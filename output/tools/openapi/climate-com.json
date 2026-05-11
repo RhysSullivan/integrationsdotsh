@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:22:08.554Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_climate_com.boundaries.fetchBoundaries",
+      "name": "boundaries.fetchBoundaries",
+      "description": "Retrieve multiple **Boundaries** (up to 10 per request)."
+    },
+    {
+      "id": "openapi_climate_com.boundaries.fetchBoundaryById",
+      "name": "boundaries.fetchBoundaryById",
+      "description": "Retrieve a **Boundary** by ID."
+    },
+    {
+      "id": "openapi_climate_com.boundaries.uploadBoundary",
+      "name": "boundaries.uploadBoundary",
+      "description": "Upload a **Boundary** entry by passing the geometry of the boundary. This will store the boundary but will not create field in Climate FieldView and will not link to an existing field in Climate FieldView.\nThis is restricted to callers with **boundaries:write** scope.\nTo upload a field boundary for field creation in Climate FieldView, please use **POST /v4/uploads**."
+    },
+    {
+      "id": "openapi_climate_com.exports.fetchExportContentsById",
+      "name": "exports.fetchExportContentsById",
+      "description": "Downloads larger than `5MiB` (`5242880 bytes`) in size must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB` (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`)."
+    },
+    {
+      "id": "openapi_climate_com.exports.fetchExportStatusById",
+      "name": "exports.fetchExportStatusById",
+      "description": "Check the status of an **Export** by ID."
+    },
+    {
+      "id": "openapi_climate_com.exports.postExport",
+      "name": "exports.postExport",
+      "description": "Step one in requesting a data product. The method will return an **Export** ID which the caller will use in subsequent `GET` requests.\nThe following `contentTypes` may be requested:\n  * __application/vnd.climate.acrsi.geojson__ (Beta)\n     Exports the planting activities accessible by the authenticated user and optionally filtered by resource owner\n     as a [GeoJSON Feature Collection](https://tools.ietf.org/html/rfc7946#page-12).\n\n     The export request definition must contain the following properties:\n       * plantingStartDate\n       * plantingEndDate\n       * resourceOwnerId\n\n     Requires `exports:read` and `plantingActivitySummary:read` scope.\n  \n  * __application/vnd.climate.harvest.geojson__\n     Exports the harvesting activities accessible by the authenticated user and optionally filtered by resource owner\n     as a [GeoJSON Feature Collection](https://tools.ietf.org/html/rfc7946#page-12).\n\n     The export request definition must contain the following properties:\n       * harvestStartDate\n       * harvestEndDate\n       * resourceOwnerId\n\n     Requires `exports:read` and `plantingActivitySummary:read` scope."
+    },
+    {
+      "id": "openapi_climate_com.farmOrganizations.fetchFarmOrganizationByTypeAndId",
+      "name": "farmOrganizations.fetchFarmOrganizationByTypeAndId",
+      "description": "Retrieve a given **farm organization** by organization type and ID."
+    },
+    {
+      "id": "openapi_climate_com.fields.fetchAllFields",
+      "name": "fields.fetchAllFields",
+      "description": "Retrieve all fields the authenticated user has access to, including fields shared with the authenticated user from other resource owners. Filter the results by field name if the `fieldName` query parameter is specified.\nA 409 will be returned if the X-Next-Token has expired. When receiving a 409, the client should discard the X-Next-Token, discard all currently persisted fields for the user, and re-fetch fields from /fields/all."
+    },
+    {
+      "id": "openapi_climate_com.fields.fetchFieldById",
+      "name": "fields.fetchFieldById",
+      "description": "Retrieve a given **Field** by ID."
+    },
+    {
+      "id": "openapi_climate_com.fields.fetchFields",
+      "name": "fields.fetchFields",
+      "description": "Retrieve list of **Fields**. Filter the results by field name if the `fieldName` query parameter is specified."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsApplied",
+      "name": "layers.getV4LayersAsApplied",
+      "description": "Retrieve a list of application activities. The id in the response is used for  GET /v4/layers/asApplied/{activityId}/contents."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsAppliedActivityIdContents",
+      "name": "layers.getV4LayersAsAppliedActivityIdContents",
+      "description": "Retrieve an individual application activity by id.  Ids are retrieved via the  /layers/asApplied route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`). The data is compressed using .zip format."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsHarvested",
+      "name": "layers.getV4LayersAsHarvested",
+      "description": "Retrieve a list of harvest activities. The id in the response is used for  GET /v4/layers/asHarvested/{activityId}/contents."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsHarvestedActivityIdContents",
+      "name": "layers.getV4LayersAsHarvestedActivityIdContents",
+      "description": "Retrieve an individual harvest activity by id.  Ids are retrieved via the  /layers/asHarvested route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`). The data is compressed using .zip format."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsPlanted",
+      "name": "layers.getV4LayersAsPlanted",
+      "description": "Retrieve a list of planting activities. The id in the response is used for  GET /v4/layers/asPlanted/{activityId}/contents."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersAsPlantedActivityIdContents",
+      "name": "layers.getV4LayersAsPlantedActivityIdContents",
+      "description": "Retrieve an individual planting activity by id.  Ids are retrieved via the  /layers/asPlanted route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`).  The data is compressed using .zip format."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersScoutingObservations",
+      "name": "layers.getV4LayersScoutingObservations",
+      "description": "Retrieve a list of scouting observations created or updated by the user identified by the Authorization header."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersScoutingObservationsScoutingObservationId",
+      "name": "layers.getV4LayersScoutingObservationsScoutingObservationId",
+      "description": "Retrieve an individual scouting observation by id.  Ids are retrieved via the /layers/scoutingObservations route."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersScoutingObservationsScoutingObservationIdAttachments",
+      "name": "layers.getV4LayersScoutingObservationsScoutingObservationIdAttachments",
+      "description": "Retrieve attachments associated with a given scouting observation. Photos added to scouting notes in the FieldView app are capped to 20MB, and we won’t store photos larger than that in a scouting note."
+    },
+    {
+      "id": "openapi_climate_com.layers.getV4LayersScoutingObservationsScoutingObservationIdAttachmentsAttachmentIdContents",
+      "name": "layers.getV4LayersScoutingObservationsScoutingObservationIdAttachmentsAttachmentIdContents",
+      "description": "Photos added to scouting notes in the FieldView app are capped to `20MiB` (`20971520 bytes`), and we won’t store photos larger than that in a scouting note. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB` (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`)."
+    },
+    {
+      "id": "openapi_climate_com.operations.fetchOperations",
+      "name": "operations.fetchOperations",
+      "description": "Retrieve the **operations** accessible to the authenticated user. Filter the results by resource owner if the `resourceOwnerId` query parameter is specified."
+    },
+    {
+      "id": "openapi_climate_com.resourceOwners.getResourceOwner",
+      "name": "resourceOwners.getResourceOwner",
+      "description": "Retrieve a resource owner for the given `resourceOwnerId`."
+    },
+    {
+      "id": "openapi_climate_com.uploads.chunkedUpload",
+      "name": "uploads.chunkedUpload",
+      "description": "Send chunked data for an **Upload**."
+    },
+    {
+      "id": "openapi_climate_com.uploads.fetchUploadStatusById",
+      "name": "uploads.fetchUploadStatusById",
+      "description": "Check the status of an **Upload** by ID."
+    },
+    {
+      "id": "openapi_climate_com.uploads.fetchUploadStatuses",
+      "name": "uploads.fetchUploadStatuses",
+      "description": "Check the status of multiple **Uploads** (up to 100 per request)."
+    },
+    {
+      "id": "openapi_climate_com.uploads.postUpload",
+      "name": "uploads.postUpload",
+      "description": "Step one in uploading a data product. The method will return an **Upload** ID which the caller will use in subsequent `PUT` requests.\nThe following `contentTypes` may be uploaded:\n    <details><summary>__image/vnd.climate.thermal.geotiff__</summary>\n\n    Allows for the upload of a thermal image. The image is a single band geotiff with 64 bit signed floating point values in degrees Celsius. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary>__image/vnd.climate.ndvi.geotiff__</summary>\n\n    Allows for the upload of a NDVI image. The image is a single band geotiff with 64 bit signed floating point values in the range of -1 to 1 inclusive. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __image/vnd.climate.rgb.geotiff__</summary>\n\n    Allows for the upload of a true color image. The image is a multi band geotiff with 24-bit composite values. Each band is 8 bits with values in the range of 0 to 255. The Coordinate Reference System (CRS) must be UTM with WGS84 datum. The geotiff must contain 3 bands in the order Red, Green, Blue.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __image/vnd.climate.rgb-nir.geotiff__</summary>\n\n    Allows for the upload of a Near Infrared (NIR) image. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary>__image/vnd.climate.rgb-cir.geotiff__</summary>\n\n    Allows for the upload of a Color Infrared (CIR) image. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.rx.planting.shp__</summary>\n\n    Allows for the upload of a planting prescription in shapefile format.  The upload must be an archive in the zip format.  It should contain one and only one of each of the following file types:\n      * .shp\n      * .shx\n      * .dbf\n\n    All files with the above suffixes must have the same prefix, ie Back40.shp, Back40.shx and Back40.dbf.\n\n    Requires either rx:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.prescription.zones.shp__</summary>\n\n    Allows for the upload of a zones prescription in shapefile format.  The upload must be an archive in the zip format.  It should contain one and only one of each of the following file types:\n      * .shp\n      * .shx\n      * .dbf\n\n    All files with the above suffixes must have the same prefix, ie Back40.shp, Back40.shx and Back40.dbf.\n\n    The following metadata entries are required:\n      * fieldId - field identifier for prescription zones.\n    \n    Requires either rxZones:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.modus.xml__</summary>\n\n    Allows for the upload of a soil sampling file in the modus 1.0 format with some restrictions.  The upload must be a single xml file.\n\n    The following elements are required to be present in the modus file.\n      * EventCode - Max length of 64 bytes\n      * EventDate - Must be in ISO8601\n      * SoilSample - Has a maxOccurs of 20k\n      * Depth - Has a maxOccurs of 50\n      * LabName - Must be non-empty.\n      * StartingDepth - 0 to 36 inclusive, default 0\n      * EndingDepth - 1 - 36 inclusive, default 1\n      * ColumnDepth\n      * DepthUnit - must be inches\n      * Geometry - point in wgs84\n    \n    Requires the soil:write scope.\n   </details>\n   <details><summary> __application/vnd.climate.stand-count.geojson__</summary>\n\n    Allows for the upload of a valid [geojson feature collection](https://tools.ietf.org/html/rfc7946#section-3.3).\n\n    Each feature in the collection must contain the following entry in its properties section:\n      * StandPPA - A count of the number of plants per acre:\n\n    Additionally, the type field of each feature's geometry field must be:\n      * Point\n\n    Requires `imagery:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.weed-count.geojson__</summary>\n\n    Allows for the upload of a valid [geojson feature collection](https://tools.ietf.org/html/rfc7946#section-3.3).\n\n    Each feature in the collection must contain the following entry in its properties section:\n      * StandPPA - A count of the number of plants per acre:\n\n    Additionally, the type field of each feature's geometry field must be:\n      * Point\n\n    Requires `imagery:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-applied.zip__</summary>\n\n    Allows for the upload of a valid application data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asApplied:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-planted.zip__</summary>\n\n    Allows for the upload of a valid planting data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asPlanted:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-harvested.zip__</summary>\n\n    Allows for the upload of a valid harvest data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asHarvested:write` scope.\n   </details>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

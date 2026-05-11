@@ -1,0 +1,937 @@
+{
+  "fetchedAt": "2026-04-30T15:26:45.268Z",
+  "status": "ok",
+  "count": 186,
+  "tools": [
+    {
+      "id": "openapi_rebilly_com.3DSecure.get3DSecure",
+      "name": "3DSecure.get3DSecure",
+      "description": "Retrieve a ThreeDSecure entry with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.3DSecure.get3DSecureCollection",
+      "name": "3DSecure.get3DSecureCollection",
+      "description": "Retrieve a list of ThreeDSecure entries"
+    },
+    {
+      "id": "openapi_rebilly_com.3DSecure.post3DSecure",
+      "name": "3DSecure.post3DSecure",
+      "description": "Create a ThreeDSecure entry.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.aml.getAmlEntry",
+      "name": "aml.getAmlEntry",
+      "description": "Search multiple PEP/Sanctions/Adverse Media lists with first and last name to find any blocklisted identities.\nPerforms a fuzzy search including soundex. Not all fields are guaranteed to be filled.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.getBankAccount",
+      "name": "bankAccounts.getBankAccount",
+      "description": "Retrieve a Bank Account with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.getBankAccountCollection",
+      "name": "bankAccounts.getBankAccountCollection",
+      "description": "Retrieve a list of Bank Accounts.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.patchBankAccount",
+      "name": "bankAccounts.patchBankAccount",
+      "description": "Update bank account's values except for the account number and routing. number.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.postBankAccount",
+      "name": "bankAccounts.postBankAccount",
+      "description": "Create a Bank Account.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.postBankAccountDeactivation",
+      "name": "bankAccounts.postBankAccountDeactivation",
+      "description": "Deactivate a Bank Account.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.bankAccounts.putBankAccount",
+      "name": "bankAccounts.putBankAccount",
+      "description": "Create or update a BankAccount with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.blocklists.deleteBlocklist",
+      "name": "blocklists.deleteBlocklist",
+      "description": "Delete a blocklist with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.blocklists.getBlocklist",
+      "name": "blocklists.getBlocklist",
+      "description": "Retrieve a blocklist with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.blocklists.getBlocklistCollection",
+      "name": "blocklists.getBlocklistCollection",
+      "description": "Retrieve a list of blocklists.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.blocklists.postBlocklist",
+      "name": "blocklists.postBlocklist",
+      "description": "Create a blocklist.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.blocklists.putBlocklist",
+      "name": "blocklists.putBlocklist",
+      "description": "Create a blocklist with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.getCoupon",
+      "name": "coupons.getCoupon",
+      "description": "Retrieve a coupon with specified coupon ID string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.getCouponCollection",
+      "name": "coupons.getCouponCollection",
+      "description": "Retrieve a list of coupons.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.getCouponRedemption",
+      "name": "coupons.getCouponRedemption",
+      "description": "Retrieve a coupon redemption with specified identifier string"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.getCouponRedemptionCollection",
+      "name": "coupons.getCouponRedemptionCollection",
+      "description": "Retrieve a list of coupon redemptions"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.postCoupon",
+      "name": "coupons.postCoupon",
+      "description": "Create a coupon.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.postCouponExpiration",
+      "name": "coupons.postCouponExpiration",
+      "description": "Set a coupon's expiry time with the specified coupon ID.\nThe expiredTime of a coupon must be greater than its issuedTime.\nThis cannot be performed on expired coupons.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.postCouponRedemption",
+      "name": "coupons.postCouponRedemption",
+      "description": "Redeem a coupon.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.postCouponRedemptionCancellation",
+      "name": "coupons.postCouponRedemptionCancellation",
+      "description": "Cancel a coupon redemption"
+    },
+    {
+      "id": "openapi_rebilly_com.coupons.putCoupon",
+      "name": "coupons.putCoupon",
+      "description": "Create or update a coupon with predefined coupon ID.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.deleteAuthenticationToken",
+      "name": "customerAuthentication.deleteAuthenticationToken",
+      "description": "Logout a customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.deleteCredential",
+      "name": "customerAuthentication.deleteCredential",
+      "description": "Delete a credential with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.deletePasswordToken",
+      "name": "customerAuthentication.deletePasswordToken",
+      "description": "Delete a Reset Password Token with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getAuthenticationOption",
+      "name": "customerAuthentication.getAuthenticationOption",
+      "description": "Read current authentication options.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getAuthenticationTokenCollection",
+      "name": "customerAuthentication.getAuthenticationTokenCollection",
+      "description": "Retrieve a list of auth tokens.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getAuthenticationTokenVerification",
+      "name": "customerAuthentication.getAuthenticationTokenVerification",
+      "description": "Verify an authentication token.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getCredential",
+      "name": "customerAuthentication.getCredential",
+      "description": "Retrieve a credential with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getCredentialCollection",
+      "name": "customerAuthentication.getCredentialCollection",
+      "description": "Retrieve a list of credentials.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getPasswordToken",
+      "name": "customerAuthentication.getPasswordToken",
+      "description": "Retrieve a Reset Password Token with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.getPasswordTokenCollection",
+      "name": "customerAuthentication.getPasswordTokenCollection",
+      "description": "Retrieve a list of tokens.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.postAuthenticationToken",
+      "name": "customerAuthentication.postAuthenticationToken",
+      "description": "Login a customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.postAuthenticationTokenExchange",
+      "name": "customerAuthentication.postAuthenticationTokenExchange",
+      "description": "Exchange Authentication Token for JWT.\n\nIt will also invalidate an Authentication Token by default (so it can only be exchanged once).\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.postCredential",
+      "name": "customerAuthentication.postCredential",
+      "description": "Create a credential.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.postPasswordToken",
+      "name": "customerAuthentication.postPasswordToken",
+      "description": "Create a Reset Password Token.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.putAuthenticationOption",
+      "name": "customerAuthentication.putAuthenticationOption",
+      "description": "Change options.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customerAuthentication.putCredential",
+      "name": "customerAuthentication.putCredential",
+      "description": "Create or update a credential with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.deleteCustomer",
+      "name": "customers.deleteCustomer",
+      "description": "Merge one duplicate customer to another target customer and delete the. former."
+    },
+    {
+      "id": "openapi_rebilly_com.customers.deleteCustomerLeadSource",
+      "name": "customers.deleteCustomerLeadSource",
+      "description": "Delete a Lead Source that belongs to a certain customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.getCustomer",
+      "name": "customers.getCustomer",
+      "description": "Retrieve a customer with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.getCustomerCollection",
+      "name": "customers.getCustomerCollection",
+      "description": "Retrieve a list of customers.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.getCustomerLeadSource",
+      "name": "customers.getCustomerLeadSource",
+      "description": "Retrieve a Lead Source of given customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.postCustomer",
+      "name": "customers.postCustomer",
+      "description": "Create a customer without a predefined ID.\nThe customer's primary address\nwill be used as the default address for payment\ninstruments, subscriptions and invoices if none\nare provided.\n\nIf you wish to create the customer with a predefined\nID (which we recommend to prevent duplication), you\nmay use our `PUT` request described below.\n\nRead our guide to [preventing duplicates](https://api-guides.rebilly.com/core-concepts/preventing-duplicates)\nto understand more.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.postCustomerTimelineCustomEventType",
+      "name": "customers.postCustomerTimelineCustomEventType",
+      "description": "Create Customer Timeline custom event type.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.putCustomer",
+      "name": "customers.putCustomer",
+      "description": "Create or update (upsert) a customer with predefined identifier string.\nRead our guide to [preventing duplicates](https://api-guides.rebilly.com/core-concepts/preventing-duplicates)\nto understand more.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customers.putCustomerLeadSource",
+      "name": "customers.putCustomerLeadSource",
+      "description": "Create a Lead Source for a customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.deleteCustomerTimeline",
+      "name": "customersTimeline.deleteCustomerTimeline",
+      "description": "Delete a Customer Timeline message with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.getCustomerTimeline",
+      "name": "customersTimeline.getCustomerTimeline",
+      "description": "Retrieve a customer message with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.getCustomerTimelineCollection",
+      "name": "customersTimeline.getCustomerTimelineCollection",
+      "description": "Retrieve a list of customer timeline messages.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.getCustomerTimelineCustomEventType",
+      "name": "customersTimeline.getCustomerTimelineCustomEventType",
+      "description": "Retrieve customer timeline custom event type.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.getCustomerTimelineCustomEventTypeCollection",
+      "name": "customersTimeline.getCustomerTimelineCustomEventTypeCollection",
+      "description": "Retrieve a list of customer timeline custom event types.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.getCustomerTimelineEventCollection",
+      "name": "customersTimeline.getCustomerTimelineEventCollection",
+      "description": "Retrieve a list of customer timeline messages for all customers.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customersTimeline.postCustomerTimeline",
+      "name": "customersTimeline.postCustomerTimeline",
+      "description": "Create a customer Timeline comment or custom defined event.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customFields.getCustomField",
+      "name": "customFields.getCustomField",
+      "description": "Retrieve a schema of the given Custom Field for the given resource type.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customFields.getCustomFieldCollection",
+      "name": "customFields.getCustomFieldCollection",
+      "description": "Retrieve a schema of Custom Fields for the given resource type.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.customFields.putCustomField",
+      "name": "customFields.putCustomField",
+      "description": "Create or alter a schema of the given Custom Field for the given resource. type.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.disputes.getDispute",
+      "name": "disputes.getDispute",
+      "description": "Retrieve a dispute with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.disputes.getDisputeCollection",
+      "name": "disputes.getDisputeCollection",
+      "description": "Retrieve a list of disputes.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.disputes.postDispute",
+      "name": "disputes.postDispute",
+      "description": "Create a dispute.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.disputes.putDispute",
+      "name": "disputes.putDispute",
+      "description": "Create or update a Dispute with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.deleteAttachment",
+      "name": "files.deleteAttachment",
+      "description": "Delete the Attachment with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.deleteFile",
+      "name": "files.deleteFile",
+      "description": "Delete the File with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getAttachment",
+      "name": "files.getAttachment",
+      "description": "Retrieve a Attachment with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getAttachmentCollection",
+      "name": "files.getAttachmentCollection",
+      "description": "Retrieve a list of attachments.\nYou may sort by the id, name, relatedId, relatedType, fileId, createdTime, and updatedTime.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getFile",
+      "name": "files.getFile",
+      "description": "Retrieve a File with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getFileCollection",
+      "name": "files.getFileCollection",
+      "description": "Retrieve a list of files.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getFileDownload",
+      "name": "files.getFileDownload",
+      "description": "Download a file.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.getFileDownloadExtension",
+      "name": "files.getFileDownloadExtension",
+      "description": "Download image in specific format. Images are converted server-side.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.postAttachment",
+      "name": "files.postAttachment",
+      "description": "Create an Attachment.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.postFile",
+      "name": "files.postFile",
+      "description": "Additionally, a file can be sent with:.\n - multipart/form-data POST request: in this case all property names are the same as the JSON ones (`file` is an uploaded file)\n - file body request: the file body is sent as the request body, with the appropriate `Content-Type`. No additional\n properties can be set along the request data\n\nThe following file types only are allowed:\n - jpg\n - png\n - gif\n - pdf\n - mp3\n\n\nIf using a Publishable Api Key, only private files can be created. The files can later on be modified or used using\n a secret API key.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.putAttachment",
+      "name": "files.putAttachment",
+      "description": "Update the Attachment with predefined ID.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.files.putFile",
+      "name": "files.putFile",
+      "description": "Update the File with predefined ID. Note that file can be uploaded with POST. only.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.deleteInvoiceTimeline",
+      "name": "invoices.deleteInvoiceTimeline",
+      "description": "Delete an Invoice Timeline message with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getCustomerUpcomingInvoiceCollection",
+      "name": "invoices.getCustomerUpcomingInvoiceCollection",
+      "description": "Retrieve a list of upcoming invoices from the subscriptions which belong to. the given customer.\nThe endpoint is temporary before upcoming invoices get a complete integration.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoice",
+      "name": "invoices.getInvoice",
+      "description": "Retrieve an invoice with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoiceCollection",
+      "name": "invoices.getInvoiceCollection",
+      "description": "Retrieve a list of invoices.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoiceItemCollection",
+      "name": "invoices.getInvoiceItemCollection",
+      "description": "Retrieve an invoice items with specified invoice identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoiceTimeline",
+      "name": "invoices.getInvoiceTimeline",
+      "description": "Retrieve a invoice message with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoiceTimelineCollection",
+      "name": "invoices.getInvoiceTimelineCollection",
+      "description": "Retrieve a list of invoice timeline messages.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.getInvoiceTransactionAllocationCollection",
+      "name": "invoices.getInvoiceTransactionAllocationCollection",
+      "description": "Get the precise amounts from a transaction allocated as invoice payments."
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoice",
+      "name": "invoices.postInvoice",
+      "description": "Create an invoice.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceAbandonment",
+      "name": "invoices.postInvoiceAbandonment",
+      "description": "Abandon an invoice with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceIssuance",
+      "name": "invoices.postInvoiceIssuance",
+      "description": "Issue an invoice with specified identifier string. It must be in `draft` status.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceItem",
+      "name": "invoices.postInvoiceItem",
+      "description": "Create an invoice item.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceRecalculation",
+      "name": "invoices.postInvoiceRecalculation",
+      "description": "Recalculate an invoice with specified identifier string.\nIt will recalculate shipping rates, taxes, discounts. It is useful when coupon was revoked or customer redeemed coupon after invoice was issued and you want to apply it to this invoice.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceReissuance",
+      "name": "invoices.postInvoiceReissuance",
+      "description": "Reissue an invoice with specified identifier string. It must be issued. (status must be `unpaid` or `past-due`).\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceTimeline",
+      "name": "invoices.postInvoiceTimeline",
+      "description": "Create an invoice Timeline comment.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceTransaction",
+      "name": "invoices.postInvoiceTransaction",
+      "description": "Apply a transaction to an invoice. The invoice must be unpaid. The transaction must have a non-zero unused amount (not fully applied to other invoices).\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.postInvoiceVoid",
+      "name": "invoices.postInvoiceVoid",
+      "description": "Void an invoice with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.invoices.putInvoice",
+      "name": "invoices.putInvoice",
+      "description": "Create or update an invoice with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.deleteKycRequest",
+      "name": "kycDocuments.deleteKycRequest",
+      "description": "Delete the KYC request with the predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.getKycDocument",
+      "name": "kycDocuments.getKycDocument",
+      "description": "Retrieve a KYC document with specified identifier string."
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.getKycDocumentCollection",
+      "name": "kycDocuments.getKycDocumentCollection",
+      "description": "Retrieve a list of KYC documents.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.getKycRequest",
+      "name": "kycDocuments.getKycRequest",
+      "description": "Retrieve a KYC request with specified identifier string."
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.getKycRequestCollection",
+      "name": "kycDocuments.getKycRequestCollection",
+      "description": "Retrieve a list of KYC requests.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.patchKycRequest",
+      "name": "kycDocuments.patchKycRequest",
+      "description": "Update a KYC request."
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycDocument",
+      "name": "kycDocuments.postKycDocument",
+      "description": "Create a KYC Document.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycDocumentAcceptance",
+      "name": "kycDocuments.postKycDocumentAcceptance",
+      "description": "Marks that status of the document as `accepted`. Updates the review time and reviewer information. Intended to be used for manual overrides.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycDocumentMatches",
+      "name": "kycDocuments.postKycDocumentMatches",
+      "description": "Updates a KYC document's documentMatches. Intended to be used for manual overrides.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycDocumentRejection",
+      "name": "kycDocuments.postKycDocumentRejection",
+      "description": "Marks that status of the document as `rejected`. Updates the review time and reviewer information. Intended to be used for manual overrides.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycDocumentReview",
+      "name": "kycDocuments.postKycDocumentReview",
+      "description": "Mark the KYC document as reviewed. Updates the review time and reviewer. information."
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.postKycRequest",
+      "name": "kycDocuments.postKycRequest",
+      "description": "Create a KYC Request.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.kycDocuments.putKycDocument",
+      "name": "kycDocuments.putKycDocument",
+      "description": "Create or update a KYC document with predefined identifier string."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.deleteSubscriptionCancellation",
+      "name": "orders.deleteSubscriptionCancellation",
+      "description": "Delete an order's cancellation. Only draft can be deleted."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.deleteSubscriptionTimeline",
+      "name": "orders.deleteSubscriptionTimeline",
+      "description": "Delete an Order Timeline message with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscription",
+      "name": "orders.getSubscription",
+      "description": "Retrieve an order with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionCancellation",
+      "name": "orders.getSubscriptionCancellation",
+      "description": "Retrieve an order сancellation with specified identifier string."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionCancellationCollection",
+      "name": "orders.getSubscriptionCancellationCollection",
+      "description": "Retrieve a list of cancellations for all subscriptions."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionCollection",
+      "name": "orders.getSubscriptionCollection",
+      "description": "Retrieve a list of orders.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionReactivation",
+      "name": "orders.getSubscriptionReactivation",
+      "description": "Retrieve an order reactivation with specified identifier string."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionReactivationCollection",
+      "name": "orders.getSubscriptionReactivationCollection",
+      "description": "Retrieve a list of reactivations for all subscriptions."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionTimeline",
+      "name": "orders.getSubscriptionTimeline",
+      "description": "Retrieve a order message with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionTimelineCollection",
+      "name": "orders.getSubscriptionTimelineCollection",
+      "description": "Retrieve a list of order timeline messages.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.getSubscriptionUpcomingInvoiceCollection",
+      "name": "orders.getSubscriptionUpcomingInvoiceCollection",
+      "description": "Retrieve an upcoming invoice from the specified subscription order.\nThe endpoint is temporary before upcoming invoices get a complete integration.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscription",
+      "name": "orders.postSubscription",
+      "description": "Create an order. Consider using the upsert.\noperation to accomplish this task.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscriptionCancellation",
+      "name": "orders.postSubscriptionCancellation",
+      "description": "Cancel an order or preview the cancellation parameters before that."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscriptionInterimInvoice",
+      "name": "orders.postSubscriptionInterimInvoice",
+      "description": "Issue an interim invoice for a subscription, typically used in conjunction. with plan changes and pro rata adjustments.\nThis process creates an invoice, adds the subscription's line items to the invoice, and issues the invoice, and applies\npayment to it if a transaction id is supplied.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscriptionItemsChange",
+      "name": "orders.postSubscriptionItemsChange",
+      "description": "Change an order's items or quantities and designate when and if there should be pro-rata credits given.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscriptionReactivation",
+      "name": "orders.postSubscriptionReactivation",
+      "description": "Reactivate a subscription."
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postSubscriptionTimeline",
+      "name": "orders.postSubscriptionTimeline",
+      "description": "Create an order Timeline comment.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.postUpcomingInvoiceIssuance",
+      "name": "orders.postUpcomingInvoiceIssuance",
+      "description": "Issue an upcoming invoice with specified identifier string for early pay.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.putSubscription",
+      "name": "orders.putSubscription",
+      "description": "Create or update an order with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.orders.putSubscriptionCancellation",
+      "name": "orders.putSubscriptionCancellation",
+      "description": "Cancel a subscription."
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.getPaymentCard",
+      "name": "paymentCards.getPaymentCard",
+      "description": "Retrieve a Payment Card with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.getPaymentCardCollection",
+      "name": "paymentCards.getPaymentCardCollection",
+      "description": "Retrieve a list of Payments Cards.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.patchPaymentCard",
+      "name": "paymentCards.patchPaymentCard",
+      "description": "Update any of the payment card's values except for the pan.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.postPaymentCard",
+      "name": "paymentCards.postPaymentCard",
+      "description": "Create a Payment Card.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.postPaymentCardDeactivation",
+      "name": "paymentCards.postPaymentCardDeactivation",
+      "description": "Deactivate a Payment Card.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentCards.putPaymentCard",
+      "name": "paymentCards.putPaymentCard",
+      "description": "Create a payment card with predefined ID"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentInstruments.getPaymentInstrument",
+      "name": "paymentInstruments.getPaymentInstrument",
+      "description": "Retrieve a payment instrument by ID.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentInstruments.getPaymentInstrumentCollection",
+      "name": "paymentInstruments.getPaymentInstrumentCollection",
+      "description": "Retrieve a list of payment instruments.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentInstruments.patchPaymentInstrument",
+      "name": "paymentInstruments.patchPaymentInstrument",
+      "description": "Update allowed payment instrument's values."
+    },
+    {
+      "id": "openapi_rebilly_com.paymentInstruments.postPaymentInstrument",
+      "name": "paymentInstruments.postPaymentInstrument",
+      "description": "Create a payment instrument.\nIf such payment card or bank account payment instrument already exists then updates it instead.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentInstruments.postPaymentInstrumentDeactivation",
+      "name": "paymentInstruments.postPaymentInstrumentDeactivation",
+      "description": "Deactivate a payment instrument.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentTokens.getToken",
+      "name": "paymentTokens.getToken",
+      "description": "Retrieve a token with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentTokens.getTokenCollection",
+      "name": "paymentTokens.getTokenCollection",
+      "description": "Retrieve a list of tokens.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentTokens.postDigitalWalletValidation",
+      "name": "paymentTokens.postDigitalWalletValidation",
+      "description": "[FramePay](https://docs.rebilly.com/docs/developer-docs/framepay/)\nis the recommended way to use when validating a digital wallet session.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.paymentTokens.postToken",
+      "name": "paymentTokens.postToken",
+      "description": "[FramePay](https://docs.rebilly.com/docs/developer-docs/framepay/)\nis the recommended way to\ncreate a payment token because it minimizes\nPCI DSS compliance.  Once a payment token\nis created, it can only be used once.\n\nA payment token expires upon first use\nor within 30 minutes of the token creation\n(whichever comes first).\n"
+    },
+    {
+      "id": "openapi_rebilly_com.payPalAccounts.getPayPalAccount",
+      "name": "payPalAccounts.getPayPalAccount",
+      "description": "Retrieve a PayPal Account with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.payPalAccounts.getPayPalAccountCollection",
+      "name": "payPalAccounts.getPayPalAccountCollection",
+      "description": "Retrieve a list of PayPal Accounts.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.payPalAccounts.postPayPalAccount",
+      "name": "payPalAccounts.postPayPalAccount",
+      "description": "Create a PayPal Account.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.payPalAccounts.postPayPalAccountDeactivation",
+      "name": "payPalAccounts.postPayPalAccountDeactivation",
+      "description": "Deactivate a PayPal Account.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.payPalAccounts.putPayPalAccount",
+      "name": "payPalAccounts.putPayPalAccount",
+      "description": "Create a PayPal account with predefined ID"
+    },
+    {
+      "id": "openapi_rebilly_com.plans.deletePlan",
+      "name": "plans.deletePlan",
+      "description": "Delete a Plan with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.plans.getPlan",
+      "name": "plans.getPlan",
+      "description": "Retrieve a plan with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.plans.getPlanCollection",
+      "name": "plans.getPlanCollection",
+      "description": "Retrieve a list of plans.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.plans.postPlan",
+      "name": "plans.postPlan",
+      "description": "Create a plan.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.plans.putPlan",
+      "name": "plans.putPlan",
+      "description": "Create or update a Plan with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.products.deleteProduct",
+      "name": "products.deleteProduct",
+      "description": "Delete a product with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.products.getProduct",
+      "name": "products.getProduct",
+      "description": "Retrieve a product with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.products.getProductCollection",
+      "name": "products.getProductCollection",
+      "description": "Retrieve a list of products.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.products.postProduct",
+      "name": "products.postProduct",
+      "description": "Create a Product.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.products.putProduct",
+      "name": "products.putProduct",
+      "description": "Create a product with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.search.getSearch",
+      "name": "search.getSearch",
+      "description": "Search merchant's data to return resources such as customers, invoices, orders, transactions.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.shippingZones.deleteShippingZone",
+      "name": "shippingZones.deleteShippingZone",
+      "description": "Delete a shipping zone with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.shippingZones.getShippingZone",
+      "name": "shippingZones.getShippingZone",
+      "description": "Retrieve a shipping zone with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.shippingZones.getShippingZoneCollection",
+      "name": "shippingZones.getShippingZoneCollection",
+      "description": "Retrieve a list of shipping zones.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.shippingZones.postShippingZone",
+      "name": "shippingZones.postShippingZone",
+      "description": "Create a Shipping Zone.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.shippingZones.putShippingZone",
+      "name": "shippingZones.putShippingZone",
+      "description": "Create a shipping zone with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.deleteTag",
+      "name": "tags.deleteTag",
+      "description": "Delete a tag.\nIt's an asynchronous operation.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.deleteTagCustomer",
+      "name": "tags.deleteTagCustomer",
+      "description": "Untag a customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.deleteTagCustomerCollection",
+      "name": "tags.deleteTagCustomerCollection",
+      "description": "Untag a list of customers.\nIf the customer from the list is already untagged it will be ignored.\nIt's an asynchronous operation.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.getTag",
+      "name": "tags.getTag",
+      "description": "Retrieve a tag.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.getTagCollection",
+      "name": "tags.getTagCollection",
+      "description": "Retrieve a list of tags.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.patchTag",
+      "name": "tags.patchTag",
+      "description": "Update a tag.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.postTag",
+      "name": "tags.postTag",
+      "description": "Create a tag.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.postTagCustomer",
+      "name": "tags.postTagCustomer",
+      "description": "Tag a customer.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.tags.postTagCustomerCollection",
+      "name": "tags.postTagCustomerCollection",
+      "description": "Tag a list of customers.\nIf the customer from the list is already tagged it will be ignored.\nIt's an asynchronous operation.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.deleteTransactionTimeline",
+      "name": "transactions.deleteTransactionTimeline",
+      "description": "Delete a Transaction Timeline message with predefined identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.getTransaction",
+      "name": "transactions.getTransaction",
+      "description": "Retrieve a Transaction with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.getTransactionCollection",
+      "name": "transactions.getTransactionCollection",
+      "description": "Retrieve a list of transactions.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.getTransactionTimeline",
+      "name": "transactions.getTransactionTimeline",
+      "description": "Retrieve a timeline message with specified identifier string.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.getTransactionTimelineCollection",
+      "name": "transactions.getTransactionTimelineCollection",
+      "description": "Retrieve a list of transaction timeline messages.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.patchTransaction",
+      "name": "transactions.patchTransaction",
+      "description": "Update a transaction's custom fields.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postPayout",
+      "name": "transactions.postPayout",
+      "description": "Create a transaction of type `credit`.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postReadyToPay",
+      "name": "transactions.postReadyToPay",
+      "description": "Get available payment methods for a specific transaction or a purchase.\n\nThe payment methods order shown to a customer **SHOULD** be the same as the order in the response.\n\nThe list of available methods is generated from available [Gateway Accounts](https://user-api-docs.rebilly.com/tag/Gateway-Accounts)\nintersected with the last matched [Rules Engine](https://user-api-docs.rebilly.com/tag/Rules#operation/PutEventRule)\n`adjust-ready-to-pay` action on `ready-to-pay-requested` event.\n\nIf there were no actions matched for the specific request – all methods supported by the Gateway Accounts are sent.\n\nTo invert this behavior – place an all-matching rule at the very end of the `ready-to-pay-requested` event in\nRules Engine with an empty `paymentMethods` property of the `adjust-ready-to-pay` action.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postTransaction",
+      "name": "transactions.postTransaction",
+      "description": "Create a transaction of type `sale` or `authorize`.\nThis endpoint supports two main styles of transactions:\n  1. A real-time decision and response.\n  2. User approval/interaction is required.\n\nA real-time decision is very familiar.  You send a request, and\ninspect the `result` of the response for `approved` or `declined`.\n\nHowever, many transactions, especially those for alternative\nmethods, require the user to interact with a 3rd party.  You\nmay be able to envision PayPal, for example, the user must\ngive permission to complete the payment (or accept the\nbilling agreement).\n\nEven payment cards may require user approval in the case of\n3D secure authentication.  In the event that approval is\nrequired, you will receive a response back and notice\nthat the `result` is `unknown`.  You will find that the\n`status` is `waiting-approval`. And you will find in the\n`_links` section of the response a link for the `approvalUrl`.\n\nIn this case you would either open the `approvalUrl` in an\niframe or in a pop (better workflow for mobile).\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postTransactionQuery",
+      "name": "transactions.postTransactionQuery",
+      "description": "Query a Transaction with a specified identifier string.\nThe query will contact the gateway account to find the result and amount/currency.\nThe response should be analyzed.  If deemed appropriate, the transaction could be updated using the Transaction Update API.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postTransactionRefund",
+      "name": "transactions.postTransactionRefund",
+      "description": "Refund a Transaction with specified identifier string.\nNote that the refund will be in the same currency as the original transaction.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postTransactionTimeline",
+      "name": "transactions.postTransactionTimeline",
+      "description": "Create a transaction Timeline comment.\n"
+    },
+    {
+      "id": "openapi_rebilly_com.transactions.postTransactionUpdate",
+      "name": "transactions.postTransactionUpdate",
+      "description": "Update a Transaction manually to completed status with given result with optional currency and amount."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

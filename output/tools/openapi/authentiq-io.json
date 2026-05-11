@@ -1,0 +1,62 @@
+{
+  "fetchedAt": "2026-04-30T15:45:21.031Z",
+  "status": "ok",
+  "count": 11,
+  "tools": [
+    {
+      "id": "openapi_authentiq_io.authentication.authorize",
+      "name": "authentication.authorize",
+      "description": "Start a session with Authentiq Connect to authenticate a user.\n\n```\nGET https://connect.authentiq.io/authorize?client_id=<your-client-id>&response_type=code+id_token&scope=openid+email&redirect_uri=<your-redirect-uri>&state=0123456789\n```\n\nThis endpoint also supports the POST method.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.authentication.token",
+      "name": "authentication.token",
+      "description": "Exchange en authorization code for an ID Token or Access Token.\n\nThis endpoint supports both `client_secret_basic` (default) and `client_secret_basic` authentication methods, as specified by the client's `token_endpoint_auth_method`.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.authentication.userInfo",
+      "name": "authentication.userInfo",
+      "description": "Use this endpoint to retrieve a user's profile in case you are unable to parse an ID Token or you've not already obtained enough details from the ID Token via the Token Endpoint.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.clientManagement.client",
+      "name": "clientManagement.client",
+      "description": "Retrieve a list of clients.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.clientManagement.clientClientId",
+      "name": "clientManagement.clientClientId",
+      "description": "Delete a previously registered client.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.clientManagement.createClient",
+      "name": "clientManagement.createClient",
+      "description": "Register a new client with this Authentiq Connect provider.\n\nThis endpoint is compatible with [OIDC's Client Registration](http://openid.net/specs/openid-connect-registration-1_0.html) extension.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.clientManagement.getClient",
+      "name": "clientManagement.getClient",
+      "description": "Retrieve the configuration of a previously registered client.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.clientManagement.updateClient",
+      "name": "clientManagement.updateClient",
+      "description": "Update the configuration of a previously registered client.\n"
+    },
+    {
+      "id": "openapi_authentiq_io.sessionManagement.authorizeIframe",
+      "name": "sessionManagement.authorizeIframe",
+      "description": "An OpenID Connect Session Management iframe to facilitate e.g. single sign-on or remote logouts.\n\nThe iframe implements the OIDC postMessage-based [change notification protocol](http://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification) via which a client can receive notifications about session state changes.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

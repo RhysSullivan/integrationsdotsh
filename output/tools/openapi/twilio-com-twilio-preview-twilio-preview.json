@@ -1,0 +1,752 @@
+{
+  "fetchedAt": "2026-04-30T15:26:53.606Z",
+  "status": "ok",
+  "count": 149,
+  "tools": [
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.createDeployedDevicesCertificate",
+      "name": "deployedDevices.createDeployedDevicesCertificate",
+      "description": "Enroll a new Certificate credential to the Fleet, optionally giving it a friendly name and assigning to a Device."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.createDeployedDevicesDeployment",
+      "name": "deployedDevices.createDeployedDevicesDeployment",
+      "description": "Create a new Deployment in the Fleet, optionally giving it a friendly name and linking to a specific Twilio Sync service instance."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.createDeployedDevicesDevice",
+      "name": "deployedDevices.createDeployedDevicesDevice",
+      "description": "Create a new Device in the Fleet, optionally giving it a unique name, friendly name, and assigning to a Deployment and/or human identity."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.createDeployedDevicesFleet",
+      "name": "deployedDevices.createDeployedDevicesFleet",
+      "description": "Create a new Fleet for scoping of deployed devices within your account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.createDeployedDevicesKey",
+      "name": "deployedDevices.createDeployedDevicesKey",
+      "description": "Create a new Key credential in the Fleet, optionally giving it a friendly name and assigning to a Device."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.deleteDeployedDevicesCertificate",
+      "name": "deployedDevices.deleteDeployedDevicesCertificate",
+      "description": "Unregister a specific Certificate credential from the Fleet, effectively disallowing any inbound client connections that are presenting it."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.deleteDeployedDevicesDeployment",
+      "name": "deployedDevices.deleteDeployedDevicesDeployment",
+      "description": "Delete a specific Deployment from the Fleet, leaving associated devices effectively undeployed."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.deleteDeployedDevicesDevice",
+      "name": "deployedDevices.deleteDeployedDevicesDevice",
+      "description": "Delete a specific Device from the Fleet, also removing it from associated Deployments."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.deleteDeployedDevicesFleet",
+      "name": "deployedDevices.deleteDeployedDevicesFleet",
+      "description": "Delete a specific Fleet from your account, also destroys all nested resources: Devices, Deployments, Certificates, Keys."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.deleteDeployedDevicesKey",
+      "name": "deployedDevices.deleteDeployedDevicesKey",
+      "description": "Delete a specific Key credential from the Fleet, effectively disallowing any inbound client connections that are presenting it."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.fetchDeployedDevicesCertificate",
+      "name": "deployedDevices.fetchDeployedDevicesCertificate",
+      "description": "Fetch information about a specific Certificate credential in the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.fetchDeployedDevicesDeployment",
+      "name": "deployedDevices.fetchDeployedDevicesDeployment",
+      "description": "Fetch information about a specific Deployment in the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.fetchDeployedDevicesDevice",
+      "name": "deployedDevices.fetchDeployedDevicesDevice",
+      "description": "Fetch information about a specific Device in the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.fetchDeployedDevicesFleet",
+      "name": "deployedDevices.fetchDeployedDevicesFleet",
+      "description": "Fetch information about a specific Fleet in your account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.fetchDeployedDevicesKey",
+      "name": "deployedDevices.fetchDeployedDevicesKey",
+      "description": "Fetch information about a specific Key credential in the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.listDeployedDevicesCertificate",
+      "name": "deployedDevices.listDeployedDevicesCertificate",
+      "description": "Retrieve a list of all Certificate credentials belonging to the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.listDeployedDevicesDeployment",
+      "name": "deployedDevices.listDeployedDevicesDeployment",
+      "description": "Retrieve a list of all Deployments belonging to the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.listDeployedDevicesDevice",
+      "name": "deployedDevices.listDeployedDevicesDevice",
+      "description": "Retrieve a list of all Devices belonging to the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.listDeployedDevicesFleet",
+      "name": "deployedDevices.listDeployedDevicesFleet",
+      "description": "Retrieve a list of all Fleets belonging to your account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.listDeployedDevicesKey",
+      "name": "deployedDevices.listDeployedDevicesKey",
+      "description": "Retrieve a list of all Keys credentials belonging to the Fleet."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.updateDeployedDevicesCertificate",
+      "name": "deployedDevices.updateDeployedDevicesCertificate",
+      "description": "Update the given properties of a specific Certificate credential in the Fleet, giving it a friendly name or assigning to a Device."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.updateDeployedDevicesDeployment",
+      "name": "deployedDevices.updateDeployedDevicesDeployment",
+      "description": "Update the given properties of a specific Deployment credential in the Fleet, giving it a friendly name or linking to a specific Twilio Sync service instance."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.updateDeployedDevicesDevice",
+      "name": "deployedDevices.updateDeployedDevicesDevice",
+      "description": "Update the given properties of a specific Device in the Fleet, giving it a friendly name, assigning to a Deployment, or a human identity."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.updateDeployedDevicesFleet",
+      "name": "deployedDevices.updateDeployedDevicesFleet",
+      "description": "Update the friendly name property of a specific Fleet in your account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.deployedDevices.updateDeployedDevicesKey",
+      "name": "deployedDevices.updateDeployedDevicesKey",
+      "description": "Update the given properties of a specific Key credential in the Fleet, giving it a friendly name or assigning to a Device."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.createHostedNumbersAuthorizationDocument",
+      "name": "hostedNumbers.createHostedNumbersAuthorizationDocument",
+      "description": "Create an AuthorizationDocument for authorizing the hosting of phone number capabilities on Twilio's platform."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.createHostedNumbersHostedNumberOrder",
+      "name": "hostedNumbers.createHostedNumbersHostedNumberOrder",
+      "description": "Host a phone number's capability on Twilio's platform."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.deleteHostedNumbersHostedNumberOrder",
+      "name": "hostedNumbers.deleteHostedNumbersHostedNumberOrder",
+      "description": "Cancel the HostedNumberOrder (only available when the status is in `received`)."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.fetchHostedNumbersAuthorizationDocument",
+      "name": "hostedNumbers.fetchHostedNumbersAuthorizationDocument",
+      "description": "Fetch a specific AuthorizationDocument."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.fetchHostedNumbersHostedNumberOrder",
+      "name": "hostedNumbers.fetchHostedNumbersHostedNumberOrder",
+      "description": "Fetch a specific HostedNumberOrder."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.listHostedNumbersAuthorizationDocument",
+      "name": "hostedNumbers.listHostedNumbersAuthorizationDocument",
+      "description": "Retrieve a list of AuthorizationDocuments belonging to the account initiating the request."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.listHostedNumbersDependentHostedNumberOrder",
+      "name": "hostedNumbers.listHostedNumbersDependentHostedNumberOrder",
+      "description": "Retrieve a list of dependent HostedNumberOrders belonging to the AuthorizationDocument."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.listHostedNumbersHostedNumberOrder",
+      "name": "hostedNumbers.listHostedNumbersHostedNumberOrder",
+      "description": "Retrieve a list of HostedNumberOrders belonging to the account initiating the request."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.updateHostedNumbersAuthorizationDocument",
+      "name": "hostedNumbers.updateHostedNumbersAuthorizationDocument",
+      "description": "Updates a specific AuthorizationDocument."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.hostedNumbers.updateHostedNumbersHostedNumberOrder",
+      "name": "hostedNumbers.updateHostedNumbersHostedNumberOrder",
+      "description": "Updates a specific HostedNumberOrder."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.createMarketplaceInstalledAddOn",
+      "name": "marketplace.createMarketplaceInstalledAddOn",
+      "description": "Install an Add-on for the Account specified."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.deleteMarketplaceInstalledAddOn",
+      "name": "marketplace.deleteMarketplaceInstalledAddOn",
+      "description": "Remove an Add-on installation from your account"
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.fetchMarketplaceAvailableAddOn",
+      "name": "marketplace.fetchMarketplaceAvailableAddOn",
+      "description": "Fetch an instance of an Add-on currently available to be installed."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.fetchMarketplaceAvailableAddOnExtension",
+      "name": "marketplace.fetchMarketplaceAvailableAddOnExtension",
+      "description": "Fetch an instance of an Extension for the Available Add-on."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.fetchMarketplaceInstalledAddOn",
+      "name": "marketplace.fetchMarketplaceInstalledAddOn",
+      "description": "Fetch an instance of an Add-on currently installed on this Account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.fetchMarketplaceInstalledAddOnExtension",
+      "name": "marketplace.fetchMarketplaceInstalledAddOnExtension",
+      "description": "Fetch an instance of an Extension for the Installed Add-on."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.listMarketplaceAvailableAddOn",
+      "name": "marketplace.listMarketplaceAvailableAddOn",
+      "description": "Retrieve a list of Add-ons currently available to be installed."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.listMarketplaceAvailableAddOnExtension",
+      "name": "marketplace.listMarketplaceAvailableAddOnExtension",
+      "description": "Retrieve a list of Extensions for the Available Add-on."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.listMarketplaceInstalledAddOn",
+      "name": "marketplace.listMarketplaceInstalledAddOn",
+      "description": "Retrieve a list of Add-ons currently installed on this Account."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.listMarketplaceInstalledAddOnExtension",
+      "name": "marketplace.listMarketplaceInstalledAddOnExtension",
+      "description": "Retrieve a list of Extensions for the Installed Add-on."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.updateMarketplaceInstalledAddOn",
+      "name": "marketplace.updateMarketplaceInstalledAddOn",
+      "description": "Update an Add-on installation for the Account specified."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.marketplace.updateMarketplaceInstalledAddOnExtension",
+      "name": "marketplace.updateMarketplaceInstalledAddOnExtension",
+      "description": "Update an Extension for an Add-on installation."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncDocument",
+      "name": "sync.createSyncDocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncService",
+      "name": "sync.createSyncService",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncSyncList",
+      "name": "sync.createSyncSyncList",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncSyncListItem",
+      "name": "sync.createSyncSyncListItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncSyncMap",
+      "name": "sync.createSyncSyncMap",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.createSyncSyncMapItem",
+      "name": "sync.createSyncSyncMapItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncDocument",
+      "name": "sync.deleteSyncDocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncDocumentPermission",
+      "name": "sync.deleteSyncDocumentPermission",
+      "description": "Delete a specific Sync Document Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncService",
+      "name": "sync.deleteSyncService",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncList",
+      "name": "sync.deleteSyncSyncList",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncListItem",
+      "name": "sync.deleteSyncSyncListItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncListPermission",
+      "name": "sync.deleteSyncSyncListPermission",
+      "description": "Delete a specific Sync List Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncMap",
+      "name": "sync.deleteSyncSyncMap",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncMapItem",
+      "name": "sync.deleteSyncSyncMapItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.deleteSyncSyncMapPermission",
+      "name": "sync.deleteSyncSyncMapPermission",
+      "description": "Delete a specific Sync Map Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncDocument",
+      "name": "sync.fetchSyncDocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncDocumentPermission",
+      "name": "sync.fetchSyncDocumentPermission",
+      "description": "Fetch a specific Sync Document Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncService",
+      "name": "sync.fetchSyncService",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncList",
+      "name": "sync.fetchSyncSyncList",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncListItem",
+      "name": "sync.fetchSyncSyncListItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncListPermission",
+      "name": "sync.fetchSyncSyncListPermission",
+      "description": "Fetch a specific Sync List Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncMap",
+      "name": "sync.fetchSyncSyncMap",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncMapItem",
+      "name": "sync.fetchSyncSyncMapItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.fetchSyncSyncMapPermission",
+      "name": "sync.fetchSyncSyncMapPermission",
+      "description": "Fetch a specific Sync Map Permission."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncDocument",
+      "name": "sync.listSyncDocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncDocumentPermission",
+      "name": "sync.listSyncDocumentPermission",
+      "description": "Retrieve a list of all Permissions applying to a Sync Document."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncService",
+      "name": "sync.listSyncService",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncList",
+      "name": "sync.listSyncSyncList",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncListItem",
+      "name": "sync.listSyncSyncListItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncListPermission",
+      "name": "sync.listSyncSyncListPermission",
+      "description": "Retrieve a list of all Permissions applying to a Sync List."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncMap",
+      "name": "sync.listSyncSyncMap",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncMapItem",
+      "name": "sync.listSyncSyncMapItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.listSyncSyncMapPermission",
+      "name": "sync.listSyncSyncMapPermission",
+      "description": "Retrieve a list of all Permissions applying to a Sync Map."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncDocument",
+      "name": "sync.updateSyncDocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncDocumentPermission",
+      "name": "sync.updateSyncDocumentPermission",
+      "description": "Update an identity's access to a specific Sync Document."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncService",
+      "name": "sync.updateSyncService",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncSyncListItem",
+      "name": "sync.updateSyncSyncListItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncSyncListPermission",
+      "name": "sync.updateSyncSyncListPermission",
+      "description": "Update an identity's access to a specific Sync List."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncSyncMapItem",
+      "name": "sync.updateSyncSyncMapItem",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.sync.updateSyncSyncMapPermission",
+      "name": "sync.updateSyncSyncMapPermission",
+      "description": "Update an identity's access to a specific Sync Map."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandAssistant",
+      "name": "understand.createUnderstandAssistant",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandField",
+      "name": "understand.createUnderstandField",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandFieldType",
+      "name": "understand.createUnderstandFieldType",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandFieldValue",
+      "name": "understand.createUnderstandFieldValue",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandModelBuild",
+      "name": "understand.createUnderstandModelBuild",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandQuery",
+      "name": "understand.createUnderstandQuery",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandSample",
+      "name": "understand.createUnderstandSample",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.createUnderstandTask",
+      "name": "understand.createUnderstandTask",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandAssistant",
+      "name": "understand.deleteUnderstandAssistant",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandField",
+      "name": "understand.deleteUnderstandField",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandFieldType",
+      "name": "understand.deleteUnderstandFieldType",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandFieldValue",
+      "name": "understand.deleteUnderstandFieldValue",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandModelBuild",
+      "name": "understand.deleteUnderstandModelBuild",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandQuery",
+      "name": "understand.deleteUnderstandQuery",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandSample",
+      "name": "understand.deleteUnderstandSample",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.deleteUnderstandTask",
+      "name": "understand.deleteUnderstandTask",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandAssistant",
+      "name": "understand.fetchUnderstandAssistant",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandAssistantFallbackActions",
+      "name": "understand.fetchUnderstandAssistantFallbackActions",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandAssistantInitiationActions",
+      "name": "understand.fetchUnderstandAssistantInitiationActions",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandDialogue",
+      "name": "understand.fetchUnderstandDialogue",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandField",
+      "name": "understand.fetchUnderstandField",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandFieldType",
+      "name": "understand.fetchUnderstandFieldType",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandFieldValue",
+      "name": "understand.fetchUnderstandFieldValue",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandModelBuild",
+      "name": "understand.fetchUnderstandModelBuild",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandQuery",
+      "name": "understand.fetchUnderstandQuery",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandSample",
+      "name": "understand.fetchUnderstandSample",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandStyleSheet",
+      "name": "understand.fetchUnderstandStyleSheet",
+      "description": "Returns Style sheet JSON object for this Assistant"
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandTask",
+      "name": "understand.fetchUnderstandTask",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandTaskActions",
+      "name": "understand.fetchUnderstandTaskActions",
+      "description": "Returns JSON actions for this Task."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.fetchUnderstandTaskStatistics",
+      "name": "understand.fetchUnderstandTaskStatistics",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandAssistant",
+      "name": "understand.listUnderstandAssistant",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandField",
+      "name": "understand.listUnderstandField",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandFieldType",
+      "name": "understand.listUnderstandFieldType",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandFieldValue",
+      "name": "understand.listUnderstandFieldValue",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandModelBuild",
+      "name": "understand.listUnderstandModelBuild",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandQuery",
+      "name": "understand.listUnderstandQuery",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandSample",
+      "name": "understand.listUnderstandSample",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.listUnderstandTask",
+      "name": "understand.listUnderstandTask",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandAssistant",
+      "name": "understand.updateUnderstandAssistant",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandAssistantFallbackActions",
+      "name": "understand.updateUnderstandAssistantFallbackActions",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandAssistantInitiationActions",
+      "name": "understand.updateUnderstandAssistantInitiationActions",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandFieldType",
+      "name": "understand.updateUnderstandFieldType",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandModelBuild",
+      "name": "understand.updateUnderstandModelBuild",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandQuery",
+      "name": "understand.updateUnderstandQuery",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandSample",
+      "name": "understand.updateUnderstandSample",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandStyleSheet",
+      "name": "understand.updateUnderstandStyleSheet",
+      "description": "Updates the style sheet for an assistant identified by {AssistantSid} or {AssistantUniqueName}."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandTask",
+      "name": "understand.updateUnderstandTask",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.understand.updateUnderstandTaskActions",
+      "name": "understand.updateUnderstandTaskActions",
+      "description": "Updates the actions of an Task identified by {TaskSid} or {TaskUniqueName}."
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.createWirelessCommand",
+      "name": "wireless.createWirelessCommand",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.createWirelessRatePlan",
+      "name": "wireless.createWirelessRatePlan",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.deleteWirelessRatePlan",
+      "name": "wireless.deleteWirelessRatePlan",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.fetchWirelessCommand",
+      "name": "wireless.fetchWirelessCommand",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.fetchWirelessRatePlan",
+      "name": "wireless.fetchWirelessRatePlan",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.fetchWirelessSim",
+      "name": "wireless.fetchWirelessSim",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.fetchWirelessUsage",
+      "name": "wireless.fetchWirelessUsage",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.listWirelessCommand",
+      "name": "wireless.listWirelessCommand",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.listWirelessRatePlan",
+      "name": "wireless.listWirelessRatePlan",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.listWirelessSim",
+      "name": "wireless.listWirelessSim",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.updateWirelessRatePlan",
+      "name": "wireless.updateWirelessRatePlan",
+      "description": ""
+    },
+    {
+      "id": "openapi_twilio_com_twilio_preview_twilio_preview.wireless.updateWirelessSim",
+      "name": "wireless.updateWirelessSim",
+      "description": ""
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

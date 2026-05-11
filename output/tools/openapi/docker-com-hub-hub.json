@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:22:11.098Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_docker_com_hub_hub.accessTokens.deleteV2AccessTokensUuid",
+      "name": "accessTokens.deleteV2AccessTokensUuid",
+      "description": "Deletes a personal access token permanently. This cannot be undone.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.accessTokens.getV2AccessTokens",
+      "name": "accessTokens.getV2AccessTokens",
+      "description": "Returns a paginated list of personal access tokens."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.accessTokens.getV2AccessTokensUuid",
+      "name": "accessTokens.getV2AccessTokensUuid",
+      "description": "Returns a personal access token by UUID."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.accessTokens.patchV2AccessTokensUuid",
+      "name": "accessTokens.patchV2AccessTokensUuid",
+      "description": "Updates a personal access token partially. You can either update the\ntoken's label or enable/disable it.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.accessTokens.postV2AccessTokens",
+      "name": "accessTokens.postV2AccessTokens",
+      "description": "Creates and returns a personal access token."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.auditLogs.auditLogsGetAuditActions",
+      "name": "auditLogs.auditLogsGetAuditActions",
+      "description": "Get audit log actions for a namespace to be used as a filter for querying audit events."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.auditLogs.auditLogsGetAuditLogs",
+      "name": "auditLogs.auditLogsGetAuditLogs",
+      "description": "Get audit log events for a given namespace."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.authentication.postUsers2FaLogin",
+      "name": "authentication.postUsers2FaLogin",
+      "description": "When user has 2FA enabled, this is the second call to perform after\n`/v2/users/login` call.\n\nCreates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.\n\nThe returned token is used in the HTTP Authorization header like `Authorization: Bearer {TOKEN}`.\n\nMost Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.authentication.postUsersLogin",
+      "name": "authentication.postUsersLogin",
+      "description": "Creates and returns a bearer token in JWT format that you can use to\nauthenticate with Docker Hub APIs.\n\nThe returned token is used in the HTTP Authorization header like `Authorization: Bearer {TOKEN}`.\n\nMost Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.images.getNamespacesRepositoriesImages",
+      "name": "images.getNamespacesRepositoriesImages",
+      "description": "Gets details on the images in a repository."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.images.getNamespacesRepositoriesImagesSummary",
+      "name": "images.getNamespacesRepositoriesImagesSummary",
+      "description": "Gets the number of images in a repository and the number of images\ncounted as active and inactive.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.images.getNamespacesRepositoriesImagesTags",
+      "name": "images.getNamespacesRepositoriesImagesTags",
+      "description": "Gets current and historical tags for an image."
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.images.postNamespacesDeleteImages",
+      "name": "images.postNamespacesDeleteImages",
+      "description": "Deletes one or more images within a namespace. This is currently limited to a single \nrepository.\n\nIf you attempt to delete images that are marked as active or are currently tagged, the deletion does not happen and it displays the warnings.\nTo continue with the deletion, you must ignore these warnings by putting them in the `ignore_warnings` property.\n\nDeleting a currently tagged image deletes the tag from the repository.\n\nYou cannot ignore errors. It is not possible to directly delete children of multi-arch images.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.orgSettings.getV2OrgsNameSettings",
+      "name": "orgSettings.getV2OrgsNameSettings",
+      "description": "Returns organization settings by name.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.orgSettings.putV2OrgsNameSettings",
+      "name": "orgSettings.putV2OrgsNameSettings",
+      "description": "Updates an organization's settings. Some settings are only used when the\norganization is on a business plan.\n\n***Only users in the \"owners\" group of the organization can use this endpoint.***\n\nThe following settings are only used on a business plan:\n- `restricted_images`\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.repositories.getV2NamespacesNamespaceRepositoriesRepositoryTags",
+      "name": "repositories.getV2NamespacesNamespaceRepositoriesRepositoryTags",
+      "description": "List repository tags"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.repositories.getV2NamespacesNamespaceRepositoriesRepositoryTagsTag",
+      "name": "repositories.getV2NamespacesNamespaceRepositoriesRepositoryTagsTag",
+      "description": "Read repository tag"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.repositories.headV2NamespacesNamespaceRepositoriesRepositoryTags",
+      "name": "repositories.headV2NamespacesNamespaceRepositoriesRepositoryTags",
+      "description": "Check repository tags"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.repositories.headV2NamespacesNamespaceRepositoriesRepositoryTagsTag",
+      "name": "repositories.headV2NamespacesNamespaceRepositoriesRepositoryTagsTag",
+      "description": "Check repository tag"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20ResourceTypes",
+      "name": "scim.getV2Scim20ResourceTypes",
+      "description": "Returns all resource types supported for the SCIM configuration.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20ResourceTypesName",
+      "name": "scim.getV2Scim20ResourceTypesName",
+      "description": "Returns a resource type by name.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20Schemas",
+      "name": "scim.getV2Scim20Schemas",
+      "description": "Returns all schemas supported for the SCIM configuration.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20SchemasId",
+      "name": "scim.getV2Scim20SchemasId",
+      "description": "Returns a schema by ID.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20ServiceProviderConfig",
+      "name": "scim.getV2Scim20ServiceProviderConfig",
+      "description": "Returns a service provider config for Docker's configuration.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20Users",
+      "name": "scim.getV2Scim20Users",
+      "description": "List users, returns paginated users for an organization. Use `startIndex`\nand `count` query parameters to receive paginated results.\n\n**Sorting:**<br>\nSorting lets you to specify the order of returned resources by specifying\na combination of `sortBy` and `sortOrder` query parameters.\n\nThe `sortBy` parameter specifies the attribute whose value will be used\nto order the returned responses. The `sortOrder` parameter defines the\norder in which the `sortBy` parameter is applied. Allowed values are\n\"ascending\" and \"descending\".\n\n**Filtering:**<br>\nYou can request a subset of resources by specifying the `filter` query\nparameter containing a filter expression. Attribute names and attribute\noperators used in filters are case insensitive. The filter parameter\nmust contain at least one valid expression. Each expression must contain\nan attribute name followed by an attribute operator and an optional\nvalue.\n\nSupported operators are listed below.\n\n- `eq` equal\n- `ne` not equal\n- `co` contains\n- `sw` starts with\n- `and` Logical \"and\"\n- `or` Logical \"or\"\n- `not` \"Not\" function\n- `()` Precedence grouping\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.getV2Scim20UsersId",
+      "name": "scim.getV2Scim20UsersId",
+      "description": "Returns a user by ID.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.postV2Scim20Users",
+      "name": "scim.postV2Scim20Users",
+      "description": "Creates a user. If the user already exists by email, they are assigned\nto the organization on the \"company\" team.\n"
+    },
+    {
+      "id": "openapi_docker_com_hub_hub.scim.putV2Scim20UsersId",
+      "name": "scim.putV2Scim20UsersId",
+      "description": "Updates a user. Use this route to change the user's name, activate,\nand deactivate the user.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

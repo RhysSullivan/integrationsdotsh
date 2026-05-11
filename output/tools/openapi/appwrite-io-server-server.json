@@ -1,0 +1,492 @@
+{
+  "fetchedAt": "2026-04-30T15:45:20.448Z",
+  "status": "ok",
+  "count": 97,
+  "tools": [
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountCreateRecovery",
+      "name": "account.accountCreateRecovery",
+      "description": "Sends the user an email with a temporary secret key for password reset. When the user clicks the confirmation link he is redirected back to your app password reset URL with the secret key and email address values attached to the URL query string. Use the query string params to submit a request to the [PUT /account/recovery](/docs/client/account#accountUpdateRecovery) endpoint to complete the process. The verification link sent to the user's email address is valid for 1 hour."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountCreateVerification",
+      "name": "account.accountCreateVerification",
+      "description": "Use this endpoint to send a verification message to your user email address to confirm they are the valid owners of that address. Both the **userId** and **secret** arguments will be passed as query parameters to the URL you have provided to be attached to the verification email. The provided URL should redirect the user back to your app and allow you to complete the verification process by verifying both the **userId** and **secret** parameters. Learn more about how to [complete the verification process](/docs/client/account#accountUpdateVerification). The verification link sent to the user's email address is valid for 7 days.\n\nPlease note that in order to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md), the only valid redirect URLs are the ones from domains you have set when adding your platforms in the console interface.\n"
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountDelete",
+      "name": "account.accountDelete",
+      "description": "Delete a currently logged in user account. Behind the scene, the user record is not deleted but permanently blocked from any access. This is done to avoid deleted accounts being overtaken by new users with the same email address. Any user-related resources like documents or storage files should be deleted separately."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountDeleteSession",
+      "name": "account.accountDeleteSession",
+      "description": "Use this endpoint to log out the currently logged in user from all their account sessions across all of their different devices. When using the option id argument, only the session unique ID provider will be deleted."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountDeleteSessions",
+      "name": "account.accountDeleteSessions",
+      "description": "Delete all sessions from the user account and remove any sessions cookies from the end client."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountGet",
+      "name": "account.accountGet",
+      "description": "Get currently logged in user data as JSON object."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountGetLogs",
+      "name": "account.accountGetLogs",
+      "description": "Get currently logged in user list of latest security activity logs. Each log returns user IP address, location and date and time of log."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountGetPrefs",
+      "name": "account.accountGetPrefs",
+      "description": "Get currently logged in user preferences as a key-value object."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountGetSession",
+      "name": "account.accountGetSession",
+      "description": "Use this endpoint to get a logged in user's session using a Session ID. Inputting 'current' will return the current session being used."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountGetSessions",
+      "name": "account.accountGetSessions",
+      "description": "Get currently logged in user list of active sessions across different devices."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdateEmail",
+      "name": "account.accountUpdateEmail",
+      "description": "Update currently logged in user account email address. After changing user address, user confirmation status is being reset and a new confirmation mail is sent. For security measures, user password is required to complete this request.\nThis endpoint can also be used to convert an anonymous account to a normal one, by passing an email address and a new password."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdateName",
+      "name": "account.accountUpdateName",
+      "description": "Update currently logged in user account name."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdatePassword",
+      "name": "account.accountUpdatePassword",
+      "description": "Update currently logged in user password. For validation, user is required to pass in the new password, and the old password. For users created with OAuth and Team Invites, oldPassword is optional."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdatePrefs",
+      "name": "account.accountUpdatePrefs",
+      "description": "Update currently logged in user account preferences. You can pass only the specific settings you wish to update."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdateRecovery",
+      "name": "account.accountUpdateRecovery",
+      "description": "Use this endpoint to complete the user account password reset. Both the **userId** and **secret** arguments will be passed as query parameters to the redirect URL you have provided when sending your request to the [POST /account/recovery](/docs/client/account#accountCreateRecovery) endpoint.\n\nPlease note that in order to avoid a [Redirect Attack](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md) the only valid redirect URLs are the ones from domains you have set when adding your platforms in the console interface."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.account.accountUpdateVerification",
+      "name": "account.accountUpdateVerification",
+      "description": "Use this endpoint to complete the user email verification process. Use both the **userId** and **secret** parameters that were attached to your app URL to verify the user email ownership. If confirmed this route will return a 200 status code."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetBrowser",
+      "name": "avatars.avatarsGetBrowser",
+      "description": "You can use this endpoint to show different browser icons to your users. The code argument receives the browser code as it appears in your user /account/sessions endpoint. Use width, height and quality arguments to change the output settings."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetCreditCard",
+      "name": "avatars.avatarsGetCreditCard",
+      "description": "The credit card endpoint will return you the icon of the credit card provider you need. Use width, height and quality arguments to change the output settings."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetFavicon",
+      "name": "avatars.avatarsGetFavicon",
+      "description": "Use this endpoint to fetch the favorite icon (AKA favicon) of any remote website URL.\n"
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetFlag",
+      "name": "avatars.avatarsGetFlag",
+      "description": "You can use this endpoint to show different country flags icons to your users. The code argument receives the 2 letter country code. Use width, height and quality arguments to change the output settings."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetImage",
+      "name": "avatars.avatarsGetImage",
+      "description": "Use this endpoint to fetch a remote image URL and crop it to any image size you want. This endpoint is very useful if you need to crop and display remote images in your app or in case you want to make sure a 3rd party image is properly served using a TLS protocol."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetInitials",
+      "name": "avatars.avatarsGetInitials",
+      "description": "Use this endpoint to show your user initials avatar icon on your website or app. By default, this route will try to print your logged-in user name or email initials. You can also overwrite the user name if you pass the 'name' parameter. If no name is given and no user is logged, an empty avatar will be returned.\n\nYou can use the color and background params to change the avatar colors. By default, a random theme will be selected. The random theme will persist for the user's initials when reloading the same theme will always return for the same initials."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.avatars.avatarsGetQr",
+      "name": "avatars.avatarsGetQr",
+      "description": "Converts a given plain text to a QR code image. You can use the query parameters to change the size and style of the resulting image."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseCreateCollection",
+      "name": "database.databaseCreateCollection",
+      "description": "Create a new Collection."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseCreateDocument",
+      "name": "database.databaseCreateDocument",
+      "description": "Create a new Document. Before using this route, you should create a new collection resource using either a [server integration](/docs/server/database#databaseCreateCollection) API or directly from your database console."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseDeleteCollection",
+      "name": "database.databaseDeleteCollection",
+      "description": "Delete a collection by its unique ID. Only users with write permissions have access to delete this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseDeleteDocument",
+      "name": "database.databaseDeleteDocument",
+      "description": "Delete a document by its unique ID. This endpoint deletes only the parent documents, its attributes and relations to other documents. Child documents **will not** be deleted."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseGetCollection",
+      "name": "database.databaseGetCollection",
+      "description": "Get a collection by its unique ID. This endpoint response returns a JSON object with the collection metadata."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseGetDocument",
+      "name": "database.databaseGetDocument",
+      "description": "Get a document by its unique ID. This endpoint response returns a JSON object with the document data."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseListCollections",
+      "name": "database.databaseListCollections",
+      "description": "Get a list of all the user collections. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project's collections. [Learn more about different API modes](/docs/admin)."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseListDocuments",
+      "name": "database.databaseListDocuments",
+      "description": "Get a list of all the user documents. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project's documents. [Learn more about different API modes](/docs/admin)."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseUpdateCollection",
+      "name": "database.databaseUpdateCollection",
+      "description": "Update a collection by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.database.databaseUpdateDocument",
+      "name": "database.databaseUpdateDocument",
+      "description": "Update a document by its unique ID. Using the patch method you can pass only specific fields that will get updated."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsCreate",
+      "name": "functions.functionsCreate",
+      "description": "Create a new function. You can pass a list of [permissions](/docs/permissions) to allow different project users or team with access to execute the function using the client API."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsCreateExecution",
+      "name": "functions.functionsCreateExecution",
+      "description": "Trigger a function execution. The returned object will return you the current execution status. You can ping the `Get Execution` endpoint to get updates on the current execution status. Once this endpoint is called, your function execution process will start asynchronously."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsCreateTag",
+      "name": "functions.functionsCreateTag",
+      "description": "Create a new function code tag. Use this endpoint to upload a new version of your code function. To execute your newly uploaded code, you'll need to update the function's tag to use your new tag UID.\n\nThis endpoint accepts a tar.gz file compressed with your code. Make sure to include any dependencies your code has within the compressed file. You can learn more about code packaging in the [Appwrite Cloud Functions tutorial](/docs/functions).\n\nUse the \"command\" param to set the entry point used to execute your code."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsDelete",
+      "name": "functions.functionsDelete",
+      "description": "Delete a function by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsDeleteTag",
+      "name": "functions.functionsDeleteTag",
+      "description": "Delete a code tag by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsGet",
+      "name": "functions.functionsGet",
+      "description": "Get a function by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsGetExecution",
+      "name": "functions.functionsGetExecution",
+      "description": "Get a function execution log by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsGetTag",
+      "name": "functions.functionsGetTag",
+      "description": "Get a code tag by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsList",
+      "name": "functions.functionsList",
+      "description": "Get a list of all the project's functions. You can use the query params to filter your results."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsListExecutions",
+      "name": "functions.functionsListExecutions",
+      "description": "Get a list of all the current user function execution logs. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project's executions. [Learn more about different API modes](/docs/admin)."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsListTags",
+      "name": "functions.functionsListTags",
+      "description": "Get a list of all the project's code tags. You can use the query params to filter your results."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsUpdate",
+      "name": "functions.functionsUpdate",
+      "description": "Update function by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.functions.functionsUpdateTag",
+      "name": "functions.functionsUpdateTag",
+      "description": "Update the function code tag ID using the unique function ID. Use this endpoint to switch the code tag that should be executed by the execution endpoint."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGet",
+      "name": "health.healthGet",
+      "description": "Check the Appwrite HTTP server is up and responsive."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetAntiVirus",
+      "name": "health.healthGetAntiVirus",
+      "description": "Check the Appwrite Anti Virus server is up and connection is successful."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetCache",
+      "name": "health.healthGetCache",
+      "description": "Check the Appwrite in-memory cache server is up and connection is successful."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetDb",
+      "name": "health.healthGetDb",
+      "description": "Check the Appwrite database server is up and connection is successful."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueCertificates",
+      "name": "health.healthGetQueueCertificates",
+      "description": "Get the number of certificates that are waiting to be issued against [Letsencrypt](https://letsencrypt.org/) in the Appwrite internal queue server."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueFunctions",
+      "name": "health.healthGetQueueFunctions",
+      "description": ""
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueLogs",
+      "name": "health.healthGetQueueLogs",
+      "description": "Get the number of logs that are waiting to be processed in the Appwrite internal queue server."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueTasks",
+      "name": "health.healthGetQueueTasks",
+      "description": "Get the number of tasks that are waiting to be processed in the Appwrite internal queue server."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueUsage",
+      "name": "health.healthGetQueueUsage",
+      "description": "Get the number of usage stats that are waiting to be processed in the Appwrite internal queue server."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetQueueWebhooks",
+      "name": "health.healthGetQueueWebhooks",
+      "description": "Get the number of webhooks that are waiting to be processed in the Appwrite internal queue server."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetStorageLocal",
+      "name": "health.healthGetStorageLocal",
+      "description": "Check the Appwrite local storage device is up and connection is successful."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.health.healthGetTime",
+      "name": "health.healthGetTime",
+      "description": "Check the Appwrite server time is synced with Google remote NTP server. We use this technology to smoothly handle leap seconds with no disruptive events. The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (NTP) is used by hundreds of millions of computers and devices to synchronize their clocks over the Internet. If your computer sets its own clock, it likely uses NTP."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGet",
+      "name": "locale.localeGet",
+      "description": "Get the current user location based on IP. Returns an object with user country code, country name, continent name, continent code, ip address and suggested currency. You can use the locale header to get the data in a supported language.\n\n([IP Geolocation by DB-IP](https://db-ip.com))"
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetContinents",
+      "name": "locale.localeGetContinents",
+      "description": "List of all continents. You can use the locale header to get the data in a supported language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetCountries",
+      "name": "locale.localeGetCountries",
+      "description": "List of all countries. You can use the locale header to get the data in a supported language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetCountriesEu",
+      "name": "locale.localeGetCountriesEu",
+      "description": "List of all countries that are currently members of the EU. You can use the locale header to get the data in a supported language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetCountriesPhones",
+      "name": "locale.localeGetCountriesPhones",
+      "description": "List of all countries phone codes. You can use the locale header to get the data in a supported language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetCurrencies",
+      "name": "locale.localeGetCurrencies",
+      "description": "List of all currencies, including currency symbol, name, plural, and decimal digits for all major and minor currencies. You can use the locale header to get the data in a supported language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.locale.localeGetLanguages",
+      "name": "locale.localeGetLanguages",
+      "description": "List of all languages classified by ISO 639-1 including 2-letter code, name in English, and name in the respective language."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageCreateFile",
+      "name": "storage.storageCreateFile",
+      "description": "Create a new file. The user who creates the file will automatically be assigned to read and write access unless he has passed custom values for read and write arguments."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageDeleteFile",
+      "name": "storage.storageDeleteFile",
+      "description": "Delete a file by its unique ID. Only users with write permissions have access to delete this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageGetFile",
+      "name": "storage.storageGetFile",
+      "description": "Get a file by its unique ID. This endpoint response returns a JSON object with the file metadata."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageGetFileDownload",
+      "name": "storage.storageGetFileDownload",
+      "description": "Get a file content by its unique ID. The endpoint response return with a 'Content-Disposition: attachment' header that tells the browser to start downloading the file to user downloads directory."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageGetFilePreview",
+      "name": "storage.storageGetFilePreview",
+      "description": "Get a file preview image. Currently, this method supports preview for image files (jpg, png, and gif), other supported formats, like pdf, docs, slides, and spreadsheets, will return the file icon image. You can also pass query string arguments for cutting and resizing your preview image."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageGetFileView",
+      "name": "storage.storageGetFileView",
+      "description": "Get a file content by its unique ID. This endpoint is similar to the download method but returns with no  'Content-Disposition: attachment' header."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageListFiles",
+      "name": "storage.storageListFiles",
+      "description": "Get a list of all the user files. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project's files. [Learn more about different API modes](/docs/admin)."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.storage.storageUpdateFile",
+      "name": "storage.storageUpdateFile",
+      "description": "Update a file by its unique ID. Only users with write permissions have access to update this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsCreate",
+      "name": "teams.teamsCreate",
+      "description": "Create a new team. The user who creates the team will automatically be assigned as the owner of the team. The team owner can invite new members, who will be able add new owners and update or delete the team from your project."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsCreateMembership",
+      "name": "teams.teamsCreateMembership",
+      "description": "Use this endpoint to invite a new member to join your team. If initiated from Client SDK, an email with a link to join the team will be sent to the new member's email address if the member doesn't exist in the project it will be created automatically. If initiated from server side SDKs, new member will automatically be added to the team.\n\nUse the 'URL' parameter to redirect the user from the invitation email back to your app. When the user is redirected, use the [Update Team Membership Status](/docs/client/teams#teamsUpdateMembershipStatus) endpoint to allow the user to accept the invitation to the team.  While calling from side SDKs the redirect url can be empty string.\n\nPlease note that in order to avoid a [Redirect Attacks](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md) the only valid redirect URL's are the once from domains you have set when added your platforms in the console interface."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsDelete",
+      "name": "teams.teamsDelete",
+      "description": "Delete a team by its unique ID. Only team owners have write access for this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsDeleteMembership",
+      "name": "teams.teamsDeleteMembership",
+      "description": "This endpoint allows a user to leave a team or for a team owner to delete the membership of any other team member. You can also use this endpoint to delete a user membership even if it is not accepted."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsGet",
+      "name": "teams.teamsGet",
+      "description": "Get a team by its unique ID. All team members have read access for this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsGetMemberships",
+      "name": "teams.teamsGetMemberships",
+      "description": "Get a team members by the team unique ID. All team members have read access for this list of resources."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsList",
+      "name": "teams.teamsList",
+      "description": "Get a list of all the current user teams. You can use the query params to filter your results. On admin mode, this endpoint will return a list of all of the project's teams. [Learn more about different API modes](/docs/admin)."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsUpdate",
+      "name": "teams.teamsUpdate",
+      "description": "Update a team by its unique ID. Only team owners have write access for this resource."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsUpdateMembershipRoles",
+      "name": "teams.teamsUpdateMembershipRoles",
+      "description": ""
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.teams.teamsUpdateMembershipStatus",
+      "name": "teams.teamsUpdateMembershipStatus",
+      "description": "Use this endpoint to allow a user to accept an invitation to join a team after being redirected back to your app from the invitation email recieved by the user."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersCreate",
+      "name": "users.usersCreate",
+      "description": "Create a new user."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersDelete",
+      "name": "users.usersDelete",
+      "description": "Delete a user by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersDeleteSession",
+      "name": "users.usersDeleteSession",
+      "description": "Delete a user sessions by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersDeleteSessions",
+      "name": "users.usersDeleteSessions",
+      "description": "Delete all user's sessions by using the user's unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersGet",
+      "name": "users.usersGet",
+      "description": "Get a user by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersGetLogs",
+      "name": "users.usersGetLogs",
+      "description": "Get a user activity logs list by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersGetPrefs",
+      "name": "users.usersGetPrefs",
+      "description": "Get the user preferences by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersGetSessions",
+      "name": "users.usersGetSessions",
+      "description": "Get the user sessions list by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersList",
+      "name": "users.usersList",
+      "description": "Get a list of all the project's users. You can use the query params to filter your results."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersUpdatePrefs",
+      "name": "users.usersUpdatePrefs",
+      "description": "Update the user preferences by its unique ID. You can pass only the specific settings you wish to update."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersUpdateStatus",
+      "name": "users.usersUpdateStatus",
+      "description": "Update the user status by its unique ID."
+    },
+    {
+      "id": "openapi_appwrite_io_server_server.users.usersUpdateVerification",
+      "name": "users.usersUpdateVerification",
+      "description": "Update the user email verification status by its unique ID."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

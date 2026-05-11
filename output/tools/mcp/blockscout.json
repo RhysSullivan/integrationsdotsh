@@ -1,0 +1,87 @@
+{
+  "fetchedAt": "2026-04-30T15:19:56.141Z",
+  "status": "ok",
+  "count": 16,
+  "tools": [
+    {
+      "id": "mcp_blockscout.unlock_blockchain_analysis",
+      "name": "__unlock_blockchain_analysis__",
+      "description": "Unlocks access to other MCP tools.\n\n    All tools remain locked with a \"Session Not Initialized\" error until this\n    function is successfully called. Skipping this explicit initialization step\n    will cause all subsequent tool calls to fail.\n\n    MANDATORY FOR AI AGENTS: The returned instructions contain ESSENTIAL rules\n    that MUST govern ALL blockchain data interactions. Failure to integrate these\n    rules will result in incorrect data retrieval, tool failures and invalid\n    responses. Always apply these guidelines when planning queries, processing\n    responses or recommending blockchain actions.\n\n    COMPREHENSIVE DATA SOURCES: Provides an extensive catalog of specialized\n    blockchain endpoints to unlock sophisticated, multi-dimensional blockchain\n    investigations across all supported networks.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_block_info",
+      "name": "get_block_info",
+      "description": "\n    Get block information like timestamp, gas used, burnt fees, transaction count etc.\n    Can optionally include the list of transaction hashes contained in the block. Transaction hashes are omitted by default; request them only when you truly need them, because on high-traffic chains the list may exhaust the context.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_block_number",
+      "name": "get_block_number",
+      "description": "\n    Retrieves the block number and timestamp for a specific date/time or the latest block.\n    Use when you need a block height for a specific point in time (e.g., \"block at 2024-01-01\")\n    or the current chain tip. If `datetime` is provided, finds the block immediately\n    preceding that time. If omitted, returns the latest indexed block.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_address_by_ens_name",
+      "name": "get_address_by_ens_name",
+      "description": "\n    Useful for when you need to convert an ENS domain name (e.g. \"blockscout.eth\")\n    to its corresponding Ethereum address.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_transactions_by_address",
+      "name": "get_transactions_by_address",
+      "description": "\n    Retrieves native currency transfers and smart contract interactions (calls, internal txs) for an address.\n    **EXCLUDES TOKEN TRANSFERS**: Filters out direct token balance changes (ERC-20, etc.). You'll see calls *to* token contracts, but not the `Transfer` events. For token history, use `get_token_transfers_by_address`.\n    A single tx can have multiple records from internal calls; use `internal_transaction_index` for execution order.\n    Requires an `age_from` date to scope results for performance and relevance.\n    Use cases:\n      - `get_transactions_by_address(address, age_from)` - get all txs to/from the address since a given date.\n      - `get_transactions_by_address(address, age_from, age_to)` - get all txs to/from the address between given dates.\n      - `get_transactions_by_address(address, age_from, age_to, methods)` - get all txs to/from the address between given dates, filtered by method.\n    **SUPPORTS PAGINATION**: If response includes 'pagination' field, use the provided next_call to get additional pages.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_token_transfers_by_address",
+      "name": "get_token_transfers_by_address",
+      "description": "\n    Get ERC-20 token transfers for an address within a specific time range.\n    Use cases:\n      - `get_token_transfers_by_address(address, age_from)` - get all transfers of any ERC-20 token to/from the address since the given date up to the current time\n      - `get_token_transfers_by_address(address, age_from, age_to)` - get all transfers of any ERC-20 token to/from the address between the given dates\n      - `get_token_transfers_by_address(address, age_from, age_to, token)` - get all transfers of the given ERC-20 token to/from the address between the given dates\n    **SUPPORTS PAGINATION**: If response includes 'pagination' field, use the provided next_call to get additional pages.\n    "
+    },
+    {
+      "id": "mcp_blockscout.lookup_token_by_symbol",
+      "name": "lookup_token_by_symbol",
+      "description": "\n    Search for token addresses by symbol or name. Returns multiple potential\n    matches based on symbol or token name similarity. Only the first\n    ``TOKEN_RESULTS_LIMIT`` matches from the Blockscout API are returned.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_contract_abi",
+      "name": "get_contract_abi",
+      "description": "\n    Get smart contract ABI (Application Binary Interface).\n    An ABI defines all functions, events, their parameters, and return types. The ABI is required to format function calls or interpret contract data.\n    "
+    },
+    {
+      "id": "mcp_blockscout.inspect_contract_code",
+      "name": "inspect_contract_code",
+      "description": "Inspects a verified contract's source code or metadata."
+    },
+    {
+      "id": "mcp_blockscout.read_contract",
+      "name": "read_contract",
+      "description": "\n        Calls a smart contract function (view/pure, or non-view/pure simulated via eth_call) and returns the\n        decoded result.\n\n        This tool provides a direct way to query the state of a smart contract.\n\n        Example:\n        To check the USDT balance of an address on Ethereum Mainnet, you would use the following arguments:\n    {\n      \"tool_name\": \"read_contract\",\n      \"params\": {\n        \"chain_id\": \"1\",\n        \"address\": \"0xdAC17F958D2ee523a2206206994597C13D831ec7\",\n        \"abi\": {\n          \"constant\": true,\n          \"inputs\": [{\"name\": \"_owner\", \"type\": \"address\"}],\n          \"name\": \"balanceOf\",\n          \"outputs\": [{\"name\": \"balance\", \"type\": \"uint256\"}],\n          \"payable\": false,\n          \"stateMutability\": \"view\",\n          \"type\": \"function\"\n        },\n        \"function_name\": \"balanceOf\",\n        \"args\": \"[\"0xF977814e90dA44bFA03b6295A0616a897441aceC\"]\"\n      }\n    }\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_address_info",
+      "name": "get_address_info",
+      "description": "\n    Get comprehensive information about an address, including:\n    - Address existence check\n    - Native token (ETH) balance (provided as is, without adjusting by decimals)\n    - First transaction details (block number and timestamp) for age calculation\n    - ENS name association (if any)\n    - Contract status (whether the address is a contract, whether it is verified)\n    - Proxy contract information (if applicable): determines if a smart contract is a proxy contract (which forwards calls to implementation contracts), including proxy type and implementation addresses\n    - Token details (if the contract is a token): name, symbol, decimals, total supply, etc.\n    Essential for address analysis, contract investigation, token research, and DeFi protocol analysis.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_tokens_by_address",
+      "name": "get_tokens_by_address",
+      "description": "\n    Get comprehensive ERC20 token holdings for an address with enriched metadata and market data.\n    Returns detailed token information including contract details (name, symbol, decimals), market metrics (exchange rate, market cap, volume), holders count, and actual balance (provided as is, without adjusting by decimals).\n    Essential for portfolio analysis, wallet auditing, and DeFi position tracking.\n    **SUPPORTS PAGINATION**: If response includes 'pagination' field, use the provided next_call to get additional pages.\n    "
+    },
+    {
+      "id": "mcp_blockscout.nft_tokens_by_address",
+      "name": "nft_tokens_by_address",
+      "description": "\n    Retrieve NFT tokens (ERC-721, ERC-404, ERC-1155) owned by an address, grouped by collection.\n    Provides collection details (type, address, name, symbol, total supply, holder count) and individual token instance data (ID, name, description, external URL, metadata attributes).\n    Essential for a detailed overview of an address's digital collectibles and their associated collection data.\n    **SUPPORTS PAGINATION**: If response includes 'pagination' field, use the provided next_call to get additional pages.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_transaction_info",
+      "name": "get_transaction_info",
+      "description": "\n    Get comprehensive transaction information.\n    Unlike standard eth_getTransactionByHash, this tool returns enriched data including decoded input parameters, detailed token transfers with token metadata, transaction fee breakdown (priority fees, burnt fees) and categorized transaction types.\n    By default, the raw transaction input is omitted if a decoded version is available to save context; request it with `include_raw_input=True` only when you truly need the raw hex data.\n    Essential for transaction analysis, debugging smart contract interactions, tracking DeFi operations.\n    "
+    },
+    {
+      "id": "mcp_blockscout.get_chains_list",
+      "name": "get_chains_list",
+      "description": "\n    Get the list of known blockchain chains with their IDs.\n    Useful for getting a chain ID when the chain name is known. This information can be used in other tools that require a chain ID to request information.\n    "
+    },
+    {
+      "id": "mcp_blockscout.direct_api_call",
+      "name": "direct_api_call",
+      "description": "Call a raw Blockscout API endpoint for advanced or chain-specific data.\n\n    Do not include query strings in ``endpoint_path``; pass all query parameters via\n    ``query_params`` to avoid double-encoding.\n\n    **SUPPORTS PAGINATION**: If response includes 'pagination' field,\n    use the provided next_call to get additional pages.\n\n    Returns:\n        ToolResponse[Any]: Must return ToolResponse[Any] (not ToolResponse[BaseModel])\n        because specialized handlers can return lists or other types that don't inherit\n        from BaseModel. The dispatcher system supports flexible data structures.\n    "
+    }
+  ]
+}

@@ -1,0 +1,752 @@
+{
+  "fetchedAt": "2026-04-30T15:26:44.105Z",
+  "status": "ok",
+  "count": 149,
+  "tools": [
+    {
+      "id": "openapi_probely_com.account.getAccount",
+      "name": "account.getAccount",
+      "description": "Retrieve account information"
+    },
+    {
+      "id": "openapi_probely_com.account.getBilling",
+      "name": "account.getBilling",
+      "description": "Retrieve billing information"
+    },
+    {
+      "id": "openapi_probely_com.account.patchBilling",
+      "name": "account.patchBilling",
+      "description": "Partial update billing information"
+    },
+    {
+      "id": "openapi_probely_com.account.postBillingActions",
+      "name": "account.postBillingActions",
+      "description": "Action that should be taken to enable the selected targets"
+    },
+    {
+      "id": "openapi_probely_com.account.postBillingEstimate",
+      "name": "account.postBillingEstimate",
+      "description": "Estimate costs of updating a subscription"
+    },
+    {
+      "id": "openapi_probely_com.account.postBillingSubscribe",
+      "name": "account.postBillingSubscribe",
+      "description": "Update a subscription"
+    },
+    {
+      "id": "openapi_probely_com.account.postTargetActions",
+      "name": "account.postTargetActions",
+      "description": "Available actions for the selected targets"
+    },
+    {
+      "id": "openapi_probely_com.account.putBilling",
+      "name": "account.putBilling",
+      "description": "Update billing information"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.deleteKeysId",
+      "name": "apiKeys.deleteKeysId",
+      "description": "Delete account API key"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.deleteTargetsTargetIdKeysId",
+      "name": "apiKeys.deleteTargetsTargetIdKeysId",
+      "description": "Delete target API key"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.getKeys",
+      "name": "apiKeys.getKeys",
+      "description": "List API keys allowed to operate on account"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.getKeysId",
+      "name": "apiKeys.getKeysId",
+      "description": "Retrieve account API key"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.getTargetsTargetIdKeys",
+      "name": "apiKeys.getTargetsTargetIdKeys",
+      "description": "List target specific API keys"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.getTargetsTargetIdKeysId",
+      "name": "apiKeys.getTargetsTargetIdKeysId",
+      "description": "Retrieve target API key"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.postKeys",
+      "name": "apiKeys.postKeys",
+      "description": "Create account API key"
+    },
+    {
+      "id": "openapi_probely_com.apiKeys.postTargetsTargetIdKeys",
+      "name": "apiKeys.postTargetsTargetIdKeys",
+      "description": "Create target API key"
+    },
+    {
+      "id": "openapi_probely_com.archive.postTargetsActivate",
+      "name": "archive.postTargetsActivate",
+      "description": "Activate targets"
+    },
+    {
+      "id": "openapi_probely_com.archive.postTargetsArchive",
+      "name": "archive.postTargetsArchive",
+      "description": "Archive targets"
+    },
+    {
+      "id": "openapi_probely_com.archive.postTargetsArchived",
+      "name": "archive.postTargetsArchived",
+      "description": "List archived targets"
+    },
+    {
+      "id": "openapi_probely_com.assets.deleteTargetsTargetIdAssetsId",
+      "name": "assets.deleteTargetsTargetIdAssetsId",
+      "description": "Delete asset"
+    },
+    {
+      "id": "openapi_probely_com.assets.getTargetsTargetIdAssets",
+      "name": "assets.getTargetsTargetIdAssets",
+      "description": "List target's assets"
+    },
+    {
+      "id": "openapi_probely_com.assets.getTargetsTargetIdAssetsId",
+      "name": "assets.getTargetsTargetIdAssetsId",
+      "description": "Retrieve asset"
+    },
+    {
+      "id": "openapi_probely_com.assets.patchTargetsTargetIdAssetsId",
+      "name": "assets.patchTargetsTargetIdAssetsId",
+      "description": "Partial update assets"
+    },
+    {
+      "id": "openapi_probely_com.assets.postTargetsTargetIdAssets",
+      "name": "assets.postTargetsTargetIdAssets",
+      "description": "Create new asset"
+    },
+    {
+      "id": "openapi_probely_com.assets.postTargetsTargetIdAssetsIdVerify",
+      "name": "assets.postTargetsTargetIdAssetsIdVerify",
+      "description": "Verify asset ownership"
+    },
+    {
+      "id": "openapi_probely_com.assets.putTargetsTargetIdAssetsId",
+      "name": "assets.putTargetsTargetIdAssetsId",
+      "description": "Update asset"
+    },
+    {
+      "id": "openapi_probely_com.events.deleteTargetsTargetIdWebhooksId",
+      "name": "events.deleteTargetsTargetIdWebhooksId",
+      "description": "Delete target webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.deleteWebhooksId",
+      "name": "events.deleteWebhooksId",
+      "description": "Delete account webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.getEvents",
+      "name": "events.getEvents",
+      "description": "List account events"
+    },
+    {
+      "id": "openapi_probely_com.events.getEventsId",
+      "name": "events.getEventsId",
+      "description": "Retrieve account event"
+    },
+    {
+      "id": "openapi_probely_com.events.getTargetsTargetIdEvents",
+      "name": "events.getTargetsTargetIdEvents",
+      "description": "List target events"
+    },
+    {
+      "id": "openapi_probely_com.events.getTargetsTargetIdEventsId",
+      "name": "events.getTargetsTargetIdEventsId",
+      "description": "Retrieve target event"
+    },
+    {
+      "id": "openapi_probely_com.events.getTargetsTargetIdWebhooks",
+      "name": "events.getTargetsTargetIdWebhooks",
+      "description": "List target webhooks"
+    },
+    {
+      "id": "openapi_probely_com.events.getTargetsTargetIdWebhooksId",
+      "name": "events.getTargetsTargetIdWebhooksId",
+      "description": "Retrieve target webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.getWebhooks",
+      "name": "events.getWebhooks",
+      "description": "List account webhooks"
+    },
+    {
+      "id": "openapi_probely_com.events.getWebhooksId",
+      "name": "events.getWebhooksId",
+      "description": "Retrieve account webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.patchTargetsTargetIdWebhooksId",
+      "name": "events.patchTargetsTargetIdWebhooksId",
+      "description": "Partial update target webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.patchWebhooksId",
+      "name": "events.patchWebhooksId",
+      "description": "Partial update account webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.postTargetsTargetIdWebhooks",
+      "name": "events.postTargetsTargetIdWebhooks",
+      "description": "Create new target webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.postWebhooks",
+      "name": "events.postWebhooks",
+      "description": "Create new account webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.putTargetsTargetIdWebhooksId",
+      "name": "events.putTargetsTargetIdWebhooksId",
+      "description": "Update target webhook"
+    },
+    {
+      "id": "openapi_probely_com.events.putWebhooksId",
+      "name": "events.putWebhooksId",
+      "description": "Update account webhook"
+    },
+    {
+      "id": "openapi_probely_com.findings.getTargetsTargetIdFindings",
+      "name": "findings.getTargetsTargetIdFindings",
+      "description": "List target findings"
+    },
+    {
+      "id": "openapi_probely_com.findings.getTargetsTargetIdFindingsId",
+      "name": "findings.getTargetsTargetIdFindingsId",
+      "description": "Retrieve finding"
+    },
+    {
+      "id": "openapi_probely_com.findings.getTargetsTargetIdFindingsIdLog",
+      "name": "findings.getTargetsTargetIdFindingsIdLog",
+      "description": "Finding activity log."
+    },
+    {
+      "id": "openapi_probely_com.findings.getTargetsTargetIdFindingsReport",
+      "name": "findings.getTargetsTargetIdFindingsReport",
+      "description": "Retrieve finding report PDF format"
+    },
+    {
+      "id": "openapi_probely_com.findings.patchTargetsTargetIdFindingsBulkUpdate",
+      "name": "findings.patchTargetsTargetIdFindingsBulkUpdate",
+      "description": "Bulk update findings"
+    },
+    {
+      "id": "openapi_probely_com.findings.patchTargetsTargetIdFindingsId",
+      "name": "findings.patchTargetsTargetIdFindingsId",
+      "description": "Partial update finding"
+    },
+    {
+      "id": "openapi_probely_com.findings.postTargetsTargetIdFindingsBulkReport",
+      "name": "findings.postTargetsTargetIdFindingsBulkReport",
+      "description": "Finding report"
+    },
+    {
+      "id": "openapi_probely_com.findings.postTargetsTargetIdFindingsBulkRetest",
+      "name": "findings.postTargetsTargetIdFindingsBulkRetest",
+      "description": "Bulk retest findings"
+    },
+    {
+      "id": "openapi_probely_com.findings.postTargetsTargetIdFindingsIdRetest",
+      "name": "findings.postTargetsTargetIdFindingsIdRetest",
+      "description": "Retest finding"
+    },
+    {
+      "id": "openapi_probely_com.findings.putTargetsTargetIdFindingsId",
+      "name": "findings.putTargetsTargetIdFindingsId",
+      "description": "Update finding"
+    },
+    {
+      "id": "openapi_probely_com.frameworks.getFrameworks",
+      "name": "frameworks.getFrameworks",
+      "description": "List frameworks"
+    },
+    {
+      "id": "openapi_probely_com.frameworks.getFrameworksId",
+      "name": "frameworks.getFrameworksId",
+      "description": "Retrieve framework"
+    },
+    {
+      "id": "openapi_probely_com.integrations.getIntegrations",
+      "name": "integrations.getIntegrations",
+      "description": "Integrations available and installed in the account"
+    },
+    {
+      "id": "openapi_probely_com.integrations.getTargetsTargetIdIntegrations",
+      "name": "integrations.getTargetsTargetIdIntegrations",
+      "description": "Integrations available and installed for the target"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getIntegrationsJiraCloudProjects",
+      "name": "jiraCloudIntegration.getIntegrationsJiraCloudProjects",
+      "description": "List Jira Projects"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypes",
+      "name": "jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypes",
+      "description": "Retrieve project issue types"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypesIssueTypeIdPriorities",
+      "name": "jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypesIssueTypeIdPriorities",
+      "description": "Retrieve issue priorities"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypesIssueTypeIdStatus",
+      "name": "jiraCloudIntegration.getIntegrationsJiraCloudProjectsProjectIdIssueTypesIssueTypeIdStatus",
+      "description": "Retrieve issue statuses"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.getTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "description": "Retrieve Jira Cloud finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.getTargetsTargetIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.getTargetsTargetIdIntegrationsJiraCloud",
+      "description": "Retrieve Jira Cloud Target configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.patchTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.patchTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "description": "Update Jira Cloud finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.patchTargetsTargetIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.patchTargetsTargetIdIntegrationsJiraCloud",
+      "description": "Update Jira Cloud target configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.putTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.putTargetsTargetIdFindingsIdIntegrationsJiraCloud",
+      "description": "Update Jira Cloud finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraCloudIntegration.putTargetsTargetIdIntegrationsJiraCloud",
+      "name": "jiraCloudIntegration.putTargetsTargetIdIntegrationsJiraCloud",
+      "description": "Update Jira Cloud target configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getIntegrationsJiraServerProjects",
+      "name": "jiraServerIntegration.getIntegrationsJiraServerProjects",
+      "description": "List Jira Projects"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypes",
+      "name": "jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypes",
+      "description": "Retrieve project issue types"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypesIssueTypeIdPriorities",
+      "name": "jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypesIssueTypeIdPriorities",
+      "description": "Retrieve issue priorities"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypesIssueTypeIdStatus",
+      "name": "jiraServerIntegration.getIntegrationsJiraServerProjectsProjectIdIssueTypesIssueTypeIdStatus",
+      "description": "Retrieve issue statuses"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.getTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "description": "Retrieve Jira Server finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.getTargetsTargetIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.getTargetsTargetIdIntegrationsJiraServer",
+      "description": "Retrieve Jira Server Target configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.patchTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.patchTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "description": "Update Jira Server finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.patchTargetsTargetIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.patchTargetsTargetIdIntegrationsJiraServer",
+      "description": "Update Jira Server target configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.putTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.putTargetsTargetIdFindingsIdIntegrationsJiraServer",
+      "description": "Update Jira Server finding configuration"
+    },
+    {
+      "id": "openapi_probely_com.jiraServerIntegration.putTargetsTargetIdIntegrationsJiraServer",
+      "name": "jiraServerIntegration.putTargetsTargetIdIntegrationsJiraServer",
+      "description": "Update Jira Server target configuration"
+    },
+    {
+      "id": "openapi_probely_com.labels.deleteLabelsId",
+      "name": "labels.deleteLabelsId",
+      "description": "Delete label"
+    },
+    {
+      "id": "openapi_probely_com.labels.getLabels",
+      "name": "labels.getLabels",
+      "description": "List labels"
+    },
+    {
+      "id": "openapi_probely_com.labels.getLabelsId",
+      "name": "labels.getLabelsId",
+      "description": "Retrieve framework"
+    },
+    {
+      "id": "openapi_probely_com.labels.patchLabelsId",
+      "name": "labels.patchLabelsId",
+      "description": "Partial update"
+    },
+    {
+      "id": "openapi_probely_com.labels.postLabels",
+      "name": "labels.postLabels",
+      "description": "Create label"
+    },
+    {
+      "id": "openapi_probely_com.labels.putLabelsId",
+      "name": "labels.putLabelsId",
+      "description": "Update label"
+    },
+    {
+      "id": "openapi_probely_com.login.postAuthObtain",
+      "name": "login.postAuthObtain",
+      "description": "The received token should be used for authenticated requests by including in the Authorization header as `Authorization: JWT <token>`.\n"
+    },
+    {
+      "id": "openapi_probely_com.login.postAuthRefresh",
+      "name": "login.postAuthRefresh",
+      "description": "Replace token with a new one"
+    },
+    {
+      "id": "openapi_probely_com.login.postAuthRevoke",
+      "name": "login.postAuthRevoke",
+      "description": "Revoke a token"
+    },
+    {
+      "id": "openapi_probely_com.login.postAuthVerify",
+      "name": "login.postAuthVerify",
+      "description": "Check for the validity of a user token.\n"
+    },
+    {
+      "id": "openapi_probely_com.login.postEnterpriseAuthObtain",
+      "name": "login.postEnterpriseAuthObtain",
+      "description": "The received token should be used for authenticated requests by including in the Authorization header as `Authorization: JWT <token>`.\n"
+    },
+    {
+      "id": "openapi_probely_com.login.postEnterpriseAuthRefresh",
+      "name": "login.postEnterpriseAuthRefresh",
+      "description": "Enterprise token refresh"
+    },
+    {
+      "id": "openapi_probely_com.login.postEnterpriseAuthRevoke",
+      "name": "login.postEnterpriseAuthRevoke",
+      "description": "Enterprise token revokation"
+    },
+    {
+      "id": "openapi_probely_com.login.postEnterpriseAuthVerify",
+      "name": "login.postEnterpriseAuthVerify",
+      "description": "Check for the validity of a user token.\n"
+    },
+    {
+      "id": "openapi_probely_com.passwordReset.postCheck",
+      "name": "passwordReset.postCheck",
+      "description": "Check validity of password reset token"
+    },
+    {
+      "id": "openapi_probely_com.passwordReset.postReset",
+      "name": "passwordReset.postReset",
+      "description": "Send reset password email"
+    },
+    {
+      "id": "openapi_probely_com.passwordReset.postSetpassword",
+      "name": "passwordReset.postSetpassword",
+      "description": "Reset password after asking for a reset (with the token sent by email).\n"
+    },
+    {
+      "id": "openapi_probely_com.plan.getPlans",
+      "name": "plan.getPlans",
+      "description": "Subscription plans"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsAllScans",
+      "name": "scans.getTargetsAllScans",
+      "description": "List scans for all targets"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScans",
+      "name": "scans.getTargetsTargetIdScans",
+      "description": "List scans"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansDates",
+      "name": "scans.getTargetsTargetIdScansDates",
+      "description": "Dates where scans have ocurred"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansId",
+      "name": "scans.getTargetsTargetIdScansId",
+      "description": "Retrieve scan"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansIdEndpoints",
+      "name": "scans.getTargetsTargetIdScansIdEndpoints",
+      "description": "Scan endpoints file"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansIdReport",
+      "name": "scans.getTargetsTargetIdScansIdReport",
+      "description": "Scan report PDF, using the report type specified for the target"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansIdReportDefault",
+      "name": "scans.getTargetsTargetIdScansIdReportDefault",
+      "description": "Scan report PDF, using the default report type"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansIdReportOwasp",
+      "name": "scans.getTargetsTargetIdScansIdReportOwasp",
+      "description": "Scan report PDF, using the OWASP report type"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansIdReportPci",
+      "name": "scans.getTargetsTargetIdScansIdReportPci",
+      "description": "Scan report PDF, using the PCI report type"
+    },
+    {
+      "id": "openapi_probely_com.scans.getTargetsTargetIdScansRetrievePage",
+      "name": "scans.getTargetsTargetIdScansRetrievePage",
+      "description": "Given a date return the page number"
+    },
+    {
+      "id": "openapi_probely_com.scans.postTargetsTargetIdScanNow",
+      "name": "scans.postTargetsTargetIdScanNow",
+      "description": "Start a scan on the target"
+    },
+    {
+      "id": "openapi_probely_com.scans.postTargetsTargetIdScansIdCancel",
+      "name": "scans.postTargetsTargetIdScansIdCancel",
+      "description": "Cancel running scan"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.deleteTargetsTargetIdScheduledscansId",
+      "name": "scheduled.deleteTargetsTargetIdScheduledscansId",
+      "description": "Delete"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.getTargetsAllScheduledscansExpanded",
+      "name": "scheduled.getTargetsAllScheduledscansExpanded",
+      "description": "List scheduled scans for all targets expanding recurrence"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.getTargetsTargetIdScheduledscans",
+      "name": "scheduled.getTargetsTargetIdScheduledscans",
+      "description": "List scheduled scans"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.getTargetsTargetIdScheduledscansExpanded",
+      "name": "scheduled.getTargetsTargetIdScheduledscansExpanded",
+      "description": "List scheduled scans expanding recurrence"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.getTargetsTargetIdScheduledscansId",
+      "name": "scheduled.getTargetsTargetIdScheduledscansId",
+      "description": "Retrieve a scheduled scan"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.patchTargetsTargetIdScheduledscansId",
+      "name": "scheduled.patchTargetsTargetIdScheduledscansId",
+      "description": "Partial update"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.postTargetsTargetIdScheduledscans",
+      "name": "scheduled.postTargetsTargetIdScheduledscans",
+      "description": "Create new scheduled scan"
+    },
+    {
+      "id": "openapi_probely_com.scheduled.putTargetsTargetIdScheduledscansId",
+      "name": "scheduled.putTargetsTargetIdScheduledscansId",
+      "description": "Update a scheduled scan"
+    },
+    {
+      "id": "openapi_probely_com.site.getTargetsTargetIdSite",
+      "name": "site.getTargetsTargetIdSite",
+      "description": "Retrieve target's site"
+    },
+    {
+      "id": "openapi_probely_com.site.patchTargetsTargetIdSite",
+      "name": "site.patchTargetsTargetIdSite",
+      "description": "Note that the URL can only be set once."
+    },
+    {
+      "id": "openapi_probely_com.site.postTargetsTargetIdSiteVerify",
+      "name": "site.postTargetsTargetIdSiteVerify",
+      "description": "Verify site ownership"
+    },
+    {
+      "id": "openapi_probely_com.site.putTargetsTargetIdSite",
+      "name": "site.putTargetsTargetIdSite",
+      "description": "Note that the URL can only be set once."
+    },
+    {
+      "id": "openapi_probely_com.slackIntegration.getTargetsTargetIdIntegrationsSlack",
+      "name": "slackIntegration.getTargetsTargetIdIntegrationsSlack",
+      "description": "Retrieve slack integration data"
+    },
+    {
+      "id": "openapi_probely_com.slackIntegration.patchTargetsTargetIdIntegrationsSlack",
+      "name": "slackIntegration.patchTargetsTargetIdIntegrationsSlack",
+      "description": "Update slack integration data"
+    },
+    {
+      "id": "openapi_probely_com.slackIntegration.putTargetsTargetIdIntegrationsSlack",
+      "name": "slackIntegration.putTargetsTargetIdIntegrationsSlack",
+      "description": "Update slack integration data"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllAverageFixTime",
+      "name": "statistics.getTargetsAllAverageFixTime",
+      "description": "Average fix time graph data (all targets)"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllNeedsAttentionPie",
+      "name": "statistics.getTargetsAllNeedsAttentionPie",
+      "description": "Targets with open vulnerabilities pie chart data"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllNeedsAttentionTop",
+      "name": "statistics.getTargetsAllNeedsAttentionTop",
+      "description": "Targets with open vulnerabilities"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllRiskTrend",
+      "name": "statistics.getTargetsAllRiskTrend",
+      "description": "Risk trend graph data (all targets)"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllSeverityTrend",
+      "name": "statistics.getTargetsAllSeverityTrend",
+      "description": "Severity trend graph data (all targets)"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsAllTopVulns",
+      "name": "statistics.getTargetsAllTopVulns",
+      "description": "Top 5 vulnerabilities (all targets)."
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsTargetIdAverageFixTime",
+      "name": "statistics.getTargetsTargetIdAverageFixTime",
+      "description": "Average vulnerability trend graph data"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsTargetIdRiskTrend",
+      "name": "statistics.getTargetsTargetIdRiskTrend",
+      "description": "Risk trend graph data"
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsTargetIdSeverityTrend",
+      "name": "statistics.getTargetsTargetIdSeverityTrend",
+      "description": "Severity trend graph data."
+    },
+    {
+      "id": "openapi_probely_com.statistics.getTargetsTargetIdTopVulns",
+      "name": "statistics.getTargetsTargetIdTopVulns",
+      "description": "Top 5 vulnerabilities"
+    },
+    {
+      "id": "openapi_probely_com.targets.deleteTargetsId",
+      "name": "targets.deleteTargetsId",
+      "description": "Delete target"
+    },
+    {
+      "id": "openapi_probely_com.targets.getTargets",
+      "name": "targets.getTargets",
+      "description": "List targets"
+    },
+    {
+      "id": "openapi_probely_com.targets.getTargetsId",
+      "name": "targets.getTargetsId",
+      "description": "Retrieve target"
+    },
+    {
+      "id": "openapi_probely_com.targets.patchTargetsId",
+      "name": "targets.patchTargetsId",
+      "description": "Partial update target"
+    },
+    {
+      "id": "openapi_probely_com.targets.postTargets",
+      "name": "targets.postTargets",
+      "description": "Create target"
+    },
+    {
+      "id": "openapi_probely_com.targets.putTargetsId",
+      "name": "targets.putTargetsId",
+      "description": "Update target"
+    },
+    {
+      "id": "openapi_probely_com.users.deleteUsersId",
+      "name": "users.deleteUsersId",
+      "description": "Deactivate a user"
+    },
+    {
+      "id": "openapi_probely_com.users.getProfile",
+      "name": "users.getProfile",
+      "description": "User data"
+    },
+    {
+      "id": "openapi_probely_com.users.getUsers",
+      "name": "users.getUsers",
+      "description": "List users"
+    },
+    {
+      "id": "openapi_probely_com.users.getUsersId",
+      "name": "users.getUsersId",
+      "description": "Retrieve user"
+    },
+    {
+      "id": "openapi_probely_com.users.patchUsersId",
+      "name": "users.patchUsersId",
+      "description": "Partial update user"
+    },
+    {
+      "id": "openapi_probely_com.users.postProfileChangePassword",
+      "name": "users.postProfileChangePassword",
+      "description": "Our password policy requires a minimum password length of 10 chars with\nat least one symbol or number.\n"
+    },
+    {
+      "id": "openapi_probely_com.users.postUsers",
+      "name": "users.postUsers",
+      "description": "Create/Reactivate a user."
+    },
+    {
+      "id": "openapi_probely_com.users.putUsersId",
+      "name": "users.putUsersId",
+      "description": "Update user"
+    },
+    {
+      "id": "openapi_probely_com.vulnerabilities.getVulnerabilityDefinitions",
+      "name": "vulnerabilities.getVulnerabilityDefinitions",
+      "description": "List vulnerability definitions"
+    },
+    {
+      "id": "openapi_probely_com.vulnerabilities.getVulnerabilityDefinitionsId",
+      "name": "vulnerabilities.getVulnerabilityDefinitionsId",
+      "description": "Retrieve vulnerability definition"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

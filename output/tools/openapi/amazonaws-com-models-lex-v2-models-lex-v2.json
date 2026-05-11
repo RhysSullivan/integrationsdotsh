@@ -1,0 +1,372 @@
+{
+  "fetchedAt": "2026-04-30T15:45:06.906Z",
+  "status": "ok",
+  "count": 73,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.batchCreateCustomVocabularyItem",
+      "name": "bots.batchCreateCustomVocabularyItem",
+      "description": "Create a batch of custom vocabulary items for a given bot locale's custom vocabulary."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.batchDeleteCustomVocabularyItem",
+      "name": "bots.batchDeleteCustomVocabularyItem",
+      "description": "Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.batchUpdateCustomVocabularyItem",
+      "name": "bots.batchUpdateCustomVocabularyItem",
+      "description": "Update a batch of custom vocabulary items for a given bot locale's custom vocabulary."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.buildBotLocale",
+      "name": "bots.buildBotLocale",
+      "description": "Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createBot",
+      "name": "bots.createBot",
+      "description": "Creates an Amazon Lex conversational bot. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createBotAlias",
+      "name": "bots.createBotAlias",
+      "description": "<p>Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.</p> <p>For example, you can create an alias called \"PROD\" that your applications use to call the Amazon Lex bot. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createBotLocale",
+      "name": "bots.createBotLocale",
+      "description": "Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createBotVersion",
+      "name": "bots.createBotVersion",
+      "description": "<p>Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it returns the last created version.</p> <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createIntent",
+      "name": "bots.createIntent",
+      "description": "<p>Creates an intent.</p> <p>To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an <code>OrderPizza</code> intent.</p> <p>When you create an intent, you must provide a name. You can optionally provide the following:</p> <ul> <li> <p>Sample utterances. For example, \"I want to order a pizza\" and \"Can I order a pizza.\" You can't provide utterances for built-in intents.</p> </li> <li> <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p> </li> <li> <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p> </li> <li> <p>A confirmation prompt to send to the user to confirm an intent. For example, \"Shall I order your pizza?\"</p> </li> <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, \"I ordered your pizza.\"</p> </li> <li> <p>A follow-up prompt that asks the user for additional activity. For example, \"Do you want a drink with your pizza?\"</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createSlot",
+      "name": "bots.createSlot",
+      "description": "Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.createSlotType",
+      "name": "bots.createSlotType",
+      "description": "<p>Creates a custom slot type</p> <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteBot",
+      "name": "bots.deleteBot",
+      "description": "<p>Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the <code>DeleteBotVersion</code> operation.</p> <p>When you delete a bot, all of the resources contained in the bot are also deleted. Deleting a bot removes all locales, intents, slot, and slot types defined for the bot.</p> <p>If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteBotAlias",
+      "name": "bots.deleteBotAlias",
+      "description": "Deletes the specified bot alias."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteBotLocale",
+      "name": "bots.deleteBotLocale",
+      "description": "<p>Removes a locale from a bot.</p> <p>When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteBotVersion",
+      "name": "bots.deleteBotVersion",
+      "description": "Deletes a specific version of a bot. To delete all versions of a bot, use the <a href=\"https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html\">DeleteBot</a> operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteCustomVocabulary",
+      "name": "bots.deleteCustomVocabulary",
+      "description": "Removes a custom vocabulary from the specified locale in the specified bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteIntent",
+      "name": "bots.deleteIntent",
+      "description": "<p>Removes the specified intent.</p> <p>Deleting an intent also deletes the slots associated with the intent.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteSlot",
+      "name": "bots.deleteSlot",
+      "description": "Deletes the specified slot from an intent."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteSlotType",
+      "name": "bots.deleteSlotType",
+      "description": "<p>Deletes a slot type from a bot locale.</p> <p>If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code> exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.deleteUtterances",
+      "name": "bots.deleteUtterances",
+      "description": "<p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a href=\"https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html\">ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>ListAggregatedUtterances</code> operation are deleted after 15 days.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeBot",
+      "name": "bots.describeBot",
+      "description": "Provides metadata information about a bot. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeBotAlias",
+      "name": "bots.describeBotAlias",
+      "description": "Get information about a specific bot alias."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeBotLocale",
+      "name": "bots.describeBotLocale",
+      "description": "Describes the settings that a bot has for a specific locale. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeBotRecommendation",
+      "name": "bots.describeBotRecommendation",
+      "description": "Provides metadata information about a bot recommendation. This information will enable you to get a description on the request inputs, to download associated transcripts after processing is complete, and to download intents and slot-types generated by the bot recommendation."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeBotVersion",
+      "name": "bots.describeBotVersion",
+      "description": "Provides metadata about a version of a bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeCustomVocabularyMetadata",
+      "name": "bots.describeCustomVocabularyMetadata",
+      "description": "Provides metadata information about a custom vocabulary."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeIntent",
+      "name": "bots.describeIntent",
+      "description": "Returns metadata about an intent."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeSlot",
+      "name": "bots.describeSlot",
+      "description": "Gets metadata information about a slot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.describeSlotType",
+      "name": "bots.describeSlotType",
+      "description": "Gets metadata information about a slot type."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listAggregatedUtterances",
+      "name": "bots.listAggregatedUtterances",
+      "description": "<p>Provides a list of utterances that users have sent to the bot.</p> <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase \"I want to order pizza\" are aggregated into the same line in the response.</p> <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p> <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p> <p>Utterances statistics are not generated under the following conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation with one or more slots.</p> </li> <li> <p>You opted out of participating in improving Amazon Lex.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listBotAliases",
+      "name": "bots.listBotAliases",
+      "description": "Gets a list of aliases for the specified bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listBotLocales",
+      "name": "bots.listBotLocales",
+      "description": "Gets a list of locales for the specified bot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listBotRecommendations",
+      "name": "bots.listBotRecommendations",
+      "description": "Get a list of bot recommendations that meet the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listBots",
+      "name": "bots.listBots",
+      "description": "Gets a list of available bots."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listBotVersions",
+      "name": "bots.listBotVersions",
+      "description": "<p>Gets information about all of the versions of a bot.</p> <p>The <code>ListBotVersions</code> operation returns a summary of each version of a bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code> operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code> version.</p> <p>The <code>ListBotVersions</code> operation always returns at least one version, the <code>DRAFT</code> version.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listCustomVocabularyItems",
+      "name": "bots.listCustomVocabularyItems",
+      "description": "Paginated list of custom vocabulary items for a given bot locale's custom vocabulary."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listIntents",
+      "name": "bots.listIntents",
+      "description": "Get a list of intents that meet the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listRecommendedIntents",
+      "name": "bots.listRecommendedIntents",
+      "description": "Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listSlots",
+      "name": "bots.listSlots",
+      "description": "Gets a list of slots that match the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.listSlotTypes",
+      "name": "bots.listSlotTypes",
+      "description": "Gets a list of slot types that match the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.searchAssociatedTranscripts",
+      "name": "bots.searchAssociatedTranscripts",
+      "description": "Search for associated transcripts that meet the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.startBotRecommendation",
+      "name": "bots.startBotRecommendation",
+      "description": "Use this to provide your transcript data, and to start the bot recommendation process."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.stopBotRecommendation",
+      "name": "bots.stopBotRecommendation",
+      "description": "Stop an already running Bot Recommendation request."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateBot",
+      "name": "bots.updateBot",
+      "description": "Updates the configuration of an existing bot. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateBotAlias",
+      "name": "bots.updateBotAlias",
+      "description": "Updates the configuration of an existing bot alias."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateBotLocale",
+      "name": "bots.updateBotLocale",
+      "description": "Updates the settings that a bot has for a specific locale."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateBotRecommendation",
+      "name": "bots.updateBotRecommendation",
+      "description": "Updates an existing bot recommendation request."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateIntent",
+      "name": "bots.updateIntent",
+      "description": "Updates the settings for an intent."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateSlot",
+      "name": "bots.updateSlot",
+      "description": "Updates the settings for a slot."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.bots.updateSlotType",
+      "name": "bots.updateSlotType",
+      "description": "Updates the configuration of an existing slot type."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.builtins.listBuiltInIntents",
+      "name": "builtins.listBuiltInIntents",
+      "description": "<p>Gets a list of built-in intents provided by Amazon Lex that you can use in your bot. </p> <p>To use a built-in intent as a the base for your own intent, include the built-in intent signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more information, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html\">CreateIntent</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.builtins.listBuiltInSlotTypes",
+      "name": "builtins.listBuiltInSlotTypes",
+      "description": "Gets a list of built-in slot types that meet the specified criteria."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.createuploadurl.createUploadUrl",
+      "name": "createuploadurl.createUploadUrl",
+      "description": "Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale. "
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.exports.createExport",
+      "name": "exports.createExport",
+      "description": "<p>Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot.</p> <p>You can create an archive that contains the complete definition of a bot, or you can specify that the archive contain only the definition of a single bot locale.</p> <p>For more information about exporting bots, and about the structure of the export archive, see <a href=\"https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html\"> Importing and exporting bots </a> </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.exports.deleteExport",
+      "name": "exports.deleteExport",
+      "description": "Removes a previous export and the associated files stored in an S3 bucket."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.exports.describeExport",
+      "name": "exports.describeExport",
+      "description": "Gets information about a specific export."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.exports.listExports",
+      "name": "exports.listExports",
+      "description": "Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.exports.updateExport",
+      "name": "exports.updateExport",
+      "description": "<p>Updates the password used to protect an export zip archive.</p> <p>The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a href=\"https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html\">DescribeExport</a> operation.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.imports.deleteImport",
+      "name": "imports.deleteImport",
+      "description": "Removes a previous import and the associated file stored in an S3 bucket."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.imports.describeImport",
+      "name": "imports.describeImport",
+      "description": "Gets information about a specific import."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.imports.listImports",
+      "name": "imports.listImports",
+      "description": "Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in the list for 7 days."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.imports.startImport",
+      "name": "imports.startImport",
+      "description": "Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.createResourcePolicy",
+      "name": "policy.createResourcePolicy",
+      "description": "Creates a new resource policy with the specified policy statements."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.createResourcePolicyStatement",
+      "name": "policy.createResourcePolicyStatement",
+      "description": "<p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p> <p>You can't create a resource policy statement that allows cross-account access.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.deleteResourcePolicy",
+      "name": "policy.deleteResourcePolicy",
+      "description": "Removes an existing policy from a bot or bot alias. If the resource doesn't have a policy attached, Amazon Lex returns an exception."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.deleteResourcePolicyStatement",
+      "name": "policy.deleteResourcePolicyStatement",
+      "description": "Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.describeResourcePolicy",
+      "name": "policy.describeResourcePolicy",
+      "description": "Gets the resource policy and policy revision for a bot or bot alias."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.policy.updateResourcePolicy",
+      "name": "policy.updateResourcePolicy",
+      "description": "Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value."
+    },
+    {
+      "id": "openapi_amazonaws_com_models_lex_v2_models_lex_v2.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes tags from a bot, bot alias, or bot channel."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

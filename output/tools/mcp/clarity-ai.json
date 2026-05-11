@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:19:55.569Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_clarity_ai.search_securities",
+      "name": "search_securities",
+      "description": "Search securities by keyword, ISIN, or CUSIP through the upstream Clarity SFDR demo API."
+    },
+    {
+      "id": "mcp_clarity_ai.sfdr20_assess_fund_name",
+      "name": "sfdr20_assess_fund_name",
+      "description": "Preferred for fund names, partial names, and natural-language requests. Resolve a fund from free-text (for example S&P 500 or Nordea 1 Global Climate and Environment), then run the SFDR20 check and return an interpreted assessment. Example: use this for 'Show the SFDR 2.0 category assessment evidence for Nordea 1 Global Climate and Environment Fund'."
+    },
+    {
+      "id": "mcp_clarity_ai.sfdr20_check_by_isin",
+      "name": "sfdr20_check_by_isin",
+      "description": "Use only when the user already provided an explicit ISIN. Do not use for fund names, partial names, or natural-language fund requests; use sfdr20_assess_fund_name instead."
+    },
+    {
+      "id": "mcp_clarity_ai.sfdr20_check_by_query",
+      "name": "sfdr20_check_by_query",
+      "description": "Deprecated alias for sfdr20_assess_fund_name. Keep for backward compatibility only. Prefer sfdr20_assess_fund_name for fund names and natural-language requests."
+    },
+    {
+      "id": "mcp_clarity_ai.sfdr20_check",
+      "name": "sfdr20_check",
+      "description": "Deprecated alias for sfdr20_check_by_isin. Keep for backward compatibility only. Do not use for fund names or natural-language requests."
+    },
+    {
+      "id": "mcp_clarity_ai.interpret_sfdr20_result",
+      "name": "interpret_sfdr20_result",
+      "description": "Normalize raw SFDR20 flags into category-level assessment evidence."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:22:05.671Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "openapi_bikewise_org.incidents.getVersionIncidentsFormat",
+      "name": "incidents.getVersionIncidentsFormat",
+      "description": "\n<p>If you’d like more detailed information about bike incidents, use this endpoint. For mapping, <code>locations</code> is probably a better bet.</p>\n\n<p><strong>Notes on location searching</strong>: <br />\n- <code>proximity</code> accepts an ip address, an address, zipcode, city, or latitude,longitude - i.e. <code>70.210.133.87</code>, <code>210 NW 11th Ave, Portland, OR</code>, <code>60647</code>, <code>Chicago, IL</code>, and <code>45.521728,-122.67326</code> are all acceptable<br />\n- <code>proximity_square</code> sets the length of the sides of the square to find matches inside of. The square is centered on the location specified by <code>proximity</code>. It defaults to 100.</p>\n"
+    },
+    {
+      "id": "openapi_bikewise_org.incidents.getVersionIncidentsIdFormat",
+      "name": "incidents.getVersionIncidentsIdFormat",
+      "description": "GET /v2/incidents/{id}"
+    },
+    {
+      "id": "openapi_bikewise_org.locations.getVersionLocationsFormat",
+      "name": "locations.getVersionLocationsFormat",
+      "description": "<p><strong>This endpoint behaves exactly like</strong> <code>incidents</code>, but returns a valid geojson <code>FeatureCollection</code> that looks like this:</p>\n\n<pre><code>{\n  type: \"FeatureCollection\",\n  features: [\n    {\n      type: \"Feature\",\n      properties: {\n      id: 4474199,\n      type: \"Theft\",\n      occurred_at: 1428536937\n    },\n      geometry: {\n      type: \"Point\",\n      coordinates: [ -122.6244177, 45.5164386 ]\n    }\n  }\n}\n</code></pre>\n\n<p>It doesn’t paginate. If you pass the <code>all</code> parameter it returns all matches (which can be big, &gt; 4mb), otherwise it returns the 100 most recent.</p>\n\n<p><strong>Go forth and make maps!</strong></p>\n"
+    },
+    {
+      "id": "openapi_bikewise_org.locations.getVersionLocationsMarkersFormat",
+      "name": "locations.getVersionLocationsMarkersFormat",
+      "description": "<p>This behaves exactly like the root <code>locations</code> endpoint, but returns <a href=\"https://github.com/mapbox/simplestyle-spec\">simplestyled markers</a> (<a href=\"https://www.mapbox.com/guides/markers/#simple-style\">mapbox styled markers</a>)</p>\n\n<p><strong>Go forth and make maps!</strong></p>\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

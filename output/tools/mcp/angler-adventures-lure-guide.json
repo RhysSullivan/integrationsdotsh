@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:21:04.688Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_angler_adventures_lure_guide.get_lure_recommendations",
+      "name": "get_lure_recommendations",
+      "description": "Return the top 3 ranked bass lure recommendations from the Angler Adventures 15-lure catalogue for the given conditions. location is required; weather, wind, water_clarity, and water_temp_f are optional but improve accuracy. Only call this directly when the user asks about a specific structure by name. After calling this tool, the widget displays the top picks — output nothing else. CRITICAL: Your final message MUST contain only this tool call. Do not include any natural language text before or after the call. Do NOT describe the lures, explain techniques, or add tips in text. Stop immediately after the tool call. Do NOT call this tool when handling 'what to throw today' or 'where to fish' — use show_lure_picker or rank_fishing_structures instead."
+    },
+    {
+      "id": "mcp_angler_adventures_lure_guide.show_lure_picker",
+      "name": "show_lure_picker",
+      "description": "Show the interactive lure picker widget for the user's current fishing conditions. Call this directly when the user asks what to throw, cast, or use today — no prior weather lookup needed. Pass the user's location if known; location is auto-detected if omitted. The widget shows all 6 fishing structures so the user can tap one and see the best lures. After calling this tool, output nothing — the widget IS the response. CRITICAL: Do not include any natural language text before or after this tool call. Stop immediately."
+    },
+    {
+      "id": "mcp_angler_adventures_lure_guide.rank_fishing_structures",
+      "name": "rank_fishing_structures",
+      "description": "Show the ranked fishing structures widget for the user's current conditions. Call this directly when the user asks where to fish today or which structures are best — no prior weather lookup needed. Pass the user's location if known; location is auto-detected if omitted. The widget displays all 6 structures ranked best to worst with the top lure for each. After calling this tool, output nothing — the widget IS the response. CRITICAL: Do not include any natural language text before or after this tool call. Stop immediately."
+    }
+  ]
+}

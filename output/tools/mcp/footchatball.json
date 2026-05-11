@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:06.369Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_footchatball.football",
+      "name": "football",
+      "description": "Use this tool to open the app's interactive football/soccer browser widget inside the conversation when the user wants football/soccer data in an app-like interface rather than a text-only reply. This is the public entry point for browsing supported competitions and teams. The widget opened by this tool can show the current table for any supported competition, show the recent and upcoming matches for any supported competition, show the current standing of a team in every supported competition it is participating in, and show the recent and upcoming matches for a team in every supported competition it is participating in. It can also combine a competition and a team so the user can inspect that team's context and match list within a specific competition. The tool accepts an optional `competition` and an optional `team`. The supported `competition` values are Campeonato Brasileiro Série A, Championship, Premier League, UEFA Champions League, European Championship, Ligue 1, Bundesliga, Serie A, Eredivisie, Primeira Liga, Copa Libertadores, Primera Division, and FIFA World Cup. Provide `competition` when the user asks about a specific supported league, cup, or tournament table or fixture list. Provide `team` when the user asks to open or inspect a specific club or national team. Provide both when the user wants a specific team viewed inside a specific supported competition. If only a competition is provided, the widget should open focused on that competition so the user can browse the current table and competition-wide matches. If only a team is provided, the widget should open focused on that team so the user can inspect the team's standings across active competitions and the team's recent and upcoming matches. If both values are provided and the team participates in that competition, the widget should open with both contexts aligned. If both values are provided but the team is not participating in that competition, the tool should prioritize the team context and omit the incompatible competition from the structured output rather than opening an invalid combined view. This makes the tool appropriate for prompts such as showing the Premier League table, showing upcoming UEFA Champions League matches, opening Liverpool, checking Arsenal's current standing across its active competitions, or browsing Real Madrid's recent and upcoming matches. Do not use this tool for non-football topics, for unrelated sports, or when the user explicitly wants a plain-text answer with no interactive app surface. Do not call the internal `api` tool during normal model reasoning; this public tool is the correct way to open the football app for the user."
+    },
+    {
+      "id": "mcp_footchatball.api",
+      "name": "api",
+      "description": "Widget-internal proxy for API requests. Do not call this tool during normal model reasoning."
+    }
+  ]
+}

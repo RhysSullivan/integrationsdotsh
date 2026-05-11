@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:19:53.782Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_tldraw.search",
+      "name": "search",
+      "description": "Search the tldraw Editor API spec by writing JavaScript that receives a `spec` object and returns a result. The spec contains: spec.members (all Editor methods/properties with name, kind, signature, description, category), spec.categories (category names), spec.types.shapes (focused shape type definitions with props), spec.types.shapeTypes (list of all shape type strings), spec.helpers (exec helper functions with descriptions, params, examples).\n\nExamples:\n- Find shape methods: return spec.members.filter(m => m.category === \"shapes\").map(m => ({ name: m.name, signature: m.signature }))\n- Get arrow shape props: return spec.types.shapes.find(s => s.shapeType === \"arrow\")\n- List all categories: return spec.categories\n- Find a helper: return spec.helpers.find(h => h.name === \"createArrowBetweenShapes\")"
+    },
+    {
+      "id": "mcp_tldraw.exec",
+      "name": "exec",
+      "description": "Execute JavaScript code on a tldraw canvas. The code runs in the widget with access to the live `editor` instance, helper functions, and normal js. Use the `search` tool first to discover available Editor methods and shape types.\n\nEach canvas has a unique `canvasId`. Omit `canvasId` to create a new blank canvas. To edit an existing canvas, pass the `canvasId` that was returned by a previous exec call.\n\nShapes and text grow depending on the amount of text they have. Use clever scripting to ensure there are no unintended overlaps.\n\nExamples:\n- Create a rectangle: editor.createShape({ _type: 'rectangle', shapeId: 'box1', x: 200, y: 120, w: 320, h: 180, text: 'Hello' })\n- Connect shapes with an arrow: editor.createShape({ _type: 'arrow', shapeId: 'a1', fromId: 'box1', toId: 'box2', x1: 0, y1: 0, x2: 100, y2: 0 })\n- Select and zoom: editor.select('box1'); editor.zoomToSelection()\n- Read shapes: return editor.getCurrentPageShapes()\n- Distribute evenly: editor.distributeShapes(editor.getSelectedShapeIds(), 'horizontal')\n- Box around shapes: boxShapes(['box1', 'box2'], { text: 'Group label', color: 'blue' })\n- Stack shapes dynamically: editor.createShape({ _type: 'rectangle', shapeId: 'a', x: 0, y: 0, w: 300, h: 200, text: 'First box\\nwith wrapping text' }); const bounds = editor.getShapePageBounds('a'); editor.createShape({ _type: 'rectangle', shapeId: 'b', x: 0, y: bounds.maxY + 20, w: 300, h: 200, text: 'Below first' })"
+    },
+    {
+      "id": "mcp_tldraw.exec_callback",
+      "name": "_exec_callback",
+      "description": "App-only: widget calls this to resolve a pending exec request."
+    },
+    {
+      "id": "mcp_tldraw.get_canvas_state",
+      "name": "_get_canvas_state",
+      "description": "App-only: get the latest checkpoint for a canvas by its canvasId."
+    },
+    {
+      "id": "mcp_tldraw.read_checkpoint",
+      "name": "read_checkpoint",
+      "description": "App-only: read shapes from a checkpoint by ID."
+    },
+    {
+      "id": "mcp_tldraw.save_checkpoint",
+      "name": "save_checkpoint",
+      "description": "App-only: save shapes to a checkpoint (from user edits). shapesJson and assetsJson must be JSON array strings."
+    }
+  ]
+}

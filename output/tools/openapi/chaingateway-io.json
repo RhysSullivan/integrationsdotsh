@@ -1,0 +1,612 @@
+{
+  "fetchedAt": "2026-04-30T15:22:08.020Z",
+  "status": "ok",
+  "count": 121,
+  "tools": [
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.broadcasttransaction2",
+      "name": "binanceSmartChain.broadcasttransaction2",
+      "description": "Broadcast raw transactions"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.deleteaddress2",
+      "name": "binanceSmartChain.deleteaddress2",
+      "description": "deleteAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.exportaddress2",
+      "name": "binanceSmartChain.exportaddress2",
+      "description": "exportAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getbep20",
+      "name": "binanceSmartChain.getbep20",
+      "description": "Receive information of a BEP20 address"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getbep20balance",
+      "name": "binanceSmartChain.getbep20balance",
+      "description": "Get the balance of a BEP20 address"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getbinancecoinbalance",
+      "name": "binanceSmartChain.getbinancecoinbalance",
+      "description": "Get the balance of an address"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getblock2",
+      "name": "binanceSmartChain.getblock2",
+      "description": "Get information of a specific block"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getgasprice2",
+      "name": "binanceSmartChain.getgasprice2",
+      "description": "Get gas price"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getlastblocknumber2",
+      "name": "binanceSmartChain.getlastblocknumber2",
+      "description": "Get the latest block number"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getnftowner2",
+      "name": "binanceSmartChain.getnftowner2",
+      "description": "Get the Owner of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.getnfturi2",
+      "name": "binanceSmartChain.getnfturi2",
+      "description": "Get the URI of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.gettransaction2",
+      "name": "binanceSmartChain.gettransaction2",
+      "description": "Get info about a transaction\n\nYou can get your transaction decoded by add /decoded to your api call. If you want to get the transaction encoded, youst remove the /decoded part"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.gettransactionreceipt2",
+      "name": "binanceSmartChain.gettransactionreceipt2",
+      "description": "Get info about a transaction receipt\n\nYou can get your transaction decoded by add /decoded to your api call. If you want to get the transaction encoded, youst remove the /decoded part"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.importaddress2",
+      "name": "binanceSmartChain.importaddress2",
+      "description": "importAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.listaddress",
+      "name": "binanceSmartChain.listaddress",
+      "description": "listAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.listfailedipns2",
+      "name": "binanceSmartChain.listfailedipns2",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.listsubscribedaddresses2",
+      "name": "binanceSmartChain.listsubscribedaddresses2",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.listtransactionsbyaddress2",
+      "name": "binanceSmartChain.listtransactionsbyaddress2",
+      "description": "Our API provides an endpoint for retrieving all transactions associated with a particular blockchain address. To use this endpoint, you will need to provide the wallet address as a parameter in the request.\n\nEach page of results returned by this endpoint contains up to 100 entries, and you can use a paginator to navigate through the pages of results.\n\nTo use the paginator, you can include parameter in your request: \"page\" . The \"page\" parameter specifies which page of results to retrieve,\n\nFor example, to retrieve the first 100 transactions associated with a particular blockchain address, you would make a request to the following URL:\n\n```\n/addresses//transactions/1\n\n```\n\nIf there are more than 100 transactions associated with the blockchain address, you can retrieve additional pages of results by incrementing the \"page\" parameter in your request. For example, to retrieve the next 100 transactions, you would make a request to the following URL:\n\n```\n/addresses//transactions/2\n```\n\nBy using the paginator, you can retrieve all transactions associated with a particular blockchain address, regardless of the total number of transactions in the blockchain.\n\neach request tells you the max pages within the Request in the **max_pages** field\n\n`\"max_pages\": 515`"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.newaddress2",
+      "name": "binanceSmartChain.newaddress2",
+      "description": "newAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.resendfailedipn2",
+      "name": "binanceSmartChain.resendfailedipn2",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.sendbep20",
+      "name": "binanceSmartChain.sendbep20",
+      "description": "sendBEP20"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.sendbep721",
+      "name": "binanceSmartChain.sendbep721",
+      "description": "sendBEP721"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.sendtransaction2",
+      "name": "binanceSmartChain.sendtransaction2",
+      "description": "sendTransaction"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.subscribeaddress2",
+      "name": "binanceSmartChain.subscribeaddress2",
+      "description": "Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.\r\n"
+    },
+    {
+      "id": "openapi_chaingateway_io.binanceSmartChain.unsubscribeaddress2",
+      "name": "binanceSmartChain.unsubscribeaddress2",
+      "description": "Deletes an existing subscription/IPN for the given address (and contractaddress)."
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.createwallet",
+      "name": "bitcoin.createwallet",
+      "description": "createWallet"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.createwalletaddress",
+      "name": "bitcoin.createwalletaddress",
+      "description": "createWalletAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.deletewallet",
+      "name": "bitcoin.deletewallet",
+      "description": "deleteWallet"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.exportaddressprivatekey",
+      "name": "bitcoin.exportaddressprivatekey",
+      "description": "exportAddressPrivateKey"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getblock4",
+      "name": "bitcoin.getblock4",
+      "description": "getBlock"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getblockchaininfo",
+      "name": "bitcoin.getblockchaininfo",
+      "description": "getBlockchaIninfo"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getfees",
+      "name": "bitcoin.getfees",
+      "description": "The fees are parted into three categroies\n\nfast (10min / 1 block)  \nmedium (30 min / 3 blocks)  \nslow (60 min / 6 blocks)\n\nthis tells you in wich block distance your transaction get confirmed. A block is around \\~10 minutes.\n\nPlease note that fees are dynamic by transaction size. This is only an estimation!"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getlastblocknumber4",
+      "name": "bitcoin.getlastblocknumber4",
+      "description": "Get the latest block number"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.gettransaction4",
+      "name": "bitcoin.gettransaction4",
+      "description": "You can get your transaction decoded by add /decoded to your api call. If you want to get the transaction encoded, youst remove the /decoded part"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getwallet",
+      "name": "bitcoin.getwallet",
+      "description": "getWallet"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.getwalletaddresses",
+      "name": "bitcoin.getwalletaddresses",
+      "description": "getWalletAddresses"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.listfailedipns4",
+      "name": "bitcoin.listfailedipns4",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.listsubscribedaddresses4",
+      "name": "bitcoin.listsubscribedaddresses4",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.resendfailedipn4",
+      "name": "bitcoin.resendfailedipn4",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.sendtransaction4",
+      "name": "bitcoin.sendtransaction4",
+      "description": "sendTransaction"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.subscribeaddress4",
+      "name": "bitcoin.subscribeaddress4",
+      "description": "Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.\r\n"
+    },
+    {
+      "id": "openapi_chaingateway_io.bitcoin.unsubscribeaddress4",
+      "name": "bitcoin.unsubscribeaddress4",
+      "description": "Deletes an existing subscription/IPN for the given address (and contractaddress)."
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.broadcasttransaction",
+      "name": "ethereum.broadcasttransaction",
+      "description": "Broadcast raw transactions"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.deleteaddress",
+      "name": "ethereum.deleteaddress",
+      "description": "deleteAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.exportaddress",
+      "name": "ethereum.exportaddress",
+      "description": "exportAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getallerc20balance",
+      "name": "ethereum.getallerc20balance",
+      "description": "Get the balance of an ERC20 address"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getblock",
+      "name": "ethereum.getblock",
+      "description": "Get information of a specific block"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.geterc20",
+      "name": "ethereum.geterc20",
+      "description": "Get information about an ERC20 token"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getethereumbalance",
+      "name": "ethereum.getethereumbalance",
+      "description": "Get the balance of an address"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getgasprice",
+      "name": "ethereum.getgasprice",
+      "description": "Get gas price"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getlastblocknumber",
+      "name": "ethereum.getlastblocknumber",
+      "description": "Get the latest block number"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getnftowner",
+      "name": "ethereum.getnftowner",
+      "description": "Get the Owner of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.getnfturi",
+      "name": "ethereum.getnfturi",
+      "description": "Get the URI of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.gettransaction",
+      "name": "ethereum.gettransaction",
+      "description": "Get info about a transaction\n\nYou can choose if you want to get the Transaction encoded or decoded by add /decoded to your request. See examlpes for details"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.gettransactionreceipt",
+      "name": "ethereum.gettransactionreceipt",
+      "description": "Get info about a transaction receipt\n\nYou can choose if you want to get the Transaction encoded or decoded by add /decoded to your request. See examlpes for details"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.importaddress",
+      "name": "ethereum.importaddress",
+      "description": "importAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.listaddresses",
+      "name": "ethereum.listaddresses",
+      "description": "listAddresses"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.listfailedipns",
+      "name": "ethereum.listfailedipns",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.listipnsbywebhookid",
+      "name": "ethereum.listipnsbywebhookid",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.listsubscribedaddresses",
+      "name": "ethereum.listsubscribedaddresses",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.listtransactionsbyaddress",
+      "name": "ethereum.listtransactionsbyaddress",
+      "description": "Our API provides an endpoint for retrieving all transactions associated with a particular blockchain address. To use this endpoint, you will need to provide the wallet address as a parameter in the request.\n\nEach page of results returned by this endpoint contains up to 100 entries, and you can use a paginator to navigate through the pages of results.\n\nTo use the paginator, you can include parameter in your request: \"page\" . The \"page\" parameter specifies which page of results to retrieve,\n\nFor example, to retrieve the first 100 transactions associated with a particular blockchain address, you would make a request to the following URL:\n\n```\n/addresses//transactions/1\n\n```\n\nIf there are more than 100 transactions associated with the blockchain address, you can retrieve additional pages of results by incrementing the \"page\" parameter in your request. For example, to retrieve the next 100 transactions, you would make a request to the following URL:\n\n```\n/addresses//transactions/2\n```\n\nBy using the paginator, you can retrieve all transactions associated with a particular blockchain address, regardless of the total number of transactions in the blockchain.\n\neach request tells you the max pages within the Request in the **max_pages** field\n\n`\"max_pages\": 515`"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.newaddress",
+      "name": "ethereum.newaddress",
+      "description": "newAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.resendfailedipn",
+      "name": "ethereum.resendfailedipn",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.senderc20",
+      "name": "ethereum.senderc20",
+      "description": "sendERC20"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.senderc721",
+      "name": "ethereum.senderc721",
+      "description": "sendERC721"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.sendtransaction",
+      "name": "ethereum.sendtransaction",
+      "description": "sendTransaction"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.subscribeaddress",
+      "name": "ethereum.subscribeaddress",
+      "description": "Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.\n\nYou can choose one or more from following filter criterias\n\n| **Parameter** | **Description** |\n| --- | --- |\n| from | ethereum address |\n| to | ethereum address |\n| contractaddress | contract address |\n| tokenid | token id |\n\nYou also need to dpecify the parameter \"type\". you can choose between \\['ETH', 'ERC20', 'ERC721', null\\]"
+    },
+    {
+      "id": "openapi_chaingateway_io.ethereum.unsubscribeaddress",
+      "name": "ethereum.unsubscribeaddress",
+      "description": "Deletes an existing subscription/IPN for the given address (and contractaddress)."
+    },
+    {
+      "id": "openapi_chaingateway_io.market.getalltimehigh",
+      "name": "market.getalltimehigh",
+      "description": "getAllTimeHigh"
+    },
+    {
+      "id": "openapi_chaingateway_io.market.getalltimelow",
+      "name": "market.getalltimelow",
+      "description": "getAllTimeLow"
+    },
+    {
+      "id": "openapi_chaingateway_io.market.getcurrencies",
+      "name": "market.getcurrencies",
+      "description": "getCurrencies"
+    },
+    {
+      "id": "openapi_chaingateway_io.market.getpricedatabycurrency",
+      "name": "market.getpricedatabycurrency",
+      "description": "getPriceDataByCurrency"
+    },
+    {
+      "id": "openapi_chaingateway_io.market.getratebycurrency",
+      "name": "market.getratebycurrency",
+      "description": "getRateByCurrency"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.broadcasttransaction1",
+      "name": "polygon.broadcasttransaction1",
+      "description": "Broadcast raw transactions"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.deleteaddress1",
+      "name": "polygon.deleteaddress1",
+      "description": "deleteAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.exportaddress1",
+      "name": "polygon.exportaddress1",
+      "description": "exportAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getblock1",
+      "name": "polygon.getblock1",
+      "description": "Get information of a specific block"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.geterc201",
+      "name": "polygon.geterc201",
+      "description": "Get information about an ERC20 token"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.geterc20balance1",
+      "name": "polygon.geterc20balance1",
+      "description": "Get the balance of an ERC20 address"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getgasprice1",
+      "name": "polygon.getgasprice1",
+      "description": "Get gas price"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getlastblocknumber1",
+      "name": "polygon.getlastblocknumber1",
+      "description": "Get the latest block number"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getnftowner1",
+      "name": "polygon.getnftowner1",
+      "description": "Get the Owner of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getnfturi1",
+      "name": "polygon.getnfturi1",
+      "description": "Get the URI of an NFT"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.getpolygonbalance",
+      "name": "polygon.getpolygonbalance",
+      "description": "Get the balance of an address"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.gettransaction1",
+      "name": "polygon.gettransaction1",
+      "description": "Get info about a transaction\n\nYou can choose if you want to get the Transaction encoded or decoded by add /decoded to your request. See examlpes for details"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.gettransactionreceipt1",
+      "name": "polygon.gettransactionreceipt1",
+      "description": "Get info about a transaction receipt\n\nYou can choose if you want to get the Transaction encoded or decoded by add /decoded to your request. See examlpes for details"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.importaddress1",
+      "name": "polygon.importaddress1",
+      "description": "importAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.listaddresses1",
+      "name": "polygon.listaddresses1",
+      "description": "listAddresses"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.listfailedipns1",
+      "name": "polygon.listfailedipns1",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.listipnsbywebhookid1",
+      "name": "polygon.listipnsbywebhookid1",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.listsubscribedaddresses1",
+      "name": "polygon.listsubscribedaddresses1",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.listtransactionsbyaddress1",
+      "name": "polygon.listtransactionsbyaddress1",
+      "description": "Our API provides an endpoint for retrieving all transactions associated with a particular blockchain address. To use this endpoint, you will need to provide the wallet address as a parameter in the request.\n\nEach page of results returned by this endpoint contains up to 100 entries, and you can use a paginator to navigate through the pages of results.\n\nTo use the paginator, you can include parameter in your request: \"page\" . The \"page\" parameter specifies which page of results to retrieve,\n\nFor example, to retrieve the first 100 transactions associated with a particular blockchain address, you would make a request to the following URL:\n\n```\n/addresses//transactions/1\n\n```\n\nIf there are more than 100 transactions associated with the blockchain address, you can retrieve additional pages of results by incrementing the \"page\" parameter in your request. For example, to retrieve the next 100 transactions, you would make a request to the following URL:\n\n```\n/addresses//transactions/2\n```\n\nBy using the paginator, you can retrieve all transactions associated with a particular blockchain address, regardless of the total number of transactions in the blockchain.\n\neach request tells you the max pages within the Request in the **max_pages** field\n\n`\"max_pages\": 515`"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.newaddress1",
+      "name": "polygon.newaddress1",
+      "description": "newAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.resendfailedipn1",
+      "name": "polygon.resendfailedipn1",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.senderc201",
+      "name": "polygon.senderc201",
+      "description": "sendERC20"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.senderc7211",
+      "name": "polygon.senderc7211",
+      "description": "sendERC721"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.sendtransaction1",
+      "name": "polygon.sendtransaction1",
+      "description": "sendTransaction"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.subscribeaddress1",
+      "name": "polygon.subscribeaddress1",
+      "description": "Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.\n\nYou can choose one or more from following filter criterias\n\n| **Parameter** | **Description** |\n| --- | --- |\n| from | ethereum address |\n| to | ethereum address |\n| contractaddress | contract address |\n| tokenid | token id |\n\nYou also need to dpecify the parameter \"type\". you can choose between \\['ETH', 'ERC20', 'ERC721', null\\]"
+    },
+    {
+      "id": "openapi_chaingateway_io.polygon.unsubscribeaddress1",
+      "name": "polygon.unsubscribeaddress1",
+      "description": "Deletes an existing subscription/IPN for the given address (and contractaddress)."
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.getaccountresources",
+      "name": "tron.getaccountresources",
+      "description": "getAccountResources"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.getblock3",
+      "name": "tron.getblock3",
+      "description": "getBlock"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.getchainparameters",
+      "name": "tron.getchainparameters",
+      "description": "getChainParameters"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.getlastblocknumber3",
+      "name": "tron.getlastblocknumber3",
+      "description": "Get the latest block number"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.gettransaction3",
+      "name": "tron.gettransaction3",
+      "description": "You can get your transaction decoded by add /decoded to your api call. If you want to get the transaction encoded, youst remove the /decoded part"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.gettransactionreceipt3",
+      "name": "tron.gettransactionreceipt3",
+      "description": "You can get your transaction decoded by add /decoded to your api call. If you want to get the transaction encoded, youst remove the /decoded part"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.gettrc10balance",
+      "name": "tron.gettrc10balance",
+      "description": "getTRC10Balance"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.gettrc20balance",
+      "name": "tron.gettrc20balance",
+      "description": "getTRC20Balance"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.gettronbalance",
+      "name": "tron.gettronbalance",
+      "description": "getTronBalance"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.listfailedipns3",
+      "name": "tron.listfailedipns3",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.listsubscribedaddresses3",
+      "name": "tron.listsubscribedaddresses3",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.listtransactionsbyaddress3",
+      "name": "tron.listtransactionsbyaddress3",
+      "description": "Our API provides an endpoint for retrieving all transactions associated with a particular blockchain address. To use this endpoint, you will need to provide the wallet address as a parameter in the request.\n\nEach page of results returned by this endpoint contains up to 100 entries, and you can use a paginator to navigate through the pages of results.\n\nTo use the paginator, you can include parameter in your request: \"page\" . The \"page\" parameter specifies which page of results to retrieve,\n\nFor example, to retrieve the first 100 transactions associated with a particular blockchain address, you would make a request to the following URL:\n\n```\n/addresses//transactions/1\n\n```\n\nIf there are more than 100 transactions associated with the blockchain address, you can retrieve additional pages of results by incrementing the \"page\" parameter in your request. For example, to retrieve the next 100 transactions, you would make a request to the following URL:\n\n```\n/addresses//transactions/2\n```\n\nBy using the paginator, you can retrieve all transactions associated with a particular blockchain address, regardless of the total number of transactions in the blockchain.\n\neach request tells you the max pages within the Request in the **max_pages** field\n\n`\"max_pages\": 515`"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.newaddress3",
+      "name": "tron.newaddress3",
+      "description": "newAddress"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.resendfailedipn3",
+      "name": "tron.resendfailedipn3",
+      "description": "Returns all subscriptions/IPNs created with an account."
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.sendtransaction3",
+      "name": "tron.sendtransaction3",
+      "description": "sendTransaction"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.sendtrc10",
+      "name": "tron.sendtrc10",
+      "description": "sendTRC10"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.sendtrc20",
+      "name": "tron.sendtrc20",
+      "description": "sendTRC20"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.sendtrc721",
+      "name": "tron.sendtrc721",
+      "description": "sendTRC721"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.subscribeaddress3",
+      "name": "tron.subscribeaddress3",
+      "description": "Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.\r\n"
+    },
+    {
+      "id": "openapi_chaingateway_io.tron.unsubscribeaddress3",
+      "name": "tron.unsubscribeaddress3",
+      "description": "Deletes an existing subscription/IPN for the given address (and contractaddress)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

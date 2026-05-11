@@ -1,0 +1,932 @@
+{
+  "fetchedAt": "2026-04-30T15:26:52.357Z",
+  "status": "ok",
+  "count": 185,
+  "tools": [
+    {
+      "id": "openapi_trakt_tv.authenticationDevices.generateNewDeviceCodes",
+      "name": "authenticationDevices.generateNewDeviceCodes",
+      "description": "Generate new codes to start the device authentication process. The `device_code` and `interval` will be used later to poll for the `access_token`. The `user_code` and `verification_url` should be presented to the user as mentioned in the flow steps above.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `client_id` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |"
+    },
+    {
+      "id": "openapi_trakt_tv.authenticationDevices.pollForTheAccessToken",
+      "name": "authenticationDevices.pollForTheAccessToken",
+      "description": "Use the `device_code` and poll at the `interval` (in seconds) to check if the user has authorized you app. Use `expires_in` to stop polling after that many seconds, and gracefully instruct the user to restart the process. **It is important to poll at the correct interval and also stop polling when expired.**\n\nWhen you receive a `200` success response, save the `access_token` so your app can authenticate the user in methods that require it. The `access_token` is valid for 3 months. Save and use the `refresh_token` to get a new `access_token` without asking the user to re-authenticate. Check below for all the error codes that you should handle.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `code` <span style=\"color:red;\">*</a> | string | `device_code` from the initial method. |\n| `client_id` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |\n| `client_secret` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |\n\n####  Status Codes\n\nThis method will send various HTTP status codes that you should handle accordingly.\n\n| Code | Description |\n|---|---|\n| `200` | Success - *save the `access_token`*\n| `400` | Pending - *waiting for the user to authorize your app*\n| `404` | Not Found - *invalid `device_code`*\n| `409` | Already Used - *user already approved this code*\n| `410` | Expired - *the tokens have expired, restart the process*\n| `418` | Denied - *user explicitly denied this code*\n| `429` | Slow Down - *your app is polling too quickly*"
+    },
+    {
+      "id": "openapi_trakt_tv.authenticationOAuth.authorizeApplication",
+      "name": "authenticationOAuth.authorizeApplication",
+      "description": "Construct then redirect to this URL. The Trakt website will request permissions for your app, which the user needs to approve. If the user isn't signed into Trakt, it will ask them to do so. Send `signup=true` if you prefer the account sign up page to be the default.\n\n**Note:** You should use the normal **https://trakt.tv** hostname when creating this URL and not the API URL."
+    },
+    {
+      "id": "openapi_trakt_tv.authenticationOAuth.exchangeRefreshTokenForAccessToken",
+      "name": "authenticationOAuth.exchangeRefreshTokenForAccessToken",
+      "description": "Use the `refresh_token` to get a new `access_token` without asking the user to re-authenticate. The `access_token` is valid for 3 months before it needs to be refreshed again.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `refresh_token` <span style=\"color:red;\">*</a> | string | Saved from the initial token method. |\n| `client_id` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |\n| `client_secret` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |\n| `redirect_uri` <span style=\"color:red;\">*</a> | string | URI specified in your app settings. |\n| `grant_type` <span style=\"color:red;\">* </a> | string | `refresh_token` |"
+    },
+    {
+      "id": "openapi_trakt_tv.authenticationOAuth.revokeAnAccessToken",
+      "name": "authenticationOAuth.revokeAnAccessToken",
+      "description": "An `access_token` can be revoked when a user signs out of their Trakt account in your app. This is not required, but might improve the user experience so the user doesn't have an unused app connection hanging around.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `token` <span style=\"color:red;\">*</a> | string | A valid OAuth `access_token`. |\n| `client_id` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |\n| `client_secret` <span style=\"color:red;\">*</a> | string | Get this from your app settings. |"
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getCalendarsAllDvdStartDateDays",
+      "name": "calendars.getCalendarsAllDvdStartDateDays",
+      "description": "#### &#10024; Extended Info &#127898; Filters\n\nReturns all movies with a DVD release date during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getCalendarsAllMoviesStartDateDays",
+      "name": "calendars.getCalendarsAllMoviesStartDateDays",
+      "description": "#### &#10024; Extended Info &#127898; Filters\n\nReturns all movies with a release date during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getCalendarsAllShowsNewStartDateDays",
+      "name": "calendars.getCalendarsAllShowsNewStartDateDays",
+      "description": "#### &#10024; Extended Info &#127898; Filters\n\nReturns all new show premieres (season 1, episode 1) airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getCalendarsAllShowsPremieresStartDateDays",
+      "name": "calendars.getCalendarsAllShowsPremieresStartDateDays",
+      "description": "#### &#10024; Extended Info &#127898; Filters\n\nReturns all show premieres (any season, episode 1) airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getCalendarsAllShowsStartDateDays",
+      "name": "calendars.getCalendarsAllShowsStartDateDays",
+      "description": "#### &#10024; Extended Info &#127898; Filters\n\nReturns all shows airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getDvdReleases",
+      "name": "calendars.getDvdReleases",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info &#127898; Filters\n\nReturns all movies with a DVD release date during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getMovies",
+      "name": "calendars.getMovies",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info &#127898; Filters\n\nReturns all movies with a release date during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getNewShows",
+      "name": "calendars.getNewShows",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info &#127898; Filters\n\nReturns all new show premieres (season 1, episode 1) airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getSeasonPremieres",
+      "name": "calendars.getSeasonPremieres",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info &#127898; Filters\n\nReturns all show premieres (any season, episode 1) airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.calendars.getShows",
+      "name": "calendars.getShows",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info &#127898; Filters\n\nReturns all shows airing during the time period specified."
+    },
+    {
+      "id": "openapi_trakt_tv.certifications.getCertifications",
+      "name": "certifications.getCertifications",
+      "description": "Get a list of all certifications, including names, slugs, and descriptions."
+    },
+    {
+      "id": "openapi_trakt_tv.checkin.checkIntoAnItem",
+      "name": "checkin.checkIntoAnItem",
+      "description": "#### &#128274; OAuth Required\n\nCheck into a movie or episode. This should be tied to a user action to manually indicate they are watching something. The item will display as *watching* on the site, then automatically switch to *watched* status once the duration has elapsed. A unique history `id` (64-bit integer) will be returned and can be used to reference this checkin directly.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie` or `episode` object. (see examples &#8594;) |\n| `sharing`  | object | Control sharing to any connected social networks. (see below &#8595;) |\n| `message`  | string | Message used for sharing. If not sent, it will use the watching string in the user settings. |\n| `venue_id` | string | Foursquare venue ID. |\n| `venue_name` | string | Foursquare venue name. |\n| `app_version` | string | Version number of the app. |\n| `app_date` | string | Build date of the app. |\n\n#### Sharing\n\nThe `sharing` object is optional and will apply the user's settings if not sent. If `sharing` is sent, each key will override the user's setting for that social network. Send `true` to post or `false` to not post on the indicated social network. You can see which social networks a user has connected with the [**/users/settings**](/reference/users/settings) method.\n\n| Key | Type |\n|---|---|\n| `twitter` | boolean |\n| `tumblr` | boolean |\n\n**Note:** If a checkin is already in progress, a `409` HTTP status code will returned. The response will contain an `expires_at` timestamp which is when the user can check in again."
+    },
+    {
+      "id": "openapi_trakt_tv.checkin.deleteAnyActiveCheckins",
+      "name": "checkin.deleteAnyActiveCheckins",
+      "description": "#### &#128274; OAuth Required\n\nRemoves any active checkins, no need to provide a specific item."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.deleteACommentOrReply",
+      "name": "comments.deleteACommentOrReply",
+      "description": "#### &#128274; OAuth Required\n\nDelete a single comment. The OAuth user must match the author of the comment in order to delete it. If not, a `401` HTTP status code is returned. The comment must also be less than 2 weeks old or have 0 replies. If not, a `409` HTTP status is returned."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getACommentOrReply",
+      "name": "comments.getACommentOrReply",
+      "description": "####  &#128513; Emojis\n\nReturns a single comment and indicates how many replies it has. Use [**/comments/:id/replies**](/reference/comments/replies/) to get the actual replies."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getAllUsersWhoLikedAComment",
+      "name": "comments.getAllUsersWhoLikedAComment",
+      "description": "#### &#128196; Pagination\n\nReturns all users who liked a comment. If you only need the `replies` count, the main `comment` object already has that, so no need to use this method."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getRecentlyCreatedComments",
+      "name": "comments.getRecentlyCreatedComments",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#128513; Emojis\n\nReturns the most recently written comments across all of Trakt. You can optionally filter by the `comment_type` and media `type` to limit what gets returned. If you want to `include_replies` that will return replies in place alongside top level comments."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getRecentlyUpdatedComments",
+      "name": "comments.getRecentlyUpdatedComments",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#128513; Emojis\n\nReturns the most recently updated comments across all of Trakt. You can optionally filter by the `comment_type` and media `type` to limit what gets returned. If you want to `include_replies` that will return replies in place alongside top level comments."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getRepliesForAComment",
+      "name": "comments.getRepliesForAComment",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all replies for a comment. It is possible these replies could have replies themselves, so in that case you would just call [**/comments/:id/replies**](/reference/comments/replies/) again with the new comment `id`."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getTheAttachedMediaItem",
+      "name": "comments.getTheAttachedMediaItem",
+      "description": "#### &#10024; Extended Info\n\nReturns the media item this comment is attached to. The media type can be `movie`, `show`, `season`, `episode`, or `list` and it also returns the standard media object for that media type."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.getTrendingComments",
+      "name": "comments.getTrendingComments",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#128513; Emojis\n\nReturns all comments with the most likes and replies over the last 7 days. You can optionally filter by the `comment_type` and media `type` to limit what gets returned. If you want to `include_replies` that will return replies in place alongside top level comments."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.likeAComment",
+      "name": "comments.likeAComment",
+      "description": "#### &#128274; OAuth Required\n\nVotes help determine popular comments. Only one like is allowed per comment per user."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.postAComment",
+      "name": "comments.postAComment",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis\n\nAdd a new comment to a movie, show, season, episode, or list. Make sure to allow and encourage *spoilers* to be indicated in your app and follow the rules listed above.\n\n#### JSON POST Data\n\n| Key | Type | Default | Value |\n|---|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | | `movie`, `show`, `season`, `episode`, or `list` object. (see examples &#8594;) |\n| `comment` <span style=\"color:red;\">*</a> | string |  | Text for the comment. |\n| `spoiler` | boolean | `false` | Is this a spoiler? |\n| `sharing`  | object | | Control sharing to any connected social networks. (see below &#8595;) |\n\n#### Sharing\n\nThe `sharing` object is optional and will apply the user's settings if not sent. If `sharing` is sent, each key will override the user's setting for that social network. Send `true` to post or `false` to not post on the indicated social network. You can see which social networks a user has connected with the [**/users/settings**](/reference/users/settings) method.\n\n| Key | Type |\n|---|---|\n| `twitter` | boolean |\n| `tumblr` | boolean |\n| `medium` | boolean |"
+    },
+    {
+      "id": "openapi_trakt_tv.comments.postAReplyForAComment",
+      "name": "comments.postAReplyForAComment",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis\n\nAdd a new reply to an existing comment. Make sure to allow and encourage *spoilers* to be indicated in your app and follow the rules listed above.\n\n#### JSON POST Data\n\n| Key | Type | Default | Value |\n|---|---|---|---|\n| `comment` <span style=\"color:red;\">*</a> | string |  | Text for the reply. |\n| `spoiler` | boolean | `false` | Is this a spoiler? |"
+    },
+    {
+      "id": "openapi_trakt_tv.comments.removeLikeOnAComment",
+      "name": "comments.removeLikeOnAComment",
+      "description": "#### &#128274; OAuth Required\n\nRemove a like on a comment."
+    },
+    {
+      "id": "openapi_trakt_tv.comments.updateACommentOrReply",
+      "name": "comments.updateACommentOrReply",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis\n\nUpdate a single comment. The OAuth user must match the author of the comment in order to update it. If not, a `401` HTTP status is returned.\n\n#### JSON POST Data\n\n| Key | Type | Default | Value |\n|---|---|---|---|\n| `comment` | string |  | Text for the comment. |\n| `spoiler` | boolean | `false` | Is this a spoiler? |"
+    },
+    {
+      "id": "openapi_trakt_tv.countries.getCountries",
+      "name": "countries.getCountries",
+      "description": "Get a list of all countries, including names and codes."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getAllEpisodeComments",
+      "name": "episodes.getAllEpisodeComments",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for an episode. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, most `replies`, `highest` rated, `lowest` rated, and most `plays`."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getAllEpisodeTranslations",
+      "name": "episodes.getAllEpisodeTranslations",
+      "description": "Returns all translations for an episode, including language and translated values for title and overview."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getAllPeopleForAnEpisode",
+      "name": "episodes.getAllPeopleForAnEpisode",
+      "description": "#### &#10024; Extended Info\n\nReturns all `cast` and `crew` for an episode. Each `cast` member will have a `characters` array and a standard `person` object.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, and `editing` (if there are people for those crew positions). Each of those members will have a `jobs` array and a standard `person` object.\n\n#### Guest Stars\n\nIf you add `?extended=guest_stars` to the URL, it will return all guest stars that appeared in the episode.\n\n**Note:** This returns a lot of data, so please only use this extended parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getASingleEpisodeForAShow",
+      "name": "episodes.getASingleEpisodeForAShow",
+      "description": "#### &#10024; Extended Info\n\nReturns a single episode's details. All date and times are in UTC and were calculated using the episode's `air_date` and show's `country` and `air_time`.\n\n**Note:** If the `first_aired` is unknown, it will be set to `null`."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getEpisodeRatings",
+      "name": "episodes.getEpisodeRatings",
+      "description": "Returns rating (between 0 and 10) and distribution for an episode."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getEpisodeStats",
+      "name": "episodes.getEpisodeStats",
+      "description": "Returns lots of episode stats."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getListsContainingThisEpisode",
+      "name": "episodes.getListsContainingThisEpisode",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists that contain this episode. By default, `personal` lists are returned sorted by the most `popular`."
+    },
+    {
+      "id": "openapi_trakt_tv.episodes.getShowsIdSeasonsSeasonEpisodesEpisodeWatching",
+      "name": "episodes.getShowsIdSeasonsSeasonEpisodesEpisodeWatching",
+      "description": "#### &#10024; Extended Info\n\nReturns all users watching this episode right now."
+    },
+    {
+      "id": "openapi_trakt_tv.genres.getGenres",
+      "name": "genres.getGenres",
+      "description": "Get a list of all genres, including names and slugs."
+    },
+    {
+      "id": "openapi_trakt_tv.languages.getLanguages",
+      "name": "languages.getLanguages",
+      "description": "Get a list of all langauges, including names and codes."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getAllListComments",
+      "name": "lists.getAllListComments",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for a list. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, and most `replies`."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getAllUsersWhoLikedAList",
+      "name": "lists.getAllUsersWhoLikedAList",
+      "description": "#### &#128196; Pagination\n\nReturns all users who liked a list."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getItemsOnAList",
+      "name": "lists.getItemsOnAList",
+      "description": "#### &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nGet all items on a personal list. Items can be a `movie`, `show`, `season`, `episode`, or `person`. You can optionally specify the `type` parameter with a single value or comma delimited string for multiple item types.\n\n#### Notes\n\nEach list item contains a `notes` field with text entered by the user.\n\n#### Sorting Headers\n\nAll list items are sorted by ascending `rank`. We also send `X-Sort-By` and `X-Sort-How` headers which can be used to custom sort the list _**in your app**_ based on the user's preference. Values for `X-Sort-By` include `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, `votes`, `my_rating`, `random`, `watched`, and `collected`. Values for `X-Sort-How` include `asc` and `desc`."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getList",
+      "name": "lists.getList",
+      "description": "#### &#128513; Emojis\n\nReturns a single list. Use the [**/lists/:id/items**](#reference/lists/list-items) method to get the actual items this list contains.\n\n**Note:** You must use an integer `id`, and only public lists will return data."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getPopularLists",
+      "name": "lists.getPopularLists",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns the most popular lists. Popularity is calculated using total number of likes and comments."
+    },
+    {
+      "id": "openapi_trakt_tv.lists.getTrendingLists",
+      "name": "lists.getTrendingLists",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists with the most likes and comments over the last 7 days."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAllMovieAliases",
+      "name": "movies.getAllMovieAliases",
+      "description": "Returns all title aliases for a movie.  Includes country where name is different."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAllMovieComments",
+      "name": "movies.getAllMovieComments",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for a movie. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, most `replies`, `highest` rated, `lowest` rated, and most `plays`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAllMovieReleases",
+      "name": "movies.getAllMovieReleases",
+      "description": "Returns all releases for a movie including country, certification, release date, release type, and note. The release type can be set to `unknown`, `premiere`, `limited`, `theatrical`, `digital`, `physical`, or `tv`. The `note` might have optional info such as the film festival name for a `premiere` release or Blu-ray specs for a `physical` release. We pull this info from [TMDB](https://developers.themoviedb.org/3/movies/get-movie-release-dates)."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAllMovieTranslations",
+      "name": "movies.getAllMovieTranslations",
+      "description": "Returns all translations for a movie, including language and translated values for title, tagline and overview."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAllPeopleForAMovie",
+      "name": "movies.getAllPeopleForAMovie",
+      "description": "#### &#10024; Extended Info\n\nReturns all `cast` and `crew` for a movie. Each `cast` member will have a `characters` array and a standard `person` object.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, and `editing` (if there are people for those crew positions). Each of those members will have a `jobs` array and a standard `person` object."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getAMovie",
+      "name": "movies.getAMovie",
+      "description": "#### &#10024; Extended Info\n\nReturns a single movie's details.\n\n**Note:** When getting `full` extended info, the `status` field can have a value of `released`, `in production`, `post production`, `planned`, `rumored`, or `canceled`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getListsContainingThisMovie",
+      "name": "movies.getListsContainingThisMovie",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists that contain this movie. By default, `personal` lists are returned sorted by the most `popular`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getMovieRatings",
+      "name": "movies.getMovieRatings",
+      "description": "Returns rating (between 0 and 10) and distribution for a movie."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getMovieStats",
+      "name": "movies.getMovieStats",
+      "description": "Returns lots of movie stats."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getMovieStudios",
+      "name": "movies.getMovieStudios",
+      "description": "Returns all studios for a movie."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getPopularMovies",
+      "name": "movies.getPopularMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most popular movies. Popularity is calculated using the rating percentage and the number of ratings."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getRecentlyUpdatedMovies",
+      "name": "movies.getRecentlyUpdatedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nReturns all movies updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getRecentlyUpdatedMovieTraktIDs",
+      "name": "movies.getRecentlyUpdatedMovieTraktIDs",
+      "description": "#### &#128196; Pagination\n\nReturns all movie Trakt IDs updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getRelatedMovies",
+      "name": "movies.getRelatedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nReturns related and similar movies."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheMostAnticipatedMovies",
+      "name": "movies.getTheMostAnticipatedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most anticipated movies based on the number of lists a movie appears on."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheMostCollectedMovies",
+      "name": "movies.getTheMostCollectedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most collected (unique users) movies in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheMostPlayedMovies",
+      "name": "movies.getTheMostPlayedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most played (a single user can watch multiple times) movies in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheMostRecommendedMovies",
+      "name": "movies.getTheMostRecommendedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most recommended movies in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheMostWatchedMovies",
+      "name": "movies.getTheMostWatchedMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most watched (unique users) movies in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTheWeekendBoxOffice",
+      "name": "movies.getTheWeekendBoxOffice",
+      "description": "#### &#10024; Extended Info\n\nReturns the top 10 grossing movies in the U.S. box office last weekend. Updated every Monday morning."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getTrendingMovies",
+      "name": "movies.getTrendingMovies",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns all movies being watched right now. Movies with the most users are returned first."
+    },
+    {
+      "id": "openapi_trakt_tv.movies.getUsersWatchingRightNow",
+      "name": "movies.getUsersWatchingRightNow",
+      "description": "#### &#10024; Extended Info\n\nReturns all users watching this movie right now."
+    },
+    {
+      "id": "openapi_trakt_tv.networks.getNetworks",
+      "name": "networks.getNetworks",
+      "description": "Get a list of all TV networks, including the name."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getASinglePerson",
+      "name": "people.getASinglePerson",
+      "description": "#### &#10024; Extended Info\n\nReturns a single person's details.\n\n#### Gender\n\nIf available, the `gender` property will be set to `male`, `female`, or `non_binary`.\n\n#### Known For Department\n\nIf available, the `known_for_department` property will be set to `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, or `editing`. Many people have credits across departments, `known_for` allows you to select their default credits more accurately."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getListsContainingThisPerson",
+      "name": "people.getListsContainingThisPerson",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists that contain this person. By default, `personal` lists are returned sorted by the most `popular`."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getMovieCredits",
+      "name": "people.getMovieCredits",
+      "description": "#### &#10024; Extended Info\n\nReturns all movies where this person is in the `cast` or `crew`. Each `cast` object will have a `characters` array and a standard `movie` object.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, and `editing` (if there are people for those crew positions). Each of those members will have a `jobs` array and a standard `movie` object."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getRecentlyUpdatedPeople",
+      "name": "people.getRecentlyUpdatedPeople",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nReturns all people updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getRecentlyUpdatedPeopleTraktIDs",
+      "name": "people.getRecentlyUpdatedPeopleTraktIDs",
+      "description": "#### &#128196; Pagination\n\nReturns all people Trakt IDs updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.people.getShowCredits",
+      "name": "people.getShowCredits",
+      "description": "#### &#10024; Extended Info\n\nReturns all shows where this person is in the `cast` or `crew`, including the `episode_count` for which they appear. Each `cast` object will have a `characters` array and a standard `show` object. If `series_regular` is `true`, this person is a series regular and not simply a guest star.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, `editing`, and `created  by` (if there are people for those crew positions). Each of those members will have a `jobs` array and a standard `show` object."
+    },
+    {
+      "id": "openapi_trakt_tv.recommendations.getMovieRecommendations",
+      "name": "recommendations.getMovieRecommendations",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nMovie recommendations for a user. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page. Set `ignore_collected=true` to filter out movies the user has already collected or `ignore_watchlisted=true` to filter out movies the user has already watchlisted."
+    },
+    {
+      "id": "openapi_trakt_tv.recommendations.getShowRecommendations",
+      "name": "recommendations.getShowRecommendations",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nTV show recommendations for a user. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page. Set `ignore_collected=true` to filter out shows the user has already collected or `ignore_watchlisted=true` to filter out shows the user has already watchlisted."
+    },
+    {
+      "id": "openapi_trakt_tv.recommendations.hideAMovieRecommendation",
+      "name": "recommendations.hideAMovieRecommendation",
+      "description": "#### &#128274; OAuth Required\n\nHide a movie from getting recommended anymore."
+    },
+    {
+      "id": "openapi_trakt_tv.recommendations.hideAShowRecommendation",
+      "name": "recommendations.hideAShowRecommendation",
+      "description": "#### &#128274; OAuth Required\n\nHide a show from getting recommended anymore."
+    },
+    {
+      "id": "openapi_trakt_tv.scrobble.pauseWatchingInAMediaCenter",
+      "name": "scrobble.pauseWatchingInAMediaCenter",
+      "description": "#### &#128274; OAuth Required\n\nUse this method when the video is paused. The playback progress will be saved and [**/sync/playback**](/reference/sync/playback/) can be used to resume the video from this exact position. Unpause a video by calling the [**/scrobble/start**](/reference/scrobble/start/) method again.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie` or `episode` object. (see examples &#8594;) |\n| `progress` <span style=\"color:red;\">*</a> | float | Progress percentage between 0 and 100. |\n| `app_version` | string | Version number of the app. |\n| `app_date` | string | Build date of the app. |"
+    },
+    {
+      "id": "openapi_trakt_tv.scrobble.startWatchingInAMediaCenter",
+      "name": "scrobble.startWatchingInAMediaCenter",
+      "description": "#### &#128274; OAuth Required\n\nUse this method when the video initially starts playing or is unpaused. This will remove any playback progress if it exists.\n\n**Note:** A watching status will auto expire after the remaining runtime has elapsed. There is no need to call this method again while continuing to watch the same item.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie` or `episode` object. (see examples &#8594;) |\n| `progress` <span style=\"color:red;\">*</a> | float | Progress percentage between 0 and 100. |\n| `app_version` | string | Version number of the app. |\n| `app_date` | string | Build date of the app. |"
+    },
+    {
+      "id": "openapi_trakt_tv.scrobble.stopOrFinishWatchingInAMediaCenter",
+      "name": "scrobble.stopOrFinishWatchingInAMediaCenter",
+      "description": "#### &#128274; OAuth Required\n\nUse this method when the video is stopped or finishes playing on its own. If the progress is above 80%, the video will be scrobbled and the `action` will be set to **scrobble**. A unique history `id` (64-bit integer) will be returned and can be used to reference this `scrobble` directly.\n\nIf the progress is less than 80%, it will be treated as a *pause* and the `action` will be set to **pause**. The playback progress will be saved and [**/sync/playback**](/reference/sync/playback/) can be used to resume the video from this exact position.\n\n**Note:** If you prefer to use a threshold higher than 80%, you should use [**/scrobble/pause**](/reference/scrobble/pause/) yourself so it doesn't create duplicate scrobbles.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie` or `episode` object. (see examples &#8594;) |\n| `progress` <span style=\"color:red;\">*</a> | flloat | Progress percentage between 0 and 100. |\n| `app_version` | string | Version number of the app. |\n| `app_date` | string | Build date of the app. |\n\n**Note:** If the same item was just scrobbled, a `409` HTTP status code will returned to avoid scrobbling a duplicate. The response will contain a `watched_at` timestamp when the item was last scrobbled and a `expires_at` timestamp when the item can be scrobbled again."
+    },
+    {
+      "id": "openapi_trakt_tv.search.getIdLookupResults",
+      "name": "search.getIdLookupResults",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nLookup items by their Trakt, IMDB, TMDB, or TVDB ID. If you use the search url without a `type` it might return multiple items if the `id_type` is not globally unique. Specify the `type` of results by sending a single value or a comma delimited string for multiple types.\n\n| Type | URL |\n|---|---|\n| `trakt` | `/search/trakt/:id` |\n|  | `/search/trakt/:id?type=movie` |\n|  | `/search/trakt/:id?type=show` |\n|  | `/search/trakt/:id?type=episode` |\n|  | `/search/trakt/:id?type=person` |\n| `imdb` | `/search/imdb/:id` |\n| `tmdb` | `/search/tmdb/:id` |\n|  | `/search/tmdb/:id?type=movie` |\n|  | `/search/tmdb/:id?type=show` |\n|  | `/search/tmdb/:id?type=episode` |\n|  | `/search/tmdb/:id?type=person` |\n| `tvdb` | `/search/tvdb/:id` |\n|  | `/search/tvdb/:id?type=show` |\n|  | `/search/tvdb/:id?type=episode` |"
+    },
+    {
+      "id": "openapi_trakt_tv.search.getTextQueryResults",
+      "name": "search.getTextQueryResults",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nSearch all text fields that a media object contains (i.e. title, overview, etc). Results are ordered by the most relevant score. Specify the `type` of results by sending a single value or a comma delimited string for multiple types.\n\n#### Special Characters\n\nOur search engine (Solr) gives the following characters special meaning when they appear in a query:\n\n`+ - && || ! ( ) { } [ ] ^ \" ~ * ? : /`\n\nTo interpret any of these characters literally (and not as a special character), precede the character with a backslash `\\` character.\n\n#### Search Fields\n\nBy default, all text fields are used to search for the `query`. You can optionally specify the `fields` parameter with a single value or comma delimited string for multiple fields. Each `type` has specific `fields` that can be specified. This can be useful if you want to support more strict searches (i.e. title only).\n\n| Type | Field |\n|---|---|\n| `movie` | `title` |\n|  | `tagline` |\n|  | `overview` |\n|  | `people` |\n|  | `translations` |\n|  | `aliases` |\n| `show` | `title` |\n|  | `overview` |\n|  | `people` |\n|  | `translations` |\n|  | `aliases` |\n| `episode` | `title` |\n|  | `overview` |\n| `person` | `name` |\n|  | `biography` |\n| `list` | `name` |\n|  | `description` |"
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getAllPeopleForASeason",
+      "name": "seasons.getAllPeopleForASeason",
+      "description": "#### &#10024; Extended Info\n\nReturns all `cast` and `crew` for a season, including the `episode_count` for which they appear. Each `cast` member will have a `characters` array and a standard `person` object.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, and `editing` (if there are people for those crew positions).. Each of those members will have a `jobs` array and a standard `person` object.\n\n#### Guest Stars\n\nIf you add `?extended=guest_stars` to the URL, it will return all guest stars that appeared in at least 1 episode of the season.\n\n**Note:** This returns a lot of data, so please only use this extended parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getAllSeasonComments",
+      "name": "seasons.getAllSeasonComments",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for a season. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, most `replies`, `highest` rated, `lowest` rated, most `plays`, and highest `watched` percentage."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getAllSeasonsForAShow",
+      "name": "seasons.getAllSeasonsForAShow",
+      "description": "#### &#10024; Extended Info\n\nReturns all seasons for a show including the number of episodes in each season.\n\n#### Episodes\n\nIf you add `?extended=episodes` to the URL, it will return all episodes for all seasons.\n\n**Note:** This returns a lot of data, so please only use this extended parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getAllSeasonTranslations",
+      "name": "seasons.getAllSeasonTranslations",
+      "description": "Returns all translations for an season, including language and translated values for title and overview."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getListsContainingThisSeason",
+      "name": "seasons.getListsContainingThisSeason",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists that contain this season. By default, `personal` lists are returned sorted by the most `popular`."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getSeasonRatings",
+      "name": "seasons.getSeasonRatings",
+      "description": "Returns rating (between 0 and 10) and distribution for a season."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getSeasonStats",
+      "name": "seasons.getSeasonStats",
+      "description": "Returns lots of season stats."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getShowsIdSeasonsSeasonWatching",
+      "name": "seasons.getShowsIdSeasonsSeasonWatching",
+      "description": "#### &#10024; Extended Info\n\nReturns all users watching this season right now."
+    },
+    {
+      "id": "openapi_trakt_tv.seasons.getSingleSeasonForAShow",
+      "name": "seasons.getSingleSeasonForAShow",
+      "description": "#### &#10024; Extended Info\n\nReturns all episodes for a specific season of a show.\n\n#### Translations\n\nIf you'd like to included translated episode titles and overviews in the response, include the `translations` parameter in the URL. Include all languages by setting the parameter to `all` or use a specific 2 digit country language code to further limit it.\n\n**Note:** This returns a lot of data, so please only use this parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getAllPeopleForAShow",
+      "name": "shows.getAllPeopleForAShow",
+      "description": "#### &#10024; Extended Info\n\nReturns all `cast` and `crew` for a show, including the `episode_count` for which they appears. Each `cast` member will have a `characters` array and a standard `person` object.\n\nThe `crew` object will be broken up by department into `production`, `art`, `crew`, `costume & make-up`, `directing`, `writing`, `sound`, `camera`, `visual effects`, `lighting`, `editing`, and `created  by` (if there are people for those crew positions). Each of those members will have a `jobs` array and a standard `person` object.\n\n#### Guest Stars\n\nIf you add `?extended=guest_stars` to the URL, it will return all guest stars that appeared in at least 1 episode of the show.\n\n**Note:** This returns a lot of data, so please only use this extended parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getAllShowAliases",
+      "name": "shows.getAllShowAliases",
+      "description": "Returns all title aliases for a show.  Includes country where name is different."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getAllShowCertifications",
+      "name": "shows.getAllShowCertifications",
+      "description": "Returns all content certifications for a show, including the country."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getAllShowComments",
+      "name": "shows.getAllShowComments",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for a show. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, most `replies`, `highest` rated, `lowest` rated, most `plays`, and highest `watched` percentage."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getAllShowTranslations",
+      "name": "shows.getAllShowTranslations",
+      "description": "Returns all translations for a show, including language and translated values for title and overview."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getASingleShow",
+      "name": "shows.getASingleShow",
+      "description": "#### &#10024; Extended Info\n\nReturns a single shows's details. If you request extended info, the `airs` object is relative to the show's country. You can use the `day`, `time`, and `timezone` to construct your own date then convert it to whatever timezone your user is in.\n\n**Note:** When getting `full` extended info, the `status` field can have a value of `returning series` (airing right now),  `continuing` (airing right now), `in production` (airing soon), `planned` (in development), `upcoming` (in development),  `pilot`, `canceled`, or `ended`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getLastEpisode",
+      "name": "shows.getLastEpisode",
+      "description": "#### &#10024; Extended Info\n\nReturns the most recently aired episode. If no episode is found, a `204` HTTP status code will be returned."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getListsContainingThisShow",
+      "name": "shows.getListsContainingThisShow",
+      "description": "#### &#128196; Pagination &#128513; Emojis\n\nReturns all lists that contain this show. By default, `personal` lists are returned sorted by the most `popular`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getNextEpisode",
+      "name": "shows.getNextEpisode",
+      "description": "#### &#10024; Extended Info\n\nReturns the next scheduled to air episode. If no episode is found, a `204` HTTP status code will be returned."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getPopularShows",
+      "name": "shows.getPopularShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most popular shows. Popularity is calculated using the rating percentage and the number of ratings."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getRecentlyUpdatedShows",
+      "name": "shows.getRecentlyUpdatedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nReturns all shows updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getRecentlyUpdatedShowTraktIDs",
+      "name": "shows.getRecentlyUpdatedShowTraktIDs",
+      "description": "#### &#128196; Pagination\n\nReturns all show Trakt IDs updated since the specified UTC date and time. We recommended storing the `X-Start-Date` header you can be efficient using this method moving forward. By default, `10` results are returned. You can send a `limit` to get up to `100` results per page.\n\n**Important!** The `start_date` is only accurate to the hour, for caching purposes. Please drop the minutes and seconds from your timestamp to help optimize our cached data. For example, use `2021-07-17T12:00:00Z` and not `2021-07-17T12:23:34Z`.\n\n**Note:** The `start_date` can only be a maximum of 30 days in the past."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getRelatedShows",
+      "name": "shows.getRelatedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info\n\nReturns related and similar shows."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowCollectionProgress",
+      "name": "shows.getShowCollectionProgress",
+      "description": "#### &#128274; OAuth Required\n\nReturns collection progress for a show including details on all aired seasons and episodes. The `next_episode` will be the next episode the user should collect, if there are no upcoming episodes it will be set to `null`.\n\nBy default, any hidden seasons will be removed from the response and stats. To include these and adjust the completion stats, set the `hidden` flag to `true`.\n\nBy default, specials will be excluded from the response. Set the `specials` flag to `true` to include season 0 and adjust the stats accordingly. If you'd like to include specials, but not adjust the stats, set `count_specials` to `false`.\n\nBy default, the `last_episode` and `next_episode` are calculated using the last `aired` episode the user has collected, even if they've collected older episodes more recently. To use their last collected episode for these calculations, set the `last_activity` flag to `collected`.\n\n**Note:** Only aired episodes are used to calculate progress. Episodes in the future or without an air date are ignored."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowRatings",
+      "name": "shows.getShowRatings",
+      "description": "Returns rating (between 0 and 10) and distribution for a show."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowsIdWatching",
+      "name": "shows.getShowsIdWatching",
+      "description": "#### &#10024; Extended Info\n\nReturns all users watching this show right now."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowStats",
+      "name": "shows.getShowStats",
+      "description": "Returns lots of show stats."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowStudios",
+      "name": "shows.getShowStudios",
+      "description": "Returns all studios for a show."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getShowWatchedProgress",
+      "name": "shows.getShowWatchedProgress",
+      "description": "#### &#128274; OAuth Required\n\nReturns watched progress for a show including details on all aired seasons and episodes. The `next_episode` will be the next episode the user should watch, if there are no upcoming episodes it will be set to `null`. If not `null`, the `reset_at` date is when the user started re-watching the show. Your app can adjust the progress by ignoring episodes with a `last_watched_at` prior to the `reset_at`.\n\nBy default, any hidden seasons will be removed from the response and stats. To include these and adjust the completion stats, set the `hidden` flag to `true`.\n\nBy default, specials will be excluded from the response. Set the `specials` flag to `true` to include season 0 and adjust the stats accordingly. If you'd like to include specials, but not adjust the stats, set `count_specials` to `false`.\n\nBy default, the `last_episode` and `next_episode` are calculated using the last `aired` episode the user has watched, even if they've watched older episodes more recently. To use their last watched episode for these calculations, set the `last_activity` flag to `watched`.\n\n**Note:** Only aired episodes are used to calculate progress. Episodes in the future or without an air date are ignored."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTheMostAnticipatedShows",
+      "name": "shows.getTheMostAnticipatedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most anticipated shows based on the number of lists a show appears on."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTheMostCollectedShows",
+      "name": "shows.getTheMostCollectedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most collected (unique users) shows in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTheMostPlayedShows",
+      "name": "shows.getTheMostPlayedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most played (a single user can watch multiple episodes multiple times) shows in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTheMostRecommendedShows",
+      "name": "shows.getTheMostRecommendedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most recommended shows in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTheMostWatchedShows",
+      "name": "shows.getTheMostWatchedShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns the most watched (unique users) shows in the specified time `period`, defaulting to `weekly`. All stats are relative to the specific time `period`."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.getTrendingShows",
+      "name": "shows.getTrendingShows",
+      "description": "#### &#128196; Pagination &#10024; Extended Info &#127898; Filters\n\nReturns all shows being watched right now. Shows with the most users are returned first."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.resetShowProgress",
+      "name": "shows.resetShowProgress",
+      "description": "#### &#128274; OAuth Required 🔥 VIP Only\n\nReset a show's progress when the user started re-watching the show. You can optionally specify the `reset_at` date to have it calculate progress from that specific date onwards."
+    },
+    {
+      "id": "openapi_trakt_tv.shows.undoResetShowProgress",
+      "name": "shows.undoResetShowProgress",
+      "description": "#### &#128274; OAuth Required 🔥 VIP Only\n\nUndo the reset and have watched progress use all watched history for the show."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.addItemsToCollection",
+      "name": "sync.addItemsToCollection",
+      "description": "#### &#128274; OAuth Required\n\nAdd items to a user's collection. Accepts shows, seasons, episodes and movies. If only a show is passed, all episodes for the show will be collected. If seasons are specified, all episodes in those seasons will be collected.\n\nSend a `collected_at` UTC datetime to mark items as collected in the past. You can also send additional metadata about the media itself to have a very accurate collection. Showcase what is available to watch from your epic HD DVD collection down to your downloaded iTunes movies.\n\n**Note:** You can resend items already in your collection and they will be updated with any new values. This includes the `collected_at` and any other metadata.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n\n#### Media Object POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie`, `show`, or `episode` object. |\n| `collected_at` | datetime | UTC datetime when the item was collected. Set to `released` to automatically use the inital release date + runtime *(episodes only)*). |\n| `media_type` | string | Set to `digital`, `bluray`, `hddvd`, `dvd`, `vcd`, `vhs`, `betamax`, or `laserdisc`. |\n| `resolution` | string | Set to `uhd_4k`, `hd_1080p`, `hd_1080i`, `hd_720p`, `sd_480p`, `sd_480i`, `sd_576p`, or `sd_576i`. |\n| `hdr` | string | Set to `dolby_vision`, `hdr10`, `hdr10_plus`, or `hlg`. |\n| `audio` | string | Set to `dolby_digital`, `dolby_digital_plus`, `dolby_digital_plus_atmos`, `dolby_truehd`, `dolby_atmos` *(Dolby TrueHD Atmos)*, `dolby_prologic`, `dts`, `dts_ma`, `dts_hr`, `dts_x`, `auro_3d`, `mp3`, `mp2`, `aac`, `lpcm`, `ogg` *(Ogg Vorbis)*, `ogg_opus`, `wma`, or `flac`. |\n| `audio_channels` | string | Set to `1.0`, `2.0`, `2.1`, `3.0`, `3.1`, `4.0`, `4.1`, `5.0`, `5.1`, `5.1.2`, `5.1.4`, `6.1`, `7.1`, `7.1.2`, `7.1.4`, `9.1`, or `10.1` |\n| `3d` | boolean | Set `true` if in 3D. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.addItemsToPersonalRecommendations",
+      "name": "sync.addItemsToPersonalRecommendations",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis\n\nIf the user only had 50 movies and TV shows to bring with them on a desert island, what would they be? These recommendations are used to enchance Trakt's social recommendation algorithm. Apps should encourage user's to build their personal recommendations so the algorithm keeps getting better.\n\n#### Notes\n\nEach recommendation can optionally accept a `notes` *(255 maximum characters)* field explaining why the user recommended the item.\n\n#### Limits\n\nIf the user has recommended 50 items already, a `420` HTTP error code is returned. This limit applies to all users.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.addItemsToWatchedHistory",
+      "name": "sync.addItemsToWatchedHistory",
+      "description": "#### &#128274; OAuth Required\n\nAdd items to a user's watch history. Accepts shows, seasons, episodes and movies. If only a show is passed, all episodes for the show will be added. If seasons are specified, only episodes in those seasons will be added.\n\nSend a `watched_at` UTC datetime to mark items as watched in the past. This is useful for syncing past watches from a media center.\n\n**Note:** Please be careful with sending duplicate data. We don't verify the `item` + `watched_at` to ensure it's unique, it is up to your app to veify this and not send duplicate plays.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n\n#### Media Object POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie`, `show`, or `episode` object. |\n| `watched_at` | datetime | UTC datetime when the item was watched. Set to `released` to automatically use the initial release date + runtime *(episodes only)*. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.addItemsToWatchlist",
+      "name": "sync.addItemsToWatchlist",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis 🔥 VIP Enhanced\n\nAdd one of more items to a user's watchlist. Accepts shows, seasons, episodes and movies. If only a show is passed, only the show itself will be added. If seasons are specified, all of those seasons will be added.\n\n#### Notes\n\nEach watchlist item can optionally accept a `notes` *(255 maximum characters)* field with custom text. The user must be a [**Trakt VIP**](https://trakt.tv/vip) to send `notes`.\n\n#### Limits\n\nIf the user's watchlist limit is exceeded, a `420` HTTP error code is returned. Use the [**/users/settings**](/reference/users/settings) method to get all limits for a user account. In most cases, upgrading to [**Trakt VIP**](https://trakt.tv/vip) will increase the limits.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.addNewRatings",
+      "name": "sync.addNewRatings",
+      "description": "#### &#128274; OAuth Required\n\nRate one or more items. Accepts shows, seasons, episodes and movies. If only a show is passed, only the show itself will be rated. If seasons are specified, all of those seasons will be rated.\n\nSend a `rated_at` UTC datetime to mark items as rated in the past. This is useful for syncing ratings from a media center.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n\n#### Media Object POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| item <span style=\"color:red;\">*</a> | object | `movie`, `show`, `season`, or `episode` object. |\n| `rating` <span style=\"color:red;\">*</a> | integer | Between 1 and 10. |\n| `rated_at` | datetime | UTC datetime when the item was rated. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getCollection",
+      "name": "sync.getCollection",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nGet all collected items in a user's collection. A collected item indicates availability to watch digitally or on physical media.\n\nEach `movie` object contains `collected_at` and `updated_at` timestamps. Since users can set custom dates when they collected movies, it is possible for `collected_at` to be in the past. We also include `updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the movie if you see a newer timestamp.\n\nEach `show` object contains `last_collected_at` and `last_updated_at` timestamps. Since users can set custom dates when they collected episodes, it is possible for `last_collected_at` to be in the past. We also include `last_updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the show if you see a newer timestamp.\n\nIf you add `?extended=metadata` to the URL, it will return the additional `media_type`, `resolution`, `hdr`, `audio`, `audio_channels` and '3d' metadata. It will use `null` if the metadata isn't set for an item."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getLastActivity",
+      "name": "sync.getLastActivity",
+      "description": "#### &#128274; OAuth Required\n\nThis method is a useful first step in the syncing process. We recommended caching these dates locally, then you can compare to know exactly what data has changed recently. This can greatly optimize your syncs so you don't pull down a ton of data only to see nothing has actually changed.\n\n#### Account\n\n`settings_at` is set when the OAuth user updates any of their Trakt settings on the website. `followed_at` is set when another Trakt user follows or unfollows the OAuth user. `following_at` is set when the OAuth user follows or unfollows another Trakt user. `pending_at` is set when the OAuth user follows a private account, which requires their approval. `requested_at` is set when the OAuth user has a private account and someone requests to follow them."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getPersonalRecommendations",
+      "name": "sync.getPersonalRecommendations",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nIf the user only had 50 movies and TV shows to bring with them on a desert island, what would they be? These recommendations are used to enchance Trakt's social recommendation algorithm. Apps should encourage user's to build their personal recommendations so the algorithm keeps getting better.\n\n#### Notes\n\nEach recommendation contains a `notes` field explaining why the user recommended the item."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getPlaybackProgress",
+      "name": "sync.getPlaybackProgress",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination Optional\n\nWhenever a scrobble is paused, the playback progress is saved. Use this progress to sync up playback across different media centers or apps. For example, you can start watching a movie in a media center, stop it, then resume on your tablet from the same spot. Each item will have the `progress` percentage between 0 and 100.\n\nYou can optionally specify a `type` to only get `movies` or `episodes`.\n\nBy default, all results will be returned. Pagination is optional and can be used for something like an \"on deck\" feature, or if you only need a limited data set.\n\n**Note:** We only save playback progress for the last 6 months."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getRatings",
+      "name": "sync.getRatings",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination Optional &#10024; Extended Info\n\nGet a user's ratings filtered by `type`. You can optionally filter for a specific `rating` between 1 and 10. Send a comma separated string for `rating` if you need multiple ratings."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getWatched",
+      "name": "sync.getWatched",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nReturns all movies or shows a user has watched sorted by most plays.\n\nIf `type` is set to _shows_ and you add `?extended=noseasons` to the URL, it won't return season or episode info.\n\nEach `movie` and `show` object contains `last_watched_at` and `last_updated_at` timestamps. Since users can set custom dates when they watched movies and episodes, it is possible for `last_watched_at` to be in the past. We also include `last_updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the movies and shows if you see a newer timestamp.\n\nEach `show` object contains a `reset_at` timestamp. If not `null`, this is when the user started re-watching the show. Your app can adjust the progress by ignoring episodes with a `last_watched_at` prior to the `reset_at`."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getWatchedHistory",
+      "name": "sync.getWatchedHistory",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination &#10024; Extended Info\n\nReturns movies and episodes that a user has watched, sorted by most recent. You can optionally limit the `type` to `movies` or `episodes`. The `id` _(64-bit integer)_ in each history item uniquely identifies the event and can be used to remove individual events by using the [**/sync/history/remove**](#reference/sync/remove-from-history/get-watched-history) method. The `action` will be set to `scrobble`, `checkin`, or `watch`.\n\nSpecify a `type` and trakt `id` to limit the history for just that item. If the `id` is valid, but there is no history, an empty array will be returned.\n\n| Example URL | Returns watches for... |\n|---|---|\n| `/history/movies/12601` | TRON: Legacy |\n| `/history/shows/1388` | All episodes of Breaking Bad |\n| `/history/seasons/3950` | All episodes of Breaking Bad: Season 1 |\n| `/history/episodes/73482` | Only episode 1 for Breaking Bad: Season 1 |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.getWatchlist",
+      "name": "sync.getWatchlist",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nReturns all items in a user's watchlist filtered by type.\n\n#### Notes\n\nEach watchlist item contains a `notes` field with text entered by the user.\n\n#### Sorting Headers\n\nBy default, all list items are sorted by `rank` `asc`. We send `X-Applied-Sort-By` and `X-Applied-Sort-How` headers to indicate how the results are actually being sorted.\n\nWe also send `X-Sort-By` and `X-Sort-How` headers which indicate the user's sort preference. Use these to to custom sort the watchlist _**in your app**_ for more advanced sort abilities we can't do in the API. Values for `X-Sort-By` include `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, and `votes`. Values for `X-Sort-How` include `asc` and `desc`.\n\n#### Auto Removal\n\nWhen an item is watched, it will be automatically removed from the watchlist. For shows and seasons, watching 1 episode will remove the entire show or season.\n\n_**The watchlist should not be used as a list of what the user is actively watching.**_\n\nUse a combination of the [**/sync/watched**](/reference/sync/get-watched) and [**/shows/:id/progress**](/reference/shows/watched-progress) methods to get what the user is actively watching."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeAPlaybackItem",
+      "name": "sync.removeAPlaybackItem",
+      "description": "#### &#128274; OAuth Required\n\nRemove a playback item from a user's playback progress list. A `404` will be returned if the `id` is invalid."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeItemsFromCollection",
+      "name": "sync.removeItemsFromCollection",
+      "description": "#### &#128274; OAuth Required\n\nRemove one or more items from a user's collection.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeItemsFromHistory",
+      "name": "sync.removeItemsFromHistory",
+      "description": "#### &#128274; OAuth Required\n\nRemove items from a user's watch history including all watches, scrobbles, and checkins. Accepts shows, seasons, episodes and movies. If only a show is passed, all episodes for the show will be removed. If seasons are specified, only episodes in those seasons will be removed.\n\nYou can also send a list of raw history `ids` _(64-bit integers)_ to delete single plays from the watched history. The [**/sync/history**](#reference/sync/get-history) method will return an individual `id` _(64-bit integer)_ for each history item.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n| `ids` | array | Array of history ids. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeItemsFromPersonalRecommendations",
+      "name": "sync.removeItemsFromPersonalRecommendations",
+      "description": "#### &#128274; OAuth Required\n\nRemove items from a user's personal recommendations. These recommendations are used to enchance Trakt's social recommendation algorithm. Apps should encourage user's to build their personal recommendations so the algorithm keeps getting better.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeItemsFromWatchlist",
+      "name": "sync.removeItemsFromWatchlist",
+      "description": "#### &#128274; OAuth Required\n\nRemove one or more items from a user's watchlist.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.removeRatings",
+      "name": "sync.removeRatings",
+      "description": "#### &#128274; OAuth Required\n\nRemove ratings for one or more items.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.sync.reorderPersonallyRecommendedItems",
+      "name": "sync.reorderPersonallyRecommendedItems",
+      "description": "#### &#128274; OAuth Required\n\nReorder all items on a user's personal recommendations by sending the updated `rank` of list item ids. Use the [**/sync/recommendations**](#reference/sync/get-personal-recommendations) method to get all list item ids."
+    },
+    {
+      "id": "openapi_trakt_tv.sync.reorderWatchlistItems",
+      "name": "sync.reorderWatchlistItems",
+      "description": "#### &#128274; OAuth Required\n\nReorder all items on a user's watchlist by sending the updated `rank` of list item ids. Use the [**/sync/watchlist**](#reference/sync/get-watchlist) method to get all list item ids."
+    },
+    {
+      "id": "openapi_trakt_tv.users.addHiddenItems",
+      "name": "users.addHiddenItems",
+      "description": "#### &#128274; OAuth Required\n\nHide items for a specific section. Here's what type of items can hidden for each section.\n\n#### Hideable Media Objects\n\n| Section | Objects |\n|---|---|---|\n| `calendar` | `movie`, `show` |\n| `progress_watched` | `show`, `season` |\n| `progress_collected` | `show`, `season` |\n| `recommendations` | `movie`, `show` |\n| `comments` | `user` |\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `users` | array | Array of `user` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.addItemsToPersonalList",
+      "name": "users.addItemsToPersonalList",
+      "description": "#### &#128274; OAuth Required &#128513; Emojis 🔥 VIP Enhanced\n\nAdd one or more items to a personal list. Items can be movies, shows, seasons, episodes, or people.\n\n#### Notes\n\nEach list item can optionally accept a `notes` *(255 maximum characters)* field with custom text. The user must be a [**Trakt VIP**](https://trakt.tv/vip) to send `notes`.\n\n#### Limits\n\nIf the user's list item limit is exceeded, a `420` HTTP error code is returned. Use the [**/users/settings**](/reference/users/settings) method to get all limits for a user account. In most cases, upgrading to [**Trakt VIP**](https://trakt.tv/vip) will increase the limits.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n| `people` | array | Array of `person` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.approveFollowRequest",
+      "name": "users.approveFollowRequest",
+      "description": "#### &#128274; OAuth Required\n\nApprove a follower using the `id` of the request. If the `id` is not found, was already approved, or was already denied, a `404` error will be returned."
+    },
+    {
+      "id": "openapi_trakt_tv.users.createPersonalList",
+      "name": "users.createPersonalList",
+      "description": "#### &#128274; OAuth Required 🔥 VIP Enhanced\n\nCreate a new personal list. The `name` is the only required field, but the other info is recommended to ask for.\n\n#### Limits\n\nIf the user's list limit is exceeded, a `420` HTTP error code is returned. Use the [**/users/settings**](/reference/users/settings) method to get all limits for a user account. In most cases, upgrading to [**Trakt VIP**](https://trakt.tv/vip) will increase the limits.\n\n#### JSON POST Data\n\n| Key | Type | Default | Value |\n|---|---|---|---|\n| `name` <span style=\"color:red;\">*</a> | string |  | Name of the list. |\n| `description` | string |  | Description for this list. |\n| `privacy` | string | `private` | `private`, `friends`, `public` |\n| `display_numbers` | boolean | `false` | Should each item be numbered? |\n| `allow_comments` | boolean | `true` | Are comments allowed? |\n| `sort_by` | string | `rank` | `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, `votes`, `my_rating`, `random`, `watched`, `collected` |\n| `sort_how` | string | `asc` | `asc`, `desc` |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.deleteAUserSPersonalList",
+      "name": "users.deleteAUserSPersonalList",
+      "description": "#### &#128274; OAuth Required\n\nRemove a personal list and all items it contains."
+    },
+    {
+      "id": "openapi_trakt_tv.users.denyFollowRequest",
+      "name": "users.denyFollowRequest",
+      "description": "#### &#128274; OAuth Required\n\nDeny a follower using the `id` of the request. If the `id` is not found, was already approved, or was already denied, a `404` error will be returned."
+    },
+    {
+      "id": "openapi_trakt_tv.users.followThisUser",
+      "name": "users.followThisUser",
+      "description": "#### &#128274; OAuth Required\n\nIf the user has a private profile, the follow request will require approval (`approved_at` will be null). If a user is public, they will be followed immediately (`approved_at` will have a date).\n\n**Note:** If this user is already being followed, a `409` HTTP status code will returned."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getAllListsAUserCanCollaborateOn",
+      "name": "users.getAllListsAUserCanCollaborateOn",
+      "description": "#### &#128275; OAuth Optional\n\nReturns all lists a user can collaborate on. This gives full access to add, remove, and re-order list items. It essentially works just like a list owned by the user, just make sure to use the correct list owner `user` when building the API URLs."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getAUserSPersonalLists",
+      "name": "users.getAUserSPersonalLists",
+      "description": "#### &#128275; OAuth Optional &#128513; Emojis\n\nReturns all personal lists for a user. Use the [**/users/:id/lists/:list_id/items**](#reference/users/list-items) method to get the actual items a specific list contains."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getComments",
+      "name": "users.getComments",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination &#10024; Extended Info\n\nReturns the most recently written comments for the user. You can optionally filter by the `comment_type` and media `type` to limit what gets returned.\n\nBy default, only top level comments are returned. Set `?include_replies=true` to return replies in addition to top level comments. Set `?include_replies=only` to return only replies and no top level comments."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getFollowers",
+      "name": "users.getFollowers",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nReturns all followers including when the relationship began."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getFollowing",
+      "name": "users.getFollowing",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nReturns all user's they follow including when the relationship began."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getFollowRequests",
+      "name": "users.getFollowRequests",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nList a user's pending follow requests so they can either approve or deny them."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getFriends",
+      "name": "users.getFriends",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nReturns all friends for a user including when the relationship began. Friendship is a 2 way relationship where each user follows the other."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getHiddenItems",
+      "name": "users.getHiddenItems",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination &#10024; Extended Info\n\nGet hidden items for a section. This will return an array of standard media objects. You can optionally limit the `type` of results to return."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getItemsOnAPersonalList",
+      "name": "users.getItemsOnAPersonalList",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nGet all items on a personal list. Items can be a `movie`, `show`, `season`, `episode`, or `person`. You can optionally specify the `type` parameter with a single value or comma delimited string for multiple item types.\n\n#### Notes\n\nEach list item contains a `notes` field with text entered by the user.\n\n#### Sorting Headers\n\nAll list items are sorted by ascending `rank`. We also send `X-Sort-By` and `X-Sort-How` headers which can be used to custom sort the list _**in your app**_ based on the user's preference. Values for `X-Sort-By` include `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, `votes`, `my_rating`, `random`, `watched`, and `collected`. Values for `X-Sort-How` include `asc` and `desc`."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getLikes",
+      "name": "users.getLikes",
+      "description": "#### &#128274; OAuth Optional &#128196; Pagination\n\nGet items a user likes. This will return an array of standard media objects. You can optionally limit the `type` of results to return.\n\n#### Comment Media Objects\n\nIf you add `?extended=comments` to the URL, it will return media objects for each comment like.\n\n**Note:** This returns a lot of data, so please only use this extended parameter if you actually need it!"
+    },
+    {
+      "id": "openapi_trakt_tv.users.getPendingFollowingRequests",
+      "name": "users.getPendingFollowingRequests",
+      "description": "#### &#128274; OAuth Required &#10024; Extended Info\n\nList a user's pending following requests that they're waiting for the other user's to approve."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getPersonalList",
+      "name": "users.getPersonalList",
+      "description": "#### &#128275; OAuth Optional &#128513; Emojis\n\nReturns a single personal list. Use the [**/users/:id/lists/:list_id/items**](#reference/users/list-items) method to get the actual items this list contains."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getSavedFilters",
+      "name": "users.getSavedFilters",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination 🔥 VIP Only\n\nGet all saved filters a user has created. The `path` and `query` can be used to construct an API path to retrieve the saved data. Think of this like a dynamically updated list."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getStats",
+      "name": "users.getStats",
+      "description": "#### &#128275; OAuth Optional\n\nReturns stats about the movies, shows, and episodes a user has watched, collected, and rated."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUserProfile",
+      "name": "users.getUserProfile",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nGet a user's profile information. If the user is private, info will only be returned if you send OAuth and are either that user or an approved follower. Adding `?extended=vip` will return some additional VIP related fields so you can display the user's Trakt VIP status and year count."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdCollectionType",
+      "name": "users.getUsersIdCollectionType",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nGet all collected items in a user's collection. A collected item indicates availability to watch digitally or on physical media.\n\nEach `movie` object contains `collected_at` and `updated_at` timestamps. Since users can set custom dates when they collected movies, it is possible for `collected_at` to be in the past. We also include `updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the movie if you see a newer timestamp.\n\nEach `show` object contains `last_collected_at` and `last_updated_at` timestamps. Since users can set custom dates when they collected episodes, it is possible for `last_collected_at` to be in the past. We also include `last_updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the show if you see a newer timestamp.\n\nIf you add `?extended=metadata` to the URL, it will return the additional `media_type`, `resolution`, `hdr`, `audio`, `audio_channels` and '3d' metadata. It will use `null` if the metadata isn't set for an item."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdHistoryTypeItemId",
+      "name": "users.getUsersIdHistoryTypeItemId",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination &#10024; Extended Info\n\nReturns movies and episodes that a user has watched, sorted by most recent. You can optionally limit the `type` to `movies` or `episodes`. The `id` _(64-bit integer)_ in each history item uniquely identifies the event and can be used to remove individual events by using the [**/sync/history/remove**](#reference/sync/remove-from-history/get-watched-history) method. The `action` will be set to `scrobble`, `checkin`, or `watch`.\n\nSpecify a `type` and trakt `item_id` to limit the history for just that item. If the `item_id` is valid, but there is no history, an empty array will be returned.\n\n| Example URL | Returns watches for... |\n|---|---|\n| `/history/movies/12601` | TRON: Legacy |\n| `/history/shows/1388` | All episodes of Breaking Bad |\n| `/history/seasons/3950` | All episodes of Breaking Bad: Season 1 |\n| `/history/episodes/73482` | Only episode 1 for Breaking Bad: Season 1 |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdListsListIdCommentsSort",
+      "name": "users.getUsersIdListsListIdCommentsSort",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination &#128513; Emojis\n\nReturns all top level comments for a list. By default, the `newest` comments are returned first. Other sorting options include `oldest`, most `likes`, and most `replies`."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdListsListIdLikes",
+      "name": "users.getUsersIdListsListIdLikes",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination\n\nReturns all users who liked a list."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdRatingsTypeRating",
+      "name": "users.getUsersIdRatingsTypeRating",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination Optional &#10024; Extended Info\n\nGet a user's ratings filtered by `type`. You can optionally filter for a specific `rating` between 1 and 10. Send a comma separated string for `rating` if you need multiple ratings."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdRecommendationsTypeSort",
+      "name": "users.getUsersIdRecommendationsTypeSort",
+      "description": "#### &#128274; OAuth Required &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nReturns the top 50 items a user personally recommendeds to others. These recommendations are used to enchance Trakt's social recommendation algorithm. Apps should encourage user's to build their personal recommendations so the algorithm keeps getting better.\n\n#### Notes\n\nEach recommendation contains a `notes` field explaining why the user recommended the item."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdWatchedType",
+      "name": "users.getUsersIdWatchedType",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nReturns all movies or shows a user has watched sorted by most plays.\n\nIf `type` is set to _shows_ and you add `?extended=noseasons` to the URL, it won't return season or episode info.\n\nEach `movie` and `show` object contains `last_watched_at` and `last_updated_at` timestamps. Since users can set custom dates when they watched movies and episodes, it is possible for `last_watched_at` to be in the past. We also include `last_updated_at` to help sync Trakt data with your app. Cache this timestamp locally and only re-process the movies and shows if you see a newer timestamp.\n\nEach `show` object contains a `reset_at` timestamp. If not `null`, this is when the user started re-watching the show. Your app can adjust the progress by ignoring episodes with a `last_watched_at` prior to the `reset_at`."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getUsersIdWatchlistTypeSort",
+      "name": "users.getUsersIdWatchlistTypeSort",
+      "description": "#### &#128275; OAuth Optional &#128196; Pagination Optional &#10024; Extended Info &#128513; Emojis\n\nReturns all items in a user's watchlist filtered by type.\n\n#### Notes\n\nEach watchlist item contains a `notes` field with text entered by the user.\n\n#### Sorting Headers\n\nBy default, all list items are sorted by `rank` `asc`. We send `X-Applied-Sort-By` and `X-Applied-Sort-How` headers to indicate how the results are actually being sorted.\n\nWe also send `X-Sort-By` and `X-Sort-How` headers which indicate the user's sort preference. Use these to to custom sort the watchlist _**in your app**_ for more advanced sort abilities we can't do in the API. Values for `X-Sort-By` include `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, and `votes`. Values for `X-Sort-How` include `asc` and `desc`.\n\n#### Auto Removal\n\nWhen an item is watched, it will be automatically removed from the watchlist. For shows and seasons, watching 1 episode will remove the entire show or season.\n\n_**The watchlist should not be used as a list of what the user is actively watching.**_\n\nUse a combination of the [**/sync/watched**](/reference/sync/get-watched) and [**/shows/:id/progress**](/reference/shows/watched-progress) methods to get what the user is actively watching."
+    },
+    {
+      "id": "openapi_trakt_tv.users.getWatching",
+      "name": "users.getWatching",
+      "description": "#### &#128275; OAuth Optional &#10024; Extended Info\n\nReturns a movie or episode if the user is currently watching something.  If they are not, it returns no data and a `204` HTTP status code."
+    },
+    {
+      "id": "openapi_trakt_tv.users.likeAList",
+      "name": "users.likeAList",
+      "description": "#### &#128274; OAuth Required\n\nVotes help determine popular lists. Only one like is allowed per list per user."
+    },
+    {
+      "id": "openapi_trakt_tv.users.removeHiddenItems",
+      "name": "users.removeHiddenItems",
+      "description": "#### &#128274; OAuth Required\n\nUnhide items for a specific section. Here's what type of items can unhidden for each section.\n\n#### Unhideable Media Objects\n\n| Section | Objects |\n|---|---|---|\n| `calendar` | `movie`, `show` |\n| `progress_watched` | `show`, `season` |\n| `progress_collected` | `show`, `season` |\n| `recommendations` | `movie`, `show` |\n| `comments` | `user` |\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `users` | array | Array of `user` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.removeItemsFromPersonalList",
+      "name": "users.removeItemsFromPersonalList",
+      "description": "#### &#128274; OAuth Required\n\nRemove one or more items from a personal list.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|\n| `movies` | array | Array of `movie` objects. (see examples &#8594;) |\n| `shows` | array | Array of `show` objects. |\n| `seasons` | array | Array of `season` objects. |\n| `episodes` | array | Array of `episode` objects. |\n| `people` | array | Array of `person` objects. |"
+    },
+    {
+      "id": "openapi_trakt_tv.users.removeLikeOnAList",
+      "name": "users.removeLikeOnAList",
+      "description": "#### &#128274; OAuth Required\n\nRemove a like on a list."
+    },
+    {
+      "id": "openapi_trakt_tv.users.reorderAUserSLists",
+      "name": "users.reorderAUserSLists",
+      "description": "#### &#128274; OAuth Required\n\nReorder all lists by sending the updated `rank` of list ids. Use the [**/users/:id/lists**](#reference/users/lists) method to get all list ids."
+    },
+    {
+      "id": "openapi_trakt_tv.users.reorderItemsOnAList",
+      "name": "users.reorderItemsOnAList",
+      "description": "#### &#128274; OAuth Required\n\nReorder all items on a list by sending the updated `rank` of list item ids. Use the [**/users/:id/lists/:list_id/items**](#reference/users/list-items) method to get all list item ids."
+    },
+    {
+      "id": "openapi_trakt_tv.users.retrieveSettings",
+      "name": "users.retrieveSettings",
+      "description": "#### &#128274; OAuth Required\n\nGet the user's settings so you can align your app's experience with what they're used to on the trakt website. A globally unique `uuid` is also returned, which can be used to identify the user locally in your app if needed. However, the `uuid` can't be used to retrieve data from the Trakt API."
+    },
+    {
+      "id": "openapi_trakt_tv.users.unfollowThisUser",
+      "name": "users.unfollowThisUser",
+      "description": "#### &#128274; OAuth Required\n\nUnfollow someone you already follow."
+    },
+    {
+      "id": "openapi_trakt_tv.users.updatePersonalList",
+      "name": "users.updatePersonalList",
+      "description": "#### &#128274; OAuth Required\n\nUpdate a personal list by sending 1 or more parameters. If you update the list name, the original slug will still be retained so existing references to this list won't break.\n\n#### JSON POST Data\n\n| Key | Type | Value |\n|---|---|---|---|\n| `name` | string | Name of the list. |\n| `description` | string | Description for this list. |\n| `privacy` | string | `private`, `friends`, `public` |\n| `display_numbers` | boolean | Should each item be numbered? |\n| `allow_comments` | boolean | Are comments allowed? |\n| `sort_by` | string | `rank`, `added`, `title`, `released`, `runtime`, `popularity`, `percentage`, `votes`, `my_rating`, `random`, `watched`, `collected` |\n| `sort_how` | string | `asc`, `desc` |"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

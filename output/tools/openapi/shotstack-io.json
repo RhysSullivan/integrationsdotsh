@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:26:46.583Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "openapi_shotstack_io.edit.getRender",
+      "name": "edit.getRender",
+      "description": "Get the rendering status, temporary asset url and details of a render by ID.\n\n**base URL:** https://api.shotstack.io/{version}"
+    },
+    {
+      "id": "openapi_shotstack_io.edit.postRender",
+      "name": "edit.postRender",
+      "description": "Queue and render the contents of a timeline as a video, image or audio file."
+    },
+    {
+      "id": "openapi_shotstack_io.serve.deleteAsset",
+      "name": "serve.deleteAsset",
+      "description": "Delete an asset by its asset id. If a render creates multiple assets, such as thumbnail and poster images, each asset must be deleted individually by the asset id.\n\n**base URL:** https://api.shotstack.io/serve/{version}"
+    },
+    {
+      "id": "openapi_shotstack_io.serve.getAsset",
+      "name": "serve.getAsset",
+      "description": "The Serve API is used to interact with, and delete hosted assets including videos, images, audio files,  thumbnails and poster images. Use this endpoint to fetch an asset by asset id. Note that an asset id is unique for each asset and different from the render id.\n\n**base URL:** https://api.shotstack.io/serve/{version}"
+    },
+    {
+      "id": "openapi_shotstack_io.serve.getAssetByRenderId",
+      "name": "serve.getAssetByRenderId",
+      "description": "A render may generate more than one file, such as a video, thumbnail and poster image. When the assets are created the only known id is the render id returned by the original [render request](#render-video), status  request or webhook. This endpoint lets you look up one or more assets by the render id.\n\n**base URL:** https://api.shotstack.io/serve/{version}"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

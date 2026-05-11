@@ -1,0 +1,122 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.043Z",
+  "status": "ok",
+  "count": 23,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.classicCheckoutSdk.postPaymentSession",
+      "name": "classicCheckoutSdk.postPaymentSession",
+      "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.\n\nFor more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.classicCheckoutSdk.postPaymentsResult",
+      "name": "classicCheckoutSdk.postPaymentsResult",
+      "description": "Verifies the payment result using the payload returned from the Checkout SDK.\n\nFor more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postCancels",
+      "name": "modifications.postCancels",
+      "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).\n\nIf you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.\n\nIf you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.\n\nFor more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postPaymentsPaymentPspReferenceAmountUpdates",
+      "name": "modifications.postPaymentsPaymentPspReferenceAmountUpdates",
+      "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).\n\nYou can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).\n\nThe amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.\n\nFor more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postPaymentsPaymentPspReferenceCancels",
+      "name": "modifications.postPaymentsPaymentPspReferenceCancels",
+      "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).\n\nIf you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.\n\nIf you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.\n\nFor more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postPaymentsPaymentPspReferenceCaptures",
+      "name": "modifications.postPaymentsPaymentPspReferenceCaptures",
+      "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).\n\nYou can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures. \n\n[Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.\n\nFor more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postPaymentsPaymentPspReferenceRefunds",
+      "name": "modifications.postPaymentsPaymentPspReferenceRefunds",
+      "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).\n\nYou can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.\n\n> Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna). \n\nIf you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.\n\nFor more information, refer to [Refund](https://docs.adyen.com/online-payments/refund)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.modifications.postPaymentsPaymentPspReferenceReversals",
+      "name": "modifications.postPaymentsPaymentPspReferenceReversals",
+      "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).\n\nThe reversed amount is always the full payment amount.\n> Do not use this request for payments that involve multiple partial captures.\n\nFor more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.orders.postOrders",
+      "name": "orders.postOrders",
+      "description": "Creates an order to be used for partial payments. Make a POST `/orders` call before making a `/payments` call when processing payments with different payment methods."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.orders.postOrdersCancel",
+      "name": "orders.postOrdersCancel",
+      "description": "Cancels an order. Cancellation of an order results in an automatic rollback of all payments made in the order, either by canceling or refunding the payment, depending on the type of payment method."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.orders.postPaymentMethodsBalance",
+      "name": "orders.postPaymentMethodsBalance",
+      "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.paymentLinks.getPaymentLinksLinkId",
+      "name": "paymentLinks.getPaymentLinksLinkId",
+      "description": "Retrieves the payment link details using the payment link `id`."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.paymentLinks.patchPaymentLinksLinkId",
+      "name": "paymentLinks.patchPaymentLinksLinkId",
+      "description": "Updates the status of a payment link. Use this endpoint to [force the expiry of a payment link](https://docs.adyen.com/online-payments/pay-by-link#update-payment-link-status)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.paymentLinks.postPaymentLinks",
+      "name": "paymentLinks.postPaymentLinks",
+      "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.\n\nFor more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.payments.postCardDetails",
+      "name": "payments.postCardDetails",
+      "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).\n\nIf you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.\n\n"
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.payments.postDonations",
+      "name": "payments.postDonations",
+      "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.\n\nFor more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.payments.postPaymentMethods",
+      "name": "payments.postPaymentMethods",
+      "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).\n\nAlthough we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paymentMethods` response and update it once a week."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.payments.postPayments",
+      "name": "payments.postPayments",
+      "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods). \nThe response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow):\n* For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**. \n* For a redirect or additional action, the response contains an `action` object. "
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.payments.postPaymentsDetails",
+      "name": "payments.postPaymentsDetails",
+      "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.\n\n"
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.utility.postApplePaySessions",
+      "name": "utility.postApplePaySessions",
+      "description": "You need to use this endpoint if you have an API-only integration with Apple Pay which uses Adyen's Apple Pay certificate.\n\nThe endpoint returns the Apple Pay session data which you need to complete the [Apple Pay session validation](https://docs.adyen.com/payment-methods/apple-pay/api-only?tab=adyen-certificate-validation_1#complete-apple-pay-session-validation)."
+    },
+    {
+      "id": "openapi_adyen_com_checkoutservice_checkoutservice.utility.postOriginKeys",
+      "name": "utility.postOriginKeys",
+      "description": "This operation takes the origin domains and returns a JSON object containing the corresponding origin keys for the domains. \n> If you're still using origin key for your Web Drop-in or Components integration, we recommend [switching to client key](https://docs.adyen.com/development-resources/client-side-authentication/migrate-from-origin-key-to-client-key). This allows you to use a single key for all origins, add or remove origins without generating a new key, and detect the card type from the number entered in your payment form. "
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

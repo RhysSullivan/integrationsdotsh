@@ -1,0 +1,132 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.759Z",
+  "status": "ok",
+  "count": 25,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.matchedOffers.getofferslist",
+      "name": "matchedOffers.getofferslist",
+      "description": "Offers are seller's products and SKUs that were sent to the marketplace, and already have their price and inventory level configured. \n\n This endpoint retrieves the available offers in a marketplace. It differs from the Get Suggestions endpoints, since it retrieves products that were already matched by the marketplace, and are currently in its catalog. \n\nIt is possible to filter the search through the following parameters: \n\n- rows \n- sort \n\n- start \n\n- fq"
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.matchedOffers.getProductoffers",
+      "name": "matchedOffers.getProductoffers",
+      "description": "Offers are seller products and SKUs that were sent to the marketplace, and already have their price and inventory level configured. \n\nThis endpoint retrieves the available offers for a speciic Product ID in the marketplace's catalog. It differs from the Get Suggestions endpoints, since it retrieves products that were already matched by the marketplace operator, and are currently active in its catalog. \n\nThe call returns a list of offers for that ID, that contain the following data: \n\n- Seller that sells the SKU \n\n- Correspondent SKU ID \n\n- SKU's price value \n\n- Inventory level \n\n- Sales channel (or [trade policy](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data)) that it is available at."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.matchedOffers.getSkUoffers",
+      "name": "matchedOffers.getSkUoffers",
+      "description": "Offers are seller products and SKUs that were sent to the marketplace, and already have their price and inventory level configured. \n\nThis endpoint retrieves the available offers for a speciic SKU ID in the marketplace's catalog. It differs from the Get Suggestions endpoints, since it retrieves products that were already matched by the marketplace operator, and are currently active in its catalog. \n\nThe call returns a list of offers for that ID, that contain the following data: \n\n- Seller that sells the SKU \n\n- Correspondent SKU ID \n\n- SKU's price value \n\n- Inventory level \n\n- Sales channel (or [trade policy](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data)) that it is available at."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.notification.inventoryNotification",
+      "name": "notification.inventoryNotification",
+      "description": "This endpoint is used by *sellers* to notify marketplaces that the inventory level has changed for one of their SKUs. \n\nThere is no request body in this call, indicating the new inventory level, for instance. It only notifies a specific marketplace (`accountName`) that a seller (`sellerId`) has changed the inventory level of an SKU (`skuId`). \n\n*Marketplaces* will then call the [fulfillment endpoint](https://developers.vtex.com/vtex-rest-api/reference/fulfillment-simulation) provided in the seller registration form to get the updated inventory  information."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.notification.priceNotification",
+      "name": "notification.priceNotification",
+      "description": "This endpoint is used by *sellers* to notify marketplaces that the price has changed for one of their SKUs. \n\nThere is no request body in this call, indicating the new price value, for instance. It only notifies a specific marketplace (`accountName`) that a seller (`sellerId`) has changed the price of an SKU (`skuId`). \n\n*Marketplaces* will then call the [fulfillment endpoint](https://developers.vtex.com/vtex-rest-api/reference/fulfillment-simulation) provided in the seller registration form to get the updated price information."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.salesChannelMapping.retrieveMapping",
+      "name": "salesChannelMapping.retrieveMapping",
+      "description": "Retrieves information about the mapping between marketplace's sales channels and a specific seller."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.salesChannelMapping.upsertMapping",
+      "name": "salesChannelMapping.upsertMapping",
+      "description": "This endpoint allows the marketplace to map its sales channels with a seller's [affiliate](https://help.vtex.com/en/tutorial/configuring-affiliates--tutorials_187). The seller can have multiple sales channels associated with the same marketplace, by creating different affiliates. The mapping enables the seller to segment catalog, prices, inventory, logistics, and payments in the marketplace."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerCommissions.bulkUpsertSellerCommissions",
+      "name": "sellerCommissions.bulkUpsertSellerCommissions",
+      "description": "This endpoint is used by marketplace operators to define comissions for multiple categories."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerCommissions.listSellerCommissions",
+      "name": "sellerCommissions.listSellerCommissions",
+      "description": "This endpoint retrieves all comissions configured for a specific seller."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerCommissions.removeSellerCommissions",
+      "name": "sellerCommissions.removeSellerCommissions",
+      "description": "This endpoint removes a seller comission on the selected category."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerCommissions.retrieveSellerCommissions",
+      "name": "sellerCommissions.retrieveSellerCommissions",
+      "description": "This endpoint retrieves seller comissions applied to the selected category."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerCommissions.upsertSellerCommissions",
+      "name": "sellerCommissions.upsertSellerCommissions",
+      "description": "This endpoint is used by marketplace operators to define comissions for a single category, by ID."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.acceptSellerLead",
+      "name": "sellerInvite.acceptSellerLead",
+      "description": "This endpoint is triggered by the seller onboarding wizard, once the seller confirms their invitation. It can be used by marketplace operators to manually accept seller leads, and carry on with their onboarding process. \n\nNote that there's no specific API call that allows status changes. The operations only allow the seller lead to move forward: \n\n From `invite` > to `Accept` > closing on `Create Seller`.  \n\nIf you want to change the status, you can start the process again, by deleting that lead through the *Delete Seller Lead* endpoint, and resending the invite through the *Resend Seller Lead's Invite* endpoint."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.createSellerFromSellerLead",
+      "name": "sellerInvite.createSellerFromSellerLead",
+      "description": "This endpoint is used by marketplace operators to create seller accounts. The request will only accept Seller Leads whose status is `accepted`. If they are already `connected` or `invited`, the call will not be fulfilled. \n\nThe creation of the account at VTEX is done by an internal Billing service. There is no seller account and marketplace affiliation if you do not go through this step. \n\nNote that there's no specific API call that allows status changes. The operations only allow the seller lead to move forward: \n\n From `invite` > to `Accept` > closing on `Create Seller`.  \n\nIf you want to change the status, you can start the process again, by deleting that lead through the *Delete Seller Lead* endpoint, and resending the invite through the *Resend Seller Lead's Invite* endpoint."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.createSellerLead",
+      "name": "sellerInvite.createSellerLead",
+      "description": "This API is used by marketplace operators to invite sellers to join their marketplace. The request sends an email to the seller, inviting sellers to activate their store. The invitation's link in the email is unique per user, and available for only seven days for the seller to click and begin activating their store. \n\nThe email template is completely customizable. All email templates that VTEX sends to seller leads can be found and edited in the marketplace's VTEX Admin, on the Message Center section."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.listSellerLeads",
+      "name": "sellerInvite.listSellerLeads",
+      "description": "This call's response includes a list of all sellers invited by the marketplace operator to join them. Retrieved results can be filtered by adding optional query fields to the request. Each seller listed includes the following information: \n\n- `id` \n\n- `createdAt` \n\n- `status` \n\n- `isConnected` \n\n- `sellerEmail` \n\n- `sellerName` \n\n- `salesChannel` \n\n- `email`"
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.removeSellerLead",
+      "name": "sellerInvite.removeSellerLead",
+      "description": "This endpoint permanently deletes a seller previously invited to the marketplace, if the seller has not already accepted the invitation."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.resendSellerLeadRequest",
+      "name": "sellerInvite.resendSellerLeadRequest",
+      "description": "This endpoint allows marketplace operators to resend an invitation to a seller lead, previously invited to join their marketplace. The request will only accept Seller Leads whose status is `invited`. If they are already `connected` or `accepted`, the call will not be fulfilled."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellerInvite.retrieveSellerLead",
+      "name": "sellerInvite.retrieveSellerLead",
+      "description": "Marketplace operators may call this endpoint to retrieve information about a specific seller invited to the Seller Portal, by searching through their `Seller Lead Id`. To know the chosen seller's `sellerLeadId`, marketplace operators can count on the *List Sellers* endpoint's response as well. Each seller listed includes the following information: \n\n- `id` \n\n- `createdAt` \n\n- `status` \n\n- `isConnected` \n\n- `sellerEmail` \n\n- `sellerName` \n\n- `salesChannel` \n\n- `email`"
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellers.getListSellers",
+      "name": "sellers.getListSellers",
+      "description": "This endpoint lists all Sellers. This call's results can be filtered by [trade policies](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data) through the `sc` query param."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellers.getRetrieveSeller",
+      "name": "sellers.getRetrieveSeller",
+      "description": "Marketplace operator may call this endpoint to retrieve information about a specific seller by filtering by ID. It is also possible to filter results by sales channel (or [trade policy](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data)) through the `sc` query param."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellers.updateSeller",
+      "name": "sellers.updateSeller",
+      "description": "This endpoint allows marketplace operators to update the information of sellers connected to their account. You can replace a path's value with another value in order to update that single information. There is no need to fill all the body params available, only the one you wish to update."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis.sellers.upsertSellerRequest",
+      "name": "sellers.upsertSellerRequest",
+      "description": "This endpoint is used by marketplace operators to configure the accounts of sellers that have already accepted the invitation to join their marketplaces. \n\nFor marketplaces to [add sellers](https://help.vtex.com/en/tutorial/adding-a-seller--tutorials_392) without the [Seller Invite](https://help.vtex.com/en/tutorial/marketplace-invited-sellers--6rb2FkcslmDueJ689Ulb9A) feature, call this endpoint directly. \n\nThis call includes all the information a seller needs to activate their account."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

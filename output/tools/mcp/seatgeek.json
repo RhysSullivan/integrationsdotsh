@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:21:12.914Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_seatgeek.eventcarousel",
+      "name": "eventCarousel",
+      "description": "Use this to display SeatGeek events as an interactive carousel with images, dates, venues, and starting prices — a much richer experience than listing events in text. Call eventSearch first to get event IDs, then pass them here. Use this whenever the user asks about multiple events (schedules, upcoming games, weekend plans, 'what's near me'). For a single event's ticket listings, use eventListings instead."
+    },
+    {
+      "id": "mcp_seatgeek.eventlistings",
+      "name": "eventListings",
+      "description": "Show ticket listings for a specific SeatGeek event by its ID. First call eventSearch to find the event ID, then call this tool with that ID. This responds with the top listings for the event, displaying them on a map and in a list. Use the detailed listing data to answer questions about specific sections, rows, seats, prices, and perks. Do NOT call this tool for general questions about events, performers, or venues that can be answered from general knowledge."
+    },
+    {
+      "id": "mcp_seatgeek.eventsearch",
+      "name": "eventSearch",
+      "description": "Use this to search for events on SeatGeek. Returns raw event data that is NOT visible to the user. You MUST always follow up by calling eventCarousel or eventListings to display results — the user cannot see anything until a display tool is called. Do not call this for general knowledge questions."
+    }
+  ]
+}

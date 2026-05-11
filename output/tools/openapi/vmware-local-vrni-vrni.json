@@ -1,0 +1,822 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.200Z",
+  "status": "ok",
+  "count": 163,
+  "tools": [
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.addApplication",
+      "name": "applications.addApplication",
+      "description": "Application is a group of tiers. A tier is a group of virtual machines based on membership criteria. Tiers are bound to single\napplication. An application name is unique and should not conflict with another application name."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.addTier",
+      "name": "applications.addTier",
+      "description": "Create a tier of an application by with specified membership criteria. The membership criteria id defined in terms of\nvirtual machines or ip addresses/subnet. Please refer to API Guide on how to construct membership criteria."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.deleteApplication",
+      "name": "applications.deleteApplication",
+      "description": "Deleting an application deletes all the tiers of the application along with the application"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.deleteTier",
+      "name": "applications.deleteTier",
+      "description": "Delete tier of an application"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.getApplication",
+      "name": "applications.getApplication",
+      "description": "Show application details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.getApplicationTier",
+      "name": "applications.getApplicationTier",
+      "description": "Show tier details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.getTier",
+      "name": "applications.getTier",
+      "description": "Show tier details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.listApplications",
+      "name": "applications.listApplications",
+      "description": "List applications"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.applications.listApplicationTiers",
+      "name": "applications.listApplicationTiers",
+      "description": "List tiers of an application"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.authentication.create",
+      "name": "authentication.create",
+      "description": "<html><body> vRealize Network Insight supports token based authentication.Tokens are non-modifiable identifiers returned by the system when the user has successfully authenticated using valid credentials. Token expires after expiry time returned in the response. All API requests must provide the auth token in Authorization header in following format.<br> Authorization &#58; NetworkInsight {token} <br> If a token is invalid or expired, 401-Unauthorized error gets returned in the response of the API request. </body></html>"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.authentication.delete",
+      "name": "authentication.delete",
+      "description": "Deletes the auth token provided in Authorization header.\nDeleting an expired or invalid token will result in 401 Unauthorized error."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addAristaSwitch",
+      "name": "dataSources.addAristaSwitch",
+      "description": "Add arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addBrocadeSwitch",
+      "name": "dataSources.addBrocadeSwitch",
+      "description": "Add brocade switch as a data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addCheckpointFirewall",
+      "name": "dataSources.addCheckpointFirewall",
+      "description": "Add checkpoint firewall as data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addCiscoSwitch",
+      "name": "dataSources.addCiscoSwitch",
+      "description": "Add cisco switch as data source. User must provide one of ip or fqdn field in the request body.\nAppropriate proxy id is retrieved from infra/nodes URL to select the proxy node."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addDellSwitch",
+      "name": "dataSources.addDellSwitch",
+      "description": "Add a dell switch as data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addHpovManager",
+      "name": "dataSources.addHpovManager",
+      "description": "Add a hp oneview manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addHpvcManager",
+      "name": "dataSources.addHpvcManager",
+      "description": "Add hpvc manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addJuniperSwitch",
+      "name": "dataSources.addJuniperSwitch",
+      "description": "Add switch Datasource"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addNsxvManagerDatasource",
+      "name": "dataSources.addNsxvManagerDatasource",
+      "description": "Add a nsx-v manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addPanoramaFirewall",
+      "name": "dataSources.addPanoramaFirewall",
+      "description": "Add panorama firewall as data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addUcsManager",
+      "name": "dataSources.addUcsManager",
+      "description": "Add an ucs manager as data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.addVcenterDatasource",
+      "name": "dataSources.addVcenterDatasource",
+      "description": "Add a vcenter data source. User must provide one of ip or fqdn field in the request body.\nAppropriate proxy id is retrieved from infra/nodes URL to select the proxy node."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteAristaSwitch",
+      "name": "dataSources.deleteAristaSwitch",
+      "description": "Delete an arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteBrocadeSwitch",
+      "name": "dataSources.deleteBrocadeSwitch",
+      "description": "Delete a brocade switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteCheckpointFirewall",
+      "name": "dataSources.deleteCheckpointFirewall",
+      "description": "Delete a checkpoint firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteCiscoSwitch",
+      "name": "dataSources.deleteCiscoSwitch",
+      "description": "Delete a cisco switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteDellSwitch",
+      "name": "dataSources.deleteDellSwitch",
+      "description": "Delete a data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteHpovManager",
+      "name": "dataSources.deleteHpovManager",
+      "description": "Delete a hp oneview data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteHpvcManager",
+      "name": "dataSources.deleteHpvcManager",
+      "description": "Delete a hpvc manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteJuniperSwitch",
+      "name": "dataSources.deleteJuniperSwitch",
+      "description": "Delete a juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteNsxvManager",
+      "name": "dataSources.deleteNsxvManager",
+      "description": "Delete a nsx-v manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deletePanoramaFirewall",
+      "name": "dataSources.deletePanoramaFirewall",
+      "description": "Delete a panorama firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteUcsManager",
+      "name": "dataSources.deleteUcsManager",
+      "description": "Delete an ucs manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.deleteVcenter",
+      "name": "dataSources.deleteVcenter",
+      "description": "Delete a data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableAristaSwitch",
+      "name": "dataSources.disableAristaSwitch",
+      "description": "Disable an arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableBrocadeSwitch",
+      "name": "dataSources.disableBrocadeSwitch",
+      "description": "Disable a brocade switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableCheckpointFirewall",
+      "name": "dataSources.disableCheckpointFirewall",
+      "description": "Disable a checkpoint firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableCiscoSwitch",
+      "name": "dataSources.disableCiscoSwitch",
+      "description": "Disable a cisco switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableDellSwitch",
+      "name": "dataSources.disableDellSwitch",
+      "description": "Disable a dell switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableHpovManager",
+      "name": "dataSources.disableHpovManager",
+      "description": "Disable a hp oneview data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableHpvcManager",
+      "name": "dataSources.disableHpvcManager",
+      "description": "Disable a hpvc manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableJuniperSwitch",
+      "name": "dataSources.disableJuniperSwitch",
+      "description": "Disable a juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableNsxvManager",
+      "name": "dataSources.disableNsxvManager",
+      "description": "Disable a nsx-v manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disablePanoramaFirewall",
+      "name": "dataSources.disablePanoramaFirewall",
+      "description": "Disable a panorama firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableUcsManager",
+      "name": "dataSources.disableUcsManager",
+      "description": "Disable an ucs manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.disableVcenter",
+      "name": "dataSources.disableVcenter",
+      "description": "Disable a vCenter data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableAristaSwitch",
+      "name": "dataSources.enableAristaSwitch",
+      "description": "Enable an arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableBrocadeSwitch",
+      "name": "dataSources.enableBrocadeSwitch",
+      "description": "Enable a brocade switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableCheckpointFirewall",
+      "name": "dataSources.enableCheckpointFirewall",
+      "description": "Enable a checkpoint firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableCiscoSwitch",
+      "name": "dataSources.enableCiscoSwitch",
+      "description": "Enable a cisco switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableDellSwitch",
+      "name": "dataSources.enableDellSwitch",
+      "description": "Enable a dell switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableHpovManager",
+      "name": "dataSources.enableHpovManager",
+      "description": "Enable a hp oneview data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableHpvcManager",
+      "name": "dataSources.enableHpvcManager",
+      "description": "Enable a hpvc manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableJuniperSwitch",
+      "name": "dataSources.enableJuniperSwitch",
+      "description": "Enable a juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableNsxvManager",
+      "name": "dataSources.enableNsxvManager",
+      "description": "Enable a nsx-v manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enablePanoramaFirewall",
+      "name": "dataSources.enablePanoramaFirewall",
+      "description": "Enable a panorama firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableUcsManager",
+      "name": "dataSources.enableUcsManager",
+      "description": "Enable an ucs manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.enableVcenter",
+      "name": "dataSources.enableVcenter",
+      "description": "Enable a vCenter data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getAristaSwitch",
+      "name": "dataSources.getAristaSwitch",
+      "description": "Show arista switch data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getAristaSwitchSnmpConfig",
+      "name": "dataSources.getAristaSwitchSnmpConfig",
+      "description": "Show snmp config for arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getBrocadeSwitch",
+      "name": "dataSources.getBrocadeSwitch",
+      "description": "Show brocade switch data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getBrocadeSwitchSnmpConfig",
+      "name": "dataSources.getBrocadeSwitchSnmpConfig",
+      "description": "Show snmp config for brocade switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getCheckpointFirewall",
+      "name": "dataSources.getCheckpointFirewall",
+      "description": "Show checkpoint firewall data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getCiscoSwitch",
+      "name": "dataSources.getCiscoSwitch",
+      "description": "Show cisco switch data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getCiscoSwitchSnmpConfig",
+      "name": "dataSources.getCiscoSwitchSnmpConfig",
+      "description": "Show snmp config for cisco switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getDellSwitch",
+      "name": "dataSources.getDellSwitch",
+      "description": "Get a dell switch data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getDellSwitchSnmpConfig",
+      "name": "dataSources.getDellSwitchSnmpConfig",
+      "description": "Show snmp config for dell switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getHpovManager",
+      "name": "dataSources.getHpovManager",
+      "description": "Show hp oneview data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getHpvcManager",
+      "name": "dataSources.getHpvcManager",
+      "description": "Show hpvc data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getJuniperSwitch",
+      "name": "dataSources.getJuniperSwitch",
+      "description": "Show juniper switch data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getJuniperSwitchSnmpConfig",
+      "name": "dataSources.getJuniperSwitchSnmpConfig",
+      "description": "Show snmp config for juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getNsxvControllerCluster",
+      "name": "dataSources.getNsxvControllerCluster",
+      "description": "Show nsx controller-cluster details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getNsxvManager",
+      "name": "dataSources.getNsxvManager",
+      "description": "Show nsx-v manager data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getPanoramaFirewall",
+      "name": "dataSources.getPanoramaFirewall",
+      "description": "Show panorama firewall data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getUcsManager",
+      "name": "dataSources.getUcsManager",
+      "description": "Show ucs manager data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getUcsSnmpConfig",
+      "name": "dataSources.getUcsSnmpConfig",
+      "description": "Show snmp config for ucs fabric interconnects"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.getVcenter",
+      "name": "dataSources.getVcenter",
+      "description": "Show vCenter data source details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listAristaSwitches",
+      "name": "dataSources.listAristaSwitches",
+      "description": "List arista switch data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listBrocadeSwitches",
+      "name": "dataSources.listBrocadeSwitches",
+      "description": "List brocade switch data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listCheckpointFirewalls",
+      "name": "dataSources.listCheckpointFirewalls",
+      "description": "List checkpoint firewall data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listCiscoSwitches",
+      "name": "dataSources.listCiscoSwitches",
+      "description": "List cisco switch data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listDellSwitches",
+      "name": "dataSources.listDellSwitches",
+      "description": "List dell switch data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listHpovManagers",
+      "name": "dataSources.listHpovManagers",
+      "description": "List hp oneview manager data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listHpvcManagers",
+      "name": "dataSources.listHpvcManagers",
+      "description": "List hpvc manager data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listJuniperSwitches",
+      "name": "dataSources.listJuniperSwitches",
+      "description": "List juniper switch data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listNsxvManagers",
+      "name": "dataSources.listNsxvManagers",
+      "description": "List nsx-v manager data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listPanoramaFirewalls",
+      "name": "dataSources.listPanoramaFirewalls",
+      "description": "List panorama firewall data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listUcsManagers",
+      "name": "dataSources.listUcsManagers",
+      "description": "List ucs manager data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.listVcenters",
+      "name": "dataSources.listVcenters",
+      "description": "List vCenter data sources"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateAristaSwitch",
+      "name": "dataSources.updateAristaSwitch",
+      "description": "Update an switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateAristaSwitchSnmpConfig",
+      "name": "dataSources.updateAristaSwitchSnmpConfig",
+      "description": "Update snmp config for arista switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateBrocadeSwitch",
+      "name": "dataSources.updateBrocadeSwitch",
+      "description": "Update a brocade switch data source. Only credentials, nickname and notes can be updated."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateBrocadeSwitchSnmpConfig",
+      "name": "dataSources.updateBrocadeSwitchSnmpConfig",
+      "description": "Update snmp config for brocade switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateCheckpointFirewall",
+      "name": "dataSources.updateCheckpointFirewall",
+      "description": "Update a checkpoint firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateCiscoSwitch",
+      "name": "dataSources.updateCiscoSwitch",
+      "description": "Update a cisco switch data source. Only credentials, nickname and notes can be updated."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateCiscoSwitchSnmpConfig",
+      "name": "dataSources.updateCiscoSwitchSnmpConfig",
+      "description": "Update snmp config for cisco switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateDellSwitch",
+      "name": "dataSources.updateDellSwitch",
+      "description": "Update a dell switch data source. Only credentials, nickname and notes can be updated"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateDellSwitchSnmpConfig",
+      "name": "dataSources.updateDellSwitchSnmpConfig",
+      "description": "Update snmp config for dell switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateHpovManager",
+      "name": "dataSources.updateHpovManager",
+      "description": "Update a hp oneview data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateHpvcManager",
+      "name": "dataSources.updateHpvcManager",
+      "description": "Update a hpvc manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateJuniperSwitch",
+      "name": "dataSources.updateJuniperSwitch",
+      "description": "Update a juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateJuniperSwitchSnmpConfig",
+      "name": "dataSources.updateJuniperSwitchSnmpConfig",
+      "description": "Update snmp config for a juniper switch data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateNsxvControllerCluster",
+      "name": "dataSources.updateNsxvControllerCluster",
+      "description": "Update nsx controller-cluster details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateNsxvManager",
+      "name": "dataSources.updateNsxvManager",
+      "description": "Update a nsx-v manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updatePanoramaFirewall",
+      "name": "dataSources.updatePanoramaFirewall",
+      "description": "Update a panorama firewall data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateUcsManager",
+      "name": "dataSources.updateUcsManager",
+      "description": "Update an ucs manager data source"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateUcsSnmpConfig",
+      "name": "dataSources.updateUcsSnmpConfig",
+      "description": "Update snmp config for ucs fabric interconnects"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.dataSources.updateVcenter",
+      "name": "dataSources.updateVcenter",
+      "description": "Update a vcenter data source. Only nickname, notes and credentials can be updated."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getCluster",
+      "name": "entities.getCluster",
+      "description": "Show cluster details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getDatacenter",
+      "name": "entities.getDatacenter",
+      "description": "Show vCenter datacenter details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getDatastore",
+      "name": "entities.getDatastore",
+      "description": "Show datastore details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getDistributedVirtualPortgroup",
+      "name": "entities.getDistributedVirtualPortgroup",
+      "description": "Show distributed virtual portgroup details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getDistributedVirtualSwitch",
+      "name": "entities.getDistributedVirtualSwitch",
+      "description": "Show distributed virtual switch details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getFirewall",
+      "name": "entities.getFirewall",
+      "description": "Show firewall details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getFirewallRule",
+      "name": "entities.getFirewallRule",
+      "description": "Show firewall rule details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getFlow",
+      "name": "entities.getFlow",
+      "description": "Show flow details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getFlows",
+      "name": "entities.getFlows",
+      "description": "List flows"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getFolder",
+      "name": "entities.getFolder",
+      "description": "Show folder details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getHost",
+      "name": "entities.getHost",
+      "description": "Show host details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getIpSet",
+      "name": "entities.getIpSet",
+      "description": "Show ip set details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getLayer2Network",
+      "name": "entities.getLayer2Network",
+      "description": "Show layer2 network details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getName",
+      "name": "entities.getName",
+      "description": "Get name of an entity"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getNames",
+      "name": "entities.getNames",
+      "description": "Get names for entities.Limit of 1000 entities in a single request."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getNsxManager",
+      "name": "entities.getNsxManager",
+      "description": "Show nsx manager details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getProblemEvent",
+      "name": "entities.getProblemEvent",
+      "description": "Show problem event details."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getSecurityGroup",
+      "name": "entities.getSecurityGroup",
+      "description": "Show security group details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getSecurityTag",
+      "name": "entities.getSecurityTag",
+      "description": "Show security tag details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getService",
+      "name": "entities.getService",
+      "description": "Show service details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getServiceGroup",
+      "name": "entities.getServiceGroup",
+      "description": "Show service group details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getVcenterManager",
+      "name": "entities.getVcenterManager",
+      "description": "Show vCenter manager details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getVm",
+      "name": "entities.getVm",
+      "description": "Show vm details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getVmknic",
+      "name": "entities.getVmknic",
+      "description": "Show vmknic details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.getVnic",
+      "name": "entities.getVnic",
+      "description": "Show vnic details"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listClusters",
+      "name": "entities.listClusters",
+      "description": "List clusters"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listDatacenters",
+      "name": "entities.listDatacenters",
+      "description": "List vCenter datacenters"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listDatastores",
+      "name": "entities.listDatastores",
+      "description": "List datastores"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listDistributedVirtualPortgroups",
+      "name": "entities.listDistributedVirtualPortgroups",
+      "description": "List distributed virtual portgroups"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listDistributedVirtualSwitches",
+      "name": "entities.listDistributedVirtualSwitches",
+      "description": "List distributed virtual switches"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listFirewallRules",
+      "name": "entities.listFirewallRules",
+      "description": "List firewall rules"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listFirewalls",
+      "name": "entities.listFirewalls",
+      "description": "List firewalls"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listFolders",
+      "name": "entities.listFolders",
+      "description": "List folders"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listHosts",
+      "name": "entities.listHosts",
+      "description": "List hosts"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listIpSets",
+      "name": "entities.listIpSets",
+      "description": "List ip sets"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listLayer2Networks",
+      "name": "entities.listLayer2Networks",
+      "description": "List layer2 networks"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listNsxManagers",
+      "name": "entities.listNsxManagers",
+      "description": "List nsx managers"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listProblemEvents",
+      "name": "entities.listProblemEvents",
+      "description": "List problem events."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listSecurityGroups",
+      "name": "entities.listSecurityGroups",
+      "description": "List security groups"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listSecurityTags",
+      "name": "entities.listSecurityTags",
+      "description": "List security tags"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listServiceGroups",
+      "name": "entities.listServiceGroups",
+      "description": "List service groups"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listServices",
+      "name": "entities.listServices",
+      "description": "List services"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listVcenterManagers",
+      "name": "entities.listVcenterManagers",
+      "description": "List vCenter managers"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listVmknics",
+      "name": "entities.listVmknics",
+      "description": "List vmknics"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listVms",
+      "name": "entities.listVms",
+      "description": "List vms"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.entities.listVnics",
+      "name": "entities.listVnics",
+      "description": "List vnics"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.info.getVersion",
+      "name": "info.getVersion",
+      "description": "Show version info"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.infrastructure.getNode",
+      "name": "infrastructure.getNode",
+      "description": "Get details of infrastructure nodes. Only admin users can get this information. The proxy id is\nrequired for adding a data source for selecting appropriate proxy node to add the data source."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.infrastructure.listNodes",
+      "name": "infrastructure.listNodes",
+      "description": "Get list of infrastructure nodes. Only admin users can retrieve this information."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.microsegmentation.exportNsxRecommendedRules",
+      "name": "microsegmentation.exportNsxRecommendedRules",
+      "description": "Export recommended firewall rules based on the flow data gathered by vRealize Network Insight in NSX-V compatible\nformat"
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.microsegmentation.listRecommendedRules",
+      "name": "microsegmentation.listRecommendedRules",
+      "description": "Get recommended firewall rules based on the flow data gathered by vRealize Network Insight.\nThis API provides service to retrieve recommended rules based on flow traffic that is observed between\ntwo groups OR for a single group based on all the inbound and outboud traffic for that group.\nIn case two groups are provided, both the groups should be of same type.\nCurrently supported groups are Application, Tier, NSXSecurityGroup, EC2SecurityGroup."
+    },
+    {
+      "id": "openapi_vmware_local_vrni_vrni.search.searchEntities",
+      "name": "search.searchEntities",
+      "description": "Using search API you can search vRealize Network Insight entities by specifying entity type and filter expression.\nA filter expression is a predicate expression (similar to SQL where clause) used to define the search criteria.\nPlease refer to API Guide on details of how to construct filter expression. A successful search request will return a\nlist of entity ids that matches the search criteria."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

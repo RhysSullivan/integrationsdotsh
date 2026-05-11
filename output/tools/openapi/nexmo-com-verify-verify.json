@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:26:39.268Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_nexmo_com_verify_verify.check.verifyCheck",
+      "name": "check.verifyCheck",
+      "description": "Use Verify check to confirm that the PIN you received from your user matches the one sent by Vonage in your Verify request.\n\n1. Send the verification `code` that your user supplied, with the corresponding `request_id` from the Verify request.\n2. Check the `status` of the response to determine if the code the user supplied matches the one sent by Vonage.\n\n*Note that this endpoint is available by `GET` request as well as `POST`.*"
+    },
+    {
+      "id": "openapi_nexmo_com_verify_verify.control.verifyControl",
+      "name": "control.verifyControl",
+      "description": "Control the progress of your Verify requests. To cancel an existing Verify request, or to trigger the next verification event:\n\n\n1. Send a Verify control request with the appropriate command (`cmd`) for what you want to achieve.\n\n2. Check the `status` in the response.\n\n\n*Note that this endpoint is available by `GET` request as well as `POST`.*"
+    },
+    {
+      "id": "openapi_nexmo_com_verify_verify.fraudManagement.networkUnblock",
+      "name": "fraudManagement.networkUnblock",
+      "description": "Request to unblock a network that has been blocked due to potential fraud detection\n<div class=\"Vlt-callout Vlt-callout--critical\">\n  <div class=\"Vlt-callout__content\">\n    <h4>Network Unblock is switched off by default.</h4>\n    Please contact Sales to enable the Network Unblock API for your account.\n  </div>\n</div>"
+    },
+    {
+      "id": "openapi_nexmo_com_verify_verify.psd2.verifyRequestWithPsD2",
+      "name": "psd2.verifyRequestWithPsD2",
+      "description": "Use Verify request to generate and send a PIN to your user to authorize a payment:\n1. Create a request to send a verification code to your user.\n2. Check the `status` field in the response to ensure that your request was successful (zero is success).\n3. Use the `request_id` field in the response for the Verify check.\n(Please note that XML format is not supported for the Payment Services Directive endpoint at this time.)"
+    },
+    {
+      "id": "openapi_nexmo_com_verify_verify.requests.verifyRequest",
+      "name": "requests.verifyRequest",
+      "description": "Use Verify request to generate and send a PIN to your user:\n\n1. Create a request to send a verification code to your user.\n\n2. Check the `status` field in the response to ensure that your request was successful (zero is success).\n\n3. Use the `request_id` field in the response for the Verify check.\n\n*Note that this endpoint is available by `GET` request as well as `POST`.*"
+    },
+    {
+      "id": "openapi_nexmo_com_verify_verify.search.verifySearch",
+      "name": "search.verifySearch",
+      "description": "Use Verify search to check the status of past or current verification requests:\n\n1. Send a Verify search request containing the `request_id`s of the verification requests you are interested in.\n2. Use the `status` of each verification request in the `checks` array of the response object to determine the outcome.\n\n*Note that this endpoint is available by `POST` request as well as `GET`.*"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

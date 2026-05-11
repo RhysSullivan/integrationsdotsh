@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:55.969Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_pazy.pricing_api",
+      "name": "pricing_api",
+      "description": "Obtiene una cotización real de un plan funerario de Pazy mediante su API oficial.\n\n        Esta herramienta se utiliza cuando el usuario solicita una cotización personalizada\n        basada en sus preferencias y datos básicos.\n\n        FUNCIONALIDAD:\n        Devuelve opciones de planes funerarios con precios y condiciones en función de:\n        - edad\n        - código postal\n        - tipo de funeral ('incineración' o 'inhumación')\n        - velatorio\n        - ceremonia\n\n        LÍMITE DE USO:\n        - Cada usuario dispone de hasta 10 consultas de cotización en un periodo de 24 horas.\n        - Si se alcanza el límite, la herramienta devolverá el estado \"LIMIT_TRIES_REACHED\".\n        - En ese caso, se debe informar al usuario de que no es posible generar más cotizaciones\n        en ese momento y ofrecer alternativas (por ejemplo, contacto con un asesor).\n\n        REQUISITOS DE DATOS:\n        La herramienta requiere que los siguientes datos estén disponibles y confirmados:\n        - edad (≥ 50 años; el usuario tendrá la opción de ponerse en contacto con un operador o asesor)\n        - código postal en España\n        - tipo de funeral\n        - preferencia de velatorio\n        - preferencia de ceremonia\n\n        CONSIDERACIONES:\n        - El servicio solamente está disponible para personas residentes en España.\n        - Cada ejecución corresponde a una única persona.\n        - Si los datos cambian, se puede generar una nueva cotización (respetando el límite de uso).\n\n        COMPORTAMIENTO:\n        - Los precios mostrados provienen exclusivamente de esta herramienta.\n        - No realiza contratación ni solicita datos personales o de pago.\n        - No modifica datos externos; únicamente consulta información.\n\n        RESULTADO:\n        Devuelve una respuesta estructurada con:\n        - listado de cotizaciones\n        - resumen de resultados\n        - información necesaria para representar la UI asociada\n        - No inventar datos.\n        "
+    },
+    {
+      "id": "mcp_pazy.get_context",
+      "name": "get_context",
+      "description": "Consulta la base de conocimiento interna de Pazy para responder preguntas sobre\n        el servicio, funcionamiento y preguntas frecuentes.\n        Usa esta herramienta para dudas informativas sobre Pazy.\n        No la uses para recuperar tono de marca ni para calcular precios."
+    }
+  ]
+}

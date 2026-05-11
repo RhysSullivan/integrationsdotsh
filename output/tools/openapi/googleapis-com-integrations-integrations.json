@@ -1,0 +1,182 @@
+{
+  "fetchedAt": "2026-04-30T15:22:38.463Z",
+  "status": "ok",
+  "count": 35,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.callback.integrationsCallbackGenerateToken",
+      "name": "callback.integrationsCallbackGenerateToken",
+      "description": "Receives the auth code and auth config id to combine that with the client id and secret to retrieve access tokens from the token endpoint. Returns either a success or error message when it's done."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.connectorPlatformRegions.integrationsConnectorPlatformRegionsEnumerate",
+      "name": "connectorPlatformRegions.integrationsConnectorPlatformRegionsEnumerate",
+      "description": "Enumerates the regions for which Connector Platform is provisioned."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsAppsScriptProjectsCreate",
+      "name": "projects.integrationsProjectsLocationsAppsScriptProjectsCreate",
+      "description": "Creates an Apps Script project."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsAppsScriptProjectsLink",
+      "name": "projects.integrationsProjectsLocationsAppsScriptProjectsLink",
+      "description": "Links a existing Apps Script project."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsConnectionsList",
+      "name": "projects.integrationsProjectsLocationsConnectionsList",
+      "description": "Lists Connections in a given project and location."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsConnectionsRuntimeActionSchemasList",
+      "name": "projects.integrationsProjectsLocationsConnectionsRuntimeActionSchemasList",
+      "description": "Lists the JSON schemas for the inputs and outputs of actions, filtered by action name."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsConnectionsRuntimeEntitySchemasList",
+      "name": "projects.integrationsProjectsLocationsConnectionsRuntimeEntitySchemasList",
+      "description": "Lists the JSON schemas for the properties of runtime entities, filtered by entity name."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsAuthConfigsCreate",
+      "name": "projects.integrationsProjectsLocationsProductsAuthConfigsCreate",
+      "description": "Creates an auth config record. Fetch corresponding credentials for specific auth types, e.g. access token for OAuth 2.0, JWT token for JWT. Encrypt the auth config with Cloud KMS and store the encrypted credentials in Spanner. Returns the encrypted auth config."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsAuthConfigsList",
+      "name": "projects.integrationsProjectsLocationsProductsAuthConfigsList",
+      "description": "Lists all auth configs that match the filter. Restrict to auth configs belong to the current client only."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsCertificatesCreate",
+      "name": "projects.integrationsProjectsLocationsProductsCertificatesCreate",
+      "description": "Creates a new certificate. The certificate will be registered to the trawler service and will be encrypted using cloud KMS and stored in Spanner Returns the certificate."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsCertificatesList",
+      "name": "projects.integrationsProjectsLocationsProductsCertificatesList",
+      "description": "List all the certificates that match the filter. Restrict to certificate of current client only."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecute",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecute",
+      "description": "Executes integrations synchronously by passing the trigger id in the request body. The request is not returned until the requested executions are either fulfilled or experienced an error. If the integration name is not specified (passing `-`), all of the associated integration under the given trigger_id will be executed. Otherwise only the specified integration for the given `trigger_id` is executed. This is helpful for execution the integration from UI."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecutionsCancel",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecutionsCancel",
+      "description": "Cancellation of an execution"
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecutionsList",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecutionsList",
+      "description": "Lists the results of all the integration executions. The response includes the same information as the [execution log](https://cloud.google.com/application-integration/docs/viewing-logs) in the Integration UI."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsLift",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsLift",
+      "description": "* Lifts suspension for advanced suspension task. Fetch corresponding suspension with provided suspension Id, resolve suspension, and set up suspension result for the Suspension Task."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsList",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsList",
+      "description": "* Lists suspensions associated with a specific execution. Only those with permissions to resolve the relevant suspensions will be able to view them."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsResolve",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsExecutionsSuspensionsResolve",
+      "description": "* Resolves (lifts/rejects) any number of suspensions. If the integration is already running, only the status of the suspension is updated. Otherwise, the suspended integration will begin execution again."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsList",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsList",
+      "description": "Returns the list of all integrations in the specified project."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsSchedule",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsSchedule",
+      "description": "Schedules an integration for execution by passing the trigger id and the scheduled time in the request body."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsVersionsDownload",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsVersionsDownload",
+      "description": "Downloads an integration. Retrieves the `IntegrationVersion` for a given `integration_id` and returns the response as a string."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsVersionsPublish",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsVersionsPublish",
+      "description": "This RPC throws an exception if the integration is in ARCHIVED or ACTIVE state. This RPC throws an exception if the version being published is DRAFT, and if the `locked_by` user is not the same as the user performing the Publish. Audit fields updated include last_published_timestamp, last_published_by, last_modified_timestamp, last_modified_by. Any existing lock is on this integration is released."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsVersionsTakeoverEditLock",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsVersionsTakeoverEditLock",
+      "description": "Clears the `locked_by` and `locked_at_timestamp`in the DRAFT version of this integration. It then performs the same action as the CreateDraftIntegrationVersion (i.e., copies the DRAFT version of the integration as a SNAPSHOT and then creates a new DRAFT version with the `locked_by` set to the `user_taking_over` and the `locked_at_timestamp` set to the current timestamp). Both the `locked_by` and `user_taking_over` are notified via email about the takeover. This RPC throws an exception if the integration is not in DRAFT status or if the `locked_by` and `locked_at_timestamp` fields are not set.The TakeoverEdit lock is treated the same as an edit of the integration, and hence shares ACLs with edit. Audit fields updated include last_modified_timestamp, last_modified_by."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsVersionsUnpublish",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsVersionsUnpublish",
+      "description": "Sets the status of the ACTIVE integration to SNAPSHOT with a new tag \"PREVIOUSLY_PUBLISHED\" after validating it. The \"HEAD\" and \"PUBLISH_REQUESTED\" tags do not change. This RPC throws an exception if the version being snapshot is not ACTIVE. Audit fields added include action, action_by, action_timestamp."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationsVersionsUpload",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationsVersionsUpload",
+      "description": "Uploads an integration. The content can be a previously downloaded integration. Performs the same function as CreateDraftIntegrationVersion, but accepts input in a string format, which holds the complete representation of the IntegrationVersion content."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationtemplatesVersionsCreate",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationtemplatesVersionsCreate",
+      "description": "Creates an IntegrationTemplateVersion."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsProductsIntegrationtemplatesVersionsList",
+      "name": "projects.integrationsProjectsLocationsProductsIntegrationtemplatesVersionsList",
+      "description": "Returns the list of all IntegrationTemplateVersions in the specified project."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesCreate",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesCreate",
+      "description": "Creates an sfdc instance record. Store the sfdc instance in Spanner. Returns the sfdc instance."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesList",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesList",
+      "description": "Lists all sfdc instances that match the filter. Restrict to sfdc instances belonging to the current client only."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsCreate",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsCreate",
+      "description": "Creates an sfdc channel record. Store the sfdc channel in Spanner. Returns the sfdc channel."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsDelete",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsDelete",
+      "description": "Deletes an sfdc channel."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsGet",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsGet",
+      "description": "Gets an sfdc channel. If the channel doesn't exist, Code.NOT_FOUND exception will be thrown."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsList",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsList",
+      "description": "Lists all sfdc channels that match the filter. Restrict to sfdc channels belonging to the current client only."
+    },
+    {
+      "id": "openapi_googleapis_com_integrations_integrations.projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsPatch",
+      "name": "projects.integrationsProjectsLocationsSfdcInstancesSfdcChannelsPatch",
+      "description": "Updates an sfdc channel. Updates the sfdc channel in spanner. Returns the sfdc channel."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

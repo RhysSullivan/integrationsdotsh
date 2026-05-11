@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-04-30T15:26:56.482Z",
+  "status": "ok",
+  "count": 10,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.note.getNote",
+      "name": "note.getNote",
+      "description": "Retrieves a given note in VTEX DO, filtering by `noteId`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.note.getNotesbyorderId",
+      "name": "note.getNotesbyorderId",
+      "description": "Retrieves notes related to a specific `orderId`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.note.newNote",
+      "name": "note.newNote",
+      "description": "This endpoint creates a new note in VTEX DO. Be aware of the following limitations:\r\n\n\r- The maximum number of notes for an order is 30.\r\n\n\r- The maximum number of characters in a note's description is 2000."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.task.addComment",
+      "name": "task.addComment",
+      "description": "Adds a comment to a given task, filtering by `taskId`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.task.editTask",
+      "name": "task.editTask",
+      "description": "Updates a given task's status, for example, filtering by `taskId`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.task.getTask",
+      "name": "task.getTask",
+      "description": "Retrieves a given task, filtering by `taskId`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.task.listtasksbyassignee",
+      "name": "task.listtasksbyassignee",
+      "description": "This endpoint allows you to filter tasks. You can choose between the following filtering options: \r\n\r\n- **Assignees:** using `assignee.email` and `status`. Example: `https://{{accountName}}.{{environment}}.com.br/api/do/tasks?assignee.email={{person@email.com}}&status={{open}}`. \r\n\r\n- **Targets:** using `targetId` and `status`. Example: `https://{{accountName}}.{{environment}}.com.br/api/do/tasks?target.id={{name}}&status={{open}}`. \r\n\r\n- **Paged tasks:** using `page`, `perPage` and `status`. Example: `https://{{accountName}}.{{environment}}.com.br/api/do/tasks?page={{1}}&perPage={{10}}&status=;{{-Closed}}`. \r\n\r\n- **Context:** using `context`, `page`, `perPage` and `status`. Example: `https://{{accountName}}.{{environment}}.com.br/api/do/tasks?context={{context}}&page={{1}}&perPage={{10}}&status={{-Closed}}`."
+    },
+    {
+      "id": "openapi_vtex_local_vtex_do_api_vtex_do_api.task.newTask",
+      "name": "task.newTask",
+      "description": "Creates a new task in VTEX DO."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

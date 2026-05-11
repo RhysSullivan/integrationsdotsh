@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:29.556Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_clutch_co.get_service_provider_reviews",
+      "name": "get_service_provider_reviews",
+      "description": "Use this tool when the user asks to see client reviews for a specific service provider (company).\n\nIt returns detailed verified reviews that include project information, pricing, scope, client feedback, ratings,\n and more.\nOptionally filter reviews by a specific service.\n        "
+    },
+    {
+      "id": "mcp_clutch_co.recommend_service_providers",
+      "name": "recommend_service_providers",
+      "description": "Use this tool when the user is looking for service providers\n(companies, agencies, consultants, contractors, vendors) and describes requirements such as\nservice type, industry, location, budget and pricing, company size, or specific focus areas (technologies/specialties).\n\nThe tool returns a ranked list of providers that best match the criteria, including basic profile info\nand review/rating signals for comparison. Use `offset`/`limit` for pagination.\n\nExamples:\n- \"Give me top web development companies for small businesses in the healthcare industry\" ->\n    service=\"Web Development\", industry=\"Healthcare\", client_type=\"Small Business( <$10M)\"\n- \"I need to improve SEO of my online store\" -> service=\"SEO\"\n- \"I need SEO agencies that specialize in Shopify and have at least 10 reviews\" ->\n    service=\"SEO\", focus_areas=[\"Shopify\"], min_reviews=10\n        "
+    },
+    {
+      "id": "mcp_clutch_co.get_service_packages",
+      "name": "get_service_packages",
+      "description": "Use this tool when the user wants to see service packages with fixed pricing and scope\nfor a specific type of service.\n\nThis tool returns standardized packages offered by service providers, including pricing tiers,\ndeliverables, and delivery timelines. It is useful when the user asks about cost, scope of work,\nor wants to compare package options. Use `page`/`limit` for pagination.\n"
+    }
+  ]
+}

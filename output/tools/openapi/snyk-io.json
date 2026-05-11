@@ -1,0 +1,532 @@
+{
+  "fetchedAt": "2026-04-30T15:26:47.091Z",
+  "status": "ok",
+  "count": 105,
+  "tools": [
+    {
+      "id": "openapi_snyk_io.auditLogs.getGroupLevelAuditLogs",
+      "name": "auditLogs.getGroupLevelAuditLogs",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.auditLogs.getOrganizationLevelAuditLogs",
+      "name": "auditLogs.getOrganizationLevelAuditLogs",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.dependencies.listAllDependencies",
+      "name": "dependencies.listAllDependencies",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.entitlements.getAnOrganizationSEntitlementValue",
+      "name": "entitlements.getAnOrganizationSEntitlementValue",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.entitlements.listAllEntitlements",
+      "name": "entitlements.listAllEntitlements",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.addAMemberToAnOrganizationWithinAGroup",
+      "name": "groups.addAMemberToAnOrganizationWithinAGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.deleteTagFromGroup",
+      "name": "groups.deleteTagFromGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.listAllMembersInAGroup",
+      "name": "groups.listAllMembersInAGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.listAllOrganizationsInAGroup",
+      "name": "groups.listAllOrganizationsInAGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.listAllRolesInAGroup",
+      "name": "groups.listAllRolesInAGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.listAllTagsInAGroup",
+      "name": "groups.listAllTagsInAGroup",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.updateGroupSettings",
+      "name": "groups.updateGroupSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.groups.viewGroupSettings",
+      "name": "groups.viewGroupSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.importProjects.getImportJobDetails",
+      "name": "importProjects.getImportJobDetails",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.importProjects.importTargets",
+      "name": "importProjects.importTargets",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.integrations.addNewIntegration",
+      "name": "integrations.addNewIntegration",
+      "description": "Add new integration for given organization."
+    },
+    {
+      "id": "openapi_snyk_io.integrations.cloneAnIntegrationWithSettingsAndCredentials",
+      "name": "integrations.cloneAnIntegrationWithSettingsAndCredentials",
+      "description": "Clone an integration, including all of its settings and credentials from one organization to another organization in the same group.\nThis API supports both brokered and non-brokered integrations.\n\nUse this API for when you want to share a Broker token between several Snyk organizations (integrations)."
+    },
+    {
+      "id": "openapi_snyk_io.integrations.deleteCredentials",
+      "name": "integrations.deleteCredentials",
+      "description": "Removes any credentials set for this integration. If this is a brokered connection the operation will have no effect."
+    },
+    {
+      "id": "openapi_snyk_io.integrations.getExistingIntegrationByType",
+      "name": "integrations.getExistingIntegrationByType",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.integrations.list",
+      "name": "integrations.list",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.integrations.provisionNewBrokerToken",
+      "name": "integrations.provisionNewBrokerToken",
+      "description": "Issue a new and unique provisional broker token for the brokered integration.\n\nUsed for zero down-time token rotation with the Snyk Broker. Once provisioned, the token can be used to initialize a new broker client before using the switch API to update the token in use by the integration.\n\nThe new provisional token will fail to be created if the integration, or any other integration in the same group, already has one provisioned."
+    },
+    {
+      "id": "openapi_snyk_io.integrations.retrieve",
+      "name": "integrations.retrieve",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.integrations.switchBetweenBrokerTokens",
+      "name": "integrations.switchBetweenBrokerTokens",
+      "description": "Switch the existing broker token with the provisioned token for this integration and any other in the same group.\nOnly perform this action when you have a Broker client running with the provisioned token.\nThis action will fail if there is no token provisioned for this integration or any integration in the same group."
+    },
+    {
+      "id": "openapi_snyk_io.integrations.update",
+      "name": "integrations.update",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.integrations.updateExistingIntegration",
+      "name": "integrations.updateExistingIntegration",
+      "description": "+ Update integration's credentials for given organization. Integration must be **not brokered**\n\n+ Enable or disable brokered integration for given organization. *Credentials required for disabling brokered integration*\n\nExamples in right section:\n\n1. Set up a broker for an existing integration\n\n2. Update credentials for an existing non-brokered integration\n\n3. Disable broker for an existing integration"
+    },
+    {
+      "id": "openapi_snyk_io.licenses.listAllLicenses",
+      "name": "licenses.listAllLicenses",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.monitor.monitorDepGraph",
+      "name": "monitor.monitorDepGraph",
+      "description": "Use this endpoint to monitor a [DepGraph data object](https://github.com/snyk/dep-graph#depgraphdata)."
+    },
+    {
+      "id": "openapi_snyk_io.organizations.createANewOrganization",
+      "name": "organizations.createANewOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.deletePendingUserProvision",
+      "name": "organizations.deletePendingUserProvision",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.getOrgOrgIdNotificationSettings",
+      "name": "organizations.getOrgOrgIdNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.inviteUsers",
+      "name": "organizations.inviteUsers",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.listAllTheOrganizationsAUserBelongsTo",
+      "name": "organizations.listAllTheOrganizationsAUserBelongsTo",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.listMembers",
+      "name": "organizations.listMembers",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.listPendingUserProvisions",
+      "name": "organizations.listPendingUserProvisions",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.provisionAUserToTheOrganization",
+      "name": "organizations.provisionAUserToTheOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.removeAMemberFromTheOrganization",
+      "name": "organizations.removeAMemberFromTheOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.removeOrganization",
+      "name": "organizations.removeOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.setNotificationSettings",
+      "name": "organizations.setNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.updateAMemberInTheOrganization",
+      "name": "organizations.updateAMemberInTheOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.updateAMemberSRoleInTheOrganization",
+      "name": "organizations.updateAMemberSRoleInTheOrganization",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.organizations.updateOrganizationSettings",
+      "name": "organizations.updateOrganizationSettings",
+      "description": "Settings that are not provided will not be modified."
+    },
+    {
+      "id": "openapi_snyk_io.organizations.viewOrganizationSettings",
+      "name": "organizations.viewOrganizationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.activate",
+      "name": "projects.activate",
+      "description": "Activating a project will:\n\n- Add a repository webhook for supported integrations.\n\n- Enable pull request tests for new vulnerabilities.\n\n- Open Fix pull request for newly disclosed vulnerabilities.\n\n- Enable recurring tests, sending email alerts about newly disclosed vulnerabilities."
+    },
+    {
+      "id": "openapi_snyk_io.projects.addATagToAProject",
+      "name": "projects.addATagToAProject",
+      "description": "​"
+    },
+    {
+      "id": "openapi_snyk_io.projects.addIgnore",
+      "name": "projects.addIgnore",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.applyingAttributes",
+      "name": "projects.applyingAttributes",
+      "description": "Applies an attribute to the provided project.\nIt is possible to assign multiple values to each attribute, but you can only assign values to one of the predefined attribute categories, using the predefined options for this category.\nAssigning an attribute requires the caller to be either an Organization Administrator or a Group Administrator.\nAssigning an attribute will override any existing values that the specific attribute already has set.\nIn order to clear out an attribute value, an empty array can be set."
+    },
+    {
+      "id": "openapi_snyk_io.projects.createJiraIssue",
+      "name": "projects.createJiraIssue",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.deactivate",
+      "name": "projects.deactivate",
+      "description": "Deactivating a project will:\n\n- Disable pull request tests for new vulnerabilities.\n\n- Disable Fix pull request from being opened for newly disclosed vulnerabilities.\n\n- Disable recurring tests - email alerts about newly disclosed vulnerabilities will be turned off.\n\n- If the repository has no other active projects, then remove any webhooks related to the project."
+    },
+    {
+      "id": "openapi_snyk_io.projects.deleteAProject",
+      "name": "projects.deleteAProject",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.deleteIgnores",
+      "name": "projects.deleteIgnores",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.deleteProjectSettings",
+      "name": "projects.deleteProjectSettings",
+      "description": "Deleting project settings will set the project to inherit default settings from its integration."
+    },
+    {
+      "id": "openapi_snyk_io.projects.getProjectDependencyGraph",
+      "name": "projects.getProjectDependencyGraph",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllAggregatedIssues",
+      "name": "projects.listAllAggregatedIssues",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllIgnores",
+      "name": "projects.listAllIgnores",
+      "description": "Temporary ignores include an `expires` attribute, while permanent ignores do not."
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllJiraIssues",
+      "name": "projects.listAllJiraIssues",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllProjectIssuePaths",
+      "name": "projects.listAllProjectIssuePaths",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllProjects",
+      "name": "projects.listAllProjects",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllProjectSnapshotAggregatedIssues",
+      "name": "projects.listAllProjectSnapshotAggregatedIssues",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllProjectSnapshotIssuePaths",
+      "name": "projects.listAllProjectSnapshotIssuePaths",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listAllProjectSnapshots",
+      "name": "projects.listAllProjectSnapshots",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.listProjectSettings",
+      "name": "projects.listProjectSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.moveProjectToADifferentOrganization",
+      "name": "projects.moveProjectToADifferentOrganization",
+      "description": "Note: when moving a project to a new organization, the historical data used for reporting does not move with it."
+    },
+    {
+      "id": "openapi_snyk_io.projects.removeATagFromAProject",
+      "name": "projects.removeATagFromAProject",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.replaceIgnores",
+      "name": "projects.replaceIgnores",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.retrieveASingleProject",
+      "name": "projects.retrieveASingleProject",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.retrieveIgnore",
+      "name": "projects.retrieveIgnore",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.updateAProject",
+      "name": "projects.updateAProject",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.projects.updateProjectSettings",
+      "name": "projects.updateProjectSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getIssueCounts",
+      "name": "reportingApi.getIssueCounts",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getLatestIssueCounts",
+      "name": "reportingApi.getLatestIssueCounts",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getLatestProjectCounts",
+      "name": "reportingApi.getLatestProjectCounts",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getListOfIssues",
+      "name": "reportingApi.getListOfIssues",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getListOfLatestIssues",
+      "name": "reportingApi.getListOfLatestIssues",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getProjectCounts",
+      "name": "reportingApi.getProjectCounts",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.reportingApi.getTestCounts",
+      "name": "reportingApi.getTestCounts",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.test.getTestPipPackageNameVersion",
+      "name": "test.getTestPipPackageNameVersion",
+      "description": "You can test `pip` packages for issues according to their name and version."
+    },
+    {
+      "id": "openapi_snyk_io.test.getTestSbtGroupIdArtifactIdVersion",
+      "name": "test.getTestSbtGroupIdArtifactIdVersion",
+      "description": "You can test `sbt` packages for issues according to their group ID, artifact ID and version. This is done via the maven endpoint (for Java), since the packages are hosted on maven central or a compatible repository. See \"Maven\" above for details."
+    },
+    {
+      "id": "openapi_snyk_io.test.testComposerJsonComposerLockFile",
+      "name": "test.testComposerJsonComposerLockFile",
+      "description": "You can test your Composer packages for issues according to their manifest file & lockfile using this action. It takes a JSON object containing a \"target\" `composer.json` and a `composer.lock`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testDepGraph",
+      "name": "test.testDepGraph",
+      "description": "Use this endpoint to find issues in a [DepGraph data object](https://github.com/snyk/dep-graph#depgraphdata)."
+    },
+    {
+      "id": "openapi_snyk_io.test.testForIssuesInAPublicGemByNameAndVersion",
+      "name": "test.testForIssuesInAPublicGemByNameAndVersion",
+      "description": "You can test `rubygems` packages for issues according to their name and version."
+    },
+    {
+      "id": "openapi_snyk_io.test.testForIssuesInAPublicPackageByGroupIdArtifactIdAndVersion",
+      "name": "test.testForIssuesInAPublicPackageByGroupIdArtifactIdAndVersion",
+      "description": "You can test `maven` packages for issues according to their [coordinates](https://maven.apache.org/pom.html#Maven_Coordinates): group ID, artifact ID and version. The repository hosting the package may also be customized (see the `repository` query parameter)."
+    },
+    {
+      "id": "openapi_snyk_io.test.testForIssuesInAPublicPackageByGroupNameAndVersion",
+      "name": "test.testForIssuesInAPublicPackageByGroupNameAndVersion",
+      "description": "You can test `gradle` packages for issues according to their group, name and version. This is done via the maven endpoint (for Java), since the packages are hosted on maven central or a compatible repository. See \"Maven\" above for details."
+    },
+    {
+      "id": "openapi_snyk_io.test.testForIssuesInAPublicPackageByNameAndVersion",
+      "name": "test.testForIssuesInAPublicPackageByNameAndVersion",
+      "description": "You can test `npm` packages for issues according to their name and version."
+    },
+    {
+      "id": "openapi_snyk_io.test.testGemfileLockFile",
+      "name": "test.testGemfileLockFile",
+      "description": "You can test your rubygems applications for issues according to their lockfile using this action. It takes a JSON object containing a the \"target\" `Gemfile.lock`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testGopkgTomlGopkgLockFile",
+      "name": "test.testGopkgTomlGopkgLockFile",
+      "description": "You can test your Go dep packages for issues according to their manifest file & lockfile using this action. It takes a JSON object containing a \"target\" `Gopkg.toml` and a `Gopkg.lock`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testGradleFile",
+      "name": "test.testGradleFile",
+      "description": "You can test your Gradle packages for issues according to their manifest file using this action. It takes a JSON object containing the \"target\" `build.gradle`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testMavenFile",
+      "name": "test.testMavenFile",
+      "description": "You can test your Maven packages for issues according to their manifest file using this action. It takes a JSON object containing a the \"target\" `pom.xml`.\n\nAdditional manifest files, if they are needed, like parent `pom.xml` files, child poms, etc., according the the definitions in the target `pom.xml` file, should be supplied in the `additional` body parameter."
+    },
+    {
+      "id": "openapi_snyk_io.test.testPackageJsonPackageLockJsonFile",
+      "name": "test.testPackageJsonPackageLockJsonFile",
+      "description": "You can test your npm packages for issues according to their manifest file & optional lockfile using this action. It takes a JSON object containing a \"target\" `package.json` and optionally a `package-lock.json`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testPackageJsonYarnLockFile",
+      "name": "test.testPackageJsonYarnLockFile",
+      "description": "You can test your yarn packages for issues according to their manifest file & lockfile using this action. It takes a JSON object containing a \"target\" `package.json` and a `yarn.lock`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testRequirementsTxtFile",
+      "name": "test.testRequirementsTxtFile",
+      "description": "You can test your pip packages for issues according to their manifest file using this action. It takes a JSON object containing a the \"target\" `requirements.txt`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testSbtFile",
+      "name": "test.testSbtFile",
+      "description": "You can test your `sbt` packages for issues according to their manifest file using this action. It takes a JSON object containing a the \"target\" `build.sbt`."
+    },
+    {
+      "id": "openapi_snyk_io.test.testVendorJsonFile",
+      "name": "test.testVendorJsonFile",
+      "description": "You can test your Go vendor packages for issues according to their manifest file using this action. It takes a JSON object containing a \"target\" `vendor.json`."
+    },
+    {
+      "id": "openapi_snyk_io.users.getMyDetails",
+      "name": "users.getMyDetails",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.users.getOrganizationNotificationSettings",
+      "name": "users.getOrganizationNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.users.getProjectNotificationSettings",
+      "name": "users.getProjectNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.users.getUserDetails",
+      "name": "users.getUserDetails",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.users.modifyOrganizationNotificationSettings",
+      "name": "users.modifyOrganizationNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.users.modifyProjectNotificationSettings",
+      "name": "users.modifyProjectNotificationSettings",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.webhooks.createAWebhook",
+      "name": "webhooks.createAWebhook",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.webhooks.deleteAWebhook",
+      "name": "webhooks.deleteAWebhook",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.webhooks.listWebhooks",
+      "name": "webhooks.listWebhooks",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.webhooks.pingAWebhook",
+      "name": "webhooks.pingAWebhook",
+      "description": ""
+    },
+    {
+      "id": "openapi_snyk_io.webhooks.retrieveAWebhook",
+      "name": "webhooks.retrieveAWebhook",
+      "description": ""
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

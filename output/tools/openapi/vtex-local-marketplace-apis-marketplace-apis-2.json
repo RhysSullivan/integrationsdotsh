@@ -1,0 +1,92 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.945Z",
+  "status": "ok",
+  "count": 17,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.getSuggestions.getSuggestion",
+      "name": "getSuggestions.getSuggestion",
+      "description": "This endpoint retrieves the data of a specific SKU sent by the seller, to the marketplace. Marketplaces or external matchers can call this endpoint when they want to check the information about a single SKU. \n\nNote that all the information sent by the seller will be in the [content] object. All remaining information in this endpoint's response is given by the Matcher. \n\nMatcher rates received SKUs by correlating the data sent by sellers, to existing fields in the marketplace. The calculation of these scores determines whether the product has been: \n\n`Approved`: score equal to or greater than 80 points. \n\n`Pending`: from 31 to 79 points.\n\n`Denied`: from 0 to 30 points. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.getSuggestions.getsuggestions",
+      "name": "getSuggestions.getsuggestions",
+      "description": "This endpoint retrieves a list of all SKUs sent by the seller for the Marketplace's approval. Marketplace operators should use this endpoint whenever they want to check the full list of received SKUs and their  information. \n\nNote that all the information sent by the seller will be in the [content] object. All remaining information in this endpoint's response is given by the Matcher. \n\nMatcher rates received SKUs by correlating the data sent by sellers, to existing fields in the marketplace. The calculation of these scores determines whether the product has been: \n\n`Approved`: score equal to or greater than 80 points. \n\n`Pending`: from 31 to 79 points.\n\n`Denied`: from 0 to 30 points. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.getVersions.getSuggestionbyversion",
+      "name": "getVersions.getSuggestionbyversion",
+      "description": "Whenever an SKU Suggestion is updated or changed, a new version of the original one is created. All versions are logged, so you can search for previous our current states of SKU suggestions. \n\nThis endpoint retrieves a specific *version* of a chosen SKU sent by the seller. Add the Seller's ID, Seller's SKU ID, and version ID in the path to detail your search."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.getVersions.getSuggestionsVersions",
+      "name": "getVersions.getSuggestionsVersions",
+      "description": "Whenever an SKU Suggestion is updated or changed, a new version of the original one is created. All versions are logged, so you can search for previous our current states of SKU suggestions. \n\nThis endpoint retrieves the data of *all* previous and latest versions of a specific SKU suggestion, sent by the seller. Whenever an SKU is updated, it is important to map previous versions, to compare and identify changes. \n\nThe response's object [latestversion] provides the information of the most recent version of that SKU suggestion."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.manageSuggestions.deleteSuggestion",
+      "name": "manageSuggestions.deleteSuggestion",
+      "description": "This endpoint deletes a chosen SKU suggestion. Only one SKU should be deleted per request. This request cannot be undone. A workaround to revert its action, is to send the suggestion again, through the Send Suggestion API."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.manageSuggestions.saveSuggestion",
+      "name": "manageSuggestions.saveSuggestion",
+      "description": "This request is used by the seller when it wants to suggest that one of their SKUs is sold in the marketplace.\n\nBefore using this request, the seller should always use the [Change Notification](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-get-seller-sku-notification) request in order to check if the SKU already exists in the marketplace. If it doesn't, then this is the next call in the SKU integration flow.\n\nIn the Send Suggestion request, the seller must send information about the SKU, such as the product and SKU name, the seller ID, and the image URL. All parameters are explained below. "
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.matchReceivedSkUs.match",
+      "name": "matchReceivedSkUs.match",
+      "description": "All SKUs sent from a seller to a marketplace must be reviewed and matched. Actions in the matching process are added in the request body through the [matchType] object. Match type actions include: \n\n1. `newproduct`: match the SKU as a new product. \n\n2. `itemMatch`: associate the received SKU to an existing SKU. \n\n3. `productMatch`: associate the received SKU to an existing product. \n\n4. `deny`: deny the received SKU. \n\n5. `pending`: the received SKU requires attention. \n\n6. `incomplete`: the received SKU is lacking information to be matched. \n\n7. `insufficientScore`: the score given by the Matcher to this received SKU doesn't qualify it to be matched. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.matchReceivedSkUs.matchMultiple",
+      "name": "matchReceivedSkUs.matchMultiple",
+      "description": "This endpoint allows the user to bulk approve, deny, or associate received SKUs. In a single request, you can match up to 25 received SKUs from your sellers.\n\nThrough the `actionName` attribute you can select the operation you want to apply to the received SKU. \n\nActions include: \n\n1. `newproduct`: match the SKU as a new product. \n\n2. `skuassociation`: associate the received SKU to an existing SKU. \n\n3. `productassociation`: associate the received SKU to an existing product. \n\n4. `deny`: deny the received SKU."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.getaccountconfig",
+      "name": "skuApprovalSettings.getaccountconfig",
+      "description": "This endpoint retrieves the current approval settings of a marketplace's Received SKUs module. Its response includes: \n\n- `Score`: Matcher scores for approving and rejecting SKUs received from sellers. \n\n- `Matchers`: All Matchers configured on the marketplace, and their respective details. \n\n- `SpecificationsMapping`: Mapping of product and SKU specifications, per seller. \n\n- `MatchFlux`: This field determines the type of approval configuration applied to SKUs received from a seller. \n\nThe possible values include: \n\n-`default`, where the Matcher reviews the SKU, and approves it based on its score. \n\n-`manual`, for manual approvals through the Received SKU UI, or Match API. \n\n-`autoApprove`, for every SKU received from a given seller to be approved automatically, regardless of their Matcher Score."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.getautoApprovevaluefromconfig",
+      "name": "skuApprovalSettings.getautoApprovevaluefromconfig",
+      "description": "This endpoint can be used to check whether the autoapprove setting is active or not, for a specific seller. \n\nIf the response is `true`, the autoapprove setting is active. If the response is `false`, it is inactive."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.getselleraccountconfig",
+      "name": "skuApprovalSettings.getselleraccountconfig",
+      "description": "This endpoint retrieves the current Received SKUs approval settings applied to a specific seller. Its response includes: \n\n- `sellerId`: A string that identifies the seller in the marketplace. \n\n- `accountId`: Marketplace’s account ID. \n\n- `accountName`: Marketplace’s account name. \n\n- `mapping`: Mapping of SKU and product Specifications. \n\n- `matchFlux`: This field determines the type of approval configuration applied to SKUs received  from a seller. \n\nThe possible values include:  \n\n-`default`, where the Matcher reviews the SKU, and approves it based on its score. \n\n-`manual`, for manual approvals through the Received SKU UI and Match API. \n\n-`autoApprove`, for every SKU received from a given seller to be approved automatically, regardless of the Matcher Score."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.putselleraccountconfig",
+      "name": "skuApprovalSettings.putselleraccountconfig",
+      "description": "Marketplaces use this endpoint to create or update approval settings to a specific seller, on the Received SKUs module. \n\nThe request includes all the details necessary to implement the chosen approval settings."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.saveaccountconfig",
+      "name": "skuApprovalSettings.saveaccountconfig",
+      "description": "Marketplaces use this endpoint to create or update approval settings on their Received SKUs module. \n\nThe request includes all the details necessary to implement the chosen approval settings."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.saveautoapproveforaccount",
+      "name": "skuApprovalSettings.saveautoapproveforaccount",
+      "description": "This endpoint enables the autoapprove rule to a marketplace's whole Received SKUs module. Once enabling the rule, received SKUs will be automatically approved on your store, regardless of the seller. \n\n For the autoapprove rule to work as expected, the approval [Matcher score](https://help.vtex.com/en/tutorial/entendendo-a-pontuacao-do-vtex-matcher--tutorials_424) should be set up as 80 (default value), but you can configure a different number through the field `Score` in [Save Account's Approval Settings](https://developers.vtex.com/vtex-rest-api/reference/saveaccountconfig)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_apis_marketplace_apis_2.skuApprovalSettings.saveautoapproveforaccountseller",
+      "name": "skuApprovalSettings.saveautoapproveforaccountseller",
+      "description": "This endpoint enables the auto approve setting to received SKUs from a specific seller. Be aware that once enabling the rule through this request, all received SKUs from that seller will be automatically approved on your store, regardless of the Matcher Score."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:26:45.335Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_rev_ai.account.getAccount",
+      "name": "account.getAccount",
+      "description": "Get the developer's account information"
+    },
+    {
+      "id": "openapi_rev_ai.captions.getCaptions",
+      "name": "captions.getCaptions",
+      "description": "Returns the caption output for a transcription job. We currently support SubRip (SRT) and Web Video Text Tracks (VTT) output.\nCaption output format can be specified in the `Accept` header. Returns SRT by default.\n***\nNote: For streaming jobs, transient failure of our storage during a live session may prevent the final hypothesis elements from saving properly, resulting in an incomplete caption file. This is rare, but not impossible.\n"
+    },
+    {
+      "id": "openapi_rev_ai.jobs.deleteJobById",
+      "name": "jobs.deleteJobById",
+      "description": "Deletes a transcription job. All data related to the job, such as input media and transcript, will be permanently deleted. A job can only be deleted once it's completed (either with success or failure)."
+    },
+    {
+      "id": "openapi_rev_ai.jobs.getJobById",
+      "name": "jobs.getJobById",
+      "description": "Returns information about a transcription job"
+    },
+    {
+      "id": "openapi_rev_ai.jobs.getListOfJobs",
+      "name": "jobs.getListOfJobs",
+      "description": "Gets a list of transcription jobs submitted within the last 30 days in reverse chronological order up to the provided `limit` number of jobs per call. **Note:** Jobs older than 30 days will not be listed. Pagination is supported via passing the last job `id` from a previous call into `starting_after`."
+    },
+    {
+      "id": "openapi_rev_ai.jobs.submitTranscriptionJob",
+      "name": "jobs.submitTranscriptionJob",
+      "description": "Starts an asynchronous job to transcribe speech-to-text for a media file. Media files can be specified in two ways, either by including a public url to the media in the transcription job `options` or by uploading a local file as part of a multipart/form request."
+    },
+    {
+      "id": "openapi_rev_ai.transcript.getTranscriptById",
+      "name": "transcript.getTranscriptById",
+      "description": "Returns the transcript for a completed transcription job. Transcript can be returned as either JSON or plaintext format. Transcript output format can be specified in the `Accept` header. Returns JSON by default.\n***\nNote: For streaming jobs, transient failure of our storage during a live session may prevent the final hypothesis elements from saving properly, resulting in an incomplete transcript. This is rare, but not impossible. To guarantee 100% completeness, we recommend capturing all final hypothesis when you receive them on the client.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

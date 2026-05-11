@@ -1,0 +1,1097 @@
+{
+  "fetchedAt": "2026-04-30T15:22:44.479Z",
+  "status": "ok",
+  "count": 218,
+  "tools": [
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.deleteAliasesV2TrackingId",
+      "name": "aliases.deleteAliasesV2TrackingId",
+      "description": "Deletes all aliases of a device identified by the `trackingId`.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion. \nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.deleteAliasesV2TrackingIdType",
+      "name": "aliases.deleteAliasesV2TrackingIdType",
+      "description": "Deletes all aliases of a specified type for a device identified by the `trackingId`.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion. \nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.deleteAliasesV2TrackingIdTypeExternalId",
+      "name": "aliases.deleteAliasesV2TrackingIdTypeExternalId",
+      "description": "Deletes the specified alias.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.getAliasesV2",
+      "name": "aliases.getAliasesV2",
+      "description": "Gets all aliases of a project.\n\nIf `type` query parameter is provided, the response will contain\nonly aliases of the given type.\n\nIf `externalId` query parameter is specified, the\nresponse will contain only aliases that match the given\nexternal ID. The following wildcards can be used:\n'*' matches any number of any characters,\n'?' matches a single character.\n\nIf `after` query parameter is provided, the successful response will only\ncontain aliases that were created after the specified timestamp.\nParameters `after` and `pageToken` are mutually exclusive and cannot be provided at the same time.\n\nThe returned results are sorted in ascending order by the alias creation time.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.getAliasesV2Health",
+      "name": "aliases.getAliasesV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.getAliasesV2TrackingIdType",
+      "name": "aliases.getAliasesV2TrackingIdType",
+      "description": "Gets all aliases of a specified type for a device identified by the `trackingId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.getAliasesV2Version",
+      "name": "aliases.getAliasesV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.putAliasesV2TrackingIdBatch",
+      "name": "aliases.putAliasesV2TrackingIdBatch",
+      "description": "Creates a set of aliases for a device identified by the `trackingId`. \nAn alias must be unique within a project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.putAliasesV2TrackingIdTypeExternalId",
+      "name": "aliases.putAliasesV2TrackingIdTypeExternalId",
+      "description": "Creates an alias for the `trackingId`. An alias must be unique within a project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.v2.getAliasesV2TrackingIdGet0010uutl",
+      "name": "aliases.v2.getAliasesV2TrackingIdGet0010uutl",
+      "description": "Gets the `trackingId` associated with an alias.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.aliases.v2.getAliasesV2TrackingIdGet00na56kr",
+      "name": "aliases.v2.getAliasesV2TrackingIdGet00na56kr",
+      "description": "Gets all aliases of a device identified by the `trackingId`.\n\nIf the request is supplied with a `type` query parameter, the response will contain\nonly aliases of the given type.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.deleteAssociationsV3TrackingIdGeofencesGeofenceId",
+      "name": "associations.deleteAssociationsV3TrackingIdGeofencesGeofenceId",
+      "description": "Deletes an association between the geofence `geofenceId` and the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.deleteAssociationsV3TrackingIdRulesRuleId",
+      "name": "associations.deleteAssociationsV3TrackingIdRulesRuleId",
+      "description": "Deletes an association between the rule `ruleId` and the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.deleteAssociationsV3TrackingIdSensorsSensorRuleId",
+      "name": "associations.deleteAssociationsV3TrackingIdSensorsSensorRuleId",
+      "description": "Deletes the association between the sensor rule `sensorRuleId` and the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3GeofencesGeofenceId",
+      "name": "associations.getAssociationsV3GeofencesGeofenceId",
+      "description": "Gets all devices associated with the geofence `geofenceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3Health",
+      "name": "associations.getAssociationsV3Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3RulesRuleId",
+      "name": "associations.getAssociationsV3RulesRuleId",
+      "description": "Gets all devices associated with the rule `ruleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3SensorsSensorRuleId",
+      "name": "associations.getAssociationsV3SensorsSensorRuleId",
+      "description": "Gets all devices associated with the sensor rule `sensorRuleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3TrackingIdGeofences",
+      "name": "associations.getAssociationsV3TrackingIdGeofences",
+      "description": "Gets a list of geofences associated with the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3TrackingIdRules",
+      "name": "associations.getAssociationsV3TrackingIdRules",
+      "description": "Gets a list of rules associated with the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3TrackingIdSensors",
+      "name": "associations.getAssociationsV3TrackingIdSensors",
+      "description": "Gets a list of sensor rules associated with the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.getAssociationsV3Version",
+      "name": "associations.getAssociationsV3Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.postAssociationsV3DevicesTrackingIdBatchCreate",
+      "name": "associations.postAssociationsV3DevicesTrackingIdBatchCreate",
+      "description": "Associates rules with the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.postAssociationsV3DevicesTrackingIdBatchDelete",
+      "name": "associations.postAssociationsV3DevicesTrackingIdBatchDelete",
+      "description": "Disassociates rules from the device identified by `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.putAssociationsV3DevicesBatchUpdate",
+      "name": "associations.putAssociationsV3DevicesBatchUpdate",
+      "description": "Updates rules associated with devices.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.putAssociationsV3TrackingIdGeofencesGeofenceId",
+      "name": "associations.putAssociationsV3TrackingIdGeofencesGeofenceId",
+      "description": "Associates the device with `trackingId` to the geofence with `geofenceId`.\nWhenever the device enters or exits the associated geofence, an event is generated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.putAssociationsV3TrackingIdRulesRuleId",
+      "name": "associations.putAssociationsV3TrackingIdRulesRuleId",
+      "description": "Associates the device with `trackingId` to the rule with `ruleId`.\nWhenever the device behaviour triggers the rule, an event is generated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.associations.putAssociationsV3TrackingIdSensorsSensorRuleId",
+      "name": "associations.putAssociationsV3TrackingIdSensorsSensorRuleId",
+      "description": "Associates the device with `trackingId` to the sensor rule with `sensorRuleId`.\n\nA single device can only have one sensor rule per sensor type associated.\n\nThe associated sensor rule settings will be automatically synchronised to the `system.sensorAlarmConfig` section of the device\n`desired shadow`.\n\nEvery time the associated sensor rule gets triggered by the device ingestion, an event will be generated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.getBulkjobsV4DeviceUploads",
+      "name": "bulkJobs.getBulkjobsV4DeviceUploads",
+      "description": "Gets the bulk upload job IDs for a project. The jobs and their results are available for one week.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.getBulkjobsV4DeviceUploadsJobIdResults",
+      "name": "bulkJobs.getBulkjobsV4DeviceUploadsJobIdResults",
+      "description": "Gets bulk upload results\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.getBulkjobsV4DeviceUploadsJobIdStatus",
+      "name": "bulkJobs.getBulkjobsV4DeviceUploadsJobIdStatus",
+      "description": "Gets bulk upload status and progress\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.getBulkjobsV4Health",
+      "name": "bulkJobs.getBulkjobsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.getBulkjobsV4Version",
+      "name": "bulkJobs.getBulkjobsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.patchBulkjobsV4DeviceUploadsJobId",
+      "name": "bulkJobs.patchBulkjobsV4DeviceUploadsJobId",
+      "description": "Updates bulk upload status. In case current status is pending or ongoing, user can perform action `cancel`,\nwhich cancels the bulk upload processes of the job that are still in the pending state.\nIn case current status is completed, failed or cancelled, user can perform action `acknowledged`\nwhich can be used to mark the job acknowledged.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.bulkJobs.postBulkjobsV4DeviceUploads",
+      "name": "bulkJobs.postBulkjobsV4DeviceUploads",
+      "description": "Starts bulk upload process\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.deleteC2cV4ConnectorsConnectorId",
+      "name": "c2C.deleteC2cV4ConnectorsConnectorId",
+      "description": "Deletes the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.deleteC2cV4ConnectorsConnectorIdExtDevicesBatch",
+      "name": "c2C.deleteC2cV4ConnectorsConnectorIdExtDevicesBatch",
+      "description": "Removes a batch of external devices from the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.deleteC2cV4ConnectorsConnectorIdExtDevicesExternalDeviceId",
+      "name": "c2C.deleteC2cV4ConnectorsConnectorIdExtDevicesExternalDeviceId",
+      "description": "Removes the external device `externalDeviceId` from the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4Connectors",
+      "name": "c2C.getC2cV4Connectors",
+      "description": "Gets a list of cloud-to-cloud connectors for the project `projectId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4ConnectorsConnectorId",
+      "name": "c2C.getC2cV4ConnectorsConnectorId",
+      "description": "Gets connector info for the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4ConnectorsConnectorIdExtDevices",
+      "name": "c2C.getC2cV4ConnectorsConnectorIdExtDevices",
+      "description": "Gets all external devices under the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4ConnectorsExtDevicesExternalDeviceId",
+      "name": "c2C.getC2cV4ConnectorsExtDevicesExternalDeviceId",
+      "description": "Gets identifiers for connectors to which an external device belongs."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4Drivers",
+      "name": "c2C.getC2cV4Drivers",
+      "description": "Gets all cloud-to-cloud drivers that a user is authorized to use."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4Health",
+      "name": "c2C.getC2cV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.getC2cV4Version",
+      "name": "c2C.getC2cV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.postC2cV4Callback",
+      "name": "c2C.postC2cV4Callback",
+      "description": "External clouds can call this endpoint through their callback mechanism\nto report device updates. The format of the payload is driver specific.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.postC2cV4Connectors",
+      "name": "c2C.postC2cV4Connectors",
+      "description": "Registers a cloud-to-cloud connector between the HERE Tracking project `projectId`\nand an external cloud using the cloud-to-cloud driver `driverId`\nand the external cloud access credentials.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.postC2cV4ConnectorsConnectorIdExtDevices",
+      "name": "c2C.postC2cV4ConnectorsConnectorIdExtDevices",
+      "description": "Adds external devices to the connector `connectorId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.postC2cV4DriversDriverIdVerify",
+      "name": "c2C.postC2cV4DriversDriverIdVerify",
+      "description": "External cloud credentials to be validated for structure and fields provided.\nVerify external cloud authentication status.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.c2C.putC2cV4ConnectorsConnectorId",
+      "name": "c2C.putC2cV4ConnectorsConnectorId",
+      "description": "Updates the connector `connectorId` info."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.deviceAssociations.getDeviceAssociationsV2Health",
+      "name": "deviceAssociations.getDeviceAssociationsV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.deviceAssociations.getDeviceAssociationsV2TrackingIdGeofences",
+      "name": "deviceAssociations.getDeviceAssociationsV2TrackingIdGeofences",
+      "description": "Gets all geofences associated with the device with `trackingId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.deviceAssociations.getDeviceAssociationsV2Version",
+      "name": "deviceAssociations.getDeviceAssociationsV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3",
+      "name": "events.getEventsV3",
+      "description": "Gets all events for all devices and shipments of the project. The results are listed in descending order \nbased on the timestamp. \n\nAn event is uniquely identified by `trackingId`-`ruleId`-`timestamp` key, \nwith an exception of dwelling and stock rule events. \nDwelling events also need `geofenceId` to be specified, \nwhereas for stock events `trackingId` is not applicable.\n\nA time range can be defined with `before` and `after` timestamps. The response will contain\nan array of events that were recorded within the range.\n\nIf the request is supplied with `eventSource` query parameter, the response will contain\nevents generated by the defined source only.\n\nIf the request is supplied with `eventType` query parameter, the response will contain\nevents of the specified type only.\n\nIf the request is supplied with `ruleId` query parameter, the response will only contain events\nfor the specified rule ID.\n\nIf the request is supplied with `initialState` query parameter, the response will contain\nevents having the specified initial state.\n\nAll the aforementioned query parameters can be combined together.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3Health",
+      "name": "events.getEventsV3Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3Statuses",
+      "name": "events.getEventsV3Statuses",
+      "description": "Gets all events statuses for all devices and shipments of the project.\nAn event status of a device is the most recent event of any rule or geofence the device \nis associated with.\nThe same applies for shipments.\n\nThe response contains a list of event status objects and\neach object has the following properties:\n* `trackingId` or `shipmentId`: a device ID or a shipment ID\n* `ruleId`: an associated rule or geofence ID\n* `eventSource`: the rule type\n* `eventType`: an event type of the latest event of the rule (same as the \"event state\")\n* `timestamp`: a time since when the device has been in this event state\n\nThe array is sorted by the following fields in the\nfollowing order: `trackingId`, `eventSource`, `timestamp`, `ruleId`, `geofenceId`.\n\nA time range can be defined with `before` and `after` timestamps. The response will contain\nevent statuses that were recorded within the range.\n\nIf the request is supplied with `eventSource` query parameter, the response results will be limited\nto the specified rule types only.\n\nIf the request is supplied with `ruleId` query parameter, the response results will be limited\nto the specified rule IDs only.\n\nIf the request is supplied with `trackingId` query parameter, the response results will be limited\nto the specified devices only. Also `shipmentId` can be used as a `trackingId`.\n\nIf the request is supplied with `eventType` query parameter, the response results will be limited\nto the specified type only.\n\nIf the request is supplied with `geofenceId` query parameter, it will only affect dwelling \nevent statuses filtering, limiting the results to the specified geofence only.\nOther event types are not affected by this setting.\nNote that for the event statuses of geofence type, the `ruleId` is the `geofenceId`.\n\nIf the request is supplied with `shipments` query parameter, the response results will be limited\neither to shipments (`shipments`=`true`) or devices (`shipments`=`false`) only. \nOtherwise, if `shipments` query parameter is not specified, response results will include both devices and shipments.\n\nAll the aforementioned query parameters can be combined together.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3StatusesDeviceCounts",
+      "name": "events.getEventsV3StatusesDeviceCounts",
+      "description": "This API call counts the number of devices and shipments that are currently in the different \nevent states per rule or per event source (that is per rule type).\n\nAn event state of a device is the event type of the most recent device event.\nIt indicates a state the device is currently in, in relation to a rule the device is associated with.\n\nFor example, the event state can be either `INSIDE_GEOFENCE` or `OUTSIDE_GEOFENCE` in case the event source is `geofence`; \nor `BELOW_RANGE`, `IN_RANGE` or `ABOVE_RANGE` in case the event source is `battery` rule.\n\nA device can be in several different event states at the same time when it has more than \none rule associated with it. \nFor example, a device can be at the same time in `INSIDE_GEOFENCE` and `ABOVE_RANGE` event states.\n\nThe same applies for shipments.\n\nThe `groupBy` query parameter defines how the results are grouped.\n\nThe default value for the `groupBy` parameter is `ruleId`. \nThe response contains a list of objects, one per each rule,\nthat are associated to at least one device or shipment of the project.\nEach object has the following properties:\n* `ruleId`: a rule ID\n* `eventSource`: the rule type\n* every distinct event state (applicable for the rule type) and the number of devices in this state\n* `total`: the total number of devices associated to the rule\n\nWhen the `groupBy` parameter value is `eventSource`, the response contains a list of objects, one per\nevent source (that is per each rule type),\nthat are associated to at least one device or shipment of the project.\nEach object has the following properties:\n* `eventSource`: a rule type\n* every distinct event state (applicable for the rule type) and the number of devices in this state. \n  One device is counted only once per `eventType` state, but in case a single device is associated to multiple\n  rules of the same type, it will be counted separately for each event state.\n* `total`: the total number of devices associated to the rule type. A single device is counted only once.\n\nFor example, a device A is associated to 2 geofences and is inside one and outside the other.\nA device B is associated to 3 geofences and is outside all of them. With the request \nquery parameter set as `groupBy`=`eventSource`, the response body will contain the following result item:\n```\n{\n  \"eventSource\": \"geofence\",\n  \"INSIDE_GEOFENCE\": 1,\n  \"OUTSIDE_GEOFENCE\": 2,\n  \"total\": 2\n}.\n```\n\nIf the request is supplied with `eventSource` query parameter, the response results will be limited\nto the specified rule types only.\n\nIf the request is supplied with `ruleId` query parameter, the response results will be limited\nto the specified rule IDs only.\n\nIf the request is supplied with `trackingId` query parameter, the response results will be limited\nto the specified devices only. Also `shipmentId` can be used as a `trackingId`.\n\nIf the request is supplied with `geofenceId` query parameter, it will only affect dwelling \nevent statuses filtering, limiting the results to the specified geofence only.\nOther event types are not affected by this setting.\nNote that for the event statuses of geofence type, the `ruleId` is the `geofenceId`.\n\nIf the request is supplied with `shipments` query parameter, the response results will be limited\neither to shipments (`shipments`=`true`) or devices (`shipments`=`false`) only. \nOtherwise, if `shipments` query parameter is not specified, response results will include both devices and shipments.\n\nAll the aforementioned query parameters can be combined together.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3TrackingId",
+      "name": "events.getEventsV3TrackingId",
+      "description": "Gets all events for a device or a shipment. \nA device is identified by the `trackingId`.\nFor shipments, `shipmentId` can be used as a `trackingId`.\n\nThe results are listed in descending order based on the timestamp.\n\nAn event is uniquely identified by `trackingId`-`ruleId`-`timestamp` key, \nwith an exception of dwelling and stock rule events. \nDwelling events also need `geofenceId` to be specified, \nwhereas for stock events `trackingId` is not applicable.\n\nA single event can be fetched using `ruleId`, `before` and `after` query parameters.\n\nA time range can be defined with `before` and `after` timestamps. The response will contain\nan array of events that were recorded within the range.\n\nIf the request is supplied with `eventSource` query parameter, the response will contain\nevents generated by the defined source only.\n\nIf the request is supplied with `eventType` query parameter, the response will contain\nevents of the specified type only.\n\nIf the request is supplied with `ruleId` query parameter, the response will only contain events\nfor the specified rule ID.\n\nIf the request is supplied with `initialState` query parameter, the response will contain\nevents having the specified initial state.\n\nAll the aforementioned query parameters can be combined together.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.events.getEventsV3Version",
+      "name": "events.getEventsV3Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofenceAssociations.deleteGeofenceAssociationsV2GeofenceIdTrackingId",
+      "name": "geofenceAssociations.deleteGeofenceAssociationsV2GeofenceIdTrackingId",
+      "description": "Deletes an association between the geofence `geofenceId` and the device `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofenceAssociations.getGeofenceAssociationsV2GeofenceIdDevices",
+      "name": "geofenceAssociations.getGeofenceAssociationsV2GeofenceIdDevices",
+      "description": "Returns all devices associated with the geofence `geofenceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofenceAssociations.getGeofenceAssociationsV2Health",
+      "name": "geofenceAssociations.getGeofenceAssociationsV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofenceAssociations.getGeofenceAssociationsV2Version",
+      "name": "geofenceAssociations.getGeofenceAssociationsV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofenceAssociations.putGeofenceAssociationsV2GeofenceIdTrackingId",
+      "name": "geofenceAssociations.putGeofenceAssociationsV2GeofenceIdTrackingId",
+      "description": "Associates the device with `trackingId` to the geofence with `geofenceId`. \nWhenever the device enters or exits the associated geofence, an event is generated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.deleteGeofencesV2",
+      "name": "geofences.deleteGeofencesV2",
+      "description": "Deletes all geofences of a project.\n\nIf a geofence is associated with a stock rule, the rule will also be deleted.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion. \nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.deleteGeofencesV2GeofenceId",
+      "name": "geofences.deleteGeofencesV2GeofenceId",
+      "description": "Deletes a single geofence identified by the `geofenceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.getGeofencesV2",
+      "name": "geofences.getGeofencesV2",
+      "description": "Gets all geofences of a project. \nResults can be filtered by using the query parameters.\nIndoor geofences with the `floor` properties\nmay be filtered by `floor[id]`, which specifies the ID of the venue associated with the geofence.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.getGeofencesV2GeofenceId",
+      "name": "geofences.getGeofencesV2GeofenceId",
+      "description": "Gets details of a single geofence identified by the `geofenceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.getGeofencesV2Health",
+      "name": "geofences.getGeofencesV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.getGeofencesV2Version",
+      "name": "geofences.getGeofencesV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.postGeofencesV2",
+      "name": "geofences.postGeofencesV2",
+      "description": "One can specify a geofence as a circle, as a polygon or as POI (Point of Interest). One can also\nassign a name and a description to each geofence to help identify them.\n\nCircle\n---\n\nSpecify coordinates of the center point of the circle and a radius in\nmeters.\n\n```json\n    {\n      \"name\": \"Home\",\n      \"type\": \"circle\",\n      \"definition\": {\n        \"center\": {\n          \"lat\": 52.5308398,\n          \"lng\": 13.38490035\n        },\n        \"radius\": 100\n      },\n      \"description\": \"Small area around my house.\"\n    }\n```\n\nPolygon\n---\n\nSpecify an array of points. A minimum of three points is required.\n\n*NOTE: If the array of points does not describe a closed polygon, the polygon is\nautomatically closed between the last and first points.*\n\n```json\n    {\n      \"name\": \"Work\",\n      \"type\": \"polygon\",\n      \"definition\": {\n        \"points\": [{\n          \"lat\": 52.5308398,\n          \"lng\": 13.38490035\n        }, {\n          \"lat\": 52.530443,\n          \"lng\": 13.38482003\n        }, {\n          \"lat\": 52.5308298,\n          \"lng\": 13.38492235\n        }]\n      },\n      \"description\": \"The area around work.\"\n    }\n```\n\nIndoor geofence\n---\n\nCircular and polygonal geofences can be both outdoors and indoors.\nTo create a `circular` `indoor` geofence, add the `floor` property to the request body.\n\n```json\n    {\n      \"name\": \"Office indoor\",\n      \"type\": \"circle\",\n      \"definition\": {\n        \"center\": {\n          \"lat\": 52.5308398,\n          \"lng\": 13.38490035\n        },\n        \"radius\": 20,\n        \"floor\": {\n          \"level\": 2,\n          \"id\": \"DM_1234\",\n          \"name\": \"Office floor 2\"\n        }\n      },\n      \"description\": \"Floor 2 of the office.\"\n    }\n\n```\n\nPOI geofence\n---\n\nSpecify location details of a POI geofence for its initial creation.\n\nAfter the POI geofence has been created, it will need to be trained.\nThe POI geofence boundary is defined using radio measurements.\nThe POI geofence is trained using a telemetry \nthat a device has ingested while being at this desired point of interest.\n\nFor a trained POI geofence, an associated device is considered to be inside the \ngeofence when the radio measurements of the device-ingested telemetry and \nthe training data match.\n\n```json\n    {\n      \"name\": \"POI room in the office\",\n      \"type\": \"poi\",\n      \"definition\": {\n        \"location\": {\n          \"room\": ROOM_201,\n          \"address\": Invalidenstrasse 116,\n          \"country\": Germany,\n          \"position\": {\n            \"lat\": 52.5308398,\n            \"lng\": 13.38490035\n          }\n        },\n        \"floor\": {\n          \"level\": 2,\n          \"id\": \"DM_1234\",\n          \"name\": \"Office floor 2\"\n        }\n      },\n      \"description\": \"A room where goods should be delivered.\"\n    }\n```\n\nSuccessful requests have the HTTP status 201 and the response body provides\nthe ID of the created geofence.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.postGeofencesV2GeofenceIdPoiTraining",
+      "name": "geofences.postGeofencesV2GeofenceIdPoiTraining",
+      "description": "Trains the POI geofence `geofenceId` using a device telemetry.\nThe POI geofence boundary is defined using radio measurements.\nThe geofence is trained using a telemetry that the device with `trackingId` has ingested \nduring the specified time range, while being at this point of interest.\nOnly telemetries that have been ingested during the last 24 hours can be used in the training.\n\nOptionally, a WLAN scan be used for the training.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.postGeofencesV2TrainingTest",
+      "name": "geofences.postGeofencesV2TrainingTest",
+      "description": "Checks if a POI geofence training is possible with the given request parameters.\n\nThe request body contains a training data sample in form of either a device tracking ID \nalong with a specific time range for the ingested device telemetry or a WLAN scan.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.geofences.putGeofencesV2GeofenceId",
+      "name": "geofences.putGeofencesV2GeofenceId",
+      "description": "Updates the geofence `type`, `name`, `description` or `definition` property. \nThe old geofence will be replaced by the new one, and hence the full set of the \ngeofence properties must be provided in the request body. \n`POI` geofence type cannot be changed to `circle` or `polygon` and vice versa.\n\nIf the update was successful, the response will contain the updated geofence details.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.getV2Health",
+      "name": "ingestion.getV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.getV2Timestamp",
+      "name": "ingestion.getV2Timestamp",
+      "description": "Returns the current server time in seconds since the UNIX epoch.\nThe server time is used to check the validity of the OAuth 1.0 header of a device data ingestion request.\nDevices must synchronise with the server time to avoid a clock skew.\n\n> Note that in the data ingestion request the timestamp is specified in milliseconds.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.getV2Version",
+      "name": "ingestion.getV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.getV3Health",
+      "name": "ingestion.getV3Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.getV3Version",
+      "name": "ingestion.getV3Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.postV2",
+      "name": "ingestion.postV2",
+      "description": "Devices can use this end point to ingest data into HERE Tracking,\nin the same way as via the `/v3` endpoint.\n\nA device uses its access token obtained via the the `/v2/token` endpoint\nto send telemetry – GPS position, sensor readings, WLAN or Bluetooth scans - to HERE Tracking.\n\nBy default the request is synchronous and the response will be\nthe device `desired` shadow. If the request is set\nto be asynchronous, the response will be empty.\n\nThe device position gets resolved based on the `position` and `scan` objects\nprovided in the request body (see the objects definitions for details).\nIf only `position` is provided, it will be used as the device position.\nIf only `scan` is provided, the position will be resolved asynchronously\nvia the HERE Positioning API after returning a response.\nIf both are provided, `scan` is resolved to a position via the HERE Positioning API,\nand the better of the two positions (provided vs. resolved) will be selected.\nIf neither `position` nor `scan` is provided, or if the HERE Positioning API is not able to\nresolve the position, the device position will be left empty.\n\nThe `reported` shadow will be updated with the device latest position information,\nsensor readings and settings ingested by the device.\nThe reported shadow may also contain additional properties generated by HERE\nTracking based on the device-ingested telemetry.\nSuch properties are stored in the `system.computed` property of the shadow.\nThe device shadow can be queried via the `shadows/v2/{trackingId}` endpoint.\n\nThe data ingested by the device will be available as a device trace via the `traces/v2/{trackingId}` endpoint.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.postV2Token",
+      "name": "ingestion.postV2Token",
+      "description": "Authenticates a device to HERE Tracking and requests a device access token.\n\nA device must provide a valid device access token when it sends telemetry to HERE Tracking.\nTokens can be obtained upon a successful device authentication.\n\nThe device token requests must be signed. The signature method uses the OAuth 1.0 standard.\nFor more information on this standard, see the [OAuth Core 1.0](https://oauth.net/core/1.0/) specification.\n\nTokens can be requested only by claimed devices.\nA claimed device license, that is ```deviceId``` and ```deviceSecret``` credential pair, is used for creating a signed token request.\n\n> See the Authentication section for details on how to generate a signed token request.\n> A new signature must be created for each device access token request.\n> Signatures can only be used once.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.postV3",
+      "name": "ingestion.postV3",
+      "description": "Devices can use this end point to ingest data into HERE Tracking.\n\nA device uses its access token obtained via the the `/v2/token` endpoint\nto send telemetry – GPS position, sensor readings, WLAN or Bluetooth scans - to HERE Tracking.\n\nAlso device owners use this end point to ingest data on behalf of a device.\n\nThe device can be either a real or a virtual device.\nA real device is identified by a `trackingId` assigned to it when the device was claimed.\nA virtual device is identified by an external device ID and the owner's project `appId`.\n\nIn case the ingestion is done by a device owner, the owner should first authenticate himself with\nHERE Tracking and obtain a user access token via the `/users/v2/login` endpoint.\nThe user access token will then be used in this API call.\n\nBy default the request is synchronous and the response will be\nthe device `desired` shadow. If the request is set\nto be asynchronous, the response will be empty.\n\nThe device position gets resolved based on the `position` and `scan` objects\nprovided in the request body (see the objects definitions for details).\nIf only `position` is provided, it will be used as the device position.\nIf only `scan` is provided, the position will be resolved asynchronously\nvia the HERE Positioning API after returning a response.\nIf both are provided, `scan` is resolved to a position via the HERE Positioning API,\nand the better of the two positions (provided vs. resolved) will be selected.\nIf neither `position` nor `scan` is provided, or if the HERE Positioning API is not able to\nresolve the position, the device position will be left empty.\n\nThe `reported` shadow will be updated with the device latest position information,\nsensor readings and settings ingested by the device.\nThe reported shadow may also contain additional properties generated by HERE\nTracking based on the device-ingested telemetry.\nSuch properties are stored in the `system.computed` property of the shadow.\nThe device shadow can be queried via the `shadows/v2/{trackingId}` endpoint.\n\nThe data ingested by the device will be available as a device trace via the `traces/v2/{trackingId}` endpoint.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.ingestion.postV3Batch",
+      "name": "ingestion.postV3Batch",
+      "description": "Device owner use this endpoint to ingest data to HERE Tracking on behalf of multiple devices.\n\nA single request can contain data for multiple devices.\nThe devices can be either real or virtual.\nA real device is identified by a `trackingId` assigned to it when the device was claimed.\nA virtual device is identified by an external device ID and the owner's project `appId`.\n\nPrior to making the request, the device owner should first authenticate himself with\nHERE Tracking and obtain a user access token.\nThe user access token will then be used in this API call.\n\nFor more information on the device position resolution, and the device shadow and trace updates,\nsee the `/v3` endpoint description.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.deleteLabelsV4ResourceTypeResourceId",
+      "name": "labels.deleteLabelsV4ResourceTypeResourceId",
+      "description": "Deletes all labels of the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.deleteLabelsV4ResourceTypeResourceIdKey",
+      "name": "labels.deleteLabelsV4ResourceTypeResourceIdKey",
+      "description": "Deletes all the labels that have the key `key` of the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.deleteLabelsV4ResourceTypeResourceIdKeyValue",
+      "name": "labels.deleteLabelsV4ResourceTypeResourceIdKeyValue",
+      "description": "Deletes the label `key`-`value` of the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4Health",
+      "name": "labels.getLabelsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4ResourceType",
+      "name": "labels.getLabelsV4ResourceType",
+      "description": "Gets all labels of the resource type `resourceType` within a project.\n\nThe `fields` parameter specifies which fields should be added to the response body \n(for example, `resourceId`).\n\nThe `labels` query parameter is specified as a label filter, and only the matching\nresults will be returned:\n\n\"?labels[priority]=high&labels[group]=group1&fields=resourceId,labels\"\n\"?labels[group]=*\"\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4ResourceTypeKeys",
+      "name": "labels.getLabelsV4ResourceTypeKeys",
+      "description": "Gets all label keys of the resource type `resourceType`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4ResourceTypeKeysKeyValues",
+      "name": "labels.getLabelsV4ResourceTypeKeysKeyValues",
+      "description": "Gets all values of the label `key` for the resource type `resourceType`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4ResourceTypeResourceId",
+      "name": "labels.getLabelsV4ResourceTypeResourceId",
+      "description": "Gets all labels of the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.getLabelsV4Version",
+      "name": "labels.getLabelsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.putLabelsV4ResourceTypeResourceIdBatch",
+      "name": "labels.putLabelsV4ResourceTypeResourceIdBatch",
+      "description": "Creates a set of labels for the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.labels.putLabelsV4ResourceTypeResourceIdKeyValue",
+      "name": "labels.putLabelsV4ResourceTypeResourceIdKeyValue",
+      "description": "Creates a label for the resource `resourceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.deleteLargedataV4DataId",
+      "name": "largedata.deleteLargedataV4DataId",
+      "description": "Deletes large data object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4DataIdData",
+      "name": "largedata.getLargedataV4DataIdData",
+      "description": "Downloads a part of large data.\n\nThe data to be downloaded is identified with `dataId`. \n`offset` query paremeter specifies the first byte of the data,\nand `count` indicates how many bytes of the data is to be downloaded\nstarting from and including the `offset`. The default value for `offset`\nis zero and the for `count` it is the total size of the data.\n\nThe size of one downloaded data part must be between 1 byte and 10 MB.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4DataIdMetadata",
+      "name": "largedata.getLargedataV4DataIdMetadata",
+      "description": "Gets metadata for a large data object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4DataIdParts",
+      "name": "largedata.getLargedataV4DataIdParts",
+      "description": "Gets information about uploaded parts for a large data object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4DevicesTrackingIdMetadata",
+      "name": "largedata.getLargedataV4DevicesTrackingIdMetadata",
+      "description": "Gets metadata listing for all large data objects for a given device.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4Health",
+      "name": "largedata.getLargedataV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.getLargedataV4Version",
+      "name": "largedata.getLargedataV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.postLargedataV4",
+      "name": "largedata.postLargedataV4",
+      "description": "Creates a new multipart large data upload.  Response contains `dataId`, which is the created large data object identifier.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.postLargedataV4DataId",
+      "name": "largedata.postLargedataV4DataId",
+      "description": "After all parts have been uploaded, this operation completes the upload.\n\nWhen the upload has been completed, it is no longer possible to upload\nnew parts to it but the uploaded data can be downloaded.\n\nThis request has an optional `abort` query\nparameter (the default value is `false`) for aborting the upload instead\nof successfully completing it. If the upload is aborted, all of its\nparts and data are removed from HERE Tracking.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.largedata.putLargedataV4DataIdPartsPartNumber",
+      "name": "largedata.putLargedataV4DataIdPartsPartNumber",
+      "description": "Uploads a part of large data. The part is identified with `dataId` and a part number.\n\nPart upload has the following limits:\n* The part numbers must start from 1, be no greater than 10000 and be consecutive.\n* The size of one uploaded data part must be between 1 byte and 1 MB.\n* Parts re-uploaded with the same `partNumber` are overridden.\n* Only `application/octet-stream` Content-Type is supported.\n\nParts can be uploaded in any order, the `partNumber` determines their\nposition in the total data.\n\nThe optional `md5` query parameter can be used to provide the MD5\ndigest for the uploaded data part. If it is specified and does not match\nto the received data, HERE Tracking returns HTTP status 400.\n\nIf the data upload is still in ***preparing*** state, HERE Tracking\nreturns HTTP status 409.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.deleteLocationsV4",
+      "name": "locations.deleteLocationsV4",
+      "description": "Deletes all locations of the project.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion.\nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.deleteLocationsV4LocationId",
+      "name": "locations.deleteLocationsV4LocationId",
+      "description": "Deletes the location `locationId`.\n\n***NOTE***: A location can not be deleted if the location is referred by any shipment or\nshipment plan.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.getLocationsV4",
+      "name": "locations.getLocationsV4",
+      "description": "Gets all locations of the project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.getLocationsV4Health",
+      "name": "locations.getLocationsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.getLocationsV4LocationId",
+      "name": "locations.getLocationsV4LocationId",
+      "description": "Gets details of the location `locationId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.getLocationsV4Version",
+      "name": "locations.getLocationsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.postLocationsV4",
+      "name": "locations.postLocationsV4",
+      "description": "Creates a new location.\nA location consists of latitude/longitude coordinate pair and/or geofenceId.\nA name, description, and address of the location may be provided.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.locations.putLocationsV4LocationId",
+      "name": "locations.putLocationsV4LocationId",
+      "description": "Updates the location `locationId` details. A location consists of latitude/longitude coordinate pair and/or geofenceId.\nA name, description, and address of the location may be provided.\nThe old location definition will be replaced, meaning that\nfull location body should be provided. After a successful update, the response provides\nthe updated location details.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.deleteMetadataV2DevicesTrackingId",
+      "name": "metadata.deleteMetadataV2DevicesTrackingId",
+      "description": "Deletes all the metadata of the device or a shipment identified by the `trackingId` or the `shipmentId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.deleteMetadataV2GeofencesGeofenceId",
+      "name": "metadata.deleteMetadataV2GeofencesGeofenceId",
+      "description": "Deletes all the metadata of the geofence identified by the `geofenceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.deleteMetadataV2SensorRulesSensorRuleId",
+      "name": "metadata.deleteMetadataV2SensorRulesSensorRuleId",
+      "description": "Delete all the metadata of the sensor rule identified by the `sensorRuleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.getMetadataV2DevicesTrackingId",
+      "name": "metadata.getMetadataV2DevicesTrackingId",
+      "description": "Gets metadata of a device or a shipment identified by the `trackingId` or the `shipmentId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.getMetadataV2GeofencesGeofenceId",
+      "name": "metadata.getMetadataV2GeofencesGeofenceId",
+      "description": "Gets metadata of the geofence identified by the `geofenceId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.getMetadataV2Health",
+      "name": "metadata.getMetadataV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.getMetadataV2SensorRulesSensorRuleId",
+      "name": "metadata.getMetadataV2SensorRulesSensorRuleId",
+      "description": "Gets metadata of the sensor rule identified by the `sensorRuleId`."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.getMetadataV2Version",
+      "name": "metadata.getMetadataV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.postMetadataV2DevicesBatch",
+      "name": "metadata.postMetadataV2DevicesBatch",
+      "description": "Gets a batch of metadata of multiple devices or shipments. The device or shipment IDs are specified in the request body."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.postMetadataV2GeofencesBatch",
+      "name": "metadata.postMetadataV2GeofencesBatch",
+      "description": "Gets a batch of metadata of multiple geofences. The geofences IDs are specified in the request body."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.postMetadataV2SensorRulesBatch",
+      "name": "metadata.postMetadataV2SensorRulesBatch",
+      "description": "Gets a batch of metadata of multiple sensor rules. The sensor rules IDs are specified in the request body."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.putMetadataV2DevicesTrackingId",
+      "name": "metadata.putMetadataV2DevicesTrackingId",
+      "description": "Updates the metadata object of the device or a shipment identified by the `trackingId` or the `shipmentId`. \nThe metadata specified in the request body is merged with the existing metadata object \n(or gets created if no metadata object exists); \nnew keys are added, and the values of the existing keys are updated with the new data.\nAdding 'null' value for a key deletes it from the metadata object.\nSuccessful response body contains the updated metadata object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.putMetadataV2GeofencesGeofenceId",
+      "name": "metadata.putMetadataV2GeofencesGeofenceId",
+      "description": "Updates the metadata object of the geofence identified by the `geofenceId`. \nThe metadata specified in the request body is merged with the existing metadata object \n(or gets created if no metadata object exists); \nnew keys are added, and the values of the existing keys are updated with the new data.\nAdding 'null' value for a key deletes it from the metadata object.\nSuccessful response body contains the updated metadata object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.metadata.putMetadataV2SensorRulesSensorRuleId",
+      "name": "metadata.putMetadataV2SensorRulesSensorRuleId",
+      "description": "Updates the metadata object of the sensor rule identified by the `sensorRuleId`. \nThe metadata specified in the request body is merged with the existing metadata object \n(or gets created if no metadata object exists); \nnew keys are added, and the values of the existing keys are updated with the new data.\nAdding 'null' value for a key deletes it from the metadata object.\nSuccessful response body contains the updated metadata object.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.deleteNotificationsV3RegistrationChannelId",
+      "name": "notifications.deleteNotificationsV3RegistrationChannelId",
+      "description": "Unregisters from notifications and deletes the notification channel `channelId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.deleteNotificationsV3Registrations",
+      "name": "notifications.deleteNotificationsV3Registrations",
+      "description": "Deletes all the notification channels. \nThis would result in unregistering from all the notifications.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion. \nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.getNotificationsV3Health",
+      "name": "notifications.getNotificationsV3Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.getNotificationsV3RegistrationChannelId",
+      "name": "notifications.getNotificationsV3RegistrationChannelId",
+      "description": "Gets details of the notification channel `channelId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.getNotificationsV3Registrations",
+      "name": "notifications.getNotificationsV3Registrations",
+      "description": "Gets a list of all registered notification channels.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.getNotificationsV3Version",
+      "name": "notifications.getNotificationsV3Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.postNotificationsV3Registrations",
+      "name": "notifications.postNotificationsV3Registrations",
+      "description": "User can subscribe to notifications of all events triggered by device telemetry and rules and geofences.\n\nTo get notified about some specific events only, one can set up `ruleId`, `eventSource`, `eventType` \nand `initialState` filters for a notification channel.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.notifications.putNotificationsV3RegistrationChannelId",
+      "name": "notifications.putNotificationsV3RegistrationChannelId",
+      "description": "Updates the `url`, `ruleId`, `eventSource`, `eventType` and `initialState` parameters of\nthe notification channel `channelId`. If a property is not provided in the request body,\nits value will be updated to null. When updating a webhook channel, the `url` parameter must be provided.\n\nAfter a successful update, the response provides the updated notification channel details.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.deleteRegistryV2DevicesDeviceOrExternalId",
+      "name": "registry.deleteRegistryV2DevicesDeviceOrExternalId",
+      "description": "Deactivates a provisioned device.\nThis operation will deactivate the device license (`deviceId` and `deviceSecret`).\nDeactivated devices cannot be claimed anymore.\n\nNOTE: The device must be unclaimed before it can be deactivated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.deleteRegistryV2TrackingId",
+      "name": "registry.deleteRegistryV2TrackingId",
+      "description": "Unclaims a device removing the ownership association between the user and the device. The device data will no longer be accessible to the user. The device can then be reclaimed by a different or the same user."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2AppIdDevices",
+      "name": "registry.getRegistryV2AppIdDevices",
+      "description": "Lists all the devices provisioned by a user project identified by the `appId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2AppIdLicenseCount",
+      "name": "registry.getRegistryV2AppIdLicenseCount",
+      "description": "Gets a number of provisioned device licenses for a user project identified by the `appId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2DevicesDeviceOrExternalId",
+      "name": "registry.getRegistryV2DevicesDeviceOrExternalId",
+      "description": "Gets the `trackingId` for a claimed device by its `deviceId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2Health",
+      "name": "registry.getRegistryV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2JobIdResults",
+      "name": "registry.getRegistryV2JobIdResults",
+      "description": "Gets results of a previously created multiple device license request batch job upon its successful completion.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2JobIdStatus",
+      "name": "registry.getRegistryV2JobIdStatus",
+      "description": "Checks the progress of a previously created multiple device license request batch job.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2Licenses",
+      "name": "registry.getRegistryV2Licenses",
+      "description": "Gets a list of projects the user is a member of, along with the license information details for each project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2TrackingId",
+      "name": "registry.getRegistryV2TrackingId",
+      "description": "Gets the `deviceId` of a claimed device by its `trackingId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.getRegistryV2Version",
+      "name": "registry.getRegistryV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.postRegistryV2AppIdDevices",
+      "name": "registry.postRegistryV2AppIdDevices",
+      "description": "Starts a batch job to create licenses for either physical devices or\nvirtual devices. Virtual devices are meant for cloud-to-cloud use case.\n\nA physical device license is a `deviceId` and `deviceSecret` credential pair. The batch\njob creates a number of physical device licenses specified by the `count`\nparameter in the request body.\nThe response contains an array of `deviceId` and `deviceSecret` pairs.\n\nVirtual devices are identified with an external device ID and the requestor's\nproject `appId`. The virtual device external ID is application-specific\nand the user is free to allocate it as user finds suitable.\nThe external IDs for the virtual devices to be created are specified\nin the `devices` array in request body. For virtual devices\nthe response contains only an array of `deviceId`s, but no `deviceSecret`s.\n\nThe `autoclaim` parameter can only be used when creating virtual devices.\nIf `autoclaim`=`true`, the created virtual devices are immediately claimed\nby the requesting user account. In this case the response contains also\ntracking IDs for the claimed devices.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.postRegistryV2AppIdOneDevice",
+      "name": "registry.postRegistryV2AppIdOneDevice",
+      "description": "Device license is a `deviceId` and `deviceSecret` credential pair.\nThe created credentials will be returned in the response body.\n\nIf `autoclaim` query parameter is set to `true`, the created device will also be claimed by the same user account.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.postRegistryV4ResourcesResourceTypeFind",
+      "name": "registry.postRegistryV4ResourcesResourceTypeFind",
+      "description": "Gets all resources of the resource type `resourceType`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.registry.putRegistryV2DevicesDeviceOrExternalId",
+      "name": "registry.putRegistryV2DevicesDeviceOrExternalId",
+      "description": "Claims a device, associating a device to a user account.\nThe user who claimed a device is the device owner,\nwhich is different from the device vendor.\n\nUnclaimed devices cannot login or send any data to HERE Tracking.\nA claimed device data is stored in HERE Tracking and is available to the\ndevice owner's project, which the device has been claimed to.\n\nWhen a device is claimed, it gets assigned a `trackingId`.\nThis is a unique ID associated with the device data in HERE Tracking.\n\n`trackingId` is different from the `deviceId`.\nThe `deviceId` is permanently associated with the hardware, while the `trackingId`\nis associated with the device data.\nIf the device is later sold or transferred, the `deviceId` remains the same but the\n`trackingId` changes in case the device is reclaimed.\nThis way the new owner cannot access the old data.\n\nIf the user is a member of multiple projects, the target project ID needs to be\nspecified in the `projectId` query parameter (note that this is different from the `appId`).\n\nOnly users with a valid HERE Tracking license are authorized to claim\nnew devices. Claimed devices are associated with the owner\napplication ID, and the total device count is kept up-to-date for billing purposes.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.reports.getReportsV4Health",
+      "name": "reports.getReportsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.reports.getReportsV4ReportId",
+      "name": "reports.getReportsV4ReportId",
+      "description": "Gets the report creation status and makes queries to fetch the actual reports.\nEach report request can have a different set of query parameters.\n\n> Note that in the report context an asset is a device.\n\nExamples\n---\nTo get a report on assets dwelling times in the specified geofence during the report period, \ncreate a request specifying the following:\n* `reportId`: ID of a report created for a dwelling rule\n* `measure`: 'duration'\n* `groupBy`: 'asset'\n* `geofenceId`: geofence ID\n\nTo get a report on how many times assets were in detention on average during each week of \nthe report period, create a request specifying the following:\n* `reportId`: ID of a report created for a detention rule\n* `measure`: 'occurrence'\n* `method`: 'average'\n* `groupBy`: 'asset'\n* `interval`: 'week'\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.reports.getReportsV4Version",
+      "name": "reports.getReportsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.reports.postReportsV4",
+      "name": "reports.postReportsV4",
+      "description": "Starts a report creation.\n\nThe request body contains a rule ID, and the report start and end time.\nThe report will be created based on the event data generated by the rule and devices associated to it.\n\nThe supported rule types are:\n* dwelling\n* detention\n* utilization\n\n> Note that both the report start and end timestamps must be earlier than the current time, \n> and no newly ingested data will be automatically added to the report after its creation.\n\nThe created report ID will be provided in the response.\n\nThe generated report is available for one week, after which it will expire \nand will need to be recreated.\nIf there is an already existing report matching the request parameters, its `reportId`\nwill be returned in the response and no new report will be generated.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.deleteRulesV4",
+      "name": "rules.deleteRulesV4",
+      "description": "Deletes all rules of the project.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion.\nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.deleteRulesV4RuleId",
+      "name": "rules.deleteRulesV4RuleId",
+      "description": "Deletes a rule identified by the `ruleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.getRulesV4",
+      "name": "rules.getRulesV4",
+      "description": "Gets all rules definitions."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.getRulesV4Health",
+      "name": "rules.getRulesV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.getRulesV4RuleId",
+      "name": "rules.getRulesV4RuleId",
+      "description": "Gets details of a single rule identified by the `ruleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.getRulesV4Version",
+      "name": "rules.getRulesV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.postRulesV4",
+      "name": "rules.postRulesV4",
+      "description": "Creates a rule of the specified rule `type` and with the defined `threshold`.\nAfter the rule has been created, it needs to be associated to a device to get activated.\n\nDetention rule\n---\nFor a rule of the `detention` type the threshold is defined as a duration in seconds.\nA `DETENTION_STARTED` event gets triggered when the device has remained\nstationary for longer than the threshold duration.\nA `DETENTION_ENDED` event will be generated when the device starts moving again.\n\nUtilization rule\n---\nFor a rule of the `utilization` type the threshold is defined as a duration in seconds.\nAn `UNUTILIZED` event will\nbe generated when the device has been stationary for longer than the threshold duration, \nand `UTILIZED` event gets triggered when the device starts moving again after having been stationary.\n\nDwelling rule\n---\nFor a rule of the `dwelling` type the threshold is defined as a duration in seconds.\nA `DWELLING_STARTED` event gets triggered when a dwelling time of the device\ninside any device-associated geofence exceeds the threshold duration.\nWhen the device exits the geofence, a `DWELLING_ENDED` event will be generated.\n\nOnline rule\n---\nFor a rule of the `online` type there is no threshold defined.\nA `TRUE_TO_FALSE` event gets triggered when the\ndevice is late for the planned ingestion schedule by more than 5 minutes.\nA `FALSE_TO_TRUE` event is generated when the device starts ingesting again after having been offline.\nThe planned ingestion schedule needs to be configured in the device `desired shadow`\n(the `desired.system.rate.sendMs` property).\n\nStock rule\n---\nFor a rule of the `stock` type the threshold is defined as `minVolume` and/or `maxVolume` values.\nWhen creating a stock rule, also a geofence ID needs to be specified.\nWhen the number of devices inside the specified geofence exceeds `maxVolume`, an `OVERSTOCK`\nevent will be generated. Similarly, when the number of devices inside the specified geofence\ngets below `minVolume`, an `UNDERSTOCK` event will be generated. When the number of\ndevices inside the specified geofence is between `minVolume` and `maxVolume`, a `NORMAL_VOLUME`\nevent will be generated. Note that the stock rule only gets triggered for devices that are associated\nto the specified geofence.\n\nShipment schedule rule\n---\nFor a rule of the `shipmentSchedule` type there are `before` and `after` deviation time thresholds \nfrom the planned shipment ETD/ETA.\nA `SHIPMENT_EARLY` event gets triggered when the shipment is ahead\nof schedule by the number of `before` seconds.\nA `SHIPMENT_DELAYED` event gets triggered when the shipment is behind\nschedule by the number of `after` seconds.\nA `SHIPMENT_ON_TIME` event gets triggered when the shipment is on time.\n\nWhen a rule has been successfully created, the response body will contain the created rule ID.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.rules.putRulesV4RuleId",
+      "name": "rules.putRulesV4RuleId",
+      "description": "Updates the name, description and threshold of the rule `ruleId`. \nThe rule type cannot be updated.\nIf some of the these properties are not provided in the request body, their values\nwill be set to null.\n\nIf the rule has been updated successfully, the response will contain the updated rule details.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.deleteSensorsV3",
+      "name": "sensors.deleteSensorsV3",
+      "description": "Deletes all sensor rules of a project.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion. \nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.deleteSensorsV3SensorRuleId",
+      "name": "sensors.deleteSensorsV3SensorRuleId",
+      "description": "Deletes a sensor rule identified by the `sensorRuleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.getSensorsV3",
+      "name": "sensors.getSensorsV3",
+      "description": "Gets all sensor rules definitions."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.getSensorsV3Health",
+      "name": "sensors.getSensorsV3Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.getSensorsV3SensorRuleId",
+      "name": "sensors.getSensorsV3SensorRuleId",
+      "description": "Gets details of a single sensor rule identified by the `sensorRuleId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.getSensorsV3Version",
+      "name": "sensors.getSensorsV3Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.postSensorsV3",
+      "name": "sensors.postSensorsV3",
+      "description": "Creates a sensor rule of the specified rule type.\nAfter the sensor rule has been created, it needs to be associated to a device to get activated.\n\nFor a sensor rule of the battery, humidity, pressure and temperature type, a `range` parameter needs \nto be specified, defining both upper and lower thresholds for the sensor readings. \nWhen the device ingests data, the reported sensor reading is compared to the defined range \nand in case in or out of range transition has taken place, an event gets triggered.\n\nFor a sensor rule of the acceleration type, a `threshold` parameter needs \nto be specified, defining the acceleration threshold value.\nEvery time the device reports its accelerometer sensor reading being above the threshold, \nan event gets triggered.\n\nFor a sensor rule of the attach and tamper types, no additional parameters\nneed to be specified.\nThe attach sensor detects whether the device is attached to some object (for example to an \nasset).\nThe tamper sensor detects whether the device cover is open or closed. When the cover is open,\nthe device is considered to be tampered with.\nEvery time the device reports getting attached, detached, tampered with or left with the \ncover closed (that is, not tampered with), an event gets triggered.\n\nWhen a sensor rule has been successfully created, the response body will contain the created rule ID.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.sensors.putSensorsV3SensorRuleId",
+      "name": "sensors.putSensorsV3SensorRuleId",
+      "description": "Updates the sensor rule `sensorRuleId` name, description and range or threshold.\nThe sensor rule type cannot be updated.\nIf some of the these properties are not provided in the request body, their values\nwill be set to null.\nIf the sensor rule has been updated successfully, the response will contain the updated rule details.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.deleteShadowsV2TrackingId",
+      "name": "shadows.deleteShadowsV2TrackingId",
+      "description": "Deletes the device shadow of the `trackingId` device.\n\nBy default, all the values of the `desired` and `reported` shadow objects will be cleared, leaving them empty.\n\nIf either `desired` or `reported` query parameter is set to `false`, that part of the shadow remains as it is.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV2Health",
+      "name": "shadows.getShadowsV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV2TrackingId",
+      "name": "shadows.getShadowsV2TrackingId",
+      "description": "Gets the `trackingId` device shadow that contains both `reported` and `desired` shadows.\n\nIf a `shipmentId` is used instead of a `trackingId`, it will return a\nshadow of the device that was most recently active for the shipment. If the shipment\nis still pending or it has been cancelled or completed, an empty shadow will be returned.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV2TrackingIdState",
+      "name": "shadows.getShadowsV2TrackingIdState",
+      "description": "Gets the `reported` or `desired` state object of the device `trackingId`, that is the `reported` or `desired` device shadow.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV2TrackingIdStateSelector",
+      "name": "shadows.getShadowsV2TrackingIdStateSelector",
+      "description": "Gets a value of a single property of either `desired` or `reported` state objects of a device.\nOne can use JSON selectors to specify the target property or reference it by name.\nIn case the property contains an object, the entire object will be returned in the response.\n\nThe JSON selector can be nested like this: `payload/time/minutes`\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV2Version",
+      "name": "shadows.getShadowsV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.getShadowsV4",
+      "name": "shadows.getShadowsV4",
+      "description": "Gets all device shadows of a project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.postShadowsV2Batch",
+      "name": "shadows.postShadowsV2Batch",
+      "description": "Gets device shadows for multiple devices. One can get shadows for a\nmaximum of 100 devices per request.\n\nIn case `after` parameter is provided, only the device\nshadows that were modified on or after the specified timestamp\nwill be retrieved.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shadows.putShadowsV2TrackingId",
+      "name": "shadows.putShadowsV2TrackingId",
+      "description": "Updates the `trackingId` device desired shadow.\n\nThe device shadow consists of `reported` and `desired` shadows. \nOnly the `desired` shadow can be updated via this endpoint.\nThe `reported` shadow is updated automatically when the device sends telemetry to the ingestion endpoint.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.getShipmentReportsV4Health",
+      "name": "shipmentReports.getShipmentReportsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.getShipmentReportsV4ShipmentReportIdMetric",
+      "name": "shipmentReports.getShipmentReportsV4ShipmentReportIdMetric",
+      "description": "Get the shipment report metric by using the `shipmentReportId` and a `metric` parameters.\n\nShipment report metrics can be requested only after the shipment\nreport generation has been completed.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.getShipmentReportsV4ShipmentReportIdStatus",
+      "name": "shipmentReports.getShipmentReportsV4ShipmentReportIdStatus",
+      "description": "Use the `shipmentReportId` as a path parameter for fetching the status of the generation of the\nshipment report.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.getShipmentReportsV4ShipmentReportIdSummary",
+      "name": "shipmentReports.getShipmentReportsV4ShipmentReportIdSummary",
+      "description": "After the shipment report generation is completed, use the\n`shipmentReportId` as a path parameter for fetching\nthe summary of the shipment report.\n\nThe summary contains general information about the locations, shipments, shipment plans,\nsegments, and segment plans which were used in the generation of the shipment report. It also includes the time\nwhen the shipment report generation started, and when it ended.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.getShipmentReportsV4Version",
+      "name": "shipmentReports.getShipmentReportsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipmentReports.postShipmentReportsV4",
+      "name": "shipmentReports.postShipmentReportsV4",
+      "description": "This endpoint starts the shipment report generation. One can specify which shipments to include\nin the shipments report by using the filters in the request body. The response contains the generated\nshipment report ID `shipmentReportId`.\n\nAfter the shipment report generation has been requested, the status of the shipment report generation\ncan be checked by using the `/shipment-reports/v4/{shipmentReportId}/status` endpoint.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.deleteShipmentsV4",
+      "name": "shipments.deleteShipmentsV4",
+      "description": "Deletes all the shipments of the project.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion.\nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.deleteShipmentsV4Plans",
+      "name": "shipments.deleteShipmentsV4Plans",
+      "description": "Deletes all shipment plans of the project. Any shipments instantiated from the plans will\npersist, but the references to the parent plans will be removed.\n\nNote that one needs to supply an HTTP header `x-confirm` with the value `true` to force the deletion.\nIf the header is not provided, the request will fail.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.deleteShipmentsV4PlansShipmentPlanId",
+      "name": "shipments.deleteShipmentsV4PlansShipmentPlanId",
+      "description": "Deletes a shipment plan identified by the `shipmentPlanId`.\n\nAny shipment instantiated from the plan will persist, but the\nreference to the parent plan will be removed.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.deleteShipmentsV4ShipmentId",
+      "name": "shipments.deleteShipmentsV4ShipmentId",
+      "description": "Deletes a shipment identified by the `shipmentId`.\nAll the data related to the shipment (such as events, associations) will be removed.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4",
+      "name": "shipments.getShipmentsV4",
+      "description": "Gets all shipments of the project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4Health",
+      "name": "shipments.getShipmentsV4Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4Plans",
+      "name": "shipments.getShipmentsV4Plans",
+      "description": "Gets all shipment plans of the project.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4PlansShipmentPlanId",
+      "name": "shipments.getShipmentsV4PlansShipmentPlanId",
+      "description": "Gets details of a shipment plan identified by the `shipmentPlanId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4PlansShipmentPlanIdSegmentPlanId",
+      "name": "shipments.getShipmentsV4PlansShipmentPlanIdSegmentPlanId",
+      "description": "Gets details of a segment plan identified by the `segmentPlanId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4ShipmentId",
+      "name": "shipments.getShipmentsV4ShipmentId",
+      "description": "Gets details of a specific shipment identified by the `shipmentId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4ShipmentIdSegmentId",
+      "name": "shipments.getShipmentsV4ShipmentIdSegmentId",
+      "description": "Gets details of a segment identified by the `segmentId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4TrackingIdSegments",
+      "name": "shipments.getShipmentsV4TrackingIdSegments",
+      "description": "Gets all segments that are assigned to the device with `trackingId` or `shipmentId`.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.getShipmentsV4Version",
+      "name": "shipments.getShipmentsV4Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.patchShipmentsV4PlansShipmentPlanId",
+      "name": "shipments.patchShipmentsV4PlansShipmentPlanId",
+      "description": "Updates details of a shipment plan identified by the `shipmentPlanId`.\nThis is a partial update, meaning that only the provided\nfields will be updated. If `ruleIds` field is specified, it will replace\nthe existing rules currently associated with the shipment plan.\n\n***Note***:\n`segments` cannot be edited through this API. Changing the order of the segments in a plan\nwould cause shipments created from earlier versions of the plan diverge from a shipment\ninstantiated from the new plan with different segment structure. Individual segments can\nstill be updated via the `shipments/v4/plans/{shipmentPlanId}/{segmentPlanId}` endpoint.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.patchShipmentsV4PlansShipmentPlanIdSegmentPlanId",
+      "name": "shipments.patchShipmentsV4PlansShipmentPlanIdSegmentPlanId",
+      "description": "Updates details of a segment plan identified by the `segmentPlanId`.\n\nThis is a partial update, meaning that only the provided\nfields will be updated.\n\n***Note***: Updating `origin` and `destination` is prohibited to prevent breaking the chain\nof locations.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.patchShipmentsV4ShipmentId",
+      "name": "shipments.patchShipmentsV4ShipmentId",
+      "description": "Updates details of a shipment identified by the `shipmentId`.\nThis is a partial update, meaning that only the provided fields will be updated,\nexcept when updating segments, the whole segments will be replaced fully.\n\nChanging the status of the shipment affects the statuses of the segments. The following\nstatus changes are allowed:\n* `pending` → `ongoing`\n  * changes the status of the first segment to `ongoing`\n* `pending` → `cancelled`\n  * changes the status of all segments to `cancelled`\n* `ongoing` → `cancelled`\n  * cancels the current `ongoing` segment and all the succeeding segments\n* `ongoing` → `completed`\n  * completes the current `ongoing` segment and cancels all the succeeding segments\n\n***Note***:\n`segments` and `autoStart` can be updated via this API call only if the shipment is in\n`pending` state.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.patchShipmentsV4ShipmentIdSegmentId",
+      "name": "shipments.patchShipmentsV4ShipmentIdSegmentId",
+      "description": "Updates details of a segment identified by the `segmentId`.\n\nThis is a partial update, meaning that only the provided fields\nwill be updated.\n\nChanging the status of a segment affects the statuses of other segments in the shipment. The\nfollowing status changes are allowed:\n* `pending` → `ongoing`\n  * changes previous `pending` segments to `cancelled`\n  * changes previous `ongoing` segment to `completed` (only for the immediate predecessor of\n    this segment)\n  * changes previous `ongoing` segment to `cancelled` (for segments that are not immediate\n    predecessors of this segment)\n  * previous segments in `cancelled` or `completed` states are not affected\n* `pending` || `ongoing` → `cancelled`\n  * no changes for other segments\n* `ongoing` → `completed`\n  * next segment with status `pending` is changed to `ongoing`\n\n***Note***:\n`trackingId` can be updated through this API call only if the segment is in `pending` state.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.postShipmentsV4",
+      "name": "shipments.postShipmentsV4",
+      "description": "Creates a new shipment. A shipment consists of segments each representing a part of the\nlogistics journey. A segment spans from a location to another and each segment may be\nassigned a different tracking device.\n\nThe segments of the shipment must form a continuous chain of locations, that is the origin of a\nsegment must match the destination of a previous segment.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.shipments.postShipmentsV4Plans",
+      "name": "shipments.postShipmentsV4Plans",
+      "description": "Creates a new shipment plan. A shipment plan is a structure that holds information about a\nrecurring shipment. Like a shipment, a shipment plan also consists of segments each\nrepresenting a part of the logistics journey. A segment spans from a location to another and\neach segment may be assigned a different tracking device. The segments of the shipment must form a\ncontinuous chain of locations, that is the origin of a segment must match the destination of a\nprevious segment.\n\nIn addition to shipments, a predefined duration can be assigned to each segment in the plan.\nThis information will be used to calculate the Estimated Time of Departure (ETD) and\nEstimated Time of Arrival (ETA) when instantiating a shipment from a shipment plan.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.traces.deleteTracesV2TrackingId",
+      "name": "traces.deleteTracesV2TrackingId",
+      "description": "Deletes all the device `trackingId` traces.\n\nThis will also trigger deletion of the entire event history of the device.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.traces.getTracesV2Health",
+      "name": "traces.getTracesV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.traces.getTracesV2TrackingId",
+      "name": "traces.getTracesV2TrackingId",
+      "description": "Gets all traces of the device `trackingId` that were recorded within the specified time range. \nThe range is defined with `before` and `after` parameters.\nThe returned traces are sorted in descending order based on their timestamps.\n\nNOTE:\nBy default, the `after` parameter value is 0, and the `before` parameter is set to the current\nsystem time.\nAlways make sure to specify `before` and `after` parameters explicitly, as otherwise it may take \na very long time for the API call to complete.\n\nIf the `trackingId` is substituted with a valid `shipmentId`, the response\ncontains a composition of traces of each shipment segment. \nTraces are only fetched for those segments that are either in `ongoing` or `completed` state.\n\nThe `outliers` parameter can be used to select only traces that have\nbeen marked as outliers (if the parameter value is `true`), or only traces\nthat have not been marked as outliers (if the parameter value is `false`).\nIf the `outliers` parameter is not present, all the traces will be returned.\n\nThe `count` and `pageToken` parameters are used for pagination.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.traces.getTracesV2Version",
+      "name": "traces.getTracesV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.transitions.getTransitionsV2DevicesTrackingId",
+      "name": "transitions.getTransitionsV2DevicesTrackingId",
+      "description": "Gets all transitions that were recorded within a specific time range.\nDefine the range with `before` and `after` parameters.\nThe returned transitions are listed in descending order based on their timestamps.\n\nNote:\n---\nBy default, the `after` parameter value is 0, and the `before` parameter is set to the current\nsystem time. \nAlways make sure to specify `before` and `after` parameters explicitly, as otherwise it may \ntake a very long time for an API call to complete.\n\nThe `count` and `pageToken` parameters are used for pagination.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.transitions.getTransitionsV2Health",
+      "name": "transitions.getTransitionsV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.transitions.getTransitionsV2Version",
+      "name": "transitions.getTransitionsV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.getUsersV2Devices",
+      "name": "users.getUsersV2Devices",
+      "description": "Gets all devices claimed by a project."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.getUsersV2Health",
+      "name": "users.getUsersV2Health",
+      "description": "Gets service health"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.getUsersV2Version",
+      "name": "users.getUsersV2Version",
+      "description": "Gets service version"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.postUsersV2Login",
+      "name": "users.postUsersV2Login",
+      "description": "Authenticates a user with an email and a password and gets a user access token upon the successful authentication.\nThe user email must be registered with a valid [HERE Account](https://account.here.com).\nOptionally user can provide requested realm ID.\n"
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.postUsersV2Refresh",
+      "name": "users.postUsersV2Refresh",
+      "description": "Gets a new valid user access token for a given previous access token and a refresh token."
+    },
+    {
+      "id": "openapi_here_com_tracking_tracking.users.postUsersV2TokenExchange",
+      "name": "users.postUsersV2TokenExchange",
+      "description": "Takes user access token, requested scope and returns project-scoped user access token.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

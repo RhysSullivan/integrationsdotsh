@@ -1,0 +1,97 @@
+{
+  "fetchedAt": "2026-04-30T15:22:44.038Z",
+  "status": "ok",
+  "count": 18,
+  "tools": [
+    {
+      "id": "openapi_graphhopper_com.clusterApi.asyncClusteringProblem",
+      "name": "clusterApi.asyncClusteringProblem",
+      "description": "\nPrefer the [synchronous endpoint](#operation/solveClusteringProblem) and use this Batch Cluster endpoint for\nlong running problems only. The work flow is asynchronous:\n\n- send a POST request towards `https://graphhopper.com/api/1/cluster/calculate?key=<your_key>` and fetch the job_id.\n- poll the solution every 500ms until it gives `status=finished`. Do this with a GET request\n  towards `https://graphhopper.com/api/1/cluster/solution/<job_id>?key=<your_key>`.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.clusterApi.getClusterSolution",
+      "name": "clusterApi.getClusterSolution",
+      "description": "This endpoint returns the solution of the clustering problems submitted to the [Batch Cluster endpoint](#operation/asyncClusteringProblem).\nYou can fetch it with the job_id, you have been sent.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.clusterApi.solveClusteringProblem",
+      "name": "clusterApi.solveClusteringProblem",
+      "description": "\nThe Cluster endpoint is used with a POST request towards\n`https://graphhopper.com/api/1/cluster?key=<your_key>`. The solution will be provided in the JSON response.\nPlease note that for problems that take longer than 10 seconds a bad request error is returned.\nIn this case please use the asynchronous [Batch Cluster Endpoint](#operation/asyncClusteringProblem) instead.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.geocodingApi.getGeocode",
+      "name": "geocodingApi.getGeocode",
+      "description": "\n### Introduction\n\n![Geocoding Example](./img/geocoding-example.png)\n\n_Geocoding_ describes the process of transforming an textual address representation to a coordinate (`latitude,longitude`).\nFor example the conversion from `Berlin` to `52.5170365,13.3888599`.\n\n_Reverse geocoding_ converts a coordinate to a textual address representation or place name. Find out more about Geocoding itself on [Wikipedia](http://en.wikipedia.org/wiki/Geocoding).\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.isochroneApi.getIsochrone",
+      "name": "isochroneApi.getIsochrone",
+      "description": "### Example\nYou can get an example response via:\n\n```\ncurl \"https://graphhopper.com/api/1/isochrone?point=51.131108,12.414551&key=[YOUR_KEY]\"\n```\n\nDon't forget to replace the placeholder with your own key.\n\n### Introduction\n![Isochrone screenshot](./img/isochrone-example.png)\n\nAn isochrone of a location is ''a line connecting points at which a vehicle arrives at the same time'', see Wikipedia.\nWith the same API you can also calculate isodistances, just use the parameter distance_limit instead of time_limit`.\n\n### Use Cases\nSome possible areas in which this API may be useful to you:\n\n- real estate analysis\n- realtors\n- vehicle scheduling\n- geomarketing\n- reach of electric vehicles\n- transport planning\n- logistics (distribution and retail network planning)\n\n### API Clients and Examples\nSee the [clients](#section/API-Clients) section in the main documentation, and [live examples](https://graphhopper.com/api/1/examples/#isochrone).\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.mapMatchingApi.postGpx",
+      "name": "mapMatchingApi.postGpx",
+      "description": "### Example\nYou get an example response for a GPX via:\n\n```\ncurl -XPOST -H \"Content-Type: application/gpx+xml\" \"https://graphhopper.com/api/1/match?vehicle=car&key=[YOUR_KEY]\" --data @/path/to/some.gpx\n```\n\nA minimal working GPX file looks like\n```gpx\n<gpx>\n <trk>\n  <trkseg>\n   <trkpt lat=\"51.343657\" lon=\"12.360708\"></trkpt>\n   <trkpt lat=\"51.343796\" lon=\"12.361337\"></trkpt>\n   <trkpt lat=\"51.342784\" lon=\"12.361882\"></trkpt>\n  </trkseg>\n </trk>\n</gpx>\n```\n\n### Introduction\n![Map Matching screenshot](./img/map-matching-example.gif)\n\nThe Map Matching API is part of the GraphHopper Directions API and with this API you can snap measured GPS points typically as GPX files to a digital\nroad network to e.g. clean data or attach certain data like elevation or turn instructions to it. Read more at Wikipedia.\n\nIn the example screenshot above and demo you see the Map Matching API in action where the black line is the GPS track and the green one is matched result.\n\nMost of the times, you can simply POST a GPX file, but some of the request parameters of the [Routing API](#tag/Routing-API) apply here, too.\n\n### API Clients and Examples\nSee the [clients](#section/API-Clients) section in the main documentation, and [live examples](https://graphhopper.com/api/1/examples/#map-matching).\n\n### Limits and Counts\nThe cost for one request depends on the number of GPS location and is documented [here](https://graphhopper.com/api/1/docs/FAQ/).\n\nOne request should not exceed the Map Matching API location limit depending on the package, see the pricing in our dashboard.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.matrixApi.calculateMatrix",
+      "name": "matrixApi.calculateMatrix",
+      "description": "Prefer the [synchronous endpoint](#operation/postMatrix) and use this Batch endpoint for long running problems only.\n\nThe Batch Matrix endpoint allows using matrices with more locations and works asynchronously - similar to the [Batch Route Optimization endpoint](#operation/asyncVRP):\n * Create a HTTP POST request against `/matrix/calculate` and add the key in the URL: `/matrix/calculate?key=[YOUR_KEY]`. This will give you the `job_id` from the response json like `{ \"job_id\": \"7ac65787-fb99-4e02-a832-2c3010c70097\" }`\n * Poll via HTTP GET requests every 500ms against `/matrix/solution/[job_id]`\n\nHere are some full examples via curl:\n```bash\n$ curl -X POST -H \"Content-Type: application/json\" \"https://graphhopper.com/api/1/matrix/calculate?key=[YOUR_KEY]\" -d '{\"points\":[[13.29895,52.48696],[13.370876,52.489575],[13.439026,52.511206]]}'\n{\"job_id\":\"7ac65787-fb99-4e02-a832-2c3010c70097\"}\n```\n\nPick the returned `job_id` and use it in the next GET requests:\n```bash\n$ curl -X GET \"https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]\"\n{\"status\":\"waiting\"}\n```\n\nWhen the calculation is finished (`status:finished`) the JSON response will contain the full matrix JSON under `solution`:\n```bash\n$ curl -X GET \"https://graphhopper.com/api/1/matrix/solution/7ac65787-fb99-4e02-a832-2c3010c70097?key=[YOUR_KEY]\"\n{\"solution\":{\"weights\":[[0.0,470.453,945.414],[503.793,0.0,580.871],[970.49,569.511,0.0]],\"info\":{\"copyrights\":[\"GraphHopper\",\"OpenStreetMap contributors\"]}},\"status\":\"finished\"}\n```\n\nPlease note that if an error occured while calculation the JSON will not have a status but contain directly the error message e.g.:\n```json\n{\"message\":\"Cannot find from_points: 1\"}\n```\nAnd the optional `hints` array.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.matrixApi.getMatrix",
+      "name": "matrixApi.getMatrix",
+      "description": "With this Matrix Endpoint you submit the points and parameters via URL parameters and is the most convenient\nas it works out-of-the-box in the browser. If possible you should\nprefer using the [POST Matrix Endpoint](#operation/postMatrix) that avoids problems with many locations\nand can also gzip the **request**. (Note, that all endpoints return gzipped responses).\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.matrixApi.getMatrixSolution",
+      "name": "matrixApi.getMatrixSolution",
+      "description": "This endpoint returns the solution of a JSON submitted to the Batch Matrix endpoint. You can fetch it with the job_id, you have been sent.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.matrixApi.postMatrix",
+      "name": "matrixApi.postMatrix",
+      "description": "\nThe [GET endpoint](#operation/getMatrix) has an URL length limitation, which hurts for many locations per request.\nIn those cases use this POST endpoint with a JSON as input. The only parameter in the URL will be the key.\nBoth request scenarios are identical except that all singular parameter names are named as their plural for a POST request.\nThe effected parameters are: `points`, `from_points`, `to_points`, and `out_arrays`. For the remaining parameters\nplease refer to the [guide of the GET endpoint](#operation/getMatrix).\n\n**Please note that in contrast to GET endpoint the points have to be specified as `[longitude, latitude]` array (in that order, similar to [GeoJson](http://geojson.org/geojson-spec.html#examples))**.\n\nFor example the query `point=10,11&point=20,22&vehicle=car` will be converted to the following JSON:\n```json\n{ \"points\": [[11,10], [22,20]], \"vehicle\": \"car\" }\n```\n\nA complete curl Example:\n```bash\ncurl -X POST -H \"Content-Type: application/json\" \"https://graphhopper.com/api/1/matrix?key=[YOUR_KEY]\" -d '{\"elevation\":false,\"out_arrays\":[\"weights\", \"times\"],\"from_points\":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],\"to_points\":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],\"vehicle\":\"car\"}'\n```\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routeOptimizationApi.asyncVrp",
+      "name": "routeOptimizationApi.asyncVrp",
+      "description": "\nTo solve a vehicle routing problem, perform the following steps:\n\n1.) Make a HTTP POST to this URL\n\n```\nhttps://graphhopper.com/api/1/vrp/optimize?key=<your_key>\n```\n\nIt returns a job id (job_id).\n\n2.) Take the job id and fetch the solution for the vehicle routing problem from this URL:\n\n```\nhttps://graphhopper.com/api/1/vrp/solution/<job_id>?key=<your_key>\n```\n\nWe recommend to query the solution every 500ms until it returns 'status=finished'.\n\n**Note**: Since the workflow is a bit more cumbersome and since you lose some time in fetching the solution, you should always prefer\nthe [synchronous endpoint](#operation/solveVRP). You should use the batch mode only for long running problems.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routeOptimizationApi.getSolution",
+      "name": "routeOptimizationApi.getSolution",
+      "description": "\nTake the job id and fetch the solution for the vehicle routing problem from this URL:\n\n```\nhttps://graphhopper.com/api/1/vrp/solution/<job_id>?key=<your_key>\n```\n\nYou get the job id by sending a vehicle routing problem to the [batch mode URL](#operation/asyncVRP).\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routeOptimizationApi.solveVrp",
+      "name": "routeOptimizationApi.solveVrp",
+      "description": "\nTo get started with the Route Optimization API, please read the [introduction](#tag/Route-Optimization-API).\n\nTo solve a new vehicle routing problem, make a HTTP POST to this URL\n\n```\nhttps://graphhopper.com/api/1/vrp?key=<your_key>\n```\n\nIt returns the solution to this problem in the JSON response.\n\nPlease note that this URL is very well suited to solve minor problems.\nLarger vehicle routing problems, which take longer than 10 seconds to solve, cannot be solved.\nTo solve them, please use the [batch mode URL](#operation/asyncVRP) instead.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routingApi.getRoute",
+      "name": "routingApi.getRoute",
+      "description": "The GET request is the most simple one: just specify the parameter in the URL and you are done.\nCan be tried directly in every browser.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routingApi.getRouteInfo",
+      "name": "routingApi.getRouteInfo",
+      "description": "Use this to find out details about the supported vehicle profiles and features, or if you just need to ping the server.\n"
+    },
+    {
+      "id": "openapi_graphhopper_com.routingApi.postRoute",
+      "name": "routingApi.postRoute",
+      "description": "Please see the [GET endpoint](#operation/getRoute) for a simpler method on how to get started.\nIf you are familiar with POST requests and JSON then do not hesitate to continue here.\n\nEspecially when you use many locations you should get familiar with this POST endpoint as the GET endpoint\nhas an URL length limitation. Additionally the request of this POST endpoint can be compressed and can slightly\nspeed up the request.\n\nTo do a request you send JSON data. Both request scenarios GET and POST are identical except that all singular parameter names are named as their plural for a POST request.\nThe effected parameters are: `points`, `point_hints` and `snap_preventions`.\n\n**Please note that in opposite to the GET endpoint, points are specified in the order of `longitude, latitude`**.\n\nFor example `point=10,11&point=20,22` will be converted to the `points` array (plural):\n```json\n{ \"points\": [[11,10], [22,20]] }\n```\nNote again that also the order changes from `[latitude,longitude]` to `[longitude,latitude]`\nsimilar to [GeoJson](http://geojson.org/geojson-spec.html#examples).\n\nExample:\n```bash\ncurl -X POST -H \"Content-Type: application/json\" \"https://graphhopper.com/api/1/route?key=[YOUR_KEY]\" -d '{\"elevation\":false,\"points\":[[-0.087891,51.534377],[-0.090637,51.467697]],\"vehicle\":\"car\"}'\n```\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

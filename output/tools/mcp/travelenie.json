@@ -1,0 +1,107 @@
+{
+  "fetchedAt": "2026-04-30T15:20:27.043Z",
+  "status": "ok",
+  "count": 20,
+  "tools": [
+    {
+      "id": "mcp_travelenie.trip_create",
+      "name": "trip-create",
+      "description": "Create a new empty trip with a name and optional date range. Use this when the user wants to start a new trip without any bookings yet. For adding bookings, use segment-create instead (it auto-creates trips)."
+    },
+    {
+      "id": "mcp_travelenie.trip_read",
+      "name": "trip-read",
+      "description": "Retrieve trip data including segment details and IDs. Use this when you need trip details to perform another operation (e.g., to look up a segment ID before calling segment-update or segment-delete). This does NOT display a widget to the user. To show the user their itinerary, use trip-view instead."
+    },
+    {
+      "id": "mcp_travelenie.trip_view",
+      "name": "trip-view",
+      "description": "Display the user's trip as an interactive itinerary widget. Use this when the user wants to see their trip, review their itinerary, check flight times, see hotel reservations, browse activities, or get an overview of their travel plans. Also use after completing a series of changes to show the updated trip. Common requests: 'show my trip', 'what's my itinerary', 'when do I fly', 'what hotel am I staying at', 'let me see my travel plans'."
+    },
+    {
+      "id": "mcp_travelenie.trip_update",
+      "name": "trip-update",
+      "description": "Update trip metadata such as name or date range. To modify segments (flights, hotels, etc.), use segment-update instead."
+    },
+    {
+      "id": "mcp_travelenie.trip_delete",
+      "name": "trip-delete",
+      "description": "Delete a trip. Use this when the user wants to remove an entire trip. To remove a single segment, use segment-delete instead. Ask the user to confirm before deleting."
+    },
+    {
+      "id": "mcp_travelenie.trip_merge",
+      "name": "trip-merge",
+      "description": "Merge all segments from a source trip into a target trip, then permanently remove the source trip and its related artifacts (shares, prep cache, and journal entries). The target trip keeps its name. Use when the user has duplicate trips or wants to combine trips. Ask for explicit confirmation before calling this tool."
+    },
+    {
+      "id": "mcp_travelenie.trip_list",
+      "name": "trip-list",
+      "description": "Use this when the user wants to see all their trips, asks 'what trips do I have', or mentions a trip by name without specifying which one. Also use when the user references 'my Japan trip', 'summer vacation', or 'upcoming travel' to find the matching trip. Shows all trips with names, dates, and destinations."
+    },
+    {
+      "id": "mcp_travelenie.segment_create",
+      "name": "segment-create",
+      "description": "Add one or more booking segments (flights, hotels, cars, trains, activities) to a trip. If tripId is omitted, a new trip is created automatically. Use this when the user shares booking confirmations, emails, or wants to add reservations. Do not use this to correct an existing segment — use segment-update instead. Before calling, check trip-list for existing trips. If you detect a duplicate segment (same flight route+date, same hotel+dates), ask the user before proceeding."
+    },
+    {
+      "id": "mcp_travelenie.segment_read",
+      "name": "segment-read",
+      "description": "Read details of a single segment by its ID. Returns the full segment data including type, dates, locations, and confirmation codes."
+    },
+    {
+      "id": "mcp_travelenie.segment_update",
+      "name": "segment-update",
+      "description": "Update a segment in a trip. Uses supersede pattern - old version is preserved for history. Use this for any change to an existing segment, including date, time, venue, or detail corrections. **Returns the updated trip brief automatically. No need to call trip-read after.**"
+    },
+    {
+      "id": "mcp_travelenie.segment_delete",
+      "name": "segment-delete",
+      "description": "Delete one or more segments from a trip. Uses soft-delete. Only use when the user explicitly wants to remove a segment. Do not delete and recreate a segment to correct it — use segment-update instead."
+    },
+    {
+      "id": "mcp_travelenie.trip_prep_analysis",
+      "name": "trip-prep-analysis",
+      "description": "Use this when the user asks about trip preparation, wants to know what they need before traveling, or asks about travel requirements. Covers visa requirements, passport validity, packing suggestions, and travel documents. Common requests: 'what do I need for my trip', 'am I ready to travel', 'do I need a visa', 'help me prepare'. Returns an interactive checklist."
+    },
+    {
+      "id": "mcp_travelenie.trip_prep_item_update",
+      "name": "trip-prep-item-update",
+      "description": "Use this when the user marks a preparation task as done, undoes a completed item, or dismisses a recommendation. Common requests: 'I packed my passport', 'mark visa as done', 'I don't need that item', 'uncheck the packing item'."
+    },
+    {
+      "id": "mcp_travelenie.trip_journal",
+      "name": "trip-journal",
+      "description": "Log a journal entry for a trip — experiences, reactions, memories, or thoughts about your travels. Use when the user shares what they did, how they felt, or what they experienced.\n- If the user mentions a place, restaurant, or activity that could be on the schedule, call trip-read first to find the matching segment and include its segmentId.\n- To log a new experience: include title, date, and/or location as available.\n- For general impressions: just include the text.\n- To update an existing entry: include entryId.\nCapture the user's words naturally. Do not ask for details they didn't volunteer — they can add more anytime."
+    },
+    {
+      "id": "mcp_travelenie.trip_share",
+      "name": "trip-share",
+      "description": "Create a share code for a trip. The code can be sent to another person who can then claim it using trip-share-claim to access the trip. The owner chooses whether to grant view-only or full edit access."
+    },
+    {
+      "id": "mcp_travelenie.trip_share_claim",
+      "name": "trip-share-claim",
+      "description": "Claim access to a trip using a share code. Use this when the user has a share code from someone who shared a trip with them. After claiming, the trip appears in their trip list and can be viewed or edited depending on the permission level granted."
+    },
+    {
+      "id": "mcp_travelenie.trip_share_list",
+      "name": "trip-share-list",
+      "description": "List trip sharing activity. Use direction 'outgoing' to see shares the user created for their trips. Use direction 'incoming' to see trips others have shared with the user."
+    },
+    {
+      "id": "mcp_travelenie.trip_share_revoke",
+      "name": "trip-share-revoke",
+      "description": "Revoke a share code so it can no longer be used. All recipients who previously claimed this code will lose access. Only the trip owner can revoke."
+    },
+    {
+      "id": "mcp_travelenie.about",
+      "name": "about",
+      "description": "Use this when the user asks what Travelenie can do or how to prompt it. Returns active capabilities and high-quality sample prompts for currently enabled features."
+    },
+    {
+      "id": "mcp_travelenie.widget_telemetry",
+      "name": "widget-telemetry",
+      "description": "Internal tool for client-side widget logging. Not for direct use."
+    }
+  ]
+}

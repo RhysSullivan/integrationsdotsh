@@ -1,0 +1,292 @@
+{
+  "fetchedAt": "2026-04-30T15:22:36.253Z",
+  "status": "ok",
+  "count": 57,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsChangelogsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsChangelogsList",
+      "description": "Returns the list of Changelogs."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsCreate",
+      "description": "Creates an agent in the specified location. Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsContinuousTestResultsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsContinuousTestResultsList",
+      "description": "Fetches a list of continuous test results for a given environment."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsCreate",
+      "description": "Creates an Environment in the specified Agent. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: Environment"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsDeployFlow",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsDeployFlow",
+      "description": "Deploys a flow to the specified Environment. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: DeployFlowMetadata - `response`: DeployFlowResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsDeploymentsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsDeploymentsList",
+      "description": "Returns the list of all deployments in the specified Environment."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsCreate",
+      "description": "Creates an Experiment in the specified Environment."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsList",
+      "description": "Returns the list of all experiments in the specified Environment."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsStart",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsStart",
+      "description": "Starts the specified Experiment. This rpc only changes the state of experiment from PENDING to RUNNING."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsStop",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsExperimentsStop",
+      "description": "Stops the specified Experiment. This rpc only changes the state of experiment from RUNNING to DONE."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsList",
+      "description": "Returns the list of all environments in the specified Agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistory",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsLookupEnvironmentHistory",
+      "description": "Looks up the history of the specified Environment."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsEnvironmentsRunContinuousTest",
+      "name": "projects.dialogflowProjectsLocationsAgentsEnvironmentsRunContinuousTest",
+      "description": "Kicks off a continuous test under the specified Environment. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: RunContinuousTestMetadata - `response`: RunContinuousTestResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsCreate",
+      "description": "Creates a flow in the specified agent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsExport",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsExport",
+      "description": "Exports the specified flow to a binary file. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: ExportFlowResponse Note that resources (e.g. intents, entities, webhooks) that the flow references will also be exported."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsImport",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsImport",
+      "description": "Imports the specified flow to the specified agent from a binary file. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: ImportFlowResponse Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsList",
+      "description": "Returns the list of all flows in the specified agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsPagesCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsPagesCreate",
+      "description": "Creates a page in the specified flow. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsPagesList",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsPagesList",
+      "description": "Returns the list of all pages in the specified flow."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsTrain",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsTrain",
+      "description": "Trains the specified flow. Note that only the flow in 'draft' environment is trained. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty) Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsTransitionRouteGroupsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsTransitionRouteGroupsCreate",
+      "description": "Creates an TransitionRouteGroup in the specified flow. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsTransitionRouteGroupsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsTransitionRouteGroupsList",
+      "description": "Returns the list of all transition route groups in the specified flow."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsValidate",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsValidate",
+      "description": "Validates the specified flow and creates or updates validation results. Please call this API after the training is completed to get the complete validation results."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsVersionsCompareVersions",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsVersionsCompareVersions",
+      "description": "Compares the specified base version with target version."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsVersionsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsVersionsCreate",
+      "description": "Creates a Version in the specified Flow. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: CreateVersionOperationMetadata - `response`: Version"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsVersionsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsVersionsList",
+      "description": "Returns the list of all versions in the specified Flow."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsFlowsVersionsLoad",
+      "name": "projects.dialogflowProjectsLocationsAgentsFlowsVersionsLoad",
+      "description": "Loads resources in the specified version to the draft flow. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsIntentsCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsIntentsCreate",
+      "description": "Creates an intent in the specified agent. Note: You should always train a flow prior to sending it queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsIntentsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsIntentsList",
+      "description": "Returns the list of all intents in the specified agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsList",
+      "description": "Returns the list of all agents in the specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsRestore",
+      "name": "projects.dialogflowProjectsLocationsAgentsRestore",
+      "description": "Restores the specified agent from a binary file. Replaces the current agent with a new one. Note that all existing resources in agent (e.g. intents, entity types, flows) will be removed. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: An empty [Struct message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty) Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsSessionsDetectIntent",
+      "name": "projects.dialogflowProjectsLocationsAgentsSessionsDetectIntent",
+      "description": "Processes a natural language query and returns structured, actionable data as a result. This method is not idempotent, because it may cause session entity types to be updated, which in turn might affect results of future queries. Note: Always use agent versions for production traffic. See [Versions and environments](https://cloud.google.com/dialogflow/cx/docs/concept/version)."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsSessionsEntityTypesCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsSessionsEntityTypesCreate",
+      "description": "Creates a session entity type."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsSessionsEntityTypesList",
+      "name": "projects.dialogflowProjectsLocationsAgentsSessionsEntityTypesList",
+      "description": "Returns the list of all session entity types in the specified session."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsSessionsFulfillIntent",
+      "name": "projects.dialogflowProjectsLocationsAgentsSessionsFulfillIntent",
+      "description": "Fulfills a matched intent returned by MatchIntent. Must be called after MatchIntent, with input from MatchIntentResponse. Otherwise, the behavior is undefined."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsSessionsMatchIntent",
+      "name": "projects.dialogflowProjectsLocationsAgentsSessionsMatchIntent",
+      "description": "Returns preliminary intent match results, doesn't change the session status."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesBatchDelete",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesBatchDelete",
+      "description": "Batch deletes test cases."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesBatchRun",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesBatchRun",
+      "description": "Kicks off a batch run of test cases. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: BatchRunTestCasesMetadata - `response`: BatchRunTestCasesResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesCalculateCoverage",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesCalculateCoverage",
+      "description": "Calculates the test coverage for an agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesCreate",
+      "description": "Creates a test case for the given agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesExport",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesExport",
+      "description": "Exports the test cases under the agent to a Cloud Storage bucket or a local file. Filter can be applied to export a subset of test cases. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: ExportTestCasesMetadata - `response`: ExportTestCasesResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesImport",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesImport",
+      "description": "Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test cases and won't overwrite any existing ones. The provided ID in the imported test case is neglected. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: ImportTestCasesMetadata - `response`: ImportTestCasesResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesList",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesList",
+      "description": "Fetches a list of test cases for a given agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesResultsList",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesResultsList",
+      "description": "Fetches a list of results for a given test case."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsTestCasesRun",
+      "name": "projects.dialogflowProjectsLocationsAgentsTestCasesRun",
+      "description": "Kicks off a test case run. This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields: - `metadata`: RunTestCaseMetadata - `response`: RunTestCaseResponse"
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsWebhooksCreate",
+      "name": "projects.dialogflowProjectsLocationsAgentsWebhooksCreate",
+      "description": "Creates a webhook in the specified agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsAgentsWebhooksList",
+      "name": "projects.dialogflowProjectsLocationsAgentsWebhooksList",
+      "description": "Returns the list of all webhooks in the specified agent."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsList",
+      "name": "projects.dialogflowProjectsLocationsList",
+      "description": "Lists information about the supported locations for this service."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsSecuritySettingsCreate",
+      "name": "projects.dialogflowProjectsLocationsSecuritySettingsCreate",
+      "description": "Create security settings in the specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsSecuritySettingsDelete",
+      "name": "projects.dialogflowProjectsLocationsSecuritySettingsDelete",
+      "description": "Deletes the specified SecuritySettings."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsSecuritySettingsList",
+      "name": "projects.dialogflowProjectsLocationsSecuritySettingsList",
+      "description": "Returns the list of all security settings in the specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsLocationsSecuritySettingsPatch",
+      "name": "projects.dialogflowProjectsLocationsSecuritySettingsPatch",
+      "description": "Updates the specified SecuritySettings."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsOperationsCancel",
+      "name": "projects.dialogflowProjectsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsOperationsGet",
+      "name": "projects.dialogflowProjectsOperationsGet",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+    },
+    {
+      "id": "openapi_googleapis_com_dialogflow_dialogflow.projects.dialogflowProjectsOperationsList",
+      "name": "projects.dialogflowProjectsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

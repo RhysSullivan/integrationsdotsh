@@ -1,0 +1,297 @@
+{
+  "fetchedAt": "2026-04-30T15:45:03.901Z",
+  "status": "ok",
+  "count": 58,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.cancelImageCreation.putOperation",
+      "name": "cancelImageCreation.putOperation",
+      "description": "CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal state."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createComponent.putOperation",
+      "name": "createComponent.putOperation",
+      "description": "<p>Creates a new component that can be used to build, validate, test, and assess your image. The component is based on a YAML document that you specify using exactly one of the following methods:</p> <ul> <li> <p>Inline, using the <code>data</code> property in the request body.</p> </li> <li> <p>A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code> property in the request body.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createContainerRecipe.putOperation",
+      "name": "createContainerRecipe.putOperation",
+      "description": "Creates a new container recipe. Container recipes define how images are configured, tested, and assessed."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createDistributionConfiguration.putOperation",
+      "name": "createDistributionConfiguration.putOperation",
+      "description": "Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createImage.putOperation",
+      "name": "createImage.putOperation",
+      "description": "Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createImagePipeline.putOperation",
+      "name": "createImagePipeline.putOperation",
+      "description": "Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createImageRecipe.putOperation",
+      "name": "createImageRecipe.putOperation",
+      "description": "Creates a new image recipe. Image recipes define how images are configured, tested, and assessed."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.createInfrastructureConfiguration.putOperation",
+      "name": "createInfrastructureConfiguration.putOperation",
+      "description": "Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteComponentComponentBuildVersionArn.deleteComponent",
+      "name": "deleteComponentComponentBuildVersionArn.deleteComponent",
+      "description": "Deletes a component build version."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteContainerRecipeContainerRecipeArn.deleteContainerRecipe",
+      "name": "deleteContainerRecipeContainerRecipeArn.deleteContainerRecipe",
+      "description": "Deletes a container recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteDistributionConfigurationDistributionConfigurationArn.deleteDistributionConfiguration",
+      "name": "deleteDistributionConfigurationDistributionConfigurationArn.deleteDistributionConfiguration",
+      "description": "Deletes a distribution configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteImageImageBuildVersionArn.deleteImage",
+      "name": "deleteImageImageBuildVersionArn.deleteImage",
+      "description": "<p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p> <ul> <li> <p>To deregister an EC2 Linux AMI, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html\">Deregister your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li> <li> <p>To deregister an EC2 Windows AMI, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html\">Deregister your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li> <li> <p>To delete a container image from Amazon ECR, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html\">Deleting an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteImagePipelineImagePipelineArn.deleteImagePipeline",
+      "name": "deleteImagePipelineImagePipelineArn.deleteImagePipeline",
+      "description": "Deletes an image pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteImageRecipeImageRecipeArn.deleteImageRecipe",
+      "name": "deleteImageRecipeImageRecipeArn.deleteImageRecipe",
+      "description": "Deletes an image recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.deleteInfrastructureConfigurationInfrastructureConfigurationArn.deleteInfrastructureConfiguration",
+      "name": "deleteInfrastructureConfigurationInfrastructureConfigurationArn.deleteInfrastructureConfiguration",
+      "description": "Deletes an infrastructure configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getComponentComponentBuildVersionArn.getComponent",
+      "name": "getComponentComponentBuildVersionArn.getComponent",
+      "description": "Gets a component object."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getComponentPolicyComponentArn.getComponentPolicy",
+      "name": "getComponentPolicyComponentArn.getComponentPolicy",
+      "description": "Gets a component policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getContainerRecipeContainerRecipeArn.getContainerRecipe",
+      "name": "getContainerRecipeContainerRecipeArn.getContainerRecipe",
+      "description": "Retrieves a container recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getContainerRecipePolicyContainerRecipeArn.getContainerRecipePolicy",
+      "name": "getContainerRecipePolicyContainerRecipeArn.getContainerRecipePolicy",
+      "description": "Retrieves the policy for a container recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getDistributionConfigurationDistributionConfigurationArn.getDistributionConfiguration",
+      "name": "getDistributionConfigurationDistributionConfigurationArn.getDistributionConfiguration",
+      "description": "Gets a distribution configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getImageImageBuildVersionArn.getImage",
+      "name": "getImageImageBuildVersionArn.getImage",
+      "description": "Gets an image."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getImagePipelineImagePipelineArn.getImagePipeline",
+      "name": "getImagePipelineImagePipelineArn.getImagePipeline",
+      "description": "Gets an image pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getImagePolicyImageArn.getImagePolicy",
+      "name": "getImagePolicyImageArn.getImagePolicy",
+      "description": "Gets an image policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getImageRecipeImageRecipeArn.getImageRecipe",
+      "name": "getImageRecipeImageRecipeArn.getImageRecipe",
+      "description": "Gets an image recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getImageRecipePolicyImageRecipeArn.getImageRecipePolicy",
+      "name": "getImageRecipePolicyImageRecipeArn.getImageRecipePolicy",
+      "description": "Gets an image recipe policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getInfrastructureConfigurationInfrastructureConfigurationArn.getInfrastructureConfiguration",
+      "name": "getInfrastructureConfigurationInfrastructureConfigurationArn.getInfrastructureConfiguration",
+      "description": "Gets an infrastructure configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getWorkflowExecutionWorkflowExecutionId.getWorkflowExecution",
+      "name": "getWorkflowExecutionWorkflowExecutionId.getWorkflowExecution",
+      "description": "Get the runtime information that was logged for a specific runtime instance of the workflow."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.getWorkflowStepExecutionStepExecutionId.getWorkflowStepExecution",
+      "name": "getWorkflowStepExecutionStepExecutionId.getWorkflowStepExecution",
+      "description": "Get the runtime information that was logged for a specific runtime instance of the workflow step."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.importComponent.putOperation",
+      "name": "importComponent.putOperation",
+      "description": "Imports a component and transforms its data into a component document."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.importVmImage.putOperation",
+      "name": "importVmImage.putOperation",
+      "description": "<p>When you export your virtual machine (VM) from its virtualization environment, that process creates a set of one or more disk container files that act as snapshots of your VM’s environment, settings, and data. The Amazon EC2 API <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html\">ImportImage</a> action uses those files to import your VM and create an AMI. To import using the CLI command, see <a href=\"https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html\">import-image</a> </p> <p>You can reference the task ID from the VM import to pull in the AMI that the import created as the base image for your Image Builder recipe.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listComponentBuildVersions.postOperation",
+      "name": "listComponentBuildVersions.postOperation",
+      "description": "<p>Returns the list of component build versions for the specified semantic version.</p> <note> <p>The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listComponents.postOperation",
+      "name": "listComponents.postOperation",
+      "description": "<p>Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to streamline results. Newly created components can take up to two minutes to appear in the ListComponents API Results.</p> <note> <p>The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listContainerRecipes.postOperation",
+      "name": "listContainerRecipes.postOperation",
+      "description": "Returns a list of container recipes."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listDistributionConfigurations.postOperation",
+      "name": "listDistributionConfigurations.postOperation",
+      "description": "Returns a list of distribution configurations."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImageBuildVersions.postOperation",
+      "name": "listImageBuildVersions.postOperation",
+      "description": "Returns a list of image build versions."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImagePackages.postOperation",
+      "name": "listImagePackages.postOperation",
+      "description": "List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImagePipelineImages.postOperation",
+      "name": "listImagePipelineImages.postOperation",
+      "description": "Returns a list of images created by the specified pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImagePipelines.postOperation",
+      "name": "listImagePipelines.postOperation",
+      "description": "Returns a list of image pipelines."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImageRecipes.postOperation",
+      "name": "listImageRecipes.postOperation",
+      "description": "Returns a list of image recipes."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImages.postOperation",
+      "name": "listImages.postOperation",
+      "description": "Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImageScanFindingAggregations.postOperation",
+      "name": "listImageScanFindingAggregations.postOperation",
+      "description": "<p>Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a filter, Image Builder returns an aggregation for your account.</p> <p>To streamline results, you can use the following filters in your request:</p> <ul> <li> <p> <code>accountId</code> </p> </li> <li> <p> <code>imageBuildVersionArn</code> </p> </li> <li> <p> <code>imagePipelineArn</code> </p> </li> <li> <p> <code>vulnerabilityId</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listImageScanFindings.postOperation",
+      "name": "listImageScanFindings.postOperation",
+      "description": "Returns a list of image scan findings for your account."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listInfrastructureConfigurations.postOperation",
+      "name": "listInfrastructureConfigurations.postOperation",
+      "description": "Returns a list of infrastructure configurations."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listWorkflowExecutions.postOperation",
+      "name": "listWorkflowExecutions.postOperation",
+      "description": "Returns a list of workflow runtime instance metadata objects for a specific image build version."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.listWorkflowStepExecutions.postOperation",
+      "name": "listWorkflowStepExecutions.postOperation",
+      "description": "Shows runtime data for each step in a runtime instance of the workflow that you specify in the request."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.putComponentPolicy.putOperation",
+      "name": "putComponentPolicy.putOperation",
+      "description": "Applies a policy to a component. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.putContainerRecipePolicy.putOperation",
+      "name": "putContainerRecipePolicy.putOperation",
+      "description": "Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for the resource to be visible to all principals with whom the resource is shared."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.putImagePolicy.putOperation",
+      "name": "putImagePolicy.putOperation",
+      "description": "Applies a policy to an image. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImagePolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.putImageRecipePolicy.putOperation",
+      "name": "putImageRecipePolicy.putOperation",
+      "description": "Applies a policy to an image recipe. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.startImagePipelineExecution.putOperation",
+      "name": "startImagePipelineExecution.putOperation",
+      "description": "Manually triggers a pipeline to create an image."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Returns the list of tags for the specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds a tag to a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes a tag from a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.updateDistributionConfiguration.putOperation",
+      "name": "updateDistributionConfiguration.putOperation",
+      "description": "Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.updateImagePipeline.putOperation",
+      "name": "updateImagePipeline.putOperation",
+      "description": "<p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note> <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_imagebuilder_imagebuilder.updateInfrastructureConfiguration.putOperation",
+      "name": "updateInfrastructureConfiguration.putOperation",
+      "description": "Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

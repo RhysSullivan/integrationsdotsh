@@ -1,0 +1,87 @@
+{
+  "fetchedAt": "2026-04-30T15:19:58.969Z",
+  "status": "ok",
+  "count": 16,
+  "tools": [
+    {
+      "id": "mcp_phish_in.get_audio_track",
+      "name": "get_audio_track",
+      "description": "Get a song performance with audio player widget. triggers: 'play [song]', 'random track', 'listen to', 'surprise me', or when user selects a performance from get_song results. params: random=true for random; slug='YYYY-MM-DD/track-slug' for specific. display: Widget renders audio player; provide only a brief 1-2 sentence summary. Link to track web URL (use 'url', not 'mp3_url')."
+    },
+    {
+      "id": "mcp_phish_in.get_playlist",
+      "name": "get_playlist",
+      "description": "Get a playlist with interactive widget. display: Widget renders track listing; provide only a brief 1-2 sentence summary. Do NOT list tracks. Link tracks to web URLs (use 'url', not 'mp3_url')."
+    },
+    {
+      "id": "mcp_phish_in.get_show",
+      "name": "get_show",
+      "description": "Get a Phish show with setlist widget. triggers: 'random show', specific dates ('Halloween 1995', '12/31/99'), or follow-up to list_shows/search. params: random=true for random; date='YYYY-MM-DD' for specific. display: Widget renders setlist; provide only a brief 1-2 sentence summary. Do NOT list tracks. Link tracks to web URLs (use 'url', not 'mp3_url')."
+    },
+    {
+      "id": "mcp_phish_in.get_song",
+      "name": "get_song",
+      "description": "Get a Phish song with performance history. triggers: 'random song' or specific song by slug. params: random=true for random; slug='song-slug' for specific. display: Format dates as 'Jul 4, 2023'. Link tracks to web URLs (use 'url', not 'mp3_url')."
+    },
+    {
+      "id": "mcp_phish_in.get_tag",
+      "name": "get_tag",
+      "description": "Get shows or tracks associated with a specific tag. params: type='show' for tagged shows (e.g., costume); type='track' for tagged tracks (e.g., jamcharts). display: Link dates to show URLs, song names to track web URLs (use 'url', not 'mp3_url'). Format dates as 'Jul 4, 2023'. Example: | [Tweezer](track_url) | [Jul 4, 2023](show_url) |"
+    },
+    {
+      "id": "mcp_phish_in.get_tour",
+      "name": "get_tour",
+      "description": "Get a Phish tour with date range and show count. params: random=true for random; slug='tour-slug' for specific. follow-up: Use list_shows with tour_slug to get shows on this tour. display: Format dates as 'Jul 4, 2023'."
+    },
+    {
+      "id": "mcp_phish_in.get_venue",
+      "name": "get_venue",
+      "description": "Get a venue with location, show count, and date range. params: random=true for random; slug='venue-slug' for specific. follow-up: Use list_shows with venue_slug to get shows at this venue. display: Format dates as 'Jul 4, 2023'."
+    },
+    {
+      "id": "mcp_phish_in.list_playlists",
+      "name": "list_playlists",
+      "description": "List user-created playlists with optional sorting. follow-up: Use get_playlist with slug for full track listing. display: Link playlist names to their URLs. Example: [My Favorite Jams](url)"
+    },
+    {
+      "id": "mcp_phish_in.list_shows",
+      "name": "list_shows",
+      "description": "Browse shows by year, date range, tour, or venue. Returns shows WITHOUT setlists. params: At least one filter required. follow-up: Call get_show with date to display setlist widget. display: Link dates to show URLs, venues to venue URLs. Format dates as 'Jul 4, 2023'. Example: | [Jul 4, 2023](show_url) | [MSG](venue_url) |"
+    },
+    {
+      "id": "mcp_phish_in.list_songs",
+      "name": "list_songs",
+      "description": "List Phish songs with optional filtering and sorting. follow-up: Use get_song with slug for detailed performance history. display: Link song titles to their URLs. Example: [Tweezer](url)"
+    },
+    {
+      "id": "mcp_phish_in.list_tags",
+      "name": "list_tags",
+      "description": "List all tags with show and track counts. Tags categorize content: Jamcharts (notable jams), Costume, Guest, Debut, and more. follow-up: Use get_tag with a tag slug to see tagged items."
+    },
+    {
+      "id": "mcp_phish_in.list_tours",
+      "name": "list_tours",
+      "description": "List all Phish tours with optional year filtering. follow-up: Use get_tour with slug for tour details."
+    },
+    {
+      "id": "mcp_phish_in.list_venues",
+      "name": "list_venues",
+      "description": "List Phish venues with optional geographic filtering. follow-up: Use get_venue with slug for venue details. display: Link venue names to their URLs. Example: [Madison Square Garden](url)"
+    },
+    {
+      "id": "mcp_phish_in.list_years",
+      "name": "list_years",
+      "description": "List all years/eras when Phish performed, with show counts. Eras: 1.0 (1983-2000), 2.0 (2002-2004), 3.0 (2009-2020), 4.0 (2021+). follow-up: Use list_shows with year to see shows. display: Link years to their URLs. Example: [1995](url)"
+    },
+    {
+      "id": "mcp_phish_in.search",
+      "name": "search",
+      "description": "Case-insensitive substring search across shows, songs, venues, tours, tags, and playlists. note: For specific dates ('Halloween 95', 'NYE 99'), use get_show directly. follow-up: Call get_show to display setlist widget. display: Link dates to show URLs, titles to song URLs, names to venue URLs. Format dates as 'Jul 4, 2023'."
+    },
+    {
+      "id": "mcp_phish_in.stats",
+      "name": "stats",
+      "description": "Statistical analysis: gaps (bustouts), transitions, set positions, geographic patterns, co-occurrence, and song frequency. display: Link song names to song URLs, dates to track web URLs (use 'url', not 'mp3_url'). Format dates as 'Jul 4, 2023'. Example: | [Tweezer](song_url) | 42 | [Dec 31, 1995](track_url) | api: https://phish.in/api/v2/swagger_doc (no key required)"
+    }
+  ]
+}

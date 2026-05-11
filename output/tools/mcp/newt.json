@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:37.366Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_newt.get_available_destinations",
+      "name": "get-available-destinations",
+      "description": "Use this when you need the list of available travel destinations before performing a tour search. Returns all available destination codes and names. ALWAYS call this tool FIRST before using tour-search to understand which destinations are available and get their correct codes."
+    },
+    {
+      "id": "mcp_newt.tour_search",
+      "name": "tour-search",
+      "description": "Use this when the user asks about tour packages, travel deals, or vacation planning. IMPORTANT: If you haven't retrieved the destination list yet in this conversation, call 'get-available-destinations' first. If you already have the destination list from earlier in this conversation, do NOT call it again - reuse the cached list. Default: Tokyo departure. For vague dates (e.g., 'around December'), uses mid-month dates with ±7 days flexibility and realistic trip duration based on destination (Hawaii: 7 days, Korea/Taiwan: 3 days)."
+    }
+  ]
+}

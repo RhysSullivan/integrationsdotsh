@@ -1,0 +1,217 @@
+{
+  "fetchedAt": "2026-04-30T15:22:32.851Z",
+  "status": "ok",
+  "count": 42,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.githubDotComWebhook.cloudbuildGithubDotComWebhookReceive",
+      "name": "githubDotComWebhook.cloudbuildGithubDotComWebhookReceive",
+      "description": "ReceiveGitHubDotComWebhook is called when the API receives a github.com webhook."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.locations.cloudbuildLocationsRegionalWebhook",
+      "name": "locations.cloudbuildLocationsRegionalWebhook",
+      "description": "ReceiveRegionalWebhook is called when the API receives a regional GitHub webhook."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsBuildsCancel",
+      "name": "projects.cloudbuildProjectsBuildsCancel",
+      "description": "Cancels a build in progress."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsBuildsCreate",
+      "name": "projects.cloudbuildProjectsBuildsCreate",
+      "description": "Starts a build with the specified configuration. This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`)."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsBuildsGet",
+      "name": "projects.cloudbuildProjectsBuildsGet",
+      "description": "Returns information about a previously requested build. The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or `WORKING`), and timing information."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsBuildsList",
+      "name": "projects.cloudbuildProjectsBuildsList",
+      "description": "Lists previously requested builds. Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsBuildsRetry",
+      "name": "projects.cloudbuildProjectsBuildsRetry",
+      "description": "Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Google Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBitbucketServerConfigsCreate",
+      "name": "projects.cloudbuildProjectsLocationsBitbucketServerConfigsCreate",
+      "description": "Creates a new `BitbucketServerConfig`. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBitbucketServerConfigsList",
+      "name": "projects.cloudbuildProjectsLocationsBitbucketServerConfigsList",
+      "description": "List all `BitbucketServerConfigs` for a given project. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBitbucketServerConfigsRemoveBitbucketServerConnectedRepository",
+      "name": "projects.cloudbuildProjectsLocationsBitbucketServerConfigsRemoveBitbucketServerConnectedRepository",
+      "description": "Remove a Bitbucket Server repository from a given BitbucketServerConfig's connected repositories. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBuildsApprove",
+      "name": "projects.cloudbuildProjectsLocationsBuildsApprove",
+      "description": "Approves or rejects a pending build. If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call. If rejected, the returned LRO will be immediately done."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBuildsCreate",
+      "name": "projects.cloudbuildProjectsLocationsBuildsCreate",
+      "description": "Starts a build with the specified configuration. This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`)."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBuildsList",
+      "name": "projects.cloudbuildProjectsLocationsBuildsList",
+      "description": "Lists previously requested builds. Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsBuildsRetry",
+      "name": "projects.cloudbuildProjectsLocationsBuildsRetry",
+      "description": "Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Google Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGithubEnterpriseConfigsCreate",
+      "name": "projects.cloudbuildProjectsLocationsGithubEnterpriseConfigsCreate",
+      "description": "Create an association between a GCP project and a GitHub Enterprise server."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGithubEnterpriseConfigsList",
+      "name": "projects.cloudbuildProjectsLocationsGithubEnterpriseConfigsList",
+      "description": "List all GitHubEnterpriseConfigs for a given project."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGitLabConfigsConnectedRepositoriesBatchCreate",
+      "name": "projects.cloudbuildProjectsLocationsGitLabConfigsConnectedRepositoriesBatchCreate",
+      "description": "Batch connecting GitLab repositories to Cloud Build. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGitLabConfigsCreate",
+      "name": "projects.cloudbuildProjectsLocationsGitLabConfigsCreate",
+      "description": "Creates a new `GitLabConfig`. This API is experimental"
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGitLabConfigsList",
+      "name": "projects.cloudbuildProjectsLocationsGitLabConfigsList",
+      "description": "List all `GitLabConfigs` for a given project. This API is experimental"
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGitLabConfigsRemoveGitLabConnectedRepository",
+      "name": "projects.cloudbuildProjectsLocationsGitLabConfigsRemoveGitLabConnectedRepository",
+      "description": "Remove a GitLab repository from a given GitLabConfig's connected repositories. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsGitLabConfigsReposList",
+      "name": "projects.cloudbuildProjectsLocationsGitLabConfigsReposList",
+      "description": "List all repositories for a given `GitLabConfig`. This API is experimental"
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsOperationsCancel",
+      "name": "projects.cloudbuildProjectsLocationsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsTriggersCreate",
+      "name": "projects.cloudbuildProjectsLocationsTriggersCreate",
+      "description": "Creates a new `BuildTrigger`. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsTriggersList",
+      "name": "projects.cloudbuildProjectsLocationsTriggersList",
+      "description": "Lists existing `BuildTrigger`s. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsTriggersPatch",
+      "name": "projects.cloudbuildProjectsLocationsTriggersPatch",
+      "description": "Updates a `BuildTrigger` by its project ID and trigger ID. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsTriggersRun",
+      "name": "projects.cloudbuildProjectsLocationsTriggersRun",
+      "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsTriggersWebhook",
+      "name": "projects.cloudbuildProjectsLocationsTriggersWebhook",
+      "description": "ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsWorkerPoolsCreate",
+      "name": "projects.cloudbuildProjectsLocationsWorkerPoolsCreate",
+      "description": "Creates a `WorkerPool`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsWorkerPoolsDelete",
+      "name": "projects.cloudbuildProjectsLocationsWorkerPoolsDelete",
+      "description": "Deletes a `WorkerPool`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsWorkerPoolsGet",
+      "name": "projects.cloudbuildProjectsLocationsWorkerPoolsGet",
+      "description": "Returns details of a `WorkerPool`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsWorkerPoolsList",
+      "name": "projects.cloudbuildProjectsLocationsWorkerPoolsList",
+      "description": "Lists `WorkerPool`s."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsLocationsWorkerPoolsPatch",
+      "name": "projects.cloudbuildProjectsLocationsWorkerPoolsPatch",
+      "description": "Updates a `WorkerPool`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersCreate",
+      "name": "projects.cloudbuildProjectsTriggersCreate",
+      "description": "Creates a new `BuildTrigger`. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersDelete",
+      "name": "projects.cloudbuildProjectsTriggersDelete",
+      "description": "Deletes a `BuildTrigger` by its project ID and trigger ID. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersGet",
+      "name": "projects.cloudbuildProjectsTriggersGet",
+      "description": "Returns information about a `BuildTrigger`. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersList",
+      "name": "projects.cloudbuildProjectsTriggersList",
+      "description": "Lists existing `BuildTrigger`s. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersPatch",
+      "name": "projects.cloudbuildProjectsTriggersPatch",
+      "description": "Updates a `BuildTrigger` by its project ID and trigger ID. This API is experimental."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersRun",
+      "name": "projects.cloudbuildProjectsTriggersRun",
+      "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.projects.cloudbuildProjectsTriggersWebhook",
+      "name": "projects.cloudbuildProjectsTriggersWebhook",
+      "description": "ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudbuild_cloudbuild.v1.cloudbuildWebhook",
+      "name": "v1.cloudbuildWebhook",
+      "description": "ReceiveWebhook is called when the API receives a GitHub webhook."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

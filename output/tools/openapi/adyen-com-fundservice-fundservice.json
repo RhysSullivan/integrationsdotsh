@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-04-30T15:44:51.982Z",
+  "status": "ok",
+  "count": 10,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postAccountHolderBalance",
+      "name": "general.postAccountHolderBalance",
+      "description": "Returns the account balances of an account holder. An account's balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postAccountHolderTransactionList",
+      "name": "general.postAccountHolderTransactionList",
+      "description": "Returns a list of transactions for an account holder's accounts. You can specify the accounts and transaction statuses to be included on the list. The call returns a maximum of 50 transactions for each account. To retrieve all transactions, you must make another call with the 'page' value incremented. Transactions are listed in chronological order, with the most recent transaction first."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postDebitAccountHolder",
+      "name": "general.postDebitAccountHolder",
+      "description": "Sends a direct debit request to an account holder's bank account. If the direct debit is successful, the funds are settled in the accounts specified in the split instructions. Adyen sends the result of the direct debit in a [`DIRECT_DEBIT_INITIATED`](https://docs.adyen.com/api-explorer/#/NotificationService/latest/post/DIRECT_DEBIT_INITIATED) notification webhook.\n\n To learn more about direct debits, see [Top up accounts](https://docs.adyen.com/marketplaces-and-platforms/classic/top-up-accounts)."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postPayoutAccountHolder",
+      "name": "general.postPayoutAccountHolder",
+      "description": "Pays out a specified amount from an account to the bank account of account holder."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postRefundFundsTransfer",
+      "name": "general.postRefundFundsTransfer",
+      "description": "Refunds funds transferred from one account to another. Both accounts must be in the same platform, but can have different account holders. "
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postRefundNotPaidOutTransfers",
+      "name": "general.postRefundNotPaidOutTransfers",
+      "description": "Refunds all the transactions of an account that have taken place since the most recent payout. This request is on a account basis (as opposed to a payment basis), so only the portion of the payment that was made to the specified account is refunded. The commissions, fees, and payments to other accounts remain in the accounts to which they were sent as designated by the original payment's split details."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postSetupBeneficiary",
+      "name": "general.postSetupBeneficiary",
+      "description": "Defines a benefactor and a beneficiary relationship between two accounts. At the time of benefactor/beneficiary setup, the funds in the benefactor account are transferred to the beneficiary account, and any further payments to the benefactor account are automatically sent to the beneficiary account. A series of benefactor/beneficiaries may not exceed four beneficiaries and may not have a cycle in it."
+    },
+    {
+      "id": "openapi_adyen_com_fundservice_fundservice.general.postTransferFunds",
+      "name": "general.postTransferFunds",
+      "description": "Transfers funds from one account to another account. Both accounts must be in the same platform, but can have different account holders. The transfer must include a transfer code, which should be determined by the platform, in compliance with local regulations."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

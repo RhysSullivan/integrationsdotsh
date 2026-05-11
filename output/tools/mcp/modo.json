@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:39.219Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_modo.search_modo_promotions",
+      "name": "search_modo_promotions",
+      "description": "Searches the MODO promotions catalog and returns an interactive carousel widget. Use when the user asks about promotions, discounts, offers, benefits, or cashback through MODO.\n\nBEFORE calling: if the user has NOT mentioned which bank they use, ask which bank they operate with before calling this tool. If they already named a bank, proceed directly.\n\nAFTER the tool returns: the widget displays all results visually. Respond with a short sentence in Spanish confirming the results. If the user mentioned any bank NOT in the available banks list, append \"Por el momento no operamos con [banco/s].\" in the same response. If the user explicitly asked a question, you may briefly answer it using ONLY the data fields present in the tool response — never invent or infer data that is not there. When answering, always include the merchant or commerce name alongside any discount or day information. Never proactively offer suggestions, recommendations, plans, follow-up actions, or ask follow-up questions — only respond to what the user asked. Never list or enumerate the full set of promotions unprompted — the widget already shows them.\n\nConstraints: call at most ONCE per user message. Do not retry, paginate, or make multiple calls. Do not use for payments, transfers, account info, or financial advice. Results are AI-ranked; availability may change, so do not guarantee specific promotions are active."
+    }
+  ]
+}

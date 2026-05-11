@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:26:54.347Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.getBenefitsDocumentUploadDownload",
+      "name": "vbaDocuments.getBenefitsDocumentUploadDownload",
+      "description": "An endpoint that will allow you to see exactly what the server sees. We split apart all submitted docs and metadata and zip the file to make it available to you to help with debugging purposes. Files are deleted after 10 days. Only available in testing environments, not production."
+    },
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.getBenefitsDocumentUploadStatus",
+      "name": "vbaDocuments.getBenefitsDocumentUploadStatus",
+      "description": "Get status for a previous benefits document upload"
+    },
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.getBenefitsDocumentUploadStatusReport",
+      "name": "vbaDocuments.getBenefitsDocumentUploadStatusReport",
+      "description": "Get a bulk status report for a list of previous uploads"
+    },
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.postBenefitsDocumentUpload",
+      "name": "vbaDocuments.postBenefitsDocumentUpload",
+      "description": "Get a location for subsequent document upload PUT request"
+    },
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.postBenefitsDocumentUploadValidateDocument",
+      "name": "vbaDocuments.postBenefitsDocumentUploadValidateDocument",
+      "description": "Using this endpoint will decrease the likelihood of errors associated with individual documents during\nthe submission process. Validations performed:\n* Document is a valid PDF (Note: `Content-Type` header value must be \"application/pdf\")\n* Document does not have a user password (an owner password is acceptable)\n* File size does not exceed 100 MB\n* Page size does not exceed 21\" x 21\"\n\nEach PDF document is sent as a direct file upload. The request body should contain nothing other than the document in\nbinary format. Binary multipart/form-data encoding is not supported. This endpoint does NOT validate metadata in JSON\nformat.\n\nThis endpoint does NOT initiate the claims intake process or submit data to that process. After using this endpoint,\nindividual PDF documents can be combined and submitted as a payload using PUT `/path`.\n\nA `200` response confirms that the individual document provided passes the system requirements.\n\nA `422` response indicates one or more problems with the document that should be resolved before submitting it in the\nfull document submission payload.\n"
+    },
+    {
+      "id": "openapi_va_gov_benefits_benefits.vbaDocuments.putBenefitsDocumentUpload",
+      "name": "vbaDocuments.putBenefitsDocumentUpload",
+      "description": "Accepts document metadata, document binary, and attachment binaries. Full URL, including\nquery parameters, provided from POST `/document_uploads`.\n\n## Example Payload\n\nThe following demonstrates a (redacted) multipart payload suitable for submitting to the PUT\nendpoint. Most programming languages should have provisions for assembling a multipart\npayload like this without having to do so manually.\n\n```\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"metadata\"\nContent-Type: application/json\n\n{\"veteranFirstName\": \"Jane\",\n\"veteranLastName\": \"Doe\",\n\"fileNumber\": \"012345678\",\n\"zipCode\": \"97202\",\n\"source\": \"MyVSO\",\n\"docType\": \"21-22\"\n\"businessLine\": \"CMP\"}\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"content\"\nContent-Type: application/pdf\n\n<Binary PDF contents>\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"attachment1\"\nContent-Type: application/pdf\n\n<Binary PDF attachment contents>\n--17de1ed8f01442b2a2d7a93506314b76--\n```\n\nThis PUT request would have an overall HTTP Content-Type header:\n\n```\nContent-Type: multipart/form-data; boundary=17de1ed8f01442b2a2d7a93506314b76\n```\n\nNote that the Content-Disposition parameter \"name\" in each part must be the expected values\n\"metadata\", \"content\", \"attachment1\"...\"attachmentN\". The attachment attributes must be named \nexactly as they are listed here (case sensitive), for example: \"attachment_1\" or \"Attachment2\"\nare invalid.\n\nThis is an example curl command:\n\n```\ncurl -v -L -X PUT '<Location from \\uploads>' -F 'metadata=\"{\\\"veteranFirstName\\\": \\\"Jane\\\",\\\"veteranLastName\\\": \\\"Doe\\\",\\\"fileNumber\\\": \\\"012345678\\\",\\\"zipCode\\\": \\\"97202\\\",\\\"source\\\": \\\"MyVSO\\\",\\\"docType\\\": \\\"21-22\\\",\\\"businessLine\\\": \\\"CMP\\\"}\";type=application/json' -F 'content=@\"content.pdf\"' -F 'attachment1=@\"file1.pdf\"' -F 'attachment2=@\"another_file.pdf\"'\n```\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

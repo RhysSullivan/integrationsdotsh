@@ -1,0 +1,352 @@
+{
+  "fetchedAt": "2026-04-30T15:45:03.473Z",
+  "status": "ok",
+  "count": 69,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.admin.disableOrganizationAdminAccount",
+      "name": "admin.disableOrganizationAdminAccount",
+      "description": "Disables an Amazon Web Services account within the Organization as the GuardDuty delegated administrator."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.admin.enableOrganizationAdminAccount",
+      "name": "admin.enableOrganizationAdminAccount",
+      "description": "Enables an Amazon Web Services account within the organization as the GuardDuty delegated administrator."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.admin.listOrganizationAdminAccounts",
+      "name": "admin.listOrganizationAdminAccounts",
+      "description": "Lists the accounts configured as GuardDuty delegated administrators."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.acceptAdministratorInvitation",
+      "name": "detector.acceptAdministratorInvitation",
+      "description": "Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent the invitation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.acceptInvitation",
+      "name": "detector.acceptInvitation",
+      "description": "Accepts the invitation to be monitored by a GuardDuty administrator account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.archiveFindings",
+      "name": "detector.archiveFindings",
+      "description": "<p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note> <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createDetector",
+      "name": "detector.createDetector",
+      "description": "<p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createFilter",
+      "name": "detector.createFilter",
+      "description": "Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web Services account per Region is 100. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html\">Quotas for GuardDuty</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createIpSet",
+      "name": "detector.createIpSet",
+      "description": "Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createMembers",
+      "name": "detector.createMembers",
+      "description": "<p>Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p> <p>When using <code>Create Members</code> as an organizations delegated administrator this action will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account, which must enable GuardDuty prior to being added as a member.</p> <p>If you are adding accounts by invitation, use this action after GuardDuty has bee enabled in potential member accounts and before using <a href=\"https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html\">InviteMembers</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createPublishingDestination",
+      "name": "detector.createPublishingDestination",
+      "description": "Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createSampleFindings",
+      "name": "detector.createSampleFindings",
+      "description": "Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates sample findings of all supported finding types."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.createThreatIntelSet",
+      "name": "detector.createThreatIntelSet",
+      "description": "Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deleteDetector",
+      "name": "detector.deleteDetector",
+      "description": "Deletes an Amazon GuardDuty detector that is specified by the detector ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deleteFilter",
+      "name": "detector.deleteFilter",
+      "description": "Deletes the filter specified by the filter name."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deleteIpSet",
+      "name": "detector.deleteIpSet",
+      "description": "Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deleteMembers",
+      "name": "detector.deleteMembers",
+      "description": "<p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deletePublishingDestination",
+      "name": "detector.deletePublishingDestination",
+      "description": "Deletes the publishing definition with the specified <code>destinationId</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.deleteThreatIntelSet",
+      "name": "detector.deleteThreatIntelSet",
+      "description": "Deletes the ThreatIntelSet specified by the ThreatIntelSet ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.describeMalwareScans",
+      "name": "detector.describeMalwareScans",
+      "description": "<p>Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all the member accounts.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.describeOrganizationConfiguration",
+      "name": "detector.describeOrganizationConfiguration",
+      "description": "<p>Returns information about the account selected as the delegated administrator for GuardDuty.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.describePublishingDestination",
+      "name": "detector.describePublishingDestination",
+      "description": "Returns information about the publishing destination specified by the provided <code>destinationId</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.disassociateFromAdministratorAccount",
+      "name": "detector.disassociateFromAdministratorAccount",
+      "description": "<p>Disassociates the current GuardDuty member account from its administrator account.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty in a member account.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.disassociateFromMasterAccount",
+      "name": "detector.disassociateFromMasterAccount",
+      "description": "Disassociates the current GuardDuty member account from its administrator account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.disassociateMembers",
+      "name": "detector.disassociateMembers",
+      "description": "<p>Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a member account before removing them from your Amazon Web Services organization.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getAdministratorAccount",
+      "name": "detector.getAdministratorAccount",
+      "description": "Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getCoverageStatistics",
+      "name": "detector.getCoverageStatistics",
+      "description": "Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getDetector",
+      "name": "detector.getDetector",
+      "description": "<p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getFilter",
+      "name": "detector.getFilter",
+      "description": "Returns the details of the filter specified by the filter name."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getFindings",
+      "name": "detector.getFindings",
+      "description": "Describes Amazon GuardDuty findings specified by finding IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getFindingsStatistics",
+      "name": "detector.getFindingsStatistics",
+      "description": "Lists Amazon GuardDuty findings statistics for the specified detector ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getIpSet",
+      "name": "detector.getIpSet",
+      "description": "Retrieves the IPSet specified by the <code>ipSetId</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getMalwareScanSettings",
+      "name": "detector.getMalwareScanSettings",
+      "description": "<p>Returns the details of the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getMasterAccount",
+      "name": "detector.getMasterAccount",
+      "description": "Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getMemberDetectors",
+      "name": "detector.getMemberDetectors",
+      "description": "<p>Describes which data sources are enabled for the member account's detector.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getMembers",
+      "name": "detector.getMembers",
+      "description": "Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getRemainingFreeTrialDays",
+      "name": "detector.getRemainingFreeTrialDays",
+      "description": "Provides the number of days left for each data source used in the free trial period."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getThreatIntelSet",
+      "name": "detector.getThreatIntelSet",
+      "description": "Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.getUsageStatistics",
+      "name": "detector.getUsageStatistics",
+      "description": "Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations\">Understanding How Usage Costs are Calculated</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.inviteMembers",
+      "name": "detector.inviteMembers",
+      "description": "Invites other Amazon Web Services accounts (created as members of the current Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the current Amazon Web Services account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listCoverage",
+      "name": "detector.listCoverage",
+      "description": "<p>Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all resources associated with the active member accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running on their EKS nodes.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listDetectors",
+      "name": "detector.listDetectors",
+      "description": "Lists detectorIds of all the existing Amazon GuardDuty detector resources."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listFilters",
+      "name": "detector.listFilters",
+      "description": "Returns a paginated list of the current filters."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listFindings",
+      "name": "detector.listFindings",
+      "description": "Lists Amazon GuardDuty findings for the specified detector ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listIpSets",
+      "name": "detector.listIpSets",
+      "description": "Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listMembers",
+      "name": "detector.listMembers",
+      "description": "Lists details about all member accounts for the current GuardDuty administrator account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listPublishingDestinations",
+      "name": "detector.listPublishingDestinations",
+      "description": "Returns a list of publishing destinations associated with the specified <code>detectorId</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.listThreatIntelSets",
+      "name": "detector.listThreatIntelSets",
+      "description": "Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.startMonitoringMembers",
+      "name": "detector.startMonitoringMembers",
+      "description": "Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href=\"https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html\">StopMonitoringMembers</a> operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.stopMonitoringMembers",
+      "name": "detector.stopMonitoringMembers",
+      "description": "<p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring the member accounts in your organization.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.unarchiveFindings",
+      "name": "detector.unarchiveFindings",
+      "description": "Unarchives GuardDuty findings specified by the <code>findingIds</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateDetector",
+      "name": "detector.updateDetector",
+      "description": "<p>Updates the Amazon GuardDuty detector specified by the detectorId.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateFilter",
+      "name": "detector.updateFilter",
+      "description": "Updates the filter specified by the filter name."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateFindingsFeedback",
+      "name": "detector.updateFindingsFeedback",
+      "description": "Marks the specified GuardDuty findings as useful or not useful."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateIpSet",
+      "name": "detector.updateIpSet",
+      "description": "Updates the IPSet specified by the IPSet ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateMalwareScanSettings",
+      "name": "detector.updateMalwareScanSettings",
+      "description": "<p>Updates the malware scan settings.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateMemberDetectors",
+      "name": "detector.updateMemberDetectors",
+      "description": "<p>Contains information on member accounts to be updated.</p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateOrganizationConfiguration",
+      "name": "detector.updateOrganizationConfiguration",
+      "description": "<p>Configures the delegated administrator account with the provided values. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p> <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html\">Regions and endpoints</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updatePublishingDestination",
+      "name": "detector.updatePublishingDestination",
+      "description": "Updates information about the publishing destination specified by the <code>destinationId</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.detector.updateThreatIntelSet",
+      "name": "detector.updateThreatIntelSet",
+      "description": "Updates the ThreatIntelSet specified by the ThreatIntelSet ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.invitation.declineInvitations",
+      "name": "invitation.declineInvitations",
+      "description": "Declines invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.invitation.deleteInvitations",
+      "name": "invitation.deleteInvitations",
+      "description": "Deletes invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.invitation.getInvitationsCount",
+      "name": "invitation.getInvitationsCount",
+      "description": "Returns the count of all GuardDuty membership invitations that were sent to the current member account except the currently accepted invitation."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.invitation.listInvitations",
+      "name": "invitation.listInvitations",
+      "description": "Lists all GuardDuty membership invitations that were sent to the current Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds tags to a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_guardduty_guardduty.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes tags from a resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

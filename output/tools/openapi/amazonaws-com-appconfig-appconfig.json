@@ -1,0 +1,232 @@
+{
+  "fetchedAt": "2026-04-30T15:44:54.750Z",
+  "status": "ok",
+  "count": 45,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.createApplication",
+      "name": "applications.createApplication",
+      "description": "Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This organizational construct has a relationship with some unit of executable code. For example, you could create an application called MyMobileApp to organize and manage configuration data for a mobile application installed by your users."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.createConfigurationProfile",
+      "name": "applications.createConfigurationProfile",
+      "description": "<p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:</p> <ul> <li> <p>Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted configuration store</p> </li> <li> <p>Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3) bucket</p> </li> <li> <p>Pipelines stored in CodePipeline</p> </li> <li> <p>Secrets stored in Secrets Manager</p> </li> <li> <p>Standard and secure string parameters stored in Amazon Web Services Systems Manager Parameter Store</p> </li> <li> <p>Configuration data in SSM documents stored in the Systems Manager document store</p> </li> </ul> <p>A configuration profile includes the following information:</p> <ul> <li> <p>The URI location of the configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li> <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html\">Create a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.createEnvironment",
+      "name": "applications.createEnvironment",
+      "description": "Creates an environment. For each application, you define one or more environments. An environment is a deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment. You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.createHostedConfigurationVersion",
+      "name": "applications.createHostedConfigurationVersion",
+      "description": "Creates a new configuration in the AppConfig hosted configuration store."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.deleteApplication",
+      "name": "applications.deleteApplication",
+      "description": "Deletes an application. Deleting an application does not delete a configuration from a host."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.deleteConfigurationProfile",
+      "name": "applications.deleteConfigurationProfile",
+      "description": "Deletes a configuration profile. Deleting a configuration profile does not delete a configuration from a host."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.deleteEnvironment",
+      "name": "applications.deleteEnvironment",
+      "description": "Deletes an environment. Deleting an environment does not delete a configuration from a host."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.deleteHostedConfigurationVersion",
+      "name": "applications.deleteHostedConfigurationVersion",
+      "description": "Deletes a version of a configuration from the AppConfig hosted configuration store."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getApplication",
+      "name": "applications.getApplication",
+      "description": "Retrieves information about an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getConfiguration",
+      "name": "applications.getConfiguration",
+      "description": "<p>(Deprecated) Retrieves the latest deployed configuration.</p> <important> <p>Note the following important information.</p> <ul> <li> <p>This API action is deprecated. Calls to receive configuration data should use the <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html\">StartConfigurationSession</a> and <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html\">GetLatestConfiguration</a> APIs instead. </p> </li> <li> <p> <code>GetConfiguration</code> is a priced call. For more information, see <a href=\"https://aws.amazon.com/systems-manager/pricing/\">Pricing</a>.</p> </li> </ul> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getConfigurationProfile",
+      "name": "applications.getConfigurationProfile",
+      "description": "Retrieves information about a configuration profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getDeployment",
+      "name": "applications.getDeployment",
+      "description": "Retrieves information about a configuration deployment."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getEnvironment",
+      "name": "applications.getEnvironment",
+      "description": "Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.getHostedConfigurationVersion",
+      "name": "applications.getHostedConfigurationVersion",
+      "description": "Retrieves information about a specific configuration version."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.listApplications",
+      "name": "applications.listApplications",
+      "description": "Lists all applications in your Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.listConfigurationProfiles",
+      "name": "applications.listConfigurationProfiles",
+      "description": "Lists the configuration profiles for an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.listDeployments",
+      "name": "applications.listDeployments",
+      "description": "Lists the deployments for an environment in descending deployment number order."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.listEnvironments",
+      "name": "applications.listEnvironments",
+      "description": "Lists the environments for an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.listHostedConfigurationVersions",
+      "name": "applications.listHostedConfigurationVersions",
+      "description": "Lists configurations stored in the AppConfig hosted configuration store by version."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.startDeployment",
+      "name": "applications.startDeployment",
+      "description": "Starts a deployment."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.stopDeployment",
+      "name": "applications.stopDeployment",
+      "description": "Stops a deployment. This API action works only on deployments that have a status of <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.updateApplication",
+      "name": "applications.updateApplication",
+      "description": "Updates an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.updateConfigurationProfile",
+      "name": "applications.updateConfigurationProfile",
+      "description": "Updates a configuration profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.updateEnvironment",
+      "name": "applications.updateEnvironment",
+      "description": "Updates an environment."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.applications.validateConfiguration",
+      "name": "applications.validateConfiguration",
+      "description": "Uses the validators in a configuration profile to validate a configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.deployementstrategies.deleteDeploymentStrategy",
+      "name": "deployementstrategies.deleteDeploymentStrategy",
+      "description": "Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration from a host."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.deploymentstrategies.createDeploymentStrategy",
+      "name": "deploymentstrategies.createDeploymentStrategy",
+      "description": "Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.deploymentstrategies.getDeploymentStrategy",
+      "name": "deploymentstrategies.getDeploymentStrategy",
+      "description": "Retrieves information about a deployment strategy. A deployment strategy defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.deploymentstrategies.listDeploymentStrategies",
+      "name": "deploymentstrategies.listDeploymentStrategies",
+      "description": "Lists deployment strategies."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.deploymentstrategies.updateDeploymentStrategy",
+      "name": "deploymentstrategies.updateDeploymentStrategy",
+      "description": "Updates a deployment strategy."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensionassociations.createExtensionAssociation",
+      "name": "extensionassociations.createExtensionAssociation",
+      "description": "When you create an extension or configure an Amazon Web Services authored extension, you associate the extension with an AppConfig application, environment, or configuration profile. For example, you can choose to run the <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services authored extension and receive notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application. Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An extension association is a specified relationship between an extension and an AppConfig resource, such as an application or a configuration profile. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensionassociations.deleteExtensionAssociation",
+      "name": "extensionassociations.deleteExtensionAssociation",
+      "description": "Deletes an extension association. This action doesn't delete extensions defined in the association."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensionassociations.getExtensionAssociation",
+      "name": "extensionassociations.getExtensionAssociation",
+      "description": "Returns information about an AppConfig extension association. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensionassociations.listExtensionAssociations",
+      "name": "extensionassociations.listExtensionAssociations",
+      "description": "Lists all AppConfig extension associations in the account. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensionassociations.updateExtensionAssociation",
+      "name": "extensionassociations.updateExtensionAssociation",
+      "description": "Updates an association. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensions.createExtension",
+      "name": "extensions.createExtension",
+      "description": "<p>Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration.</p> <p>You can create your own extensions or use the Amazon Web Services authored extensions provided by AppConfig. For most use cases, to create your own extension, you must create an Lambda function to perform any computation and processing defined in the extension. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensions.deleteExtension",
+      "name": "extensions.deleteExtension",
+      "description": "Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensions.getExtension",
+      "name": "extensions.getExtension",
+      "description": "Returns information about an AppConfig extension."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensions.listExtensions",
+      "name": "extensions.listExtensions",
+      "description": "Lists all custom and Amazon Web Services authored AppConfig extensions in the account. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.extensions.updateExtension",
+      "name": "extensions.updateExtension",
+      "description": "Updates an AppConfig extension. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Retrieves the list of key-value tags assigned to the resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Assigns metadata to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. You can specify a maximum of 50 tags for a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_appconfig_appconfig.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Deletes a tag key and value from an AppConfig resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

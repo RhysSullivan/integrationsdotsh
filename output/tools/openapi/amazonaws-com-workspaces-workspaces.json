@@ -1,0 +1,342 @@
+{
+  "fetchedAt": "2026-04-30T15:45:13.168Z",
+  "status": "ok",
+  "count": 67,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceAssociateConnectionAlias.associateConnectionAlias",
+      "name": "xAmzTargetWorkspacesServiceAssociateConnectionAlias.associateConnectionAlias",
+      "description": "<p>Associates the specified connection alias with the specified directory to enable cross-Region redirection. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note> <p>Before performing this operation, call <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html\"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceAssociateIpGroups.associateIpGroups",
+      "name": "xAmzTargetWorkspacesServiceAssociateIpGroups.associateIpGroups",
+      "description": "Associates the specified IP access control group with the specified directory."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceAuthorizeIpRules.authorizeIpRules",
+      "name": "xAmzTargetWorkspacesServiceAuthorizeIpRules.authorizeIpRules",
+      "description": "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCopyWorkspaceImage.copyWorkspaceImage",
+      "name": "xAmzTargetWorkspacesServiceCopyWorkspaceImage.copyWorkspaceImage",
+      "description": "<p>Copies the specified image from the specified Region to the current Region. For more information about copying images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html\"> Copy a Custom WorkSpaces Image</a>.</p> <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p> <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p> <important> <p>Before copying a shared image, be sure to verify that it has been shared from the correct Amazon Web Services account. To determine if an image has been shared and to see the ID of the Amazon Web Services account that owns an image, use the <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html\">DescribeWorkSpaceImages</a> and <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html\">DescribeWorkspaceImagePermissions</a> API operations. </p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateConnectClientAddIn.createConnectClientAddIn",
+      "name": "xAmzTargetWorkspacesServiceCreateConnectClientAddIn.createConnectClientAddIn",
+      "description": "<p>Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.</p> <p>This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateConnectionAlias.createConnectionAlias",
+      "name": "xAmzTargetWorkspacesServiceCreateConnectionAlias.createConnectionAlias",
+      "description": "Creates the specified connection alias for use with cross-Region redirection. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateIpGroup.createIpGroup",
+      "name": "xAmzTargetWorkspacesServiceCreateIpGroup.createIpGroup",
+      "description": "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateStandbyWorkspaces.createStandbyWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceCreateStandbyWorkspaces.createStandbyWorkspaces",
+      "description": "Creates a standby WorkSpace in a secondary Region."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateTags.createTags",
+      "name": "xAmzTargetWorkspacesServiceCreateTags.createTags",
+      "description": "Creates the specified tags for the specified WorkSpaces resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateUpdatedWorkspaceImage.createUpdatedWorkspaceImage",
+      "name": "xAmzTargetWorkspacesServiceCreateUpdatedWorkspaceImage.createUpdatedWorkspaceImage",
+      "description": "<p>Creates a new updated WorkSpace image based on the specified source image. The new updated WorkSpace image has the latest drivers and other updates required by the Amazon WorkSpaces components.</p> <p>To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces requirements, use <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html\"> DescribeWorkspaceImages</a>.</p> <note> <ul> <li> <p>Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft Windows updates and other application updates are not included in the update process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can delete the source image after you've verified your new updated image and created a new bundle. </p> </li> </ul> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateWorkspaceBundle.createWorkspaceBundle",
+      "name": "xAmzTargetWorkspacesServiceCreateWorkspaceBundle.createWorkspaceBundle",
+      "description": "Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html\"> Create a Custom WorkSpaces Image and Bundle</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateWorkspaceImage.createWorkspaceImage",
+      "name": "xAmzTargetWorkspacesServiceCreateWorkspaceImage.createWorkspaceImage",
+      "description": "Creates a new WorkSpace image from an existing WorkSpace."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceCreateWorkspaces.createWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceCreateWorkspaces.createWorkspaces",
+      "description": "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> <note> <p>The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href=\"http://aws.amazon.com/workspaces/core/\">Amazon WorkSpaces Core</a>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteClientBranding.deleteClientBranding",
+      "name": "xAmzTargetWorkspacesServiceDeleteClientBranding.deleteClientBranding",
+      "description": "<p>Deletes customized client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <p>After you delete your customized client branding, your login portal reverts to the default client branding.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteConnectClientAddIn.deleteConnectClientAddIn",
+      "name": "xAmzTargetWorkspacesServiceDeleteConnectClientAddIn.deleteConnectClientAddIn",
+      "description": "Deletes a client-add-in for Amazon Connect that is configured within a directory."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteConnectionAlias.deleteConnectionAlias",
+      "name": "xAmzTargetWorkspacesServiceDeleteConnectionAlias.deleteConnectionAlias",
+      "description": "<p>Deletes the specified connection alias. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <important> <p> <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration code for your WorkSpaces users, you must take certain precautions to prevent potential security issues.</b> For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations\"> Security Considerations if You Stop Using Cross-Region Redirection</a>.</p> </important> <note> <p>To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteIpGroup.deleteIpGroup",
+      "name": "xAmzTargetWorkspacesServiceDeleteIpGroup.deleteIpGroup",
+      "description": "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteTags.deleteTags",
+      "name": "xAmzTargetWorkspacesServiceDeleteTags.deleteTags",
+      "description": "Deletes the specified tags from the specified WorkSpaces resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteWorkspaceBundle.deleteWorkspaceBundle",
+      "name": "xAmzTargetWorkspacesServiceDeleteWorkspaceBundle.deleteWorkspaceBundle",
+      "description": "Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html\"> Delete a Custom WorkSpaces Bundle or Image</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeleteWorkspaceImage.deleteWorkspaceImage",
+      "name": "xAmzTargetWorkspacesServiceDeleteWorkspaceImage.deleteWorkspaceImage",
+      "description": "Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts. "
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDeregisterWorkspaceDirectory.deregisterWorkspaceDirectory",
+      "name": "xAmzTargetWorkspacesServiceDeregisterWorkspaceDirectory.deregisterWorkspaceDirectory",
+      "description": "<p>Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister the directory.</p> <note> <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the <a href=\"http://aws.amazon.com/directoryservice/pricing/\">Directory Service pricing terms</a>.</p> <p>To delete empty directories, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html\"> Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeAccount.describeAccount",
+      "name": "xAmzTargetWorkspacesServiceDescribeAccount.describeAccount",
+      "description": "Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the specified account."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeAccountModifications.describeAccountModifications",
+      "name": "xAmzTargetWorkspacesServiceDescribeAccountModifications.describeAccountModifications",
+      "description": "Retrieves a list that describes modifications to the configuration of Bring Your Own License (BYOL) for the specified account."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeClientBranding.describeClientBranding",
+      "name": "xAmzTargetWorkspacesServiceDescribeClientBranding.describeClientBranding",
+      "description": "<p>Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <note> <p>Only device types that have branding information configured will be shown in the response.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeClientProperties.describeClientProperties",
+      "name": "xAmzTargetWorkspacesServiceDescribeClientProperties.describeClientProperties",
+      "description": "Retrieves a list that describes one or more specified Amazon WorkSpaces clients."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeConnectClientAddIns.describeConnectClientAddIns",
+      "name": "xAmzTargetWorkspacesServiceDescribeConnectClientAddIns.describeConnectClientAddIns",
+      "description": "Retrieves a list of Amazon Connect client add-ins that have been created."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeConnectionAliases.describeConnectionAliases",
+      "name": "xAmzTargetWorkspacesServiceDescribeConnectionAliases.describeConnectionAliases",
+      "description": "Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeConnectionAliasPermissions.describeConnectionAliasPermissions",
+      "name": "xAmzTargetWorkspacesServiceDescribeConnectionAliasPermissions.describeConnectionAliasPermissions",
+      "description": "Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeIpGroups.describeIpGroups",
+      "name": "xAmzTargetWorkspacesServiceDescribeIpGroups.describeIpGroups",
+      "description": "Describes one or more of your IP access control groups."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeTags.describeTags",
+      "name": "xAmzTargetWorkspacesServiceDescribeTags.describeTags",
+      "description": "Describes the specified tags for the specified WorkSpaces resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaceBundles.describeWorkspaceBundles",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaceBundles.describeWorkspaceBundles",
+      "description": "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaceDirectories.describeWorkspaceDirectories",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaceDirectories.describeWorkspaceDirectories",
+      "description": "Describes the available directories that are registered with Amazon WorkSpaces."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaceImagePermissions.describeWorkspaceImagePermissions",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaceImagePermissions.describeWorkspaceImagePermissions",
+      "description": "Describes the permissions that the owner of an image has granted to other Amazon Web Services accounts for an image."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaceImages.describeWorkspaceImages",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaceImages.describeWorkspaceImages",
+      "description": "Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. "
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaces.describeWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaces.describeWorkspaces",
+      "description": "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspacesConnectionStatus.describeWorkspacesConnectionStatus",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspacesConnectionStatus.describeWorkspacesConnectionStatus",
+      "description": "Describes the connection status of the specified WorkSpaces."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDescribeWorkspaceSnapshots.describeWorkspaceSnapshots",
+      "name": "xAmzTargetWorkspacesServiceDescribeWorkspaceSnapshots.describeWorkspaceSnapshots",
+      "description": "Describes the snapshots for the specified WorkSpace."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDisassociateConnectionAlias.disassociateConnectionAlias",
+      "name": "xAmzTargetWorkspacesServiceDisassociateConnectionAlias.disassociateConnectionAlias",
+      "description": "<p>Disassociates a connection alias from a directory. Disassociating a connection alias disables cross-Region redirection between two directories in different Regions. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note> <p>Before performing this operation, call <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html\"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceDisassociateIpGroups.disassociateIpGroups",
+      "name": "xAmzTargetWorkspacesServiceDisassociateIpGroups.disassociateIpGroups",
+      "description": "Disassociates the specified IP access control group from the specified directory."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceImportClientBranding.importClientBranding",
+      "name": "xAmzTargetWorkspacesServiceImportClientBranding.importClientBranding",
+      "description": "<p>Imports client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <p>After you import client branding, the default branding experience for the specified platform type is replaced with the imported experience</p> <note> <ul> <li> <p>You must specify at least one platform type when importing client branding.</p> </li> <li> <p>You can import up to 6 MB of data with each request. If your request exceeds this limit, you can import client branding for different platform types using separate requests.</p> </li> <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify only one parameter for each platform type, but not both.</p> </li> <li> <p>Imported data can take up to a minute to appear in the WorkSpaces client.</p> </li> </ul> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceImportWorkspaceImage.importWorkspaceImage",
+      "name": "xAmzTargetWorkspacesServiceImportWorkspaceImage.importWorkspaceImage",
+      "description": "Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html\"> Bring Your Own Windows Desktop Licenses</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceListAvailableManagementCidrRanges.listAvailableManagementCidrRanges",
+      "name": "xAmzTargetWorkspacesServiceListAvailableManagementCidrRanges.listAvailableManagementCidrRanges",
+      "description": "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL). </p> <p>This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code> error.</p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceMigrateWorkspace.migrateWorkspace",
+      "name": "xAmzTargetWorkspacesServiceMigrateWorkspace.migrateWorkspace",
+      "description": "<p>Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data on the user volume.</p> <p>The migration process recreates the WorkSpace by using a new root volume from the target bundle image and the user volume from the last available snapshot of the original WorkSpace. During migration, the original <code>D:\\Users\\%USERNAME%</code> user profile folder is renamed to <code>D:\\Users\\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A new <code>D:\\Users\\%USERNAME%\\</code> folder is generated by the new OS. Certain files in the old user profile are moved to the new user profile.</p> <p>For available migration scenarios, details about what happens during migration, and best practices, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html\">Migrate a WorkSpace</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyAccount.modifyAccount",
+      "name": "xAmzTargetWorkspacesServiceModifyAccount.modifyAccount",
+      "description": "Modifies the configuration of Bring Your Own License (BYOL) for the specified account."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyCertificateBasedAuthProperties.modifyCertificateBasedAuthProperties",
+      "name": "xAmzTargetWorkspacesServiceModifyCertificateBasedAuthProperties.modifyCertificateBasedAuthProperties",
+      "description": "Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyClientProperties.modifyClientProperties",
+      "name": "xAmzTargetWorkspacesServiceModifyClientProperties.modifyClientProperties",
+      "description": "Modifies the properties of the specified Amazon WorkSpaces clients."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifySamlProperties.modifySamlProperties",
+      "name": "xAmzTargetWorkspacesServiceModifySamlProperties.modifySamlProperties",
+      "description": "Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifySelfservicePermissions.modifySelfservicePermissions",
+      "name": "xAmzTargetWorkspacesServiceModifySelfservicePermissions.modifySelfservicePermissions",
+      "description": "Modifies the self-service WorkSpace management capabilities for your users. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html\">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyWorkspaceAccessProperties.modifyWorkspaceAccessProperties",
+      "name": "xAmzTargetWorkspacesServiceModifyWorkspaceAccessProperties.modifyWorkspaceAccessProperties",
+      "description": "Specifies which devices and operating systems users can use to access their WorkSpaces. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access\"> Control Device Access</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyWorkspaceCreationProperties.modifyWorkspaceCreationProperties",
+      "name": "xAmzTargetWorkspacesServiceModifyWorkspaceCreationProperties.modifyWorkspaceCreationProperties",
+      "description": "Modify the default properties used to create WorkSpaces."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyWorkspaceProperties.modifyWorkspaceProperties",
+      "name": "xAmzTargetWorkspacesServiceModifyWorkspaceProperties.modifyWorkspaceProperties",
+      "description": "<p>Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html\"> Modify a WorkSpace</a>. </p> <note> <p>The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href=\"http://aws.amazon.com/workspaces/core/\">Amazon WorkSpaces Core</a>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceModifyWorkspaceState.modifyWorkspaceState",
+      "name": "xAmzTargetWorkspacesServiceModifyWorkspaceState.modifyWorkspaceState",
+      "description": "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceRebootWorkspaces.rebootWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceRebootWorkspaces.rebootWorkspaces",
+      "description": "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceRebuildWorkspaces.rebuildWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceRebuildWorkspaces.rebuildWorkspaces",
+      "description": "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceRegisterWorkspaceDirectory.registerWorkspaceDirectory",
+      "name": "xAmzTargetWorkspacesServiceRegisterWorkspaceDirectory.registerWorkspaceDirectory",
+      "description": "Registers the specified directory. This operation is asynchronous and returns before the WorkSpace directory is registered. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role\"> Creating the workspaces_DefaultRole Role</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceRestoreWorkspace.restoreWorkspace",
+      "name": "xAmzTargetWorkspacesServiceRestoreWorkspace.restoreWorkspace",
+      "description": "<p>Restores the specified WorkSpace to its last known healthy state.</p> <p>You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>, <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p> <p>Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html\">Restore a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpace is completely restored.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceRevokeIpRules.revokeIpRules",
+      "name": "xAmzTargetWorkspacesServiceRevokeIpRules.revokeIpRules",
+      "description": "Removes one or more rules from the specified IP access control group."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceStartWorkspaces.startWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceStartWorkspaces.startWorkspaces",
+      "description": "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceStopWorkspaces.stopWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceStopWorkspaces.stopWorkspaces",
+      "description": "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceTerminateWorkspaces.terminateWorkspaces",
+      "name": "xAmzTargetWorkspacesServiceTerminateWorkspaces.terminateWorkspaces",
+      "description": "<p>Terminates the specified WorkSpaces.</p> <important> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services Support before terminating the WorkSpace.</p> </important> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html\"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p> <note> <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the <a href=\"http://aws.amazon.com/directoryservice/pricing/\">Directory Service pricing terms</a>.</p> <p>To delete empty directories, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html\"> Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceUpdateConnectClientAddIn.updateConnectClientAddIn",
+      "name": "xAmzTargetWorkspacesServiceUpdateConnectClientAddIn.updateConnectClientAddIn",
+      "description": "Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceUpdateConnectionAliasPermission.updateConnectionAliasPermission",
+      "name": "xAmzTargetWorkspacesServiceUpdateConnectionAliasPermission.updateConnectionAliasPermission",
+      "description": "<p>Shares or unshares a connection alias with one account by specifying whether that account has permission to associate the connection alias with a directory. If the association permission is granted, the connection alias is shared with that account. If the association permission is revoked, the connection alias is unshared with the account. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html\"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note> <ul> <li> <p>Before performing this operation, call <a href=\"https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html\"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p> </li> <li> <p>To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.</p> </li> </ul> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceUpdateRulesOfIpGroup.updateRulesOfIpGroup",
+      "name": "xAmzTargetWorkspacesServiceUpdateRulesOfIpGroup.updateRulesOfIpGroup",
+      "description": "Replaces the current rules of the specified IP access control group with the specified rules."
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceUpdateWorkspaceBundle.updateWorkspaceBundle",
+      "name": "xAmzTargetWorkspacesServiceUpdateWorkspaceBundle.updateWorkspaceBundle",
+      "description": "<p>Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html\"> Update a Custom WorkSpaces Bundle</a>.</p> <important> <p>Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or delete and recreate them.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_workspaces_workspaces.xAmzTargetWorkspacesServiceUpdateWorkspaceImagePermission.updateWorkspaceImagePermission",
+      "name": "xAmzTargetWorkspacesServiceUpdateWorkspaceImagePermission.updateWorkspaceImagePermission",
+      "description": "<p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.</p> <p>After an image has been shared, the recipient account can copy the image to other Regions as needed.</p> <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p> <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p> <p>For more information about sharing images, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html\"> Share or Unshare a Custom WorkSpaces Image</a>.</p> <note> <ul> <li> <p>To delete an image that has been shared, you must unshare the image before you delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p> </li> </ul> </note>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

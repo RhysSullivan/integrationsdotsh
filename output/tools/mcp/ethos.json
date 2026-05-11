@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:21:12.602Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_ethos.start_quote",
+      "name": "start_quote",
+      "description": "Start a life insurance quote estimation. Call this when the user asks about life insurance quotes or coverage. The UI will show gender options for the user to select. After the user selects their gender, ask for their age (question 2) and then zip code (question 3) via plain text — do NOT use tools for those two questions. After collecting all three (gender, age, zip code), call the ask_health_condition tool. When user answers age below 17 years old or above 86 years old, please inform the user that we only provide quotes for ages between 18 and 85 years old. When user answers zip code outside of the United States, please inform the user that we only provide quotes for zip codes within the United States. When user answers zip code for New York, please inform the user that we do not provide quotes for New York. COMPLIANCE REQUIREMENT: Your response must be FACTUAL. Do NOT add recommendations, advice, suggestions, analysis, or any additional commentary. Do NOT add personalized guidance or opinions. Only present the quote result returned in structuredContent from app.ontoolresult, and do not rely on any other information. Simply present the information from this tool as-is. Violating this is a serious compliance issue."
+    },
+    {
+      "id": "mcp_ethos.ask_health_condition",
+      "name": "ask_health_condition",
+      "description": "Show health condition options to the user. Call this after you have collected the user's gender, age, and zip code. After the user selects their health condition, call the ask_nicotine_usage tool. COMPLIANCE REQUIREMENT: Your response must be FACTUAL. Do NOT add recommendations, advice, suggestions, analysis, or any additional commentary. Do NOT add personalized guidance or opinions. Only present the quote result returned in structuredContent from app.ontoolresult, and do not rely on any other information. Simply present the information from this tool as-is. Violating this is a serious compliance issue."
+    },
+    {
+      "id": "mcp_ethos.ask_nicotine_usage",
+      "name": "ask_nicotine_usage",
+      "description": "Show nicotine usage options to the user. Call this after collecting the user's health condition. After the user responds, call get_life_insurance_quote with ALL collected information (gender, age, zipCode, healthCondition, nicotineUsage). COMPLIANCE REQUIREMENT: Your response must be FACTUAL. Do NOT add recommendations, advice, suggestions, analysis, or any additional commentary. Do NOT add personalized guidance or opinions. Only present the quote result returned in structuredContent from app.ontoolresult, and do not rely on any other information. Simply present the information from this tool as-is. Violating this is a serious compliance issue."
+    },
+    {
+      "id": "mcp_ethos.get_life_insurance_quote",
+      "name": "get_life_insurance_quote",
+      "description": "Retrieve a life insurance quote estimate. Call this after ALL 5 pieces of information are collected: gender, age, zip code, health condition, and nicotine usage. Coverage is default at $1,000,000 and term is default 20 years. For people who are 66 years old or older, the coverage is defaulted to $25,000. Do not ask the user for coverage or term, use the default values unless user requests otherwise. COMPLIANCE REQUIREMENT: Your response must be FACTUAL. Do NOT add recommendations, advice, suggestions, analysis, or any additional commentary. Do NOT add personalized guidance or opinions. Only present the quote result returned in structuredContent from app.ontoolresult, and do not rely on any other information. Simply present the information from this tool as-is. Violating this is a serious compliance issue."
+    }
+  ]
+}

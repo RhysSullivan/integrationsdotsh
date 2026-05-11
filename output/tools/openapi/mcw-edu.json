@@ -1,0 +1,517 @@
+{
+  "fetchedAt": "2026-04-30T15:22:50.495Z",
+  "status": "ok",
+  "count": 102,
+  "tools": [
+    {
+      "id": "openapi_mcw_edu.agr.getAffectedGenomicModelsUsingGet",
+      "name": "agr.getAffectedGenomicModelsUsingGet",
+      "description": "Get affected genomic models (rat strains with gene alleles) submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.agr.getAllelesForTaxonUsingGet",
+      "name": "agr.getAllelesForTaxonUsingGet",
+      "description": "Get gene allele records submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.agr.getExpressionForTaxonUsingGet",
+      "name": "agr.getExpressionForTaxonUsingGet",
+      "description": "Get expression annotations submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.agr.getGenesForLatestAssemblyUsingGet",
+      "name": "agr.getGenesForLatestAssemblyUsingGet",
+      "description": "Get gene records submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.agr.getPhenotypesForTaxonUsingGet",
+      "name": "agr.getPhenotypesForTaxonUsingGet",
+      "description": "Get phenotype annotations submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.agr.getVariantsForTaxonUsingGet",
+      "name": "agr.getVariantsForTaxonUsingGet",
+      "description": "Get basic variant records submitted by RGD to AGR by taxonId"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationCountByAccIdAndObjectTypeUsingGet",
+      "name": "annotation.getAnnotationCountByAccIdAndObjectTypeUsingGet",
+      "description": "Returns annotation count for ontology accession ID and object type"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationCountByAccIdAndSpeciesUsingGet",
+      "name": "annotation.getAnnotationCountByAccIdAndSpeciesUsingGet",
+      "description": "Returns annotation count for ontology accession ID and speicies"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationCountByAccIdUsingGet",
+      "name": "annotation.getAnnotationCountByAccIdUsingGet",
+      "description": "Returns annotation count for ontology accession ID"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationsByAccIdAndRgdIdUsingGet",
+      "name": "annotation.getAnnotationsByAccIdAndRgdIdUsingGet",
+      "description": "Returns a list of annotations by RGD ID and ontology term accession ID"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationsByRgdIdAndOntologyUsingGet",
+      "name": "annotation.getAnnotationsByRgdIdAndOntologyUsingGet",
+      "description": "Returns a list of annotations by RGD ID and ontology prefix"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationsByRgdIdUsingGet",
+      "name": "annotation.getAnnotationsByRgdIdUsingGet",
+      "description": "Returns a list of annotations by RGD ID"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationsUsingGet",
+      "name": "annotation.getAnnotationsUsingGet",
+      "description": "Returns a list annotations for an ontology term or a term and it's children"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotationsUsingPost",
+      "name": "annotation.getAnnotationsUsingPost",
+      "description": "Return a list of genes annotated to an ontology term"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getAnnotsByRefrerenceUsingGet",
+      "name": "annotation.getAnnotsByRefrerenceUsingGet",
+      "description": "Returns a list of annotations for a reference"
+    },
+    {
+      "id": "openapi_mcw_edu.annotation.getTermAccIdsUsingGet",
+      "name": "annotation.getTermAccIdsUsingGet",
+      "description": "Returns a list ontology term accession IDs annotated to an rgd object"
+    },
+    {
+      "id": "openapi_mcw_edu.chromosome.getChromosomeByAssemblyUsingGet",
+      "name": "chromosome.getChromosomeByAssemblyUsingGet",
+      "description": "Return a list of chromosomes"
+    },
+    {
+      "id": "openapi_mcw_edu.chromosome.getChromosomesByAssemblyUsingGet",
+      "name": "chromosome.getChromosomesByAssemblyUsingGet",
+      "description": "Return a list of chromosomes"
+    },
+    {
+      "id": "openapi_mcw_edu.enrichmentWebService.getEnrichmentDataUsingPost",
+      "name": "enrichmentWebService.getEnrichmentDataUsingPost",
+      "description": "Return a list of genes annotated to the term.Genes are rgdids separated by comma.Species type is an integer value.term is the ontology"
+    },
+    {
+      "id": "openapi_mcw_edu.enrichmentWebService.getEnrichmentDataUsingPost1",
+      "name": "enrichmentWebService.getEnrichmentDataUsingPost1",
+      "description": "Return a chart of ontology terms annotated to the genes.Genes are rgdids separated by comma.Species type is an integer value.Aspect is the Ontology group"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getAllAnnotatedGenesUsingGet",
+      "name": "gene.getAllAnnotatedGenesUsingGet",
+      "description": "Return a list of genes annotated to an ontology term"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getAnnotatedGenesUsingPost",
+      "name": "gene.getAnnotatedGenesUsingPost",
+      "description": "Return a list of genes annotated to an ontology term"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGeneAllelesUsingGet",
+      "name": "gene.getGeneAllelesUsingGet",
+      "description": "Return a list of gene alleles"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGeneByMapKeyUsingGet",
+      "name": "gene.getGeneByMapKeyUsingGet",
+      "description": "Return a list of all genes with position information for an assembly"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGeneByRgdIdUsingGet",
+      "name": "gene.getGeneByRgdIdUsingGet",
+      "description": "Get a gene record by RGD ID"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGeneBySymbolUsingGet",
+      "name": "gene.getGeneBySymbolUsingGet",
+      "description": "Get a gene record by symbol and species type key"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGeneOrthologsUsingGet",
+      "name": "gene.getGeneOrthologsUsingGet",
+      "description": "Return a list of gene orthologs"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesAnnotatedUsingGet",
+      "name": "gene.getGenesAnnotatedUsingGet",
+      "description": "Return a list of genes annotated to an ontology term"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesByAffyIdUsingGet",
+      "name": "gene.getGenesByAffyIdUsingGet",
+      "description": "Return a list of genes for an affymetrix ID"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesByAliasSymbolUsingGet",
+      "name": "gene.getGenesByAliasSymbolUsingGet",
+      "description": "Return a list of genes for an alias and species"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesByKeywordUsingGet",
+      "name": "gene.getGenesByKeywordUsingGet",
+      "description": "Return a list of genes by keyword and species type key"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesByPositionUsingGet",
+      "name": "gene.getGenesByPositionUsingGet",
+      "description": "Return a list of genes position and map key"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesBySpeciesUsingGet",
+      "name": "gene.getGenesBySpeciesUsingGet",
+      "description": "Return a list of all genes for a species in RGD"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getGenesInRegionUsingGet",
+      "name": "gene.getGenesInRegionUsingGet",
+      "description": "Return a list of genes in region"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getMappedGenesByPositionUsingGet",
+      "name": "gene.getMappedGenesByPositionUsingGet",
+      "description": "Return a list of genes position and map key"
+    },
+    {
+      "id": "openapi_mcw_edu.gene.getOrthologsByListUsingPost",
+      "name": "gene.getOrthologsByListUsingPost",
+      "description": "Return a list of gene orthologs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblGeneMappingUsingGet",
+      "name": "lookup.getEnsemblGeneMappingUsingGet",
+      "description": "Translate an RGD ID to an Ensembl Gene  ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblGeneMappingUsingPost",
+      "name": "lookup.getEnsemblGeneMappingUsingPost",
+      "description": "Translate RGD IDs to Ensembl Gene IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblProteinMappingUsingGet",
+      "name": "lookup.getEnsemblProteinMappingUsingGet",
+      "description": "Translate an RGD ID to an Ensembl Protein ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblProteinMappingUsingPost",
+      "name": "lookup.getEnsemblProteinMappingUsingPost",
+      "description": "Translate RGD IDs to Ensembl Protein IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblTranscriptMappingUsingGet",
+      "name": "lookup.getEnsemblTranscriptMappingUsingGet",
+      "description": "Translate an RGD ID to an Ensembl Transcript ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getEnsemblTranscriptMappingUsingPost",
+      "name": "lookup.getEnsemblTranscriptMappingUsingPost",
+      "description": "Translate RGD IDs to Ensembl Transcript IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGenBankNucleotideMappingUsingGet",
+      "name": "lookup.getGenBankNucleotideMappingUsingGet",
+      "description": "Translate an RGD ID to a GenBank Nucleotide ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGenBankNucleotideMappingUsingPost",
+      "name": "lookup.getGenBankNucleotideMappingUsingPost",
+      "description": "Translate RGD IDs to GenBank Nucleotide IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGenBankProteinMappingUsingGet",
+      "name": "lookup.getGenBankProteinMappingUsingGet",
+      "description": "Translate an RGD ID to a GenBank Protein ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGenBankProteinMappingUsingPost",
+      "name": "lookup.getGenBankProteinMappingUsingPost",
+      "description": "Translate RGD IDs to GenBank Protein IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGeneTypesUsingGet",
+      "name": "lookup.getGeneTypesUsingGet",
+      "description": "Returns a list of gene types avialable in RGD"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGtexMappingUsingGet",
+      "name": "lookup.getGtexMappingUsingGet",
+      "description": "Translate an RGD ID to an GTEx ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getGtexMappingUsingPost",
+      "name": "lookup.getGtexMappingUsingPost",
+      "description": "Translate RGD IDs to GTEx IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getHgncMappingUsingGet",
+      "name": "lookup.getHgncMappingUsingGet",
+      "description": "Translate an RGD ID to an HGNC ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getHgncMappingUsingPost",
+      "name": "lookup.getHgncMappingUsingPost",
+      "description": "Translate RGD IDs to HGNC IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getMapsUsingGet",
+      "name": "lookup.getMapsUsingGet",
+      "description": "Return a list assembly maps for a species"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getMapsUsingGet1",
+      "name": "lookup.getMapsUsingGet1",
+      "description": "Return a standardUnit for an ontology if it exists"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getMgiMappingUsingGet",
+      "name": "lookup.getMgiMappingUsingGet",
+      "description": "Translate an RGD ID to an MGI ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getMgiMappingUsingPost",
+      "name": "lookup.getMgiMappingUsingPost",
+      "description": "Translate RGD IDs to MGI IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getNcbiGeneMappingUsingGet",
+      "name": "lookup.getNcbiGeneMappingUsingGet",
+      "description": "Translate an RGD ID to an NCBI Gene ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getNcbiGeneMappingUsingPost",
+      "name": "lookup.getNcbiGeneMappingUsingPost",
+      "description": "Translate RGD IDs to NCBI Gene IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getSpeciesTypesUsingGet",
+      "name": "lookup.getSpeciesTypesUsingGet",
+      "description": "Return a Map of species type keys available in RGD"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getUniProtMappingUsingGet",
+      "name": "lookup.getUniProtMappingUsingGet",
+      "description": "Translate an RGD ID to a UniProt ID"
+    },
+    {
+      "id": "openapi_mcw_edu.lookup.getUniProtMappingUsingPost",
+      "name": "lookup.getUniProtMappingUsingPost",
+      "description": "Translate RGD IDs to UniProt IDs"
+    },
+    {
+      "id": "openapi_mcw_edu.map.getMapsBySpeciesUsingGet",
+      "name": "map.getMapsBySpeciesUsingGet",
+      "description": "Return a list of assemblies"
+    },
+    {
+      "id": "openapi_mcw_edu.ontology.getOntDagsUsingGet",
+      "name": "ontology.getOntDagsUsingGet",
+      "description": "Returns child and parent terms for Accession ID"
+    },
+    {
+      "id": "openapi_mcw_edu.ontology.getTermUsingGet",
+      "name": "ontology.getTermUsingGet",
+      "description": "Returns term for Accession ID"
+    },
+    {
+      "id": "openapi_mcw_edu.ontology.isDescendantOfUsingGet",
+      "name": "ontology.isDescendantOfUsingGet",
+      "description": "Returns true or false for terms"
+    },
+    {
+      "id": "openapi_mcw_edu.pathway.getPathwaysWithDiagramsForCategoryUsingGet",
+      "name": "pathway.getPathwaysWithDiagramsForCategoryUsingGet",
+      "description": "Return a list of pathways based on category provided"
+    },
+    {
+      "id": "openapi_mcw_edu.pathway.searchPathwaysUsingGet",
+      "name": "pathway.searchPathwaysUsingGet",
+      "description": "Return a list of pathways based on search term"
+    },
+    {
+      "id": "openapi_mcw_edu.qtl.getMappedQtlByPositionUsingGet",
+      "name": "qtl.getMappedQtlByPositionUsingGet",
+      "description": "Returns a list QTL for given position and assembly map"
+    },
+    {
+      "id": "openapi_mcw_edu.qtl.getQtlByRgdIdUsingGet",
+      "name": "qtl.getQtlByRgdIdUsingGet",
+      "description": "Return a QTL for provided RGD ID"
+    },
+    {
+      "id": "openapi_mcw_edu.qtl.getQtlListByPositionUsingGet",
+      "name": "qtl.getQtlListByPositionUsingGet",
+      "description": "Returns a list QTL for given position and assembly map"
+    },
+    {
+      "id": "openapi_mcw_edu.quantitativePhenotype.getChartInfoUsingGet",
+      "name": "quantitativePhenotype.getChartInfoUsingGet",
+      "description": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla).  Reference RGD ID for a study works like a filter."
+    },
+    {
+      "id": "openapi_mcw_edu.quantitativePhenotype.getChartInfoUsingGet1",
+      "name": "quantitativePhenotype.getChartInfoUsingGet1",
+      "description": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla)"
+    },
+    {
+      "id": "openapi_mcw_edu.ratStrain.getAllStrainsUsingGet",
+      "name": "ratStrain.getAllStrainsUsingGet",
+      "description": "Return all active strains in RGD"
+    },
+    {
+      "id": "openapi_mcw_edu.ratStrain.getStrainByRgdIdUsingGet",
+      "name": "ratStrain.getStrainByRgdIdUsingGet",
+      "description": "Return a strain by RGD ID"
+    },
+    {
+      "id": "openapi_mcw_edu.ratStrain.getStrainsByPositionUsingGet",
+      "name": "ratStrain.getStrainsByPositionUsingGet",
+      "description": "Return all active strains by position"
+    },
+    {
+      "id": "openapi_mcw_edu.sslp.getMappedSslpByPositionUsingGet",
+      "name": "sslp.getMappedSslpByPositionUsingGet",
+      "description": "Returns a list SSLP for given position and assembly map"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getActiveObjectCountUsingGet",
+      "name": "statistics.getActiveObjectCountUsingGet",
+      "description": "Count of active objects by type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getActiveObjectDiffUsingGet",
+      "name": "statistics.getActiveObjectDiffUsingGet",
+      "description": "Count difference of active objects, by type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getGeneTypeCountUsingGet",
+      "name": "statistics.getGeneTypeCountUsingGet",
+      "description": "Count of gene types, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getGeneTypeDiffUsingGet",
+      "name": "statistics.getGeneTypeDiffUsingGet",
+      "description": "Count difference of gene types, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectStatusCountUsingGet",
+      "name": "statistics.getObjectStatusCountUsingGet",
+      "description": "Count of objects with given status, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectStatusDiffUsingGet",
+      "name": "statistics.getObjectStatusDiffUsingGet",
+      "description": "Count difference of objects with given status, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithReferenceCountUsingGet",
+      "name": "statistics.getObjectsWithReferenceCountUsingGet",
+      "description": "Count of objects with reference, by object type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithReferenceDiffUsingGet",
+      "name": "statistics.getObjectsWithReferenceDiffUsingGet",
+      "description": "Count difference of objects with reference, by object type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithRefSeqCountUsingGet",
+      "name": "statistics.getObjectsWithRefSeqCountUsingGet",
+      "description": "Count of objects with reference sequence(s), by object type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithRefSeqDiffUsingGet",
+      "name": "statistics.getObjectsWithRefSeqDiffUsingGet",
+      "description": "Count difference of objects with reference sequence(s), by object type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithXdBsCountUsingGet",
+      "name": "statistics.getObjectsWithXdBsCountUsingGet",
+      "description": "Count of objects with external database ids, by database id, for specified species, object type and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getObjectsWithXdBsDiffUsingGet",
+      "name": "statistics.getObjectsWithXdBsDiffUsingGet",
+      "description": "Count difference of objects with external database ids, by database id, for specified species, object type and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getProteinInteractionCountUsingGet",
+      "name": "statistics.getProteinInteractionCountUsingGet",
+      "description": "Count of protein interactions, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getProteinInteractionDiffUsingGet",
+      "name": "statistics.getProteinInteractionDiffUsingGet",
+      "description": "Count difference of protein interactions, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getQtlInheritanceTypeCountUsingGet",
+      "name": "statistics.getQtlInheritanceTypeCountUsingGet",
+      "description": "Count of strains, by qtl inheritance type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getQtlInheritanceTypeDiffUsingGet",
+      "name": "statistics.getQtlInheritanceTypeDiffUsingGet",
+      "description": "Count difference of strains, by qtl inheritance type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getRetiredObjectCountUsingGet",
+      "name": "statistics.getRetiredObjectCountUsingGet",
+      "description": "Count of retired objects by type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getRetiredObjectDiffUsingGet",
+      "name": "statistics.getRetiredObjectDiffUsingGet",
+      "description": "Count difference of retired objects, by type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getStrainTypeCountUsingGet",
+      "name": "statistics.getStrainTypeCountUsingGet",
+      "description": "Count of strain types, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getStrainTypeDiffUsingGet",
+      "name": "statistics.getStrainTypeDiffUsingGet",
+      "description": "Count difference of strain types, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getTermStatsUsingGet",
+      "name": "statistics.getTermStatsUsingGet",
+      "description": "getTermStats"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getWithdrawnObjectCountUsingGet",
+      "name": "statistics.getWithdrawnObjectCountUsingGet",
+      "description": "Count of withdrawn objects by type, for specified species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getWithdrawnObjectDiffUsingGet",
+      "name": "statistics.getWithdrawnObjectDiffUsingGet",
+      "description": "Count difference of withdrawn objects, by type, for specified species and date range"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getXdbsCountUsingGet",
+      "name": "statistics.getXdbsCountUsingGet",
+      "description": "Count of external database ids, for specied species and date"
+    },
+    {
+      "id": "openapi_mcw_edu.statistics.getXdbsDiffUsingGet",
+      "name": "statistics.getXdbsDiffUsingGet",
+      "description": "Count difference of external database ids, for specified species and date range"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

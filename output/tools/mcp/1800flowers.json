@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:20:10.380Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "mcp_1800flowers.search_products",
+      "name": "search_products",
+      "description": "Use this to Search for products or gifts by search terms and get the top product picks. If the customer provides a zip code and delivery date, the products will be filtered to only include products that are available for that zip code and delivery date!"
+    },
+    {
+      "id": "mcp_1800flowers.get_product_details",
+      "name": "get_product_details",
+      "description": "Use this to get the details of a specific product or gift if the customer asks for a specific product"
+    },
+    {
+      "id": "mcp_1800flowers.get_delivery_dates_and_shipping_costs",
+      "name": "get_delivery_dates_and_shipping_costs",
+      "description": "This tool gets delivery dates and shipping costs for each delivery date! Use this to get the delivery dates for a product or gift by its child product code and zip code. The child product code is the sku of the variant. You may need to use the get_product_details tool to get the child product code."
+    },
+    {
+      "id": "mcp_1800flowers.add_to_cart",
+      "name": "add_to_cart",
+      "description": "Use this to call internal cart services to create a cart for the customer. It will return a link to the cart that they can use to checkout with on the brand website.\n                Just note that these links each will have a different reference id and, therefore, the customer will need to click on each one if this tool is used more than one time!\n            "
+    },
+    {
+      "id": "mcp_1800flowers.get_order_status",
+      "name": "get_order_status",
+      "description": "Use this to get the status of a customer's order using their order number, email, or billing phone number.\n            To protect privacy, verification requires three pieces of identifying information (e.g., order number + email + phone) to use this tool.\n            An error will be thrown if less than 3 pieces of identifying information are provided.\n            Please provide at least 3 pieces of information (1 being either the orderNumber, email, or billingPhoneNumber) among the following: \n            orderNumber, recipientName, customerName, email, billingZipCode, recipientZipCode, billingPhoneNumber, deliveryDate.\n            Never assume a name is for a customer or a recipient or that a zip code is for a customer or a recipient.\n            Always ask for clarification if needed."
+    },
+    {
+      "id": "mcp_1800flowers.cancel_order",
+      "name": "cancel_order",
+      "description": "Cancel an eligible order or order item after verification.\n            This tool should:\n            1. Verify the order using the provided identifiers.\n            2. Check whether the order is eligible for self-service cancellation.\n            3. If more information or confirmation is needed, return a structured response indicating that.\n            4. If eligible and confirmed, execute the cancellation.\n            5. Return success, ineligible, needs_confirmation, needs_disambiguation, or error."
+    },
+    {
+      "id": "mcp_1800flowers.company_faqs",
+      "name": "company_faqs",
+      "description": "Use this to search the company FAQs to find clear answers to common questions."
+    }
+  ]
+}

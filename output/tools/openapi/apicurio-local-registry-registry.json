@@ -1,0 +1,337 @@
+{
+  "fetchedAt": "2026-04-30T15:45:13.811Z",
+  "status": "ok",
+  "count": 66,
+  "tools": [
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.createRoleMapping",
+      "name": "admin.createRoleMapping",
+      "description": "Creates a new mapping between a user/principal and a role.\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.deleteRoleMapping",
+      "name": "admin.deleteRoleMapping",
+      "description": "Deletes a single role mapping, effectively denying access to a user/principal.\n\nThis operation can fail for the following reasons:\n\n* No role mapping for the principalId exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.exportData",
+      "name": "admin.exportData",
+      "description": "Exports registry data as a ZIP archive."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.getConfigProperty",
+      "name": "admin.getConfigProperty",
+      "description": "Returns the value of a single configuration property.\n\nThis operation may fail for one of the following reasons:\n\n* Property not found or not configured (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.getLogConfiguration",
+      "name": "admin.getLogConfiguration",
+      "description": "Returns the configured logger configuration for the provided logger name, if no logger configuration is persisted it will return the current default log configuration in the system."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.getRoleMapping",
+      "name": "admin.getRoleMapping",
+      "description": "Gets the details of a single role mapping (by `principalId`).\n\nThis operation can fail for the following reasons:\n\n* No role mapping for the `principalId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.importData",
+      "name": "admin.importData",
+      "description": "Imports registry data that was previously exported using the `/admin/export` operation."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.listConfigProperties",
+      "name": "admin.listConfigProperties",
+      "description": "Returns a list of all configuration properties that have been set.  The list is not paged.\n\nThis operation may fail for one of the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.listLogConfigurations",
+      "name": "admin.listLogConfigurations",
+      "description": "List all of the configured logging levels.  These override the default\nlogging configuration."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.listRoleMappings",
+      "name": "admin.listRoleMappings",
+      "description": "Gets a list of all role mappings configured in the registry (if any).\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.removeLogConfiguration",
+      "name": "admin.removeLogConfiguration",
+      "description": "Removes the configured logger configuration (if any) for the given logger."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.resetConfigProperty",
+      "name": "admin.resetConfigProperty",
+      "description": "Resets the value of a single configuration property.  This will return the property to\nits default value (see external documentation for supported properties and their default\nvalues).\n\nThis operation may fail for one of the following reasons:\n\n* Property not found or not configured (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.setLogConfiguration",
+      "name": "admin.setLogConfiguration",
+      "description": "Configures the logger referenced by the provided logger name with the given configuration."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.updateConfigProperty",
+      "name": "admin.updateConfigProperty",
+      "description": "Updates the value of a single configuration property.\n\nThis operation may fail for one of the following reasons:\n\n* Property not found or not configured (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.admin.updateRoleMapping",
+      "name": "admin.updateRoleMapping",
+      "description": "Updates a single role mapping for one user/principal.\n\nThis operation can fail for the following reasons:\n\n* No role mapping for the principalId exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.createArtifactRule",
+      "name": "artifactRules.createArtifactRule",
+      "description": "Adds a rule to the list of rules that get applied to the artifact when adding new\nversions.  All configured rules must pass to successfully add a new artifact version.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* Rule (named in the request body) is unknown (HTTP error `400`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.deleteArtifactRule",
+      "name": "artifactRules.deleteArtifactRule",
+      "description": "Deletes a rule from the artifact.  This results in the rule no longer applying for\nthis artifact.  If this is the only rule configured for the artifact, this is the \nsame as deleting **all** rules, and the globally configured rules now apply to\nthis artifact.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No rule with this name/type is configured for this artifact (HTTP error `404`)\n* Invalid rule type (HTTP error `400`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.deleteArtifactRules",
+      "name": "artifactRules.deleteArtifactRules",
+      "description": "Deletes all of the rules configured for the artifact.  After this is done, the global\nrules apply to the artifact again.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.getArtifactRuleConfig",
+      "name": "artifactRules.getArtifactRuleConfig",
+      "description": "Returns information about a single rule configured for an artifact.  This is useful\nwhen you want to know what the current configuration settings are for a specific rule.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No rule with this name/type is configured for this artifact (HTTP error `404`)\n* Invalid rule type (HTTP error `400`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.listArtifactRules",
+      "name": "artifactRules.listArtifactRules",
+      "description": "Returns a list of all rules configured for the artifact.  The set of rules determines\nhow the content of an artifact can evolve over time.  If no rules are configured for\nan artifact, the set of globally configured rules are used.  If no global rules \nare defined, there are no restrictions on content evolution.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.testUpdateArtifact",
+      "name": "artifactRules.testUpdateArtifact",
+      "description": "Tests whether an update to the artifact's content *would* succeed for the provided content.\nUltimately, this applies any rules configured for the artifact against the given content\nto determine whether the rules would pass or fail, but without actually updating the artifact\ncontent.\n\nThe body of the request should be the raw content of the artifact.  This is typically in \nJSON format for *most* of the supported types, but may be in another format for a few \n(for example, `PROTOBUF`).\n\nThe update could fail for a number of reasons including:\n\n* Provided content (request body) was empty (HTTP error `400`)\n* No artifact with the `artifactId` exists (HTTP error `404`)\n* The new content violates one of the rules configured for the artifact (HTTP error `409`)\n* The provided artifact type is not recognized (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n\nWhen successful, this operation simply returns a *No Content* response.  This response\nindicates that the content is valid against the configured content rules for the \nartifact (or the global rules if no artifact rules are enabled)."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactRules.updateArtifactRuleConfig",
+      "name": "artifactRules.updateArtifactRuleConfig",
+      "description": "Updates the configuration of a single rule for the artifact.  The configuration data\nis specific to each rule type, so the configuration of the `COMPATIBILITY` rule \nis in a different format from the configuration of the `VALIDITY` rule.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No rule with this name/type is configured for this artifact (HTTP error `404`)\n* Invalid rule type (HTTP error `400`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.createArtifact",
+      "name": "artifacts.createArtifact",
+      "description": "Creates a new artifact by posting the artifact content.  The body of the request should\nbe the raw content of the artifact.  This is typically in JSON format for *most* of the \nsupported types, but may be in another format for a few (for example, `PROTOBUF`).\n\nThe registry attempts to figure out what kind of artifact is being added from the\nfollowing supported list:\n\n* Avro (`AVRO`)\n* Protobuf (`PROTOBUF`)\n* JSON Schema (`JSON`)\n* Kafka Connect (`KCONNECT`)\n* OpenAPI (`OPENAPI`)\n* AsyncAPI (`ASYNCAPI`)\n* GraphQL (`GRAPHQL`)\n* Web Services Description Language (`WSDL`)\n* XML Schema (`XSD`)\n\nAlternatively, you can specify the artifact type using the `X-Registry-ArtifactType` \nHTTP request header, or include a hint in the request's `Content-Type`.  For example:\n\n```\nContent-Type: application/json; artifactType=AVRO\n```\n\nAn artifact is created using the content provided in the body of the request.  This\ncontent is created under a unique artifact ID that can be provided in the request\nusing the `X-Registry-ArtifactId` request header.  If not provided in the request,\nthe server generates a unique ID for the artifact.  It is typically recommended\nthat callers provide the ID, because this is typically a meaningful identifier, \nand for most use cases should be supplied by the caller.\n\nIf an artifact with the provided artifact ID already exists, the default behavior\nis for the server to reject the content with a 409 error.  However, the caller can\nsupply the `ifExists` query parameter to alter this default behavior. The `ifExists`\nquery parameter can have one of the following values:\n\n* `FAIL` (*default*) - server rejects the content with a 409 error\n* `UPDATE` - server updates the existing artifact and returns the new metadata\n* `RETURN` - server does not create or add content to the server, but instead \nreturns the metadata for the existing artifact\n* `RETURN_OR_UPDATE` - server returns an existing **version** that matches the \nprovided content if such a version exists, otherwise a new version is created\n\nThis operation may fail for one of the following reasons:\n\n* An invalid `ArtifactType` was indicated (HTTP error `400`)\n* No `ArtifactType` was indicated and the server could not determine one from the content (HTTP error `400`)\n* Provided content (request body) was empty (HTTP error `400`)\n* An artifact with the provided ID already exists (HTTP error `409`)\n* The content violates one of the configured global rules (HTTP error `409`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.deleteArtifact",
+      "name": "artifacts.deleteArtifact",
+      "description": "Deletes an artifact completely, resulting in all versions of the artifact also being\ndeleted.  This may fail for one of the following reasons:\n\n* No artifact with the `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.deleteArtifactsInGroup",
+      "name": "artifacts.deleteArtifactsInGroup",
+      "description": "Deletes all of the artifacts that exist in a given group."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.getContentByGlobalId",
+      "name": "artifacts.getContentByGlobalId",
+      "description": "Gets the content for an artifact version in the registry using its globally unique\nidentifier.\n\nThis operation may fail for one of the following reasons:\n\n* No artifact version with this `globalId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.getContentByHash",
+      "name": "artifacts.getContentByHash",
+      "description": "Gets the content for an artifact version in the registry using the \nSHA-256 hash of the content.  This content hash may be shared by multiple artifact\nversions in the case where the artifact versions have identical content.\n\nThis operation may fail for one of the following reasons:\n\n* No content with this `contentHash` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.getContentById",
+      "name": "artifacts.getContentById",
+      "description": "Gets the content for an artifact version in the registry using the unique content\nidentifier for that content.  This content ID may be shared by multiple artifact\nversions in the case where the artifact versions are identical.\n\nThis operation may fail for one of the following reasons:\n\n* No content with this `contentId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.getLatestArtifact",
+      "name": "artifacts.getLatestArtifact",
+      "description": "Returns the latest version of the artifact in its raw form.  The `Content-Type` of the\nresponse depends on the artifact type.  In most cases, this is `application/json`, but \nfor some types it may be different (for example, `PROTOBUF`).\n\nThis operation may fail for one of the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.listArtifactsInGroup",
+      "name": "artifacts.listArtifactsInGroup",
+      "description": "Returns a list of all artifacts in the group.  This list is paged."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.referencesByContentHash",
+      "name": "artifacts.referencesByContentHash",
+      "description": "Returns a list containing all the artifact references using the artifact content hash.\n\nThis operation may fail for one of the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.referencesByContentId",
+      "name": "artifacts.referencesByContentId",
+      "description": "Returns a list containing all the artifact references using the artifact content ID.\n\nThis operation may fail for one of the following reasons:\n\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.referencesByGlobalId",
+      "name": "artifacts.referencesByGlobalId",
+      "description": "Returns a list containing all the artifact references using the artifact global ID.\n\nThis operation may fail for one of the following reasons:\n\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.updateArtifact",
+      "name": "artifacts.updateArtifact",
+      "description": "Updates an artifact by uploading new content.  The body of the request can\nbe the raw content of the artifact or a JSON object containing both the raw content and\na set of references to other artifacts..  This is typically in JSON format for *most*\nof the supported types, but may be in another format for a few (for example, `PROTOBUF`).\nThe type of the content should be compatible with the artifact's type (it would be\nan error to update an `AVRO` artifact with new `OPENAPI` content, for example).\n\nThe update could fail for a number of reasons including:\n\n* Provided content (request body) was empty (HTTP error `400`)\n* No artifact with the `artifactId` exists (HTTP error `404`)\n* The new content violates one of the rules configured for the artifact (HTTP error `409`)\n* A server error occurred (HTTP error `500`)\n\nWhen successful, this creates a new version of the artifact, making it the most recent\n(and therefore official) version of the artifact."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifacts.updateArtifactState",
+      "name": "artifacts.updateArtifactState",
+      "description": "Updates the state of the artifact.  For example, you can use this to mark the latest\nversion of an artifact as `DEPRECATED`.  The operation changes the state of the latest \nversion of the artifact.  If multiple versions exist, only the most recent is changed.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.artifactType.listArtifactTypes",
+      "name": "artifactType.listArtifactTypes",
+      "description": "Gets a list of all the configured artifact types.\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.createGlobalRule",
+      "name": "globalRules.createGlobalRule",
+      "description": "Adds a rule to the list of globally configured rules.\n\nThis operation can fail for the following reasons:\n\n* The rule type is unknown (HTTP error `400`)\n* The rule already exists (HTTP error `409`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.deleteAllGlobalRules",
+      "name": "globalRules.deleteAllGlobalRules",
+      "description": "Deletes all globally configured rules.\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.deleteGlobalRule",
+      "name": "globalRules.deleteGlobalRule",
+      "description": "Deletes a single global rule.  If this is the only rule configured, this is the same\nas deleting **all** rules.\n\nThis operation can fail for the following reasons:\n\n* Invalid rule name/type (HTTP error `400`)\n* No rule with name/type `rule` exists (HTTP error `404`)\n* Rule cannot be deleted (HTTP error `409`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.getGlobalRuleConfig",
+      "name": "globalRules.getGlobalRuleConfig",
+      "description": "Returns information about the named globally configured rule.\n\nThis operation can fail for the following reasons:\n\n* Invalid rule name/type (HTTP error `400`)\n* No rule with name/type `rule` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.listGlobalRules",
+      "name": "globalRules.listGlobalRules",
+      "description": "Gets a list of all the currently configured global rules (if any).\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.globalRules.updateGlobalRuleConfig",
+      "name": "globalRules.updateGlobalRuleConfig",
+      "description": "Updates the configuration for a globally configured rule.\n\nThis operation can fail for the following reasons:\n\n* Invalid rule name/type (HTTP error `400`)\n* No rule with name/type `rule` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.groups.createGroup",
+      "name": "groups.createGroup",
+      "description": "Creates a new group.\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n* The group already exist (HTTP error `409`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.groups.deleteGroupById",
+      "name": "groups.deleteGroupById",
+      "description": "Deletes a group by identifier.\n\nThis operation can fail for the following reasons:\n\n* A server error occurred (HTTP error `500`)\n* The group does not exist (HTTP error `404`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.groups.getGroupById",
+      "name": "groups.getGroupById",
+      "description": "Returns a group using the specified id.\n\nThis operation can fail for the following reasons:\n\n* No group exists with the specified ID (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.groups.listGroups",
+      "name": "groups.listGroups",
+      "description": "Returns a list of all groups.  This list is paged."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.deleteArtifactVersionMetaData",
+      "name": "metadata.deleteArtifactVersionMetaData",
+      "description": "Deletes the user-editable metadata properties of the artifact version.  Any properties\nthat are not user-editable are preserved.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.getArtifactMetaData",
+      "name": "metadata.getArtifactMetaData",
+      "description": "Gets the metadata for an artifact in the registry.  The returned metadata includes\nboth generated (read-only) and editable metadata (such as name and description).\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.getArtifactOwner",
+      "name": "metadata.getArtifactOwner",
+      "description": "Gets the owner of an artifact in the registry.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.getArtifactVersionMetaData",
+      "name": "metadata.getArtifactVersionMetaData",
+      "description": "Retrieves the metadata for a single version of the artifact.  The version metadata is \na subset of the artifact metadata and only includes the metadata that is specific to\nthe version (for example, this doesn't include `modifiedOn`).\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.getArtifactVersionMetaDataByContent",
+      "name": "metadata.getArtifactVersionMetaDataByContent",
+      "description": "Gets the metadata for an artifact that matches the raw content.  Searches the registry\nfor a version of the given artifact matching the content provided in the body of the\nPOST.\n\nThis operation can fail for the following reasons:\n\n* Provided content (request body) was empty (HTTP error `400`)\n* No artifact with the `artifactId` exists (HTTP error `404`)\n* No artifact version matching the provided content exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.updateArtifactMetaData",
+      "name": "metadata.updateArtifactMetaData",
+      "description": "Updates the editable parts of the artifact's metadata.  Not all metadata fields can\nbe updated.  For example, `createdOn` and `createdBy` are both read-only properties.\n\nThis operation can fail for the following reasons:\n\n* No artifact with the `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.updateArtifactOwner",
+      "name": "metadata.updateArtifactOwner",
+      "description": "Changes the ownership of an artifact.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.metadata.updateArtifactVersionMetaData",
+      "name": "metadata.updateArtifactVersionMetaData",
+      "description": "Updates the user-editable portion of the artifact version's metadata.  Only some of \nthe metadata fields are editable by the user.  For example, `description` is editable, \nbut `createdOn` is not.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.search.searchArtifacts",
+      "name": "search.searchArtifacts",
+      "description": "Returns a paginated list of all artifacts that match the provided filter criteria.\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.search.searchArtifactsByContent",
+      "name": "search.searchArtifactsByContent",
+      "description": "Returns a paginated list of all artifacts with at least one version that matches the\nposted content.\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.system.getResourceLimits",
+      "name": "system.getResourceLimits",
+      "description": "This operation retrieves the list of limitations on used resources, that are applied on the current instance of Registry."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.system.getSystemInfo",
+      "name": "system.getSystemInfo",
+      "description": "This operation retrieves information about the running registry system, such as the version\nof the software and when it was built."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.users.getCurrentUserInfo",
+      "name": "users.getCurrentUserInfo",
+      "description": "Returns information about the currently authenticated user."
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.versions.createArtifactVersion",
+      "name": "versions.createArtifactVersion",
+      "description": "Creates a new version of the artifact by uploading new content.  The configured rules for\nthe artifact are applied, and if they all pass, the new content is added as the most recent \nversion of the artifact.  If any of the rules fail, an error is returned.\n\nThe body of the request can be the raw content of the new artifact version, or the raw content \nand a set of references pointing to other artifacts, and the type\nof that content should match the artifact's type (for example if the artifact type is `AVRO`\nthen the content of the request should be an Apache Avro document).\n\nThis operation can fail for the following reasons:\n\n* Provided content (request body) was empty (HTTP error `400`)\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* The new content violates one of the rules configured for the artifact (HTTP error `409`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.versions.getArtifactVersion",
+      "name": "versions.getArtifactVersion",
+      "description": "Retrieves a single version of the artifact content.  Both the `artifactId` and the\nunique `version` number must be provided.  The `Content-Type` of the response depends \non the artifact type.  In most cases, this is `application/json`, but for some types \nit may be different (for example, `PROTOBUF`).\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.versions.getArtifactVersionReferences",
+      "name": "versions.getArtifactVersionReferences",
+      "description": "Retrieves a single version of the artifact content.  Both the `artifactId` and the\nunique `version` number must be provided.  The `Content-Type` of the response depends \non the artifact type.  In most cases, this is `application/json`, but for some types \nit may be different (for example, `PROTOBUF`).\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.versions.listArtifactVersions",
+      "name": "versions.listArtifactVersions",
+      "description": "Returns a list of all versions of the artifact.  The result set is paged.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi_apicurio_local_registry_registry.versions.updateArtifactVersionState",
+      "name": "versions.updateArtifactVersionState",
+      "description": "Updates the state of a specific version of an artifact.  For example, you can use \nthis operation to disable a specific version.\n\nThis operation can fail for the following reasons:\n\n* No artifact with this `artifactId` exists (HTTP error `404`)\n* No version with this `version` exists (HTTP error `404`)\n* A server error occurred (HTTP error `500`)\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "fetchedAt": "2026-04-30T15:22:11.156Z",
+  "status": "ok",
+  "count": 107,
+  "tools": [
+    {
+      "id": "openapi_docker_com_engine_engine.config.configCreate",
+      "name": "config.configCreate",
+      "description": "Create a config"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.config.configDelete",
+      "name": "config.configDelete",
+      "description": "Delete a config"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.config.configInspect",
+      "name": "config.configInspect",
+      "description": "Inspect a config"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.config.configList",
+      "name": "config.configList",
+      "description": "List configs"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.config.configUpdate",
+      "name": "config.configUpdate",
+      "description": "Update a Config"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerArchive",
+      "name": "container.containerArchive",
+      "description": "Get a tar archive of a resource in the filesystem of container id."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerArchiveInfo",
+      "name": "container.containerArchiveInfo",
+      "description": "A response header `X-Docker-Container-Path-Stat` is return containing a base64 - encoded JSON object with some filesystem header information about the path."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerAttach",
+      "name": "container.containerAttach",
+      "description": "Attach to a container to read its output or send it input. You can attach to the same container multiple times and you can reattach to containers that have been detached.\n\nEither the `stream` or `logs` parameter must be `true` for this endpoint to do anything.\n\nSee [the documentation for the `docker attach` command](https://docs.docker.com/engine/reference/commandline/attach/) for more details.\n\n### Hijacking\n\nThis endpoint hijacks the HTTP connection to transport `stdin`, `stdout`, and `stderr` on the same socket.\n\nThis is the response from the daemon for an attach request:\n\n```\nHTTP/1.1 200 OK\nContent-Type: application/vnd.docker.raw-stream\n\n[STREAM]\n```\n\nAfter the headers and two new lines, the TCP connection can now be used for raw, bidirectional communication between the client and server.\n\nTo hint potential proxies about connection hijacking, the Docker client can also optionally send connection upgrade headers.\n\nFor example, the client sends this request to upgrade the connection:\n\n```\nPOST /containers/16253994b7c4/attach?stream=1&stdout=1 HTTP/1.1\nUpgrade: tcp\nConnection: Upgrade\n```\n\nThe Docker daemon will respond with a `101 UPGRADED` response, and will similarly follow with the raw stream:\n\n```\nHTTP/1.1 101 UPGRADED\nContent-Type: application/vnd.docker.raw-stream\nConnection: Upgrade\nUpgrade: tcp\n\n[STREAM]\n```\n\n### Stream format\n\nWhen the TTY setting is disabled in [`POST /containers/create`](#operation/ContainerCreate), the stream over the hijacked connected is multiplexed to separate out `stdout` and `stderr`. The stream consists of a series of frames, each containing a header and a payload.\n\nThe header contains the information which the stream writes (`stdout` or `stderr`). It also contains the size of the associated frame encoded in the last four bytes (`uint32`).\n\nIt is encoded on the first eight bytes like this:\n\n```go\nheader := [8]byte{STREAM_TYPE, 0, 0, 0, SIZE1, SIZE2, SIZE3, SIZE4}\n```\n\n`STREAM_TYPE` can be:\n\n- 0: `stdin` (is written on `stdout`)\n- 1: `stdout`\n- 2: `stderr`\n\n`SIZE1, SIZE2, SIZE3, SIZE4` are the four bytes of the `uint32` size encoded as big endian.\n\nFollowing the header is the payload, which is the specified number of bytes of `STREAM_TYPE`.\n\nThe simplest way to implement this protocol is the following:\n\n1. Read 8 bytes.\n2. Choose `stdout` or `stderr` depending on the first byte.\n3. Extract the frame size from the last four bytes.\n4. Read the extracted size and output it on the correct output.\n5. Goto 1.\n\n### Stream format when using a TTY\n\nWhen the TTY setting is enabled in [`POST /containers/create`](#operation/ContainerCreate), the stream is not multiplexed. The data exchanged over the hijacked connection is simply the raw data from the process PTY and client's `stdin`.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerAttachWebsocket",
+      "name": "container.containerAttachWebsocket",
+      "description": "Attach to a container via a websocket"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerChanges",
+      "name": "container.containerChanges",
+      "description": "Returns which files in a container's filesystem have been added, deleted,\nor modified. The `Kind` of modification can be one of:\n\n- `0`: Modified\n- `1`: Added\n- `2`: Deleted\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerCreate",
+      "name": "container.containerCreate",
+      "description": "Create a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerDelete",
+      "name": "container.containerDelete",
+      "description": "Remove a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerExport",
+      "name": "container.containerExport",
+      "description": "Export the contents of a container as a tarball."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerInspect",
+      "name": "container.containerInspect",
+      "description": "Return low-level information about a container."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerKill",
+      "name": "container.containerKill",
+      "description": "Send a POSIX signal to a container, defaulting to killing to the container."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerList",
+      "name": "container.containerList",
+      "description": "Returns a list of containers. For details on the format, see [the inspect endpoint](#operation/ContainerInspect).\n\nNote that it uses a different, smaller representation of a container than inspecting a single container. For example,\nthe list of linked containers is not propagated .\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerLogs",
+      "name": "container.containerLogs",
+      "description": "Get `stdout` and `stderr` logs from a container.\n\nNote: This endpoint works only for containers with the `json-file` or `journald` logging driver.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerPause",
+      "name": "container.containerPause",
+      "description": "Use the cgroups freezer to suspend all processes in a container.\n\nTraditionally, when suspending a process the `SIGSTOP` signal is used, which is observable by the process being suspended. With the cgroups freezer the process is unaware, and unable to capture, that it is being suspended, and subsequently resumed.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerPrune",
+      "name": "container.containerPrune",
+      "description": "Delete stopped containers"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerRename",
+      "name": "container.containerRename",
+      "description": "Rename a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerResize",
+      "name": "container.containerResize",
+      "description": "Resize the TTY for a container. You must restart the container for the resize to take effect."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerRestart",
+      "name": "container.containerRestart",
+      "description": "Restart a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerStart",
+      "name": "container.containerStart",
+      "description": "Start a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerStats",
+      "name": "container.containerStats",
+      "description": "This endpoint returns a live stream of a container’s resource usage\nstatistics.\n\nThe `precpu_stats` is the CPU statistic of last read, which is used\nfor calculating the CPU usage percentage. It is not the same as the\n`cpu_stats` field.\n\nIf either `precpu_stats.online_cpus` or `cpu_stats.online_cpus` is\nnil then for compatibility with older daemons the length of the\ncorresponding `cpu_usage.percpu_usage` array should be used.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerStop",
+      "name": "container.containerStop",
+      "description": "Stop a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerTop",
+      "name": "container.containerTop",
+      "description": "On Unix systems, this is done by running the `ps` command. This endpoint is not supported on Windows."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerUnpause",
+      "name": "container.containerUnpause",
+      "description": "Resume a container which has been paused."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerUpdate",
+      "name": "container.containerUpdate",
+      "description": "Change various configuration options of a container without having to recreate it."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.containerWait",
+      "name": "container.containerWait",
+      "description": "Block until a container stops, then returns the exit code."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.container.putContainerArchive",
+      "name": "container.putContainerArchive",
+      "description": "Upload a tar archive to be extracted to a path in the filesystem of container id."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.distribution.distributionInspect",
+      "name": "distribution.distributionInspect",
+      "description": "Return image digest and platform information by contacting the registry."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.exec.containerExec",
+      "name": "exec.containerExec",
+      "description": "Run a command inside a running container."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.exec.execInspect",
+      "name": "exec.execInspect",
+      "description": "Return low-level information about an exec instance."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.exec.execResize",
+      "name": "exec.execResize",
+      "description": "Resize the TTY session used by an exec instance. This endpoint only works if `tty` was specified as part of creating and starting the exec instance."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.exec.execStart",
+      "name": "exec.execStart",
+      "description": "Starts a previously set up exec instance. If detach is true, this endpoint returns immediately after starting the command. Otherwise, it sets up an interactive session with the command."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.buildPrune",
+      "name": "image.buildPrune",
+      "description": "Delete builder cache"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageBuild",
+      "name": "image.imageBuild",
+      "description": "Build an image from a tar archive with a `Dockerfile` in it.\n\nThe `Dockerfile` specifies how the image is built from the tar archive. It is typically in the archive's root, but can be at a different path or have a different name by specifying the `dockerfile` parameter. [See the `Dockerfile` reference for more information](https://docs.docker.com/engine/reference/builder/).\n\nThe Docker daemon performs a preliminary validation of the `Dockerfile` before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.\n\nThe build is canceled if the client drops the connection by quitting or being killed.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageCommit",
+      "name": "image.imageCommit",
+      "description": "Create a new image from a container"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageCreate",
+      "name": "image.imageCreate",
+      "description": "Create an image by either pulling it from a registry or importing it."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageDelete",
+      "name": "image.imageDelete",
+      "description": "Remove an image, along with any untagged parent images that were\nreferenced by that image.\n\nImages can't be removed if they have descendant images, are being\nused by a running container or are being used by a build.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageGet",
+      "name": "image.imageGet",
+      "description": "Get a tarball containing all images and metadata for a repository.\n\nIf `name` is a specific name and tag (e.g. `ubuntu:latest`), then only that image (and its parents) are returned. If `name` is an image ID, similarly only that image (and its parents) are returned, but with the exclusion of the `repositories` file in the tarball, as there were no image names referenced.\n\n### Image tarball format\n\nAn image tarball contains one directory per image layer (named using its long ID), each containing these files:\n\n- `VERSION`: currently `1.0` - the file format version\n- `json`: detailed layer information, similar to `docker inspect layer_id`\n- `layer.tar`: A tarfile containing the filesystem changes in this layer\n\nThe `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.\n\nIf the tarball defines a repository, the tarball should also include a `repositories` file at the root that contains a list of repository and tag names mapped to layer IDs.\n\n```json\n{\n  \"hello-world\": {\n    \"latest\": \"565a9d68a73f6706862bfe8409a7f659776d4d60a8d096eb4a3cbce6999cc2a1\"\n  }\n}\n```\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageGetAll",
+      "name": "image.imageGetAll",
+      "description": "Get a tarball containing all images and metadata for several image repositories.\n\nFor each value of the `names` parameter: if it is a specific name and tag (e.g. `ubuntu:latest`), then only that image (and its parents) are returned; if it is an image ID, similarly only that image (and its parents) are returned and there would be no names referenced in the 'repositories' file for this image ID.\n\nFor details on the format, see [the export image endpoint](#operation/ImageGet).\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageHistory",
+      "name": "image.imageHistory",
+      "description": "Return parent layers of an image."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageInspect",
+      "name": "image.imageInspect",
+      "description": "Return low-level information about an image."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageList",
+      "name": "image.imageList",
+      "description": "Returns a list of images on the server. Note that it uses a different, smaller representation of an image than inspecting a single image."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageLoad",
+      "name": "image.imageLoad",
+      "description": "Load a set of images and tags into a repository.\n\nFor details on the format, see [the export image endpoint](#operation/ImageGet).\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imagePrune",
+      "name": "image.imagePrune",
+      "description": "Delete unused images"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imagePush",
+      "name": "image.imagePush",
+      "description": "Push an image to a registry.\n\nIf you wish to push an image on to a private registry, that image must already have a tag which references the registry. For example, `registry.example.com/myimage:latest`.\n\nThe push is cancelled if the HTTP connection is closed.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageSearch",
+      "name": "image.imageSearch",
+      "description": "Search for an image on Docker Hub."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.image.imageTag",
+      "name": "image.imageTag",
+      "description": "Tag an image so that it becomes part of a repository."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkConnect",
+      "name": "network.networkConnect",
+      "description": "Connect a container to a network"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkCreate",
+      "name": "network.networkCreate",
+      "description": "Create a network"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkDelete",
+      "name": "network.networkDelete",
+      "description": "Remove a network"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkDisconnect",
+      "name": "network.networkDisconnect",
+      "description": "Disconnect a container from a network"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkInspect",
+      "name": "network.networkInspect",
+      "description": "Inspect a network"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkList",
+      "name": "network.networkList",
+      "description": "Returns a list of networks. For details on the format, see [the network inspect endpoint](#operation/NetworkInspect).\n\nNote that it uses a different, smaller representation of a network than inspecting a single network. For example,\nthe list of containers attached to the network is not propagated in API versions 1.28 and up.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.network.networkPrune",
+      "name": "network.networkPrune",
+      "description": "Delete unused networks"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.node.nodeDelete",
+      "name": "node.nodeDelete",
+      "description": "Delete a node"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.node.nodeInspect",
+      "name": "node.nodeInspect",
+      "description": "Inspect a node"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.node.nodeList",
+      "name": "node.nodeList",
+      "description": "List nodes"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.node.nodeUpdate",
+      "name": "node.nodeUpdate",
+      "description": "Update a node"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.getPluginPrivileges",
+      "name": "plugin.getPluginPrivileges",
+      "description": "Get plugin privileges"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginCreate",
+      "name": "plugin.pluginCreate",
+      "description": "Create a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginDelete",
+      "name": "plugin.pluginDelete",
+      "description": "Remove a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginDisable",
+      "name": "plugin.pluginDisable",
+      "description": "Disable a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginEnable",
+      "name": "plugin.pluginEnable",
+      "description": "Enable a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginInspect",
+      "name": "plugin.pluginInspect",
+      "description": "Inspect a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginList",
+      "name": "plugin.pluginList",
+      "description": "Returns information about installed plugins."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginPull",
+      "name": "plugin.pluginPull",
+      "description": "Pulls and installs a plugin. After the plugin is installed, it can be enabled using the [`POST /plugins/{name}/enable` endpoint](#operation/PostPluginsEnable).\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginPush",
+      "name": "plugin.pluginPush",
+      "description": "Push a plugin to the registry.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginSet",
+      "name": "plugin.pluginSet",
+      "description": "Configure a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.plugin.pluginUpgrade",
+      "name": "plugin.pluginUpgrade",
+      "description": "Upgrade a plugin"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.secret.secretCreate",
+      "name": "secret.secretCreate",
+      "description": "Create a secret"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.secret.secretDelete",
+      "name": "secret.secretDelete",
+      "description": "Delete a secret"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.secret.secretInspect",
+      "name": "secret.secretInspect",
+      "description": "Inspect a secret"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.secret.secretList",
+      "name": "secret.secretList",
+      "description": "List secrets"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.secret.secretUpdate",
+      "name": "secret.secretUpdate",
+      "description": "Update a Secret"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceCreate",
+      "name": "service.serviceCreate",
+      "description": "Create a service"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceDelete",
+      "name": "service.serviceDelete",
+      "description": "Delete a service"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceInspect",
+      "name": "service.serviceInspect",
+      "description": "Inspect a service"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceList",
+      "name": "service.serviceList",
+      "description": "List services"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceLogs",
+      "name": "service.serviceLogs",
+      "description": "Get `stdout` and `stderr` logs from a service.\n\n**Note**: This endpoint works only for services with the `json-file` or `journald` logging drivers.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.service.serviceUpdate",
+      "name": "service.serviceUpdate",
+      "description": "Update a service"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.sessionExperimental.session",
+      "name": "sessionExperimental.session",
+      "description": "Start a new interactive session with a server. Session allows server to call back to the client for advanced capabilities.\n\n> **Note**: This endpoint is *experimental* and only available if the daemon is started with experimental\n> features enabled. The specifications for this endpoint may still change in a future version of the API.\n\n### Hijacking\n\nThis endpoint hijacks the HTTP connection to HTTP2 transport that allows the client to expose gPRC services on that connection.\n\nFor example, the client sends this request to upgrade the connection:\n\n```\nPOST /session HTTP/1.1\nUpgrade: h2c\nConnection: Upgrade\n```\n\nThe Docker daemon will respond with a `101 UPGRADED` response follow with the raw stream:\n\n```\nHTTP/1.1 101 UPGRADED\nConnection: Upgrade\nUpgrade: h2c\n```\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmInit",
+      "name": "swarm.swarmInit",
+      "description": "Initialize a new swarm"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmInspect",
+      "name": "swarm.swarmInspect",
+      "description": "Inspect swarm"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmJoin",
+      "name": "swarm.swarmJoin",
+      "description": "Join an existing swarm"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmLeave",
+      "name": "swarm.swarmLeave",
+      "description": "Leave a swarm"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmUnlock",
+      "name": "swarm.swarmUnlock",
+      "description": "Unlock a locked manager"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmUnlockkey",
+      "name": "swarm.swarmUnlockkey",
+      "description": "Get the unlock key"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.swarm.swarmUpdate",
+      "name": "swarm.swarmUpdate",
+      "description": "Update a swarm"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemAuth",
+      "name": "system.systemAuth",
+      "description": "Validate credentials for a registry and, if available, get an identity token for accessing the registry without password."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemDataUsage",
+      "name": "system.systemDataUsage",
+      "description": "Get data usage information"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemEvents",
+      "name": "system.systemEvents",
+      "description": "Stream real-time events from the server.\n\nVarious objects within Docker report events when something happens to them.\n\nContainers report these events: `attach`, `commit`, `copy`, `create`, `destroy`, `detach`, `die`, `exec_create`, `exec_detach`, `exec_start`, `export`, `health_status`, `kill`, `oom`, `pause`, `rename`, `resize`, `restart`, `start`, `stop`, `top`, `unpause`, and `update`\n\nImages report these events: `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, and `untag`\n\nVolumes report these events: `create`, `mount`, `unmount`, and `destroy`\n\nNetworks report these events: `create`, `connect`, `disconnect`, `destroy`, `update`, and `remove`\n\nThe Docker daemon reports these events: `reload`\n\nServices report these events: `create`, `update`, and `remove`\n\nNodes report these events: `create`, `update`, and `remove`\n\nSecrets report these events: `create`, `update`, and `remove`\n\nConfigs report these events: `create`, `update`, and `remove`\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemInfo",
+      "name": "system.systemInfo",
+      "description": "Get system information"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemPing",
+      "name": "system.systemPing",
+      "description": "This is a dummy endpoint you can use to test if the server is accessible."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.system.systemVersion",
+      "name": "system.systemVersion",
+      "description": "Returns the version of Docker that is running and various information about the system that Docker is running on."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.task.taskInspect",
+      "name": "task.taskInspect",
+      "description": "Inspect a task"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.task.taskList",
+      "name": "task.taskList",
+      "description": "List tasks"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.tasks.taskLogs",
+      "name": "tasks.taskLogs",
+      "description": "Get `stdout` and `stderr` logs from a task.\n\n**Note**: This endpoint works only for services with the `json-file` or `journald` logging drivers.\n"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.volume.volumeCreate",
+      "name": "volume.volumeCreate",
+      "description": "Create a volume"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.volume.volumeDelete",
+      "name": "volume.volumeDelete",
+      "description": "Instruct the driver to remove the volume."
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.volume.volumeInspect",
+      "name": "volume.volumeInspect",
+      "description": "Inspect a volume"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.volume.volumeList",
+      "name": "volume.volumeList",
+      "description": "List volumes"
+    },
+    {
+      "id": "openapi_docker_com_engine_engine.volume.volumePrune",
+      "name": "volume.volumePrune",
+      "description": "Delete unused volumes"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

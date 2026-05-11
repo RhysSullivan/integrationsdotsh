@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:22:32.361Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.operations.bigtableadminOperationsCancel",
+      "name": "operations.bigtableadminOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.operations.bigtableadminOperationsProjectsOperationsList",
+      "name": "operations.bigtableadminOperationsProjectsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesAppProfilesCreate",
+      "name": "projects.bigtableadminProjectsInstancesAppProfilesCreate",
+      "description": "Creates an app profile within an instance."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesAppProfilesList",
+      "name": "projects.bigtableadminProjectsInstancesAppProfilesList",
+      "description": "Lists information about app profiles in an instance."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersBackupsCopy",
+      "name": "projects.bigtableadminProjectsInstancesClustersBackupsCopy",
+      "description": "Copy a Cloud Bigtable backup to a new backup in the destination cluster located in the destination instance and project."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersBackupsCreate",
+      "name": "projects.bigtableadminProjectsInstancesClustersBackupsCreate",
+      "description": "Starts creating a new Cloud Bigtable Backup. The returned backup long-running operation can be used to track creation of the backup. The metadata field type is CreateBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the creation and delete the backup."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersBackupsList",
+      "name": "projects.bigtableadminProjectsInstancesClustersBackupsList",
+      "description": "Lists Cloud Bigtable backups. Returns both completed and pending backups."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersCreate",
+      "name": "projects.bigtableadminProjectsInstancesClustersCreate",
+      "description": "Creates a cluster within an instance. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersHotTabletsList",
+      "name": "projects.bigtableadminProjectsInstancesClustersHotTabletsList",
+      "description": "Lists hot tablets in a cluster, within the time range provided. Hot tablets are ordered based on CPU usage."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersList",
+      "name": "projects.bigtableadminProjectsInstancesClustersList",
+      "description": "Lists information about clusters in an instance."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesClustersUpdate",
+      "name": "projects.bigtableadminProjectsInstancesClustersUpdate",
+      "description": "Updates a cluster within an instance. Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesCreate",
+      "name": "projects.bigtableadminProjectsInstancesCreate",
+      "description": "Create an instance within a project. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesList",
+      "name": "projects.bigtableadminProjectsInstancesList",
+      "description": "Lists information about instances in a project."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesCheckConsistency",
+      "name": "projects.bigtableadminProjectsInstancesTablesCheckConsistency",
+      "description": "Checks replication consistency based on a consistency token, that is, if replication has caught up based on the conditions specified in the token and the check request."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesCreate",
+      "name": "projects.bigtableadminProjectsInstancesTablesCreate",
+      "description": "Creates a new table in the specified instance. The table can be created with a full set of initial column families, specified in the request."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesDelete",
+      "name": "projects.bigtableadminProjectsInstancesTablesDelete",
+      "description": "Permanently deletes a specified table and all of its data."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesDropRowRange",
+      "name": "projects.bigtableadminProjectsInstancesTablesDropRowRange",
+      "description": "Permanently drop/delete a row range from a specified table. The request can specify whether to delete all rows in a table, or only those that match a particular prefix."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesGenerateConsistencyToken",
+      "name": "projects.bigtableadminProjectsInstancesTablesGenerateConsistencyToken",
+      "description": "Generates a consistency token for a Table, which can be used in CheckConsistency to check whether mutations to the table that finished before this call started have been replicated. The tokens will be available for 90 days."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesGetIamPolicy",
+      "name": "projects.bigtableadminProjectsInstancesTablesGetIamPolicy",
+      "description": "Gets the access control policy for a Table resource. Returns an empty policy if the resource exists but does not have a policy set."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesList",
+      "name": "projects.bigtableadminProjectsInstancesTablesList",
+      "description": "Lists all tables served from a specified instance."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesModifyColumnFamilies",
+      "name": "projects.bigtableadminProjectsInstancesTablesModifyColumnFamilies",
+      "description": "Performs a series of column family modifications on the specified table. Either all or none of the modifications will occur before this method returns, but data requests received prior to that point may see a table where only some modifications have taken effect."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesPatch",
+      "name": "projects.bigtableadminProjectsInstancesTablesPatch",
+      "description": "Updates a specified table."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesRestore",
+      "name": "projects.bigtableadminProjectsInstancesTablesRestore",
+      "description": "Create a new table by restoring from a completed backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesSetIamPolicy",
+      "name": "projects.bigtableadminProjectsInstancesTablesSetIamPolicy",
+      "description": "Sets the access control policy on a Table resource. Replaces any existing policy."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesTestIamPermissions",
+      "name": "projects.bigtableadminProjectsInstancesTablesTestIamPermissions",
+      "description": "Returns permissions that the caller has on the specified table resource."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsInstancesTablesUndelete",
+      "name": "projects.bigtableadminProjectsInstancesTablesUndelete",
+      "description": "Restores a specified table which was accidentally deleted."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsLocationsGet",
+      "name": "projects.bigtableadminProjectsLocationsGet",
+      "description": "Gets information about a location."
+    },
+    {
+      "id": "openapi_googleapis_com_bigtableadmin_bigtableadmin.projects.bigtableadminProjectsLocationsList",
+      "name": "projects.bigtableadminProjectsLocationsList",
+      "description": "Lists information about the supported locations for this service."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

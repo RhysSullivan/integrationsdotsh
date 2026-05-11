@@ -1,0 +1,262 @@
+{
+  "fetchedAt": "2026-04-30T15:45:07.411Z",
+  "status": "ok",
+  "count": 51,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.acceptEulas",
+      "name": "20200801.acceptEulas",
+      "description": "Accept EULAs."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createLaunchProfile",
+      "name": "20200801.createLaunchProfile",
+      "description": "Create a launch profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createStreamingImage",
+      "name": "20200801.createStreamingImage",
+      "description": "Creates a streaming image resource in a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createStreamingSession",
+      "name": "20200801.createStreamingSession",
+      "description": "<p>Creates a streaming session in a studio.</p> <p>After invoking this operation, you must poll GetStreamingSession until the streaming session is in the <code>READY</code> state.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createStreamingSessionStream",
+      "name": "20200801.createStreamingSessionStream",
+      "description": "<p>Creates a streaming session stream for a streaming session.</p> <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until it is in the <code>READY</code> state.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createStudio",
+      "name": "20200801.createStudio",
+      "description": "<p>Create a new studio.</p> <p>When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p> <p>The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to function properly.</p> <p>The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to function properly.</p> <p>You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.</p> <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you own and manage.</p> <p>When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys.</p> <p>If you delete this grant, the studio will no longer be accessible to your portal users.</p> <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.createStudioComponent",
+      "name": "20200801.createStudioComponent",
+      "description": "Creates a studio component resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteLaunchProfile",
+      "name": "20200801.deleteLaunchProfile",
+      "description": "Permanently delete a launch profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteLaunchProfileMember",
+      "name": "20200801.deleteLaunchProfileMember",
+      "description": "Delete a user from launch profile membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteStreamingImage",
+      "name": "20200801.deleteStreamingImage",
+      "description": "Delete streaming image."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteStreamingSession",
+      "name": "20200801.deleteStreamingSession",
+      "description": "<p>Deletes streaming session resource.</p> <p>After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a <code>DELETED</code> state.</p> <p>A streaming session will count against your streaming session quota until it is marked <code>DELETED</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteStudio",
+      "name": "20200801.deleteStudio",
+      "description": "Delete a studio resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteStudioComponent",
+      "name": "20200801.deleteStudioComponent",
+      "description": "Deletes a studio component resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.deleteStudioMember",
+      "name": "20200801.deleteStudioMember",
+      "description": "Delete a user from studio membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getEula",
+      "name": "20200801.getEula",
+      "description": "Get EULA."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getLaunchProfile",
+      "name": "20200801.getLaunchProfile",
+      "description": "Get a launch profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getLaunchProfileDetails",
+      "name": "20200801.getLaunchProfileDetails",
+      "description": "Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getLaunchProfileInitialization",
+      "name": "20200801.getLaunchProfileInitialization",
+      "description": "Get a launch profile initialization."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getLaunchProfileMember",
+      "name": "20200801.getLaunchProfileMember",
+      "description": "Get a user persona in launch profile membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStreamingImage",
+      "name": "20200801.getStreamingImage",
+      "description": "Get streaming image."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStreamingSession",
+      "name": "20200801.getStreamingSession",
+      "description": "<p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a streaming session state while creating or deleting a session.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStreamingSessionBackup",
+      "name": "20200801.getStreamingSessionBackup",
+      "description": "<p>Gets <code>StreamingSessionBackup</code> resource.</p> <p>Invoke this operation to poll for a streaming session backup while stopping a streaming session.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStreamingSessionStream",
+      "name": "20200801.getStreamingSessionStream",
+      "description": "<p>Gets a StreamingSessionStream for a streaming session.</p> <p>Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.</p> <p>After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will contain a stream to be used with the DCV streaming client.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStudio",
+      "name": "20200801.getStudio",
+      "description": "Get a studio resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStudioComponent",
+      "name": "20200801.getStudioComponent",
+      "description": "Gets a studio component resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.getStudioMember",
+      "name": "20200801.getStudioMember",
+      "description": "Get a user's membership in a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listEulaAcceptances",
+      "name": "20200801.listEulaAcceptances",
+      "description": "List EULA acceptances."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listEulas",
+      "name": "20200801.listEulas",
+      "description": "List EULAs."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listLaunchProfileMembers",
+      "name": "20200801.listLaunchProfileMembers",
+      "description": "Get all users in a given launch profile membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listLaunchProfiles",
+      "name": "20200801.listLaunchProfiles",
+      "description": "List all the launch profiles a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStreamingImages",
+      "name": "20200801.listStreamingImages",
+      "description": "<p>List the streaming image resources available to this studio.</p> <p>This list will contain both images provided by Amazon Web Services, as well as streaming images that you have created in your studio.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStreamingSessionBackups",
+      "name": "20200801.listStreamingSessionBackups",
+      "description": "Lists the backups of a streaming session in a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStreamingSessions",
+      "name": "20200801.listStreamingSessions",
+      "description": "Lists the streaming sessions in a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStudioComponents",
+      "name": "20200801.listStudioComponents",
+      "description": "Lists the <code>StudioComponents</code> in a studio."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStudioMembers",
+      "name": "20200801.listStudioMembers",
+      "description": "<p>Get all users in a given studio membership.</p> <note> <p> <code>ListStudioMembers</code> only returns admin members.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listStudios",
+      "name": "20200801.listStudios",
+      "description": "List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.listTagsForResource",
+      "name": "20200801.listTagsForResource",
+      "description": "<p>Gets the tags for a resource, given its Amazon Resource Names (ARN).</p> <p>This operation supports ARNs for all resource types in Nimble Studio that support tags, including studio, studio component, launch profile, streaming image, and streaming session. All resources that can be tagged will contain an ARN property, so you do not have to create this ARN yourself.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.putLaunchProfileMembers",
+      "name": "20200801.putLaunchProfileMembers",
+      "description": "Add/update users with given persona to launch profile membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.putStudioMembers",
+      "name": "20200801.putStudioMembers",
+      "description": "Add/update users with given persona to studio membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.startStreamingSession",
+      "name": "20200801.startStreamingSession",
+      "description": "Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and <code>READY</code> states."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.startStudioSsoConfigurationRepair",
+      "name": "20200801.startStudioSsoConfigurationRepair",
+      "description": "<p>Repairs the IAM Identity Center configuration for a given studio.</p> <p>If the studio has a valid IAM Identity Center configuration currently associated with it, this operation will fail with a validation error.</p> <p>If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new IAM Identity Center application is created for the studio and the studio is changed to the <code>READY</code> state.</p> <p>After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.stopStreamingSession",
+      "name": "20200801.stopStreamingSession",
+      "description": "Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and <code>STOPPED</code> states."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.tagResource",
+      "name": "20200801.tagResource",
+      "description": "Creates tags for a resource, given its ARN."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.untagResource",
+      "name": "20200801.untagResource",
+      "description": "Deletes the tags for a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.updateLaunchProfile",
+      "name": "20200801.updateLaunchProfile",
+      "description": "Update a launch profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.updateLaunchProfileMember",
+      "name": "20200801.updateLaunchProfileMember",
+      "description": "Update a user persona in launch profile membership."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.updateStreamingImage",
+      "name": "20200801.updateStreamingImage",
+      "description": "Update streaming image."
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.updateStudio",
+      "name": "20200801.updateStudio",
+      "description": "<p>Update a Studio resource.</p> <p>Currently, this operation only supports updating the displayName of your studio.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_nimble_nimble.20200801.updateStudioComponent",
+      "name": "20200801.updateStudioComponent",
+      "description": "Updates a studio component resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

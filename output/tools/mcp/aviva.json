@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:58.665Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_aviva.search_faqs",
+      "name": "search_faqs",
+      "description": "Search the Aviva insurance FAQ knowledge base for accurate answers.\n\nWHEN TO USE:\n- When the user asks any question about insurance coverage, policy terms, claims, payments, excesses, cancellation, or eligibility.\n- Always call this before answering factual questions about Aviva products to ensure accuracy.\n- Do NOT call this for address lookups or quote requests — use the dedicated tools for those.\n\nAFTER CALLING:\n- Do not give insurance advice based on the answers. Only provide the information from the FAQs.\n- Use the returned FAQ answers to give the user a clear, helpful response in your own words.\n- If the top result has a score below 0.70, the question may not be covered in the FAQs — say so honestly and suggest the user visits aviva.co.uk or calls Aviva directly.\n- Never fabricate insurance details; only use what the FAQs say."
+    },
+    {
+      "id": "mcp_aviva.get_insurance_quote",
+      "name": "get_insurance_quote",
+      "description": "Get a home insurance quote.\n\nWORKFLOW:\n1. Collect all required details in small chunks, a few questions at a time:\n   - House number/name and postcode\n   - Title (Mr/Mrs/Miss/Ms/Dr), First Name, Last Name\n   - Date of Birth (DD/MM/YYYY), Email Address, Phone Number\n   - Cover Type: \"Contents Only\", \"Buildings Only\", or \"Buildings and Contents\"\n2. Before showing the summary, inform the user of the following using this exact wording:\n   \"To check if a monthly payment option is available for you, we'll carry out a soft credit check using credit reference agencies. This won't affect your credit score unless you choose to pay monthly.\"\n3. Show a summary and ask the user to confirm before calling this tool.\n4. After the widget displays, acknowledge that the quote is ready.\n\nRULES:\n- Home insurance only — do not ask for any fields not in the schema.\n- Only process legitimate personal data.\n- Never provide quote amounts outside the widget.\n"
+    }
+  ]
+}

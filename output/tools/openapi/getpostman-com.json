@@ -1,0 +1,302 @@
+{
+  "fetchedAt": "2026-04-30T15:22:16.072Z",
+  "status": "ok",
+  "count": 59,
+  "tools": [
+    {
+      "id": "openapi_getpostman_com.api.createApi",
+      "name": "api.createApi",
+      "description": "This call creates a new API with a default API Version.  \n\nRequest body should contain an `api` object which should atleast have a property `name`.\n\nResponse contains an `api` object with all the details related to the created API, namely, `id`, `name`, `summary`, `description`, etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.createApiVersion",
+      "name": "api.createApiVersion",
+      "description": "This call creates a new API version in the specified API.  \n\nRequest body should contain a `version` object which should have fields:\n\n<table>\n<tr>\n\t<td>name</td>\n\t<td>Required. Name of the API Version</td>\n</tr>\n<tr>\n\t<td>source</td>\n\t<td>\n\t\tIf specified, it will copy the contents of the specified api version to create a new api verison.\n\t\t<table>\n\t\t\t<tr>\n\t\t\t\t<td>id</td>\n\t\t\t\t<td>Required. Id of the apiversion from where the details are to be copied</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>schema</td>\n\t\t\t\t<td>Boolean. If true then copies the schema from the specified api version</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td>relations</td>\n\t\t\t\t<td>Object. {\"&lt;relationType&gt;\": true/false}.  \n\t\t\t\t\tAllowed relation types are `mock`, `monitor`, `documentation`, `contracttest`, `integrationtest`, `testsuite`, `environment`\n\t\t\t\tRelation types which should be copied over to the new api verison</td>\n\t\t\t</tr>\n\t\t</table>\n\t</td>\n</tr>\n</table>\n\nResponse contains a `version` object with all the details related to the created API Version, namely, `id`, `name`, `api`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.createCollectionFromSchema",
+      "name": "api.createCollectionFromSchema",
+      "description": "This call creates a collection and links it to an API as one or multiple relations. \n\nRequest body requires two keys:\n- `name` - Name of the collection to be created.\n- `relations` - A list of relation(s) to be created.\n\nThe allowed relation types are `contracttest`, `integrationtest`, `testsuite`, and `documentation`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.createRelations",
+      "name": "api.createRelations",
+      "description": "This call allows you to add existing Postman entities as new relations to an API. The request body should contain the relations to be created along with an array of entity IDs. \n\n<table>\n  <tr>\n    <th>Relation</th>\n    <th>Entity ID type</th>\n  <tr>\n  <tr>\n    <td>contracttest</td>\n    <td>Collection UIDs</td>\n  </tr>\n  <tr>\n    <td>integrationtest</td>\n    <td>Collection UIDs</td>\n  </tr>\n  <tr>\n    <td>documentation</td>\n    <td>Collection UIDs</td>\n  </tr>\n  <tr>\n    <td>testsuite</td>\n    <td>Collection UIDs</td>\n  </tr>\n  <tr>\n    <td>environment</td>\n    <td>Environment UIDs</td>\n  </tr>\n  <tr>\n    <td>mock</td>\n    <td>Mock IDs</td>\n  </tr>\n  <tr>\n    <td>monitor</td>\n    <td>Monitor IDs</td>\n  </tr>\n</table>\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.createSchema",
+      "name": "api.createSchema",
+      "description": "This call creates a new schema.\n\nRequest body should contain a `schema` object which should atleast have these properties with `string` values:\n\n- **`type`**: Allowed types are `openapi3`, `openapi2`, `openapi1`, `raml` and `graphql`.\n- **`language`** : Allowed languages are `json` and `yaml` for OpenAPI and RAML schema types. GraphQL schema type accepts only `graphql` language.\n- **`schema`**: Optional. If passed, must be the content of the schema as a `string`.\n\nResponse contains a `schema` object with all the details related to the created schema, namely, `id`, `language`, `type` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.deleteAnApi",
+      "name": "api.deleteAnApi",
+      "description": "This call deletes an existing API having the specified id.  \n\nResponse contains an `api` object with `id` of the API which was deleted.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.deleteAnApiVersion",
+      "name": "api.deleteAnApiVersion",
+      "description": "This call deletes an existing API Version having the specified id.  \n\nResponse contains an `version` object with `id` of the API Version which was deleted.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getAllApIs",
+      "name": "api.getAllApIs",
+      "description": "This call fetches all the APIs present in the specified workspace\n\nResponse contains an array named `apis` which would contain all the details of APIs present in the workspace.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getAllApiVersions",
+      "name": "api.getAllApiVersions",
+      "description": "This call fetches details about the all the API Versions in the specified API.\n\nThe response will contain an array `versions` object which would be a list of all the API Version along with their details.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getAnApiVersion",
+      "name": "api.getAnApiVersion",
+      "description": "This call fetches details about the specified API Version.\n\nThe response will contain a `version` object which would contain all the details of the API Version.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getContractTestRelations",
+      "name": "api.getContractTestRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getDocumentationRelations",
+      "name": "api.getDocumentationRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getEnvironmentRelations",
+      "name": "api.getEnvironmentRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getIntegrationTestRelations",
+      "name": "api.getIntegrationTestRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getLinkedRelations",
+      "name": "api.getLinkedRelations",
+      "description": "This call fetches all the relations which are linked to the specified API version along with their details.\n\nThe response will contain a `relations` object which lists all the relation types which are linked to the API version. Each of the relation type will be an object which details the relations of this type. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getMonitorRelations",
+      "name": "api.getMonitorRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getSchema",
+      "name": "api.getSchema",
+      "description": "This call fetches a single schema having the specified id.\n\nResponse contains a `schema` object with all the details related to the schema, namely, `id`, `language`, `type`, `schema` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.getTestSuiteRelations",
+      "name": "api.getTestSuiteRelations",
+      "description": "This call fetches all the relations by type which are linked to the specified API version along with their details.\n\nThe response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.singleApi",
+      "name": "api.singleApi",
+      "description": "This call fetches a single API having the specified id.\n\nResponse contains an `api` object with all the details related to the queried API, namely, `id`, `name`, `summary`, `description` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.syncRelationsWithSchema",
+      "name": "api.syncRelationsWithSchema",
+      "description": "This call allows you to keep the relation in sync with the API schema.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.updateAnApi",
+      "name": "api.updateAnApi",
+      "description": "This call updates an existing API .  \n\nRequest body should contain an `api` object which should have the fields to be updated. Only `name`, `summary` and `description` fields can be edited for an API.\n\nResponse contains an `api` object with all the details related to the created API, namely, `id`, `name`, `summary`, `description` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.updateAnApiVersion",
+      "name": "api.updateAnApiVersion",
+      "description": "This call updates an existing API Version.  \n\nRequest body should contain a `version` object with the fields which need to be updated. Only field which can be updated is `name`.\n\nResponse contains a `version` object with all the details related to the created API Version, namely, `id`, `name`, `api` etc.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.api.updateSchema",
+      "name": "api.updateSchema",
+      "description": "This call updates an existing schema.\n\nRequest body should contain a `schema` object which should atleast have these properties with `string` values:\n\n- **`type`**: Allowed types are `openapi3`, `openapi2`, `openapi1`, `raml` and `graphql`.\n- **`language`** : Allowed languages are `json` and `yaml` for OpenAPI and RAML schema types. GraphQL schema type accepts only `graphql` language.\n- **`schema`**: Optional. If passed, must be the content of the schema as a `string`.\n\nResponse contains a `schema` object with all the details related to the created schema, namely, `id`, `language`, `type` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.allCollections",
+      "name": "collections.allCollections",
+      "description": "The `/collections` endpoint returns a list of all [collections](https://www.getpostman.com/docs/collections) that are accessible by you. The list includes your own collections and the collections that you have subscribed to.\n\nThe response contains an array of collection information containing the `name`, `id`, `owner` and `uid` of each collection.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.createAFork",
+      "name": "collections.createAFork",
+      "description": "This endpoint allows you to create a fork from an existing collection.\n\nOn successful creation of the collection, the response returns the collection `name`, `id`, `uid` along with `fork` information.\n\nYou can also specify the context of a workspace to fork a collection in by passing the `workspace` as a query param.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.createCollection",
+      "name": "collections.createCollection",
+      "description": "This endpoint allows you to create collections using the Postman Collection v2 format. For more information about the v2 schema, check the format [here](https://schema.getpostman.com/json/collection/v2.0.0/docs/index.html).\n\nOn successful creation of the collection, the response returns the collection `name`, `id` and the `uid`.\n\nYou can also specify the context of a workspace to create a collection in directly by passing the `workspace` as a query param.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.deleteCollection",
+      "name": "collections.deleteCollection",
+      "description": "This endpoint allows you to delete an existing collection.\n\nOn successful deletion of the collection, the response returns the `id` and `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.mergeAFork",
+      "name": "collections.mergeAFork",
+      "description": "This endpoint allows you to merge a forked collection back to its destination collection.\n\nOn successful creation of the collection, the response returns the collection `name`, `id` and `uid`.\n\nYou need to specify the fork UID (as `source`) and destination collection UID (as `destination`) in the request body.\n\nOptionally, you can also specify the merge strategy as either `deleteSource` or `updateSourceWithDestination`. Following is an explanation of the merge strategies\n\n| Merge Strategy | Behaviour |\n| --- | --- |\n| deleteSource | Forked collection is deleted after merging |\n| updateSourceWithDestination | Forked collection is up to date with changes in destination collection |\n\nIf the collections cannot be merged (due to conflicts), appropriate error messages will be returned.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.singleCollection",
+      "name": "collections.singleCollection",
+      "description": "Access the contents of a collection that is accessible to you using its unique id (`uid`).\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.collections.updateCollection",
+      "name": "collections.updateCollection",
+      "description": "This endpoint allows you to update an existing collection using the Postman Collection v2 format. For more information about the v2 schema, check the format [here](https://schema.getpostman.com/json/collection/v2.0.0/docs/index.html).\n\nOn successful updation of the collection, the response returns the collection `name`, `id` and `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.\n\nNote: Please be careful when trying to update the collection, as the existing collection will be replaced by the request body."
+    },
+    {
+      "id": "openapi_getpostman_com.environments.allEnvironments",
+      "name": "environments.allEnvironments",
+      "description": "The `/environments` endpoint returns a list of all [environments](https://www.getpostman.com/docs/environments) that belong to you..\n\nThe response contains an array of environments' information containing the `name`, `id`, `owner` and `uid` of each environment.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.environments.createEnvironment",
+      "name": "environments.createEnvironment",
+      "description": "A sample body is added to the request that conforms to the following JSON schema:\n\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"environment\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"name\": {\n              \"type\": \"string\",\n              \"maxLength\": 254,\n              \"minLength\": 1\n            },\n        \"values\": {\n          \"type\": \"array\",\n          \"maxItems\": 100,\n          \"additionalItems\": false,\n          \"items\": {\n              \"type\": \"object\",\n              \"properties\": {\n                \"key\": {\n                  \"type\": \"string\",\n                  \"maxLength\": 254\n                  \"minLength\": 1\n                },\n                \"value\": { \"type\": \"string\" },\n                \"enabled\": { \"type\": \"boolean\" }\n              },\n              \"required\": [\"key\", \"value\"]\n            }\n        }\n      },\n      \"required\": [\"name\"]\n    }\n  },\n  \"required\": [\"environment\"]\n}\n```\n\nOn successful creation of the environment, the API returns the environment name and `id`.\n\nYou can also specify the context of a workspace to create an environment in directly by passing the `workspace` as a query param.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.environments.deleteEnvironment",
+      "name": "environments.deleteEnvironment",
+      "description": "This endpoint allows you to delete a single environment based on an environment's unique `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.environments.singleEnvironment",
+      "name": "environments.singleEnvironment",
+      "description": "Access the contents of an environment that is accessible to you using its unique id (`uid`).\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.environments.updateEnvironment",
+      "name": "environments.updateEnvironment",
+      "description": "This endpoint replaces an existing environment.\n\nA sample body is added to the request that conforms to the following JSON schema:\n\n```json\n{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"environment\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"properties\": {\n\t\t\t\t\"name\": {\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"maxLength\": 254,\n\t\t\t\t\t\"minLength\": 1\n\t\t\t\t},\n\t\t\t\t\"values\": {\n\t\t\t\t\t\"type\": \"array\",\n\t\t\t\t\t\"maxItems\": 100,\n\t\t\t\t\t\"additionalItems\": false,\n\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\"type\": \"object\",\n\t\t\t\t\t\t\"properties\": {\n\t\t\t\t\t\t\t\"key\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\t\t\t\"maxLength\": 254,\n\t\t\t\t\t\t\t\t\"minLength\": 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"value\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\t\t\t\"maxLength\": 254,\n\t\t\t\t\t\t\t\t\"minLength\": 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"type\": {\n\t\t\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"enabled\": {\n\t\t\t\t\t\t\t\t\"type\": \"boolean\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"required\": [\n\t\t\t\t\t\t\t\"key\",\n\t\t\t\t\t\t\t\"value\"\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\n\t\t\"environment\"\n\t]\n}\n```\n\nOn successful updation of the environment, the API returns the environment name and `id`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.import.importExportedData",
+      "name": "import.importExportedData",
+      "description": "This endpoint allows you to import your exported Postman data.\nFor more information about how you can export your data, refer <a href=\"https://go.postman.co/me/export\">Export your Postman data.</a>\n\nOn successful imports, the response will be an array with Each element contaning `id`, `name` and `uid` of entities created.\n\n**Note**: Refer to examples for different scenarios.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header."
+    },
+    {
+      "id": "openapi_getpostman_com.import.importExternalApiSpecification",
+      "name": "import.importExternalApiSpecification",
+      "description": "This endpoint allows you to import external API specifications into Postman.\n\nCurrently, this endpoint only supports the <a href=\"https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md\">OpenAPI</a> specification, for which the `importType` will be `openapi`.\n\nOn a successful import, the response will be an array with each element contaning `id`, `name` and `uid` of entities created.\n\nSupported `type`s:\n\n- string\n- json\n- file\n\nThe `input` parameter should be defined based on the `type`.\n\n> To import a file, request body must be form-data with `type` param set to `file`.\n\n**Note**: Refer to examples for different scenarios.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.allMocks",
+      "name": "mocks.allMocks",
+      "description": "This endpoint fetches all the mocks that you have created.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.createMock",
+      "name": "mocks.createMock",
+      "description": "This endpoint allows you to create a mock on a collection. You can also provide an environment UID to resolve any environment variables in the collection.\n\nYou can also specify the context of a workspace to create a mock in directly by passing the `workspace` as a query param.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.deleteMock",
+      "name": "mocks.deleteMock",
+      "description": "This endpoint allows you to delete an existing mock using its `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.publishMock",
+      "name": "mocks.publishMock",
+      "description": "This endpoint publishes the mock you have created using its `uid`\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key ` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.singleMock",
+      "name": "mocks.singleMock",
+      "description": "This endpoint fetches you the basic information about a single mock using its `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.unpublishMock",
+      "name": "mocks.unpublishMock",
+      "description": "This endpoint unpublishes the mock you have created using its `uid`\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key ` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.mocks.updateMock",
+      "name": "mocks.updateMock",
+      "description": "This endpoint allows you to update a mock you have created using its `uid`. The endpoint allows you to edit fields,\n* name\n* environment\n* description\n* private\n* versionTag\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.allMonitors",
+      "name": "monitors.allMonitors",
+      "description": "The `/monitors` endpoint returns a list of all [monitors](https://monitor.getpostman.com/) that are accessible by you.\n\nThe response contains an array of monitors information containing the `name`, `id`, `owner` and `uid` of each monitor.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.createMonitor",
+      "name": "monitors.createMonitor",
+      "description": "This endpoint allows you to create a monitor.\n\nSome sample `cron` values are:\n\n| Frequency                  | Cron Pattern   |\n|-----------------------|----------------|\n| Every 5 minutes       | `*/5 * * * *`  |\n| Every 30 minutes     | `*/30 * * * *` |\n| Every Hour         | `0 */1 * * *`  |\n| Every 6 Hours      | `0 */6 * * *`  |\n| Every day at 5pm    | `0 17 * * *`   |\n| Every Monday at 12pm  | `0 12 * * MON` |\n| Every weekday (Monday - Friday) at 6am | `0 6 * * MON-FRI` |\n\nNote: Currently, you can only create monitors at some limited schedules. You can head to [Postman Monitors](https://monitor.getpostman.com) to see the allowed schedules. \n\nFor more information about the format of the `timezone` value, check this [list of time zones.](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)\n\nYou can also specify the context of a workspace to create a monitor in directly by passing the `workspace` as a query param.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.deleteMonitor",
+      "name": "monitors.deleteMonitor",
+      "description": "This endpoint can be used to delete an existing monitor using its `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.runAMonitor",
+      "name": "monitors.runAMonitor",
+      "description": "This endpoint will run the monitor instantly and wait for the monitor to run completely. It responds with the run results.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.singleMonitor",
+      "name": "monitors.singleMonitor",
+      "description": "This endpoint fetches you basic information about the monitor using its `uid`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.monitors.updateMonitor",
+      "name": "monitors.updateMonitor",
+      "description": "This endpoint allows you to update a monitor using its `uid`. Only the monitor name and its schedule can be updated.\n\nSome example `cron` values are:\n\n| Frequency                  | Cron Pattern   |\n|-----------------------|----------------|\n| Every 5 minutes       | `*/5 * * * *`  |\n| Every 30 minutes     | `*/30 * * * *` |\n| Every Hour         | `0 */1 * * *`  |\n| Every 6 Hours      | `0 */6 * * *`  |\n| Every day at 5pm    | `0 17 * * *`   |\n| Every Monday at 12pm  | `0 12 * * MON` |\n| Every weekday (Monday - Friday) at 6am | `0 6 * * MON-FRI` |\n\nNote: Currently, you can only create monitors at some limited schedules. You can head to [Postman Monitors](https://monitor.getpostman.com) to see the allowed schedules. \n\nFor more information about the format of the `timezone` value, check this [list of time zones.](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.user.apiKeyOwner",
+      "name": "user.apiKeyOwner",
+      "description": "the `/me` Postman API endpoint lets you access information about the authenticated user. You can retrieve the authenticated user's username, full name, e-mail address, and any other available information.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.webhooks.createWebhook",
+      "name": "webhooks.createWebhook",
+      "description": "Create a webhook that triggers a collection with your custom payload.\n\nYou can specify the webhook name and the collection to trigger by using the following attributes of the `webhook` object on your JSON body:\n\n* `name`: the name of the webhook that you're creating.\n* `collection`: the ID of the collection that you want to trigger once this webhook is called.\n\nOnce created, the webhook URL can be retrieved by accessing the `webhookUrl` attribute of the `webhook` object on the response JSON payload."
+    },
+    {
+      "id": "openapi_getpostman_com.workspaces.allWorkspaces",
+      "name": "workspaces.allWorkspaces",
+      "description": "The `/workspaces` endpoint returns a list of all [workspaces](https://www.getpostman.com/docs/v6/postman/workspaces/intro_to_workspaces) that is accessible by you. The list includes your own workspaces and the workspaces that you have access to.\n\nThe response contains an array of collection information containing the `name`, `id`, and `type` of each workspace.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.workspaces.createWorkspace",
+      "name": "workspaces.createWorkspace",
+      "description": "This endpoint allows you to create a workspace and populate it with entities like `collections`, `environments`, `mocks` and `monitors` using their `uid`.\n\nOn successful creation of the workspace, the response returns the workspcae `name` and `id`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.workspaces.deleteWorkspace",
+      "name": "workspaces.deleteWorkspace",
+      "description": "This endpoint allows you to delete an existing workspace.\n\nOn successful deletion of the workspace, the response returns the `id`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.workspaces.singleWorkspace",
+      "name": "workspaces.singleWorkspace",
+      "description": "Access the contents of a workspace that is accessible to you using its id (`id`). Includes the collections, environments, mocks and monitors of that workspace.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+    },
+    {
+      "id": "openapi_getpostman_com.workspaces.updateWorkspace",
+      "name": "workspaces.updateWorkspace",
+      "description": "This endpoint allows you to update a workspace and update it's association to entities like `collections`, `environments`, `mocks` and `monitors` using their `uid`.\n\nOn successful updation of the workspace, the response returns the workspcae `name` and `id`.\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.\n\n**Note** : The endpoint expects you to send the desired state of the workspace in terms of the associated entities so be careful when trying to update these entities.\n\nFor eg. if your workspace has collections A and B, and in the update call, you send C's uid in the collections array, then A and B would be removed from the workspace and C would be added."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "fetchedAt": "2026-04-30T15:22:40.427Z",
+  "status": "ok",
+  "count": 35,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasCommit",
+      "name": "projects.pubsubProjectsSchemasCommit",
+      "description": "Commits a new schema revision to an existing schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasCreate",
+      "name": "projects.pubsubProjectsSchemasCreate",
+      "description": "Creates a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasDelete",
+      "name": "projects.pubsubProjectsSchemasDelete",
+      "description": "Deletes a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasDeleteRevision",
+      "name": "projects.pubsubProjectsSchemasDeleteRevision",
+      "description": "Deletes a specific schema revision."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasGet",
+      "name": "projects.pubsubProjectsSchemasGet",
+      "description": "Gets a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasList",
+      "name": "projects.pubsubProjectsSchemasList",
+      "description": "Lists schemas in a project."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasListRevisions",
+      "name": "projects.pubsubProjectsSchemasListRevisions",
+      "description": "Lists all schema revisions for the named schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasRollback",
+      "name": "projects.pubsubProjectsSchemasRollback",
+      "description": "Creates a new schema revision that is a copy of the provided revision_id."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasValidate",
+      "name": "projects.pubsubProjectsSchemasValidate",
+      "description": "Validates a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSchemasValidateMessage",
+      "name": "projects.pubsubProjectsSchemasValidateMessage",
+      "description": "Validates a message against a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSnapshotsDelete",
+      "name": "projects.pubsubProjectsSnapshotsDelete",
+      "description": "Removes an existing snapshot. Snapshots are used in [Seek] (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSnapshotsGet",
+      "name": "projects.pubsubProjectsSnapshotsGet",
+      "description": "Gets the configuration details of a snapshot. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSnapshotsList",
+      "name": "projects.pubsubProjectsSnapshotsList",
+      "description": "Lists the existing snapshots. Snapshots are used in [Seek]( https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsAcknowledge",
+      "name": "projects.pubsubProjectsSubscriptionsAcknowledge",
+      "description": "Acknowledges the messages associated with the `ack_ids` in the `AcknowledgeRequest`. The Pub/Sub system can remove the relevant messages from the subscription. Acknowledging a message whose ack deadline has expired may succeed, but such a message may be redelivered later. Acknowledging a message more than once will not result in an error."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsDelete",
+      "name": "projects.pubsubProjectsSubscriptionsDelete",
+      "description": "Deletes an existing subscription. All messages retained in the subscription are immediately dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is deleted, a new one may be created with the same name, but the new one has no association with the old subscription or its topic unless the same topic is specified."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsDetach",
+      "name": "projects.pubsubProjectsSubscriptionsDetach",
+      "description": "Detaches a subscription from this topic. All messages retained in the subscription are dropped. Subsequent `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the subscription is a push subscription, pushes to the endpoint will stop."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsGet",
+      "name": "projects.pubsubProjectsSubscriptionsGet",
+      "description": "Gets the configuration details of a subscription."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsList",
+      "name": "projects.pubsubProjectsSubscriptionsList",
+      "description": "Lists matching subscriptions."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsModifyAckDeadline",
+      "name": "projects.pubsubProjectsSubscriptionsModifyAckDeadline",
+      "description": "Modifies the ack deadline for a specific message. This method is useful to indicate that more time is needed to process a message by the subscriber, or to make the message available for redelivery if the processing was interrupted. Note that this does not modify the subscription-level `ackDeadlineSeconds` used for subsequent messages."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsModifyPushConfig",
+      "name": "projects.pubsubProjectsSubscriptionsModifyPushConfig",
+      "description": "Modifies the `PushConfig` for a specified subscription. This may be used to change a push subscription to a pull one (signified by an empty `PushConfig`) or vice versa, or change the endpoint URL and other attributes of a push subscription. Messages will accumulate for delivery continuously through the call regardless of changes to the `PushConfig`."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsPull",
+      "name": "projects.pubsubProjectsSubscriptionsPull",
+      "description": "Pulls messages from the server."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsSubscriptionsSeek",
+      "name": "projects.pubsubProjectsSubscriptionsSeek",
+      "description": "Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in [Seek] (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsCreate",
+      "name": "projects.pubsubProjectsTopicsCreate",
+      "description": "Creates the given topic with the given name. See the [resource name rules] (https://cloud.google.com/pubsub/docs/admin#resource_names)."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsDelete",
+      "name": "projects.pubsubProjectsTopicsDelete",
+      "description": "Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a topic is deleted, a new topic may be created with the same name; this is an entirely new topic with none of the old configuration or subscriptions. Existing subscriptions to this topic are not deleted, but their `topic` field is set to `_deleted-topic_`."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsGet",
+      "name": "projects.pubsubProjectsTopicsGet",
+      "description": "Gets the configuration of a topic."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsGetIamPolicy",
+      "name": "projects.pubsubProjectsTopicsGetIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsList",
+      "name": "projects.pubsubProjectsTopicsList",
+      "description": "Lists matching topics."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsPatch",
+      "name": "projects.pubsubProjectsTopicsPatch",
+      "description": "Updates an existing topic. Note that certain properties of a topic are not modifiable."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsPublish",
+      "name": "projects.pubsubProjectsTopicsPublish",
+      "description": "Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsSetIamPolicy",
+      "name": "projects.pubsubProjectsTopicsSetIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsSnapshotsList",
+      "name": "projects.pubsubProjectsTopicsSnapshotsList",
+      "description": "Lists the names of the snapshots on this topic. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsSubscriptionsList",
+      "name": "projects.pubsubProjectsTopicsSubscriptionsList",
+      "description": "Lists the names of the attached subscriptions on this topic."
+    },
+    {
+      "id": "openapi_googleapis_com_pubsub_pubsub.projects.pubsubProjectsTopicsTestIamPermissions",
+      "name": "projects.pubsubProjectsTopicsTestIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

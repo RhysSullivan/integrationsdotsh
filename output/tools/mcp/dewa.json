@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:21:59.208Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_dewa.get_outstanding",
+      "name": "get_outstanding",
+      "description": "Fetches the outstanding balance for ONE DEWA account number at a time.\n\nCRITICAL CONSTRAINTS:\n- ONLY call this tool ONCE per conversation turn\n- NEVER call this tool in parallel with itself\n- Extract the account number VERBATIM from the user's LATEST message only\n- DO NOT infer, reformat, pad, truncate, or modify the account number in any way\n- DO NOT reuse account numbers from previous turns\n- DO NOT fabricate, estimate, or simulate any balance information\n- NEVER return a balance unless it comes directly from the tool response\n\nANTI-HALLUCINATION RULES:\n- If the tool does not return a valid response, clearly inform the user that the balance could not be retrieved\n- Do NOT guess the outstanding amount under any circumstances\n- Do NOT generate example balances or placeholder values\n- Only present information explicitly returned by the tool\n- If required information is missing, ask the user instead of assuming\n\nBEHAVIOR RULES:\n1. If NO account number is provided → Ask: 'Please provide your DEWA account number so I can check the outstanding balance.'\n2. If MULTIPLE account numbers are provided → Ask: 'I can check the outstanding balance for one account at a time. Which account number would you like me to check first?'\n3. If account number is incomplete, unclear, or ambiguous → Ask: 'Please provide the full DEWA account number so I can check the outstanding balance.'\n4. If exactly ONE account number is provided → Call this tool with that exact number\n\nAlways extract the account number strictly from the user's most recent message before calling the tool."
+    },
+    {
+      "id": "mcp_dewa.get_happiness_centers",
+      "name": "get_happiness_centers",
+      "description": "Fetches the list of DEWA customer happiness centers and their locations. IMPORTANT: Only ask for user location (userLatitude and userLongitude) when the user explicitly requests proximity-based information using phrases like 'near me', 'nearby', 'near current location', 'closest', or 'nearest'. For general queries like 'Find customer happiness centers' or 'Show happiness centers', call this tool WITHOUT location parameters to return all centers. When location parameters are provided, centers will be sorted by distance (nearest first) and distance information will be included."
+    },
+    {
+      "id": "mcp_dewa.get_ev_chargers",
+      "name": "get_ev_chargers",
+      "description": "Fetches the list of available DEWA EV charging locations and their details. If userLatitude and userLongitude are provided, chargers will be sorted by distance (nearest first) and distance information will be included."
+    },
+    {
+      "id": "mcp_dewa.get_dewa_services",
+      "name": "get_dewa_services",
+      "description": "Returns a curated list of DEWA services and a link to open each service."
+    },
+    {
+      "id": "mcp_dewa.geocode_location",
+      "name": "geocode_location",
+      "description": "Converts a location name, address, or place name to geographic coordinates (latitude and longitude). Use this when the user provides a location name like 'Dubai Marina', 'Downtown Dubai', or any address in UAE. The coordinates can then be used with get_happiness_centers or get_ev_chargers to find nearest locations."
+    }
+  ]
+}

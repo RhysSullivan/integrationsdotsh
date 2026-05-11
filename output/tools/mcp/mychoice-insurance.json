@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:59.518Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_mychoice_insurance.get_auto_quote",
+      "name": "get_auto_quote",
+      "description": "Flow when user initiates an auto insurance quote:\n1. Ask for these fields. IMPORTANT: always present these as a bulleted list so the user can answer each one clearly:\n   - Postal code (Canadian, e.g. 'M5H 2N2')\n   - Vehicle year (e.g. 2019)\n   - Vehicle make (e.g. Toyota)\n   - Vehicle model (e.g. Corolla)\n   - Purchase date\n   - Daily driving distance in KM (approximate)\n   - Driver age\n   - Gender (male or female)\n   - Age when first got a driver's licence (approximate)\n   - Licence type (G, G1, or G2)\n   - Whether they held a licence before anywhere other than Canada/USA (yes or no)\n   - Whether currently insured in Canada/USA (yes or no). If yes, ask:\n     - What year were you first insured in Canada/USA? (ask this as a sub question of previous one)\n2. Call this tool with all collected fields and pap user answers to parameter values:\n   - gender: 'M' or 'F'\n   - previous_licence: true or false\n   - insured: true or false\n   - purchase_date: 'YYYY-MM-DD' format"
+    },
+    {
+      "id": "mcp_mychoice_insurance.get_life_quote",
+      "name": "get_life_quote",
+      "description": "Flow when user initiates a life insurance quote:\n1. Ask for these fields. IMPORTANT: always present these as a bulleted list so the user can answer each one clearly:\n   - Postal code (Canadian, e.g. 'M5H 2N2')\n   - Province (name or abbreviation, e.g. 'Ontario' or 'ON')\n   - Age (do not ask for full date of birth — the server converts age into DOB internally)\n   - Sex (male or female)\n   - Smoker status (yes or no)\n   - Coverage amount (100k, 250k, 500k, 1M, 2M, or 5M)\n   - Term length — list ALL of the following as a sub-list so the user can pick one:\n     - 10 Year Level Term\n     - 15 Year Level Term\n     - 20 Year Level Term\n     - 25 Year Level Term\n     - 30 Year Level Term\n     - 35 Year Level Term\n     - 40 Year Level Term\n     - Term to 100 Guaranteed Life Pay\n     - Whole Life Guaranteed Life Pay\n     - Whole Life Guaranteed 20 Pay\n     - U/L T100 - Minimum Premium - 10 Pay\n   Do NOT list these fields more than once. Present the list exactly once.\n2. Call this tool with all collected fields\n   Map user answers to parameter values:\n   - sex: 'M' or 'F'\n   - smoker: 'Y' or 'N'\n   - face_amount: integer (100000, 250000, 500000, 1000000, 2000000, 5000000)\n   - term_length: map user's choice to code — 10 Year Level Term=3, 15 Year Level Term=4, 20 Year Level Term=5, 25 Year Level Term=6, 30 Year Level Term=7, 35 Year Level Term=9, 40 Year Level Term=0, Term to 100 Guaranteed Life Pay=P, Whole Life Guaranteed Life Pay=H, Whole Life Guaranteed 20 Pay=J, U/L T100 Minimum Premium 10 Pay=O"
+    }
+  ]
+}

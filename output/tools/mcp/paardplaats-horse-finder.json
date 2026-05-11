@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:38.427Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_paardplaats_horse_finder.get_filter_options",
+      "name": "get_filter_options",
+      "description": "Retrieve ALL available filter options — categories, breeds, genders, colors, levels, and countries — as lists of {id, name, slug} objects. ALWAYS call this tool first when the user mentions any breed, category, gender, color, level, or country by name so you can resolve the name to its numeric ID. Never pass filter IDs to search_listings without first confirming them here."
+    },
+    {
+      "id": "mcp_paardplaats_horse_finder.search_listings",
+      "name": "search_listings",
+      "description": "Search Paardplaats horse advertisements with optional filters. Results are displayed as an interactive card widget (10 per page). ALL *_ids parameters require numeric IDs — call get_filter_options first to resolve names to IDs. Use 'page' to paginate."
+    }
+  ]
+}

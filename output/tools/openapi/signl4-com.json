@@ -1,0 +1,522 @@
+{
+  "fetchedAt": "2026-04-30T15:26:46.704Z",
+  "status": "ok",
+  "count": 103,
+  "tools": [
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertId",
+      "name": "alerts.getAlertsAlertId",
+      "description": "Gets an alert by id."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertIdAnnotations",
+      "name": "alerts.getAlertsAlertIdAnnotations",
+      "description": "Get annotations of an alert by id."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertIdAttachments",
+      "name": "alerts.getAlertsAlertIdAttachments",
+      "description": "Get attachments of an alert by id."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertIdAttachmentsAttachmentId",
+      "name": "alerts.getAlertsAlertIdAttachmentsAttachmentId",
+      "description": "Gets a specified attachment of a specified alert."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertIdNotifications",
+      "name": "alerts.getAlertsAlertIdNotifications",
+      "description": "Get notifications of all users by alert id."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsAlertIdOverview",
+      "name": "alerts.getAlertsAlertIdOverview",
+      "description": "Get overview alert by id."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.getAlertsReport",
+      "name": "alerts.getAlertsReport",
+      "description": "Returns information about the occurred alert volume in different time periods as well as information about the\r\nresponse behaviour (amount of confirmed and unhandled alerts) of your team members."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlerts",
+      "name": "alerts.postAlerts",
+      "description": "Triggers a new alert for your team. All team members on duty will receive alert notifications."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAcknowledgeAll",
+      "name": "alerts.postAlertsAcknowledgeAll",
+      "description": "This method confirms all unhandled alerts your team currently has by a specific user."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAcknowledgeMultiple",
+      "name": "alerts.postAlertsAcknowledgeMultiple",
+      "description": "This method confirms all alerts provided."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAlertIdAcknowledge",
+      "name": "alerts.postAlertsAlertIdAcknowledge",
+      "description": "Acknowledge an alert"
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAlertIdAnnotate",
+      "name": "alerts.postAlertsAlertIdAnnotate",
+      "description": "Annotates an alert by given Annotation Info."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAlertIdClose",
+      "name": "alerts.postAlertsAlertIdClose",
+      "description": "Close an alert"
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAlertIdUndoAcknowledge",
+      "name": "alerts.postAlertsAlertIdUndoAcknowledge",
+      "description": "This method tries to undo an alert acknowledgement."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsAlertIdUndoClose",
+      "name": "alerts.postAlertsAlertIdUndoClose",
+      "description": "This method tries to undo an alert close."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsCloseAll",
+      "name": "alerts.postAlertsCloseAll",
+      "description": "This method closes all acknowledged alerts your team currently has."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsCloseMultiple",
+      "name": "alerts.postAlertsCloseMultiple",
+      "description": "This method closes all alerts provided."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsPaged",
+      "name": "alerts.postAlertsPaged",
+      "description": "Gets alerts paged"
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsUndoAcknowledgeMultiple",
+      "name": "alerts.postAlertsUndoAcknowledgeMultiple",
+      "description": "This method tries to undo the acknowledgement of multiple alerts via a queue. The operation is handled in the background."
+    },
+    {
+      "id": "openapi_signl4_com.alerts.postAlertsUndoCloseMultiple",
+      "name": "alerts.postAlertsUndoCloseMultiple",
+      "description": "This method tries to undo multiple alert closes. The operation is handled in the background."
+    },
+    {
+      "id": "openapi_signl4_com.categories.deleteCategoriesTeamIdCategoryId",
+      "name": "categories.deleteCategoriesTeamIdCategoryId",
+      "description": "Sample Request:\r\n            \r\n    DELETE /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesImages",
+      "name": "categories.getCategoriesImages",
+      "description": "Gets the names of all alert category images.\r\nYou can get the image by going to account.signl4.com/images/alerts/categoryImageName.svg"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesTeamId",
+      "name": "categories.getCategoriesTeamId",
+      "description": "Sample Request:\r\n            \r\n    GET /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesTeamIdCategoryId",
+      "name": "categories.getCategoriesTeamIdCategoryId",
+      "description": "Sample Request:\r\n            \r\n    GET /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesTeamIdCategoryIdMetrics",
+      "name": "categories.getCategoriesTeamIdCategoryIdMetrics",
+      "description": "Sample Request:\r\n            \r\n    GET /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e/metrics"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesTeamIdCategoryIdSubscriptions",
+      "name": "categories.getCategoriesTeamIdCategoryIdSubscriptions",
+      "description": "Sample Request:\r\n            \r\n    GET /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e/subscriptions\r\n    {\r\n    }"
+    },
+    {
+      "id": "openapi_signl4_com.categories.getCategoriesTeamIdMetrics",
+      "name": "categories.getCategoriesTeamIdMetrics",
+      "description": "Sample Request:\r\n            \r\n    GET /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/metrics"
+    },
+    {
+      "id": "openapi_signl4_com.categories.postCategoriesTeamId",
+      "name": "categories.postCategoriesTeamId",
+      "description": "Sample Request:\r\n            \r\n    POST /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7\r\n    {\r\n        \"name\": \"Water\",\r\n        \"imageName\": \"water.svg\",\r\n        \"color\": \"#0000cc\",\r\n        \"keywordMatching\": \"Any\",\r\n        \"keywords\": [\r\n            {\r\n                \"value\": \"H2O\"\r\n            },\r\n            {\r\n                \"value\": \"Water\"\r\n            }\r\n        ]\r\n    }"
+    },
+    {
+      "id": "openapi_signl4_com.categories.postCategoriesTeamIdCategoryIdSubscriptions",
+      "name": "categories.postCategoriesTeamIdCategoryIdSubscriptions",
+      "description": "Sample Request:\r\n            \r\n    POST /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e/subscriptions\r\n    {\r\n    }"
+    },
+    {
+      "id": "openapi_signl4_com.categories.putCategoriesTeamIdCategoryId",
+      "name": "categories.putCategoriesTeamIdCategoryId",
+      "description": "Sample Request:\r\n            \r\n    PUT /categories/cbb70402-1359-477f-ac92-0171cf2b5ff7/c0054336-cd89-4abf-882d-ba69b5adb25e\r\n    {\r\n        \"name\": \"Water-Updated\",\r\n        \"imageName\": \"water.svg\",\r\n        \"color\": \"#0000cc\",\r\n        \"keywordMatching\": \"All\",\r\n        \"keywords\": [\r\n            {\r\n                \"value\": \"H2O\"\r\n            },\r\n            {\r\n                \"value\": \"Water\"\r\n            },\r\n            {\r\n                \"value\": \"Wet\"\r\n            }\r\n        ]\r\n    }"
+    },
+    {
+      "id": "openapi_signl4_com.duties.deleteTeamsTeamIdSchedulesDutyId",
+      "name": "duties.deleteTeamsTeamIdSchedulesDutyId",
+      "description": "Delete a specific duty."
+    },
+    {
+      "id": "openapi_signl4_com.duties.getTeamsTeamIdDutyReports",
+      "name": "duties.getTeamsTeamIdDutyReports",
+      "description": "Get Information about downloadable reports"
+    },
+    {
+      "id": "openapi_signl4_com.duties.getTeamsTeamIdDutyReportsFileName",
+      "name": "duties.getTeamsTeamIdDutyReportsFileName",
+      "description": "Download duty report with a specific fileName"
+    },
+    {
+      "id": "openapi_signl4_com.duties.getTeamsTeamIdDutysummary",
+      "name": "duties.getTeamsTeamIdDutysummary",
+      "description": "Get duty assistant info for a team"
+    },
+    {
+      "id": "openapi_signl4_com.duties.getTeamsTeamIdSchedules",
+      "name": "duties.getTeamsTeamIdSchedules",
+      "description": "Returns information about all duties that belong to the team."
+    },
+    {
+      "id": "openapi_signl4_com.duties.getTeamsTeamIdSchedulesScheduleId",
+      "name": "duties.getTeamsTeamIdSchedulesScheduleId",
+      "description": "Returns information of the duty schedule with the specified Id."
+    },
+    {
+      "id": "openapi_signl4_com.duties.postTeamsTeamIdSchedules",
+      "name": "duties.postTeamsTeamIdSchedules",
+      "description": "Create/Update given duty schedule."
+    },
+    {
+      "id": "openapi_signl4_com.duties.postTeamsTeamIdSchedulesDeleteRange",
+      "name": "duties.postTeamsTeamIdSchedulesDeleteRange",
+      "description": "Delete duty schedules in range"
+    },
+    {
+      "id": "openapi_signl4_com.duties.postTeamsTeamIdSchedulesMultiple",
+      "name": "duties.postTeamsTeamIdSchedulesMultiple",
+      "description": "Save multiple schedules. It is possible to override existing schedules if you wish"
+    },
+    {
+      "id": "openapi_signl4_com.events.getEventsEventIdOverview",
+      "name": "events.getEventsEventIdOverview",
+      "description": "Get overview event by id."
+    },
+    {
+      "id": "openapi_signl4_com.events.getEventsEventIdParameters",
+      "name": "events.getEventsEventIdParameters",
+      "description": "Get parameters of an event by id."
+    },
+    {
+      "id": "openapi_signl4_com.events.postEventsPaged",
+      "name": "events.postEventsPaged",
+      "description": "Get overview event paged. If there are more results, you also get a continuation token which you can add to the event filter."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getPrepaidBalance",
+      "name": "prepaid.getPrepaidBalance",
+      "description": "Get your subscription's current prepaid balance."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getPrepaidSettings",
+      "name": "prepaid.getPrepaidSettings",
+      "description": "Get your subscription's current prepaid settings."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getPrepaidTransactions",
+      "name": "prepaid.getPrepaidTransactions",
+      "description": "Get your subscription's prepaid transactions."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getSubscriptionsSubscriptionIdPrepaidBalance",
+      "name": "prepaid.getSubscriptionsSubscriptionIdPrepaidBalance",
+      "description": "Get a subscription's current prepaid balance."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getSubscriptionsSubscriptionIdPrepaidSettings",
+      "name": "prepaid.getSubscriptionsSubscriptionIdPrepaidSettings",
+      "description": "Get a subscription's current prepaid settings."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.getSubscriptionsSubscriptionIdPrepaidTransactions",
+      "name": "prepaid.getSubscriptionsSubscriptionIdPrepaidTransactions",
+      "description": "Get a subscription's prepaid transactions."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.putPrepaidSettings",
+      "name": "prepaid.putPrepaidSettings",
+      "description": "Update your subscription's current prepaid settings."
+    },
+    {
+      "id": "openapi_signl4_com.prepaid.putSubscriptionsSubscriptionIdPrepaidSettings",
+      "name": "prepaid.putSubscriptionsSubscriptionIdPrepaidSettings",
+      "description": "Update a subscription's current prepaid settings."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.deleteScriptsInstancesInstanceId",
+      "name": "scripts.deleteScriptsInstancesInstanceId",
+      "description": "Gets the script instance specified by the passed instance id."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.getScriptsInstances",
+      "name": "scripts.getScriptsInstances",
+      "description": "Returns all script instances in the subscription."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.getScriptsInstancesInstanceId",
+      "name": "scripts.getScriptsInstancesInstanceId",
+      "description": "Gets the script instance specified by the passed instance id."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.getScriptsInventory",
+      "name": "scripts.getScriptsInventory",
+      "description": "Returns all available inventory scripts which can be added to a SIGNL4 subscription."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.getScriptsInventoryParsed",
+      "name": "scripts.getScriptsInventoryParsed",
+      "description": "Returns all inventory scripts."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.getScriptsInventoryParsedScriptId",
+      "name": "scripts.getScriptsInventoryParsedScriptId",
+      "description": "Gets the script specified by the passed script id."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.postScriptsInstances",
+      "name": "scripts.postScriptsInstances",
+      "description": "Creates a new script instance of the script specified in the request body."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.postScriptsInstancesInstanceIdDisable",
+      "name": "scripts.postScriptsInstancesInstanceIdDisable",
+      "description": "Disables a given script instance."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.postScriptsInstancesInstanceIdEnable",
+      "name": "scripts.postScriptsInstancesInstanceIdEnable",
+      "description": "Enables a script instance."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.putScriptsInstancesInstanceId",
+      "name": "scripts.putScriptsInstancesInstanceId",
+      "description": "Updates the specified script instance."
+    },
+    {
+      "id": "openapi_signl4_com.scripts.putScriptsInstancesInstanceIdData",
+      "name": "scripts.putScriptsInstancesInstanceIdData",
+      "description": "Updates the specified script instance."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.getSubscriptions",
+      "name": "subscriptions.getSubscriptions",
+      "description": "Get infos of all available/managed subscriptions."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.getSubscriptionsSubscriptionId",
+      "name": "subscriptions.getSubscriptionsSubscriptionId",
+      "description": "Get infos of a specific subscription."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.getSubscriptionsSubscriptionIdChannelPrices",
+      "name": "subscriptions.getSubscriptionsSubscriptionIdChannelPrices",
+      "description": "Returns the subscription's channel price information."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.getSubscriptionsSubscriptionIdFeatures",
+      "name": "subscriptions.getSubscriptionsSubscriptionIdFeatures",
+      "description": "Returns the features of a specified subscription."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.getSubscriptionsSubscriptionIdUserLicenses",
+      "name": "subscriptions.getSubscriptionsSubscriptionIdUserLicenses",
+      "description": "Gets a subscription's user licenses."
+    },
+    {
+      "id": "openapi_signl4_com.subscriptions.putSubscriptionsSubscriptionIdProfile",
+      "name": "subscriptions.putSubscriptionsSubscriptionIdProfile",
+      "description": "Updates a subscriptions profile."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getSubscriptionsSubscriptionIdTeams",
+      "name": "teams.getSubscriptionsSubscriptionIdTeams",
+      "description": "Get infos for all teams of the subscription."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeams",
+      "name": "teams.getTeams",
+      "description": "Get infos of all teams."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamId",
+      "name": "teams.getTeamsTeamId",
+      "description": "Gets infos of a specific team."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamIdAlertReports",
+      "name": "teams.getTeamsTeamIdAlertReports",
+      "description": "Get information about downloadable alert reports"
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamIdAlertReportsFileName",
+      "name": "teams.getTeamsTeamIdAlertReportsFileName",
+      "description": "Returns Alert Report"
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamIdAlertSettings",
+      "name": "teams.getTeamsTeamIdAlertSettings",
+      "description": "Gets alert settings of a specific team."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamIdEventSources",
+      "name": "teams.getTeamsTeamIdEventSources",
+      "description": "Gets event sources of a specific team."
+    },
+    {
+      "id": "openapi_signl4_com.teams.getTeamsTeamIdSetupProgress",
+      "name": "teams.getTeamsTeamIdSetupProgress",
+      "description": "Gets setup progress of a specific team."
+    },
+    {
+      "id": "openapi_signl4_com.teams.postTeamsTeamIdAlertSettings",
+      "name": "teams.postTeamsTeamIdAlertSettings",
+      "description": "Sets alert settings of a specific team."
+    },
+    {
+      "id": "openapi_signl4_com.teams.putTeamsTeamIdProfile",
+      "name": "teams.putTeamsTeamIdProfile",
+      "description": "Updates team profile of a team"
+    },
+    {
+      "id": "openapi_signl4_com.teamsMemberships.deleteTeamsTeamIdMembershipsUserId",
+      "name": "teamsMemberships.deleteTeamsTeamIdMembershipsUserId",
+      "description": "Removes a user or invitation from a team, and may delete the user if he is not in any team."
+    },
+    {
+      "id": "openapi_signl4_com.teamsMemberships.getTeamsTeamIdMemberships",
+      "name": "teamsMemberships.getTeamsTeamIdMemberships",
+      "description": "Get all invites of a team."
+    },
+    {
+      "id": "openapi_signl4_com.teamsMemberships.postTeamsTeamIdMemberships",
+      "name": "teamsMemberships.postTeamsTeamIdMemberships",
+      "description": "Invite users to a team"
+    },
+    {
+      "id": "openapi_signl4_com.teamsMemberships.postTeamsTeamIdMembershipsResendInviteMail",
+      "name": "teamsMemberships.postTeamsTeamIdMembershipsResendInviteMail",
+      "description": "Sends invite email again if an invite exists"
+    },
+    {
+      "id": "openapi_signl4_com.teamsMemberships.putTeamsTeamIdMembershipsUserId",
+      "name": "teamsMemberships.putTeamsTeamIdMembershipsUserId",
+      "description": "Updates the user's team membership. You can move the user to another team within the subscription\r\nand/or change the user's role."
+    },
+    {
+      "id": "openapi_signl4_com.users.getUsers",
+      "name": "users.getUsers",
+      "description": "Returns a list of user objects with details such as their email address and duty information. Only users who\r\nare part of your team will be returned."
+    },
+    {
+      "id": "openapi_signl4_com.users.getUsersUserId",
+      "name": "users.getUsersUserId",
+      "description": "Returns a user object with details such as his email address and duty information."
+    },
+    {
+      "id": "openapi_signl4_com.users.getUsersUserIdDutyStatus",
+      "name": "users.getUsersUserIdDutyStatus",
+      "description": "Returns a object with duty information."
+    },
+    {
+      "id": "openapi_signl4_com.users.getUsersUserIdImage",
+      "name": "users.getUsersUserIdImage",
+      "description": "GET /users/{userId}/image"
+    },
+    {
+      "id": "openapi_signl4_com.users.getUsersUserIdSetupProgress",
+      "name": "users.getUsersUserIdSetupProgress",
+      "description": "Gets setup progress of a specific user."
+    },
+    {
+      "id": "openapi_signl4_com.users.postUsersUserIdCheckPermissions",
+      "name": "users.postUsersUserIdCheckPermissions",
+      "description": "Checks if a user has the provided permission."
+    },
+    {
+      "id": "openapi_signl4_com.users.postUsersUserIdImage",
+      "name": "users.postUsersUserIdImage",
+      "description": "Uploaded a profile image for a specified user."
+    },
+    {
+      "id": "openapi_signl4_com.users.postUsersUserIdPunchIn",
+      "name": "users.postUsersUserIdPunchIn",
+      "description": "The specified user will be punched in to duty."
+    },
+    {
+      "id": "openapi_signl4_com.users.postUsersUserIdPunchInAsManager",
+      "name": "users.postUsersUserIdPunchInAsManager",
+      "description": "The specified user will be punched in to duty as a manager."
+    },
+    {
+      "id": "openapi_signl4_com.users.postUsersUserIdPunchOut",
+      "name": "users.postUsersUserIdPunchOut",
+      "description": "The specified user will be punched out from duty."
+    },
+    {
+      "id": "openapi_signl4_com.users.putUsersUserIdChangePassword",
+      "name": "users.putUsersUserIdChangePassword",
+      "description": "Updates the password of a user"
+    },
+    {
+      "id": "openapi_signl4_com.users.putUsersUserIdProfile",
+      "name": "users.putUsersUserIdProfile",
+      "description": "Updates user profile of an user"
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.deleteWebhooksWebhookId",
+      "name": "webhooks.deleteWebhooksWebhookId",
+      "description": "Deletes the specified webhook so that it will no longer be notified."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.getWebhookById",
+      "name": "webhooks.getWebhookById",
+      "description": "Returns information of the webhook specified by the passed id."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Returns a collection of defined outbound webhooks in the system."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.postWebhooks",
+      "name": "webhooks.postWebhooks",
+      "description": "Creates a new outbound webhook that will be notified when certain events occur."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.postWebhooksWebhookIdDisable",
+      "name": "webhooks.postWebhooksWebhookIdDisable",
+      "description": "Ability to enable a webHook."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.postWebhooksWebhookIdEnable",
+      "name": "webhooks.postWebhooksWebhookIdEnable",
+      "description": "Ability to disable a webHook."
+    },
+    {
+      "id": "openapi_signl4_com.webhooks.putWebhooksWebhookId",
+      "name": "webhooks.putWebhooksWebhookId",
+      "description": "Updates the specified webhook."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

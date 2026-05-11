@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:19:58.115Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_swyft_filings.business_classifications",
+      "name": "business-classifications",
+      "description": "Get NAICS business classifications from Swyft API"
+    },
+    {
+      "id": "mcp_swyft_filings.get_incorporation_offer",
+      "name": "get-incorporation-offer",
+      "description": "Get data for the incorporation service. Shows a service card with pricing and details. Do NOT call this tool again if the user has already seen the card.\n\nWhen the user wants to proceed or fill out the form, call get-incorporation-form instead.\n\nIMPORTANT: If the user mentions a state in their request (e.g., \"I want to file in Texas\", \"incorporate in California\", \"form an LLC in NY\"), extract the state and pass it as the 'state' parameter. Convert state names to 2-letter uppercase codes: \"Texas\" -> \"TX\", \"California\" -> \"CA\", \"New York\" -> \"NY\", etc."
+    },
+    {
+      "id": "mcp_swyft_filings.get_incorporation_form",
+      "name": "get-incorporation-form",
+      "description": "Show the incorporation form to collect business and customer details. Use this after get-incorporation-offer when the user wants to proceed with filing.\n\nIMPORTANT: If you already collected any information from the user during conversation (name, email, state, business type, etc.), pass it as parameters to pre-fill the form fields."
+    },
+    {
+      "id": "mcp_swyft_filings.business_structure_guide",
+      "name": "business-structure-guide",
+      "description": "Use whenever the user asks about business structures, entity types, or how to start/form a business. Use this tool when a user needs help with creating a business in order to provide context about the possibilities available. Shows LLC, C Corporation, S Corporation, and Nonprofit options with pros and cons. After calling this tool, you can talk to the user but about the information displayed in the guide."
+    },
+    {
+      "id": "mcp_swyft_filings.create_order",
+      "name": "create-order",
+      "description": "Create a new order"
+    }
+  ]
+}

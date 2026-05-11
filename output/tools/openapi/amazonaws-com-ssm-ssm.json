@@ -1,0 +1,707 @@
+{
+  "fetchedAt": "2026-04-30T15:45:12.042Z",
+  "status": "ok",
+  "count": 140,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmAddTagsToResource.addTagsToResource",
+      "name": "xAmzTargetAmazonSsmAddTagsToResource.addTagsToResource",
+      "description": "<p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata that you can assign to your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p> <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p> <code>Key=Stack,Value=Production</code> </p> </li> <li> <p> <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p> <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Most resources can have a maximum of 50 tags. Automations can have a maximum of 5 tags.</p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of characters.</p> <p>For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmAssociateOpsItemRelatedItem.associateOpsItemRelatedItem",
+      "name": "xAmzTargetAmazonSsmAssociateOpsItemRelatedItem.associateOpsItemRelatedItem",
+      "description": "Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCancelCommand.cancelCommand",
+      "name": "xAmzTargetAmazonSsmCancelCommand.cancelCommand",
+      "description": "Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCancelMaintenanceWindowExecution.cancelMaintenanceWindowExecution",
+      "name": "xAmzTargetAmazonSsmCancelMaintenanceWindowExecution.cancelMaintenanceWindowExecution",
+      "description": "Stops a maintenance window execution that is already in progress and cancels any tasks in the window that haven't already starting running. Tasks already in progress will continue to completion."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateActivation.createActivation",
+      "name": "xAmzTargetAmazonSsmCreateActivation.createActivation",
+      "description": "<p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html\">Setting up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note> <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed nodes</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateAssociation.createAssociation",
+      "name": "xAmzTargetAmazonSsmCreateAssociation.createAssociation",
+      "description": "A State Manager association defines the state that you want to maintain on your managed nodes. For example, an association can specify that anti-virus software must be installed and running on your managed nodes, or that certain ports must be closed. For static targets, the association specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager applies the configuration when new managed nodes are added to the group. The association also specifies actions to take when applying the configuration. For example, an association for anti-virus software might run once a day. If the software isn't installed, then State Manager installs it. If the software is installed, but the service isn't running, then the association might instruct State Manager to start the service. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateAssociationBatch.createAssociationBatch",
+      "name": "xAmzTargetAmazonSsmCreateAssociationBatch.createAssociationBatch",
+      "description": "<p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified managed nodes or targets.</p> <p>When you associate a document with one or more managed nodes using IDs or tags, Amazon Web Services Systems Manager Agent (SSM Agent) running on the managed node processes the document and configures the node as specified.</p> <p>If you associate a document with a managed node that already has an associated document, the system returns the AssociationAlreadyExists exception.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateDocument.createDocument",
+      "name": "xAmzTargetAmazonSsmCreateDocument.createDocument",
+      "description": "Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html\">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateMaintenanceWindow.createMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmCreateMaintenanceWindow.createMaintenanceWindow",
+      "description": "<p>Creates a new maintenance window.</p> <note> <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateOpsItem.createOpsItem",
+      "name": "xAmzTargetAmazonSsmCreateOpsItem.createOpsItem",
+      "description": "<p>Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">Amazon Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateOpsMetadata.createOpsMetadata",
+      "name": "xAmzTargetAmazonSsmCreateOpsMetadata.createOpsMetadata",
+      "description": "If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify information about the new application, including the application type."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreatePatchBaseline.createPatchBaseline",
+      "name": "xAmzTargetAmazonSsmCreatePatchBaseline.createPatchBaseline",
+      "description": "<p>Creates a patch baseline.</p> <note> <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <a>PatchFilter</a>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmCreateResourceDataSync.createResourceDataSync",
+      "name": "xAmzTargetAmazonSsmCreateResourceDataSync.createResourceDataSync",
+      "description": "<p>A resource data sync helps you view data from multiple sources in a single location. Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize Inventory data from multiple Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html\">Configuring resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational work items (OpsItems) and operational data (OpsData) from multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple Amazon Web Services accounts and Amazon Web Services Regions or <code>EntireOrganization</code> by using Organizations. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html\">Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data. To check the status of a sync, use the <a>ListResourceDataSync</a>.</p> <note> <p>By default, data isn't encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteActivation.deleteActivation",
+      "name": "xAmzTargetAmazonSsmDeleteActivation.deleteActivation",
+      "description": "Deletes an activation. You aren't required to delete an activation. If you delete an activation, you can no longer use it to register additional managed nodes. Deleting an activation doesn't de-register managed nodes. You must manually de-register managed nodes."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteAssociation.deleteAssociation",
+      "name": "xAmzTargetAmazonSsmDeleteAssociation.deleteAssociation",
+      "description": "<p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified managed node. If you created the association by using the <code>Targets</code> parameter, then you must delete the association by using the association ID.</p> <p>When you disassociate a document from a managed node, it doesn't change the configuration of the node. To change the configuration state of a managed node after you disassociate a document, you must create a new document with the desired configuration and associate it with the node.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteDocument.deleteDocument",
+      "name": "xAmzTargetAmazonSsmDeleteDocument.deleteDocument",
+      "description": "<p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the document.</p> <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all managed nodes that are associated with the document.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteInventory.deleteInventory",
+      "name": "xAmzTargetAmazonSsmDeleteInventory.deleteInventory",
+      "description": "Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteMaintenanceWindow.deleteMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmDeleteMaintenanceWindow.deleteMaintenanceWindow",
+      "description": "Deletes a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteOpsMetadata.deleteOpsMetadata",
+      "name": "xAmzTargetAmazonSsmDeleteOpsMetadata.deleteOpsMetadata",
+      "description": "Delete OpsMetadata related to an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteParameter.deleteParameter",
+      "name": "xAmzTargetAmazonSsmDeleteParameter.deleteParameter",
+      "description": "Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteParameters.deleteParameters",
+      "name": "xAmzTargetAmazonSsmDeleteParameters.deleteParameters",
+      "description": "Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeletePatchBaseline.deletePatchBaseline",
+      "name": "xAmzTargetAmazonSsmDeletePatchBaseline.deletePatchBaseline",
+      "description": "Deletes a patch baseline."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteResourceDataSync.deleteResourceDataSync",
+      "name": "xAmzTargetAmazonSsmDeleteResourceDataSync.deleteResourceDataSync",
+      "description": "Deletes a resource data sync configuration. After the configuration is deleted, changes to data on managed nodes are no longer synced to or from the target. Deleting a sync configuration doesn't delete data."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeleteResourcePolicy.deleteResourcePolicy",
+      "name": "xAmzTargetAmazonSsmDeleteResourcePolicy.deleteResourcePolicy",
+      "description": "Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeregisterManagedInstance.deregisterManagedInstance",
+      "name": "xAmzTargetAmazonSsmDeregisterManagedInstance.deregisterManagedInstance",
+      "description": "Removes the server or virtual machine from the list of registered servers. You can reregister the node again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeregisterPatchBaselineForPatchGroup.deregisterPatchBaselineForPatchGroup",
+      "name": "xAmzTargetAmazonSsmDeregisterPatchBaselineForPatchGroup.deregisterPatchBaselineForPatchGroup",
+      "description": "Removes a patch group from a patch baseline."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeregisterTargetFromMaintenanceWindow.deregisterTargetFromMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmDeregisterTargetFromMaintenanceWindow.deregisterTargetFromMaintenanceWindow",
+      "description": "Removes a target from a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDeregisterTaskFromMaintenanceWindow.deregisterTaskFromMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmDeregisterTaskFromMaintenanceWindow.deregisterTaskFromMaintenanceWindow",
+      "description": "Removes a task from a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeActivations.describeActivations",
+      "name": "xAmzTargetAmazonSsmDescribeActivations.describeActivations",
+      "description": "Describes details about the activation, such as the date and time the activation was created, its expiration date, the Identity and Access Management (IAM) role assigned to the managed nodes in the activation, and the number of nodes registered by using this activation."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAssociation.describeAssociation",
+      "name": "xAmzTargetAmazonSsmDescribeAssociation.describeAssociation",
+      "description": "Describes the association for the specified target or managed node. If you created the association by using the <code>Targets</code> parameter, then you must retrieve the association by using the association ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAssociationExecutions.describeAssociationExecutions",
+      "name": "xAmzTargetAmazonSsmDescribeAssociationExecutions.describeAssociationExecutions",
+      "description": "Views all executions for a specific association ID. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAssociationExecutionTargets.describeAssociationExecutionTargets",
+      "name": "xAmzTargetAmazonSsmDescribeAssociationExecutionTargets.describeAssociationExecutionTargets",
+      "description": "Views information about a specific execution of a specific association."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAutomationExecutions.describeAutomationExecutions",
+      "name": "xAmzTargetAmazonSsmDescribeAutomationExecutions.describeAutomationExecutions",
+      "description": "Provides details about all active and terminated Automation executions."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAutomationStepExecutions.describeAutomationStepExecutions",
+      "name": "xAmzTargetAmazonSsmDescribeAutomationStepExecutions.describeAutomationStepExecutions",
+      "description": "Information about all active and terminated step executions in an Automation workflow."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeAvailablePatches.describeAvailablePatches",
+      "name": "xAmzTargetAmazonSsmDescribeAvailablePatches.describeAvailablePatches",
+      "description": "Lists all patches eligible to be included in a patch baseline."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeDocument.describeDocument",
+      "name": "xAmzTargetAmazonSsmDescribeDocument.describeDocument",
+      "description": "Describes the specified Amazon Web Services Systems Manager document (SSM document)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeDocumentPermission.describeDocumentPermission",
+      "name": "xAmzTargetAmazonSsmDescribeDocumentPermission.describeDocumentPermission",
+      "description": "Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). "
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeEffectiveInstanceAssociations.describeEffectiveInstanceAssociations",
+      "name": "xAmzTargetAmazonSsmDescribeEffectiveInstanceAssociations.describeEffectiveInstanceAssociations",
+      "description": "All associations for the managed node(s)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeEffectivePatchesForPatchBaseline.describeEffectivePatchesForPatchBaseline",
+      "name": "xAmzTargetAmazonSsmDescribeEffectivePatchesForPatchBaseline.describeEffectivePatchesForPatchBaseline",
+      "description": "Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Applies to patch baselines for Windows only."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInstanceAssociationsStatus.describeInstanceAssociationsStatus",
+      "name": "xAmzTargetAmazonSsmDescribeInstanceAssociationsStatus.describeInstanceAssociationsStatus",
+      "description": "The status of the associations for the managed node(s)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInstanceInformation.describeInstanceInformation",
+      "name": "xAmzTargetAmazonSsmDescribeInstanceInformation.describeInstanceInformation",
+      "description": "<p>Describes one or more of your managed nodes, including information about the operating system platform, the version of SSM Agent installed on the managed node, node status, and so on.</p> <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node that you don't own, you receive an error.</p> <note> <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInstancePatches.describeInstancePatches",
+      "name": "xAmzTargetAmazonSsmDescribeInstancePatches.describeInstancePatches",
+      "description": "Retrieves information about the patches on the specified managed node and their state relative to the patch baseline being used for the node."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInstancePatchStates.describeInstancePatchStates",
+      "name": "xAmzTargetAmazonSsmDescribeInstancePatchStates.describeInstancePatchStates",
+      "description": "Retrieves the high-level patch state of one or more managed nodes."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInstancePatchStatesForPatchGroup.describeInstancePatchStatesForPatchGroup",
+      "name": "xAmzTargetAmazonSsmDescribeInstancePatchStatesForPatchGroup.describeInstancePatchStatesForPatchGroup",
+      "description": "Retrieves the high-level patch state for the managed nodes in the specified patch group."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeInventoryDeletions.describeInventoryDeletions",
+      "name": "xAmzTargetAmazonSsmDescribeInventoryDeletions.describeInventoryDeletions",
+      "description": "Describes a specific delete inventory operation."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutions.describeMaintenanceWindowExecutions",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutions.describeMaintenanceWindowExecutions",
+      "description": "Lists the executions of a maintenance window. This includes information about when the maintenance window was scheduled to be active, and information about tasks registered and run with the maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutionTaskInvocations.describeMaintenanceWindowExecutionTaskInvocations",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutionTaskInvocations.describeMaintenanceWindowExecutionTaskInvocations",
+      "description": "Retrieves the individual task executions (one per target) for a particular task run as part of a maintenance window execution."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutionTasks.describeMaintenanceWindowExecutionTasks",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowExecutionTasks.describeMaintenanceWindowExecutionTasks",
+      "description": "For a given maintenance window execution, lists the tasks that were run."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindows.describeMaintenanceWindows",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindows.describeMaintenanceWindows",
+      "description": "Retrieves the maintenance windows in an Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowSchedule.describeMaintenanceWindowSchedule",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowSchedule.describeMaintenanceWindowSchedule",
+      "description": "Retrieves information about upcoming executions of a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowsForTarget.describeMaintenanceWindowsForTarget",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowsForTarget.describeMaintenanceWindowsForTarget",
+      "description": "Retrieves information about the maintenance window targets or tasks that a managed node is associated with."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowTargets.describeMaintenanceWindowTargets",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowTargets.describeMaintenanceWindowTargets",
+      "description": "Lists the targets registered with the maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeMaintenanceWindowTasks.describeMaintenanceWindowTasks",
+      "name": "xAmzTargetAmazonSsmDescribeMaintenanceWindowTasks.describeMaintenanceWindowTasks",
+      "description": "<p>Lists the tasks in a maintenance window.</p> <note> <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeOpsItems.describeOpsItems",
+      "name": "xAmzTargetAmazonSsmDescribeOpsItems.describeOpsItems",
+      "description": "<p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeParameters.describeParameters",
+      "name": "xAmzTargetAmazonSsmDescribeParameters.describeParameters",
+      "description": "<p>Get information about a parameter.</p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <important> <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribePatchBaselines.describePatchBaselines",
+      "name": "xAmzTargetAmazonSsmDescribePatchBaselines.describePatchBaselines",
+      "description": "Lists the patch baselines in your Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribePatchGroups.describePatchGroups",
+      "name": "xAmzTargetAmazonSsmDescribePatchGroups.describePatchGroups",
+      "description": "Lists all patch groups that have been registered with patch baselines."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribePatchGroupState.describePatchGroupState",
+      "name": "xAmzTargetAmazonSsmDescribePatchGroupState.describePatchGroupState",
+      "description": "Returns high-level aggregated patch compliance state information for a patch group."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribePatchProperties.describePatchProperties",
+      "name": "xAmzTargetAmazonSsmDescribePatchProperties.describePatchProperties",
+      "description": "<p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The following section lists the properties that can be used in filters for each major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p> </dd> <dt>MACOS</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p> </dd> <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>SUSE</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>UBUNTU</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p> </dd> </dl>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDescribeSessions.describeSessions",
+      "name": "xAmzTargetAmazonSsmDescribeSessions.describeSessions",
+      "description": "Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30 days."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmDisassociateOpsItemRelatedItem.disassociateOpsItemRelatedItem",
+      "name": "xAmzTargetAmazonSsmDisassociateOpsItemRelatedItem.disassociateOpsItemRelatedItem",
+      "description": "Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetAutomationExecution.getAutomationExecution",
+      "name": "xAmzTargetAmazonSsmGetAutomationExecution.getAutomationExecution",
+      "description": "Get detailed information about a particular Automation execution."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetCalendarState.getCalendarState",
+      "name": "xAmzTargetAmazonSsmGetCalendarState.getCalendarState",
+      "description": "<p>Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at that specific time, and returns the next time that the change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code> uses the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the request are closed, the status returned is <code>CLOSED</code>.</p> <p>For more information about Change Calendar, a capability of Amazon Web Services Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html\">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetCommandInvocation.getCommandInvocation",
+      "name": "xAmzTargetAmazonSsmGetCommandInvocation.getCommandInvocation",
+      "description": "<p>Returns detailed information about command execution for an invocation or plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <a>ListCommandInvocations</a>. To get the command execution status across managed nodes, use <a>ListCommands</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetConnectionStatus.getConnectionStatus",
+      "name": "xAmzTargetAmazonSsmGetConnectionStatus.getConnectionStatus",
+      "description": "Retrieves the Session Manager connection status for a managed node to determine whether it is running and ready to receive Session Manager connections."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetDefaultPatchBaseline.getDefaultPatchBaseline",
+      "name": "xAmzTargetAmazonSsmGetDefaultPatchBaseline.getDefaultPatchBaseline",
+      "description": "<p>Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p> <p>If you don't specify an operating system value, the default patch baseline for Windows is returned.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetDeployablePatchSnapshotForInstance.getDeployablePatchSnapshotForInstance",
+      "name": "xAmzTargetAmazonSsmGetDeployablePatchSnapshotForInstance.getDeployablePatchSnapshotForInstance",
+      "description": "<p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p> <note> <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command. For example, run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code> document.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetDocument.getDocument",
+      "name": "xAmzTargetAmazonSsmGetDocument.getDocument",
+      "description": "Gets the contents of the specified Amazon Web Services Systems Manager document (SSM document)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetInventory.getInventory",
+      "name": "xAmzTargetAmazonSsmGetInventory.getInventory",
+      "description": "Query inventory information. This includes managed node status, such as <code>Stopped</code> or <code>Terminated</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetInventorySchema.getInventorySchema",
+      "name": "xAmzTargetAmazonSsmGetInventorySchema.getInventorySchema",
+      "description": "Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetMaintenanceWindow.getMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmGetMaintenanceWindow.getMaintenanceWindow",
+      "description": "Retrieves a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetMaintenanceWindowExecution.getMaintenanceWindowExecution",
+      "name": "xAmzTargetAmazonSsmGetMaintenanceWindowExecution.getMaintenanceWindowExecution",
+      "description": "Retrieves details about a specific a maintenance window execution."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetMaintenanceWindowExecutionTask.getMaintenanceWindowExecutionTask",
+      "name": "xAmzTargetAmazonSsmGetMaintenanceWindowExecutionTask.getMaintenanceWindowExecutionTask",
+      "description": "Retrieves the details about a specific task run as part of a maintenance window execution."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetMaintenanceWindowExecutionTaskInvocation.getMaintenanceWindowExecutionTaskInvocation",
+      "name": "xAmzTargetAmazonSsmGetMaintenanceWindowExecutionTaskInvocation.getMaintenanceWindowExecutionTaskInvocation",
+      "description": "Retrieves information about a specific task running on a specific target."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetMaintenanceWindowTask.getMaintenanceWindowTask",
+      "name": "xAmzTargetAmazonSsmGetMaintenanceWindowTask.getMaintenanceWindowTask",
+      "description": "<p>Retrieves the details of a maintenance window task.</p> <note> <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p> </note> <p>To retrieve a list of tasks in a maintenance window, instead use the <a>DescribeMaintenanceWindowTasks</a> command.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetOpsItem.getOpsItem",
+      "name": "xAmzTargetAmazonSsmGetOpsItem.getOpsItem",
+      "description": "<p>Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management (IAM) to view information about an OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetOpsMetadata.getOpsMetadata",
+      "name": "xAmzTargetAmazonSsmGetOpsMetadata.getOpsMetadata",
+      "description": "View operational metadata related to an application in Application Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetOpsSummary.getOpsSummary",
+      "name": "xAmzTargetAmazonSsmGetOpsSummary.getOpsSummary",
+      "description": "View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetParameter.getParameter",
+      "name": "xAmzTargetAmazonSsmGetParameter.getParameter",
+      "description": "<p>Get information about a single parameter by specifying the parameter name.</p> <note> <p>To get information about more than one parameter at a time, use the <a>GetParameters</a> operation.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetParameterHistory.getParameterHistory",
+      "name": "xAmzTargetAmazonSsmGetParameterHistory.getParameterHistory",
+      "description": "<p>Retrieves the history of all changes to a parameter.</p> <important> <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetParameters.getParameters",
+      "name": "xAmzTargetAmazonSsmGetParameters.getParameters",
+      "description": "<p>Get information about one or more parameters by specifying multiple parameter names.</p> <note> <p>To get information about a single parameter, you can use the <a>GetParameter</a> operation instead.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetParametersByPath.getParametersByPath",
+      "name": "xAmzTargetAmazonSsmGetParametersByPath.getParametersByPath",
+      "description": "<p>Retrieve information about one or more parameters in a specific hierarchy. </p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetPatchBaseline.getPatchBaseline",
+      "name": "xAmzTargetAmazonSsmGetPatchBaseline.getPatchBaseline",
+      "description": "Retrieves information about a patch baseline."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetPatchBaselineForPatchGroup.getPatchBaselineForPatchGroup",
+      "name": "xAmzTargetAmazonSsmGetPatchBaselineForPatchGroup.getPatchBaselineForPatchGroup",
+      "description": "Retrieves the patch baseline that should be used for the specified patch group."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetResourcePolicies.getResourcePolicies",
+      "name": "xAmzTargetAmazonSsmGetResourcePolicies.getResourcePolicies",
+      "description": "Returns an array of the <code>Policy</code> object."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmGetServiceSetting.getServiceSetting",
+      "name": "xAmzTargetAmazonSsmGetServiceSetting.getServiceSetting",
+      "description": "<p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of <code>false</code>. This means the user can't use this feature unless they change the setting to <code>true</code> and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to change the default setting. Or use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the Amazon Web Services service team.</p> <p>Query the current service setting for the Amazon Web Services account. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmLabelParameterVersion.labelParameterVersion",
+      "name": "xAmzTargetAmazonSsmLabelParameterVersion.labelParameterVersion",
+      "description": "<p>A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and increments the version number by one. A label can help you remember the purpose of a parameter when there are multiple versions. </p> <p>Parameter labels have the following requirements and restrictions.</p> <ul> <li> <p>A version of a parameter can have a maximum of 10 labels.</p> </li> <li> <p>You can't attach the same label to different versions of the same parameter. For example, if version 1 has the label Production, then you can't attach Production to version 2.</p> </li> <li> <p>You can move a label from one version of a parameter to another.</p> </li> <li> <p>You can't create a label when you create a new parameter. You must attach a label to a specific version of a parameter.</p> </li> <li> <p>If you no longer want to use a parameter label, then you can either delete it or move it to a different version of a parameter.</p> </li> <li> <p>A label can have a maximum of 100 characters.</p> </li> <li> <p>Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels can't begin with a number, \"<code>aws</code>\" or \"<code>ssm</code>\" (not case sensitive). If a label fails to meet these requirements, then the label isn't associated with a parameter and the system displays it in the list of InvalidLabels.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListAssociations.listAssociations",
+      "name": "xAmzTargetAmazonSsmListAssociations.listAssociations",
+      "description": "Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results to a specific State Manager association document or managed node by specifying a filter. State Manager is a capability of Amazon Web Services Systems Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListAssociationVersions.listAssociationVersions",
+      "name": "xAmzTargetAmazonSsmListAssociationVersions.listAssociationVersions",
+      "description": "Retrieves all versions of an association for a specific association ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListCommandInvocations.listCommandInvocations",
+      "name": "xAmzTargetAmazonSsmListCommandInvocations.listCommandInvocations",
+      "description": "An invocation is copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. <code>ListCommandInvocations</code> provide status about command execution."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListCommands.listCommands",
+      "name": "xAmzTargetAmazonSsmListCommands.listCommands",
+      "description": "Lists the commands requested by users of the Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListComplianceItems.listComplianceItems",
+      "name": "xAmzTargetAmazonSsmListComplianceItems.listComplianceItems",
+      "description": "For a specified resource ID, this API operation returns a list of compliance statuses for different resource types. Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the filter."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListComplianceSummaries.listComplianceSummaries",
+      "name": "xAmzTargetAmazonSsmListComplianceSummaries.listComplianceSummaries",
+      "description": "Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListDocumentMetadataHistory.listDocumentMetadataHistory",
+      "name": "xAmzTargetAmazonSsmListDocumentMetadataHistory.listDocumentMetadataHistory",
+      "description": "Information about approval reviews for a version of a change template in Change Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListDocuments.listDocuments",
+      "name": "xAmzTargetAmazonSsmListDocuments.listDocuments",
+      "description": "Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results of this request by using a filter."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListDocumentVersions.listDocumentVersions",
+      "name": "xAmzTargetAmazonSsmListDocumentVersions.listDocumentVersions",
+      "description": "List all versions for a document."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListInventoryEntries.listInventoryEntries",
+      "name": "xAmzTargetAmazonSsmListInventoryEntries.listInventoryEntries",
+      "description": "A list of inventory items returned by the request."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListOpsItemEvents.listOpsItemEvents",
+      "name": "xAmzTargetAmazonSsmListOpsItemEvents.listOpsItemEvents",
+      "description": "Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can limit the results to events associated with specific OpsItems by specifying a filter."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListOpsItemRelatedItems.listOpsItemRelatedItems",
+      "name": "xAmzTargetAmazonSsmListOpsItemRelatedItems.listOpsItemRelatedItems",
+      "description": "Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListOpsMetadata.listOpsMetadata",
+      "name": "xAmzTargetAmazonSsmListOpsMetadata.listOpsMetadata",
+      "description": "Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or blobs."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListResourceComplianceSummaries.listResourceComplianceSummaries",
+      "name": "xAmzTargetAmazonSsmListResourceComplianceSummaries.listResourceComplianceSummaries",
+      "description": "Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListResourceDataSync.listResourceDataSync",
+      "name": "xAmzTargetAmazonSsmListResourceDataSync.listResourceDataSync",
+      "description": "<p>Lists your resource data sync configurations. Includes information about the last time a sync attempted to start, the last sync status, and the last time a sync successfully completed.</p> <p>The number of sync configurations might be too large to return using a single call to <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmListTagsForResource.listTagsForResource",
+      "name": "xAmzTargetAmazonSsmListTagsForResource.listTagsForResource",
+      "description": "<p>Returns a list of the tags assigned to the specified resource.</p> <p>For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmModifyDocumentPermission.modifyDocumentPermission",
+      "name": "xAmzTargetAmazonSsmModifyDocumentPermission.modifyDocumentPermission",
+      "description": "Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmPutComplianceItems.putComplianceItems",
+      "name": "xAmzTargetAmazonSsmPutComplianceItems.putComplianceItems",
+      "description": "<p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p> </li> <li> <p>Id: The patch, association, or custom compliance ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch severity. For example, <code>Critical</code>.</p> </li> <li> <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li> <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li> <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name of a patch group.</p> </li> <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmPutInventory.putInventory",
+      "name": "xAmzTargetAmazonSsmPutInventory.putInventory",
+      "description": "Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item, if it doesn't already exist, or updates an inventory item, if it does exist."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmPutParameter.putParameter",
+      "name": "xAmzTargetAmazonSsmPutParameter.putParameter",
+      "description": "Add a parameter to the system."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmPutResourcePolicy.putResourcePolicy",
+      "name": "xAmzTargetAmazonSsmPutResourcePolicy.putResourcePolicy",
+      "description": "Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems)."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmRegisterDefaultPatchBaseline.registerDefaultPatchBaseline",
+      "name": "xAmzTargetAmazonSsmRegisterDefaultPatchBaseline.registerDefaultPatchBaseline",
+      "description": "<p>Defines the default patch baseline for the relevant operating system.</p> <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of <code>pb-0574b43a65ea646ed</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmRegisterPatchBaselineForPatchGroup.registerPatchBaselineForPatchGroup",
+      "name": "xAmzTargetAmazonSsmRegisterPatchBaselineForPatchGroup.registerPatchBaselineForPatchGroup",
+      "description": "Registers a patch baseline for a patch group."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmRegisterTargetWithMaintenanceWindow.registerTargetWithMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmRegisterTargetWithMaintenanceWindow.registerTargetWithMaintenanceWindow",
+      "description": "Registers a target with a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmRegisterTaskWithMaintenanceWindow.registerTaskWithMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmRegisterTaskWithMaintenanceWindow.registerTaskWithMaintenanceWindow",
+      "description": "Adds a new task to a maintenance window."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmRemoveTagsFromResource.removeTagsFromResource",
+      "name": "xAmzTargetAmazonSsmRemoveTagsFromResource.removeTagsFromResource",
+      "description": "Removes tag keys from the specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmResetServiceSetting.resetServiceSetting",
+      "name": "xAmzTargetAmazonSsmResetServiceSetting.resetServiceSetting",
+      "description": "<p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of \"false\". This means the user can't use this feature unless they change the setting to \"true\" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the current value. Use the <a>UpdateServiceSetting</a> API operation to change the default setting. </p> <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmResumeSession.resumeSession",
+      "name": "xAmzTargetAmazonSsmResumeSession.resumeSession",
+      "description": "<p>Reconnects a session to a managed node after it has been disconnected. Connections can be resumed for disconnected sessions, but not terminated sessions.</p> <note> <p>This command is primarily for use by client machines to automatically reconnect during intermittent network issues. It isn't intended for any other use.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmSendAutomationSignal.sendAutomationSignal",
+      "name": "xAmzTargetAmazonSsmSendAutomationSignal.sendAutomationSignal",
+      "description": "Sends a signal to an Automation execution to change the current behavior or status of the execution. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmSendCommand.sendCommand",
+      "name": "xAmzTargetAmazonSsmSendCommand.sendCommand",
+      "description": "Runs commands on one or more managed nodes."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmStartAssociationsOnce.startAssociationsOnce",
+      "name": "xAmzTargetAmazonSsmStartAssociationsOnce.startAssociationsOnce",
+      "description": "Runs an association immediately and only one time. This operation can be helpful when troubleshooting associations."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmStartAutomationExecution.startAutomationExecution",
+      "name": "xAmzTargetAmazonSsmStartAutomationExecution.startAutomationExecution",
+      "description": "Initiates execution of an Automation runbook."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmStartChangeRequestExecution.startChangeRequestExecution",
+      "name": "xAmzTargetAmazonSsmStartChangeRequestExecution.startChangeRequestExecution",
+      "description": "Creates a change request for Change Manager. The Automation runbooks specified in the change request run only after all required approvals for the change request have been received."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmStartSession.startSession",
+      "name": "xAmzTargetAmazonSsmStartSession.startSession",
+      "description": "<p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.</p> <note> <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to be installed on the client machine making the call. For information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html\">Install the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools for PowerShell on Windows local machines.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmStopAutomationExecution.stopAutomationExecution",
+      "name": "xAmzTargetAmazonSsmStopAutomationExecution.stopAutomationExecution",
+      "description": "Stop an Automation that is currently running."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmTerminateSession.terminateSession",
+      "name": "xAmzTargetAmazonSsmTerminateSession.terminateSession",
+      "description": "Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the managed node. A terminated session can't be resumed."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUnlabelParameterVersion.unlabelParameterVersion",
+      "name": "xAmzTargetAmazonSsmUnlabelParameterVersion.unlabelParameterVersion",
+      "description": "Remove a label or labels from a parameter."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateAssociation.updateAssociation",
+      "name": "xAmzTargetAmazonSsmUpdateAssociation.updateAssociation",
+      "description": "<p>Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system removes all optional parameters from the request and overwrites the association with null values for those parameters. This is by design. You must specify all optional parameters in the call, even if you are not changing the parameters. This includes the <code>Name</code> parameter. Before calling this API action, we recommend that you call the <a>DescribeAssociation</a> API operation and make a note of all optional parameters required for your <code>UpdateAssociation</code> call.</p> <p>In order to call this API operation, a user, group, or role must be granted permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission to call <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p> <important> <p>When you update an association, the association immediately runs against the specified targets. You can add the <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the next schedule run.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateAssociationStatus.updateAssociationStatus",
+      "name": "xAmzTargetAmazonSsmUpdateAssociationStatus.updateAssociationStatus",
+      "description": "<p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified managed node.</p> <p> <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to report status updates about your associations and is only used for associations created with the <code>InstanceId</code> legacy parameter.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateDocument.updateDocument",
+      "name": "xAmzTargetAmazonSsmUpdateDocument.updateDocument",
+      "description": "Updates one or more values for an SSM document."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateDocumentDefaultVersion.updateDocumentDefaultVersion",
+      "name": "xAmzTargetAmazonSsmUpdateDocumentDefaultVersion.updateDocumentDefaultVersion",
+      "description": "<p>Set the default version of a document. </p> <note> <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateDocumentMetadata.updateDocumentMetadata",
+      "name": "xAmzTargetAmazonSsmUpdateDocumentMetadata.updateDocumentMetadata",
+      "description": "Updates information related to approval reviews for a specific version of a change template in Change Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateMaintenanceWindow.updateMaintenanceWindow",
+      "name": "xAmzTargetAmazonSsmUpdateMaintenanceWindow.updateMaintenanceWindow",
+      "description": "<p>Updates an existing maintenance window. Only specified parameters are modified.</p> <note> <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateMaintenanceWindowTarget.updateMaintenanceWindowTarget",
+      "name": "xAmzTargetAmazonSsmUpdateMaintenanceWindowTarget.updateMaintenanceWindowTarget",
+      "description": "<p>Modifies the target of an existing maintenance window. You can change the following:</p> <ul> <li> <p>Name</p> </li> <li> <p>Description</p> </li> <li> <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag target</p> </li> <li> <p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is null, then the corresponding field isn't modified.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateMaintenanceWindowTask.updateMaintenanceWindowTask",
+      "name": "xAmzTargetAmazonSsmUpdateMaintenanceWindowTask.updateMaintenanceWindowTask",
+      "description": "<p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p> <ul> <li> <p> <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task from <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.</p> </li> <li> <p> <code>ServiceRoleArn</code> </p> </li> <li> <p> <code>TaskInvocationParameters</code> </p> </li> <li> <p> <code>Priority</code> </p> </li> <li> <p> <code>MaxConcurrency</code> </p> </li> <li> <p> <code>MaxErrors</code> </p> </li> </ul> <note> <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html\">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </note> <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field isn't modified. If you set <code>Replace</code> to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required for this request. Optional fields that aren't specified are set to null.</p> <important> <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateManagedInstanceRole.updateManagedInstanceRole",
+      "name": "xAmzTargetAmazonSsmUpdateManagedInstanceRole.updateManagedInstanceRole",
+      "description": "Changes the Identity and Access Management (IAM) role that is assigned to the on-premises server, edge device, or virtual machines (VM). IAM roles are first assigned to these hybrid nodes during the activation process. For more information, see <a>CreateActivation</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateOpsItem.updateOpsItem",
+      "name": "xAmzTargetAmazonSsmUpdateOpsItem.updateOpsItem",
+      "description": "<p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateOpsMetadata.updateOpsMetadata",
+      "name": "xAmzTargetAmazonSsmUpdateOpsMetadata.updateOpsMetadata",
+      "description": "Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager."
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdatePatchBaseline.updatePatchBaseline",
+      "name": "xAmzTargetAmazonSsmUpdatePatchBaseline.updatePatchBaseline",
+      "description": "<p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p> <note> <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <a>PatchFilter</a>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateResourceDataSync.updateResourceDataSync",
+      "name": "xAmzTargetAmazonSsmUpdateResourceDataSync.updateResourceDataSync",
+      "description": "<p>Update a resource data sync. After you create a resource data sync for a Region, you can't change the account options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't edit that sync later and choose the <code>Include all accounts from my Organizations configuration</code> option. Instead, you must delete the first resource data sync, and create a new one.</p> <note> <p>This API operation only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ssm_ssm.xAmzTargetAmazonSsmUpdateServiceSetting.updateServiceSetting",
+      "name": "xAmzTargetAmazonSsmUpdateServiceSetting.updateServiceSetting",
+      "description": "<p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of \"false\". This means the user can't use this feature unless they change the setting to \"true\" and intentionally opt in for a paid feature.</p> <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the current value. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the Amazon Web Services service team.</p> <p>Update the service setting for the account. </p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

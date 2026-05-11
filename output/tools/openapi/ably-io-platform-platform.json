@@ -1,0 +1,127 @@
+{
+  "fetchedAt": "2026-04-30T15:44:51.534Z",
+  "status": "ok",
+  "count": 24,
+  "tools": [
+    {
+      "id": "openapi_ably_io_platform_platform.authentication.requestAccessToken",
+      "name": "authentication.requestAccessToken",
+      "description": "This is the means by which clients obtain access tokens to use the service. You can see how to construct an Ably TokenRequest in the [Ably TokenRequest spec](https://www.ably.io/documentation/rest-api/token-request-spec) documentation, although we recommend you use an Ably SDK rather to create a TokenRequest, as the construction of a TokenRequest is complex. The resulting token response object contains the token properties as defined in Ably TokenRequest spec. Authentication is not required if using a Signed TokenRequest."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.history.getMessagesByChannel",
+      "name": "history.getMessagesByChannel",
+      "description": "Get message history for a channel"
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.history.getPresenceHistoryOfChannel",
+      "name": "history.getPresenceHistoryOfChannel",
+      "description": "Get presence on a channel"
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.publishing.publishMessagesToChannel",
+      "name": "publishing.publishMessagesToChannel",
+      "description": "Publish a message to the specified channel"
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.deletePushDeviceDetails",
+      "name": "push.deletePushDeviceDetails",
+      "description": "Delete a device details object."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.getChannelsWithPushSubscribers",
+      "name": "push.getChannelsWithPushSubscribers",
+      "description": "Returns a paginated response of channel names."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.getPushDeviceDetails",
+      "name": "push.getPushDeviceDetails",
+      "description": "Get the full details of a device."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.getPushSubscriptionsOnChannels",
+      "name": "push.getPushSubscriptionsOnChannels",
+      "description": "Get a list of push notification subscriptions to channels."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.getRegisteredPushDevices",
+      "name": "push.getRegisteredPushDevices",
+      "description": "List of device details of devices registed for push notifications."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.patchPushDeviceDetails",
+      "name": "push.patchPushDeviceDetails",
+      "description": "Specific attributes of an existing registration can be updated. Only clientId, metadata and push.recipient are mutable."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.publishPushNotificationToDevices",
+      "name": "push.publishPushNotificationToDevices",
+      "description": "A convenience endpoint to deliver a push notification payload to a single device or set of devices identified by their client identifier."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.putPushDeviceDetails",
+      "name": "push.putPushDeviceDetails",
+      "description": "Device registrations can be upserted (the existing registration is replaced entirely) with a PUT operation. Only clientId, metadata and push.recipient are mutable."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.registerPushDevice",
+      "name": "push.registerPushDevice",
+      "description": "Register a device’s details, including the information necessary to deliver push notifications to it. Requires \"push-admin\" capability."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.subscribePushDeviceToChannel",
+      "name": "push.subscribePushDeviceToChannel",
+      "description": "Subscribe either a single device or all devices associated with a client ID to receive push notifications from messages sent to a channel."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.unregisterAllPushDevices",
+      "name": "push.unregisterAllPushDevices",
+      "description": "Unregisters devices. All their subscriptions for receiving push notifications through channels will also be deleted."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.unregisterPushDevice",
+      "name": "push.unregisterPushDevice",
+      "description": "Unregisters a single device by its device ID. All its subscriptions for receiving push notifications through channels will also be deleted."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.push.updatePushDeviceDetails",
+      "name": "push.updatePushDeviceDetails",
+      "description": "Gets an updated device details object."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.stats.getStats",
+      "name": "stats.getStats",
+      "description": "The Ably system can be queried to obtain usage statistics for a given application, and results are provided aggregated across all channels in use in the application in the specified period. Stats may be used to track usage against account quotas."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.stats.getTime",
+      "name": "stats.getTime",
+      "description": "This returns the service time in milliseconds since the epoch."
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.status.getMetadataOfAllChannels",
+      "name": "status.getMetadataOfAllChannels",
+      "description": "Enumerate all active channels of the application"
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.status.getMetadataOfChannel",
+      "name": "status.getMetadataOfChannel",
+      "description": "Get metadata of a channel"
+    },
+    {
+      "id": "openapi_ably_io_platform_platform.status.getPresenceOfChannel",
+      "name": "status.getPresenceOfChannel",
+      "description": "Get presence on a channel"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

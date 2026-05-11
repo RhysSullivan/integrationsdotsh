@@ -1,0 +1,212 @@
+{
+  "fetchedAt": "2026-04-30T15:22:14.499Z",
+  "status": "ok",
+  "count": 41,
+  "tools": [
+    {
+      "id": "openapi_fire_com.accounts.addAccount",
+      "name": "accounts.addAccount",
+      "description": "Creates a new fire.com account.\n\n**Please note there is a charge associated with creating a new account.**\n"
+    },
+    {
+      "id": "openapi_fire_com.accounts.getAccountById",
+      "name": "accounts.getAccountById",
+      "description": "You can retrieve the details of a fire.com Account by its `ican`."
+    },
+    {
+      "id": "openapi_fire_com.accounts.getAccounts",
+      "name": "accounts.getAccounts",
+      "description": "Returns all your fire.com Accounts. Ordered by Alias ascending. Can be paginated."
+    },
+    {
+      "id": "openapi_fire_com.api.createApiApplication",
+      "name": "api.createApiApplication",
+      "description": "Create a new API Application with specified permissions"
+    },
+    {
+      "id": "openapi_fire_com.authentication.authenticate",
+      "name": "authentication.authenticate",
+      "description": "Access to the API is by Bearer Tokens. The process is somewhat similar to OAuth2.0, but with some changes to improve security.\n\n  1. You must first log into the firework online application and create a new Application in the Profile > API page. (You will need your PIN digits and 2-Factor Authentication device).\n  \n  2. Give your application a Name and select the scope/permissions you need the application to have (more on Scopes below).\n  \n  3. You will be provided with three pieces of information - the App Refresh Token, Client ID and Client Key. You need to take note of the Client Key when it is displayed - it will not be shown again.\n  \n  \n  You now use these pieces of data to retrieve a short-term Access Token which you can use to access the API. The Access Token expires within a relatively short time, so even if it is compromised, the attacker will not have long to use it. The Client Key is the most important piece of information to keep secret. This should only ever be stored on a backend server, and never in a front end client or mobile app.\n\n\n  **If you ever accidentally reveal the Client Key (or accidentally commit it to Github for instance) it is vital that you log into firework online and delete/recreate the App Tokens as soon as possible. Anyone who has these three pieces of data can access the API to view your data and set up payments from your account (depending on the scope of the tokens).**\n  \n  \n  Once you have the access token, pass it as a header for every call, like so:\n\n  `Authorization: Bearer $ACCESS_TOKEN`\n\n  Whenever it expires, create a new nonce and get a new access token again.\n"
+    },
+    {
+      "id": "openapi_fire_com.cards.blockCard",
+      "name": "cards.blockCard",
+      "description": "Updates status of an existing card to block which prevents any transactions being carried out with that card."
+    },
+    {
+      "id": "openapi_fire_com.cards.createNewCard",
+      "name": "cards.createNewCard",
+      "description": "You can create multiple debit cards which can be linked to your fire.com accounts."
+    },
+    {
+      "id": "openapi_fire_com.cards.getListofCards",
+      "name": "cards.getListofCards",
+      "description": "Returns a list of cards related to your fire.com account."
+    },
+    {
+      "id": "openapi_fire_com.cards.getListofCardTransactions",
+      "name": "cards.getListofCardTransactions",
+      "description": "Returns a list of cards transactions related to your fire.com card."
+    },
+    {
+      "id": "openapi_fire_com.cards.unblockCard",
+      "name": "cards.unblockCard",
+      "description": "Updates status of an existing card to unblock which means that transactions can be carried out with that card."
+    },
+    {
+      "id": "openapi_fire_com.directDebits.activateMandate",
+      "name": "directDebits.activateMandate",
+      "description": "This endpoint can only be used to activate a direct debit mandate when it is in the status REJECT_REQUESTED (even if the account has direct debits disabled). This action will also enable the account for direct debits if it was previously set to be disabled.\nThe permision needed to access this endpoint is PERM_BUSINESS_POST_MANDATE_ACTIVATE\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.cancelMandateByUuid",
+      "name": "directDebits.cancelMandateByUuid",
+      "description": "This endpoint allows you to cancel a direct debit mandate.\nThe permision needed to access this endpoint is PERM_BUSINESS_POST_MANDATE_CANCEL\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.getDirectDebitByUuid",
+      "name": "directDebits.getDirectDebitByUuid",
+      "description": "Retrieve all details of a single direct debit collection/payment, whether successful or not.\nThe permision needed to access this endpoint is **PERM_BUSINESS_GET_DIRECT_DEBIT**\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.getDirectDebitMandates",
+      "name": "directDebits.getDirectDebitMandates",
+      "description": "The permision needed to access this endpoint is PERM_BUSINESS_GET_MANDATES\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.getDirectDebitsForMandateUuid",
+      "name": "directDebits.getDirectDebitsForMandateUuid",
+      "description": "Retrieve all direct debit payments associated with a direct debit mandate.\nThe permision needed to access this endpoint is PERM_BUSINESS_GET_DIRECT_DEBITS\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.getMandate",
+      "name": "directDebits.getMandate",
+      "description": "Retrieve all details for a direct debit mandate.\nThe permision needed to access this endpoint is PERM_BUSINESS_GET_MANDATE\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.rejectDirectDebit",
+      "name": "directDebits.rejectDirectDebit",
+      "description": "This endpoint allows you to reject a direct debit payment where the status is still set to RECEIVED.\nPermission name PERM_BUSINESS_POST_DIRECT_DEBIT_REJECT\n"
+    },
+    {
+      "id": "openapi_fire_com.directDebits.updateMandateAlias",
+      "name": "directDebits.updateMandateAlias",
+      "description": "Update Direct Debit Mandate Alias\nThe permision needed to access this endpoint is PERM_BUSINESS_PUT_MANDATE\n"
+    },
+    {
+      "id": "openapi_fire_com.openBanking.getListOfAspsps",
+      "name": "openBanking.getListOfAspsps",
+      "description": "Returns all ASPSPs (Account Servicing Payment Service Provider) / banks. The list can be filtered by currency. You will need to enable the `PERM_BUSINESS_GET_ASPSPS` permission to use this endpoint.\n***This endpoint is only required if you intend to host the “Select ASPSP / bank” page yourself.***\n"
+    },
+    {
+      "id": "openapi_fire_com.openBanking.getPaymentDetails",
+      "name": "openBanking.getPaymentDetails",
+      "description": "Returns the details of a specific payment.\n\nAs the customer goes through the process of making the payment the status of the payment will change.\n\n* `AWAITING_AUTHORISATION` -This is the initial status of all your payments.\n* `AUTHORISED` - This is the status that your payment is set to after the customer has authorised the payment with their ASPSP / bank.\n* `AWAITING_MULTI_AUTHORISATION` - Some business accounts such as charities require dual authorisation.\n* `NOT_AUTHORISED` - Either your customer clicked on cancel or the payment was rejected by their ASPSP / bank.\n* `PENDING` - This is the status that your payment is set to after the customer has authorised the payment with their ASPSP / bank but the bank may want to carry out another check before funding the transaction.\n* `PAID` - Funds were received into your fire.com GBP or EUR account from your customer’s ASPSP / bank.\n\n\nYou will need to enable the `PERM_BUSINESS_GET_PAYMENT` permission to use this endpoint.\n"
+    },
+    {
+      "id": "openapi_fire_com.openBanking.newPaymentRequest",
+      "name": "openBanking.newPaymentRequest",
+      "description": "Fire Open Payments is a feature of the fire.com business account that leverages Open Banking to allow your customers to pay you via bank transfer and to reconcile those payments as they are received into your fire.com GBP or EUR account.\n\nTo set up each Fire Open Payment you first need to create a payment request. This contains the details of the payment such as the amount, destination account, description as well as various other specific fields that you want to associate with the payment. The payment request is represented as a URL with a unique code which can then be incorporated into an eCommerce shopping cart as an alternative form of payment. For example, you can put “Pay by Bank” on your website along with “Pay by Card” and “Pay by PayPal”. It can also be distributed by a variety of means such as by email, SMS, WhatsApp, encoded as a QR code, NFC tag, etc.\n\nConsumers confirm the payment details such as the amount are correct, select their bank and authorise the payment. Payments can be made from all major UK banks.\n\nThe funds are settled into your fire.com account, fully reconciled, with your specified fields provided.\n\nThere are two implementation options you can use to display payment pages with Fire Open Payments.\n1. **Hosted Payment Pages:** fire.com hosts the payment pages - this option allows you to re-direct your customer to the hosted fire.com payment pages displaying the payment details confirmation, bank selection, consent and response pages.\n2. **Integrated Payment Pages:** You host the payments page yourself - this option allows you to have control of the UI and UX for displaying the payment details confirmation, bank selection and response pages. Once the response is received, fire.com can re-direct the payer back to your website.\n\n## Hosted Payment Pages Option\n![Image](https://fire.com/docs/images/fop-hosted-flow.png)\n\nThe payer is brought through 5 stages to complete the payment:\n1. **View Payment Details page:** The payer must first be clear on the amount of the payment, who they are paying and the reason for the payment.\n2. **Select Bank / Account Provider page:** The payer then selects their bank. Again this step is offered as part of the fire.com payment UI.\n3. **Consent page:**  The payer must provide consent to the PISP (fire.com) prior to authorising the payment. This is a regulatory requirement, this page must be hosted by fire.com.\n4. **Authenticate and Authorise Payment:** The payer will be redirected to their bank’s online site or mobile banking app. After authenticating, the details of the payment will be displayed, and the payer will authorise the payment.\n5. **Response page:** It is a regulatory requirement that the PISP (fire.com) display the results of the payment and provide the same information that would be provided if the payer had made the payment via their banking application. fire.com must display this page, before optionally redirecting the payer back to your website.\n\nTo implement the hosted Fire Open Payments option you need to do the following:\n1. You can create a new Fire Open Payment request either within Firework Online or via the API.\n2. Create your new API application with the appropriate permissions required in Firework Online, as outlined in the “Authentication” steps. The permissions needed are:\n    - “Create a Payment Request”\n    - “Get Payment Details”\n\n3. Use the Refresh Token, Client ID and Client Key to create an access token as outlined in the “Authentication” steps.\n4. On your website, create a “Pay by Bank” button alongside your other available payment methods, such as Cards and PayPal.\n5. After the user clicks on “Pay by Bank”, you need to create a new Fire Open Payment request as outlined in the “Create a Fire Open Payment” steps. The Create a Fire Open Payment request endpoint returns a unique code for the payment request.\n6. Create a URL using the code returned in this format: `https://payments.fire.com/{code}` and redirect your customer to this page.\n7. fire.com will host all the pages that the customer needs to review and authorise the payment. fire.com will will return the paymentUUID of the successful or failed transaction to the returnUrl that you supplied when creating the Fire Open Payment request. fire.com can also optionally send a “webhook” to your website notifying you of the transaction’s outcome.\n8. Once fire.com responds with the paymentUUID and/or the webhook to your website, you need to call the “Get Payment Details” endpoint to get the details of the transaction. This will let you know whether the transaction was successful or not. You can set up the “Payment Request Payment Authorised” webhook to notify you once the payment is authorised or cancelled.\n9. The funds will be received into your GBP or EUR account. Funding will typically be within 6 business hours.\n\nOnce the code is returned the payment can be viewed and paid by going to the following URL: `https://payments.fire.com/{code}`\n\nThis request creates a new Fire Open Payment Payment. A code is returned that can be shared to your customers as a URL by any channel you wish.\nYou will need to enable the `PERM_BUSINESS_POST_PAYMENT_REQUEST` permission to use this endpoint.\n"
+    },
+    {
+      "id": "openapi_fire_com.payeeBankAccounts.getPayees",
+      "name": "payeeBankAccounts.getPayees",
+      "description": "Returns all your payee bank accounts. \n\nOrdered by payee name ascending. \n\nCan be paginated.\n"
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.addBankTransferBatchPayment",
+      "name": "paymentBatches.addBankTransferBatchPayment",
+      "description": "There are two ways to process bank transfers - by Payee ID (**Mode 1**) or by Payee Account Details (**Mode 2**).\n\n**Mode 1:** Use the payee IDs of existing approved payees set up against your account. These batches can be approved in the normal manner.\n\n**Mode 2:** Use the account details of the payee. In the event that these details correspond to an existing approved payee, the batch can be approved as normal. If the account details are new, a batch of New Payees will automatically be created. This batch will need to be approved before the Payment batch can be approved. These payees will then exist as approved payees for future batches.\n"
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.addInternalTransferBatchPayment",
+      "name": "paymentBatches.addInternalTransferBatchPayment",
+      "description": "Simply specify the source account, destination account, amount and a reference."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.cancelBatchPayment",
+      "name": "paymentBatches.cancelBatchPayment",
+      "description": "Cancels the Batch. You can only cancel a batch before it is submitted for approval (while it is in the OPEN state)."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.createBatchPayment",
+      "name": "paymentBatches.createBatchPayment",
+      "description": "The fire.com API allows businesses to automate payments between their accounts or to third parties across the UK and Europe.\n\nFor added security, the API can only set up the payments in batches. These batches must be approved by an authorised user via the firework mobile app.\n\n\nThe process is as follows:\n\n**1.**Create a new batch\n\n**2.**Add payments to the batch\n\n**3.**Submit the batch for approval\n\nOnce the batch is submitted, the authorised users will receive notifications to their firework mobile apps. They can review the contents of the batch and then approve or reject it. If approved, the batch is then processed. You can avail of enhanced security by using Dual Authorisation to verify payments if you wish. Dual Authorisation can be enabled by you when setting up your API application in firework online.\n\n**Batch Life Cycle Events**\n\nA batch webhook can be specified to receive details of all the payments as they are processed. This webhook receives notifications for every event in the batch lifecycle.\n\nThe following events are triggered during a batch:\n\n**batch.opened:** Contains the details of the batch opened. Checks that the callback URL exists - unless a HTTP 200 response is returned, the callback URL will not be configured.\n\n**batch.item-added:** Details of the item added to the batch\n\n**batch.item-removed:** Details of the item removed from the batch\n\n**batch.cancelled:** Notifies that the batch was cancelled.\n\n**batch.submitted:** Notifes that the batch was submitted\n\n**batch.approved:** Notifies that the batch was approved.\n\n**batch.rejected:** Notifies that the batch was rejected.\n\n**batch.failed:** Notifies that the batch failed - includes the details of the failure (insufficient funds etc)\n\n**batch.completed:** Notifies that the batch completed successfully. Includes a summary.\n\nPush notifications are sent to the firework mobile app for many of these events too - these can be configured from within the app.\n\nThis is the first step in creating a batch payment.\n"
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.deleteBankTransferBatchPayment",
+      "name": "paymentBatches.deleteBankTransferBatchPayment",
+      "description": "Removes a Payment from the Batch (Bank Transfers). You can only remove payments before the batch is submitted for approval (while it is in the OPEN state)."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.deleteInternalTransferBatchPayment",
+      "name": "paymentBatches.deleteInternalTransferBatchPayment",
+      "description": "Removes a Payment from the Batch (Internal Transfer). You can only remove payments before the batch is submitted for approval (while it is in the OPEN state)."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.getBatches",
+      "name": "paymentBatches.getBatches",
+      "description": "Returns the list of batch with the specified types and statuses.\n"
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.getDetailsSingleBatch",
+      "name": "paymentBatches.getDetailsSingleBatch",
+      "description": "Returns the details of the batch specified in the API endpoint - {batchUuid}."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.getItemsBatchBankTransfer",
+      "name": "paymentBatches.getItemsBatchBankTransfer",
+      "description": "Returns a paginated list of items in the specified batch."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.getItemsBatchInternalTrasnfer",
+      "name": "paymentBatches.getItemsBatchInternalTrasnfer",
+      "description": "Returns a paginated list of items in the specified batch."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.getListofApproversForBatch",
+      "name": "paymentBatches.getListofApproversForBatch",
+      "description": "Returns a list of approvers for this batch."
+    },
+    {
+      "id": "openapi_fire_com.paymentBatches.submitBatch",
+      "name": "paymentBatches.submitBatch",
+      "description": "Submits the Batch (for approval in the case of a **BANK_TRANSFER**). If this is an **INTERNAL_TRANSFER** batch, the transfers are immediately queued for processing. If this is a **BANK_TRANSFER** batch, this will trigger requests for approval to the firework mobile apps of authorised users. Once those users approve the batch, it is queued for processing.\n\nYou can only submit a batch while it is in the OPEN state.\n"
+    },
+    {
+      "id": "openapi_fire_com.transactions.getTransactionsByIdv1",
+      "name": "transactions.getTransactionsByIdv1",
+      "description": "Retrieve a list of transactions against an account. Recommended to use the v3 endpoint instead."
+    },
+    {
+      "id": "openapi_fire_com.transactions.getTransactionsByIdv3",
+      "name": "transactions.getTransactionsByIdv3",
+      "description": "Retrieve a list of transactions against an account. Initially, use the optional `limit`, `dateRangeFrom` and `dateRangeTo` query params to limit your query, then use the embedded `next` or `prev` links in the response to get newer or older pages.\n"
+    },
+    {
+      "id": "openapi_fire_com.transactions.getTransactionsFilteredById",
+      "name": "transactions.getTransactionsFilteredById",
+      "description": "Retrieve a filtered list of transactions against an account. Recommended to use the v3 endpoint instead.\n* `dateRangeFrom` - A millisecond epoch time specifying the date range start date.\n* `dateRangeTo` - A millisecond epoch time specifying the date range end date.\n* `searchKeyword` - Search term to filter by from the reference field (`myRef`).\n* `transactionTypes` - One or more of the transaction types above. This field can be repeated multiple times to allow for multiple transaction types.\n* `offset` - The page offset. Defaults to 0. This is the record number that the returned list will start at. E.g. offset = 40 and limit = 20 will return records 40 to 59.\n"
+    },
+    {
+      "id": "openapi_fire_com.users.getUser",
+      "name": "users.getUser",
+      "description": "You can retrieve the details of a specific fire.com user"
+    },
+    {
+      "id": "openapi_fire_com.users.getUsers",
+      "name": "users.getUsers",
+      "description": "You can retrieve the details of all fire.com users on your acount."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

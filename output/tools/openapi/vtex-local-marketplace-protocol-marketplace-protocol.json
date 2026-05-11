@@ -1,0 +1,92 @@
+{
+  "fetchedAt": "2026-04-30T15:26:57.450Z",
+  "status": "ok",
+  "count": 17,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.authorizeDispatchForFulfillmentOrder",
+      "name": "externalMarketplace.authorizeDispatchForFulfillmentOrder",
+      "description": "Creates fulfillment order, meaning that it is an order for the seller's side in a sale made through a marketplace. This order assumes the transaction itself has already happened on the marketplace's side and, therfore, cares only about the fulfillment side. \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.enqueueNewOrder",
+      "name": "externalMarketplace.enqueueNewOrder",
+      "description": "API to integrate an external channel's order into the VTEX plataform.\n\nThis process is asynchronous and a notification with the order's integration results will be sent to the endpoint specified in the **connectorEndpoint** field in [App Template](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-app-template), if the connector uses our App template. The field **connectorName** is also optional for connectors that use our App Template and authenticate using the app's auth cookie. If the account is not informed in the URL host, it should also be defined as a query string parameter in the route: `an={account}`. \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.fulfillmentSimulationExternalMarketplace",
+      "name": "externalMarketplace.fulfillmentSimulationExternalMarketplace",
+      "description": "This endpoint can be triggered by marketplaces to simulate the fulfillment of an item in the cart.\r\n\r\nThe fulfillment information is useful whenever you need to know the availability of fulfilling an order for a specific cart setting, since the API response will let you know the updated price, inventory and shipping data."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.placeFulfillmentOrder",
+      "name": "externalMarketplace.placeFulfillmentOrder",
+      "description": "Creates fulfillment order, meaning that it is an order for the seller's side in a sale made through a marketplace. This order assumes the transaction itself has already happened on the marketplace's side and, therfore, cares only about the fulfillment side.\n\r\n\r> If you plan to integrate external orders with possible [Price divergence](https://help.vtex.com/en/tutorial/price-divergence-rule--6RlFLhD1rIRRshl83KnCjW#) be mindful of the `isCreatedAsync` request body field. \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.sendCategoryMappingVtexMapper",
+      "name": "externalMarketplace.sendCategoryMappingVtexMapper",
+      "description": "Mapping categories guarantees that the VTEX category tree has a correct association with the marketplace’s category tree. \n\nTo perform this association, VTEX made VTEX Mapper available. It is a tool integrated to the VTEX platform that allows the user to relate categories created in VTEX to categories from the marketplace. \n\nThis endpoint allows connectors to send the marketplace's category tree mapped in the integration. \n\nConnectors should send the payload compacted in .gzip format. \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.updateOrderStatus",
+      "name": "externalMarketplace.updateOrderStatus",
+      "description": "API request used to update an order status in VTEX.\n\nThis process is asynchronous and a notification with the order's integration results will be sent to the endpoint specified in the **connectiorEndpoint** field or the **connectiorEndpoint** [App Template](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-app-template), if the connector uses our App template. The field **connectorName** is also optional for connectors that use our App Template and authenticate using the app's auth cookie. \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalMarketplace.vtexMapperRegistration",
+      "name": "externalMarketplace.vtexMapperRegistration",
+      "description": "Mapping categories guarantees that the VTEX category tree has a correct association with the marketplace’s category tree. \n\nTo perform this association, VTEX made VTEX Mapper available. It is a tool integrated to the VTEX platform that allows the user to relate categories created in VTEX to categories from the marketplace. \n\nThis endpoint allows connectors to register the external marketplace integration in VTEX Mapper. \n\nIn case VTEX Mapper detects an error and the call fails, the connector should check if mandatory information was sent correctly. Ex. are URLs correctly registered in the properties categoryTreeEndPoint and mappingEndPoint? \n\nFor a detailed explanation of the steps required to develop a custom connector to become an external marketplace for VTEX sellers, check out our complete [External Marketplace Integration Guide](https://developers.vtex.com/vtex-rest-api/docs/external-marketplace-integration-guide)."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.authorizeFulfillment",
+      "name": "externalSeller.authorizeFulfillment",
+      "description": "This request is sent from VTEX to the seller after the payment is approved, to notify them that the fulfillment process can start."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.cancelOrderInMarketplace",
+      "name": "externalSeller.cancelOrderInMarketplace",
+      "description": "This request is sent by the external seller to the VTEX marketplace to cancel an order."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.fulfillmentSimulation",
+      "name": "externalSeller.fulfillmentSimulation",
+      "description": "This endpoint may be called upon by VTEX for fulfillment simulation in the external seller different contexts. See examples below.\n\nWhen a [price](https://developers.vtex.com/docs/api-reference/marketplace-apis#post-/notificator/-sellerId-/changenotification/-skuId-/price) or [inventory](https://developers.vtex.com/docs/api-reference/marketplace-apis#post-/notificator/-sellerId-/changenotification/-skuId-/inventory) notification request returns a response with status `200 OK`, it means that the SKU already exists in the marketplace. Whenever this happens, the marketplace will call the seller to get two updated information about the SKU: Price and Inventory.\n\nThe seller needs to have an endpoint implemented in order to receive this call and send a response containing the requested information to the marketplace. We call it the Fulfillment Simulation endpoint.\n\nIf the seller wishes to include other parameters in this call (like account name, or [sales channel](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV) ID), this should be done within their {fulfillmentEndpoint}. This path is then inserted in the marketplace's VTEX admin when [configuring a seller](https://help.vtex.com/en/tutorial/configurando-seller--tutorials_392). \n\nThe marketplace will send an object containing an array of items. The seller must use this list to get the updated information about the referred SKUs and send them back to the marketplace, following the response format explained in the API Reference. \n\nThis call is also applied in the Storefront simulation scenario, in which case the request from VTEX does not send the paramenters `country` and `postalCode`. \nThe call's payload can be adapted into two scenarios: \n\n- **Displaying items in the storefront**: the address information can be nulled in the request, since they are not mandatory data for this context.   \n- **Making a shopping cart simulation during checkout**: address information must be sent, since this data is needed to calculate freight values. If the address information (including `postalCode` and `country`) is not sent through the call, VTEX interprets the stock balance as zero. Without a valid stock balance, the seller will not be shown as an option during checkout. \n  \n## Request body example - Indexing simulation\n\n```\n{\n    \"items\": [\n      {\n        \"id\": \"7908010136043\",\n        \"quantity\": 1,\n        \"seller\": \"1\",\n      }\n    ],\n    \"isCheckedIn\": false,\n  }\n``` \n## Request body example - Checkout simulation\n\n```\n{\n    \"items\": [\n      {\n        \"id\": \"7908010136043\",\n        \"quantity\": 1,\n        \"seller\": \"1\",\n      }\n    ],\n    \"postalCode\": \"22270-030\",\n    \"country\": \"BRA\",\n  }\n```"
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.mkpOrderCancellation",
+      "name": "externalSeller.mkpOrderCancellation",
+      "description": "This request may be sent from VTEX to the external seller in case of order cancelation. For that, the seller will need to implement the Marketplace order cancellation endpoint. Whenever this request is received by the seler, the order should be canceled and the fulfillment flow should not proceed. \n\nFor the seller to: \n\n- **Evaluate a cancellation request:** it is possible to send an empty body as a response to the cancellation request, meaning that the seller is evaluating whether to proceed with the cancellation or not. \n\n- **Confirm the cancellation request:** it is possible to confirm the order cancellation by the marketplace by responding to the call with a body including only one information: the `marketplaceOrderId`, which identifies the order in the marketplace. The seller should use this ID to trigger the cancellation of the corresponding order. The seller should then respond with the same `marketplaceOrderId` and also with the `orderId`, which identifies the order in the seller, the date and time of the notification receipt, and a protocol code that confirms the receipt of the request (which may have the value `null`). \n\n- **Refuse a cancellation request:** it is possible to to [send the Invoice](https://developers.vtex.com/vtex-rest-api/reference/external-seller#send-invoice), meaning that the cancellation has been denied, and the flow continues to the [Order Invoicing](https://developers.vtex.com/vtex-rest-api/docs/external-seller-integration-connector#order-invoicing) step, and the ones that follow it. \n\nThis call should be made twice: once for the *Evaluate cancellation request* scenario, and a second time to *Confirm cancellation* or *Refuse cancellation*."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.orderPlacement",
+      "name": "externalSeller.orderPlacement",
+      "description": "This request is sent by VTEX to the external seller once the customer finishes their checkout, to let the seller know there is a newly placed order. It does that by calling the **Order Placement** endpoint, which needs to be implemented by the seller.\n\nThe marketplace will send information such as the items contained in the cart, the client’s profile data, the shipping data, and the payment data. With all that, the seller will be able to create the order in their own store."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.sendInvoice",
+      "name": "externalSeller.sendInvoice",
+      "description": "This request is sent by the external seller to the VTEX marketplace to send invoice information.\n\nThis can be necessary in a regular order or in the case of a return. The `type` field is used to indicate which of these is the case."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.sendTrackingInformation",
+      "name": "externalSeller.sendTrackingInformation",
+      "description": "This request is sent by the external seller to the VTEX marketplace to add tracking information to a given order's invoice, in case it is necessary to do so after the invoice has been sent."
+    },
+    {
+      "id": "openapi_vtex_local_marketplace_protocol_marketplace_protocol.externalSeller.updateTrackingStatus",
+      "name": "externalSeller.updateTrackingStatus",
+      "description": "This request is sent by the external seller to the VTEX marketplace to update a given order's tracking status."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

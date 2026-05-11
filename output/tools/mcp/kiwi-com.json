@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:19:53.446Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_kiwi_com.search_flight",
+      "name": "search-flight",
+      "description": "\n# Search for a flight\n\n## Description\n\nUses the Kiwi API to search for available flights between two locations on a specific date.\n\n## How it works\n\nThe tool will:\n1. Search for matching locations to resolve airport codes\n2. Find available flights for the specified route and date range\n\n## Method\n\nCall this tool whenever a user wants to search for flights, regardless of whether they provided exact airport codes or just city names.\n\nYou should display the returned results in a markdown table format: Group the results by price (those who are the cheapest), duration (those who are the shortest, i.e. have the smallest 'totalDurationInSeconds') and the rest (those that could still be interesting).\n\nAlways display for each flight in order:\n  - In the 1st column: The departure and arrival airports, including layovers (e.g. \"Paris CDG → Barcelona BCN → Lisbon LIS\")\n  - In the 2nd column: The departure and arrival dates & times in the local timezones, and duration of the flight (e.g. \"03/08 06:05 → 09:30 (3h 25m)\", use 'durationInSeconds' to display the duration and not 'totalDurationInSeconds')\n  - In the 3rd column: The cabin class (e.g. \"Economy\")\n  - (In case of return flight only) In the 4th column: The return flight departure and arrival airports, including layovers (e.g. \"Paris CDG → Barcelona BCN → Lisbon LIS\")\n  - (In case of return flight only) In the 5th column: The return flight departure and arrival dates & times in the local timezones, and duration of the flight (e.g. \"03/08 06:05 → 09:30 (3h 25m)\", use 'return.durationInSeconds' to display the duration)\n  - (In case of return flight only) In the 6th column: The return flight cabin class (e.g. \"Economy\")\n  - In the previous-to-last column: The total price of the flight\n  - In the last column: The deep link to book the flight\n\nFinally, provide a summary highlighting the best prices, the shortest flights and a recommendation. End wishing a nice trip to the user with a short fun fact about the destination!\n"
+    },
+    {
+      "id": "mcp_kiwi_com.feedback_to_devs",
+      "name": "feedback-to-devs",
+      "description": "Send feedback to the dev of the Kiwi MCP server."
+    }
+  ]
+}

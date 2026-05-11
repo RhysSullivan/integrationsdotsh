@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.906Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.addresses.createNewCustomerAddress",
+      "name": "addresses.createNewCustomerAddress",
+      "description": "Creates new customer address. \r\n\r\n> You can use this request to create customer addresses according to any `AD` schema. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for the schemas you are using. Learn more about how to use [Master Data v2 schemas](https://developers.vtex.com/vtex-rest-api/docs/master-data-schema-lifecycle)."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.addresses.deleteCustomerAddress",
+      "name": "addresses.deleteCustomerAddress",
+      "description": "Deletes a customer address."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.addresses.updateCustomerAddress",
+      "name": "addresses.updateCustomerAddress",
+      "description": "Partially updates a customer address.\r\n\r\n> You can use this request to update customer addresses according to any `AD` schema. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for the schemas you are using. Learn more about how to use [Master Data v2 schemas](https://developers.vtex.com/vtex-rest-api/docs/master-data-schema-lifecycle)."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.clusters.validatedocumentbyclusters",
+      "name": "clusters.validatedocumentbyclusters",
+      "description": "Check if a document is present in one or more clusters (specific set of field values).\r\n\r\n> There is a limit of five rules per request."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.customerProfiles.createNewCustomerProfilev2",
+      "name": "customerProfiles.createNewCustomerProfilev2",
+      "description": "Creates new customer profile.\r\n\r\n> You can use this request to create customer profiles according to any `CL` schema. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for the schemas you are using. Learn more about how to use [Master Data v2 schemas](https://developers.vtex.com/vtex-rest-api/docs/master-data-schema-lifecycle)."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.customerProfiles.deleteCustomerProfile",
+      "name": "customerProfiles.deleteCustomerProfile",
+      "description": "Deletes a customer profile."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.customerProfiles.updateCustomerProfile",
+      "name": "customerProfiles.updateCustomerProfile",
+      "description": "Partially updates a customer profile.\r\n\r\n> You can use this request to update customer profiles according to any `CL` schema. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for the schemas you are using. Learn more about how to use [Master Data v2 schemas](https://developers.vtex.com/vtex-rest-api/docs/master-data-schema-lifecycle)."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.createnewdocument",
+      "name": "documents.createnewdocument",
+      "description": "This request allows you to create a new document corresponding to a given data entity. For example, you can create a new customer profile or address.\r\n\r\n> You can use this request to create documents for any given data entity. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for each document you wish to create.\r\n\r\n## Example use cases\r\n\r\n### Client profile\r\n\r\nIn order to create a new customer profile, choose the `CL` data entity and send a request similar to this:\r\n\r\nPOST\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Client/documents\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"email\": \"clark.kent@examplemail.com\",\r\n    \"firstName\": \"Clark\",\r\n    \"lastName\": \"Kent\",\r\n    \"phone\": \"+12025550195\",\r\n    \"documentType\": \"CPF\",\r\n    \"document\": \"12345678900\"\r\n    \"isCorporate\": false,\r\n    \"isNewsletterOptIn\": false,\r\n    \"localeDefault\": \"en-US\"\r\n }\r\n```\r\n\r\n### Client address\r\n\r\nFor a new address, the data entity is `AD` and the request would look like this:\r\n\r\nPOST\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Address/documents\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"addressName\": \"My House\",\r\n    \"addressType\": \"residential\",\r\n    \"city\": \"Metropolis\",\r\n    \"complement\": \"\",\r\n    \"country\": \"USA\",\r\n    \"postalCode\": \"11375\",\r\n    \"receiverName\": \"Clark Kent\",\r\n    \"reference\": null,\r\n    \"state\": \"MP\",\r\n    \"street\": \"Baker Street\",\r\n    \"neighborhood\": \"Upper east side\",\r\n    \"number\": \"21\",\r\n    \"userId\": \"7e03m794-a33a-11e9-84rt6-0adfa64s5a8e\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.createorupdatepartialdocument",
+      "name": "documents.createorupdatepartialdocument",
+      "description": "This request allows you to partially update a document corresponding to a given data entity.\r\n\r\n> You can use this request to create documents for any given data entity. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for each document you wish to update.\r\n\r\n## Example use cases\r\n\r\n### Client profile\r\n\r\nIn order to create a customer profile's `phone` and `isNewsletterOptIn` fields, choose the `CL` data entity and send a request similar to this:\r\n\r\nPATCH\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Client/documents\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"phone\": \"+12025550195\",\r\n    \"isNewsletterOptIn\": false\r\n }\r\n```\r\n\r\n### Client address\r\n\r\nIn order to update the `receiverName` of an existing address, the data entity is `AD` and the request would look like this:\r\n\r\nPATCH\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Address/documents\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"receiverName\": \"Lois Lane\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.deletedocument",
+      "name": "documents.deletedocument",
+      "description": "It allows to delete a document."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.getdocument",
+      "name": "documents.getdocument",
+      "description": "Gets document by ID.\n\r\n\r> Assign the `_fields` parameter in the query string to retrieve the desired fields. If you want to return all the fields use `_fields=_all`."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.updateentiredocument",
+      "name": "documents.updateentiredocument",
+      "description": "Update an existing document corresponding to a given data entity. For example, you can update a customer profile or address.\r\n\r\n> You can use this request to update documents in any given data entity. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for each document you wish to update.\r\n\r\n## Example use cases\r\n\r\n### Client profile\r\n\r\nIn order to update an existing customer profile, choose the `CL` data entity and send a request similar to this:\r\n\r\nPUT\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Client/documents/123456789abc\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"email\": \"clark.kent@examplemail.com\",\r\n    \"firstName\": \"Clark\",\r\n    \"lastName\": \"Kent\",\r\n    \"phone\": \"+12025550195\",\r\n    \"documentType\": \"CPF\",\r\n    \"document\": \"12345678900\"\r\n    \"isCorporate\": false,\r\n    \"isNewsletterOptIn\": false,\r\n    \"localeDefault\": \"en-US\"\r\n }\r\n```\r\n\r\n### Client address\r\n\r\nTo update an address, the data entity is `AD` and the request would look like this:\r\n\r\nPUT\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Address/documents/123456789abc\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"addressName\": \"My House\",\r\n    \"addressType\": \"residential\",\r\n    \"city\": \"Metropolis\",\r\n    \"complement\": \"\",\r\n    \"country\": \"USA\",\r\n    \"postalCode\": \"11375\",\r\n    \"receiverName\": \"Clark Kent\",\r\n    \"reference\": null,\r\n    \"state\": \"MP\",\r\n    \"street\": \"Baker Street\",\r\n    \"neighborhood\": \"Upper east side\",\r\n    \"number\": \"21\",\r\n    \"userId\": \"7e03m794-a33a-11e9-84rt6-0adfa64s5a8e\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.documents.updatepartialdocument",
+      "name": "documents.updatepartialdocument",
+      "description": "This request allows you to partially update a document corresponding to a given data entity. For example, you can update some fields of a customer profile or address.\r\n\r\n> You can use this request to update documents for any given data entity. Because of this, you are not restricted to using the fields exemplified below in your requests. But you should be aware of the fields allowed or required for each document you wish to update.\r\n\r\n## Example use cases\r\n\r\n### Client profile\r\n\r\nIn order to update a customer profile's `phone` and `isNewsletterOptIn` fields, choose the `CL` data entity and send a request similar to this:\r\n\r\nPATCH\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Client/documents/123456789abc\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"phone\": \"+12025550195\",\r\n    \"isNewsletterOptIn\": false\r\n }\r\n```\r\n\r\n### Client address\r\n\r\nIn order to update the `receiverName` of an existing address, the data entity is `AD` and the request would look like this:\r\n\r\nPATCH\r\n```\r\nhttps://examplestore.vtexcommercestable.com.br/api/dataentities/Address/documents/123456789abc\r\n```\r\n\r\nRequest body\r\n```json\r\n{\r\n    \"receiverName\": \"Lois Lane\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.indices.deleteindexbyname",
+      "name": "indices.deleteindexbyname",
+      "description": "Delete an index."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.indices.getindexbyname",
+      "name": "indices.getindexbyname",
+      "description": "Returns an index."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.indices.getindices",
+      "name": "indices.getindices",
+      "description": "Returns the list of indices by data entity."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.indices.putindices",
+      "name": "indices.putindices",
+      "description": "Create an index."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.schemas.deleteschemabyname",
+      "name": "schemas.deleteschemabyname",
+      "description": "Deletes an existing schema for a given data entity."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.schemas.getschemabyname",
+      "name": "schemas.getschemabyname",
+      "description": "Returns an existing schema for a given data entity."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.schemas.getschemas",
+      "name": "schemas.getschemas",
+      "description": "Return the schemas saved."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.schemas.saveschemabyname",
+      "name": "schemas.saveschemabyname",
+      "description": "Creates or edits a data entity schema. Learn more about [Master Data schemas](https://developers.vtex.com/vtex-rest-api/docs/master-data-schema-lifecycle)\r\n\r\n> Note that if you send a `schemaName` that does not exist for that data entity, this request will create it.\r\n\r\nThis request can also be used to [create or edit Master Data v2 triggers](https://developers.vtex.com/vtex-rest-api/docs/setting-up-triggers-in-master-data-v2)."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.scroll.scrolldocuments",
+      "name": "scroll.scrolldocuments",
+      "description": "In the first request, the `X-VTEX-MD-TOKEN` token will be returned in the header. This token must be passed to the next request in the query string `_token` parameter. The token has a timeout of 10 minutes, which refreshes after each request.\r\n\r\nAfter the token is obtained it is no longer necessary to send the filter or document size per page parameters. You only need to resend the token until the document collection is empty.\n\r\n\r> Avoid sending too many requests with wildcards (`*`) in the search parameters or that use the `keyword` parameter. This may lead to this endpoint being temporarily blocked for your account. If this happens you will receive an error with status code `429`.\r\n\r\n## Request examples\r\n\r\nFirst request:\r\n```\r\n/dataentities/Client/scroll?isCluster=true&_size=250&_fields=email,firstName\r\n```\r\n\r\nRetrieve the token in the header `X-VTEX-MD-TOKEN` from the first request's response and use it to make the next requests.\r\n\r\nSubsequent requests:\r\n```\r\n/dataentities/Client/scroll?_token={tokenValueExample}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.search.searchdocuments",
+      "name": "search.searchdocuments",
+      "description": "Retrieves documents' information, while choosing which fields will be returned and filtering documents by specific fields.\r\n\r\n> The response header `REST-Content-Range` indicates the total amount of results for that specific search. For example, it may return `resources 0-100/136108`, which indicates it has returned results from 0 to 100 of a total 136108.\r\n\r\nBelow you can see some query examples and learn more about each query parameter.\n\r\n\r> Avoid sending too many requests with wildcards (`*`) in the search parameters or that use the `keyword` parameter. This may lead to this endpoint being temporarily blocked for your account. If this happens you will receive an error with status code `503`.\r\n\r\n## Query examples\r\n\r\n### Simple filter\r\n\r\n```\r\n/dataentities/Client/search?email=my@email.com\r\n```\r\n\r\n### Complex filter\r\n\r\n```\r\n/dataentities/Client/search?_where=(firstName=Jon OR lastName=Smith) OR (createdIn between 2001-01-01 AND 2016-01-01)\r\n```\r\n\r\n### Date Range\r\n\r\n```\r\n/dataentities/Client/search?_where=createdIn between 2001-01-01 AND 2016-01-01\r\n```\r\n\r\n### Range numeric fields\r\n\r\n```\r\n/dataentities/Client/search?_where=age between 18 AND 25\r\n```\r\n\r\n### Partial filter\r\n\r\n```\r\n/dataentities/Client/search?firstName=*Maria*\r\n```\r\n\r\n### Filter for null values\r\n\r\n```\r\n/dataentities/Client/search?_where=firstName is null\r\n```\r\n\r\n### Filter for non-null values\r\n\r\n```\r\n/dataentities/Client/search?_where=firstName is not null\r\n```\r\n\r\n### Filter for difference\r\n```\r\n/dataentities/Client/search?_where=firstName<>maria\r\n```\r\n\r\n### Filter greater than or less than\r\n```\r\n/dataentities/Client/search?_where=number>5\r\n/dataentities/Client/search?_where=date<2001-01-01\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.versions.getversion",
+      "name": "versions.getversion",
+      "description": "Returns the version of a document."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.versions.listversions",
+      "name": "versions.listversions",
+      "description": "Allows to list the versions of a document."
+    },
+    {
+      "id": "openapi_vtex_local_master_data_api_master_data_api.versions.putversion",
+      "name": "versions.putversion",
+      "description": "Updates document with version values."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

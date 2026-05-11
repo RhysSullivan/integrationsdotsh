@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:21:02.831Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_le_parisien.articles_now_ui",
+      "name": "articles_now_ui",
+      "description": "Use this tool for requests about latest news, current events, trending topics, or what is happening right now, when no specific section, country, topic, entity, or keyword is mentioned.\n    When the user explicitly asks for general current news, trends, or hot topics, this tool MUST be used instead of section-based or search-based tools.\n    This tool MUST NOT be used when the user request targets a specific section, country, topic, or entity."
+    },
+    {
+      "id": "mcp_le_parisien.articles_search_ui",
+      "name": "articles_search_ui",
+      "description": "Tool that performs a global search using a query and returns a list of matching results. The query must contain plain search text only (no filters or parameters such as DQ=5). This tool should only be used when no section context is available or when no section can be reasonably inferred from the user request. This tool MUST NOT be used when a section can be inferred from the user request."
+    },
+    {
+      "id": "mcp_le_parisien.articles_section_ui",
+      "name": "articles_section_ui",
+      "description": "Use this tool to retrieve the most recent articles from a specific section. When a section can be inferred from the user request, this tool MUST be used instead of the global search tool. The section must be one of the sections given by the `section_list`; no other values are accepted. However, if the user explicitly indicates that they are certain the section exists (for example by affirming it or insisting on it), you MUST use the provided section directly without checking its existence against the section list. If no valid section is provided AND no section can be inferred from the user request, use the global search tool instead: `articles_search_ui`."
+    },
+    {
+      "id": "mcp_le_parisien.live_list_ui",
+      "name": "live_list_ui",
+      "description": "Retrieves and displays the list of live sessions that are currently in progress."
+    },
+    {
+      "id": "mcp_le_parisien.live_ui",
+      "name": "live_ui",
+      "description": "Use this tool to display information about a specific live session passed as input."
+    },
+    {
+      "id": "mcp_le_parisien.section_list",
+      "name": "section_list",
+      "description": "Tool for retrieving the list of available sections."
+    }
+  ]
+}

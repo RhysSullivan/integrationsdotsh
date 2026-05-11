@@ -1,0 +1,652 @@
+{
+  "fetchedAt": "2026-04-30T15:22:09.788Z",
+  "status": "ok",
+  "count": 129,
+  "tools": [
+    {
+      "id": "openapi_codat_io_accounting_accounting.accounts.createAccount",
+      "name": "accounts.createAccount",
+      "description": "Creates a new account for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/accounting-api#/operations/get-create-chartOfAccounts-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.accounts.getAccount",
+      "name": "accounts.getAccount",
+      "description": "Gets a single account corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.accounts.getCreateChartOfAccountsModel",
+      "name": "accounts.getCreateChartOfAccountsModel",
+      "description": "Get create account model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.accounts.listAccounts",
+      "name": "accounts.listAccounts",
+      "description": "Gets the latest accounts for a company"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.accountTransactions.getAccountTransaction",
+      "name": "accountTransactions.getAccountTransaction",
+      "description": "Gets the account transactions for a given company.Gets the specified account transaction for a given company and connection."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.accountTransactions.listAccountTransactions",
+      "name": "accountTransactions.listAccountTransactions",
+      "description": "Gets the account transactions for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.createBankAccount",
+      "name": "bankAccounts.createBankAccount",
+      "description": "Posts a new bank account to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call []().\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating bank accounts."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.getAllBankAccount",
+      "name": "bankAccounts.getAllBankAccount",
+      "description": "Gets the bank account for given account ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.getBankAccount",
+      "name": "bankAccounts.getBankAccount",
+      "description": "Gets the bank account with a given ID"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.getCreateUpdateBankAccountsModel",
+      "name": "bankAccounts.getCreateUpdateBankAccountsModel",
+      "description": "Get create/update bank account model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating bank accounts."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.listBankAccounts",
+      "name": "bankAccounts.listBankAccounts",
+      "description": "Gets the list of bank accounts for a given connection"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccounts.updateBankAccount",
+      "name": "bankAccounts.updateBankAccount",
+      "description": "Posts an updated bank account to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call []().\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support updating bank accounts."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccountTransactions.createBankTransactions",
+      "name": "bankAccountTransactions.createBankTransactions",
+      "description": "Posts bank transactions to the accounting package for a given company.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support POST methods."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccountTransactions.getCreateBankAccountModel",
+      "name": "bankAccountTransactions.getCreateBankAccountModel",
+      "description": "Gets the options of pushing bank account transactions."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccountTransactions.listBankAccountTransactions",
+      "name": "bankAccountTransactions.listBankAccountTransactions",
+      "description": "Gets bank transactions for a given bank account ID"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bankAccountTransactions.listBankTransactions",
+      "name": "bankAccountTransactions.listBankTransactions",
+      "description": "Gets the latest bank transactions for given account ID and company. Doesn't require connection ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billCreditNotes.createBillCreditNote",
+      "name": "billCreditNotes.createBillCreditNote",
+      "description": "Posts a new billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating bill credit notes."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billCreditNotes.getBillCreditNote",
+      "name": "billCreditNotes.getBillCreditNote",
+      "description": "Gets a single billCreditNote corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billCreditNotes.getCreateUpdateBillCreditNotesModel",
+      "name": "billCreditNotes.getCreateUpdateBillCreditNotesModel",
+      "description": "Get create/update bill credit note model.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating bill credit notes."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billCreditNotes.listBillCreditNotes",
+      "name": "billCreditNotes.listBillCreditNotes",
+      "description": "Gets a list of all bill credit notes for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billCreditNotes.updateBillCreditNote",
+      "name": "billCreditNotes.updateBillCreditNote",
+      "description": "Posts an updated billCreditNote to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-billCreditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support updating bill credit notes."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billPayments.createBillPayment",
+      "name": "billPayments.createBillPayment",
+      "description": "Posts a new bill payment to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create bill payment model](https://docs.codat.io/accounting-api#/operations/get-create-billPayments-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating bill payments."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billPayments.deleteBillPayment",
+      "name": "billPayments.deleteBillPayment",
+      "description": "Deletes a bill payment from the accounting package for a given company.\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our Oracle NetSuite integration. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billPayments.getBillPayments",
+      "name": "billPayments.getBillPayments",
+      "description": "Get a bill payment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billPayments.getCreateBillPaymentsModel",
+      "name": "billPayments.getCreateBillPaymentsModel",
+      "description": "Get create bill payment model.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating and deleting bill payments."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.billPayments.listBillPayments",
+      "name": "billPayments.listBillPayments",
+      "description": "Gets the latest billPayments for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.createBill",
+      "name": "bills.createBill",
+      "description": "Posts a new bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.deleteBill",
+      "name": "bills.deleteBill",
+      "description": "Deletes a bill from the accounting package for a given company.\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our Oracle NetSuite and QuickBooks Online integrations. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.downloadBillAttachment",
+      "name": "bills.downloadBillAttachment",
+      "description": "Download bill attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.getBill",
+      "name": "bills.getBill",
+      "description": "Get bill"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.getBillAttachment",
+      "name": "bills.getBillAttachment",
+      "description": "Get bill attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.getBillAttachments",
+      "name": "bills.getBillAttachments",
+      "description": "Get bill attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.getCreateUpdateBillsModel",
+      "name": "bills.getCreateUpdateBillsModel",
+      "description": "Get create/update bill model.\n\n > **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.listBills",
+      "name": "bills.listBills",
+      "description": "Gets the latest bills for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.updateBill",
+      "name": "bills.updateBill",
+      "description": "Posts an updated bill to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/accounting-api#/operations/get-create-update-bills-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support updating a bill."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.bills.uploadBillAttachments",
+      "name": "bills.uploadBillAttachments",
+      "description": "Upload bill attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.companyInfo.getCompanyInfo",
+      "name": "companyInfo.getCompanyInfo",
+      "description": "Gets the latest basic info for a company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.companyInfo.postSyncInfo",
+      "name": "companyInfo.postSyncInfo",
+      "description": "Initiates the process of synchronising basic info for a company"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.creditNotes.createCreditNote",
+      "name": "creditNotes.createCreditNote",
+      "description": "Push credit note\n\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-creditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=creditNotes) for integrations that support creating a credit note."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.creditNotes.getCreateUpdateCreditNotesModel",
+      "name": "creditNotes.getCreateUpdateCreditNotesModel",
+      "description": "Get create/update credit note model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=creditNotes) for integrations that support creating and updating a credit note."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.creditNotes.getCreditNote",
+      "name": "creditNotes.getCreditNote",
+      "description": "Gets a single creditNote corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.creditNotes.listCreditNotes",
+      "name": "creditNotes.listCreditNotes",
+      "description": "Gets a list of all credit notes for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.creditNotes.updateCreditNote",
+      "name": "creditNotes.updateCreditNote",
+      "description": "Posts an updated credit note to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update credit note model](https://docs.codat.io/accounting-api#/operations/get-create-update-creditNotes-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=creditNotes) for integrations that support updating a credit note."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.createCustomer",
+      "name": "customers.createCustomer",
+      "description": "Posts an individual customer for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/accounting-api#/operations/get-create-update-customers-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating customers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.downloadCustomerAttachment",
+      "name": "customers.downloadCustomerAttachment",
+      "description": "Download customer attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.getCreateUpdateCustomersModel",
+      "name": "customers.getCreateUpdateCustomersModel",
+      "description": "Get create/update customer model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support creating and updating customers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.getCustomer",
+      "name": "customers.getCustomer",
+      "description": "Gets a single customer corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.getCustomerAttachment",
+      "name": "customers.getCustomerAttachment",
+      "description": "Get  customer attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.getCustomerAttachments",
+      "name": "customers.getCustomerAttachments",
+      "description": "Get customer attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.getCustomers",
+      "name": "customers.getCustomers",
+      "description": "Gets the latest customers for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.customers.updateCustomer",
+      "name": "customers.updateCustomer",
+      "description": "Posts an updated customer for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update customer model](https://docs.codat.io/accounting-api#/operations/get-create-update-customers-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers) for integrations that support updating customers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.createDirectCost",
+      "name": "directCosts.createDirectCost",
+      "description": "Posts a new direct cost to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create direct cost model](https://docs.codat.io/accounting-api#/operations/get-create-directCosts-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=directCosts) for integrations that support creating direct costs."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.downloadDirectCostAttachment",
+      "name": "directCosts.downloadDirectCostAttachment",
+      "description": "Downloads an attachment for the specified direct cost for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.getCreateDirectCostsModel",
+      "name": "directCosts.getCreateDirectCostsModel",
+      "description": "Get create direct cost model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=directCosts) for integrations that support creating direct costs."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.getDirectCost",
+      "name": "directCosts.getDirectCost",
+      "description": "Gets the specified direct cost for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.getDirectCostAttachment",
+      "name": "directCosts.getDirectCostAttachment",
+      "description": "Gets the specified direct cost attachment for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.getDirectCosts",
+      "name": "directCosts.getDirectCosts",
+      "description": "Gets the direct costs for the company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.listDirectCostAttachments",
+      "name": "directCosts.listDirectCostAttachments",
+      "description": "Gets all attachments for the specified direct cost for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directCosts.uploadDirectCostAttachment",
+      "name": "directCosts.uploadDirectCostAttachment",
+      "description": "Posts a new direct cost attachment for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.createDirectIncome",
+      "name": "directIncomes.createDirectIncome",
+      "description": "Posts a new direct income to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create direct income model](https://docs.codat.io/accounting-api#/operations/get-create-directIncomes-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=directIncomes) for integrations that support creating direct incomes."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.downloadDirectIncomeAttachment",
+      "name": "directIncomes.downloadDirectIncomeAttachment",
+      "description": "Downloads an attachment for the specified direct income for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.getCreateDirectIncomesModel",
+      "name": "directIncomes.getCreateDirectIncomesModel",
+      "description": "Get create direct income model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=directIncomes) for integrations that support creating direct incomes."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.getDirectIncome",
+      "name": "directIncomes.getDirectIncome",
+      "description": "Gets the specified direct income for a given company and connection."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.getDirectIncomeAttachment",
+      "name": "directIncomes.getDirectIncomeAttachment",
+      "description": "Gets the specified direct income attachment for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.getDirectIncomes",
+      "name": "directIncomes.getDirectIncomes",
+      "description": "Gets the direct incomes for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.listDirectIncomeAttachments",
+      "name": "directIncomes.listDirectIncomeAttachments",
+      "description": "Gets all attachments for the specified direct income for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.directIncomes.uploadDirectIncomeAttachment",
+      "name": "directIncomes.uploadDirectIncomeAttachment",
+      "description": "Posts a new direct income attachment for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.financials.getBalanceSheet",
+      "name": "financials.getBalanceSheet",
+      "description": "Gets the latest balance sheet for a company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.financials.getCashFlowStatement",
+      "name": "financials.getCashFlowStatement",
+      "description": "Gets the latest cash flow statement for a company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.financials.getProfitAndLoss",
+      "name": "financials.getProfitAndLoss",
+      "description": "Gets the latest profit and loss for a company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.createInvoice",
+      "name": "invoices.createInvoice",
+      "description": "Posts a new invoice to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update invoice model](https://docs.codat.io/accounting-api#/operations/get-create-update-invoices-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=invoices) for integrations that support creating invoices."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.deleteInvoice",
+      "name": "invoices.deleteInvoice",
+      "description": "Deletes an invoice from the accounting package for a given company.\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our QuickBooks Online integration. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.downloadInvoiceAttachment",
+      "name": "invoices.downloadInvoiceAttachment",
+      "description": "Download invoice attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.downloadInvoicePdf",
+      "name": "invoices.downloadInvoicePdf",
+      "description": "Get invoice as PDF"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.getCreateUpdateInvoicesModel",
+      "name": "invoices.getCreateUpdateInvoicesModel",
+      "description": "Get create/update invoice model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=invoices) for integrations that support creating and updating invoices."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.getInvoice",
+      "name": "invoices.getInvoice",
+      "description": "Get invoice"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.getInvoiceAttachment",
+      "name": "invoices.getInvoiceAttachment",
+      "description": "Get invoice attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.getInvoiceAttachments",
+      "name": "invoices.getInvoiceAttachments",
+      "description": "Get invoice attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.listInvoices",
+      "name": "invoices.listInvoices",
+      "description": "Gets the latest invoices for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.updateInvoice",
+      "name": "invoices.updateInvoice",
+      "description": "Posts an updated invoice to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update invoice model](https://docs.codat.io/accounting-api#/operations/get-create-update-invoices-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=invoices) for integrations that support updating invoices."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.invoices.uploadInvoiceAttachment",
+      "name": "invoices.uploadInvoiceAttachment",
+      "description": "Push invoice attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.items.createItem",
+      "name": "items.createItem",
+      "description": "Posts a new item to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create item model](https://docs.codat.io/accounting-api#/operations/get-create-items-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=items) for integrations that support creating items."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.items.getCreateItemsModel",
+      "name": "items.getCreateItemsModel",
+      "description": "Get create item model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=items) for integrations that support creating items."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.items.getItem",
+      "name": "items.getItem",
+      "description": "Gets the specified item for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.items.listItems",
+      "name": "items.listItems",
+      "description": "Gets the items for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journalEntries.createJournalEntry",
+      "name": "journalEntries.createJournalEntry",
+      "description": "Posts a new journalEntry to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/accounting-api#/operations/get-create-journalEntries-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating journal entries."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journalEntries.deleteJournalEntry",
+      "name": "journalEntries.deleteJournalEntry",
+      "description": "Deletes a journal entry from the accounting package for a given company.\n\n> **Supported Integrations**\n> \n> This functionality is currently only supported for our QuickBooks Online integration. Check out our [public roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) to see what we're building next, and to submit ideas for new features."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journalEntries.getCreateJournalEntriesModel",
+      "name": "journalEntries.getCreateJournalEntriesModel",
+      "description": "Get create journal entry model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating journal entries."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journalEntries.getJournalEntry",
+      "name": "journalEntries.getJournalEntry",
+      "description": "Gets a single JournalEntry corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journalEntries.listJournalEntries",
+      "name": "journalEntries.listJournalEntries",
+      "description": "Gets the latest journal entries for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journals.getCreateJournalsModel",
+      "name": "journals.getCreateJournalsModel",
+      "description": "Get create journal model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating journals."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journals.getJournal",
+      "name": "journals.getJournal",
+      "description": "Gets a single journal corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journals.listJournals",
+      "name": "journals.listJournals",
+      "description": "Gets the latest journals for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.journals.pushJournal",
+      "name": "journals.pushJournal",
+      "description": "Posts a new journal to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/accounting-api#/operations/get-create-journals-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating journals."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.paymentMethods.getPaymentMethod",
+      "name": "paymentMethods.getPaymentMethod",
+      "description": "Gets the specified payment method for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.paymentMethods.listPaymentMethods",
+      "name": "paymentMethods.listPaymentMethods",
+      "description": "Gets the payment methods for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.payments.createPayment",
+      "name": "payments.createPayment",
+      "description": "Posts a new payment to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create payment model](https://docs.codat.io/accounting-api#/operations/get-create-payments-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=payments) for integrations that support creating payments."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.payments.getCreatePaymentsModel",
+      "name": "payments.getCreatePaymentsModel",
+      "description": "Get create payment model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=payments) for integrations that support creating payments."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.payments.getPayment",
+      "name": "payments.getPayment",
+      "description": "Get payment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.payments.listPayments",
+      "name": "payments.listPayments",
+      "description": "Gets the latest payments for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.purchaseOrders.createPurchaseOrder",
+      "name": "purchaseOrders.createPurchaseOrder",
+      "description": "Posts a new purchase order to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update purchase order model](https://docs.codat.io/accounting-api#/operations/get-create-update-purchaseOrders-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=purchaseOrders) for integrations that support creating purchase orders."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.purchaseOrders.getCreateUpdatePurchaseOrdersModel",
+      "name": "purchaseOrders.getCreateUpdatePurchaseOrdersModel",
+      "description": "Get create/update purchase order model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=purchaseOrders) for integrations that support creating and updating purchase orders."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.purchaseOrders.getPurchaseOrder",
+      "name": "purchaseOrders.getPurchaseOrder",
+      "description": "Get purchase order"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.purchaseOrders.listPurchaseOrders",
+      "name": "purchaseOrders.listPurchaseOrders",
+      "description": "Get purchase orders"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.purchaseOrders.updatePurchaseOrder",
+      "name": "purchaseOrders.updatePurchaseOrder",
+      "description": "Posts an updated purchase order to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call []().\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=purchaseOrders) for integrations that support updating purchase orders."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.reports.getAgedCreditorsReport",
+      "name": "reports.getAgedCreditorsReport",
+      "description": "Returns aged creditors report for company that shows the total balance owed by a business to its suppliers over time."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.reports.getAgedDebtorsReport",
+      "name": "reports.getAgedDebtorsReport",
+      "description": "Returns aged debtors report for company that shows the total outstanding balance due from customers to the business over time."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.reports.isAgedCreditorsReportAvailable",
+      "name": "reports.isAgedCreditorsReportAvailable",
+      "description": "Indicates whether the aged creditor report is available for the company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.reports.isAgedDebtorReportAvailable",
+      "name": "reports.isAgedDebtorReportAvailable",
+      "description": "Indicates whether the aged debtor report is available for the company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.salesOrders.getSalesOrder",
+      "name": "salesOrders.getSalesOrder",
+      "description": "Get sales order"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.salesOrders.listSalesOrders",
+      "name": "salesOrders.listSalesOrders",
+      "description": "Get sales orders"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.createSupplier",
+      "name": "suppliers.createSupplier",
+      "description": "Push suppliers\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating suppliers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.downloadSupplierAttachment",
+      "name": "suppliers.downloadSupplierAttachment",
+      "description": "Download supplier attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.getCreateUpdateSuppliersModel",
+      "name": "suppliers.getCreateUpdateSuppliersModel",
+      "description": "Get create/update supplier model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating suppliers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.getSupplier",
+      "name": "suppliers.getSupplier",
+      "description": "Gets a single supplier corresponding to the given ID."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.getSupplierAttachment",
+      "name": "suppliers.getSupplierAttachment",
+      "description": "Get supplier attachment"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.listSupplierAttachments",
+      "name": "suppliers.listSupplierAttachments",
+      "description": "Get supplier attachments"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.listSuppliers",
+      "name": "suppliers.listSuppliers",
+      "description": "Gets the latest suppliers for a company, with pagination"
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.suppliers.putSupplier",
+      "name": "suppliers.putSupplier",
+      "description": "Push supplier\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/accounting-api#/operations/get-create-update-suppliers-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support updating suppliers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.taxRates.getTaxRate",
+      "name": "taxRates.getTaxRate",
+      "description": "Gets the specified tax rate for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.taxRates.listTaxRates",
+      "name": "taxRates.listTaxRates",
+      "description": "Gets the latest tax rates for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.trackingCategories.getTrackingCategory",
+      "name": "trackingCategories.getTrackingCategory",
+      "description": "Gets the specified tracking categories for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.trackingCategories.listTrackingCategories",
+      "name": "trackingCategories.listTrackingCategories",
+      "description": "Gets the latest tracking categories for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.transfers.createTransfer",
+      "name": "transfers.createTransfer",
+      "description": "Posts a new transfer to the accounting package for a given company.\n\nRequired data may vary by integration. To see what data to post, first call [Get create transfer model](https://docs.codat.io/accounting-api#/operations/get-create-transfers-model).\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=transfers) for integrations that support creating transfers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.transfers.getCreateTransfersModel",
+      "name": "transfers.getCreateTransfersModel",
+      "description": "Get create transfer model. Returns the expected data for the request payload.\n\nSee the examples for integration-specific indicative models.\n\n> **Supported Integrations**\n> \n> Check out our [Knowledge UI](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=transfers) for integrations that support creating transfers."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.transfers.getTransfer",
+      "name": "transfers.getTransfer",
+      "description": "Gets the specified transfer for a given company."
+    },
+    {
+      "id": "openapi_codat_io_accounting_accounting.transfers.listTransfers",
+      "name": "transfers.listTransfers",
+      "description": "Gets the transfers for a given company."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

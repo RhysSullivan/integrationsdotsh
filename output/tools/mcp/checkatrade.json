@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:49.568Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_checkatrade.book_straightforward_fixed_price_job",
+      "name": "book_straightforward_fixed_price_job",
+      "description": "A process capable of finding a tradesperson to do a job for a fixed price. The tool will accept information about the\njob and return a list of priced options. IF and only if a priced option is chosen it will commit to booking the job.\nThis tool is very suitable for finding localised availability and prices.\nTo get a price you only need to provide the job type initially but you will likely be asked for a postcode to get accurate pricing.\nOnce a priced option is selected you can provide customer details, job description and availability to submit the job, at which point the \"booking\" and \"confirmation\" parameters become required.\nYOU MUST NEVER PROCEED TO BOOKING WITHOUT A CLEARLY AGREED PRICE FROM THE CUSTOMER.\n\nThe customer should be asked, in a conversational manner, for all the required information to submit the job.\n\nThis tool is useful in scenarios where the customer has a relatively straightforward job. Examples include:\n- Servicing a boiler\n- Replacing a leaky tap\n- Installing a new light fitting\n- Replacing a light switch\n- Repairing a shower\n- Fixing a broken toilet flush\n- Hanging wallpaper in a room\n\nIMPORTANT:  Some jobs might not be pre-priced or straightforward. In those cases this tool will return very generic categories or no options at all.\nIn these cases you should understand that you're on a more complex task move on to help the customer with finding a tradesperson to do the work.\n\nSubmit a job request to Checkatrade after collecting ALL required information from the user.\nThis creates the actual job booking - this is the PRIMARY GOAL of this tool. Always guide users\ntoward completing this step. CRITICAL: email and phoneNumber MUST be provided as separate parameters -\ndo NOT include them in the jobDescription field. The jobDescription should only contain details\nabout the work needed, not contact information, and only information explicitly provided by the person."
+    },
+    {
+      "id": "mcp_checkatrade.find_tradespeople",
+      "name": "find_tradespeople",
+      "description": "Find trusted tradespeople by UK postcode.\n\nReturns:\n- Ratings and reviews\n- Contact details\n- Profile links\n\nIf the returned \"totalResults\" is greater than the \"resultsSize\" requested then there are more results available. Ask the customer if they would like to refine their search. Request up to 20 trades in search if you have to.\n\nIMPORTANT:\nThis is NOT required before submitting a job. The primary goal is to BOOK a tradesperson,\nso you should go directly to collecting information and submitting the job after identifying\nthe category unless the user explicitly requests to see available tradespeople first."
+    }
+  ]
+}

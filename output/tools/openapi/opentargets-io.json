@@ -1,0 +1,172 @@
+{
+  "fetchedAt": "2026-04-30T15:26:41.440Z",
+  "status": "ok",
+  "count": 33,
+  "tools": [
+    {
+      "id": "openapi_opentargets_io.private.getApiDocs",
+      "name": "private.getApiDocs",
+      "description": "Access api docs as served by Redoc"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getApiSwaggerUi",
+      "name": "private.getApiSwaggerUi",
+      "description": "Interactive API docs using swagger-ui"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getAutocomplete",
+      "name": "private.getAutocomplete",
+      "description": "Search for the closest term to autocomplete in the search box.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getDiseaseById",
+      "name": "private.getDiseaseById",
+      "description": "Get `disease` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getDrugById",
+      "name": "private.getDrugById",
+      "description": "Get `drug` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getEcObyId",
+      "name": "private.getEcObyId",
+      "description": "Get `ECO` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getQuickSearch",
+      "name": "private.getQuickSearch",
+      "description": "Get `search-result` objects. Enables search bar functionality.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getRelationByEfoid",
+      "name": "private.getRelationByEfoid",
+      "description": "Get `relation` objects starting from diseases.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getRelationByEnsgid",
+      "name": "private.getRelationByEnsgid",
+      "description": "Get `relation` objects starting from diseases.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getSwagger",
+      "name": "private.getSwagger",
+      "description": "Get swagger.yaml specs for the API"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getTargetByEnsgid",
+      "name": "private.getTargetByEnsgid",
+      "description": "Get `target` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.getTargetExpressionByEnsgid",
+      "name": "private.getTargetExpressionByEnsgid",
+      "description": "Get `gene-expression` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postBestHitSearch",
+      "name": "private.postBestHitSearch",
+      "description": "Fire the search method for multiple strings\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postDiseaseById",
+      "name": "private.postDiseaseById",
+      "description": "Get `disease` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postEnrichmentTarget",
+      "name": "private.postEnrichmentTarget",
+      "description": "Returns an enrichment analysis for a list of targets passed in the body\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postRelation",
+      "name": "private.postRelation",
+      "description": "Get `relation` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postTargetByEnsgid",
+      "name": "private.postTargetByEnsgid",
+      "description": "Get `target` objects. Used for the target profile page.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.private.postTargetExpressionByEnsgid",
+      "name": "private.postTargetExpressionByEnsgid",
+      "description": "Get `gene-expression` objects.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getAssociationById",
+      "name": "public.getAssociationById",
+      "description": "Once we integrate all evidence connecting a target to a specific disease, we\n compute an association score by the means of an harmonic sum. This *association score* provides\n an indication of how strong the evidence behind each connection is and can be\n used to rank genes in order of likelihood as drug targets.\n The association ID is constructed by using the Ensembl ID of the gene and the\n EFO ID for the disease (e.g. ENSG00000073756-EFO_0003767).\n The method returns an association object, which contains the data and summary\n on each evidence type included in the calculation of the score, as well as the score itself.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getAssociationFilter",
+      "name": "public.getAssociationFilter",
+      "description": "More complex queries for associations scores and objects can be done using\nthis method, which allows to sort in different order, restrict to a specific class\nof diseases or targets, as well as filtering results by score and associated pathways.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getDataMetrics",
+      "name": "public.getDataMetrics",
+      "description": "Returns the metrics about associations and evidences, divided by datasource, genes and so on.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getDataStats",
+      "name": "public.getDataStats",
+      "description": "Returns the number of associations and evidences, divided by datasource.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getEvidenceById",
+      "name": "public.getEvidenceById",
+      "description": "We call **evidence** a unit of data that support a connection between a target and a disease.\nThe Open Targets Platform integrates multiple types of evidence including genetic associations,\nsomatic mutations, RNA expression and target-disease associations mined from the literature.\nThis method allows you to retrieve a single evidence item or a list of pieces of evidence by using their\ntargetvalidation.org ID.\n\nEvidence IDs are unique within each data release (e.g. `8ed3d7568a8c6cac9c95cfb869bac762` for release 1.2).\nYou can obtain a list of evidence and their IDs from other API calls such as [/public/evidence/filter](#!/public/get_public_evidence_filter).\n\n**Please note** that a specific evidence ID may change between data releases. We can not guarantee that a specific evidence ID will refer to the same piece of evidence connecting a target and its diseases.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getEvidenceFilter",
+      "name": "public.getEvidenceFilter",
+      "description": "The filter method allows to retrieve the specific data that supports a connection between targets and diseases.\nFilters can be used to restrict the results by source and type of data,\nor limit results to targets which are part of a particular pathway.\nMinimum and maximum scores can be specified as well as the type of evidence linking target and disease.\n**Note** that multiple genes and diseases can be specified in the same request.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getPing",
+      "name": "public.getPing",
+      "description": "Check if the API is up\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getSearch",
+      "name": "public.getSearch",
+      "description": "This method allows you to look for gene or diseases of interest using a free text search,\nreplicating the functionality of the search box on our homepage. It should be used to identify\nthe best match for a disease or target of interest, rather than gathering a specific set of evidence.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getTherapeuticAreas",
+      "name": "public.getTherapeuticAreas",
+      "description": "Returns the list of therapeutic areas for the current data release\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.getVersion",
+      "name": "public.getVersion",
+      "description": "Returns current API version.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.postAssociationFilter",
+      "name": "public.postAssociationFilter",
+      "description": "Complex queries and filters for association objects can also be submitted using a JSON\nobject and the equivalent POST method.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.postEvidenceById",
+      "name": "public.postEvidenceById",
+      "description": "This is the POST version of [/public/evidence](#!/public/get_public_evidence).\nIt allows to query for a list of evidence strings encoded in a `json` object to be passed in the body.\n"
+    },
+    {
+      "id": "openapi_opentargets_io.public.postEvidenceFilter",
+      "name": "public.postEvidenceFilter",
+      "description": "POST version of [/public/evidence/filter](#!/public/get_public_evidence_filter).\nFilters can be specified as part of a `json` object in the body, simplifying the submission of queries.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

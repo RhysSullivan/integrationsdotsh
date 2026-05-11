@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:22:07.465Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_voyage_prive.search_voyage_prive",
+      "name": "search-voyage-prive",
+      "description": "Use this tool to search for a trip in the Voyage Prive catalog. \n    The tool will try to find trips matching the filters provided. If there are no results the tool will widen the search by removing filters one by one.\n    The tool will let you now which filters the results returned correspond to (in the resultsFilters object).\n    - If the provided filters & the resultsFilters are different, you should make it clear to the user that there was no match for the provided filters, so voyage privé widened the search.\n    - If the resultsFilters.destination is \"no results for this destination\", you should make it clear to the user that there was no match for the provided destination, so voyage privé displays his most popular offers. You should also offer to search for another destination.\n    Examples of messages you can send to the user after the search:\n    - \"Here are the results for France, 3 nights, from 10/10/2025 to 13/10/2025, for 100-200€ per night. I can help you compare those offers or search for another destination.\"\n    - \"There were no results for France, from 10/10/2025 to 13/10/2025, for 100-200€ per night, but i found results for the same destination and dates with a higher price. I can help you compare those offers or search for another destination or other dates.\"\n    - \"I couldn't find any results for this destination, but here are the most popular trips at the moment. Would you like me to search for another destination?\"\n      ."
+    }
+  ]
+}

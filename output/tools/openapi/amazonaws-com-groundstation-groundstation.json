@@ -1,0 +1,182 @@
+{
+  "fetchedAt": "2026-04-30T15:45:03.384Z",
+  "status": "ok",
+  "count": 35,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.agent.getAgentConfiguration",
+      "name": "agent.getAgentConfiguration",
+      "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.agent.registerAgent",
+      "name": "agent.registerAgent",
+      "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p> Registers a new agent with AWS Ground Station. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.agent.updateAgentStatus",
+      "name": "agent.updateAgentStatus",
+      "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.config.createConfig",
+      "name": "config.createConfig",
+      "description": "<p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p> <p>Only one type of <code>configData</code> can be specified.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.config.deleteConfig",
+      "name": "config.deleteConfig",
+      "description": "Deletes a <code>Config</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.config.getConfig",
+      "name": "config.getConfig",
+      "description": "<p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.config.listConfigs",
+      "name": "config.listConfigs",
+      "description": "Returns a list of <code>Config</code> objects."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.config.updateConfig",
+      "name": "config.updateConfig",
+      "description": "<p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.contact.cancelContact",
+      "name": "contact.cancelContact",
+      "description": "Cancels a contact with a specified contact ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.contact.describeContact",
+      "name": "contact.describeContact",
+      "description": "Describes an existing contact."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.contact.reserveContact",
+      "name": "contact.reserveContact",
+      "description": "Reserves a contact using specified parameters."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.contacts.listContacts",
+      "name": "contacts.listContacts",
+      "description": "<p>Returns a list of contacts.</p> <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.dataflowEndpointGroup.createDataflowEndpointGroup",
+      "name": "dataflowEndpointGroup.createDataflowEndpointGroup",
+      "description": "<p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.dataflowEndpointGroup.deleteDataflowEndpointGroup",
+      "name": "dataflowEndpointGroup.deleteDataflowEndpointGroup",
+      "description": "Deletes a dataflow endpoint group."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.dataflowEndpointGroup.getDataflowEndpointGroup",
+      "name": "dataflowEndpointGroup.getDataflowEndpointGroup",
+      "description": "Returns the dataflow endpoint group."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.dataflowEndpointGroup.listDataflowEndpointGroups",
+      "name": "dataflowEndpointGroup.listDataflowEndpointGroups",
+      "description": "Returns a list of <code>DataflowEndpoint</code> groups."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.ephemerides.listEphemerides",
+      "name": "ephemerides.listEphemerides",
+      "description": "List existing ephemerides."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.ephemeris.createEphemeris",
+      "name": "ephemeris.createEphemeris",
+      "description": "Creates an Ephemeris with the specified <code>EphemerisData</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.ephemeris.deleteEphemeris",
+      "name": "ephemeris.deleteEphemeris",
+      "description": "Deletes an ephemeris"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.ephemeris.describeEphemeris",
+      "name": "ephemeris.describeEphemeris",
+      "description": "Describes an existing ephemeris."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.ephemeris.updateEphemeris",
+      "name": "ephemeris.updateEphemeris",
+      "description": "Updates an existing ephemeris"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.groundstation.listGroundStations",
+      "name": "groundstation.listGroundStations",
+      "description": "Returns a list of ground stations. "
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.minuteUsage.getMinuteUsage",
+      "name": "minuteUsage.getMinuteUsage",
+      "description": "Returns the number of minutes used by account."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.missionprofile.createMissionProfile",
+      "name": "missionprofile.createMissionProfile",
+      "description": "<p>Creates a mission profile.</p> <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.missionprofile.deleteMissionProfile",
+      "name": "missionprofile.deleteMissionProfile",
+      "description": "Deletes a mission profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.missionprofile.getMissionProfile",
+      "name": "missionprofile.getMissionProfile",
+      "description": "Returns a mission profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.missionprofile.listMissionProfiles",
+      "name": "missionprofile.listMissionProfiles",
+      "description": "Returns a list of mission profiles."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.missionprofile.updateMissionProfile",
+      "name": "missionprofile.updateMissionProfile",
+      "description": "<p>Updates a mission profile.</p> <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.satellite.getSatellite",
+      "name": "satellite.getSatellite",
+      "description": "Returns a satellite."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.satellite.listSatellites",
+      "name": "satellite.listSatellites",
+      "description": "Returns a list of satellites."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Returns a list of tags for a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Assigns a tag to a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_groundstation_groundstation.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Deassigns a resource tag."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

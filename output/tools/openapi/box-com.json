@@ -1,0 +1,1317 @@
+{
+  "fetchedAt": "2026-04-30T15:22:06.115Z",
+  "status": "ok",
+  "count": 262,
+  "tools": [
+    {
+      "id": "openapi_box_com.authorization.getAuthorize",
+      "name": "authorization.getAuthorize",
+      "description": "Authorize a user by sending them through the [Box](https://box.com)\nwebsite and request their permission to act on their behalf.\n\nThis is the first step when authenticating a user using\nOAuth 2.0. To request a user's authorization to use the Box APIs\non their behalf you will need to send a user to the URL with this\nformat."
+    },
+    {
+      "id": "openapi_box_com.authorization.postOauth2Revoke",
+      "name": "authorization.postOauth2Revoke",
+      "description": "Revoke an active Access Token, effectively logging a user out\nthat has been previously authenticated."
+    },
+    {
+      "id": "openapi_box_com.authorization.postOauth2Token",
+      "name": "authorization.postOauth2Token",
+      "description": "Request an Access Token using either a client-side obtained OAuth 2.0\nauthorization code or a server-side JWT assertion.\n\nAn Access Token is a string that enables Box to verify that a\nrequest belongs to an authorized session. In the normal order of\noperations you will begin by requesting authentication from the\n[authorize](#get-authorize) endpoint and Box will send you an\nauthorization code.\n\nYou will then send this code to this endpoint to exchange it for\nan Access Token. The returned Access Token can then be used to to make\nBox API calls."
+    },
+    {
+      "id": "openapi_box_com.authorization.postOauth2TokenRefresh",
+      "name": "authorization.postOauth2TokenRefresh",
+      "description": "Refresh an Access Token using its client ID, secret, and refresh token."
+    },
+    {
+      "id": "openapi_box_com.boxSign.getSignRequests",
+      "name": "boxSign.getSignRequests",
+      "description": "Gets sign requests created by a user. If the `sign_files` and/or\n`parent_folder` are deleted, the sign request will not return in the list."
+    },
+    {
+      "id": "openapi_box_com.boxSign.getSignRequestsId",
+      "name": "boxSign.getSignRequestsId",
+      "description": "Gets a sign request by ID."
+    },
+    {
+      "id": "openapi_box_com.boxSign.postSignRequests",
+      "name": "boxSign.postSignRequests",
+      "description": "Creates a sign request. This involves preparing a document for signing and\nsending the sign request to signers."
+    },
+    {
+      "id": "openapi_box_com.boxSign.postSignRequestsIdCancel",
+      "name": "boxSign.postSignRequestsIdCancel",
+      "description": "Cancels a sign request."
+    },
+    {
+      "id": "openapi_box_com.boxSign.postSignRequestsIdResend",
+      "name": "boxSign.postSignRequestsIdResend",
+      "description": "Resends a sign request email to all outstanding signers."
+    },
+    {
+      "id": "openapi_box_com.classifications.deleteMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchema",
+      "name": "classifications.deleteMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchema",
+      "description": "Delete all classifications by deleting the classification\nmetadata template."
+    },
+    {
+      "id": "openapi_box_com.classifications.getMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchema",
+      "name": "classifications.getMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchema",
+      "description": "Retrieves the classification metadata template and lists all the\nclassifications available to this enterprise.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`."
+    },
+    {
+      "id": "openapi_box_com.classifications.postMetadataTemplatesSchemaClassifications",
+      "name": "classifications.postMetadataTemplatesSchemaClassifications",
+      "description": "When an enterprise does not yet have any classifications, this API call\ninitializes the classification template with an initial set of\nclassifications.\n\nIf an enterprise already has a classification, the template will already\nexist and instead an API call should be made to add additional\nclassifications."
+    },
+    {
+      "id": "openapi_box_com.classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaAdd",
+      "name": "classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaAdd",
+      "description": "Adds one or more new classifications to the list of classifications\navailable to the enterprise.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`."
+    },
+    {
+      "id": "openapi_box_com.classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaDelete",
+      "name": "classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaDelete",
+      "description": "Removes a classification from the list of classifications\navailable to the enterprise.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`."
+    },
+    {
+      "id": "openapi_box_com.classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaUpdate",
+      "name": "classifications.putMetadataTemplatesEnterpriseSecurityClassification6VmVochwUWoSchemaUpdate",
+      "description": "Updates the labels and descriptions of one or more classifications\navailable to the enterprise.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFiles.deleteFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFiles.deleteFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Removes any classifications from a file.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/files/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFiles.getFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFiles.getFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Retrieves the classification metadata instance that\nhas been applied to a file.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/files/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFiles.postFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFiles.postFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Adds a classification to a file by specifying the label of the\nclassification to add.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/files/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFiles.putFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFiles.putFilesIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Updates a classification on a file.\n\nThe classification can only be updated if a classification has already been\napplied to the file before. When editing classifications, only values are\ndefined for the enterprise will be accepted."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFolders.deleteFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFolders.deleteFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Removes any classifications from a folder.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/folders/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFolders.getFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFolders.getFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Retrieves the classification metadata instance that\nhas been applied to a folder.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/folders/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFolders.postFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFolders.postFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Adds a classification to a folder by specifying the label of the\nclassification to add.\n\nThis API can also be called by including the enterprise ID in the\nURL explicitly, for example\n`/folders/:id//enterprise_12345/securityClassification-6VMVochwUWo`."
+    },
+    {
+      "id": "openapi_box_com.classificationsOnFolders.putFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "name": "classificationsOnFolders.putFoldersIdMetadataEnterpriseSecurityClassification6VmVochwUWo",
+      "description": "Updates a classification on a folder.\n\nThe classification can only be updated if a classification has already been\napplied to the folder before. When editing classifications, only values are\ndefined for the enterprise will be accepted."
+    },
+    {
+      "id": "openapi_box_com.collaborations.deleteCollaborationsId",
+      "name": "collaborations.deleteCollaborationsId",
+      "description": "Deletes a single collaboration."
+    },
+    {
+      "id": "openapi_box_com.collaborations.getCollaborationsId",
+      "name": "collaborations.getCollaborationsId",
+      "description": "Retrieves a single collaboration."
+    },
+    {
+      "id": "openapi_box_com.collaborations.postCollaborations",
+      "name": "collaborations.postCollaborations",
+      "description": "Adds a collaboration for a single user or a single group to a file\nor folder.\n\nCollaborations can be created using email address, user IDs, or a\ngroup IDs.\n\nIf a collaboration is being created with a group, access to\nthis endpoint is dependent on the group's ability to be invited."
+    },
+    {
+      "id": "openapi_box_com.collaborations.putCollaborationsId",
+      "name": "collaborations.putCollaborationsId",
+      "description": "Updates a collaboration.\nCan be used to change the owner of an item, or to\naccept collaboration invites."
+    },
+    {
+      "id": "openapi_box_com.collaborationsList.getCollaborations",
+      "name": "collaborationsList.getCollaborations",
+      "description": "Retrieves all pending collaboration invites for this user."
+    },
+    {
+      "id": "openapi_box_com.collaborationsList.getFilesIdCollaborations",
+      "name": "collaborationsList.getFilesIdCollaborations",
+      "description": "Retrieves a list of pending and active collaborations for a\nfile. This returns all the users that have access to the file\nor have been invited to the file."
+    },
+    {
+      "id": "openapi_box_com.collaborationsList.getFoldersIdCollaborations",
+      "name": "collaborationsList.getFoldersIdCollaborations",
+      "description": "Retrieves a list of pending and active collaborations for a\nfolder. This returns all the users that have access to the folder\nor have been invited to the folder."
+    },
+    {
+      "id": "openapi_box_com.collaborationsList.getGroupsIdCollaborations",
+      "name": "collaborationsList.getGroupsIdCollaborations",
+      "description": "Retrieves all the collaborations for a group. The user\nmust have admin permissions to inspect enterprise's groups.\n\nEach collaboration object has details on which files or\nfolders the group has access to and with what role."
+    },
+    {
+      "id": "openapi_box_com.collections.getCollections",
+      "name": "collections.getCollections",
+      "description": "Retrieves all collections for a given user.\n\nCurrently, only the `favorites` collection\nis supported."
+    },
+    {
+      "id": "openapi_box_com.collections.getCollectionsIdItems",
+      "name": "collections.getCollectionsIdItems",
+      "description": "Retrieves the files and/or folders contained within\nthis collection."
+    },
+    {
+      "id": "openapi_box_com.comments.deleteCommentsId",
+      "name": "comments.deleteCommentsId",
+      "description": "Permanently deletes a comment."
+    },
+    {
+      "id": "openapi_box_com.comments.getCommentsId",
+      "name": "comments.getCommentsId",
+      "description": "Retrieves the message and metadata for a specific comment, as well\nas information on the user who created the comment."
+    },
+    {
+      "id": "openapi_box_com.comments.getFilesIdComments",
+      "name": "comments.getFilesIdComments",
+      "description": "Retrieves a list of comments for a file."
+    },
+    {
+      "id": "openapi_box_com.comments.postComments",
+      "name": "comments.postComments",
+      "description": "Adds a comment by the user to a specific file, or\nas a reply to an other comment."
+    },
+    {
+      "id": "openapi_box_com.comments.putCommentsId",
+      "name": "comments.putCommentsId",
+      "description": "Update the message of a comment."
+    },
+    {
+      "id": "openapi_box_com.devicePinners.deleteDevicePinnersId",
+      "name": "devicePinners.deleteDevicePinnersId",
+      "description": "Deletes an individual device pin."
+    },
+    {
+      "id": "openapi_box_com.devicePinners.getDevicePinnersId",
+      "name": "devicePinners.getDevicePinnersId",
+      "description": "Retrieves information about an individual device pin."
+    },
+    {
+      "id": "openapi_box_com.devicePinners.getEnterprisesIdDevicePinners",
+      "name": "devicePinners.getEnterprisesIdDevicePinners",
+      "description": "Retrieves all the device pins within an enterprise.\n\nThe user must have admin privileges, and the application\nneeds the \"manage enterprise\" scope to make this call."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsForCollaborations.deleteCollaborationWhitelistEntriesId",
+      "name": "domainRestrictionsForCollaborations.deleteCollaborationWhitelistEntriesId",
+      "description": "Removes a domain from the list of domains that have been deemed safe to create\ncollaborations for within the current enterprise."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsForCollaborations.getCollaborationWhitelistEntries",
+      "name": "domainRestrictionsForCollaborations.getCollaborationWhitelistEntries",
+      "description": "Returns the list domains that have been deemed safe to create collaborations\nfor within the current enterprise."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsForCollaborations.getCollaborationWhitelistEntriesId",
+      "name": "domainRestrictionsForCollaborations.getCollaborationWhitelistEntriesId",
+      "description": "Returns a domain that has been deemed safe to create collaborations\nfor within the current enterprise."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsForCollaborations.postCollaborationWhitelistEntries",
+      "name": "domainRestrictionsForCollaborations.postCollaborationWhitelistEntries",
+      "description": "Creates a new entry in the list of allowed domains to allow\ncollaboration for."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsUserExemptions.deleteCollaborationWhitelistExemptTargetsId",
+      "name": "domainRestrictionsUserExemptions.deleteCollaborationWhitelistExemptTargetsId",
+      "description": "Removes a user's exemption from the restrictions set out by the allowed list\nof domains for collaborations."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsUserExemptions.getCollaborationWhitelistExemptTargets",
+      "name": "domainRestrictionsUserExemptions.getCollaborationWhitelistExemptTargets",
+      "description": "Returns a list of users who have been exempt from the collaboration\ndomain restrictions."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsUserExemptions.getCollaborationWhitelistExemptTargetsId",
+      "name": "domainRestrictionsUserExemptions.getCollaborationWhitelistExemptTargetsId",
+      "description": "Returns a users who has been exempt from the collaboration\ndomain restrictions."
+    },
+    {
+      "id": "openapi_box_com.domainRestrictionsUserExemptions.postCollaborationWhitelistExemptTargets",
+      "name": "domainRestrictionsUserExemptions.postCollaborationWhitelistExemptTargets",
+      "description": "Exempts a user from the restrictions set out by the allowed list of domains\nfor collaborations."
+    },
+    {
+      "id": "openapi_box_com.downloads.getFilesIdContent",
+      "name": "downloads.getFilesIdContent",
+      "description": "Returns the contents of a file in binary format."
+    },
+    {
+      "id": "openapi_box_com.emailAliases.deleteUsersIdEmailAliasesId",
+      "name": "emailAliases.deleteUsersIdEmailAliasesId",
+      "description": "Removes an email alias from a user."
+    },
+    {
+      "id": "openapi_box_com.emailAliases.getUsersIdEmailAliases",
+      "name": "emailAliases.getUsersIdEmailAliases",
+      "description": "Retrieves all email aliases for a user. The collection\ndoes not include the primary login for the user."
+    },
+    {
+      "id": "openapi_box_com.emailAliases.postUsersIdEmailAliases",
+      "name": "emailAliases.postUsersIdEmailAliases",
+      "description": "Adds a new email alias to a user account.."
+    },
+    {
+      "id": "openapi_box_com.events.getEvents",
+      "name": "events.getEvents",
+      "description": "Returns up to a year of past events for a given user\nor for the entire enterprise.\n\nBy default this returns events for the authenticated user. To retrieve events\nfor the entire enterprise, set the `stream_type` to `admin_logs_streaming`\nfor live monitoring of new events, or `admin_logs` for querying across\nhistorical events. The user making the API call will\nneed to have admin privileges, and the application will need to have the\nscope `manage enterprise properties` checked."
+    },
+    {
+      "id": "openapi_box_com.events.optionsEvents",
+      "name": "events.optionsEvents",
+      "description": "Returns a list of real-time servers that can be used for long-polling updates\nto the [event stream](#get-events).\n\nLong polling is the concept where a HTTP request is kept open until the\nserver sends a response, then repeating the process over and over to receive\nupdated responses.\n\nLong polling the event stream can only be used for user events, not for\nenterprise events.\n\nTo use long polling, first use this endpoint to retrieve a list of long poll\nURLs. Next, make a long poll request to any of the provided URLs.\n\nWhen an event occurs in monitored account a response with the value\n`new_change` will be sent. The response contains no other details as\nit only serves as a prompt to take further action such as sending a\nrequest to the [events endpoint](#get-events) with the last known\n`stream_position`.\n\nAfter the server sends this response it closes the connection. You must now\nrepeat the long poll process to begin listening for events again.\n\nIf no events occur for a while and the connection times out you will\nreceive a response with the value `reconnect`. When you receive this response\nyou’ll make another call to this endpoint to restart the process.\n\nIf you receive no events in `retry_timeout` seconds then you will need to\nmake another request to the real-time server (one of the URLs in the response\nfor this endpoint). This might be necessary due to network errors.\n\nFinally, if you receive a `max_retries` error when making a request to the\nreal-time server, you should start over by making a call to this endpoint\nfirst."
+    },
+    {
+      "id": "openapi_box_com.fileRequests.deleteFileRequestsId",
+      "name": "fileRequests.deleteFileRequestsId",
+      "description": "Deletes a file request permanently."
+    },
+    {
+      "id": "openapi_box_com.fileRequests.getFileRequestsId",
+      "name": "fileRequests.getFileRequestsId",
+      "description": "Retrieves the information about a file request."
+    },
+    {
+      "id": "openapi_box_com.fileRequests.postFileRequestsIdCopy",
+      "name": "fileRequests.postFileRequestsIdCopy",
+      "description": "Copies an existing file request that is already present on one folder,\nand applies it to another folder."
+    },
+    {
+      "id": "openapi_box_com.fileRequests.putFileRequestsId",
+      "name": "fileRequests.putFileRequestsId",
+      "description": "Updates a file request. This can be used to activate or\ndeactivate a file request."
+    },
+    {
+      "id": "openapi_box_com.files.deleteFilesId",
+      "name": "files.deleteFilesId",
+      "description": "Deletes a file, either permanently or by moving it to\nthe trash.\n\nThe the enterprise settings determine whether the item will\nbe permanently deleted from Box or moved to the trash."
+    },
+    {
+      "id": "openapi_box_com.files.getFilesId",
+      "name": "files.getFilesId",
+      "description": "Retrieves the details about a file."
+    },
+    {
+      "id": "openapi_box_com.files.getFilesIdThumbnailId",
+      "name": "files.getFilesIdThumbnailId",
+      "description": "Retrieves a thumbnail, or smaller image representation, of a file.\n\nSizes of `32x32`,`64x64`, `128x128`, and `256x256` can be returned in\nthe `.png` format and sizes of `32x32`, `160x160`, and `320x320`\ncan be returned in the `.jpg` format.\n\nThumbnails can be generated for the image and video file formats listed\n[found on our community site][1].\n\n[1]: https://community.box.com/t5/Migrating-and-Previewing-Content/File-Types-and-Fonts-Supported-in-Box-Content-Preview/ta-p/327"
+    },
+    {
+      "id": "openapi_box_com.files.optionsFilesContent",
+      "name": "files.optionsFilesContent",
+      "description": "Performs a check to verify that a file will be accepted by Box\nbefore you upload the entire file."
+    },
+    {
+      "id": "openapi_box_com.files.postFilesIdCopy",
+      "name": "files.postFilesIdCopy",
+      "description": "Creates a copy of a file."
+    },
+    {
+      "id": "openapi_box_com.files.putFilesId",
+      "name": "files.putFilesId",
+      "description": "Updates a file. This can be used to rename or move a file,\ncreate a shared link, or lock a file."
+    },
+    {
+      "id": "openapi_box_com.fileVersionLegalHolds.getFileVersionLegalHolds",
+      "name": "fileVersionLegalHolds.getFileVersionLegalHolds",
+      "description": "Get a list of file versions on legal hold for a legal hold\nassignment.\n\nDue to ongoing re-architecture efforts this API might not return all file\nversions for this policy ID.\n\nInstead, this API will only return file versions held in the legacy\narchitecture. Two new endpoints will available to request any file versions\nheld in the new architecture.\n\nFor file versions held in the new architecture, the `GET\n/legal_hold_policy_assignments/:id/file_versions_on_hold` API can be used to\nreturn all past file versions available for this policy assignment, and the\n`GET /legal_hold_policy_assignments/:id/files_on_hold` API can be used to\nreturn any current (latest) versions of a file under legal hold.\n\nThe `GET /legal_hold_policy_assignments?policy_id={id}` API can be used to\nfind a list of policy assignments for a given policy ID.\n\nOnce the re-architecture is completed this API will be deprecated."
+    },
+    {
+      "id": "openapi_box_com.fileVersionLegalHolds.getFileVersionLegalHoldsId",
+      "name": "fileVersionLegalHolds.getFileVersionLegalHoldsId",
+      "description": "Retrieves information about the legal hold policies\nassigned to a file version."
+    },
+    {
+      "id": "openapi_box_com.fileVersionRetentions.getFileVersionRetentions",
+      "name": "fileVersionRetentions.getFileVersionRetentions",
+      "description": "Retrieves all file version retentions for the given enterprise."
+    },
+    {
+      "id": "openapi_box_com.fileVersionRetentions.getFileVersionRetentionsId",
+      "name": "fileVersionRetentions.getFileVersionRetentionsId",
+      "description": "Returns information about a file version retention."
+    },
+    {
+      "id": "openapi_box_com.fileVersions.deleteFilesIdVersionsId",
+      "name": "fileVersions.deleteFilesIdVersionsId",
+      "description": "Move a file version to the trash.\n\nVersions are only tracked for Box users with premium accounts."
+    },
+    {
+      "id": "openapi_box_com.fileVersions.getFilesIdVersions",
+      "name": "fileVersions.getFilesIdVersions",
+      "description": "Retrieve a list of the past versions for a file.\n\nVersions are only tracked by Box users with premium accounts. To fetch the ID\nof the current version of a file, use the `GET /file/:id` API."
+    },
+    {
+      "id": "openapi_box_com.fileVersions.getFilesIdVersionsId",
+      "name": "fileVersions.getFilesIdVersionsId",
+      "description": "Retrieve a specific version of a file.\n\nVersions are only tracked for Box users with premium accounts."
+    },
+    {
+      "id": "openapi_box_com.fileVersions.postFilesIdVersionsCurrent",
+      "name": "fileVersions.postFilesIdVersionsCurrent",
+      "description": "Promote a specific version of a file.\n\nIf previous versions exist, this method can be used to\npromote one of the older versions to the top of the version history.\n\nThis creates a new copy of the old version and puts it at the\ntop of the versions history. The file will have the exact same contents\nas the older version, with the the same hash digest, `etag`, and\nname as the original.\n\nOther properties such as comments do not get updated to their\nformer values.\n\nDon't use this endpoint to restore Box Notes,\nas it works with file formats such as PDF, DOC,\nPPTX or similar."
+    },
+    {
+      "id": "openapi_box_com.fileVersions.putFilesIdVersionsId",
+      "name": "fileVersions.putFilesIdVersionsId",
+      "description": "Restores a specific version of a file after it was deleted.\nDon't use this endpoint to restore Box Notes,\nas it works with file formats such as PDF, DOC,\nPPTX or similar."
+    },
+    {
+      "id": "openapi_box_com.folderLocks.deleteFolderLocksId",
+      "name": "folderLocks.deleteFolderLocksId",
+      "description": "Deletes a folder lock on a given folder.\n\nYou must be authenticated as the owner or co-owner of the folder to\nuse this endpoint."
+    },
+    {
+      "id": "openapi_box_com.folderLocks.getFolderLocks",
+      "name": "folderLocks.getFolderLocks",
+      "description": "Retrieves folder lock details for a given folder.\n\nYou must be authenticated as the owner or co-owner of the folder to\nuse this endpoint."
+    },
+    {
+      "id": "openapi_box_com.folderLocks.postFolderLocks",
+      "name": "folderLocks.postFolderLocks",
+      "description": "Creates a folder lock on a folder, preventing it from being moved and/or\ndeleted.\n\nYou must be authenticated as the owner or co-owner of the folder to\nuse this endpoint."
+    },
+    {
+      "id": "openapi_box_com.folders.deleteFoldersId",
+      "name": "folders.deleteFoldersId",
+      "description": "Deletes a folder, either permanently or by moving it to\nthe trash."
+    },
+    {
+      "id": "openapi_box_com.folders.getFoldersId",
+      "name": "folders.getFoldersId",
+      "description": "Retrieves details for a folder, including the first 100 entries\nin the folder.\n\nTo fetch more items within the folder, please use the\n[Get items in a folder](#get-folders-id-items) endpoint."
+    },
+    {
+      "id": "openapi_box_com.folders.getFoldersIdItems",
+      "name": "folders.getFoldersIdItems",
+      "description": "Retrieves a page of items in a folder. These items can be files,\nfolders, and web links.\n\nTo request more information about the folder itself, like its size,\nplease use the [Get a folder](#get-folders-id) endpoint instead."
+    },
+    {
+      "id": "openapi_box_com.folders.postFolders",
+      "name": "folders.postFolders",
+      "description": "Creates a new empty folder within the specified parent folder."
+    },
+    {
+      "id": "openapi_box_com.folders.postFoldersIdCopy",
+      "name": "folders.postFoldersIdCopy",
+      "description": "Creates a copy of a folder within a destination folder.\n\nThe original folder will not be changed."
+    },
+    {
+      "id": "openapi_box_com.folders.putFoldersId",
+      "name": "folders.putFoldersId",
+      "description": "Updates a folder. This can be also be used to move the folder,\ncreate shared links, update collaborations, and more."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.deleteGroupMembershipsId",
+      "name": "groupMemberships.deleteGroupMembershipsId",
+      "description": "Deletes a specific group membership. Only admins of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.getGroupMembershipsId",
+      "name": "groupMemberships.getGroupMembershipsId",
+      "description": "Retrieves a specific group membership. Only admins of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.getGroupsIdMemberships",
+      "name": "groupMemberships.getGroupsIdMemberships",
+      "description": "Retrieves all the members for a group. Only members of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.getUsersIdMemberships",
+      "name": "groupMemberships.getUsersIdMemberships",
+      "description": "Retrieves all the groups for a user. Only members of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.postGroupMemberships",
+      "name": "groupMemberships.postGroupMemberships",
+      "description": "Creates a group membership. Only users with\nadmin-level permissions will be able to use this API."
+    },
+    {
+      "id": "openapi_box_com.groupMemberships.putGroupMembershipsId",
+      "name": "groupMemberships.putGroupMembershipsId",
+      "description": "Updates a user's group membership. Only admins of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groups.deleteGroupsId",
+      "name": "groups.deleteGroupsId",
+      "description": "Permanently deletes a group. Only users with\nadmin-level permissions will be able to use this API."
+    },
+    {
+      "id": "openapi_box_com.groups.getGroups",
+      "name": "groups.getGroups",
+      "description": "Retrieves all of the groups for a given enterprise. The user\nmust have admin permissions to inspect enterprise's groups."
+    },
+    {
+      "id": "openapi_box_com.groups.getGroupsId",
+      "name": "groups.getGroupsId",
+      "description": "Retrieves information about a group. Only members of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.groups.postGroups",
+      "name": "groups.postGroups",
+      "description": "Creates a new group of users in an enterprise. Only users with admin\npermissions can create new groups."
+    },
+    {
+      "id": "openapi_box_com.groups.postGroupsTerminateSessions",
+      "name": "groups.postGroupsTerminateSessions",
+      "description": "Validates the roles and permissions of the group,\nand creates asynchronous jobs\nto terminate the group's sessions.\nReturns the status for the POST request."
+    },
+    {
+      "id": "openapi_box_com.groups.putGroupsId",
+      "name": "groups.putGroupsId",
+      "description": "Updates a specific group. Only admins of this\ngroup or users with admin-level permissions will be able to\nuse this API."
+    },
+    {
+      "id": "openapi_box_com.invites.getInvitesId",
+      "name": "invites.getInvitesId",
+      "description": "Returns the status of a user invite."
+    },
+    {
+      "id": "openapi_box_com.invites.postInvites",
+      "name": "invites.postInvites",
+      "description": "Invites an existing external user to join an enterprise.\n\nThe existing user can not be part of another enterprise and\nmust already have a Box account. Once invited, the user will receive an\nemail and are prompted to accept the invitation within the\nBox web application.\n\nThis method requires the \"Manage An Enterprise\" scope enabled for\nthe application, which can be enabled within the developer console."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicies.deleteLegalHoldPoliciesId",
+      "name": "legalHoldPolicies.deleteLegalHoldPoliciesId",
+      "description": "Delete an existing legal hold policy.\n\nThis is an asynchronous process. The policy will not be\nfully deleted yet when the response returns."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicies.getLegalHoldPolicies",
+      "name": "legalHoldPolicies.getLegalHoldPolicies",
+      "description": "Retrieves a list of legal hold policies that belong to\nan enterprise."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicies.getLegalHoldPoliciesId",
+      "name": "legalHoldPolicies.getLegalHoldPoliciesId",
+      "description": "Retrieve a legal hold policy."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicies.postLegalHoldPolicies",
+      "name": "legalHoldPolicies.postLegalHoldPolicies",
+      "description": "Create a new legal hold policy."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicies.putLegalHoldPoliciesId",
+      "name": "legalHoldPolicies.putLegalHoldPoliciesId",
+      "description": "Update legal hold policy."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.deleteLegalHoldPolicyAssignmentsId",
+      "name": "legalHoldPolicyAssignments.deleteLegalHoldPolicyAssignmentsId",
+      "description": "Remove a legal hold from an item.\n\nThis is an asynchronous process. The policy will not be\nfully removed yet when the response returns."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.getLegalHoldPolicyAssignments",
+      "name": "legalHoldPolicyAssignments.getLegalHoldPolicyAssignments",
+      "description": "Retrieves a list of items a legal hold policy has been assigned to."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsId",
+      "name": "legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsId",
+      "description": "Retrieve a legal hold policy assignment."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsIdFilesOnHold",
+      "name": "legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsIdFilesOnHold",
+      "description": "Get a list of current file versions for a legal hold\nassignment.\n\nIn some cases you may want to get previous file versions instead. In these\ncases, use the `GET  /legal_hold_policy_assignments/:id/file_versions_on_hold`\nAPI instead to return any previous versions of a file for this legal hold\npolicy assignment.\n\nDue to ongoing re-architecture efforts this API might not return all file\nversions held for this policy ID. Instead, this API will only return the\nlatest file version held in the newly developed architecture. The `GET\n/file_version_legal_holds` API can be used to fetch current and past versions\nof files held within the legacy architecture.\n\nThe `GET /legal_hold_policy_assignments?policy_id={id}` API can be used to\nfind a list of policy assignments for a given policy ID."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsIdFileVersionsOnHold",
+      "name": "legalHoldPolicyAssignments.getLegalHoldPolicyAssignmentsIdFileVersionsOnHold",
+      "description": "Get a list of previous file versions for a legal hold\nassignment.\n\nIn some cases you may only need the latest file versions instead. In these\ncases, use the `GET  /legal_hold_policy_assignments/:id/files_on_hold` API\ninstead to return any current (latest) versions of a file for this legal hold\npolicy assignment.\n\nDue to ongoing re-architecture efforts this API might not return all files\nheld for this policy ID. Instead, this API will only return past file versions\nheld in the newly developed architecture. The `GET /file_version_legal_holds`\nAPI can be used to fetch current and past versions of files held within the\nlegacy architecture.\n\nThe `GET /legal_hold_policy_assignments?policy_id={id}` API can be used to\nfind a list of policy assignments for a given policy ID."
+    },
+    {
+      "id": "openapi_box_com.legalHoldPolicyAssignments.postLegalHoldPolicyAssignments",
+      "name": "legalHoldPolicyAssignments.postLegalHoldPolicyAssignments",
+      "description": "Assign a legal hold to a file, file version, folder, or user."
+    },
+    {
+      "id": "openapi_box_com.metadataCascadePolicies.deleteMetadataCascadePoliciesId",
+      "name": "metadataCascadePolicies.deleteMetadataCascadePoliciesId",
+      "description": "Deletes a metadata cascade policy."
+    },
+    {
+      "id": "openapi_box_com.metadataCascadePolicies.getMetadataCascadePolicies",
+      "name": "metadataCascadePolicies.getMetadataCascadePolicies",
+      "description": "Retrieves a list of all the metadata cascade policies\nthat are applied to a given folder. This can not be used on the root\nfolder with ID `0`."
+    },
+    {
+      "id": "openapi_box_com.metadataCascadePolicies.getMetadataCascadePoliciesId",
+      "name": "metadataCascadePolicies.getMetadataCascadePoliciesId",
+      "description": "Retrieve a specific metadata cascade policy assigned to a folder."
+    },
+    {
+      "id": "openapi_box_com.metadataCascadePolicies.postMetadataCascadePolicies",
+      "name": "metadataCascadePolicies.postMetadataCascadePolicies",
+      "description": "Creates a new metadata cascade policy that applies a given\nmetadata template to a given folder and automatically\ncascades it down to any files within that folder.\n\nIn order for the policy to be applied a metadata instance must first\nbe applied to the folder the policy is to be applied to."
+    },
+    {
+      "id": "openapi_box_com.metadataCascadePolicies.postMetadataCascadePoliciesIdApply",
+      "name": "metadataCascadePolicies.postMetadataCascadePoliciesIdApply",
+      "description": "Force the metadata on a folder with a metadata cascade policy to be applied to\nall of its children. This can be used after creating a new cascade policy to\nenforce the metadata to be cascaded down to all existing files within that\nfolder."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFiles.deleteFilesIdMetadataIdId",
+      "name": "metadataInstancesFiles.deleteFilesIdMetadataIdId",
+      "description": "Deletes a piece of file metadata."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFiles.getFilesIdMetadata",
+      "name": "metadataInstancesFiles.getFilesIdMetadata",
+      "description": "Retrieves all metadata for a given file."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFiles.getFilesIdMetadataIdId",
+      "name": "metadataInstancesFiles.getFilesIdMetadataIdId",
+      "description": "Retrieves the instance of a metadata template that has been applied to a\nfile."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFiles.postFilesIdMetadataIdId",
+      "name": "metadataInstancesFiles.postFilesIdMetadataIdId",
+      "description": "Applies an instance of a metadata template to a file.\n\nIn most cases only values that are present in the metadata template\nwill be accepted, except for the `global.properties` template which accepts\nany key-value pair."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFiles.putFilesIdMetadataIdId",
+      "name": "metadataInstancesFiles.putFilesIdMetadataIdId",
+      "description": "Updates a piece of metadata on a file.\n\nThe metadata instance can only be updated if the template has already been\napplied to the file before. When editing metadata, only values that match\nthe metadata template schema will be accepted.\n\nThe update is applied atomically. If any errors occur during the\napplication of the operations, the metadata instance will not be changed."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFolders.deleteFoldersIdMetadataIdId",
+      "name": "metadataInstancesFolders.deleteFoldersIdMetadataIdId",
+      "description": "Deletes a piece of folder metadata."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFolders.getFoldersIdMetadata",
+      "name": "metadataInstancesFolders.getFoldersIdMetadata",
+      "description": "Retrieves all metadata for a given folder. This can not be used on the root\nfolder with ID `0`."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFolders.getFoldersIdMetadataIdId",
+      "name": "metadataInstancesFolders.getFoldersIdMetadataIdId",
+      "description": "Retrieves the instance of a metadata template that has been applied to a\nfolder. This can not be used on the root folder with ID `0`."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFolders.postFoldersIdMetadataIdId",
+      "name": "metadataInstancesFolders.postFoldersIdMetadataIdId",
+      "description": "Applies an instance of a metadata template to a folder.\n\nIn most cases only values that are present in the metadata template\nwill be accepted, except for the `global.properties` template which accepts\nany key-value pair.\n\nTo display the metadata template in the Box web app the enterprise needs to be\nconfigured to enable **Cascading Folder Level Metadata** for the user in the\nadmin console."
+    },
+    {
+      "id": "openapi_box_com.metadataInstancesFolders.putFoldersIdMetadataIdId",
+      "name": "metadataInstancesFolders.putFoldersIdMetadataIdId",
+      "description": "Updates a piece of metadata on a folder.\n\nThe metadata instance can only be updated if the template has already been\napplied to the folder before. When editing metadata, only values that match\nthe metadata template schema will be accepted.\n\nThe update is applied atomically. If any errors occur during the\napplication of the operations, the metadata instance will not be changed."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.deleteMetadataTemplatesIdIdSchema",
+      "name": "metadataTemplates.deleteMetadataTemplatesIdIdSchema",
+      "description": "Delete a metadata template and its instances.\nThis deletion is permanent and can not be reversed."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.getMetadataTemplates",
+      "name": "metadataTemplates.getMetadataTemplates",
+      "description": "Finds a metadata template by searching for the ID of an instance of the\ntemplate."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.getMetadataTemplatesEnterprise",
+      "name": "metadataTemplates.getMetadataTemplatesEnterprise",
+      "description": "Used to retrieve all metadata templates created to be used specifically within\nthe user's enterprise"
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.getMetadataTemplatesGlobal",
+      "name": "metadataTemplates.getMetadataTemplatesGlobal",
+      "description": "Used to retrieve all generic, global metadata templates available to all\nenterprises using Box."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.getMetadataTemplatesId",
+      "name": "metadataTemplates.getMetadataTemplatesId",
+      "description": "Retrieves a metadata template by its ID."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.getMetadataTemplatesIdIdSchema",
+      "name": "metadataTemplates.getMetadataTemplatesIdIdSchema",
+      "description": "Retrieves a metadata template by its `scope` and `templateKey` values.\n\nTo find the `scope` and `templateKey` for a template, list all templates for\nan enterprise or globally, or list all templates applied to a file or folder."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.postMetadataTemplatesSchema",
+      "name": "metadataTemplates.postMetadataTemplatesSchema",
+      "description": "Creates a new metadata template that can be applied to\nfiles and folders."
+    },
+    {
+      "id": "openapi_box_com.metadataTemplates.putMetadataTemplatesIdIdSchema",
+      "name": "metadataTemplates.putMetadataTemplatesIdIdSchema",
+      "description": "Updates a metadata template.\n\nThe metadata template can only be updated if the template\nalready exists.\n\nThe update is applied atomically. If any errors occur during the\napplication of the operations, the metadata template will not be changed."
+    },
+    {
+      "id": "openapi_box_com.recentItems.getRecentItems",
+      "name": "recentItems.getRecentItems",
+      "description": "Returns information about the recent items accessed\nby a user, either in the last 90 days or up to the last\n1000 items accessed."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicies.deleteRetentionPoliciesId",
+      "name": "retentionPolicies.deleteRetentionPoliciesId",
+      "description": "Permanently deletes a retention policy."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicies.getRetentionPolicies",
+      "name": "retentionPolicies.getRetentionPolicies",
+      "description": "Retrieves all of the retention policies for an enterprise."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicies.getRetentionPoliciesId",
+      "name": "retentionPolicies.getRetentionPoliciesId",
+      "description": "Retrieves a retention policy."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicies.postRetentionPolicies",
+      "name": "retentionPolicies.postRetentionPolicies",
+      "description": "Creates a retention policy."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicies.putRetentionPoliciesId",
+      "name": "retentionPolicies.putRetentionPoliciesId",
+      "description": "Updates a retention policy."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.deleteRetentionPolicyAssignmentsId",
+      "name": "retentionPolicyAssignments.deleteRetentionPolicyAssignmentsId",
+      "description": "Removes a retention policy assignment\napplied to content."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.getRetentionPoliciesIdAssignments",
+      "name": "retentionPolicyAssignments.getRetentionPoliciesIdAssignments",
+      "description": "Returns a list of all retention policy assignments associated with a specified\nretention policy."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.getRetentionPolicyAssignmentsId",
+      "name": "retentionPolicyAssignments.getRetentionPolicyAssignmentsId",
+      "description": "Retrieves a retention policy assignment"
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.getRetentionPolicyAssignmentsIdFilesUnderRetention",
+      "name": "retentionPolicyAssignments.getRetentionPolicyAssignmentsIdFilesUnderRetention",
+      "description": "Returns a list of files under retention for a retention policy assignment."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.getRetentionPolicyAssignmentsIdFileVersionsUnderRetention",
+      "name": "retentionPolicyAssignments.getRetentionPolicyAssignmentsIdFileVersionsUnderRetention",
+      "description": "Returns a list of file versions under retention for a retention policy\nassignment."
+    },
+    {
+      "id": "openapi_box_com.retentionPolicyAssignments.postRetentionPolicyAssignments",
+      "name": "retentionPolicyAssignments.postRetentionPolicyAssignments",
+      "description": "Assigns a retention policy to an item."
+    },
+    {
+      "id": "openapi_box_com.search.getMetadataQueryIndices",
+      "name": "search.getMetadataQueryIndices",
+      "description": "Retrieves the metadata query indices for a given scope and template key."
+    },
+    {
+      "id": "openapi_box_com.search.getSearch",
+      "name": "search.getSearch",
+      "description": "Searches for files, folders, web links, and shared files across the\nusers content or across the entire enterprise."
+    },
+    {
+      "id": "openapi_box_com.search.postMetadataQueriesExecuteRead",
+      "name": "search.postMetadataQueriesExecuteRead",
+      "description": "Create a search using SQL-like syntax to return items that match specific\nmetadata.\n\nBy default, this endpoint returns only the most basic info about the items for\nwhich the query matches. To get additional fields for each item, including any\nof the metadata, use the `fields` attribute in the query."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFiles.getFilesIdGetSharedLink",
+      "name": "sharedLinksFiles.getFilesIdGetSharedLink",
+      "description": "Gets the information for a shared link on a file."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFiles.getSharedItems",
+      "name": "sharedLinksFiles.getSharedItems",
+      "description": "Returns the file represented by a shared link.\n\nA shared file can be represented by a shared link,\nwhich can originate within the current enterprise or within another.\n\nThis endpoint allows an application to retrieve information about a\nshared file when only given a shared link.\n\nThe `shared_link_permission_options` array field can be returned\nby requesting it in the `fields` query parameter."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFiles.putFilesIdAddSharedLink",
+      "name": "sharedLinksFiles.putFilesIdAddSharedLink",
+      "description": "Adds a shared link to a file."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFiles.putFilesIdRemoveSharedLink",
+      "name": "sharedLinksFiles.putFilesIdRemoveSharedLink",
+      "description": "Removes a shared link from a file."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFiles.putFilesIdUpdateSharedLink",
+      "name": "sharedLinksFiles.putFilesIdUpdateSharedLink",
+      "description": "Updates a shared link on a file."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFolders.getFoldersIdGetSharedLink",
+      "name": "sharedLinksFolders.getFoldersIdGetSharedLink",
+      "description": "Gets the information for a shared link on a folder."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFolders.getSharedItemsFolders",
+      "name": "sharedLinksFolders.getSharedItemsFolders",
+      "description": "Return the folder represented by a shared link.\n\nA shared folder can be represented by a shared link,\nwhich can originate within the current enterprise or within another.\n\nThis endpoint allows an application to retrieve information about a\nshared folder when only given a shared link."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFolders.putFoldersIdAddSharedLink",
+      "name": "sharedLinksFolders.putFoldersIdAddSharedLink",
+      "description": "Adds a shared link to a folder."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFolders.putFoldersIdRemoveSharedLink",
+      "name": "sharedLinksFolders.putFoldersIdRemoveSharedLink",
+      "description": "Removes a shared link from a folder."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksFolders.putFoldersIdUpdateSharedLink",
+      "name": "sharedLinksFolders.putFoldersIdUpdateSharedLink",
+      "description": "Updates a shared link on a folder."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksWebLinks.getSharedItemsWebLinks",
+      "name": "sharedLinksWebLinks.getSharedItemsWebLinks",
+      "description": "Returns the web link represented by a shared link.\n\nA shared web link can be represented by a shared link,\nwhich can originate within the current enterprise or within another.\n\nThis endpoint allows an application to retrieve information about a\nshared web link when only given a shared link."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksWebLinks.getWebLinksIdGetSharedLink",
+      "name": "sharedLinksWebLinks.getWebLinksIdGetSharedLink",
+      "description": "Gets the information for a shared link on a web link."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksWebLinks.putWebLinksIdAddSharedLink",
+      "name": "sharedLinksWebLinks.putWebLinksIdAddSharedLink",
+      "description": "Adds a shared link to a web link."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksWebLinks.putWebLinksIdRemoveSharedLink",
+      "name": "sharedLinksWebLinks.putWebLinksIdRemoveSharedLink",
+      "description": "Removes a shared link from a web link."
+    },
+    {
+      "id": "openapi_box_com.sharedLinksWebLinks.putWebLinksIdUpdateSharedLink",
+      "name": "sharedLinksWebLinks.putWebLinksIdUpdateSharedLink",
+      "description": "Updates a shared link on a web link."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierReports.getShieldInformationBarrierReports",
+      "name": "shieldInformationBarrierReports.getShieldInformationBarrierReports",
+      "description": "Lists shield information barrier reports with specific IDs."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierReports.getShieldInformationBarrierReportsId",
+      "name": "shieldInformationBarrierReports.getShieldInformationBarrierReportsId",
+      "description": "Retrieves a shield information barrier report by its ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierReports.postShieldInformationBarrierReports",
+      "name": "shieldInformationBarrierReports.postShieldInformationBarrierReports",
+      "description": "Creates a shield information barrier report for a given barrier."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarriers.getShieldInformationBarriers",
+      "name": "shieldInformationBarriers.getShieldInformationBarriers",
+      "description": "Retrieves a list of shield information barrier objects\nfor the enterprise of JWT."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarriers.getShieldInformationBarriersId",
+      "name": "shieldInformationBarriers.getShieldInformationBarriersId",
+      "description": "Get shield information barrier based on provided ID.."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarriers.postShieldInformationBarriers",
+      "name": "shieldInformationBarriers.postShieldInformationBarriers",
+      "description": "Creates a shield information barrier to\nseparate individuals/groups within the same\nfirm and prevents confidential information passing between them."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarriers.postShieldInformationBarriersChangeStatus",
+      "name": "shieldInformationBarriers.postShieldInformationBarriersChangeStatus",
+      "description": "Change status of shield information barrier with the specified ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentMembers.deleteShieldInformationBarrierSegmentMembersId",
+      "name": "shieldInformationBarrierSegmentMembers.deleteShieldInformationBarrierSegmentMembersId",
+      "description": "Deletes a shield information barrier\nsegment member based on provided ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentMembers.getShieldInformationBarrierSegmentMembers",
+      "name": "shieldInformationBarrierSegmentMembers.getShieldInformationBarrierSegmentMembers",
+      "description": "Lists shield information barrier segment members\nbased on provided segment IDs."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentMembers.getShieldInformationBarrierSegmentMembersId",
+      "name": "shieldInformationBarrierSegmentMembers.getShieldInformationBarrierSegmentMembersId",
+      "description": "Retrieves a shield information barrier\nsegment member by its ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentMembers.postShieldInformationBarrierSegmentMembers",
+      "name": "shieldInformationBarrierSegmentMembers.postShieldInformationBarrierSegmentMembers",
+      "description": "Creates a new shield information barrier segment member."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentRestrictions.deleteShieldInformationBarrierSegmentRestrictionsId",
+      "name": "shieldInformationBarrierSegmentRestrictions.deleteShieldInformationBarrierSegmentRestrictionsId",
+      "description": "Delete shield information barrier segment restriction\nbased on provided ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentRestrictions.getShieldInformationBarrierSegmentRestrictions",
+      "name": "shieldInformationBarrierSegmentRestrictions.getShieldInformationBarrierSegmentRestrictions",
+      "description": "Lists shield information barrier segment restrictions\nbased on provided segment ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentRestrictions.getShieldInformationBarrierSegmentRestrictionsId",
+      "name": "shieldInformationBarrierSegmentRestrictions.getShieldInformationBarrierSegmentRestrictionsId",
+      "description": "Retrieves a shield information barrier segment\nrestriction based on provided ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegmentRestrictions.postShieldInformationBarrierSegmentRestrictions",
+      "name": "shieldInformationBarrierSegmentRestrictions.postShieldInformationBarrierSegmentRestrictions",
+      "description": "Creates a shield information barrier\nsegment restriction object."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegments.deleteShieldInformationBarrierSegmentsId",
+      "name": "shieldInformationBarrierSegments.deleteShieldInformationBarrierSegmentsId",
+      "description": "Deletes the shield information barrier segment\nbased on provided ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegments.getShieldInformationBarrierSegments",
+      "name": "shieldInformationBarrierSegments.getShieldInformationBarrierSegments",
+      "description": "Retrieves a list of shield information barrier segment objects\nfor the specified Information Barrier ID."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegments.getShieldInformationBarrierSegmentsId",
+      "name": "shieldInformationBarrierSegments.getShieldInformationBarrierSegmentsId",
+      "description": "Retrieves shield information barrier segment based on provided ID.."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegments.postShieldInformationBarrierSegments",
+      "name": "shieldInformationBarrierSegments.postShieldInformationBarrierSegments",
+      "description": "Creates a shield information barrier segment."
+    },
+    {
+      "id": "openapi_box_com.shieldInformationBarrierSegments.putShieldInformationBarrierSegmentsId",
+      "name": "shieldInformationBarrierSegments.putShieldInformationBarrierSegmentsId",
+      "description": "Updates the shield information barrier segment based on provided ID.."
+    },
+    {
+      "id": "openapi_box_com.skills.deleteFilesIdMetadataGlobalBoxSkillsCards",
+      "name": "skills.deleteFilesIdMetadataGlobalBoxSkillsCards",
+      "description": "Removes any Box Skills cards metadata from a file."
+    },
+    {
+      "id": "openapi_box_com.skills.getFilesIdMetadataGlobalBoxSkillsCards",
+      "name": "skills.getFilesIdMetadataGlobalBoxSkillsCards",
+      "description": "List the Box Skills metadata cards that are attached to a file."
+    },
+    {
+      "id": "openapi_box_com.skills.postFilesIdMetadataGlobalBoxSkillsCards",
+      "name": "skills.postFilesIdMetadataGlobalBoxSkillsCards",
+      "description": "Applies one or more Box Skills metadata cards to a file."
+    },
+    {
+      "id": "openapi_box_com.skills.putFilesIdMetadataGlobalBoxSkillsCards",
+      "name": "skills.putFilesIdMetadataGlobalBoxSkillsCards",
+      "description": "Updates one or more Box Skills metadata cards to a file."
+    },
+    {
+      "id": "openapi_box_com.skills.putSkillInvocationsId",
+      "name": "skills.putSkillInvocationsId",
+      "description": "An alternative method that can be used to overwrite and update all Box Skill\nmetadata cards on a file."
+    },
+    {
+      "id": "openapi_box_com.storagePolicies.getStoragePolicies",
+      "name": "storagePolicies.getStoragePolicies",
+      "description": "Fetches all the storage policies in the enterprise."
+    },
+    {
+      "id": "openapi_box_com.storagePolicies.getStoragePoliciesId",
+      "name": "storagePolicies.getStoragePoliciesId",
+      "description": "Fetches a specific storage policy."
+    },
+    {
+      "id": "openapi_box_com.storagePolicyAssignments.deleteStoragePolicyAssignmentsId",
+      "name": "storagePolicyAssignments.deleteStoragePolicyAssignmentsId",
+      "description": "Delete a storage policy assignment.\n\nDeleting a storage policy assignment on a user\nwill have the user inherit the enterprise's default\nstorage policy.\n\nThere is a rate limit for calling this endpoint of only\ntwice per user in a 24 hour time frame."
+    },
+    {
+      "id": "openapi_box_com.storagePolicyAssignments.getStoragePolicyAssignments",
+      "name": "storagePolicyAssignments.getStoragePolicyAssignments",
+      "description": "Fetches all the storage policy assignment for an enterprise or user."
+    },
+    {
+      "id": "openapi_box_com.storagePolicyAssignments.getStoragePolicyAssignmentsId",
+      "name": "storagePolicyAssignments.getStoragePolicyAssignmentsId",
+      "description": "Fetches a specific storage policy assignment."
+    },
+    {
+      "id": "openapi_box_com.storagePolicyAssignments.postStoragePolicyAssignments",
+      "name": "storagePolicyAssignments.postStoragePolicyAssignments",
+      "description": "Creates a storage policy assignment for an enterprise or user."
+    },
+    {
+      "id": "openapi_box_com.storagePolicyAssignments.putStoragePolicyAssignmentsId",
+      "name": "storagePolicyAssignments.putStoragePolicyAssignmentsId",
+      "description": "Updates a specific storage policy assignment."
+    },
+    {
+      "id": "openapi_box_com.taskAssignments.deleteTaskAssignmentsId",
+      "name": "taskAssignments.deleteTaskAssignmentsId",
+      "description": "Deletes a specific task assignment."
+    },
+    {
+      "id": "openapi_box_com.taskAssignments.getTaskAssignmentsId",
+      "name": "taskAssignments.getTaskAssignmentsId",
+      "description": "Retrieves information about a task assignment."
+    },
+    {
+      "id": "openapi_box_com.taskAssignments.getTasksIdAssignments",
+      "name": "taskAssignments.getTasksIdAssignments",
+      "description": "Lists all of the assignments for a given task."
+    },
+    {
+      "id": "openapi_box_com.taskAssignments.postTaskAssignments",
+      "name": "taskAssignments.postTaskAssignments",
+      "description": "Assigns a task to a user.\n\nA task can be assigned to more than one user by creating multiple\nassignments."
+    },
+    {
+      "id": "openapi_box_com.taskAssignments.putTaskAssignmentsId",
+      "name": "taskAssignments.putTaskAssignmentsId",
+      "description": "Updates a task assignment. This endpoint can be\nused to update the state of a task assigned to a user."
+    },
+    {
+      "id": "openapi_box_com.tasks.deleteTasksId",
+      "name": "tasks.deleteTasksId",
+      "description": "Removes a task from a file."
+    },
+    {
+      "id": "openapi_box_com.tasks.getFilesIdTasks",
+      "name": "tasks.getFilesIdTasks",
+      "description": "Retrieves a list of all the tasks for a file. This\nendpoint does not support pagination."
+    },
+    {
+      "id": "openapi_box_com.tasks.getTasksId",
+      "name": "tasks.getTasksId",
+      "description": "Retrieves information about a specific task."
+    },
+    {
+      "id": "openapi_box_com.tasks.postTasks",
+      "name": "tasks.postTasks",
+      "description": "Creates a single task on a file. This task is not assigned to any user and\nwill need to be assigned separately."
+    },
+    {
+      "id": "openapi_box_com.tasks.putTasksId",
+      "name": "tasks.putTasksId",
+      "description": "Updates a task. This can be used to update a task's configuration, or to\nupdate its completion state."
+    },
+    {
+      "id": "openapi_box_com.termsOfService.getTermsOfServices",
+      "name": "termsOfService.getTermsOfServices",
+      "description": "Returns the current terms of service text and settings\nfor the enterprise."
+    },
+    {
+      "id": "openapi_box_com.termsOfService.getTermsOfServicesId",
+      "name": "termsOfService.getTermsOfServicesId",
+      "description": "Fetches a specific terms of service."
+    },
+    {
+      "id": "openapi_box_com.termsOfService.postTermsOfServices",
+      "name": "termsOfService.postTermsOfServices",
+      "description": "Creates a terms of service for a given enterprise\nand type of user."
+    },
+    {
+      "id": "openapi_box_com.termsOfService.putTermsOfServicesId",
+      "name": "termsOfService.putTermsOfServicesId",
+      "description": "Updates a specific terms of service."
+    },
+    {
+      "id": "openapi_box_com.termsOfServiceUserStatuses.getTermsOfServiceUserStatuses",
+      "name": "termsOfServiceUserStatuses.getTermsOfServiceUserStatuses",
+      "description": "Retrieves an overview of users and their status for a\nterms of service, including Whether they have accepted\nthe terms and when."
+    },
+    {
+      "id": "openapi_box_com.termsOfServiceUserStatuses.postTermsOfServiceUserStatuses",
+      "name": "termsOfServiceUserStatuses.postTermsOfServiceUserStatuses",
+      "description": "Sets the status for a terms of service for a user."
+    },
+    {
+      "id": "openapi_box_com.termsOfServiceUserStatuses.putTermsOfServiceUserStatusesId",
+      "name": "termsOfServiceUserStatuses.putTermsOfServiceUserStatusesId",
+      "description": "Updates the status for a terms of service for a user."
+    },
+    {
+      "id": "openapi_box_com.transferFolders.putUsersIdFolders0",
+      "name": "transferFolders.putUsersIdFolders0",
+      "description": "Move all of the items (files, folders and workflows) owned by a user into\nanother user's account\n\nOnly the root folder (`0`) can be transferred.\n\nFolders can only be moved across users by users with administrative\npermissions.\n\nAll existing shared links and folder-level collaborations are transferred\nduring the operation. Please note that while collaborations at the individual\nfile-level are transferred during the operation, the collaborations are\ndeleted when the original user is deleted.\n\nThis call will be performed synchronously which might lead to a slow response\nwhen the source user has a large number of items in all of its folders.\n\nIf the destination path has a metadata cascade policy attached to any of\nthe parent folders, a metadata cascade operation will be kicked off\nasynchronously.\n\nThere is currently no way to check for when this operation is finished.\n\nThe destination folder's name will be in the format `{User}'s Files and\nFolders`, where `{User}` is the display name of the user.\n\nTo make this API call your application will need to have the \"Read and write\nall files and folders stored in Box\" scope enabled.\n\nPlease make sure the destination user has access to `Relay` or `Relay Lite`,\nand has access to the files and folders involved in the workflows being\ntransferred.\n\nAdmins will receive an email when the operation is completed."
+    },
+    {
+      "id": "openapi_box_com.trashedFiles.deleteFilesIdTrash",
+      "name": "trashedFiles.deleteFilesIdTrash",
+      "description": "Permanently deletes a file that is in the trash.\nThis action cannot be undone."
+    },
+    {
+      "id": "openapi_box_com.trashedFiles.getFilesIdTrash",
+      "name": "trashedFiles.getFilesIdTrash",
+      "description": "Retrieves a file that has been moved to the trash.\n\nPlease note that only if the file itself has been moved to the\ntrash can it be retrieved with this API call. If instead one of\nits parent folders was moved to the trash, only that folder\ncan be inspected using the\n[`GET /folders/:id/trash`](e://get_folders_id_trash) API.\n\nTo list all items that have been moved to the trash, please\nuse the [`GET /folders/trash/items`](e://get-folders-trash-items/)\nAPI."
+    },
+    {
+      "id": "openapi_box_com.trashedFiles.postFilesId",
+      "name": "trashedFiles.postFilesId",
+      "description": "Restores a file that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the file to in case the\noriginal folder has been deleted."
+    },
+    {
+      "id": "openapi_box_com.trashedFolders.deleteFoldersIdTrash",
+      "name": "trashedFolders.deleteFoldersIdTrash",
+      "description": "Permanently deletes a folder that is in the trash.\nThis action cannot be undone."
+    },
+    {
+      "id": "openapi_box_com.trashedFolders.getFoldersIdTrash",
+      "name": "trashedFolders.getFoldersIdTrash",
+      "description": "Retrieves a folder that has been moved to the trash.\n\nPlease note that only if the folder itself has been moved to the\ntrash can it be retrieved with this API call. If instead one of\nits parent folders was moved to the trash, only that folder\ncan be inspected using the\n[`GET /folders/:id/trash`](e://get_folders_id_trash) API.\n\nTo list all items that have been moved to the trash, please\nuse the [`GET /folders/trash/items`](e://get-folders-trash-items/)\nAPI."
+    },
+    {
+      "id": "openapi_box_com.trashedFolders.postFoldersId",
+      "name": "trashedFolders.postFoldersId",
+      "description": "Restores a folder that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the folder to in case the\noriginal folder has been deleted.\n\n# Folder locking\n\nDuring this operation, part of the file tree will be locked, mainly\nthe source folder and all of its descendants, as well as the destination\nfolder.\n\nFor the duration of the operation, no other move, copy, delete, or restore\noperation can performed on any of the locked folders."
+    },
+    {
+      "id": "openapi_box_com.trashedItems.getFoldersTrashItems",
+      "name": "trashedItems.getFoldersTrashItems",
+      "description": "Retrieves the files and folders that have been moved\nto the trash.\n\nAny attribute in the full files or folders objects can be passed\nin with the `fields` parameter to retrieve those specific\nattributes that are not returned by default.\n\nThis endpoint defaults to use offset-based pagination, yet also supports\nmarker-based pagination using the `marker` parameter."
+    },
+    {
+      "id": "openapi_box_com.trashedWebLinks.deleteWebLinksIdTrash",
+      "name": "trashedWebLinks.deleteWebLinksIdTrash",
+      "description": "Permanently deletes a web link that is in the trash.\nThis action cannot be undone."
+    },
+    {
+      "id": "openapi_box_com.trashedWebLinks.getWebLinksIdTrash",
+      "name": "trashedWebLinks.getWebLinksIdTrash",
+      "description": "Retrieves a web link that has been moved to the trash."
+    },
+    {
+      "id": "openapi_box_com.trashedWebLinks.postWebLinksId",
+      "name": "trashedWebLinks.postWebLinksId",
+      "description": "Restores a web link that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the  web link to in case\nthe original folder has been deleted."
+    },
+    {
+      "id": "openapi_box_com.uploads.postFilesContent",
+      "name": "uploads.postFilesContent",
+      "description": "Uploads a small file to Box. For file sizes over 50MB we recommend\nusing the Chunk Upload APIs.\n\n# Request body order\n\nThe `attributes` part of the body must come **before** the\n`file` part. Requests that do not follow this format when\nuploading the file will receive a HTTP `400` error with a\n`metadata_after_file_contents` error code."
+    },
+    {
+      "id": "openapi_box_com.uploads.postFilesIdContent",
+      "name": "uploads.postFilesIdContent",
+      "description": "Update a file's content. For file sizes over 50MB we recommend\nusing the Chunk Upload APIs.\n\n# Request body order\n\nThe `attributes` part of the body must come **before** the\n`file` part. Requests that do not follow this format when\nuploading the file will receive a HTTP `400` error with a\n`metadata_after_file_contents` error code."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.deleteFilesUploadSessionsId",
+      "name": "uploadsChunked.deleteFilesUploadSessionsId",
+      "description": "Abort an upload session and discard all data uploaded.\n\nThis cannot be reversed."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.getFilesUploadSessionsId",
+      "name": "uploadsChunked.getFilesUploadSessionsId",
+      "description": "Return information about an upload session."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.getFilesUploadSessionsIdParts",
+      "name": "uploadsChunked.getFilesUploadSessionsIdParts",
+      "description": "Return a list of the chunks uploaded to the upload\nsession so far."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.postFilesIdUploadSessions",
+      "name": "uploadsChunked.postFilesIdUploadSessions",
+      "description": "Creates an upload session for an existing file."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.postFilesUploadSessions",
+      "name": "uploadsChunked.postFilesUploadSessions",
+      "description": "Creates an upload session for a new file."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.postFilesUploadSessionsIdCommit",
+      "name": "uploadsChunked.postFilesUploadSessionsIdCommit",
+      "description": "Close an upload session and create a file from the\nuploaded chunks."
+    },
+    {
+      "id": "openapi_box_com.uploadsChunked.putFilesUploadSessionsId",
+      "name": "uploadsChunked.putFilesUploadSessionsId",
+      "description": "Updates a chunk of an upload session for a file."
+    },
+    {
+      "id": "openapi_box_com.userAvatars.deleteUsersIdAvatar",
+      "name": "userAvatars.deleteUsersIdAvatar",
+      "description": "Removes an existing user avatar.\nYou cannot reverse this operation."
+    },
+    {
+      "id": "openapi_box_com.userAvatars.getUsersIdAvatar",
+      "name": "userAvatars.getUsersIdAvatar",
+      "description": "Retrieves an image of a the user's avatar."
+    },
+    {
+      "id": "openapi_box_com.userAvatars.postUsersIdAvatar",
+      "name": "userAvatars.postUsersIdAvatar",
+      "description": "Adds or updates a user avatar."
+    },
+    {
+      "id": "openapi_box_com.users.deleteUsersId",
+      "name": "users.deleteUsersId",
+      "description": "Deletes a user. By default this will fail if the user\nstill owns any content. Move their owned content first\nbefore proceeding, or use the `force` field to delete\nthe user and their files."
+    },
+    {
+      "id": "openapi_box_com.users.getUsers",
+      "name": "users.getUsers",
+      "description": "Returns a list of all users for the Enterprise along with their `user_id`,\n`public_name`, and `login`.\n\nThe application and the authenticated user need to\nhave the permission to look up users in the entire\nenterprise."
+    },
+    {
+      "id": "openapi_box_com.users.getUsersId",
+      "name": "users.getUsersId",
+      "description": "Retrieves information about a user in the enterprise.\n\nThe application and the authenticated user need to\nhave the permission to look up users in the entire\nenterprise.\n\nThis endpoint also returns a limited set of information\nfor external users who are collaborated on content\nowned by the enterprise for authenticated users with the\nright scopes. In this case, disallowed fields will return\nnull instead."
+    },
+    {
+      "id": "openapi_box_com.users.getUsersMe",
+      "name": "users.getUsersMe",
+      "description": "Retrieves information about the user who is currently authenticated.\n\nIn the case of a client-side authenticated OAuth 2.0 application\nthis will be the user who authorized the app.\n\nIn the case of a JWT, server-side authenticated application\nthis will be the service account that belongs to the application\nby default.\n\nUse the `As-User` header to change who this API call is made on behalf of."
+    },
+    {
+      "id": "openapi_box_com.users.postUsers",
+      "name": "users.postUsers",
+      "description": "Creates a new managed user in an enterprise. This endpoint\nis only available to users and applications with the right\nadmin permissions."
+    },
+    {
+      "id": "openapi_box_com.users.postUsersTerminateSessions",
+      "name": "users.postUsersTerminateSessions",
+      "description": "Validates the roles and permissions of the user,\nand creates asynchronous jobs\nto terminate the user's sessions.\nReturns the status for the POST request."
+    },
+    {
+      "id": "openapi_box_com.users.putUsersId",
+      "name": "users.putUsersId",
+      "description": "Updates a managed or app user in an enterprise. This endpoint\nis only available to users and applications with the right\nadmin permissions."
+    },
+    {
+      "id": "openapi_box_com.watermarksFiles.deleteFilesIdWatermark",
+      "name": "watermarksFiles.deleteFilesIdWatermark",
+      "description": "Removes the watermark from a file."
+    },
+    {
+      "id": "openapi_box_com.watermarksFiles.getFilesIdWatermark",
+      "name": "watermarksFiles.getFilesIdWatermark",
+      "description": "Retrieve the watermark for a file."
+    },
+    {
+      "id": "openapi_box_com.watermarksFiles.putFilesIdWatermark",
+      "name": "watermarksFiles.putFilesIdWatermark",
+      "description": "Applies or update a watermark on a file."
+    },
+    {
+      "id": "openapi_box_com.watermarksFolders.deleteFoldersIdWatermark",
+      "name": "watermarksFolders.deleteFoldersIdWatermark",
+      "description": "Removes the watermark from a folder."
+    },
+    {
+      "id": "openapi_box_com.watermarksFolders.getFoldersIdWatermark",
+      "name": "watermarksFolders.getFoldersIdWatermark",
+      "description": "Retrieve the watermark for a folder."
+    },
+    {
+      "id": "openapi_box_com.watermarksFolders.putFoldersIdWatermark",
+      "name": "watermarksFolders.putFoldersIdWatermark",
+      "description": "Applies or update a watermark on a folder."
+    },
+    {
+      "id": "openapi_box_com.webhooks.deleteWebhooksId",
+      "name": "webhooks.deleteWebhooksId",
+      "description": "Deletes a webhook."
+    },
+    {
+      "id": "openapi_box_com.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Returns all defined webhooks for the requesting application.\n\nThis API only returns webhooks that are applied to files or folders that are\nowned by the authenticated user. This means that an admin can not see webhooks\ncreated by a service account unless the admin has access to those folders, and\nvice versa."
+    },
+    {
+      "id": "openapi_box_com.webhooks.getWebhooksId",
+      "name": "webhooks.getWebhooksId",
+      "description": "Retrieves a specific webhook"
+    },
+    {
+      "id": "openapi_box_com.webhooks.postWebhooks",
+      "name": "webhooks.postWebhooks",
+      "description": "Creates a webhook."
+    },
+    {
+      "id": "openapi_box_com.webhooks.putWebhooksId",
+      "name": "webhooks.putWebhooksId",
+      "description": "Updates a webhook."
+    },
+    {
+      "id": "openapi_box_com.webLinks.deleteWebLinksId",
+      "name": "webLinks.deleteWebLinksId",
+      "description": "Deletes a web link."
+    },
+    {
+      "id": "openapi_box_com.webLinks.getWebLinksId",
+      "name": "webLinks.getWebLinksId",
+      "description": "Retrieve information about a web link."
+    },
+    {
+      "id": "openapi_box_com.webLinks.postWebLinks",
+      "name": "webLinks.postWebLinks",
+      "description": "Creates a web link object within a folder."
+    },
+    {
+      "id": "openapi_box_com.webLinks.putWebLinksId",
+      "name": "webLinks.putWebLinksId",
+      "description": "Updates a web link object."
+    },
+    {
+      "id": "openapi_box_com.workflows.getWorkflows",
+      "name": "workflows.getWorkflows",
+      "description": "Returns list of workflows that act on a given `folder ID`, and\nhave a flow with a trigger type of `WORKFLOW_MANUAL_START`.\n\nYou application must be authorized to use the `Manage Box Relay` application\nscope within the developer console in to use this endpoint."
+    },
+    {
+      "id": "openapi_box_com.workflows.postWorkflowsIdStart",
+      "name": "workflows.postWorkflowsIdStart",
+      "description": "Initiates a flow with a trigger type of `WORKFLOW_MANUAL_START`.\n\nYou application must be authorized to use the `Manage Box Relay` application\nscope within the developer console."
+    },
+    {
+      "id": "openapi_box_com.zipDownloads.getZipDownloadsIdContent",
+      "name": "zipDownloads.getZipDownloadsIdContent",
+      "description": "Returns the contents of a `zip` archive in binary format. This URL does not\nrequire any form of authentication and could be used in a user's browser to\ndownload the archive to a user's device.\n\nBy default, this URL is only valid for a few seconds from the creation of\nthe request for this archive. Once a download has started it can not be\nstopped and resumed, instead a new request for a zip archive would need to\nbe created.\n\nThe URL of this endpoint should not be considered as fixed. Instead, use\nthe [Create zip download](e://post_zip_downloads) API to request to create a\n`zip` archive, and then follow the `download_url` field in the response to\nthis endpoint."
+    },
+    {
+      "id": "openapi_box_com.zipDownloads.getZipDownloadsIdStatus",
+      "name": "zipDownloads.getZipDownloadsIdStatus",
+      "description": "Returns the download status of a `zip` archive, allowing an application to\ninspect the progress of the download as well as the number of items that\nmight have been skipped.\n\nThis endpoint can only be accessed once the download has started.\nSubsequently this endpoint is valid for 12 hours from the start of the\ndownload.\n\nThe URL of this endpoint should not be considered as fixed. Instead, use\nthe [Create zip download](e://post_zip_downloads) API to request to create a\n`zip` archive, and then follow the `status_url` field in the response to\nthis endpoint."
+    },
+    {
+      "id": "openapi_box_com.zipDownloads.postZipDownloads",
+      "name": "zipDownloads.postZipDownloads",
+      "description": "Creates a request to download multiple files and folders as a single `zip`\narchive file. This API does not return the archive but instead performs all\nthe checks to ensure that the user has access to all the items, and then\nreturns a `download_url` and a `status_url` that can be used to download the\narchive.\n\nThe limit for an archive is either the Account's upload limit or\n10,000 files, whichever is met first"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:20:30.356Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_airport_pickups_london.get_quote",
+      "name": "get_quote",
+      "description": "Get fixed transfer prices. BEFORE: ask customer for travel date and WAIT. AFTER this tool returns: say ONLY \"Would you like to make a booking?\" — NEVER list prices in text, the widget shows them."
+    },
+    {
+      "id": "mcp_airport_pickups_london.validate_flight",
+      "name": "validate_flight",
+      "description": "Cross-check a flight number. Call this IMMEDIATELY after the customer gives their flight number and landing time. NEVER ask for the terminal — this tool returns it.\n\nAfter calling: If times match, say \"I've verified your flight — [number] ([airline]) arrives at [terminal] at [time]. All looks good!\" If times differ, tell customer and ask which to use.\n\nTHEN present clearance time: domestic=15min, European=45min, international=60min. Pickup = landing + clearance. NEVER use landing time as pickup. NEVER say \"30 minutes\"."
+    },
+    {
+      "id": "mcp_airport_pickups_london.book_transfer",
+      "name": "book_transfer",
+      "description": "Creates a real booking. NEVER call until ALL fields collected and customer confirmed. Checklist before calling:\n(1) Customer chose a car type — never choose for them\n(2) Passengers and suitcases asked — never assumed\n(3) Airport pickups: flight number collected, validate_flight called, clearance delay asked (15/45/60 min), transfer_time = landing + delay (NEVER landing time alone), origin MUST include terminal (e.g. \"Heathrow Terminal 3\" not \"Heathrow Airport\")\n(4) Name, phone with country code, AND email collected — ask ALL THREE in ONE message, NEVER split across multiple messages\n(6) Special requests asked\n(7) Payment info given (cash or online)\n(8) ALL details read back to customer and they said yes\nNEVER call this to amend — direct customer to manage booking link or call 0208 688 7744."
+    },
+    {
+      "id": "mcp_airport_pickups_london.cancel_booking",
+      "name": "cancel_booking",
+      "description": "Cancel an existing APL booking. Free cancellation 12+ hours before pickup (£10 admin fee). 6-12 hours: 50% charge. Under 6 hours: no refund. Accepts either APL reference (e.g. APL-CJ5KDJ) or reservation ID (e.g. 959570)."
+    },
+    {
+      "id": "mcp_airport_pickups_london.amend_booking",
+      "name": "amend_booking",
+      "description": "Amend an existing APL booking. Can change: passenger name, phone, email, flight number, transfer date, transfer time, passengers count, special requests. CANNOT change car type (must cancel and rebook). Accepts either APL reference or reservation ID."
+    }
+  ]
+}

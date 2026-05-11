@@ -1,0 +1,162 @@
+{
+  "fetchedAt": "2026-04-30T15:22:39.087Z",
+  "status": "ok",
+  "count": 31,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsExplain",
+      "name": "projects.mlProjectsExplain",
+      "description": "Performs explanation on the data in the request. {% dynamic include \"/ai-platform/includes/___explain-request\" %} "
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsGetConfig",
+      "name": "projects.mlProjectsGetConfig",
+      "description": "Get the service account information associated with your project. You need this information in order to grant the service account permissions for the Google Cloud Storage location where you put your model training code for training the model with Google Cloud Machine Learning."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsJobsCreate",
+      "name": "projects.mlProjectsJobsCreate",
+      "description": "Creates a training or a batch prediction job."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsJobsList",
+      "name": "projects.mlProjectsJobsList",
+      "description": "Lists the jobs in the project. If there are no jobs that match the request parameters, the list request returns an empty response body: {}."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsList",
+      "name": "projects.mlProjectsLocationsList",
+      "description": "List all locations that provides at least one type of CMLE capability."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesCreate",
+      "name": "projects.mlProjectsLocationsStudiesCreate",
+      "description": "Creates a study."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesList",
+      "name": "projects.mlProjectsLocationsStudiesList",
+      "description": "Lists all the studies in a region for an associated project."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsAddMeasurement",
+      "name": "projects.mlProjectsLocationsStudiesTrialsAddMeasurement",
+      "description": "Adds a measurement of the objective metrics to a trial. This measurement is assumed to have been taken before the trial is complete."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsCheckEarlyStoppingState",
+      "name": "projects.mlProjectsLocationsStudiesTrialsCheckEarlyStoppingState",
+      "description": "Checks whether a trial should stop or not. Returns a long-running operation. When the operation is successful, it will contain a CheckTrialEarlyStoppingStateResponse."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsComplete",
+      "name": "projects.mlProjectsLocationsStudiesTrialsComplete",
+      "description": "Marks a trial as complete."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsCreate",
+      "name": "projects.mlProjectsLocationsStudiesTrialsCreate",
+      "description": "Adds a user provided trial to a study."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsList",
+      "name": "projects.mlProjectsLocationsStudiesTrialsList",
+      "description": "Lists the trials associated with a study."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsListOptimalTrials",
+      "name": "projects.mlProjectsLocationsStudiesTrialsListOptimalTrials",
+      "description": "Lists the pareto-optimal trials for multi-objective study or the optimal trials for single-objective study. The definition of pareto-optimal can be checked in wiki page. https://en.wikipedia.org/wiki/Pareto_efficiency"
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsStop",
+      "name": "projects.mlProjectsLocationsStudiesTrialsStop",
+      "description": "Stops a trial."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsLocationsStudiesTrialsSuggest",
+      "name": "projects.mlProjectsLocationsStudiesTrialsSuggest",
+      "description": "Adds one or more trials to a study, with parameter values suggested by AI Platform Vizier. Returns a long-running operation associated with the generation of trial suggestions. When this long-running operation succeeds, it will contain a SuggestTrialsResponse."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsCreate",
+      "name": "projects.mlProjectsModelsCreate",
+      "description": "Creates a model which will later contain one or more versions. You must add at least one version before you can request predictions from the model. Add versions by calling projects.models.versions.create."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsGetIamPolicy",
+      "name": "projects.mlProjectsModelsGetIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsList",
+      "name": "projects.mlProjectsModelsList",
+      "description": "Lists the models in a project. Each project can contain multiple models, and each model can have multiple versions. If there are no models that match the request parameters, the list request returns an empty response body: {}."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsSetIamPolicy",
+      "name": "projects.mlProjectsModelsSetIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsTestIamPermissions",
+      "name": "projects.mlProjectsModelsTestIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsVersionsCreate",
+      "name": "projects.mlProjectsModelsVersionsCreate",
+      "description": "Creates a new version of a model from a trained TensorFlow model. If the version created in the cloud by this call is the first deployed version of the specified model, it will be made the default version of the model. When you add a version to a model that already has one or more versions, the default version does not automatically change. If you want a new version to be the default, you must call projects.models.versions.setDefault."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsVersionsDelete",
+      "name": "projects.mlProjectsModelsVersionsDelete",
+      "description": "Deletes a model version. Each model can have multiple versions deployed and in use at any given time. Use this method to remove a single version. Note: You cannot delete the version that is set as the default version of the model unless it is the only remaining version."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsVersionsList",
+      "name": "projects.mlProjectsModelsVersionsList",
+      "description": "Gets basic information about all the versions of a model. If you expect that a model has many versions, or if you need to handle only a limited number of results at a time, you can request that the list be retrieved in batches (called pages). If there are no versions that match the request parameters, the list request returns an empty response body: {}."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsVersionsPatch",
+      "name": "projects.mlProjectsModelsVersionsPatch",
+      "description": "Updates the specified Version resource. Currently the only update-able fields are `description`, `requestLoggingConfig`, `autoScaling.minNodes`, and `manualScaling.nodes`."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsModelsVersionsSetDefault",
+      "name": "projects.mlProjectsModelsVersionsSetDefault",
+      "description": "Designates a version to be the default for the model. The default version is used for prediction requests made against the model that don't specify a version. The first version to be created for a model is automatically set as the default. You must make any subsequent changes to the default version setting manually using this method."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsOperationsCancel",
+      "name": "projects.mlProjectsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsOperationsGet",
+      "name": "projects.mlProjectsOperationsGet",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsOperationsList",
+      "name": "projects.mlProjectsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_ml_ml.projects.mlProjectsPredict",
+      "name": "projects.mlProjectsPredict",
+      "description": "Performs online prediction on the data in the request. {% dynamic include \"/ai-platform/includes/___predict-request\" %} "
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

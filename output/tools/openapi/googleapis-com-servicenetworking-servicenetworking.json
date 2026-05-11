@@ -1,0 +1,122 @@
+{
+  "fetchedAt": "2026-04-30T15:22:42.015Z",
+  "status": "ok",
+  "count": 23,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.operations.servicenetworkingOperationsCancel",
+      "name": "operations.servicenetworkingOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesAddSubnetwork",
+      "name": "services.servicenetworkingServicesAddSubnetwork",
+      "description": "For service producers, provisions a new subnet in a peered service's shared VPC network in the requested region and with the requested size that's expressed as a CIDR range (number of leading bits of ipV4 network mask). The method checks against the assigned allocated ranges to find a non-conflicting IP address range. The method will reuse a subnet if subsequent calls contain the same subnet name, region, and prefix length. This method will make producer's tenant project to be a shared VPC service project as needed."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesConnectionsCreate",
+      "name": "services.servicenetworkingServicesConnectionsCreate",
+      "description": "Creates a private connection that establishes a VPC Network Peering connection to a VPC network in the service producer's organization. The administrator of the service consumer's VPC network invokes this method. The administrator must assign one or more allocated IP ranges for provisioning subnetworks in the service producer's VPC network. This connection is used for all supported services in the service producer's organization, so it only needs to be invoked once."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesConnectionsDeleteConnection",
+      "name": "services.servicenetworkingServicesConnectionsDeleteConnection",
+      "description": "Deletes a private service access connection."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesConnectionsList",
+      "name": "services.servicenetworkingServicesConnectionsList",
+      "description": "List the private connections that are configured in a service consumer's VPC network."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesConnectionsPatch",
+      "name": "services.servicenetworkingServicesConnectionsPatch",
+      "description": "Updates the allocated ranges that are assigned to a connection."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDisableVpcServiceControls",
+      "name": "services.servicenetworkingServicesDisableVpcServiceControls",
+      "description": "Disables VPC service controls for a connection."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDnsRecordSetsAdd",
+      "name": "services.servicenetworkingServicesDnsRecordSetsAdd",
+      "description": "Service producers can use this method to add DNS record sets to private DNS zones in the shared producer host project."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDnsRecordSetsRemove",
+      "name": "services.servicenetworkingServicesDnsRecordSetsRemove",
+      "description": "Service producers can use this method to remove DNS record sets from private DNS zones in the shared producer host project."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDnsRecordSetsUpdate",
+      "name": "services.servicenetworkingServicesDnsRecordSetsUpdate",
+      "description": "Service producers can use this method to update DNS record sets from private DNS zones in the shared producer host project."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDnsZonesAdd",
+      "name": "services.servicenetworkingServicesDnsZonesAdd",
+      "description": "Service producers can use this method to add private DNS zones in the shared producer host project and matching peering zones in the consumer project."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesDnsZonesRemove",
+      "name": "services.servicenetworkingServicesDnsZonesRemove",
+      "description": "Service producers can use this method to remove private DNS zones in the shared producer host project and matching peering zones in the consumer project."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesEnableVpcServiceControls",
+      "name": "services.servicenetworkingServicesEnableVpcServiceControls",
+      "description": "Enables VPC service controls for a connection."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesProjectsGlobalNetworksGet",
+      "name": "services.servicenetworkingServicesProjectsGlobalNetworksGet",
+      "description": "Service producers use this method to get the configuration of their connection including the import/export of custom routes and subnetwork routes with public IP."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsCreate",
+      "name": "services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsCreate",
+      "description": "Creates a peered DNS domain which sends requests for records in given namespace originating in the service producer VPC network to the consumer VPC network to be resolved."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsDelete",
+      "name": "services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsDelete",
+      "description": "Deletes a peered DNS domain."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsList",
+      "name": "services.servicenetworkingServicesProjectsGlobalNetworksPeeredDnsDomainsList",
+      "description": "Lists peered DNS domains for a connection."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesProjectsGlobalNetworksUpdateConsumerConfig",
+      "name": "services.servicenetworkingServicesProjectsGlobalNetworksUpdateConsumerConfig",
+      "description": "Service producers use this method to update the configuration of their connection including the import/export of custom routes and subnetwork routes with public IP."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesRolesAdd",
+      "name": "services.servicenetworkingServicesRolesAdd",
+      "description": "Service producers can use this method to add roles in the shared VPC host project. Each role is bound to the provided member. Each role must be selected from within an allowlisted set of roles. Each role is applied at only the granularity specified in the allowlist."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesSearchRange",
+      "name": "services.servicenetworkingServicesSearchRange",
+      "description": "Service producers can use this method to find a currently unused range within consumer allocated ranges. This returned range is not reserved, and not guaranteed to remain unused. It will validate previously provided allocated ranges, find non-conflicting sub-range of requested size (expressed in number of leading bits of ipv4 network mask, as in CIDR range notation)."
+    },
+    {
+      "id": "openapi_googleapis_com_servicenetworking_servicenetworking.services.servicenetworkingServicesValidate",
+      "name": "services.servicenetworkingServicesValidate",
+      "description": "Service producers use this method to validate if the consumer provided network, project and requested range are valid. This allows them to use a fail-fast mechanism for consumer requests, and not have to wait for AddSubnetwork operation completion to determine if user request is invalid."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

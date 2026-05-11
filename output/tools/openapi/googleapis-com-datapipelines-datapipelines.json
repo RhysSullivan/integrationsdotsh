@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-04-30T15:22:35.681Z",
+  "status": "ok",
+  "count": 10,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesCreate",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesCreate",
+      "description": "Creates a pipeline. For a batch pipeline, you can pass scheduler information. Data Pipelines uses the scheduler information to create an internal scheduler that runs jobs periodically. If the internal scheduler is not configured, you can use RunPipeline to run jobs."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesDelete",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesDelete",
+      "description": "Deletes a pipeline. If a scheduler job is attached to the pipeline, it will be deleted."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesGet",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesGet",
+      "description": "Looks up a single pipeline. Returns a \"NOT_FOUND\" error if no such pipeline exists. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesJobsList",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesJobsList",
+      "description": "Lists jobs for a given pipeline. Throws a \"FORBIDDEN\" error if the caller doesn't have permission to access it."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesList",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesList",
+      "description": "Lists pipelines. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesPatch",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesPatch",
+      "description": "Updates a pipeline. If successful, the updated Pipeline is returned. Returns `NOT_FOUND` if the pipeline doesn't exist. If UpdatePipeline does not return successfully, you can retry the UpdatePipeline request until you receive a successful response."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesRun",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesRun",
+      "description": "Creates a job for the specified pipeline directly. You can use this method when the internal scheduler is not configured and you want to trigger the job directly or through an external system. Returns a \"NOT_FOUND\" error if the pipeline doesn't exist. Returns a \"FORBIDDEN\" error if the user doesn't have permission to access the pipeline or run jobs for the pipeline."
+    },
+    {
+      "id": "openapi_googleapis_com_datapipelines_datapipelines.projects.datapipelinesProjectsLocationsPipelinesStop",
+      "name": "projects.datapipelinesProjectsLocationsPipelinesStop",
+      "description": "Freezes pipeline execution permanently. If there's a corresponding scheduler entry, it's deleted, and the pipeline state is changed to \"ARCHIVED\". However, pipeline metadata is retained."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

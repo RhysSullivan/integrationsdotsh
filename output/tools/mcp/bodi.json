@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:21:00.421Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_bodi.search_workout_plans",
+      "name": "search_workout_plans",
+      "description": "Search BODi fitness content for workout plans, programs, or any collection/group of workouts. 'Workout plan', 'program', 'plan', 'training plan', and 'series' are all synonyms — they all refer to a structured, multi-session fitness experience on BODi. Use this tool whenever the user wants MULTIPLE workouts or a structured plan, regardless of the words they use. Plural or collection intent always routes here: 'show me some workouts', 'show me a group of exercises', 'show me exercises', 'give me a few workouts', 'what workouts do you have', 'I want a program', 'I want a workout plan', 'show me workouts for X'. Returns matching programs in a carousel. Always follow with show_fitness_programs to display results. For a single workout video (e.g. 'play me a yoga video'), use play_video instead."
+    },
+    {
+      "id": "mcp_bodi.show_fitness_programs",
+      "name": "show_fitness_programs",
+      "description": "Display workout programs in an interactive carousel widget."
+    },
+    {
+      "id": "mcp_bodi.play_video",
+      "name": "play_video",
+      "description": "Play a single workout video in an interactive video player widget. Use this ONLY for singular requests where the user clearly wants one specific video right now — e.g. 'play me a yoga video', 'show me a workout video', 'I want to do a quick workout'. For any request involving multiple workouts, a plan, a program, a series, or a group/collection of exercises, use search_workout_plans instead (then show_fitness_programs). When in doubt between singular and plural intent, default to search_workout_plans."
+    },
+    {
+      "id": "mcp_bodi.get_fitness_program_info",
+      "name": "get_fitness_program_info",
+      "description": "Get detailed information about a specific workout program."
+    },
+    {
+      "id": "mcp_bodi.generate_program_expectations",
+      "name": "generate_program_expectations",
+      "description": "Generate personalized 'What to expect' content for a program. This tool wraps the HTTP custom route functionality for Lambda proxy access."
+    }
+  ]
+}

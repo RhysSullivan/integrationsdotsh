@@ -1,0 +1,267 @@
+{
+  "fetchedAt": "2026-04-30T15:45:06.199Z",
+  "status": "ok",
+  "count": 52,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.addBridgeOutputs",
+      "name": "bridges.addBridgeOutputs",
+      "description": "Adds outputs to an existing bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.addBridgeSources",
+      "name": "bridges.addBridgeSources",
+      "description": "Adds sources to an existing bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.createBridge",
+      "name": "bridges.createBridge",
+      "description": "Creates a new bridge. The request must include one source."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.deleteBridge",
+      "name": "bridges.deleteBridge",
+      "description": "Deletes a bridge. Before you can delete a bridge, you must stop the bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.describeBridge",
+      "name": "bridges.describeBridge",
+      "description": "Displays the details of a bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.listBridges",
+      "name": "bridges.listBridges",
+      "description": "Displays a list of bridges that are associated with this account and an optionally specified Arn. This request returns a paginated result."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.removeBridgeOutput",
+      "name": "bridges.removeBridgeOutput",
+      "description": "Removes an output from a bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.removeBridgeSource",
+      "name": "bridges.removeBridgeSource",
+      "description": "Removes a source from a bridge."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.updateBridge",
+      "name": "bridges.updateBridge",
+      "description": "Updates the bridge"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.updateBridgeOutput",
+      "name": "bridges.updateBridgeOutput",
+      "description": "Updates an existing bridge output."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.updateBridgeSource",
+      "name": "bridges.updateBridgeSource",
+      "description": "Updates an existing bridge source."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.bridges.updateBridgeState",
+      "name": "bridges.updateBridgeState",
+      "description": "Updates the bridge state"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.entitlements.listEntitlements",
+      "name": "entitlements.listEntitlements",
+      "description": "Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.addFlowMediaStreams",
+      "name": "flows.addFlowMediaStreams",
+      "description": "Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.addFlowOutputs",
+      "name": "flows.addFlowOutputs",
+      "description": "Adds outputs to an existing flow. You can create up to 50 outputs per flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.addFlowSources",
+      "name": "flows.addFlowSources",
+      "description": "Adds Sources to flow"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.addFlowVpcInterfaces",
+      "name": "flows.addFlowVpcInterfaces",
+      "description": "Adds VPC interfaces to flow"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.createFlow",
+      "name": "flows.createFlow",
+      "description": "Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.deleteFlow",
+      "name": "flows.deleteFlow",
+      "description": "Deletes a flow. Before you can delete a flow, you must stop the flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.describeFlow",
+      "name": "flows.describeFlow",
+      "description": "Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.grantFlowEntitlements",
+      "name": "flows.grantFlowEntitlements",
+      "description": "Grants entitlements to an existing flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.listFlows",
+      "name": "flows.listFlows",
+      "description": "Displays a list of flows that are associated with this account. This request returns a paginated result."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.removeFlowMediaStream",
+      "name": "flows.removeFlowMediaStream",
+      "description": "Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.removeFlowOutput",
+      "name": "flows.removeFlowOutput",
+      "description": "Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.removeFlowSource",
+      "name": "flows.removeFlowSource",
+      "description": "Removes a source from an existing flow. This request can be made only if there is more than one source on the flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.removeFlowVpcInterface",
+      "name": "flows.removeFlowVpcInterface",
+      "description": "Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.revokeFlowEntitlement",
+      "name": "flows.revokeFlowEntitlement",
+      "description": "Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.startFlow",
+      "name": "flows.startFlow",
+      "description": "Starts a flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.stopFlow",
+      "name": "flows.stopFlow",
+      "description": "Stops a flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.updateFlow",
+      "name": "flows.updateFlow",
+      "description": "Updates flow"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.updateFlowEntitlement",
+      "name": "flows.updateFlowEntitlement",
+      "description": "You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.updateFlowMediaStream",
+      "name": "flows.updateFlowMediaStream",
+      "description": "Updates an existing media stream."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.updateFlowOutput",
+      "name": "flows.updateFlowOutput",
+      "description": "Updates an existing flow output."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.flows.updateFlowSource",
+      "name": "flows.updateFlowSource",
+      "description": "Updates the source of a flow."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gatewayInstances.deregisterGatewayInstance",
+      "name": "gatewayInstances.deregisterGatewayInstance",
+      "description": "Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gatewayInstances.describeGatewayInstance",
+      "name": "gatewayInstances.describeGatewayInstance",
+      "description": "Displays the details of an instance."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gatewayInstances.listGatewayInstances",
+      "name": "gatewayInstances.listGatewayInstances",
+      "description": "Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gatewayInstances.updateGatewayInstance",
+      "name": "gatewayInstances.updateGatewayInstance",
+      "description": "Updates the configuration of an existing Gateway Instance."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gateways.createGateway",
+      "name": "gateways.createGateway",
+      "description": "Creates a new gateway. The request must include at least one network (up to 4)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gateways.deleteGateway",
+      "name": "gateways.deleteGateway",
+      "description": "Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gateways.describeGateway",
+      "name": "gateways.describeGateway",
+      "description": "Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as details about the networks."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.gateways.listGateways",
+      "name": "gateways.listGateways",
+      "description": "Displays a list of gateways that are associated with this account. This request returns a paginated result."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.offerings.describeOffering",
+      "name": "offerings.describeOffering",
+      "description": "Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.offerings.listOfferings",
+      "name": "offerings.listOfferings",
+      "description": "Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you've purchased an offering that has already started and hasn't expired yet), your account isn't eligible for other offerings."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.offerings.purchaseOffering",
+      "name": "offerings.purchaseOffering",
+      "description": "Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another offering."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.reservations.describeReservation",
+      "name": "reservations.describeReservation",
+      "description": "Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.reservations.listReservations",
+      "name": "reservations.listReservations",
+      "description": "Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list includes all reservations in all states (such as active and expired)."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "List all tags on an AWS Elemental MediaConnect resource"
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well."
+    },
+    {
+      "id": "openapi_amazonaws_com_mediaconnect_mediaconnect.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Deletes specified tags from a resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

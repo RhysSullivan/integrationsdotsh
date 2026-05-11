@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:22:09.910Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_corrently_io.easee.easeeSessions",
+      "name": "easee.easeeSessions",
+      "description": "Refer to easee.cloud API for details.\n"
+    },
+    {
+      "id": "openapi_corrently_io.greenPowerIndexGrNstromIndex.gsiBesthour",
+      "name": "greenPowerIndexGrNstromIndex.gsiBesthour",
+      "description": "Simple Wrapper around the GreenPowerIndex for easy integration into almost any SmartHome system that allows access to a JSON/REST Service This endpoint is designed to indicate if a device should be turned on or off. (Switch state).\n"
+    },
+    {
+      "id": "openapi_corrently_io.greenPowerIndexGrNstromIndex.gsiDispatch",
+      "name": "greenPowerIndexGrNstromIndex.gsiDispatch",
+      "description": "Dispatch of green energy has two aspects to consider:\n  - Availability of gerneration facility (depends on weather and installed capacity)\n  - Demand of energy\nUsing the green power index (GrünstromIndex) we have received a tool to automate distribution of energy in order to prevent redispatch situations. Doing this alows to opimize resource usage (tactical) and leverage data for investment planning (strategic).\n"
+    },
+    {
+      "id": "openapi_corrently_io.greenPowerIndexGrNstromIndex.gsiMarketdata",
+      "name": "greenPowerIndexGrNstromIndex.gsiMarketdata",
+      "description": "Compatible to awattar (https://api.awattar.de/v1/marketdata) API interface but data comes from GreenPowerIndex instead of EPEXSpot.\n"
+    },
+    {
+      "id": "openapi_corrently_io.greenPowerIndexGrNstromIndex.gsiPrediction",
+      "name": "greenPowerIndexGrNstromIndex.gsiPrediction",
+      "description": "Retrieval the GreenPowerIndex (GrünstromIndex) for a given city (by zipcode) in Germany.\n"
+    },
+    {
+      "id": "openapi_corrently_io.meteringDecorator.meteringGet",
+      "name": "meteringDecorator.meteringGet",
+      "description": "Retrieves a metered reading using account (Stromkonto).\n"
+    },
+    {
+      "id": "openapi_corrently_io.meteringDecorator.meteringPost",
+      "name": "meteringDecorator.meteringPost",
+      "description": "Post meter reading and get it decorated. Best practice is to first create a new Stromkonto with the register method and choose a nice secret to protect updates. Now regularly send updates to get readings (consumption) split into green power (1.8.1) and grey power (1.8.2).\n"
+    },
+    {
+      "id": "openapi_corrently_io.ocpp.ocppSessions",
+      "name": "ocpp.ocppSessions",
+      "description": "Returns lastSession info of OCCP Cloud service for clearing in corrently ecosystem. Might be tested via [OCPP cloud simulator](https://ocpp.corrently.cloud).\nLast session Info of managed EV charging stations connected to the correnty ecosystem.\n"
+    },
+    {
+      "id": "openapi_corrently_io.openMeter.omActivities",
+      "name": "openMeter.omActivities",
+      "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.\n"
+    },
+    {
+      "id": "openapi_corrently_io.openMeter.omMeters",
+      "name": "openMeter.omMeters",
+      "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.\n"
+    },
+    {
+      "id": "openapi_corrently_io.openMeter.omReadings",
+      "name": "openMeter.omReadings",
+      "description": "Provides a list of available meterrs in the OpenMETER project ( https://www.openmeter.de/ ) which grants access for analytics as data discovery.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromkontoLedger.prepareTransaction",
+      "name": "stromkontoLedger.prepareTransaction",
+      "description": "Prepares and inques a transaction (transfer) between two accounts (Stromkonten). This might be used to send any balanced entity. Using this endpoint will only prepare the transaction and enques it for signing and countersigning. This is done from within the user UI using validation process. Note: This API method does not validate any transations. In other words authentication, authorization, validation and actual transfer of value is done using a smart contract during processing in the energy blockchain.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromkontoLedger.stromkontoBalances",
+      "name": "stromkontoLedger.stromkontoBalances",
+      "description": "Stromkonto represents a core component of the Corrently Ecosystem. It is a ledger for green energy related transactions and gets heavily used by the public Web-UI on www.stromkonto.net . Beside of some decoration and reformating operations all data is backed by the [Energychain blockchain](https://github.com/energychain/) to provide consensus of balances and transactions. Use this API Endppoint if you prefere not to work with low level Distributed Ledger Technology (Blockchain).\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromkontoLedger.stromkontoChoices",
+      "name": "stromkontoLedger.stromkontoChoices",
+      "description": "Signable choices (contract changes) for customer.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromkontoLedger.stromkontoLogin",
+      "name": "stromkontoLedger.stromkontoLogin",
+      "description": "Sends a mail to a given email address to login this user. This function makes life a bit easier in order to not having to deal with private key protection on the user side as a shared key is used to sign transactions onbehalf of a particular account.  However viewing consensus information (balances) are public and *might move* from account to account without prior notification. Best practice for third party uses is to always start a session with the login RESP call and only create a user in case the response indicates an `unregistered` status.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromkontoLedger.stromkontoRegister",
+      "name": "stromkontoLedger.stromkontoRegister",
+      "description": "Calling this method with an unregistered (new) email will create a new account (Stromkonto) with all balances having a value of `0` and no transaction history. In addition some basic properties like region and zipcode are set to allow further operation of account.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungComit",
+      "name": "stromQuittung.quittungComit",
+      "description": "Uses collected fields or provided fields to create a final receipt (Strom-Quittung).\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungCreate",
+      "name": "stromQuittung.quittungCreate",
+      "description": "Creates a full featured receipt (Quittung) for an energy delivery as it appears on a charging session or similar events. Allows to embed receipt generation directly into external services.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungPrepare",
+      "name": "stromQuittung.quittungPrepare",
+      "description": "During the first call an account parameter will be returned within the result object. Any other parameter will be set inside the preperation. If account is put into body/request in following requests, the existing collection will be extended/updated with the provided body parameters/values.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungTse",
+      "name": "stromQuittung.quittungTse",
+      "description": "Allows to retrieve all relevant data assiciated to a TSE service call. E.q. Input parameters, public key and signature.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungTseData",
+      "name": "stromQuittung.quittungTseData",
+      "description": "Allows to retrieve input string for a signing process.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungTsEsignature",
+      "name": "stromQuittung.quittungTsEsignature",
+      "description": "Allows to retrieve digital signature for a given receipt.\n"
+    },
+    {
+      "id": "openapi_corrently_io.stromQuittung.quittungZugferd",
+      "name": "stromQuittung.quittungZugferd",
+      "description": "Allows to retrieve XML of the zugferd invoice.\n"
+    },
+    {
+      "id": "openapi_corrently_io.tariffPriceApi.tariffcomponents",
+      "name": "tariffPriceApi.tariffcomponents",
+      "description": "Provides insides into the different cost components of energy for a private household.\nSample Request: https://api.corrently.io/v2.0/tariff/components?email=demo%40corrently.io&zip=69168&kwha=3300\n"
+    },
+    {
+      "id": "openapi_corrently_io.tariffPriceApi.tariffSlpH0",
+      "name": "tariffPriceApi.tariffSlpH0",
+      "description": "Provides pricing data for private households with standard load profiles (Standardlastprofil H0).\n"
+    },
+    {
+      "id": "openapi_corrently_io.wiMWechselprozesseImMesswesenStromStatusApi.wimstatus",
+      "name": "wiMWechselprozesseImMesswesenStromStatusApi.wimstatus",
+      "description": "Access to status information of an existing metering change and allocation process.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

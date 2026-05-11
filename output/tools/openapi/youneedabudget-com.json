@@ -1,0 +1,172 @@
+{
+  "fetchedAt": "2026-04-30T15:26:58.293Z",
+  "status": "ok",
+  "count": 33,
+  "tools": [
+    {
+      "id": "openapi_youneedabudget_com.accounts.createAccount",
+      "name": "accounts.createAccount",
+      "description": "Creates a new account"
+    },
+    {
+      "id": "openapi_youneedabudget_com.accounts.getAccountById",
+      "name": "accounts.getAccountById",
+      "description": "Returns a single account"
+    },
+    {
+      "id": "openapi_youneedabudget_com.accounts.getAccounts",
+      "name": "accounts.getAccounts",
+      "description": "Returns all accounts"
+    },
+    {
+      "id": "openapi_youneedabudget_com.budgets.getBudgetById",
+      "name": "budgets.getBudgetById",
+      "description": "Returns a single budget with all related entities.  This resource is effectively a full budget export."
+    },
+    {
+      "id": "openapi_youneedabudget_com.budgets.getBudgets",
+      "name": "budgets.getBudgets",
+      "description": "Returns budgets list with summary information"
+    },
+    {
+      "id": "openapi_youneedabudget_com.budgets.getBudgetSettingsById",
+      "name": "budgets.getBudgetSettingsById",
+      "description": "Returns settings for a budget"
+    },
+    {
+      "id": "openapi_youneedabudget_com.categories.getCategories",
+      "name": "categories.getCategories",
+      "description": "Returns all categories grouped by category group.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC)."
+    },
+    {
+      "id": "openapi_youneedabudget_com.categories.getCategoryById",
+      "name": "categories.getCategoryById",
+      "description": "Returns a single category.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC)."
+    },
+    {
+      "id": "openapi_youneedabudget_com.categories.getMonthCategoryById",
+      "name": "categories.getMonthCategoryById",
+      "description": "Returns a single category for a specific budget month.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC)."
+    },
+    {
+      "id": "openapi_youneedabudget_com.categories.updateMonthCategory",
+      "name": "categories.updateMonthCategory",
+      "description": "Update a category for a specific month.  Only `budgeted` amount can be updated."
+    },
+    {
+      "id": "openapi_youneedabudget_com.deprecated.bulkCreateTransactions",
+      "name": "deprecated.bulkCreateTransactions",
+      "description": "Creates multiple transactions.  Although this endpoint is still supported, it is recommended to use 'POST /budgets/{budget_id}/transactions' to create multiple transactions."
+    },
+    {
+      "id": "openapi_youneedabudget_com.months.getBudgetMonth",
+      "name": "months.getBudgetMonth",
+      "description": "Returns a single budget month"
+    },
+    {
+      "id": "openapi_youneedabudget_com.months.getBudgetMonths",
+      "name": "months.getBudgetMonths",
+      "description": "Returns all budget months"
+    },
+    {
+      "id": "openapi_youneedabudget_com.payeeLocations.getPayeeLocationById",
+      "name": "payeeLocations.getPayeeLocationById",
+      "description": "Returns a single payee location"
+    },
+    {
+      "id": "openapi_youneedabudget_com.payeeLocations.getPayeeLocations",
+      "name": "payeeLocations.getPayeeLocations",
+      "description": "Returns all payee locations"
+    },
+    {
+      "id": "openapi_youneedabudget_com.payeeLocations.getPayeeLocationsByPayee",
+      "name": "payeeLocations.getPayeeLocationsByPayee",
+      "description": "Returns all payee locations for a specified payee"
+    },
+    {
+      "id": "openapi_youneedabudget_com.payees.getPayeeById",
+      "name": "payees.getPayeeById",
+      "description": "Returns a single payee"
+    },
+    {
+      "id": "openapi_youneedabudget_com.payees.getPayees",
+      "name": "payees.getPayees",
+      "description": "Returns all payees"
+    },
+    {
+      "id": "openapi_youneedabudget_com.scheduledTransactions.getScheduledTransactionById",
+      "name": "scheduledTransactions.getScheduledTransactionById",
+      "description": "Returns a single scheduled transaction"
+    },
+    {
+      "id": "openapi_youneedabudget_com.scheduledTransactions.getScheduledTransactions",
+      "name": "scheduledTransactions.getScheduledTransactions",
+      "description": "Returns all scheduled transactions"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.createTransaction",
+      "name": "transactions.createTransaction",
+      "description": "Creates a single transaction or multiple transactions.  If you provide a body containing a `transaction` object, a single transaction will be created and if you provide a body containing a `transactions` array, multiple transactions will be created.  Scheduled transactions cannot be created on this endpoint."
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.deleteTransaction",
+      "name": "transactions.deleteTransaction",
+      "description": "Deletes a transaction"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.getTransactionById",
+      "name": "transactions.getTransactionById",
+      "description": "Returns a single transaction"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.getTransactions",
+      "name": "transactions.getTransactions",
+      "description": "Returns budget transactions"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.getTransactionsByAccount",
+      "name": "transactions.getTransactionsByAccount",
+      "description": "Returns all transactions for a specified account"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.getTransactionsByCategory",
+      "name": "transactions.getTransactionsByCategory",
+      "description": "Returns all transactions for a specified category"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.getTransactionsByPayee",
+      "name": "transactions.getTransactionsByPayee",
+      "description": "Returns all transactions for a specified payee"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.importTransactions",
+      "name": "transactions.importTransactions",
+      "description": "Imports available transactions on all linked accounts for the given budget.  Linked accounts allow transactions to be imported directly from a specified financial institution and this endpoint initiates that import.  Sending a request to this endpoint is the equivalent of clicking \"Import\" on each account in the web application or tapping the \"New Transactions\" banner in the mobile applications.  The response for this endpoint contains the transaction ids that have been imported."
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.updateTransaction",
+      "name": "transactions.updateTransaction",
+      "description": "Updates a single transaction"
+    },
+    {
+      "id": "openapi_youneedabudget_com.transactions.updateTransactions",
+      "name": "transactions.updateTransactions",
+      "description": "Updates multiple transactions, by `id` or `import_id`."
+    },
+    {
+      "id": "openapi_youneedabudget_com.user.getUser",
+      "name": "user.getUser",
+      "description": "Returns authenticated user information"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

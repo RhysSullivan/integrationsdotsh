@@ -1,0 +1,62 @@
+{
+  "fetchedAt": "2026-04-30T15:22:40.772Z",
+  "status": "ok",
+  "count": 11,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsInsightTypesInsightsList",
+      "name": "projects.recommenderProjectsLocationsInsightTypesInsightsList",
+      "description": "Lists insights for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified insight type."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsInsightTypesInsightsMarkAccepted",
+      "name": "projects.recommenderProjectsLocationsInsightTypesInsightsMarkAccepted",
+      "description": "Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender API that they have applied some action based on the insight. This stops the insight content from being updated. MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the recommender.*.update IAM permission for the specified insight."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsGet",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsGet",
+      "description": "Gets the requested recommendation. Requires the recommender.*.get IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsList",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsList",
+      "description": "Lists recommendations for the specified Cloud Resource. Requires the recommender.*.list IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsMarkClaimed",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsMarkClaimed",
+      "description": "Marks the Recommendation State as Claimed. Users can use this method to indicate to the Recommender API that they are starting to apply the recommendation themselves. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationClaimed can be applied to recommendations in CLAIMED, SUCCEEDED, FAILED, or ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsMarkDismissed",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsMarkDismissed",
+      "description": "Mark the Recommendation State as Dismissed. Users can use this method to indicate to the Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED. MarkRecommendationDismissed can be applied to recommendations in ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsMarkFailed",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsMarkFailed",
+      "description": "Marks the Recommendation State as Failed. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation failed. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state. Requires the recommender.*.update IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersRecommendationsMarkSucceeded",
+      "name": "projects.recommenderProjectsLocationsRecommendersRecommendationsMarkSucceeded",
+      "description": "Marks the Recommendation State as Succeeded. Users can use this method to indicate to the Recommender API that they have applied the recommendation themselves, and the operation was successful. This stops the recommendation content from being updated. Associated insights are frozen and placed in the ACCEPTED state. MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or FAILED state. Requires the recommender.*.update IAM permission for the specified recommender."
+    },
+    {
+      "id": "openapi_googleapis_com_recommender_recommender.projects.recommenderProjectsLocationsRecommendersUpdateConfig",
+      "name": "projects.recommenderProjectsLocationsRecommendersUpdateConfig",
+      "description": "Updates a Recommender Config. This will create a new revision of the config."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

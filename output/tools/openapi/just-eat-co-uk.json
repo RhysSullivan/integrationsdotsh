@@ -1,0 +1,507 @@
+{
+  "fetchedAt": "2026-04-30T15:22:47.658Z",
+  "status": "ok",
+  "count": 100,
+  "tools": [
+    {
+      "id": "openapi_just_eat_co_uk.attemptedDeliveryApi.postTenantOrdersOrderIdQueriesAttempteddelivery",
+      "name": "attemptedDeliveryApi.postTenantOrdersOrderIdQueriesAttempteddelivery",
+      "description": "If the customer hasn't answered the door to collect the order, then an attempted delivery event can be created using this endpoint."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.attemptedDeliveryApi.postTenantOrdersOrderIdQueriesAttempteddeliveryResolutionRedeliverorder",
+      "name": "attemptedDeliveryApi.postTenantOrdersOrderIdQueriesAttempteddeliveryResolutionRedeliverorder",
+      "description": "If the customer responds, then you can trigger the redelivery of an order through this endpoint"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.attemptedDeliveryWebhooks.putAttemptedDeliveryQueryResolved",
+      "name": "attemptedDeliveryWebhooks.putAttemptedDeliveryQueryResolved",
+      "description": "This webhook will be invoked whenever an attempted delivery query has been resolved."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.attemptedDeliveryWebhooks.putDeliveryFailed",
+      "name": "attemptedDeliveryWebhooks.putDeliveryFailed",
+      "description": "This webhook will be invoked whenever an attempted delivery event is created from the device."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.checkout.getCheckoutTenantCheckoutId",
+      "name": "checkout.getCheckoutTenantCheckoutId",
+      "description": "Get the details required to fulfil an order, which includes:\n  - The restaurant selling the items to be purchased\n  - The customer making the purchase\n  - How, where and when the items will be received by the customer\n  - Instructions about the order\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.checkout.getCheckoutTenantCheckoutIdFulfilmentAvailabletimes",
+      "name": "checkout.getCheckoutTenantCheckoutIdFulfilmentAvailabletimes",
+      "description": "Gets a collection of times for when an order can be fulfilled."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.checkout.patchCheckoutTenantCheckoutId",
+      "name": "checkout.patchCheckoutTenantCheckoutId",
+      "description": "Update the details required to fulfil an order, which includes:\n  - The customer making the purchase\n  - Where and when the items will be received by the customer\n  - Instructions about the order\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumerQueries.postOrdersTenantOrderIdConsumerqueriesLateordercompensationRestaurantresponse",
+      "name": "consumerQueries.postOrdersTenantOrderIdConsumerqueriesLateordercompensationRestaurantresponse",
+      "description": "If a customer has requested compensation for a late order, a restaurant response is given by calling this endpoint."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumerQueries.postOrdersTenantOrderIdConsumerqueriesLateorderRestaurantresponse",
+      "name": "consumerQueries.postOrdersTenantOrderIdConsumerqueriesLateorderRestaurantresponse",
+      "description": "If a customer has requested an update on the status of a late order, a response can be given by calling this endpoint."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumerQueriesWebhooks.postLateOrderCompensationQuery",
+      "name": "consumerQueriesWebhooks.postLateOrderCompensationQuery",
+      "description": "This webhook will be invoked when a late order compensation query has been raised and a restaurant response is required."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumerQueriesWebhooks.postLateOrderQuery",
+      "name": "consumerQueriesWebhooks.postLateOrderQuery",
+      "description": "This webhook will be invoked when a late order query has been raised and a restaurant response is required."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.deleteConsumersTenantMeCommunicationPreferencesTypeSubscribedChannelsChannel",
+      "name": "consumers.deleteConsumersTenantMeCommunicationPreferencesTypeSubscribedChannelsChannel",
+      "description": "Remove subscription of a specific communication preference channel."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.getConsumersTenant",
+      "name": "consumers.getConsumersTenant",
+      "description": "Currently this operation only supports retrieving a count of consumer accounts given an email address."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.getConsumersTenantMeCommunicationPreferences",
+      "name": "consumers.getConsumersTenantMeCommunicationPreferences",
+      "description": "Get all communication preferences for a given consumer."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.getConsumersTenantMeCommunicationPreferencesType",
+      "name": "consumers.getConsumersTenantMeCommunicationPreferencesType",
+      "description": "Get channel subscriptions for a given consumer's communication preference type"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.postConsumersTenant",
+      "name": "consumers.postConsumersTenant",
+      "description": "Creates a consumer for the given tenant."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.postConsumersTenantMeCommunicationPreferencesTypeSubscribedChannelsChannel",
+      "name": "consumers.postConsumersTenantMeCommunicationPreferencesTypeSubscribedChannelsChannel",
+      "description": "Subscribe to a specific communication preference channel."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.consumers.putConsumersTenantMeCommunicationPreferencesType",
+      "name": "consumers.putConsumersTenantMeCommunicationPreferencesType",
+      "description": "Set only the channel subscriptions for a given consumer's communication preference type. E.g., An empty list of subscribed Channels implies unsubscribe from all channels."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryFee.getDeliveryFeesTenant",
+      "name": "deliveryFee.getDeliveryFeesTenant",
+      "description": "Retrieve delivery fees for many restaurants. Returns fees and minimum order values required for delivery orders."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.deleteDeliveryPoolsDeliveryPoolId",
+      "name": "deliveryPoolsApi.deleteDeliveryPoolsDeliveryPoolId",
+      "description": "The restaurants will no longer be associated with the pool."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.deleteDeliveryPoolsDeliveryPoolIdRestaurants",
+      "name": "deliveryPoolsApi.deleteDeliveryPoolsDeliveryPoolIdRestaurants",
+      "description": "Remove restaurants from a delivery pool"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.getDeliveryPools",
+      "name": "deliveryPoolsApi.getDeliveryPools",
+      "description": "A delivery pool is a named group of drivers which deliver food for a set of restaurants."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.getDeliveryPoolsDeliveryPoolId",
+      "name": "deliveryPoolsApi.getDeliveryPoolsDeliveryPoolId",
+      "description": "A delivery pool is a named group of drivers which deliver food for a set of restaurants."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.getDeliveryPoolsDeliveryPoolIdAvailabilityRelative",
+      "name": "deliveryPoolsApi.getDeliveryPoolsDeliveryPoolIdAvailabilityRelative",
+      "description": "Get the current amount of time it will take a driver to collect a new order from a restaurant in the pool."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.patchDeliveryPoolsDeliveryPoolId",
+      "name": "deliveryPoolsApi.patchDeliveryPoolsDeliveryPoolId",
+      "description": "Modify a delivery pool, changing its name, restaurants or both"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.postDeliveryPools",
+      "name": "deliveryPoolsApi.postDeliveryPools",
+      "description": "A delivery pool is a named group of drivers which deliver food for a set of restaurants."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.putDeliveryPoolsDeliveryPoolId",
+      "name": "deliveryPoolsApi.putDeliveryPoolsDeliveryPoolId",
+      "description": "Replace an existing delivery pool changing all of its properties"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdAvailabilityRelative",
+      "name": "deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdAvailabilityRelative",
+      "description": "Set the average amount of time it will take a driver to collect a new order from a restaurant in the pool."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdHours",
+      "name": "deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdHours",
+      "description": "Set the daily start and end times for a pool or set closed flag if the pool does not operate on that day. Start and end times for all days must be provided. Though the API accepts array of start and end times for each day, multiple start and end time for a day are not accepted. If the end time for a day is equal to or before start time, end time will be considered as time for the next day."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdRestaurants",
+      "name": "deliveryPoolsApi.putDeliveryPoolsDeliveryPoolIdRestaurants",
+      "description": "Add additional restaurants to a delivery pool"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.postOrdersOrderIdComplete",
+      "name": "orderAcceptanceApi.postOrdersOrderIdComplete",
+      "description": "Call when an order is complete. An order can only be marked as complete if it hasn't already been marked as cancelled or complete."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.postOrdersOrderIdReadyforcollection",
+      "name": "orderAcceptanceApi.postOrdersOrderIdReadyforcollection",
+      "description": "Call when a collection order is ready to be collected by the customer. An order can only be marked as ready for collection if it is a collection order in the accepted state."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.putOrdersOrderIdAccept",
+      "name": "orderAcceptanceApi.putOrdersOrderIdAccept",
+      "description": "Call when an order has been accepted. An order can only be accepted if it hasn't previously been accepted, rejected, cancelled or ignored"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.putOrdersOrderIdCancel",
+      "name": "orderAcceptanceApi.putOrdersOrderIdCancel",
+      "description": "Call when an order has been cancelled by Ops. Cancelling an order overrides any previous accept/reject calls. This should not be used for restaurant rejection but only from Ops involvement"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.putOrdersOrderIdDuedate",
+      "name": "orderAcceptanceApi.putOrdersOrderIdDuedate",
+      "description": "Use this to update the estimated time of arrival for an order (i.e. when you expect the customer to receive the food). NOTE: An initial estimate is given [upon acceptance](#/paths/~1orders~1{orderId}~1accept/put). This endpoint can be used to update that estimate.\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.putOrdersOrderIdIgnore",
+      "name": "orderAcceptanceApi.putOrdersOrderIdIgnore",
+      "description": "Call when an order has been ignored by restaurant. An order can only be ignored if it hasn't previously been accepted, rejected, cancelled or ignored"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceApi.putOrdersOrderIdReject",
+      "name": "orderAcceptanceApi.putOrdersOrderIdReject",
+      "description": "Call when an order has been rejected. An order can only be rejected if it hasn't previously been accepted, rejected, cancelled or ignored"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceWebhooks.postAcceptanceRequested",
+      "name": "orderAcceptanceWebhooks.postAcceptanceRequested",
+      "description": "This webhook will be invoked whenever acceptance has been requested for the order."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceWebhooks.postOrderAccepted",
+      "name": "orderAcceptanceWebhooks.postOrderAccepted",
+      "description": "This webhook will be invoked whenever the order was accepted."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceWebhooks.postOrderCancelled",
+      "name": "orderAcceptanceWebhooks.postOrderCancelled",
+      "description": "This webhook will be invoked whenever the order was cancelled."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceWebhooks.postOrderRejected",
+      "name": "orderAcceptanceWebhooks.postOrderRejected",
+      "description": "This webhook will be invoked whenever the order was rejected."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderAcceptanceWebhooks.putRedeliveryRequested",
+      "name": "orderAcceptanceWebhooks.putRedeliveryRequested",
+      "description": "This webhook will be invoked whenever the customer responds to the attempted delivery notification."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderApi.postOrders",
+      "name": "orderApi.postOrders",
+      "description": "Create order"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.getDeliveryEstimate",
+      "name": "orderDeliveryApi.getDeliveryEstimate",
+      "description": "Get delivery estimate"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersDeliverystateDriverlocation",
+      "name": "orderDeliveryApi.putOrdersDeliverystateDriverlocation",
+      "description": "Current driver location (bulk upload)"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateAtdeliveryaddress",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateAtdeliveryaddress",
+      "description": "<p>The _at delivery address_ callback should be sent when the driver thinks that they have arrived at the specified delivery address.</p><p>NB&semi; This callback should be distinct from the delivered callback, as Just Eat use this callback to understand how much time is spent locating the customer's address.</p>"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateAtrestaurant",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateAtrestaurant",
+      "description": "The _at restaurant_ callback should be sent when the driver arrives at the restaurant and is ready to collect the order."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateAtrestauranteta",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateAtrestauranteta",
+      "description": "<p>In the UK, this endpoint updates the estimated arrival time at the restaurant. This value can be overridden from other endpoints like <a href=\"https://uk.api.just-eat.io/docs#tag/Order-Delivery-API/paths/~1orders~1{orderId}~1deliverystate~1driverlocation/put\">Driver Locations</a> </p> <p> This endpoint should be used to set initial at restaurant ETAs prior to driver assignment where available. The earlier a delivery partner is able to provide an estimate of when the driver will arrive at the restaurant the more likely it is that driver arrival and order preparation will be aligned. </p> <p> In other tenants (Not UK):Note that if set for a given order, this Eta will NOT be overridden by any other at restaurant ETAs provided in `DriverAssigned` or `DriverLocation` requests</p> <p>This value is significant since it informs when a restaurant is instructed to start preparing food. When the time remaining between current time and the estimated time of arrival becomes less than the restaurant's configured preparation time, food preparation is initiated</p>"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateDelivered",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateDelivered",
+      "description": "The _delivered_ callback should be sent when the driver has handed the food to the customer and completed the order."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateDriverassigned",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateDriverassigned",
+      "description": "The _driver assigned_ callback should be sent when a driver is assigned to the order. It should communicate important details about the driver - and also an estimated time for the driver to arrive at the restaurant and delivery address."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateDriverlocation",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateDriverlocation",
+      "description": "<p>Just Eat requires all delivery partners to send regular driver location callbacks, that record the GPS location of the drivers assigned to each order</p><p>Partners should aim to supply this callback approximately every 10 seconds.</p><p>Please provide an up-to-date ETA for when the driver will reach the restaurant in this request - this value is significant since it informs when a restaurant is instructed to start preparing food - when the time remaining between current time and the estimated time of arrival becomes less than the restaurant's configured preparation time, food preparation is initiated</p><p>Note that at restaurant Eta provided in this request will NOT override any ETA set in the Driver At Restaurant Eta request</p>"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateDriverunassigned",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateDriverunassigned",
+      "description": "The _driver unassigned_ callback should be sent when a driver is unassigned from the order. It may details about the reason for cancelling the assignment, the driver details, and any newer at restaurant and customer estimations."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryApi.putOrdersOrderIdDeliverystateOnitsway",
+      "name": "orderDeliveryApi.putOrdersOrderIdDeliverystateOnitsway",
+      "description": "The _on its way_ callback should be sent when the driver departs the restaurant with the customer's order. It should contain an ETA that records when the driver expects to arrive at the customer's address."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverAssignedToDelivery",
+      "name": "orderDeliveryWebhooks.putDriverAssignedToDelivery",
+      "description": "Driver Assigned to Delivery"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverAtDeliveryAddress",
+      "name": "orderDeliveryWebhooks.putDriverAtDeliveryAddress",
+      "description": "Driver at delivery address"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverAtRestaurant",
+      "name": "orderDeliveryWebhooks.putDriverAtRestaurant",
+      "description": "Driver at restaurant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverHasDeliveredOrder",
+      "name": "orderDeliveryWebhooks.putDriverHasDeliveredOrder",
+      "description": "Driver has delivered order"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverLocation",
+      "name": "orderDeliveryWebhooks.putDriverLocation",
+      "description": "Driver Location"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putDriverOnTheirWayToDeliveryAddress",
+      "name": "orderDeliveryWebhooks.putDriverOnTheirWayToDeliveryAddress",
+      "description": "Driver on their way to delivery address"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putOrderIsReadyForPickup",
+      "name": "orderDeliveryWebhooks.putOrderIsReadyForPickup",
+      "description": "<p>The \"Ready for pickup\" event lets the delivery partner know that the food has been cooked and is now ready for collection up from the restaurant.</p><p>When this event is received, it is important that you let your driver know that the order should now be collected from inside the restaurant. For example, this driver notification could take the form of an in-app notification or an SMS message.</p><p>This communication is needed to support restaurants who are unable to accommodate drivers inside their premises, as it allows restaurants to notify drivers waiting outside that they should come inside to collect their order.</p><p>NB&semi; This event can be sent by the restaurant at any point after the order is accepted by the restaurant (for instance, this event may be sent before the driver has arrived at the restaurant).</p>"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderDeliveryWebhooks.putOrderRequiresDeliveryAcceptance",
+      "name": "orderDeliveryWebhooks.putOrderRequiresDeliveryAcceptance",
+      "description": "This webhook will be invoked when we have determined that an order is required acceptance for delivery. Upon receiving the request, the order should be scheduled for pickup by a courier/driver. We expect an immediate `201` response from this webhook to denote that you have received the request."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderWebhooks.postOrderReadyForPreparationAsync",
+      "name": "orderWebhooks.postOrderReadyForPreparationAsync",
+      "description": "This webhook will be invoked when we have determined that an order is ready for preparation. Upon receiving the request, you should perform any preparation-related activities, such as sending the order to the POS system / kitchen screen.\n**NOTE:** This version of the webhook is asynchronous, and we expect a response in two parts:\n  1. We expect an immediate `202` response from this webhook to denote that you have received the request;\n  2. Following that, we expect an [async callback](#section/Async-Webhooks) - indicating either success or failure of the operation. The body for the async callbacks are as below:\n  \n  **Success callback**\n  ```\n  {\n        \"status\": \"Success\",\n        \"message\": \"Order successfully sent to POS\",\n        \"data\": {}\n  }\n  ```\n  **Failure callback**\n  ```\n  {\n        \"status\": \"Failure\",\n        \"message\": \"{errorMessage}\",   // e.g. \"The POS is currently in use\"\n        \"data\": {}\n  }\n  ```\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderWebhooks.postOrderReadyForPreparationSync",
+      "name": "orderWebhooks.postOrderReadyForPreparationSync",
+      "description": "This webhook will be invoked when we have determined that an order is ready for preparation. Upon receiving the request, you should perform any preparation-related activities, such as sending the order to the POS system / kitchen screen.\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.orderWebhooks.postSendToPosFailed",
+      "name": "orderWebhooks.postSendToPosFailed",
+      "description": "This webhook will be invoked if we experience an error or timeout in sending an order to the underlying POS / kitchen screen. When notified via this webhook, typically you will perform some form of alerting or backup flow (e.g. ask the operator to enter the order manually into the POS). NOTE: This message contains the `OrderId`, but not the full order. It is assumed that you have stored/cached the full order details earlier in the flow - e.g. via the [/order-ready-for-preparation](#/paths/~1order-ready-for-preparation-sync/post) webhook."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.publiclyAccessible.getOrderTimes",
+      "name": "publiclyAccessible.getOrderTimes",
+      "description": "Get list of the delivery and collection lead times supplied by the restaurant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.publiclyAccessible.updateOrderTime",
+      "name": "publiclyAccessible.updateOrderTime",
+      "description": "Update the restaurant's delivery and collection lead times"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantClaims.getRestaurantsTenantRestaurantIdCustomerclaims",
+      "name": "restaurantClaims.getRestaurantsTenantRestaurantIdCustomerclaims",
+      "description": "Provides claims for a given restaurant with optional filtering"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantClaims.getRestaurantsTenantRestaurantIdCustomerclaimsId",
+      "name": "restaurantClaims.getRestaurantsTenantRestaurantIdCustomerclaimsId",
+      "description": "Get information about a order claim"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantClaims.postRestaurantsTenantRestaurantIdCustomerclaimsIdRestaurantresponse",
+      "name": "restaurantClaims.postRestaurantsTenantRestaurantIdCustomerclaimsIdRestaurantresponse",
+      "description": "Submit a restaurant response for the claim, where the restaurant can tell us if they accept or reject the claim"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantClaims.putRestaurantsTenantRestaurantIdCustomerclaimsIdRestaurantresponseJustification",
+      "name": "restaurantClaims.putRestaurantsTenantRestaurantIdCustomerclaimsIdRestaurantresponseJustification",
+      "description": "Add reason and optional comments in case of rejection of order claim"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantEvents.deleteV1TenantRestaurantsIdEventOffline",
+      "name": "restaurantEvents.deleteV1TenantRestaurantsIdEventOffline",
+      "description": "Removes specified restaurant from offline events. If role header is `System` or `Operations` only events created by the specified role will be affected. If role header is `Restaurant` then all events that have `allowRestaurantOverride=true` will be affected."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantEvents.postV1TenantRestaurantsEventOffline",
+      "name": "restaurantEvents.postV1TenantRestaurantsEventOffline",
+      "description": "Creates an event for the specified restaurants that indicates a reason for those restaurants to be offline."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantEventsWebhooks.putRestaurantOfflineStatus",
+      "name": "restaurantEventsWebhooks.putRestaurantOfflineStatus",
+      "description": "Callback to notify that a restaurant has been taken offline through an active Restaurant Event or there's been a change in whether the restaurant can override a previous offline status."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantEventsWebhooks.putRestaurantOnlineStatus",
+      "name": "restaurantEventsWebhooks.putRestaurantOnlineStatus",
+      "description": "Callback to notify that a restaurant is now able to come back online as there are no longer any active offline Restaurant Events"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantQueries.postOrdersTenantOrderIdRestaurantqueriesCompensation",
+      "name": "restaurantQueries.postOrdersTenantOrderIdRestaurantqueriesCompensation",
+      "description": "When an order is cancelled the restaurant might be eligible for compensation, this endpoint allows a request for compensation to be created."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantQueriesWebhooks.postOrderEligibleForRestaurantCompensation",
+      "name": "restaurantQueriesWebhooks.postOrderEligibleForRestaurantCompensation",
+      "description": "This webhook will be invoked for every cancelled order and it will inform if the order is eligible for compensation.\n"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantServiceTimes",
+      "name": "restaurants.getRestaurantServiceTimes",
+      "description": "Gets the service times (the weekly times at which a restaurant is in service for delivery or collection) for a restaurant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogue",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogue",
+      "description": "Get details of the restaurant's product catalogue"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueAvailabilities",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueAvailabilities",
+      "description": "Get all availabilities on the restaurant's menu"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueCategories",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueCategories",
+      "description": "Get all categories on the restaurant's menu"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueCategoriesCategoryIdItems",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueCategoriesCategoryIdItems",
+      "description": "Get all item IDs which are assigned to the specified category"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueItems",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueItems",
+      "description": "Get all menu items on the restaurant's menu"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdDealgroups",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdDealgroups",
+      "description": "Get all deal groups for the menu item with the provided ID"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdDealgroupsDealGroupIdDealitemvariations",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdDealgroupsDealGroupIdDealitemvariations",
+      "description": "Get all deal item variations for the deal group with the specified ID, in the menu item with the specified ID"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdModifiergroups",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdModifiergroups",
+      "description": "Get all modifier groups for the menu item with the provided ID"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdVariations",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdCatalogueItemsItemIdVariations",
+      "description": "Get all variations for the menu item with the provided ID"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdFees",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdFees",
+      "description": "Get the fees currently applied to a restaurant in a particular tenant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.getRestaurantsTenantRestaurantIdMenu",
+      "name": "restaurants.getRestaurantsTenantRestaurantIdMenu",
+      "description": "The endpoint will return a 301 redirect containing a URL that will grant access to the Menu file. The URL will only be available for a short period of time. The Menu file will be a single document containing the information that Just Eat has and uses to display the Menu on our customer clients. This will include a collection of items, a collection of Categories and a collection of Availabilities for when the items are available. Partners will be able to retrieve the Menu for any Restaurants that they currently manage."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.putMenuForIngestion",
+      "name": "restaurants.putMenuForIngestion",
+      "description": "This will begin an asynchronous process that will lead to that menu becoming live on the Just Eat platform"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.putRestaurantsDriverEta",
+      "name": "restaurants.putRestaurantsDriverEta",
+      "description": "Set the average amount of time it will take a driver to collect a new order from a restaurant."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.putRestaurantServiceTimes",
+      "name": "restaurants.putRestaurantServiceTimes",
+      "description": "Creates or updates the service times (the weekly times at which a restaurant is in service for delivery or collection) for a restaurant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.putRestaurantsTenantRestaurantIdFees",
+      "name": "restaurants.putRestaurantsTenantRestaurantIdFees",
+      "description": "Creates or Updates the fees for a restaurant in a particular tenant"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.searchByLocation",
+      "name": "restaurants.searchByLocation",
+      "description": "Provides details of all restaurants that deliver to the specified location"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurants.searchByPostcode",
+      "name": "restaurants.searchByPostcode",
+      "description": "Provides details of restaurants that deliver to the specified postcode"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantWebhooks.postMenuIngestionComplete",
+      "name": "restaurantWebhooks.postMenuIngestionComplete",
+      "description": "Callback to confirm that an attempt to ingest a menu has completed either successfully or unsuccessfully"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.restaurantWebhooks.postOrderTimeUpdated",
+      "name": "restaurantWebhooks.postOrderTimeUpdated",
+      "description": "Callback to notify recipients that there has been a change to the restaurant order times for a given day and service type"
+    },
+    {
+      "id": "openapi_just_eat_co_uk.search.getSearchAutocompleteTenant",
+      "name": "search.getSearchAutocompleteTenant",
+      "description": "Provides auto-completed search terms for restaurants, cuisines and products available in a given location."
+    },
+    {
+      "id": "openapi_just_eat_co_uk.search.getSearchRestaurantsTenant",
+      "name": "search.getSearchRestaurantsTenant",
+      "description": "Get restaurants available in a given lat-long which match a search term.\r\nMatches can be found against the name, a cuisine or a product."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

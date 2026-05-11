@@ -1,0 +1,892 @@
+{
+  "fetchedAt": "2026-04-30T15:22:34.827Z",
+  "status": "ok",
+  "count": 177,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsAuthinfo",
+      "name": "accounts.contentAccountsAuthinfo",
+      "description": "Returns information about the authenticated user."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsClaimwebsite",
+      "name": "accounts.contentAccountsClaimwebsite",
+      "description": "Claims the website of a Merchant Center sub-account. Merchant accounts with approved third-party CSSs aren't required to claim a website."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsCredentialsCreate",
+      "name": "accounts.contentAccountsCredentialsCreate",
+      "description": "Uploads credentials for the Merchant Center account. If credentials already exist for this Merchant Center account and purpose, this method updates them."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsCustombatch",
+      "name": "accounts.contentAccountsCustombatch",
+      "description": "Retrieves, inserts, updates, and deletes multiple Merchant Center (sub-)accounts in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsDelete",
+      "name": "accounts.contentAccountsDelete",
+      "description": "Deletes a Merchant Center sub-account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsGet",
+      "name": "accounts.contentAccountsGet",
+      "description": "Retrieves a Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsInsert",
+      "name": "accounts.contentAccountsInsert",
+      "description": "Creates a Merchant Center sub-account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsLabelsCreate",
+      "name": "accounts.contentAccountsLabelsCreate",
+      "description": "Creates a new label, not assigned to any account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsLabelsDelete",
+      "name": "accounts.contentAccountsLabelsDelete",
+      "description": "Deletes a label and removes it from all accounts to which it was assigned."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsLabelsList",
+      "name": "accounts.contentAccountsLabelsList",
+      "description": "Lists the labels assigned to an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsLabelsPatch",
+      "name": "accounts.contentAccountsLabelsPatch",
+      "description": "Updates a label."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsLink",
+      "name": "accounts.contentAccountsLink",
+      "description": "Performs an action on a link between two Merchant Center accounts, namely accountId and linkedAccountId."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsList",
+      "name": "accounts.contentAccountsList",
+      "description": "Lists the sub-accounts in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsListlinks",
+      "name": "accounts.contentAccountsListlinks",
+      "description": "Returns the list of accounts linked to your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsRequestphoneverification",
+      "name": "accounts.contentAccountsRequestphoneverification",
+      "description": "Request verification code to start phone verification."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsReturncarrierCreate",
+      "name": "accounts.contentAccountsReturncarrierCreate",
+      "description": "Links return carrier to a merchant account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsReturncarrierDelete",
+      "name": "accounts.contentAccountsReturncarrierDelete",
+      "description": "Delete a return carrier in the merchant account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsReturncarrierList",
+      "name": "accounts.contentAccountsReturncarrierList",
+      "description": "Lists available return carriers in the merchant account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsReturncarrierPatch",
+      "name": "accounts.contentAccountsReturncarrierPatch",
+      "description": "Updates a return carrier in the merchant account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsUpdate",
+      "name": "accounts.contentAccountsUpdate",
+      "description": "Updates a Merchant Center account. Any fields that are not provided are deleted from the resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsUpdatelabels",
+      "name": "accounts.contentAccountsUpdatelabels",
+      "description": "Updates labels that are assigned to the Merchant Center account by CSS user."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounts.contentAccountsVerifyphonenumber",
+      "name": "accounts.contentAccountsVerifyphonenumber",
+      "description": "Validates verification code to verify phone number for the account. If successful this will overwrite the value of `accounts.businessinformation.phoneNumber`. Only verified phone number will replace an existing verified phone number."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accountstatuses.contentAccountstatusesCustombatch",
+      "name": "accountstatuses.contentAccountstatusesCustombatch",
+      "description": "Retrieves multiple Merchant Center account statuses in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accountstatuses.contentAccountstatusesGet",
+      "name": "accountstatuses.contentAccountstatusesGet",
+      "description": "Retrieves the status of a Merchant Center account. No itemLevelIssues are returned for multi-client accounts."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accountstatuses.contentAccountstatusesList",
+      "name": "accountstatuses.contentAccountstatusesList",
+      "description": "Lists the statuses of the sub-accounts in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounttax.contentAccounttaxCustombatch",
+      "name": "accounttax.contentAccounttaxCustombatch",
+      "description": "Retrieves and updates tax settings of multiple accounts in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounttax.contentAccounttaxGet",
+      "name": "accounttax.contentAccounttaxGet",
+      "description": "Retrieves the tax settings of the account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounttax.contentAccounttaxList",
+      "name": "accounttax.contentAccounttaxList",
+      "description": "Lists the tax settings of the sub-accounts in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.accounttax.contentAccounttaxUpdate",
+      "name": "accounttax.contentAccounttaxUpdate",
+      "description": "Updates the tax settings of the account. Any fields that are not provided are deleted from the resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsActivate",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsActivate",
+      "description": "Reactivates the BoG program in your Merchant Center account. Moves the program to the active state when allowed, for example, when paused. This method is only available to selected merchants."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsGet",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsGet",
+      "description": "Retrieves a status of the BoG program for your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsOnboard",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsOnboard",
+      "description": "Onboards the BoG program in your Merchant Center account. By using this method, you agree to the [Terms of Service](https://merchants.google.com/mc/termsofservice/transactions/US/latest). Calling this method is only possible if the authenticated account is the same as the merchant id in the request. Calling this method multiple times will only accept Terms of Service if the latest version is not currently signed."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsPatch",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsPatch",
+      "description": "Updates the status of the BoG program for your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsPause",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsPause",
+      "description": "Pauses the BoG program in your Merchant Center account. This method is only available to selected merchants."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.buyongoogleprograms.contentBuyongoogleprogramsRequestreview",
+      "name": "buyongoogleprograms.contentBuyongoogleprogramsRequestreview",
+      "description": "Requests review and then activates the BoG program in your Merchant Center account for the first time. Moves the program to the REVIEW_PENDING state. This method is only available to selected merchants."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collections.contentCollectionsCreate",
+      "name": "collections.contentCollectionsCreate",
+      "description": "Uploads a collection to your Merchant Center account. If a collection with the same collectionId already exists, this method updates that entry. In each update, the collection is completely replaced by the fields in the body of the update request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collections.contentCollectionsDelete",
+      "name": "collections.contentCollectionsDelete",
+      "description": "Deletes a collection from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collections.contentCollectionsGet",
+      "name": "collections.contentCollectionsGet",
+      "description": "Retrieves a collection from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collections.contentCollectionsList",
+      "name": "collections.contentCollectionsList",
+      "description": "Lists the collections in your Merchant Center account. The response might contain fewer items than specified by page_size. Rely on next_page_token to determine if there are more items to be requested."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collectionstatuses.contentCollectionstatusesGet",
+      "name": "collectionstatuses.contentCollectionstatusesGet",
+      "description": "Gets the status of a collection from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.collectionstatuses.contentCollectionstatusesList",
+      "name": "collectionstatuses.contentCollectionstatusesList",
+      "description": "Lists the statuses of the collections in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesCreate",
+      "name": "conversionsources.contentConversionsourcesCreate",
+      "description": "Creates a new conversion source."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesDelete",
+      "name": "conversionsources.contentConversionsourcesDelete",
+      "description": "Archives an existing conversion source. It will be recoverable for 30 days. This archiving behavior is not typical in the Content API and unique to this service."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesGet",
+      "name": "conversionsources.contentConversionsourcesGet",
+      "description": "Fetches a conversion source."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesList",
+      "name": "conversionsources.contentConversionsourcesList",
+      "description": "Retrieves the list of conversion sources the caller has access to."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesPatch",
+      "name": "conversionsources.contentConversionsourcesPatch",
+      "description": "Updates information of an existing conversion source."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.conversionsources.contentConversionsourcesUndelete",
+      "name": "conversionsources.contentConversionsourcesUndelete",
+      "description": "Re-enables an archived conversion source."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.csses.contentCssesGet",
+      "name": "csses.contentCssesGet",
+      "description": "Retrieves a single CSS domain by ID."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.csses.contentCssesList",
+      "name": "csses.contentCssesList",
+      "description": "Lists CSS domains affiliated with a CSS group."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.csses.contentCssesUpdatelabels",
+      "name": "csses.contentCssesUpdatelabels",
+      "description": "Updates labels that are assigned to a CSS domain by its CSS group."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsCustombatch",
+      "name": "datafeeds.contentDatafeedsCustombatch",
+      "description": "Deletes, fetches, gets, inserts and updates multiple datafeeds in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsDelete",
+      "name": "datafeeds.contentDatafeedsDelete",
+      "description": "Deletes a datafeed configuration from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsFetchnow",
+      "name": "datafeeds.contentDatafeedsFetchnow",
+      "description": "Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the [Products service](https://developers.google.com/shopping-content/reference/rest/v2.1/products) to update your product data."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsGet",
+      "name": "datafeeds.contentDatafeedsGet",
+      "description": "Retrieves a datafeed configuration from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsInsert",
+      "name": "datafeeds.contentDatafeedsInsert",
+      "description": "Registers a datafeed configuration with your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsList",
+      "name": "datafeeds.contentDatafeedsList",
+      "description": "Lists the configurations for datafeeds in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeeds.contentDatafeedsUpdate",
+      "name": "datafeeds.contentDatafeedsUpdate",
+      "description": "Updates a datafeed configuration of your Merchant Center account. Any fields that are not provided are deleted from the resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeedstatuses.contentDatafeedstatusesCustombatch",
+      "name": "datafeedstatuses.contentDatafeedstatusesCustombatch",
+      "description": "Gets multiple Merchant Center datafeed statuses in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeedstatuses.contentDatafeedstatusesGet",
+      "name": "datafeedstatuses.contentDatafeedstatusesGet",
+      "description": "Retrieves the status of a datafeed from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.datafeedstatuses.contentDatafeedstatusesList",
+      "name": "datafeedstatuses.contentDatafeedstatusesList",
+      "description": "Lists the statuses of the datafeeds in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.freelistingsprogram.contentFreelistingsprogramGet",
+      "name": "freelistingsprogram.contentFreelistingsprogramGet",
+      "description": "Retrieves the status and review eligibility for the free listing program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.freelistingsprogram.contentFreelistingsprogramRequestreview",
+      "name": "freelistingsprogram.contentFreelistingsprogramRequestreview",
+      "description": "Requests a review of free listings in a specific region. This method is only available to selected merchants."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsCustombatch",
+      "name": "liasettings.contentLiasettingsCustombatch",
+      "description": "Retrieves and/or updates the LIA settings of multiple accounts in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsGet",
+      "name": "liasettings.contentLiasettingsGet",
+      "description": "Retrieves the LIA settings of the account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsGetaccessiblegmbaccounts",
+      "name": "liasettings.contentLiasettingsGetaccessiblegmbaccounts",
+      "description": "Retrieves the list of accessible Business Profiles."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsList",
+      "name": "liasettings.contentLiasettingsList",
+      "description": "Lists the LIA settings of the sub-accounts in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsListposdataproviders",
+      "name": "liasettings.contentLiasettingsListposdataproviders",
+      "description": "Retrieves the list of POS data providers that have active settings for the all eiligible countries."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsRequestgmbaccess",
+      "name": "liasettings.contentLiasettingsRequestgmbaccess",
+      "description": "Requests access to a specified Business Profile."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsRequestinventoryverification",
+      "name": "liasettings.contentLiasettingsRequestinventoryverification",
+      "description": "Requests inventory validation for the specified country."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsSetinventoryverificationcontact",
+      "name": "liasettings.contentLiasettingsSetinventoryverificationcontact",
+      "description": "Sets the inventory verification contract for the specified country."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsSetposdataprovider",
+      "name": "liasettings.contentLiasettingsSetposdataprovider",
+      "description": "Sets the POS data provider for the specified country."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.liasettings.contentLiasettingsUpdate",
+      "name": "liasettings.contentLiasettingsUpdate",
+      "description": "Updates the LIA settings of the account. Any fields that are not provided are deleted from the resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.localinventory.contentLocalinventoryCustombatch",
+      "name": "localinventory.contentLocalinventoryCustombatch",
+      "description": "Updates local inventory for multiple products or stores in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.localinventory.contentLocalinventoryInsert",
+      "name": "localinventory.contentLocalinventoryInsert",
+      "description": "Updates the local inventory of a product in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderinvoices.contentOrderinvoicesCreatechargeinvoice",
+      "name": "orderinvoices.contentOrderinvoicesCreatechargeinvoice",
+      "description": "Creates a charge invoice for a shipment group, and triggers a charge capture for orderinvoice enabled orders."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderinvoices.contentOrderinvoicesCreaterefundinvoice",
+      "name": "orderinvoices.contentOrderinvoicesCreaterefundinvoice",
+      "description": "Creates a refund invoice for one or more shipment groups, and triggers a refund for orderinvoice enabled orders. This can only be used for line items that have previously been charged using `createChargeInvoice`. All amounts (except for the summary) are incremental with respect to the previous invoice."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreports.contentOrderreportsListdisbursements",
+      "name": "orderreports.contentOrderreportsListdisbursements",
+      "description": "Retrieves a report for disbursements from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreports.contentOrderreportsListtransactions",
+      "name": "orderreports.contentOrderreportsListtransactions",
+      "description": "Retrieves a list of transactions for a disbursement from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsAcknowledge",
+      "name": "orderreturns.contentOrderreturnsAcknowledge",
+      "description": "Acks an order return in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsCreateorderreturn",
+      "name": "orderreturns.contentOrderreturnsCreateorderreturn",
+      "description": "Create return in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsGet",
+      "name": "orderreturns.contentOrderreturnsGet",
+      "description": "Retrieves an order return from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsLabelsCreate",
+      "name": "orderreturns.contentOrderreturnsLabelsCreate",
+      "description": "Links a return shipping label to a return id. You can only create one return label per return id. Since the label is sent to the buyer, the linked return label cannot be updated or deleted. If you try to create multiple return shipping labels for a single return id, every create request except the first will fail."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsList",
+      "name": "orderreturns.contentOrderreturnsList",
+      "description": "Lists order returns in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orderreturns.contentOrderreturnsProcess",
+      "name": "orderreturns.contentOrderreturnsProcess",
+      "description": "Processes return in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersAcknowledge",
+      "name": "orders.contentOrdersAcknowledge",
+      "description": "Marks an order as acknowledged."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersAdvancetestorder",
+      "name": "orders.contentOrdersAdvancetestorder",
+      "description": "Sandbox only. Moves a test order from state \"`inProgress`\" to state \"`pendingShipment`\"."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCancel",
+      "name": "orders.contentOrdersCancel",
+      "description": "Cancels all line items in an order, making a full refund."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCancellineitem",
+      "name": "orders.contentOrdersCancellineitem",
+      "description": "Cancels a line item, making a full refund."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCanceltestorderbycustomer",
+      "name": "orders.contentOrdersCanceltestorderbycustomer",
+      "description": "Sandbox only. Cancels a test order for customer-initiated cancellation."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCaptureOrder",
+      "name": "orders.contentOrdersCaptureOrder",
+      "description": "Capture funds from the customer for the current order total. This method should be called after the merchant verifies that they are able and ready to start shipping the order. This method blocks until a response is received from the payment processsor. If this method succeeds, the merchant is guaranteed to receive funds for the order after shipment. If the request fails, it can be retried or the order may be cancelled. This method cannot be called after the entire order is already shipped. A rejected error code is returned when the payment service provider has declined the charge. This indicates a problem between the PSP and either the merchant's or customer's account. Sometimes this error will be resolved by the customer. We recommend retrying these errors once per day or cancelling the order with reason `failedToCaptureFunds` if the items cannot be held."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCreatetestorder",
+      "name": "orders.contentOrdersCreatetestorder",
+      "description": "Sandbox only. Creates a test order."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersCreatetestreturn",
+      "name": "orders.contentOrdersCreatetestreturn",
+      "description": "Sandbox only. Creates a test return."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersGet",
+      "name": "orders.contentOrdersGet",
+      "description": "Retrieves an order from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersGetbymerchantorderid",
+      "name": "orders.contentOrdersGetbymerchantorderid",
+      "description": "Retrieves an order using merchant order ID."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersGettestordertemplate",
+      "name": "orders.contentOrdersGettestordertemplate",
+      "description": "Sandbox only. Retrieves an order template that can be used to quickly create a new order in sandbox."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersInstorerefundlineitem",
+      "name": "orders.contentOrdersInstorerefundlineitem",
+      "description": "Deprecated. Notifies that item return and refund was handled directly by merchant outside of Google payments processing (for example, cash refund done in store). Note: We recommend calling the returnrefundlineitem method to refund in-store returns. We will issue the refund directly to the customer. This helps to prevent possible differences arising between merchant and Google transaction records. We also recommend having the point of sale system communicate with Google to ensure that customers do not receive a double refund by first refunding through Google then through an in-store return."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersList",
+      "name": "orders.contentOrdersList",
+      "description": "Lists the orders in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersRefunditem",
+      "name": "orders.contentOrdersRefunditem",
+      "description": "Issues a partial or total refund for items and shipment."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersRefundorder",
+      "name": "orders.contentOrdersRefundorder",
+      "description": "Issues a partial or total refund for an order."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersRejectreturnlineitem",
+      "name": "orders.contentOrdersRejectreturnlineitem",
+      "description": "Rejects return on an line item."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersReturnrefundlineitem",
+      "name": "orders.contentOrdersReturnrefundlineitem",
+      "description": "Returns and refunds a line item. Note that this method can only be called on fully shipped orders. The Orderreturns API is the preferred way to handle returns after you receive a return from a customer. You can use Orderreturns.list or Orderreturns.get to search for the return, and then use Orderreturns.processreturn to issue the refund. If the return cannot be found, then we recommend using this API to issue a refund."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersSetlineitemmetadata",
+      "name": "orders.contentOrdersSetlineitemmetadata",
+      "description": "Sets (or overrides if it already exists) merchant provided annotations in the form of key-value pairs. A common use case would be to supply us with additional structured information about a line item that cannot be provided through other methods. Submitted key-value pairs can be retrieved as part of the orders resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersShiplineitems",
+      "name": "orders.contentOrdersShiplineitems",
+      "description": "Marks line item(s) as shipped."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersUpdatelineitemshippingdetails",
+      "name": "orders.contentOrdersUpdatelineitemshippingdetails",
+      "description": "Updates ship by and delivery by dates for a line item."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersUpdatemerchantorderid",
+      "name": "orders.contentOrdersUpdatemerchantorderid",
+      "description": "Updates the merchant order ID for a given order."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.orders.contentOrdersUpdateshipment",
+      "name": "orders.contentOrdersUpdateshipment",
+      "description": "Updates a shipment's status, carrier, and/or tracking ID."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.ordertrackingsignals.contentOrdertrackingsignalsCreate",
+      "name": "ordertrackingsignals.contentOrdertrackingsignalsCreate",
+      "description": "Creates new order tracking signal."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosCustombatch",
+      "name": "pos.contentPosCustombatch",
+      "description": "Batches multiple POS-related calls in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosDelete",
+      "name": "pos.contentPosDelete",
+      "description": "Deletes a store for the given merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosGet",
+      "name": "pos.contentPosGet",
+      "description": "Retrieves information about the given store."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosInsert",
+      "name": "pos.contentPosInsert",
+      "description": "Creates a store for the given merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosInventory",
+      "name": "pos.contentPosInventory",
+      "description": "Submit inventory for the given merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosList",
+      "name": "pos.contentPosList",
+      "description": "Lists the stores of the target merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pos.contentPosSale",
+      "name": "pos.contentPosSale",
+      "description": "Submit a sale event for the given merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productdeliverytime.contentProductdeliverytimeCreate",
+      "name": "productdeliverytime.contentProductdeliverytimeCreate",
+      "description": "Creates or updates the delivery time of a product."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productdeliverytime.contentProductdeliverytimeDelete",
+      "name": "productdeliverytime.contentProductdeliverytimeDelete",
+      "description": "Deletes the delivery time of a product."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productdeliverytime.contentProductdeliverytimeGet",
+      "name": "productdeliverytime.contentProductdeliverytimeGet",
+      "description": "Gets `productDeliveryTime` by `productId`."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsCustombatch",
+      "name": "products.contentProductsCustombatch",
+      "description": "Retrieves, inserts, and deletes multiple products in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsDelete",
+      "name": "products.contentProductsDelete",
+      "description": "Deletes a product from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsGet",
+      "name": "products.contentProductsGet",
+      "description": "Retrieves a product from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsInsert",
+      "name": "products.contentProductsInsert",
+      "description": "Uploads a product to your Merchant Center account. If an item with the same channel, contentLanguage, offerId, and targetCountry already exists, this method updates that entry."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsList",
+      "name": "products.contentProductsList",
+      "description": "Lists the products in your Merchant Center account. The response might contain fewer items than specified by maxResults. Rely on nextPageToken to determine if there are more items to be requested."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.products.contentProductsUpdate",
+      "name": "products.contentProductsUpdate",
+      "description": "Updates an existing product in your Merchant Center account. Only updates attributes provided in the request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productstatuses.contentProductstatusesCustombatch",
+      "name": "productstatuses.contentProductstatusesCustombatch",
+      "description": "Gets the statuses of multiple products in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productstatuses.contentProductstatusesGet",
+      "name": "productstatuses.contentProductstatusesGet",
+      "description": "Gets the status of a product from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productstatuses.contentProductstatusesList",
+      "name": "productstatuses.contentProductstatusesList",
+      "description": "Lists the statuses of the products in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.productstatuses.contentProductstatusesRepricingreportsList",
+      "name": "productstatuses.contentProductstatusesRepricingreportsList",
+      "description": "Lists the metrics report for a given Repricing product."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.promotions.contentPromotionsCreate",
+      "name": "promotions.contentPromotionsCreate",
+      "description": "Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead. To [end or delete] (https://developers.google.com/shopping-content/guides/promotions#end_a_promotion) a promotion update the time period of the promotion to a time that has already passed."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.promotions.contentPromotionsGet",
+      "name": "promotions.contentPromotionsGet",
+      "description": "Retrieves a promotion from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pubsubnotificationsettings.contentPubsubnotificationsettingsGet",
+      "name": "pubsubnotificationsettings.contentPubsubnotificationsettingsGet",
+      "description": "Retrieves a Merchant Center account's pubsub notification settings."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.pubsubnotificationsettings.contentPubsubnotificationsettingsUpdate",
+      "name": "pubsubnotificationsettings.contentPubsubnotificationsettingsUpdate",
+      "description": "Register a Merchant Center account for pubsub notifications. Note that cloud topic name shouldn't be provided as part of the request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.quotas.contentQuotasList",
+      "name": "quotas.contentQuotasList",
+      "description": "Lists the daily call quota and usage per method for your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.recommendations.contentRecommendationsGenerate",
+      "name": "recommendations.contentRecommendationsGenerate",
+      "description": "Generates recommendations for a merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.recommendations.contentRecommendationsReportInteraction",
+      "name": "recommendations.contentRecommendationsReportInteraction",
+      "description": "Reports an interaction on a recommendation for a merchant."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regionalinventory.contentRegionalinventoryCustombatch",
+      "name": "regionalinventory.contentRegionalinventoryCustombatch",
+      "description": "Updates regional inventory for multiple products or regions in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regionalinventory.contentRegionalinventoryInsert",
+      "name": "regionalinventory.contentRegionalinventoryInsert",
+      "description": "Updates the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regions.contentRegionsCreate",
+      "name": "regions.contentRegionsCreate",
+      "description": "Creates a region definition in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regions.contentRegionsDelete",
+      "name": "regions.contentRegionsDelete",
+      "description": "Deletes a region definition from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regions.contentRegionsGet",
+      "name": "regions.contentRegionsGet",
+      "description": "Retrieves a region defined in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regions.contentRegionsList",
+      "name": "regions.contentRegionsList",
+      "description": "Lists the regions in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.regions.contentRegionsPatch",
+      "name": "regions.contentRegionsPatch",
+      "description": "Updates a region definition in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.reports.contentReportsSearch",
+      "name": "reports.contentReportsSearch",
+      "description": "Retrieves merchant performance mertrics matching the search query and optionally segmented by selected dimensions."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesCreate",
+      "name": "repricingrules.contentRepricingrulesCreate",
+      "description": "Creates a repricing rule for your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesDelete",
+      "name": "repricingrules.contentRepricingrulesDelete",
+      "description": "Deletes a repricing rule in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesGet",
+      "name": "repricingrules.contentRepricingrulesGet",
+      "description": "Retrieves a repricing rule from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesList",
+      "name": "repricingrules.contentRepricingrulesList",
+      "description": "Lists the repricing rules in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesPatch",
+      "name": "repricingrules.contentRepricingrulesPatch",
+      "description": "Updates a repricing rule in your Merchant Center account. All mutable fields will be overwritten in each update request. In each update, you must provide all required mutable fields, or an error will be thrown. If you do not provide an optional field in the update request, if that field currently exists, it will be deleted from the rule."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.repricingrules.contentRepricingrulesRepricingreportsList",
+      "name": "repricingrules.contentRepricingrulesRepricingreportsList",
+      "description": "Lists the metrics report for a given Repricing rule."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnaddress.contentReturnaddressCustombatch",
+      "name": "returnaddress.contentReturnaddressCustombatch",
+      "description": "Batches multiple return address related calls in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnaddress.contentReturnaddressDelete",
+      "name": "returnaddress.contentReturnaddressDelete",
+      "description": "Deletes a return address for the given Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnaddress.contentReturnaddressGet",
+      "name": "returnaddress.contentReturnaddressGet",
+      "description": "Gets a return address of the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnaddress.contentReturnaddressInsert",
+      "name": "returnaddress.contentReturnaddressInsert",
+      "description": "Inserts a return address for the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnaddress.contentReturnaddressList",
+      "name": "returnaddress.contentReturnaddressList",
+      "description": "Lists the return addresses of the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicy.contentReturnpolicyCustombatch",
+      "name": "returnpolicy.contentReturnpolicyCustombatch",
+      "description": "Batches multiple return policy related calls in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicy.contentReturnpolicyDelete",
+      "name": "returnpolicy.contentReturnpolicyDelete",
+      "description": "Deletes a return policy for the given Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicy.contentReturnpolicyGet",
+      "name": "returnpolicy.contentReturnpolicyGet",
+      "description": "Gets a return policy of the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicy.contentReturnpolicyInsert",
+      "name": "returnpolicy.contentReturnpolicyInsert",
+      "description": "Inserts a return policy for the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicy.contentReturnpolicyList",
+      "name": "returnpolicy.contentReturnpolicyList",
+      "description": "Lists the return policies of the Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicyonline.contentReturnpolicyonlineCreate",
+      "name": "returnpolicyonline.contentReturnpolicyonlineCreate",
+      "description": "Creates a new return policy."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicyonline.contentReturnpolicyonlineDelete",
+      "name": "returnpolicyonline.contentReturnpolicyonlineDelete",
+      "description": "Deletes an existing return policy."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicyonline.contentReturnpolicyonlineGet",
+      "name": "returnpolicyonline.contentReturnpolicyonlineGet",
+      "description": "Gets an existing return policy."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicyonline.contentReturnpolicyonlineList",
+      "name": "returnpolicyonline.contentReturnpolicyonlineList",
+      "description": "Lists all existing return policies."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.returnpolicyonline.contentReturnpolicyonlinePatch",
+      "name": "returnpolicyonline.contentReturnpolicyonlinePatch",
+      "description": "Updates an existing return policy."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.settlementreports.contentSettlementreportsGet",
+      "name": "settlementreports.contentSettlementreportsGet",
+      "description": "Retrieves a settlement report from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.settlementreports.contentSettlementreportsList",
+      "name": "settlementreports.contentSettlementreportsList",
+      "description": "Retrieves a list of settlement reports from your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.settlementtransactions.contentSettlementtransactionsList",
+      "name": "settlementtransactions.contentSettlementtransactionsList",
+      "description": "Retrieves a list of transactions for the settlement."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsCustombatch",
+      "name": "shippingsettings.contentShippingsettingsCustombatch",
+      "description": "Retrieves and updates the shipping settings of multiple accounts in a single request."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsGet",
+      "name": "shippingsettings.contentShippingsettingsGet",
+      "description": "Retrieves the shipping settings of the account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsGetsupportedcarriers",
+      "name": "shippingsettings.contentShippingsettingsGetsupportedcarriers",
+      "description": "Retrieves supported carriers and carrier services for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsGetsupportedholidays",
+      "name": "shippingsettings.contentShippingsettingsGetsupportedholidays",
+      "description": "Retrieves supported holidays for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsGetsupportedpickupservices",
+      "name": "shippingsettings.contentShippingsettingsGetsupportedpickupservices",
+      "description": "Retrieves supported pickup services for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsList",
+      "name": "shippingsettings.contentShippingsettingsList",
+      "description": "Lists the shipping settings of the sub-accounts in your Merchant Center account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shippingsettings.contentShippingsettingsUpdate",
+      "name": "shippingsettings.contentShippingsettingsUpdate",
+      "description": "Updates the shipping settings of the account. Any fields that are not provided are deleted from the resource."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shoppingadsprogram.contentShoppingadsprogramGet",
+      "name": "shoppingadsprogram.contentShoppingadsprogramGet",
+      "description": "Retrieves the status and review eligibility for the Shopping Ads program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_content_content.shoppingadsprogram.contentShoppingadsprogramRequestreview",
+      "name": "shoppingadsprogram.contentShoppingadsprogramRequestreview",
+      "description": "Requests a review of Shopping ads in a specific region. This method is only available to selected merchants."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

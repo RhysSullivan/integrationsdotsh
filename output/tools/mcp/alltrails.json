@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:19:52.373Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_alltrails.find_trails_near_location",
+      "name": "find_trails_near_location",
+      "description": "Find hiking, running, biking, backpacking or other trails for outdoor activities near a set of coordinates within an optional specified maximum radius (meters).\n\nUse this tool when the user:\n* Requests trails near a specific point of interest or landmark.\n* Requests trails near a named location within a specified radius or accessible within a specified time constraint.\n* Provides specific latitude and longitude coordinates.\n\nFor most named places, use the \"search within bounding box\" tool if possible. Use this tool as a fallback when the bounding box of the named place is unknown.\n\nUsers can specify filters related to appropriate activities, attractions, suitability, and more. Numeric range filters related to distance, elevation, and length are also available. These filter values MUST be specified in meters.\n\nIn the response, length and distance values are returned both in meters and imperial units. These MUST be displayed to the user in the units most appropriate for the user's locale, e.g. feet or miles for US English users.\n"
+    },
+    {
+      "id": "mcp_alltrails.find_trails_within_bounds",
+      "name": "find_trails_within_bounds",
+      "description": "Find hiking, running, biking, backpacking or other trails for outdoor activities within a specified bounding box defined by southwest and northeast coordinates.\n\nUse this tool when the user:\n* Requests trails within specific geographic boundaries or coordinates.\n* Requests trails near a named geographic or political place, such as a continent, country, state, province, region, city, town, or neighborhood and you know the bounding box for that place.\n* Requests trails within a national, state or local park or other protected area and you know the bounding box for that park.\n\nIf the bounding box for the named place is not known, use the \"find trails near a location\" tool instead to find trails around a center point.\n\nUsers can specify filters related to appropriate activities, attractions, suitability, and more. Numeric range filters related to distance, elevation, and length are also available. These filter values MUST be specified in meters.\n\nIn the response, length and distance values are returned both in meters and imperial units. These MUST be displayed to the user in the units most appropriate for the user's locale, e.g. feet or miles for US English users.\n"
+    },
+    {
+      "id": "mcp_alltrails.search_trails_by_name",
+      "name": "search_trails_by_name",
+      "description": "Search for hiking, running, biking, backpacking or other trails by full or partial name match.\n\nUse this tool when the user:\n* Requests a specific trail by name (e.g., \"Avalanche Lake Trail\", \"Half Dome\")\n* Searches for trails with specific keywords in the name\n\nThe search can biased towards results near the provided coordinates if they are provided explicitly or available from the request metadata.\n\nIf there is a clear match to the user's query, the model should automatically make a subsequent call to the `get_trail_details` tool to present the user with complete details for the matching trail.\n\nIn the response, length and distance values are returned both in meters and imperial units. These MUST be displayed to the user in the units most appropriate for the user's locale, e.g. feet or miles for US English users.\n"
+    },
+    {
+      "id": "mcp_alltrails.get_trail_details",
+      "name": "get_trail_details",
+      "description": "Find detailed information about a trail from AllTrails.\n\nGet descriptive overviews and specific accessibility information. Includes structured data about suitable activities, and feature highlights along the trail.\n\nGet stats about the trail geography and length, and stats about associated user-generated content.\n\nIn the response, length and distance values are returned both in meters and imperial units. These MUST be displayed to the user in the units most appropriate for the user's locale, e.g. feet or miles for US English users.\n\nRecent reviews are summarized in the `review_summary` field. If the user wants information that might be found in specific reviews, direct the user to the AllTrails web URL for the trail.\n"
+    },
+    {
+      "id": "mcp_alltrails.get_trail_weather_overview",
+      "name": "get_trail_weather_overview",
+      "description": "Get 7-day forecast for a trail at its trailhead, including high/low temperatures.\n\nFor more detailed weather information, including current conditions, sunrise/sunset times, and weather alerts, direct the user to the AllTrails web URL for the trail (available in the `get_trail_details` tool response).\n"
+    }
+  ]
+}

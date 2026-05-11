@@ -1,0 +1,187 @@
+{
+  "fetchedAt": "2026-04-30T15:45:04.314Z",
+  "status": "ok",
+  "count": 36,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.createChannel",
+      "name": "channels.createChannel",
+      "description": "Used to create a channel. A channel collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.deleteChannel",
+      "name": "channels.deleteChannel",
+      "description": "Deletes the specified channel."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.describeChannel",
+      "name": "channels.describeChannel",
+      "description": "Retrieves information about a channel."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.listChannels",
+      "name": "channels.listChannels",
+      "description": "Retrieves a list of channels."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.sampleChannelData",
+      "name": "channels.sampleChannelData",
+      "description": "Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.channels.updateChannel",
+      "name": "channels.updateChannel",
+      "description": "Used to update the settings of a channel."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.createDataset",
+      "name": "datasets.createDataset",
+      "description": "Used to create a dataset. A dataset stores data retrieved from a data store by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application). This operation creates the skeleton of a dataset. The dataset can be populated manually by calling <code>CreateDatasetContent</code> or automatically according to a trigger you specify."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.createDatasetContent",
+      "name": "datasets.createDatasetContent",
+      "description": "Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application)."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.deleteDataset",
+      "name": "datasets.deleteDataset",
+      "description": "<p>Deletes the specified dataset.</p> <p>You do not have to delete the content of the dataset before you perform this operation.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.deleteDatasetContent",
+      "name": "datasets.deleteDatasetContent",
+      "description": "Deletes the content of the specified dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.describeDataset",
+      "name": "datasets.describeDataset",
+      "description": "Retrieves information about a dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.getDatasetContent",
+      "name": "datasets.getDatasetContent",
+      "description": "Retrieves the contents of a dataset as presigned URIs."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.listDatasetContents",
+      "name": "datasets.listDatasetContents",
+      "description": "Lists information about dataset contents that have been created."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.listDatasets",
+      "name": "datasets.listDatasets",
+      "description": "Retrieves information about datasets."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datasets.updateDataset",
+      "name": "datasets.updateDataset",
+      "description": "Updates the settings of a dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datastores.createDatastore",
+      "name": "datastores.createDatastore",
+      "description": "Creates a data store, which is a repository for messages."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datastores.deleteDatastore",
+      "name": "datastores.deleteDatastore",
+      "description": "Deletes the specified data store."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datastores.describeDatastore",
+      "name": "datastores.describeDatastore",
+      "description": "Retrieves information about a data store."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datastores.listDatastores",
+      "name": "datastores.listDatastores",
+      "description": "Retrieves a list of data stores."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.datastores.updateDatastore",
+      "name": "datastores.updateDatastore",
+      "description": "Used to update the settings of a data store."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.logging.describeLoggingOptions",
+      "name": "logging.describeLoggingOptions",
+      "description": "Retrieves the current settings of the IoT Analytics logging options."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.logging.putLoggingOptions",
+      "name": "logging.putLoggingOptions",
+      "description": "<p>Sets or updates the IoT Analytics logging options.</p> <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.messages.batchPutMessage",
+      "name": "messages.batchPutMessage",
+      "description": "Sends messages to a channel."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelineactivities.runPipelineActivity",
+      "name": "pipelineactivities.runPipelineActivity",
+      "description": "Simulates the results of running a pipeline activity on a message payload."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.cancelPipelineReprocessing",
+      "name": "pipelines.cancelPipelineReprocessing",
+      "description": "Cancels the reprocessing of data through the pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.createPipeline",
+      "name": "pipelines.createPipeline",
+      "description": "Creates a pipeline. A pipeline consumes messages from a channel and allows you to process the messages before storing them in a data store. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.deletePipeline",
+      "name": "pipelines.deletePipeline",
+      "description": "Deletes the specified pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.describePipeline",
+      "name": "pipelines.describePipeline",
+      "description": "Retrieves information about a pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.listPipelines",
+      "name": "pipelines.listPipelines",
+      "description": "Retrieves a list of pipelines."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.startPipelineReprocessing",
+      "name": "pipelines.startPipelineReprocessing",
+      "description": "Starts the reprocessing of raw message data through the pipeline."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.pipelines.updatePipeline",
+      "name": "pipelines.updatePipeline",
+      "description": "Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.tagsResourceArn.listTagsForResource",
+      "name": "tagsResourceArn.listTagsForResource",
+      "description": "Lists the tags (metadata) that you have assigned to the resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.tagsResourceArn.tagResource",
+      "name": "tagsResourceArn.tagResource",
+      "description": "Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_iotanalytics_iotanalytics.tagsResourceArnTagKeys.untagResource",
+      "name": "tagsResourceArnTagKeys.untagResource",
+      "description": "Removes the given tags (metadata) from the resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

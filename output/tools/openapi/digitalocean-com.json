@@ -1,0 +1,1467 @@
+{
+  "fetchedAt": "2026-04-30T15:22:13.922Z",
+  "status": "ok",
+  "count": 292,
+  "tools": [
+    {
+      "id": "openapi_digitalocean_com.1ClickApplications.oneClicksInstallKubernetes",
+      "name": "1ClickApplications.oneClicksInstallKubernetes",
+      "description": "To install a Kubernetes 1-Click application on a cluster, send a POST request to\n`/v2/1-clicks/kubernetes`. The `addon_slugs` and `cluster_uuid` must be provided as body\nparameter in order to specify which 1-Click application(s) to install. To list all available\n1-Click Kubernetes applications, send a request to `/v2/1-clicks?type=kubernetes`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.1ClickApplications.oneClicksList",
+      "name": "1ClickApplications.oneClicksList",
+      "description": "To list all available 1-Click applications, send a GET request to `/v2/1-clicks`. The `type` may\nbe provided as query paramater in order to restrict results to a certain type of 1-Click, for\nexample: `/v2/1-clicks?type=droplet`. Current supported types are `kubernetes` and `droplet`.\n\nThe response will be a JSON object with a key called `1_clicks`. This will be set to an array of\n1-Click application data, each of which will contain the the slug and type for the 1-Click.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.account.accountGet",
+      "name": "account.accountGet",
+      "description": "To show information about the current user account, send a GET request to `/v2/account`."
+    },
+    {
+      "id": "openapi_digitalocean_com.actions.actionsGet",
+      "name": "actions.actionsGet",
+      "description": "To retrieve a specific action object, send a GET request to `/v2/actions/$ACTION_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.actions.actionsList",
+      "name": "actions.actionsList",
+      "description": "This will be the entire list of actions taken on your account, so it will be quite large. As with any large collection returned by the API, the results will be paginated with only 20 on each page by default."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsAssignAlertDestinations",
+      "name": "apps.appsAssignAlertDestinations",
+      "description": "Updates the emails and slack webhook destinations for app alerts. Emails must be associated to a user with access to the app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsCancelDeployment",
+      "name": "apps.appsCancelDeployment",
+      "description": "Immediately cancel an in-progress deployment."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsCommitRollback",
+      "name": "apps.appsCommitRollback",
+      "description": "Commit an app rollback. This action permanently applies the rollback and unpins the app to resume new deployments.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsCreate",
+      "name": "apps.appsCreate",
+      "description": "Create a new app by submitting an app specification. For documentation on app specifications (`AppSpec` objects), please refer to [the product documentation](https://docs.digitalocean.com/products/app-platform/reference/app-spec/)."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsCreateDeployment",
+      "name": "apps.appsCreateDeployment",
+      "description": "Creating an app deployment will pull the latest changes from your repository and schedule a new deployment for your app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsCreateRollback",
+      "name": "apps.appsCreateRollback",
+      "description": "Rollback an app to a previous deployment. A new deployment will be created to perform the rollback.\nThe app will be pinned to the rollback deployment preventing any new deployments from being created,\neither manually or through Auto Deploy on Push webhooks. To resume deployments, the rollback must be\neither committed or reverted.\n\nIt is recommended to use the Validate App Rollback endpoint to double check if the rollback is\nvalid and if there are any warnings.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsDelete",
+      "name": "apps.appsDelete",
+      "description": "Delete an existing app. Once deleted, all active deployments will be permanently shut down and the app deleted. If needed, be sure to back up your app specification so that you may re-create it at a later time."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGet",
+      "name": "apps.appsGet",
+      "description": "Retrieve details about an existing app by either its ID or name. To retrieve an app by its name, do not include an ID in the request path. Information about the current active deployment as well as any in progress ones will also be included in the response."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetDeployment",
+      "name": "apps.appsGetDeployment",
+      "description": "Retrieve information about an app deployment."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetInstanceSize",
+      "name": "apps.appsGetInstanceSize",
+      "description": "Retrieve information about a specific instance size for `service`, `worker`, and `job` components."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetLogs",
+      "name": "apps.appsGetLogs",
+      "description": "Retrieve the logs of a past, in-progress, or active deployment. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetLogsActiveDeployment",
+      "name": "apps.appsGetLogsActiveDeployment",
+      "description": "Retrieve the logs of the active deployment if one exists. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment. Note log_type=BUILD logs will return logs associated with the current active deployment (being served). To view build logs associated with in-progress build, the query must explicitly reference the deployment id."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetLogsActiveDeploymentAggregate",
+      "name": "apps.appsGetLogsActiveDeploymentAggregate",
+      "description": "Retrieve the logs of the active deployment if one exists. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment. Note log_type=BUILD logs will return logs associated with the current active deployment (being served). To view build logs associated with in-progress build, the query must explicitly reference the deployment id."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetLogsAggregate",
+      "name": "apps.appsGetLogsAggregate",
+      "description": "Retrieve the logs of a past, in-progress, or active deployment. If a component name is specified, the logs will be limited to only that component. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetMetricsBandwidthDaily",
+      "name": "apps.appsGetMetricsBandwidthDaily",
+      "description": "Retrieve daily bandwidth usage metrics for a single app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsGetTier",
+      "name": "apps.appsGetTier",
+      "description": "Retrieve information about a specific app tier."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsList",
+      "name": "apps.appsList",
+      "description": "List all apps on your account. Information about the current active deployment as well as any in progress ones will also be included for each app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListAlerts",
+      "name": "apps.appsListAlerts",
+      "description": "List alerts associated to the app and any components. This includes configuration information about the alerts including emails, slack webhooks, and triggering events or conditions."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListDeployments",
+      "name": "apps.appsListDeployments",
+      "description": "List all deployments of an app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListInstanceSizes",
+      "name": "apps.appsListInstanceSizes",
+      "description": "List all instance sizes for `service`, `worker`, and `job` components."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListMetricsBandwidthDaily",
+      "name": "apps.appsListMetricsBandwidthDaily",
+      "description": "Retrieve daily bandwidth usage metrics for multiple apps."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListRegions",
+      "name": "apps.appsListRegions",
+      "description": "List all regions supported by App Platform."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsListTiers",
+      "name": "apps.appsListTiers",
+      "description": "List all app tiers."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsRevertRollback",
+      "name": "apps.appsRevertRollback",
+      "description": "Revert an app rollback. This action reverts the active rollback by creating a new deployment from the\nlatest app spec prior to the rollback and unpins the app to resume new deployments.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsUpdate",
+      "name": "apps.appsUpdate",
+      "description": "Update an existing app by submitting a new app specification. For documentation on app specifications (`AppSpec` objects), please refer to [the product documentation](https://docs.digitalocean.com/products/app-platform/reference/app-spec/)."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsValidateAppSpec",
+      "name": "apps.appsValidateAppSpec",
+      "description": "To propose and validate a spec for a new or existing app, send a POST request to the `/v2/apps/propose` endpoint. The request returns some information about the proposed app, including app cost and upgrade cost. If an existing app ID is specified, the app spec is treated as a proposed update to the existing app."
+    },
+    {
+      "id": "openapi_digitalocean_com.apps.appsValidateRollback",
+      "name": "apps.appsValidateRollback",
+      "description": "Check whether an app can be rolled back to a specific deployment. This endpoint can also be used\nto check if there are any warnings or validation conditions that will cause the rollback to proceed\nunder unideal circumstances. For example, if a component must be rebuilt as part of the rollback\ncausing it to take longer than usual.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.balanceGet",
+      "name": "billing.balanceGet",
+      "description": "To retrieve the balances on a customer's account, send a GET request to `/v2/customers/my/balance`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.billingHistoryList",
+      "name": "billing.billingHistoryList",
+      "description": "To retrieve a list of all billing history entries, send a GET request to `/v2/customers/my/billing_history`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.invoicesGetByUuid",
+      "name": "billing.invoicesGetByUuid",
+      "description": "To retrieve the invoice items for an invoice, send a GET request to `/v2/customers/my/invoices/$INVOICE_UUID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.invoicesGetCsvByUuid",
+      "name": "billing.invoicesGetCsvByUuid",
+      "description": "To retrieve a CSV for an invoice, send a GET request to `/v2/customers/my/invoices/$INVOICE_UUID/csv`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.invoicesGetPdfByUuid",
+      "name": "billing.invoicesGetPdfByUuid",
+      "description": "To retrieve a PDF for an invoice, send a GET request to `/v2/customers/my/invoices/$INVOICE_UUID/pdf`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.invoicesGetSummaryByUuid",
+      "name": "billing.invoicesGetSummaryByUuid",
+      "description": "To retrieve a summary for an invoice, send a GET request to `/v2/customers/my/invoices/$INVOICE_UUID/summary`."
+    },
+    {
+      "id": "openapi_digitalocean_com.billing.invoicesList",
+      "name": "billing.invoicesList",
+      "description": "To retrieve a list of all invoices, send a GET request to `/v2/customers/my/invoices`."
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumesCreate",
+      "name": "blockStorage.volumesCreate",
+      "description": "To create a new volume, send a POST request to `/v2/volumes`. Optionally, a `filesystem_type` attribute may be provided in order to automatically format the volume's filesystem. Pre-formatted volumes are automatically mounted when attached to Ubuntu, Debian, Fedora, Fedora Atomic, and CentOS Droplets created on or after April 26, 2018. Attaching pre-formatted volumes to Droplets without support for auto-mounting is not recommended."
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumesDelete",
+      "name": "blockStorage.volumesDelete",
+      "description": "To delete a block storage volume, destroying all data and removing it from your account, send a DELETE request to `/v2/volumes/$VOLUME_ID`.\nNo response body will be sent back, but the response code will indicate success. Specifically, the response code will be a 204, which means that the action was successful with no returned body data.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumesDeleteByName",
+      "name": "blockStorage.volumesDeleteByName",
+      "description": "Block storage volumes may also be deleted by name by sending a DELETE request with the volume's **name** and the **region slug** for the region it is located in as query parameters to `/v2/volumes?name=$VOLUME_NAME&region=nyc1`.\nNo response body will be sent back, but the response code will indicate success. Specifically, the response code will be a 204, which means that the action was successful with no returned body data.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumesGet",
+      "name": "blockStorage.volumesGet",
+      "description": "To show information about a block storage volume, send a GET request to `/v2/volumes/$VOLUME_ID`.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumesList",
+      "name": "blockStorage.volumesList",
+      "description": "To list all of the block storage volumes available on your account, send a GET request to `/v2/volumes`.\n## Filtering Results\n### By Region\nThe `region` may be provided as query parameter in order to restrict results to volumes available in a specific region. For example: `/v2/volumes?region=nyc1`\n### By Name\nIt is also possible to list volumes on your account that match a specified name. To do so, send a GET request with the volume's name as a query parameter to `/v2/volumes?name=$VOLUME_NAME`.\n**Note:** You can only create one volume per region with the same name.\n### By Name and Region\nIt is also possible to retrieve information about a block storage volume by name. To do so, send a GET request with the volume's name and the region slug for the region it is located in as query parameters to `/v2/volumes?name=$VOLUME_NAME&region=nyc1`.\n\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumeSnapshotsCreate",
+      "name": "blockStorage.volumeSnapshotsCreate",
+      "description": "To create a snapshot from a volume, sent a POST request to `/v2/volumes/$VOLUME_ID/snapshots`."
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumeSnapshotsDeleteById",
+      "name": "blockStorage.volumeSnapshotsDeleteById",
+      "description": "To delete a volume snapshot, send a DELETE request to\n`/v2/snapshots/$SNAPSHOT_ID`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumeSnapshotsGetById",
+      "name": "blockStorage.volumeSnapshotsGetById",
+      "description": "To retrieve the details of a snapshot that has been created from a volume, send a GET request to `/v2/volumes/snapshots/$SNAPSHOT_ID`.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorage.volumeSnapshotsList",
+      "name": "blockStorage.volumeSnapshotsList",
+      "description": "To retrieve the snapshots that have been created from a volume, send a GET request to `/v2/volumes/$VOLUME_ID/snapshots`.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorageActions.volumeActionsGet",
+      "name": "blockStorageActions.volumeActionsGet",
+      "description": "To retrieve the status of a volume action, send a GET request to `/v2/volumes/$VOLUME_ID/actions/$ACTION_ID`.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorageActions.volumeActionsList",
+      "name": "blockStorageActions.volumeActionsList",
+      "description": "To retrieve all actions that have been executed on a volume, send a GET request to `/v2/volumes/$VOLUME_ID/actions`.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorageActions.volumeActionsPost",
+      "name": "blockStorageActions.volumeActionsPost",
+      "description": "To initiate an action on a block storage volume by Name, send a POST request to\n`~/v2/volumes/actions`. The body should contain the appropriate\nattributes for the respective action.\n\n## Attach a Block Storage Volume to a Droplet\n\n| Attribute   | Details                                                             |\n| ----------- | ------------------------------------------------------------------- |\n| type        | This must be `attach`                                               |\n| volume_name | The name of the block storage volume                                |\n| droplet_id  | Set to the Droplet's ID                                             |\n| region      | Set to the slug representing the region where the volume is located |\n\nEach volume may only be attached to a single Droplet. However, up to five\nvolumes may be attached to a Droplet at a time. Pre-formatted volumes will be\nautomatically mounted to Ubuntu, Debian, Fedora, Fedora Atomic, and CentOS\nDroplets created on or after April 26, 2018 when attached. On older Droplets,\n[additional configuration](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-digitalocean-block-storage-volumes-in-linux#mounting-the-filesystems)\nis required.\n\n## Remove a Block Storage Volume from a Droplet\n\n| Attribute   | Details                                                             |\n| ----------- | ------------------------------------------------------------------- |\n| type        | This must be `detach`                                               |\n| volume_name | The name of the block storage volume                                |\n| droplet_id  | Set to the Droplet's ID                                             |\n| region      | Set to the slug representing the region where the volume is located |\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.blockStorageActions.volumeActionsPostById",
+      "name": "blockStorageActions.volumeActionsPostById",
+      "description": "To initiate an action on a block storage volume by Id, send a POST request to\n`~/v2/volumes/$VOLUME_ID/actions`. The body should contain the appropriate\nattributes for the respective action.\n\n## Attach a Block Storage Volume to a Droplet\n\n| Attribute  | Details                                                             |\n| ---------- | ------------------------------------------------------------------- |\n| type       | This must be `attach`                                               |\n| droplet_id | Set to the Droplet's ID                                             |\n| region     | Set to the slug representing the region where the volume is located |\n\nEach volume may only be attached to a single Droplet. However, up to seven\nvolumes may be attached to a Droplet at a time. Pre-formatted volumes will be\nautomatically mounted to Ubuntu, Debian, Fedora, Fedora Atomic, and CentOS\nDroplets created on or after April 26, 2018 when attached. On older Droplets,\n[additional configuration](https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-digitalocean-block-storage-volumes-in-linux#mounting-the-filesystems)\nis required.\n\n## Remove a Block Storage Volume from a Droplet\n\n| Attribute  | Details                                                             |\n| ---------- | ------------------------------------------------------------------- |\n| type       | This must be `detach`                                               |\n| droplet_id | Set to the Droplet's ID                                             |\n| region     | Set to the slug representing the region where the volume is located |\n\n## Resize a Volume\n\n| Attribute      | Details                                                             |\n| -------------- | ------------------------------------------------------------------- |\n| type           | This must be `resize`                                               |\n| size_gigabytes | The new size of the block storage volume in GiB (1024^3)            |\n| region         | Set to the slug representing the region where the volume is located |\n\nVolumes may only be resized upwards. The maximum size for a volume is 16TiB.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnCreateEndpoint",
+      "name": "cdnEndpoints.cdnCreateEndpoint",
+      "description": "To create a new CDN endpoint, send a POST request to `/v2/cdn/endpoints`. The\norigin attribute must be set to the fully qualified domain name (FQDN) of a\nDigitalOcean Space. Optionally, the TTL may be configured by setting the `ttl`\nattribute.\n\nA custom subdomain may be configured by specifying the `custom_domain` and\n`certificate_id` attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnDeleteEndpoint",
+      "name": "cdnEndpoints.cdnDeleteEndpoint",
+      "description": "To delete a specific CDN endpoint, send a DELETE request to\n`/v2/cdn/endpoints/$ENDPOINT_ID`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnGetEndpoint",
+      "name": "cdnEndpoints.cdnGetEndpoint",
+      "description": "To show information about an existing CDN endpoint, send a GET request to `/v2/cdn/endpoints/$ENDPOINT_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnListEndpoints",
+      "name": "cdnEndpoints.cdnListEndpoints",
+      "description": "To list all of the CDN endpoints available on your account, send a GET request to `/v2/cdn/endpoints`."
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnPurgeCache",
+      "name": "cdnEndpoints.cdnPurgeCache",
+      "description": "To purge cached content from a CDN endpoint, send a DELETE request to\n`/v2/cdn/endpoints/$ENDPOINT_ID/cache`. The body of the request should include\na `files` attribute containing a list of cached file paths to be purged. A\npath may be for a single file or may contain a wildcard (`*`) to recursively\npurge all files under a directory. When only a wildcard is provided, all\ncached files will be purged. There is a rate limit of 50 files per 20 seconds \nthat can be purged.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.cdnEndpoints.cdnUpdateEndpoints",
+      "name": "cdnEndpoints.cdnUpdateEndpoints",
+      "description": "To update the TTL, certificate ID, or the FQDN of the custom subdomain for\nan existing CDN endpoint, send a PUT request to\n`/v2/cdn/endpoints/$ENDPOINT_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.certificates.certificatesCreate",
+      "name": "certificates.certificatesCreate",
+      "description": "To upload new SSL certificate which you have previously generated, send a POST\nrequest to `/v2/certificates`.\n\nWhen uploading a user-generated certificate, the `private_key`,\n`leaf_certificate`, and optionally the `certificate_chain` attributes should\nbe provided. The type must be set to `custom`.\n\nWhen using Let's Encrypt to create a certificate, the `dns_names` attribute\nmust be provided, and the type must be set to `lets_encrypt`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.certificates.certificatesDelete",
+      "name": "certificates.certificatesDelete",
+      "description": "To delete a specific certificate, send a DELETE request to\n`/v2/certificates/$CERTIFICATE_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.certificates.certificatesGet",
+      "name": "certificates.certificatesGet",
+      "description": "To show information about an existing certificate, send a GET request to `/v2/certificates/$CERTIFICATE_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.certificates.certificatesList",
+      "name": "certificates.certificatesList",
+      "description": "To list all of the certificates available on your account, send a GET request to `/v2/certificates`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryCreate",
+      "name": "containerRegistry.registryCreate",
+      "description": "To create your container registry, send a POST request to `/v2/registry`.\n\nThe `name` becomes part of the URL for images stored in the registry. For\nexample, if your registry is called `example`, an image in it will have the\nURL `registry.digitalocean.com/example/image:tag`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryDelete",
+      "name": "containerRegistry.registryDelete",
+      "description": "To delete your container registry, destroying all container image data stored in it, send a DELETE request to `/v2/registry`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryDeleteRepositoryManifest",
+      "name": "containerRegistry.registryDeleteRepositoryManifest",
+      "description": "To delete a container repository manifest by digest, send a DELETE request to\n`/v2/registry/$REGISTRY_NAME/repositories/$REPOSITORY_NAME/digests/$MANIFEST_DIGEST`.\n\nNote that if your repository name contains `/` characters, it must be\nURL-encoded in the request URL. For example, to delete\n`registry.digitalocean.com/example/my/repo@sha256:abcd`, the path would be\n`/v2/registry/example/repositories/my%2Frepo/digests/sha256:abcd`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryDeleteRepositoryTag",
+      "name": "containerRegistry.registryDeleteRepositoryTag",
+      "description": "To delete a container repository tag, send a DELETE request to\n`/v2/registry/$REGISTRY_NAME/repositories/$REPOSITORY_NAME/tags/$TAG`.\n\nNote that if your repository name contains `/` characters, it must be\nURL-encoded in the request URL. For example, to delete\n`registry.digitalocean.com/example/my/repo:mytag`, the path would be\n`/v2/registry/example/repositories/my%2Frepo/tags/mytag`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryGet",
+      "name": "containerRegistry.registryGet",
+      "description": "To get information about your container registry, send a GET request to `/v2/registry`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryGetDockerCredentials",
+      "name": "containerRegistry.registryGetDockerCredentials",
+      "description": "In order to access your container registry with the Docker client or from a\nKubernetes cluster, you will need to configure authentication. The necessary\nJSON configuration can be retrieved by sending a GET request to\n`/v2/registry/docker-credentials`.\n\nThe response will be in the format of a Docker `config.json` file. To use the\nconfig in your Kubernetes cluster, create a Secret with:\n\n    kubectl create secret generic docr \\\n      --from-file=.dockerconfigjson=config.json \\\n      --type=kubernetes.io/dockerconfigjson\n\nBy default, the returned credentials have read-only access to your registry\nand cannot be used to push images. This is appropriate for most Kubernetes\nclusters. To retrieve read/write credentials, suitable for use with the Docker\nclient or in a CI system, read_write may be provided as query parameter. For\nexample: `/v2/registry/docker-credentials?read_write=true`\n\nBy default, the returned credentials will not expire. To retrieve credentials\nwith an expiry set, expiry_seconds may be provided as a query parameter. For\nexample: `/v2/registry/docker-credentials?expiry_seconds=3600` will return\ncredentials that expire after one hour.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryGetGarbageCollection",
+      "name": "containerRegistry.registryGetGarbageCollection",
+      "description": "To get information about the currently-active garbage collection for a registry, send a GET request to `/v2/registry/$REGISTRY_NAME/garbage-collection`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryGetOptions",
+      "name": "containerRegistry.registryGetOptions",
+      "description": "This endpoint serves to provide additional information as to which option values are available when creating a container registry.\nThere are multiple subscription tiers available for container registry. Each tier allows a different number of image repositories to be created in your registry, and has a different amount of storage and transfer included.\nThere are multiple regions available for container registry and controls where your data is stored.\nTo list the available options, send a GET request to `/v2/registry/options`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryGetSubscription",
+      "name": "containerRegistry.registryGetSubscription",
+      "description": "A subscription is automatically created when you configure your container registry. To get information about your subscription, send a GET request to `/v2/registry/subscription`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryListGarbageCollections",
+      "name": "containerRegistry.registryListGarbageCollections",
+      "description": "To get information about past garbage collections for a registry, send a GET request to `/v2/registry/$REGISTRY_NAME/garbage-collections`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryListRepositories",
+      "name": "containerRegistry.registryListRepositories",
+      "description": "This endpoint has been deprecated in favor of the _List All Container Registry Repositories [V2]_ endpoint.\n\nTo list all repositories in your container registry, send a GET\nrequest to `/v2/registry/$REGISTRY_NAME/repositories`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryListRepositoriesV2",
+      "name": "containerRegistry.registryListRepositoriesV2",
+      "description": "To list all repositories in your container registry, send a GET request to `/v2/registry/$REGISTRY_NAME/repositoriesV2`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryListRepositoryManifests",
+      "name": "containerRegistry.registryListRepositoryManifests",
+      "description": "To list all manifests in your container registry repository, send a GET\nrequest to `/v2/registry/$REGISTRY_NAME/repositories/$REPOSITORY_NAME/digests`.\n\nNote that if your repository name contains `/` characters, it must be\nURL-encoded in the request URL. For example, to list manifests for\n`registry.digitalocean.com/example/my/repo`, the path would be\n`/v2/registry/example/repositories/my%2Frepo/digests`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryListRepositoryTags",
+      "name": "containerRegistry.registryListRepositoryTags",
+      "description": "To list all tags in your container registry repository, send a GET\nrequest to `/v2/registry/$REGISTRY_NAME/repositories/$REPOSITORY_NAME/tags`.\n\nNote that if your repository name contains `/` characters, it must be\nURL-encoded in the request URL. For example, to list tags for\n`registry.digitalocean.com/example/my/repo`, the path would be\n`/v2/registry/example/repositories/my%2Frepo/tags`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryRunGarbageCollection",
+      "name": "containerRegistry.registryRunGarbageCollection",
+      "description": "Garbage collection enables users to clear out unreferenced blobs (layer &\nmanifest data) after deleting one or more manifests from a repository. If\nthere are no unreferenced blobs resulting from the deletion of one or more\nmanifests, garbage collection is effectively a noop.\n[See here for more information](https://www.digitalocean.com/docs/container-registry/how-to/clean-up-container-registry/)\nabout how and why you should clean up your container registry periodically.\n\nTo request a garbage collection run on your registry, send a POST request to\n`/v2/registry/$REGISTRY_NAME/garbage-collection`. This will initiate the\nfollowing sequence of events on your registry.\n\n* Set the registry to read-only mode, meaning no further write-scoped\n  JWTs will be issued to registry clients. Existing write-scoped JWTs will\n  continue to work until they expire which can take up to 15 minutes.\n* Wait until all existing write-scoped JWTs have expired.\n* Scan all registry manifests to determine which blobs are unreferenced.\n* Delete all unreferenced blobs from the registry.\n* Record the number of blobs deleted and bytes freed, mark the garbage\n  collection status as `success`.\n* Remove the read-only mode restriction from the registry, meaning write-scoped\n  JWTs will once again be issued to registry clients.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryUpdateGarbageCollection",
+      "name": "containerRegistry.registryUpdateGarbageCollection",
+      "description": "To cancel the currently-active garbage collection for a registry, send a PUT request to `/v2/registry/$REGISTRY_NAME/garbage-collection/$GC_UUID` and specify one or more of the attributes below."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryUpdateSubscription",
+      "name": "containerRegistry.registryUpdateSubscription",
+      "description": "After creating your registry, you can switch to a different subscription tier to better suit your needs. To do this, send a POST request to `/v2/registry/subscription`."
+    },
+    {
+      "id": "openapi_digitalocean_com.containerRegistry.registryValidateName",
+      "name": "containerRegistry.registryValidateName",
+      "description": "To validate that a container registry name is available for use, send a POST\nrequest to `/v2/registry/validate-name`.\n\nIf the name is both formatted correctly and available, the response code will\nbe 204 and contain no body. If the name is already in use, the response will\nbe a 409 Conflict.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesAdd",
+      "name": "databases.databasesAdd",
+      "description": "To add a new database to an existing cluster, send a POST request to\n`/v2/databases/$DATABASE_ID/dbs`.\n\nNote: Database management is not supported for Redis clusters.\n\nThe response will be a JSON object with a key called `db`. The value of this will be\nan object that contains the standard attributes associated with a database.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesAddConnectionPool",
+      "name": "databases.databasesAddConnectionPool",
+      "description": "For PostgreSQL database clusters, connection pools can be used to allow a\ndatabase to share its idle connections. The popular PostgreSQL connection\npooling utility PgBouncer is used to provide this service. [See here for more information](https://www.digitalocean.com/docs/databases/postgresql/how-to/manage-connection-pools/)\nabout how and why to use PgBouncer connection pooling including\ndetails about the available transaction modes.\n\nTo add a new connection pool to a PostgreSQL database cluster, send a POST\nrequest to `/v2/databases/$DATABASE_ID/pools` specifying a name for the pool,\nthe user to connect with, the database to connect to, as well as its desired\nsize and transaction mode.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesAddUser",
+      "name": "databases.databasesAddUser",
+      "description": "To add a new database user, send a POST request to `/v2/databases/$DATABASE_ID/users`\nwith the desired username.\n\nNote: User management is not supported for Redis clusters.\n\nWhen adding a user to a MySQL cluster, additional options can be configured in the\n`mysql_settings` object.\n\nThe response will be a JSON object with a key called `user`. The value of this will be an\nobject that contains the standard attributes associated with a database user including\nits randomly generated password.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesCreateCluster",
+      "name": "databases.databasesCreateCluster",
+      "description": "To create a database cluster, send a POST request to `/v2/databases`.\nThe response will be a JSON object with a key called `database`. The value of this will be an object that contains the standard attributes associated with a database cluster. The initial value of the database cluster's `status` attribute will be `creating`. When the cluster is ready to receive traffic, this will transition to `online`.\nThe embedded `connection` and `private_connection` objects will contain the information needed to access the database cluster.\nDigitalOcean managed PostgreSQL and MySQL database clusters take automated daily backups. To create a new database cluster based on a backup of an existing cluster, send a POST request to `/v2/databases`. In addition to the standard database cluster attributes, the JSON body must include a key named `backup_restore` with the name of the original database cluster and the timestamp of the backup to be restored. Creating a database from a backup is the same as forking a database in the control panel.\nNote: Backups are not supported for Redis clusters."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesCreateReplica",
+      "name": "databases.databasesCreateReplica",
+      "description": "To create a read-only replica for a PostgreSQL or MySQL database cluster, send a POST request to `/v2/databases/$DATABASE_ID/replicas` specifying the name it should be given, the size of the node to be used, and the region where it will be located.\n\n**Note**: Read-only replicas are not supported for Redis clusters.\n\nThe response will be a JSON object with a key called `replica`. The value of this will be an object that contains the standard attributes associated with a database replica. The initial value of the read-only replica's `status` attribute will be `forking`. When the replica is ready to receive traffic, this will transition to `active`."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDelete",
+      "name": "databases.databasesDelete",
+      "description": "To delete a specific database, send a DELETE request to\n`/v2/databases/$DATABASE_ID/dbs/$DB_NAME`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n\nNote: Database management is not supported for Redis clusters.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDeleteConnectionPool",
+      "name": "databases.databasesDeleteConnectionPool",
+      "description": "To delete a specific connection pool for a PostgreSQL database cluster, send\na DELETE request to `/v2/databases/$DATABASE_ID/pools/$POOL_NAME`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDeleteOnlineMigration",
+      "name": "databases.databasesDeleteOnlineMigration",
+      "description": "To stop an online migration, send a DELETE request to `/v2/databases/$DATABASE_ID/online-migration/$MIGRATION_ID`.\n\nA status of 204 will be given. This indicates that the request was processed successfully, but that no response body is needed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDeleteUser",
+      "name": "databases.databasesDeleteUser",
+      "description": "To remove a specific database user, send a DELETE request to\n`/v2/databases/$DATABASE_ID/users/$USERNAME`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n\nNote: User management is not supported for Redis clusters.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDestroyCluster",
+      "name": "databases.databasesDestroyCluster",
+      "description": "To destroy a specific database, send a DELETE request to `/v2/databases/$DATABASE_ID`.\nA status of 204 will be given. This indicates that the request was processed successfully, but that no response body is needed."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesDestroyReplica",
+      "name": "databases.databasesDestroyReplica",
+      "description": "To destroy a specific read-only replica, send a DELETE request to `/v2/databases/$DATABASE_ID/replicas/$REPLICA_NAME`.\n\n**Note**: Read-only replicas are not supported for Redis clusters.\n\nA status of 204 will be given. This indicates that the request was processed successfully, but that no response body is needed."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGet",
+      "name": "databases.databasesGet",
+      "description": "To show information about an existing database cluster, send a GET request to\n`/v2/databases/$DATABASE_ID/dbs/$DB_NAME`.\n\nNote: Database management is not supported for Redis clusters.\n\nThe response will be a JSON object with a `db` key. This will be set to an object\ncontaining the standard database attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetCa",
+      "name": "databases.databasesGetCa",
+      "description": "To retrieve the public certificate used to secure the connection to the database cluster send a GET request to\n`/v2/databases/$DATABASE_ID/ca`.\n\nThe response will be a JSON object with a `ca` key. This will be set to an object\ncontaining the base64 encoding of the public key certificate.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetCluster",
+      "name": "databases.databasesGetCluster",
+      "description": "To show information about an existing database cluster, send a GET request to `/v2/databases/$DATABASE_ID`.\nThe response will be a JSON object with a database key. This will be set to an object containing the standard database cluster attributes.\nThe embedded connection and private_connection objects will contain the information needed to access the database cluster.\nThe embedded maintenance_window object will contain information about any scheduled maintenance for the database cluster."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetConfig",
+      "name": "databases.databasesGetConfig",
+      "description": "Shows configuration parameters for an existing database cluster by sending a GET request to\n`/v2/databases/$DATABASE_ID/config`.\nThe response is a JSON object with a `config` key, which is set to an object\ncontaining any database configuration parameters.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetConnectionPool",
+      "name": "databases.databasesGetConnectionPool",
+      "description": "To show information about an existing connection pool for a PostgreSQL database cluster, send a GET request to `/v2/databases/$DATABASE_ID/pools/$POOL_NAME`.\nThe response will be a JSON object with a `pool` key."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetEvictionPolicy",
+      "name": "databases.databasesGetEvictionPolicy",
+      "description": "To retrieve the configured eviction policy for an existing Redis cluster, send a GET request to `/v2/databases/$DATABASE_ID/eviction_policy`.\nThe response will be a JSON object with an `eviction_policy` key. This will be set to a string representing the eviction policy."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetMigrationStatus",
+      "name": "databases.databasesGetMigrationStatus",
+      "description": "To retrieve the status of the most recent online migration, send a GET request to `/v2/databases/$DATABASE_ID/online-migration`. "
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetReplica",
+      "name": "databases.databasesGetReplica",
+      "description": "To show information about an existing database replica, send a GET request to `/v2/databases/$DATABASE_ID/replicas/$REPLICA_NAME`.\n\n**Note**: Read-only replicas are not supported for Redis clusters.\n\nThe response will be a JSON object with a `replica key`. This will be set to an object containing the standard database replica attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetSqlMode",
+      "name": "databases.databasesGetSqlMode",
+      "description": "To retrieve the configured SQL modes for an existing MySQL cluster, send a GET request to `/v2/databases/$DATABASE_ID/sql_mode`.\nThe response will be a JSON object with a `sql_mode` key. This will be set to a string representing the configured SQL modes."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesGetUser",
+      "name": "databases.databasesGetUser",
+      "description": "To show information about an existing database user, send a GET request to\n`/v2/databases/$DATABASE_ID/users/$USERNAME`.\n\nNote: User management is not supported for Redis clusters.\n\nThe response will be a JSON object with a `user` key. This will be set to an object\ncontaining the standard database user attributes.\n\nFor MySQL clusters, additional options will be contained in the mysql_settings\nobject.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesList",
+      "name": "databases.databasesList",
+      "description": "To list all of the databases in a clusters, send a GET request to\n`/v2/databases/$DATABASE_ID/dbs`.\n\nThe result will be a JSON object with a `dbs` key. This will be set to an array\nof database objects, each of which will contain the standard database attributes.\n\nNote: Database management is not supported for Redis clusters.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListBackups",
+      "name": "databases.databasesListBackups",
+      "description": "To list all of the available backups of a PostgreSQL or MySQL database cluster, send a GET request to `/v2/databases/$DATABASE_ID/backups`.\n**Note**: Backups are not supported for Redis clusters.\nThe result will be a JSON object with a `backups key`. This will be set to an array of backup objects, each of which will contain the size of the backup and the timestamp at which it was created."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListClusters",
+      "name": "databases.databasesListClusters",
+      "description": "To list all of the database clusters available on your account, send a GET request to `/v2/databases`. To limit the results to database clusters with a specific tag, include the `tag_name` query parameter set to the name of the tag. For example, `/v2/databases?tag_name=$TAG_NAME`.\nThe result will be a JSON object with a `databases` key. This will be set to an array of database objects, each of which will contain the standard database attributes.\nThe embedded `connection` and `private_connection` objects will contain the information needed to access the database cluster:\nThe embedded `maintenance_window` object will contain information about any scheduled maintenance for the database cluster."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListConnectionPools",
+      "name": "databases.databasesListConnectionPools",
+      "description": "To list all of the connection pools available to a PostgreSQL database cluster, send a GET request to `/v2/databases/$DATABASE_ID/pools`.\nThe result will be a JSON object with a `pools` key. This will be set to an array of connection pool objects."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListFirewallRules",
+      "name": "databases.databasesListFirewallRules",
+      "description": "To list all of a database cluster's firewall rules (known as \"trusted sources\" in the control panel), send a GET request to `/v2/databases/$DATABASE_ID/firewall`.\nThe result will be a JSON object with a `rules` key."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListOptions",
+      "name": "databases.databasesListOptions",
+      "description": "To list all of the options available for the offered database engines, send a GET request to `/v2/databases/options`.\nThe result will be a JSON object with an `options` key."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListReplicas",
+      "name": "databases.databasesListReplicas",
+      "description": "To list all of the read-only replicas associated with a database cluster, send a GET request to `/v2/databases/$DATABASE_ID/replicas`.\n\n**Note**: Read-only replicas are not supported for Redis clusters.\n\nThe result will be a JSON object with a `replicas` key. This will be set to an array of database replica objects, each of which will contain the standard database replica attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesListUsers",
+      "name": "databases.databasesListUsers",
+      "description": "To list all of the users for your database cluster, send a GET request to\n`/v2/databases/$DATABASE_ID/users`.\n\nNote: User management is not supported for Redis clusters.\n\nThe result will be a JSON object with a `users` key. This will be set to an array\nof database user objects, each of which will contain the standard database user attributes.\n\nFor MySQL clusters, additional options will be contained in the mysql_settings object.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesPatchConfig",
+      "name": "databases.databasesPatchConfig",
+      "description": "To update the configuration for an existing database cluster, send a PATCH request to\n`/v2/databases/$DATABASE_ID/config`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesPromoteReplica",
+      "name": "databases.databasesPromoteReplica",
+      "description": "To promote a specific read-only replica, send a PUT request to `/v2/databases/$DATABASE_ID/replicas/$REPLICA_NAME/promote`.\n\n**Note**: Read-only replicas are not supported for Redis clusters.\n\nA status of 204 will be given. This indicates that the request was processed successfully, but that no response body is needed."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesResetAuth",
+      "name": "databases.databasesResetAuth",
+      "description": "To reset the password for a database user, send a POST request to\n`/v2/databases/$DATABASE_ID/users/$USERNAME/reset_auth`.\n\nFor `mysql` databases, the authentication method can be specifying by\nincluding a key in the JSON body called `mysql_settings` with the `auth_plugin`\nvalue specified.\n\nThe response will be a JSON object with a `user` key. This will be set to an\nobject containing the standard database user attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateClusterSize",
+      "name": "databases.databasesUpdateClusterSize",
+      "description": "To resize a database cluster, send a PUT request to `/v2/databases/$DATABASE_ID/resize`. The body of the request must specify both the size and num_nodes attributes.\nA successful request will receive a 202 Accepted status code with no body in response. Querying the database cluster will show that its status attribute will now be set to resizing. This will transition back to online when the resize operation has completed."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateConnectionPool",
+      "name": "databases.databasesUpdateConnectionPool",
+      "description": "To update a connection pool for a PostgreSQL database cluster, send a PUT request to  `/v2/databases/$DATABASE_ID/pools/$POOL_NAME`."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateEvictionPolicy",
+      "name": "databases.databasesUpdateEvictionPolicy",
+      "description": "To configure an eviction policy for an existing Redis cluster, send a PUT request to `/v2/databases/$DATABASE_ID/eviction_policy` specifying the desired policy."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateFirewallRules",
+      "name": "databases.databasesUpdateFirewallRules",
+      "description": "To update a database cluster's firewall rules (known as \"trusted sources\" in the control panel), send a PUT request to `/v2/databases/$DATABASE_ID/firewall` specifying which resources should be able to open connections to the database. You may limit connections to specific Droplets, Kubernetes clusters, or IP addresses. When a tag is provided, any Droplet or Kubernetes node with that tag applied to it will have access. The firewall is limited to 100 rules (or trusted sources). When possible, we recommend [placing your databases into a VPC network](https://www.digitalocean.com/docs/networking/vpc/) to limit access to them instead of using a firewall.\nA successful"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateMaintenanceWindow",
+      "name": "databases.databasesUpdateMaintenanceWindow",
+      "description": "To configure the window when automatic maintenance should be performed for a database cluster, send a PUT request to `/v2/databases/$DATABASE_ID/maintenance`.\nA successful request will receive a 204 No Content status code with no body in response."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateMajorVersion",
+      "name": "databases.databasesUpdateMajorVersion",
+      "description": "To upgrade the major version of a database, send a PUT request to `/v2/databases/$DATABASE_ID/upgrade`, specifying the target version.\nA successful request will receive a 204 No Content status code with no body in response."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateOnlineMigration",
+      "name": "databases.databasesUpdateOnlineMigration",
+      "description": "To start an online migration, send a PUT request to `/v2/databases/$DATABASE_ID/online-migration` endpoint. Migrating a cluster establishes a connection with an existing cluster and replicates its contents to the target cluster. Online migration is only available for MySQL, PostgreSQL, and Redis clusters."
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateRegion",
+      "name": "databases.databasesUpdateRegion",
+      "description": "To migrate a database cluster to a new region, send a `PUT` request to\n`/v2/databases/$DATABASE_ID/migrate`. The body of the request must specify a\n`region` attribute.\n\nA successful request will receive a 202 Accepted status code with no body in\nresponse. Querying the database cluster will show that its `status` attribute\nwill now be set to `migrating`. This will transition back to `online` when the\nmigration has completed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.databases.databasesUpdateSqlMode",
+      "name": "databases.databasesUpdateSqlMode",
+      "description": "To configure the SQL modes for an existing MySQL cluster, send a PUT request to `/v2/databases/$DATABASE_ID/sql_mode` specifying the desired modes. See the official MySQL 8 documentation for a [full list of supported SQL modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-full).\nA successful request will receive a 204 No Content status code with no body in response."
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsCreateRecord",
+      "name": "domainRecords.domainsCreateRecord",
+      "description": "To create a new record to a domain, send a POST request to\n`/v2/domains/$DOMAIN_NAME/records`.\n\nThe request must include all of the required fields for the domain record type\nbeing added.\n\nSee the [attribute table](#tag/Domain-Records) for details regarding record\ntypes and their respective required attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsDeleteRecord",
+      "name": "domainRecords.domainsDeleteRecord",
+      "description": "To delete a record for a domain, send a DELETE request to\n`/v2/domains/$DOMAIN_NAME/records/$DOMAIN_RECORD_ID`.\n\nThe record will be deleted and the response status will be a 204. This\nindicates a successful request with no body returned.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsGetRecord",
+      "name": "domainRecords.domainsGetRecord",
+      "description": "To retrieve a specific domain record, send a GET request to `/v2/domains/$DOMAIN_NAME/records/$RECORD_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsListRecords",
+      "name": "domainRecords.domainsListRecords",
+      "description": "To get a listing of all records configured for a domain, send a GET request to `/v2/domains/$DOMAIN_NAME/records`.\nThe list of records returned can be filtered by using the `name` and `type` query parameters. For example, to only include A records for a domain, send a GET request to `/v2/domains/$DOMAIN_NAME/records?type=A`. `name` must be a fully qualified record name. For example, to only include records matching `sub.example.com`, send a GET request to `/v2/domains/$DOMAIN_NAME/records?name=sub.example.com`. Both name and type may be used together.\n\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsPatchRecord",
+      "name": "domainRecords.domainsPatchRecord",
+      "description": "To update an existing record, send a PATCH request to\n`/v2/domains/$DOMAIN_NAME/records/$DOMAIN_RECORD_ID`. Any attribute valid for\nthe record type can be set to a new value for the record.\n\nSee the [attribute table](#tag/Domain-Records) for details regarding record\ntypes and their respective attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domainRecords.domainsUpdateRecord",
+      "name": "domainRecords.domainsUpdateRecord",
+      "description": "To update an existing record, send a PUT request to\n`/v2/domains/$DOMAIN_NAME/records/$DOMAIN_RECORD_ID`. Any attribute valid for\nthe record type can be set to a new value for the record.\n\nSee the [attribute table](#tag/Domain-Records) for details regarding record\ntypes and their respective attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domains.domainsCreate",
+      "name": "domains.domainsCreate",
+      "description": "To create a new domain, send a POST request to `/v2/domains`. Set the \"name\"\nattribute to the domain name you are adding. Optionally, you may set the\n\"ip_address\" attribute, and an A record will be automatically created pointing\nto the apex domain.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domains.domainsDelete",
+      "name": "domains.domainsDelete",
+      "description": "To delete a domain, send a DELETE request to `/v2/domains/$DOMAIN_NAME`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.domains.domainsGet",
+      "name": "domains.domainsGet",
+      "description": "To get details about a specific domain, send a GET request to `/v2/domains/$DOMAIN_NAME`."
+    },
+    {
+      "id": "openapi_digitalocean_com.domains.domainsList",
+      "name": "domains.domainsList",
+      "description": "To retrieve a list of all of the domains in your account, send a GET request to `/v2/domains`."
+    },
+    {
+      "id": "openapi_digitalocean_com.dropletActions.dropletActionsGet",
+      "name": "dropletActions.dropletActionsGet",
+      "description": "To retrieve a Droplet action, send a GET request to\n`/v2/droplets/$DROPLET_ID/actions/$ACTION_ID`.\n\nThe response will be a JSON object with a key called `action`. The value will\nbe a Droplet action object.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.dropletActions.dropletActionsList",
+      "name": "dropletActions.dropletActionsList",
+      "description": "To retrieve a list of all actions that have been executed for a Droplet, send\na GET request to `/v2/droplets/$DROPLET_ID/actions`.\n\nThe results will be returned as a JSON object with an `actions` key. This will\nbe set to an array filled with `action` objects containing the standard\n`action` attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.dropletActions.dropletActionsPost",
+      "name": "dropletActions.dropletActionsPost",
+      "description": "To initiate an action on a Droplet send a POST request to\n`/v2/droplets/$DROPLET_ID/actions`. In the JSON body to the request,\nset the `type` attribute to on of the supported action types:\n\n| Action                                   | Details |\n| ---------------------------------------- | ----------- |\n| <nobr>`enable_backups`</nobr>            | Enables backups for a Droplet |\n| <nobr>`disable_backups`</nobr>           | Disables backups for a Droplet |\n| <nobr>`reboot`</nobr>                    | Reboots a Droplet. A `reboot` action is an attempt to reboot the Droplet in a graceful way, similar to using the `reboot` command from the console. |\n| <nobr>`power_cycle`</nobr>               | Power cycles a Droplet. A `powercycle` action is similar to pushing the reset button on a physical machine, it's similar to booting from scratch. |\n| <nobr>`shutdown`</nobr>                  | Shutsdown a Droplet. A shutdown action is an attempt to shutdown the Droplet in a graceful way, similar to using the `shutdown` command from the console. Since a `shutdown` command can fail, this action guarantees that the command is issued, not that it succeeds. The preferred way to turn off a Droplet is to attempt a shutdown, with a reasonable timeout, followed by a `power_off` action to ensure the Droplet is off. |\n| <nobr>`power_off`</nobr>                 | Powers off a Droplet. A `power_off` event is a hard shutdown and should only be used if the `shutdown` action is not successful. It is similar to cutting the power on a server and could lead to complications. |\n| <nobr>`power_on`</nobr>                  | Powers on a Droplet. |\n| <nobr>`restore`</nobr>                   | Restore a Droplet using a backup image. The image ID that is passed in must be a backup of the current Droplet instance. The operation will leave any embedded SSH keys intact. |\n| <nobr>`password_reset`</nobr>            | Resets the root password for a Droplet. A new password will be provided via email. It must be changed after first use. |\n| <nobr>`resize`</nobr>                    | Resizes a Droplet. Set the `size` attribute to a size slug. If a permanent resize with disk changes included is desired, set the `disk` attribute to `true`. |\n| <nobr>`rebuild`</nobr>                   | Rebuilds a Droplet from a new base image. Set the `image` attribute to an image ID or slug. |\n| <nobr>`rename`</nobr>                    | Renames a Droplet. |\n| <nobr>`change_kernel`</nobr>             | Changes a Droplet's kernel. Only applies to Droplets with externally managed kernels. All Droplets created after March 2017 use internal kernels by default. |\n| <nobr>`enable_ipv6`</nobr>               | Enables IPv6 for a Droplet. |\n| <nobr>`snapshot`</nobr>                  | Takes a snapshot of a Droplet. |\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.dropletActions.dropletActionsPostByTag",
+      "name": "dropletActions.dropletActionsPostByTag",
+      "description": "Some actions can be performed in bulk on tagged Droplets. The actions can be\ninitiated by sending a POST to `/v2/droplets/actions?tag_name=$TAG_NAME` with\nthe action arguments.\n\nOnly a sub-set of action types are supported:\n\n- `power_cycle`\n- `power_on`\n- `power_off`\n- `shutdown`\n- `enable_ipv6`\n- `enable_backups`\n- `disable_backups`\n- `snapshot`\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsCreate",
+      "name": "droplets.dropletsCreate",
+      "description": "To create a new Droplet, send a POST request to `/v2/droplets` setting the\nrequired attributes.\n\nA Droplet will be created using the provided information. The response body\nwill contain a JSON object with a key called `droplet`. The value will be an\nobject containing the standard attributes for your new Droplet. The response\ncode, 202 Accepted, does not indicate the success or failure of the operation,\njust that the request has been accepted for processing. The `actions` returned\nas part of the response's `links` object can be used to check the status\nof the Droplet create event.\n\n### Create Multiple Droplets\n\nCreating multiple Droplets is very similar to creating a single Droplet.\nInstead of sending `name` as a string, send `names` as an array of strings. A\nDroplet will be created for each name you send using the associated\ninformation. Up to ten Droplets may be created this way at a time.\n\nRather than returning a single Droplet, the response body will contain a JSON\narray with a key called `droplets`. This will be set to an array of JSON\nobjects, each of which will contain the standard Droplet attributes. The\nresponse code, 202 Accepted, does not indicate the success or failure of any\noperation, just that the request has been accepted for processing. The array\nof `actions` returned as part of the response's `links` object can be used to\ncheck the status of each individual Droplet create event.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsDestroy",
+      "name": "droplets.dropletsDestroy",
+      "description": "To delete a Droplet, send a DELETE request to `/v2/droplets/$DROPLET_ID`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsDestroyByTag",
+      "name": "droplets.dropletsDestroyByTag",
+      "description": "To delete **all** Droplets assigned to a specific tag, include the `tag_name`\nquery parameter set to the name of the tag in your DELETE request. For\nexample,  `/v2/droplets?tag_name=$TAG_NAME`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsDestroyRetryWithAssociatedResources",
+      "name": "droplets.dropletsDestroyRetryWithAssociatedResources",
+      "description": "If the status of a request to destroy a Droplet with its associated resources\nreported any errors, it can be retried by sending a POST request to the\n`/v2/droplets/$DROPLET_ID/destroy_with_associated_resources/retry` endpoint.\n\nOnly one destroy can be active at a time per Droplet. If a retry is issued\nwhile another destroy is in progress for the Droplet a 409 status code will\nbe returned. A successful response will include a 202 response code and no\ncontent.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsDestroyWithAssociatedResourcesDangerous",
+      "name": "droplets.dropletsDestroyWithAssociatedResourcesDangerous",
+      "description": "To destroy a Droplet along with all of its associated resources, send a DELETE\nrequest to the `/v2/droplets/$DROPLET_ID/destroy_with_associated_resources/dangerous`\nendpoint. The headers of this request must include an `X-Dangerous` key set to\n`true`. To preview which resources will be destroyed, first query the\nDroplet's associated resources. This operation _can not_ be reverse and should\nbe used with caution.\n\nA successful response will include a 202 response code and no content. Use the\nstatus endpoint to check on the success or failure of the destruction of the\nindividual resources.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsDestroyWithAssociatedResourcesSelective",
+      "name": "droplets.dropletsDestroyWithAssociatedResourcesSelective",
+      "description": "To destroy a Droplet along with a sub-set of its associated resources, send a\nDELETE request to the `/v2/droplets/$DROPLET_ID/destroy_with_associated_resources/selective`\nendpoint. The JSON body of the request should include `reserved_ips`, `snapshots`, `volumes`,\nor `volume_snapshots` keys each set to an array of IDs for the associated\nresources to be destroyed. The IDs can be found by querying the Droplet's\nassociated resources. Any associated resource not included in the request\nwill remain and continue to accrue changes on your account.\n\nA successful response will include a 202 response code and no content. Use\nthe status endpoint to check on the success or failure of the destruction of\nthe individual resources.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsGet",
+      "name": "droplets.dropletsGet",
+      "description": "To show information about an individual Droplet, send a GET request to\n`/v2/droplets/$DROPLET_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsGetDestroyAssociatedResourcesStatus",
+      "name": "droplets.dropletsGetDestroyAssociatedResourcesStatus",
+      "description": "To check on the status of a request to destroy a Droplet with its associated\nresources, send a GET request to the\n`/v2/droplets/$DROPLET_ID/destroy_with_associated_resources/status` endpoint.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsList",
+      "name": "droplets.dropletsList",
+      "description": "To list all Droplets in your account, send a GET request to `/v2/droplets`.\n\nThe response body will be a JSON object with a key of `droplets`. This will be\nset to an array containing objects each representing a Droplet. These will\ncontain the standard Droplet attributes.\n\n### Filtering Results by Tag\n\nIt's possible to request filtered results by including certain query parameters.\nTo only list Droplets assigned to a specific tag, include the `tag_name` query\nparameter set to the name of the tag in your GET request. For example,\n`/v2/droplets?tag_name=$TAG_NAME`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListAssociatedResources",
+      "name": "droplets.dropletsListAssociatedResources",
+      "description": "To list the associated billable resources that can be destroyed along with a\nDroplet, send a GET request to the\n`/v2/droplets/$DROPLET_ID/destroy_with_associated_resources` endpoint.\n\nThe response will be a JSON object containing `snapshots`, `volumes`, and\n`volume_snapshots` keys. Each will be set to an array of objects containing\ninformation about the associated resources.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListBackups",
+      "name": "droplets.dropletsListBackups",
+      "description": "To retrieve any backups associated with a Droplet, send a GET request to\n`/v2/droplets/$DROPLET_ID/backups`.\n\nYou will get back a JSON object that has a `backups` key. This will be set to\nan array of backup objects, each of which contain the standard\nDroplet backup attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListFirewalls",
+      "name": "droplets.dropletsListFirewalls",
+      "description": "To retrieve a list of all firewalls available to a Droplet, send a GET request\nto `/v2/droplets/$DROPLET_ID/firewalls`\n\nThe response will be a JSON object that has a key called `firewalls`. This will\nbe set to an array of `firewall` objects, each of which contain the standard\n`firewall` attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListKernels",
+      "name": "droplets.dropletsListKernels",
+      "description": "To retrieve a list of all kernels available to a Droplet, send a GET request\nto `/v2/droplets/$DROPLET_ID/kernels`\n\nThe response will be a JSON object that has a key called `kernels`. This will\nbe set to an array of `kernel` objects, each of which contain the standard\n`kernel` attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListNeighbors",
+      "name": "droplets.dropletsListNeighbors",
+      "description": "To retrieve a list of any \"neighbors\" (i.e. Droplets that are co-located on\nthe same physical hardware) for a specific Droplet, send a GET request to\n`/v2/droplets/$DROPLET_ID/neighbors`.\n\nThe results will be returned as a JSON object with a key of `droplets`. This\nwill be set to an array containing objects representing any other Droplets\nthat share the same physical hardware. An empty array indicates that the\nDroplet is not co-located any other Droplets associated with your account.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListNeighborsIds",
+      "name": "droplets.dropletsListNeighborsIds",
+      "description": "To retrieve a list of all Droplets that are co-located on the same physical\nhardware, send a GET request to `/v2/reports/droplet_neighbors_ids`.\n\nThe results will be returned as a JSON object with a key of `neighbor_ids`.\nThis will be set to an array of arrays. Each array will contain a set of\nDroplet IDs for Droplets that share a physical server. An empty array\nindicates that all Droplets associated with your account are located on\nseparate physical hardware.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.droplets.dropletsListSnapshots",
+      "name": "droplets.dropletsListSnapshots",
+      "description": "To retrieve the snapshots that have been created from a Droplet, send a GET\nrequest to `/v2/droplets/$DROPLET_ID/snapshots`.\n\nYou will get back a JSON object that has a `snapshots` key. This will be set\nto an array of snapshot objects, each of which contain the standard Droplet\nsnapshot attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsAddRules",
+      "name": "firewalls.firewallsAddRules",
+      "description": "To add additional access rules to a firewall, send a POST request to\n`/v2/firewalls/$FIREWALL_ID/rules`. The body of the request may include an\ninbound_rules and/or outbound_rules attribute containing an array of rules to\nbe added.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsAddTags",
+      "name": "firewalls.firewallsAddTags",
+      "description": "To assign a tag representing a group of Droplets to a firewall, send a POST\nrequest to `/v2/firewalls/$FIREWALL_ID/tags`. In the body of the request,\nthere should be a `tags` attribute containing a list of tag names.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsAssignDroplets",
+      "name": "firewalls.firewallsAssignDroplets",
+      "description": "To assign a Droplet to a firewall, send a POST request to\n`/v2/firewalls/$FIREWALL_ID/droplets`. In the body of the request, there\nshould be a `droplet_ids` attribute containing a list of Droplet IDs.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsCreate",
+      "name": "firewalls.firewallsCreate",
+      "description": "To create a new firewall, send a POST request to `/v2/firewalls`. The request\nmust contain at least one inbound or outbound access rule.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsDelete",
+      "name": "firewalls.firewallsDelete",
+      "description": "To delete a firewall send a DELETE request to `/v2/firewalls/$FIREWALL_ID`.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsDeleteDroplets",
+      "name": "firewalls.firewallsDeleteDroplets",
+      "description": "To remove a Droplet from a firewall, send a DELETE request to\n`/v2/firewalls/$FIREWALL_ID/droplets`. In the body of the request, there should\nbe a `droplet_ids` attribute containing a list of Droplet IDs.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsDeleteRules",
+      "name": "firewalls.firewallsDeleteRules",
+      "description": "To remove access rules from a firewall, send a DELETE request to\n`/v2/firewalls/$FIREWALL_ID/rules`. The body of the request may include an\n`inbound_rules` and/or `outbound_rules` attribute containing an array of rules\nto be removed.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsDeleteTags",
+      "name": "firewalls.firewallsDeleteTags",
+      "description": "To remove a tag representing a group of Droplets from a firewall, send a\nDELETE request to `/v2/firewalls/$FIREWALL_ID/tags`. In the body of the\nrequest, there should be a `tags` attribute containing a list of tag names.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsGet",
+      "name": "firewalls.firewallsGet",
+      "description": "To show information about an existing firewall, send a GET request to `/v2/firewalls/$FIREWALL_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsList",
+      "name": "firewalls.firewallsList",
+      "description": "To list all of the firewalls available on your account, send a GET request to `/v2/firewalls`."
+    },
+    {
+      "id": "openapi_digitalocean_com.firewalls.firewallsUpdate",
+      "name": "firewalls.firewallsUpdate",
+      "description": "To update the configuration of an existing firewall, send a PUT request to\n`/v2/firewalls/$FIREWALL_ID`. The request should contain a full representation\nof the firewall including existing attributes. **Note that any attributes that\nare not provided will be reset to their default values.**\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIpActions.floatingIPsActionGet",
+      "name": "floatingIpActions.floatingIPsActionGet",
+      "description": "To retrieve the status of a floating IP action, send a GET request to `/v2/floating_ips/$FLOATING_IP/actions/$ACTION_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIpActions.floatingIPsActionList",
+      "name": "floatingIpActions.floatingIPsActionList",
+      "description": "To retrieve all actions that have been executed on a floating IP, send a GET request to `/v2/floating_ips/$FLOATING_IP/actions`."
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIpActions.floatingIPsActionPost",
+      "name": "floatingIpActions.floatingIPsActionPost",
+      "description": "To initiate an action on a floating IP send a POST request to\n`/v2/floating_ips/$FLOATING_IP/actions`. In the JSON body to the request,\nset the `type` attribute to on of the supported action types:\n\n| Action     | Details\n|------------|--------\n| `assign`   | Assigns a floating IP to a Droplet\n| `unassign` | Unassign a floating IP from a Droplet\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIPs.floatingIPsCreate",
+      "name": "floatingIPs.floatingIPsCreate",
+      "description": "On creation, a floating IP must be either assigned to a Droplet or reserved to a region.\n* To create a new floating IP assigned to a Droplet, send a POST\n  request to `/v2/floating_ips` with the `droplet_id` attribute.\n\n* To create a new floating IP reserved to a region, send a POST request to\n  `/v2/floating_ips` with the `region` attribute.\n\n**Note**:  In addition to the standard rate limiting, only 12 floating IPs may be created per 60 seconds."
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIPs.floatingIPsDelete",
+      "name": "floatingIPs.floatingIPsDelete",
+      "description": "To delete a floating IP and remove it from your account, send a DELETE request\nto `/v2/floating_ips/$FLOATING_IP_ADDR`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIPs.floatingIPsGet",
+      "name": "floatingIPs.floatingIPsGet",
+      "description": "To show information about a floating IP, send a GET request to `/v2/floating_ips/$FLOATING_IP_ADDR`."
+    },
+    {
+      "id": "openapi_digitalocean_com.floatingIPs.floatingIPsList",
+      "name": "floatingIPs.floatingIPsList",
+      "description": "To list all of the floating IPs available on your account, send a GET request to `/v2/floating_ips`."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsCreateNamespace",
+      "name": "functions.functionsCreateNamespace",
+      "description": "Creates a new serverless functions namespace in the desired region and associates it with the provided label. A namespace is a collection of functions and their associated packages, triggers, and project specifications. To create a namespace, send a POST request to `/v2/functions/namespaces` with the `region` and `label` properties."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsCreateTrigger",
+      "name": "functions.functionsCreateTrigger",
+      "description": "Creates a new trigger for a given function in a namespace. To create a trigger, send a POST request to `/v2/functions/namespaces/$NAMESPACE_ID/triggers` with the `name`, `function`, `type`, `is_enabled` and `scheduled_details` properties."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsDeleteNamespace",
+      "name": "functions.functionsDeleteNamespace",
+      "description": "Deletes the given namespace.  When a namespace is deleted all assets, in the namespace are deleted, this includes packages, functions and triggers. Deleting a namespace is a destructive operation and assets in the namespace are not recoverable after deletion. Some metadata is retained, such as activations, or soft deleted for reporting purposes.\nTo delete namespace, send a DELETE request to `/v2/functions/namespaces/$NAMESPACE_ID`.\nA successful deletion returns a 204 response."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsDeleteTrigger",
+      "name": "functions.functionsDeleteTrigger",
+      "description": "Deletes the given trigger.\nTo delete trigger, send a DELETE request to `/v2/functions/namespaces/$NAMESPACE_ID/triggers/$TRIGGER_NAME`.\nA successful deletion returns a 204 response."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsGetNamespace",
+      "name": "functions.functionsGetNamespace",
+      "description": "Gets the namespace details for the given namespace UUID. To get namespace details, send a GET request to `/v2/functions/namespaces/$NAMESPACE_ID` with no parameters."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsGetTrigger",
+      "name": "functions.functionsGetTrigger",
+      "description": "Gets the trigger details. To get the trigger details, send a GET request to `/v2/functions/namespaces/$NAMESPACE_ID/triggers/$TRIGGER_NAME`."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsListNamespaces",
+      "name": "functions.functionsListNamespaces",
+      "description": "Returns a list of namespaces associated with the current user. To get all namespaces, send a GET request to `/v2/functions/namespaces`."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsListTriggers",
+      "name": "functions.functionsListTriggers",
+      "description": "Returns a list of triggers associated with the current user and namespace. To get all triggers, send a GET request to `/v2/functions/namespaces/$NAMESPACE_ID/triggers`."
+    },
+    {
+      "id": "openapi_digitalocean_com.functions.functionsUpdateTrigger",
+      "name": "functions.functionsUpdateTrigger",
+      "description": "Updates the details of the given trigger. To update a trigger, send a PUT request to `/v2/functions/namespaces/$NAMESPACE_ID/triggers/$TRIGGER_NAME` with new values for the `is_enabled ` or `scheduled_details` properties."
+    },
+    {
+      "id": "openapi_digitalocean_com.imageActions.imageActionsGet",
+      "name": "imageActions.imageActionsGet",
+      "description": "To retrieve the status of an image action, send a GET request to `/v2/images/$IMAGE_ID/actions/$IMAGE_ACTION_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.imageActions.imageActionsList",
+      "name": "imageActions.imageActionsList",
+      "description": "To retrieve all actions that have been executed on an image, send a GET request to `/v2/images/$IMAGE_ID/actions`."
+    },
+    {
+      "id": "openapi_digitalocean_com.imageActions.imageActionsPost",
+      "name": "imageActions.imageActionsPost",
+      "description": "The following actions are available on an Image.\n\n## Convert an Image to a Snapshot\n\nTo convert an image, for example, a backup to a snapshot, send a POST request\nto `/v2/images/$IMAGE_ID/actions`. Set the `type` attribute to `convert`.\n\n## Transfer an Image\n\nTo transfer an image to another region, send a POST request to\n`/v2/images/$IMAGE_ID/actions`. Set the `type` attribute to `transfer` and set\n`region` attribute to the slug identifier of the region you wish to transfer\nto.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.images.imagesCreateCustom",
+      "name": "images.imagesCreateCustom",
+      "description": "To create a new custom image, send a POST request to /v2/images.\nThe body must contain a url attribute pointing to a Linux virtual machine\nimage to be imported into DigitalOcean.\nThe image must be in the raw, qcow2, vhdx, vdi, or vmdk format.\nIt may be compressed using gzip or bzip2 and must be smaller than 100 GB after\n being decompressed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.images.imagesDelete",
+      "name": "images.imagesDelete",
+      "description": "To delete a snapshot or custom image, send a `DELETE` request to `/v2/images/$IMAGE_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.images.imagesGet",
+      "name": "images.imagesGet",
+      "description": "To retrieve information about an image, send a `GET` request to\n`/v2/images/$IDENTIFIER`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.images.imagesList",
+      "name": "images.imagesList",
+      "description": "To list all of the images available on your account, send a GET request to /v2/images.\n\n## Filtering Results\n-----\n\nIt's possible to request filtered results by including certain query parameters.\n\n**Image Type**\n\nEither 1-Click Application or OS Distribution images can be filtered by using the `type` query parameter.\n\n> Important: The `type` query parameter does not directly relate to the `type` attribute.\n\nTo retrieve only ***distribution*** images, include the `type` query parameter set to distribution, `/v2/images?type=distribution`.\n\nTo retrieve only ***application*** images, include the `type` query parameter set to application, `/v2/images?type=application`.\n\n**User Images**\n\nTo retrieve only the private images of a user, include the `private` query parameter set to true, `/v2/images?private=true`.\n\n**Tags**\n\nTo list all images assigned to a specific tag, include the `tag_name` query parameter set to the name of the tag in your GET request. For example, `/v2/images?tag_name=$TAG_NAME`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.images.imagesUpdate",
+      "name": "images.imagesUpdate",
+      "description": "To update an image, send a `PUT` request to `/v2/images/$IMAGE_ID`.\nSet the `name` attribute to the new value you would like to use.\nFor custom images, the `description` and `distribution` attributes may also be updated.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesAddNodePool",
+      "name": "kubernetes.kubernetesAddNodePool",
+      "description": "To add an additional node pool to a Kubernetes clusters, send a POST request\nto `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools` with the following\nattributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesAddRegistry",
+      "name": "kubernetes.kubernetesAddRegistry",
+      "description": "To integrate the container registry with Kubernetes clusters, send a POST request to `/v2/kubernetes/registry`."
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesCreateCluster",
+      "name": "kubernetes.kubernetesCreateCluster",
+      "description": "To create a new Kubernetes cluster, send a POST request to\n`/v2/kubernetes/clusters`. The request must contain at least one node pool\nwith at least one worker.\n\nThe request may contain a maintenance window policy describing a time period\nwhen disruptive maintenance tasks may be carried out. Omitting the policy\nimplies that a window will be chosen automatically. See\n[here](https://www.digitalocean.com/docs/kubernetes/how-to/upgrade-cluster/)\nfor details.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesDeleteCluster",
+      "name": "kubernetes.kubernetesDeleteCluster",
+      "description": "To delete a Kubernetes cluster and all services deployed to it, send a DELETE\nrequest to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID`.\n\nA 204 status code with no body will be returned in response to a successful\nrequest.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesDeleteNode",
+      "name": "kubernetes.kubernetesDeleteNode",
+      "description": "To delete a single node in a pool, send a DELETE request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools/$NODE_POOL_ID/nodes/$NODE_ID`.\n\nAppending the `skip_drain=1` query parameter to the request causes node\ndraining to be skipped. Omitting the query parameter or setting its value to\n`0` carries out draining prior to deletion.\n\nAppending the `replace=1` query parameter to the request causes the node to\nbe replaced by a new one after deletion. Omitting the query parameter or\nsetting its value to `0` deletes without replacement.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesDeleteNodePool",
+      "name": "kubernetes.kubernetesDeleteNodePool",
+      "description": "To delete a node pool, send a DELETE request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools/$NODE_POOL_ID`.\n\nA 204 status code with no body will be returned in response to a successful\nrequest. Nodes in the pool will subsequently be drained and deleted.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesDestroyAssociatedResourcesDangerous",
+      "name": "kubernetes.kubernetesDestroyAssociatedResourcesDangerous",
+      "description": "To delete a Kubernetes cluster with all of its associated resources, send a\nDELETE request to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/destroy_with_associated_resources/dangerous`.\nA 204 status code with no body will be returned in response to a successful request.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesDestroyAssociatedResourcesSelective",
+      "name": "kubernetes.kubernetesDestroyAssociatedResourcesSelective",
+      "description": "To delete a Kubernetes cluster along with a subset of its associated resources,\nsend a DELETE request to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/destroy_with_associated_resources/selective`.\n\nThe JSON body of the request should include `load_balancers`, `volumes`, or\n`volume_snapshots` keys each set to an array of IDs for the associated\nresources to be destroyed.\n\nThe IDs can be found by querying the cluster's associated resources endpoint.\nAny associated resource not included in the request will remain and continue\nto accrue changes on your account.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetAvailableUpgrades",
+      "name": "kubernetes.kubernetesGetAvailableUpgrades",
+      "description": "To determine whether a cluster can be upgraded, and the versions to which it\ncan be upgraded, send a GET request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/upgrades`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetCluster",
+      "name": "kubernetes.kubernetesGetCluster",
+      "description": "To show information about an existing Kubernetes cluster, send a GET request\nto `/v2/kubernetes/clusters/$K8S_CLUSTER_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetClusterLintResults",
+      "name": "kubernetes.kubernetesGetClusterLintResults",
+      "description": "To request clusterlint diagnostics for your cluster, send a GET request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/clusterlint`. If the `run_id` query\nparameter is provided, then the diagnostics for the specific run is fetched.\nBy default, the latest results are shown.\n\nTo find out how to address clusterlint feedback, please refer to\n[the clusterlint check documentation](https://github.com/digitalocean/clusterlint/blob/master/checks.md).\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetClusterUser",
+      "name": "kubernetes.kubernetesGetClusterUser",
+      "description": "To show information the user associated with a Kubernetes cluster, send a GET\nrequest to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/user`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetCredentials",
+      "name": "kubernetes.kubernetesGetCredentials",
+      "description": "This endpoint returns a JSON object . It can be used to programmatically\nconstruct Kubernetes clients which cannot parse kubeconfig files.\n\nThe resulting JSON object contains token-based authentication for clusters\nsupporting it, and certificate-based authentication otherwise. For a list of\nsupported versions and more information, see \"[How to Connect to a DigitalOcean\nKubernetes Cluster with kubectl](https://www.digitalocean.com/docs/kubernetes/how-to/connect-with-kubectl/)\".\n\nTo retrieve credentials for accessing a Kubernetes cluster, send a GET\nrequest to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/credentials`.\n\nClusters supporting token-based authentication may define an expiration by\npassing a duration in seconds as a query parameter to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/kubeconfig?expiry_seconds=$DURATION_IN_SECONDS`.\nIf not set or 0, then the token will have a 7 day expiry. The query parameter\nhas no impact in certificate-based authentication.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetKubeconfig",
+      "name": "kubernetes.kubernetesGetKubeconfig",
+      "description": "This endpoint returns a kubeconfig file in YAML format. It can be used to\nconnect to and administer the cluster using the Kubernetes command line tool,\n`kubectl`, or other programs supporting kubeconfig files (e.g., client libraries).\n\nThe resulting kubeconfig file uses token-based authentication for clusters\nsupporting it, and certificate-based authentication otherwise. For a list of\nsupported versions and more information, see \"[How to Connect to a DigitalOcean\nKubernetes Cluster with kubectl](https://www.digitalocean.com/docs/kubernetes/how-to/connect-with-kubectl/)\".\n\nTo retrieve a kubeconfig file for use with a Kubernetes cluster, send a GET\nrequest to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/kubeconfig`.\n\nClusters supporting token-based authentication may define an expiration by\npassing a duration in seconds as a query parameter to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/kubeconfig?expiry_seconds=$DURATION_IN_SECONDS`.\nIf not set or 0, then the token will have a 7 day expiry. The query parameter\nhas no impact in certificate-based authentication.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesGetNodePool",
+      "name": "kubernetes.kubernetesGetNodePool",
+      "description": "To show information about a specific node pool in a Kubernetes cluster, send\na GET request to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools/$NODE_POOL_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesListAssociatedResources",
+      "name": "kubernetes.kubernetesListAssociatedResources",
+      "description": "To list the associated billable resources that can be destroyed along with a cluster, send a GET request to the `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/destroy_with_associated_resources` endpoint."
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesListClusters",
+      "name": "kubernetes.kubernetesListClusters",
+      "description": "To list all of the Kubernetes clusters on your account, send a GET request\nto `/v2/kubernetes/clusters`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesListNodePools",
+      "name": "kubernetes.kubernetesListNodePools",
+      "description": "To list all of the node pools in a Kubernetes clusters, send a GET request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesListOptions",
+      "name": "kubernetes.kubernetesListOptions",
+      "description": "To list the versions of Kubernetes available for use, the regions that support Kubernetes, and the available node sizes, send a GET request to `/v2/kubernetes/options`."
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesRecycleNodePool",
+      "name": "kubernetes.kubernetesRecycleNodePool",
+      "description": "The endpoint has been deprecated. Please use the DELETE\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools/$NODE_POOL_ID/nodes/$NODE_ID`\nmethod instead.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesRemoveRegistry",
+      "name": "kubernetes.kubernetesRemoveRegistry",
+      "description": "To remove the container registry from Kubernetes clusters, send a DELETE request to `/v2/kubernetes/registry`."
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesRunClusterLint",
+      "name": "kubernetes.kubernetesRunClusterLint",
+      "description": "Clusterlint helps operators conform to Kubernetes best practices around\nresources, security and reliability to avoid common problems while operating\nor upgrading the clusters.\n\nTo request a clusterlint run on your cluster, send a POST request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/clusterlint`. This will run all\nchecks present in the `doks` group by default, if a request body is not\nspecified. Optionally specify the below attributes.\n\nFor information about the available checks, please refer to\n[the clusterlint check documentation](https://github.com/digitalocean/clusterlint/blob/master/checks.md).\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesUpdateCluster",
+      "name": "kubernetes.kubernetesUpdateCluster",
+      "description": "To update a Kubernetes cluster, send a PUT request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID` and specify one or more of the\nattributes below.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesUpdateNodePool",
+      "name": "kubernetes.kubernetesUpdateNodePool",
+      "description": "To update the name of a node pool, edit the tags applied to it, or adjust its\nnumber of nodes, send a PUT request to\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/node_pools/$NODE_POOL_ID` with the\nfollowing attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.kubernetes.kubernetesUpgradeCluster",
+      "name": "kubernetes.kubernetesUpgradeCluster",
+      "description": "To immediately upgrade a Kubernetes cluster to a newer patch release of\nKubernetes, send a POST request to `/v2/kubernetes/clusters/$K8S_CLUSTER_ID/upgrade`.\nThe body of the request must specify a version attribute.\n\nAvailable upgrade versions for a cluster can be fetched from\n`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/upgrades`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersAddDroplets",
+      "name": "loadBalancers.loadBalancersAddDroplets",
+      "description": "To assign a Droplet to a load balancer instance, send a POST request to\n`/v2/load_balancers/$LOAD_BALANCER_ID/droplets`. In the body of the request,\nthere should be a `droplet_ids` attribute containing a list of Droplet IDs.\nIndividual Droplets can not be added to a load balancer configured with a\nDroplet tag. Attempting to do so will result in a \"422 Unprocessable Entity\"\nresponse from the API.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersAddForwardingRules",
+      "name": "loadBalancers.loadBalancersAddForwardingRules",
+      "description": "To add an additional forwarding rule to a load balancer instance, send a POST\nrequest to `/v2/load_balancers/$LOAD_BALANCER_ID/forwarding_rules`. In the body\nof the request, there should be a `forwarding_rules` attribute containing an\narray of rules to be added.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersCreate",
+      "name": "loadBalancers.loadBalancersCreate",
+      "description": "To create a new load balancer instance, send a POST request to\n`/v2/load_balancers`.\n\nYou can specify the Droplets that will sit behind the load balancer using one\nof two methods:\n\n* Set `droplet_ids` to a list of specific Droplet IDs.\n* Set `tag` to the name of a tag. All Droplets with this tag applied will be\n  assigned to the load balancer. Additional Droplets will be automatically\n  assigned as they are tagged.\n\nThese methods are mutually exclusive.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersDelete",
+      "name": "loadBalancers.loadBalancersDelete",
+      "description": "To delete a load balancer instance, disassociating any Droplets assigned to it\nand removing it from your account, send a DELETE request to\n`/v2/load_balancers/$LOAD_BALANCER_ID`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersGet",
+      "name": "loadBalancers.loadBalancersGet",
+      "description": "To show information about a load balancer instance, send a GET request to\n`/v2/load_balancers/$LOAD_BALANCER_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersList",
+      "name": "loadBalancers.loadBalancersList",
+      "description": "To list all of the load balancer instances on your account, send a GET request\nto `/v2/load_balancers`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersRemoveDroplets",
+      "name": "loadBalancers.loadBalancersRemoveDroplets",
+      "description": "To remove a Droplet from a load balancer instance, send a DELETE request to\n`/v2/load_balancers/$LOAD_BALANCER_ID/droplets`. In the body of the request,\nthere should be a `droplet_ids` attribute containing a list of Droplet IDs.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersRemoveForwardingRules",
+      "name": "loadBalancers.loadBalancersRemoveForwardingRules",
+      "description": "To remove forwarding rules from a load balancer instance, send a DELETE\nrequest to `/v2/load_balancers/$LOAD_BALANCER_ID/forwarding_rules`. In the\nbody of the request, there should be a `forwarding_rules` attribute containing\nan array of rules to be removed.\n\nNo response body will be sent back, but the response code will indicate\nsuccess. Specifically, the response code will be a 204, which means that the\naction was successful with no returned body data.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.loadBalancers.loadBalancersUpdate",
+      "name": "loadBalancers.loadBalancersUpdate",
+      "description": "To update a load balancer's settings, send a PUT request to\n`/v2/load_balancers/$LOAD_BALANCER_ID`. The request should contain a full\nrepresentation of the load balancer including existing attributes. It may\ncontain _one of_ the `droplets_ids` or `tag` attributes as they are mutually\nexclusive. **Note that any attribute that is not provided will be reset to its\ndefault value.**\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringCreateAlertPolicy",
+      "name": "monitoring.monitoringCreateAlertPolicy",
+      "description": "To create a new alert, send a POST request to `/v2/monitoring/alerts`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringDeleteAlertPolicy",
+      "name": "monitoring.monitoringDeleteAlertPolicy",
+      "description": "To delete an alert policy, send a DELETE request to `/v2/monitoring/alerts/{alert_uuid}`"
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetAlertPolicy",
+      "name": "monitoring.monitoringGetAlertPolicy",
+      "description": "To retrieve a given alert policy, send a GET request to `/v2/monitoring/alerts/{alert_uuid}`"
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletBandwidthMetrics",
+      "name": "monitoring.monitoringGetDropletBandwidthMetrics",
+      "description": "To retrieve bandwidth metrics for a given Droplet, send a GET request to `/v2/monitoring/metrics/droplet/bandwidth`. Use the `interface` query parameter to specify if the results should be for the `private` or `public` interface. Use the `direction` query parameter to specify if the results should be for `inbound` or `outbound` traffic."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletCpuMetrics",
+      "name": "monitoring.monitoringGetDropletCpuMetrics",
+      "description": "To retrieve CPU metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/cpu`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletFilesystemFreeMetrics",
+      "name": "monitoring.monitoringGetDropletFilesystemFreeMetrics",
+      "description": "To retrieve filesystem free metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/filesystem_free`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletFilesystemSizeMetrics",
+      "name": "monitoring.monitoringGetDropletFilesystemSizeMetrics",
+      "description": "To retrieve filesystem size metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/filesystem_size`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletLoad15Metrics",
+      "name": "monitoring.monitoringGetDropletLoad15Metrics",
+      "description": "To retrieve 15 minute load average metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/load_15`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletLoad1Metrics",
+      "name": "monitoring.monitoringGetDropletLoad1Metrics",
+      "description": "To retrieve 1 minute load average metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/load_1`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletLoad5Metrics",
+      "name": "monitoring.monitoringGetDropletLoad5Metrics",
+      "description": "To retrieve 5 minute load average metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/load_5`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletMemoryAvailableMetrics",
+      "name": "monitoring.monitoringGetDropletMemoryAvailableMetrics",
+      "description": "To retrieve available memory metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/memory_available`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletMemoryCachedMetrics",
+      "name": "monitoring.monitoringGetDropletMemoryCachedMetrics",
+      "description": "To retrieve cached memory metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/memory_cached`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletMemoryFreeMetrics",
+      "name": "monitoring.monitoringGetDropletMemoryFreeMetrics",
+      "description": "To retrieve free memory metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/memory_free`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringGetDropletMemoryTotalMetrics",
+      "name": "monitoring.monitoringGetDropletMemoryTotalMetrics",
+      "description": "To retrieve total memory metrics for a given droplet, send a GET request to `/v2/monitoring/metrics/droplet/memory_total`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringListAlertPolicy",
+      "name": "monitoring.monitoringListAlertPolicy",
+      "description": "Returns all alert policies that are configured for the given account. To List all alert policies, send a GET request to `/v2/monitoring/alerts`."
+    },
+    {
+      "id": "openapi_digitalocean_com.monitoring.monitoringUpdateAlertPolicy",
+      "name": "monitoring.monitoringUpdateAlertPolicy",
+      "description": "To update en existing policy, send a PUT request to `v2/monitoring/alerts/{alert_uuid}`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projectResources.projectsAssignResources",
+      "name": "projectResources.projectsAssignResources",
+      "description": "To assign resources to a project, send a POST request to `/v2/projects/$PROJECT_ID/resources`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projectResources.projectsAssignResourcesDefault",
+      "name": "projectResources.projectsAssignResourcesDefault",
+      "description": "To assign resources to your default project, send a POST request to `/v2/projects/default/resources`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projectResources.projectsListResources",
+      "name": "projectResources.projectsListResources",
+      "description": "To list all your resources in a project, send a GET request to `/v2/projects/$PROJECT_ID/resources`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projectResources.projectsListResourcesDefault",
+      "name": "projectResources.projectsListResourcesDefault",
+      "description": "To list all your resources in your default project, send a GET request to `/v2/projects/default/resources`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsCreate",
+      "name": "projects.projectsCreate",
+      "description": "To create a project, send a POST request to `/v2/projects`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsDelete",
+      "name": "projects.projectsDelete",
+      "description": "To delete a project, send a DELETE request to `/v2/projects/$PROJECT_ID`. To\nbe deleted, a project must not have any resources assigned to it. Any existing\nresources must first be reassigned or destroyed, or you will receive a 412 error.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsGet",
+      "name": "projects.projectsGet",
+      "description": "To get a project, send a GET request to `/v2/projects/$PROJECT_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsGetDefault",
+      "name": "projects.projectsGetDefault",
+      "description": "To get your default project, send a GET request to `/v2/projects/default`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsList",
+      "name": "projects.projectsList",
+      "description": "To list all your projects, send a GET request to `/v2/projects`."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsPatch",
+      "name": "projects.projectsPatch",
+      "description": "To update only specific attributes of a project, send a PATCH request to `/v2/projects/$PROJECT_ID`. At least one of the following attributes needs to be sent."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsPatchDefault",
+      "name": "projects.projectsPatchDefault",
+      "description": "To update only specific attributes of your default project, send a PATCH request to `/v2/projects/default`. At least one of the following attributes needs to be sent."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsUpdate",
+      "name": "projects.projectsUpdate",
+      "description": "To update a project, send a PUT request to `/v2/projects/$PROJECT_ID`. All of the following attributes must be sent."
+    },
+    {
+      "id": "openapi_digitalocean_com.projects.projectsUpdateDefault",
+      "name": "projects.projectsUpdateDefault",
+      "description": "To update you default project, send a PUT request to `/v2/projects/default`. All of the following attributes must be sent."
+    },
+    {
+      "id": "openapi_digitalocean_com.regions.regionsList",
+      "name": "regions.regionsList",
+      "description": "To list all of the regions that are available, send a GET request to `/v2/regions`.\nThe response will be a JSON object with a key called `regions`. The value of this will be an array of `region` objects, each of which will contain the standard region attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIpActions.reservedIPsActionsGet",
+      "name": "reservedIpActions.reservedIPsActionsGet",
+      "description": "To retrieve the status of a reserved IP action, send a GET request to `/v2/reserved_ips/$RESERVED_IP/actions/$ACTION_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIpActions.reservedIPsActionsList",
+      "name": "reservedIpActions.reservedIPsActionsList",
+      "description": "To retrieve all actions that have been executed on a reserved IP, send a GET request to `/v2/reserved_ips/$RESERVED_IP/actions`."
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIpActions.reservedIPsActionsPost",
+      "name": "reservedIpActions.reservedIPsActionsPost",
+      "description": "To initiate an action on a reserved IP send a POST request to\n`/v2/reserved_ips/$RESERVED_IP/actions`. In the JSON body to the request,\nset the `type` attribute to on of the supported action types:\n\n| Action     | Details\n|------------|--------\n| `assign`   | Assigns a reserved IP to a Droplet\n| `unassign` | Unassign a reserved IP from a Droplet\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIPs.reservedIPsCreate",
+      "name": "reservedIPs.reservedIPsCreate",
+      "description": "On creation, a reserved IP must be either assigned to a Droplet or reserved to a region.\n* To create a new reserved IP assigned to a Droplet, send a POST\n  request to `/v2/reserved_ips` with the `droplet_id` attribute.\n\n* To create a new reserved IP reserved to a region, send a POST request to\n  `/v2/reserved_ips` with the `region` attribute.\n\n**Note**:  In addition to the standard rate limiting, only 12 reserved IPs may be created per 60 seconds."
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIPs.reservedIPsDelete",
+      "name": "reservedIPs.reservedIPsDelete",
+      "description": "To delete a reserved IP and remove it from your account, send a DELETE request\nto `/v2/reserved_ips/$RESERVED_IP_ADDR`.\n\nA successful request will receive a 204 status code with no body in response.\nThis indicates that the request was processed successfully.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIPs.reservedIPsGet",
+      "name": "reservedIPs.reservedIPsGet",
+      "description": "To show information about a reserved IP, send a GET request to `/v2/reserved_ips/$RESERVED_IP_ADDR`."
+    },
+    {
+      "id": "openapi_digitalocean_com.reservedIPs.reservedIPsList",
+      "name": "reservedIPs.reservedIPsList",
+      "description": "To list all of the reserved IPs available on your account, send a GET request to `/v2/reserved_ips`."
+    },
+    {
+      "id": "openapi_digitalocean_com.sizes.sizesList",
+      "name": "sizes.sizesList",
+      "description": "To list all of available Droplet sizes, send a GET request to `/v2/sizes`.\nThe response will be a JSON object with a key called `sizes`. The value of this will be an array of `size` objects each of which contain the standard size attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.snapshots.snapshotsDelete",
+      "name": "snapshots.snapshotsDelete",
+      "description": "Both Droplet and volume snapshots are managed through the `/v2/snapshots/`\nendpoint. To delete a snapshot, send a DELETE request to\n`/v2/snapshots/$SNAPSHOT_ID`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.snapshots.snapshotsGet",
+      "name": "snapshots.snapshotsGet",
+      "description": "To retrieve information about a snapshot, send a GET request to\n`/v2/snapshots/$SNAPSHOT_ID`.\n\nThe response will be a JSON object with a key called `snapshot`. The value of\nthis will be an snapshot object containing the standard snapshot attributes.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.snapshots.snapshotsList",
+      "name": "snapshots.snapshotsList",
+      "description": "To list all of the snapshots available on your account, send a GET request to\n`/v2/snapshots`.\n\nThe response will be a JSON object with a key called `snapshots`. This will be\nset to an array of `snapshot` objects, each of which will contain the standard\nsnapshot attributes.\n\n### Filtering Results by Resource Type\n\nIt's possible to request filtered results by including certain query parameters.\n\n#### List Droplet Snapshots\n\nTo retrieve only snapshots based on Droplets, include the `resource_type`\nquery parameter set to `droplet`. For example, `/v2/snapshots?resource_type=droplet`.\n\n#### List Volume Snapshots\n\nTo retrieve only snapshots based on volumes, include the `resource_type`\nquery parameter set to `volume`. For example, `/v2/snapshots?resource_type=volume`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.sshKeys.sshKeysCreate",
+      "name": "sshKeys.sshKeysCreate",
+      "description": "To add a new SSH public key to your DigitalOcean account, send a POST request to `/v2/account/keys`. Set the `name` attribute to the name you wish to use and the `public_key` attribute to the full public key you are adding."
+    },
+    {
+      "id": "openapi_digitalocean_com.sshKeys.sshKeysDelete",
+      "name": "sshKeys.sshKeysDelete",
+      "description": "To destroy a public SSH key that you have in your account, send a DELETE request to `/v2/account/keys/$KEY_ID` or `/v2/account/keys/$KEY_FINGERPRINT`.\nA 204 status will be returned, indicating that the action was successful and that the response body is empty."
+    },
+    {
+      "id": "openapi_digitalocean_com.sshKeys.sshKeysGet",
+      "name": "sshKeys.sshKeysGet",
+      "description": "To get information about a key, send a GET request to `/v2/account/keys/$KEY_ID` or `/v2/account/keys/$KEY_FINGERPRINT`.\nThe response will be a JSON object with the key `ssh_key` and value an ssh_key object which contains the standard ssh_key attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.sshKeys.sshKeysList",
+      "name": "sshKeys.sshKeysList",
+      "description": "To list all of the keys in your account, send a GET request to `/v2/account/keys`. The response will be a JSON object with a key set to `ssh_keys`. The value of this will be an array of ssh_key objects, each of which contains the standard ssh_key attributes."
+    },
+    {
+      "id": "openapi_digitalocean_com.sshKeys.sshKeysUpdate",
+      "name": "sshKeys.sshKeysUpdate",
+      "description": "To update the name of an SSH key, send a PUT request to either `/v2/account/keys/$SSH_KEY_ID` or `/v2/account/keys/$SSH_KEY_FINGERPRINT`. Set the `name` attribute to the new name you want to use."
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsAssignResources",
+      "name": "tags.tagsAssignResources",
+      "description": "Resources can be tagged by sending a POST request to `/v2/tags/$TAG_NAME/resources` with an array of json objects containing `resource_id` and `resource_type` attributes.\nCurrently only tagging of Droplets, Databases, Images, Volumes, and Volume Snapshots is supported. `resource_type` is expected to be the string `droplet`, `database`, `image`, `volume` or `volume_snapshot`. `resource_id` is expected to be the ID of the resource as a string."
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsCreate",
+      "name": "tags.tagsCreate",
+      "description": "To create a tag you can send a POST request to `/v2/tags` with a `name` attribute."
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsDelete",
+      "name": "tags.tagsDelete",
+      "description": "A tag can be deleted by sending a `DELETE` request to `/v2/tags/$TAG_NAME`. Deleting a tag also untags all the resources that have previously been tagged by the Tag"
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsGet",
+      "name": "tags.tagsGet",
+      "description": "To retrieve an individual tag, you can send a `GET` request to `/v2/tags/$TAG_NAME`."
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsList",
+      "name": "tags.tagsList",
+      "description": "To list all of your tags, you can send a GET request to `/v2/tags`."
+    },
+    {
+      "id": "openapi_digitalocean_com.tags.tagsUnassignResources",
+      "name": "tags.tagsUnassignResources",
+      "description": "Resources can be untagged by sending a DELETE request to `/v2/tags/$TAG_NAME/resources` with an array of json objects containing `resource_id` and `resource_type` attributes.\nCurrently only untagging of Droplets, Databases, Images, Volumes, and Volume Snapshots is supported. `resource_type` is expected to be the string `droplet`, `database`, `image`, `volume` or `volume_snapshot`. `resource_id` is expected to be the ID of the resource as a string."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeAlertCreate",
+      "name": "uptime.uptimeAlertCreate",
+      "description": "To create an Uptime alert, send a POST request to `/v2/uptime/checks/$CHECK_ID/alerts` specifying the attributes\nin the table below in the JSON body.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeAlertDelete",
+      "name": "uptime.uptimeAlertDelete",
+      "description": "To delete an Uptime alert, send a DELETE request to `/v2/uptime/checks/$CHECK_ID/alerts/$ALERT_ID`. A 204 status\ncode with no body will be returned in response to a successful request.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeAlertGet",
+      "name": "uptime.uptimeAlertGet",
+      "description": "To show information about an existing alert, send a GET request to `/v2/uptime/checks/$CHECK_ID/alerts/$ALERT_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeAlertUpdate",
+      "name": "uptime.uptimeAlertUpdate",
+      "description": "To update the settings of an Uptime alert, send a PUT request to `/v2/uptime/checks/$CHECK_ID/alerts/$ALERT_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckAlertsList",
+      "name": "uptime.uptimeCheckAlertsList",
+      "description": "To list all of the alerts for an Uptime check, send a GET request to `/v2/uptime/checks/$CHECK_ID/alerts`."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckCreate",
+      "name": "uptime.uptimeCheckCreate",
+      "description": "To create an Uptime check, send a POST request to `/v2/uptime/checks` specifying the attributes\nin the table below in the JSON body.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckDelete",
+      "name": "uptime.uptimeCheckDelete",
+      "description": "To delete an Uptime check, send a DELETE request to `/v2/uptime/checks/$CHECK_ID`. A 204 status\ncode with no body will be returned in response to a successful request.\n\n\nDeleting a check will also delete alerts associated with the check.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckGet",
+      "name": "uptime.uptimeCheckGet",
+      "description": "To show information about an existing check, send a GET request to `/v2/uptime/checks/$CHECK_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeChecksList",
+      "name": "uptime.uptimeChecksList",
+      "description": "To list all of the Uptime checks on your account, send a GET request to `/v2/uptime/checks`."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckStateGet",
+      "name": "uptime.uptimeCheckStateGet",
+      "description": "To show information about an existing check's state, send a GET request to `/v2/uptime/checks/$CHECK_ID/state`."
+    },
+    {
+      "id": "openapi_digitalocean_com.uptime.uptimeCheckUpdate",
+      "name": "uptime.uptimeCheckUpdate",
+      "description": "To update the settings of an Uptime check, send a PUT request to `/v2/uptime/checks/$CHECK_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsCreate",
+      "name": "vpCs.vpcsCreate",
+      "description": "To create a VPC, send a POST request to `/v2/vpcs` specifying the attributes\nin the table below in the JSON body.\n\n**Note:** If you do not currently have a VPC network in a specific datacenter\nregion, the first one that you create will be set as the default for that\nregion. The default VPC for a region cannot be changed or deleted.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsDelete",
+      "name": "vpCs.vpcsDelete",
+      "description": "To delete a VPC, send a DELETE request to `/v2/vpcs/$VPC_ID`. A 204 status\ncode with no body will be returned in response to a successful request.\n\nThe default VPC for a region can not be deleted. Additionally, a VPC can only\nbe deleted if it does not contain any member resources. Attempting to delete\na region's default VPC or a VPC that still has members will result in a\n403 Forbidden error response.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsGet",
+      "name": "vpCs.vpcsGet",
+      "description": "To show information about an existing VPC, send a GET request to `/v2/vpcs/$VPC_ID`."
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsList",
+      "name": "vpCs.vpcsList",
+      "description": "To list all of the VPCs on your account, send a GET request to `/v2/vpcs`."
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsListMembers",
+      "name": "vpCs.vpcsListMembers",
+      "description": "To list all of the resources that are members of a VPC, send a GET request to\n`/v2/vpcs/$VPC_ID/members`.\n\nTo only list resources of a specific type that are members of the VPC,\nincluded a `resource_type` query parameter. For example, to only list Droplets\nin the VPC, send a GET request to `/v2/vpcs/$VPC_ID/members?resource_type=droplet`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsPatch",
+      "name": "vpCs.vpcsPatch",
+      "description": "To update a subset of information about a VPC, send a PATCH request to\n`/v2/vpcs/$VPC_ID`.\n"
+    },
+    {
+      "id": "openapi_digitalocean_com.vpCs.vpcsUpdate",
+      "name": "vpCs.vpcsUpdate",
+      "description": "To update information about a VPC, send a PUT request to `/v2/vpcs/$VPC_ID`.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

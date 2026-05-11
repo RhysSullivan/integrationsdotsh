@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:32.982Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_1_2_3_cook.display_recipe",
+      "name": "display-recipe",
+      "description": "Use to display a complete recipe inside an interactive cooking widget in the conversation. Call this tool when you have already produced, selected, or transformed a recipe and want the user to view it in a recipe-first interface instead of plain prose. The tool is ideal for requests such as “give me a recipe,” “show me a recipe for apple pie,” “format this recipe clearly,” or “turn that recipe into something easier to cook from.” The input must include the entire recipe in the required structured format. That means you should provide a title, serves count, preparation time, cooking time, a full ingredient list, and a full ordered instruction list. If cuisine or difficulty are known, include them. If useful extra notes exist, include them as notes.\n\nThis tool should not be used to invent a recipe structure after the fact from incomplete fragments unless you have enough information to produce a coherent full recipe. It should also not be used for general cooking advice, shopping lists without a recipe, menu suggestions, substitutions without a complete recipe context, or any response that would be better delivered as normal text. The widget is for presenting a concrete recipe object, not for performing reasoning or fetching outside information.\n\nWhen you call this tool, pass the recipe exactly as you want the user to see it. The tool will return the same recipe unchanged and instruct ChatGPT to open the recipe widget resource. The widget then handles recipe reading interactions such as section navigation, checklist tracking, unit conversion for supported units, and timer management. Because the tool output is deterministic and read-only, you should use it whenever the goal is clear recipe presentation rather than a side effect. In short: if the user would benefit from a structured, cook-along recipe card and you can provide the full recipe now, call this tool with the completed recipe object."
+    }
+  ]
+}

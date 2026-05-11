@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:21:52.271Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_draftkings.get_league_configurations_v1",
+      "name": "get_league_configurations_v1",
+      "description": "Returns all supported leagues and their available seasons with date ranges and status.\nUse this tool to discover which league abbreviations are supported (e.g., NFL, NBA, NHL, MLB)\nand which seasons are available for each league, including whether seasons are past, active, or upcoming.\nThis helps determine valid parameters for other tools and whether data exists for specific time periods."
+    },
+    {
+      "id": "mcp_draftkings.ping",
+      "name": "ping",
+      "description": "Returns current server time and status"
+    },
+    {
+      "id": "mcp_draftkings.search_games_v1",
+      "name": "search_games_v1",
+      "description": "Returns game scores and statistics (historic, live, and pre-live) for sports whose scheduled start time falls within the requested time range.\n\nUse the following relative-time definitions:\n- now/live: +-3 hours around the current moment\n- tonight/last night/this evening: 6pm-5am in the intended local timezone\n- today/yesterday/tomorrow: 12am-12am the next day in the intended local timezone\n- this morning: 2am-12pm in the intended local timezone\n- this afternoon: 12pm-6pm in the intended local timezone\n\nTime handling rules:\n- startLocalDateTime and endLocalDateTime must be ISO-8601 datetimes with explicit timezone information.\n- Use a reliable current-time source when interpreting relative-time queries that depend on the current moment.\n- Prefer platform-provided user local time/context when available for user-local natural-language queries.\n- Datetime / current instant: if platform current time is unavailable, use ping to get serverTime when server-authoritative current time is needed.\n- Timezone / local calendar context: if platform timezone/local context is unavailable, resolve timezone using the timezone resolution rules below.\n- The current-time source determines the current instant, while the chosen timezone determines the local calendar boundaries.\n- For past-looking queries, cap the range at the current moment so future scheduled games are excluded.\n- For future-looking queries, start the range at the current moment.\n- Do not use end-of-day as the upper bound for queries like \"last game\", \"latest game\", or \"most recent game\".\n- Do not default to raw UTC day or month boundaries unless the user explicitly asks for UTC.\n\nTimezone resolution rules:\n- Use the timezone explicitly provided by the user, if any.\n- Otherwise use platform-provided user local time/location context, if available.\n- Otherwise use a product-defined default timezone, if one exists.\n- Otherwise use the league-relevant default timezone as a fallback.\n- Do not infer the user's timezone from the referenced team, matchup, league, or city alone.\n\nCalendar-boundary rules:\n- Relative natural-language queries such as \"today\", \"yesterday\", \"tonight\", \"last night\", \"this morning\", \"this afternoon\", \"this week\", and \"this month\" use the resolved user/intended timezone.\n- Explicit sports-calendar queries such as \"games on March 1, 2026\", \"games in March 2026\", \"games during Week 1\", and \"games this season so far\" use the league-relevant default timezone unless the user explicitly specifies another timezone.\n- League timezone mapping: NFL, NBA, NHL, MLB -> America/New_York.\n\nOther prompt guidance:\n- \"last game\" / \"latest game\" / \"most recent game\": set endLocalDateTime to the current moment, set startLocalDateTime to a reasonable lookback window before that moment, use takeFrom='End', and prefer the most recent completed game rather than an upcoming game.\n- \"last X games\": set startLocalDateTime to 365 days ago (or a narrower reasonable lookback window), set endLocalDateTime to the current moment, use takeFrom='End', choose an appropriate limit, and prefer completed games when the user is asking for results that already happened.\n- \"next X games\" or \"when does team x play next\": set startLocalDateTime to the current moment, set endLocalDateTime to 365+ days ahead, use takeFrom='Start' (or omit), and limit to 1-3 results.\n- \"Show me games at x pm\": search for +-1 hour around that local time; still use local time with explicit timezone information.\n- \"games on March 1, 2026\": interpret the date boundary in the league-relevant default timezone, not UTC, unless the user explicitly requests UTC or another timezone.\n- \"first X games this month\": determine the month from the current moment in the intended local timezone, construct the month boundary in that timezone, cap endLocalDateTime at the current moment if querying the current month, and use takeFrom='Start'.\n- \"last X games this month\": determine the month from the current moment in the intended local timezone, construct the month boundary in that timezone, cap endLocalDateTime at the current moment if querying the current month, and use takeFrom='End'.\n\nKey principle:\n- The current-time source determines the current instant.\n- The chosen timezone determines calendar boundaries.\n- Relative natural-language phrasing uses the resolved user/intended timezone.\n- Explicit sports-calendar queries use the league-relevant default timezone unless the user specifies another timezone."
+    },
+    {
+      "id": "mcp_draftkings.get_current_season_team_statistics_v1",
+      "name": "get_current_season_team_statistics_v1",
+      "description": "Returns season level statistics for a single team for the current season.\nAnswers questions like:\n- How have the Dodgers been performing this season?\n- Show me the season stats for the Steelers so far.\n- Give me the Red Sox season stats.\n- Show me the team card for the Knicks."
+    },
+    {
+      "id": "mcp_draftkings.get_team_configurations_v1",
+      "name": "get_team_configurations_v1",
+      "description": "Returns all teams and their configurations including team abbreviations, names, and branding.\nUse this tool to discover which team abbreviations are valid for the search_games_v1 tool.\nEach team includes its abbreviation (e.g., 'BOS', 'NYY', 'LAL'), full name, team ID,\nprimary color, and logo URLs. Teams are organized by league for easy discovery.\nThis helps answer questions like 'What teams are in the NBA?' or 'What's the abbreviation for the Red Sox?'"
+    }
+  ]
+}

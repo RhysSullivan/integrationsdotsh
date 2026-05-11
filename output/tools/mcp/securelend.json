@@ -1,0 +1,117 @@
+{
+  "fetchedAt": "2026-04-30T15:20:32.973Z",
+  "status": "ok",
+  "count": 22,
+  "tools": [
+    {
+      "id": "mcp_securelend.compare_personal_loans",
+      "name": "compare_personal_loans",
+      "description": "Search SecureLend's lender database for personal loan offers matching the user's criteria (loan amount, purpose, credit score, state). Returns available rates, terms, monthly payment estimates, fees, and eligibility indicators from participating lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_business_loans",
+      "name": "compare_business_loans",
+      "description": "Search SecureLend's lender database for business loan offers matching the user's criteria (loan amount, purpose, industry, annual revenue, time in business). Returns available rates, terms, funding speed, and eligibility indicators from participating lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_personal_mortgages",
+      "name": "compare_personal_mortgages",
+      "description": "Search SecureLend's lender database for residential mortgage offers (purchase or refinance) matching the user's criteria (property value, loan amount, credit score, state, loan type). Returns available rates, terms, estimated monthly payments, and closing cost indicators from participating lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_business_mortgages",
+      "name": "compare_business_mortgages",
+      "description": "Search SecureLend's lender database for commercial mortgage offers (purchase or refinance) matching the user's criteria. Returns available rates, terms, and eligibility indicators from participating commercial lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.calculate_loan_payment",
+      "name": "calculate_loan_payment",
+      "description": "Calculates monthly payment, total interest, and total cost for any installment loan based on user-supplied principal, interest rate, and term. This tool performs a pure calculation using user inputs; it does not access external data, nor does it create, modify, or delete any records. Works for personal loans, business loans, auto loans, and student loans."
+    },
+    {
+      "id": "mcp_securelend.calculate_mortgage_payment",
+      "name": "calculate_mortgage_payment",
+      "description": "Calculates full PITI mortgage payment (Principal, Interest, Taxes, Insurance) based on user-supplied property value, down payment, interest rate, loan term, and optional tax/insurance figures. Pure calculation using user inputs — no external data is accessed."
+    },
+    {
+      "id": "mcp_securelend.compare_lease_vs_purchase",
+      "name": "compare_lease_vs_purchase",
+      "description": "Calculates and compares the total cost of leasing versus purchasing a vehicle over the same time period, based on user-supplied vehicle price, down payment, loan/lease terms, and residual value. Pure calculation using user inputs — no external data is accessed."
+    },
+    {
+      "id": "mcp_securelend.compare_business_credit_cards",
+      "name": "compare_business_credit_cards",
+      "description": "Search SecureLend’s product database for business credit cards matching the user’s criteria (optional credit score, optional annual revenue, optional business age). Returns a list of cards with issuer details, fees (e.g., annual fee), APR, credit limit information when available, and a summary of who each card is best for. Results may include SecureLend data and authorized partner integrations when enabled. This tool does not submit an application; if the user chooses to apply, they are directed to the issuer’s website."
+    },
+    {
+      "id": "mcp_securelend.compare_business_banking",
+      "name": "compare_business_banking",
+      "description": "Search SecureLend’s product database for business banking accounts matching the user’s criteria (optional industry, optional monthly transaction estimate). Returns available accounts with key features such as monthly fees, bonuses (if offered), APY/interest information when available, and a ‘best for’ summary. Results may include SecureLend data and authorized partner integrations when enabled. This tool does not open an account; if the user chooses to proceed, they are directed to the provider’s website."
+    },
+    {
+      "id": "mcp_securelend.compare_personal_banking",
+      "name": "compare_personal_banking",
+      "description": "Search SecureLend's lender database for personal banking accounts matching the user's desired features. Returns available accounts with fee structures, features, and eligibility indicators. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects an account and is directed to apply on the bank's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_savings_accounts",
+      "name": "compare_savings_accounts",
+      "description": "Search SecureLend's lender database for savings accounts matching the user's criteria (initial deposit amount, desired APY). Returns available accounts with rates, minimum balance requirements, and features. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects an account and is directed to apply on the bank's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_personal_credit_cards",
+      "name": "compare_personal_credit_cards",
+      "description": "Search SecureLend's lender database for personal credit card offers matching the user's criteria (credit score, preferred rewards type). Returns available cards with rates, fees, rewards structures, and eligibility indicators. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a card and is directed to apply on the issuer's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_car_loans",
+      "name": "compare_car_loans",
+      "description": "Search SecureLend's lender database for auto loan offers matching the user's criteria (loan amount, vehicle type, credit score, state). Returns available rates, terms, and eligibility indicators from participating lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.compare_student_loans",
+      "name": "compare_student_loans",
+      "description": "Search SecureLend's lender database for student loan offers matching the user's criteria (loan amount, degree type, credit score, enrollment status). Returns available rates, terms, deferment options, and eligibility indicators from participating lenders. Results may change over time and may include offers from SecureLend’s database and authorized third-party integrations when enabled. The user selects a lender and is directed to complete their application on the lender's own platform."
+    },
+    {
+      "id": "mcp_securelend.get_offer",
+      "name": "get_offer",
+      "description": "Records a loan enquiry in SecureLend's system and submits it to one selected lender on the user's behalf, after explicit user confirmation. The lender reviews the enquiry and, if interested, provides a quote. The user then completes their full application directly on the lender's own platform. This tool does not collect sensitive personal data such as social security numbers, bank account details, health information, or biometric data. Creates a persistent lead record in SecureLend's database."
+    },
+    {
+      "id": "mcp_securelend.get_multiple_offers",
+      "name": "get_multiple_offers",
+      "description": "Records a loan enquiry in SecureLend's system and submits it to multiple selected lenders on the user's behalf, after explicit user confirmation. Each lender independently reviews the enquiry and, if interested, provides a quote. The user reviews quotes and completes their chosen application directly on the lender's own platform. This tool does not collect sensitive personal data such as social security numbers, bank account details, health information, or biometric data. Creates a persistent lead record in SecureLend's database."
+    },
+    {
+      "id": "mcp_securelend.display_offer_form",
+      "name": "display_offer_form",
+      "description": "Retrieves a previously cached offer (by offerId or sessionId) and the original search inputs from SecureLend's internal cache so the user can review a pre-filled enquiry/application form before confirming submission. This tool only displays data and does not submit an enquiry."
+    },
+    {
+      "id": "mcp_securelend.track_offer_status",
+      "name": "track_offer_status",
+      "description": "Retrieves the current enquiry/application status stored in SecureLend's system by applicationId or applicant email. Status reflects what SecureLend has recorded (including any provider updates received previously) and is not guaranteed to represent real-time lender decisions."
+    },
+    {
+      "id": "mcp_securelend.display_prequalification_form",
+      "name": "display_prequalification_form",
+      "description": "Displays a form to collect application prefill data required to continue an enquiry. This tool only renders the form. When the user submits, the form calls submit_prequalification_details, which stores the data and may forward it to lender/partner APIs."
+    },
+    {
+      "id": "mcp_securelend.display_upload_documents_form",
+      "name": "display_upload_documents_form",
+      "description": "Displays an upload form for supporting documents. When submitted, the widget calls submit_documents to create a document record and obtain a presigned S3 upload configuration, then uploads the file directly from the user’s browser to SecureLend’s S3 storage."
+    },
+    {
+      "id": "mcp_securelend.submit_documents",
+      "name": "submit_documents",
+      "description": "Generates a secure presigned URL for uploading a document to SecureLend's document storage, and records the document metadata against the application in SecureLend's database. Creates a persistent document record. Called by the document upload widget after the user selects a file. This creates a persistent document record and enables upload to SecureLend storage."
+    },
+    {
+      "id": "mcp_securelend.submit_prequalification_details",
+      "name": "submit_prequalification_details",
+      "description": "Submits application prefill information for an existing enquiry to SecureLend's backend, which forwards it to the selected lender API(s). Covers standard prequalification data such as general financial profile, employment status, and business structure. IMPORTANT: consentsToFcra and consentsToTcpa must both be true (user must have explicitly agreed to the FCRA and TCPA disclosures) before this tool is called. This tool submits limited prequalification details for referral purposes only. It does not collect sensitive personal data or perform underwriting. If the user proceeds with a lender, the lender may later request additional information or perform credit checks on its own platform."
+    }
+  ]
+}

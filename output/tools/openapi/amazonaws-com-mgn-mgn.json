@@ -1,0 +1,322 @@
+{
+  "fetchedAt": "2026-04-30T15:45:06.674Z",
+  "status": "ok",
+  "count": 63,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.archiveApplication.postOperation",
+      "name": "archiveApplication.postOperation",
+      "description": "Archive application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.archiveWave.postOperation",
+      "name": "archiveWave.postOperation",
+      "description": "Archive wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.associateApplications.postOperation",
+      "name": "associateApplications.postOperation",
+      "description": "Associate applications to wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.associateSourceServers.postOperation",
+      "name": "associateSourceServers.postOperation",
+      "description": "Associate source servers to application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.changeServerLifeCycleState.postOperation",
+      "name": "changeServerLifeCycleState.postOperation",
+      "description": "Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)"
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.createApplication.postOperation",
+      "name": "createApplication.postOperation",
+      "description": "Create application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.createLaunchConfigurationTemplate.postOperation",
+      "name": "createLaunchConfigurationTemplate.postOperation",
+      "description": "Creates a new Launch Configuration Template."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.createReplicationConfigurationTemplate.postOperation",
+      "name": "createReplicationConfigurationTemplate.postOperation",
+      "description": "Creates a new ReplicationConfigurationTemplate."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.createWave.postOperation",
+      "name": "createWave.postOperation",
+      "description": "Create wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteApplication.postOperation",
+      "name": "deleteApplication.postOperation",
+      "description": "Delete application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteJob.postOperation",
+      "name": "deleteJob.postOperation",
+      "description": "Deletes a single Job by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteLaunchConfigurationTemplate.postOperation",
+      "name": "deleteLaunchConfigurationTemplate.postOperation",
+      "description": "Deletes a single Launch Configuration Template by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteReplicationConfigurationTemplate.postOperation",
+      "name": "deleteReplicationConfigurationTemplate.postOperation",
+      "description": "Deletes a single Replication Configuration Template by ID"
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteSourceServer.postOperation",
+      "name": "deleteSourceServer.postOperation",
+      "description": "Deletes a single source server by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteVcenterClient.postOperation",
+      "name": "deleteVcenterClient.postOperation",
+      "description": "Deletes a given vCenter client by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.deleteWave.postOperation",
+      "name": "deleteWave.postOperation",
+      "description": "Delete wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeJobLogItems.postOperation",
+      "name": "describeJobLogItems.postOperation",
+      "description": "Retrieves detailed job log items with paging."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeJobs.postOperation",
+      "name": "describeJobs.postOperation",
+      "description": "Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeLaunchConfigurationTemplates.postOperation",
+      "name": "describeLaunchConfigurationTemplates.postOperation",
+      "description": "Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs"
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeReplicationConfigurationTemplates.postOperation",
+      "name": "describeReplicationConfigurationTemplates.postOperation",
+      "description": "Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeSourceServers.postOperation",
+      "name": "describeSourceServers.postOperation",
+      "description": "Retrieves all SourceServers or multiple SourceServers by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.describeVcenterClients.getOperation",
+      "name": "describeVcenterClients.getOperation",
+      "description": "Returns a list of the installed vCenter clients."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.disassociateApplications.postOperation",
+      "name": "disassociateApplications.postOperation",
+      "description": "Disassociate applications from wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.disassociateSourceServers.postOperation",
+      "name": "disassociateSourceServers.postOperation",
+      "description": "Disassociate source servers from application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.disconnectFromService.postOperation",
+      "name": "disconnectFromService.postOperation",
+      "description": "Disconnects specific Source Servers from Application Migration Service. Data replication is stopped immediately. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the agent on the source server has not been prevented from communicating with the Application Migration Service service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.finalizeCutover.postOperation",
+      "name": "finalizeCutover.postOperation",
+      "description": "Finalizes the cutover immediately for specific Source Servers. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. The AWS Replication Agent will receive a command to uninstall itself (within 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.getLaunchConfiguration.postOperation",
+      "name": "getLaunchConfiguration.postOperation",
+      "description": "Lists all LaunchConfigurations available, filtered by Source Server IDs."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.getReplicationConfiguration.postOperation",
+      "name": "getReplicationConfiguration.postOperation",
+      "description": "Lists all ReplicationConfigurations, filtered by Source Server ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.initializeService.postOperation",
+      "name": "initializeService.postOperation",
+      "description": "Initialize Application Migration Service."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listApplications.postOperation",
+      "name": "listApplications.postOperation",
+      "description": "Retrieves all applications or multiple applications by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listExportErrors.postOperation",
+      "name": "listExportErrors.postOperation",
+      "description": "List export errors."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listExports.postOperation",
+      "name": "listExports.postOperation",
+      "description": "List exports."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listImportErrors.postOperation",
+      "name": "listImportErrors.postOperation",
+      "description": "List import errors."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listImports.postOperation",
+      "name": "listImports.postOperation",
+      "description": "List imports."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listSourceServerActions.postOperation",
+      "name": "listSourceServerActions.postOperation",
+      "description": "List source server post migration custom actions."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listTemplateActions.postOperation",
+      "name": "listTemplateActions.postOperation",
+      "description": "List template post migration custom actions."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.listWaves.postOperation",
+      "name": "listWaves.postOperation",
+      "description": "Retrieves all waves or multiple waves by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.markAsArchived.postOperation",
+      "name": "markAsArchived.postOperation",
+      "description": "Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED or CUTOVER."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.putSourceServerAction.postOperation",
+      "name": "putSourceServerAction.postOperation",
+      "description": "Put source server post migration custom action."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.putTemplateAction.postOperation",
+      "name": "putTemplateAction.postOperation",
+      "description": "Put template post migration custom action."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.removeSourceServerAction.postOperation",
+      "name": "removeSourceServerAction.postOperation",
+      "description": "Remove source server post migration custom action."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.removeTemplateAction.postOperation",
+      "name": "removeTemplateAction.postOperation",
+      "description": "Remove template post migration custom action."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.retryDataReplication.postOperation",
+      "name": "retryDataReplication.postOperation",
+      "description": "Causes the data replication initiation sequence to begin immediately upon next Handshake for specified SourceServer IDs, regardless of when the previous initiation started. This command will not work if the SourceServer is not stalled or is in a DISCONNECTED or STOPPED state."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.startCutover.postOperation",
+      "name": "startCutover.postOperation",
+      "description": "Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state property to CUTTING_OVER."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.startExport.postOperation",
+      "name": "startExport.postOperation",
+      "description": "Start export."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.startImport.postOperation",
+      "name": "startImport.postOperation",
+      "description": "Start import."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.startReplication.postOperation",
+      "name": "startReplication.postOperation",
+      "description": "Starts replication for SNAPSHOT_SHIPPING agents."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.startTest.postOperation",
+      "name": "startTest.postOperation",
+      "description": "Launches a Test Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state property to TESTING."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "List all tags for your Application Migration Service resources."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Deletes the specified set of tags from the specified set of Application Migration Service resources."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.terminateTargetInstances.postOperation",
+      "name": "terminateTargetInstances.postOperation",
+      "description": "Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.unarchiveApplication.postOperation",
+      "name": "unarchiveApplication.postOperation",
+      "description": "Unarchive application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.unarchiveWave.postOperation",
+      "name": "unarchiveWave.postOperation",
+      "description": "Unarchive wave."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateApplication.postOperation",
+      "name": "updateApplication.postOperation",
+      "description": "Update application."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateLaunchConfiguration.postOperation",
+      "name": "updateLaunchConfiguration.postOperation",
+      "description": "Updates multiple LaunchConfigurations by Source Server ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateLaunchConfigurationTemplate.postOperation",
+      "name": "updateLaunchConfigurationTemplate.postOperation",
+      "description": "Updates an existing Launch Configuration Template by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateReplicationConfiguration.postOperation",
+      "name": "updateReplicationConfiguration.postOperation",
+      "description": "Allows you to update multiple ReplicationConfigurations by Source Server ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateReplicationConfigurationTemplate.postOperation",
+      "name": "updateReplicationConfigurationTemplate.postOperation",
+      "description": "Updates multiple ReplicationConfigurationTemplates by ID."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateSourceServerReplicationType.postOperation",
+      "name": "updateSourceServerReplicationType.postOperation",
+      "description": "Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type."
+    },
+    {
+      "id": "openapi_amazonaws_com_mgn_mgn.updateWave.postOperation",
+      "name": "updateWave.postOperation",
+      "description": "Update wave."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

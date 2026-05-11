@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:19:52.205Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_icd_10_codes.lookup_code",
+      "name": "lookup_code",
+      "description": "Look up a specific ICD-10 code by its code number. Returns full details including descriptions and HIPAA transaction validity status. Use this for exact code lookups when you have the complete code."
+    },
+    {
+      "id": "mcp_icd_10_codes.search_codes",
+      "name": "search_codes",
+      "description": "Search ICD-10-CM diagnosis and ICD-10-PCS procedure codes. Unified tool that supports searching by code or description. Use this for all ICD-10 search needs."
+    },
+    {
+      "id": "mcp_icd_10_codes.validate_code",
+      "name": "validate_code",
+      "description": "Validate an ICD-10 code to check if it exists and is valid for HIPAA-covered transactions. Returns detailed validation status including whether the code is valid for HIPAA transactions or just a category header."
+    },
+    {
+      "id": "mcp_icd_10_codes.get_hierarchy",
+      "name": "get_hierarchy",
+      "description": "Get the full hierarchy of codes under a category. Returns the category header and all child codes. Use this to explore related codes within a disease category or code family."
+    },
+    {
+      "id": "mcp_icd_10_codes.get_by_category",
+      "name": "get_by_category",
+      "description": "Get diagnosis codes by ICD-10-CM chapter or category. Use chapter (single letter) for broad categories or category (3 characters) for specific disease groups. Useful for exploring codes within a clinical area."
+    },
+    {
+      "id": "mcp_icd_10_codes.get_by_body_system",
+      "name": "get_by_body_system",
+      "description": "Get ICD-10-PCS procedure codes for a specific body system, optionally filtered by section. Body system is identified by the second character of the code for most sections (fourth character for Section F). Example: '0' for Central Nervous System (Section 0), '0' for Neurological System (Section F). Useful for finding all procedures related to an anatomical system."
+    }
+  ]
+}

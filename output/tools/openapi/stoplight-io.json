@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:26:48.841Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "openapi_stoplight_io.versions.getVersionsVersionIdExportFormat",
+      "name": "versions.getVersionsVersionIdExportFormat",
+      "description": "Export a version to your choice of API specification.\n\n### Allowed Formats:\n\n- oas.json\n- oas.yaml\n- raml08.yaml\n- raml10.yaml\n- stoplight.json\n- stoplight.yaml\n\nThe stoplight format actually returns OAS (Swagger 2) with x-stoplight annotations. If you are exporting with the intent on importing back into Stoplight, this export format preserves the most information.\n\n### Example URL:\n\n`https://api.stoplight.io/v1/versions/123/export/oas.json`"
+    },
+    {
+      "id": "openapi_stoplight_io.versions.postVersionsPublishAnon",
+      "name": "versions.postVersionsPublishAnon",
+      "description": "Anonymously publish to API Docs.\n\nThis endpoint will take a JSON spec or a URL to a swagger or raml spec.\n\n```\n{\n  \"specData\": {...}\n}\n```\n\nor\n\n```\n{\n  \"url\": \"http://petstore.swagger.io/v2/swagger.json\"\n}\n```\n\nThe spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.\n\nThe response will contain a url to the published documentation.\n\n```\n{\n  \"url\": \"https://swagger-petstore.api-docs.io/v1.0.0\"\n}\n```\n\n\nThe limitations of anonymous publishing\n* Cannot update/remove the documentation\n* Cannot choose the subdomain\n* Cannot choose the version\n* Cannot add theming"
+    },
+    {
+      "id": "openapi_stoplight_io.versions.postVersionsVersionIdPublish",
+      "name": "versions.postVersionsVersionIdPublish",
+      "description": "Re-publish an API version in Stoplight. This will re-publish the given API version, with whatever publish settings have already been setup in the app.\n\nThis will only work with APIs that have previously been published at least once.\n\nThis works well with the #endpoint:957qEfc97BB5XGAeZ endpoint to augment your continuous integration processes, and automatically re-publish your documentation when certain events happen. Once such scenario is:\n\n1. Swagger is generated from your codebase, and pushed up to Github.\n2. A simple script that you write sends a request to the Stoplight API to import the new specification, passing in the URL to the swagger file on Github.\n3. After the import succeeds, and your API in Stoplight is up to date, the script sends a request to the Stoplight API (this endpoint) to re-publish your documentation."
+    },
+    {
+      "id": "openapi_stoplight_io.versions.putVersionsVersionIdImport",
+      "name": "versions.putVersionsVersionIdImport",
+      "description": "Import the given specification into an existing version. \n\n**Warning, this is a destructive action! Any resources present in both the existing version, and the specification being imported, will be overwritten.**\n\nThis endpoint is particularly useful when you manage a specification file (Swagger or RAML) outside of Stoplight, and want to keep your Stoplight API version up to date as that specification changes.\n\nBy default, a \"merge\" is performed when importing. If a resource exists in the specification that you are importing, and in the Stoplight API, the resource will be overwritten. If a resource exists in the Stoplight API, but not in the spefication that you are importing, the resource will be left alone (and not deleted).\n\nYou can include an optional `options` property in the request body, to indicate if you would like to perform more of a replacement (instead of a merge). The options are documented in full in the response definition below these notes.\n\nTake this request + request body for example:\n\n`PUT https://api.stoplight.io/v1/versions/123/import`\n```json\n{\n  \"url\": \"http://petstore.swagger.io/v2/swagger.json\",\n  \"options\": {\n    \"removeExtraEndpoints\": true,\n    \"removeExtraSchemas\": true\n  }\n}\n```\n\nThis request will grab the swagger specification described at `http://petstore.swagger.io/v2/swagger.json`, and import it into the Stoplight API version with id `123`. Additionally, it will delete any existing endpoints or models that are not described in the petstore swagger being imported.\n\nInstead of a URL, you can provide the actual specification to be imported, either as a string (in the case of YAML) or an object (in the case of JSON). That request would look something like this:\n\n`PUT https://api.stoplight.io/v1/versions/123/import`\n```json\n{\n  \"specData\": {\n    \"swagger\": \"2.0\",\n    \"info\": {}\n    ... rest of spec\n  }\n}\n```"
+    },
+    {
+      "id": "openapi_stoplight_io.versions.putVersionsVersionIdUnpublish",
+      "name": "versions.putVersionsVersionIdUnpublish",
+      "description": "Unpublish the documentation associated with the given API version."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

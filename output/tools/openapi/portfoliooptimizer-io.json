@@ -1,0 +1,432 @@
+{
+  "fetchedAt": "2026-04-30T15:26:43.446Z",
+  "status": "ok",
+  "count": 85,
+  "tools": [
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsAnalysis.postAssetsAnalysisAbsorptionRatio",
+      "name": "assetsAnalysis.postAssetsAnalysisAbsorptionRatio",
+      "description": "Compute the absorption ratio associated to a universe of assets.\n\nReferences\n* [Mark Kritzman, Yuanzhen Li, Sebastien Page and Roberto Rigobon, Principal Components as a Measure of Systemic Risk, The Journal of Portfolio Management Summer 2011, 37 (4) 112-126](https://jpm.pm-research.com/content/37/4/112)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsAnalysis.postAssetsAnalysisTurbulenceIndex",
+      "name": "assetsAnalysis.postAssetsAnalysisTurbulenceIndex",
+      "description": "Compute the turbulence index associated to a universe of assets.\n\nReferences\n* [M. Kritzman, Y. Li, Skulls, Financial Turbulence, and Risk Management,Financial Analysts Journal, Volume 66, Number 5, Pages 30-41, Year 2010](https://www.tandfonline.com/doi/abs/10.2469/faj.v66.n5.3)\n* [Kinlaw, W., Turkington, D. Correlation surprise. J Asset Manag 14, 385–399 (2013)](https://link.springer.com/article/10.1057/jam.2013.27)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrix",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrix",
+      "description": "Compute the Pearson asset correlation matrix from either:  \n* The asset returns\n* The asset covariance matrix\n\nReferences\n* [Wikipedia, Correlation and Dependence](https://en.wikipedia.org/wiki/Correlation_and_dependence#Correlation_matrices)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixBounds",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixBounds",
+      "description": "Compute the lower bounds and the upper bounds of an asset correlation matrix associated to a given group of assets.\n \n References\n * [Kawee Numpacharoen & Kornkanok Bunwong (2013) Boundaries of Correlation Adjustment with Applications to Financial Risk Management, Applied Mathematical Finance, 20:4, 403-414](http://dx.doi.org/10.1080/1350486X.2012.723517).\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixDenoised",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixDenoised",
+      "description": "Compute a denoised asset correlation matrix, using one of the following methods:\n * The eigenvalues clipping method, described in the first reference, which is based on random matrix theory\n \n References\n * [Laurent Laloux, Pierre Cizeau, Jean-Philippe Bouchaud, and Marc Potters, Noise Dressing of Financial Correlation Matrices, Phys. Rev. Lett. 83, 1467](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.83.1467)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixDistance",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixDistance",
+      "description": "Compute the distance between an asset correlation matrix and a reference correlation matrix, using one of the following distance metrics:\n* Euclidean distance (default), which is the distance induced by [the Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)\n* Correlation matrix distance, defined in the first reference, which corresponds to [the cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity) between the two vectorized asset correlation matrices\n* Bures distance, defined in the second reference\n\n References\n * [M. Herdin, N. Czink, H. Ozcelik and E. Bonek, Correlation matrix distance, a meaningful measure for evaluation of non-stationary MIMO channels, 2005 IEEE 61st Vehicular Technology Conference, 2005, pp. 136-140 Vol. 1](https://ieeexplore.ieee.org/document/1543265)\n * [Rajendra Bhatia, Tanvi Jain, Yongdo Lim, On the Bures–Wasserstein distance between positive definite matrices, Expositiones Mathematicae, Volume 37, Issue 2, 2019](https://www.sciencedirect.com/science/article/pii/S0723086918300021)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixEffectiveRank",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixEffectiveRank",
+      "description": "Compute the effective rank of an asset correlation matrix.\n\nReferences\n* [Olivier Roy and Martin Vetterli, The effective rank: A measure of effective dimensionality, 15th European Signal Processing Conference, 2007](https://ieeexplore.ieee.org/document/7098875)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixInformativeness",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixInformativeness",
+      "description": "Compute the informativeness of an asset correlation matrix, using one of the following distance metrics:\n* Euclidean distance (default), which is the distance induced by [the Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)\n* Correlation matrix distance, defined in the second reference, which corresponds to [the cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity) between the two vectorized asset correlation matrices\n* Bures distance, defined in the third reference\n\n References\n * [Austin J. Brockmeier and Tingting Mu and Sophia Ananiadou and John Y. Goulermas, Quantifying the Informativeness of Similarity Measurements, Journal of Machine Learning Research, 2017](http://jmlr.org/papers/v18/16-296.html)\n * [M. Herdin, N. Czink, H. Ozcelik and E. Bonek, Correlation matrix distance, a meaningful measure for evaluation of non-stationary MIMO channels, 2005 IEEE 61st Vehicular Technology Conference, 2005, pp. 136-140 Vol. 1](https://ieeexplore.ieee.org/document/1543265)\n * [Rajendra Bhatia, Tanvi Jain, Yongdo Lim, On the Bures–Wasserstein distance between positive definite matrices, Expositiones Mathematicae, Volume 37, Issue 2, 2019](https://www.sciencedirect.com/science/article/pii/S0723086918300021)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixNearest",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixNearest",
+      "description": "Compute the _closest_ - in terms of [the Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm) - asset correlation matrix to an approximate asset correlation matrix, optionally keeping a selected number of correlations fixed.\n\nReferences\n* [Nicholas J. Higham, Computing the Nearest Correlation Matrix—A Problem from Finance, IMA J. Numer. Anal. 22, 329–343, 2002.](http://www.maths.manchester.ac.uk/~higham/narep/narep369.pdf)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixRandom",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixRandom",
+      "description": "Generate an asset correlation matrix uniformly at random over the space of positive definite correlation matrices.\n\nReferences\n* [Joe, H., Generating random correlation matrices based on partial correlations. Journal of Multivariate Analysis, 2006, 97, 2177-2189](https://www.sciencedirect.com/science/article/pii/S0047259X05000886)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixShrinkage",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixShrinkage",
+      "description": "Compute an asset correlation matrix as a convex linear combination of an asset correlation matrix and a target correlation matrix, the target correlation matrix being either:  \n * An equicorrelation matrix made of 1\n * An equicorrelation matrix made of 0\n * An equicorrelation matrix made of -1/(n-1), with n the number of assets\n * A provided correlation matrix\n \n References\n * [Steiner, Andreas, Manipulating Valid Correlation Matrices](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1878165)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixTheoryImplied",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixTheoryImplied",
+      "description": "Compute the theory-implied asset correlation matrix associated with:\n* A hierarchical classification of a universe of assets\n* An asset correlation matrix\n\nReferences\n* [Lopez de Prado, Marcos Estimation of Theory-Implied Correlation Matrices (November 9, 2019)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3484152)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCorrelationMatrix.postAssetsCorrelationMatrixValidation",
+      "name": "assetsCorrelationMatrix.postAssetsCorrelationMatrixValidation",
+      "description": "Validate whether a matrix is an asset correlation matrix.\n\nReferences\n* [Wikipedia, Correlation and Dependence](https://en.wikipedia.org/wiki/Correlation_and_dependence#Correlation_matrices)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCovarianceMatrix.postAssetsCovarianceMatrix",
+      "name": "assetsCovarianceMatrix.postAssetsCovarianceMatrix",
+      "description": "Compute the covariance matrix of assets from either:  \n* The asset correlation matrix and their volatilities (i.e., standard deviations)\n* The asset correlation matrix and their variances\n* The asset returns\n\nReferences\n* [Wikipedia, Covariance Matrix](https://en.wikipedia.org/wiki/Covariance_matrix)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCovarianceMatrix.postAssetsCovarianceMatrixEffectiveRank",
+      "name": "assetsCovarianceMatrix.postAssetsCovarianceMatrixEffectiveRank",
+      "description": "Compute the effective rank of an asset covariance matrix.\n\nReferences\n* [Olivier Roy and Martin Vetterli, The effective rank: A measure of effective dimensionality, 15th European Signal Processing Conference, 2007](https://ieeexplore.ieee.org/document/7098875)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCovarianceMatrix.postAssetsCovarianceMatrixExponentiallyWeighted",
+      "name": "assetsCovarianceMatrix.postAssetsCovarianceMatrixExponentiallyWeighted",
+      "description": "Compute an exponentially weighted covariance matrix of assets returns.\n\nReferences\n* [RiskMetrics Group. Longerstaey, J. (1996). RiskMetrics technical document, Technical Report fourth edition](https://www.msci.com/documents/10199/5915b101-4206-4ba0-aee2-3449d5c7e95a)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsCovarianceMatrix.postAssetsCovarianceMatrixValidation",
+      "name": "assetsCovarianceMatrix.postAssetsCovarianceMatrixValidation",
+      "description": "Validate whether a matrix is a covariance matrix.\n\nReferences\n* [Wikipedia, Covariance Matrix](https://en.wikipedia.org/wiki/Covariance_matrix)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsKurtosis.postAssetsKurtosis",
+      "name": "assetsKurtosis.postAssetsKurtosis",
+      "description": "Compute the kurtosis of one or several asset(s), from the asset returns.\n\nReferences\n* [Wikipedia, Kurtosis](https://en.wikipedia.org/wiki/Kurtosis)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsPrices.postAssetsPricesAdjusted",
+      "name": "assetsPrices.postAssetsPricesAdjusted",
+      "description": "Compute the backward-adjusted prices of one or several asset(s) for one or several date(s) from:\n* Unadjusted prices\n* Capital distributions, like stock dividends\n* Splits, like stock splits\n\nThe adjustment base date is chosen to be the last date for which unadjusted prices are available, which implies that:\n* The price on the last date for which unadjusted prices are available is left unadjusted\n* The price on any other date is adjusted based on the capital distributions and the splits which occurred between this date and the last date for which unadjusted prices are available\n\nReferences\n* [Center for Research in Security Prices](https://www.crsp.org/products/documentation/crsp-calculations)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsPrices.postAssetsPricesAdjustedForward",
+      "name": "assetsPrices.postAssetsPricesAdjustedForward",
+      "description": "Compute the forward-adjusted prices of one or several asset(s) for one or several date(s) from:\n* Unadjusted prices\n* Capital distributions, like stock dividends\n* Splits, like stock splits\n\nThe adjustment base date is chosen to be the first date for which unadjusted prices are available, which implies that:\n* The price on the first date for which unadjusted prices are available is left unadjusted\n* The price on any other date is adjusted based on the capital distributions and the splits which occurred between this date and the first date for which unadjusted prices are available\n\nReferences\n* [Center for Research in Security Prices](https://www.crsp.org/products/documentation/crsp-calculations)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsReturns.postAssetsReturns",
+      "name": "assetsReturns.postAssetsReturns",
+      "description": "Compute the arithmetic return(s) of one or several asset(s) for one or several time period(s).\n\nReferences\n* [Wikipedia, Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return#Return)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsReturns.postAssetsReturnsAverage",
+      "name": "assetsReturns.postAssetsReturnsAverage",
+      "description": "Compute the arithmetic average of the return(s) of one or several asset(s).\n\nReferences\n* [Wikipedia, Arithmetic Average Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return#Arithmetic_average_rate_of_return)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsReturnsSimulation.postAssetsReturnsSimulationBootstrap",
+      "name": "assetsReturnsSimulation.postAssetsReturnsSimulationBootstrap",
+      "description": "Simulate the return(s) of one or several asset(s) for one or several time period(s) using a bootstrap method.\n\nReferences\n* [Efron, B. (1979), Bootstrap methods: Another look at the jackknife, The Annals of Statistics 7, 1-26](https://projecteuclid.org/journals/annals-of-statistics/volume-7/issue-1/Bootstrap-Methods-Another-Look-at-the-Jackknife/10.1214/aos/1176344552.full)\n* [Politis, D. N. and Romano, J. P., A circular block resampling procedure for stationary data, in R. Lepage and L. Billard, eds, Exploring the Limits of Bootstrap, Wiley, New York, pp. 263-270](https://statistics.stanford.edu/technical-reports/circular-block-resampling-procedure-stationary-data)\n* [Politis, D. N. and Romano, J. P., The stationary bootstrap, Journal of the American Statistical Association 89, 1303-1313](https://www.jstor.org/stable/2290993)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsSkewness.postAssetsSkewness",
+      "name": "assetsSkewness.postAssetsSkewness",
+      "description": "Compute the skewness of one or several asset(s), from the asset returns.\n\nReferences\n* [Wikipedia, Skewness](https://en.wikipedia.org/wiki/Skewness)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsVariance.postAssetsVariance",
+      "name": "assetsVariance.postAssetsVariance",
+      "description": "Compute the variance of one or several asset(s) from either:  \n* The asset returns\n* The asset covariance matrix\n* The asset volatility(ies)\n\nReferences\n* [Wikipedia, Variance](https://en.wikipedia.org/wiki/Variance)        \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.assetsVolatility.postAssetsVolatility",
+      "name": "assetsVolatility.postAssetsVolatility",
+      "description": "Compute the volatility (i.e., standard deviation) of one or several asset(s) from either:  \n* The asset returns\n* The asset covariance matrix\n* The asset variance(s)\n\nReferences\n* [Wikipedia, Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.factors.postFactorsResidualization",
+      "name": "factors.postFactorsResidualization",
+      "description": "Compute the residuals of a factor against a set of factors, using a returns-based linear regression analysis.\n\nReferences\n* [Factor Research, Factor Exposure Analysis: Exploring Residualization](https://insights.factorresearch.com/research-factor-exposure-analysis-exploring-residualization/)\n* [Catalina B. Garcia, Román Salmeron, Claudia Garcia & Jose Garcia (2019): Residualization: justification, properties and application, Journal of Applied Statistics](https://doi.org/10.1080/02664763.2019.1701638)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisAlpha",
+      "name": "portfolioAnalysis.postPortfolioAnalysisAlpha",
+      "description": "Compute the Jensen’s alpha of one or several portfolio(s) in the Capital Asset Pricing Model (CAPM).\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution  \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisBeta",
+      "name": "portfolioAnalysis.postPortfolioAnalysisBeta",
+      "description": "Compute the beta of one or several portfolio(s) in the Capital Asset Pricing Model (CAPM).\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution  \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisConditionalValueAtRisk",
+      "name": "portfolioAnalysis.postPortfolioAnalysisConditionalValueAtRisk",
+      "description": "Compute the conditional value at risk of one or several portfolio(s) from portfolio values.\n\nReferences\n* [Wikipedia, Value at risk](https://en.wikipedia.org/wiki/Value_at_risk)\n* [Acerbi, C. and Tasche, D. (2002), Expected Shortfall: A Natural Coherent Alternative to Value at Risk. Economic Notes, 31: 379-388](https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0300.00091)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisContributionsReturn",
+      "name": "portfolioAnalysis.postPortfolioAnalysisContributionsReturn",
+      "description": "Perform a return contribution analysis of one or several portfolio(s), optionally using groups of assets.\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisContributionsRisk",
+      "name": "portfolioAnalysis.postPortfolioAnalysisContributionsRisk",
+      "description": "Perform a risk contribution analysis of one or several portfolio(s), optionally using groups of assets.\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisCorrelationSpectrum",
+      "name": "portfolioAnalysis.postPortfolioAnalysisCorrelationSpectrum",
+      "description": "Compute the correlation spectrum of one or several portfolio(s).\n\nReferences\n* [Tristan Froidure, Khalid Jalalzai and Yves Choueifaty, Portfolio Rho-Representativity, International Journal of Theoretical and Applied FinanceVol. 22, No. 07, 1950034 (2019)](https://www.worldscientific.com/doi/10.1142/S0219024919500341)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisDiversificationRatio",
+      "name": "portfolioAnalysis.postPortfolioAnalysisDiversificationRatio",
+      "description": "Compute the diversification ratio of one or several portfolio(s).\n\nReferences\n* [Yves Choueifaty and Yves Coignard, Toward Maximum Diversification, The Journal of Portfolio Management Fall 2008, 35 (1) 40-51](https://doi.org/10.3905/JPM.2008.35.1.40)\n* [Tristan Froidure, Khalid Jalalzai and Yves Choueifaty, Portfolio Rho-Representativity, International Journal of Theoretical and Applied FinanceVol. 22, No. 07, 1950034 (2019)](https://www.worldscientific.com/doi/10.1142/S0219024919500341)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisDrawdowns",
+      "name": "portfolioAnalysis.postPortfolioAnalysisDrawdowns",
+      "description": "Compute the drawdown function - also called the underwater equity curve -, as well as the worst 10 drawdowns of one or several portfolio(s).\n\nReferences\n* [Wikipedia, Drawdown](https://en.wikipedia.org/wiki/Drawdown_(economics))        \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisEffectiveNumberOfBets",
+      "name": "portfolioAnalysis.postPortfolioAnalysisEffectiveNumberOfBets",
+      "description": "Compute the effective number of bets of one or several portfolio(s).\n\nReferences\n* [Meucci, Attilio and Santangelo, Alberto and Deguest, Romain, Risk Budgeting and Diversification Based on Optimized Uncorrelated Factors (November 10, 2015)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2276632)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisFactorsExposures",
+      "name": "portfolioAnalysis.postPortfolioAnalysisFactorsExposures",
+      "description": "Compute the exposures of one or several portfolio(s) to a set of factors, using a returns-based linear regression analysis.\n\nReferences\n* [Measuring Factor Exposures: Uses and Abuses, Ronen Israel and Adrienne Ross, The Journal of Alternative Investments Summer 2017, 20 (1) 10-25](https://jai.pm-research.com/content/20/1/10.short) \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisMeanVarianceEfficientFrontier",
+      "name": "portfolioAnalysis.postPortfolioAnalysisMeanVarianceEfficientFrontier",
+      "description": "Compute the discretized mean-variance efficient frontier associated to a list of assets, optionally subject to:\n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraint\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisMeanVarianceMinimumVarianceFrontier",
+      "name": "portfolioAnalysis.postPortfolioAnalysisMeanVarianceMinimumVarianceFrontier",
+      "description": "Compute the discretized mean-variance minimum variance frontier associated to a list of assets, optionally subject to:\n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraint\n\n> This endpoint is similar to the endpoint [`/portfolio/analysis/mean-variance/efficient-frontier`](#post-/portfolio/analysis/mean-variance/efficient-frontier), because the mean-variance efficient frontier is the \"top\" portion of the mean-variance minimum variance frontier.\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisReturn",
+      "name": "portfolioAnalysis.postPortfolioAnalysisReturn",
+      "description": "Compute the arithmetic return of one or several portfolio(s) from either:  \n* Portfolio assets arithmetic returns\n* Portfolio values\n\nReferences\n* [Wikipedia, Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return#Return)\n* Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisReturnsAverage",
+      "name": "portfolioAnalysis.postPortfolioAnalysisReturnsAverage",
+      "description": "Compute the arithmetic average of the arithmetic return(s) of one or several portfolio(s).\n\nReferences\n* [Wikipedia, Arithmetic Average Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return#Arithmetic_average_rate_of_return)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisTrackingError",
+      "name": "portfolioAnalysis.postPortfolioAnalysisTrackingError",
+      "description": "Compute the tracking error between a benchmark and one or several portfolio(s).\n\nReferences\n* [Wikipedia, Tracking error](https://en.wikipedia.org/wiki/Tracking_error) \n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisUlcerIndex",
+      "name": "portfolioAnalysis.postPortfolioAnalysisUlcerIndex",
+      "description": "Compute the Ulcer Index of one or several portfolio(s).\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n* [Peter G. Martin, Ulcer Index, An Alternative Approach to the Measurement of Investment Risk & Risk-Adjusted Performance](http://www.tangotools.com/ui/ui.htm)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisUlcerPerformanceIndex",
+      "name": "portfolioAnalysis.postPortfolioAnalysisUlcerPerformanceIndex",
+      "description": "Compute the Ulcer Performance Index of one or several portfolio(s).\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n* [Peter G. Martin, Ulcer Index, An Alternative Approach to the Measurement of Investment Risk & Risk-Adjusted Performance](http://www.tangotools.com/ui/ui.htm)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisValueAtRisk",
+      "name": "portfolioAnalysis.postPortfolioAnalysisValueAtRisk",
+      "description": "Compute the value at risk of one or several portfolio(s) from portfolio values.\n\nReferences\n* [Wikipedia, Value at risk](https://en.wikipedia.org/wiki/Value_at_risk)\n* [Acerbi, C. and Tasche, D. (2002), Expected Shortfall: A Natural Coherent Alternative to Value at Risk. Economic Notes, 31: 379-388](https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0300.00091)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysis.postPortfolioAnalysisVolatility",
+      "name": "portfolioAnalysis.postPortfolioAnalysisVolatility",
+      "description": "Compute the volatility (i.e., standard deviation) of one or several portfolio(s) from either:  \n* Portfolio assets covariance matrix\n* Portfolio values\n\nReferences\n* [Wikipedia, Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation#Finance)\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n* Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatio",
+      "name": "portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatio",
+      "description": "Compute the Sharpe ratio of one or several portfolio(s) from either:\n* Portfolio assets arithmetic returns and assets covariance matrix\n* Portfolio values\n\nReferences\n* Carl R. Bacon, Practical Portfolio Performance Measurement and Attribution\n* Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioBiasAdjusted",
+      "name": "portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioBiasAdjusted",
+      "description": "Compute the Sharpe ratio of one or several portfolio(s), adjusted for small sample bias.\n\nReferences\n* [Opdyke, J., Comparing Sharpe ratios: So where are the p-values?. J Asset Manag 8, 308–336 (2007)](https://link.springer.com/article/10.1057/palgrave.jam.2250084)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioConfidenceInterval",
+      "name": "portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioConfidenceInterval",
+      "description": "Build a confidence interval for the Sharpe ratio of one or several portfolio(s).\n\nReferences\n* [Opdyke, J.D., Comparing Sharpe ratios: So where are the p-values?. J Asset Manag 8, 308–336 (2007)](https://link.springer.com/article/10.1057/palgrave.jam.2250084)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioProbabilistic",
+      "name": "portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioProbabilistic",
+      "description": "Compute the probabilistic Sharpe ratio of one or several portfolio(s).\n\nReferences\n* [Opdyke, J.D., Comparing Sharpe ratios: So where are the p-values?. J Asset Manag 8, 308–336 (2007)](https://link.springer.com/article/10.1057/palgrave.jam.2250084)\n* [Bailey, David H. and Lopez de Prado, Marcos, The Sharpe Ratio Efficient Frontier (April 1, 2012). Journal of Risk, Vol. 15, No. 2, Winter 2012/13](https://ssrn.com/abstract=1821643)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioProbabilisticMinimumTrackRecordLength",
+      "name": "portfolioAnalysisSharpeRatio.postPortfolioAnalysisSharpeRatioProbabilisticMinimumTrackRecordLength",
+      "description": "Compute the minimum track record length of one or several portfolio(s).\n\nReferences\n* [Bailey, David H. and Lopez de Prado, Marcos, The Sharpe Ratio Efficient Frontier (April 1, 2012). Journal of Risk, Vol. 15, No. 2, Winter 2012/13](https://ssrn.com/abstract=1821643)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioConstruction.postPortfolioConstructionInvestable",
+      "name": "portfolioConstruction.postPortfolioConstructionInvestable",
+      "description": "Compute an investable portfolio as close as possible, in terms of assets weights, to a desired portfolio, taking into account:\n* The desired assets weights\n* The desired assets groups weights\n* The desired maximum assets groups weights\n* The prices of the assets\n* The portfolio value\n* The requirement to purchase some assets by round lots or by odd lots\n* The possibility to purchase some assets by a fractional quantity of shares\n* The requirement to purchase a minimum number of shares, or a minimum monetary value, for some assets\n\nReferences\n* [Steiner, Andreas, Accuracy and Rounding in Portfolio Construction](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2261131)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioConstruction.postPortfolioConstructionMimicking",
+      "name": "portfolioConstruction.postPortfolioConstructionMimicking",
+      "description": "Construct a portfolio as close as possible, in terms of returns, to a benchmark, optionally subject to:\n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences \n* Konstantinos Benidis, Yiyong Feng, Daniel P. Palomar, Optimization Methods for Financial Index Tracking: From Theory to Practice, now publishers Inc (7 juin 2018)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioConstruction.postPortfolioConstructionRandom",
+      "name": "portfolioConstruction.postPortfolioConstructionRandom",
+      "description": "Construct one or several random portfolio(s), optionally subject to:       \n* Minimum and maximum weights constraints\n* Minimum and maximum portfolio exposure constraints\n\n> Because of the nature of the endpoint, subsequent calls with the same input data will result in different output data.\n\nReferences\n* [William Thornton Shaw, Monte Carlo Portfolio Optimization for General Investor Risk-Return Objectives and Arbitrary Return Distributions: A Solution for Long-Only Portfolios](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1680224)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationEqualRiskContributions",
+      "name": "portfolioOptimization.postPortfolioOptimizationEqualRiskContributions",
+      "description": "Compute the asset weights of the equal risk contributions portfolio, optionally subject to:  \n* Minimum and maximum weights constraints  \n\nReferences\n * [Richard, Jean-Charles and Roncalli, Thierry, Constrained Risk Budgeting Portfolios: Theory, Algorithms, Applications & Puzzles](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3331184)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationEqualSharpeRatioContributions",
+      "name": "portfolioOptimization.postPortfolioOptimizationEqualSharpeRatioContributions",
+      "description": "Compute the asset weights of the equal Sharpe Ratio contributions portfolio.\n\nReferences\n * [Andreas Steiner, Sharpe Ratio Contribution and Attribution Analysis](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1839166\")\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationEqualVolatilityWeighted",
+      "name": "portfolioOptimization.postPortfolioOptimizationEqualVolatilityWeighted",
+      "description": "Compute the asset weights of the equal volatility-weighted portfolio.\n\nReferences\n * [Tristan Froidure, Khalid Jalalzai and Yves Choueifaty, Portfolio Rho-Representativity, International Journal of Theoretical and Applied FinanceVol. 22, No. 07, 1950034 (2019)](https://www.worldscientific.com/doi/10.1142/S0219024919500341)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationEqualWeighted",
+      "name": "portfolioOptimization.postPortfolioOptimizationEqualWeighted",
+      "description": "Compute the asset weights of the equal-weighted portfolio.\n\nReferences\n * [Victor DeMiguel and al., Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?](https://academic.oup.com/rfs/article-abstract/22/5/1915/1592901?redirectedFrom=fulltext)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationHierarchicalRiskParity",
+      "name": "portfolioOptimization.postPortfolioOptimizationHierarchicalRiskParity",
+      "description": "Compute the asset weights of the hierarchical risk parity portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [Lopez de Prado, M. (2016). Building diversified portfolios that outperform out-of-sample. Journal of Portfolio Management, 42(4), 59–69](https://jpm.pm-research.com/content/42/4/59)\n * [Johann Pfitzinger & Nico Katzke, 2019. A constrained hierarchical risk parity algorithm with cluster-based capital allocation. Working Papers 14/2019, Stellenbosch University, Department of Economics](https://ideas.repec.org/p/sza/wpaper/wpapers328.html)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationHierarchicalRiskParityClusteringBased",
+      "name": "portfolioOptimization.postPortfolioOptimizationHierarchicalRiskParityClusteringBased",
+      "description": "Compute the asset weights of the hierarchical clustering-based risk parity portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [Machine Learning for Asset Management: New Developments and Financial Applications, Emmanuel Jurczenko, Chapter 9, Harald Lohre,Carsten Rother,Kilian Axel Schäfer, Hierarchical Risk Parity: Accounting for Tail Dependencies in Multi-asset Multi-factor Allocations](https://onlinelibrary.wiley.com/doi/10.1002/9781119751182.ch9)\n * [Thomas Raffinot, Hierarchical Clustering-Based Asset Allocation, The Journal of Portfolio Management Multi-Asset Special Issue 2018, 44 (2) 89-99](https://jpm.pm-research.com/content/44/2/89.abstract)\n * [Raffinot, Thomas, The Hierarchical Equal Risk Contribution Portfolio](https://ssrn.com/abstract=3237540)\n * [Johann Pfitzinger & Nico Katzke, 2019. A constrained hierarchical risk parity algorithm with cluster-based capital allocation. Working Papers 14/2019, Stellenbosch University, Department of Economics](https://ideas.repec.org/p/sza/wpaper/wpapers328.html)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationInverseVarianceWeighted",
+      "name": "portfolioOptimization.postPortfolioOptimizationInverseVarianceWeighted",
+      "description": "Compute the asset weights of the inverse variance-weighted portfolio.\n\nReferences\n * [Raul Leote de Carvalho and al., Demystifying Equity Risk-Based Strategies: A Simple Alpha Plus Beta Description](https://doi.org/10.3905/jpm.2012.38.3.056)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationInverseVolatilityWeighted",
+      "name": "portfolioOptimization.postPortfolioOptimizationInverseVolatilityWeighted",
+      "description": "Compute the asset weights of the inverse volatility-weighted portfolio.\n\nReferences\n * [Raul Leote de Carvalho and al., Demystifying Equity Risk-Based Strategies: A Simple Alpha Plus Beta Description](https://doi.org/10.3905/jpm.2012.38.3.056)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMarketCapitalizationWeighted",
+      "name": "portfolioOptimization.postPortfolioOptimizationMarketCapitalizationWeighted",
+      "description": "Compute the asset weights of the market capitalization-weighted portfolio.\n\nReferences\n * [Wikipedia, Capitalization-weighted Index](https://en.wikipedia.org/wiki/Capitalization-weighted_index)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMaximumDecorrelation",
+      "name": "portfolioOptimization.postPortfolioOptimizationMaximumDecorrelation",
+      "description": "Compute the asset weights of the maximum decorrelation portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [F. Goltz, S. Sivasubramanian, Scientific Beta Maximum Decorrelation Indices](http://www.scientificbeta.com/download/file/scientific-beta-max-decorrelation-indices)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMaximumUlcerPerformanceIndex",
+      "name": "portfolioOptimization.postPortfolioOptimizationMaximumUlcerPerformanceIndex",
+      "description": "Compute the asset weights of the maximum Ulcer Performance Index portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nNotes:  \n* This endpoint will return an error if the maximum Ulcer Performance Index portfolio has a negative Ulcer Performance Index\n\nReferences\n * [Peter G. Martin, Ulcer Index, An Alternative Approach to the Measurement of Investment Risk & Risk-Adjusted Performance](http://www.tangotools.com/ui/ui.htm)\n * [A. Chekhlov, S. Uryasev, M. Zabarankin, Portfolio Optimization with Drawdown Constraints, Supply Chain and Finance, p 209-228](https://doi.org/10.1142/9789812562586_0013)\n * [A. Chekhlov, S. Uryasev, M. Zabarankin, Drawdown Measure in Portfolio Optimization, International Journal of Theoretical and Applied FinanceVol. 08, No. 01, pp. 13-58 (2005)](https://www.worldscientific.com/doi/10.1142/S0219024905002767)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMinimumCorrelation",
+      "name": "portfolioOptimization.postPortfolioOptimizationMinimumCorrelation",
+      "description": "Compute the asset weights of the (heuristic) minimum correlation portfolio, which is a portfolio built using the Minimum Correlation Algorithm discovered by [David Varadi](https://cssanalytics.wordpress.com/).\n\nReferences\n * [CSSA, Minimum Correlation Algorithm Paper Release](https://cssanalytics.wordpress.com/2012/09/21/minimum-correlation-algorithm-paper-release/)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMinimumUlcerIndex",
+      "name": "portfolioOptimization.postPortfolioOptimizationMinimumUlcerIndex",
+      "description": "Compute the asset weights of the minimum Ulcer Index portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [Peter G. Martin, Ulcer Index, An Alternative Approach to the Measurement of Investment Risk & Risk-Adjusted Performance](http://www.tangotools.com/ui/ui.htm)\n * [A. Chekhlov, S. Uryasev, M. Zabarankin, Portfolio Optimization with Drawdown Constraints, Supply Chain and Finance, p 209-228](https://doi.org/10.1142/9789812562586_0013)\n * [A. Chekhlov, S. Uryasev, M. Zabarankin, Drawdown Measure in Portfolio Optimization, International Journal of Theoretical and Applied FinanceVol. 08, No. 01, pp. 13-58 (2005)](https://www.worldscientific.com/doi/10.1142/S0219024905002767)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimization.postPortfolioOptimizationMostDiversified",
+      "name": "portfolioOptimization.postPortfolioOptimizationMostDiversified",
+      "description": "Compute the asset weights of the most diversified portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [Yves Choueifaty and Yves Coignard, Toward Maximum Diversification, The Journal of Portfolio Management Fall 2008, 35 (1) 40-51](https://doi.org/10.3905/JPM.2008.35.1.40)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturn",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturn",
+      "description": "Compute the asset weights of the maximum return portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturnDiversified",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturnDiversified",
+      "description": "Compute the asset weights of the diversified maximum return portfolio, as defined in the first reference, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nThe diversification measure used in the optimization procedure is the [Herfindahl-Hirschman Index](https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index) of the assets weights.\n\nReferences\n * [Alejandro Corvalan, 2005. Well Diversified Efficient Portfolios, Working Papers Central Bank of Chile 336, Central Bank of Chile](https://ideas.repec.org/p/chb/bcchwp/336.html)\n * [Bouchaud, Jean-Philippe and Potters, Marc and Aguilar, Jean-Pierre, Missing Information and Asset Allocation, arXiv, 1997](https://arxiv.org/abs/cond-mat/9707042)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturnSubsetResamplingBased",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumReturnSubsetResamplingBased",
+      "description": "Compute the asset weights of the subset resampling-based maximum return portfolio, following the methodology described in the first and the second references, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [CSSA, Random Subspace Optimization (RSO)](https://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)\n * [Subset Optimization for Asset Allocation,Benjamin J. Gillen](https://www.bengillen.com/uploads/1/2/3/8/123891022/subsets.pdf)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatio",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatio",
+      "description": "Compute the asset weights of the maximum Sharpe ratio portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatioDiversified",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatioDiversified",
+      "description": "Compute the asset weights of the diversified maximum Sharpe ratio portfolio, as defined in the first reference, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nThe diversification measure used in the optimization procedure is the [Herfindahl-Hirschman Index](https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index) of the assets weights.\n\nReferences\n * [Alejandro Corvalan, 2005. Well Diversified Efficient Portfolios, Working Papers Central Bank of Chile 336, Central Bank of Chile](https://ideas.repec.org/p/chb/bcchwp/336.html)\n * [Bouchaud, Jean-Philippe and Potters, Marc and Aguilar, Jean-Pierre, Missing Information and Asset Allocation, arXiv, 1997](https://arxiv.org/abs/cond-mat/9707042)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatioSubsetResamplingBased",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMaximumSharpeRatioSubsetResamplingBased",
+      "description": "Compute the asset weights of the susbet resampling-based maximum Sharpe ratio portfolio, following the methodology described in the first and the second references, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [CSSA, Random Subspace Optimization (RSO)](https://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)\n * [Subset Optimization for Asset Allocation,Benjamin J. Gillen](https://www.bengillen.com/uploads/1/2/3/8/123891022/subsets.pdf)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficient",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficient",
+      "description": "Compute the asset weights of a mean-variance efficient portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\n> A mean-variance efficient portfolio is a portfolio belonging to [the mean-variance efficient frontier](#post-/portfolio/analysis/mean-variance/efficient-frontier).\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficientDiversified",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficientDiversified",
+      "description": "Compute the asset weights of a diversified mean-variance efficient portfolio, as defined in the first reference, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nThe diversification measure used in the optimization procedure is the [Herfindahl-Hirschman Index](https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index) of the assets weights.\n\n> A diversified mean-variance efficient portfolio does NOT belong to [the mean-variance efficient frontier](#post-/portfolio/analysis/mean-variance/efficient-frontier), but is close to this frontier.\n\nReferences\n * [Alejandro Corvalan, 2005. Well Diversified Efficient Portfolios, Working Papers Central Bank of Chile 336, Central Bank of Chile](https://ideas.repec.org/p/chb/bcchwp/336.html)\n * [Bouchaud, Jean-Philippe and Potters, Marc and Aguilar, Jean-Pierre, Missing Information and Asset Allocation, arXiv, 1997](https://arxiv.org/abs/cond-mat/9707042)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficientSubsetResamplingBased",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMeanVarianceEfficientSubsetResamplingBased",
+      "description": "Compute the asset weights of a subset resampling-based  mean-variance efficient portfolio, following the methodology described in the first and the second references, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [CSSA, Random Subspace Optimization (RSO)](https://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)\n * [Subset Optimization for Asset Allocation,Benjamin J. Gillen](https://www.bengillen.com/uploads/1/2/3/8/123891022/subsets.pdf)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVariance",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVariance",
+      "description": "Compute the asset weights of the minimum variance portfolio, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVarianceDiversified",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVarianceDiversified",
+      "description": "Compute the asset weights of the diversified minimum variance portfolio, as defined in the first reference, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nThe diversification measure used in the optimization procedure is the [Herfindahl-Hirschman Index](https://en.wikipedia.org/wiki/Herfindahl%E2%80%93Hirschman_index) of the assets weights.\n\nReferences\n * [Alejandro Corvalan, 2005. Well Diversified Efficient Portfolios, Working Papers Central Bank of Chile 336, Central Bank of Chile](https://ideas.repec.org/p/chb/bcchwp/336.html)\n * [Bouchaud, Jean-Philippe and Potters, Marc and Aguilar, Jean-Pierre, Missing Information and Asset Allocation, arXiv, 1997](https://arxiv.org/abs/cond-mat/9707042)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVarianceSubsetResamplingBased",
+      "name": "portfolioOptimizationMeanVariance.postPortfolioOptimizationMinimumVarianceSubsetResamplingBased",
+      "description": "Compute the asset weights of the subset resampling-based minimum variance portfolio, following the methodology described in the first and the second references, optionally subject to:  \n* Minimum and maximum weights constraints\n* Maximum group weights constraints\n* Minimum and maximum portfolio exposure constraints\n\nReferences\n * [CSSA, Random Subspace Optimization (RSO)](https://cssanalytics.wordpress.com/2013/10/06/random-subspace-optimization-rso/)\n * [Subset Optimization for Asset Allocation,Benjamin J. Gillen](https://www.bengillen.com/uploads/1/2/3/8/123891022/subsets.pdf)\n * Harry M. Markowitz, Portfolio Selection, Efficient Diversification of Investments, Second edition, Blackwell Publishers Inc.\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioSimulation.postPortfolioSimulationRebalancingDriftWeight",
+      "name": "portfolioSimulation.postPortfolioSimulationRebalancingDriftWeight",
+      "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being never rebalanced (a.k.a. buy and hold).\n\nReferences\n* [Hillion, Pierre, The Ex-Ante Rebalancing Premium (March 11, 2016). INSEAD Working Paper No. 2016/15/FIN](https://ssrn.com/abstract=2746471)\n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioSimulation.postPortfolioSimulationRebalancingFixedWeight",
+      "name": "portfolioSimulation.postPortfolioSimulationRebalancingFixedWeight",
+      "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being rebalanced toward fixed weights at the beginning of each time period.\n\nReferences\n* [Hillion, Pierre, The Ex-Ante Rebalancing Premium (March 11, 2016). INSEAD Working Paper No. 2016/15/FIN](https://ssrn.com/abstract=2746471)        \n"
+    },
+    {
+      "id": "openapi_portfoliooptimizer_io.portfolioSimulation.postPortfolioSimulationRebalancingRandomWeight",
+      "name": "portfolioSimulation.postPortfolioSimulationRebalancingRandomWeight",
+      "description": "Simulate the evolution of one or several portfolio(s) over one or several time period(s), the portfolio(s) being rebalanced toward random weights at the beginning of each time period.\n\nReferences\n* [R Stein, Not fooled by randomness: Using random portfolios to analyse investment funds, Investment Analysts Journal, 43:79, 1-15, DOI: 10.1080/10293523.2014.11082564](https://www.tandfonline.com/doi/abs/10.1080/10293523.2014.11082564)\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

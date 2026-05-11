@@ -1,0 +1,3892 @@
+{
+  "fetchedAt": "2026-04-30T15:26:38.097Z",
+  "status": "ok",
+  "count": 777,
+  "tools": [
+    {
+      "id": "openapi_mist_com.admin.registerNewAdmin",
+      "name": "admin.registerNewAdmin",
+      "description": "Register a new admin and his/her org\nAn email will also be sent to the user with a link to https://manage.mist.com/verify/register?token=:token"
+    },
+    {
+      "id": "openapi_mist_com.admin.verifyAdminInvite",
+      "name": "admin.verifyAdminInvite",
+      "description": "**Note**: another call to ```GET /api/v1/self``` is required to see the new set of privileges"
+    },
+    {
+      "id": "openapi_mist_com.admin.verifyRegistration",
+      "name": "admin.verifyRegistration",
+      "description": "Verify registration"
+    },
+    {
+      "id": "openapi_mist_com.apiToken.createApiToken",
+      "name": "apiToken.createApiToken",
+      "description": "Create API Token\nNote that the key is only available during creation time."
+    },
+    {
+      "id": "openapi_mist_com.apiToken.deleteApiToken",
+      "name": "apiToken.deleteApiToken",
+      "description": "Delete an API Token"
+    },
+    {
+      "id": "openapi_mist_com.apiToken.getApiTokens",
+      "name": "apiToken.getApiTokens",
+      "description": "List Current API Tokens"
+    },
+    {
+      "id": "openapi_mist_com.constants.getAlarmDefinitions",
+      "name": "constants.getAlarmDefinitions",
+      "description": "Get brief definitions of all the supported alarm types.  The example field contains an example payload as you would recieve in the alarm webhook output."
+    },
+    {
+      "id": "openapi_mist_com.constants.getApChannels",
+      "name": "constants.getApChannels",
+      "description": "Get List of Available channels per country code"
+    },
+    {
+      "id": "openapi_mist_com.constants.getApLedDefinition",
+      "name": "constants.getApLedDefinition",
+      "description": "Get AP LED definition"
+    },
+    {
+      "id": "openapi_mist_com.constants.getApplications",
+      "name": "constants.getApplications",
+      "description": "Get a list of applications that Juniper-Mist APs recognize"
+    },
+    {
+      "id": "openapi_mist_com.constants.getCallEventsDefinitions",
+      "name": "constants.getCallEventsDefinitions",
+      "description": "Get Call Event Definitions"
+    },
+    {
+      "id": "openapi_mist_com.constants.getClientEventsDefinitions",
+      "name": "constants.getClientEventsDefinitions",
+      "description": "Get List of available Client Events"
+    },
+    {
+      "id": "openapi_mist_com.constants.getCountryCodes",
+      "name": "constants.getCountryCodes",
+      "description": "Get List of available Country Codes"
+    },
+    {
+      "id": "openapi_mist_com.constants.getDeviceEventsDefinitions",
+      "name": "constants.getDeviceEventsDefinitions",
+      "description": "Get list of device events"
+    },
+    {
+      "id": "openapi_mist_com.constants.getDeviceModels",
+      "name": "constants.getDeviceModels",
+      "description": "Get a list of AP device models for the Mist Site"
+    },
+    {
+      "id": "openapi_mist_com.constants.getGetawayDefaultConfig",
+      "name": "constants.getGetawayDefaultConfig",
+      "description": "Generate Default Gateway Config"
+    },
+    {
+      "id": "openapi_mist_com.constants.getMxEdgeEventsDefinitions",
+      "name": "constants.getMxEdgeEventsDefinitions",
+      "description": "Get List of available MX Edge Events"
+    },
+    {
+      "id": "openapi_mist_com.constants.getMxEdgeModels",
+      "name": "constants.getMxEdgeModels",
+      "description": "get available Mx Edge models"
+    },
+    {
+      "id": "openapi_mist_com.constants.getSiteAvailableInsightMetrics",
+      "name": "constants.getSiteAvailableInsightMetrics",
+      "description": "Get Available Insight Metrics"
+    },
+    {
+      "id": "openapi_mist_com.constants.getSiteLanguages",
+      "name": "constants.getSiteLanguages",
+      "description": "Get Languages"
+    },
+    {
+      "id": "openapi_mist_com.constants.getSystemEventsDefinitions",
+      "name": "constants.getSystemEventsDefinitions",
+      "description": "Get list of available system events"
+    },
+    {
+      "id": "openapi_mist_com.constants.getTrafficTypes",
+      "name": "constants.getTrafficTypes",
+      "description": "Get List of identified traffic"
+    },
+    {
+      "id": "openapi_mist_com.installer.addInstallerDeviceImage",
+      "name": "installer.addInstallerDeviceImage",
+      "description": "Add image"
+    },
+    {
+      "id": "openapi_mist_com.installer.claimInstallerDevices",
+      "name": "installer.claimInstallerDevices",
+      "description": "This mirrors `POST /api/v1/orgs/{org_id}/inventory` (see Inventory API)"
+    },
+    {
+      "id": "openapi_mist_com.installer.createInstallerMap",
+      "name": "installer.createInstallerMap",
+      "description": "Create a MAP"
+    },
+    {
+      "id": "openapi_mist_com.installer.createOrUpdateInstallerSites",
+      "name": "installer.createOrUpdateInstallerSites",
+      "description": "Often the Installers are asked to assign Devices to Sites. The Sites can either be pre-created or created/modified by the Installer. If this is an update, the same grace period also applies."
+    },
+    {
+      "id": "openapi_mist_com.installer.deleteInstallerDeviceImage",
+      "name": "installer.deleteInstallerDeviceImage",
+      "description": "delete image"
+    },
+    {
+      "id": "openapi_mist_com.installer.deleteInstallerMap",
+      "name": "installer.deleteInstallerMap",
+      "description": "Delete Map"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerAlarmTemplates",
+      "name": "installer.getInstallerAlarmTemplates",
+      "description": "Get the list of alarm templates"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerDeviceProfilesWip",
+      "name": "installer.getInstallerDeviceProfilesWip",
+      "description": "Get Device Profiles"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerListOfRenctlyClaimedDevices",
+      "name": "installer.getInstallerListOfRenctlyClaimedDevices",
+      "description": "Get recently claimed devices"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerMaps",
+      "name": "installer.getInstallerMaps",
+      "description": "Get Maps"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerRfTemplatesNames",
+      "name": "installer.getInstallerRfTemplatesNames",
+      "description": "Get RF Template"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerSecPolicies",
+      "name": "installer.getInstallerSecPolicies",
+      "description": "Get Secuity Policies"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerSiteGroups",
+      "name": "installer.getInstallerSiteGroups",
+      "description": "Get Site Groups"
+    },
+    {
+      "id": "openapi_mist_com.installer.getInstallerSites",
+      "name": "installer.getInstallerSites",
+      "description": "Get Sites"
+    },
+    {
+      "id": "openapi_mist_com.installer.importInstallerMap",
+      "name": "installer.importInstallerMap",
+      "description": "Import data from files is a multipart POST which has an file, an optional json, and an optional csv, to create floorplan, assign & place ap if name or mac matches"
+    },
+    {
+      "id": "openapi_mist_com.installer.optimizeInstallerRrm",
+      "name": "installer.optimizeInstallerRrm",
+      "description": "After installation is considered complete (APs are placed on maps, all powered up), you can trigger an optimize operation where RRM will kick in (and maybe other things in the future) before it’s automatically scheduled."
+    },
+    {
+      "id": "openapi_mist_com.installer.provisionInstallerDevices",
+      "name": "installer.provisionInstallerDevices",
+      "description": "Provision or Replace a device \n\nIf replacing_mac is in the request payload, other attributes are ignored, we attempt to replace existing device (with mac replacing_mac) with the inventory device being configured. The replacement device must be in the inventory but not assigned, and the replacing_mac device must be assigned to a site, and satisfy grace period requirements. The Device replaced will become unassigned."
+    },
+    {
+      "id": "openapi_mist_com.installer.startInstallerLocateDevice",
+      "name": "installer.startInstallerLocateDevice",
+      "description": "Locate a Device by blinking it’s LED, it’s a persisted state that has to be stopped by calling Stop Locating API"
+    },
+    {
+      "id": "openapi_mist_com.installer.stopInstallerLocateDevice",
+      "name": "installer.stopInstallerLocateDevice",
+      "description": "Stop it"
+    },
+    {
+      "id": "openapi_mist_com.installer.unassignInstallerRecentlyClaimedDevice",
+      "name": "installer.unassignInstallerRecentlyClaimedDevice",
+      "description": "Unassign recently claimed devices"
+    },
+    {
+      "id": "openapi_mist_com.installer.updateInstallerMap",
+      "name": "installer.updateInstallerMap",
+      "description": "Update map"
+    },
+    {
+      "id": "openapi_mist_com.login.logout",
+      "name": "login.logout",
+      "description": "Logout"
+    },
+    {
+      "id": "openapi_mist_com.login.lookup",
+      "name": "login.lookup",
+      "description": "Login Lookup"
+    },
+    {
+      "id": "openapi_mist_com.login.postOperation",
+      "name": "login.postOperation",
+      "description": "Log in with email/password"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.getOAuth2AuthorizationUrlForLogin",
+      "name": "loginWithOAuth2.getOAuth2AuthorizationUrlForLogin",
+      "description": "Obtain Authorization URL for Login"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.getOAuth2UrlForLinking",
+      "name": "loginWithOAuth2.getOAuth2UrlForLinking",
+      "description": "Obtain Authorization URL for Linking"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.linkOAuth2MistAccount",
+      "name": "loginWithOAuth2.linkOAuth2MistAccount",
+      "description": "Link Mist account with an OAuth2 Provider"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.loginOAuth2",
+      "name": "loginWithOAuth2.loginOAuth2",
+      "description": "Login via OAuth2"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.twoFactor",
+      "name": "loginWithOAuth2.twoFactor",
+      "description": "Send 2FA Code"
+    },
+    {
+      "id": "openapi_mist_com.loginWithOAuth2.unlinkOAuth2Provider",
+      "name": "loginWithOAuth2.unlinkOAuth2Provider",
+      "description": "Unlink OAuth2 Provider"
+    },
+    {
+      "id": "openapi_mist_com.mobile.activateSdkInvite",
+      "name": "mobile.activateSdkInvite",
+      "description": "Verify secret"
+    },
+    {
+      "id": "openapi_mist_com.msps.createMsp",
+      "name": "msps.createMsp",
+      "description": "Create MSP account"
+    },
+    {
+      "id": "openapi_mist_com.msps.deleteMsp",
+      "name": "msps.deleteMsp",
+      "description": "Deleting MSP removes the MSP and OrgGroup under the MSP as well as all privileges associated with them. It does not remove any Org or Admins"
+    },
+    {
+      "id": "openapi_mist_com.msps.updateMsp",
+      "name": "msps.updateMsp",
+      "description": "Update MSP"
+    },
+    {
+      "id": "openapi_mist_com.mspsAdmins.getMspAdmin",
+      "name": "mspsAdmins.getMspAdmin",
+      "description": "Get MSP Admins"
+    },
+    {
+      "id": "openapi_mist_com.mspsAdmins.getMspAdmins",
+      "name": "mspsAdmins.getMspAdmins",
+      "description": "Get MSP Admins"
+    },
+    {
+      "id": "openapi_mist_com.mspsAdmins.getMspDetails",
+      "name": "mspsAdmins.getMspDetails",
+      "description": "Get MSP Detail"
+    },
+    {
+      "id": "openapi_mist_com.mspsAdmins.revokeMspAdmin",
+      "name": "mspsAdmins.revokeMspAdmin",
+      "description": "This removes all privileges this admin has against the MSP. This goes deep all the way to the sites"
+    },
+    {
+      "id": "openapi_mist_com.mspsAdmins.updateMspAdmin",
+      "name": "mspsAdmins.updateMspAdmin",
+      "description": "Update MSP Admin"
+    },
+    {
+      "id": "openapi_mist_com.mspsInventory.getMspInventoryByMac",
+      "name": "mspsInventory.getMspInventoryByMac",
+      "description": "Get Inventoy By device MAC address"
+    },
+    {
+      "id": "openapi_mist_com.mspsInvites.inviteMspAdmin",
+      "name": "mspsInvites.inviteMspAdmin",
+      "description": "Invite MSP Admin\n\n**Note**: An email will also be sent to the user with a link to https://manage.mist.com/verify/invite?token=:token"
+    },
+    {
+      "id": "openapi_mist_com.mspsInvites.uninviteMspAdmin",
+      "name": "mspsInvites.uninviteMspAdmin",
+      "description": "Delete admin invite"
+    },
+    {
+      "id": "openapi_mist_com.mspsInvites.updateMspAdminInvite",
+      "name": "mspsInvites.updateMspAdminInvite",
+      "description": "Update MSP admin invite"
+    },
+    {
+      "id": "openapi_mist_com.mspsLicenses.claimMspLicence",
+      "name": "mspsLicenses.claimMspLicence",
+      "description": "Claim an Order by Activation Code"
+    },
+    {
+      "id": "openapi_mist_com.mspsLicenses.getMspLicenses",
+      "name": "mspsLicenses.getMspLicenses",
+      "description": "Get Msp Licenses"
+    },
+    {
+      "id": "openapi_mist_com.mspsLicenses.moveOrDeleteMspLicenseToAnotherOrg",
+      "name": "mspsLicenses.moveOrDeleteMspLicenseToAnotherOrg",
+      "description": "Move or Delete MSP Licenses"
+    },
+    {
+      "id": "openapi_mist_com.mspsLogo.deleteMspLogo",
+      "name": "mspsLogo.deleteMspLogo",
+      "description": "Delete MSP Logo"
+    },
+    {
+      "id": "openapi_mist_com.mspsLogo.postMspLogo",
+      "name": "mspsLogo.postMspLogo",
+      "description": "Upload Logo (only for advanced msp tier)"
+    },
+    {
+      "id": "openapi_mist_com.mspsLogs.countMspLogs",
+      "name": "mspsLogs.countMspLogs",
+      "description": "Count by Distinct Attributes of Audit Logs"
+    },
+    {
+      "id": "openapi_mist_com.mspsLogs.getMspLogs",
+      "name": "mspsLogs.getMspLogs",
+      "description": "Get a list of change logs for the current MSP"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgGroups.createMspOrgGroup",
+      "name": "mspsOrgGroups.createMspOrgGroup",
+      "description": "Create MSP Org Group"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgGroups.deleteMspOrgGroup",
+      "name": "mspsOrgGroups.deleteMspOrgGroup",
+      "description": "Delete MSP Org Group"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgGroups.getMspOrgGroup",
+      "name": "mspsOrgGroups.getMspOrgGroup",
+      "description": "Get MSP Org Group Details"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgGroups.getMspOrgGroups",
+      "name": "mspsOrgGroups.getMspOrgGroups",
+      "description": "Get MSP Org Groups"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgGroups.updateMspOrgGroup",
+      "name": "mspsOrgGroups.updateMspOrgGroup",
+      "description": "Update MSP Org Group"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgs.createMspOrg",
+      "name": "mspsOrgs.createMspOrg",
+      "description": "Create an Org under MSP"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgs.getMspOrg",
+      "name": "mspsOrgs.getMspOrg",
+      "description": "Get MSP Org Details"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgs.getMspOrgs",
+      "name": "mspsOrgs.getMspOrgs",
+      "description": "Get MSP Orgs"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgs.manageMspOrgs",
+      "name": "mspsOrgs.manageMspOrgs",
+      "description": "Assign or Unassign Orgs to an MSP account"
+    },
+    {
+      "id": "openapi_mist_com.mspsOrgs.searchMspOrgs",
+      "name": "mspsOrgs.searchMspOrgs",
+      "description": "Search Org in MSP"
+    },
+    {
+      "id": "openapi_mist_com.mspsSearch.searchMspOrgGroup",
+      "name": "mspsSearch.searchMspOrgGroup",
+      "description": "Search in MSP Orgs"
+    },
+    {
+      "id": "openapi_mist_com.mspsSlEs.getMspSle",
+      "name": "mspsSlEs.getMspSle",
+      "description": "Get MSP SLEs (all/worst Orgs ...)"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.createMspSso",
+      "name": "mspsSso.createMspSso",
+      "description": "Create MSP SSO profile"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.deleteMspSso",
+      "name": "mspsSso.deleteMspSso",
+      "description": "Delete MSP SSO Config"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.downloadMspSsoSamlMetadata",
+      "name": "mspsSso.downloadMspSsoSamlMetadata",
+      "description": "Download MSP SSO SAML Metadata\n\nExample of metadata.xml:\n```xml\n<?xml version=\"1.0\" encoding=\"UTF-8\"?><md:EntityDescriptor xmlns:md=\"urn:oasis:names:tc:SAML:2.0:metadata\" entityID=\"https://api.mist.com/api/v1/saml/5hdF5g/login\" validUntil=\"2027-10-12T21:59:01Z\" xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n    <md:SPSSODescriptor AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\">\n        <md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://api.mist.com/api/v1/saml/5hdF5g/logout\" />\n        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>\n        <md:AssertionConsumerService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://api.mist.com/api/v1/saml/5hdF5g/login\" index=\"0\" isDefault=\"true\"/>\n        <md:AttributeConsumingService index=\"0\">\n            <md:ServiceName xml:lang=\"en-US\">Mist</md:ServiceName>\n            <md:RequestedAttribute Name=\"Role\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"true\"/>\n            <md:RequestedAttribute Name=\"FirstName\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"false\"/>\n            <md:RequestedAttribute Name=\"LastName\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"false\"/>\n        </md:AttributeConsumingService>\n    </md:SPSSODescriptor>\n</md:EntityDescriptor>\n```"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.getMspSso",
+      "name": "mspsSso.getMspSso",
+      "description": "Get MSP SSO Config"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.getMspSsoLatestFailures",
+      "name": "mspsSso.getMspSsoLatestFailures",
+      "description": "Get MSP SSO Latest Failures"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.getMspSsoSamlMetadata",
+      "name": "mspsSso.getMspSsoSamlMetadata",
+      "description": "Get MSP SSO SAML Metadata"
+    },
+    {
+      "id": "openapi_mist_com.mspsSso.updateMspSso",
+      "name": "mspsSso.updateMspSso",
+      "description": "Update MSP SSO config"
+    },
+    {
+      "id": "openapi_mist_com.mspsSsoRoles.createMspSsoRole",
+      "name": "mspsSsoRoles.createMspSsoRole",
+      "description": "Create MSP Role"
+    },
+    {
+      "id": "openapi_mist_com.mspsSsoRoles.deleteMspSsoRole",
+      "name": "mspsSsoRoles.deleteMspSsoRole",
+      "description": "Delete MSP SSO Roles"
+    },
+    {
+      "id": "openapi_mist_com.mspsSsoRoles.getMspSsoRoles",
+      "name": "mspsSsoRoles.getMspSsoRoles",
+      "description": "Get MSP SSO Roles"
+    },
+    {
+      "id": "openapi_mist_com.mspsSsoRoles.updateMspSsoRole",
+      "name": "mspsSsoRoles.updateMspSsoRole",
+      "description": "Update SSO Role"
+    },
+    {
+      "id": "openapi_mist_com.mspsStats.getMspOrgLicenses",
+      "name": "mspsStats.getMspOrgLicenses",
+      "description": "Get MSP Licences"
+    },
+    {
+      "id": "openapi_mist_com.mspsStats.getMspOrgStats",
+      "name": "mspsStats.getMspOrgStats",
+      "description": "Get MSP Orgs Stats"
+    },
+    {
+      "id": "openapi_mist_com.mspsTickets.countMspTickets",
+      "name": "mspsTickets.countMspTickets",
+      "description": "Count tickets"
+    },
+    {
+      "id": "openapi_mist_com.mspsTickets.getMspTickets",
+      "name": "mspsTickets.getMspTickets",
+      "description": "Get Tickets of a MSP"
+    },
+    {
+      "id": "openapi_mist_com.orgs.cloneOrg",
+      "name": "orgs.cloneOrg",
+      "description": "Create an Org by cloning from another one. Org Settings, Templates, Wxlan Tags, Wxlan Tunnels, Wxlan Rules, Org Wlans will be copied. Sites and Site Groups will not be copied, and therefore, the copied template will not be applied to any site/sitegroups."
+    },
+    {
+      "id": "openapi_mist_com.orgs.createOrg",
+      "name": "orgs.createOrg",
+      "description": "Org admin can invite people to manage the org. Furthermore, he can dictate the level of security those accounts are. The check is enforced when the invited admin tries to “accept” the invitation and every time the admin tries to login"
+    },
+    {
+      "id": "openapi_mist_com.orgs.deleteOrg",
+      "name": "orgs.deleteOrg",
+      "description": "Delete Org"
+    },
+    {
+      "id": "openapi_mist_com.orgs.getOrgInfo",
+      "name": "orgs.getOrgInfo",
+      "description": "Get Organization information"
+    },
+    {
+      "id": "openapi_mist_com.orgs.linkOrgToJuniperJuniperAccount",
+      "name": "orgs.linkOrgToJuniperJuniperAccount",
+      "description": "Link Juniper Accounts"
+    },
+    {
+      "id": "openapi_mist_com.orgs.unlinkOrgFromJuniperCustomerId",
+      "name": "orgs.unlinkOrgFromJuniperCustomerId",
+      "description": "Unlink Juniper Customer ID"
+    },
+    {
+      "id": "openapi_mist_com.orgs.updateOrg",
+      "name": "orgs.updateOrg",
+      "description": "Update Org"
+    },
+    {
+      "id": "openapi_mist_com.orgs128T.getOrg128TRegistrationCommands",
+      "name": "orgs128T.getOrg128TRegistrationCommands",
+      "description": "128T devices can be managed/adopted by Mist."
+    },
+    {
+      "id": "openapi_mist_com.orgsAdmins.getOrgAdmins",
+      "name": "orgsAdmins.getOrgAdmins",
+      "description": "Get a list of people who can manage the Site/Org under the Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsAdmins.revokeOrgAdmin",
+      "name": "orgsAdmins.revokeOrgAdmin",
+      "description": "This removes all privileges this admin has against the org"
+    },
+    {
+      "id": "openapi_mist_com.orgsAdmins.updateOrgAdmin",
+      "name": "orgsAdmins.updateOrgAdmin",
+      "description": "Invite Org Admin"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.ackOrgAlarm",
+      "name": "orgsAlarms.ackOrgAlarm",
+      "description": "Ack Org Alarm"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.ackOrgAllAlarms",
+      "name": "orgsAlarms.ackOrgAllAlarms",
+      "description": "Ack all Org Alarms\n\n**N.B.**: Batch size for multiple alarm ack and unack has to be less or or equal to 1000."
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.countOrgAlarms",
+      "name": "orgsAlarms.countOrgAlarms",
+      "description": "Count Org Alarms"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.multiAckOrgAlarms",
+      "name": "orgsAlarms.multiAckOrgAlarms",
+      "description": "Ack multiple Org Alarms"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.multiUnackOrgAlarms",
+      "name": "orgsAlarms.multiUnackOrgAlarms",
+      "description": "Unack multiple Org Alarms"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.searchOrgAlarms",
+      "name": "orgsAlarms.searchOrgAlarms",
+      "description": "Search Org Alarms"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarms.unackOrgAllArlarms",
+      "name": "orgsAlarms.unackOrgAllArlarms",
+      "description": "Unack all Org Alarms\n\n**N.B.**: Batch size for multiple alarm ack and unack has to be less or or equal to 1000."
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.createOrgAlarmTemplate",
+      "name": "orgsAlarmTemplates.createOrgAlarmTemplate",
+      "description": "Available rules can be found in Orgs>Consts>getAlarmDefs\n\nThe delivery dict is only required if different from the template delivery settings."
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.deleteOrgAlarmTemplate",
+      "name": "orgsAlarmTemplates.deleteOrgAlarmTemplate",
+      "description": "Delete Org Alarm Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.getOrgAlarmTemplate",
+      "name": "orgsAlarmTemplates.getOrgAlarmTemplate",
+      "description": "Get Org Alarm Template Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.getOrgAlarmTemplates",
+      "name": "orgsAlarmTemplates.getOrgAlarmTemplates",
+      "description": "Get Org Alarm Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.suppressOrgAlarm",
+      "name": "orgsAlarmTemplates.suppressOrgAlarm",
+      "description": "In certain situations, for example, scheduled maintanance, you may want to suspend alarms to be triggered for a period of time."
+    },
+    {
+      "id": "openapi_mist_com.orgsAlarmTemplates.updateOrgAlarmTemplate",
+      "name": "orgsAlarmTemplates.updateOrgAlarmTemplate",
+      "description": "Update Org Alarm Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsApiTokens.createOrgApiToken",
+      "name": "orgsApiTokens.createOrgApiToken",
+      "description": "Create Org API Token\nNote that the token key is only available during creation time."
+    },
+    {
+      "id": "openapi_mist_com.orgsApiTokens.deleteOrgApiToken",
+      "name": "orgsApiTokens.deleteOrgApiToken",
+      "description": "Delete Org API Token"
+    },
+    {
+      "id": "openapi_mist_com.orgsApiTokens.getOrgApiToken",
+      "name": "orgsApiTokens.getOrgApiToken",
+      "description": "Get Org API Token"
+    },
+    {
+      "id": "openapi_mist_com.orgsApiTokens.getOrgApiTokens",
+      "name": "orgsApiTokens.getOrgApiTokens",
+      "description": "get organization api tokens"
+    },
+    {
+      "id": "openapi_mist_com.orgsApiTokens.updateOrgApiToken",
+      "name": "orgsApiTokens.updateOrgApiToken",
+      "description": "Update Org API Token"
+    },
+    {
+      "id": "openapi_mist_com.orgsApTemplates.createOrgAptemplate",
+      "name": "orgsApTemplates.createOrgAptemplate",
+      "description": "Create Org AP Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsApTemplates.deleteOrgAptemplate",
+      "name": "orgsApTemplates.deleteOrgAptemplate",
+      "description": "Delete existing AP Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsApTemplates.getOrgAptemplate",
+      "name": "orgsApTemplates.getOrgAptemplate",
+      "description": "Get AP Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsApTemplates.getOrgAptemplates",
+      "name": "orgsApTemplates.getOrgAptemplates",
+      "description": "Get AP Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsApTemplates.updateOrgAptemplate",
+      "name": "orgsApTemplates.updateOrgAptemplate",
+      "description": "Update AP Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssetFilters.createOrgAssetFilters",
+      "name": "orgsAssetFilters.createOrgAssetFilters",
+      "description": "Create Asset Filter\n\nCreates a single BLE asset filter for the given site. Any subset of filter properties can be included in the filter. A matching asset must meet the conditions of all given filter properties (logical ‘AND’)."
+    },
+    {
+      "id": "openapi_mist_com.orgsAssetFilters.deleteOrgAssetFilter",
+      "name": "orgsAssetFilters.deleteOrgAssetFilter",
+      "description": "Deletes an existing BLE asset filter for the given site."
+    },
+    {
+      "id": "openapi_mist_com.orgsAssetFilters.getOrgAssetFilter",
+      "name": "orgsAssetFilters.getOrgAssetFilter",
+      "description": "Get Org Asset Filter Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssetFilters.getOrgAssetFilters",
+      "name": "orgsAssetFilters.getOrgAssetFilters",
+      "description": "Get the list of all BLE asset filters for the given site. Each asset filter in the list operates independently. For a filter object to match an asset, all of the filter properties must match (logical ‘AND’ of each filter property). For example, the “Visitor Tags” filter below will match an asset when both the “ibeacon\\_uuid” and “ibeacon_major” properties match the asset. All non-matching assets are ignored."
+    },
+    {
+      "id": "openapi_mist_com.orgsAssetFilters.updateOrgAssetFilters",
+      "name": "orgsAssetFilters.updateOrgAssetFilters",
+      "description": "Updates an existing BLE asset filter for the given site."
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.countOrgAssetsByDistanceField",
+      "name": "orgsAssets.countOrgAssetsByDistanceField",
+      "description": "Count Org Assets"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.createOrgAsset",
+      "name": "orgsAssets.createOrgAsset",
+      "description": "Create Org Asset"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.deleteOrgAsset",
+      "name": "orgsAssets.deleteOrgAsset",
+      "description": "Delete Org Asset"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.getOrgAsset",
+      "name": "orgsAssets.getOrgAsset",
+      "description": "Get Org Asset Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.getOrgAssets",
+      "name": "orgsAssets.getOrgAssets",
+      "description": "Get Org Assets"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.importOrgAssets",
+      "name": "orgsAssets.importOrgAssets",
+      "description": "Impert Org Assets. \n\nIt can be done via a CSV file or a JSON payload.\n\n#### CSV File Format\n```csv\nname,mac\n\"asset_name\",5c5b53010101\n``` "
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.searchOrgAssets",
+      "name": "orgsAssets.searchOrgAssets",
+      "description": "Search for Org Assets"
+    },
+    {
+      "id": "openapi_mist_com.orgsAssets.updateOrgAsset",
+      "name": "orgsAssets.updateOrgAsset",
+      "description": "Update Org Asset"
+    },
+    {
+      "id": "openapi_mist_com.orgsCalls.countOrgCallEvents",
+      "name": "orgsCalls.countOrgCallEvents",
+      "description": "Count Org Call Events"
+    },
+    {
+      "id": "openapi_mist_com.orgsCalls.searchOrgCallEvents",
+      "name": "orgsCalls.searchOrgCallEvents",
+      "description": "Search Org Call Events"
+    },
+    {
+      "id": "openapi_mist_com.orgsCert.clearOrgCertificates",
+      "name": "orgsCert.clearOrgCertificates",
+      "description": "Clear Org Certificates"
+    },
+    {
+      "id": "openapi_mist_com.orgsCert.getOrgCertificates",
+      "name": "orgsCert.getOrgCertificates",
+      "description": "Get Org Certificates"
+    },
+    {
+      "id": "openapi_mist_com.orgsCert.truncateOrgCrlFile",
+      "name": "orgsCert.truncateOrgCrlFile",
+      "description": "By default, all certs used by recently unclaimed devices within 9 month will be included in CRL. If the list grows too big, you can truncate it"
+    },
+    {
+      "id": "openapi_mist_com.orgsClaim.claimOrgLicense",
+      "name": "orgsClaim.claimOrgLicense",
+      "description": "Claim Org licenses / activation codes"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.countOrgClientsWired",
+      "name": "orgsClients.countOrgClientsWired",
+      "description": "Count by Distinct Attributes of Clients\n\nNote: For list of avaialable `type` values, please refer to [getClientEventsDefinitions](/#tag/Constants/operation/getClientEventsDefinitions)"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.countOrgClientsWireless",
+      "name": "orgsClients.countOrgClientsWireless",
+      "description": "Count Org Wireless Clients"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.countOrgWirelessClientsSessions",
+      "name": "orgsClients.countOrgWirelessClientsSessions",
+      "description": "Count Org Wireless Clients Sessions"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.searchOrgClientsEvents",
+      "name": "orgsClients.searchOrgClientsEvents",
+      "description": "Get Org Clients Events"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.searchOrgClientsWired",
+      "name": "orgsClients.searchOrgClientsWired",
+      "description": "Search for Wired Clients in org\n\nNote: For list of avaialable `type` values, please refer to [getClientEventsDefinitions](/#tag/Constants/operation/getClientEventsDefinitions)"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.searchOrgClientsWireless",
+      "name": "orgsClients.searchOrgClientsWireless",
+      "description": "Search Org Wireless Clients"
+    },
+    {
+      "id": "openapi_mist_com.orgsClients.searchOrgClientWirelessSessions",
+      "name": "orgsClients.searchOrgClientWirelessSessions",
+      "description": "Search Org Wireless Clients Sessions"
+    },
+    {
+      "id": "openapi_mist_com.orgsCrl.getOrgCrlFile",
+      "name": "orgsCrl.getOrgCrlFile",
+      "description": "Get Org CRL File"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.assignOrgDeviceProfileToDevices",
+      "name": "orgsDeviceProfiles.assignOrgDeviceProfileToDevices",
+      "description": "Assign Org Device Profile to Devices"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.createOrgDeviceProfiles",
+      "name": "orgsDeviceProfiles.createOrgDeviceProfiles",
+      "description": "Create Device Profile"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.deleteOrgDeviceProfile",
+      "name": "orgsDeviceProfiles.deleteOrgDeviceProfile",
+      "description": "Delete Org Device Profile"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.getOrgDeviceProfile",
+      "name": "orgsDeviceProfiles.getOrgDeviceProfile",
+      "description": "Get Org device Profile Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.getOrgDeviceProfiles",
+      "name": "orgsDeviceProfiles.getOrgDeviceProfiles",
+      "description": "Get Org Device Profiles"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.unassignOrgDeviceProfilesFromDevices",
+      "name": "orgsDeviceProfiles.unassignOrgDeviceProfilesFromDevices",
+      "description": "Unassign Org Device Profile from Devices"
+    },
+    {
+      "id": "openapi_mist_com.orgsDeviceProfiles.updateOrgDeviceProfile",
+      "name": "orgsDeviceProfiles.updateOrgDeviceProfile",
+      "description": "Update Org Device Profile"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.countOrgDeviceLastConfigs",
+      "name": "orgsDevices.countOrgDeviceLastConfigs",
+      "description": "Counts the number of entries in device config history for distinct field with given filters"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.countOrgDevices",
+      "name": "orgsDevices.countOrgDevices",
+      "description": "Count Org Devices"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.countOrgDevicesEvents",
+      "name": "orgsDevices.countOrgDevicesEvents",
+      "description": "Count Org Devices Events"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgApsMacs",
+      "name": "orgsDevices.getOrgApsMacs",
+      "description": "Get Org AP Device Mac and Radio MACs"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgDevices",
+      "name": "orgsDevices.getOrgDevices",
+      "description": "Get Org Devices"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgJuniperDevicesCommand",
+      "name": "orgsDevices.getOrgJuniperDevicesCommand",
+      "description": "Get Org Juniper Devices command\n\nJuniper devices can be managed/adopted by Mist. Currently outbound-ssh + netconf is used.\nA few lines of CLI commands are generated per-Org, allowing the Juniper devices to phone home to Mist."
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgJunosDevicesRegistrationCommands",
+      "name": "orgsDevices.getOrgJunosDevicesRegistrationCommands",
+      "description": "Junos devices running mist agents can be managed/adopted by Mist."
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgMultiSitesDevicesUpgrades",
+      "name": "orgsDevices.getOrgMultiSitesDevicesUpgrades",
+      "description": "get Site multi devces upgrades"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgMultiSitesUpgrade",
+      "name": "orgsDevices.getOrgMultiSitesUpgrade",
+      "description": "Get Multi Site Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.getOrgSsrUpgradeInfo",
+      "name": "orgsDevices.getOrgSsrUpgradeInfo",
+      "description": "Get Org SSD Ugprade information"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.searchOrgDeviceLastConfigs",
+      "name": "orgsDevices.searchOrgDeviceLastConfigs",
+      "description": "Search Device Last Configs"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.searchOrgDevices",
+      "name": "orgsDevices.searchOrgDevices",
+      "description": "Search Org Devices"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.searchOrgDevicesEvents",
+      "name": "orgsDevices.searchOrgDevicesEvents",
+      "description": "Search Org Devices Events"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevices.upgradeOrgMultiSitesDevices",
+      "name": "orgsDevices.upgradeOrgMultiSitesDevices",
+      "description": "Upgrade Multiple Sites"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesEvpn.createOrgEvpnTopology",
+      "name": "orgsDevicesEvpn.createOrgEvpnTopology",
+      "description": "While all the `evpn_id` / `downlink_ips` can be specifidd by hand, the easiest way is to call the `build_vpn_topology` API, allowing you to examine the diff, and update it yourself. You can also simply call it with `overwrite=true` which will apply the updates for you.\n\n**Notes:**\n1. You can use `core` / `distribution` / `access` to create a CLOS topology\n2. You can also use `core` / `distribution` to form a 2-tier EVPN topology where ESI-Lag is configured distribution to connect to access switches\n3. In a small/medium campus, `collapsed-core` can be used where core switches are the inter-connected to do EVPN\n4. The API uses a few pre-defined parameters and best-practices to generate the configs. It can be customized by using `evpn_options` in Site Setting / Network Template. (e.g. a different subnet for the underlay)\n\n#### Collapsed Core\nIn a small-medium campus, EVPN can also be enabled only at the core switches (up to 4) by assigning all participating switches with `collapsed-core role`. When there are more than 2 switches, a ring-like topology will be formed.\n\n#### ESI-Lag\nIf the access switchess does not have EVPN support, you can take advantage of EVPN by setting up ESI-Lag on distribution switches\n\n#### Leaf / Access / Collapsed-Core\nFor leaf nodes in a EVPN topology, you’d have to configure the IPs for networks that would participate in EVPN. Optionally, VRFs to isolate traffic from one tenant verus another"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesEvpn.deleteOrgEvpnTopology",
+      "name": "orgsDevicesEvpn.deleteOrgEvpnTopology",
+      "description": "Delete the Org EVPN Topology"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesEvpn.getOrgEvpnTolopogy",
+      "name": "orgsDevicesEvpn.getOrgEvpnTolopogy",
+      "description": "Get One EVPN Topology Detail"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesEvpn.getOrgEvpnTopologies",
+      "name": "orgsDevicesEvpn.getOrgEvpnTopologies",
+      "description": "Get the existing EVPN topology"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesEvpn.updateOrgEvpnTopology",
+      "name": "orgsDevicesEvpn.updateOrgEvpnTopology",
+      "description": "Update the EVPN Topolgy"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.deleteOrgOtherDevice",
+      "name": "orgsDevicesOthers.deleteOrgOtherDevice",
+      "description": "Delete OtherDevice"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.getOrgOtherDevice",
+      "name": "orgsDevicesOthers.getOrgOtherDevice",
+      "description": "Get Org other device (3rd party device)"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.getOrgOtherDevices",
+      "name": "orgsDevicesOthers.getOrgOtherDevices",
+      "description": "Get Org other devices (3rd party devices)"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.getOrgOtherDeviceStats",
+      "name": "orgsDevicesOthers.getOrgOtherDeviceStats",
+      "description": "Get Otherdevice Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.setupOrgCradlepointConnectionToMist",
+      "name": "orgsDevicesOthers.setupOrgCradlepointConnectionToMist",
+      "description": "This sets up cradlepoint webhooks to send events to Mist"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.syncOrgCradlepointRouters",
+      "name": "orgsDevicesOthers.syncOrgCradlepointRouters",
+      "description": "This syncs cradlepoint devices with Mist. We’ll also attempt to use the LLDP data from cradlepoint to identify the linkage against Mist Site / Device"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.updateOrgOtherDevice",
+      "name": "orgsDevicesOthers.updateOrgOtherDevice",
+      "description": "If the Site / Device cannot be identified, a manual association can be made"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesOthers.updateOrgOtherDevices",
+      "name": "orgsDevicesOthers.updateOrgOtherDevices",
+      "description": "If the Site / Device cannot be identified, a manual association can be made. Either a site_id or a device_mac needs to be provided."
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesSsr.cancelOrgSsrUpgrade",
+      "name": "orgsDevicesSsr.cancelOrgSsrUpgrade",
+      "description": "Best effort to cancel an upgrade. Devices which are already upgraded wont be touched↵\n"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesSsr.getOrgSsrUpgrades",
+      "name": "orgsDevicesSsr.getOrgSsrUpgrades",
+      "description": "Get Org SSR Upgrades"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesSsr.upgradeOrgSsrs",
+      "name": "orgsDevicesSsr.upgradeOrgSsrs",
+      "description": "Upgrade Org SSRs"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesUtilities.countOrgBgpStats",
+      "name": "orgsDevicesUtilities.countOrgBgpStats",
+      "description": "Count Org BGP Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesUtilities.searchOrgBgpStats",
+      "name": "orgsDevicesUtilities.searchOrgBgpStats",
+      "description": "Search Org BGP Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsDevicesZscaler.setupOrgZscalerCredential",
+      "name": "orgsDevicesZscaler.setupOrgZscalerCredential",
+      "description": "To setup Zscaler credential\n"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.createOrgGatewayTemplate",
+      "name": "orgsGatewayTemplates.createOrgGatewayTemplate",
+      "description": "Create Org Gateway Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.deleteOrgGatewayTemplate",
+      "name": "orgsGatewayTemplates.deleteOrgGatewayTemplate",
+      "description": "Delete Organization Gateway Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.getOrgGatewayTemplate",
+      "name": "orgsGatewayTemplates.getOrgGatewayTemplate",
+      "description": "Get Organization Gateway Template details"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.getOrgGatewayTemplates",
+      "name": "orgsGatewayTemplates.getOrgGatewayTemplates",
+      "description": "Get Organization Gateway Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.getOrgNetwork",
+      "name": "orgsGatewayTemplates.getOrgNetwork",
+      "description": "Get Organization Network Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsGatewayTemplates.updateOrgGatewayTemplate",
+      "name": "orgsGatewayTemplates.updateOrgGatewayTemplate",
+      "description": "Update Organization Gateway Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.countOrgGuestAuthorizations",
+      "name": "orgsGuests.countOrgGuestAuthorizations",
+      "description": "Count Org Authorized Guest"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.deleteOrgGuestAuthorization",
+      "name": "orgsGuests.deleteOrgGuestAuthorization",
+      "description": "Delete Guest Authorization"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.getOrgGuestAuthorization",
+      "name": "orgsGuests.getOrgGuestAuthorization",
+      "description": "Get Guest Authorization"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.getOrgGuestAuthorizations",
+      "name": "orgsGuests.getOrgGuestAuthorizations",
+      "description": "Get Org Guest Authorizations"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.searchOrgGuestAuthorization",
+      "name": "orgsGuests.searchOrgGuestAuthorization",
+      "description": "Search Authorized Guest"
+    },
+    {
+      "id": "openapi_mist_com.orgsGuests.updateOrgGuestAuthorization",
+      "name": "orgsGuests.updateOrgGuestAuthorization",
+      "description": "Update Guest Authorization"
+    },
+    {
+      "id": "openapi_mist_com.orgsInventory.addOrgInventory",
+      "name": "orgsInventory.addOrgInventory",
+      "description": "Add Device to Org Inventory"
+    },
+    {
+      "id": "openapi_mist_com.orgsInventory.getOrgInventory",
+      "name": "orgsInventory.getOrgInventory",
+      "description": "Get Org Inventory\n\n### VC (Virtual-Chassis) Management\nIdeally VC should be managed as a single device - where - one managed entity where config / monitoring is anchored against (with a stable identify MAC) - all members appears in the inventory\n\nIn our implementation, we strive to achieve that without manual user configurations by \n1. during claim or adoption a VC, we require FPC0 to exist and will use its MAC as identify for the entire chassis\n2. other VC members will be automatically populated when they’re all present\n\nThe perceivable result is \n1. from `/sites/:site_id/stats/devices/:fpc0_mac` API, you’d see the VC where module_stat contains the VC members \n2. from `/orgs/:org_id/inventory?vc=true` API, you’d see all VC members with vc_mac pointing to the FPC0"
+    },
+    {
+      "id": "openapi_mist_com.orgsInventory.reevaluateOrgAutoAssignment",
+      "name": "orgsInventory.reevaluateOrgAutoAssignment",
+      "description": "Reevaluate Auto Assignment"
+    },
+    {
+      "id": "openapi_mist_com.orgsInventory.replaceOrgDevices",
+      "name": "orgsInventory.replaceOrgDevices",
+      "description": "It’s a common request we get from the customers. When a AP HW has problem and need a replacement, they would want to copy the existing attributes (Device Config) of this old AP to the new one. It can be done by providing the MAC of a device that’s currently in the inventory but not assigned. The Device replaced will become unassigned.\n\n**Note:** For Gateway devices only like-for-like replacements (can only replace a SRX320 with a SRX320 and not some otehr model) are allowed."
+    },
+    {
+      "id": "openapi_mist_com.orgsInventory.updateOrgInventoryAssignment",
+      "name": "orgsInventory.updateOrgInventoryAssignment",
+      "description": "Update Org Inventory"
+    },
+    {
+      "id": "openapi_mist_com.orgsInvites.inviteOrgAdmin",
+      "name": "orgsInvites.inviteOrgAdmin",
+      "description": "If the request is successful, an email will also be sent to the user with a link to ```https://manage.mist.com/verify/invite?token=:token&expire=1459632743&org=OrgName```"
+    },
+    {
+      "id": "openapi_mist_com.orgsInvites.uninviteOrgAdmin",
+      "name": "orgsInvites.uninviteOrgAdmin",
+      "description": "Delete Admin Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsInvites.updateOrgAdminInvite",
+      "name": "orgsInvites.updateOrgAdminInvite",
+      "description": "Update Admin Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsJsi.adoptOrgJsiDevice",
+      "name": "orgsJsi.adoptOrgJsiDevice",
+      "description": "Adopt JSI devices\n"
+    },
+    {
+      "id": "openapi_mist_com.orgsJsi.createOrgJsiDeviceShellSession",
+      "name": "orgsJsi.createOrgJsiDeviceShellSession",
+      "description": "Create Shell Session"
+    },
+    {
+      "id": "openapi_mist_com.orgsJsi.getOrgJsiDevices",
+      "name": "orgsJsi.getOrgJsiDevices",
+      "description": "Get all devices that connected to JSI"
+    },
+    {
+      "id": "openapi_mist_com.orgsJsi.getOrgJsiPastPurchases",
+      "name": "orgsJsi.getOrgJsiPastPurchases",
+      "description": "This gets all devices purchased from the accounts associated with the Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsJsi.upgradeOrgJsiDevice",
+      "name": "orgsJsi.upgradeOrgJsiDevice",
+      "description": "Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.orgsLicenses.getOrgLicencesBySite",
+      "name": "orgsLicenses.getOrgLicencesBySite",
+      "description": "Get Licenses Usage by Sites\nThis shows license usage (i.e. needed) based on the features enabled for the site."
+    },
+    {
+      "id": "openapi_mist_com.orgsLicenses.getOrgLicencesSummary",
+      "name": "orgsLicenses.getOrgLicencesSummary",
+      "description": "Get the list of licenses"
+    },
+    {
+      "id": "openapi_mist_com.orgsLicenses.moveOrDeleteOrgLicenseToAnotherOrg",
+      "name": "orgsLicenses.moveOrDeleteOrgLicenseToAnotherOrg",
+      "description": "Move, Undo Move or Delete Org License to Another Org\nIf the admin has admin privilege against the `org_id` and `dst_org_id`, he can move some of the licenses to another Org. Given that: \n1. the specified license is currently active \n2. there’s enough licenses left in the specified license (by subscription_id) \n3. there will still be enough entitled licenses for the type of license after the amendment"
+    },
+    {
+      "id": "openapi_mist_com.orgsLogs.countOrgLogsByDistinctAttributes",
+      "name": "orgsLogs.countOrgLogsByDistinctAttributes",
+      "description": "Count by Distinct Attributes of Audit Logs"
+    },
+    {
+      "id": "openapi_mist_com.orgsLogs.getOrgLogs",
+      "name": "orgsLogs.getOrgLogs",
+      "description": "Get a list of change logs for the current Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsMaps.importOrgMaps",
+      "name": "orgsMaps.importOrgMaps",
+      "description": "Import data from files is a multipart POST which has an file, an optional json, and an optional csv, to create floorplan, assign matching inventory to specific site, place ap if name or mac matches\n\n# CSV File Format\n```csv\nVendor AP name,Mist AP Mac\nUS Office AP-2 - 5c:5b:35:00:00:02,5c5b35000002\n``` "
+    },
+    {
+      "id": "openapi_mist_com.orgsMarvis.troubleshootOrgClient",
+      "name": "orgsMarvis.troubleshootOrgClient",
+      "description": "Troubleshoot sites, devices, clients, and wired clients. See search APIs for device information:\n- [search Device](/#tag/Orgs-Devices/operation/searchOrgDevices)\n- [search Wireless Client](/#tag/Orgs-Devices/operation/searchOrgClientsWireless)\n- [search Wired Client](/#tag/Orgs-Devices/operation/searchOrgClientsWired)\n\n**NOTE**: requires Marvis subscription license"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxClusters.createOrgMxEdgeCluster",
+      "name": "orgsMxClusters.createOrgMxEdgeCluster",
+      "description": "Create MxCluster"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxClusters.deleteOrgMxEdgeCluster",
+      "name": "orgsMxClusters.deleteOrgMxEdgeCluster",
+      "description": "Delete Org MXEdge Cluster"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxClusters.getOrgMxEdgeCluster",
+      "name": "orgsMxClusters.getOrgMxEdgeCluster",
+      "description": "Get Org MxEdge Cluster Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxClusters.getOrgMxEdgeClusters",
+      "name": "orgsMxClusters.getOrgMxEdgeClusters",
+      "description": "Get MxEdge Clusters"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxClusters.updateOrgMxEdgeCluster",
+      "name": "orgsMxClusters.updateOrgMxEdgeCluster",
+      "description": "Update Org MxEdge Cluster"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.assignOrgMxEdgeToSite",
+      "name": "orgsMxEdges.assignOrgMxEdgeToSite",
+      "description": "Assign Org MxEdge to Site"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.bounceOrgMxEdgeDataPorts",
+      "name": "orgsMxEdges.bounceOrgMxEdgeDataPorts",
+      "description": "Bounce TunTerm Data Ports"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.claimOrgMxEdge",
+      "name": "orgsMxEdges.claimOrgMxEdge",
+      "description": "For a Mist Edge in default state, it will show a random claim code like `135-546-673` which you can “claim” it into your Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.controlOrgMxEdgeServices",
+      "name": "orgsMxEdges.controlOrgMxEdgeServices",
+      "description": "Control Services on a Mist Edge"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.createOrgMxEdge",
+      "name": "orgsMxEdges.createOrgMxEdge",
+      "description": "Create MxEdge"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.deleteOrgMxEdge",
+      "name": "orgsMxEdges.deleteOrgMxEdge",
+      "description": "Delete Org MxEdge"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.getOrgMxEdge",
+      "name": "orgsMxEdges.getOrgMxEdge",
+      "description": "Get Org MxEdge details"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.getOrgMxEdges",
+      "name": "orgsMxEdges.getOrgMxEdges",
+      "description": "Get Org MxEdges"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.getOrgMxEdgeUpgrade",
+      "name": "orgsMxEdges.getOrgMxEdgeUpgrade",
+      "description": "Get Mist Edge Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.getOrgMxEdgeUpgradeInfo",
+      "name": "orgsMxEdges.getOrgMxEdgeUpgradeInfo",
+      "description": "Get Mist Edge Upgrade Information"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.getOrgMxEdgeUpgrades",
+      "name": "orgsMxEdges.getOrgMxEdgeUpgrades",
+      "description": "Get Mist Edge Upgrades"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.restartOrgMxEdge",
+      "name": "orgsMxEdges.restartOrgMxEdge",
+      "description": "In the case where a Mist Edge is replaced, you would need to unregister it. Which disconnects the currently the connected Mist Edge and allow another to register."
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.unassignOrgMxEdgeFromSite",
+      "name": "orgsMxEdges.unassignOrgMxEdgeFromSite",
+      "description": "Unassign Org MxEdge from Site"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.unregisterOrgMxEdge",
+      "name": "orgsMxEdges.unregisterOrgMxEdge",
+      "description": "In the case where a Mist Edge is replaced, you would need to unregister it. Which disconnects the currently the connected Mist Edge and allow another to register."
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.updateOrgMxEdge",
+      "name": "orgsMxEdges.updateOrgMxEdge",
+      "description": "Update Org MxEdge"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.upgradeOrgMxEdge",
+      "name": "orgsMxEdges.upgradeOrgMxEdge",
+      "description": "Upgrade MxEdge"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.upgradeOrgMxEdges",
+      "name": "orgsMxEdges.upgradeOrgMxEdges",
+      "description": "Upgrade Mist Edges"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxEdges.uploadOrgMxEdgeSupportFiles",
+      "name": "orgsMxEdges.uploadOrgMxEdgeSupportFiles",
+      "description": "Support / Upload Mist Edge support files"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxTunnels.createOrgMxTunnel",
+      "name": "orgsMxTunnels.createOrgMxTunnel",
+      "description": "Create MxTunnel"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxTunnels.deleteOrgMxTunnel",
+      "name": "orgsMxTunnels.deleteOrgMxTunnel",
+      "description": "Delete Org MxTunnel"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxTunnels.getOrgMxTunnel",
+      "name": "orgsMxTunnels.getOrgMxTunnel",
+      "description": "Get Org MxTunnel Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxTunnels.getOrgMxTunnels",
+      "name": "orgsMxTunnels.getOrgMxTunnels",
+      "description": "Get Org MxTiunnels"
+    },
+    {
+      "id": "openapi_mist_com.orgsMxTunnels.updateOrgMxTunnel",
+      "name": "orgsMxTunnels.updateOrgMxTunnel",
+      "description": "Update Org MxTunnel"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.createOrgNacRule",
+      "name": "orgsNac.createOrgNacRule",
+      "description": "create Org NAC Rule"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.createOrgNacTag",
+      "name": "orgsNac.createOrgNacTag",
+      "description": "Create Org NAC Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.deleteOrgNacRule",
+      "name": "orgsNac.deleteOrgNacRule",
+      "description": "Delete Org NAC Rule"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.deleteOrgNacTag",
+      "name": "orgsNac.deleteOrgNacTag",
+      "description": "Delete Org NAC Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.getOrgNacRule",
+      "name": "orgsNac.getOrgNacRule",
+      "description": "Get Org NAC Rule"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.getOrgNacRules",
+      "name": "orgsNac.getOrgNacRules",
+      "description": "get Org NAC Rules"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.getOrgNacTag",
+      "name": "orgsNac.getOrgNacTag",
+      "description": "Get Org NAC Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.getOrgNacTags",
+      "name": "orgsNac.getOrgNacTags",
+      "description": "Get Org NAC Tags"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.updateOrgNacRule",
+      "name": "orgsNac.updateOrgNacRule",
+      "description": "Update Org NAC Rule"
+    },
+    {
+      "id": "openapi_mist_com.orgsNac.updateOrgNacTag",
+      "name": "orgsNac.updateOrgNacTag",
+      "description": "Update Org NAC Tag "
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworks.createOrgNetwork",
+      "name": "orgsNetworks.createOrgNetwork",
+      "description": "Create Organization Network"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworks.deleteOrgNetwork",
+      "name": "orgsNetworks.deleteOrgNetwork",
+      "description": "Delete Organization Network"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworks.getOrgNetworks",
+      "name": "orgsNetworks.getOrgNetworks",
+      "description": "Get Organization Networks"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworks.updateOrgNetwork",
+      "name": "orgsNetworks.updateOrgNetwork",
+      "description": "Update Organization Network"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworkTemplates.createOrgNetworkTemplate",
+      "name": "orgsNetworkTemplates.createOrgNetworkTemplate",
+      "description": "Update Org Network Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworkTemplates.deleteOrgNetworkTemplate",
+      "name": "orgsNetworkTemplates.deleteOrgNetworkTemplate",
+      "description": "Delete Org Network Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworkTemplates.getOrgNetworkTemplate",
+      "name": "orgsNetworkTemplates.getOrgNetworkTemplate",
+      "description": "Get Org Network Templates Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworkTemplates.getOrgNetworkTemplates",
+      "name": "orgsNetworkTemplates.getOrgNetworkTemplates",
+      "description": "Get Org Network Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsNetworkTemplates.updateOrgNetworkTemplates",
+      "name": "orgsNetworkTemplates.updateOrgNetworkTemplates",
+      "description": "Update Org Network Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsOAuth.deleteOrgOauthAppAuthorization",
+      "name": "orgsOAuth.deleteOrgOauthAppAuthorization",
+      "description": "Delete Org Level OAuth Application Authorization With Mist Portal"
+    },
+    {
+      "id": "openapi_mist_com.orgsOAuth.deleteOrgOauthAppAuthorizationDeprecated",
+      "name": "orgsOAuth.deleteOrgOauthAppAuthorizationDeprecated",
+      "description": "Kept for backward compatibility. \nUse `/api/v1/orgs/{org_id}/setting/{app_name}/link` instead.\n\nDelete Org Level OAuth Application Authorization With Mist Portal"
+    },
+    {
+      "id": "openapi_mist_com.orgsOAuth.getOrgOauthAppLinkedStatus",
+      "name": "orgsOAuth.getOrgOauthAppLinkedStatus",
+      "description": "Get Org Level OAuth Application Linked Status"
+    },
+    {
+      "id": "openapi_mist_com.orgsOAuth.getOrgOauthAppLinkedStatusDeprecated",
+      "name": "orgsOAuth.getOrgOauthAppLinkedStatusDeprecated",
+      "description": "Kept for backward compatibility. \nUse `/api/v1/orgs/{org_id}/setting/{app_name}/link` instead.\n\nGet Org Level OAuth Application Linked Status"
+    },
+    {
+      "id": "openapi_mist_com.orgsPremiumAnalytics.getOrgPmaDashboards",
+      "name": "orgsPremiumAnalytics.getOrgPmaDashboards",
+      "description": "This all the premium analytics dashboards for this Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsPskPortals.createOrgPskPortal",
+      "name": "orgsPskPortals.createOrgPskPortal",
+      "description": "Create Org Psk Portal"
+    },
+    {
+      "id": "openapi_mist_com.orgsPskPortals.deleteOrgPskPortal",
+      "name": "orgsPskPortals.deleteOrgPskPortal",
+      "description": "Delete Org Psk Portal"
+    },
+    {
+      "id": "openapi_mist_com.orgsPskPortals.getOrgPskPortal",
+      "name": "orgsPskPortals.getOrgPskPortal",
+      "description": "get Org Psk Portal Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsPskPortals.getOrgPskPortals",
+      "name": "orgsPskPortals.getOrgPskPortals",
+      "description": "get Org Psk Portals\n\nPSK Self-Service Portals are for \n1. **WIFI users** who want to connect to a WLAN with personal PSK, they’re told to connect to a URL\nwhere they can login (likely through company’s SSO) and get the WIFI Name / Passphrase - required input fields name, email so we can generate PSK \n2. **PSK Admins** (they don’t have access to normal Network Admin Portal)"
+    },
+    {
+      "id": "openapi_mist_com.orgsPskPortals.updateOrgPskPortal",
+      "name": "orgsPskPortals.updateOrgPskPortal",
+      "description": "update Org Psk Portal"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.createOrgPsk",
+      "name": "orgsPsks.createOrgPsk",
+      "description": "Create Org PSK"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.deleteOrgPsk",
+      "name": "orgsPsks.deleteOrgPsk",
+      "description": "Delete Org PSK"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.deleteOrgPskOldPassphrase",
+      "name": "orgsPsks.deleteOrgPskOldPassphrase",
+      "description": "Delete `old_passphrase` from PSK. \nIf successful, response is same as GET, returns the PSK with `old_passphrase` removed."
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.getOrgPsk",
+      "name": "orgsPsks.getOrgPsk",
+      "description": "Get Org PSK Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.getOrgPsks",
+      "name": "orgsPsks.getOrgPsks",
+      "description": "Get Org Psks"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.importOrgPsks",
+      "name": "orgsPsks.importOrgPsks",
+      "description": "Import PSK from CSV file or JSON\n\n## CSV File Format\n```\nPSK Import CSV File Format:\nname,ssid,passphrase,usage,vlan_id,mac,max_usage,role,expire_time,notify_expiry,expiry_notification_time,notify_on_create_or_edit,email\nCommon,warehouse,foryoureyesonly,single,35,a31425f31278,0,student,1618594236\nJustin,reception,visible,multi,1002,200,teacher,1618594236\nCommon2,ssid,1245678-xx,single,35,a31425f31278,0,student,1618594236,true,7,true,admin@test.com\n```"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.updateOrgMultiPsks",
+      "name": "orgsPsks.updateOrgMultiPsks",
+      "description": "Update multi PSKs"
+    },
+    {
+      "id": "openapi_mist_com.orgsPsks.updateOrgPsk",
+      "name": "orgsPsks.updateOrgPsk",
+      "description": "Update Org PSK "
+    },
+    {
+      "id": "openapi_mist_com.orgsRfTemplates.createOrgRfTemplate",
+      "name": "orgsRfTemplates.createOrgRfTemplate",
+      "description": "Create Org RF Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsRfTemplates.deleteOrgRfTemplate",
+      "name": "orgsRfTemplates.deleteOrgRfTemplate",
+      "description": "Delete Org RF Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsRfTemplates.getOrgRfTemplate",
+      "name": "orgsRfTemplates.getOrgRfTemplate",
+      "description": "Get Org RF Template Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsRfTemplates.getOrgRfTemplates",
+      "name": "orgsRfTemplates.getOrgRfTemplates",
+      "description": "Get Org RF Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsRfTemplates.updateOrgRfTemplate",
+      "name": "orgsRfTemplates.updateOrgRfTemplate",
+      "description": "Update Org RF Template "
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkClients.updateSdkClient",
+      "name": "orgsSdkClients.updateSdkClient",
+      "description": "Update SDK Client"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.createSdkInvite",
+      "name": "orgsSdkInvites.createSdkInvite",
+      "description": "Create SDK Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.getSdkInvite",
+      "name": "orgsSdkInvites.getSdkInvite",
+      "description": "Get SDK Invite Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.getSdkInviteQrCode",
+      "name": "orgsSdkInvites.getSdkInviteQrCode",
+      "description": "Revoke SDK Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.getSdkInvites",
+      "name": "orgsSdkInvites.getSdkInvites",
+      "description": "Get SDK Invites"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.revokeSdkInvite",
+      "name": "orgsSdkInvites.revokeSdkInvite",
+      "description": "Revoke SDK Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.sendSdkInviteEmail",
+      "name": "orgsSdkInvites.sendSdkInviteEmail",
+      "description": "Send SDK Invite by Email"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.sendSdkInviteSms",
+      "name": "orgsSdkInvites.sendSdkInviteSms",
+      "description": "Send SDK Invite by SMS"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkInvites.updateSdkInvite",
+      "name": "orgsSdkInvites.updateSdkInvite",
+      "description": "Update SDK Invite"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkTemplates.createSdkTemplate",
+      "name": "orgsSdkTemplates.createSdkTemplate",
+      "description": "Create SDK Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkTemplates.deleteSdkTemplate",
+      "name": "orgsSdkTemplates.deleteSdkTemplate",
+      "description": "Delete SDK Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkTemplates.getSdkTemplate",
+      "name": "orgsSdkTemplates.getSdkTemplate",
+      "description": "Get SDK Template Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkTemplates.getSdkTemplates",
+      "name": "orgsSdkTemplates.getSdkTemplates",
+      "description": "Get SDK Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsSdkTemplates.updateSdkTemplate",
+      "name": "orgsSdkTemplates.updateSdkTemplate",
+      "description": "Update SDK Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSecPolicies.createOrgSecPolicies",
+      "name": "orgsSecPolicies.createOrgSecPolicies",
+      "description": "Create Org Security Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsSecPolicies.deleteOrgSecPolicy",
+      "name": "orgsSecPolicies.deleteOrgSecPolicy",
+      "description": "Delete Org Security Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsSecPolicies.getOrgSecPolicies",
+      "name": "orgsSecPolicies.getOrgSecPolicies",
+      "description": "Get Org Security Policies"
+    },
+    {
+      "id": "openapi_mist_com.orgsSecPolicies.getOrgSecPolicy",
+      "name": "orgsSecPolicies.getOrgSecPolicy",
+      "description": "Get Org Security Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsSecPolicies.updateOrgSecPolicies",
+      "name": "orgsSecPolicies.updateOrgSecPolicies",
+      "description": "Update Org Security Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsServicePolicies.createOrgServicePolicy",
+      "name": "orgsServicePolicies.createOrgServicePolicy",
+      "description": "Create Org Serrvice Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsServicePolicies.deleteOrgServicePolicy",
+      "name": "orgsServicePolicies.deleteOrgServicePolicy",
+      "description": "Delete Org Service Policuy"
+    },
+    {
+      "id": "openapi_mist_com.orgsServicePolicies.getOrgServicePolicies",
+      "name": "orgsServicePolicies.getOrgServicePolicies",
+      "description": "Get Org Service Policies"
+    },
+    {
+      "id": "openapi_mist_com.orgsServicePolicies.getOrgServicePolicy",
+      "name": "orgsServicePolicies.getOrgServicePolicy",
+      "description": "Get Org Service Policy Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsServicePolicies.updateOrgServicePolicy",
+      "name": "orgsServicePolicies.updateOrgServicePolicy",
+      "description": "Update Org Serrvice Policy"
+    },
+    {
+      "id": "openapi_mist_com.orgsServices.createOrgService",
+      "name": "orgsServices.createOrgService",
+      "description": "Create getOrgServices Service"
+    },
+    {
+      "id": "openapi_mist_com.orgsServices.deleteOrgService",
+      "name": "orgsServices.deleteOrgService",
+      "description": "deleteOrgService"
+    },
+    {
+      "id": "openapi_mist_com.orgsServices.getOrgService",
+      "name": "orgsServices.getOrgService",
+      "description": "Get Org Service"
+    },
+    {
+      "id": "openapi_mist_com.orgsServices.getOrgServices",
+      "name": "orgsServices.getOrgServices",
+      "description": "Get Org Services"
+    },
+    {
+      "id": "openapi_mist_com.orgsServices.updateOrgService",
+      "name": "orgsServices.updateOrgService",
+      "description": "update Org Service"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.createOrgClientsBlocklist",
+      "name": "orgsSetting.createOrgClientsBlocklist",
+      "description": "Create Org Blacklist Client List. \n\nIf there is already a blacklist, this API will replace it with the new one. \n\nMax number of blacklist clients is 1000. \n\nRetrieve the current blacklisted clients from `blacklist_url` under Org:Setting\n"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.deleteOrgClientsBlocklist",
+      "name": "orgsSetting.deleteOrgClientsBlocklist",
+      "description": "Delete Org Blacklist Station Clients"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.getOrgSettings",
+      "name": "orgsSetting.getOrgSettings",
+      "description": "Get Org Settings"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.setOrgCustomBucket",
+      "name": "orgsSetting.setOrgCustomBucket",
+      "description": "Provide Customer Bucket Name\n\nSetting up Custom PCAP Bucket Involves the following:\n* provide the bucket name\n* we’ll attempt to write a file MIST_TOKEN\n* you have to verify the ownership of the bucket by providing the content of the MIST_TOKEN"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.updateOrgSettings",
+      "name": "orgsSetting.updateOrgSettings",
+      "description": "Update Org Settings"
+    },
+    {
+      "id": "openapi_mist_com.orgsSetting.verifyOrgCustomBucket",
+      "name": "orgsSetting.verifyOrgCustomBucket",
+      "description": "Verify Customer PCAP Bucket\n\n**Note**: If successful, a “VERIFIED” file will be created in the bucket"
+    },
+    {
+      "id": "openapi_mist_com.orgsSitegroups.createOrgSiteGroup",
+      "name": "orgsSitegroups.createOrgSiteGroup",
+      "description": "Create Org Site Group"
+    },
+    {
+      "id": "openapi_mist_com.orgsSitegroups.deleteOrgSiteGroup",
+      "name": "orgsSitegroups.deleteOrgSiteGroup",
+      "description": "Delete Org Site Group"
+    },
+    {
+      "id": "openapi_mist_com.orgsSitegroups.getOrgSiteGroup",
+      "name": "orgsSitegroups.getOrgSiteGroup",
+      "description": "Get Org Site Group"
+    },
+    {
+      "id": "openapi_mist_com.orgsSitegroups.getOrgSiteGroups",
+      "name": "orgsSitegroups.getOrgSiteGroups",
+      "description": "Get Org Site Groups"
+    },
+    {
+      "id": "openapi_mist_com.orgsSitegroups.updateOrgSiteGroup",
+      "name": "orgsSitegroups.updateOrgSiteGroup",
+      "description": "Update Org Site Group"
+    },
+    {
+      "id": "openapi_mist_com.orgsSites.countOrgSites",
+      "name": "orgsSites.countOrgSites",
+      "description": "Count Sites"
+    },
+    {
+      "id": "openapi_mist_com.orgsSites.createOrgSite",
+      "name": "orgsSites.createOrgSite",
+      "description": "Create Org Site"
+    },
+    {
+      "id": "openapi_mist_com.orgsSites.getOrgSites",
+      "name": "orgsSites.getOrgSites",
+      "description": "Get Org Sites"
+    },
+    {
+      "id": "openapi_mist_com.orgsSites.importOrgMapToSite",
+      "name": "orgsSites.importOrgMapToSite",
+      "description": "Import data from files is a multipart POST which has an file, an optional json, and an optional csv, to create floorplan, assign matching inventory to specific site, place ap if name or mac matches\n\n#### Request\n\n```\n\"json\": a JSON string describing your upload\n\"file\": a binary file\n```"
+    },
+    {
+      "id": "openapi_mist_com.orgsSites.searchOrgSites",
+      "name": "orgsSites.searchOrgSites",
+      "description": "Search Sites"
+    },
+    {
+      "id": "openapi_mist_com.orgsSiteTemplates.createOrgSiteTemplates",
+      "name": "orgsSiteTemplates.createOrgSiteTemplates",
+      "description": "Create Org Site Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSiteTemplates.deleteOrgSiteTemplate",
+      "name": "orgsSiteTemplates.deleteOrgSiteTemplate",
+      "description": "Delete Org Site Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSiteTemplates.getOrgSiteTemplate",
+      "name": "orgsSiteTemplates.getOrgSiteTemplate",
+      "description": "Get Org Site Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSiteTemplates.getOrgSiteTemplates",
+      "name": "orgsSiteTemplates.getOrgSiteTemplates",
+      "description": "get Org Site Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsSiteTemplates.updateOrgSiteTemplate",
+      "name": "orgsSiteTemplates.updateOrgSiteTemplate",
+      "description": "Update Org Site Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsSlEs.getOrgSitesSle",
+      "name": "orgsSlEs.getOrgSitesSle",
+      "description": "Get Org Sites SLE"
+    },
+    {
+      "id": "openapi_mist_com.orgsSlEs.getOrgSle",
+      "name": "orgsSlEs.getOrgSle",
+      "description": "Get Org SLEs (all/worst sites, Mx Edges, ...)"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.createOrgSso",
+      "name": "orgsSso.createOrgSso",
+      "description": "Create Org SSO Configuration"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.deleteOrgSso",
+      "name": "orgsSso.deleteOrgSso",
+      "description": "Delete Org SSO Configuration"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.downloadOrgSsoSamlMetadata",
+      "name": "orgsSso.downloadOrgSsoSamlMetadata",
+      "description": "Download Org SSO SAML Metdata\n\nExample of metadata.xml:\n```xml\n<?xml version=\"1.0\" encoding=\"UTF-8\"?><md:EntityDescriptor xmlns:md=\"urn:oasis:names:tc:SAML:2.0:metadata\" entityID=\"https://api.mist.com/api/v1/saml/5hdF5g/login\" validUntil=\"2027-10-12T21:59:01Z\" xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n    <md:SPSSODescriptor AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\">\n        <md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://api.mist.com/api/v1/saml/5hdF5g/logout\" />\n        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>\n        <md:AssertionConsumerService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://api.mist.com/api/v1/saml/5hdF5g/login\" index=\"0\" isDefault=\"true\"/>\n        <md:AttributeConsumingService index=\"0\">\n            <md:ServiceName xml:lang=\"en-US\">Mist</md:ServiceName>\n            <md:RequestedAttribute Name=\"Role\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"true\"/>\n            <md:RequestedAttribute Name=\"FirstName\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"false\"/>\n            <md:RequestedAttribute Name=\"LastName\" NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" isRequired=\"false\"/>\n        </md:AttributeConsumingService>\n    </md:SPSSODescriptor>\n</md:EntityDescriptor>\n```"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.getOrgSso",
+      "name": "orgsSso.getOrgSso",
+      "description": "Get Org SSO Configuration Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.getOrgSsoLatestFailures",
+      "name": "orgsSso.getOrgSsoLatestFailures",
+      "description": "Get Org SSO Latest Failures"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.getOrgSsos",
+      "name": "orgsSso.getOrgSsos",
+      "description": "Get Org SSO Configuration"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.getOrgSsoSamlMetadata",
+      "name": "orgsSso.getOrgSsoSamlMetadata",
+      "description": "Get Org SSO SAML Metadata"
+    },
+    {
+      "id": "openapi_mist_com.orgsSso.updateOrgSso",
+      "name": "orgsSso.updateOrgSso",
+      "description": "Update Org SSO Configuration"
+    },
+    {
+      "id": "openapi_mist_com.orgsSsoRoles.createOrgSsoRole",
+      "name": "orgsSsoRoles.createOrgSsoRole",
+      "description": "Create Org SSO Role"
+    },
+    {
+      "id": "openapi_mist_com.orgsSsoRoles.deleteOrgSsoRole",
+      "name": "orgsSsoRoles.deleteOrgSsoRole",
+      "description": "Delete Org SSO Role"
+    },
+    {
+      "id": "openapi_mist_com.orgsSsoRoles.getOrgSsoRole",
+      "name": "orgsSsoRoles.getOrgSsoRole",
+      "description": "Get Org SSO Role Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsSsoRoles.getOrgSsoRoles",
+      "name": "orgsSsoRoles.getOrgSsoRoles",
+      "description": "Get Org SSO Roles"
+    },
+    {
+      "id": "openapi_mist_com.orgsSsoRoles.updateOrgSsoRole",
+      "name": "orgsSsoRoles.updateOrgSsoRole",
+      "description": "Update Org SSO Role"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.countOrgByDisctinctAttributesOfSwitchPorts",
+      "name": "orgsStats.countOrgByDisctinctAttributesOfSwitchPorts",
+      "description": "Count by Distinct Attributes of Switch/Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.getOrgAssetsStats",
+      "name": "orgsStats.getOrgAssetsStats",
+      "description": "Get Org Assets Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.getOrgDevicesStats",
+      "name": "orgsStats.getOrgDevicesStats",
+      "description": "Org Devices stats\nThis API renders some high-level device stats, pagination is assumed and returned in response header (as the response is an array)\n"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.getOrgMxEdgesStats",
+      "name": "orgsStats.getOrgMxEdgesStats",
+      "description": "Get Org MxEdge Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.getOrgMxEdgeStats",
+      "name": "orgsStats.getOrgMxEdgeStats",
+      "description": "Get Org MxEdge Details Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsStats.getOrgStats",
+      "name": "orgsStats.getOrgStats",
+      "description": "Get Org Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsStatsTunnels.countOrgTunnelsStats",
+      "name": "orgsStatsTunnels.countOrgTunnelsStats",
+      "description": "Count Mist Tunnels Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsStatsTunnels.searchOrgTunnelsStats",
+      "name": "orgsStatsTunnels.searchOrgTunnelsStats",
+      "description": "Search Org Tunnels Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsSubscriptions.subscribeOrgAlarmsReports",
+      "name": "orgsSubscriptions.subscribeOrgAlarmsReports",
+      "description": "Subscribe to Org Alarms/Reports\nSubscriptions define how Org Alarms/Reports are delivered to whom"
+    },
+    {
+      "id": "openapi_mist_com.orgsSubscriptions.unsubscribeOrgAlarmsReports",
+      "name": "orgsSubscriptions.unsubscribeOrgAlarmsReports",
+      "description": "Unsubscribe from Org Alarms/Reports\nSubscriptions define how Org Alarms/Reports are delivered to whom"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.cloneOrgTemplate",
+      "name": "orgsTemplates.cloneOrgTemplate",
+      "description": "Clone Org Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.createOrgTemplate",
+      "name": "orgsTemplates.createOrgTemplate",
+      "description": "Create Org Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.deleteOrgTemplate",
+      "name": "orgsTemplates.deleteOrgTemplate",
+      "description": "Delete Org Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.getOrgTemplate",
+      "name": "orgsTemplates.getOrgTemplate",
+      "description": "Get Org Template Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.getOrgTemplates",
+      "name": "orgsTemplates.getOrgTemplates",
+      "description": "Get Org Templates"
+    },
+    {
+      "id": "openapi_mist_com.orgsTemplates.updateOrgTemplate",
+      "name": "orgsTemplates.updateOrgTemplate",
+      "description": "Update Org Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.addOrgTicketComment",
+      "name": "orgsTickets.addOrgTicketComment",
+      "description": "Add Comment to support ticket"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.countOrgTickets",
+      "name": "orgsTickets.countOrgTickets",
+      "description": "Count Org Tickets"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.createOrgTicket",
+      "name": "orgsTickets.createOrgTicket",
+      "description": "Create a support ticket"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.getOrgTicket",
+      "name": "orgsTickets.getOrgTicket",
+      "description": "Get support ticket details"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.getOrgTickets",
+      "name": "orgsTickets.getOrgTickets",
+      "description": "Get Tickets of an Org"
+    },
+    {
+      "id": "openapi_mist_com.orgsTickets.updateOrgTicket",
+      "name": "orgsTickets.updateOrgTicket",
+      "description": "Update support ticket"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.countOrgPeerPathStats",
+      "name": "orgsVpNs.countOrgPeerPathStats",
+      "description": "Count Org Peer Path Statgs"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.createOrgVpns",
+      "name": "orgsVpNs.createOrgVpns",
+      "description": "Create Org VPN"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.deleteOrgVpn",
+      "name": "orgsVpNs.deleteOrgVpn",
+      "description": "delete Org Vpn"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.getOrgsVpns",
+      "name": "orgsVpNs.getOrgsVpns",
+      "description": "Get Org VPNs"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.getOrgVpn",
+      "name": "orgsVpNs.getOrgVpn",
+      "description": "getOrgVpn"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.searchOrgPeerPathStats",
+      "name": "orgsVpNs.searchOrgPeerPathStats",
+      "description": "Search Org Peer Path Stats"
+    },
+    {
+      "id": "openapi_mist_com.orgsVpNs.updateOrgVpn",
+      "name": "orgsVpNs.updateOrgVpn",
+      "description": "update Org Vpn"
+    },
+    {
+      "id": "openapi_mist_com.orgsWebhooks.createOrgWebhook",
+      "name": "orgsWebhooks.createOrgWebhook",
+      "description": "Create Org Webhook\n\n**N.B**. For org webhooks, only device-events/alarms/audits/client-join/client-sessions/device-updowns/mxedge-events Infrastructure topics are supported."
+    },
+    {
+      "id": "openapi_mist_com.orgsWebhooks.deleteOrgWebhook",
+      "name": "orgsWebhooks.deleteOrgWebhook",
+      "description": "Delete Org Webhook"
+    },
+    {
+      "id": "openapi_mist_com.orgsWebhooks.getOrgWebhook",
+      "name": "orgsWebhooks.getOrgWebhook",
+      "description": "Get Org Webhook Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsWebhooks.getOrgWebhooks",
+      "name": "orgsWebhooks.getOrgWebhooks",
+      "description": "Get Org Webhooks"
+    },
+    {
+      "id": "openapi_mist_com.orgsWebhooks.updateOrgWebhook",
+      "name": "orgsWebhooks.updateOrgWebhook",
+      "description": "Update Org Webhook"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.createOrgWlan",
+      "name": "orgsWlans.createOrgWlan",
+      "description": "Create Org Wlan"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.deleteOrgWlan",
+      "name": "orgsWlans.deleteOrgWlan",
+      "description": "Delete Org WLAN"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.deleteOrgWlanPortalImage",
+      "name": "orgsWlans.deleteOrgWlanPortalImage",
+      "description": "Delete Org WLAN Portal Image"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.getOrgWlan",
+      "name": "orgsWlans.getOrgWlan",
+      "description": "Get Org Wlan Detail"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.getOrgWlanDerived",
+      "name": "orgsWlans.getOrgWlanDerived",
+      "description": "Get Org WLAN Derived"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.getOrgWlans",
+      "name": "orgsWlans.getOrgWlans",
+      "description": "Get Org Wlans"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.updateOrgWlan",
+      "name": "orgsWlans.updateOrgWlan",
+      "description": "Update Org Wlan"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.updateOrgWlanPortalTemplate",
+      "name": "orgsWlans.updateOrgWlanPortalTemplate",
+      "description": "Update Org WLAN Portal Template"
+    },
+    {
+      "id": "openapi_mist_com.orgsWlans.uploadOrgWlanPortalImage",
+      "name": "orgsWlans.uploadOrgWlanPortalImage",
+      "description": "Upload Org WLAN Portal Image"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.createOrgWxRule",
+      "name": "orgsWxRules.createOrgWxRule",
+      "description": "Create Org WxRule"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.deleteOrgWxRule",
+      "name": "orgsWxRules.deleteOrgWxRule",
+      "description": "Delete Org WxRule"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.getOrgWxRule",
+      "name": "orgsWxRules.getOrgWxRule",
+      "description": "Get Org WxRule Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.getOrgWxRules",
+      "name": "orgsWxRules.getOrgWxRules",
+      "description": "Get Org WxRules"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.getOrgWxRulesDerived",
+      "name": "orgsWxRules.getOrgWxRulesDerived",
+      "description": "Get Derived Org WxRule"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxRules.updateOrgWxRule",
+      "name": "orgsWxRules.updateOrgWxRule",
+      "description": "Update Org WxRule"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.createOrgWxTag",
+      "name": "orgsWxTags.createOrgWxTag",
+      "description": "Create WxLAN Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.deleteOrgWxTag",
+      "name": "orgsWxTags.deleteOrgWxTag",
+      "description": "Delete WxLAN Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.getOrgApplicationList",
+      "name": "orgsWxTags.getOrgApplicationList",
+      "description": "Get Application List"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.getOrgCurrentMatchingClientsOfAWxTag",
+      "name": "orgsWxTags.getOrgCurrentMatchingClientsOfAWxTag",
+      "description": "Get Current Matching Clients of a WXLAN Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.getOrgWxTag",
+      "name": "orgsWxTags.getOrgWxTag",
+      "description": "Get WxLAN Tag Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.getOrgWxTags",
+      "name": "orgsWxTags.getOrgWxTags",
+      "description": "Get WxLAN Tags"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTags.updateOrgWxTag",
+      "name": "orgsWxTags.updateOrgWxTag",
+      "description": "Update WxLAN Tag"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTunnels.createOrgWxTunnel",
+      "name": "orgsWxTunnels.createOrgWxTunnel",
+      "description": "Create Org WxAN Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTunnels.deleteOrgWxTunnel",
+      "name": "orgsWxTunnels.deleteOrgWxTunnel",
+      "description": "Delete Org WxLAN Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTunnels.getOrgWxTunnel",
+      "name": "orgsWxTunnels.getOrgWxTunnel",
+      "description": "Get Org WxLAN Tunnel Details"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTunnels.getOrgWxTunnels",
+      "name": "orgsWxTunnels.getOrgWxTunnels",
+      "description": "Get Org WxLAN Tunnels"
+    },
+    {
+      "id": "openapi_mist_com.orgsWxTunnels.updateOrgWxTunnel",
+      "name": "orgsWxTunnels.updateOrgWxTunnel",
+      "description": "Update Org WxLAN Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.self.deleteSelf",
+      "name": "self.deleteSelf",
+      "description": "To delete ones account and every associated with it. The effects:\n\nthe account would be deleted\nany orphaned Org (that only has this account as admin) will be deleted\nalong with all data with Org (sites, wlans, devices) will be gone."
+    },
+    {
+      "id": "openapi_mist_com.self.generateQrCodeForVerification",
+      "name": "self.generateQrCodeForVerification",
+      "description": "Generate QR code for verification"
+    },
+    {
+      "id": "openapi_mist_com.self.getAlarmSubscriptions",
+      "name": "self.getAlarmSubscriptions",
+      "description": "Get all the subscriptions"
+    },
+    {
+      "id": "openapi_mist_com.self.getSelf",
+      "name": "self.getSelf",
+      "description": "Get Account information"
+    },
+    {
+      "id": "openapi_mist_com.self.getSelfAuditLogs",
+      "name": "self.getSelfAuditLogs",
+      "description": "Audit logs records all administrative activities done by current admin across all orgs\n\nGet a list of change logs across all Orgs for current admin"
+    },
+    {
+      "id": "openapi_mist_com.self.recoverPassword",
+      "name": "self.recoverPassword",
+      "description": "Recover Password\nAn email will also be sent to the user with a link to https://manage.mist.com/verify/recover?token=:token"
+    },
+    {
+      "id": "openapi_mist_com.self.updateSelf",
+      "name": "self.updateSelf",
+      "description": "update Account Information"
+    },
+    {
+      "id": "openapi_mist_com.self.updateSelfEmail",
+      "name": "self.updateSelfEmail",
+      "description": "Change Email\nWe require the user to verify that they actually own the email address they intend to change it to.\n\nAfter the API call, the user will receive an email to the new email address with a link like https://manage.mist.com/verify/update?expire=:exp_time&email=:admin_email&token=:token\n\nUpon clicking the link, the user is provided with a login page to authenticate using existing credentials. After successful login, the email address of the user gets updated\n\n**Note**: The request parameter email can be used by UI to validate that the current session (if any) belongs to the admin or provide a login page (by pre-populating the email on login screen). UI can also use the request parameter expire to validate token expiry."
+    },
+    {
+      "id": "openapi_mist_com.self.verifyRecoverPasssword",
+      "name": "self.verifyRecoverPasssword",
+      "description": "Verify Recover Password\nWith correct verification, the user will be authenticated. UI can then prompt for new password"
+    },
+    {
+      "id": "openapi_mist_com.self.verifySelfEmail",
+      "name": "self.verifySelfEmail",
+      "description": "Verify Email change"
+    },
+    {
+      "id": "openapi_mist_com.self.verifyTwoFactor",
+      "name": "self.verifyTwoFactor",
+      "description": "Verify Two-factor (OTP)\n\nTo verify two-factor authentication by using a code generated by app (e.g. Google Authenticator, Authy) or by SMS. Upon successful verification, the otp_verified will be set to true if it hasn’t already been."
+    },
+    {
+      "id": "openapi_mist_com.sites.deleteSite",
+      "name": "sites.deleteSite",
+      "description": "Delete Site"
+    },
+    {
+      "id": "openapi_mist_com.sites.getSiteInfo",
+      "name": "sites.getSiteInfo",
+      "description": "Get Site Info"
+    },
+    {
+      "id": "openapi_mist_com.sites.updateSiteInfo",
+      "name": "sites.updateSiteInfo",
+      "description": "Update Site Info"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.ackSiteAlarm",
+      "name": "sitesAlarms.ackSiteAlarm",
+      "description": "Ack Site Alarm"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.ackSiteAllAlarms",
+      "name": "sitesAlarms.ackSiteAllAlarms",
+      "description": "Ack all Site Alarms\n\n**N.B.**: Batch size for multiple alarm ack and unack has to be less or or equal to 1000."
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.countSiteAlarms",
+      "name": "sitesAlarms.countSiteAlarms",
+      "description": "Count Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.multiAckSiteAlarms",
+      "name": "sitesAlarms.multiAckSiteAlarms",
+      "description": "Ack multiple Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.multiUnackSiteAlarms",
+      "name": "sitesAlarms.multiUnackSiteAlarms",
+      "description": "Unack multiple Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.searchSiteAlarms",
+      "name": "sitesAlarms.searchSiteAlarms",
+      "description": "Search Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.unackSiteAlarm",
+      "name": "sitesAlarms.unackSiteAlarm",
+      "description": "Unack Site Alarm"
+    },
+    {
+      "id": "openapi_mist_com.sitesAlarms.unackSiteAllArlarms",
+      "name": "sitesAlarms.unackSiteAllArlarms",
+      "description": "Unack all Site Alarms\n\n**N.B.**: Batch size for multiple alarm ack and unack has to be less or or equal to 1000."
+    },
+    {
+      "id": "openapi_mist_com.sitesAnomaly.getSiteAnomalyEvents",
+      "name": "sitesAnomaly.getSiteAnomalyEvents",
+      "description": "Get Site Anomaly Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesAnomaly.getSiteAnomalyEventsForClient",
+      "name": "sitesAnomaly.getSiteAnomalyEventsForClient",
+      "description": "Get Client Anomaly Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesAnomaly.getSiteAnomalyEventsforDevice",
+      "name": "sitesAnomaly.getSiteAnomalyEventsforDevice",
+      "description": "Get Device Anomaly Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesApplications.countSiteApps",
+      "name": "sitesApplications.countSiteApps",
+      "description": "Count by Distinct Attributes of Applications"
+    },
+    {
+      "id": "openapi_mist_com.sitesApplications.getSiteApps",
+      "name": "sitesApplications.getSiteApps",
+      "description": "Get Application List"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssetFilters.createSiteAssetFilters",
+      "name": "sitesAssetFilters.createSiteAssetFilters",
+      "description": "Create Site Asset Filter"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssetFilters.deleteSiteAssetFilter",
+      "name": "sitesAssetFilters.deleteSiteAssetFilter",
+      "description": "Deletes an existing BLE asset filter for the given site."
+    },
+    {
+      "id": "openapi_mist_com.sitesAssetFilters.getSiteAssetFilter",
+      "name": "sitesAssetFilters.getSiteAssetFilter",
+      "description": "Get Site Asset Filter Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssetFilters.getSiteAssetFilters",
+      "name": "sitesAssetFilters.getSiteAssetFilters",
+      "description": "Get Site Asset Filters"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssetFilters.updateSiteAssetFilter",
+      "name": "sitesAssetFilters.updateSiteAssetFilter",
+      "description": "Updates an existing BLE asset filter for the given site."
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.countSiteAssets",
+      "name": "sitesAssets.countSiteAssets",
+      "description": "Count Asset by distinct field"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.createSiteAsset",
+      "name": "sitesAssets.createSiteAsset",
+      "description": "Create Site Asset"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.deleteSiteAsset",
+      "name": "sitesAssets.deleteSiteAsset",
+      "description": "Delete Site Asset"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.getSiteAsset",
+      "name": "sitesAssets.getSiteAsset",
+      "description": "Get Site Asset Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.getSiteAssets",
+      "name": "sitesAssets.getSiteAssets",
+      "description": "Get Site Assets"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.getSiteAssetsOfInterest",
+      "name": "sitesAssets.getSiteAssetsOfInterest",
+      "description": "Get a list of BLE beacons that matches Asset or AssetFilter"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.importSiteAssets",
+      "name": "sitesAssets.importSiteAssets",
+      "description": "Impert Site Assets. \n\nIt can be done via a CSV file or a JSON payload.\n\n## CSV File Format\n```csv\nname,mac\n\"asset_name\",5c5b53010101\n``` "
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.searchSiteAssets",
+      "name": "sitesAssets.searchSiteAssets",
+      "description": "Assets Search"
+    },
+    {
+      "id": "openapi_mist_com.sitesAssets.updateSiteAsset",
+      "name": "sitesAssets.updateSiteAsset",
+      "description": "Update Site Asset"
+    },
+    {
+      "id": "openapi_mist_com.sitesBeacons.createSiteBeacon",
+      "name": "sitesBeacons.createSiteBeacon",
+      "description": "Create Site Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesBeacons.deleteSiteBeacons",
+      "name": "sitesBeacons.deleteSiteBeacons",
+      "description": "Delete Site Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesBeacons.getSiteBeacon",
+      "name": "sitesBeacons.getSiteBeacon",
+      "description": "Get Site Beacon Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesBeacons.getSiteBeacons",
+      "name": "sitesBeacons.getSiteBeacons",
+      "description": "Get Site Beacons"
+    },
+    {
+      "id": "openapi_mist_com.sitesBeacons.updateSiteBeacons",
+      "name": "sitesBeacons.updateSiteBeacons",
+      "description": "Update Site Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesCalls.countSiteCallEvents",
+      "name": "sitesCalls.countSiteCallEvents",
+      "description": "Count Site Call Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesCalls.countSiteCalls",
+      "name": "sitesCalls.countSiteCalls",
+      "description": "Count by Distinct Attributes of Calls"
+    },
+    {
+      "id": "openapi_mist_com.sitesCalls.searchSiteCallEvents",
+      "name": "sitesCalls.searchSiteCallEvents",
+      "description": "Search Site Call Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesCalls.searchSiteCalls",
+      "name": "sitesCalls.searchSiteCalls",
+      "description": "Search Calls"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.countSiteByDistinctAttributesOfClients",
+      "name": "sitesClients.countSiteByDistinctAttributesOfClients",
+      "description": "Count by Distinct Attributes of Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.countSiteByDistinctAttributesOfClientSessions",
+      "name": "sitesClients.countSiteByDistinctAttributesOfClientSessions",
+      "description": "Count by Distinct Attributes of Client Sessions"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.countSiteByDistinctAttributesOfClientsEvents",
+      "name": "sitesClients.countSiteByDistinctAttributesOfClientsEvents",
+      "description": "Count by Distinct Attributes of Client-Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.disconnectSiteClient",
+      "name": "sitesClients.disconnectSiteClient",
+      "description": "This disconnect a client (and it’s likely to connect back)"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.disconnectSiteMultipleClients",
+      "name": "sitesClients.disconnectSiteMultipleClients",
+      "description": "To unauthorize multiple clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.getSiteEventsForClient",
+      "name": "sitesClients.getSiteEventsForClient",
+      "description": "Get the list of events for a specific client"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.searchSiteClientsEvents",
+      "name": "sitesClients.searchSiteClientsEvents",
+      "description": "Get Site Clients Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.searchSiteClientsWireless",
+      "name": "sitesClients.searchSiteClientsWireless",
+      "description": "Search Wireless Clients\n\n**NOTE**: fuzzy logic can be used with ‘*’, supported filters: mac, hostname, device, os, model. E.g. /clients/search?device=Mac*&hostname=jerry"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.searchSiteClientWirelessSessions",
+      "name": "sitesClients.searchSiteClientWirelessSessions",
+      "description": "Search Client Sessions"
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.unauthorizeSiteClient",
+      "name": "sitesClients.unauthorizeSiteClient",
+      "description": "This unauthorize a client (if it’s a guest) and disconnect it. From the guest’s perspective, s/he will see the splash page again and go through the flow (e.g. Terms of Use) again."
+    },
+    {
+      "id": "openapi_mist_com.sitesClients.unauthorizeSiteMultipleClients",
+      "name": "sitesClients.unauthorizeSiteMultipleClients",
+      "description": "This unauthorize clients (if they are guest) and disconnect them. From the guest’s perspective, they will see the splash page again and go through the flow (e.g. Terms of Use) again."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.addSiteDeviceImage",
+      "name": "sitesDevices.addSiteDeviceImage",
+      "description": "Attach up to 3 images to a device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.cancelSiteDeviceUpgrade",
+      "name": "sitesDevices.cancelSiteDeviceUpgrade",
+      "description": "Best effort to cancel an upgrade. Devices which are already upgraded wont be touched"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.countSiteDeviceConfigHistory",
+      "name": "sitesDevices.countSiteDeviceConfigHistory",
+      "description": "Counts the number of entries in device config history for distinct field with given filters"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.countSiteDeviceEvents",
+      "name": "sitesDevices.countSiteDeviceEvents",
+      "description": "Counts the number of entries in ap events history for distinct field with given filters"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.countSiteDeviceLastConfig",
+      "name": "sitesDevices.countSiteDeviceLastConfig",
+      "description": "Counts the number of entries in device config history for distinct field with given filters"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.countSiteDevices",
+      "name": "sitesDevices.countSiteDevices",
+      "description": "Counts the number of entries in ap events history for distinct field with given filters"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.createSiteDevice",
+      "name": "sitesDevices.createSiteDevice",
+      "description": "Create a device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.deleteSiteDevice",
+      "name": "sitesDevices.deleteSiteDevice",
+      "description": "Delete Site Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.deleteSiteDeviceImage",
+      "name": "sitesDevices.deleteSiteDeviceImage",
+      "description": "Delete image from a device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.exportSiteDevices",
+      "name": "sitesDevices.exportSiteDevices",
+      "description": "To download the exported device information"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteAvailableDeviceVersions",
+      "name": "sitesDevices.getSiteAvailableDeviceVersions",
+      "description": "Get Available Device Versions"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteDevice",
+      "name": "sitesDevices.getSiteDevice",
+      "description": "Get Device Configuration"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteDeviceConfigCmd",
+      "name": "sitesDevices.getSiteDeviceConfigCmd",
+      "description": "Get Config CLI Commands\nFor a brown-field switch deployment where we adopted the switch through Adoption Command, we do not wipe out / overwrite the existing config automatically. Instead, we generate CLI commands that we would have generated. The user can inspect, modify, and incorporate this into their existing config manually.\n\nOnce they feel comfortable about the config we generate, they can enable allow_mist_config where we will take full control of their config like a claimed switch"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteDevices",
+      "name": "sitesDevices.getSiteDevices",
+      "description": "Get list of devices on the site."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteDevicesUpgrade",
+      "name": "sitesDevices.getSiteDevicesUpgrade",
+      "description": "Get all upgrades for site"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteDeviceZtpPassword",
+      "name": "sitesDevices.getSiteDeviceZtpPassword",
+      "description": "In the case where soemthing happens during/after ZTP, the root-password is modified (required for ZTP to set up outbound-ssh) but the user-defined password config has not be configured. This API can be used to retrieve the temporary password."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.getSiteUpgrade",
+      "name": "sitesDevices.getSiteUpgrade",
+      "description": "Get Site Device Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.importSiteDevices",
+      "name": "sitesDevices.importSiteDevices",
+      "description": "Import Information for Multiple Devices\n\nCSV format:\n```csv\nmac,name,map_id,x,y,height,orientation,labels,band_24.power,band_24.bandwidth,band_24.channel,band_24.disabled,band_5.power,band_5.bandwidth,band_5.channel,band_5.disabled,band_6.power,band_6.bandwidth,band_6.channel,band_6.disabled\n5c5b53010101,\"AP 1\",845a23bf-bed9-e43c-4c86-6fa474be7ae5,30,10,2.3,45,\"guest, campus, vip\",1,20,0,false,0,40,0,false,17,80,0,false\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.multiRestartSiteDevices",
+      "name": "sitesDevices.multiRestartSiteDevices",
+      "description": "Note that only the devices that are connected will be restarted."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.multiUpgradeSiteDevices",
+      "name": "sitesDevices.multiUpgradeSiteDevices",
+      "description": "Upgrade Multiple Device\n\n**Note**: this call doesn’t guarantee the devices to be upgraded right away (they may be offline)"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.restartSiteDevice",
+      "name": "sitesDevices.restartSiteDevice",
+      "description": "Restart / Reboot a device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.searchSiteDeviceConfigHistory",
+      "name": "sitesDevices.searchSiteDeviceConfigHistory",
+      "description": "Search for entries in device config history"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.searchSiteDeviceLastConfigs",
+      "name": "sitesDevices.searchSiteDeviceLastConfigs",
+      "description": "Search Device Last Configs"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.searchSiteDevices",
+      "name": "sitesDevices.searchSiteDevices",
+      "description": "Search Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.searchSiteDevicesEvents",
+      "name": "sitesDevices.searchSiteDevicesEvents",
+      "description": "Search Devices Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.updateSiteDevice",
+      "name": "sitesDevices.updateSiteDevice",
+      "description": "Update Device Configuration"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.upgradeSiteDevice",
+      "name": "sitesDevices.upgradeSiteDevice",
+      "description": "Device Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevices.uploadSiteDeviceSupportFile",
+      "name": "sitesDevices.uploadSiteDeviceSupportFile",
+      "description": "Support / Upload device support files\n\n#### Info Param\n**Parameter**|**Type**|**Description** \n :-------------: |:-------------: |:-------------: \nprocess|string|Upload 1 file with output of show system processes extensive\noutbound-ssh|string|Upload 1 file that concatenates all /var/log/outbound-ssh.log* files\nmessages|string|Upload 1 to 10 /var/log/messages* files\ncore-dumps|string|Upload all core dump files, if any\nfull|string|Upload 1 file with output of request support information, 1 file that concatenates all /var/log/outbound-ssh.log files, all core dump files, and the 3 most recent /var/log/messages files"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.getSiteDeviceIotPort",
+      "name": "sitesDevicesAPs.getSiteDeviceIotPort",
+      "description": "Returns the current state of each enabled IoT pin configured as an output."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.getSiteDeviceRadioChannels",
+      "name": "sitesDevicesAPs.getSiteDeviceRadioChannels",
+      "description": "Get a list of allowed channels (per channel width)"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.reprovisionSiteAllAps",
+      "name": "sitesDevicesAPs.reprovisionSiteAllAps",
+      "description": "To force all APs to reprovision itself again. "
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.resetSiteAllApsToUseRrm",
+      "name": "sitesDevicesAPs.resetSiteAllApsToUseRrm",
+      "description": "Reset all APs in the Site to use RRM"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.setSiteDeviceIotPort",
+      "name": "sitesDevicesAPs.setSiteDeviceIotPort",
+      "description": "**Note**: For each IoT pin referenced:\n * The pin must be enabled using the Device `iot_config` API\n * The pin must support the output direction"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.startSiteLocateDevice",
+      "name": "sitesDevicesAPs.startSiteLocateDevice",
+      "description": "Locate a Device by blinking it’s LED, it’s a persisted state that has to be stopped by calling Stop Locating API"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.stopSiteLocateDevice",
+      "name": "sitesDevicesAPs.stopSiteLocateDevice",
+      "description": "Stop Locate a Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesAPs.zeroizeSiteFipsAllAps",
+      "name": "sitesDevicesAPs.zeroizeSiteFipsAllAps",
+      "description": "Zeroize all FIPS APs in the Site"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesOthers.getSiteOtherDevices",
+      "name": "sitesDevicesOthers.getSiteOtherDevices",
+      "description": "Get Site other devices (3rd party devices)"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.countSiteByDisctinctAttributesOfSwitchPorts",
+      "name": "sitesDevicesStats.countSiteByDisctinctAttributesOfSwitchPorts",
+      "description": "Count by Distinct Attributes of Switch/Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.countSiteByDisctinctAttributesOPorts",
+      "name": "sitesDevicesStats.countSiteByDisctinctAttributesOPorts",
+      "description": "Count by Distinct Attributes of Switch/Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.getSiteAllClientsStatsByDevice",
+      "name": "sitesDevicesStats.getSiteAllClientsStatsByDevice",
+      "description": "Get wireless client stat by Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.getSiteDevicesStats",
+      "name": "sitesDevicesStats.getSiteDevicesStats",
+      "description": "Get Site Devices Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.getSiteDeviceStats",
+      "name": "sitesDevicesStats.getSiteDeviceStats",
+      "description": "Get Site Device Stats Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.getSiteMxEdgesStats",
+      "name": "sitesDevicesStats.getSiteMxEdgesStats",
+      "description": "Get Site MxEdges Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.getSiteMxEdgeStats",
+      "name": "sitesDevicesStats.getSiteMxEdgeStats",
+      "description": "Get One Site MxEdge Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.searchOrgSwOrGwPorts",
+      "name": "sitesDevicesStats.searchOrgSwOrGwPorts",
+      "description": "Search Switch / Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.searchSiteSwitchPorts",
+      "name": "sitesDevicesStats.searchSiteSwitchPorts",
+      "description": "Search Switch / Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesStats.searchSiteSwOrGwPorts",
+      "name": "sitesDevicesStats.searchSiteSwOrGwPorts",
+      "description": "Search Switch / Gateway Ports"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.cableTestFromSwitch",
+      "name": "sitesDevicesSwitches.cableTestFromSwitch",
+      "description": "TDR can be performed from the Switch. The output will be available through websocket. As there can be multiple command issued against the same Switch at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```json\n{\n    \"event\": \"data\",\n    \"channel\": \"/sites/4ac1dcf4-9d8b-7211-65c4-057819f0862b/devices/00000000-0000-0000-1000-5c5b350e0060/cmd\",\n    \"data\": {\n        \"session\": \"session_id\",\n        \"raw\": \"Interface TDR detail:\\nTest status : Test successfully executed  ge-0/0/0\\n\"\n    }\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.clearAllLearnedMacsFromPortOnSwitch",
+      "name": "sitesDevicesSwitches.clearAllLearnedMacsFromPortOnSwitch",
+      "description": "Clear all learned MAC addresses, including persistent MAC addresses, on a port."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.clearBpduErrosFromPortsOnSwitch",
+      "name": "sitesDevicesSwitches.clearBpduErrosFromPortsOnSwitch",
+      "description": "Clear bridge protocol data unit (BPDU) error condition caused by the detection of a possible bridging loop from Spanning Tree Protocol (STP) operation that renders the port unoperational."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.deleteSiteLocalSwitchPortConfig",
+      "name": "sitesDevicesSwitches.deleteSiteLocalSwitchPortConfig",
+      "description": "Sometimes HelpDesk Admin needs to change port configs"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.getSiteAdoptedSwitchesComplianceMetrics",
+      "name": "sitesDevicesSwitches.getSiteAdoptedSwitchesComplianceMetrics",
+      "description": "Get version compliance metrics for managed or monitored switches\n"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.pollSiteSwitchStats",
+      "name": "sitesDevicesSwitches.pollSiteSwitchStats",
+      "description": "This API can be used to poll statistics from the Switch proactively once. After it is called, the statistics will be pushed back to the cloud within the statistics interval."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.portsBounceFromSwitch",
+      "name": "sitesDevicesSwitches.portsBounceFromSwitch",
+      "description": "Port Bounce can be performed from the Switch.The output will be available through websocket. As there can be multiple command issued against the same AP at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```json\n{\n    \"event\": \"data\",\n    \"channel\": \"/sites/4ac1dcf4-9d8b-7211-65c4-057819f0862b/devices/00000000-0000-0000-1000-5c5b350e0060/cmd\",\n    \"data\": {\n        \"session\": \"session_id\",\n        \"raw\": \"Port bounce complete.\"\n    }\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitches.updateSiteLocalSwitchPortConfig",
+      "name": "sitesDevicesSwitches.updateSiteLocalSwitchPortConfig",
+      "description": "Sometimes HelpDesk Admin needs to change port configs"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesEvpn.createSiteEvpnTopology",
+      "name": "sitesDevicesSwitchesEvpn.createSiteEvpnTopology",
+      "description": "While all the `evpn_id` / `downlink_ips` can be specifidd by hand, the easiest way is to call the `build_vpn_topology` API, allowing you to examine the diff, and update it yourself. You can also simply call it with `overwrite=true` which will apply the updates for you.\n\n**Notes:**\n1. You can use `core` / `distribution` / `access` to create a CLOS topology\n2. You can also use `core` / `distribution` to form a 2-tier EVPN topology where ESI-Lag is configured distribution to connect to access switches\n3. In a small/medium campus, `collapsed-core` can be used where core switches are the inter-connected to do EVPN\n4. The API uses a few pre-defined parameters and best-practices to generate the configs. It can be customized by using `evpn_options` in Site Setting / Network Template. (e.g. a different subnet for the underlay)\n\n#### Collapsed Core\nIn a small-medium campus, EVPN can also be enabled only at the core switches (up to 4) by assigning all participating switches with `collapsed-core role`. When there are more than 2 switches, a ring-like topology will be formed.\n\n#### ESI-Lag\nIf the access switchess does not have EVPN support, you can take advantage of EVPN by setting up ESI-Lag on distribution switches\n\n#### Leaf / Access / Collapsed-Core\nFor leaf nodes in a EVPN topology, you’d have to configure the IPs for networks that would participate in EVPN. Optionally, VRFs to isolate traffic from one tenant verus another"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesEvpn.deleteSiteEvpnTopology",
+      "name": "sitesDevicesSwitchesEvpn.deleteSiteEvpnTopology",
+      "description": "Delete the site EVPN Topology"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesEvpn.getSiteEvpnTolopogy",
+      "name": "sitesDevicesSwitchesEvpn.getSiteEvpnTolopogy",
+      "description": "Get One EVPN Topology Detail"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesEvpn.getSiteEvpnTopologies",
+      "name": "sitesDevicesSwitchesEvpn.getSiteEvpnTopologies",
+      "description": "Get the existing EVPN topology"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesEvpn.updateSiteEvpnTopology",
+      "name": "sitesDevicesSwitchesEvpn.updateSiteEvpnTopology",
+      "description": "Update the EVPN Topolgy"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesVirtualChassis.createSiteVirtualChassis",
+      "name": "sitesDevicesSwitchesVirtualChassis.createSiteVirtualChassis",
+      "description": "For models (e.g. EX3400 and up) having dedicated VC ports, it is easier to form a VC by just connecting cables with the dedicated VC ports. Cloud will detect the new VC and update the inventory.\n\nIn case that the user would like to choose the dedicated switch as a VC master. Or for EX2300-C-12P and EX2300-C-12T which doesn’t have dedicated VC ports, below are procedures to automate the VC creation:\n\n1. Power on the switch that is choosen as the VC master first. And the powering on the other member switches.\n2. Claim or adopt all these switches under the same organization’s Inventory\n3. Assign these switches into the same Site\n4. Invoke vc command on the switch choosen to be the VC master. For EX2300-C-12P, VC ports will be created automatically.\n5. Connect the cables to the VC ports for these switches\n6. Wait for the VC to be formed. The Org’s inventory will be updated for the new VC."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesVirtualChassis.deleteSiteVirtualChassis",
+      "name": "sitesDevicesSwitchesVirtualChassis.deleteSiteVirtualChassis",
+      "description": "When all the member switches of VC are removed and only member ID 0 is left, the cloud would detect this situation and automatically changes the single switch to non-VC role.\n\nFor some unexpected cases that the VC is gone and disconncted, the API below could be used to change the state of VC’s switches to be standalone. After it is executed, all the switches will be shown as standalone switches under Inventory."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesVirtualChassis.getSiteVirtualChassis",
+      "name": "sitesDevicesSwitchesVirtualChassis.getSiteVirtualChassis",
+      "description": "Get VC Status\n\nThe API returns a combined view of the VC status which includes topology and stats_"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesVirtualChassis.setSiteVcPort",
+      "name": "sitesDevicesSwitchesVirtualChassis.setSiteVcPort",
+      "description": "Set VC port"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesSwitchesVirtualChassis.updateSiteVirtualChassisMember",
+      "name": "sitesDevicesSwitchesVirtualChassis.updateSiteVirtualChassisMember",
+      "description": "The VC creation and adding member switch API will update the device’s virtual chassis config which is applied after VC is formed to create JUNOS pre-provisioned virtual chassis configuration.\n\n## Change to use preprovisioned VC\nTo switch the VC to use preprovisioned VC, enable preprovisioned in virtual_chassis config. Both vc_role master and backup will be matched to routing-engine role in Junos preprovisioned VC config. Member-id will be determined by the sequence of listed members.\n\nNotice: to configure preprovisioned VC, every member of the VC must be presented in members or the confg push will be failed.\n\n## Add new members\nFor models (e.g. EX4300 and up) having dedicated VC ports, it is easier to add new member switches into a VC by just connecting cables with the dedicated VC ports. Cloud will detect the new members and update the inventory.\n\nFor EX2300 VC, adding new members requires to follow the procedures below:\n1. Powering on the new member switches and ensuring cables are not connected to any VC ports.\n2. Claim or adopt all new member switches under the VC’s organization Inventory\n3. Assign all new member switches to the same Site as the VC\n4. Invoke vc command to add switches to the VC.\n5. Connect the cables to the VC ports for these switches\n6. After a while, the Org’s Inventory shows this new switches has been added into the VC.\n\n## Removing member switch\nTo remove a member switch from the VC, following the procedures below:\n\n1. Ensuring the VC is connected to the cloud first\n2. Unplug the cable from the VC port of the switch\n3. Waiting for the VC state (vc_state) of this switch is changed to not-present\n4. Invoke update_vc with remove to remove this switch from the VC\n5. The Org’s Inventory shows the switch is removed.\n\nPlease notice that member ID 0 (fpc0) cannot be removed. When a VC has two switches left, unpluging the cable may result in the situation that fpc0 becomes a line card (LC). When this situation is happened, please re-plug in the cable, wait for both switches becoming present (show virtual-chassis) and then removing the cable again.\n\n## Renumber a member switch\nWhen a member switch doesn’t work properly and needed to be replaced, the renumber API could be used. The following two types of renumber are supported:\n\n1. Replace a non-fpc0 member switch\n2. Replace fpc0. When fpc0 is relaced, PAPI device config and JUNOS config will be both updated.\n\nFor renumber to work, the following procedures are needed: \n1. Ensuring the VC is connected to the cloud and the state of the member switch to be replaced must be non present. \n2. Adding the new member switch to the VC \n3. Waiting for the VC state (vc_state) of this VC to be updated to API server \n4. Invoke vc with renumber to replace the new member switch from fpc X to"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.arpFromDevice",
+      "name": "sitesDevicesUtilities.arpFromDevice",
+      "description": "ARP can be performed on the Device. The output will be available through websocket. As there can be multiple command issued against the same AP at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```json\n{ \n \"event\": \"data\", \n \"channel\": \"/sites/4ac1dcf4-9d8b-7211-65c4-057819f0862b/devices/00000000-0000-0000-1000-5c5b350e0060/cmd\", \n \"data\": { \n   \"session\": \"session_id\", \n   \"raw\": \n   \"Output\": \"\\tMAC\\t\\tDEV\\tVLAN\\tRx Packets\\t\\t Rx Bytes\\t\\tTx Packets\\t\\t Tx Bytes\\tFlows\\tIdle sec\\n-----------------------------------------------------------------------------------------------------------------------\"\n  } \n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.countSiteBgpStats",
+      "name": "sitesDevicesUtilities.countSiteBgpStats",
+      "description": "Count BGP Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.createSiteDeviceSnapshot",
+      "name": "sitesDevicesUtilities.createSiteDeviceSnapshot",
+      "description": "Create recovery device snapshot (Available on Junos OS EX2300-, EX3400-, EX4400- devices)"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.pingFromDevice",
+      "name": "sitesDevicesUtilities.pingFromDevice",
+      "description": "Ping from AP, Switch and SSR\n\nPing can be performed from the Device. The output will be available through websocket. As there can be multiple command issued against the same AP at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```json\n{\n    \"event\": \"data\",\n    \"channel\": \"/sites/4ac1dcf4-9d8b-7211-65c4-057819f0862b/devices/00000000-0000-0000-1000-5c5b350e0060/cmd\",\n    \"data\": {\n        \"session\": \"session_id\",\n        \"raw\": \"64 bytes from 23.211.0.110: seq=8 ttl=58 time=12.323 ms\\n\"\n    }\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.searchSiteBgpStats",
+      "name": "sitesDevicesUtilities.searchSiteBgpStats",
+      "description": "Search BGP Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesUtilities.tracerouteFromDevice",
+      "name": "sitesDevicesUtilities.tracerouteFromDevice",
+      "description": "Traceroute can be performed from the Device. The output will be available through websocket. As there can be multiple command issued against the same AP at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.clearSiteSsrArpCache",
+      "name": "sitesDevicesWanEdges.clearSiteSsrArpCache",
+      "description": "Clear the entire ARP cache or a subset if arguments are provided.\n\n*Note*: port_id is optional if neither vlan nor ip is specified"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.clearSiteSsrBgpRoutes",
+      "name": "sitesDevicesWanEdges.clearSiteSsrBgpRoutes",
+      "description": "Clear routes associated with one or all BGP neighbors"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.getSiteSsrAndSrxRoutes",
+      "name": "sitesDevicesWanEdges.getSiteSsrAndSrxRoutes",
+      "description": "Get routes from the Device. The output will be available through websocket. As there can be multiple command issued against the same device at the same time and the output all goes through the same websocket stream, `session` is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```\nshow service-path\n\nService    Service-route     Type              Destination  Next-Hop  Interface  Vector  Cost  Rate  Capacity        State\n\nWeb        web-route1        service-agent     4.4.4.4      1.1.1.2     lan        red     10    1    200/3000       Up*\nWeb        web-route1        service-agent     4.4.4.4      1.1.1.3     lan        red     10    1    200/3000       Up\nWeb        web-route2        service-agent     5.5.5.5      2.2.2.2     lan       blue     20    2    50/unlimited   Down\nLogin      <None>            BgpOverSVR        10.1.1.1     1.2.3.4     wan        red     10    3        -          Up\nLogin      <None>            BgpOverSVR        11.1.1.1     1.2.3.4     wan        red     10    1        -          Up\nApp1       <None>            Routed                -           -         -          -      -     -        -          -\nApp1       learned-routed    Routed                -           -         -          -      -     -        -          -\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.getSiteSsrAndSrxSessions",
+      "name": "sitesDevicesWanEdges.getSiteSsrAndSrxSessions",
+      "description": "Get active sessions passing through the Device. The output will be available through websocket. As there can be multiple command issued against the same device at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```\nadmin@ssr.node# show sessions\nFri 2020-04-17 16:55:34 UTC\n\nNode: node1\n\n====================================== ===== ============= =========== ========== ====== ======= ================= ========== ================= =========== ================= ========== =================== ========= =================\n Session Id                             Dir   Service       Tenant      Dev Name   VLAN   Proto   Src IP            Src Port   Dest IP           Dest Port   NAT IP            NAT Port   Payload Encrypted   Timeout   Uptime\n====================================== ===== ============= =========== ========== ====== ======= ================= ========== ================= =========== ================= ========== =================== ========= =================\n 01187fb8-765a-45e5-ae90-37d77f15e292   fwd   Internet      lanSubnet   lan           0   udp     192.168.0.28         44674   35.166.173.18          9930   96.230.191.130       19569   false                   154   0 days  0:00:28\n 01187fb8-765a-45e5-ae90-37d77f15e292   rev   Internet      lanSubnet   wan           0   udp     35.166.173.18         9930   96.230.191.130        19569   0.0.0.0                  0   false                   154   0 days  0:00:28\n 0859a4ae-bcff-4aa6-b812-79a5236a6c13   fwd   Internet      lanSubnet   lan           0   tcp     192.168.0.41         60843   17.249.171.246          443   96.230.191.130       51941   false                     2   0 days  0:00:10\n\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.getSiteSsrUpgrade",
+      "name": "sitesDevicesWanEdges.getSiteSsrUpgrade",
+      "description": "Get Specific Site SSR Upgrade"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.releaseSiteSsrDhcpLease",
+      "name": "sitesDevicesWanEdges.releaseSiteSsrDhcpLease",
+      "description": "Releases an active DHCP lease."
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.servicePingFromSsr",
+      "name": "sitesDevicesWanEdges.servicePingFromSsr",
+      "description": "Ping from SSR\n\nService Ping can be performed from the Device. The output will be available through websocket. As there can be multiple command issued against the same device at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```json\n{\n    \"event\": \"data\",\n    \"channel\": \"/sites/4ac1dcf4-9d8b-7211-65c4-057819f0862b/devices/00000000-0000-0000-1000-5c5b350e0060/cmd\",\n    \"data\": {\n        \"session\": \"session_id\",\n        \"raw\": \"64 bytes from 23.211.0.110: seq=8 ttl=58 time=12.323 ms\\n\"\n    }\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.testSiteSsrDnsResolution",
+      "name": "sitesDevicesWanEdges.testSiteSsrDnsResolution",
+      "description": "DNS resolutions are performed on the Device. The output will be available through websocket. As there can be multiple command issued against the same SSR at the same time and the output all goes through the same websocket stream, `session` is used for demux.\n \n #### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    \"subscribe\": \"/sites/{site_id}/devices/{device_id}/cmd\"\n}\n```\n##### Example output from ws stream\n```\n Router      | Hostname               | Resolved | Last Resolved        | Expiration\n-------------|------------------------|----------|----------------------|---------------------\n test-device | xxx.yyy.net            | Y        | 2022-03-28T03:56:49Z | 2022-03-28T03:57:49Z\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdges.upgradeSiteSsr",
+      "name": "sitesDevicesWanEdges.upgradeSiteSsr",
+      "description": "Upgrade Site SSR device"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdgesHa.createSiteDeviceHaCluster",
+      "name": "sitesDevicesWanEdgesHa.createSiteDeviceHaCluster",
+      "description": "Create HA Cluster\nBoth nodes has to be in the same site. We expect the user to configure ha_sync / ha_data port in port_configs already\n\n### SRX cabling\n\nsee [Chassis Cluster User Guide for SRX Series Devices](https://www.juniper.net/documentation/us/en/software/junos/chassis-cluster-security-devices/topics/concept/chassis-cluster-srx-series-node-interface-understanding.html) Here’s the recommended cabling.\n\n#### SRX300\n\nFrom ZTP / default state, ge-0/0/0 and ge-0/0/7 (SFP) are default WAN ports and will get DHCP IP. However, ge-0/0/0 becomes OOB/fxp0 after cluster is enabled (i.e. using it for reach Mist is not recommended)\n\n1.  form cluster in UI\n2.  configure ge-0/0/7,ge-1/0/7 for WAN (reth0)\n3.  configure ge-0/0/2,ge-1/0/2 for ha_data\n4.  configure ge-0/0/3- for LAN or additional WAN e.g.\n    \n\n``` json\n{\n    \"port_config\": {\n        \"ge-0/0/2,ge-1/0/2\": {\n            \"usage\": \"ha_data\"\n        },\n        \"ge-0/0/7,ge-1/0/7\": {\n            \"usage\": \"wan\",\n            \"redundant\": true,\n            \"reth_idx\": 0,\n            \"ip_config\": {\"type\": \"dhcp\"}\n        },\n    }\n}\n\n```\n\n1.  connect ge-0/0/1 back to back for ha_control\n2.  connect ge-0/0/2 back to back for ha_data\n3.  connect both ge-0/0/7 to uplink switch to WAN and to reach Mist\n4.  power up both devices\n5.  it takes about 30 minutes for the cluster to form\n    \n\n#### SRX320\n\nFrom ZTP / default state, ge-0/0/0, ge-0/0/7 (SFP) and cl-1/0/0 (LTE) are default WAN ports and will get DHCP IP. However, ge-0/0/0 becomes OOB/fxp0 after cluster is enabled (i.e. using it for reach Mist is not recommended)\n\n##### ZTP via ge-0/0/7\n\nSimilar to SRX300\n\n##### ZTP via cl-1/0/0 (LTE)\n\n1.  form cluster in UI\n2.  configure cl-1/0/0, cl-3/0/0 as WAN (reth0)\n3.  configure ge-0/0/2,ge-3/0/2 for ha_data\n4.  same as above\n    \n\n#### SRX340 / SRX345 / SRX380\n\nSRX340/SRX345 has dedicated OOB/fxp0 ports\n\n1.  form cluster in UI\n2.  configure ge-0/0/0,ge-5/0/0 for WAN (reth0)\n3.  configure ge-0/0/2,ge-5/0/2 for ha_data\n4.  configure ge-0/0/3- for LAN or additional WAN\n5.  connect ge-0/0/0 to uplink switch to WAN and to reach Mist\n6.  connect ge-0/0/1 back-to-back for ha_control\n7.  connect ge-0/0/2 back-to-back for ha_data (fabric); or for SRX380, xe-0/0/16 if 10G SFP+ is used\n8.  connect ge-0/0/3- to LAN or additional WANs\n    \n\n#### SRX550\n\nge-0/0/0 becomes OOB/fxp0 after cluster is enabled, make suenable oob_ip_config as dhcp to maintain cloud connectivity\n\n1.  connect ge-0/0/0 to reach Mist (after cluster is fully up, this port becomes OOB/fxp0)\n2.  connect ge-0/0/1 back-to-back for ha_control\n3.  connect ge-0/0/2 back-to-back for ha_data (fabric)\n4.  connect ge-0/0/3 to WAN (after cluster is up, intended to be used for reth0)\n5.  connect ge-0/0/4- to LAN or additional WANs\n    \n\n#### SRX1500\n\nSRX1500 has, additionally, dedicated HA Control port\n\n1.  form cluster in UI\n2.  configure ge-0/0/0,ge-5/0/0 for WAN (reth0)\n3.  configure ge-0/0/1,ge-5/0/1 for ha_data\n4.  configure ge-0/0/2- for LAN or additional WAN\n5.  connect dedicated ha_control back-to-back\n6.  connect ge-0/0/0 to uplink switch to WAN and to reach Mist\n7.  connect ge-0/0/1 back-to-back for ha_data\n8.  connect ge-0/0/2- to LAN or additional WANs\n    \n\n#### SRX4100\n\nSRX4100 has dedicated ha_control and ha_data (fabric) ports\n\n1.  connect dedicated ha_control back-to-back\n2.  connect dedicated ha_data back-to-back\n3.  connect xe-0/0/0 to WAN to reach Mist\n4.  connect xe-0/0/1- to LAN or additional WANs\n    \n\n#### VSRX\n\nWhen standalone, VSRX has fxp0 as first Network Adapter, then ge-0/0/0-N When clustered, VSRX has fxp0, em0, then ge-0/0/0-N\n\n1.  connect net0 (fxp0) to WAN to reach Mist\n2.  connect net1 back-to-back for ha_control\n3.  connect net2 (ge-0/0/0) back-to-back for ha_data (fab0/fab1)\n4.  connect net3 (ge-0/0/1) to WAN, intended to be used for reth0\n5.  connect net4 (ge-0/0/2) to LAN\n    \n\nSRX340/SRX345 has dedicated OOB/fxp0 ports VSRX has fxp0 as first Network Adapter, then ge-0/0/0-N\n\n1.  connect ge-0/0/0 to WAN to reach Mist\n2.  connect ge-0/0/1 back-to-back for ha_control\n3.  connect ge-0/0/2 back-to-back for ha_data (fabric); or for SRX380, xe-0/0/16 if 10G SFP+ is used\n4.  connect ge-0/0/3- to LAN or additional WANs\n    \n\n#### SRX550\n\nge-0/0/0 becomes OOB/fxp0 after cluster is enabled, make suenable oob_ip_config as dhcp to maintain cloud connectivity\n\n1.  connect ge-0/0/0 to reach Mist (after cluster is fully up, this port becomes OOB/fxp0)\n2.  connect ge-0/0/1 back-to-back for ha_control\n3.  connect ge-0/0/2 back-to-back for ha_data (fabric)\n4.  connect ge-0/0/3 to WAN (after cluster is up, intended to be used for reth0)\n5.  connect ge-0/0/4- to LAN or additional WANs\n    \n\n#### SRX1500\n\nSRX1500 has, additionally, dedicated HA Control port\n\n1.  connect dedicated ha_control back-to-back\n2.  connect ge-0/0/0 to WAN to reach mist\n3.  connect ge-0/0/1 back-to-back for ha_data\n4.  connect ge-0/0/2- to LAN or additional WANs\n    \n\n#### SRX4100\n\nSRX4100 has dedicated ha_control and ha_data (fabric) ports\n\n1.  connect dedicated ha_control back-to-back\n2.  connect dedicated ha_data back-to-back\n3.  connect xe-0/0/0 to WAN to reach Mist\n4.  connect xe-0/0/1- to LAN or additional WANs"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdgesHa.deleteSiteDeviceHaCluster",
+      "name": "sitesDevicesWanEdgesHa.deleteSiteDeviceHaCluster",
+      "description": "Delete HA Cluster"
+    },
+    {
+      "id": "openapi_mist_com.sitesDevicesWanEdgesHa.swapSiteDeviceHaClusterNode",
+      "name": "sitesDevicesWanEdgesHa.swapSiteDeviceHaClusterNode",
+      "description": "Swap nodes on the HA Cluster"
+    },
+    {
+      "id": "openapi_mist_com.sitesEvents.countSiteSystemEvents",
+      "name": "sitesEvents.countSiteSystemEvents",
+      "description": "Count System Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesEvents.getSiteInterferenceEvents",
+      "name": "sitesEvents.getSiteInterferenceEvents",
+      "description": "Get Interference Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesEvents.getSiteRoamingEvents",
+      "name": "sitesEvents.getSiteRoamingEvents",
+      "description": "Roaming Events data"
+    },
+    {
+      "id": "openapi_mist_com.sitesEvents.searchSiteSystemEvents",
+      "name": "sitesEvents.searchSiteSystemEvents",
+      "description": "Search System Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.countSiteGuestAuthorizations",
+      "name": "sitesGuests.countSiteGuestAuthorizations",
+      "description": "Count Authorized Guest"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.deleteSiteGuestAuthorization",
+      "name": "sitesGuests.deleteSiteGuestAuthorization",
+      "description": "Delete Guest Authorization"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.getSiteAllGuestAuthorizations",
+      "name": "sitesGuests.getSiteAllGuestAuthorizations",
+      "description": "Get Guest Authorizations"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.getSiteGuestAuthorization",
+      "name": "sitesGuests.getSiteGuestAuthorization",
+      "description": "Get Guest Authorization"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.searchSiteGuestAuthorization",
+      "name": "sitesGuests.searchSiteGuestAuthorization",
+      "description": "Search Authorized Guest"
+    },
+    {
+      "id": "openapi_mist_com.sitesGuests.updateSiteGuestAuthorization",
+      "name": "sitesGuests.updateSiteGuestAuthorization",
+      "description": "Update Guest Authorization  "
+    },
+    {
+      "id": "openapi_mist_com.sitesInsights.getSiteInsightMetrics",
+      "name": "sitesInsights.getSiteInsightMetrics",
+      "description": "Get Site Insight Metrics\nSee metrics possibilities at /api/v1/const/insight_metrics"
+    },
+    {
+      "id": "openapi_mist_com.sitesInsights.getSiteInsightMetricsForClient",
+      "name": "sitesInsights.getSiteInsightMetricsForClient",
+      "description": "Get Client Insight Metrics\nSee metrics possibilities at /api/v1/const/insight_metrics"
+    },
+    {
+      "id": "openapi_mist_com.sitesInsights.getSiteInsightMetricsForDevice",
+      "name": "sitesInsights.getSiteInsightMetricsForDevice",
+      "description": "Get AP Insight Metrics\nSee metrics possibilities at /api/v1/const/insight_metrics"
+    },
+    {
+      "id": "openapi_mist_com.sitesInsights.getSiteRogueAPs",
+      "name": "sitesInsights.getSiteRogueAPs",
+      "description": "Get Site Rogue/Neighbor APs"
+    },
+    {
+      "id": "openapi_mist_com.sitesInsights.getSiteRogueClients",
+      "name": "sitesInsights.getSiteRogueClients",
+      "description": "Get Rogue Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesLicenses.getSiteLicenseUsage",
+      "name": "sitesLicenses.getSiteLicenseUsage",
+      "description": "This shows license usage (i.e. needed) based on the features enabled for the site."
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.clearSiteMlOverwriteForDevice",
+      "name": "sitesLocation.clearSiteMlOverwriteForDevice",
+      "description": "Clear ML Overwrite for Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.clearSiteMlOverwriteForMap",
+      "name": "sitesLocation.clearSiteMlOverwriteForMap",
+      "description": "Clear ML Overwrite for Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.getSiteBeamCoverageOverview",
+      "name": "sitesLocation.getSiteBeamCoverageOverview",
+      "description": "Get Beam Coverage Overview"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.getSiteDefaultPlfForModels",
+      "name": "sitesLocation.getSiteDefaultPlfForModels",
+      "description": "Get Default PLF for Models"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.getSiteMachineLearningCurrentStat",
+      "name": "sitesLocation.getSiteMachineLearningCurrentStat",
+      "description": "Get Machine Learning Current Stat\nFor each VBLE AP, it has ML model parameters (e.g. Path-loss-estimate, Intercept) as well as completion indicators (Level and PercentageComplete). For the completeness, ML takes N sample to finish its first level and use N*0.25 samples to complete each successive level. When a device is moved, the completeness will be reset as it has to re-learn."
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.getSiteMachineLearningEvents",
+      "name": "sitesLocation.getSiteMachineLearningEvents",
+      "description": "Get Machine Learning Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.overwriteSiteMlForDevice",
+      "name": "sitesLocation.overwriteSiteMlForDevice",
+      "description": "Overwrite ML For Device"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.overwriteSiteMlForMap",
+      "name": "sitesLocation.overwriteSiteMlForMap",
+      "description": "Overwrite ML For Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesLocation.resetSiteMlStatsByMap",
+      "name": "sitesLocation.resetSiteMlStatsByMap",
+      "description": "Reset ML Stats by Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.addSiteMapImage",
+      "name": "sitesMaps.addSiteMapImage",
+      "description": "Add image map is a multipart POST which has an file (Image) and an optional json parameter"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.bulkAssignSiteApsToMap",
+      "name": "sitesMaps.bulkAssignSiteApsToMap",
+      "description": "This API can be used to assign a list of AP Macs associated with site_id to the specified map_id. Note that map_id must be associated with corresponding site_id. This API obeys the following rules \n1. if AP is unassigned to any Map, it gets associated with map_id \n2. Any moved APs are returned in the response \n3. If the AP is considered a locked AP, no action will be taken"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.clearSiteApAutoOrient",
+      "name": "sitesMaps.clearSiteApAutoOrient",
+      "description": "This API is used to destroy the autoorientations of a map or subset of APs on a map."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.clearSiteApAutoplacement",
+      "name": "sitesMaps.clearSiteApAutoplacement",
+      "description": "This API is used to destroy the cached autoplacement locations of a map or subset of APs on a map."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.createSiteMap",
+      "name": "sitesMaps.createSiteMap",
+      "description": "Create Site Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.deleteSiteApAutoOrientation",
+      "name": "sitesMaps.deleteSiteApAutoOrientation",
+      "description": "This API is called to force stop auto placement for a given map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.deleteSiteApAutoplacement",
+      "name": "sitesMaps.deleteSiteApAutoplacement",
+      "description": "This API is called to force stop auto placement for a given map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.deleteSiteMap",
+      "name": "sitesMaps.deleteSiteMap",
+      "description": "Delete Site Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.deleteSiteMapImage",
+      "name": "sitesMaps.deleteSiteMapImage",
+      "description": "Delete Site Map Image"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.getSiteApAutoPlacement",
+      "name": "sitesMaps.getSiteApAutoPlacement",
+      "description": "This API is called to view the current status of auto placement for a given map."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.getSiteMap",
+      "name": "sitesMaps.getSiteMap",
+      "description": "Get Site Map Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.getSiteMaps",
+      "name": "sitesMaps.getSiteMaps",
+      "description": "Get Site Maps"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.importSiteMaps",
+      "name": "sitesMaps.importSiteMaps",
+      "description": "Import data from files is a multipart POST which has an file, an optional json, and an optional csv, to create floorplan, assign matching inventory to specific site, place ap if name or mac matches\n\n# CSV File Format\n```csv\nVendor AP name,Mist AP Mac\nUS Office AP-2 - 5c:5b:35:00:00:02,5c5b35000002\n``` "
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.importSiteWayfindings",
+      "name": "sitesMaps.importSiteWayfindings",
+      "description": "This imports the vendor map meta data into the Map JSON. This is required by the SDK and App in order to access/render the vendor Map properly."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.replaceSiteMapImage",
+      "name": "sitesMaps.replaceSiteMapImage",
+      "description": "Replace Map Image\n\n\nThis works like an PUT where the image will be replaced. If transform is provided, all the locations of the objects on the map (AP, Zone, Vbeacon, Beacon) will be transformed as well (relative to the new Map)"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.revertSiteApAutoOrient",
+      "name": "sitesMaps.revertSiteApAutoOrient",
+      "description": "This API is used to revert the orientations of a map or subset of APs on a map to the state before auto orientation."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.revertSiteApAutoplacement",
+      "name": "sitesMaps.revertSiteApAutoplacement",
+      "description": "This API is used to revert the locations of a map or subset of APs on a map to the state before auto placement."
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.runSiteApAutoplacement",
+      "name": "sitesMaps.runSiteApAutoplacement",
+      "description": "This API is called to trigger a map for auto placement. For auto placement feature to work, RTT-FTM data need to be collected from the APs on the map. This scan is disruptive and therefore the user must be notified of service disrution during the functioning of auto placement Repeated POST to this endpoint while a map is still running will be rejected.\n\nList of devices to provide suggestions for is an optional parameter that can be given to this API. This will provide autoplacement suggestions only for the devices specified. If no list of devices is provided, all APs asociated with that map are considered by default"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.startSiteApAutoOrientation",
+      "name": "sitesMaps.startSiteApAutoOrientation",
+      "description": "This API is used to trigger a map for Auto orientation"
+    },
+    {
+      "id": "openapi_mist_com.sitesMaps.updateSiteMap",
+      "name": "sitesMaps.updateSiteMap",
+      "description": "Update Site Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.createSiteMxEdge",
+      "name": "sitesMxEdges.createSiteMxEdge",
+      "description": "Create Site Mist Edge"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.deleteSiteMxEdge",
+      "name": "sitesMxEdges.deleteSiteMxEdge",
+      "description": "Delete Site Mist Edge"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.getSiteMxEdge",
+      "name": "sitesMxEdges.getSiteMxEdge",
+      "description": "get Site Mist Edge"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.getSiteMxEdges",
+      "name": "sitesMxEdges.getSiteMxEdges",
+      "description": "Get Site Mist Edges"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.updateSiteMxEdge",
+      "name": "sitesMxEdges.updateSiteMxEdge",
+      "description": "Update Site Mist Edge settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxEdges.uploadSiteMxEdgeSupportFiles",
+      "name": "sitesMxEdges.uploadSiteMxEdgeSupportFiles",
+      "description": "Support / Upload Mist Edge support files"
+    },
+    {
+      "id": "openapi_mist_com.sitesMxTunnels.preemptSitesMxTunnel",
+      "name": "sitesMxTunnels.preemptSitesMxTunnel",
+      "description": "To preempt AP’s which are not connected to preferred peer to the preferred peer"
+    },
+    {
+      "id": "openapi_mist_com.sitesPcaps.getSiteCapturingStatus",
+      "name": "sitesPcaps.getSiteCapturingStatus",
+      "description": "Get Capturing status"
+    },
+    {
+      "id": "openapi_mist_com.sitesPcaps.getSitePacketCaptures",
+      "name": "sitesPcaps.getSitePacketCaptures",
+      "description": "Get a list of captures"
+    },
+    {
+      "id": "openapi_mist_com.sitesPcaps.startSitePacketCapture",
+      "name": "sitesPcaps.startSitePacketCapture",
+      "description": "Initiate a Packet Capture\n\nThe output will be available through websocket. As there can be multiple command issued against the same AP at the same time and the output all goes through the same websocket stream, session is introduced for demux.\n\n#### Subscribe to Device Command outputs\n`WS /api-ws/v1/stream`\n\n```json\n{\n    subscribe: \"/sites/{site_id}/pcaps\"\n}\n```\n#### Response (Wireless/RadioTap)\n```json\n{\n    \"event\": \"data\"\n    \"channel\": \"/sites/:site_id/pcaps\"\n    \"data\": {\n         \"capture_id\": \"6b1be4fb-b239-44d9-9d3b-cb1ff3af1721\",\n     \"lost_messages\": 0\n         \"pcap_dict\": {\n             \"channel_frequency\": 2412,\n             \"channel\": \"1\",\n             \"datarate\": \"1.0 Mbps\",\n             \"rssi\": -75, \n             \"dst\": \"78:bd:bc:ca:0b:0a\",\n             \"src\": \"18:b8:1f:4c:91:c0\",\n             \"bssid\": \"18:b8:1f:4c:91:c0\",\n             \"frame_type\": \"Management\", \n             \"frame_subtype\": \"Probe Response\", \n         \"proto\": \"802.11\", \n             \"ap_mac\": \"d4:20:b0:81:99:2e\", \n             \"direction\": \"tx\", \n             \"timestamp\": 1652246543, \n             \"length\": 416.0,\n             \"interface\": \"radiotap\",\n             \"info\": \"1652246544.467733 1683216786us tsft 1.0 Mb/s 2412 MHz 11g -75dBm signal -82dBm noise antenna 0 Probe Response (ATTKmsWiVS) [1.0* 2.0* 5.5* 11.0* 18.0 24.0 36.0 54.0 Mbit] CH: 2, PRIVACY\\\\n\",\n         }, \n        \"pcap_raw\": \"1MOyoQIABAAAAAAAAAAAAP//AAABAAAAEEh7Yh5VBwCgAQAAoAEAAAAAKwBvCADAAQAAAIw7reCS2VNkAAAAABACbAmABLWuAAEAEBgAAwACAABQADoBeL28ygsKGLgfTJHAGLgfTJHAcIZ2WDlBJQAAAGQAERUACkFUVEttc1dpVlMBCIKEi5YkMEhsAwECBwZVUyABCx4gAQAjAhkAKgEEMgQMEhhgMBQBAAAPrAQBAAAPrAQBAAAPrAIMAAsFAQAbAABGBTIIAQAALRqtCR////8AAAAAAAAAAAAAAAAAAAAAAAAAAD0WAggVAAAAAAAAAAAAAAAAAAAAAAAAAH8IBAAIAAAAAEDdkwBQ8gQQSgABEBBEAAECEDsAAQMQRwAQn2481frn3KT+uGod2ERx+RAhAAtBcnJpcywgSW5jLhAjAApCR1cyMTAtNzAwECQACkJHVzIxMC03MDAQQgAKQkdXMjEwLTcwMBBUAAgABgBQ8gQAARARAA5BcnJpcyBXaXJlbGVzcxAIAAIgCBA8AAEBEEkABgA3KgABIN0JABAYAgEQHAAA3RgAUPICAQGEAAOkAAAnpAAAQkNeAGIyLwAzjakr\"\n}\n```\n\n#### vResponse (Wired)\n```json\n{\n    \"event\": \"data\"\n    \"channel\": \"/sites/67970e46-4e12-11e6-9188-0242ac110007/pcaps\"\n    \"data\": {\n        \"capture_id\": \"f039b1b4-a23e-48b2-906a-0da40524de73\", \n        \"pcap_dict\": {\n             \"dst_mac\": \"68:ec:c5:09:2e:87\",\n             \"src_mac\": \"8c:3b:ad:e0:47:40\", \n             \"vlan\": 1, \n             \"src_ip\": \"34.224.147.117\", \n             \"dst_ip\": \"192.168.1.55\",\n             \"dst_port\": 51635, \n             \"src_port\": 443,\n             \"proto\": \"TCP\", \n             \"ap_mac\": \"d4:20:b0:81:99:2e\",\n             \"direction\": \"tx\", \n             \"timestamp\": 1652247615, \n             \"length\": 159.0, \n             \"interface\": \"wired\",\n             \"info\": \"1652247616.007409 IP ec2-34-224-147-117.compute-1.amazonaws.com.https > ip-192-168-1-55.ec2.internal.51635: Flags [P.], seq 2192123968:2192124057, ack 4035166782, win 12, options [nop,nop,TS val 597467050 ecr 740580660], length 89\\\\n\",\n             }, \n        \"pcap_raw\": \"1MOyoQIABAAAAAAAAAAAAP//AAABAAAAQEx7YhMzAACfAAAAnwAAAGjsxQkuh4w7reBHQIEAAAEIAEUAAI1bLEAAKAZ/CiLgk3XAqAE3AbvJs4KpKEDwg8I+gBgADFf9AAABAQgKI5yfqiwkXTQXAwMAVKY5JopoKQrVEn0/3ld4YntctGEH/rTZuwtCvzSncFw71QJveJi9uxHs57KC8w9Apph3YvXJrmWg7M37+o+YV0KH/xmr626s5Bkhb3QhKOu+NoNEmA==\"\n\n    }\n}\n```\n\n#### Stop Response (Wired/Wireless)\n```json\n{\n    \"event\": \"data\"\n    \"channel\": \"/sites/67970e46-4e12-11e6-9188-0242ac110007/pcaps\"\n    \"data\": {\n      \"capture_id\": \"a2f7374d-6a70-41fd-8a3f-71e42573baaf\", \n      \"lost_messages\": 0,\n      \"pcap_dict\": null\n    }\n}\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesPcaps.stopSitePacketCapture",
+      "name": "sitesPcaps.stopSitePacketCapture",
+      "description": "Stop current capture"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.createSitePsk",
+      "name": "sitesPsks.createSitePsk",
+      "description": "Create Site PSK"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.deleteSitePsk",
+      "name": "sitesPsks.deleteSitePsk",
+      "description": "Delete Site PSK"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.getSitePsk",
+      "name": "sitesPsks.getSitePsk",
+      "description": "Get Site PSK Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.getSitePsks",
+      "name": "sitesPsks.getSitePsks",
+      "description": "Get Site PSKs"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.importSitePsks",
+      "name": "sitesPsks.importSitePsks",
+      "description": "Import PSK from CSV file or JSON\n\n## CSV File Format\n```csv\nPSK Import CSV File Format:\nname,ssid,passphrase,usage,vlan_id,mac\nCommon,warehouse,foryoureyesonly,single,35,a31425f31278\nJustin,reception,visible,multi,1002\n```"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.updateSitePsk",
+      "name": "sitesPsks.updateSitePsk",
+      "description": "Update Site PSK"
+    },
+    {
+      "id": "openapi_mist_com.sitesPsks.updateSitePsks",
+      "name": "sitesPsks.updateSitePsks",
+      "description": "Update multi PSKs"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.deleteSiteRfdiagRecording",
+      "name": "sitesRfdiags.deleteSiteRfdiagRecording",
+      "description": "Delete Recording"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.downloadSiteRfdiagRecording",
+      "name": "sitesRfdiags.downloadSiteRfdiagRecording",
+      "description": "Download Recording\nDownload raw_events blob"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.getSiteRfdiagRecording",
+      "name": "sitesRfdiags.getSiteRfdiagRecording",
+      "description": "Get RF Diage Recording Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.getSiteSiteRfdiagRecording",
+      "name": "sitesRfdiags.getSiteSiteRfdiagRecording",
+      "description": "List RF Glass Recording"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.startSiteRecording",
+      "name": "sitesRfdiags.startSiteRecording",
+      "description": "Start RF Glass Recording"
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.stopSiteRfdiagRecording",
+      "name": "sitesRfdiags.stopSiteRfdiagRecording",
+      "description": "If the recording session is active for the given rfdiag_id, it will finish the recording. duration and end_time will be updated to reflect the correct values."
+    },
+    {
+      "id": "openapi_mist_com.sitesRfdiags.updateSiteRfdiagRecording",
+      "name": "sitesRfdiags.updateSiteRfdiagRecording",
+      "description": "Update Recording"
+    },
+    {
+      "id": "openapi_mist_com.sitesRogues.countSiteRogueEvents",
+      "name": "sitesRogues.countSiteRogueEvents",
+      "description": "Count Rogue Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesRogues.deauthSiteClientsConnectedToARogue",
+      "name": "sitesRogues.deauthSiteClientsConnectedToARogue",
+      "description": "Send Deauth frame to clients connected to a Rogue AP"
+    },
+    {
+      "id": "openapi_mist_com.sitesRogues.getSiteRogueAp",
+      "name": "sitesRogues.getSiteRogueAp",
+      "description": "Get Rogue AP Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesRogues.searchSiteRogueEvents",
+      "name": "sitesRogues.searchSiteRogueEvents",
+      "description": "Search Rogue Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesRrm.getSiteCurrentChannelPlanning",
+      "name": "sitesRrm.getSiteCurrentChannelPlanning",
+      "description": "Get Current Channel Planning"
+    },
+    {
+      "id": "openapi_mist_com.sitesRrm.getSiteCurrentRrmConsiderationsForAnApOnASpecificBand",
+      "name": "sitesRrm.getSiteCurrentRrmConsiderationsForAnApOnASpecificBand",
+      "description": "Get Current RRM Considerations for an AP on a Specific Band"
+    },
+    {
+      "id": "openapi_mist_com.sitesRrm.getSiteRrmEvents",
+      "name": "sitesRrm.getSiteRrmEvents",
+      "description": "Get Site RRM Events"
+    },
+    {
+      "id": "openapi_mist_com.sitesRrm.optimizeSiteRrm",
+      "name": "sitesRrm.optimizeSiteRrm",
+      "description": "Optimize Site RRM"
+    },
+    {
+      "id": "openapi_mist_com.sitesRssizones.createSiteRssiZone",
+      "name": "sitesRssizones.createSiteRssiZone",
+      "description": "Create RSSI Zone"
+    },
+    {
+      "id": "openapi_mist_com.sitesRssizones.deleteSiteRssiZone",
+      "name": "sitesRssizones.deleteSiteRssiZone",
+      "description": "Delete Site RSSI Zone"
+    },
+    {
+      "id": "openapi_mist_com.sitesRssizones.getSiteRssiZone",
+      "name": "sitesRssizones.getSiteRssiZone",
+      "description": "Get Site RSSI Zone details"
+    },
+    {
+      "id": "openapi_mist_com.sitesRssizones.getSiteRssiZones",
+      "name": "sitesRssizones.getSiteRssiZones",
+      "description": "Get RSSI Zone is RSSI-based"
+    },
+    {
+      "id": "openapi_mist_com.sitesRssizones.updateSiteRssiZone",
+      "name": "sitesRssizones.updateSiteRssiZone",
+      "description": "Update Site RSSI Zone"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.createSiteClientsAllowlist",
+      "name": "sitesSetting.createSiteClientsAllowlist",
+      "description": "This endpoint is to provide list of client macs for annotation as whitelist.\n\nRetrieve the current clients list from `whitelist_url` under Site:Setting"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.createSiteClientsBlocklist",
+      "name": "sitesSetting.createSiteClientsBlocklist",
+      "description": "This endpoint is to provide list of client macs for annotation blacklist.\n\nRetrieve the current clients list `blacklist_url` under Site:Setting"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.createSiteWatchedStations",
+      "name": "sitesSetting.createSiteWatchedStations",
+      "description": "This endpoint is to provide list of client macs for annotation as  watched station.\n\nRetrieve the current clients list from  `watched_station_url` under Site:Setting"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.deleteSiteClientsAllowlist",
+      "name": "sitesSetting.deleteSiteClientsAllowlist",
+      "description": "Delete Site Whitelist Station Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.deleteSiteClientsBlocklist",
+      "name": "sitesSetting.deleteSiteClientsBlocklist",
+      "description": "Delete Site Blacklist Station Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.deleteSiteWatchedStations",
+      "name": "sitesSetting.deleteSiteWatchedStations",
+      "description": "Delete Site Watched Station Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.getSiteSetting",
+      "name": "sitesSetting.getSiteSetting",
+      "description": "Get Site Settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesSetting.updateSiteSettings",
+      "name": "sitesSetting.updateSiteSettings",
+      "description": "Update Site Settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesSkyatp.countSiteByDistringAttributesOfSkyatpEvents",
+      "name": "sitesSkyatp.countSiteByDistringAttributesOfSkyatpEvents",
+      "description": "Count by Distinct Attributes of Skyatp Events (WIP)"
+    },
+    {
+      "id": "openapi_mist_com.sitesSkyatp.searchSiteSkyatpEvents",
+      "name": "sitesSkyatp.searchSiteSkyatpEvents",
+      "description": "Search Skyatp Events (WIP)"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleClassifierDetails",
+      "name": "sitesSlEs.getSiteSleClassifierDetails",
+      "description": "Get SLE classifier details"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleHistogram",
+      "name": "sitesSlEs.getSiteSleHistogram",
+      "description": "Get the histogram for the SLE metric"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedApplications",
+      "name": "sitesSlEs.getSiteSleImpactedApplications",
+      "description": "For WAN SLEs. Get list of impacted interfaces optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedAps",
+      "name": "sitesSlEs.getSiteSleImpactedAps",
+      "description": "For Wireless SLEs. Get list of impacted APs optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedChassis",
+      "name": "sitesSlEs.getSiteSleImpactedChassis",
+      "description": "For Wired and WAN SLEs. Get list of impacted interfaces optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedGateways",
+      "name": "sitesSlEs.getSiteSleImpactedGateways",
+      "description": "For WAN SLEs. Get list of impacted interfaces optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedInterfaces",
+      "name": "sitesSlEs.getSiteSleImpactedInterfaces",
+      "description": "For Wired and WAN SLEs. Get list of impacted interfaces optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedSwitches",
+      "name": "sitesSlEs.getSiteSleImpactedSwitches",
+      "description": "For Wired SLEs. Get list of impacted switches optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedWiredClients",
+      "name": "sitesSlEs.getSiteSleImpactedWiredClients",
+      "description": "For Wired SLEs. Get list of impacted interfaces optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactedWirelessClients",
+      "name": "sitesSlEs.getSiteSleImpactedWirelessClients",
+      "description": "For Wireless SLEs. Get list of impacted wireless users optionally filtered by classifier and failure type"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleImpactSummary",
+      "name": "sitesSlEs.getSiteSleImpactSummary",
+      "description": "Get impact summary counts optionally filtered by classifier and failure type\n \n* Wireless SLE Fields: `wlan`, `device_type`, `device_os` ,`band`, `ap`, `server`, `mxedge`\n* Wired SLE Fields: `switch`, `client`, `vlan`, `interface`, `chassis`\n* WAN SLE Fields: `gateway`, `client`, `interface`, `chassis`, `peer_path`, `gateway_zones`"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleMetricClassifiers",
+      "name": "sitesSlEs.getSiteSleMetricClassifiers",
+      "description": "Get the list of classifiers for a specific metric"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSlesMetrics",
+      "name": "sitesSlEs.getSiteSlesMetrics",
+      "description": "Get the list of metrics for the given scope"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleSummary",
+      "name": "sitesSlEs.getSiteSleSummary",
+      "description": " Get the summary for the SLE metric"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.getSiteSleThreshold",
+      "name": "sitesSlEs.getSiteSleThreshold",
+      "description": "Get the SLE threshold"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.replaceSiteSleThreshold",
+      "name": "sitesSlEs.replaceSiteSleThreshold",
+      "description": "Replace the SLE threshold"
+    },
+    {
+      "id": "openapi_mist_com.sitesSlEs.updateSiteSleThreshold",
+      "name": "sitesSlEs.updateSiteSleThreshold",
+      "description": "Update the SLE threshold"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.countSiteDiscoveredSwitches",
+      "name": "sitesStats.countSiteDiscoveredSwitches",
+      "description": "Count Discovered Switches"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteAssetsStats",
+      "name": "sitesStats.getSiteAssetsStats",
+      "description": "Get Site Assets Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteAssetStats",
+      "name": "sitesStats.getSiteAssetStats",
+      "description": "Get Site Asset Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteBeaconsStats",
+      "name": "sitesStats.getSiteBeaconsStats",
+      "description": "Get Site Beacons Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteClientsStats",
+      "name": "sitesStats.getSiteClientsStats",
+      "description": "Get Site All Clients Stats Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteClientsStatsByMap",
+      "name": "sitesStats.getSiteClientsStatsByMap",
+      "description": "Get Site Clients Stats By Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteClientStats",
+      "name": "sitesStats.getSiteClientStats",
+      "description": "Get Site Client Stats Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteDiscoveredAssetByMap",
+      "name": "sitesStats.getSiteDiscoveredAssetByMap",
+      "description": "Get a list of BLE beacons that we discovered (whether they’re defined as assets or not)"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteDiscoveredAssets",
+      "name": "sitesStats.getSiteDiscoveredAssets",
+      "description": "Get Discovered BLE Assets\n\nGet a list of Discovered Assets that doesn’t match any of the Asset / Assetfilters"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteDiscoveredSwitchesMetrics",
+      "name": "sitesStats.getSiteDiscoveredSwitchesMetrics",
+      "description": "Discovered switches related metrics, lists related switch system names & details if not compliant"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteGatewayMetrics",
+      "name": "sitesStats.getSiteGatewayMetrics",
+      "description": "Get Site Gateway Metrics"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteSdkStats",
+      "name": "sitesStats.getSiteSdkStats",
+      "description": "Get Detail Stats of a SdkClient"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteSdkStatsByMap",
+      "name": "sitesStats.getSiteSdkStatsByMap",
+      "description": "Get SdkClient Stats By Map"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteStats",
+      "name": "sitesStats.getSiteStats",
+      "description": "Get Site Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteUnconnectedClientStats",
+      "name": "sitesStats.getSiteUnconnectedClientStats",
+      "description": "Unconnected Client Location"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteWxRulesUsage",
+      "name": "sitesStats.getSiteWxRulesUsage",
+      "description": "Get Wxlan Rule usage"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteZonesStats",
+      "name": "sitesStats.getSiteZonesStats",
+      "description": "Get Zones Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.getSiteZoneStats",
+      "name": "sitesStats.getSiteZoneStats",
+      "description": "Get Detail Zone Stats"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.searchSiteDiscoveredSwitches",
+      "name": "sitesStats.searchSiteDiscoveredSwitches",
+      "description": "Search Discovered Switches"
+    },
+    {
+      "id": "openapi_mist_com.sitesStats.searchSiteDiscoveredSwitchesMetrics",
+      "name": "sitesStats.searchSiteDiscoveredSwitchesMetrics",
+      "description": "Search Discovered Switch Metrics"
+    },
+    {
+      "id": "openapi_mist_com.sitesSubscriptions.subscribeSite",
+      "name": "sitesSubscriptions.subscribeSite",
+      "description": "Subscribe to Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesSubscriptions.unsubscribeSite",
+      "name": "sitesSubscriptions.unsubscribeSite",
+      "description": "Unsubscribe to Site Alarms"
+    },
+    {
+      "id": "openapi_mist_com.sitesSyntheticTests.getSiteSyntheticTestStatus",
+      "name": "sitesSyntheticTests.getSiteSyntheticTestStatus",
+      "description": "Get Synthetic Testing Status"
+    },
+    {
+      "id": "openapi_mist_com.sitesSyntheticTests.startSiteDeviceSyntheticTest",
+      "name": "sitesSyntheticTests.startSiteDeviceSyntheticTest",
+      "description": "Device Synthetic Test\n"
+    },
+    {
+      "id": "openapi_mist_com.sitesSyntheticTests.startSiteSwitchRadiusSyntheticTest",
+      "name": "sitesSyntheticTests.startSiteSwitchRadiusSyntheticTest",
+      "description": "Ping test from the AP to confirm ‘reachability’ of the Radius server. Utilize Juniper EX switch(to which an AP is connected to) radius test capabilities to get details on the Radius Server ‘availability’."
+    },
+    {
+      "id": "openapi_mist_com.sitesSyntheticTests.triggerSiteSyntheticTest",
+      "name": "sitesSyntheticTests.triggerSiteSyntheticTest",
+      "description": "Trigger Synthetic Testing"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.createSiteCurdSettings",
+      "name": "sitesUiSettings.createSiteCurdSettings",
+      "description": "CURD site UI settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.deleteSiteCurdSetting",
+      "name": "sitesUiSettings.deleteSiteCurdSetting",
+      "description": "CURD site UI settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.getSiteCurdSetting",
+      "name": "sitesUiSettings.getSiteCurdSetting",
+      "description": "CURD site UI settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.getSiteCurdSettings",
+      "name": "sitesUiSettings.getSiteCurdSettings",
+      "description": "CURD site UI settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.getSiteDerivedCurdSetting",
+      "name": "sitesUiSettings.getSiteDerivedCurdSetting",
+      "description": "Get both site UI settings(for_site=true) and org UI settings (for_site=false)"
+    },
+    {
+      "id": "openapi_mist_com.sitesUiSettings.updateSiteCurdSetting",
+      "name": "sitesUiSettings.updateSiteCurdSetting",
+      "description": "CURD site UI settings"
+    },
+    {
+      "id": "openapi_mist_com.sitesVBeacons.createSiteVBeacon",
+      "name": "sitesVBeacons.createSiteVBeacon",
+      "description": "Create Virtual Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesVBeacons.deleteSiteVBeacon",
+      "name": "sitesVBeacons.deleteSiteVBeacon",
+      "description": "Delete Site Virtual Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesVBeacons.getSiteVBeacon",
+      "name": "sitesVBeacons.getSiteVBeacon",
+      "description": "Get Site Virtual Beacon Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesVBeacons.getSiteVBeacons",
+      "name": "sitesVBeacons.getSiteVBeacons",
+      "description": "Get Site Virtual Beacons"
+    },
+    {
+      "id": "openapi_mist_com.sitesVBeacons.updateSiteVBeacon",
+      "name": "sitesVBeacons.updateSiteVBeacon",
+      "description": "Update Site Virtual Beacon"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.createSiteWebhook",
+      "name": "sitesWebhooks.createSiteWebhook",
+      "description": "Webhook defines a webhook, modeled after [github’s model](https://developer.github.com/webhooks/).\n\nThere is two types of webhooks:\n* webhooks ([examples](https://www.postman.com/juniper-mist/workspace/mist-systems-s-public-workspace/folder/224925-be01e694-7253-4195-8563-78e2a745e114))\n* raw data webhooks ([examples](https://www.postman.com/juniper-mist/workspace/mist-systems-s-public-workspace/folder/224925-e2d5d5f8-4bdb-4efc-93e4-90f4b33d0b2b))\n\n##### Webhooks\nWebhooks can be configured at the org level (subset of topics only) and at the site level. It is possible to have multiple topics in the same webhook configuration and/or to have multiple webhooks configured at the same time.\n\n##### Client Raw Data Webhooks\nRaw data webhooks are a special subset of webhooks that provide insight into raw data packets emitted by a client, identified by their advertising MAC address (assets, discovered ble, connected wifi, unconnected wifi). The data that client raw data webhooks encompasses are reporting AP information, RSSI Data, and any special packets/telemetry packets that the client may emit. Note that client raw webhooks are the raw data coming from the client and do not contain the X,Y location data of the client. In order to get the location data for a client please see our location webhooks. Clients can be identified uniquely across these client raw data topics and location webhook topic using MAC address as the Unique identifier (client identifier).\n\n###### Client Raw Data Webhooks Topics\nTopics that correspond to client raw data for different client types. \n* `asset-raw-rssi` - Raw data from packets emitted by named and filtered assets \n* `discovered-raw-rssi` - Raw data from packets emitted by passive BLE devices \n* `wifi-conn-raw` - Raw data from packets emitted by connected devices \n* `wifi-unconn-raw` - Raw data from packets emitted by unconnected devices (passive)\n\n###### Rules for configuring client raw data webhooks\n1. Only one instance of a webhook object containing a client raw data webhook topic is allowed. (a site level entry will override an org level entry for the client raw data webhook topic in question)\n2. Only one client raw data webhook topic is allowed per `http-post` message to webhooks api\n"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.deleteSiteWebhook",
+      "name": "sitesWebhooks.deleteSiteWebhook",
+      "description": "Delete Site Webhook"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.getSiteWebhook",
+      "name": "sitesWebhooks.getSiteWebhook",
+      "description": "Get Site Webhook Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.getSiteWebhooks",
+      "name": "sitesWebhooks.getSiteWebhooks",
+      "description": "Get Site Webhooks"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.pingSiteWebhook",
+      "name": "sitesWebhooks.pingSiteWebhook",
+      "description": "send a Ping event to the webhook"
+    },
+    {
+      "id": "openapi_mist_com.sitesWebhooks.updateSiteWebhook",
+      "name": "sitesWebhooks.updateSiteWebhook",
+      "description": "Update Site Webhook"
+    },
+    {
+      "id": "openapi_mist_com.sitesWiredClients.countSiteClientsWired",
+      "name": "sitesWiredClients.countSiteClientsWired",
+      "description": "Count by Distinct Attributes of Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesWiredClients.searchSiteClientsWired",
+      "name": "sitesWiredClients.searchSiteClientsWired",
+      "description": "Search Wired Clients"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.createSiteWlan",
+      "name": "sitesWlans.createSiteWlan",
+      "description": "Create Site WLAN"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.deleteSiteWlan",
+      "name": "sitesWlans.deleteSiteWlan",
+      "description": "Delete Site WLAN"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.getSiteWlan",
+      "name": "sitesWlans.getSiteWlan",
+      "description": "Get Site WLAN"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.getSiteWlanDerived",
+      "name": "sitesWlans.getSiteWlanDerived",
+      "description": "Get Wlans Derived"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.getSiteWlans",
+      "name": "sitesWlans.getSiteWlans",
+      "description": "Get Site WLANs"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.testSiteWlanTelstraSetup",
+      "name": "sitesWlans.testSiteWlanTelstraSetup",
+      "description": "Allows validation of Telstra sms gateway credentials.\n\nIn case of success, a text message confirming successful setup should be received. In case of error, telstra error message are returned."
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.testSiteWlanTwilioSetup",
+      "name": "sitesWlans.testSiteWlanTwilioSetup",
+      "description": "Allows validation of twilio setup\nIn case of success, a text message confirming successful setup should be received. In case of error, twilio error code and message are returned."
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.updateSiteWlan",
+      "name": "sitesWlans.updateSiteWlan",
+      "description": "Update Site WLAN"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.updateSiteWlanPortalTemplate",
+      "name": "sitesWlans.updateSiteWlanPortalTemplate",
+      "description": "Update a Portal Template"
+    },
+    {
+      "id": "openapi_mist_com.sitesWlans.uploadSiteWlanPortalImage",
+      "name": "sitesWlans.uploadSiteWlanPortalImage",
+      "description": "Wlan Portal Image Upload"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.createSiteWxRule",
+      "name": "sitesWxRules.createSiteWxRule",
+      "description": "Create Site WxLan Rule"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.deleteSiteWxRule",
+      "name": "sitesWxRules.deleteSiteWxRule",
+      "description": "Delete Site WxLan Rule"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.getSiteWxRule",
+      "name": "sitesWxRules.getSiteWxRule",
+      "description": "Get Site WxLan Rule Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.getSiteWxRules",
+      "name": "sitesWxRules.getSiteWxRules",
+      "description": "Get Site WxLan Rules"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.getSiteWxRulesDerived",
+      "name": "sitesWxRules.getSiteWxRulesDerived",
+      "description": "Get Site WxLan Rule Derived"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxRules.updateSiteWxRule",
+      "name": "sitesWxRules.updateSiteWxRule",
+      "description": "Update Site WxLan Rule"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.createSiteWxTag",
+      "name": "sitesWxTags.createSiteWxTag",
+      "description": "Create Site WxTag"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.deleteSiteWxTag",
+      "name": "sitesWxTags.deleteSiteWxTag",
+      "description": "Delete Site WxTag"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.getSiteApplicationList",
+      "name": "sitesWxTags.getSiteApplicationList",
+      "description": "Get Application List"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.getSiteCurrentMatchingClientsOfAWxTag",
+      "name": "sitesWxTags.getSiteCurrentMatchingClientsOfAWxTag",
+      "description": "Get Current Matching Clients of a WXLAN Tag"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.getSiteWxTag",
+      "name": "sitesWxTags.getSiteWxTag",
+      "description": "Get Site WxTag Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.getSiteWxTags",
+      "name": "sitesWxTags.getSiteWxTags",
+      "description": "Get Site WxTags"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTags.updateSiteWxTag",
+      "name": "sitesWxTags.updateSiteWxTag",
+      "description": "Update Site WxTag"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTunnels.createSiteWxTunnel",
+      "name": "sitesWxTunnels.createSiteWxTunnel",
+      "description": "Create Site WxLan Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTunnels.deleteSiteWxTunnel",
+      "name": "sitesWxTunnels.deleteSiteWxTunnel",
+      "description": "Delete Site WxLan Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTunnels.getSiteWxTunnel",
+      "name": "sitesWxTunnels.getSiteWxTunnel",
+      "description": "Get Site WxLan tunnel Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTunnels.getSiteWxTunnels",
+      "name": "sitesWxTunnels.getSiteWxTunnels",
+      "description": "Get Site WxLan Tunnels"
+    },
+    {
+      "id": "openapi_mist_com.sitesWxTunnels.updateSiteWxTunnel",
+      "name": "sitesWxTunnels.updateSiteWxTunnel",
+      "description": "Update Site WxLan Tunnel"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.countSiteZoneSessions",
+      "name": "sitesZones.countSiteZoneSessions",
+      "description": "Count Site Zone Sessions"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.createSiteZone",
+      "name": "sitesZones.createSiteZone",
+      "description": "Create Site Zone "
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.deleteSiteZone",
+      "name": "sitesZones.deleteSiteZone",
+      "description": "Delete Site Zone"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.getSiteZone",
+      "name": "sitesZones.getSiteZone",
+      "description": "Get Site Zone Details"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.getSiteZones",
+      "name": "sitesZones.getSiteZones",
+      "description": "Get Site Zones"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.searchSiteZoneSessions",
+      "name": "sitesZones.searchSiteZoneSessions",
+      "description": "Search Zone Sessions"
+    },
+    {
+      "id": "openapi_mist_com.sitesZones.updateSiteZone",
+      "name": "sitesZones.updateSiteZone",
+      "description": "Update Site Zone"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.alarms",
+      "name": "webhookSamples.alarms",
+      "description": "Webhook sample for `alarm` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.assetRaw",
+      "name": "webhookSamples.assetRaw",
+      "description": "Webhook sample for `asset_raw` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.audits",
+      "name": "webhookSamples.audits",
+      "description": "Webhook sample for `audit` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.clientJoin",
+      "name": "webhookSamples.clientJoin",
+      "description": "Webhook sample for `client_join` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.clientSessions",
+      "name": "webhookSamples.clientSessions",
+      "description": "Webhook sample for `client_sessions` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.deviceEvents",
+      "name": "webhookSamples.deviceEvents",
+      "description": "Webhook sample for `device_events` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.deviceUpDown",
+      "name": "webhookSamples.deviceUpDown",
+      "description": "Webhook sample for `device_updowns` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.discoveredRawRssi",
+      "name": "webhookSamples.discoveredRawRssi",
+      "description": "Webhook sample for `discovered-raw-rssi` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.location",
+      "name": "webhookSamples.location",
+      "description": "Webhook sample for `location` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.occupancyAlerts",
+      "name": "webhookSamples.occupancyAlerts",
+      "description": "Webhook sample for `occupancy_alerts` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.ping",
+      "name": "webhookSamples.ping",
+      "description": "Webhook sample for `ping` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.sdkclientScanData",
+      "name": "webhookSamples.sdkclientScanData",
+      "description": "Webhook sample for `sdkclient_scan_data` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi_mist_com.webhookSamples.zone",
+      "name": "webhookSamples.zone",
+      "description": "Webhook sample for `zone` topic\n\n**Note**: The server host will be your own server FQDN where the Mist Cloud is sending the webhook messages\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

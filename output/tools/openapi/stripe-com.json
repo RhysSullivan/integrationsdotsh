@@ -1,0 +1,2247 @@
+{
+  "fetchedAt": "2026-04-30T15:26:50.880Z",
+  "status": "ok",
+  "count": 448,
+  "tools": [
+    {
+      "id": "openapi_stripe_com.account.getAccount",
+      "name": "account.getAccount",
+      "description": "<p>Retrieves the details of an account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accountLinks.postAccountLinks",
+      "name": "accountLinks.postAccountLinks",
+      "description": "<p>Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.deleteAccountsAccount",
+      "name": "accounts.deleteAccountsAccount",
+      "description": "<p>With <a href=\"/docs/connect\">Connect</a>, you can delete accounts you manage.</p>\n\n<p>Accounts created using test-mode keys can be deleted at any time. Standard accounts created using live-mode keys cannot be deleted. Custom or Express accounts created using live-mode keys can only be deleted once all balances are zero.</p>\n\n<p>If you want to delete your own account, use the <a href=\"https://dashboard.stripe.com/account\">account information tab in your account settings</a> instead.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.deleteAccountsAccountBankAccountsId",
+      "name": "accounts.deleteAccountsAccountBankAccountsId",
+      "description": "<p>Delete a specified external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.deleteAccountsAccountExternalAccountsId",
+      "name": "accounts.deleteAccountsAccountExternalAccountsId",
+      "description": "<p>Delete a specified external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.deleteAccountsAccountPeoplePerson",
+      "name": "accounts.deleteAccountsAccountPeoplePerson",
+      "description": "<p>Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the <code>account_opener</code>. If your integration is using the <code>executive</code> parameter, you cannot delete the only verified <code>executive</code> on file.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.deleteAccountsAccountPersonsPerson",
+      "name": "accounts.deleteAccountsAccountPersonsPerson",
+      "description": "<p>Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the <code>account_opener</code>. If your integration is using the <code>executive</code> parameter, you cannot delete the only verified <code>executive</code> on file.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccounts",
+      "name": "accounts.getAccounts",
+      "description": "<p>Returns a list of accounts connected to your platform via <a href=\"/docs/connect\">Connect</a>. If you’re not a platform, the list is empty.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccount",
+      "name": "accounts.getAccountsAccount",
+      "description": "<p>Retrieves the details of an account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountBankAccountsId",
+      "name": "accounts.getAccountsAccountBankAccountsId",
+      "description": "<p>Retrieve a specified external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountCapabilities",
+      "name": "accounts.getAccountsAccountCapabilities",
+      "description": "<p>Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountCapabilitiesCapability",
+      "name": "accounts.getAccountsAccountCapabilitiesCapability",
+      "description": "<p>Retrieves information about the specified Account Capability.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountExternalAccounts",
+      "name": "accounts.getAccountsAccountExternalAccounts",
+      "description": "<p>List external accounts for an account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountExternalAccountsId",
+      "name": "accounts.getAccountsAccountExternalAccountsId",
+      "description": "<p>Retrieve a specified external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountPeople",
+      "name": "accounts.getAccountsAccountPeople",
+      "description": "<p>Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountPeoplePerson",
+      "name": "accounts.getAccountsAccountPeoplePerson",
+      "description": "<p>Retrieves an existing person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountPersons",
+      "name": "accounts.getAccountsAccountPersons",
+      "description": "<p>Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.getAccountsAccountPersonsPerson",
+      "name": "accounts.getAccountsAccountPersonsPerson",
+      "description": "<p>Retrieves an existing person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccounts",
+      "name": "accounts.postAccounts",
+      "description": "<p>With <a href=\"/docs/connect\">Connect</a>, you can create Stripe accounts for your users.\nTo do this, you’ll first need to <a href=\"https://dashboard.stripe.com/account/applications/settings\">register your platform</a>.</p>\n\n<p>If you’ve already collected information for your connected accounts, you <a href=\"/docs/connect/best-practices#onboarding\">can pre-fill that information</a> when\ncreating the account. Connect Onboarding won’t ask for the pre-filled information during account onboarding.\nYou can pre-fill any information on the account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccount",
+      "name": "accounts.postAccountsAccount",
+      "description": "<p>Updates a <a href=\"/docs/connect/accounts\">connected account</a> by setting the values of the parameters passed. Any parameters not provided are\nleft unchanged.</p>\n\n<p>For Custom accounts, you can update any information on the account. For other accounts, you can update all information until that\naccount has started to go through Connect Onboarding. Once you create an <a href=\"/docs/api/account_links\">Account Link</a>\nfor a Standard or Express account, some parameters can no longer be changed. These are marked as <strong>Custom Only</strong> or <strong>Custom and Express</strong>\nbelow.</p>\n\n<p>To update your own account, use the <a href=\"https://dashboard.stripe.com/account\">Dashboard</a>. Refer to our\n<a href=\"/docs/connect/updating-accounts\">Connect</a> documentation to learn more about updating accounts.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountBankAccounts",
+      "name": "accounts.postAccountsAccountBankAccounts",
+      "description": "<p>Create an external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountBankAccountsId",
+      "name": "accounts.postAccountsAccountBankAccountsId",
+      "description": "<p>Updates the metadata, account holder name, account holder type of a bank account belonging to a <a href=\"/docs/connect/custom-accounts\">Custom account</a>, and optionally sets it as the default for its currency. Other bank account details are not editable by design.</p>\n\n<p>You can re-enable a disabled bank account by performing an update call without providing any arguments or changes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountCapabilitiesCapability",
+      "name": "accounts.postAccountsAccountCapabilitiesCapability",
+      "description": "<p>Updates an existing Account Capability.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountExternalAccounts",
+      "name": "accounts.postAccountsAccountExternalAccounts",
+      "description": "<p>Create an external account for a given account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountExternalAccountsId",
+      "name": "accounts.postAccountsAccountExternalAccountsId",
+      "description": "<p>Updates the metadata, account holder name, account holder type of a bank account belonging to a <a href=\"/docs/connect/custom-accounts\">Custom account</a>, and optionally sets it as the default for its currency. Other bank account details are not editable by design.</p>\n\n<p>You can re-enable a disabled bank account by performing an update call without providing any arguments or changes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountLoginLinks",
+      "name": "accounts.postAccountsAccountLoginLinks",
+      "description": "<p>Creates a single-use login link for an Express account to access their Stripe dashboard.</p>\n\n<p><strong>You may only create login links for <a href=\"/docs/connect/express-accounts\">Express accounts</a> connected to your platform</strong>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountPeople",
+      "name": "accounts.postAccountsAccountPeople",
+      "description": "<p>Creates a new person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountPeoplePerson",
+      "name": "accounts.postAccountsAccountPeoplePerson",
+      "description": "<p>Updates an existing person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountPersons",
+      "name": "accounts.postAccountsAccountPersons",
+      "description": "<p>Creates a new person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountPersonsPerson",
+      "name": "accounts.postAccountsAccountPersonsPerson",
+      "description": "<p>Updates an existing person.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.accounts.postAccountsAccountReject",
+      "name": "accounts.postAccountsAccountReject",
+      "description": "<p>With <a href=\"/docs/connect\">Connect</a>, you may flag accounts as suspicious.</p>\n\n<p>Test-mode Custom and Express accounts can be rejected at any time. Accounts created using live-mode keys may only be rejected once all balances are zero.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applePay.deleteApplePayDomainsDomain",
+      "name": "applePay.deleteApplePayDomainsDomain",
+      "description": "<p>Delete an apple pay domain.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applePay.getApplePayDomains",
+      "name": "applePay.getApplePayDomains",
+      "description": "<p>List apple pay domains.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applePay.getApplePayDomainsDomain",
+      "name": "applePay.getApplePayDomainsDomain",
+      "description": "<p>Retrieve an apple pay domain.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applePay.postApplePayDomains",
+      "name": "applePay.postApplePayDomains",
+      "description": "<p>Create an apple pay domain.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.getApplicationFees",
+      "name": "applicationFees.getApplicationFees",
+      "description": "<p>Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.getApplicationFeesFeeRefundsId",
+      "name": "applicationFees.getApplicationFeesFeeRefundsId",
+      "description": "<p>By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.getApplicationFeesId",
+      "name": "applicationFees.getApplicationFeesId",
+      "description": "<p>Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.getApplicationFeesIdRefunds",
+      "name": "applicationFees.getApplicationFeesIdRefunds",
+      "description": "<p>You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional refunds.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.postApplicationFeesFeeRefundsId",
+      "name": "applicationFees.postApplicationFeesFeeRefundsId",
+      "description": "<p>Updates the specified application fee refund by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request only accepts metadata as an argument.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.postApplicationFeesIdRefund",
+      "name": "applicationFees.postApplicationFeesIdRefund",
+      "description": ""
+    },
+    {
+      "id": "openapi_stripe_com.applicationFees.postApplicationFeesIdRefunds",
+      "name": "applicationFees.postApplicationFeesIdRefunds",
+      "description": "<p>Refunds an application fee that has previously been collected but not yet refunded.\nFunds will be refunded to the Stripe account from which the fee was originally collected.</p>\n\n<p>You can optionally refund only part of an application fee.\nYou can do so multiple times, until the entire fee has been refunded.</p>\n\n<p>Once entirely refunded, an application fee can’t be refunded again.\nThis method will raise an error when called on an already-refunded application fee,\nor when trying to refund more money than is left on an application fee.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.apps.getAppsSecrets",
+      "name": "apps.getAppsSecrets",
+      "description": "<p>List all secrets stored on the given scope.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.apps.getAppsSecretsFind",
+      "name": "apps.getAppsSecretsFind",
+      "description": "<p>Finds a secret in the secret store by name and scope.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.apps.postAppsSecrets",
+      "name": "apps.postAppsSecrets",
+      "description": "<p>Create or replace a secret in the secret store.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.apps.postAppsSecretsDelete",
+      "name": "apps.postAppsSecretsDelete",
+      "description": "<p>Deletes a secret from the secret store by name and scope.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.balance.getBalance",
+      "name": "balance.getBalance",
+      "description": "<p>Retrieves the current account balance, based on the authentication that was used to make the request.\n For a sample request, see <a href=\"/docs/connect/account-balances#accounting-for-negative-balances\">Accounting for negative balances</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.balance.getBalanceHistory",
+      "name": "balance.getBalanceHistory",
+      "description": "<p>Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.</p>\n\n<p>Note that this endpoint was previously called “Balance history” and used the path <code>/v1/balance/history</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.balance.getBalanceHistoryId",
+      "name": "balance.getBalanceHistoryId",
+      "description": "<p>Retrieves the balance transaction with the given ID.</p>\n\n<p>Note that this endpoint previously used the path <code>/v1/balance/history/:id</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.balanceTransactions.getBalanceTransactions",
+      "name": "balanceTransactions.getBalanceTransactions",
+      "description": "<p>Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.</p>\n\n<p>Note that this endpoint was previously called “Balance history” and used the path <code>/v1/balance/history</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.balanceTransactions.getBalanceTransactionsId",
+      "name": "balanceTransactions.getBalanceTransactionsId",
+      "description": "<p>Retrieves the balance transaction with the given ID.</p>\n\n<p>Note that this endpoint previously used the path <code>/v1/balance/history/:id</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.billingPortal.getBillingPortalConfigurations",
+      "name": "billingPortal.getBillingPortalConfigurations",
+      "description": "<p>Returns a list of configurations that describe the functionality of the customer portal.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.billingPortal.getBillingPortalConfigurationsConfiguration",
+      "name": "billingPortal.getBillingPortalConfigurationsConfiguration",
+      "description": "<p>Retrieves a configuration that describes the functionality of the customer portal.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.billingPortal.postBillingPortalConfigurations",
+      "name": "billingPortal.postBillingPortalConfigurations",
+      "description": "<p>Creates a configuration that describes the functionality and behavior of a PortalSession</p>"
+    },
+    {
+      "id": "openapi_stripe_com.billingPortal.postBillingPortalConfigurationsConfiguration",
+      "name": "billingPortal.postBillingPortalConfigurationsConfiguration",
+      "description": "<p>Updates a configuration that describes the functionality of the customer portal.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.billingPortal.postBillingPortalSessions",
+      "name": "billingPortal.postBillingPortalSessions",
+      "description": "<p>Creates a session of the customer portal.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getCharges",
+      "name": "charges.getCharges",
+      "description": "<p>Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getChargesCharge",
+      "name": "charges.getChargesCharge",
+      "description": "<p>Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getChargesChargeDispute",
+      "name": "charges.getChargesChargeDispute",
+      "description": "<p>Retrieve a dispute for a specified charge.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getChargesChargeRefunds",
+      "name": "charges.getChargesChargeRefunds",
+      "description": "<p>You can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional refunds.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getChargesChargeRefundsRefund",
+      "name": "charges.getChargesChargeRefundsRefund",
+      "description": "<p>Retrieves the details of an existing refund.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.getChargesSearch",
+      "name": "charges.getChargesSearch",
+      "description": "<p>Search for charges you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postCharges",
+      "name": "charges.postCharges",
+      "description": "<p>To charge a credit card or other payment source, you create a <code>Charge</code> object. If your API key is in test mode, the supplied payment source (e.g., card) won’t actually be charged, although everything else will occur as if in live mode. (Stripe assumes that the charge would have completed successfully).</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesCharge",
+      "name": "charges.postChargesCharge",
+      "description": "<p>Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeCapture",
+      "name": "charges.postChargesChargeCapture",
+      "description": "<p>Capture the payment of an existing, uncaptured, charge. This is the second half of the two-step payment flow, where first you <a href=\"#create_charge\">created a charge</a> with the capture option set to false.</p>\n\n<p>Uncaptured payments expire a set number of days after they are created (<a href=\"/docs/charges/placing-a-hold\">7 by default</a>). If they are not captured by that point in time, they will be marked as refunded and will no longer be capturable.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeDispute",
+      "name": "charges.postChargesChargeDispute",
+      "description": ""
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeDisputeClose",
+      "name": "charges.postChargesChargeDisputeClose",
+      "description": ""
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeRefund",
+      "name": "charges.postChargesChargeRefund",
+      "description": "<p>When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it.</p>\n\n<p>Creating a new refund will refund a charge that has previously been created but not yet refunded.\nFunds will be refunded to the credit or debit card that was originally charged.</p>\n\n<p>You can optionally refund only part of a charge.\nYou can do so multiple times, until the entire charge has been refunded.</p>\n\n<p>Once entirely refunded, a charge can’t be refunded again.\nThis method will raise an error when called on an already-refunded charge,\nor when trying to refund more money than is left on a charge.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeRefunds",
+      "name": "charges.postChargesChargeRefunds",
+      "description": "<p>Create a refund.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.charges.postChargesChargeRefundsRefund",
+      "name": "charges.postChargesChargeRefundsRefund",
+      "description": "<p>Update a specified refund.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.checkout.getCheckoutSessions",
+      "name": "checkout.getCheckoutSessions",
+      "description": "<p>Returns a list of Checkout Sessions.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.checkout.getCheckoutSessionsSession",
+      "name": "checkout.getCheckoutSessionsSession",
+      "description": "<p>Retrieves a Session object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.checkout.getCheckoutSessionsSessionLineItems",
+      "name": "checkout.getCheckoutSessionsSessionLineItems",
+      "description": "<p>When retrieving a Checkout Session, there is an includable <strong>line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.checkout.postCheckoutSessions",
+      "name": "checkout.postCheckoutSessions",
+      "description": "<p>Creates a Session object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.checkout.postCheckoutSessionsSessionExpire",
+      "name": "checkout.postCheckoutSessionsSessionExpire",
+      "description": "<p>A Session can be expired when it is in one of these statuses: <code>open</code> </p>\n\n<p>After it expires, a customer can’t complete a Session and customers loading the Session see a message saying the Session is expired.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.countrySpecs.getCountrySpecs",
+      "name": "countrySpecs.getCountrySpecs",
+      "description": "<p>Lists all Country Spec objects available in the API.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.countrySpecs.getCountrySpecsCountry",
+      "name": "countrySpecs.getCountrySpecsCountry",
+      "description": "<p>Returns a Country Spec for a given Country code.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.coupons.deleteCouponsCoupon",
+      "name": "coupons.deleteCouponsCoupon",
+      "description": "<p>You can delete coupons via the <a href=\"https://dashboard.stripe.com/coupons\">coupon management</a> page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.coupons.getCoupons",
+      "name": "coupons.getCoupons",
+      "description": "<p>Returns a list of your coupons.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.coupons.getCouponsCoupon",
+      "name": "coupons.getCouponsCoupon",
+      "description": "<p>Retrieves the coupon with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.coupons.postCoupons",
+      "name": "coupons.postCoupons",
+      "description": "<p>You can create coupons easily via the <a href=\"https://dashboard.stripe.com/coupons\">coupon management</a> page of the Stripe dashboard. Coupon creation is also accessible via the API if you need to create coupons on the fly.</p>\n\n<p>A coupon has either a <code>percent_off</code> or an <code>amount_off</code> and <code>currency</code>. If you set an <code>amount_off</code>, that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of <currency>100</currency> will have a final total of <currency>0</currency> if a coupon with an <code>amount_off</code> of <amount>200</amount> is applied to it and an invoice with a subtotal of <currency>300</currency> will have a final total of <currency>100</currency> if a coupon with an <code>amount_off</code> of <amount>200</amount> is applied to it.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.coupons.postCouponsCoupon",
+      "name": "coupons.postCouponsCoupon",
+      "description": "<p>Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.getCreditNotes",
+      "name": "creditNotes.getCreditNotes",
+      "description": "<p>Returns a list of credit notes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.getCreditNotesCreditNoteLines",
+      "name": "creditNotes.getCreditNotesCreditNoteLines",
+      "description": "<p>When retrieving a credit note, you’ll get a <strong>lines</strong> property containing the the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.getCreditNotesId",
+      "name": "creditNotes.getCreditNotesId",
+      "description": "<p>Retrieves the credit note object with the given identifier.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.getCreditNotesPreview",
+      "name": "creditNotes.getCreditNotesPreview",
+      "description": "<p>Get a preview of a credit note without creating it.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.getCreditNotesPreviewLines",
+      "name": "creditNotes.getCreditNotesPreviewLines",
+      "description": "<p>When retrieving a credit note preview, you’ll get a <strong>lines</strong> property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.postCreditNotes",
+      "name": "creditNotes.postCreditNotes",
+      "description": "<p>Issue a credit note to adjust the amount of a finalized invoice. For a <code>status=open</code> invoice, a credit note reduces\nits <code>amount_due</code>. For a <code>status=paid</code> invoice, a credit note does not affect its <code>amount_due</code>. Instead, it can result\nin any combination of the following:</p>\n\n<ul>\n<li>Refund: create a new refund (using <code>refund_amount</code>) or link an existing refund (using <code>refund</code>).</li>\n<li>Customer balance credit: credit the customer’s balance (using <code>credit_amount</code>) which will be automatically applied to their next invoice when it’s finalized.</li>\n<li>Outside of Stripe credit: record the amount that is or will be credited outside of Stripe (using <code>out_of_band_amount</code>).</li>\n</ul>\n\n<p>For post-payment credit notes the sum of the refund, credit and outside of Stripe amounts must equal the credit note total.</p>\n\n<p>You may issue multiple credit notes for an invoice. Each credit note will increment the invoice’s <code>pre_payment_credit_notes_amount</code>\nor <code>post_payment_credit_notes_amount</code> depending on its <code>status</code> at the time of credit note creation.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.postCreditNotesId",
+      "name": "creditNotes.postCreditNotesId",
+      "description": "<p>Updates an existing credit note.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.creditNotes.postCreditNotesIdVoid",
+      "name": "creditNotes.postCreditNotesIdVoid",
+      "description": "<p>Marks a credit note as void. Learn more about <a href=\"/docs/billing/invoices/credit-notes#voiding\">voiding credit notes</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomer",
+      "name": "customers.deleteCustomersCustomer",
+      "description": "<p>Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerBankAccountsId",
+      "name": "customers.deleteCustomersCustomerBankAccountsId",
+      "description": "<p>Delete a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerCardsId",
+      "name": "customers.deleteCustomersCustomerCardsId",
+      "description": "<p>Delete a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerDiscount",
+      "name": "customers.deleteCustomersCustomerDiscount",
+      "description": "<p>Removes the currently applied discount on a customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerSourcesId",
+      "name": "customers.deleteCustomersCustomerSourcesId",
+      "description": "<p>Delete a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "name": "customers.deleteCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "description": "<p>Cancels a customer’s subscription. If you set the <code>at_period_end</code> parameter to <code>true</code>, the subscription will remain active until the end of the period, at which point it will be canceled and not renewed. Otherwise, with the default <code>false</code> value, the subscription is terminated immediately. In either case, the customer will not be charged again for the subscription.</p>\n\n<p>Note, however, that any pending invoice items that you’ve created will still be charged for at the end of the period, unless manually <a href=\"#delete_invoiceitem\">deleted</a>. If you’ve set the subscription to cancel at the end of the period, any pending prorations will also be left in place and collected at the end of the period. But if the subscription is set to cancel immediately, pending prorations will be removed.</p>\n\n<p>By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+      "name": "customers.deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+      "description": "<p>Removes the currently applied discount on a customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.deleteCustomersCustomerTaxIdsId",
+      "name": "customers.deleteCustomersCustomerTaxIdsId",
+      "description": "<p>Deletes an existing <code>TaxID</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomers",
+      "name": "customers.getCustomers",
+      "description": "<p>Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomer",
+      "name": "customers.getCustomersCustomer",
+      "description": "<p>Retrieves a Customer object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerBalanceTransactions",
+      "name": "customers.getCustomersCustomerBalanceTransactions",
+      "description": "<p>Returns a list of transactions that updated the customer’s <a href=\"/docs/billing/customer/balance\">balances</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerBalanceTransactionsTransaction",
+      "name": "customers.getCustomersCustomerBalanceTransactionsTransaction",
+      "description": "<p>Retrieves a specific customer balance transaction that updated the customer’s <a href=\"/docs/billing/customer/balance\">balances</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerBankAccounts",
+      "name": "customers.getCustomersCustomerBankAccounts",
+      "description": "<p>You can see a list of the bank accounts belonging to a Customer. Note that the 10 most recent sources are always available by default on the Customer. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional bank accounts.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerBankAccountsId",
+      "name": "customers.getCustomersCustomerBankAccountsId",
+      "description": "<p>By default, you can see the 10 most recent sources stored on a Customer directly on the object, but you can also retrieve details about a specific bank account stored on the Stripe account.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerCards",
+      "name": "customers.getCustomersCustomerCards",
+      "description": "<p>You can see a list of the cards belonging to a customer.\nNote that the 10 most recent sources are always available on the <code>Customer</code> object.\nIf you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional cards.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerCardsId",
+      "name": "customers.getCustomersCustomerCardsId",
+      "description": "<p>You can always see the 10 most recent cards directly on a customer; this method lets you retrieve details about a specific card stored on the customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerCashBalance",
+      "name": "customers.getCustomersCustomerCashBalance",
+      "description": "<p>Retrieves a customer’s cash balance.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerCashBalanceTransactions",
+      "name": "customers.getCustomersCustomerCashBalanceTransactions",
+      "description": "<p>Returns a list of transactions that modified the customer’s <a href=\"/docs/payments/customer-balance\">cash balance</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerCashBalanceTransactionsTransaction",
+      "name": "customers.getCustomersCustomerCashBalanceTransactionsTransaction",
+      "description": "<p>Retrieves a specific cash balance transaction, which updated the customer’s <a href=\"/docs/payments/customer-balance\">cash balance</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerDiscount",
+      "name": "customers.getCustomersCustomerDiscount",
+      "description": ""
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerPaymentMethods",
+      "name": "customers.getCustomersCustomerPaymentMethods",
+      "description": "<p>Returns a list of PaymentMethods for a given Customer</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerPaymentMethodsPaymentMethod",
+      "name": "customers.getCustomersCustomerPaymentMethodsPaymentMethod",
+      "description": "<p>Retrieves a PaymentMethod object for a given Customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerSources",
+      "name": "customers.getCustomersCustomerSources",
+      "description": "<p>List sources for a specified customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerSourcesId",
+      "name": "customers.getCustomersCustomerSourcesId",
+      "description": "<p>Retrieve a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerSubscriptions",
+      "name": "customers.getCustomersCustomerSubscriptions",
+      "description": "<p>You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "name": "customers.getCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "description": "<p>Retrieves the subscription with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+      "name": "customers.getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+      "description": ""
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerTaxIds",
+      "name": "customers.getCustomersCustomerTaxIds",
+      "description": "<p>Returns a list of tax IDs for a customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersCustomerTaxIdsId",
+      "name": "customers.getCustomersCustomerTaxIdsId",
+      "description": "<p>Retrieves the <code>TaxID</code> object with the given identifier.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.getCustomersSearch",
+      "name": "customers.getCustomersSearch",
+      "description": "<p>Search for customers you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomers",
+      "name": "customers.postCustomers",
+      "description": "<p>Creates a new customer object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomer",
+      "name": "customers.postCustomersCustomer",
+      "description": "<p>Updates the specified customer by setting the values of the parameters passed. Any parameters not provided will be left unchanged. For example, if you pass the <strong>source</strong> parameter, that becomes the customer’s active source (e.g., a card) to be used for all charges in the future. When you update a customer to a new valid card source by passing the <strong>source</strong> parameter: for each of the customer’s current subscriptions, if the subscription bills automatically and is in the <code>past_due</code> state, then the latest open invoice for the subscription with automatic collection enabled will be retried. This retry will not count as an automatic retry, and will not affect the next regularly scheduled payment for the invoice. Changing the <strong>default_source</strong> for a customer will not trigger this behavior.</p>\n\n<p>This request accepts mostly the same arguments as the customer creation call.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerBalanceTransactions",
+      "name": "customers.postCustomersCustomerBalanceTransactions",
+      "description": "<p>Creates an immutable transaction that updates the customer’s credit <a href=\"/docs/billing/customer/balance\">balance</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerBalanceTransactionsTransaction",
+      "name": "customers.postCustomersCustomerBalanceTransactionsTransaction",
+      "description": "<p>Most credit balance transaction fields are immutable, but you may update its <code>description</code> and <code>metadata</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerBankAccounts",
+      "name": "customers.postCustomersCustomerBankAccounts",
+      "description": "<p>When you create a new credit card, you must specify a customer or recipient on which to create it.</p>\n\n<p>If the card’s owner has no default card, then the new card will become the default.\nHowever, if the owner already has a default, then it will not change.\nTo change the default, you should <a href=\"/docs/api#update_customer\">update the customer</a> to have a new <code>default_source</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerBankAccountsId",
+      "name": "customers.postCustomersCustomerBankAccountsId",
+      "description": "<p>Update a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerBankAccountsIdVerify",
+      "name": "customers.postCustomersCustomerBankAccountsIdVerify",
+      "description": "<p>Verify a specified bank account for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerCards",
+      "name": "customers.postCustomersCustomerCards",
+      "description": "<p>When you create a new credit card, you must specify a customer or recipient on which to create it.</p>\n\n<p>If the card’s owner has no default card, then the new card will become the default.\nHowever, if the owner already has a default, then it will not change.\nTo change the default, you should <a href=\"/docs/api#update_customer\">update the customer</a> to have a new <code>default_source</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerCardsId",
+      "name": "customers.postCustomersCustomerCardsId",
+      "description": "<p>Update a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerCashBalance",
+      "name": "customers.postCustomersCustomerCashBalance",
+      "description": "<p>Changes the settings on a customer’s cash balance.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerFundingInstructions",
+      "name": "customers.postCustomersCustomerFundingInstructions",
+      "description": "<p>Retrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new\nfunding instructions will be created. If funding instructions have already been created for a given customer, the same\nfunding instructions will be retrieved. In other words, we will return the same funding instructions each time.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerSources",
+      "name": "customers.postCustomersCustomerSources",
+      "description": "<p>When you create a new credit card, you must specify a customer or recipient on which to create it.</p>\n\n<p>If the card’s owner has no default card, then the new card will become the default.\nHowever, if the owner already has a default, then it will not change.\nTo change the default, you should <a href=\"/docs/api#update_customer\">update the customer</a> to have a new <code>default_source</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerSourcesId",
+      "name": "customers.postCustomersCustomerSourcesId",
+      "description": "<p>Update a specified source for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerSourcesIdVerify",
+      "name": "customers.postCustomersCustomerSourcesIdVerify",
+      "description": "<p>Verify a specified bank account for a given customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerSubscriptions",
+      "name": "customers.postCustomersCustomerSubscriptions",
+      "description": "<p>Creates a new subscription on an existing customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "name": "customers.postCustomersCustomerSubscriptionsSubscriptionExposedId",
+      "description": "<p>Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the <a href=\"#upcoming_invoice\">upcoming invoice</a> endpoint.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.customers.postCustomersCustomerTaxIds",
+      "name": "customers.postCustomersCustomerTaxIds",
+      "description": "<p>Creates a new <code>TaxID</code> object for a customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.disputes.getDisputes",
+      "name": "disputes.getDisputes",
+      "description": "<p>Returns a list of your disputes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.disputes.getDisputesDispute",
+      "name": "disputes.getDisputesDispute",
+      "description": "<p>Retrieves the dispute with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.disputes.postDisputesDispute",
+      "name": "disputes.postDisputesDispute",
+      "description": "<p>When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your <a href=\"https://dashboard.stripe.com/disputes\">dashboard</a>, but if you prefer, you can use the API to submit evidence programmatically.</p>\n\n<p>Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our <a href=\"/docs/disputes/categories\">guide to dispute types</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.disputes.postDisputesDisputeClose",
+      "name": "disputes.postDisputesDisputeClose",
+      "description": "<p>Closing the dispute for a charge indicates that you do not have any evidence to submit and are essentially dismissing the dispute, acknowledging it as lost.</p>\n\n<p>The status of the dispute will change from <code>needs_response</code> to <code>lost</code>. <em>Closing a dispute is irreversible</em>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.ephemeralKeys.deleteEphemeralKeysKey",
+      "name": "ephemeralKeys.deleteEphemeralKeysKey",
+      "description": "<p>Invalidates a short-lived API key for a given resource.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.ephemeralKeys.postEphemeralKeys",
+      "name": "ephemeralKeys.postEphemeralKeys",
+      "description": "<p>Creates a short-lived API key for a given resource.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.events.getEvents",
+      "name": "events.getEvents",
+      "description": "<p>List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in <a href=\"/docs/api/events/object\">event object</a> <code>api_version</code> attribute (not according to your current Stripe API version or <code>Stripe-Version</code> header).</p>"
+    },
+    {
+      "id": "openapi_stripe_com.events.getEventsId",
+      "name": "events.getEventsId",
+      "description": "<p>Retrieves the details of an event. Supply the unique identifier of the event, which you might have received in a webhook.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.exchangeRates.getExchangeRates",
+      "name": "exchangeRates.getExchangeRates",
+      "description": "<p>Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.exchangeRates.getExchangeRatesRateId",
+      "name": "exchangeRates.getExchangeRatesRateId",
+      "description": "<p>Retrieves the exchange rates from the given currency to every supported currency.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.fileLinks.getFileLinks",
+      "name": "fileLinks.getFileLinks",
+      "description": "<p>Returns a list of file links.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.fileLinks.getFileLinksLink",
+      "name": "fileLinks.getFileLinksLink",
+      "description": "<p>Retrieves the file link with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.fileLinks.postFileLinks",
+      "name": "fileLinks.postFileLinks",
+      "description": "<p>Creates a new file link object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.fileLinks.postFileLinksLink",
+      "name": "fileLinks.postFileLinksLink",
+      "description": "<p>Updates an existing file link object. Expired links can no longer be updated.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.files.getFiles",
+      "name": "files.getFiles",
+      "description": "<p>Returns a list of the files that your account has access to. The files are returned sorted by creation date, with the most recently created files appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.files.getFilesFile",
+      "name": "files.getFilesFile",
+      "description": "<p>Retrieves the details of an existing file object. Supply the unique file ID from a file, and Stripe will return the corresponding file object. To access file contents, see the <a href=\"/docs/file-upload#download-file-contents\">File Upload Guide</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.files.postFiles",
+      "name": "files.postFiles",
+      "description": "<p>To upload a file to Stripe, you’ll need to send a request of type <code>multipart/form-data</code>. The request should contain the file you would like to upload, as well as the parameters for creating a file.</p>\n\n<p>All of Stripe’s officially supported Client libraries should have support for sending <code>multipart/form-data</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.getFinancialConnectionsAccounts",
+      "name": "financialConnections.getFinancialConnectionsAccounts",
+      "description": "<p>Returns a list of Financial Connections <code>Account</code> objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.getFinancialConnectionsAccountsAccount",
+      "name": "financialConnections.getFinancialConnectionsAccountsAccount",
+      "description": "<p>Retrieves the details of an Financial Connections <code>Account</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.getFinancialConnectionsAccountsAccountOwners",
+      "name": "financialConnections.getFinancialConnectionsAccountsAccountOwners",
+      "description": "<p>Lists all owners for a given <code>Account</code></p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.getFinancialConnectionsSessionsSession",
+      "name": "financialConnections.getFinancialConnectionsSessionsSession",
+      "description": "<p>Retrieves the details of a Financial Connections <code>Session</code></p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.postFinancialConnectionsAccountsAccountDisconnect",
+      "name": "financialConnections.postFinancialConnectionsAccountsAccountDisconnect",
+      "description": "<p>Disables your access to a Financial Connections <code>Account</code>. You will no longer be able to access data associated with the account (e.g. balances, transactions).</p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.postFinancialConnectionsAccountsAccountRefresh",
+      "name": "financialConnections.postFinancialConnectionsAccountsAccountRefresh",
+      "description": "<p>Refreshes the data associated with a Financial Connections <code>Account</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.financialConnections.postFinancialConnectionsSessions",
+      "name": "financialConnections.postFinancialConnectionsSessions",
+      "description": "<p>To launch the Financial Connections authorization flow, create a <code>Session</code>. The session’s <code>client_secret</code> can be used to launch the flow using Stripe.js.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.getIdentityVerificationReports",
+      "name": "identity.getIdentityVerificationReports",
+      "description": "<p>List all verification reports.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.getIdentityVerificationReportsReport",
+      "name": "identity.getIdentityVerificationReportsReport",
+      "description": "<p>Retrieves an existing VerificationReport</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.getIdentityVerificationSessions",
+      "name": "identity.getIdentityVerificationSessions",
+      "description": "<p>Returns a list of VerificationSessions</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.getIdentityVerificationSessionsSession",
+      "name": "identity.getIdentityVerificationSessionsSession",
+      "description": "<p>Retrieves the details of a VerificationSession that was previously created.</p>\n\n<p>When the session status is <code>requires_input</code>, you can use this method to retrieve a valid\n<code>client_secret</code> or <code>url</code> to allow re-submission.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.postIdentityVerificationSessions",
+      "name": "identity.postIdentityVerificationSessions",
+      "description": "<p>Creates a VerificationSession object.</p>\n\n<p>After the VerificationSession is created, display a verification modal using the session <code>client_secret</code> or send your users to the session’s <code>url</code>.</p>\n\n<p>If your API key is in test mode, verification checks won’t actually process, though everything else will occur as if in live mode.</p>\n\n<p>Related guide: <a href=\"/docs/identity/verify-identity-documents\">Verify your users’ identity documents</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.postIdentityVerificationSessionsSession",
+      "name": "identity.postIdentityVerificationSessionsSession",
+      "description": "<p>Updates a VerificationSession object.</p>\n\n<p>When the session status is <code>requires_input</code>, you can use this method to update the\nverification check and options.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.postIdentityVerificationSessionsSessionCancel",
+      "name": "identity.postIdentityVerificationSessionsSessionCancel",
+      "description": "<p>A VerificationSession object can be canceled when it is in <code>requires_input</code> <a href=\"/docs/identity/how-sessions-work\">status</a>.</p>\n\n<p>Once canceled, future submission attempts are disabled. This cannot be undone. <a href=\"/docs/identity/verification-sessions#cancel\">Learn more</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.identity.postIdentityVerificationSessionsSessionRedact",
+      "name": "identity.postIdentityVerificationSessionsSessionRedact",
+      "description": "<p>Redact a VerificationSession to remove all collected information from Stripe. This will redact\nthe VerificationSession and all objects related to it, including VerificationReports, Events,\nrequest logs, etc.</p>\n\n<p>A VerificationSession object can be redacted when it is in <code>requires_input</code> or <code>verified</code>\n<a href=\"/docs/identity/how-sessions-work\">status</a>. Redacting a VerificationSession in <code>requires_action</code>\nstate will automatically cancel it.</p>\n\n<p>The redaction process may take up to four days. When the redaction process is in progress, the\nVerificationSession’s <code>redaction.status</code> field will be set to <code>processing</code>; when the process is\nfinished, it will change to <code>redacted</code> and an <code>identity.verification_session.redacted</code> event\nwill be emitted.</p>\n\n<p>Redaction is irreversible. Redacted objects are still accessible in the Stripe API, but all the\nfields that contain personal data will be replaced by the string <code>[redacted]</code> or a similar\nplaceholder. The <code>metadata</code> field will also be erased. Redacted objects cannot be updated or\nused for any purpose.</p>\n\n<p><a href=\"/docs/identity/verification-sessions#redact\">Learn more</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoiceitems.deleteInvoiceitemsInvoiceitem",
+      "name": "invoiceitems.deleteInvoiceitemsInvoiceitem",
+      "description": "<p>Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoiceitems.getInvoiceitems",
+      "name": "invoiceitems.getInvoiceitems",
+      "description": "<p>Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoiceitems.getInvoiceitemsInvoiceitem",
+      "name": "invoiceitems.getInvoiceitemsInvoiceitem",
+      "description": "<p>Retrieves the invoice item with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoiceitems.postInvoiceitems",
+      "name": "invoiceitems.postInvoiceitems",
+      "description": "<p>Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoiceitems.postInvoiceitemsInvoiceitem",
+      "name": "invoiceitems.postInvoiceitemsInvoiceitem",
+      "description": "<p>Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.deleteInvoicesInvoice",
+      "name": "invoices.deleteInvoicesInvoice",
+      "description": "<p>Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be <a href=\"#void_invoice\">voided</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoices",
+      "name": "invoices.getInvoices",
+      "description": "<p>You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoicesInvoice",
+      "name": "invoices.getInvoicesInvoice",
+      "description": "<p>Retrieves the invoice with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoicesInvoiceLines",
+      "name": "invoices.getInvoicesInvoiceLines",
+      "description": "<p>When retrieving an invoice, you’ll get a <strong>lines</strong> property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoicesSearch",
+      "name": "invoices.getInvoicesSearch",
+      "description": "<p>Search for invoices you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoicesUpcoming",
+      "name": "invoices.getInvoicesUpcoming",
+      "description": "<p>At any time, you can preview the upcoming invoice for a customer. This will show you all the charges that are pending, including subscription renewal charges, invoice item charges, etc. It will also show you any discounts that are applicable to the invoice.</p>\n\n<p>Note that when you are viewing an upcoming invoice, you are simply viewing a preview – the invoice has not yet been created. As such, the upcoming invoice will not show up in invoice listing calls, and you cannot use the API to pay or edit the invoice. If you want to change the amount that your customer will be billed, you can add, remove, or update pending invoice items, or update the customer’s discount.</p>\n\n<p>You can preview the effects of updating a subscription, including a preview of what proration will take place. To ensure that the actual proration is calculated exactly the same as the previewed proration, you should pass a <code>proration_date</code> parameter when doing the actual subscription update. The value passed in should be the same as the <code>subscription_proration_date</code> returned on the upcoming invoice resource. The recommended way to get only the prorations being previewed is to consider only proration line items where <code>period[start]</code> is equal to the <code>subscription_proration_date</code> on the upcoming invoice resource.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.getInvoicesUpcomingLines",
+      "name": "invoices.getInvoicesUpcomingLines",
+      "description": "<p>When retrieving an upcoming invoice, you’ll get a <strong>lines</strong> property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoices",
+      "name": "invoices.postInvoices",
+      "description": "<p>This endpoint creates a draft invoice for a given customer. The invoice remains a draft until you <a href=\"#finalize_invoice\">finalize</a> the invoice, which allows you to <a href=\"#pay_invoice\">pay</a> or <a href=\"#send_invoice\">send</a> the invoice to your customers.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoice",
+      "name": "invoices.postInvoicesInvoice",
+      "description": "<p>Draft invoices are fully editable. Once an invoice is <a href=\"/docs/billing/invoices/workflow#finalized\">finalized</a>,\nmonetary values, as well as <code>collection_method</code>, become uneditable.</p>\n\n<p>If you would like to stop the Stripe Billing engine from automatically finalizing, reattempting payments on,\nsending reminders for, or <a href=\"/docs/billing/invoices/reconciliation\">automatically reconciling</a> invoices, pass\n<code>auto_advance=false</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoiceFinalize",
+      "name": "invoices.postInvoicesInvoiceFinalize",
+      "description": "<p>Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoiceMarkUncollectible",
+      "name": "invoices.postInvoicesInvoiceMarkUncollectible",
+      "description": "<p>Marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoicePay",
+      "name": "invoices.postInvoicesInvoicePay",
+      "description": "<p>Stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your <a href=\"https://dashboard.stripe.com/account/billing/automatic\">subscriptions settings</a>. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoiceSend",
+      "name": "invoices.postInvoicesInvoiceSend",
+      "description": "<p>Stripe will automatically send invoices to customers according to your <a href=\"https://dashboard.stripe.com/account/billing/automatic\">subscriptions settings</a>. However, if you’d like to manually send an invoice to your customer out of the normal schedule, you can do so. When sending invoices that have already been paid, there will be no reference to the payment in the email.</p>\n\n<p>Requests made in test-mode result in no emails being sent, despite sending an <code>invoice.sent</code> event.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.invoices.postInvoicesInvoiceVoid",
+      "name": "invoices.postInvoicesInvoiceVoid",
+      "description": "<p>Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to <a href=\"#delete_invoice\">deletion</a>, however it only applies to finalized invoices and maintains a papertrail where the invoice can still be found.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingAuthorizations",
+      "name": "issuing.getIssuingAuthorizations",
+      "description": "<p>Returns a list of Issuing <code>Authorization</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingAuthorizationsAuthorization",
+      "name": "issuing.getIssuingAuthorizationsAuthorization",
+      "description": "<p>Retrieves an Issuing <code>Authorization</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingCardholders",
+      "name": "issuing.getIssuingCardholders",
+      "description": "<p>Returns a list of Issuing <code>Cardholder</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingCardholdersCardholder",
+      "name": "issuing.getIssuingCardholdersCardholder",
+      "description": "<p>Retrieves an Issuing <code>Cardholder</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingCards",
+      "name": "issuing.getIssuingCards",
+      "description": "<p>Returns a list of Issuing <code>Card</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingCardsCard",
+      "name": "issuing.getIssuingCardsCard",
+      "description": "<p>Retrieves an Issuing <code>Card</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingDisputes",
+      "name": "issuing.getIssuingDisputes",
+      "description": "<p>Returns a list of Issuing <code>Dispute</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingDisputesDispute",
+      "name": "issuing.getIssuingDisputesDispute",
+      "description": "<p>Retrieves an Issuing <code>Dispute</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingSettlements",
+      "name": "issuing.getIssuingSettlements",
+      "description": "<p>Returns a list of Issuing <code>Settlement</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingSettlementsSettlement",
+      "name": "issuing.getIssuingSettlementsSettlement",
+      "description": "<p>Retrieves an Issuing <code>Settlement</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingTransactions",
+      "name": "issuing.getIssuingTransactions",
+      "description": "<p>Returns a list of Issuing <code>Transaction</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.getIssuingTransactionsTransaction",
+      "name": "issuing.getIssuingTransactionsTransaction",
+      "description": "<p>Retrieves an Issuing <code>Transaction</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingAuthorizationsAuthorization",
+      "name": "issuing.postIssuingAuthorizationsAuthorization",
+      "description": "<p>Updates the specified Issuing <code>Authorization</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingAuthorizationsAuthorizationApprove",
+      "name": "issuing.postIssuingAuthorizationsAuthorizationApprove",
+      "description": "<p>Approves a pending Issuing <code>Authorization</code> object. This request should be made within the timeout window of the <a href=\"/docs/issuing/controls/real-time-authorizations\">real-time authorization</a> flow. \nYou can also respond directly to the webhook request to approve an authorization (preferred). More details can be found <a href=\"https://site-admin.stripe.com/docs/issuing/controls/real-time-authorizations#authorization-handling\">here</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingAuthorizationsAuthorizationDecline",
+      "name": "issuing.postIssuingAuthorizationsAuthorizationDecline",
+      "description": "<p>Declines a pending Issuing <code>Authorization</code> object. This request should be made within the timeout window of the <a href=\"/docs/issuing/controls/real-time-authorizations\">real time authorization</a> flow.\nYou can also respond directly to the webhook request to decline an authorization (preferred). More details can be found <a href=\"https://site-admin.stripe.com/docs/issuing/controls/real-time-authorizations#authorization-handling\">here</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingCardholders",
+      "name": "issuing.postIssuingCardholders",
+      "description": "<p>Creates a new Issuing <code>Cardholder</code> object that can be issued cards.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingCardholdersCardholder",
+      "name": "issuing.postIssuingCardholdersCardholder",
+      "description": "<p>Updates the specified Issuing <code>Cardholder</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingCards",
+      "name": "issuing.postIssuingCards",
+      "description": "<p>Creates an Issuing <code>Card</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingCardsCard",
+      "name": "issuing.postIssuingCardsCard",
+      "description": "<p>Updates the specified Issuing <code>Card</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingDisputes",
+      "name": "issuing.postIssuingDisputes",
+      "description": "<p>Creates an Issuing <code>Dispute</code> object. Individual pieces of evidence within the <code>evidence</code> object are optional at this point. Stripe only validates that required evidence is present during submission. Refer to <a href=\"/docs/issuing/purchases/disputes#dispute-reasons-and-evidence\">Dispute reasons and evidence</a> for more details about evidence requirements.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingDisputesDispute",
+      "name": "issuing.postIssuingDisputesDispute",
+      "description": "<p>Updates the specified Issuing <code>Dispute</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Properties on the <code>evidence</code> object can be unset by passing in an empty string.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingDisputesDisputeSubmit",
+      "name": "issuing.postIssuingDisputesDisputeSubmit",
+      "description": "<p>Submits an Issuing <code>Dispute</code> to the card network. Stripe validates that all evidence fields required for the dispute’s reason are present. For more details, see <a href=\"/docs/issuing/purchases/disputes#dispute-reasons-and-evidence\">Dispute reasons and evidence</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingSettlementsSettlement",
+      "name": "issuing.postIssuingSettlementsSettlement",
+      "description": "<p>Updates the specified Issuing <code>Settlement</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.issuing.postIssuingTransactionsTransaction",
+      "name": "issuing.postIssuingTransactionsTransaction",
+      "description": "<p>Updates the specified Issuing <code>Transaction</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkAccountSessions.getLinkAccountSessionsSession",
+      "name": "linkAccountSessions.getLinkAccountSessionsSession",
+      "description": "<p>Retrieves the details of a Financial Connections <code>Session</code></p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkAccountSessions.postLinkAccountSessions",
+      "name": "linkAccountSessions.postLinkAccountSessions",
+      "description": "<p>To launch the Financial Connections authorization flow, create a <code>Session</code>. The session’s <code>client_secret</code> can be used to launch the flow using Stripe.js.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkedAccounts.getLinkedAccounts",
+      "name": "linkedAccounts.getLinkedAccounts",
+      "description": "<p>Returns a list of Financial Connections <code>Account</code> objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkedAccounts.getLinkedAccountsAccount",
+      "name": "linkedAccounts.getLinkedAccountsAccount",
+      "description": "<p>Retrieves the details of an Financial Connections <code>Account</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkedAccounts.getLinkedAccountsAccountOwners",
+      "name": "linkedAccounts.getLinkedAccountsAccountOwners",
+      "description": "<p>Lists all owners for a given <code>Account</code></p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkedAccounts.postLinkedAccountsAccountDisconnect",
+      "name": "linkedAccounts.postLinkedAccountsAccountDisconnect",
+      "description": "<p>Disables your access to a Financial Connections <code>Account</code>. You will no longer be able to access data associated with the account (e.g. balances, transactions).</p>"
+    },
+    {
+      "id": "openapi_stripe_com.linkedAccounts.postLinkedAccountsAccountRefresh",
+      "name": "linkedAccounts.postLinkedAccountsAccountRefresh",
+      "description": "<p>Refreshes the data associated with a Financial Connections <code>Account</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.mandates.getMandatesMandate",
+      "name": "mandates.getMandatesMandate",
+      "description": "<p>Retrieves a Mandate object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.getPaymentIntents",
+      "name": "paymentIntents.getPaymentIntents",
+      "description": "<p>Returns a list of PaymentIntents.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.getPaymentIntentsIntent",
+      "name": "paymentIntents.getPaymentIntentsIntent",
+      "description": "<p>Retrieves the details of a PaymentIntent that has previously been created. </p>\n\n<p>Client-side retrieval using a publishable key is allowed when the <code>client_secret</code> is provided in the query string. </p>\n\n<p>When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the <a href=\"#payment_intent_object\">payment intent</a> object reference for more details.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.getPaymentIntentsSearch",
+      "name": "paymentIntents.getPaymentIntentsSearch",
+      "description": "<p>Search for PaymentIntents you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntents",
+      "name": "paymentIntents.postPaymentIntents",
+      "description": "<p>Creates a PaymentIntent object.</p>\n\n<p>After the PaymentIntent is created, attach a payment method and <a href=\"/docs/api/payment_intents/confirm\">confirm</a>\nto continue the payment. You can read more about the different payment flows\navailable via the Payment Intents API <a href=\"/docs/payments/payment-intents\">here</a>.</p>\n\n<p>When <code>confirm=true</code> is used during creation, it is equivalent to creating\nand confirming the PaymentIntent in the same call. You may use any parameters\navailable in the <a href=\"/docs/api/payment_intents/confirm\">confirm API</a> when <code>confirm=true</code>\nis supplied.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntent",
+      "name": "paymentIntents.postPaymentIntentsIntent",
+      "description": "<p>Updates properties on a PaymentIntent object without confirming.</p>\n\n<p>Depending on which properties you update, you may need to confirm the\nPaymentIntent again. For example, updating the <code>payment_method</code> will\nalways require you to confirm the PaymentIntent again. If you prefer to\nupdate and confirm at the same time, we recommend updating properties via\nthe <a href=\"/docs/api/payment_intents/confirm\">confirm API</a> instead.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentApplyCustomerBalance",
+      "name": "paymentIntents.postPaymentIntentsIntentApplyCustomerBalance",
+      "description": "<p>Manually reconcile the remaining amount for a customer_balance PaymentIntent.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentCancel",
+      "name": "paymentIntents.postPaymentIntentsIntentCancel",
+      "description": "<p>A PaymentIntent object can be canceled when it is in one of these statuses: <code>requires_payment_method</code>, <code>requires_capture</code>, <code>requires_confirmation</code>, <code>requires_action</code> or, <a href=\"/docs/payments/intents\">in rare cases</a>, <code>processing</code>. </p>\n\n<p>Once canceled, no additional charges will be made by the PaymentIntent and any operations on the PaymentIntent will fail with an error. For PaymentIntents with <code>status=’requires_capture’</code>, the remaining <code>amount_capturable</code> will automatically be refunded. </p>\n\n<p>You cannot cancel the PaymentIntent for a Checkout Session. <a href=\"/docs/api/checkout/sessions/expire\">Expire the Checkout Session</a> instead.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentCapture",
+      "name": "paymentIntents.postPaymentIntentsIntentCapture",
+      "description": "<p>Capture the funds of an existing uncaptured PaymentIntent when its status is <code>requires_capture</code>.</p>\n\n<p>Uncaptured PaymentIntents will be canceled a set number of days after they are created (7 by default).</p>\n\n<p>Learn more about <a href=\"/docs/payments/capture-later\">separate authorization and capture</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentConfirm",
+      "name": "paymentIntents.postPaymentIntentsIntentConfirm",
+      "description": "<p>Confirm that your customer intends to pay with current or provided\npayment method. Upon confirmation, the PaymentIntent will attempt to initiate\na payment.\nIf the selected payment method requires additional authentication steps, the\nPaymentIntent will transition to the <code>requires_action</code> status and\nsuggest additional actions via <code>next_action</code>. If payment fails,\nthe PaymentIntent will transition to the <code>requires_payment_method</code> status. If\npayment succeeds, the PaymentIntent will transition to the <code>succeeded</code>\nstatus (or <code>requires_capture</code>, if <code>capture_method</code> is set to <code>manual</code>).\nIf the <code>confirmation_method</code> is <code>automatic</code>, payment may be attempted\nusing our <a href=\"/docs/stripe-js/reference#stripe-handle-card-payment\">client SDKs</a>\nand the PaymentIntent’s <a href=\"#payment_intent_object-client_secret\">client_secret</a>.\nAfter <code>next_action</code>s are handled by the client, no additional\nconfirmation is required to complete the payment.\nIf the <code>confirmation_method</code> is <code>manual</code>, all payment attempts must be\ninitiated using a secret key.\nIf any actions are required for the payment, the PaymentIntent will\nreturn to the <code>requires_confirmation</code> state\nafter those actions are completed. Your server needs to then\nexplicitly re-confirm the PaymentIntent to initiate the next payment\nattempt. Read the <a href=\"/docs/payments/payment-intents/web-manual\">expanded documentation</a>\nto learn more about manual confirmation.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentIncrementAuthorization",
+      "name": "paymentIntents.postPaymentIntentsIntentIncrementAuthorization",
+      "description": "<p>Perform an incremental authorization on an eligible\n<a href=\"/docs/api/payment_intents/object\">PaymentIntent</a>. To be eligible, the\nPaymentIntent’s status must be <code>requires_capture</code> and\n<a href=\"/docs/api/charges/object#charge_object-payment_method_details-card_present-incremental_authorization_supported\">incremental_authorization_supported</a>\nmust be <code>true</code>.</p>\n\n<p>Incremental authorizations attempt to increase the authorized amount on\nyour customer’s card to the new, higher <code>amount</code> provided. As with the\ninitial authorization, incremental authorizations may be declined. A\nsingle PaymentIntent can call this endpoint multiple times to further\nincrease the authorized amount.</p>\n\n<p>If the incremental authorization succeeds, the PaymentIntent object is\nreturned with the updated\n<a href=\"/docs/api/payment_intents/object#payment_intent_object-amount\">amount</a>.\nIf the incremental authorization fails, a\n<a href=\"/docs/error-codes#card-declined\">card_declined</a> error is returned, and no\nfields on the PaymentIntent or Charge are updated. The PaymentIntent\nobject remains capturable for the previously authorized amount.</p>\n\n<p>Each PaymentIntent can have a maximum of 10 incremental authorization attempts, including declines.\nOnce captured, a PaymentIntent can no longer be incremented.</p>\n\n<p>Learn more about <a href=\"/docs/terminal/features/incremental-authorizations\">incremental authorizations</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentIntents.postPaymentIntentsIntentVerifyMicrodeposits",
+      "name": "paymentIntents.postPaymentIntentsIntentVerifyMicrodeposits",
+      "description": "<p>Verifies microdeposits on a PaymentIntent object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentLinks.getPaymentLinks",
+      "name": "paymentLinks.getPaymentLinks",
+      "description": "<p>Returns a list of your payment links.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentLinks.getPaymentLinksPaymentLink",
+      "name": "paymentLinks.getPaymentLinksPaymentLink",
+      "description": "<p>Retrieve a payment link.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentLinks.getPaymentLinksPaymentLinkLineItems",
+      "name": "paymentLinks.getPaymentLinksPaymentLinkLineItems",
+      "description": "<p>When retrieving a payment link, there is an includable <strong>line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentLinks.postPaymentLinks",
+      "name": "paymentLinks.postPaymentLinks",
+      "description": "<p>Creates a payment link.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentLinks.postPaymentLinksPaymentLink",
+      "name": "paymentLinks.postPaymentLinksPaymentLink",
+      "description": "<p>Updates a payment link.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.getPaymentMethods",
+      "name": "paymentMethods.getPaymentMethods",
+      "description": "<p>Returns a list of PaymentMethods for Treasury flows. If you want to list the PaymentMethods attached to a Customer for payments, you should use the <a href=\"/docs/api/payment_methods/customer_list\">List a Customer’s PaymentMethods</a> API instead.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.getPaymentMethodsPaymentMethod",
+      "name": "paymentMethods.getPaymentMethodsPaymentMethod",
+      "description": "<p>Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use <a href=\"/docs/api/payment_methods/customer\">Retrieve a Customer’s PaymentMethods</a></p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.postPaymentMethods",
+      "name": "paymentMethods.postPaymentMethods",
+      "description": "<p>Creates a PaymentMethod object. Read the <a href=\"/docs/stripe-js/reference#stripe-create-payment-method\">Stripe.js reference</a> to learn how to create PaymentMethods via Stripe.js.</p>\n\n<p>Instead of creating a PaymentMethod directly, we recommend using the <a href=\"/docs/payments/accept-a-payment\">PaymentIntents</a> API to accept a payment immediately or the <a href=\"/docs/payments/save-and-reuse\">SetupIntent</a> API to collect payment method details ahead of a future payment.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.postPaymentMethodsPaymentMethod",
+      "name": "paymentMethods.postPaymentMethodsPaymentMethod",
+      "description": "<p>Updates a PaymentMethod object. A PaymentMethod must be attached a customer to be updated.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.postPaymentMethodsPaymentMethodAttach",
+      "name": "paymentMethods.postPaymentMethodsPaymentMethodAttach",
+      "description": "<p>Attaches a PaymentMethod object to a Customer.</p>\n\n<p>To attach a new PaymentMethod to a customer for future payments, we recommend you use a <a href=\"/docs/api/setup_intents\">SetupIntent</a>\nor a PaymentIntent with <a href=\"/docs/api/payment_intents/create#create_payment_intent-setup_future_usage\">setup_future_usage</a>.\nThese approaches will perform any necessary steps to set up the PaymentMethod for future payments. Using the <code>/v1/payment_methods/:id/attach</code>\nendpoint without first using a SetupIntent or PaymentIntent with <code>setup_future_usage</code> does not optimize the PaymentMethod for\nfuture use, which makes later declines and payment friction more likely.\nSee <a href=\"/docs/payments/payment-intents#future-usage\">Optimizing cards for future payments</a> for more information about setting up\nfuture payments.</p>\n\n<p>To use this PaymentMethod as the default for invoice or subscription payments,\nset <a href=\"/docs/api/customers/update#update_customer-invoice_settings-default_payment_method\"><code>invoice_settings.default_payment_method</code></a>,\non the Customer to the PaymentMethod’s ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.paymentMethods.postPaymentMethodsPaymentMethodDetach",
+      "name": "paymentMethods.postPaymentMethodsPaymentMethodDetach",
+      "description": "<p>Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.getPayouts",
+      "name": "payouts.getPayouts",
+      "description": "<p>Returns a list of existing payouts sent to third-party bank accounts or that Stripe has sent you. The payouts are returned in sorted order, with the most recently created payouts appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.getPayoutsPayout",
+      "name": "payouts.getPayoutsPayout",
+      "description": "<p>Retrieves the details of an existing payout. Supply the unique payout ID from either a payout creation request or the payout list, and Stripe will return the corresponding payout information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.postPayouts",
+      "name": "payouts.postPayouts",
+      "description": "<p>To send funds to your own bank account, you create a new payout object. Your <a href=\"#balance\">Stripe balance</a> must be able to cover the payout amount, or you’ll receive an “Insufficient Funds” error.</p>\n\n<p>If your API key is in test mode, money won’t actually be sent, though everything else will occur as if in live mode.</p>\n\n<p>If you are creating a manual payout on a Stripe account that uses multiple payment source types, you’ll need to specify the source type balance that the payout should draw from. The <a href=\"#balance_object\">balance object</a> details available and pending amounts by source type.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.postPayoutsPayout",
+      "name": "payouts.postPayoutsPayout",
+      "description": "<p>Updates the specified payout by setting the values of the parameters passed. Any parameters not provided will be left unchanged. This request accepts only the metadata as arguments.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.postPayoutsPayoutCancel",
+      "name": "payouts.postPayoutsPayoutCancel",
+      "description": "<p>A previously created payout can be canceled if it has not yet been paid out. Funds will be refunded to your available balance. You may not cancel automatic Stripe payouts.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.payouts.postPayoutsPayoutReverse",
+      "name": "payouts.postPayoutsPayoutReverse",
+      "description": "<p>Reverses a payout by debiting the destination bank account. Only payouts for connected accounts to US bank accounts may be reversed at this time. If the payout is in the <code>pending</code> status, <code>/v1/payouts/:id/cancel</code> should be used instead.</p>\n\n<p>By requesting a reversal via <code>/v1/payouts/:id/reverse</code>, you confirm that the authorized signatory of the selected bank account has authorized the debit on the bank account and that no other authorization is required.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.plans.deletePlansPlan",
+      "name": "plans.deletePlansPlan",
+      "description": "<p>Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.plans.getPlans",
+      "name": "plans.getPlans",
+      "description": "<p>Returns a list of your plans.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.plans.getPlansPlan",
+      "name": "plans.getPlansPlan",
+      "description": "<p>Retrieves the plan with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.plans.postPlans",
+      "name": "plans.postPlans",
+      "description": "<p>You can now model subscriptions more flexibly using the <a href=\"#prices\">Prices API</a>. It replaces the Plans API and is backwards compatible to simplify your migration.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.plans.postPlansPlan",
+      "name": "plans.postPlansPlan",
+      "description": "<p>Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.prices.getPrices",
+      "name": "prices.getPrices",
+      "description": "<p>Returns a list of your prices.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.prices.getPricesPrice",
+      "name": "prices.getPricesPrice",
+      "description": "<p>Retrieves the price with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.prices.getPricesSearch",
+      "name": "prices.getPricesSearch",
+      "description": "<p>Search for prices you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.prices.postPrices",
+      "name": "prices.postPrices",
+      "description": "<p>Creates a new price for an existing product. The price can be recurring or one-time.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.prices.postPricesPrice",
+      "name": "prices.postPricesPrice",
+      "description": "<p>Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.deleteProductsId",
+      "name": "products.deleteProductsId",
+      "description": "<p>Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with <code>type=good</code> is only possible if it has no SKUs associated with it.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.getProducts",
+      "name": "products.getProducts",
+      "description": "<p>Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.getProductsId",
+      "name": "products.getProductsId",
+      "description": "<p>Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.getProductsSearch",
+      "name": "products.getProductsSearch",
+      "description": "<p>Search for products you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.postProducts",
+      "name": "products.postProducts",
+      "description": "<p>Creates a new product object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.products.postProductsId",
+      "name": "products.postProductsId",
+      "description": "<p>Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.promotionCodes.getPromotionCodes",
+      "name": "promotionCodes.getPromotionCodes",
+      "description": "<p>Returns a list of your promotion codes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.promotionCodes.getPromotionCodesPromotionCode",
+      "name": "promotionCodes.getPromotionCodesPromotionCode",
+      "description": "<p>Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing <code>code</code> use <a href=\"/docs/api/promotion_codes/list\">list</a> with the desired <code>code</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.promotionCodes.postPromotionCodes",
+      "name": "promotionCodes.postPromotionCodes",
+      "description": "<p>A promotion code points to a coupon. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.promotionCodes.postPromotionCodesPromotionCode",
+      "name": "promotionCodes.postPromotionCodesPromotionCode",
+      "description": "<p>Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.getQuotes",
+      "name": "quotes.getQuotes",
+      "description": "<p>Returns a list of your quotes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.getQuotesQuote",
+      "name": "quotes.getQuotesQuote",
+      "description": "<p>Retrieves the quote with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.getQuotesQuoteComputedUpfrontLineItems",
+      "name": "quotes.getQuotesQuoteComputedUpfrontLineItems",
+      "description": "<p>When retrieving a quote, there is an includable <a href=\"https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items\"><strong>computed.upfront.line_items</strong></a> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.getQuotesQuoteLineItems",
+      "name": "quotes.getQuotesQuoteLineItems",
+      "description": "<p>When retrieving a quote, there is an includable <strong>line_items</strong> property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.getQuotesQuotePdf",
+      "name": "quotes.getQuotesQuotePdf",
+      "description": "<p>Download the PDF for a finalized quote</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.postQuotes",
+      "name": "quotes.postQuotes",
+      "description": "<p>A quote models prices and services for a customer. Default options for <code>header</code>, <code>description</code>, <code>footer</code>, and <code>expires_at</code> can be set in the dashboard via the <a href=\"https://dashboard.stripe.com/settings/billing/quote\">quote template</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.postQuotesQuote",
+      "name": "quotes.postQuotesQuote",
+      "description": "<p>A quote models prices and services for a customer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.postQuotesQuoteAccept",
+      "name": "quotes.postQuotesQuoteAccept",
+      "description": "<p>Accepts the specified quote.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.postQuotesQuoteCancel",
+      "name": "quotes.postQuotesQuoteCancel",
+      "description": "<p>Cancels the quote.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.quotes.postQuotesQuoteFinalize",
+      "name": "quotes.postQuotesQuoteFinalize",
+      "description": "<p>Finalizes the quote.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.deleteRadarValueListItemsItem",
+      "name": "radar.deleteRadarValueListItemsItem",
+      "description": "<p>Deletes a <code>ValueListItem</code> object, removing it from its parent value list.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.deleteRadarValueListsValueList",
+      "name": "radar.deleteRadarValueListsValueList",
+      "description": "<p>Deletes a <code>ValueList</code> object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarEarlyFraudWarnings",
+      "name": "radar.getRadarEarlyFraudWarnings",
+      "description": "<p>Returns a list of early fraud warnings.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarEarlyFraudWarningsEarlyFraudWarning",
+      "name": "radar.getRadarEarlyFraudWarningsEarlyFraudWarning",
+      "description": "<p>Retrieves the details of an early fraud warning that has previously been created. </p>\n\n<p>Please refer to the <a href=\"#early_fraud_warning_object\">early fraud warning</a> object reference for more details.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarValueListItems",
+      "name": "radar.getRadarValueListItems",
+      "description": "<p>Returns a list of <code>ValueListItem</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarValueListItemsItem",
+      "name": "radar.getRadarValueListItemsItem",
+      "description": "<p>Retrieves a <code>ValueListItem</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarValueLists",
+      "name": "radar.getRadarValueLists",
+      "description": "<p>Returns a list of <code>ValueList</code> objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.getRadarValueListsValueList",
+      "name": "radar.getRadarValueListsValueList",
+      "description": "<p>Retrieves a <code>ValueList</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.postRadarValueListItems",
+      "name": "radar.postRadarValueListItems",
+      "description": "<p>Creates a new <code>ValueListItem</code> object, which is added to the specified parent value list.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.postRadarValueLists",
+      "name": "radar.postRadarValueLists",
+      "description": "<p>Creates a new <code>ValueList</code> object, which can then be referenced in rules.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.radar.postRadarValueListsValueList",
+      "name": "radar.postRadarValueListsValueList",
+      "description": "<p>Updates a <code>ValueList</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that <code>item_type</code> is immutable.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.refunds.getRefunds",
+      "name": "refunds.getRefunds",
+      "description": "<p>Returns a list of all refunds you’ve previously created. The refunds are returned in sorted order, with the most recent refunds appearing first. For convenience, the 10 most recent refunds are always available by default on the charge object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.refunds.getRefundsRefund",
+      "name": "refunds.getRefundsRefund",
+      "description": "<p>Retrieves the details of an existing refund.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.refunds.postRefunds",
+      "name": "refunds.postRefunds",
+      "description": "<p>Create a refund.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.refunds.postRefundsRefund",
+      "name": "refunds.postRefundsRefund",
+      "description": "<p>Updates the specified refund by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request only accepts <code>metadata</code> as an argument.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.refunds.postRefundsRefundCancel",
+      "name": "refunds.postRefundsRefundCancel",
+      "description": "<p>Cancels a refund with a status of <code>requires_action</code>.</p>\n\n<p>Refunds in other states cannot be canceled, and only refunds for payment methods that require customer action will enter the <code>requires_action</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reporting.getReportingReportRuns",
+      "name": "reporting.getReportingReportRuns",
+      "description": "<p>Returns a list of Report Runs, with the most recent appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reporting.getReportingReportRunsReportRun",
+      "name": "reporting.getReportingReportRunsReportRun",
+      "description": "<p>Retrieves the details of an existing Report Run.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reporting.getReportingReportTypes",
+      "name": "reporting.getReportingReportTypes",
+      "description": "<p>Returns a full list of Report Types.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reporting.getReportingReportTypesReportType",
+      "name": "reporting.getReportingReportTypesReportType",
+      "description": "<p>Retrieves the details of a Report Type. (Certain report types require a <a href=\"https://stripe.com/docs/keys#test-live-modes\">live-mode API key</a>.)</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reporting.postReportingReportRuns",
+      "name": "reporting.postReportingReportRuns",
+      "description": "<p>Creates a new object and begin running the report. (Certain report types require a <a href=\"https://stripe.com/docs/keys#test-live-modes\">live-mode API key</a>.)</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reviews.getReviews",
+      "name": "reviews.getReviews",
+      "description": "<p>Returns a list of <code>Review</code> objects that have <code>open</code> set to <code>true</code>. The objects are sorted in descending order by creation date, with the most recently created object appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reviews.getReviewsReview",
+      "name": "reviews.getReviewsReview",
+      "description": "<p>Retrieves a <code>Review</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.reviews.postReviewsReviewApprove",
+      "name": "reviews.postReviewsReviewApprove",
+      "description": "<p>Approves a <code>Review</code> object, closing it and removing it from the list of reviews.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupAttempts.getSetupAttempts",
+      "name": "setupAttempts.getSetupAttempts",
+      "description": "<p>Returns a list of SetupAttempts associated with a provided SetupIntent.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.getSetupIntents",
+      "name": "setupIntents.getSetupIntents",
+      "description": "<p>Returns a list of SetupIntents.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.getSetupIntentsIntent",
+      "name": "setupIntents.getSetupIntentsIntent",
+      "description": "<p>Retrieves the details of a SetupIntent that has previously been created. </p>\n\n<p>Client-side retrieval using a publishable key is allowed when the <code>client_secret</code> is provided in the query string. </p>\n\n<p>When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the <a href=\"#setup_intent_object\">SetupIntent</a> object reference for more details.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.postSetupIntents",
+      "name": "setupIntents.postSetupIntents",
+      "description": "<p>Creates a SetupIntent object.</p>\n\n<p>After the SetupIntent is created, attach a payment method and <a href=\"/docs/api/setup_intents/confirm\">confirm</a>\nto collect any required permissions to charge the payment method later.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.postSetupIntentsIntent",
+      "name": "setupIntents.postSetupIntentsIntent",
+      "description": "<p>Updates a SetupIntent object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.postSetupIntentsIntentCancel",
+      "name": "setupIntents.postSetupIntentsIntentCancel",
+      "description": "<p>A SetupIntent object can be canceled when it is in one of these statuses: <code>requires_payment_method</code>, <code>requires_confirmation</code>, or <code>requires_action</code>. </p>\n\n<p>Once canceled, setup is abandoned and any operations on the SetupIntent will fail with an error.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.postSetupIntentsIntentConfirm",
+      "name": "setupIntents.postSetupIntentsIntentConfirm",
+      "description": "<p>Confirm that your customer intends to set up the current or\nprovided payment method. For example, you would confirm a SetupIntent\nwhen a customer hits the “Save” button on a payment method management\npage on your website.</p>\n\n<p>If the selected payment method does not require any additional\nsteps from the customer, the SetupIntent will transition to the\n<code>succeeded</code> status.</p>\n\n<p>Otherwise, it will transition to the <code>requires_action</code> status and\nsuggest additional actions via <code>next_action</code>. If setup fails,\nthe SetupIntent will transition to the\n<code>requires_payment_method</code> status.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.setupIntents.postSetupIntentsIntentVerifyMicrodeposits",
+      "name": "setupIntents.postSetupIntentsIntentVerifyMicrodeposits",
+      "description": "<p>Verifies microdeposits on a SetupIntent object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.shippingRates.getShippingRates",
+      "name": "shippingRates.getShippingRates",
+      "description": "<p>Returns a list of your shipping rates.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.shippingRates.getShippingRatesShippingRateToken",
+      "name": "shippingRates.getShippingRatesShippingRateToken",
+      "description": "<p>Returns the shipping rate object with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.shippingRates.postShippingRates",
+      "name": "shippingRates.postShippingRates",
+      "description": "<p>Creates a new shipping rate object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.shippingRates.postShippingRatesShippingRateToken",
+      "name": "shippingRates.postShippingRatesShippingRateToken",
+      "description": "<p>Updates an existing shipping rate object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sigma.getSigmaScheduledQueryRuns",
+      "name": "sigma.getSigmaScheduledQueryRuns",
+      "description": "<p>Returns a list of scheduled query runs.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sigma.getSigmaScheduledQueryRunsScheduledQueryRun",
+      "name": "sigma.getSigmaScheduledQueryRunsScheduledQueryRun",
+      "description": "<p>Retrieves the details of an scheduled query run.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.getSourcesSource",
+      "name": "sources.getSourcesSource",
+      "description": "<p>Retrieves an existing source object. Supply the unique source ID from a source creation request and Stripe will return the corresponding up-to-date source object information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.getSourcesSourceMandateNotificationsMandateNotification",
+      "name": "sources.getSourcesSourceMandateNotificationsMandateNotification",
+      "description": "<p>Retrieves a new Source MandateNotification.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.getSourcesSourceSourceTransactions",
+      "name": "sources.getSourcesSourceSourceTransactions",
+      "description": "<p>List source transactions for a given source.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.getSourcesSourceSourceTransactionsSourceTransaction",
+      "name": "sources.getSourcesSourceSourceTransactionsSourceTransaction",
+      "description": "<p>Retrieve an existing source transaction object. Supply the unique source ID from a source creation request and the source transaction ID and Stripe will return the corresponding up-to-date source object information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.postSources",
+      "name": "sources.postSources",
+      "description": "<p>Creates a new source object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.postSourcesSource",
+      "name": "sources.postSourcesSource",
+      "description": "<p>Updates the specified source by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request accepts the <code>metadata</code> and <code>owner</code> as arguments. It is also possible to update type specific information for selected payment methods. Please refer to our <a href=\"/docs/sources\">payment method guides</a> for more detail.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.sources.postSourcesSourceVerify",
+      "name": "sources.postSourcesSourceVerify",
+      "description": "<p>Verify a given source.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.deleteSubscriptionItemsItem",
+      "name": "subscriptionItems.deleteSubscriptionItemsItem",
+      "description": "<p>Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.getSubscriptionItems",
+      "name": "subscriptionItems.getSubscriptionItems",
+      "description": "<p>Returns a list of your subscription items for a given subscription.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.getSubscriptionItemsItem",
+      "name": "subscriptionItems.getSubscriptionItemsItem",
+      "description": "<p>Retrieves the subscription item with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.getSubscriptionItemsSubscriptionItemUsageRecordSummaries",
+      "name": "subscriptionItems.getSubscriptionItemsSubscriptionItemUsageRecordSummaries",
+      "description": "<p>For the specified subscription item, returns a list of summary objects. Each object in the list provides usage information that’s been summarized from multiple usage records and over a subscription billing period (e.g., 15 usage records in the month of September).</p>\n\n<p>The list is sorted in reverse-chronological order (newest first). The first list item represents the most current usage period that hasn’t ended yet. Since new usage records can still be added, the returned summary information for the subscription item’s ID should be seen as unstable until the subscription billing period ends.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.postSubscriptionItems",
+      "name": "subscriptionItems.postSubscriptionItems",
+      "description": "<p>Adds a new item to an existing subscription. No existing items will be changed or replaced.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.postSubscriptionItemsItem",
+      "name": "subscriptionItems.postSubscriptionItemsItem",
+      "description": "<p>Updates the plan or quantity of an item on a current subscription.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionItems.postSubscriptionItemsSubscriptionItemUsageRecords",
+      "name": "subscriptionItems.postSubscriptionItemsSubscriptionItemUsageRecords",
+      "description": "<p>Creates a usage record for a specified subscription item and date, and fills it with a quantity.</p>\n\n<p>Usage records provide <code>quantity</code> information that Stripe uses to track how much a customer is using your service. With usage information and the pricing model set up by the <a href=\"https://stripe.com/docs/billing/subscriptions/metered-billing\">metered billing</a> plan, Stripe helps you send accurate invoices to your customers.</p>\n\n<p>The default calculation for usage is to add up all the <code>quantity</code> values of the usage records within a billing period. You can change this default behavior with the billing plan’s <code>aggregate_usage</code> <a href=\"/docs/api/plans/create#create_plan-aggregate_usage\">parameter</a>. When there is more than one usage record with the same timestamp, Stripe adds the <code>quantity</code> values together. In most cases, this is the desired resolution, however, you can change this behavior with the <code>action</code> parameter.</p>\n\n<p>The default pricing model for metered billing is <a href=\"/docs/api/plans/object#plan_object-billing_scheme\">per-unit pricing</a>. For finer granularity, you can configure metered billing to have a <a href=\"https://stripe.com/docs/billing/subscriptions/tiers\">tiered pricing</a> model.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.deleteSubscriptionsSubscriptionExposedId",
+      "name": "subscriptions.deleteSubscriptionsSubscriptionExposedId",
+      "description": "<p>Cancels a customer’s subscription immediately. The customer will not be charged again for the subscription.</p>\n\n<p>Note, however, that any pending invoice items that you’ve created will still be charged for at the end of the period, unless manually <a href=\"#delete_invoiceitem\">deleted</a>. If you’ve set the subscription to cancel at the end of the period, any pending prorations will also be left in place and collected at the end of the period. But if the subscription is set to cancel immediately, pending prorations will be removed.</p>\n\n<p>By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.deleteSubscriptionsSubscriptionExposedIdDiscount",
+      "name": "subscriptions.deleteSubscriptionsSubscriptionExposedIdDiscount",
+      "description": "<p>Removes the currently applied discount on a subscription.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.getSubscriptions",
+      "name": "subscriptions.getSubscriptions",
+      "description": "<p>By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify <code>status=canceled</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.getSubscriptionsSearch",
+      "name": "subscriptions.getSubscriptionsSearch",
+      "description": "<p>Search for subscriptions you’ve previously created using Stripe’s <a href=\"/docs/search#search-query-language\">Search Query Language</a>.\nDon’t use search in read-after-write flows where strict consistency is necessary. Under normal operating\nconditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up\nto an hour behind during outages. Search functionality is not available to merchants in India.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.getSubscriptionsSubscriptionExposedId",
+      "name": "subscriptions.getSubscriptionsSubscriptionExposedId",
+      "description": "<p>Retrieves the subscription with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.postSubscriptions",
+      "name": "subscriptions.postSubscriptions",
+      "description": "<p>Creates a new subscription on an existing customer. Each customer can have up to 500 active or scheduled subscriptions.</p>\n\n<p>When you create a subscription with <code>collection_method=charge_automatically</code>, the first invoice is finalized as part of the request.\nThe <code>payment_behavior</code> parameter determines the exact behavior of the initial payment.</p>\n\n<p>To start subscriptions where the first invoice always begins in a <code>draft</code> status, use <a href=\"/docs/billing/subscriptions/subscription-schedules#managing\">subscription schedules</a> instead.\nSchedules provide the flexibility to model more complex billing configurations that change over time.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.postSubscriptionsSubscriptionExposedId",
+      "name": "subscriptions.postSubscriptionsSubscriptionExposedId",
+      "description": "<p>Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the <a href=\"#upcoming_invoice\">upcoming invoice</a> endpoint.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptions.postSubscriptionsSubscriptionResume",
+      "name": "subscriptions.postSubscriptionsSubscriptionResume",
+      "description": "<p>Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If a resumption invoice is generated, it must be paid or marked uncollectible before the subscription will be unpaused. If payment succeeds the subscription will become <code>active</code>, and if payment fails the subscription will be <code>past_due</code>. The resumption invoice will void automatically if not paid by the expiration date.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.getSubscriptionSchedules",
+      "name": "subscriptionSchedules.getSubscriptionSchedules",
+      "description": "<p>Retrieves the list of your subscription schedules.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.getSubscriptionSchedulesSchedule",
+      "name": "subscriptionSchedules.getSubscriptionSchedulesSchedule",
+      "description": "<p>Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.postSubscriptionSchedules",
+      "name": "subscriptionSchedules.postSubscriptionSchedules",
+      "description": "<p>Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.postSubscriptionSchedulesSchedule",
+      "name": "subscriptionSchedules.postSubscriptionSchedulesSchedule",
+      "description": "<p>Updates an existing subscription schedule.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.postSubscriptionSchedulesScheduleCancel",
+      "name": "subscriptionSchedules.postSubscriptionSchedulesScheduleCancel",
+      "description": "<p>Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is <code>not_started</code> or <code>active</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.subscriptionSchedules.postSubscriptionSchedulesScheduleRelease",
+      "name": "subscriptionSchedules.postSubscriptionSchedulesScheduleRelease",
+      "description": "<p>Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is <code>not_started</code> or <code>active</code>. If the subscription schedule is currently associated with a subscription, releasing it will remove its <code>subscription</code> property and set the subscription’s ID to the <code>released_subscription</code> property.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxCodes.getTaxCodes",
+      "name": "taxCodes.getTaxCodes",
+      "description": "<p>A list of <a href=\"https://stripe.com/docs/tax/tax-categories\">all tax codes available</a> to add to Products in order to allow specific tax calculations.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxCodes.getTaxCodesId",
+      "name": "taxCodes.getTaxCodesId",
+      "description": "<p>Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will return the corresponding tax code information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxRates.getTaxRates",
+      "name": "taxRates.getTaxRates",
+      "description": "<p>Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxRates.getTaxRatesTaxRate",
+      "name": "taxRates.getTaxRatesTaxRate",
+      "description": "<p>Retrieves a tax rate with the given ID</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxRates.postTaxRates",
+      "name": "taxRates.postTaxRates",
+      "description": "<p>Creates a new tax rate.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.taxRates.postTaxRatesTaxRate",
+      "name": "taxRates.postTaxRatesTaxRate",
+      "description": "<p>Updates an existing tax rate.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.deleteTerminalConfigurationsConfiguration",
+      "name": "terminal.deleteTerminalConfigurationsConfiguration",
+      "description": "<p>Deletes a <code>Configuration</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.deleteTerminalLocationsLocation",
+      "name": "terminal.deleteTerminalLocationsLocation",
+      "description": "<p>Deletes a <code>Location</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.deleteTerminalReadersReader",
+      "name": "terminal.deleteTerminalReadersReader",
+      "description": "<p>Deletes a <code>Reader</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalConfigurations",
+      "name": "terminal.getTerminalConfigurations",
+      "description": "<p>Returns a list of <code>Configuration</code> objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalConfigurationsConfiguration",
+      "name": "terminal.getTerminalConfigurationsConfiguration",
+      "description": "<p>Retrieves a <code>Configuration</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalLocations",
+      "name": "terminal.getTerminalLocations",
+      "description": "<p>Returns a list of <code>Location</code> objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalLocationsLocation",
+      "name": "terminal.getTerminalLocationsLocation",
+      "description": "<p>Retrieves a <code>Location</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalReaders",
+      "name": "terminal.getTerminalReaders",
+      "description": "<p>Returns a list of <code>Reader</code> objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.getTerminalReadersReader",
+      "name": "terminal.getTerminalReadersReader",
+      "description": "<p>Retrieves a <code>Reader</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalConfigurations",
+      "name": "terminal.postTerminalConfigurations",
+      "description": "<p>Creates a new <code>Configuration</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalConfigurationsConfiguration",
+      "name": "terminal.postTerminalConfigurationsConfiguration",
+      "description": "<p>Updates a new <code>Configuration</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalConnectionTokens",
+      "name": "terminal.postTerminalConnectionTokens",
+      "description": "<p>To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalLocations",
+      "name": "terminal.postTerminalLocations",
+      "description": "<p>Creates a new <code>Location</code> object.\nFor further details, including which address fields are required in each country, see the <a href=\"/docs/terminal/fleet/locations\">Manage locations</a> guide.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalLocationsLocation",
+      "name": "terminal.postTerminalLocationsLocation",
+      "description": "<p>Updates a <code>Location</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReaders",
+      "name": "terminal.postTerminalReaders",
+      "description": "<p>Creates a new <code>Reader</code> object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReader",
+      "name": "terminal.postTerminalReadersReader",
+      "description": "<p>Updates a <code>Reader</code> object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReaderCancelAction",
+      "name": "terminal.postTerminalReadersReaderCancelAction",
+      "description": "<p>Cancels the current reader action.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReaderProcessPaymentIntent",
+      "name": "terminal.postTerminalReadersReaderProcessPaymentIntent",
+      "description": "<p>Initiates a payment flow on a Reader.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReaderProcessSetupIntent",
+      "name": "terminal.postTerminalReadersReaderProcessSetupIntent",
+      "description": "<p>Initiates a setup intent flow on a Reader.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReaderRefundPayment",
+      "name": "terminal.postTerminalReadersReaderRefundPayment",
+      "description": "<p>Initiates a refund on a Reader</p>"
+    },
+    {
+      "id": "openapi_stripe_com.terminal.postTerminalReadersReaderSetReaderDisplay",
+      "name": "terminal.postTerminalReadersReaderSetReaderDisplay",
+      "description": "<p>Sets reader display to show cart details.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.deleteTestHelpersTestClocksTestClock",
+      "name": "testHelpers.deleteTestHelpersTestClocksTestClock",
+      "description": "<p>Deletes a test clock.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.getTestHelpersTestClocks",
+      "name": "testHelpers.getTestHelpersTestClocks",
+      "description": "<p>Returns a list of your test clocks.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.getTestHelpersTestClocksTestClock",
+      "name": "testHelpers.getTestHelpersTestClocksTestClock",
+      "description": "<p>Retrieves a test clock.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersCustomersCustomerFundCashBalance",
+      "name": "testHelpers.postTestHelpersCustomersCustomerFundCashBalance",
+      "description": "<p>Create an incoming testmode bank transfer</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersIssuingCardsCardShippingDeliver",
+      "name": "testHelpers.postTestHelpersIssuingCardsCardShippingDeliver",
+      "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>delivered</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersIssuingCardsCardShippingFail",
+      "name": "testHelpers.postTestHelpersIssuingCardsCardShippingFail",
+      "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>failure</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersIssuingCardsCardShippingReturn",
+      "name": "testHelpers.postTestHelpersIssuingCardsCardShippingReturn",
+      "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>returned</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersIssuingCardsCardShippingShip",
+      "name": "testHelpers.postTestHelpersIssuingCardsCardShippingShip",
+      "description": "<p>Updates the shipping status of the specified Issuing <code>Card</code> object to <code>shipped</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersRefundsRefundExpire",
+      "name": "testHelpers.postTestHelpersRefundsRefundExpire",
+      "description": "<p>Expire a refund with a status of <code>requires_action</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTerminalReadersReaderPresentPaymentMethod",
+      "name": "testHelpers.postTestHelpersTerminalReadersReaderPresentPaymentMethod",
+      "description": "<p>Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTestClocks",
+      "name": "testHelpers.postTestHelpersTestClocks",
+      "description": "<p>Creates a new test clock that can be attached to new customers and quotes.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTestClocksTestClockAdvance",
+      "name": "testHelpers.postTestHelpersTestClocksTestClockAdvance",
+      "description": "<p>Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to <code>Ready</code>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryInboundTransfersIdFail",
+      "name": "testHelpers.postTestHelpersTreasuryInboundTransfersIdFail",
+      "description": "<p>Transitions a test mode created InboundTransfer to the <code>failed</code> status. The InboundTransfer must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryInboundTransfersIdReturn",
+      "name": "testHelpers.postTestHelpersTreasuryInboundTransfersIdReturn",
+      "description": "<p>Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the <code>succeeded</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryInboundTransfersIdSucceed",
+      "name": "testHelpers.postTestHelpersTreasuryInboundTransfersIdSucceed",
+      "description": "<p>Transitions a test mode created InboundTransfer to the <code>succeeded</code> status. The InboundTransfer must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundPaymentsIdFail",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundPaymentsIdFail",
+      "description": "<p>Transitions a test mode created OutboundPayment to the <code>failed</code> status. The OutboundPayment must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundPaymentsIdPost",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundPaymentsIdPost",
+      "description": "<p>Transitions a test mode created OutboundPayment to the <code>posted</code> status. The OutboundPayment must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundPaymentsIdReturn",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundPaymentsIdReturn",
+      "description": "<p>Transitions a test mode created OutboundPayment to the <code>returned</code> status. The OutboundPayment must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferFail",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferFail",
+      "description": "<p>Transitions a test mode created OutboundTransfer to the <code>failed</code> status. The OutboundTransfer must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferPost",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferPost",
+      "description": "<p>Transitions a test mode created OutboundTransfer to the <code>posted</code> status. The OutboundTransfer must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn",
+      "name": "testHelpers.postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn",
+      "description": "<p>Transitions a test mode created OutboundTransfer to the <code>returned</code> status. The OutboundTransfer must already be in the <code>processing</code> state.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryReceivedCredits",
+      "name": "testHelpers.postTestHelpersTreasuryReceivedCredits",
+      "description": "<p>Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.testHelpers.postTestHelpersTreasuryReceivedDebits",
+      "name": "testHelpers.postTestHelpersTreasuryReceivedDebits",
+      "description": "<p>Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.tokens.getTokensToken",
+      "name": "tokens.getTokensToken",
+      "description": "<p>Retrieves the token with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.tokens.postTokens",
+      "name": "tokens.postTokens",
+      "description": "<p>Creates a single-use token that represents a bank account’s details.\nThis token can be used with any API method in place of a bank account dictionary. This token can be used only once, by attaching it to a <a href=\"#accounts\">Custom account</a>.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.topups.getTopups",
+      "name": "topups.getTopups",
+      "description": "<p>Returns a list of top-ups.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.topups.getTopupsTopup",
+      "name": "topups.getTopupsTopup",
+      "description": "<p>Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.topups.postTopups",
+      "name": "topups.postTopups",
+      "description": "<p>Top up the balance of an account</p>"
+    },
+    {
+      "id": "openapi_stripe_com.topups.postTopupsTopup",
+      "name": "topups.postTopupsTopup",
+      "description": "<p>Updates the metadata of a top-up. Other top-up details are not editable by design.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.topups.postTopupsTopupCancel",
+      "name": "topups.postTopupsTopupCancel",
+      "description": "<p>Cancels a top-up. Only pending top-ups can be canceled.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.getTransfers",
+      "name": "transfers.getTransfers",
+      "description": "<p>Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.getTransfersIdReversals",
+      "name": "transfers.getTransfersIdReversals",
+      "description": "<p>You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the <code>limit</code> and <code>starting_after</code> parameters to page through additional reversals.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.getTransfersTransfer",
+      "name": "transfers.getTransfersTransfer",
+      "description": "<p>Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.getTransfersTransferReversalsId",
+      "name": "transfers.getTransfersTransferReversalsId",
+      "description": "<p>By default, you can see the 10 most recent reversals stored directly on the transfer object, but you can also retrieve details about a specific reversal stored on the transfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.postTransfers",
+      "name": "transfers.postTransfers",
+      "description": "<p>To send funds from your Stripe account to a connected account, you create a new transfer object. Your <a href=\"#balance\">Stripe balance</a> must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.postTransfersIdReversals",
+      "name": "transfers.postTransfersIdReversals",
+      "description": "<p>When you create a new reversal, you must specify a transfer to create it on.</p>\n\n<p>When reversing transfers, you can optionally reverse part of the transfer. You can do so as many times as you wish until the entire transfer has been reversed.</p>\n\n<p>Once entirely reversed, a transfer can’t be reversed again. This method will return an error when called on an already-reversed transfer, or when trying to reverse more money than is left on a transfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.postTransfersTransfer",
+      "name": "transfers.postTransfersTransfer",
+      "description": "<p>Updates the specified transfer by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request accepts only metadata as an argument.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.transfers.postTransfersTransferReversalsId",
+      "name": "transfers.postTransfersTransferReversalsId",
+      "description": "<p>Updates the specified reversal by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>\n\n<p>This request only accepts metadata and description as arguments.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryCreditReversals",
+      "name": "treasury.getTreasuryCreditReversals",
+      "description": "<p>Returns a list of CreditReversals.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryCreditReversalsCreditReversal",
+      "name": "treasury.getTreasuryCreditReversalsCreditReversal",
+      "description": "<p>Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryDebitReversals",
+      "name": "treasury.getTreasuryDebitReversals",
+      "description": "<p>Returns a list of DebitReversals.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryDebitReversalsDebitReversal",
+      "name": "treasury.getTreasuryDebitReversalsDebitReversal",
+      "description": "<p>Retrieves a DebitReversal object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryFinancialAccounts",
+      "name": "treasury.getTreasuryFinancialAccounts",
+      "description": "<p>Returns a list of FinancialAccounts.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryFinancialAccountsFinancialAccount",
+      "name": "treasury.getTreasuryFinancialAccountsFinancialAccount",
+      "description": "<p>Retrieves the details of a FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryFinancialAccountsFinancialAccountFeatures",
+      "name": "treasury.getTreasuryFinancialAccountsFinancialAccountFeatures",
+      "description": "<p>Retrieves Features information associated with the FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryInboundTransfers",
+      "name": "treasury.getTreasuryInboundTransfers",
+      "description": "<p>Returns a list of InboundTransfers sent from the specified FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryInboundTransfersId",
+      "name": "treasury.getTreasuryInboundTransfersId",
+      "description": "<p>Retrieves the details of an existing InboundTransfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryOutboundPayments",
+      "name": "treasury.getTreasuryOutboundPayments",
+      "description": "<p>Returns a list of OutboundPayments sent from the specified FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryOutboundPaymentsId",
+      "name": "treasury.getTreasuryOutboundPaymentsId",
+      "description": "<p>Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryOutboundTransfers",
+      "name": "treasury.getTreasuryOutboundTransfers",
+      "description": "<p>Returns a list of OutboundTransfers sent from the specified FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryOutboundTransfersOutboundTransfer",
+      "name": "treasury.getTreasuryOutboundTransfersOutboundTransfer",
+      "description": "<p>Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryReceivedCredits",
+      "name": "treasury.getTreasuryReceivedCredits",
+      "description": "<p>Returns a list of ReceivedCredits.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryReceivedCreditsId",
+      "name": "treasury.getTreasuryReceivedCreditsId",
+      "description": "<p>Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID from the ReceivedCredit list.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryReceivedDebits",
+      "name": "treasury.getTreasuryReceivedDebits",
+      "description": "<p>Returns a list of ReceivedDebits.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryReceivedDebitsId",
+      "name": "treasury.getTreasuryReceivedDebitsId",
+      "description": "<p>Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from the ReceivedDebit list</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryTransactionEntries",
+      "name": "treasury.getTreasuryTransactionEntries",
+      "description": "<p>Retrieves a list of TransactionEntry objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryTransactionEntriesId",
+      "name": "treasury.getTreasuryTransactionEntriesId",
+      "description": "<p>Retrieves a TransactionEntry object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryTransactions",
+      "name": "treasury.getTreasuryTransactions",
+      "description": "<p>Retrieves a list of Transaction objects.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.getTreasuryTransactionsId",
+      "name": "treasury.getTreasuryTransactionsId",
+      "description": "<p>Retrieves the details of an existing Transaction.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryCreditReversals",
+      "name": "treasury.postTreasuryCreditReversals",
+      "description": "<p>Reverses a ReceivedCredit and creates a CreditReversal object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryDebitReversals",
+      "name": "treasury.postTreasuryDebitReversals",
+      "description": "<p>Reverses a ReceivedDebit and creates a DebitReversal object.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryFinancialAccounts",
+      "name": "treasury.postTreasuryFinancialAccounts",
+      "description": "<p>Creates a new FinancialAccount. For now, each connected account can only have one FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryFinancialAccountsFinancialAccount",
+      "name": "treasury.postTreasuryFinancialAccountsFinancialAccount",
+      "description": "<p>Updates the details of a FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryFinancialAccountsFinancialAccountFeatures",
+      "name": "treasury.postTreasuryFinancialAccountsFinancialAccountFeatures",
+      "description": "<p>Updates the Features associated with a FinancialAccount.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryInboundTransfers",
+      "name": "treasury.postTreasuryInboundTransfers",
+      "description": "<p>Creates an InboundTransfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryInboundTransfersInboundTransferCancel",
+      "name": "treasury.postTreasuryInboundTransfersInboundTransferCancel",
+      "description": "<p>Cancels an InboundTransfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryOutboundPayments",
+      "name": "treasury.postTreasuryOutboundPayments",
+      "description": "<p>Creates an OutboundPayment.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryOutboundPaymentsIdCancel",
+      "name": "treasury.postTreasuryOutboundPaymentsIdCancel",
+      "description": "<p>Cancel an OutboundPayment.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryOutboundTransfers",
+      "name": "treasury.postTreasuryOutboundTransfers",
+      "description": "<p>Creates an OutboundTransfer.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.treasury.postTreasuryOutboundTransfersOutboundTransferCancel",
+      "name": "treasury.postTreasuryOutboundTransfersOutboundTransferCancel",
+      "description": "<p>An OutboundTransfer can be canceled if the funds have not yet been paid out.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.webhookEndpoints.deleteWebhookEndpointsWebhookEndpoint",
+      "name": "webhookEndpoints.deleteWebhookEndpointsWebhookEndpoint",
+      "description": "<p>You can also delete webhook endpoints via the <a href=\"https://dashboard.stripe.com/account/webhooks\">webhook endpoint management</a> page of the Stripe dashboard.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.webhookEndpoints.getWebhookEndpoints",
+      "name": "webhookEndpoints.getWebhookEndpoints",
+      "description": "<p>Returns a list of your webhook endpoints.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.webhookEndpoints.getWebhookEndpointsWebhookEndpoint",
+      "name": "webhookEndpoints.getWebhookEndpointsWebhookEndpoint",
+      "description": "<p>Retrieves the webhook endpoint with the given ID.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.webhookEndpoints.postWebhookEndpoints",
+      "name": "webhookEndpoints.postWebhookEndpoints",
+      "description": "<p>A webhook endpoint must have a <code>url</code> and a list of <code>enabled_events</code>. You may optionally specify the Boolean <code>connect</code> parameter. If set to true, then a Connect webhook endpoint that notifies the specified <code>url</code> about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified <code>url</code> only about events from your account is created. You can also create webhook endpoints in the <a href=\"https://dashboard.stripe.com/account/webhooks\">webhooks settings</a> section of the Dashboard.</p>"
+    },
+    {
+      "id": "openapi_stripe_com.webhookEndpoints.postWebhookEndpointsWebhookEndpoint",
+      "name": "webhookEndpoints.postWebhookEndpointsWebhookEndpoint",
+      "description": "<p>Updates the webhook endpoint. You may edit the <code>url</code>, the list of <code>enabled_events</code>, and the status of your endpoint.</p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

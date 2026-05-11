@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:22:10.654Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_departureboard_io.departuresArrivals.getArrivalsAndDeparturesByCrs",
+      "name": "departuresArrivals.getArrivalsAndDeparturesByCrs",
+      "description": "getArrivalsAndDeparturesByCRS is used to get a list of services arriving to and departing from a UK train station by the CRS (Computer Reservation System) code. This will typically return a list of train services, but will also return any replacement bus or ferry services that are in place."
+    },
+    {
+      "id": "openapi_departureboard_io.departuresArrivals.getArrivalsByCrs",
+      "name": "departuresArrivals.getArrivalsByCrs",
+      "description": "getArrivalsByCRS is used to get a list of services arriving to a UK train station by the CRS (Computer Reservation System) code. This will typically return a list of train services, but will also return any replacement bus or ferry services that are in place."
+    },
+    {
+      "id": "openapi_departureboard_io.departuresArrivals.getDeparturesByCrs",
+      "name": "departuresArrivals.getDeparturesByCrs",
+      "description": "getDeparturesByCRS is used to get a list of services departing from a UK train station by the CRS (Computer Reservation System) code. This will typically return a list of train services, but will also return any replacement bus or ferry services that are in place."
+    },
+    {
+      "id": "openapi_departureboard_io.fastestAndNextDepartures.getFastestDeparturesByCrs",
+      "name": "fastestAndNextDepartures.getFastestDeparturesByCrs",
+      "description": "getFastestDeparturesByCRS is used to get the fastest next service running between two stations. Multiple destinations can be specified. This will typically return a single train service, but will also return a replacement bus or ferry service if in place."
+    },
+    {
+      "id": "openapi_departureboard_io.fastestAndNextDepartures.getNextDeparturesByCrs",
+      "name": "fastestAndNextDepartures.getNextDeparturesByCrs",
+      "description": "getNextDeparturesByCRS is used to get the next service running between two stations. Multiple destinations can be specified. This will typically return a single train service, but will also return a replacement bus or ferry service if in place. This will return the next departures for each of the filterList stations specified. It may not return the fastest next service. To get the fastest next service use the getFastestDeparturesByCRS endpoint."
+    },
+    {
+      "id": "openapi_departureboard_io.serviceInformation.getServiceDetailsById",
+      "name": "serviceInformation.getServiceDetailsById",
+      "description": "getServiceDetailsByID is used to get information on a service, by the Service ID. This will typically return a train service, but will also return a bus and ferry services. The Service ID must be provided in the serviceIDUrlSafe format that is provided in the response for Arrival and Departure Boards. A service ID is specific to a station, and can only be looked up for a short time after a train/bus/ferry arrives at, or departs from a station. This is a National Rail limitation."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

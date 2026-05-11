@@ -1,0 +1,607 @@
+{
+  "fetchedAt": "2026-04-30T15:26:47.015Z",
+  "status": "ok",
+  "count": 120,
+  "tools": [
+    {
+      "id": "openapi_shutterstock_com.audio.addTrackCollectionItems",
+      "name": "audio.addTrackCollectionItems",
+      "description": "This endpoint adds one or more tracks to a collection by track IDs."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.createTrackCollection",
+      "name": "audio.createTrackCollection",
+      "description": "This endpoint creates one or more collections (soundboxes). To add tracks, use `POST /v2/audio/collections/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.deleteTrackCollection",
+      "name": "audio.deleteTrackCollection",
+      "description": "This endpoint deletes a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.deleteTrackCollectionItems",
+      "name": "audio.deleteTrackCollectionItems",
+      "description": "This endpoint removes one or more tracks from a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.downloadTracks",
+      "name": "audio.downloadTracks",
+      "description": "This endpoint redownloads tracks that you have already received a license for. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrack",
+      "name": "audio.getTrack",
+      "description": "This endpoint shows information about a track, including its genres, instruments, and other attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrackCollection",
+      "name": "audio.getTrackCollection",
+      "description": "This endpoint gets more detailed information about a collection, including the number of items in it and when it was last updated. To get the tracks in collections, use `GET /v2/audio/collections/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrackCollectionItems",
+      "name": "audio.getTrackCollectionItems",
+      "description": "This endpoint lists the IDs of tracks in a collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrackCollectionList",
+      "name": "audio.getTrackCollectionList",
+      "description": "This endpoint lists your collections of audio tracks and their basic attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrackLicenseList",
+      "name": "audio.getTrackLicenseList",
+      "description": "This endpoint lists existing licenses. You can filter the results according to the track ID to see if you have an existing license for a specific track."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.getTrackList",
+      "name": "audio.getTrackList",
+      "description": "This endpoint lists information about one or more audio tracks, including the description and publication date."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.licenseTrack",
+      "name": "audio.licenseTrack",
+      "description": "This endpoint gets licenses for one or more tracks. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.listGenres",
+      "name": "audio.listGenres",
+      "description": "This endpoint returns a list of all audio genres."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.listInstruments",
+      "name": "audio.listInstruments",
+      "description": "This endpoint returns a list of all audio instruments."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.listMoods",
+      "name": "audio.listMoods",
+      "description": "This endpoint returns a list of all audio moods."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.renameTrackCollection",
+      "name": "audio.renameTrackCollection",
+      "description": "This endpoint sets a new name for a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.audio.searchTracks",
+      "name": "audio.searchTracks",
+      "description": "This endpoint searches for tracks. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.addToCollection",
+      "name": "catalog.addToCollection",
+      "description": "This endpoint adds assets to a catalog collection. It also automatically adds the assets to the user's account's catalog."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.createCollection",
+      "name": "catalog.createCollection",
+      "description": "This endpoint creates a catalog collection and optionally adds assets. To add assets to the collection later, use `PATCH /v2/catalog/collections/{collection_id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.deleteCollection",
+      "name": "catalog.deleteCollection",
+      "description": "This endpoint deletes a catalog collection. It does not remove the assets from the user's account's catalog."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.deleteFromCollection",
+      "name": "catalog.deleteFromCollection",
+      "description": "This endpoint removes assets from a catalog collection. It does not remove the assets from the user's account's catalog."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.getCollections",
+      "name": "catalog.getCollections",
+      "description": "This endpoint returns a list of catalog collections."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.searchCatalog",
+      "name": "catalog.searchCatalog",
+      "description": "This endpoint searches for assets in the account's catalog. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT."
+    },
+    {
+      "id": "openapi_shutterstock_com.catalog.updateCollection",
+      "name": "catalog.updateCollection",
+      "description": "This endpoint updates the metadata of a catalog collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.computerVision.getKeywords",
+      "name": "computerVision.getKeywords",
+      "description": "This endpoint returns a list of suggested keywords for a media item that you specify or upload."
+    },
+    {
+      "id": "openapi_shutterstock_com.computerVision.getSimilarImages",
+      "name": "computerVision.getSimilarImages",
+      "description": "This endpoint returns images that are visually similar to an image that you specify or upload."
+    },
+    {
+      "id": "openapi_shutterstock_com.computerVision.getSimilarVideos",
+      "name": "computerVision.getSimilarVideos",
+      "description": "This endpoint returns videos that are visually similar to an image that you specify or upload."
+    },
+    {
+      "id": "openapi_shutterstock_com.computerVision.uploadEphemeralImage",
+      "name": "computerVision.uploadEphemeralImage",
+      "description": "Deprecated; use `POST /v2/cv/images` instead. This endpoint uploads an image for reverse image search. The image must be in JPEG or PNG format. To get the search results, pass the ID that this endpoint returns to the `GET /v2/images/{id}/similar` endpoint."
+    },
+    {
+      "id": "openapi_shutterstock_com.computerVision.uploadImage",
+      "name": "computerVision.uploadImage",
+      "description": "This endpoint uploads an image for reverse image or video search. Images must be in JPEG or PNG format. To get the search results, pass the upload ID that this endpoint returns to the GET /v2/cv/similar/images or GET /v2/cv/similar/videos endpoints. Contact us for access to this endpoint."
+    },
+    {
+      "id": "openapi_shutterstock_com.contributors.getContributor",
+      "name": "contributors.getContributor",
+      "description": "This endpoint shows information about a single contributor, including contributor type, equipment they use, and other attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.contributors.getContributorCollectionItems",
+      "name": "contributors.getContributorCollectionItems",
+      "description": "This endpoint lists the IDs of items in a contributor's collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.contributors.getContributorCollections",
+      "name": "contributors.getContributorCollections",
+      "description": "This endpoint gets more detailed information about a contributor's collection, including its cover image, timestamps for its creation, and most recent update. To get the items in collections, use GET /v2/contributors/{contributor_id}/collections/{id}/items."
+    },
+    {
+      "id": "openapi_shutterstock_com.contributors.getContributorCollectionsList",
+      "name": "contributors.getContributorCollectionsList",
+      "description": "This endpoint lists collections based on contributor ID."
+    },
+    {
+      "id": "openapi_shutterstock_com.contributors.getContributorList",
+      "name": "contributors.getContributorList",
+      "description": "This endpoint lists information about one or more contributors, including contributor type, equipment they use and other attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.customMusic.createAudioRenders",
+      "name": "customMusic.createAudioRenders",
+      "description": "This endpoint creates rendered audio from timeline data. It returns a render ID that you can use to download the finished audio when it is ready. The render ID is valid for up to 48 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.customMusic.fetchRenders",
+      "name": "customMusic.fetchRenders",
+      "description": "This endpoint shows the status of one or more audio renders, including download links for completed audio."
+    },
+    {
+      "id": "openapi_shutterstock_com.customMusic.listCustomDescriptors",
+      "name": "customMusic.listCustomDescriptors",
+      "description": "This endpoint lists the descriptors that you can use in the audio regions in an audio render."
+    },
+    {
+      "id": "openapi_shutterstock_com.customMusic.listCustomInstruments",
+      "name": "customMusic.listCustomInstruments",
+      "description": "This endpoint lists the instruments that you can include in computer audio. If you specify more than one search parameter, the API uses an AND condition."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialCategories",
+      "name": "editorialImages.getEditorialCategories",
+      "description": "Deprecated; use `GET /v2/editorial/images/categories` instead. This endpoint lists the categories that editorial images can belong to, which are separate from the categories that other types of assets can belong to."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialImage",
+      "name": "editorialImages.getEditorialImage",
+      "description": "This endpoint shows information about an editorial image, including a URL to a preview image and the sizes that it is available in."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialImageLicenseList",
+      "name": "editorialImages.getEditorialImageLicenseList",
+      "description": "This endpoint lists existing editorial image licenses."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialImageLivefeed",
+      "name": "editorialImages.getEditorialImageLivefeed",
+      "description": "Get editorial livefeed"
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialImageLivefeedItems",
+      "name": "editorialImages.getEditorialImageLivefeedItems",
+      "description": "Get editorial livefeed items"
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialImageLivefeedList",
+      "name": "editorialImages.getEditorialImageLivefeedList",
+      "description": "Get editorial livefeed list"
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialLivefeed",
+      "name": "editorialImages.getEditorialLivefeed",
+      "description": "Deprecated: use `GET /v2/editorial/images/livefeeds/{id}` instead to get an editorial livefeed."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialLivefeedItems",
+      "name": "editorialImages.getEditorialLivefeedItems",
+      "description": "Deprecated; use `GET /v2/editorial/images/livefeeds/{id}/items` instead to get editorial livefeed items."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getEditorialLivefeedList",
+      "name": "editorialImages.getEditorialLivefeedList",
+      "description": "Deprecated; use `GET /v2/editorial/images/livefeeds` instead to get a list of editorial livefeeds."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getUpdatedEditorialImage",
+      "name": "editorialImages.getUpdatedEditorialImage",
+      "description": "Deprecated; use `GET /v2/editorial/images/updated` instead to get recently updated items."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getUpdatedEditorialImages",
+      "name": "editorialImages.getUpdatedEditorialImages",
+      "description": "This endpoint lists editorial images that have been updated in the specified time period to update content management systems (CMS) or digital asset management (DAM) systems. In most cases, use the date_updated_start and date_updated_end parameters to specify a range updates based on when the updates happened. You can also use the date_taken_start and date_taken_end parameters to specify a range of updates based on when the image was taken."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.getV2EditorialId",
+      "name": "editorialImages.getV2EditorialId",
+      "description": "Deprecated; use `GET /v2/editorial/images/{id}` instead to show information about an editorial image, including a URL to a preview image and the sizes that it is available in."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.licenseEditorialImage",
+      "name": "editorialImages.licenseEditorialImage",
+      "description": "Deprecated; use `POST /v2/editorial/images/licenses` instead to get licenses for one or more editorial images. You must specify the country and one or more editorial images to license. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.licenseEditorialImages",
+      "name": "editorialImages.licenseEditorialImages",
+      "description": "This endpoint gets licenses for one or more editorial images. You must specify the country and one or more editorial images to license. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.listEditorialImageCategories",
+      "name": "editorialImages.listEditorialImageCategories",
+      "description": "This endpoint lists the categories that editorial images can belong to, which are separate from the categories that other types of assets can belong to."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.searchEditorial",
+      "name": "editorialImages.searchEditorial",
+      "description": "Deprecated; use `GET /v2/editorial/images/search` instead to search for editorial images."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialImages.searchEditorialImages",
+      "name": "editorialImages.searchEditorialImages",
+      "description": "This endpoint searches for editorial images. If you specify more than one search parameter, the API uses an AND condition. For example, if you set the `category` parameter to \"Alone,Performing\" and also specify a `query` parameter, the results include only images that match the query and are in both the Alone and Performing categories. You can also filter search terms out in the `query` parameter by prefixing the term with NOT."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialVideo.getEditorialVideo",
+      "name": "editorialVideo.getEditorialVideo",
+      "description": "This endpoint shows information about an editorial image, including a URL to a preview image and the sizes that it is available in."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialVideo.getEditorialVideoLicenseList",
+      "name": "editorialVideo.getEditorialVideoLicenseList",
+      "description": "This endpoint lists existing editorial video licenses."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialVideo.licenseEditorialVideo",
+      "name": "editorialVideo.licenseEditorialVideo",
+      "description": "This endpoint gets licenses for one or more editorial videos. You must specify the country and one or more editorial videos to license. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialVideo.listEditorialVideoCategories",
+      "name": "editorialVideo.listEditorialVideoCategories",
+      "description": "This endpoint lists the categories that editorial videos can belong to, which are separate from the categories that other types of assets can belong to."
+    },
+    {
+      "id": "openapi_shutterstock_com.editorialVideo.searchEditorialVideos",
+      "name": "editorialVideo.searchEditorialVideos",
+      "description": "This endpoint searches for editorial videos. If you specify more than one search parameter, the API uses an AND condition. For example, if you set the `category` parameter to \"Alone,Performing\" and also specify a `query` parameter, the results include only videos that match the query and are in both the Alone and Performing categories.  You can also filter search terms out in the `query` parameter by prefixing the term with NOT."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.addImageCollectionItems",
+      "name": "images.addImageCollectionItems",
+      "description": "This endpoint adds one or more images to a collection by image IDs."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.bulkSearchImages",
+      "name": "images.bulkSearchImages",
+      "description": "This endpoint runs up to 5 image searches in a single request and returns up to 20 results per search. You can provide global search parameters in the query parameters and override them for each search in the body parameter. The query and body parameters are the same as in the `GET /v2/images/search` endpoint."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.createImageCollection",
+      "name": "images.createImageCollection",
+      "description": "This endpoint creates one or more image collections (lightboxes). To add images to the collections, use `POST /v2/images/collections/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.deleteImageCollection",
+      "name": "images.deleteImageCollection",
+      "description": "This endpoint deletes an image collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.deleteImageCollectionItems",
+      "name": "images.deleteImageCollectionItems",
+      "description": "This endpoint removes one or more images from a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.downloadImage",
+      "name": "images.downloadImage",
+      "description": "This endpoint redownloads images that you have already received a license for. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getFeaturedImageCollection",
+      "name": "images.getFeaturedImageCollection",
+      "description": "This endpoint gets more detailed information about a featured collection, including its cover image and timestamps for its creation and most recent update. To get the images, use `GET /v2/images/collections/featured/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getFeaturedImageCollectionItems",
+      "name": "images.getFeaturedImageCollectionItems",
+      "description": "This endpoint lists the IDs of images in a featured collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getFeaturedImageCollectionList",
+      "name": "images.getFeaturedImageCollectionList",
+      "description": "This endpoint lists featured collections of specific types and a name and cover image for each collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImage",
+      "name": "images.getImage",
+      "description": "This endpoint shows information about an image, including a URL to a preview image and the sizes that it is available in."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageCollection",
+      "name": "images.getImageCollection",
+      "description": "This endpoint gets more detailed information about a collection, including its cover image and timestamps for its creation and most recent update. To get the images in collections, use `GET /v2/images/collections/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageCollectionItems",
+      "name": "images.getImageCollectionItems",
+      "description": "This endpoint lists the IDs of images in a collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageCollectionList",
+      "name": "images.getImageCollectionList",
+      "description": "This endpoint lists your collections of images and their basic attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageKeywordSuggestions",
+      "name": "images.getImageKeywordSuggestions",
+      "description": "This endpoint returns up to 10 important keywords from a block of plain text."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageLicenseList",
+      "name": "images.getImageLicenseList",
+      "description": "This endpoint lists existing licenses."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageList",
+      "name": "images.getImageList",
+      "description": "This endpoint lists information about one or more images, including the available sizes."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageRecommendations",
+      "name": "images.getImageRecommendations",
+      "description": "This endpoint returns images that customers put in the same collection as the specified image IDs."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getImageSuggestions",
+      "name": "images.getImageSuggestions",
+      "description": "This endpoint provides autocomplete suggestions for partial search terms."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.getUpdatedImages",
+      "name": "images.getUpdatedImages",
+      "description": "This endpoint lists images that have been updated in the specified time period to update content management systems (CMS) or digital asset management (DAM) systems. In most cases, use the `interval` parameter to show images that were updated recently, but you can also use the `start_date` and `end_date` parameters to specify a range of no more than three days. Do not use the `interval` parameter with either `start_date` or `end_date`."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.licenseImages",
+      "name": "images.licenseImages",
+      "description": "This endpoint gets licenses for one or more images. You must specify the image IDs in the body parameter and other details like the format, size, and subscription ID either in the query parameter or with each image ID in the body parameter. Values in the body parameter override values in the query parameters. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.listImageCategories",
+      "name": "images.listImageCategories",
+      "description": "This endpoint lists the categories (Shutterstock-assigned genres) that images can belong to."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.listSimilarImages",
+      "name": "images.listSimilarImages",
+      "description": "This endpoint returns images that are visually similar to an image that you specify."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.renameImageCollection",
+      "name": "images.renameImageCollection",
+      "description": "This endpoint sets a new name for an image collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.images.searchImages",
+      "name": "images.searchImages",
+      "description": "This endpoint searches for images. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT. Free API accounts show results only from a limited library of media, not the full Shutterstock media library. Also, the number of search fields they can use in a request is limited."
+    },
+    {
+      "id": "openapi_shutterstock_com.oauth.authorize",
+      "name": "oauth.authorize",
+      "description": "This endpoint returns a redirect URI (in the 'Location' header) that the customer uses to authorize your application and, together with POST /v2/oauth/access_token, generate an access token that represents that authorization."
+    },
+    {
+      "id": "openapi_shutterstock_com.oauth.createAccessToken",
+      "name": "oauth.createAccessToken",
+      "description": "This endpoint returns an access token for the specified user and with the specified scopes. The token does not expire until the user changes their password. The body parameters must be encoded as form data."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.downloadSfx",
+      "name": "soundEffects.downloadSfx",
+      "description": "This endpoint redownloads sound effects that you have already received a license for. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.getSfxDetails",
+      "name": "soundEffects.getSfxDetails",
+      "description": "This endpoint shows information about a sound effect."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.getSfxLicenseList",
+      "name": "soundEffects.getSfxLicenseList",
+      "description": "This endpoint lists existing licenses."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.getSfxListDetails",
+      "name": "soundEffects.getSfxListDetails",
+      "description": "This endpoint shows information about sound effects."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.licensesSfx",
+      "name": "soundEffects.licensesSfx",
+      "description": "This endpoint licenses sounds effect assets."
+    },
+    {
+      "id": "openapi_shutterstock_com.soundEffects.searchSfx",
+      "name": "soundEffects.searchSfx",
+      "description": "This endpoint searches for sound effects. If you specify more than one search parameter, the API uses an AND condition."
+    },
+    {
+      "id": "openapi_shutterstock_com.test.echo",
+      "name": "test.echo",
+      "description": "Echo text"
+    },
+    {
+      "id": "openapi_shutterstock_com.test.validate",
+      "name": "test.validate",
+      "description": "Validate input"
+    },
+    {
+      "id": "openapi_shutterstock_com.users.getAccessToken",
+      "name": "users.getAccessToken",
+      "description": "Get access token details"
+    },
+    {
+      "id": "openapi_shutterstock_com.users.getUser",
+      "name": "users.getUser",
+      "description": "Get user details"
+    },
+    {
+      "id": "openapi_shutterstock_com.users.getUserSubscriptionList",
+      "name": "users.getUserSubscriptionList",
+      "description": "List user subscriptions"
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.addVideoCollectionItems",
+      "name": "videos.addVideoCollectionItems",
+      "description": "This endpoint adds one or more videos to a collection by video IDs."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.createVideoCollection",
+      "name": "videos.createVideoCollection",
+      "description": "This endpoint creates one or more collections (clipboxes). To add videos to collections, use `POST /v2/videos/collections/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.deleteVideoCollection",
+      "name": "videos.deleteVideoCollection",
+      "description": "This endpoint deletes a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.deleteVideoCollectionItems",
+      "name": "videos.deleteVideoCollectionItems",
+      "description": "This endpoint removes one or more videos from a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.downloadVideos",
+      "name": "videos.downloadVideos",
+      "description": "This endpoint redownloads videos that you have already received a license for."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.findSimilarVideos",
+      "name": "videos.findSimilarVideos",
+      "description": "This endpoint searches for videos that are similar to a video that you specify."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getFeaturedVideoCollection",
+      "name": "videos.getFeaturedVideoCollection",
+      "description": "This endpoint gets more detailed information about a featured video collection, including its cover video and timestamps for its creation and most recent update. To get the videos, use `GET /v2/videos/collections/featured/{id}/items`."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getFeaturedVideoCollectionItems",
+      "name": "videos.getFeaturedVideoCollectionItems",
+      "description": "This endpoint lists the IDs of videos in a featured collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getFeaturedVideoCollectionList",
+      "name": "videos.getFeaturedVideoCollectionList",
+      "description": "This endpoint lists featured video collections and a name and cover video for each collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getUpdatedVideos",
+      "name": "videos.getUpdatedVideos",
+      "description": "This endpoint lists videos that have been updated in the specified time period to update content management systems (CMS) or digital asset management (DAM) systems. In most cases, use the `interval` parameter to show videos that were updated recently, but you can also use the `start_date` and `end_date` parameters to specify a range of no more than three days. Do not use the `interval` parameter with either `start_date` or `end_date`."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideo",
+      "name": "videos.getVideo",
+      "description": "This endpoint shows information about a video, including URLs to previews and the sizes that it is available in."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoCollection",
+      "name": "videos.getVideoCollection",
+      "description": "This endpoint gets more detailed information about a collection, including the timestamp for its creation and the number of videos in it. To get the videos in collections, use GET /v2/videos/collections/{id}/items."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoCollectionItems",
+      "name": "videos.getVideoCollectionItems",
+      "description": "This endpoint lists the IDs of videos in a collection and the date that each was added."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoCollectionList",
+      "name": "videos.getVideoCollectionList",
+      "description": "This endpoint lists your collections of videos and their basic attributes."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoLicenseList",
+      "name": "videos.getVideoLicenseList",
+      "description": "This endpoint lists existing licenses."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoList",
+      "name": "videos.getVideoList",
+      "description": "This endpoint lists information about one or more videos, including the aspect ratio and URLs to previews."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.getVideoSuggestions",
+      "name": "videos.getVideoSuggestions",
+      "description": "This endpoint provides autocomplete suggestions for partial search terms."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.licenseVideos",
+      "name": "videos.licenseVideos",
+      "description": "This endpoint gets licenses for one or more videos. You must specify the video IDs in the body parameter and the size and subscription ID either in the query parameter or with each video ID in the body parameter. Values in the body parameter override values in the query parameters. The download links in the response are valid for 8 hours."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.listVideoCategories",
+      "name": "videos.listVideoCategories",
+      "description": "This endpoint lists the categories (Shutterstock-assigned genres) that videos can belong to."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.renameVideoCollection",
+      "name": "videos.renameVideoCollection",
+      "description": "This endpoint sets a new name for a collection."
+    },
+    {
+      "id": "openapi_shutterstock_com.videos.searchVideos",
+      "name": "videos.searchVideos",
+      "description": "This endpoint searches for videos. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

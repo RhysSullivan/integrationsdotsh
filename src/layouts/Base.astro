@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style is:global>
+      :root {
+        --bg: #0b0d10;
+        --fg: #e6e6e6;
+        --muted: #8a8f98;
+        --accent: #4ade80;
+        --border: #1f2329;
+        --card: #14171c;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+      header.site {
+        border-bottom: 1px solid var(--border);
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header.site a { text-decoration: none; }
+      header.site .brand { font-weight: 600; letter-spacing: -0.01em; }
+      main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 96px; }
+      footer.site { color: var(--muted); font-size: 12px; padding: 24px; text-align: center; border-top: 1px solid var(--border); }
+      .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+      .badge.mcp { color: #c4b5fd; border-color: #4c3a9f; }
+      .badge.openapi { color: #93c5fd; border-color: #1e4ea8; }
+      .badge.graphql { color: #f9a8d4; border-color: #9d2470; }
+      .md { line-height: 1.55; }
+      .md > :first-child { margin-top: 0; }
+      .md > :last-child { margin-bottom: 0; }
+      .md p { margin: 0 0 0.65em; }
+      .md p:last-child { margin-bottom: 0; }
+      .md a { color: var(--accent); text-decoration: none; }
+      .md a:hover { text-decoration: underline; }
+      .md code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+      .md pre { background: var(--card); padding: 12px; border-radius: 8px; overflow: auto; font-size: 12px; margin: 0 0 0.65em; }
+      .md pre code { background: transparent; padding: 0; font-size: 12px; }
+      .md ul, .md ol { padding-left: 1.4em; margin: 0 0 0.65em; }
+      .md li { margin: 0.15em 0; }
+      .md h1, .md h2, .md h3, .md h4 { margin: 1em 0 0.4em; line-height: 1.25; letter-spacing: -0.01em; }
+      .md h1 { font-size: 1.3em; }
+      .md h2 { font-size: 1.15em; }
+      .md h3 { font-size: 1.0em; }
+      .md blockquote { border-left: 2px solid var(--border); margin: 0 0 0.65em; padding: 0 0 0 12px; color: var(--muted); }
+      .md table { border-collapse: collapse; margin: 0 0 0.65em; font-size: 13px; }
+      .md th, .md td { border: 1px solid var(--border); padding: 6px 10px; }
+      /* Cards keep markdown tiny and clipped to 4 lines. */
+      .card .desc.md { color: var(--muted); font-size: 13px; margin: 8px 0 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+      .card .desc.md p { margin: 0; }
+      /* Tool descriptions: tight, no top margin. */
+      .tool .tool-desc.md { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+      .tool .tool-desc.md p { margin: 0 0 0.4em; }
+      .tool .tool-desc.md p:last-child { margin-bottom: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <a class="brand" href="/">integrations.sh</a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      An aggregator of MCP servers, OpenAPI and GraphQL specs.
+    </footer>
+  </body>
+</html>

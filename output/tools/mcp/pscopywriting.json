@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:21:36.502Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_pscopywriting.submit_contact_form",
+      "name": "submit_contact_form",
+      "description": "Use this when the user wants to contact the business or send a direct inquiry. Displays an interactive contact form widget that collects name, email, phone (optional), and message. This tool supports two modes: interactive form display and explicit submission. Use name, email, phone, and message for both context-derived prefill and explicit submission. Submission mode is triggered only when name, email, and message are provided together; otherwise the widget opens for interactive completion. Form submission is explicitly triggered by the user in the widget or by an explicit user request to submit now. Use this tool for requests like: 'I want to contact you', 'I want to discuss this', 'Send this message to the business'. Do NOT use for booking appointments (use book_appointment tool instead). DO NOT use for listing products/services (use show_products tool instead)."
+    },
+    {
+      "id": "mcp_pscopywriting.book_appointment",
+      "name": "book_appointment",
+      "description": "Use this when the user wants to schedule a call or meeting with the business. Displays an interactive booking calendar widget with available dates and times. Use customerName, customerEmail, customerPhone, date (YYYY-MM-DD), and time (HH:MM) for both prefill and direct booking. Direct booking occurs only when customerName, customerEmail, date, and time are provided together; otherwise the widget opens for interactive scheduling. When direct booking succeeds, the widget opens in confirmation state. Use this tool for requests like: 'I want to book a call', 'I want to schedule a meeting', 'Book me for Tuesday at 3 PM'. Do NOT use for submitting general inquiries (use submit_contact_form tool instead). DO NOT use for listing products/services (use show_products tool instead)."
+    },
+    {
+      "id": "mcp_pscopywriting.show_business_info",
+      "name": "show_business_info",
+      "description": "Use this when the user asks for general business profile information. Displays a read-only business information widget with business name, description, email, phone, address, and website. Use this tool for requests like: 'Tell me about your business', 'What is your phone number?', 'What is your website?'. Do NOT use for detailed policy/procedure questions (use ask_question tool instead). DO NOT use for map/location exploration (use show_locations tool instead)."
+    }
+  ]
+}

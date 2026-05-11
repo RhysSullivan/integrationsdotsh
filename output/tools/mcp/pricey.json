@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:27.663Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_pricey.display_product",
+      "name": "display-product",
+      "description": "Use to retrieve and display detailed information and images for a single, specific Amazon product identified by a valid ASIN and marketplace domain. Call this tool when the user explicitly references a concrete product (by ASIN or by having selected one from search results) and wants to view its details, price, price history, or manage a price alert. Do not call this tool for broad or keyword-based discovery requests (use `search-products` instead), for non-Amazon products, or when the ASIN/domain pair has not been validated. This tool is read-only and intended purely for presenting authoritative product data and enabling downstream price-alert workflows."
+    },
+    {
+      "id": "mcp_pricey.search_products",
+      "name": "search-products",
+      "description": "Use to perform keyword-based search within a specific Amazon marketplace domain in order to discover candidate products and their ASINs. Call this tool when the user expresses exploratory intent (e.g., searching by product name, category, or descriptive keywords) and does not yet have a confirmed ASIN. The primary purpose is to obtain valid ASIN/domain pairs that can subsequently be passed to `display-product` for detailed viewing or to `create-price-alert` for alert creation. Do not call this tool if the user already provides a precise ASIN and domain, or if the request is unrelated to Amazon product search."
+    },
+    {
+      "id": "mcp_pricey.create_price_alert",
+      "name": "create-price-alert",
+      "description": "Use to create or update a persistent price alert for a specific Amazon product identified by ASIN and marketplace domain, tied to a user’s email address and a target price threshold. Call this tool only after a valid ASIN/domain pair has been established (for example via `display-product` or `search-products`) and the user has explicitly requested to be notified if the price drops below a specified amount. Do not call this tool for general product viewing, exploratory search, or if required inputs (ASIN, domain, email address, and target price) are missing or ambiguous. This tool performs a state-changing operation by creating or updating stored alert records but does not render UI directly."
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "fetchedAt": "2026-04-30T15:22:14.636Z",
+  "status": "ok",
+  "count": 93,
+  "tools": [
+    {
+      "id": "openapi_fec_gov.audit.getAuditCase",
+      "name": "audit.getAuditCase",
+      "description": "\nThis endpoint contains Final Audit Reports approved by the Commission since inception.\nThe search can be based on information about the audited committee (Name, FEC ID Number, Type, \nElection Cycle) or the issues covered in the report.\n"
+    },
+    {
+      "id": "openapi_fec_gov.audit.getAuditCategory",
+      "name": "audit.getAuditCategory",
+      "description": "\nThis lists the options for the categories and subcategories available in the /audit-search/ endpoint.\n"
+    },
+    {
+      "id": "openapi_fec_gov.audit.getAuditPrimaryCategory",
+      "name": "audit.getAuditPrimaryCategory",
+      "description": "\nThis lists the options for the primary categories available in the /audit-search/ endpoint.\n"
+    },
+    {
+      "id": "openapi_fec_gov.audit.getNamesAuditCandidates",
+      "name": "audit.getNamesAuditCandidates",
+      "description": "\nSearch for candidates or committees by name. If you're looking for information on a\nparticular person or group, using a name to find the `candidate_id` or `committee_id` on\nthis endpoint can be a helpful first step.\n"
+    },
+    {
+      "id": "openapi_fec_gov.audit.getNamesAuditCommittees",
+      "name": "audit.getNamesAuditCommittees",
+      "description": "\nSearch for candidates or committees by name. If you're looking for information on a\nparticular person or group, using a name to find the `candidate_id` or `committee_id` on\nthis endpoint can be a helpful first step.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidateCandidateId",
+      "name": "candidate.getCandidateCandidateId",
+      "description": "\nThis endpoint is useful for finding detailed information about a particular candidate. Use the\n`candidate_id` to find the most recent information about that candidate.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidateCandidateIdHistory",
+      "name": "candidate.getCandidateCandidateIdHistory",
+      "description": "\nFind out a candidate's characteristics over time. This is particularly useful if the\ncandidate runs for the same office in different districts or you want to know more about a candidate's\nprevious races.\n\nThis information is organized by `candidate_id`, so it won't help you find a candidate\nwho ran for different offices over time; candidates get a new ID for each office.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidateCandidateIdHistoryCycle",
+      "name": "candidate.getCandidateCandidateIdHistoryCycle",
+      "description": "\nFind out a candidate's characteristics over time. This is particularly useful if the\ncandidate runs for the same office in different districts or you want to know more about a candidate's\nprevious races.\n\nThis information is organized by `candidate_id`, so it won't help you find a candidate\nwho ran for different offices over time; candidates get a new ID for each office.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidateCandidateIdTotals",
+      "name": "candidate.getCandidateCandidateIdTotals",
+      "description": "\nThis endpoint provides information about a committee's Form 3, Form 3X, or Form 3P financial reports,\nwhich are aggregated by two-year period. We refer to two-year periods as a `cycle`.\n\nThe cycle is named after the even-numbered year and includes the year before it. To obtain\ntotals from 2013 and 2014, you would use 2014. In odd-numbered years, the current cycle\nis the next year — for example, in 2015, the current cycle is 2016.\n\nFor presidential and Senate candidates, multiple two-year cycles exist between elections.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidates",
+      "name": "candidate.getCandidates",
+      "description": "\nFetch basic information about candidates, and use parameters to filter results to the\ncandidates you're looking for.\n\nEach result reflects a unique FEC candidate ID. That ID is particular to the candidate for a\nparticular office sought. If a candidate runs for the same office multiple times, the ID\nstays the same. If the same person runs for another office — for example, a House\ncandidate runs for a Senate office — that candidate will get a unique ID for each office.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidatesSearch",
+      "name": "candidate.getCandidatesSearch",
+      "description": "\nFetch basic information about candidates and their principal committees.\n\nEach result reflects a unique FEC candidate ID. That ID is assigned to the candidate for a\nparticular office sought. If a candidate runs for the same office over time, that ID\nstays the same. If the same person runs for multiple offices — for example, a House\ncandidate runs for a Senate office — that candidate will get a unique ID for each office.\n\nThe candidate endpoints primarily use data from FEC registration\n[Form 1](https://www.fec.gov/pdf/forms/fecfrm1.pdf) for committee information and\n[Form 2](https://www.fec.gov/pdf/forms/fecfrm2.pdf) for candidate information.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidatesTotals",
+      "name": "candidate.getCandidatesTotals",
+      "description": "\nAggregated candidate receipts and disbursements grouped by cycle.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidatesTotalsAggregates",
+      "name": "candidate.getCandidatesTotalsAggregates",
+      "description": " Candidate total receipts and disbursements aggregated by `aggregate_by`.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidatesTotalsByOffice",
+      "name": "candidate.getCandidatesTotalsByOffice",
+      "description": " Aggregated candidate receipts and disbursements grouped by office by cycle.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCandidatesTotalsByOfficeByParty",
+      "name": "candidate.getCandidatesTotalsByOfficeByParty",
+      "description": " Aggregated candidate receipts and disbursements grouped by office by party by cycle.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCommitteeCommitteeIdCandidates",
+      "name": "candidate.getCommitteeCommitteeIdCandidates",
+      "description": "\nThis endpoint is useful for finding detailed information about a particular candidate. Use the\n`candidate_id` to find the most recent information about that candidate.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCommitteeCommitteeIdCandidatesHistory",
+      "name": "candidate.getCommitteeCommitteeIdCandidatesHistory",
+      "description": "\nFind out a candidate's characteristics over time. This is particularly useful if the\ncandidate runs for the same office in different districts or you want to know more about a candidate's\nprevious races.\n\nThis information is organized by `candidate_id`, so it won't help you find a candidate\nwho ran for different offices over time; candidates get a new ID for each office.\n"
+    },
+    {
+      "id": "openapi_fec_gov.candidate.getCommitteeCommitteeIdCandidatesHistoryCycle",
+      "name": "candidate.getCommitteeCommitteeIdCandidatesHistoryCycle",
+      "description": "\nFind out a candidate's characteristics over time. This is particularly useful if the\ncandidate runs for the same office in different districts or you want to know more about a candidate's\nprevious races.\n\nThis information is organized by `candidate_id`, so it won't help you find a candidate\nwho ran for different offices over time; candidates get a new ID for each office.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCandidateCandidateIdCommittees",
+      "name": "committee.getCandidateCandidateIdCommittees",
+      "description": "\nThis endpoint is useful for finding detailed information about a particular committee or\nfiler. Use the `committee_id` to find the most recent information about the committee.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCandidateCandidateIdCommitteesHistory",
+      "name": "committee.getCandidateCandidateIdCommitteesHistory",
+      "description": "\nExplore a filer's characteristics over time. This can be particularly useful if the\ncommittees change treasurers, designation, or `committee_type`.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCandidateCandidateIdCommitteesHistoryCycle",
+      "name": "committee.getCandidateCandidateIdCommitteesHistoryCycle",
+      "description": "\nExplore a filer's characteristics over time. This can be particularly useful if the\ncommittees change treasurers, designation, or `committee_type`.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCommitteeCommitteeId",
+      "name": "committee.getCommitteeCommitteeId",
+      "description": "\nThis endpoint is useful for finding detailed information about a particular committee or\nfiler. Use the `committee_id` to find the most recent information about the committee.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCommitteeCommitteeIdHistory",
+      "name": "committee.getCommitteeCommitteeIdHistory",
+      "description": "\nExplore a filer's characteristics over time. This can be particularly useful if the\ncommittees change treasurers, designation, or `committee_type`.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCommitteeCommitteeIdHistoryCycle",
+      "name": "committee.getCommitteeCommitteeIdHistoryCycle",
+      "description": "\nExplore a filer's characteristics over time. This can be particularly useful if the\ncommittees change treasurers, designation, or `committee_type`.\n"
+    },
+    {
+      "id": "openapi_fec_gov.committee.getCommittees",
+      "name": "committee.getCommittees",
+      "description": "\nFetch basic information about committees and filers. Use parameters to filter for\nparticular characteristics.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.communicationCost.getCommunicationCosts",
+      "name": "communicationCost.getCommunicationCosts",
+      "description": "\n52 U.S.C. 30118 allows \"communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject,\" including the express advocacy of the election or defeat of any Federal candidate.  The costs of such communications must be reported to the Federal Election Commission under certain circumstances.\n"
+    },
+    {
+      "id": "openapi_fec_gov.communicationCost.getCommunicationCostsAggregates",
+      "name": "communicationCost.getCommunicationCostsAggregates",
+      "description": "Communication cost aggregated by candidate ID and committee ID."
+    },
+    {
+      "id": "openapi_fec_gov.communicationCost.getCommunicationCostsByCandidate",
+      "name": "communicationCost.getCommunicationCostsByCandidate",
+      "description": "Communication cost aggregated by candidate ID and committee ID."
+    },
+    {
+      "id": "openapi_fec_gov.communicationCost.getCommunicationCostsTotalsByCandidate",
+      "name": "communicationCost.getCommunicationCostsTotalsByCandidate",
+      "description": "\nTotal communications costs aggregated across committees on supported or opposed candidates by cycle or candidate election year.\n"
+    },
+    {
+      "id": "openapi_fec_gov.dates.getCalendarDates",
+      "name": "dates.getCalendarDates",
+      "description": "\nCombines the election and reporting dates with Commission meetings, conferences, outreach, Advisory Opinions, rules, litigation dates and other\nevents into one calendar.\n\nState and report type filtering is no longer available.\n"
+    },
+    {
+      "id": "openapi_fec_gov.dates.getCalendarDatesExport",
+      "name": "dates.getCalendarDatesExport",
+      "description": "\nReturns CSV or ICS for downloading directly into calendar applications like Google, Outlook or other applications.\n\nCombines the election and reporting dates with Commission meetings, conferences, outreach, Advisory Opinions, rules, litigation dates and other\nevents into one calendar.\n\nState filtering now applies to elections, reports and reporting periods.\n\nPresidential pre-primary report due dates are not shown on even years.\nFilers generally opt to file monthly rather than submit over 50 pre-primary election\nreports. All reporting deadlines are available at /reporting-dates/ for reference.\n\nThis is [the sql function](https://github.com/fecgov/openFEC/blob/develop/data/migrations/V40__omnibus_dates.sql)\nthat creates the calendar.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.dates.getElectionDates",
+      "name": "dates.getElectionDates",
+      "description": "\nFEC election dates since 1995.\n"
+    },
+    {
+      "id": "openapi_fec_gov.dates.getReportingDates",
+      "name": "dates.getReportingDates",
+      "description": "\nFEC election dates since 1995.\n"
+    },
+    {
+      "id": "openapi_fec_gov.debts.getSchedulesScheduleD",
+      "name": "debts.getSchedulesScheduleD",
+      "description": "\nSchedule D, it shows debts and obligations owed to or by the committee that are\nrequired to be disclosed.\n\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.debts.getSchedulesScheduleDSubId",
+      "name": "debts.getSchedulesScheduleDSubId",
+      "description": "\nSchedule D, it shows debts and obligations owed to or by the committee that are\nrequired to be disclosed.\n\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleB",
+      "name": "disbursements.getSchedulesScheduleB",
+      "description": "\nSchedule B filings describe itemized disbursements. This data\nexplains how committees and other filers spend their money. These figures are\nreported as part of forms F3, F3X and F3P.\n\nThe data is divided in two-year periods, called `two_year_transaction_period`, which\nis derived from the `report_year` submitted of the corresponding form. If no value is supplied, the results will\ndefault to the most recent two-year period that is named after the ending,\neven-numbered year.\n\nDue to the large quantity of Schedule B filings, this endpoint is not paginated by\npage number. Instead, you can request the next page of results by adding the values in\nthe `last_indexes` object from `pagination` to the URL of your last request. For\nexample, when sorting by `disbursement_date`, you might receive a page of\nresults with the following pagination information:\n\n```\npagination: {\n    pages: 965191,\n    per_page: 20,\n    count: 19303814,\n    last_indexes: {\n        last_index: \"230906248\",\n        last_disbursement_date: \"2014-07-04\"\n    }\n}\n```\n\nTo fetch the next page of sorted results, append `last_index=230906248` and\n`last_disbursement_date=2014-07-04` to the URL.  We strongly advise paging through\nthese results by using the sort indices (defaults to sort by disbursement date, e.g.\n`last_disbursement_date`), otherwise some resources may be unintentionally filtered out.\nThis resource uses keyset pagination to improve query performance\nand these indices are required to properly page through this large dataset.\n\nNote: because the Schedule B data includes many records, counts for\nlarge result sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleBByPurpose",
+      "name": "disbursements.getSchedulesScheduleBByPurpose",
+      "description": "\nSchedule B disbursements aggregated by disbursement purpose category. To avoid double counting,\nmemoed items are not included.\nPurpose is a combination of transaction codes, category codes and disbursement description.\nInspect the `disbursement_purpose` sql function within the migrations for more details.\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleBByRecipient",
+      "name": "disbursements.getSchedulesScheduleBByRecipient",
+      "description": "\nSchedule B disbursements aggregated by recipient name. To avoid double counting,\nmemoed items are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleBByRecipientId",
+      "name": "disbursements.getSchedulesScheduleBByRecipientId",
+      "description": "\nSchedule B disbursements aggregated by recipient committee ID, if applicable.\nTo avoid double counting, memoed items are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleBEfile",
+      "name": "disbursements.getSchedulesScheduleBEfile",
+      "description": "\nEfiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.\n"
+    },
+    {
+      "id": "openapi_fec_gov.disbursements.getSchedulesScheduleBSubId",
+      "name": "disbursements.getSchedulesScheduleBSubId",
+      "description": "\nSchedule B filings describe itemized disbursements. This data\nexplains how committees and other filers spend their money. These figures are\nreported as part of forms F3, F3X and F3P.\n\nThe data is divided in two-year periods, called `two_year_transaction_period`, which\nis derived from the `report_year` submitted of the corresponding form. If no value is supplied, the results will\ndefault to the most recent two-year period that is named after the ending,\neven-numbered year.\n\nDue to the large quantity of Schedule B filings, this endpoint is not paginated by\npage number. Instead, you can request the next page of results by adding the values in\nthe `last_indexes` object from `pagination` to the URL of your last request. For\nexample, when sorting by `disbursement_date`, you might receive a page of\nresults with the following pagination information:\n\n```\npagination: {\n    pages: 965191,\n    per_page: 20,\n    count: 19303814,\n    last_indexes: {\n        last_index: \"230906248\",\n        last_disbursement_date: \"2014-07-04\"\n    }\n}\n```\n\nTo fetch the next page of sorted results, append `last_index=230906248` and\n`last_disbursement_date=2014-07-04` to the URL.  We strongly advise paging through\nthese results by using the sort indices (defaults to sort by disbursement date, e.g.\n`last_disbursement_date`), otherwise some resources may be unintentionally filtered out.\nThis resource uses keyset pagination to improve query performance\nand these indices are required to properly page through this large dataset.\n\nNote: because the Schedule B data includes many records, counts for\nlarge result sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.efiling.getEfileFilings",
+      "name": "efiling.getEfileFilings",
+      "description": "Basic information about electronic files coming into the FEC, posted as they are received."
+    },
+    {
+      "id": "openapi_fec_gov.efiling.getEfileReportsHouseSenate",
+      "name": "efiling.getEfileReportsHouseSenate",
+      "description": "\nKey financial data reported periodically by committees as they are reported. This feed includes summary\ninformation from the the House F3 reports, the presidential F3p reports and the PAC and party\nF3x reports.\n\nGenerally, committees file reports on a quarterly or monthly basis, but\nsome must also submit a report 12 days before primary elections. Therefore, during the primary\nseason, the period covered by this file may be different for different committees. These totals\nalso incorporate any changes made by committees, if any report covering the period is amended.\n\nDISCLAIMER: The field labels contained within this resource are subject to change.  We are attempting to succinctly\nlabel these fields while conveying clear meaning to ensure accessibility for all users.\n"
+    },
+    {
+      "id": "openapi_fec_gov.efiling.getEfileReportsPacParty",
+      "name": "efiling.getEfileReportsPacParty",
+      "description": "\nKey financial data reported periodically by committees as they are reported. This feed includes summary\ninformation from the the House F3 reports, the presidential F3p reports and the PAC and party\nF3x reports.\n\nGenerally, committees file reports on a quarterly or monthly basis, but\nsome must also submit a report 12 days before primary elections. Therefore, during the primary\nseason, the period covered by this file may be different for different committees. These totals\nalso incorporate any changes made by committees, if any report covering the period is amended.\n\nDISCLAIMER: The field labels contained within this resource are subject to change.  We are attempting to succinctly\nlabel these fields while conveying clear meaning to ensure accessibility for all users.\n"
+    },
+    {
+      "id": "openapi_fec_gov.efiling.getEfileReportsPresidential",
+      "name": "efiling.getEfileReportsPresidential",
+      "description": "\nKey financial data reported periodically by committees as they are reported. This feed includes summary\ninformation from the the House F3 reports, the presidential F3p reports and the PAC and party\nF3x reports.\n\nGenerally, committees file reports on a quarterly or monthly basis, but\nsome must also submit a report 12 days before primary elections. Therefore, during the primary\nseason, the period covered by this file may be different for different committees. These totals\nalso incorporate any changes made by committees, if any report covering the period is amended.\n\nDISCLAIMER: The field labels contained within this resource are subject to change.  We are attempting to succinctly\nlabel these fields while conveying clear meaning to ensure accessibility for all users.\n"
+    },
+    {
+      "id": "openapi_fec_gov.electioneering.getElectioneering",
+      "name": "electioneering.getElectioneering",
+      "description": "\nAn electioneering communication is any broadcast, cable or satellite communication that fulfills each of the following conditions:\n\n_The communication refers to a clearly identified federal candidate._\n\n_The communication is publicly distributed by a television station, radio station, cable television system or satellite system for a fee._\n\n_The communication is distributed within 60 days prior to a general election or 30 days prior to a primary election to federal office._\n"
+    },
+    {
+      "id": "openapi_fec_gov.electioneering.getElectioneeringAggregates",
+      "name": "electioneering.getElectioneeringAggregates",
+      "description": "Electioneering communications costs aggregates"
+    },
+    {
+      "id": "openapi_fec_gov.electioneering.getElectioneeringByCandidate",
+      "name": "electioneering.getElectioneeringByCandidate",
+      "description": "Electioneering costs aggregated by candidate"
+    },
+    {
+      "id": "openapi_fec_gov.electioneering.getElectioneeringTotalsByCandidate",
+      "name": "electioneering.getElectioneeringTotalsByCandidate",
+      "description": "\nTotal electioneering communications spent on candidates by cycle\nor candidate election year\n"
+    },
+    {
+      "id": "openapi_fec_gov.filerResources.getRadAnalyst",
+      "name": "filerResources.getRadAnalyst",
+      "description": "\nUse this endpoint to look up the RAD Analyst for a committee.\n\nThe mission of the Reports Analysis Division (RAD) is to ensure that\ncampaigns and political committees file timely and accurate reports that fully disclose\ntheir financial activities.  RAD is responsible for reviewing statements and financial\nreports filed by political committees participating in federal elections, providing\nassistance and guidance to the committees to properly file their reports, and for taking\nappropriate action to ensure compliance with the Federal Election Campaign Act (FECA).\n"
+    },
+    {
+      "id": "openapi_fec_gov.filerResources.getStateElectionOffice",
+      "name": "filerResources.getStateElectionOffice",
+      "description": "\nState laws and procedures govern elections for state or local offices as well as\nhow candidates appear on election ballots.\nContact the appropriate state election office for more information.\n"
+    },
+    {
+      "id": "openapi_fec_gov.filings.getCandidateCandidateIdFilings",
+      "name": "filings.getCandidateCandidateIdFilings",
+      "description": "\nAll official records and reports filed by or delivered to the FEC.\n\nNote: because the filings data includes many records, counts for large\nresult sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.filings.getCommitteeCommitteeIdFilings",
+      "name": "filings.getCommitteeCommitteeIdFilings",
+      "description": "\nAll official records and reports filed by or delivered to the FEC.\n\nNote: because the filings data includes many records, counts for large\nresult sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.filings.getFilings",
+      "name": "filings.getFilings",
+      "description": "\nAll official records and reports filed by or delivered to the FEC.\n\nNote: because the filings data includes many records, counts for large\nresult sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.filings.getOperationsLog",
+      "name": "filings.getOperationsLog",
+      "description": "\nThe Operations log contains details of each report loaded into the database. It is primarily\nused as status check to determine when all of the data processes, from initial entry through\nreview are complete.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getCommitteeCommitteeIdReports",
+      "name": "financial.getCommitteeCommitteeIdReports",
+      "description": "\nEach report represents the summary information from Form 3, Form 3X and Form 3P.\nThese reports have key statistics that illuminate the financial status of a given committee.\nThings like cash on hand, debts owed by committee, total receipts, and total disbursements\nare especially helpful for understanding a committee's financial dealings.\n\nBy default, this endpoint includes both amended and final versions of each report. To restrict\nto only the final versions of each report, use `is_amended=false`; to retrieve only reports that\nhave been amended, use `is_amended=true`.\n\nSeveral different reporting structures exist, depending on the type of organization that\nsubmits financial information. To see an example of these reporting requirements,\nlook at the summary and detailed summary pages of Form 3, Form 3X, and Form 3P.\n\nDISCLAIMER: The field labels contained within this resource are subject to change.  We are attempting to succinctly\nlabel these fields while conveying clear meaning to ensure accessibility for all users.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getCommitteeCommitteeIdTotals",
+      "name": "financial.getCommitteeCommitteeIdTotals",
+      "description": "\nThis endpoint provides information about a committee's Form 3, Form 3X, or Form 3P financial reports,\nwhich are aggregated by two-year period. We refer to two-year periods as a `cycle`.\n\nThe cycle is named after the even-numbered year and includes the year before it. To obtain\ntotals from 2013 and 2014, you would use 2014. In odd-numbered years, the current cycle\nis the next year — for example, in 2015, the current cycle is 2016.\n\nFor presidential and Senate candidates, multiple two-year cycles exist between elections.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getElections",
+      "name": "financial.getElections",
+      "description": "\nLook at the top-level financial information for all candidates running for the same\noffice.\n\nChoose a 2-year cycle, and `house`, `senate` or `presidential`.\n\nIf you are looking for a Senate seat, you will need to select the state using a two-letter\nabbreviation.\n\nHouse races require state and a two-digit district number.\n\nSince this endpoint reflects financial information, it will only have candidates once they file\nfinancial reporting forms. Query the `/candidates` endpoint to retrieve an-up-to-date list of all the\ncandidates that filed to run for a particular seat.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getElectionsSearch",
+      "name": "financial.getElectionsSearch",
+      "description": "\nList elections by cycle, office, state, and district.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getElectionsSummary",
+      "name": "financial.getElectionsSummary",
+      "description": "\nList elections by cycle, office, state, and district.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getReportsEntityType",
+      "name": "financial.getReportsEntityType",
+      "description": "\nEach report represents the summary information from Form 3, Form 3X and Form 3P.\nThese reports have key statistics that illuminate the financial status of a given committee.\nThings like cash on hand, debts owed by committee, total receipts, and total disbursements\nare especially helpful for understanding a committee's financial dealings.\n\nBy default, this endpoint includes both amended and final versions of each report. To restrict\nto only the final versions of each report, use `is_amended=false`; to retrieve only reports that\nhave been amended, use `is_amended=true`.\n\nSeveral different reporting structures exist, depending on the type of organization that\nsubmits financial information. To see an example of these reporting requirements,\nlook at the summary and detailed summary pages of Form 3, Form 3X, and Form 3P.\n\nDISCLAIMER: The field labels contained within this resource are subject to change.  We are attempting to succinctly\nlabel these fields while conveying clear meaning to ensure accessibility for all users.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getTotalsByEntity",
+      "name": "financial.getTotalsByEntity",
+      "description": "\nProvides cumulative receipt totals by entity type, over a two year cycle. Totals are adjusted to avoid double counting.\n\nThis is [the sql](https://github.com/fecgov/openFEC/blob/develop/data/migrations/V41__large_aggregates.sql) that creates these calculations.\n"
+    },
+    {
+      "id": "openapi_fec_gov.financial.getTotalsEntityType",
+      "name": "financial.getTotalsEntityType",
+      "description": "\nThis endpoint provides information about a committee's Form 3, Form 3X, or Form 3P financial reports,\nwhich are aggregated by two-year period. We refer to two-year periods as a `cycle`.\n\nThe cycle is named after the even-numbered year and includes the year before it. To obtain\ntotals from 2013 and 2014, you would use 2014. In odd-numbered years, the current cycle\nis the next year — for example, in 2015, the current cycle is 2016.\n\nFor presidential and Senate candidates, multiple two-year cycles exist between elections.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.independentExpenditures.getSchedulesScheduleE",
+      "name": "independentExpenditures.getSchedulesScheduleE",
+      "description": "\nSchedule E covers the line item expenditures for independent expenditures. For example, if a super PAC\nbought ads on TV to oppose a federal candidate, each ad purchase would be recorded here with\nthe expenditure amount, name and id of the candidate, and whether the ad supported or opposed the candidate.\n\nAn independent expenditure is an expenditure for a communication \"expressly advocating the election or\ndefeat of a clearly identified candidate that is not made in cooperation, consultation, or concert with,\nor at the request or suggestion of, a candidate, a candidate’s authorized committee, or their agents, or\na political party or its agents.\"\n\nAggregates by candidate do not include 24 and 48 hour reports. This ensures we don't double count expenditures\nand the totals are more accurate. You can still find the information from 24 and 48 hour reports in\n`/schedule/schedule_e/`.\n\nDue to the large quantity of Schedule E filings, this endpoint is not paginated by\npage number. Instead, you can request the next page of results by adding the values in\nthe `last_indexes` object from `pagination` to the URL of your last request. For\nexample, when sorting by `expenditure_amount`, you might receive a page of\nresults with the following pagination information:\n\n```\n \"pagination\": {\n    \"count\": 152623,\n    \"last_indexes\": {\n      \"last_index\": \"3023037\",\n      \"last_expenditure_amount\": -17348.5\n    },\n    \"per_page\": 20,\n    \"pages\": 7632\n  }\n}\n```\n\nTo fetch the next page of sorted results, append `last_index=3023037` and\n`last_expenditure_amount=` to the URL.  We strongly advise paging through\nthese results by using the sort indices (defaults to sort by disbursement date,\ne.g. `last_disbursement_date`), otherwise some resources may be unintentionally\nfiltered out.  This resource uses keyset pagination to improve query performance\nand these indices are required to properly page through this large dataset.\n\nNote: because the Schedule E data includes many records, counts for\nlarge result sets are approximate; you will want to page through the records until no records are returned.\n"
+    },
+    {
+      "id": "openapi_fec_gov.independentExpenditures.getSchedulesScheduleEByCandidate",
+      "name": "independentExpenditures.getSchedulesScheduleEByCandidate",
+      "description": "\nSchedule E receipts aggregated by recipient candidate. To avoid double\ncounting, memoed items are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.independentExpenditures.getSchedulesScheduleEEfile",
+      "name": "independentExpenditures.getSchedulesScheduleEEfile",
+      "description": "\nEfiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.\n"
+    },
+    {
+      "id": "openapi_fec_gov.independentExpenditures.getSchedulesScheduleETotalsByCandidate",
+      "name": "independentExpenditures.getSchedulesScheduleETotalsByCandidate",
+      "description": "\nTotal independent expenditure on supported or opposed candidates by cycle or candidate election year.\n"
+    },
+    {
+      "id": "openapi_fec_gov.legal.getLegalSearch",
+      "name": "legal.getLegalSearch",
+      "description": "\nSearch legal documents by document type, or across all document types using keywords, parameter values and ranges.\n"
+    },
+    {
+      "id": "openapi_fec_gov.loans.getSchedulesScheduleC",
+      "name": "loans.getSchedulesScheduleC",
+      "description": "\nSchedule C shows all loans, endorsements and loan guarantees a committee\nreceives or makes.\n\nThe committee continues to report the loan until it is repaid.\n"
+    },
+    {
+      "id": "openapi_fec_gov.loans.getSchedulesScheduleCSubId",
+      "name": "loans.getSchedulesScheduleCSubId",
+      "description": "\nSchedule C shows all loans, endorsements and loan guarantees a committee\nreceives or makes.\n\nThe committee continues to report the loan until it is repaid.\n"
+    },
+    {
+      "id": "openapi_fec_gov.partyCoordinatedExpenditures.getSchedulesScheduleF",
+      "name": "partyCoordinatedExpenditures.getSchedulesScheduleF",
+      "description": "\nSchedule F, it shows all special expenditures a national or state party committee\nmakes in connection with the general election campaigns of federal candidates.\n\nThese coordinated party expenditures do not count against the contribution limits but are subject to other limits,\nthese limits are detailed in Chapter 7 of the FEC Campaign Guide for Political Party Committees.\n"
+    },
+    {
+      "id": "openapi_fec_gov.partyCoordinatedExpenditures.getSchedulesScheduleFSubId",
+      "name": "partyCoordinatedExpenditures.getSchedulesScheduleFSubId",
+      "description": "\nSchedule F, it shows all special expenditures a national or state party committee\nmakes in connection with the general election campaigns of federal candidates.\n\nThese coordinated party expenditures do not count against the contribution limits but are subject to other limits,\nthese limits are detailed in Chapter 7 of the FEC Campaign Guide for Political Party Committees.\n"
+    },
+    {
+      "id": "openapi_fec_gov.presidential.getPresidentialContributionsByCandidate",
+      "name": "presidential.getPresidentialContributionsByCandidate",
+      "description": "\nNet receipts per candidate.\n\nFilter with `contributor_state='US'` for national totals\n"
+    },
+    {
+      "id": "openapi_fec_gov.presidential.getPresidentialContributionsBySize",
+      "name": "presidential.getPresidentialContributionsBySize",
+      "description": "\nContribution receipts by size per candidate.\n\nFilter by candidate_id, election_year and/or size\n"
+    },
+    {
+      "id": "openapi_fec_gov.presidential.getPresidentialContributionsByState",
+      "name": "presidential.getPresidentialContributionsByState",
+      "description": "\nContribution receipts by state per candidate.\n\nFilter by candidate_id and/or election_year\n"
+    },
+    {
+      "id": "openapi_fec_gov.presidential.getPresidentialCoverageEndDate",
+      "name": "presidential.getPresidentialCoverageEndDate",
+      "description": "\nCoverage end date per candidate.\n\nFilter by candidate_id and/or election_year\n"
+    },
+    {
+      "id": "openapi_fec_gov.presidential.getPresidentialFinancialSummary",
+      "name": "presidential.getPresidentialFinancialSummary",
+      "description": "\nFinancial summary per candidate.\n\nFilter by candidate_id and/or election_year\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleA",
+      "name": "receipts.getSchedulesScheduleA",
+      "description": "\nThis description is for both ​`/schedules​/schedule_a​/` and ​ `/schedules​/schedule_a​/{sub_id}​/`.\n\nThis endpoint provides itemized receipts. Schedule A records describe itemized receipts, including contributions from individuals. If you are interested in contributions from an individual, use the `/schedules/schedule_a/` endpoint. For a more complete description of all Schedule A records visit [About receipts data](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/about-receipts-data/). If you are interested in our \"is_individual\" methodology visit our [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology/).\n\n​The `/schedules​/schedule_a​/` endpoint is not paginated by page number. This endpoint uses keyset pagination to improve query performance and these indices are required to properly page through this large dataset. To request the next page, you should append the values found in the `last_indexes` object from pagination to the URL of your last request as additional parameters. \nFor example, when sorting by `contribution_receipt_date`, you might receive a page of results with the two scenarios of following pagination information:\n\ncase #1:\n```\npagination: {\n    pages: 2152643,\n    per_page: 20,\n    count: 43052850,\n    last_indexes: {\n        last_index: \"230880619\",\n        last_contribution_receipt_date: \"2014-01-01\"\n    }\n}\n```\n<br/>\ncase #2 (results which include contribution_receipt_date = NULL):\n\n```\npagination: {\n    pages: 2152644,\n    per_page: 20,\n    count: 43052850,\n    last_indexes: {\n        last_index: \"230880639\",\n        sort_null_only: True\n    }\n}\n```\nTo fetch the next page of sorted results, append `last_index=230880619` and `last_contribution_receipt_date=2014-01-01` to the URL and when reaching `contribution_receipt_date=NULL`, append `last_index=230880639` and `sort_null_only=True`. We strongly advise paging through these results using sort indices. The default sort is acending by `contribution_receipt_date` (`deprecated`, will be descending). If you do not page using sort indices, some transactions may be unintentionally filtered out.\n\nCalls to ​`/schedules​/schedule_a​/` may return many records. For large result sets, the record counts found in the pagination object are approximate; you will need to page through the records until no records are returned.\n\nTo avoid throwing the \"out of range\" exception on the last page, one recommandation is to use total count and `per_page` to control the traverse loop of results.\n\n​The `/schedules​/schedule_a​/{sub_id}​/` endpoint returns a single transaction, but it does include a pagination object class. Please ignore the information in that object class.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByEmployer",
+      "name": "receipts.getSchedulesScheduleAByEmployer",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by the contributor’s employer name. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByOccupation",
+      "name": "receipts.getSchedulesScheduleAByOccupation",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by the contributor’s occupation. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleABySize",
+      "name": "receipts.getSchedulesScheduleABySize",
+      "description": "\nThis endpoint provides individual contributions received by a committee, aggregated by size:\n\n```\n - $200 and under\n - $200.01 - $499.99\n - $500 - $999.99\n - $1000 - $1999.99\n - $2000 +\n```\n\nThe $200.00 and under category includes contributions of $200 or less combined with unitemized individual contributions.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleABySizeByCandidate",
+      "name": "receipts.getSchedulesScheduleABySizeByCandidate",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by size of contribution and candidate. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByState",
+      "name": "receipts.getSchedulesScheduleAByState",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by the contributor’s state. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByStateByCandidate",
+      "name": "receipts.getSchedulesScheduleAByStateByCandidate",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by contributor’s state and candidate. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByStateByCandidateTotals",
+      "name": "receipts.getSchedulesScheduleAByStateByCandidateTotals",
+      "description": "\nItemized individual contributions aggregated by contributor’s state, candidate, committee type and cycle. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByStateTotals",
+      "name": "receipts.getSchedulesScheduleAByStateTotals",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by contributor’s state, committee type and cycle. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAByZip",
+      "name": "receipts.getSchedulesScheduleAByZip",
+      "description": "\nThis endpoint provides itemized individual contributions received by a committee, aggregated by the contributor’s ZIP code. If you are interested in our “is_individual” methodology, review the [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology). Unitemized individual contributions are not included.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleAEfile",
+      "name": "receipts.getSchedulesScheduleAEfile",
+      "description": "\nEfiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.\n"
+    },
+    {
+      "id": "openapi_fec_gov.receipts.getSchedulesScheduleASubId",
+      "name": "receipts.getSchedulesScheduleASubId",
+      "description": "\nThis description is for both ​`/schedules​/schedule_a​/` and ​ `/schedules​/schedule_a​/{sub_id}​/`.\n\nThis endpoint provides itemized receipts. Schedule A records describe itemized receipts, including contributions from individuals. If you are interested in contributions from an individual, use the `/schedules/schedule_a/` endpoint. For a more complete description of all Schedule A records visit [About receipts data](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/about-receipts-data/). If you are interested in our \"is_individual\" methodology visit our [methodology page](https://www.fec.gov/campaign-finance-data/about-campaign-finance-data/methodology/).\n\n​The `/schedules​/schedule_a​/` endpoint is not paginated by page number. This endpoint uses keyset pagination to improve query performance and these indices are required to properly page through this large dataset. To request the next page, you should append the values found in the `last_indexes` object from pagination to the URL of your last request as additional parameters. \nFor example, when sorting by `contribution_receipt_date`, you might receive a page of results with the two scenarios of following pagination information:\n\ncase #1:\n```\npagination: {\n    pages: 2152643,\n    per_page: 20,\n    count: 43052850,\n    last_indexes: {\n        last_index: \"230880619\",\n        last_contribution_receipt_date: \"2014-01-01\"\n    }\n}\n```\n<br/>\ncase #2 (results which include contribution_receipt_date = NULL):\n\n```\npagination: {\n    pages: 2152644,\n    per_page: 20,\n    count: 43052850,\n    last_indexes: {\n        last_index: \"230880639\",\n        sort_null_only: True\n    }\n}\n```\nTo fetch the next page of sorted results, append `last_index=230880619` and `last_contribution_receipt_date=2014-01-01` to the URL and when reaching `contribution_receipt_date=NULL`, append `last_index=230880639` and `sort_null_only=True`. We strongly advise paging through these results using sort indices. The default sort is acending by `contribution_receipt_date` (`deprecated`, will be descending). If you do not page using sort indices, some transactions may be unintentionally filtered out.\n\nCalls to ​`/schedules​/schedule_a​/` may return many records. For large result sets, the record counts found in the pagination object are approximate; you will need to page through the records until no records are returned.\n\nTo avoid throwing the \"out of range\" exception on the last page, one recommandation is to use total count and `per_page` to control the traverse loop of results.\n\n​The `/schedules​/schedule_a​/{sub_id}​/` endpoint returns a single transaction, but it does include a pagination object class. Please ignore the information in that object class.\n\n"
+    },
+    {
+      "id": "openapi_fec_gov.search.getNamesCandidates",
+      "name": "search.getNamesCandidates",
+      "description": "\nSearch for candidates or committees by name. If you're looking for information on a\nparticular person or group, using a name to find the `candidate_id` or `committee_id` on\nthis endpoint can be a helpful first step.\n"
+    },
+    {
+      "id": "openapi_fec_gov.search.getNamesCommittees",
+      "name": "search.getNamesCommittees",
+      "description": "\nSearch for candidates or committees by name. If you're looking for information on a\nparticular person or group, using a name to find the `candidate_id` or `committee_id` on\nthis endpoint can be a helpful first step.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "fetchedAt": "2026-04-30T15:22:35.711Z",
+  "status": "ok",
+  "count": 34,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.catalog.datacatalogCatalogSearch",
+      "name": "catalog.datacatalogCatalogSearch",
+      "description": "Searches Data Catalog for multiple resources like entries and tags that match a query. This is a [Custom Method] (https://cloud.google.com/apis/design/custom_methods) that doesn't return all information on a resource, only its ID and high level fields. To get more information, you can subsequently call specific get methods. Note: Data Catalog search queries don't guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries. For more information, see [Data Catalog search syntax] (https://cloud.google.com/data-catalog/docs/how-to/search-reference)."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.entries.datacatalogEntriesLookup",
+      "name": "entries.datacatalogEntriesLookup",
+      "description": "Gets an entry by its target resource name. The resource name comes from the source Google Cloud Platform service."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsCreate",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsCreate",
+      "description": "Creates an entry group. An entry group contains logically related entries together with [Cloud Identity and Access Management](/data-catalog/docs/concepts/iam) policies. These policies specify users who can create, edit, and view entries within entry groups. Data Catalog automatically creates entry groups with names that start with the `@` symbol for the following resources: * BigQuery entries (`@bigquery`) * Pub/Sub topics (`@pubsub`) * Dataproc Metastore services (`@dataproc_metastore_{SERVICE_NAME_HASH}`) You can create your own entry groups for Cloud Storage fileset entries and custom entries together with the corresponding IAM policies. User-created entry groups can't contain the `@` symbol, it is reserved for automatically created groups. Entry groups, like entries, can be searched. A maximum of 10,000 entry groups may be created per organization across all locations. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesCreate",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesCreate",
+      "description": "Creates an entry. You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM', or custom types. Data Catalog automatically creates entries with other types during metadata ingestion from integrated systems. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project). An entry group can have a maximum of 100,000 entries."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesImport",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesImport",
+      "description": "Imports entries from a source, such as data previously dumped into a Cloud Storage bucket, into Data Catalog. Import of entries is a sync operation that reconciles the state of the third-party system with the Data Catalog. `ImportEntries` accepts source data snapshots of a third-party system. Snapshot should be delivered as a .wire or base65-encoded .txt file containing a sequence of Protocol Buffer messages of DumpItem type. `ImportEntries` returns a long-running operation resource that can be queried with Operations.GetOperation to return ImportEntriesMetadata and an ImportEntriesResponse message."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesList",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesList",
+      "description": "Lists entries. Note: Currently, this method can list only custom entries. To get a list of both custom and automatically created entries, use SearchCatalog."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesModifyEntryContacts",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesModifyEntryContacts",
+      "description": "Modifies contacts, part of the business context of an Entry. To call this method, you must have the `datacatalog.entries.updateContacts` IAM permission on the corresponding project."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesModifyEntryOverview",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesModifyEntryOverview",
+      "description": "Modifies entry overview, part of the business context of an Entry. To call this method, you must have the `datacatalog.entries.updateOverview` IAM permission on the corresponding project."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesStar",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesStar",
+      "description": "Marks an Entry as starred by the current user. Starring information is private to each user."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesTagsReconcile",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesTagsReconcile",
+      "description": "`ReconcileTags` creates or updates a list of tags on the entry. If the ReconcileTagsRequest.force_delete_missing parameter is set, the operation deletes tags not included in the input tag list. `ReconcileTags` returns a long-running operation resource that can be queried with Operations.GetOperation to return ReconcileTagsMetadata and a ReconcileTagsResponse message."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsEntriesUnstar",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsEntriesUnstar",
+      "description": "Marks an Entry as NOT starred by the current user. Starring information is private to each user."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsList",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsList",
+      "description": "Lists entry groups."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsTagsCreate",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsTagsCreate",
+      "description": "Creates a tag and assigns it to: * An Entry if the method name is `projects.locations.entryGroups.entries.tags.create`. * Or EntryGroupif the method name is `projects.locations.entryGroups.tags.create`. Note: The project identified by the `parent` parameter for the [tag] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the [tag template] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be in the same organization."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsEntryGroupsTagsList",
+      "name": "projects.datacatalogProjectsLocationsEntryGroupsTagsList",
+      "description": "Lists tags assigned to an Entry. The columns in the response are lowercased."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsOperationsCancel",
+      "name": "projects.datacatalogProjectsLocationsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsOperationsList",
+      "name": "projects.datacatalogProjectsLocationsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTagTemplatesCreate",
+      "name": "projects.datacatalogProjectsLocationsTagTemplatesCreate",
+      "description": "Creates a tag template. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project)."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTagTemplatesFieldsCreate",
+      "name": "projects.datacatalogProjectsLocationsTagTemplatesFieldsCreate",
+      "description": "Creates a field in a tag template. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTagTemplatesFieldsEnumValuesRename",
+      "name": "projects.datacatalogProjectsLocationsTagTemplatesFieldsEnumValuesRename",
+      "description": "Renames an enum value in a tag template. Within a single enum field, enum values must be unique."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesCreate",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesCreate",
+      "description": "Creates a taxonomy in a specified project. The taxonomy is initially empty, that is, it doesn't contain policy tags."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesExport",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesExport",
+      "description": "Exports taxonomies in the requested type and returns them, including their policy tags. The requested taxonomies must belong to the same project. This method generates `SerializedTaxonomy` protocol buffers with nested policy tags that can be used as input for `ImportTaxonomies` calls."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesImport",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesImport",
+      "description": "Creates new taxonomies (including their policy tags) in a given project by importing from inlined or cross-regional sources. For a cross-regional source, new taxonomies are created by copying from a source in another region. For an inlined source, taxonomies and policy tags are created in bulk using nested protocol buffer structures."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesList",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesList",
+      "description": "Lists all taxonomies in a project in a particular location that you have a permission to view."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsCreate",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsCreate",
+      "description": "Creates a policy tag in a taxonomy."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsDelete",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsDelete",
+      "description": "Deletes a policy tag together with the following: * All of its descendant policy tags, if any * Policies associated with the policy tag and its descendants * References from BigQuery table schema of the policy tag and its descendants"
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsGet",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsGet",
+      "description": "Gets a policy tag."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsGetIamPolicy",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsGetIamPolicy",
+      "description": "Gets the IAM policy for a policy tag or a taxonomy."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsList",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsList",
+      "description": "Lists all policy tags in a taxonomy."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsPatch",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsPatch",
+      "description": "Updates a policy tag, including its display name, description, and parent policy tag."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsSetIamPolicy",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsSetIamPolicy",
+      "description": "Sets the IAM policy for a policy tag or a taxonomy."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsTestIamPermissions",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesPolicyTagsTestIamPermissions",
+      "description": "Returns your permissions on a specified policy tag or taxonomy."
+    },
+    {
+      "id": "openapi_googleapis_com_datacatalog_datacatalog.projects.datacatalogProjectsLocationsTaxonomiesReplace",
+      "name": "projects.datacatalogProjectsLocationsTaxonomiesReplace",
+      "description": "Replaces (updates) a taxonomy and all its policy tags. The taxonomy and its entire hierarchy of policy tags must be represented literally by `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages. This operation automatically does the following: - Deletes the existing policy tags that are missing from the `SerializedPolicyTag`. - Creates policy tags that don't have resource names. They are considered new. - Updates policy tags with valid resources names accordingly."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

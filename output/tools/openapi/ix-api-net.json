@@ -1,0 +1,407 @@
+{
+  "fetchedAt": "2026-04-30T15:22:47.485Z",
+  "status": "ok",
+  "count": 80,
+  "tools": [
+    {
+      "id": "openapi_ix_api_net.accounts.accountsCreate",
+      "name": "accounts.accountsCreate",
+      "description": "Create a new account."
+    },
+    {
+      "id": "openapi_ix_api_net.accounts.accountsDestroy",
+      "name": "accounts.accountsDestroy",
+      "description": "Accounts can be deleted, when all services and configs\nare decommissioned or the account is not longer referenced\ne.g. as a `managing_account` or `billing_account`.\n\nDeleting an account will cascade to `contacts` and\n`role-assignments`.\n\nThe request will immediately fail, if the above preconditions\nare not met."
+    },
+    {
+      "id": "openapi_ix_api_net.accounts.accountsList",
+      "name": "accounts.accountsList",
+      "description": "Retrieve a list of `Account`s.\n\nThis includes all accounts the currently authorized account\nis managing and the current account itself."
+    },
+    {
+      "id": "openapi_ix_api_net.accounts.accountsPartialUpdate",
+      "name": "accounts.accountsPartialUpdate",
+      "description": "Update parts of an account."
+    },
+    {
+      "id": "openapi_ix_api_net.accounts.accountsRead",
+      "name": "accounts.accountsRead",
+      "description": "Get a single account."
+    },
+    {
+      "id": "openapi_ix_api_net.accounts.accountsUpdate",
+      "name": "accounts.accountsUpdate",
+      "description": "Update the entire account."
+    },
+    {
+      "id": "openapi_ix_api_net.auth.authTokenCreate",
+      "name": "auth.authTokenCreate",
+      "description": "Authenticate an API user identified by `api_key` and\n`api_secret`."
+    },
+    {
+      "id": "openapi_ix_api_net.auth.authTokenRefresh",
+      "name": "auth.authTokenRefresh",
+      "description": "Reauthenticate the API user, issue a new `access_token`\nand `refresh_token` pair by providing the `refresh_token`\nin the request body."
+    },
+    {
+      "id": "openapi_ix_api_net.connections.connectionsList",
+      "name": "connections.connectionsList",
+      "description": "List all `connection`s."
+    },
+    {
+      "id": "openapi_ix_api_net.connections.connectionsRead",
+      "name": "connections.connectionsRead",
+      "description": "Read a `connection`."
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsCreate",
+      "name": "contacts.contactsCreate",
+      "description": "Create a new contact."
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsDestroy",
+      "name": "contacts.contactsDestroy",
+      "description": "Remove a contact.\n\nPlease note, that a contact can only be removed if\nit is not longer in use in a network service or config\nthrough a role assignment."
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsList",
+      "name": "contacts.contactsList",
+      "description": "List available contacts managed by the authorized account."
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsPartialUpdate",
+      "name": "contacts.contactsPartialUpdate",
+      "description": "Update parts of a contact"
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsRead",
+      "name": "contacts.contactsRead",
+      "description": "Get a contact by it's id"
+    },
+    {
+      "id": "openapi_ix_api_net.contacts.contactsUpdate",
+      "name": "contacts.contactsUpdate",
+      "description": "Update a contact"
+    },
+    {
+      "id": "openapi_ix_api_net.devices.devicesList",
+      "name": "devices.devicesList",
+      "description": "List available devices"
+    },
+    {
+      "id": "openapi_ix_api_net.devices.devicesRead",
+      "name": "devices.devicesRead",
+      "description": "Get a specific device identified by id"
+    },
+    {
+      "id": "openapi_ix_api_net.facilities.facilitiesList",
+      "name": "facilities.facilitiesList",
+      "description": "Get a (filtered) list of `facilities`."
+    },
+    {
+      "id": "openapi_ix_api_net.facilities.facilitiesRead",
+      "name": "facilities.facilitiesRead",
+      "description": "Retrieve a facility by id"
+    },
+    {
+      "id": "openapi_ix_api_net.health.apiHealthRead",
+      "name": "health.apiHealthRead",
+      "description": "Get the IX-API service health status."
+    },
+    {
+      "id": "openapi_ix_api_net.implementation.apiImplementationRead",
+      "name": "implementation.apiImplementationRead",
+      "description": "Get the API implementation details."
+    },
+    {
+      "id": "openapi_ix_api_net.ips.ipsCreate",
+      "name": "ips.ipsCreate",
+      "description": "Add an ip host address or network prefix."
+    },
+    {
+      "id": "openapi_ix_api_net.ips.ipsList",
+      "name": "ips.ipsList",
+      "description": "List all ip addresses (and prefixes)."
+    },
+    {
+      "id": "openapi_ix_api_net.ips.ipsPartialUpdate",
+      "name": "ips.ipsPartialUpdate",
+      "description": "Update parts of an ip address.\n\n\nAs with the `PUT` opertaion, IP addresses, where you\ndon't have update rights, will yield a `resource access denied`\nerror when attempting an update.\n\nIf the ip address was allocated for you, you might\nnot be able to change anything but the `fqdn`."
+    },
+    {
+      "id": "openapi_ix_api_net.ips.ipsRead",
+      "name": "ips.ipsRead",
+      "description": "Get a single ip addresses by it's id."
+    },
+    {
+      "id": "openapi_ix_api_net.ips.ipsUpdate",
+      "name": "ips.ipsUpdate",
+      "description": "Update an ip address object.\n\nYou can only update\nIP addresses within your current scope. Not all\naddresses you can read you can update.\n\nIf the ip address was allocated for you, you might\nnot be able to change anything but the `fqdn`."
+    },
+    {
+      "id": "openapi_ix_api_net.macs.macsCreate",
+      "name": "macs.macsCreate",
+      "description": "Register a mac address."
+    },
+    {
+      "id": "openapi_ix_api_net.macs.macsDestroy",
+      "name": "macs.macsDestroy",
+      "description": "Remove a mac address."
+    },
+    {
+      "id": "openapi_ix_api_net.macs.macsList",
+      "name": "macs.macsList",
+      "description": "List all mac addresses managed by the authorized customer."
+    },
+    {
+      "id": "openapi_ix_api_net.macs.macsRead",
+      "name": "macs.macsRead",
+      "description": "Get a single mac address by it's id."
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesCreate",
+      "name": "memberJoiningRules.memberJoiningRulesCreate",
+      "description": "Create a member joining rule"
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesDestroy",
+      "name": "memberJoiningRules.memberJoiningRulesDestroy",
+      "description": "Delete a joining rule"
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesList",
+      "name": "memberJoiningRules.memberJoiningRulesList",
+      "description": "Get a list of joining rules"
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesPartialUpdate",
+      "name": "memberJoiningRules.memberJoiningRulesPartialUpdate",
+      "description": "Partially update a joining rule"
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesRead",
+      "name": "memberJoiningRules.memberJoiningRulesRead",
+      "description": "Get a single rule"
+    },
+    {
+      "id": "openapi_ix_api_net.memberJoiningRules.memberJoiningRulesUpdate",
+      "name": "memberJoiningRules.memberJoiningRulesUpdate",
+      "description": "Update a joining rule"
+    },
+    {
+      "id": "openapi_ix_api_net.metroAreaNetworks.metroAreaNetworksList",
+      "name": "metroAreaNetworks.metroAreaNetworksList",
+      "description": "List all MetroAreaNetworks"
+    },
+    {
+      "id": "openapi_ix_api_net.metroAreaNetworks.metroAreaNetworksRead",
+      "name": "metroAreaNetworks.metroAreaNetworksRead",
+      "description": "Retrieve a MetroAreaNetwork"
+    },
+    {
+      "id": "openapi_ix_api_net.metroAreas.metroAreasList",
+      "name": "metroAreas.metroAreasList",
+      "description": "List all MetroAreas"
+    },
+    {
+      "id": "openapi_ix_api_net.metroAreas.metroAreasRead",
+      "name": "metroAreas.metroAreasRead",
+      "description": "Get a single MetroArea"
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsCreate",
+      "name": "networkFeatureConfigs.networkFeatureConfigsCreate",
+      "description": "Create a configuration for a `NetworkFeature`\ndefined in the `NetworkFeature`s collection."
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsDestroy",
+      "name": "networkFeatureConfigs.networkFeatureConfigsDestroy",
+      "description": "Remove a network feature config.\n\nThe network feature config will be marked as\n`decommission_requested`.\nDecommissioning a network feature config will not\ncascade to related services or service configs."
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsList",
+      "name": "networkFeatureConfigs.networkFeatureConfigsList",
+      "description": "Get all network feature configs."
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsPartialUpdate",
+      "name": "networkFeatureConfigs.networkFeatureConfigsPartialUpdate",
+      "description": "Update parts of a network feature configuration"
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsRead",
+      "name": "networkFeatureConfigs.networkFeatureConfigsRead",
+      "description": "Get a single network feature config."
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatureConfigs.networkFeatureConfigsUpdate",
+      "name": "networkFeatureConfigs.networkFeatureConfigsUpdate",
+      "description": "Update a network feature configuration"
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatures.networkFeaturesList",
+      "name": "networkFeatures.networkFeaturesList",
+      "description": "List available network features."
+    },
+    {
+      "id": "openapi_ix_api_net.networkFeatures.networkFeaturesRead",
+      "name": "networkFeatures.networkFeaturesRead",
+      "description": "Get a single network feature by it's id."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigCancellationPolicyRead",
+      "name": "networkServiceConfigs.networkServiceConfigCancellationPolicyRead",
+      "description": "The cancellation-policy can be queried to answer\nthe questions:\n\nIf I cancel my subscription, *when will it be technically\ndecommissioned*?\nIf I cancel my subscription, *until what date will I be charged*?\n\nWhen the query parameter `decommision_at` is not provided\nit will provide the first possible cancellation date\nand charge period if cancelled at above date.\n\nThe granularity of the date field is a day, the start and end\nof which are to be interpreted by the IXP (some may use UTC,\nsome may use their local time zone)."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsCreate",
+      "name": "networkServiceConfigs.networkServiceConfigsCreate",
+      "description": "Create a `network-service-config`."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsDestroy",
+      "name": "networkServiceConfigs.networkServiceConfigsDestroy",
+      "description": "Request decommissioning the network service configuration.\n\nThe network service config will assume the state\n`decommission_requested`.\nThis will cascade to related resources like\n`network-feature-configs`."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsList",
+      "name": "networkServiceConfigs.networkServiceConfigsList",
+      "description": "Get all `network-service-config`s."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsPartialUpdate",
+      "name": "networkServiceConfigs.networkServiceConfigsPartialUpdate",
+      "description": "Update parts of an exisiting `network-service-config`."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsRead",
+      "name": "networkServiceConfigs.networkServiceConfigsRead",
+      "description": "Get a `network-service-config`"
+    },
+    {
+      "id": "openapi_ix_api_net.networkServiceConfigs.networkServiceConfigsUpdate",
+      "name": "networkServiceConfigs.networkServiceConfigsUpdate",
+      "description": "Update an exisiting `network-service-config`"
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServiceCancellationPolicyRead",
+      "name": "networkServices.networkServiceCancellationPolicyRead",
+      "description": "The cancellation-policy can be queried to answer\nthe questions:\n\nIf I cancel my service, *when will it be technically\ndecommissioned*?\nIf I cancel my service, *until what date will I be charged*?\n\nWhen the query parameter `decommision_at` is not provided\nit will provide the first possible cancellation date\nand charge period if cancelled at above date.\n\nThe granularity of the date field is a day, the start and end\nof which are to be interpreted by the IXP (some may use UTC,\nsome may use their local time zone)."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServiceChangeRequestCreate",
+      "name": "networkServices.networkServiceChangeRequestCreate",
+      "description": "Request a change to the network service.\n\nA participant in a network service of type\n`p2p_vc` can issue a change request, expressing a\ndesired change in the capacity.\nThe change is accepted when all sides have configured\nthe network service configs with the new bandwidth.\nThese changes can sometimes require a change of the\nproduct offering.\nThe product offering may only differ in regards to\nbandwidth.\n\nThe network service will change it's state from `production`\ninto `production_change_pending`.\n\nOnly one change request may be issued at a time."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServiceChangeRequestDestroy",
+      "name": "networkServices.networkServiceChangeRequestDestroy",
+      "description": "Retract or reject a change to the network service."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServiceChangeRequestRead",
+      "name": "networkServices.networkServiceChangeRequestRead",
+      "description": "Get the change request."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesCreate",
+      "name": "networkServices.networkServicesCreate",
+      "description": "Create a new network service"
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesDestroy",
+      "name": "networkServices.networkServicesDestroy",
+      "description": "Request decomissioning of the network service.\n\nThe network service will enter the state of\n`decommission_requested`. The request will\ncascade to related network service and feature\nconfigs.\n\nAn *optional request body* can be provided to request\na specific service termination date.\n\nIf no date is given in the request body, it is assumed to\nbe the earliest possible date.\n\nPossible values for `decommission_at` can be queried\nthrough the `network_service_cancellation_policy_read`\noperation.\n\nThe response will contain the dates on which the\nchanges will be effected."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesList",
+      "name": "networkServices.networkServicesList",
+      "description": "List available `NetworkService`s."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesPartialUpdate",
+      "name": "networkServices.networkServicesPartialUpdate",
+      "description": "Partially update a network service"
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesRead",
+      "name": "networkServices.networkServicesRead",
+      "description": "Get a specific `network-service` by id."
+    },
+    {
+      "id": "openapi_ix_api_net.networkServices.networkServicesUpdate",
+      "name": "networkServices.networkServicesUpdate",
+      "description": "Update a network service"
+    },
+    {
+      "id": "openapi_ix_api_net.pops.popsList",
+      "name": "pops.popsList",
+      "description": "List all PoPs"
+    },
+    {
+      "id": "openapi_ix_api_net.pops.popsRead",
+      "name": "pops.popsRead",
+      "description": "Get a single point of presence"
+    },
+    {
+      "id": "openapi_ix_api_net.ports.portsList",
+      "name": "ports.portsList",
+      "description": "List all ports."
+    },
+    {
+      "id": "openapi_ix_api_net.ports.portsRead",
+      "name": "ports.portsRead",
+      "description": "Retrieve a port."
+    },
+    {
+      "id": "openapi_ix_api_net.productOfferings.productOfferingsList",
+      "name": "productOfferings.productOfferingsList",
+      "description": "List all (filtered) products-offerings available on the platform"
+    },
+    {
+      "id": "openapi_ix_api_net.productOfferings.productOfferingsRead",
+      "name": "productOfferings.productOfferingsRead",
+      "description": "Get a single products-offering by id."
+    },
+    {
+      "id": "openapi_ix_api_net.roleAssignments.roleAssignmentsCreate",
+      "name": "roleAssignments.roleAssignmentsCreate",
+      "description": "Assign a `Role` to a `Contact`.\n\nThe contact needs to have all fields filled, which the\nrole requires. If this is not the case a `400`\n`UnableToFulfill` will be returned."
+    },
+    {
+      "id": "openapi_ix_api_net.roleAssignments.roleAssignmentsDestroy",
+      "name": "roleAssignments.roleAssignmentsDestroy",
+      "description": "Remove a role assignment from a contact.\n\nIf the contact is still in use with a given role required,\nthis will yield an `UnableToFulfill` error."
+    },
+    {
+      "id": "openapi_ix_api_net.roleAssignments.roleAssignmentsList",
+      "name": "roleAssignments.roleAssignmentsList",
+      "description": "List all role assignments for a contact."
+    },
+    {
+      "id": "openapi_ix_api_net.roleAssignments.roleAssignmentsRead",
+      "name": "roleAssignments.roleAssignmentsRead",
+      "description": "Get a role assignment for a contact."
+    },
+    {
+      "id": "openapi_ix_api_net.roles.rolesList",
+      "name": "roles.rolesList",
+      "description": "List all roles available."
+    },
+    {
+      "id": "openapi_ix_api_net.roles.rolesRead",
+      "name": "roles.rolesRead",
+      "description": "Get a single `Role`."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

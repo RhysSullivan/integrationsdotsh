@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:20:35.561Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_amore_mall.search_products",
+      "name": "search_products",
+      "description": "아모레몰 일반 상품 검색 도구입니다. 브랜드명, 상품명, 키워드로 검색할 때 사용합니다. 카테고리를 지정하여 검색 범위를 좁힐 수 있습니다 (예: 스킨케어의 크림, 메이크업의 립스틱). 선물하기나 선물 추천이 아닌 일반 제품 검색에 사용합니다."
+    },
+    {
+      "id": "mcp_amore_mall.get_popular_products",
+      "name": "get_popular_products",
+      "description": "실시간 인기 상품과 트렌드 아이템을 추천합니다. 사용자가 명시적으로 '인기', '베스트', 'HOT', '트렌드', '랭킹', '많이 팔리는' 등의 키워드를 사용했을 때만 사용하세요. 단순한 카테고리 검색이나 일반 추천 요청에는 search_products를 사용하세요."
+    },
+    {
+      "id": "mcp_amore_mall.get_gift_products",
+      "name": "get_gift_products",
+      "description": "선물하기, 선물 추천, 선물용 상품을 요청할 때 사용합니다. 필수: 사용자 쿼리에서 '남자', '남성', '여자', '여성', '맘', '엄마' 등의 카테고리 키워드를 찾아서 category_sn 파라미터에 키워드 이름을 그대로 전달해야 합니다. 숫자가 아닌 키워드 이름을 전달하세요. 전달하지 않으면 검색이 실패합니다. 예: '40대 남자 선물' -> category_sn='남자'를 전달. '40대 여성 3만원 선물' -> category_sn='여성', price_range='UNDER_THREE'를 전달. 지원 키워드: 전체, 여성, 여자, 남성, 남자, 맘, 엄마, 아기, 베이비, 럭셔리, 나를 위한 선물, 집들이. 가격대 매핑: UNDER_THREE=3만원 미만/3만원 이하, THREE_TO_FIVE=3-5만원/3만원~5만원, FIVE_TO_TEN=5-10만원/5만원~10만원, OVER_TEN=10만원 이상. 일반 상품 검색이 아닌 선물 전용 추천 기능입니다."
+    },
+    {
+      "id": "mcp_amore_mall.get_product_detail",
+      "name": "get_product_detail",
+      "description": "특정 상품의 상세 정보를 확인합니다. 사용자가 '상세 정보', '자세히', '성분', '사용법', '리뷰' 등을 요청하거나 특정 상품번호(onlineProdSn)를 제공했을 때 사용합니다. 상품의 전체 정보, 성분, 사용법, 리뷰 등을 포함합니다."
+    }
+  ]
+}

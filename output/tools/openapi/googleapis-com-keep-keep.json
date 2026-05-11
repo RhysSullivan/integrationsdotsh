@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:22:38.574Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesCreate",
+      "name": "notes.keepNotesCreate",
+      "description": "Creates a new note."
+    },
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesDelete",
+      "name": "notes.keepNotesDelete",
+      "description": "Deletes a note. Caller must have the `OWNER` role on the note to delete. Deleting a note removes the resource immediately and cannot be undone. Any collaborators will lose access to the note."
+    },
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesGet",
+      "name": "notes.keepNotesGet",
+      "description": "Gets a note."
+    },
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesList",
+      "name": "notes.keepNotesList",
+      "description": "Lists notes. Every list call returns a page of results with `page_size` as the upper bound of returned items. A `page_size` of zero allows the server to choose the upper bound. The ListNotesResponse contains at most `page_size` entries. If there are more things left to list, it provides a `next_page_token` value. (Page tokens are opaque values.) To get the next page of results, copy the result's `next_page_token` into the next request's `page_token`. Repeat until the `next_page_token` returned with a page of results is empty. ListNotes return consistent results in the face of concurrent changes, or signals that it cannot with an ABORTED error."
+    },
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesPermissionsBatchCreate",
+      "name": "notes.keepNotesPermissionsBatchCreate",
+      "description": "Creates one or more permissions on the note. Only permissions with the `WRITER` role may be created. If adding any permission fails, then the entire request fails and no changes are made."
+    },
+    {
+      "id": "openapi_googleapis_com_keep_keep.notes.keepNotesPermissionsBatchDelete",
+      "name": "notes.keepNotesPermissionsBatchDelete",
+      "description": "Deletes one or more permissions on the note. The specified entities will immediately lose access. A permission with the `OWNER` role can't be removed. If removing a permission fails, then the entire request fails and no changes are made. Returns a 400 bad request error if a specified permission does not exist on the note."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

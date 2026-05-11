@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:26:42.932Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "openapi_peoplefinderspro_com.address.postAddressAutocomplete",
+      "name": "address.postAddressAutocomplete",
+      "description": "###### *Click on the grey search box above, to view sample request/response objects for Address Autocomplete Search*\n\nPerform a search:\n\n1. Add your key and key secret to the request headers.\n    + galaxy-ap-name: [Key]\n    + galaxy-ap-password: [Secret]\n    + galaxy-search-type: DevAPIAddressAutoComplete\n\n2.  Add search criteria to your request.\n    ~~~html\n            {\n                \"Input\":\"1821 Q\"\n            }\n    ~~~\n\n3.  Submit your search\n\nThe JSON request should have parts of the address.\n\n+ <code>Input</code> = null (optional, string) ... address."
+    },
+    {
+      "id": "openapi_peoplefinderspro_com.contact.postContactEnrich",
+      "name": "contact.postContactEnrich",
+      "description": "###### *Click on the grey search box above, to view sample request/response objects for Contact Enrichment Search*\n\nPerform a search:\n\n1. Add your key and key secret to the request headers.\n    + galaxy-ap-name: [Key]\n    + galaxy-ap-password: [Secret]\n    + galaxy-search-type: DevAPIContactEnrich\n\n2.  Add search criteria to your request. At least two are required: Name, Phone, Address, or Email.\n    ~~~html\n            {\n                \"FirstName\": \"John\",\n                \"MiddleName\": \"T\",\n                \"LastName\": \"Lawrence\",\n                \"Dob\":\"\",\n                \"Age\": 0,\n                \"Address\": {\n                    \"addressLine1\":\"123 Q Street\",\n                    \"addressLine2\":\"Sacramento, CA\"\n                },\n                \"PhoneNumber\":\"\",\n                \"Email\":\"\"\n            }\n    ~~~\n\n3.  Submit your search\n\nA complete list of JSON request properties follows.\n\n+ <code>FirstName</code>= null (optional, string) ... First name.\n\n+ <code>MiddleName</code> = null (optional, string) ... Middle name or middle initial.\n\n+ <code>LastName</code> = null (optional, string) ... Last name.\n\n+ <code>Dob</code> = null (optional, string) ... Date of birth (format: MM/DD/YYYY).\n\n+ <code>Age</code> = null (optional, int) ... Age.\n\n+ <code>Addresses</code> = null (optional, Addresses[]) ... List of addresses.\n    + <code>Members</code>\n        + <code>AddressLine1</code> = null (optional, string) ... House number, street name and Unit number (i.e. 123 Q Street, Unit 102) or PO Box (i.e. 1821 Q Street).\n        + <code>AddressLine2</code> = null (optional, string) ... State or City and State or Zip (i.e. Sacramento, CA).\n\n+ <code>Phone</code> = null (optional, string) ... Phone number (formats: ###-###-####, (###) ###-####).\n\n+ <code>Email</code> = null (optional, string) ... E-mail address."
+    },
+    {
+      "id": "openapi_peoplefinderspro_com.email.postEmailEnrich",
+      "name": "email.postEmailEnrich",
+      "description": "###### *Click on the grey search box above, to view sample request/response objects for Email Enrichment Search*\n\nPerform a search:\n\n1. Add your Access Profile username and password to the request headers.\n    + galaxy-ap-name: [Key]\n    + galaxy-ap-password: [Secret]\n    + galaxy-search-type: DevAPIEmailID\n\n2.  Add search criteria to your request.\n    ~~~html\n            {\n                \"Email\":\"johnsmith@somedomain\"\n            }\n    ~~~\n\n3.  Submit your search\n\nThe JSON request should have an email.\n\n+ <code>Email</code> = null (optional, string) ... E-mail address."
+    },
+    {
+      "id": "openapi_peoplefinderspro_com.identity.search",
+      "name": "identity.search",
+      "description": "###### *Click on the grey search box above, to view sample request/response objects for the Identity Verification Search*\n\nPerform a search:\n\n1. Add your key and key secret to the request headers.\n    + galaxy-ap-name: [Key]\n    + galaxy-ap-password: [Secret]\n    + galaxy-search-type: DevAPIIDVerification\n\n2.  Add search criteria to your request. At least two are required: SSN, Name, Phone, Address or Email.\n    ~~~html\n            {\n                \"FirstName\": \"John\",\n                \"MiddleName\": \"T\",\n                \"LastName\": \"Lawrence\",\n                \"Dob\":\"\",\n                \"Age\": 0,\n                \"Address\": {\n                    \"addressLine1\":\"123 Q Street, Unit 102\",\n                    \"addressLine2\":\"Sacramento, CA\"\n                },\n                \"PhoneNumber\":\"\",\n                \"Email\":\"\"\n            }\n    ~~~\n\n3.  Submit your search\n\nA complete list of JSON request properties follows.\n\n+ <code>FirstName</code>= null (optional, string) ... First name.\n\n+ <code>MiddleName</code> = null (optional, string) ... Middle name or middle initial.\n\n+ <code>LastName</code> = null (optional, string) ... Last name.\n\n+ <code>Dob</code> = null (optional, string) ... Date of birth (format: MM/DD/YYYY).\n\n+ <code>Age</code> = null (optional, int) ... Age.\n\n+ <code>Addresses</code> = null (optional, Addresses[]) ... List of addresses.\n    + <code>Members</code>\n        + <code>AddressLine1</code> = null (optional, string) ... House number, street name and Unit number (i.e. 123 Q Street, Unit 102) or PO Box (i.e. 1821 Q Street).\n        + <code>AddressLine2</code> = null (optional, string) ... State or City and State or Zip (i.e. Sacramento, CA).\n\n+ <code>Phone</code> = null (optional, string) ... Phone number (formats: ###-###-####, (###) ###-####).\n\n+ <code>Email</code> = null (optional, string) ... E-mail address."
+    },
+    {
+      "id": "openapi_peoplefinderspro_com.phone.postPhoneEnrich",
+      "name": "phone.postPhoneEnrich",
+      "description": "###### *Click on the grey search box above, to view sample request/response objects for Phone Enrichment Search*\n\nPerform a search:\n\n1. Add your key and key secret to the request headers.\n    + galaxy-ap-name: [Key]\n    + galaxy-ap-password: [Secret]\n    + galaxy-search-type: DevAPICallerID\n\n2.  Add search criteria to your request.\n    ~~~html\n            {\n                \"Phone\":\"(123) 456-7890\"\n            }\n    ~~~\n\n3.  Submit your search\n\nThe JSON request should have a phone number.\n\n+ <code>Phone</code> = null (optional, string) ... Phone number (formats: ###-###-####, (###) ###-####)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

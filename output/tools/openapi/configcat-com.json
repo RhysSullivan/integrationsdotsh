@@ -1,0 +1,327 @@
+{
+  "fetchedAt": "2026-04-30T15:22:09.826Z",
+  "status": "ok",
+  "count": 64,
+  "tools": [
+    {
+      "id": "openapi_configcat_com.auditLogs.getAuditlogs",
+      "name": "auditLogs.getAuditlogs",
+      "description": "This endpoint returns the list of Audit log items for a given Product \nand the result can be optionally filtered by Config and/or Environment."
+    },
+    {
+      "id": "openapi_configcat_com.auditLogs.getDeletedSettings",
+      "name": "auditLogs.getDeletedSettings",
+      "description": "This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config."
+    },
+    {
+      "id": "openapi_configcat_com.auditLogs.getOrganizationAuditlogs",
+      "name": "auditLogs.getOrganizationAuditlogs",
+      "description": "This endpoint returns the list of Audit log items for a given Organization \nand the result can be optionally filtered by Product and/or Config and/or Environment."
+    },
+    {
+      "id": "openapi_configcat_com.codeReferences.postV1CodeReferences",
+      "name": "codeReferences.postV1CodeReferences",
+      "description": "POST /v1/code-references"
+    },
+    {
+      "id": "openapi_configcat_com.codeReferences.postV1CodeReferencesDeleteReports",
+      "name": "codeReferences.postV1CodeReferencesDeleteReports",
+      "description": "POST /v1/code-references/delete-reports"
+    },
+    {
+      "id": "openapi_configcat_com.configs.createConfig",
+      "name": "configs.createConfig",
+      "description": "This endpoint creates a new Config in a specified Product \nidentified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.configs.deleteConfig",
+      "name": "configs.deleteConfig",
+      "description": "This endpoint removes a Config identified by the `configId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.configs.getConfig",
+      "name": "configs.getConfig",
+      "description": "This endpoint returns the metadata of a Config\nidentified by the `configId`."
+    },
+    {
+      "id": "openapi_configcat_com.configs.getConfigs",
+      "name": "configs.getConfigs",
+      "description": "This endpoint returns the list of the Configs that belongs to the given Product identified by the\n`productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.configs.updateConfig",
+      "name": "configs.updateConfig",
+      "description": "This endpoint updates a Config identified by the `configId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.environments.createEnvironment",
+      "name": "environments.createEnvironment",
+      "description": "This endpoint creates a new Environment in a specified Product \nidentified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.environments.deleteEnvironment",
+      "name": "environments.deleteEnvironment",
+      "description": "This endpoint removes an Environment identified by the `environmentId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.environments.getEnvironment",
+      "name": "environments.getEnvironment",
+      "description": "This endpoint returns the metadata of an Environment \nidentified by the `environmentId`."
+    },
+    {
+      "id": "openapi_configcat_com.environments.getEnvironments",
+      "name": "environments.getEnvironments",
+      "description": "This endpoint returns the list of the Environments that belongs to the given Product identified by the\n`productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.environments.updateEnvironment",
+      "name": "environments.updateEnvironment",
+      "description": "This endpoint updates an Environment identified by the `environmentId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValues.getSettingValue",
+      "name": "featureFlagSettingValues.getSettingValue",
+      "description": "This endpoint returns the value of a Feature Flag or Setting \nin a specified Environment identified by the `environmentId` parameter.\n\nThe most important attributes in the response are the `value`, `rolloutRules` and `percentageRules`.\nThe `value` represents what the clients will get when the evaluation requests of our SDKs \nare not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.\n\nThe `rolloutRules` and `percentageRules` attributes are representing the current \nTargeting and Percentage Rules configuration of the actual Feature Flag or Setting \nin an **ordered** collection, which means the order of the returned rules is matching to the\nevaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/)."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValues.getSettingValues",
+      "name": "featureFlagSettingValues.getSettingValues",
+      "description": "This endpoint returns the value of a specified Config's Feature Flags or Settings identified by the `configId` parameter\nin a specified Environment identified by the `environmentId` parameter.\n\nThe most important attributes in the response are the `value`, `rolloutRules` and `percentageRules`.\nThe `value` represents what the clients will get when the evaluation requests of our SDKs \nare not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.\n\nThe `rolloutRules` and `percentageRules` attributes are representing the current \nTargeting and Percentage Rules configuration of the actual Feature Flag or Setting \nin an **ordered** collection, which means the order of the returned rules is matching to the\nevaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/)."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValues.replaceSettingValue",
+      "name": "featureFlagSettingValues.replaceSettingValue",
+      "description": "This endpoint replaces the whole value of a Feature Flag or Setting in a specified Environment.\n\nOnly the `value`, `rolloutRules` and `percentageRules` attributes are modifiable by this endpoint.\n\n**Important:** As this endpoint is doing a complete replace, it's important to set every other attribute that you don't \nwant to change in its original state. Not listing one means that it will reset.\n\nFor example: We have the following resource.\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": false\n}\n```\nIf we send a replace request body as below:\n```\n{\n\t\"value\": true\n}\n```\nThen besides that the default value is set to `true`, all the Percentage Rules are deleted. \nSo we get a response like this:\n```\n{\n\t\"rolloutPercentageItems\": [],\n\t\"rolloutRules\": [],\n\t\"value\": true\n}\n```\n\nThe `rolloutRules` property describes two types of rules:\n\n- **Targeting rules**: When you want to add or update a targenting rule, the `comparator`, `comparisonAttribute`, and `comparisonValue` members are required.\n- **Segment rules**: When you want to add add or update a segment rule, the `segmentId` which identifies the desired segment and the `segmentComparator` members are required."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValues.updateSettingValue",
+      "name": "featureFlagSettingValues.updateSettingValue",
+      "description": "This endpoint updates the value of a Feature Flag or Setting \nwith a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Environment.\n\nOnly the `value`, `rolloutRules` and `percentageRules` attributes are modifiable by this endpoint.\n\nThe advantage of using JSON Patch is that you can describe individual update operations on a resource\nwithout touching attributes that you don't want to change. It supports collection reordering, so it also \ncan be used for reordering the targeting rules of a Feature Flag or Setting.\n\nFor example: We have the following resource.\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": false\n}\n```\nIf we send an update request body as below:\n```\n[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/value\",\n\t\t\"value\": true\n\t}\n]\n```\nOnly the default value is going to be set to `true` and all the Percentage Rules are remaining unchanged.\nSo we get a response like this:\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": true\n}\n```\n\nThe `rolloutRules` property describes two types of rules:\n\n- **Targeting rules**: When you want to add or update a targenting rule, the `comparator`, `comparisonAttribute`, and `comparisonValue` members are required.\n- **Segment rules**: When you want to add add or update a segment rule, the `segmentId` which identifies the desired segment and the `segmentComparator` members are required."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValuesUsingSdkKey.getSettingValueBySdkkey",
+      "name": "featureFlagSettingValuesUsingSdkKey.getSettingValueBySdkkey",
+      "description": "This endpoint returns the value of a Feature Flag or Setting \nin a specified Environment identified by the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://app.configcat.com/sdkkey\">SDK key</a> passed in the `X-CONFIGCAT-SDKKEY` header.\n\nThe most important attributes in the response are the `value`, `rolloutRules` and `percentageRules`.\nThe `value` represents what the clients will get when the evaluation requests of our SDKs \nare not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.\n\nThe `rolloutRules` and `percentageRules` attributes are representing the current \nTargeting and Percentage Rules configuration of the actual Feature Flag or Setting \nin an **ordered** collection, which means the order of the returned rules is matching to the\nevaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/)."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValuesUsingSdkKey.replaceSettingValueBySdkkey",
+      "name": "featureFlagSettingValuesUsingSdkKey.replaceSettingValueBySdkkey",
+      "description": "This endpoint replaces the value of a Feature Flag or Setting \nin a specified Environment identified by the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://app.configcat.com/sdkkey\">SDK key</a> passed in the `X-CONFIGCAT-SDKKEY` header.\n\nOnly the `value`, `rolloutRules` and `percentageRules` attributes are modifiable by this endpoint.\n\n**Important:** As this endpoint is doing a complete replace, it's important to set every other attribute that you don't \nwant to change to its original state. Not listing one means that it will reset.\n\nFor example: We have the following resource.\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": false\n}\n```\nIf we send a replace request body as below:\n```\n{\n\t\"value\": true\n}\n```\nThen besides that the default served value is set to `true`, all the Percentage Rules are deleted. \nSo we get a response like this:\n```\n{\n\t\"rolloutPercentageItems\": [],\n\t\"rolloutRules\": [],\n\t\"value\": true\n}\n```"
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagSettingValuesUsingSdkKey.updateSettingValueBySdkkey",
+      "name": "featureFlagSettingValuesUsingSdkKey.updateSettingValueBySdkkey",
+      "description": "This endpoint updates the value of a Feature Flag or Setting \nwith a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Environment\nidentified by the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://app.configcat.com/sdkkey\">SDK key</a> passed in the `X-CONFIGCAT-SDKKEY` header.\n\nOnly the `value`, `rolloutRules` and `percentageRules` attributes are modifiable by this endpoint.\n\nThe advantage of using JSON Patch is that you can describe individual update operations on a resource\nwithout touching attributes that you don't want to change. It supports collection reordering, so it also \ncan be used for reordering the targeting rules of a Feature Flag or Setting.\n\nFor example: We have the following resource.\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": false\n}\n```\nIf we send an update request body as below:\n```\n[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/value\",\n\t\t\"value\": true\n\t}\n]\n```\nOnly the default served value is going to be set to `true` and all the Percentage Rules are remaining unchanged.\nSo we get a response like this:\n```\n{\n\t\"rolloutPercentageItems\": [\n\t\t{\n\t\t\t\"percentage\": 30,\n\t\t\t\"value\": true\n\t\t},\n\t\t{\n\t\t\t\"percentage\": 70,\n\t\t\t\"value\": false\n\t\t}\n\t],\n\t\"rolloutRules\": [],\n\t\"value\": true\n}\n```"
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagsSettings.createSetting",
+      "name": "featureFlagsSettings.createSetting",
+      "description": "This endpoint creates a new Feature Flag or Setting in a specified Config\nidentified by the `configId` parameter.\n\n**Important:** The `key` attribute must be unique within the given Config."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagsSettings.deleteSetting",
+      "name": "featureFlagsSettings.deleteSetting",
+      "description": "This endpoint removes a Feature Flag or Setting from a specified Config, \nidentified by the `configId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagsSettings.getSetting",
+      "name": "featureFlagsSettings.getSetting",
+      "description": "This endpoint returns the metadata attributes of a Feature Flag or Setting \nidentified by the `settingId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagsSettings.getSettings",
+      "name": "featureFlagsSettings.getSettings",
+      "description": "This endpoint returns the list of the Feature Flags and Settings defined in a \nspecified Config, identified by the `configId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.featureFlagsSettings.updateSetting",
+      "name": "featureFlagsSettings.updateSetting",
+      "description": "This endpoint updates the metadata of a Feature Flag or Setting \nwith a collection of [JSON Patch](http://jsonpatch.com) operations in a specified Config.\n\nOnly the `name`, `hint` and `tags` attributes are modifiable by this endpoint.\nThe `tags` attribute is a simple collection of the [tag IDs](#operation/get-tags) attached to the given setting.\n\nThe advantage of using JSON Patch is that you can describe individual update operations on a resource\nwithout touching attributes that you don't want to change.\n\nFor example: We have the following resource.\n```\n{\n\t\"settingId\": 5345,\n\t\"key\": \"myGrandFeature\",\n\t\"name\": \"Tihs is a naem with soem typos.\",\n\t\"hint\": \"This flag controls my grandioso feature.\",\n\t\"settingType\": \"boolean\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"tagId\": 0,\n\t\t\t\"name\": \"sample tag\",\n\t\t\t\"color\": \"whale\"\n\t\t}\n\t]\n}\n```\nIf we send an update request body as below (it changes the name and adds the already existing tag with the id 2):\n```\n[\n\t{\n\t\t\"op\": \"replace\",\n\t\t\"path\": \"/name\",\n\t\t\"value\": \"This is the name without typos.\"\n\t},\n\t{\n\t\t\"op\": \"add\",\n\t\t\"path\": \"/tags/-\",\n\t\t\"value\": 2\n\t}\n]\n```\nOnly the `name` and `tags` are going to be updated and all the other attributes are remaining unchanged.\nSo we get a response like this:\n```\n{\n\t\"settingId\": 5345,\n\t\"key\": \"myGrandFeature\",\n\t\"name\": \"This is the name without typos.\",\n\t\"hint\": \"This flag controls my grandioso feature.\",\n\t\"settingType\": \"boolean\",\n\t\"tags\": [\n\t\t{\n\t\t\t\"tagId\": 0,\n\t\t\t\"name\": \"sample tag\",\n\t\t\t\"color\": \"whale\"\n\t\t},\n\t\t{\n\t\t\t\"tagId\": 2,\n\t\t\t\"name\": \"another tag\",\n\t\t\t\"color\": \"koala\"\n\t\t}\n\t]\n}\n```"
+    },
+    {
+      "id": "openapi_configcat_com.integrationLinks.addOrUpdateIntegrationLink",
+      "name": "integrationLinks.addOrUpdateIntegrationLink",
+      "description": ""
+    },
+    {
+      "id": "openapi_configcat_com.integrationLinks.deleteIntegrationLink",
+      "name": "integrationLinks.deleteIntegrationLink",
+      "description": ""
+    },
+    {
+      "id": "openapi_configcat_com.integrationLinks.getIntegrationLinkDetails",
+      "name": "integrationLinks.getIntegrationLinkDetails",
+      "description": ""
+    },
+    {
+      "id": "openapi_configcat_com.integrationLinks.jiraAddOrUpdateIntegrationLink",
+      "name": "integrationLinks.jiraAddOrUpdateIntegrationLink",
+      "description": "POST /v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}"
+    },
+    {
+      "id": "openapi_configcat_com.integrationLinks.postV1JiraConnect",
+      "name": "integrationLinks.postV1JiraConnect",
+      "description": "POST /v1/jira/Connect"
+    },
+    {
+      "id": "openapi_configcat_com.me.getMe",
+      "name": "me.getMe",
+      "description": ""
+    },
+    {
+      "id": "openapi_configcat_com.members.addMemberToGroup",
+      "name": "members.addMemberToGroup",
+      "description": "This endpoint adds a Member identified by the `userId` to one or more Permission Groups. \nThis endpoint can also be used to move a Member between Permission Groups within a Product.\nOnly a single Permission Group can be set per Product."
+    },
+    {
+      "id": "openapi_configcat_com.members.deleteOrganizationMember",
+      "name": "members.deleteOrganizationMember",
+      "description": "This endpoint removes a Member identified by the `userId` from the \ngiven Organization identified by the `organizationId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.members.deleteProductMember",
+      "name": "members.deleteProductMember",
+      "description": "This endpoint removes a Member identified by the `userId` from the \ngiven Product identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.members.getOrganizationMembers",
+      "name": "members.getOrganizationMembers",
+      "description": "This endpoint returns the list of Members that belongs \nto the given Organization, identified by the `organizationId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.members.getProductMembers",
+      "name": "members.getProductMembers",
+      "description": "This endpoint returns the list of Members that belongs \nto the given Product, identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.members.inviteMember",
+      "name": "members.inviteMember",
+      "description": "This endpoint invites a Member into the given Product identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.organizations.getOrganizations",
+      "name": "organizations.getOrganizations",
+      "description": "This endpoint returns the list of the Organizations that belongs to the user."
+    },
+    {
+      "id": "openapi_configcat_com.permissionGroups.createPermissionGroup",
+      "name": "permissionGroups.createPermissionGroup",
+      "description": "This endpoint creates a new Permission Group in a specified Product \nidentified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.permissionGroups.deletePermissionGroup",
+      "name": "permissionGroups.deletePermissionGroup",
+      "description": "This endpoint removes a Permission Group identified by the `permissionGroupId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.permissionGroups.getPermissionGroup",
+      "name": "permissionGroups.getPermissionGroup",
+      "description": "This endpoint returns the metadata of a Permission Group \nidentified by the `permissionGroupId`."
+    },
+    {
+      "id": "openapi_configcat_com.permissionGroups.getPermissionGroups",
+      "name": "permissionGroups.getPermissionGroups",
+      "description": "This endpoint returns the list of the Permission Groups that belongs to the given Product identified by the\n`productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.permissionGroups.updatePermissionGroup",
+      "name": "permissionGroups.updatePermissionGroup",
+      "description": "This endpoint updates a Permission Group identified by the `permissionGroupId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.products.createProduct",
+      "name": "products.createProduct",
+      "description": "This endpoint creates a new Product in a specified Organization \nidentified by the `organizationId` parameter, which can be obtained from the [List Organizations](#operation/get-organizations) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.products.deleteProduct",
+      "name": "products.deleteProduct",
+      "description": "This endpoint removes a Product identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.products.getProduct",
+      "name": "products.getProduct",
+      "description": "This endpoint returns the metadata of a Product \nidentified by the `productId`."
+    },
+    {
+      "id": "openapi_configcat_com.products.getProducts",
+      "name": "products.getProducts",
+      "description": "This endpoint returns the list of the Products that belongs to the user."
+    },
+    {
+      "id": "openapi_configcat_com.products.updateProduct",
+      "name": "products.updateProduct",
+      "description": "This endpoint updates a Product identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.sdkKeys.getSdkKeys",
+      "name": "sdkKeys.getSdkKeys",
+      "description": "This endpoint returns the SDK Key for your Config in a specified Environment."
+    },
+    {
+      "id": "openapi_configcat_com.segments.createSegment",
+      "name": "segments.createSegment",
+      "description": "This endpoint creates a new Segment in a specified Product \nidentified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.segments.deleteSegment",
+      "name": "segments.deleteSegment",
+      "description": "This endpoint removes a Segment identified by the `segmentId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.segments.getSegment",
+      "name": "segments.getSegment",
+      "description": "This endpoint returns the metadata of a Segment\nidentified by the `segmentId`."
+    },
+    {
+      "id": "openapi_configcat_com.segments.getSegments",
+      "name": "segments.getSegments",
+      "description": "This endpoint returns the list of the Segments that belongs to the given Product identified by the\n`productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.segments.updateSegment",
+      "name": "segments.updateSegment",
+      "description": "This endpoint updates a Segment identified by the `segmentId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.tags.createTag",
+      "name": "tags.createTag",
+      "description": "This endpoint creates a new Tag in a specified Product \nidentified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.tags.deleteTag",
+      "name": "tags.deleteTag",
+      "description": "This endpoint deletes a Tag identified by the `tagId` parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint."
+    },
+    {
+      "id": "openapi_configcat_com.tags.getSettingsByTag",
+      "name": "tags.getSettingsByTag",
+      "description": "This endpoint returns the list of the Settings that \nhas the specified Tag, identified by the `tagId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.tags.getTag",
+      "name": "tags.getTag",
+      "description": "This endpoint returns the metadata of a Tag \nidentified by the `tagId`."
+    },
+    {
+      "id": "openapi_configcat_com.tags.getTags",
+      "name": "tags.getTags",
+      "description": "This endpoint returns the list of the Tags in a \nspecified Product, identified by the `productId` parameter."
+    },
+    {
+      "id": "openapi_configcat_com.tags.updateTag",
+      "name": "tags.updateTag",
+      "description": "This endpoint updates a Tag identified by the `tagId` parameter."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

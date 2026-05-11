@@ -1,0 +1,206 @@
+---
+import Base from "~/layouts/Base.astro";
+import IntegrationCard from "~/components/IntegrationCard.astro";
+import { all, byKind, kindLabel } from "~/lib/data.ts";
+import type { Feed, Kind } from "~/lib/types.ts";
+
+const items = [...all].sort((a, b) => {
+  const pa = a.popularity ?? 0;
+  const pb = b.popularity ?? 0;
+  if (pa !== pb) return pb - pa;
+  return a.name.localeCompare(b.name);
+});
+
+const kinds: Kind[] = ["mcp", "openapi", "graphql"];
+const feeds: Feed[] = ["claude", "openai", "apis-guru", "graphql-apis", "override"];
+const feedCounts: Record<string, number> = {};
+for (const r of all) for (const f of r.feeds) feedCounts[f] = (feedCounts[f] ?? 0) + 1;
+---
+
+<Base title="integrations.sh — find any MCP, OpenAPI, or GraphQL integration">
+  <section class="hero">
+    <h1>integrations.sh</h1>
+    <p class="sub">
+      {all.length.toLocaleString()} integrations — {byKind.mcp.length.toLocaleString()} MCP servers,
+      {byKind.openapi.length.toLocaleString()} OpenAPI specs, {byKind.graphql.length.toLocaleString()} GraphQL APIs.
+    </p>
+    <input
+      id="q"
+      type="search"
+      placeholder="Search integrations…"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+    />
+    <div class="filters" id="filters">
+      <fieldset>
+        <legend>Kind</legend>
+        <label class="chip"><input type="checkbox" name="kind" value="" checked /> All</label>
+        {kinds.map((k) => (
+          <label class={`chip kind-${k}`}>
+            <input type="checkbox" name="kind" value={k} />
+            {kindLabel[k]} <span class="count">{byKind[k].length.toLocaleString()}</span>
+          </label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Feed</legend>
+        <label class="chip"><input type="checkbox" name="feed" value="" checked /> All</label>
+        {feeds.map((f) => (
+          <label class="chip">
+            <input type="checkbox" name="feed" value={f} />
+            {f} {feedCounts[f] ? <span class="count">{feedCounts[f].toLocaleString()}</span> : null}
+          </label>
+        ))}
+      </fieldset>
+    </div>
+  </section>
+
+  <p class="result-count" id="result-count">{items.length.toLocaleString()} results</p>
+  <div class="grid" id="grid">
+    {items.map((item) => <IntegrationCard item={item} />)}
+  </div>
+  <p class="empty" id="empty" hidden>No matches.</p>
+</Base>
+
+<script is:inline>
+  (() => {
+    const grid = document.getElementById("grid");
+    const cards = Array.from(grid.querySelectorAll(".card"));
+    const q = document.getElementById("q");
+    const counter = document.getElementById("result-count");
+    const empty = document.getElementById("empty");
+    const filters = document.getElementById("filters");
+
+    let activeKinds = new Set();
+    let activeFeeds = new Set();
+    let term = "";
+
+    const apply = () => {
+      const t = term.trim().toLowerCase();
+      let visible = 0;
+      for (const el of cards) {
+        const k = el.dataset.kind;
+        const fs = (el.dataset.feeds || "").split(",");
+        const matchKind = activeKinds.size === 0 || activeKinds.has(k);
+        const matchFeed = activeFeeds.size === 0 || fs.some((f) => activeFeeds.has(f));
+        const matchTerm = !t || (el.dataset.search || "").includes(t);
+        const show = matchKind && matchFeed && matchTerm;
+        el.hidden = !show;
+        if (show) visible++;
+      }
+      counter.textContent = `${visible.toLocaleString()} ${visible === 1 ? "result" : "results"}`;
+      empty.hidden = visible !== 0;
+    };
+
+    // Debounce typing for cheaper filtering on large lists.
+    let to = 0;
+    q.addEventListener("input", () => {
+      term = q.value;
+      clearTimeout(to);
+      to = setTimeout(apply, 80);
+    });
+
+    // Chip groups: an "All" chip with empty value clears the group.
+    filters.addEventListener("change", (e) => {
+      const input = e.target;
+      if (input.tagName !== "INPUT") return;
+      const group = input.name;
+      const isAll = input.value === "";
+      const set = group === "kind" ? activeKinds : activeFeeds;
+
+      if (isAll) {
+        // Clicking All clears the set + unchecks all siblings.
+        set.clear();
+        for (const sib of filters.querySelectorAll(`input[name="${group}"]`)) {
+          sib.checked = sib.value === "";
+        }
+      } else {
+        if (input.checked) set.add(input.value);
+        else set.delete(input.value);
+        // Sync the All chip.
+        const allChip = filters.querySelector(`input[name="${group}"][value=""]`);
+        allChip.checked = set.size === 0;
+      }
+      apply();
+    });
+
+    // Focus search on /
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== q) {
+        e.preventDefault();
+        q.focus();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .hero { padding: 32px 0 24px; max-width: 760px; margin: 0 auto; text-align: center; }
+  .hero h1 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .hero .sub { color: var(--muted); margin: 0 0 22px; font-size: 14px; }
+  #q {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--fg);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.12s;
+  }
+  #q:focus { border-color: var(--accent); }
+  #q::placeholder { color: var(--muted); }
+  .filters {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filters fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filters legend {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-right: 8px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--muted);
+    transition: border-color 0.12s, color 0.12s;
+  }
+  .chip input { display: none; }
+  .chip:has(input:checked) { color: var(--fg); border-color: #2c333d; background: #1c2128; }
+  .chip.kind-mcp:has(input:checked) { color: #c4b5fd; border-color: #4c3a9f; }
+  .chip.kind-openapi:has(input:checked) { color: #93c5fd; border-color: #1e4ea8; }
+  .chip.kind-graphql:has(input:checked) { color: #f9a8d4; border-color: #9d2470; }
+  .chip .count { color: var(--muted); font-size: 11px; opacity: 0.7; }
+  .result-count { color: var(--muted); font-size: 12px; margin: 24px 0 12px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .empty { color: var(--muted); text-align: center; margin: 48px 0; }
+</style>

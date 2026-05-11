@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:50.096Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_answerback.start_conversation",
+      "name": "start-conversation",
+      "description": "Use to initialize a conversation role-play session. Call this tool when the user wants to practice a conversation and needs to define setup parameters such as participant names, other person's role/personality, conversation topic, and optionally the user's opening turn. This tool should be used at the start of a new practice flow so the widget can collect or refine scenario details before the assistant proceeds with role-play. The output is a normalized scenario payload used by the widget to persist and render current state. After the user presses Start in the widget, the conversation should proceed in chat and then continue-conversation should be called with response options."
+    },
+    {
+      "id": "mcp_answerback.continue_conversation",
+      "name": "continue-conversation",
+      "description": "Use to continue a conversation role-play session after the assistant has provided a turn in chat. Supply the other person's next message plus 2-4 candidate user responses so the widget can show selectable options to the user. The widget returns or persists the selected response and then prompts the assistant to take another turn and call continue-conversation again. Use this repeatedly for guided back-and-forth practice until the user indicates they are finished and asks for assessment. Do not output any text after rendering calling this tool."
+    }
+  ]
+}

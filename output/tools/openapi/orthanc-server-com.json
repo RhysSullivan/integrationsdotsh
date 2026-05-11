@@ -1,0 +1,1387 @@
+{
+  "fetchedAt": "2026-04-30T15:26:41.408Z",
+  "status": "ok",
+  "count": 276,
+  "tools": [
+    {
+      "id": "openapi_orthanc_server_com.instances.deleteInstancesId",
+      "name": "instances.deleteInstancesId",
+      "description": "Delete the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.deleteInstancesIdAttachmentsName",
+      "name": "instances.deleteInstancesIdAttachmentsName",
+      "description": "Delete an attachment associated with the given DICOM instance. This call will fail if trying to delete a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.deleteInstancesIdMetadataName",
+      "name": "instances.deleteInstancesIdMetadataName",
+      "description": "Delete some metadata associated with the given DICOM instance. This call will fail if trying to delete a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstances",
+      "name": "instances.getInstances",
+      "description": "List the Orthanc identifiers of all the available DICOM instances"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesId",
+      "name": "instances.getInstancesId",
+      "description": "Get detailed information about the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachments",
+      "name": "instances.getInstancesIdAttachments",
+      "description": "Get the list of attachments that are associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameCompressedData",
+      "name": "instances.getInstancesIdAttachmentsNameCompressedData",
+      "description": "Get the (binary) content of one attachment associated with the given instance. The attachment will not be decompressed if `StorageCompression` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameCompressedMd5",
+      "name": "instances.getInstancesIdAttachmentsNameCompressedMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given instance, as stored on the disk. This is different from `.../md5` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameCompressedSize",
+      "name": "instances.getInstancesIdAttachmentsNameCompressedSize",
+      "description": "Get the size of one attachment associated with the given instance, as stored on the disk. This is different from `.../size` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameData",
+      "name": "instances.getInstancesIdAttachmentsNameData",
+      "description": "Get the (binary) content of one attachment associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameInfo",
+      "name": "instances.getInstancesIdAttachmentsNameInfo",
+      "description": "Get all the information about the attachment associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameIsCompressed",
+      "name": "instances.getInstancesIdAttachmentsNameIsCompressed",
+      "description": "Test whether the attachment has been stored as a compressed file on the disk."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameMd5",
+      "name": "instances.getInstancesIdAttachmentsNameMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdAttachmentsNameSize",
+      "name": "instances.getInstancesIdAttachmentsNameSize",
+      "description": "Get the size of one attachment associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdContent",
+      "name": "instances.getInstancesIdContent",
+      "description": "Get the raw content of one DICOM tag in the hierarchy of DICOM dataset"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFile",
+      "name": "instances.getInstancesIdFile",
+      "description": "Download one DICOM instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFrames",
+      "name": "instances.getInstancesIdFrames",
+      "description": "List the frames that are available in the DICOM instance of interest"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameImageInt16",
+      "name": "instances.getInstancesIdFramesFrameImageInt16",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [-32768,32767] range. Negative values must be interpreted according to two's complement."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameImageUint16",
+      "name": "instances.getInstancesIdFramesFrameImageUint16",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [0,65535] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameImageUint8",
+      "name": "instances.getInstancesIdFramesFrameImageUint8",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [0,255] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameMatlab",
+      "name": "instances.getInstancesIdFramesFrameMatlab",
+      "description": "Decode one frame of interest from the given DICOM instance, and export this frame as a Octave/Matlab matrix to be imported with `eval()`: https://book.orthanc-server.com/faq/matlab.html"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameNumpy",
+      "name": "instances.getInstancesIdFramesFrameNumpy",
+      "description": "Decode one frame of interest from the given DICOM instance, for use with numpy in Python. The numpy array has 3 dimensions: (height, width, color channel)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFramePreview",
+      "name": "instances.getInstancesIdFramesFramePreview",
+      "description": "Decode one frame of interest from the given DICOM instance. The full dynamic range of grayscale images is rescaled to the [0,255] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameRaw",
+      "name": "instances.getInstancesIdFramesFrameRaw",
+      "description": "Access the raw content of one individual frame of the DICOM instance of interest, bypassing image decoding. This is notably useful to access the source files in compressed transfer syntaxes."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameRawGz",
+      "name": "instances.getInstancesIdFramesFrameRawGz",
+      "description": "Access the raw content of one individual frame of the DICOM instance of interest, bypassing image decoding. This is notably useful to access the source files in compressed transfer syntaxes. The image is compressed using gzip"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdFramesFrameRendered",
+      "name": "instances.getInstancesIdFramesFrameRendered",
+      "description": "Render one frame of interest from the given DICOM instance. This function takes scaling into account (`RescaleSlope` and `RescaleIntercept` tags), as well as the default windowing stored in the DICOM file (`WindowCenter` and `WindowWidth`tags), and can be used to resize the resulting image. Color images are not affected by windowing."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdHeader",
+      "name": "instances.getInstancesIdHeader",
+      "description": "Get the DICOM tags in the meta-header of the DICOM instance. By default, the `full` format is used, which combines hexadecimal tags with human-readable description."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdImageInt16",
+      "name": "instances.getInstancesIdImageInt16",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [-32768,32767] range. Negative values must be interpreted according to two's complement."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdImageUint16",
+      "name": "instances.getInstancesIdImageUint16",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [0,65535] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdImageUint8",
+      "name": "instances.getInstancesIdImageUint8",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [0,255] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdMatlab",
+      "name": "instances.getInstancesIdMatlab",
+      "description": "Decode the first frame of the given DICOM instance., and export this frame as a Octave/Matlab matrix to be imported with `eval()`: https://book.orthanc-server.com/faq/matlab.html"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdMetadata",
+      "name": "instances.getInstancesIdMetadata",
+      "description": "Get the list of metadata that are associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdMetadataName",
+      "name": "instances.getInstancesIdMetadataName",
+      "description": "Get the value of a metadata that is associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdModule",
+      "name": "instances.getInstancesIdModule",
+      "description": "Get the instance module of the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdNumpy",
+      "name": "instances.getInstancesIdNumpy",
+      "description": "Decode the given DICOM instance, for use with numpy in Python. The numpy array has 4 dimensions: (frame, height, width, color channel)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdPatient",
+      "name": "instances.getInstancesIdPatient",
+      "description": "Get detailed information about the parent patient of the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdPdf",
+      "name": "instances.getInstancesIdPdf",
+      "description": "Get the PDF file that is embedded in one DICOM instance. If the DICOM instance doesn't contain the `EncapsulatedDocument` tag or if the `MIMETypeOfEncapsulatedDocument` tag doesn't correspond to the PDF type, a `404` HTTP error is raised."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdPreview",
+      "name": "instances.getInstancesIdPreview",
+      "description": "Decode the first frame of the given DICOM instance. The full dynamic range of grayscale images is rescaled to the [0,255] range."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdRendered",
+      "name": "instances.getInstancesIdRendered",
+      "description": "Render the first frame of the given DICOM instance. This function takes scaling into account (`RescaleSlope` and `RescaleIntercept` tags), as well as the default windowing stored in the DICOM file (`WindowCenter` and `WindowWidth`tags), and can be used to resize the resulting image. Color images are not affected by windowing."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdSeries",
+      "name": "instances.getInstancesIdSeries",
+      "description": "Get detailed information about the parent series of the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdSimplifiedTags",
+      "name": "instances.getInstancesIdSimplifiedTags",
+      "description": "Get the DICOM tags in human-readable format (same as the `/instances/{id}/tags?simplify` route)"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdStatistics",
+      "name": "instances.getInstancesIdStatistics",
+      "description": "Get statistics about the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdStudy",
+      "name": "instances.getInstancesIdStudy",
+      "description": "Get detailed information about the parent study of the DICOM instance whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.getInstancesIdTags",
+      "name": "instances.getInstancesIdTags",
+      "description": "Get the DICOM tags in the specified format. By default, the `full` format is used, which combines hexadecimal tags with human-readable description."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstances",
+      "name": "instances.postInstances",
+      "description": "Upload DICOM instances"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdAnonymize",
+      "name": "instances.postInstancesIdAnonymize",
+      "description": "Download an anonymized version of the DICOM instance whose Orthanc identifier is provided in the URL: https://book.orthanc-server.com/users/anonymization.html#anonymization-of-a-single-instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdAttachmentsNameCompress",
+      "name": "instances.postInstancesIdAttachmentsNameCompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdAttachmentsNameUncompress",
+      "name": "instances.postInstancesIdAttachmentsNameUncompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdAttachmentsNameVerifyMd5",
+      "name": "instances.postInstancesIdAttachmentsNameVerifyMd5",
+      "description": "Verify that the attachment is not corrupted, by validating its MD5 hash"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdExport",
+      "name": "instances.postInstancesIdExport",
+      "description": "Write the DICOM file onto the filesystem where Orthanc is running"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdModify",
+      "name": "instances.postInstancesIdModify",
+      "description": "Download a modified version of the DICOM instance whose Orthanc identifier is provided in the URL: https://book.orthanc-server.com/users/anonymization.html#modification-of-a-single-instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.postInstancesIdReconstruct",
+      "name": "instances.postInstancesIdReconstruct",
+      "description": "Reconstruct the main DICOM tags in DB of the instance whose Orthanc identifier is provided in the URL. This is useful if child studies/series/instances have inconsistent values for higher-level tags, in order to force Orthanc to use the value from the resource of interest. Beware that this is a time-consuming operation, as all the children DICOM instances will be parsed again, and the Orthanc index will be updated accordingly."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.putInstancesIdAttachmentsName",
+      "name": "instances.putInstancesIdAttachmentsName",
+      "description": "Attach a file to the given DICOM instance. This call will fail if trying to modify a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.instances.putInstancesIdMetadataName",
+      "name": "instances.putInstancesIdMetadataName",
+      "description": "Set the value of some metadata in the given DICOM instance. This call will fail if trying to modify a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.getJobs",
+      "name": "jobs.getJobs",
+      "description": "List all the available jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.getJobsId",
+      "name": "jobs.getJobsId",
+      "description": "Retrieve detailed information about the job whose identifier is provided in the URL: https://book.orthanc-server.com/users/advanced-rest.html#jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.getJobsIdKey",
+      "name": "jobs.getJobsIdKey",
+      "description": "Retrieve some output produced by a job. As of Orthanc 1.8.2, only the jobs that generate a DICOMDIR media or a ZIP archive provide such an output (with `key` equals to `archive`)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.postJobsIdCancel",
+      "name": "jobs.postJobsIdCancel",
+      "description": "Cancel the job whose identifier is provided in the URL. Check out the Orthanc Book for more information about the state machine applicable to jobs: https://book.orthanc-server.com/users/advanced-rest.html#jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.postJobsIdPause",
+      "name": "jobs.postJobsIdPause",
+      "description": "Pause the job whose identifier is provided in the URL. Check out the Orthanc Book for more information about the state machine applicable to jobs: https://book.orthanc-server.com/users/advanced-rest.html#jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.postJobsIdResubmit",
+      "name": "jobs.postJobsIdResubmit",
+      "description": "Resubmit the job whose identifier is provided in the URL. Check out the Orthanc Book for more information about the state machine applicable to jobs: https://book.orthanc-server.com/users/advanced-rest.html#jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.jobs.postJobsIdResume",
+      "name": "jobs.postJobsIdResume",
+      "description": "Resume the job whose identifier is provided in the URL. Check out the Orthanc Book for more information about the state machine applicable to jobs: https://book.orthanc-server.com/users/advanced-rest.html#jobs"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevel",
+      "name": "logs.getToolsLogLevel",
+      "description": "Get the main log level of Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelDicom",
+      "name": "logs.getToolsLogLevelDicom",
+      "description": "Get the log level of the log category `dicom`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelGeneric",
+      "name": "logs.getToolsLogLevelGeneric",
+      "description": "Get the log level of the log category `generic`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelHttp",
+      "name": "logs.getToolsLogLevelHttp",
+      "description": "Get the log level of the log category `http`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelJobs",
+      "name": "logs.getToolsLogLevelJobs",
+      "description": "Get the log level of the log category `jobs`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelLua",
+      "name": "logs.getToolsLogLevelLua",
+      "description": "Get the log level of the log category `lua`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelPlugins",
+      "name": "logs.getToolsLogLevelPlugins",
+      "description": "Get the log level of the log category `plugins`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.getToolsLogLevelSqlite",
+      "name": "logs.getToolsLogLevelSqlite",
+      "description": "Get the log level of the log category `sqlite`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevel",
+      "name": "logs.putToolsLogLevel",
+      "description": "Set the main log level of Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelDicom",
+      "name": "logs.putToolsLogLevelDicom",
+      "description": "Set the log level of the log category `dicom`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelGeneric",
+      "name": "logs.putToolsLogLevelGeneric",
+      "description": "Set the log level of the log category `generic`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelHttp",
+      "name": "logs.putToolsLogLevelHttp",
+      "description": "Set the log level of the log category `http`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelJobs",
+      "name": "logs.putToolsLogLevelJobs",
+      "description": "Set the log level of the log category `jobs`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelLua",
+      "name": "logs.putToolsLogLevelLua",
+      "description": "Set the log level of the log category `lua`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelPlugins",
+      "name": "logs.putToolsLogLevelPlugins",
+      "description": "Set the log level of the log category `plugins`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.logs.putToolsLogLevelSqlite",
+      "name": "logs.putToolsLogLevelSqlite",
+      "description": "Set the log level of the log category `sqlite`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.deleteModalitiesId",
+      "name": "networking.deleteModalitiesId",
+      "description": "Delete one DICOM modality. This change is permanent iff. `DicomModalitiesInDatabase` is `true`, otherwise it is lost at the next restart of Orthanc."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.deletePeersId",
+      "name": "networking.deletePeersId",
+      "description": "Delete one Orthanc peer. This change is permanent iff. `OrthancPeersInDatabase` is `true`, otherwise it is lost at the next restart of Orthanc."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.deleteQueriesId",
+      "name": "networking.deleteQueriesId",
+      "description": "Delete the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getModalities",
+      "name": "networking.getModalities",
+      "description": "List all the DICOM modalities that are known to Orthanc. This corresponds either to the content of the `DicomModalities` configuration option, or to the information stored in the database if `DicomModalitiesInDatabase` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getModalitiesId",
+      "name": "networking.getModalitiesId",
+      "description": "List the operations that are available for a DICOM modality."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getModalitiesIdConfiguration",
+      "name": "networking.getModalitiesIdConfiguration",
+      "description": "Get detailed information about the configuration of some DICOM modality"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getPeers",
+      "name": "networking.getPeers",
+      "description": "List all the Orthanc peers that are known to Orthanc. This corresponds either to the content of the `OrthancPeers` configuration option, or to the information stored in the database if `OrthancPeersInDatabase` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getPeersId",
+      "name": "networking.getPeersId",
+      "description": "List the operations that are available for an Orthanc peer."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getPeersIdConfiguration",
+      "name": "networking.getPeersIdConfiguration",
+      "description": "Get detailed information about the configuration of some Orthanc peer"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getPeersIdSystem",
+      "name": "networking.getPeersIdSystem",
+      "description": "Get system information about some Orthanc peer. This corresponds to doing a `GET` request against the `/system` URI of the remote peer. This route can be used to test connectivity."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueries",
+      "name": "networking.getQueries",
+      "description": "List the identifiers of all the query/retrieve operations on DICOM modalities, as initiated by calls to `/modalities/{id}/query`. The length of this list is bounded by the `QueryRetrieveSize` configuration option of Orthanc. https://book.orthanc-server.com/users/rest.html#performing-query-retrieve-c-find-and-find-with-rest"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesId",
+      "name": "networking.getQueriesId",
+      "description": "List the available operations for the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdAnswers",
+      "name": "networking.getQueriesIdAnswers",
+      "description": "List the indices of all the available answers resulting from a query/retrieve operation on some DICOM modality, whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdAnswersIndex",
+      "name": "networking.getQueriesIdAnswersIndex",
+      "description": "List the available operations on an answer associated with the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdAnswersIndexContent",
+      "name": "networking.getQueriesIdAnswersIndexContent",
+      "description": "Get the content (DICOM tags) of one answer associated with the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdLevel",
+      "name": "networking.getQueriesIdLevel",
+      "description": "Get the query level (value of the `QueryRetrieveLevel` tag) of the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdModality",
+      "name": "networking.getQueriesIdModality",
+      "description": "Get the identifier of the DICOM modality that was targeted by the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getQueriesIdQuery",
+      "name": "networking.getQueriesIdQuery",
+      "description": "Get the original DICOM filter associated with the query/retrieve operation whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.getStorageCommitmentId",
+      "name": "networking.getStorageCommitmentId",
+      "description": "Get the storage commitment report whose identifier is provided in the URL: https://book.orthanc-server.com/users/storage-commitment.html#storage-commitment-scu"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdEcho",
+      "name": "networking.postModalitiesIdEcho",
+      "description": "Trigger C-ECHO SCU command against the DICOM modality whose identifier is provided in URL: https://book.orthanc-server.com/users/rest.html#performing-c-echo"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFind",
+      "name": "networking.postModalitiesIdFind",
+      "description": "Trigger a sequence of C-FIND SCU commands against the DICOM modality whose identifier is provided in URL, in order to discover a hierarchy of matching patients/studies/series. Deprecated in favor of `/modalities/{id}/query`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFindInstance",
+      "name": "networking.postModalitiesIdFindInstance",
+      "description": "Trigger C-FIND SCU command against the DICOM modality whose identifier is provided in URL, in order to find an instance. Deprecated in favor of `/modalities/{id}/query`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFindPatient",
+      "name": "networking.postModalitiesIdFindPatient",
+      "description": "Trigger C-FIND SCU command against the DICOM modality whose identifier is provided in URL, in order to find a patient. Deprecated in favor of `/modalities/{id}/query`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFindSeries",
+      "name": "networking.postModalitiesIdFindSeries",
+      "description": "Trigger C-FIND SCU command against the DICOM modality whose identifier is provided in URL, in order to find a series. Deprecated in favor of `/modalities/{id}/query`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFindStudy",
+      "name": "networking.postModalitiesIdFindStudy",
+      "description": "Trigger C-FIND SCU command against the DICOM modality whose identifier is provided in URL, in order to find a study. Deprecated in favor of `/modalities/{id}/query`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdFindWorklist",
+      "name": "networking.postModalitiesIdFindWorklist",
+      "description": "Trigger C-FIND SCU command against the remote worklists of the DICOM modality whose identifier is provided in URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdMove",
+      "name": "networking.postModalitiesIdMove",
+      "description": "Start a C-MOVE SCU command as a job, in order to drive the execution of a sequence of C-STORE commands by some remote DICOM modality whose identifier is provided in the URL: https://book.orthanc-server.com/users/rest.html#performing-c-move"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdQuery",
+      "name": "networking.postModalitiesIdQuery",
+      "description": "Trigger C-FIND SCU command against the DICOM modality whose identifier is provided in URL: https://book.orthanc-server.com/users/rest.html#performing-query-retrieve-c-find-and-find-with-rest"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdStorageCommitment",
+      "name": "networking.postModalitiesIdStorageCommitment",
+      "description": "Trigger a storage commitment request to some remote DICOM modality whose identifier is provided in the URL: https://book.orthanc-server.com/users/storage-commitment.html#storage-commitment-scu"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdStore",
+      "name": "networking.postModalitiesIdStore",
+      "description": "Start a C-STORE SCU command as a job, in order to send DICOM resources stored locally to some remote DICOM modality whose identifier is provided in the URL: https://book.orthanc-server.com/users/rest.html#rest-store-scu"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postModalitiesIdStoreStraight",
+      "name": "networking.postModalitiesIdStoreStraight",
+      "description": "Synchronously send the DICOM instance in the POST body to the remote DICOM modality whose identifier is provided in URL, without having to first store it locally within Orthanc. This is an alternative to command-line tools such as `storescu` from DCMTK or dcm4che."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postPeersIdStore",
+      "name": "networking.postPeersIdStore",
+      "description": "Send DICOM resources stored locally to some remote Orthanc peer whose identifier is provided in the URL: https://book.orthanc-server.com/users/rest.html#sending-one-resource"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postPeersIdStoreStraight",
+      "name": "networking.postPeersIdStoreStraight",
+      "description": "Synchronously send the DICOM instance in the POST body to the Orthanc peer whose identifier is provided in URL, without having to first store it locally within Orthanc. This is an alternative to command-line tools such as `curl`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postQueriesIdAnswersIndexQueryInstances",
+      "name": "networking.postQueriesIdAnswersIndexQueryInstances",
+      "description": "Issue a second DICOM C-FIND operation, in order to query the child instances associated with one answer to some query/retrieve operation whose identifiers are provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postQueriesIdAnswersIndexQuerySeries",
+      "name": "networking.postQueriesIdAnswersIndexQuerySeries",
+      "description": "Issue a second DICOM C-FIND operation, in order to query the child series associated with one answer to some query/retrieve operation whose identifiers are provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postQueriesIdAnswersIndexQueryStudies",
+      "name": "networking.postQueriesIdAnswersIndexQueryStudies",
+      "description": "Issue a second DICOM C-FIND operation, in order to query the child studies associated with one answer to some query/retrieve operation whose identifiers are provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postQueriesIdAnswersIndexRetrieve",
+      "name": "networking.postQueriesIdAnswersIndexRetrieve",
+      "description": "Start a C-MOVE SCU command as a job, in order to retrieve one answer associated with the query/retrieve operation whose identifiers are provided in the URL: https://book.orthanc-server.com/users/rest.html#performing-retrieve-c-move"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postQueriesIdRetrieve",
+      "name": "networking.postQueriesIdRetrieve",
+      "description": "Start a C-MOVE SCU command as a job, in order to retrieve all the answers associated with the query/retrieve operation whose identifier is provided in the URL: https://book.orthanc-server.com/users/rest.html#performing-retrieve-c-move"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.postStorageCommitmentIdRemove",
+      "name": "networking.postStorageCommitmentIdRemove",
+      "description": "Remove out of Orthanc, the DICOM instances that have been reported to have been properly received the storage commitment report whose identifier is provided in the URL. This is only possible if the `Status` of the storage commitment report is `Success`. https://book.orthanc-server.com/users/storage-commitment.html#removing-the-instances"
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.putModalitiesId",
+      "name": "networking.putModalitiesId",
+      "description": "Define a new DICOM modality, or update an existing one. This change is permanent iff. `DicomModalitiesInDatabase` is `true`, otherwise it is lost at the next restart of Orthanc."
+    },
+    {
+      "id": "openapi_orthanc_server_com.networking.putPeersId",
+      "name": "networking.putPeersId",
+      "description": "Define a new Orthanc peer, or update an existing one. This change is permanent iff. `OrthancPeersInDatabase` is `true`, otherwise it is lost at the next restart of Orthanc."
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getInstancesIdAttachmentsName",
+      "name": "other.getInstancesIdAttachmentsName",
+      "description": "Get the list of the operations that are available for attachments associated with the given instance"
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getInstancesIdFramesFrame",
+      "name": "other.getInstancesIdFramesFrame",
+      "description": "List the available operations under URI `/instances/{id}/frames/{frame}/`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getPatientsIdAttachmentsName",
+      "name": "other.getPatientsIdAttachmentsName",
+      "description": "Get the list of the operations that are available for attachments associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getSeriesIdAttachmentsName",
+      "name": "other.getSeriesIdAttachmentsName",
+      "description": "Get the list of the operations that are available for attachments associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getStudiesIdAttachmentsName",
+      "name": "other.getStudiesIdAttachmentsName",
+      "description": "Get the list of the operations that are available for attachments associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.other.getTools",
+      "name": "other.getTools",
+      "description": "List the available operations under URI `/tools/`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.deletePatientsId",
+      "name": "patients.deletePatientsId",
+      "description": "Delete the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.deletePatientsIdAttachmentsName",
+      "name": "patients.deletePatientsIdAttachmentsName",
+      "description": "Delete an attachment associated with the given DICOM patient. This call will fail if trying to delete a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.deletePatientsIdMetadataName",
+      "name": "patients.deletePatientsIdMetadataName",
+      "description": "Delete some metadata associated with the given DICOM patient. This call will fail if trying to delete a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatients",
+      "name": "patients.getPatients",
+      "description": "List the Orthanc identifiers of all the available DICOM patients"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsId",
+      "name": "patients.getPatientsId",
+      "description": "Get detailed information about the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdArchive",
+      "name": "patients.getPatientsIdArchive",
+      "description": "Synchronously create a ZIP archive containing the DICOM patient whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachments",
+      "name": "patients.getPatientsIdAttachments",
+      "description": "Get the list of attachments that are associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameCompressedData",
+      "name": "patients.getPatientsIdAttachmentsNameCompressedData",
+      "description": "Get the (binary) content of one attachment associated with the given patient. The attachment will not be decompressed if `StorageCompression` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameCompressedMd5",
+      "name": "patients.getPatientsIdAttachmentsNameCompressedMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given patient, as stored on the disk. This is different from `.../md5` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameCompressedSize",
+      "name": "patients.getPatientsIdAttachmentsNameCompressedSize",
+      "description": "Get the size of one attachment associated with the given patient, as stored on the disk. This is different from `.../size` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameData",
+      "name": "patients.getPatientsIdAttachmentsNameData",
+      "description": "Get the (binary) content of one attachment associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameInfo",
+      "name": "patients.getPatientsIdAttachmentsNameInfo",
+      "description": "Get all the information about the attachment associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameIsCompressed",
+      "name": "patients.getPatientsIdAttachmentsNameIsCompressed",
+      "description": "Test whether the attachment has been stored as a compressed file on the disk."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameMd5",
+      "name": "patients.getPatientsIdAttachmentsNameMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdAttachmentsNameSize",
+      "name": "patients.getPatientsIdAttachmentsNameSize",
+      "description": "Get the size of one attachment associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdInstances",
+      "name": "patients.getPatientsIdInstances",
+      "description": "Get detailed information about the child instances of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdInstancesTags",
+      "name": "patients.getPatientsIdInstancesTags",
+      "description": "Get the tags of all the child instances of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdMedia",
+      "name": "patients.getPatientsIdMedia",
+      "description": "Synchronously create a DICOMDIR media containing the DICOM patient whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdMetadata",
+      "name": "patients.getPatientsIdMetadata",
+      "description": "Get the list of metadata that are associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdMetadataName",
+      "name": "patients.getPatientsIdMetadataName",
+      "description": "Get the value of a metadata that is associated with the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdModule",
+      "name": "patients.getPatientsIdModule",
+      "description": "Get the patient module of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdProtected",
+      "name": "patients.getPatientsIdProtected",
+      "description": "Is the patient protected against recycling?"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdSeries",
+      "name": "patients.getPatientsIdSeries",
+      "description": "Get detailed information about the child series of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdSharedTags",
+      "name": "patients.getPatientsIdSharedTags",
+      "description": "Extract the DICOM tags whose value is constant across all the child instances of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdStatistics",
+      "name": "patients.getPatientsIdStatistics",
+      "description": "Get statistics about the given patient"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.getPatientsIdStudies",
+      "name": "patients.getPatientsIdStudies",
+      "description": "Get detailed information about the child studies of the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdAnonymize",
+      "name": "patients.postPatientsIdAnonymize",
+      "description": "Start a job that will anonymize all the DICOM instances within the patient whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new patient, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#anonymization-of-patients-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdArchive",
+      "name": "patients.postPatientsIdArchive",
+      "description": "Create a ZIP archive containing the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdAttachmentsNameCompress",
+      "name": "patients.postPatientsIdAttachmentsNameCompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdAttachmentsNameUncompress",
+      "name": "patients.postPatientsIdAttachmentsNameUncompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdAttachmentsNameVerifyMd5",
+      "name": "patients.postPatientsIdAttachmentsNameVerifyMd5",
+      "description": "Verify that the attachment is not corrupted, by validating its MD5 hash"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdMedia",
+      "name": "patients.postPatientsIdMedia",
+      "description": "Create a DICOMDIR media containing the DICOM patient whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdModify",
+      "name": "patients.postPatientsIdModify",
+      "description": "Start a job that will modify all the DICOM instances within the patient whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new patient, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#modification-of-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.postPatientsIdReconstruct",
+      "name": "patients.postPatientsIdReconstruct",
+      "description": "Reconstruct the main DICOM tags in DB of the patient whose Orthanc identifier is provided in the URL. This is useful if child studies/series/instances have inconsistent values for higher-level tags, in order to force Orthanc to use the value from the resource of interest. Beware that this is a time-consuming operation, as all the children DICOM instances will be parsed again, and the Orthanc index will be updated accordingly."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.putPatientsIdAttachmentsName",
+      "name": "patients.putPatientsIdAttachmentsName",
+      "description": "Attach a file to the given DICOM patient. This call will fail if trying to modify a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.putPatientsIdMetadataName",
+      "name": "patients.putPatientsIdMetadataName",
+      "description": "Set the value of some metadata in the given DICOM patient. This call will fail if trying to modify a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.patients.putPatientsIdProtected",
+      "name": "patients.putPatientsIdProtected",
+      "description": "Check out configuration options `MaximumStorageSize` and `MaximumPatientCount`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.deleteSeriesId",
+      "name": "series.deleteSeriesId",
+      "description": "Delete the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.deleteSeriesIdAttachmentsName",
+      "name": "series.deleteSeriesIdAttachmentsName",
+      "description": "Delete an attachment associated with the given DICOM series. This call will fail if trying to delete a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.deleteSeriesIdMetadataName",
+      "name": "series.deleteSeriesIdMetadataName",
+      "description": "Delete some metadata associated with the given DICOM series. This call will fail if trying to delete a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeries",
+      "name": "series.getSeries",
+      "description": "List the Orthanc identifiers of all the available DICOM series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesId",
+      "name": "series.getSeriesId",
+      "description": "Get detailed information about the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdArchive",
+      "name": "series.getSeriesIdArchive",
+      "description": "Synchronously create a ZIP archive containing the DICOM series whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachments",
+      "name": "series.getSeriesIdAttachments",
+      "description": "Get the list of attachments that are associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameCompressedData",
+      "name": "series.getSeriesIdAttachmentsNameCompressedData",
+      "description": "Get the (binary) content of one attachment associated with the given series. The attachment will not be decompressed if `StorageCompression` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameCompressedMd5",
+      "name": "series.getSeriesIdAttachmentsNameCompressedMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given series, as stored on the disk. This is different from `.../md5` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameCompressedSize",
+      "name": "series.getSeriesIdAttachmentsNameCompressedSize",
+      "description": "Get the size of one attachment associated with the given series, as stored on the disk. This is different from `.../size` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameData",
+      "name": "series.getSeriesIdAttachmentsNameData",
+      "description": "Get the (binary) content of one attachment associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameInfo",
+      "name": "series.getSeriesIdAttachmentsNameInfo",
+      "description": "Get all the information about the attachment associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameIsCompressed",
+      "name": "series.getSeriesIdAttachmentsNameIsCompressed",
+      "description": "Test whether the attachment has been stored as a compressed file on the disk."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameMd5",
+      "name": "series.getSeriesIdAttachmentsNameMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdAttachmentsNameSize",
+      "name": "series.getSeriesIdAttachmentsNameSize",
+      "description": "Get the size of one attachment associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdInstances",
+      "name": "series.getSeriesIdInstances",
+      "description": "Get detailed information about the child instances of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdInstancesTags",
+      "name": "series.getSeriesIdInstancesTags",
+      "description": "Get the tags of all the child instances of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdMedia",
+      "name": "series.getSeriesIdMedia",
+      "description": "Synchronously create a DICOMDIR media containing the DICOM series whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdMetadata",
+      "name": "series.getSeriesIdMetadata",
+      "description": "Get the list of metadata that are associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdMetadataName",
+      "name": "series.getSeriesIdMetadataName",
+      "description": "Get the value of a metadata that is associated with the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdModule",
+      "name": "series.getSeriesIdModule",
+      "description": "Get the series module of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdNumpy",
+      "name": "series.getSeriesIdNumpy",
+      "description": "Decode the given DICOM series, for use with numpy in Python. The numpy array has 4 dimensions: (frame, height, width, color channel)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdOrderedSlices",
+      "name": "series.getSeriesIdOrderedSlices",
+      "description": "Sort the instances and frames (slices) of the DICOM series whose Orthanc identifier is provided in the URL. This URI is essentially used by the Orthanc Web viewer and by the Osimis Web viewer."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdPatient",
+      "name": "series.getSeriesIdPatient",
+      "description": "Get detailed information about the parent patient of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdSharedTags",
+      "name": "series.getSeriesIdSharedTags",
+      "description": "Extract the DICOM tags whose value is constant across all the child instances of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdStatistics",
+      "name": "series.getSeriesIdStatistics",
+      "description": "Get statistics about the given series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.getSeriesIdStudy",
+      "name": "series.getSeriesIdStudy",
+      "description": "Get detailed information about the parent study of the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdAnonymize",
+      "name": "series.postSeriesIdAnonymize",
+      "description": "Start a job that will anonymize all the DICOM instances within the series whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new series, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#anonymization-of-patients-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdArchive",
+      "name": "series.postSeriesIdArchive",
+      "description": "Create a ZIP archive containing the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdAttachmentsNameCompress",
+      "name": "series.postSeriesIdAttachmentsNameCompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdAttachmentsNameUncompress",
+      "name": "series.postSeriesIdAttachmentsNameUncompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdAttachmentsNameVerifyMd5",
+      "name": "series.postSeriesIdAttachmentsNameVerifyMd5",
+      "description": "Verify that the attachment is not corrupted, by validating its MD5 hash"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdMedia",
+      "name": "series.postSeriesIdMedia",
+      "description": "Create a DICOMDIR media containing the DICOM series whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdModify",
+      "name": "series.postSeriesIdModify",
+      "description": "Start a job that will modify all the DICOM instances within the series whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new series, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#modification-of-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.postSeriesIdReconstruct",
+      "name": "series.postSeriesIdReconstruct",
+      "description": "Reconstruct the main DICOM tags in DB of the series whose Orthanc identifier is provided in the URL. This is useful if child studies/series/instances have inconsistent values for higher-level tags, in order to force Orthanc to use the value from the resource of interest. Beware that this is a time-consuming operation, as all the children DICOM instances will be parsed again, and the Orthanc index will be updated accordingly."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.putSeriesIdAttachmentsName",
+      "name": "series.putSeriesIdAttachmentsName",
+      "description": "Attach a file to the given DICOM series. This call will fail if trying to modify a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.series.putSeriesIdMetadataName",
+      "name": "series.putSeriesIdMetadataName",
+      "description": "Set the value of some metadata in the given DICOM series. This call will fail if trying to modify a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.deleteStudiesId",
+      "name": "studies.deleteStudiesId",
+      "description": "Delete the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.deleteStudiesIdAttachmentsName",
+      "name": "studies.deleteStudiesIdAttachmentsName",
+      "description": "Delete an attachment associated with the given DICOM study. This call will fail if trying to delete a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.deleteStudiesIdMetadataName",
+      "name": "studies.deleteStudiesIdMetadataName",
+      "description": "Delete some metadata associated with the given DICOM study. This call will fail if trying to delete a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudies",
+      "name": "studies.getStudies",
+      "description": "List the Orthanc identifiers of all the available DICOM studies"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesId",
+      "name": "studies.getStudiesId",
+      "description": "Get detailed information about the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdArchive",
+      "name": "studies.getStudiesIdArchive",
+      "description": "Synchronously create a ZIP archive containing the DICOM study whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachments",
+      "name": "studies.getStudiesIdAttachments",
+      "description": "Get the list of attachments that are associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameCompressedData",
+      "name": "studies.getStudiesIdAttachmentsNameCompressedData",
+      "description": "Get the (binary) content of one attachment associated with the given study. The attachment will not be decompressed if `StorageCompression` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameCompressedMd5",
+      "name": "studies.getStudiesIdAttachmentsNameCompressedMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given study, as stored on the disk. This is different from `.../md5` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameCompressedSize",
+      "name": "studies.getStudiesIdAttachmentsNameCompressedSize",
+      "description": "Get the size of one attachment associated with the given study, as stored on the disk. This is different from `.../size` iff `EnableStorage` is `true`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameData",
+      "name": "studies.getStudiesIdAttachmentsNameData",
+      "description": "Get the (binary) content of one attachment associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameInfo",
+      "name": "studies.getStudiesIdAttachmentsNameInfo",
+      "description": "Get all the information about the attachment associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameIsCompressed",
+      "name": "studies.getStudiesIdAttachmentsNameIsCompressed",
+      "description": "Test whether the attachment has been stored as a compressed file on the disk."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameMd5",
+      "name": "studies.getStudiesIdAttachmentsNameMd5",
+      "description": "Get the MD5 hash of one attachment associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdAttachmentsNameSize",
+      "name": "studies.getStudiesIdAttachmentsNameSize",
+      "description": "Get the size of one attachment associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdInstances",
+      "name": "studies.getStudiesIdInstances",
+      "description": "Get detailed information about the child instances of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdInstancesTags",
+      "name": "studies.getStudiesIdInstancesTags",
+      "description": "Get the tags of all the child instances of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdMedia",
+      "name": "studies.getStudiesIdMedia",
+      "description": "Synchronously create a DICOMDIR media containing the DICOM study whose Orthanc identifier is provided in the URL. This flavor is synchronous, which might *not* be desirable to archive large amount of data, as it might lead to network timeouts. Prefer the asynchronous version using `POST` method."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdMetadata",
+      "name": "studies.getStudiesIdMetadata",
+      "description": "Get the list of metadata that are associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdMetadataName",
+      "name": "studies.getStudiesIdMetadataName",
+      "description": "Get the value of a metadata that is associated with the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdModule",
+      "name": "studies.getStudiesIdModule",
+      "description": "Get the study module of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdModulePatient",
+      "name": "studies.getStudiesIdModulePatient",
+      "description": "Get the patient module of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdPatient",
+      "name": "studies.getStudiesIdPatient",
+      "description": "Get detailed information about the parent patient of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdSeries",
+      "name": "studies.getStudiesIdSeries",
+      "description": "Get detailed information about the child series of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdSharedTags",
+      "name": "studies.getStudiesIdSharedTags",
+      "description": "Extract the DICOM tags whose value is constant across all the child instances of the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.getStudiesIdStatistics",
+      "name": "studies.getStudiesIdStatistics",
+      "description": "Get statistics about the given study"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdAnonymize",
+      "name": "studies.postStudiesIdAnonymize",
+      "description": "Start a job that will anonymize all the DICOM instances within the study whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new study, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#anonymization-of-patients-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdArchive",
+      "name": "studies.postStudiesIdArchive",
+      "description": "Create a ZIP archive containing the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdAttachmentsNameCompress",
+      "name": "studies.postStudiesIdAttachmentsNameCompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdAttachmentsNameUncompress",
+      "name": "studies.postStudiesIdAttachmentsNameUncompress",
+      "description": "Change the compression scheme that is used to store an attachment."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdAttachmentsNameVerifyMd5",
+      "name": "studies.postStudiesIdAttachmentsNameVerifyMd5",
+      "description": "Verify that the attachment is not corrupted, by validating its MD5 hash"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdMedia",
+      "name": "studies.postStudiesIdMedia",
+      "description": "Create a DICOMDIR media containing the DICOM study whose Orthanc identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdMerge",
+      "name": "studies.postStudiesIdMerge",
+      "description": "Start a new job so as to move some DICOM resources into the DICOM study whose Orthanc identifier is provided in the URL: https://book.orthanc-server.com/users/anonymization.html#merging"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdModify",
+      "name": "studies.postStudiesIdModify",
+      "description": "Start a job that will modify all the DICOM instances within the study whose identifier is provided in the URL. The modified DICOM instances will be stored into a brand new study, whose Orthanc identifiers will be returned by the job. https://book.orthanc-server.com/users/anonymization.html#modification-of-studies-or-series"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdReconstruct",
+      "name": "studies.postStudiesIdReconstruct",
+      "description": "Reconstruct the main DICOM tags in DB of the study whose Orthanc identifier is provided in the URL. This is useful if child studies/series/instances have inconsistent values for higher-level tags, in order to force Orthanc to use the value from the resource of interest. Beware that this is a time-consuming operation, as all the children DICOM instances will be parsed again, and the Orthanc index will be updated accordingly."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.postStudiesIdSplit",
+      "name": "studies.postStudiesIdSplit",
+      "description": "Start a new job so as to split the DICOM study whose Orthanc identifier is provided in the URL, by taking some of its children series or instances out of it and putting them into a brand new study (this new study is created by setting the `StudyInstanceUID` tag to a random identifier): https://book.orthanc-server.com/users/anonymization.html#splitting"
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.putStudiesIdAttachmentsName",
+      "name": "studies.putStudiesIdAttachmentsName",
+      "description": "Attach a file to the given DICOM study. This call will fail if trying to modify a system attachment (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.studies.putStudiesIdMetadataName",
+      "name": "studies.putStudiesIdMetadataName",
+      "description": "Set the value of some metadata in the given DICOM study. This call will fail if trying to modify a system metadata (i.e. whose index is < 1024)."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getPlugins",
+      "name": "system.getPlugins",
+      "description": "List all the installed plugins"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getPluginsExplorerJs",
+      "name": "system.getPluginsExplorerJs",
+      "description": "Get the JavaScript extensions that are installed by all the plugins using the `OrthancPluginExtendOrthancExplorer()` function of the plugin SDK. This route is for internal use of Orthanc Explorer."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getPluginsId",
+      "name": "system.getPluginsId",
+      "description": "Get system information about the plugin whose identifier is provided in the URL"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getStatistics",
+      "name": "system.getStatistics",
+      "description": "Get statistics related to the database of Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getSystem",
+      "name": "system.getSystem",
+      "description": "Get system information about Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsAcceptedTransferSyntaxes",
+      "name": "system.getToolsAcceptedTransferSyntaxes",
+      "description": "Get the list of UIDs of the DICOM transfer syntaxes that are accepted by Orthanc C-STORE SCP. This corresponds to the configuration options `AcceptedTransferSyntaxes` and `XXXTransferSyntaxAccepted`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsDefaultEncoding",
+      "name": "system.getToolsDefaultEncoding",
+      "description": "Get the default encoding that is used by Orthanc if parsing a DICOM instance without the `SpecificCharacterEncoding` tag, or during C-FIND. This corresponds to the configuration option `DefaultEncoding`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsDicomConformance",
+      "name": "system.getToolsDicomConformance",
+      "description": "Get the DICOM conformance statement of Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsGenerateUid",
+      "name": "system.getToolsGenerateUid",
+      "description": "Generate a random DICOM identifier"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsMetrics",
+      "name": "system.getToolsMetrics",
+      "description": "Returns a Boolean specifying whether Prometheus metrics are collected and exposed at `/tools/metrics-prometheus`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsMetricsPrometheus",
+      "name": "system.getToolsMetricsPrometheus",
+      "description": "Get usage metrics of Orthanc in the Prometheus file format (OpenMetrics): https://book.orthanc-server.com/users/advanced-rest.html#instrumentation-with-prometheus"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsNow",
+      "name": "system.getToolsNow",
+      "description": "Get UTC time"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsNowLocal",
+      "name": "system.getToolsNowLocal",
+      "description": "Get local time"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.getToolsUnknownSopClassAccepted",
+      "name": "system.getToolsUnknownSopClassAccepted",
+      "description": "Shall Orthanc C-STORE SCP accept DICOM instances with an unknown SOP class UID?"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsBulkAnonymize",
+      "name": "system.postToolsBulkAnonymize",
+      "description": "Start a job that will anonymize all the DICOM patients, studies, series or instances whose identifiers are provided in the `Resources` field."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsBulkContent",
+      "name": "system.postToolsBulkContent",
+      "description": "Get the content all the DICOM patients, studies, series or instances whose identifiers are provided in the `Resources` field, in one single call."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsBulkDelete",
+      "name": "system.postToolsBulkDelete",
+      "description": "Delete all the DICOM patients, studies, series or instances whose identifiers are provided in the `Resources` field."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsBulkModify",
+      "name": "system.postToolsBulkModify",
+      "description": "Start a job that will modify all the DICOM patients, studies, series or instances whose identifiers are provided in the `Resources` field."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsCreateArchive",
+      "name": "system.postToolsCreateArchive",
+      "description": "Create a ZIP archive containing the DICOM resources (patients, studies, series, or instances) whose Orthanc identifiers are provided in the body"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsCreateDicom",
+      "name": "system.postToolsCreateDicom",
+      "description": "Create one DICOM instance, and store it into Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsCreateMedia",
+      "name": "system.postToolsCreateMedia",
+      "description": "Create a DICOMDIR media containing the DICOM resources (patients, studies, series, or instances) whose Orthanc identifiers are provided in the body"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsCreateMediaExtended",
+      "name": "system.postToolsCreateMediaExtended",
+      "description": "Create a DICOMDIR media containing the DICOM resources (patients, studies, series, or instances) whose Orthanc identifiers are provided in the body"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsDicomEcho",
+      "name": "system.postToolsDicomEcho",
+      "description": "Trigger C-ECHO SCU command against a DICOM modality described in the POST body, without having to register the modality in some `/modalities/{id}` (new in Orthanc 1.8.1)"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsExecuteScript",
+      "name": "system.postToolsExecuteScript",
+      "description": "Execute the provided Lua script by the Orthanc server. This is very insecure for Orthanc servers that are remotely accessible, cf. configuration option `ExecuteLuaEnabled`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsFind",
+      "name": "system.postToolsFind",
+      "description": "This URI can be used to perform a search on the content of the local Orthanc server, in a way that is similar to querying remote DICOM modalities using C-FIND SCU: https://book.orthanc-server.com/users/rest.html#performing-finds-within-orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsInvalidateTags",
+      "name": "system.postToolsInvalidateTags",
+      "description": "Remove all the attachments of the type \"DICOM-as-JSON\" that are associated will all the DICOM instances stored in Orthanc. These summaries will be automatically re-created on the next access. This is notably useful after changes to the `Dictionary` configuration option. https://book.orthanc-server.com/faq/orthanc-storage.html#storage-area"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsLookup",
+      "name": "system.postToolsLookup",
+      "description": "This URI can be used to convert one DICOM identifier to a list of matching Orthanc resources"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsReconstruct",
+      "name": "system.postToolsReconstruct",
+      "description": "Reconstruct the index of all the tags of all the DICOM instances that are stored in Orthanc. This is notably useful after the deletion of resources whose children resources have inconsistent values with their sibling resources. Beware that this is a highly time-consuming operation, as all the DICOM instances will be parsed again, and as all the Orthanc index will be regenerated. If you have a large database to process, it is advised to use the Housekeeper plugin to perform this action resource by resource"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsReset",
+      "name": "system.postToolsReset",
+      "description": "Restart Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.postToolsShutdown",
+      "name": "system.postToolsShutdown",
+      "description": "Shutdown Orthanc"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.putToolsAcceptedTransferSyntaxes",
+      "name": "system.putToolsAcceptedTransferSyntaxes",
+      "description": "Set the DICOM transfer syntaxes that accepted by Orthanc C-STORE SCP"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.putToolsDefaultEncoding",
+      "name": "system.putToolsDefaultEncoding",
+      "description": "Change the default encoding that is used by Orthanc if parsing a DICOM instance without the `SpecificCharacterEncoding` tag, or during C-FIND. This corresponds to the configuration option `DefaultEncoding`."
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.putToolsMetrics",
+      "name": "system.putToolsMetrics",
+      "description": "Enable or disable the collection and publication of metrics at `/tools/metrics-prometheus`"
+    },
+    {
+      "id": "openapi_orthanc_server_com.system.putToolsUnknownSopClassAccepted",
+      "name": "system.putToolsUnknownSopClassAccepted",
+      "description": "Set whether Orthanc C-STORE SCP should accept DICOM instances with an unknown SOP class UID"
+    },
+    {
+      "id": "openapi_orthanc_server_com.trackingChanges.deleteChanges",
+      "name": "trackingChanges.deleteChanges",
+      "description": "Clear the full history stored in the changes log"
+    },
+    {
+      "id": "openapi_orthanc_server_com.trackingChanges.deleteExports",
+      "name": "trackingChanges.deleteExports",
+      "description": "Clear the full history stored in the exports log"
+    },
+    {
+      "id": "openapi_orthanc_server_com.trackingChanges.getChanges",
+      "name": "trackingChanges.getChanges",
+      "description": "Whenever Orthanc receives a new DICOM instance, this event is recorded in the so-called _Changes Log_. This enables remote scripts to react to the arrival of new DICOM resources. A typical application is auto-routing, where an external script waits for a new DICOM instance to arrive into Orthanc, then forward this instance to another modality."
+    },
+    {
+      "id": "openapi_orthanc_server_com.trackingChanges.getExports",
+      "name": "trackingChanges.getExports",
+      "description": "For medical traceability, Orthanc can be configured to store a log of all the resources that have been exported to remote modalities. In auto-routing scenarios, it is important to prevent this log to grow indefinitely as incoming instances are routed. You can either disable this logging by setting the option `LogExportedResources` to `false` in the configuration file, or periodically clear this log by `DELETE`-ing this URI. This route might be removed in future versions of Orthanc."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "fetchedAt": "2026-04-30T15:45:13.335Z",
+  "status": "ok",
+  "count": 114,
+  "tools": [
+    {
+      "id": "openapi_anchore_io.archives.archiveImageAnalysis",
+      "name": "archives.archiveImageAnalysis",
+      "description": "POST /archives/images"
+    },
+    {
+      "id": "openapi_anchore_io.archives.createAnalysisArchiveRule",
+      "name": "archives.createAnalysisArchiveRule",
+      "description": "POST /archives/rules"
+    },
+    {
+      "id": "openapi_anchore_io.archives.deleteAnalysisArchiveRule",
+      "name": "archives.deleteAnalysisArchiveRule",
+      "description": "DELETE /archives/rules/{ruleId}"
+    },
+    {
+      "id": "openapi_anchore_io.archives.deleteArchivedAnalysis",
+      "name": "archives.deleteArchivedAnalysis",
+      "description": "Performs a synchronous archive deletion"
+    },
+    {
+      "id": "openapi_anchore_io.archives.getAnalysisArchiveRule",
+      "name": "archives.getAnalysisArchiveRule",
+      "description": "GET /archives/rules/{ruleId}"
+    },
+    {
+      "id": "openapi_anchore_io.archives.getArchivedAnalysis",
+      "name": "archives.getArchivedAnalysis",
+      "description": "Returns the archive metadata record identifying the image and tags for the analysis in the archive."
+    },
+    {
+      "id": "openapi_anchore_io.archives.listAnalysisArchive",
+      "name": "archives.listAnalysisArchive",
+      "description": "GET /archives/images"
+    },
+    {
+      "id": "openapi_anchore_io.archives.listAnalysisArchiveRules",
+      "name": "archives.listAnalysisArchiveRules",
+      "description": "GET /archives/rules"
+    },
+    {
+      "id": "openapi_anchore_io.archives.listArchives",
+      "name": "archives.listArchives",
+      "description": "GET /archives"
+    },
+    {
+      "id": "openapi_anchore_io.events.deleteEvent",
+      "name": "events.deleteEvent",
+      "description": "Delete an event by its event ID"
+    },
+    {
+      "id": "openapi_anchore_io.events.deleteEvents",
+      "name": "events.deleteEvents",
+      "description": "Delete all or a subset of events filtered using the optional query parameters"
+    },
+    {
+      "id": "openapi_anchore_io.events.getEvent",
+      "name": "events.getEvent",
+      "description": "Lookup an event by its event ID"
+    },
+    {
+      "id": "openapi_anchore_io.events.listEvents",
+      "name": "events.listEvents",
+      "description": "Returns a paginated list of events in the descending order of their occurrence. Optional query parameters may be used for filtering results"
+    },
+    {
+      "id": "openapi_anchore_io.events.listEventTypes",
+      "name": "events.listEventTypes",
+      "description": "Returns list of event types in the category hierarchy"
+    },
+    {
+      "id": "openapi_anchore_io.health.healthCheck",
+      "name": "health.healthCheck",
+      "description": "Health check, returns 200 and no body if service is running"
+    },
+    {
+      "id": "openapi_anchore_io.identity.addCredential",
+      "name": "identity.addCredential",
+      "description": "add/replace credential"
+    },
+    {
+      "id": "openapi_anchore_io.identity.getCredentials",
+      "name": "identity.getCredentials",
+      "description": "Get current credential summary"
+    },
+    {
+      "id": "openapi_anchore_io.identity.getUser",
+      "name": "identity.getUser",
+      "description": "List authenticated user info"
+    },
+    {
+      "id": "openapi_anchore_io.identity.getUsersAccount",
+      "name": "identity.getUsersAccount",
+      "description": "List the account for the authenticated user"
+    },
+    {
+      "id": "openapi_anchore_io.images.addImage",
+      "name": "images.addImage",
+      "description": "Creates a new analysis task that is executed asynchronously"
+    },
+    {
+      "id": "openapi_anchore_io.images.deleteImage",
+      "name": "images.deleteImage",
+      "description": "Delete an image analysis"
+    },
+    {
+      "id": "openapi_anchore_io.images.deleteImageByImageId",
+      "name": "images.deleteImageByImageId",
+      "description": "Delete image by docker imageId"
+    },
+    {
+      "id": "openapi_anchore_io.images.deleteImagesAsync",
+      "name": "images.deleteImagesAsync",
+      "description": "Delete analysis for image digests in the list asynchronously"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImage",
+      "name": "images.getImage",
+      "description": "Get image metadata"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageByImageId",
+      "name": "images.getImageByImageId",
+      "description": "Lookup image by docker imageId"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByType",
+      "name": "images.getImageContentByType",
+      "description": "Get the content of an image by type"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeFiles",
+      "name": "images.getImageContentByTypeFiles",
+      "description": "Get the content of an image by type files"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeImageId",
+      "name": "images.getImageContentByTypeImageId",
+      "description": "Get the content of an image by type"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeImageIdFiles",
+      "name": "images.getImageContentByTypeImageIdFiles",
+      "description": "Get the content of an image by type files"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeImageIdJavapackage",
+      "name": "images.getImageContentByTypeImageIdJavapackage",
+      "description": "Get the content of an image by type java"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeJavapackage",
+      "name": "images.getImageContentByTypeJavapackage",
+      "description": "Get the content of an image by type java"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageContentByTypeMalware",
+      "name": "images.getImageContentByTypeMalware",
+      "description": "Get the content of an image by type malware"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageMetadataByType",
+      "name": "images.getImageMetadataByType",
+      "description": "Get the metadata of an image by type"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImagePolicyCheck",
+      "name": "images.getImagePolicyCheck",
+      "description": "Get the policy evaluation for the given image"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImagePolicyCheckByImageId",
+      "name": "images.getImagePolicyCheckByImageId",
+      "description": "Get the policy evaluation for the given image"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageSbomNative",
+      "name": "images.getImageSbomNative",
+      "description": "Get image sbom in the native Anchore format"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageVulnerabilitiesByType",
+      "name": "images.getImageVulnerabilitiesByType",
+      "description": "Get vulnerabilities by type"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageVulnerabilitiesByTypeImageId",
+      "name": "images.getImageVulnerabilitiesByTypeImageId",
+      "description": "Get vulnerabilities by type"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageVulnerabilityTypes",
+      "name": "images.getImageVulnerabilityTypes",
+      "description": "Get vulnerability types"
+    },
+    {
+      "id": "openapi_anchore_io.images.getImageVulnerabilityTypesByImageId",
+      "name": "images.getImageVulnerabilityTypesByImageId",
+      "description": "Get vulnerability types"
+    },
+    {
+      "id": "openapi_anchore_io.images.listFileContentSearchResults",
+      "name": "images.listFileContentSearchResults",
+      "description": "Return a list of analyzer artifacts of the specified type"
+    },
+    {
+      "id": "openapi_anchore_io.images.listImageContent",
+      "name": "images.listImageContent",
+      "description": "List image content types"
+    },
+    {
+      "id": "openapi_anchore_io.images.listImageContentByImageid",
+      "name": "images.listImageContentByImageid",
+      "description": "List image content types"
+    },
+    {
+      "id": "openapi_anchore_io.images.listImageMetadata",
+      "name": "images.listImageMetadata",
+      "description": "List image metadata types"
+    },
+    {
+      "id": "openapi_anchore_io.images.listImages",
+      "name": "images.listImages",
+      "description": "List all images visible to the user"
+    },
+    {
+      "id": "openapi_anchore_io.images.listRetrievedFiles",
+      "name": "images.listRetrievedFiles",
+      "description": "Return a list of analyzer artifacts of the specified type"
+    },
+    {
+      "id": "openapi_anchore_io.images.listSecretSearchResults",
+      "name": "images.listSecretSearchResults",
+      "description": "Return a list of analyzer artifacts of the specified type"
+    },
+    {
+      "id": "openapi_anchore_io.import.importImageArchive",
+      "name": "import.importImageArchive",
+      "description": "Import an anchore image tar.gz archive file. This is a deprecated API replaced by the \"/imports/images\" route"
+    },
+    {
+      "id": "openapi_anchore_io.imports.createOperation",
+      "name": "imports.createOperation",
+      "description": "Begin the import of an image analyzed by Syft into the system"
+    },
+    {
+      "id": "openapi_anchore_io.imports.getOperation",
+      "name": "imports.getOperation",
+      "description": "Get detail on a single import"
+    },
+    {
+      "id": "openapi_anchore_io.imports.importImageConfig",
+      "name": "imports.importImageConfig",
+      "description": "Import a docker or OCI image config to associate with the image"
+    },
+    {
+      "id": "openapi_anchore_io.imports.importImageDockerfile",
+      "name": "imports.importImageDockerfile",
+      "description": "Begin the import of an image analyzed by Syft into the system"
+    },
+    {
+      "id": "openapi_anchore_io.imports.importImageManifest",
+      "name": "imports.importImageManifest",
+      "description": "Import a docker or OCI distribution manifest to associate with the image"
+    },
+    {
+      "id": "openapi_anchore_io.imports.importImagePackages",
+      "name": "imports.importImagePackages",
+      "description": "Begin the import of an image analyzed by Syft into the system"
+    },
+    {
+      "id": "openapi_anchore_io.imports.importImageParentManifest",
+      "name": "imports.importImageParentManifest",
+      "description": "Import a docker or OCI distribution manifest list to associate with the image"
+    },
+    {
+      "id": "openapi_anchore_io.imports.invalidateOperation",
+      "name": "imports.invalidateOperation",
+      "description": "Invalidate operation ID so it can be garbage collected"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listImportDockerfiles",
+      "name": "imports.listImportDockerfiles",
+      "description": "List uploaded dockerfiles"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listImportImageConfigs",
+      "name": "imports.listImportImageConfigs",
+      "description": "List uploaded image configs"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listImportImageManifests",
+      "name": "imports.listImportImageManifests",
+      "description": "List uploaded image manifests"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listImportPackages",
+      "name": "imports.listImportPackages",
+      "description": "List uploaded package manifests"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listImportParentManifests",
+      "name": "imports.listImportParentManifests",
+      "description": "List uploaded parent manifests (manifest lists for a tag)"
+    },
+    {
+      "id": "openapi_anchore_io.imports.listOperations",
+      "name": "imports.listOperations",
+      "description": "Lists in-progress imports"
+    },
+    {
+      "id": "openapi_anchore_io.oauth.getOauthToken",
+      "name": "oauth.getOauthToken",
+      "description": "Request a jwt token for subsequent operations, this request is authenticated with normal HTTP auth"
+    },
+    {
+      "id": "openapi_anchore_io.policies.addPolicy",
+      "name": "policies.addPolicy",
+      "description": "Adds a new policy bundle to the system"
+    },
+    {
+      "id": "openapi_anchore_io.policies.deletePolicy",
+      "name": "policies.deletePolicy",
+      "description": "Delete the specified policy"
+    },
+    {
+      "id": "openapi_anchore_io.policies.getPolicy",
+      "name": "policies.getPolicy",
+      "description": "Get the policy bundle content"
+    },
+    {
+      "id": "openapi_anchore_io.policies.listPolicies",
+      "name": "policies.listPolicies",
+      "description": "List all saved policy bundles"
+    },
+    {
+      "id": "openapi_anchore_io.policies.updatePolicy",
+      "name": "policies.updatePolicy",
+      "description": "Update/replace and existing policy"
+    },
+    {
+      "id": "openapi_anchore_io.query.queryImagesByPackage",
+      "name": "query.queryImagesByPackage",
+      "description": "Filterable query interface to search for images containing specified package"
+    },
+    {
+      "id": "openapi_anchore_io.query.queryImagesByVulnerability",
+      "name": "query.queryImagesByVulnerability",
+      "description": "Returns a listing of images and their respective packages vulnerable to the given vulnerability ID"
+    },
+    {
+      "id": "openapi_anchore_io.query.queryVulnerabilities",
+      "name": "query.queryVulnerabilities",
+      "description": "List (w/filters) vulnerability records known by the system, with affected packages information if present"
+    },
+    {
+      "id": "openapi_anchore_io.registries.createRegistry",
+      "name": "registries.createRegistry",
+      "description": "Adds a new registry to the system"
+    },
+    {
+      "id": "openapi_anchore_io.registries.deleteRegistry",
+      "name": "registries.deleteRegistry",
+      "description": "Delete a registry configuration record from the system. Does not remove any images."
+    },
+    {
+      "id": "openapi_anchore_io.registries.getRegistry",
+      "name": "registries.getRegistry",
+      "description": "Get information on a specific registry"
+    },
+    {
+      "id": "openapi_anchore_io.registries.listRegistries",
+      "name": "registries.listRegistries",
+      "description": "List all configured registries the system can/will watch"
+    },
+    {
+      "id": "openapi_anchore_io.registries.updateRegistry",
+      "name": "registries.updateRegistry",
+      "description": "Replaces an existing registry record with the given record"
+    },
+    {
+      "id": "openapi_anchore_io.repositoryCredentials.addRepository",
+      "name": "repositoryCredentials.addRepository",
+      "description": ""
+    },
+    {
+      "id": "openapi_anchore_io.root.ping",
+      "name": "root.ping",
+      "description": "Simple status check"
+    },
+    {
+      "id": "openapi_anchore_io.subscriptions.addSubscription",
+      "name": "subscriptions.addSubscription",
+      "description": "Create a new subscription to watch a tag and get notifications of changes"
+    },
+    {
+      "id": "openapi_anchore_io.subscriptions.deleteSubscription",
+      "name": "subscriptions.deleteSubscription",
+      "description": "Delete subscriptions of a specific type"
+    },
+    {
+      "id": "openapi_anchore_io.subscriptions.getSubscription",
+      "name": "subscriptions.getSubscription",
+      "description": "Get a specific subscription set"
+    },
+    {
+      "id": "openapi_anchore_io.subscriptions.listSubscriptions",
+      "name": "subscriptions.listSubscriptions",
+      "description": "List all subscriptions"
+    },
+    {
+      "id": "openapi_anchore_io.subscriptions.updateSubscription",
+      "name": "subscriptions.updateSubscription",
+      "description": "Update an existing and specific subscription"
+    },
+    {
+      "id": "openapi_anchore_io.summaries.listImagetags",
+      "name": "summaries.listImagetags",
+      "description": "List all image tags visible to the user"
+    },
+    {
+      "id": "openapi_anchore_io.system.deleteFeed",
+      "name": "system.deleteFeed",
+      "description": "Delete the groups and data for the feed and disable the feed itself"
+    },
+    {
+      "id": "openapi_anchore_io.system.deleteFeedGroup",
+      "name": "system.deleteFeedGroup",
+      "description": "Delete the group data and disable the group itself"
+    },
+    {
+      "id": "openapi_anchore_io.system.deleteService",
+      "name": "system.deleteService",
+      "description": "Delete the service config"
+    },
+    {
+      "id": "openapi_anchore_io.system.describeErrorCodes",
+      "name": "system.describeErrorCodes",
+      "description": "Describe anchore engine error codes."
+    },
+    {
+      "id": "openapi_anchore_io.system.describePolicy",
+      "name": "system.describePolicy",
+      "description": "Get the policy language spec for this service"
+    },
+    {
+      "id": "openapi_anchore_io.system.getServiceDetail",
+      "name": "system.getServiceDetail",
+      "description": "Get the system status including queue lengths"
+    },
+    {
+      "id": "openapi_anchore_io.system.getServicesByName",
+      "name": "system.getServicesByName",
+      "description": "Get a service configuration and state"
+    },
+    {
+      "id": "openapi_anchore_io.system.getServicesByNameAndHost",
+      "name": "system.getServicesByNameAndHost",
+      "description": "Get service config for a specific host"
+    },
+    {
+      "id": "openapi_anchore_io.system.getStatus",
+      "name": "system.getStatus",
+      "description": "Get the API service status"
+    },
+    {
+      "id": "openapi_anchore_io.system.getSystemFeeds",
+      "name": "system.getSystemFeeds",
+      "description": "Return a list of feed and their groups along with update and record count information. This data reflects the state of the policy engine, not the upstream feed service itself."
+    },
+    {
+      "id": "openapi_anchore_io.system.listServices",
+      "name": "system.listServices",
+      "description": "List system services"
+    },
+    {
+      "id": "openapi_anchore_io.system.postSystemFeeds",
+      "name": "system.postSystemFeeds",
+      "description": "Execute a synchronous feed sync operation. The response will block until complete, then return the result summary."
+    },
+    {
+      "id": "openapi_anchore_io.system.testWebhook",
+      "name": "system.testWebhook",
+      "description": "Loads the Webhook configuration for webhook_type, and sends the notification out as a test"
+    },
+    {
+      "id": "openapi_anchore_io.system.toggleFeedEnabled",
+      "name": "system.toggleFeedEnabled",
+      "description": "Disable the feed so that it does not sync on subsequent sync operations"
+    },
+    {
+      "id": "openapi_anchore_io.system.toggleGroupEnabled",
+      "name": "system.toggleGroupEnabled",
+      "description": "Disable a specific group within a feed to not sync"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.createAccount",
+      "name": "userManagement.createAccount",
+      "description": "Create a new user. Only avaialble to admin user."
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.createUser",
+      "name": "userManagement.createUser",
+      "description": "Create a new user"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.createUserCredential",
+      "name": "userManagement.createUserCredential",
+      "description": "add/replace credential"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.deleteAccount",
+      "name": "userManagement.deleteAccount",
+      "description": "Delete the specified account, only allowed if the account is in the disabled state. All users will be deleted along with the account and all resources will be garbage collected"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.deleteUser",
+      "name": "userManagement.deleteUser",
+      "description": "Delete a specific user credential by username of the credential. Cannot be the credential used to authenticate the request."
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.deleteUserCredential",
+      "name": "userManagement.deleteUserCredential",
+      "description": "Delete a credential by type"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.getAccount",
+      "name": "userManagement.getAccount",
+      "description": "Get info about an user. Only available to admin user. Uses the main user Id, not a username."
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.getAccountUser",
+      "name": "userManagement.getAccountUser",
+      "description": "Get a specific user in the specified account"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.listAccounts",
+      "name": "userManagement.listAccounts",
+      "description": "List user summaries. Only available to the system admin user."
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.listUserCredentials",
+      "name": "userManagement.listUserCredentials",
+      "description": "Get current credential summary"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.listUsers",
+      "name": "userManagement.listUsers",
+      "description": "List accounts for the user"
+    },
+    {
+      "id": "openapi_anchore_io.userManagement.updateAccountState",
+      "name": "userManagement.updateAccountState",
+      "description": "Update the state of an account to either enabled or disabled. For deletion use the DELETE route"
+    },
+    {
+      "id": "openapi_anchore_io.version.versionCheck",
+      "name": "version.versionCheck",
+      "description": "Returns the version object for the service, including db schema version info"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

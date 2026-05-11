@@ -1,0 +1,82 @@
+{
+  "fetchedAt": "2026-04-30T15:45:12.470Z",
+  "status": "ok",
+  "count": 15,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101CancelQuery.cancelQuery",
+      "name": "xAmzTargetTimestream20181101CancelQuery.cancelQuery",
+      "description": " Cancels a query that has been issued. Cancellation is provided only if the query has not completed running before the cancellation request was issued. Because cancellation is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>, indicating that the query has already been canceled. See <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html\">code sample</a> for details. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101CreateScheduledQuery.createScheduledQuery",
+      "name": "xAmzTargetTimestream20181101CreateScheduledQuery.createScheduledQuery",
+      "description": " Create a scheduled query that will be run on your behalf at the configured schedule. Timestream assumes the execution role provided as part of the <code>ScheduledQueryExecutionRoleArn</code> parameter to run the query. You can use the <code>NotificationConfiguration</code> parameter to configure notification for your scheduled query operations."
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101DeleteScheduledQuery.deleteScheduledQuery",
+      "name": "xAmzTargetTimestream20181101DeleteScheduledQuery.deleteScheduledQuery",
+      "description": "Deletes a given scheduled query. This is an irreversible operation. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101DescribeEndpoints.describeEndpoints",
+      "name": "xAmzTargetTimestream20181101DescribeEndpoints.describeEndpoints",
+      "description": "<p>DescribeEndpoints returns a list of available endpoints to make Timestream API calls against. This API is available through both Write and Query.</p> <p>Because the Timestream SDKs are designed to transparently work with the service’s architecture, including the management and mapping of the service endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul> <li> <p>You are using <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints\">VPC endpoints (Amazon Web Services PrivateLink) with Timestream </a> </p> </li> <li> <p>Your application uses a programming language that does not yet have SDK support</p> </li> <li> <p>You require better control over the client-side implementation</p> </li> </ul> <p>For detailed information on how and when to use and implement DescribeEndpoints, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery\">The Endpoint Discovery Pattern</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101DescribeScheduledQuery.describeScheduledQuery",
+      "name": "xAmzTargetTimestream20181101DescribeScheduledQuery.describeScheduledQuery",
+      "description": "Provides detailed information about a scheduled query."
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101ExecuteScheduledQuery.executeScheduledQuery",
+      "name": "xAmzTargetTimestream20181101ExecuteScheduledQuery.executeScheduledQuery",
+      "description": " You can use this API to run a scheduled query manually. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101ListScheduledQueries.listScheduledQueries",
+      "name": "xAmzTargetTimestream20181101ListScheduledQueries.listScheduledQueries",
+      "description": "Gets a list of all scheduled queries in the caller's Amazon account and Region. <code>ListScheduledQueries</code> is eventually consistent. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101ListTagsForResource.listTagsForResource",
+      "name": "xAmzTargetTimestream20181101ListTagsForResource.listTagsForResource",
+      "description": "List all tags on a Timestream query resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101PrepareQuery.prepareQuery",
+      "name": "xAmzTargetTimestream20181101PrepareQuery.prepareQuery",
+      "description": "A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101Query.query",
+      "name": "xAmzTargetTimestream20181101Query.query",
+      "description": "<p> <code>Query</code> is a synchronous operation that enables you to run a query against your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You must update the default timeout in the SDK to support a timeout of 60 seconds. See the <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html\">code sample</a> for details. </p> <p>Your query request will fail in the following cases:</p> <ul> <li> <p> If you submit a <code>Query</code> request with the same client token outside of the 5-minute idempotency window. </p> </li> <li> <p> If you submit a <code>Query</code> request with the same client token, but change other parameters, within the 5-minute idempotency window. </p> </li> <li> <p> If the size of the row (including the query metadata) exceeds 1 MB, then the query will fail with the following error message: </p> <p> <code>Query aborted as max page response size has been exceeded by the output result row</code> </p> </li> <li> <p> If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an <code>Invalid pagination token</code> error. </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101TagResource.tagResource",
+      "name": "xAmzTargetTimestream20181101TagResource.tagResource",
+      "description": "Associate a set of tags with a Timestream resource. You can then activate these user-defined tags so that they appear on the Billing and Cost Management console for cost allocation tracking. "
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101UntagResource.untagResource",
+      "name": "xAmzTargetTimestream20181101UntagResource.untagResource",
+      "description": "Removes the association of tags from a Timestream query resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_timestream_query_timestream_query.xAmzTargetTimestream20181101UpdateScheduledQuery.updateScheduledQuery",
+      "name": "xAmzTargetTimestream20181101UpdateScheduledQuery.updateScheduledQuery",
+      "description": "Update a scheduled query."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

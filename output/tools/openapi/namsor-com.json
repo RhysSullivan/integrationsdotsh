@@ -1,0 +1,437 @@
+{
+  "fetchedAt": "2026-04-30T15:22:52.051Z",
+  "status": "ok",
+  "count": 86,
+  "tools": [
+    {
+      "id": "openapi_namsor_com.admin.anonymize",
+      "name": "admin.anonymize",
+      "description": "Activate/deactivate anonymization for a source."
+    },
+    {
+      "id": "openapi_namsor_com.admin.apiKeyInfo",
+      "name": "admin.apiKeyInfo",
+      "description": "Read API Key info."
+    },
+    {
+      "id": "openapi_namsor_com.admin.apiStatus",
+      "name": "admin.apiStatus",
+      "description": "Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices."
+    },
+    {
+      "id": "openapi_namsor_com.admin.apiUsage",
+      "name": "admin.apiUsage",
+      "description": "Print current API usage."
+    },
+    {
+      "id": "openapi_namsor_com.admin.apiUsageHistory",
+      "name": "admin.apiUsageHistory",
+      "description": "Print historical API usage."
+    },
+    {
+      "id": "openapi_namsor_com.admin.apiUsageHistoryAggregate",
+      "name": "admin.apiUsageHistoryAggregate",
+      "description": "Print historical API usage (in an aggregated view, by service, by day/hour/min)."
+    },
+    {
+      "id": "openapi_namsor_com.admin.availableServices",
+      "name": "admin.availableServices",
+      "description": "List of classification services and usage cost in Units per classification (default is 1=ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers."
+    },
+    {
+      "id": "openapi_namsor_com.admin.learnable",
+      "name": "admin.learnable",
+      "description": "Activate/deactivate learning from a source."
+    },
+    {
+      "id": "openapi_namsor_com.admin.regions",
+      "name": "admin.regions",
+      "description": "Print basic source statistics."
+    },
+    {
+      "id": "openapi_namsor_com.admin.softwareVersion",
+      "name": "admin.softwareVersion",
+      "description": "Get the current software version"
+    },
+    {
+      "id": "openapi_namsor_com.admin.taxonomyClasses",
+      "name": "admin.taxonomyClasses",
+      "description": "Print the taxonomy classes valid for the given classifier."
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameCandidates",
+      "name": "chinese.chineseNameCandidates",
+      "description": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameCandidatesBatch",
+      "name": "chinese.chineseNameCandidatesBatch",
+      "description": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameCandidatesGenderBatch",
+      "name": "chinese.chineseNameCandidatesGenderBatch",
+      "description": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname) ex. Wang Xiaoming."
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameGenderCandidates",
+      "name": "chinese.chineseNameGenderCandidates",
+      "description": "Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming - having a known gender ('male' or 'female')"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameMatch",
+      "name": "chinese.chineseNameMatch",
+      "description": "Return a score for matching Chinese name ex. 王晓明 with a romanized name ex. Wang Xiaoming"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.chineseNameMatchBatch",
+      "name": "chinese.chineseNameMatchBatch",
+      "description": "Identify Chinese name candidates, based on the romanized name (firstName = chineseGivenName; lastName=chineseSurname), ex. Wang Xiaoming"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.genderChineseName",
+      "name": "chinese.genderChineseName",
+      "description": "Infer the likely gender of a Chinese full name ex. 王晓明"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.genderChineseNameBatch",
+      "name": "chinese.genderChineseNameBatch",
+      "description": "Infer the likely gender of up to 100 full names ex. 王晓明"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.genderChineseNamePinyin",
+      "name": "chinese.genderChineseNamePinyin",
+      "description": "Infer the likely gender of a Chinese name in LATIN (Pinyin)."
+    },
+    {
+      "id": "openapi_namsor_com.chinese.genderChineseNamePinyinBatch",
+      "name": "chinese.genderChineseNamePinyinBatch",
+      "description": "Infer the likely gender of up to 100 Chinese names in LATIN (Pinyin)."
+    },
+    {
+      "id": "openapi_namsor_com.chinese.parseChineseName",
+      "name": "chinese.parseChineseName",
+      "description": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name)"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.parseChineseNameBatch",
+      "name": "chinese.parseChineseNameBatch",
+      "description": "Infer the likely first/last name structure of a name, ex. 王晓明 -> 王(surname) 晓明(given name)."
+    },
+    {
+      "id": "openapi_namsor_com.chinese.pinyinChineseName",
+      "name": "chinese.pinyinChineseName",
+      "description": "Romanize the Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name)"
+    },
+    {
+      "id": "openapi_namsor_com.chinese.pinyinChineseNameBatch",
+      "name": "chinese.pinyinChineseNameBatch",
+      "description": "Romanize a list of Chinese name to Pinyin, ex. 王晓明 -> Wang (surname) Xiaoming (given name)."
+    },
+    {
+      "id": "openapi_namsor_com.general.nameType",
+      "name": "general.nameType",
+      "description": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.general.nameTypeBatch",
+      "name": "general.nameTypeBatch",
+      "description": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.general.nameTypeGeo",
+      "name": "general.nameTypeGeo",
+      "description": "Infer the likely type of a proper noun (personal name, brand name, place name etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.general.nameTypeGeoBatch",
+      "name": "general.nameTypeGeoBatch",
+      "description": "Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.indian.castegroupIndianFull",
+      "name": "indian.castegroupIndianFull",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of a personal full name."
+    },
+    {
+      "id": "openapi_namsor_com.indian.castegroupIndianFullBatch",
+      "name": "indian.castegroupIndianFullBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of up to 100 personal full names. "
+    },
+    {
+      "id": "openapi_namsor_com.indian.religion",
+      "name": "indian.religion",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal Indian full name, provided the Indian state or Union territory (NB/ this can be inferred using the subclassification endpoint)."
+    },
+    {
+      "id": "openapi_namsor_com.indian.religionIndianFullBatch",
+      "name": "indian.religionIndianFullBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full Indian names, provided the subclassification at State or Union territory level (NB/ can be inferred using the subclassification endpoint)."
+    },
+    {
+      "id": "openapi_namsor_com.indian.subclassificationIndian",
+      "name": "indian.subclassificationIndian",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on the name."
+    },
+    {
+      "id": "openapi_namsor_com.indian.subclassificationIndianBatch",
+      "name": "indian.subclassificationIndianBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on a list of up to 100 names."
+    },
+    {
+      "id": "openapi_namsor_com.japanese.genderJapaneseNameFull",
+      "name": "japanese.genderJapaneseNameFull",
+      "description": "Infer the likely gender of a Japanese full name ex. 王晓明"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.genderJapaneseNameFullBatch",
+      "name": "japanese.genderJapaneseNameFullBatch",
+      "description": "Infer the likely gender of up to 100 full names"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.genderJapaneseNamePinyin",
+      "name": "japanese.genderJapaneseNamePinyin",
+      "description": "Infer the likely gender of a Japanese name in LATIN (Pinyin)."
+    },
+    {
+      "id": "openapi_namsor_com.japanese.genderJapaneseNamePinyinBatch",
+      "name": "japanese.genderJapaneseNamePinyinBatch",
+      "description": "Infer the likely gender of up to 100 Japanese names in LATIN (Pinyin)."
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameGenderKanjiCandidatesBatch",
+      "name": "japanese.japaneseNameGenderKanjiCandidatesBatch",
+      "description": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameKanjiCandidates",
+      "name": "japanese.japaneseNameKanjiCandidates",
+      "description": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameKanjiCandidates1",
+      "name": "japanese.japaneseNameKanjiCandidates1",
+      "description": "Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender."
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameKanjiCandidatesBatch",
+      "name": "japanese.japaneseNameKanjiCandidatesBatch",
+      "description": "Identify japanese name candidates in KANJI, based on the romanized name (firstName = japaneseGivenName; lastName=japaneseSurname), ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameLatinCandidates",
+      "name": "japanese.japaneseNameLatinCandidates",
+      "description": "Romanize japanese name, based on the name in Kanji."
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameLatinCandidatesBatch",
+      "name": "japanese.japaneseNameLatinCandidatesBatch",
+      "description": "Romanize japanese names, based on the name in KANJI"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameMatch",
+      "name": "japanese.japaneseNameMatch",
+      "description": "Return a score for matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameMatchBatch",
+      "name": "japanese.japaneseNameMatchBatch",
+      "description": "Return a score for matching a list of Japanese names in KANJI ex. 山本 早苗 with romanized names ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.japaneseNameMatchFeedbackLoop",
+      "name": "japanese.japaneseNameMatchFeedbackLoop",
+      "description": "[CREDITS 1 UNIT] Feedback loop to better perform matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.parseJapaneseName",
+      "name": "japanese.parseJapaneseName",
+      "description": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae"
+    },
+    {
+      "id": "openapi_namsor_com.japanese.parseJapaneseNameBatch",
+      "name": "japanese.parseJapaneseNameBatch",
+      "description": "Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae "
+    },
+    {
+      "id": "openapi_namsor_com.personal.corridor",
+      "name": "personal.corridor",
+      "description": "[USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)"
+    },
+    {
+      "id": "openapi_namsor_com.personal.corridorBatch",
+      "name": "personal.corridorBatch",
+      "description": "[USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)"
+    },
+    {
+      "id": "openapi_namsor_com.personal.country",
+      "name": "personal.country",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin."
+    },
+    {
+      "id": "openapi_namsor_com.personal.countryBatch",
+      "name": "personal.countryBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin."
+    },
+    {
+      "id": "openapi_namsor_com.personal.diaspora",
+      "name": "personal.diaspora",
+      "description": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.personal.diasporaBatch",
+      "name": "personal.diasporaBatch",
+      "description": "[USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)"
+    },
+    {
+      "id": "openapi_namsor_com.personal.gender",
+      "name": "personal.gender",
+      "description": "Infer the likely gender of a just a fiven name, assuming default 'US' local context. Please use preferably full names and local geographic context for better accuracy."
+    },
+    {
+      "id": "openapi_namsor_com.personal.gender1",
+      "name": "personal.gender1",
+      "description": "Infer the likely gender of a name."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderBatch",
+      "name": "personal.genderBatch",
+      "description": "Infer the likely gender of up to 100 names, detecting automatically the cultural context."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderFull",
+      "name": "personal.genderFull",
+      "description": "Infer the likely gender of a full name, ex. John H. Smith"
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderFullBatch",
+      "name": "personal.genderFullBatch",
+      "description": "Infer the likely gender of up to 100 full names, detecting automatically the cultural context."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderFullGeo",
+      "name": "personal.genderFullGeo",
+      "description": "Infer the likely gender of a full name, given a local context (ISO2 country code)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderFullGeoBatch",
+      "name": "personal.genderFullGeoBatch",
+      "description": "Infer the likely gender of up to 100 full names, with a given cultural context (country ISO2 code)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderGeo",
+      "name": "personal.genderGeo",
+      "description": "Infer the likely gender of a name, given a local context (ISO2 country code)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.genderGeoBatch",
+      "name": "personal.genderGeoBatch",
+      "description": "Infer the likely gender of up to 100 names, each given a local context (ISO2 country code)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.origin",
+      "name": "personal.origin",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use 'diaspora' instead."
+    },
+    {
+      "id": "openapi_namsor_com.personal.originBatch",
+      "name": "personal.originBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely country of origin of up to 100 names, detecting automatically the cultural context."
+    },
+    {
+      "id": "openapi_namsor_com.personal.parseName",
+      "name": "personal.parseName",
+      "description": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. "
+    },
+    {
+      "id": "openapi_namsor_com.personal.parseNameBatch",
+      "name": "personal.parseNameBatch",
+      "description": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John."
+    },
+    {
+      "id": "openapi_namsor_com.personal.parseNameGeo",
+      "name": "personal.parseNameGeo",
+      "description": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context."
+    },
+    {
+      "id": "openapi_namsor_com.personal.parseNameGeoBatch",
+      "name": "personal.parseNameGeoBatch",
+      "description": "Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. "
+    },
+    {
+      "id": "openapi_namsor_com.personal.religionFull",
+      "name": "personal.religionFull",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely religion of a personal full name. NB: only for INDIA (as of current version)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.religionFullBatch",
+      "name": "personal.religionFullBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full names. NB: only for India as of currently."
+    },
+    {
+      "id": "openapi_namsor_com.personal.subclassification",
+      "name": "personal.subclassification",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely origin of a name at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN')."
+    },
+    {
+      "id": "openapi_namsor_com.personal.subclassificationBatch",
+      "name": "personal.subclassificationBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer the likely origin of a list of up to 100 names at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code 'IN')."
+    },
+    {
+      "id": "openapi_namsor_com.personal.usRaceEthnicity",
+      "name": "personal.usRaceEthnicity",
+      "description": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.usRaceEthnicityBatch",
+      "name": "personal.usRaceEthnicityBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.usRaceEthnicityZiP5",
+      "name": "personal.usRaceEthnicityZiP5",
+      "description": "[USES 10 UNITS PER NAME] Infer a US resident's likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+    },
+    {
+      "id": "openapi_namsor_com.personal.usZipRaceEthnicityBatch",
+      "name": "personal.usZipRaceEthnicityBatch",
+      "description": "[USES 10 UNITS PER NAME] Infer up-to 100 US resident's likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander)."
+    },
+    {
+      "id": "openapi_namsor_com.social.phoneCode",
+      "name": "social.phoneCode",
+      "description": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number."
+    },
+    {
+      "id": "openapi_namsor_com.social.phoneCodeBatch",
+      "name": "social.phoneCodeBatch",
+      "description": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, detecting automatically the local context given a name and formatted / unformatted phone number."
+    },
+    {
+      "id": "openapi_namsor_com.social.phoneCodeGeo",
+      "name": "social.phoneCodeGeo",
+      "description": "[USES 11 UNITS PER NAME] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence)."
+    },
+    {
+      "id": "openapi_namsor_com.social.phoneCodeGeoBatch",
+      "name": "social.phoneCodeGeoBatch",
+      "description": "[USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, with a local context (ISO2 country of residence)."
+    },
+    {
+      "id": "openapi_namsor_com.social.phoneCodeGeoFeedbackLoop",
+      "name": "social.phoneCodeGeoFeedbackLoop",
+      "description": "[CREDITS 1 UNIT] Feedback loop to better infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

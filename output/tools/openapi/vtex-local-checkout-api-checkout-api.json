@@ -1,0 +1,177 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.472Z",
+  "status": "ok",
+  "count": 34,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addClientPreferences",
+      "name": "cartAttachments.addClientPreferences",
+      "description": "Use this request to include client preferences information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addClientProfile",
+      "name": "cartAttachments.addClientProfile",
+      "description": "Use this request to include client profile information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are modifying information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addMarketingData",
+      "name": "cartAttachments.addMarketingData",
+      "description": "Use this request to include marketing information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addMerchantContextData",
+      "name": "cartAttachments.addMerchantContextData",
+      "description": "This endpoint is used for the merchant to add to the cart any relevant information that is related to the context of a specific order.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addPaymentData",
+      "name": "cartAttachments.addPaymentData",
+      "description": "Use this request to include payment information to a given shopping cart. The payment information attachment in the shopping cart does not determine the final order payment method in itself. However, it allows tha platform to update any relevant information that may be impacted by the payment method.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.addShippingAddress",
+      "name": "cartAttachments.addShippingAddress",
+      "description": "Use this request to include shipping information and/or selected delivery option to a given shopping cart.\r\n\r\nTo add shipping addresses send the `selectedAddresses` array. For delivery option use the `logisticsInfo` array.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are modifying information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.cartAttachments.getClientProfileByEmail",
+      "name": "cartAttachments.getClientProfileByEmail",
+      "description": "Retrieve a client's profile information by providing an email address.\n\r\n\rIf the response body fields are empty, the following situations may have occurred:\n\r\n\r1. There is no client registered with the email address provided in your store, or;\n\r2. Client profile is invalid or incomplete. For more information, see [SmartCheckout - Customer information automatic fill-in](https://help.vtex.com/en/tutorial/smartcheckout-customer-information-automatic-fill-in--2Nuu3xAFzdhIzJIldAdtan).\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are consulting information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.configuration.clearorderFormMessages",
+      "name": "configuration.clearorderFormMessages",
+      "description": "This request removes all messages from the `messages` field of the orderForm , leaving it empty.\r\n\r\nYou must send an empty JSON in the body of the request.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\n**Important**: **Request Body** must always be sent with empty value \"{ }\" in this endpoint."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.configuration.getorderFormconfiguration",
+      "name": "configuration.getorderFormconfiguration",
+      "description": "Retrieves the settings that are currently applied to every orderForm in the account.\n\r\n\rThese settings are defined by the request [Update orderForm configuration](https://developers.vtex.com/reference/configuration#updateorderformconfiguration).\n\r\n\rAlways use this request to retrieve the current configuration before performing an update. By doing so you ensure that you are modifying only the properties you want."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.configuration.getWindowToChangeSeller",
+      "name": "configuration.getWindowToChangeSeller",
+      "description": "Retrieves a marketplace’s window to change seller, that is, the period when it is possible to choose another seller to fulfill a given order after the original seller has canceled it.\n\r\n\rThe default period for this window is of 2 days, but it can be configured by the request Update window to change seller."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.configuration.updateorderFormconfiguration",
+      "name": "configuration.updateorderFormconfiguration",
+      "description": "Determines settings that will apply to every orderForm in the account.\n\r\n\rFor example, if you create an app using this request, every orderForm of this account will have the custom fields created though it.\n\r\n\r**Important**: always retrieve the current configuration before performing an update to ensure that you are modifying only the properties you want. Otherwise, old values can be overwritten. To retrieve the current configuration, use the request [Get orderForm configuration](https://developers.vtex.com/reference#getorderformconfiguration)."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.configuration.updateWindowToChangeSeller",
+      "name": "configuration.updateWindowToChangeSeller",
+      "description": "Updates a marketplace’s window to change seller, that is, the period when it is possible to choose another seller to fulfill a given order after the original seller has canceled it.\n\r\n\rIt is possible to check the current window using the request Get window to change seller."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.customData.removesinglecustomfieldvalue",
+      "name": "customData.removesinglecustomfieldvalue",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) request. The value of a specific custom field can be removed by this request.\n\r\n\rTo do that, you need to inform in the URL the ID of the app you created with the configuration API (`appId`).\n\r\n\rYou also need to iform the specific field created in this app (identified by the `appFieldName` parameter, also passed through the URL) whose value you want to remove."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.customData.setMultipleCustomFieldValues",
+      "name": "customData.setMultipleCustomFieldValues",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference/configuration#updateorderformconfiguration) request. The values of these custom fields can then be updated by this request.\n\r\n\rTo do that, you need to inform the ID of the app you created with the configuration API (`appId`).\n\r\n\rIn the body of the request, for each field created in this app (`appFieldName`) you will inform a value (`appFieldValue`).\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.customData.setSingleCustomFieldValue",
+      "name": "customData.setSingleCustomFieldValue",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) request. The value of a specific custom field can then be updated by this request.\n\r\n\rTo do that, you need to inform in the URL the ID of the app you created with the configuration API (`appId`).\n\r\n\rIn the body of the request, you will inform the new value (`appFieldValue`, passed through the body) of the specific field created in this app (identified by the `appFieldName` parameter, passed through the URL).\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.fulfillment.getAddressByPostalCode",
+      "name": "fulfillment.getAddressByPostalCode",
+      "description": "Retrieves address information for a given postal code and country.\r\n\r\nThis request can be used to implement auto complete functionality when a customer needs to fill in an address."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.fulfillment.listPickupPpointsByLocation",
+      "name": "fulfillment.listPickupPpointsByLocation",
+      "description": "Retrieves information on pickup points close to a given location determined by geocoordinates or postal code.\n\r\n\rThe pickup points returned are not necessarily all active ones. Make sure to validate the information consumed by integrations."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.orderPlacement.placeOrder",
+      "name": "orderPlacement.placeOrder",
+      "description": "Places order without having any prior cart information. This means all information on items, client, payment and shipping must be sent in the body.\r\n\r\n>⚠️ The authentication of this endpoint is required if you are creating an order with an item that has an attachment that creates a Subscription. For more information, access [Subscriptions API](https://developers.vtex.com/docs/api-reference/subscriptions-api-v3)."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.orderPlacement.placeOrderFromExistingOrderForm",
+      "name": "orderPlacement.placeOrderFromExistingOrderForm",
+      "description": "This endpoint places an order from an existing `orderForm` object, meaning an existing cart.\n\r\n\rAfter the creation of an order with this request, you have five minutes to send payment information and then request payment processing."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.orderPlacement.processOrder",
+      "name": "orderPlacement.processOrder",
+      "description": "Order processing callback request, which is made after an order's payment is approved.\n\r\n\r> This request has to be made until five minutes after the [Place order](https://developers.vtex.com/docs/api-reference/checkout-api#put-/api/checkout/pub/orders) or [Place order from existing cart](https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/transaction) request has been made, or else, the order will not be processed."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.region.getSellersByRegion",
+      "name": "region.getSellersByRegion",
+      "description": "Retrieve a list of sellers that cater to a specific region or address, according to your set up of our [regionalization feature](https://help.vtex.com/en/tutorial/setting-up-price-and-availability-of-skus-by-region--12ne58BmvYsYuGsimmugoc#). Learn more about [Region v2](https://developers.vtex.com/vtex-developer-docs/changelog/region-v2).\n\r\n\rTo access the list of sellers, you must choose one of the following methods:\n\r\n\r1. Send the identification of the list of sellers (`regionId`) as a path parameter through the URL. Or;\n\r2. Send the `country` (3-digit ISO code) and at least one of the two values (`postal Code` or `geo Coordinates`) as query parameters through the URL. For this method, it is also allowed to send both values (`postalCode` or `geoCoordinates`) in the same request."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.addCoupons",
+      "name": "shoppingCart.addCoupons",
+      "description": "Use this request to add coupons to a given shopping cart."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.cartSimulation",
+      "name": "shoppingCart.cartSimulation",
+      "description": "This endpoint is used to simulate a cart in VTEX Checkout.\r\n\r\nIt receives an **SKU ID**, the **quantity** of items in the cart and the ID of the **Seller**.\r\n\r\nIt sends back all information about the cart, such as the selling price of each item, rates and benefits data, payment and logistics info.\r\n\r\nThis is useful whenever you need to know the availability of fulfilling an order for a specific cart setting, since the API response will let you know the updated price, inventory and shipping data.\r\n\r\n**Important**: The fields (`sku id`, `quantity`, `seller`, `country`, `postalCode` and `geoCoordinates`) are just examples of content that you can simulate in your cart. You can add more fields to the request as per your need. Access the [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) guide to check the available fields."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.createANewCart",
+      "name": "shoppingCart.createANewCart",
+      "description": "You can use this request to get your current shopping cart information (`orderFormId`) or to create a new cart.\r\n\r\n**Important**: To create a new empty shopping cart you need to send this request with the query param `forceNewCart=true`.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` obtained in response is the identification code of the newly created cart.\n\r\n\r> This request has a time out of 45 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.getCartInformationById",
+      "name": "shoppingCart.getCartInformationById",
+      "description": "Use this request to get all information associated to a given shopping  cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.getCartInstallments",
+      "name": "shoppingCart.getCartInstallments",
+      "description": "Retrieves possible amount of installments and respective values for a given cart with a given payment method.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\rThis endpoint can be used to get the installment options for only one payment method at a time.\n\r\n\rThis endpoint should be called only after the selected `orderForm` already has a `paymentData`."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.ignoreProfileData",
+      "name": "shoppingCart.ignoreProfileData",
+      "description": "When a shopper provides an email address at Checkout, the platform tries to retrieve existing profile information for that email and add it to the shopping cart information. Use this request if you want to change this behavior for a given cart, meaning profile information will not be included in the order automattically.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\nNote that this request will only work if you have not sent the `clientProfileData` to the cart yet. Sending it to a cart that already has a `clientProfileData` should return a status `403 Forbidden` error, with an `Access denied` message."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.items",
+      "name": "shoppingCart.items",
+      "description": "Use this request to add a new item to the shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.itemsUpdate",
+      "name": "shoppingCart.itemsUpdate",
+      "description": "You can use this request to:\n\r\n\r1. Change the quantity of one or more items in a specific cart.\n\r2. Remove an item from the cart (by sending the `quantity` value = `0` in the request body).\r\n\r\n**Important**: To remove all items from the cart at the same time, use the [Remove all items](https://developers.vtex.com/vtex-rest-api/reference/removeallitems) endpoint.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.priceChange",
+      "name": "shoppingCart.priceChange",
+      "description": "This request changes the price of an SKU in a cart. You can also perform type of bulk price change with the [Update cart items request](https://developers.vtex.com/vtex-rest-api/reference/shopping-cart#itemsupdate)\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\rYou need to inform which cart you are referring to, by sending its `orderFormId`; and what is the item whose price you want to change, by sending its `itemIndex`.\n\r\n\rYou also need to pass the new price value in the body.\n\r\n\rRemember that, to use this endpoint, the feature of *manual price* must be active. To check if it's active, use the [Get orderForm configuration](https://developers.vtex.com/reference#getorderformconfiguration) endpoint. To make it active, use the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) endpoint, making the `allowManualPrice` field `true`.\n\r\n\r> Whenever you use this request to change the price of an item, all items in that cart with the same SKU are affected by this change. This applies even to items that share the SKU but have been separated into different objects in the `items` array due to customizations or attachments, for example."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.removeAllItems",
+      "name": "shoppingCart.removeAllItems",
+      "description": "This request removes all items from a given cart, leaving it empty.\r\n\r\nYou must send an empty JSON in the body of the request.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\n**Important**: **Request Body** must always be sent with empty value \"{ }\" in this endpoint."
+    },
+    {
+      "id": "openapi_vtex_local_checkout_api_checkout_api.shoppingCart.removeallpersonaldata",
+      "name": "shoppingCart.removeallpersonaldata",
+      "description": "This call removes all user information, making a cart anonymous while leaving the items.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that represents a shopping cart and contains all information about it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\nThis call works by creating a new orderForm, setting a new cookie, and returning a redirect 302 to the cart URL (`/checkout/#/orderform`)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

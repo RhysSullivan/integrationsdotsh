@@ -1,0 +1,92 @@
+{
+  "fetchedAt": "2026-04-30T15:22:42.316Z",
+  "status": "ok",
+  "count": 17,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.googleServiceAccounts.storagetransferGoogleServiceAccountsGet",
+      "name": "googleServiceAccounts.storagetransferGoogleServiceAccountsGet",
+      "description": "Returns the Google service account that is used by Storage Transfer Service to access buckets in the project where transfers run or in other projects. Each Google service account is associated with one Google Cloud project. Users should add this service account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is created and owned by Storage Transfer Service and can only be used by Storage Transfer Service."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.projects.storagetransferProjectsAgentPoolsCreate",
+      "name": "projects.storagetransferProjectsAgentPoolsCreate",
+      "description": "Creates an agent pool resource."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.projects.storagetransferProjectsAgentPoolsDelete",
+      "name": "projects.storagetransferProjectsAgentPoolsDelete",
+      "description": "Deletes an agent pool."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.projects.storagetransferProjectsAgentPoolsList",
+      "name": "projects.storagetransferProjectsAgentPoolsList",
+      "description": "Lists agent pools."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.projects.storagetransferProjectsAgentPoolsPatch",
+      "name": "projects.storagetransferProjectsAgentPoolsPatch",
+      "description": "Updates an existing agent pool resource."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsCreate",
+      "name": "transferJobs.storagetransferTransferJobsCreate",
+      "description": "Creates a transfer job that runs periodically."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsDelete",
+      "name": "transferJobs.storagetransferTransferJobsDelete",
+      "description": "Deletes a transfer job. Deleting a transfer job sets its status to DELETED."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsGet",
+      "name": "transferJobs.storagetransferTransferJobsGet",
+      "description": "Gets a transfer job."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsList",
+      "name": "transferJobs.storagetransferTransferJobsList",
+      "description": "Lists transfer jobs."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsPatch",
+      "name": "transferJobs.storagetransferTransferJobsPatch",
+      "description": "Updates a transfer job. Updating a job's transfer spec does not affect transfer operations that are running already. **Note:** The job's status field can be modified using this RPC (for example, to set a job's status to DELETED, DISABLED, or ENABLED)."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferJobs.storagetransferTransferJobsRun",
+      "name": "transferJobs.storagetransferTransferJobsRun",
+      "description": "Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one active `TransferOperation`. If this method is called while a `TransferOperation` is active, an error is returned."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferOperations.storagetransferTransferOperationsCancel",
+      "name": "transferOperations.storagetransferTransferOperationsCancel",
+      "description": "Cancels a transfer. Use the transferOperations.get method to check if the cancellation succeeded or if the operation completed despite the `cancel` request. When you cancel an operation, the currently running transfer is interrupted. For recurring transfer jobs, the next instance of the transfer job will still run. For example, if your job is configured to run every day at 1pm and you cancel Monday's operation at 1:05pm, Monday's transfer will stop. However, a transfer job will still be attempted on Tuesday. This applies only to currently running operations. If an operation is not currently running, `cancel` does nothing. *Caution:* Canceling a transfer job can leave your data in an unknown state. We recommend that you restore the state at both the destination and the source after the `cancel` request completes so that your data is in a consistent state. When you cancel a job, the next job computes a delta of files and may repair any inconsistent state. For instance, if you run a job every day, and today's job found 10 new files and transferred five files before you canceled the job, tomorrow's transfer operation will compute a new delta with the five files that were not copied today plus any new files discovered tomorrow."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferOperations.storagetransferTransferOperationsList",
+      "name": "transferOperations.storagetransferTransferOperationsList",
+      "description": "Lists transfer operations. Operations are ordered by their creation time in reverse chronological order."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferOperations.storagetransferTransferOperationsPause",
+      "name": "transferOperations.storagetransferTransferOperationsPause",
+      "description": "Pauses a transfer operation."
+    },
+    {
+      "id": "openapi_googleapis_com_storagetransfer_storagetransfer.transferOperations.storagetransferTransferOperationsResume",
+      "name": "transferOperations.storagetransferTransferOperationsResume",
+      "description": "Resumes a transfer operation that is paused."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

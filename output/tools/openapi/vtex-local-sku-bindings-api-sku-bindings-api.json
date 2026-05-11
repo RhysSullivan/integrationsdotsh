@@ -1,0 +1,77 @@
+{
+  "fetchedAt": "2026-04-30T15:26:56.300Z",
+  "status": "ok",
+  "count": 14,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.activateSkuBinding",
+      "name": "skuBindings.activateSkuBinding",
+      "description": "Changes the status of an SKU Binding to active, setting `isActive` to `true`.\r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/activate/{sellerId}/{skuSellerId}`."
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.bindtoanothersku",
+      "name": "skuBindings.bindtoanothersku",
+      "description": "Associates a seller's SKU to another marketplace SKU.\r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/{sellerId}/{sellerSkuId}`.\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"StockKeepingUnitId\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.changeNotification",
+      "name": "skuBindings.changeNotification",
+      "description": "The seller is responsible for suggesting new SKUs to be sold in the VTEX marketplace and also for informing the marketplace about changes in their SKUs that already exist in the marketplace. Both actions start with a catalog notification, which is made by this request.\n\nWith this notification, the seller is telling the marketplace that something has changed about a specific SKU, like price or inventory, or that this is a new SKU that the seller would like to offer to the marketplace.\n\nThe body of the request should be empty.\r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/changenotification/{skuId}`."
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.deactivateSkuBinding",
+      "name": "skuBindings.deactivateSkuBinding",
+      "description": "Changes the status of an SKU Binding to inactive, setting `isActive` to `false`.\r\n\r\n  > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/inactivate/{sellerId}/{skuSellerId}`."
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.deleteSkUsellerassociation",
+      "name": "skuBindings.deleteSkUsellerassociation",
+      "description": "Remove a seller's SKU binding, given the Seller ID and the SKU ID in the seller's store.\r\n\r\n  > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/remove/{sellerId}/{sellerSkuId}`."
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.getallbySellerId",
+      "name": "skuBindings.getallbySellerId",
+      "description": "Retrieves a list of SKU Bindings given a specific Seller ID. \r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/list/bysellerId/{sellerId}`.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"SellerStockKeepingUnitId\": \"24\",\r\n        \"FreightCommissionPercentage\": null,\r\n        \"ProductCommissionPercentage\": null,\r\n        \"SellerId\": \"vtxkfj7352\",\r\n        \"StockKeepingUnitId\": 121,\r\n        \"IsActive\": true\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.getbySkuId",
+      "name": "skuBindings.getbySkuId",
+      "description": "Retrieves SKU Bindings details by SKU ID.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 48,\r\n        \"SellerId\": \"cosmetics1\",\r\n        \"StockKeepingUnitId\": 1,\r\n        \"SellerSkuId\": \"42\",\r\n        \"IsActive\": true,\r\n        \"LastUpdateDate\": \"2020-10-21T19:13:00.657\",\r\n        \"SalesPolicy\": 0\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.getpagedadmin",
+      "name": "skuBindings.getpagedadmin",
+      "description": "Retrieves SKU Bindings administrative information using optional query params `sellerId`, `skuId`, `sellerSkuId` and `IsActive` to filter results and `size` to restrict the amount of results. \r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/admin`.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"IsPersisted\": true,\r\n        \"IsRemoved\": false,\r\n        \"SkuSellerId\": 1,\r\n        \"UpdateDate\": \"2019-12-04T01:56:00.673Z\",\r\n        \"RequestedUpdateDate\": null,\r\n        \"SellerStockKeepingUnitId\": \"12\",\r\n        \"SellerId\": \"cosmetics1\",\r\n        \"StockKeepingUnitId\": 25,\r\n        \"IsActive\": true\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.getpagedbySellerId",
+      "name": "skuBindings.getpagedbySellerId",
+      "description": "Retrieves a paged list of SKU Bindings given a specific Seller ID. \r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/paged/sellerid/{sellerId}`.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"SellerId\": \"vtxkfj7352\",\r\n        \"StockKeepingUnitId\": 121,\r\n        \"SellerStockKeepingUnitId\": \"24\",\r\n        \"IsActive\": true,\r\n        \"FreightCommissionPercentage\": null,\r\n        \"ProductCommissionPercentage\": null\r\n    },\r\n    {\r\n        \"SellerId\": \"vtxkfj7352\",\r\n        \"StockKeepingUnitId\": 14,\r\n        \"SellerStockKeepingUnitId\": \"60\",\r\n        \"IsActive\": true,\r\n        \"FreightCommissionPercentage\": null,\r\n        \"ProductCommissionPercentage\": null\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.getSkUseller",
+      "name": "skuBindings.getSkUseller",
+      "description": "Retrieves the details of a seller's SKU given a seller ID and the SKU ID in the seller's store. \r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/{sellerId}/{sellerSkuId}`.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"IsPersisted\": true,\r\n    \"IsRemoved\": false,\r\n    \"SkuSellerId\": 102,\r\n    \"UpdateDate\": \"2021-04-12T20:06:59.413Z\",\r\n    \"RequestedUpdateDate\": null,\r\n    \"SellerStockKeepingUnitId\": \"71\",\r\n    \"SellerId\": \"vtxkfj7352\",\r\n    \"StockKeepingUnitId\": 1,\r\n    \"IsActive\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.insertSkuBinding",
+      "name": "skuBindings.insertSkuBinding",
+      "description": "Creates an SKU Binding, associating a seller's SKU with a marketplace's SKU.\r\n\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/insertion`."
+    },
+    {
+      "id": "openapi_vtex_local_sku_bindings_api_sku_bindings_api.skuBindings.postSkuBindingPvtSkusellerChangenotificationSellerIdSellerSkuId",
+      "name": "skuBindings.postSkuBindingPvtSkusellerChangenotificationSellerIdSellerSkuId",
+      "description": "The seller is responsible for suggesting new SKUs to be sold in the VTEX marketplace and also for informing the marketplace about changes in their SKUs that already exist in the marketplace. Both actions start with a catalog notification, which is made by this request.\n\nWith this notification, the seller is telling the marketplace that something has changed about a specific SKU, like price or inventory, or that this is a new SKU that the seller would like to offer to the marketplace.\n\nThere are two information expected by the marketplace in this request: the `sellerId`, which identifies the seller, and the `sellerSkuId`, which identifies the binding of the seller with the SKU.\n\nBoth information are passed through the request URL. The body of the request should be empty.\r\n > ℹ This path is an updated version of `/api/catalog_system/pvt/skuseller/changenotification/{sellerId}/{sellerSkuId}`.\r\n\r\n## Example\r\n\r\nLet's say your seller has the ID `123` in the marketplace and you want to inform the marketplace that has been a change in the SKU with ID `700`.\r\n\r\nIn this case, you would have to replace the `sellerId` parameter with the value `123` and the `skuId` parameter with the value `700`. The URL of the request would be the following.\r\n\r\n```\r\nhttps://{{accountName}}.vtexcommercestable.com.br/api/sku-binding/pvt/skuseller/changenotification/123/700\r\n```\r\n\r\n## Response codes\r\n\r\nThe following response codes are possible for this request.\r\n* 200: the SKU whose ID was informed in the URL already exists in the marketplace and was found. The marketplace can now proceed with a fulfillment simulation in order to get updated information about this SKU's inventory and price.\r\n* 403: Failure in the authentication.\r\n* 404: the SKU was not found in the marketplace. The body of the response, in this case, should follow this format: \"Seller StockKeepingUnit `{{skuId}}` not found for this seller id `{{sellerId}}`. This means that the seller can now proceed with sending an offer to the marketplace in order to suggest that this SKU is sold there.\r\n* 429: Failure due to too many requests."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

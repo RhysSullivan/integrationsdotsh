@@ -1,0 +1,327 @@
+{
+  "fetchedAt": "2026-04-30T15:26:54.079Z",
+  "status": "ok",
+  "count": 64,
+  "tools": [
+    {
+      "id": "openapi_twinehealth_com.action.createAction",
+      "name": "action.createAction",
+      "description": "Create a plan action"
+    },
+    {
+      "id": "openapi_twinehealth_com.action.fetchAction",
+      "name": "action.fetchAction",
+      "description": "Get a health action from a patient's plan."
+    },
+    {
+      "id": "openapi_twinehealth_com.action.updateAction",
+      "name": "action.updateAction",
+      "description": "Update a health action from a patient's plan."
+    },
+    {
+      "id": "openapi_twinehealth_com.bundle.createBundle",
+      "name": "bundle.createBundle",
+      "description": "Create a bundle in a patient's plan"
+    },
+    {
+      "id": "openapi_twinehealth_com.bundle.fetchBundle",
+      "name": "bundle.fetchBundle",
+      "description": "Get a bundle from a patient's plan."
+    },
+    {
+      "id": "openapi_twinehealth_com.bundle.updateBundle",
+      "name": "bundle.updateBundle",
+      "description": "Updte a bundle from a patient's plan."
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEvent.createCalendarEvent",
+      "name": "calendarEvent.createCalendarEvent",
+      "description": "Create a calendar event for a patient. Attribute `all_day` must be set to `true` and `end_at` cannot be set for `plan-check-in` event type."
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEvent.deleteCalendarEvent",
+      "name": "calendarEvent.deleteCalendarEvent",
+      "description": "Delete a calendar event by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEvent.fetchCalendarEvent",
+      "name": "calendarEvent.fetchCalendarEvent",
+      "description": "Get a calendar event by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEvent.fetchCalendarEvents",
+      "name": "calendarEvent.fetchCalendarEvents",
+      "description": "Get a list of calendar events"
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEvent.updateCalendarEvent",
+      "name": "calendarEvent.updateCalendarEvent",
+      "description": "Update a calendar event for a patient. Attribute `all_day` must be true and `end_at` cannot be specified for `plan-check-in` event type. To mark a calendar event as 'completed', set `completed_at` and `completed_by` to desired values.  To mark a completed calendar event as 'not completed', set `completed_at` and `completed_by` to `null`. Attendees can be added or removed, but response status cannot be updated. Use the calendar event response api for response status updates instead."
+    },
+    {
+      "id": "openapi_twinehealth_com.calendarEventResponse.createCalendarEventResponse",
+      "name": "calendarEventResponse.createCalendarEventResponse",
+      "description": "Create a calendar event response for an attendee of a calendar event, the attendee can be a coach or patient.  Calendar event responses cannot be fetched, updated nor deleted.  Use calendar event api to fetch the response status for attendees."
+    },
+    {
+      "id": "openapi_twinehealth_com.coach.fetchCoach",
+      "name": "coach.fetchCoach",
+      "description": "Get a coach record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.coach.fetchCoaches",
+      "name": "coach.fetchCoaches",
+      "description": "Get a list of coaches matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.emailHistory.fetchEmailHistories",
+      "name": "emailHistory.fetchEmailHistories",
+      "description": "Get a list of email histories"
+    },
+    {
+      "id": "openapi_twinehealth_com.emailHistory.fetchEmailHistory",
+      "name": "emailHistory.fetchEmailHistory",
+      "description": "Get an email history by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.group.createGroup",
+      "name": "group.createGroup",
+      "description": "Create a group record."
+    },
+    {
+      "id": "openapi_twinehealth_com.group.fetchGroup",
+      "name": "group.fetchGroup",
+      "description": "Get a group record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.group.fetchGroups",
+      "name": "group.fetchGroups",
+      "description": "Get a list of groups matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfile.fetchHealthProfile",
+      "name": "healthProfile.fetchHealthProfile",
+      "description": "Get a health profile by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfile.fetchHealthProfiles",
+      "name": "healthProfile.fetchHealthProfiles",
+      "description": "Get a list of health profiles"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfileAnswer.fetchHealthProfileAnswer",
+      "name": "healthProfileAnswer.fetchHealthProfileAnswer",
+      "description": "Get a health profile answer by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfileAnswer.fetchHealthProfileAnswers",
+      "name": "healthProfileAnswer.fetchHealthProfileAnswers",
+      "description": "Get a list of health profile answers"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfileQuestion.fetchHealthProfileQuestion",
+      "name": "healthProfileQuestion.fetchHealthProfileQuestion",
+      "description": "Get a health profile by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthProfileQuestion.fetchHealthProfileQuestions",
+      "name": "healthProfileQuestion.fetchHealthProfileQuestions",
+      "description": "Get a list of health profile questions"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthQuestionDefinition.fetchHealthQuestionDefinition",
+      "name": "healthQuestionDefinition.fetchHealthQuestionDefinition",
+      "description": "Get a health question definition by id"
+    },
+    {
+      "id": "openapi_twinehealth_com.healthQuestionDefinition.fetchHealthQuestionDefinitions",
+      "name": "healthQuestionDefinition.fetchHealthQuestionDefinitions",
+      "description": "Get a list of all health question definitions"
+    },
+    {
+      "id": "openapi_twinehealth_com.metric.createPatientHealthMetric",
+      "name": "metric.createPatientHealthMetric",
+      "description": "Create one or more patient health metrics.\n\nExample for creating a patient health result with a patient specified using `meta.query` instead of `id`:\n\n```JSON\n  {\n    \"data\": {\n      \"type\": \"patient_health_metric\",\n       \"attributes\": {\n         \"code\": {\n           \"system\": \"LOINC\",\n           \"value\": \"13457-7\"\n         },\n         \"type\": \"ldl_cholesterol\",\n         \"occurred_at\": \"2017-03-14T11:00:57.000Z\",\n         \"value\": 121,\n         \"unit\": \"mg/dl\"\n      },\n      \"relationships\": {\n        \"patient\": {\n          \"data\": {\n            \"type\": \"patient\",\n            \"meta\": {\n              \"query\": {\n                \"identifier\": {\n                  \"system\": \"medical-record-number\",\n                  \"value\": \"121212\"\n                },\n                \"organization\": \"58c4554710123c5c40dbab81\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n```\n"
+    },
+    {
+      "id": "openapi_twinehealth_com.metric.fetchPatientHealthMetric",
+      "name": "metric.fetchPatientHealthMetric",
+      "description": "Get the plan summary for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.metric.fetchPatientHealthMetrics",
+      "name": "metric.fetchPatientHealthMetrics",
+      "description": "Get a list of patient health metrics."
+    },
+    {
+      "id": "openapi_twinehealth_com.oauth.createToken",
+      "name": "oauth.createToken",
+      "description": "Create an OAuth 2.0 Bearer token. A valid bearer token is required for all other API requests.\n\nBe sure to set the header `Content-Type: \"application/vnd.api+json\"`. Otherwise, you will get an error\n403 Forbidden. Using `Content-Type: \"application/json\"` is permitted (to support older oauth clients) but when\nusing `application/json` the body should have a body in the following format instead of nesting under\n`data.attributes`:\n```\n{\n  \"grant_type\": \"client_credentials\",\n  \"client_id\": \"95c78ab2-167f-40b8-8bec-8398d4b87454\",\n  \"client_secret\": \"35d18dc9-a3dd-4948-b787-063a490b9354\"\n}\n```\n"
+    },
+    {
+      "id": "openapi_twinehealth_com.oauth.fetchTokenGroups",
+      "name": "oauth.fetchTokenGroups",
+      "description": "Get the list of groups a token can be used to access."
+    },
+    {
+      "id": "openapi_twinehealth_com.oauth.fetchTokenOrganization",
+      "name": "oauth.fetchTokenOrganization",
+      "description": "Get the organization a token can be used to access."
+    },
+    {
+      "id": "openapi_twinehealth_com.organization.fetchOrganization",
+      "name": "organization.fetchOrganization",
+      "description": "Get an organization record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.createPatient",
+      "name": "patient.createPatient",
+      "description": "Create a patient record.\n\nExample for creating a patient with a group specified using `meta.query` instead of `id`:\n\n```JSON\n{\n  \"data\": {\n    \"type\": \"patient\",\n    \"attributes\": {\n      \"first_name\": \"Andrew\",\n      \"last_name\": \"Smith\"\n    },\n    \"relationships\": {\n      \"groups\": {\n        \"data\": [\n          {\n            \"type\": \"group\",\n            \"meta\": {\n              \"query\": {\n                \"organization\": \"58c88de7c93eb96357a87033\",\n                \"name\": \"Patients Lead\"\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n```\n"
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.fetchPatient",
+      "name": "patient.fetchPatient",
+      "description": "Gets a patient record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.fetchPatientCoaches",
+      "name": "patient.fetchPatientCoaches",
+      "description": "Get the list of coaches for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.fetchPatientGroups",
+      "name": "patient.fetchPatientGroups",
+      "description": "Get the list of groups for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.fetchPatients",
+      "name": "patient.fetchPatients",
+      "description": "Get a list of patients."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.updatePatient",
+      "name": "patient.updatePatient",
+      "description": "Update a patient record."
+    },
+    {
+      "id": "openapi_twinehealth_com.patient.upsertPatient",
+      "name": "patient.upsertPatient",
+      "description": "Create a new patient or update an existing patient"
+    },
+    {
+      "id": "openapi_twinehealth_com.plan.fetchPatientPlanSummaries",
+      "name": "plan.fetchPatientPlanSummaries",
+      "description": "Get a list of patient plan summaries"
+    },
+    {
+      "id": "openapi_twinehealth_com.plan.fetchPatientPlanSummary",
+      "name": "plan.fetchPatientPlanSummary",
+      "description": "Get the plan summary for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.plan.updatePatientPlanSummary",
+      "name": "plan.updatePatientPlanSummary",
+      "description": "Update a plan summary record for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.result.fetchPatientHealthResult",
+      "name": "result.fetchPatientHealthResult",
+      "description": "Get patient health result by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.result.fetchPatientHealthResults",
+      "name": "result.fetchPatientHealthResults",
+      "description": "Get a list of patient health results."
+    },
+    {
+      "id": "openapi_twinehealth_com.reward.createReward",
+      "name": "reward.createReward",
+      "description": "Create a reward for a patient."
+    },
+    {
+      "id": "openapi_twinehealth_com.reward.fetchReward",
+      "name": "reward.fetchReward",
+      "description": "Get a reward record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.reward.fetchRewards",
+      "name": "reward.fetchRewards",
+      "description": "Get a list of rewards matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarning.createRewardEarning",
+      "name": "rewardEarning.createRewardEarning",
+      "description": "Create a reward earning for a reward. There can only be one earning for a reward. It is possilble to create multiple reward earnings simultaneously by providing and array of reward earnings in the data property."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarning.fetchRewardEarning",
+      "name": "rewardEarning.fetchRewardEarning",
+      "description": "Get a reward earning record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarning.fetchRewardEarnings",
+      "name": "rewardEarning.fetchRewardEarnings",
+      "description": "Get a list of reward earnings matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarningFulfillment.createRewardEarningFulfillment",
+      "name": "rewardEarningFulfillment.createRewardEarningFulfillment",
+      "description": "Create a reward earning fulfillment for a reward earning. There can only be one fulfillment for each earning."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarningFulfillment.fetchRewardEarningFulfillment",
+      "name": "rewardEarningFulfillment.fetchRewardEarningFulfillment",
+      "description": "Get a reward earning fulfillment record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardEarningFulfillment.fetchRewardEarningFulfillments",
+      "name": "rewardEarningFulfillment.fetchRewardEarningFulfillments",
+      "description": "Get a list of reward earning fulfillments matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgram.createRewardProgram",
+      "name": "rewardProgram.createRewardProgram",
+      "description": "Create a reward program for a group."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgram.fetchRewardProgram",
+      "name": "rewardProgram.fetchRewardProgram",
+      "description": "Get a reward program record by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgram.fetchRewardProgramGroup",
+      "name": "rewardProgram.fetchRewardProgramGroup",
+      "description": "Get the group related to a reward program."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgram.fetchRewardPrograms",
+      "name": "rewardProgram.fetchRewardPrograms",
+      "description": "Get a list of reward programs matching the specified filters."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgramActivation.createRewardProgramActivation",
+      "name": "rewardProgramActivation.createRewardProgramActivation",
+      "description": "Create a reward program activation for a patient. There can only be one activation for a patient for a given reward program."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgramActivation.fetchRewardProgramActivation",
+      "name": "rewardProgramActivation.fetchRewardProgramActivation",
+      "description": "Get a reward program activationrecord by id."
+    },
+    {
+      "id": "openapi_twinehealth_com.rewardProgramActivation.fetchRewardProgramActivations",
+      "name": "rewardProgramActivation.fetchRewardProgramActivations",
+      "description": "Get a list of reward program activations matching the specified filters."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

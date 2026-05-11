@@ -1,0 +1,757 @@
+{
+  "fetchedAt": "2026-04-30T15:26:44.185Z",
+  "status": "ok",
+  "count": 150,
+  "tools": [
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsChartupdateGetId",
+      "name": "charts.chartsChartsChartupdateGetId",
+      "description": "Gets a ChartDataDTO object, usually used for downstream analytics and chart updates"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsChartupdatePutId",
+      "name": "charts.chartsChartsChartupdatePutId",
+      "description": "Simplifies chart update by allowing users to supply data via ChartDataDTO"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsChildobjectsGetId",
+      "name": "charts.chartsChartsChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Chart and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsDetailsGetId",
+      "name": "charts.chartsChartsDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsGetId",
+      "name": "charts.chartsChartsGetId",
+      "description": "Get by Id: Use this method to retrieve a Charts object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsOpenofficexmlGetIdUpdated",
+      "name": "charts.chartsChartsOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Chart object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Chart objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsOpenofficexmlPutId",
+      "name": "charts.chartsChartsOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Chart object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Chart objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.charts.chartsChartsSvgGetIdUseCache",
+      "name": "charts.chartsChartsSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Chart as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsAxes.chartAxesGetId",
+      "name": "chartsAxes.chartAxesGetId",
+      "description": "Get by Id: Use this method to retrieve a Axes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsAxisDataTypes.chartAxisdatatypesGet",
+      "name": "chartsAxisDataTypes.chartAxisdatatypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the AxisDataTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Chart object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsAxisDataTypes.chartAxisdatatypesGetId",
+      "name": "chartsAxisDataTypes.chartAxisdatatypesGetId",
+      "description": "Get by Id: Use this method to retrieve a AxisDataTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsAxisDataTypes.chartAxisdatatypesTypeidGetTypeId",
+      "name": "chartsAxisDataTypes.chartAxisdatatypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsChartData.chartChartdataGetId",
+      "name": "chartsChartData.chartChartdataGetId",
+      "description": "Get by Id: Use this method to retrieve a ChartData object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsColumnCollections.chartColumncollectionsGetId",
+      "name": "chartsColumnCollections.chartColumncollectionsGetId",
+      "description": "Get by Id: Use this method to retrieve a ColumnCollections object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsColumns.chartColumnsGetId",
+      "name": "chartsColumns.chartColumnsGetId",
+      "description": "Get by Id: Use this method to retrieve a Columns object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsDataPoints.chartDatapointsGetId",
+      "name": "chartsDataPoints.chartDatapointsGetId",
+      "description": "Get by Id: Use this method to retrieve a DataPoints object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsPlotType.chartPlottypeGet",
+      "name": "chartsPlotType.chartPlottypeGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the PlotType type. Use the Id from oneof the returned elements on to make changes to elements in the Chart object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsPlotType.chartPlottypeGetId",
+      "name": "chartsPlotType.chartPlottypeGetId",
+      "description": "Get by Id: Use this method to retrieve a PlotType object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsPlotType.chartPlottypeTypeidGetTypeId",
+      "name": "chartsPlotType.chartPlottypeTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowCol.chartRowcolGet",
+      "name": "chartsRowCol.chartRowcolGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the RowCol type. Use the Id from oneof the returned elements on to make changes to elements in the Chart object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowCol.chartRowcolGetId",
+      "name": "chartsRowCol.chartRowcolGetId",
+      "description": "Get by Id: Use this method to retrieve a RowCol object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowCol.chartRowcolTypeidGetTypeId",
+      "name": "chartsRowCol.chartRowcolTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowCollections.chartRowcollectionsGetId",
+      "name": "chartsRowCollections.chartRowcollectionsGetId",
+      "description": "Get by Id: Use this method to retrieve a RowCollections object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowNameFormatTypes.chartRownameformattypesGet",
+      "name": "chartsRowNameFormatTypes.chartRownameformattypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the RowNameFormatTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Chart object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowNameFormatTypes.chartRownameformattypesGetId",
+      "name": "chartsRowNameFormatTypes.chartRownameformattypesGetId",
+      "description": "Get by Id: Use this method to retrieve a RowNameFormatTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRowNameFormatTypes.chartRownameformattypesTypeidGetTypeId",
+      "name": "chartsRowNameFormatTypes.chartRownameformattypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.chartsRows.chartRowsGetId",
+      "name": "chartsRows.chartRowsGetId",
+      "description": "Get by Id: Use this method to retrieve a Rows object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesChildobjectsGetId",
+      "name": "connectionShapes.slidesConnectionshapesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesDetailsGetId",
+      "name": "connectionShapes.slidesConnectionshapesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesGetId",
+      "name": "connectionShapes.slidesConnectionshapesGetId",
+      "description": "Get by Id: Use this method to retrieve a ConnectionShapes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesOpenofficexmlGetIdUpdated",
+      "name": "connectionShapes.slidesConnectionshapesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesOpenofficexmlPutId",
+      "name": "connectionShapes.slidesConnectionshapesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.connectionShapes.slidesConnectionshapesSvgGetIdUseCache",
+      "name": "connectionShapes.slidesConnectionshapesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsChildobjectsGetId",
+      "name": "documents.documentsChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this DocumentsController and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsClonePostId",
+      "name": "documents.documentsClonePostId",
+      "description": "Clone A Document that has already been uploaded to a new Story"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsDeleteId",
+      "name": "documents.documentsDeleteId",
+      "description": "Permantly delete a document from the Ooxml Automation API. Note that is does not make changes to the related Presalytics APIs.\r\nPlease use the delete endpoint in the story API to ensure that stories are not left with orphaned references to the Ooxml Automation API."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsDownloadGetIdOrginal",
+      "name": "documents.documentsDownloadGetIdOrginal",
+      "description": "Download the into a bytestream for client-side processing."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsGetId",
+      "name": "documents.documentsGetId",
+      "description": "Get by Id: Use this method to retrieve a Documents object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documents.documentsPost",
+      "name": "documents.documentsPost",
+      "description": "Upload an OpenOfficeXml document (e.g., .xlsx, .pptx) for processing by the API."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documentsDocumentType.documentsDocumenttypeGet",
+      "name": "documentsDocumentType.documentsDocumenttypeGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the DocumentType type. Use the Id from oneof the returned elements on to make changes to elements in the Documents object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documentsDocumentType.documentsDocumenttypeGetId",
+      "name": "documentsDocumentType.documentsDocumenttypeGetId",
+      "description": "Get by Id: Use this method to retrieve a DocumentType object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.documentsDocumentType.documentsDocumenttypeTypeidGetTypeId",
+      "name": "documentsDocumentType.documentsDocumenttypeTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsChildobjectsGetId",
+      "name": "groups.slidesGroupsChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsDetailsGetId",
+      "name": "groups.slidesGroupsDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsGetId",
+      "name": "groups.slidesGroupsGetId",
+      "description": "Get by Id: Use this method to retrieve a Groups object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsOpenofficexmlGetIdUpdated",
+      "name": "groups.slidesGroupsOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsOpenofficexmlPutId",
+      "name": "groups.slidesGroupsOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.groups.slidesGroupsSvgGetIdUseCache",
+      "name": "groups.slidesGroupsSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesChildobjectsGetId",
+      "name": "images.sharedImagesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Shared and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesDetailsGetId",
+      "name": "images.sharedImagesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesGetId",
+      "name": "images.sharedImagesGetId",
+      "description": "Get by Id: Use this method to retrieve a Images object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesGetimagePutId",
+      "name": "images.sharedImagesGetimagePutId",
+      "description": "Download Images extracted from Ooxml Documents"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesOpenofficexmlGetIdUpdated",
+      "name": "images.sharedImagesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Shared object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Shared objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesOpenofficexmlPutId",
+      "name": "images.sharedImagesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Shared object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Shared objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.images.sharedImagesSvgGetIdUseCache",
+      "name": "images.sharedImagesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Shared as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesChildobjectsGetId",
+      "name": "shapes.slidesShapesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesDetailsGetId",
+      "name": "shapes.slidesShapesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesGetId",
+      "name": "shapes.slidesShapesGetId",
+      "description": "Get by Id: Use this method to retrieve a Shapes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesOpenofficexmlGetIdUpdated",
+      "name": "shapes.slidesShapesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesOpenofficexmlPutId",
+      "name": "shapes.slidesShapesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapes.slidesShapesSvgGetIdUseCache",
+      "name": "shapes.slidesShapesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesChildobjectsGetId",
+      "name": "shapeTrees.slidesShapetreesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesDetailsGetId",
+      "name": "shapeTrees.slidesShapetreesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesGetId",
+      "name": "shapeTrees.slidesShapetreesGetId",
+      "description": "Get by Id: Use this method to retrieve a ShapeTrees object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesOpenofficexmlGetIdUpdated",
+      "name": "shapeTrees.slidesShapetreesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesOpenofficexmlPutId",
+      "name": "shapeTrees.slidesShapetreesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.shapeTrees.slidesShapetreesSvgGetIdUseCache",
+      "name": "shapeTrees.slidesShapetreesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedColorTransformationAttributes.sharedColortransformationattributesGetId",
+      "name": "sharedColorTransformationAttributes.sharedColortransformationattributesGetId",
+      "description": "Get by Id: Use this method to retrieve a ColorTransformationAttributes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedColorTransformations.sharedColortransformationsGetId",
+      "name": "sharedColorTransformations.sharedColortransformationsGetId",
+      "description": "Get by Id: Use this method to retrieve a ColorTransformations object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedColorTypes.sharedColortypesGet",
+      "name": "sharedColorTypes.sharedColortypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the ColorTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedColorTypes.sharedColortypesGetId",
+      "name": "sharedColorTypes.sharedColortypesGetId",
+      "description": "Get by Id: Use this method to retrieve a ColorTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedColorTypes.sharedColortypesTypeidGetTypeId",
+      "name": "sharedColorTypes.sharedColortypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedDashTypes.sharedDashtypesGet",
+      "name": "sharedDashTypes.sharedDashtypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the DashTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedDashTypes.sharedDashtypesGetId",
+      "name": "sharedDashTypes.sharedDashtypesGetId",
+      "description": "Get by Id: Use this method to retrieve a DashTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedDashTypes.sharedDashtypesTypeidGetTypeId",
+      "name": "sharedDashTypes.sharedDashtypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedEffectAttributes.sharedEffectattributesGetId",
+      "name": "sharedEffectAttributes.sharedEffectattributesGetId",
+      "description": "Get by Id: Use this method to retrieve a EffectAttributes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedEffects.sharedEffectsGetId",
+      "name": "sharedEffects.sharedEffectsGetId",
+      "description": "Get by Id: Use this method to retrieve a Effects object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedEffectTypes.sharedEffecttypesGet",
+      "name": "sharedEffectTypes.sharedEffecttypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the EffectTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedEffectTypes.sharedEffecttypesGetId",
+      "name": "sharedEffectTypes.sharedEffecttypesGetId",
+      "description": "Get by Id: Use this method to retrieve a EffectTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedEffectTypes.sharedEffecttypesTypeidGetTypeId",
+      "name": "sharedEffectTypes.sharedEffecttypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedFillMap.sharedFillmapGetId",
+      "name": "sharedFillMap.sharedFillmapGetId",
+      "description": "Get by Id: Use this method to retrieve a FillMap object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedFillTypes.sharedFilltypesGet",
+      "name": "sharedFillTypes.sharedFilltypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the FillTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedFillTypes.sharedFilltypesGetId",
+      "name": "sharedFillTypes.sharedFilltypesGetId",
+      "description": "Get by Id: Use this method to retrieve a FillTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedFillTypes.sharedFilltypesTypeidGetTypeId",
+      "name": "sharedFillTypes.sharedFilltypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedGradientFills.sharedGradientfillsGetId",
+      "name": "sharedGradientFills.sharedGradientfillsGetId",
+      "description": "Get by Id: Use this method to retrieve a GradientFills object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedGradientStops.sharedGradientstopsGetId",
+      "name": "sharedGradientStops.sharedGradientstopsGetId",
+      "description": "Get by Id: Use this method to retrieve a GradientStops object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedImageFills.sharedImagefillsGetId",
+      "name": "sharedImageFills.sharedImagefillsGetId",
+      "description": "Get by Id: Use this method to retrieve a ImageFills object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndSizes.sharedLineendsizesGet",
+      "name": "sharedLineEndSizes.sharedLineendsizesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the LineEndSizes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndSizes.sharedLineendsizesGetId",
+      "name": "sharedLineEndSizes.sharedLineendsizesGetId",
+      "description": "Get by Id: Use this method to retrieve a LineEndSizes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndSizes.sharedLineendsizesTypeidGetTypeId",
+      "name": "sharedLineEndSizes.sharedLineendsizesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndTypes.sharedLineendtypesGet",
+      "name": "sharedLineEndTypes.sharedLineendtypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the LineEndTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Shared object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndTypes.sharedLineendtypesGetId",
+      "name": "sharedLineEndTypes.sharedLineendtypesGetId",
+      "description": "Get by Id: Use this method to retrieve a LineEndTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLineEndTypes.sharedLineendtypesTypeidGetTypeId",
+      "name": "sharedLineEndTypes.sharedLineendtypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedLines.sharedLinesGetId",
+      "name": "sharedLines.sharedLinesGetId",
+      "description": "Get by Id: Use this method to retrieve a Lines object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedParagraph.sharedParagraphGetId",
+      "name": "sharedParagraph.sharedParagraphGetId",
+      "description": "Get by Id: Use this method to retrieve a Paragraph object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedSolidFills.sharedSolidfillsGetId",
+      "name": "sharedSolidFills.sharedSolidfillsGetId",
+      "description": "Get by Id: Use this method to retrieve a SolidFills object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedText.sharedTextGetId",
+      "name": "sharedText.sharedTextGetId",
+      "description": "Get by Id: Use this method to retrieve a Text object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.sharedTextContainer.sharedTextcontainerGetId",
+      "name": "sharedTextContainer.sharedTextcontainerGetId",
+      "description": "Get by Id: Use this method to retrieve a TextContainer object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesChildobjectsGetId",
+      "name": "slides.slidesSlidesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesDetailsGetId",
+      "name": "slides.slidesSlidesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesGetId",
+      "name": "slides.slidesSlidesGetId",
+      "description": "Get by Id: Use this method to retrieve a Slides object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesOpenofficexmlGetIdUpdated",
+      "name": "slides.slidesSlidesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesOpenofficexmlPutId",
+      "name": "slides.slidesSlidesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slides.slidesSlidesSvgGetIdUseCache",
+      "name": "slides.slidesSlidesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesColorMaps.slidesColormapsGetId",
+      "name": "slidesColorMaps.slidesColormapsGetId",
+      "description": "Get by Id: Use this method to retrieve a ColorMaps object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGraphics.slidesGraphicsGetId",
+      "name": "slidesGraphics.slidesGraphicsGetId",
+      "description": "Get by Id: Use this method to retrieve a Graphics object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGraphicTypes.slidesGraphictypesGet",
+      "name": "slidesGraphicTypes.slidesGraphictypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the GraphicTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Slides object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGraphicTypes.slidesGraphictypesGetId",
+      "name": "slidesGraphicTypes.slidesGraphictypesGetId",
+      "description": "Get by Id: Use this method to retrieve a GraphicTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGraphicTypes.slidesGraphictypesTypeidGetTypeId",
+      "name": "slidesGraphicTypes.slidesGraphictypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGroupElements.slidesGroupelementsGetId",
+      "name": "slidesGroupElements.slidesGroupelementsGetId",
+      "description": "Get by Id: Use this method to retrieve a GroupElements object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGroupElementTypes.slidesGroupelementtypesGet",
+      "name": "slidesGroupElementTypes.slidesGroupelementtypesGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the GroupElementTypes type. Use the Id from oneof the returned elements on to make changes to elements in the Slides object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGroupElementTypes.slidesGroupelementtypesGetId",
+      "name": "slidesGroupElementTypes.slidesGroupelementtypesGetId",
+      "description": "Get by Id: Use this method to retrieve a GroupElementTypes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesGroupElementTypes.slidesGroupelementtypesTypeidGetTypeId",
+      "name": "slidesGroupElementTypes.slidesGroupelementtypesTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.slidesSlideMasters.slidesSlidemastersGetId",
+      "name": "slidesSlideMasters.slidesSlidemastersGetId",
+      "description": "Get by Id: Use this method to retrieve a SlideMasters object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsChildobjectsGetId",
+      "name": "smartArts.slidesSmartartsChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Slide and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsDetailsGetId",
+      "name": "smartArts.slidesSmartartsDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsGetId",
+      "name": "smartArts.slidesSmartartsGetId",
+      "description": "Get by Id: Use this method to retrieve a SmartArts object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsOpenofficexmlGetIdUpdated",
+      "name": "smartArts.slidesSmartartsOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Slide object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsOpenofficexmlPutId",
+      "name": "smartArts.slidesSmartartsOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Slide object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Slide objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.smartArts.slidesSmartartsSvgGetIdUseCache",
+      "name": "smartArts.slidesSmartartsSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Slide as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesChildobjectsGetId",
+      "name": "tables.tablesTablesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Table and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesDetailsGetId",
+      "name": "tables.tablesTablesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesGetId",
+      "name": "tables.tablesTablesGetId",
+      "description": "Get by Id: Use this method to retrieve a Tables object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesOpenofficexmlGetIdUpdated",
+      "name": "tables.tablesTablesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Table object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Table objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesOpenofficexmlPutId",
+      "name": "tables.tablesTablesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Table object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Table objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesSvgGetIdUseCache",
+      "name": "tables.tablesTablesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Table as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesTableupdateGetId",
+      "name": "tables.tablesTablesTableupdateGetId",
+      "description": "Gets a TabletDataDTO object, usually used for downstream updates to table content"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tables.tablesTablesTableupdatePutId",
+      "name": "tables.tablesTablesTableupdatePutId",
+      "description": "Simplifies table update by allowing users to supply strings to table cells  via TableDataDTO"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tablesBorders.tablesBordersGetId",
+      "name": "tablesBorders.tablesBordersGetId",
+      "description": "Get by Id: Use this method to retrieve a Borders object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tablesCells.tablesCellsGetId",
+      "name": "tablesCells.tablesCellsGetId",
+      "description": "Get by Id: Use this method to retrieve a Cells object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tablesColumns.tablesColumnsGetId",
+      "name": "tablesColumns.tablesColumnsGetId",
+      "description": "Get by Id: Use this method to retrieve a Columns object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.tablesRows.tablesRowsGetId",
+      "name": "tablesRows.tablesRowsGetId",
+      "description": "Get by Id: Use this method to retrieve a Rows object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesChildobjectsGetId",
+      "name": "themes.themeThemesChildobjectsGetId",
+      "description": "This endpoint is helpful for helping users and bots identify dependent objects to this Theme and retreive their corresponding metadata in order to make modifications to those objects in downstream operations."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesDetailsGetId",
+      "name": "themes.themeThemesDetailsGetId",
+      "description": "Returns object metadata and information about relative dependent objects "
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesGetId",
+      "name": "themes.themeThemesGetId",
+      "description": "Get by Id: Use this method to retrieve a Themes object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesOpenofficexmlGetIdUpdated",
+      "name": "themes.themeThemesOpenofficexmlGetIdUpdated",
+      "description": "Return the subset of the xml content from within the latest edited version of the OpenXmlDocument from this Theme object.  The returned xml data conforms to the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm).  Use this endpoint a starting point for building client-side extensions that modify Presalytics widgets containing Theme objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesOpenofficexmlPutId",
+      "name": "themes.themeThemesOpenofficexmlPutId",
+      "description": "Directly eidt the underlying xml of a Theme object within an OpenOpenXml (e.g. Excel, Powerpoint) document. This endpoint will validatate the submitted xml against the [Ecma-376 standard](http://www.ecma-international.org/publications/standards/Ecma-376.htm) prior to saving modification.  Invalid xml will rejected by this endpoint and a (hopefully) helpful error message will be returned.  Use this endpoint for client-side automation of modifications ot Theme objects."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themes.themeThemesSvgGetIdUseCache",
+      "name": "themes.themeThemesSvgGetIdUseCache",
+      "description": "This endpoint is helpful for rending this Theme as an svg or image object that can then be rendered in a story, dashboard or website."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesBackgroundFills.themesBackgroundfillsGetId",
+      "name": "themesBackgroundFills.themesBackgroundfillsGetId",
+      "description": "Get by Id: Use this method to retrieve a BackgroundFills object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesColors.themesColorsGetId",
+      "name": "themesColors.themesColorsGetId",
+      "description": "Get by Id: Use this method to retrieve a Colors object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesCustomColors.themesCustomcolorsGetId",
+      "name": "themesCustomColors.themesCustomcolorsGetId",
+      "description": "Get by Id: Use this method to retrieve a CustomColors object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesEffectMap.themesEffectmapGetId",
+      "name": "themesEffectMap.themesEffectmapGetId",
+      "description": "Get by Id: Use this method to retrieve a EffectMap object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesFills.themesFillsGetId",
+      "name": "themesFills.themesFillsGetId",
+      "description": "Get by Id: Use this method to retrieve a Fills object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesFonts.themesFontsGetId",
+      "name": "themesFonts.themesFontsGetId",
+      "description": "Get by Id: Use this method to retrieve a Fonts object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesIntensity.themesIntensityGet",
+      "name": "themesIntensity.themesIntensityGet",
+      "description": "List Types: Use this method to retreive a list of possible options for the Intensity type. Use the Id from oneof the returned elements on to make changes to elements in the Themes object space."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesIntensity.themesIntensityGetId",
+      "name": "themesIntensity.themesIntensityGetId",
+      "description": "Get by Id: Use this method to retrieve a Intensity object by its primary key (id)"
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesIntensity.themesIntensityTypeidGetTypeId",
+      "name": "themesIntensity.themesIntensityTypeidGetTypeId",
+      "description": "This endpoint returns Type metadata from an integer type_id that can found on objects throughout the api."
+    },
+    {
+      "id": "openapi_presalytics_io_ooxml_ooxml.themesLineMap.themesLinemapGetId",
+      "name": "themesLineMap.themesLinemapGetId",
+      "description": "Get by Id: Use this method to retrieve a LineMap object by its primary key (id)"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

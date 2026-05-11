@@ -1,0 +1,522 @@
+{
+  "fetchedAt": "2026-04-30T15:44:57.521Z",
+  "status": "ok",
+  "count": 103,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAddCustomAttributes.addCustomAttributes",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAddCustomAttributes.addCustomAttributes",
+      "description": "Adds additional user attributes to the user pool schema."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminAddUserToGroup.adminAddUserToGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminAddUserToGroup.adminAddUserToGroup",
+      "description": "<p>Adds the specified user to the specified group.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminConfirmSignUp.adminConfirmSignUp",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminConfirmSignUp.adminConfirmSignUp",
+      "description": "<p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminCreateUser.adminCreateUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminCreateUser.adminCreateUser",
+      "description": "<p>Creates a new user in the specified user pool.</p> <p>If <code>MessageAction</code> isn't set, the default is to send a welcome message via email or phone (SMS).</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note> <p>This message is based on a template that you configured in your call to create or update a user pool. This template includes your custom sign-up instructions and placeholders for user name and temporary password.</p> <p>Alternatively, you can call <code>AdminCreateUser</code> with <code>SUPPRESS</code> for the <code>MessageAction</code> parameter, and Amazon Cognito won't send any email. </p> <p>In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their password.</p> <p> <code>AdminCreateUser</code> requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminDeleteUser.adminDeleteUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminDeleteUser.adminDeleteUser",
+      "description": "<p>Deletes a user as an administrator. Works on any user.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminDeleteUserAttributes.adminDeleteUserAttributes",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminDeleteUserAttributes.adminDeleteUserAttributes",
+      "description": "<p>Deletes the user attributes in a user pool as an administrator. Works on any user.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminDisableProviderForUser.adminDisableProviderForUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminDisableProviderForUser.adminDisableProviderForUser",
+      "description": "<p>Prevents the user from signing in with the specified external (SAML or social) identity provider (IdP). If the user that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use their password to sign in. If the user to deactivate is a linked external IdP user, any link between that user and an existing user is removed. When the external user signs in again, and the user is no longer attached to the previously linked <code>DestinationUser</code>, the user must create a new user account. See <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html\">AdminLinkProviderForUser</a>.</p> <p>This action is enabled only for admin access and requires developer credentials.</p> <p>The <code>ProviderName</code> must match the value specified when creating an IdP for the pool. </p> <p>To deactivate a native username + password user, the <code>ProviderName</code> value must be <code>Cognito</code> and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>. The <code>ProviderAttributeValue</code> must be the name that is used in the user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social IdPs. The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was originally linked as a source user.</p> <p>For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were used for the <code>SourceUser</code> when the identities were originally linked using <code> AdminLinkProviderForUser</code> call. (If the linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminDisableUser.adminDisableUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminDisableUser.adminDisableUser",
+      "description": "<p>Deactivates a user and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code> API requests.</p> <p>You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code> permissions.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminEnableUser.adminEnableUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminEnableUser.adminEnableUser",
+      "description": "<p>Enables the specified user as an administrator. Works on any user.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminForgetDevice.adminForgetDevice",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminForgetDevice.adminForgetDevice",
+      "description": "<p>Forgets the device, as an administrator.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminGetDevice.adminGetDevice",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminGetDevice.adminGetDevice",
+      "description": "<p>Gets the device, as an administrator.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminGetUser.adminGetUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminGetUser.adminGetUser",
+      "description": "<p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminInitiateAuth.adminInitiateAuth",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminInitiateAuth.adminInitiateAuth",
+      "description": "<p>Initiates the authentication flow, as an administrator.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminLinkProviderForUser.adminLinkProviderForUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminLinkProviderForUser.adminLinkProviderForUser",
+      "description": "<p>Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external IdP (<code>SourceUser</code>) based on a specified attribute name and value from the external IdP. This allows you to create a link from the existing user account to an external federated user identity that has not yet been used to sign in. You can then use the federated user identity to sign in as the existing user account. </p> <p> For example, if there is an existing user with a username and password, this API links that user to a federated user identity. When the user signs in with a federated user identity, they sign in as the existing user account.</p> <note> <p>The maximum number of federated identities linked to a user is five.</p> </note> <important> <p>Because this API allows a user with an external federated identity to sign in as an existing user in the user pool, it is critical that it only be used with external IdPs and provider attributes that have been trusted by the application owner.</p> </important> <p>This action is administrative and requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminListDevices.adminListDevices",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminListDevices.adminListDevices",
+      "description": "<p>Lists devices, as an administrator.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminListGroupsForUser.adminListGroupsForUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminListGroupsForUser.adminListGroupsForUser",
+      "description": "<p>Lists the groups that the user belongs to.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminListUserAuthEvents.adminListUserAuthEvents",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminListUserAuthEvents.adminListUserAuthEvents",
+      "description": "A history of user activity and any risks detected as part of Amazon Cognito advanced security."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminRemoveUserFromGroup.adminRemoveUserFromGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminRemoveUserFromGroup.adminRemoveUserFromGroup",
+      "description": "<p>Removes the specified user from the specified group.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminResetUserPassword.adminResetUserPassword",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminResetUserPassword.adminResetUserPassword",
+      "description": "<p>Resets the specified user's password in a user pool as an administrator. Works on any user.</p> <p>When a developer calls this API, the current password is invalidated, so it must be changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException exception back and should direct the user down the flow to reset the password, which is the same as the forgot password flow. In addition, if the user pool has phone verification selected and a verified phone number exists for the user, or if email verification is selected and a verified email exists for the user, calling this API will also result in sending a message to the end user with the code to change their password.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminRespondToAuthChallenge.adminRespondToAuthChallenge",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminRespondToAuthChallenge.adminRespondToAuthChallenge",
+      "description": "<p>Responds to an authentication challenge, as an administrator.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserMfaPreference.adminSetUserMfaPreference",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserMfaPreference.adminSetUserMfaPreference",
+      "description": "The user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserPassword.adminSetUserPassword",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserPassword.adminSetUserPassword",
+      "description": "<p>Sets the specified user's password in a user pool as an administrator. Works on any user. </p> <p>The password can be temporary or permanent. If it is temporary, the user status enters the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user doesn't sign in before it expires, the user won't be able to sign in, and an administrator must reset their password. </p> <p>Once the user has set a new password, or the password is permanent, the user status is set to <code>Confirmed</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserSettings.adminSetUserSettings",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminSetUserSettings.adminSetUserSettings",
+      "description": " <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token MFA. To configure either type of MFA, use <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html\">AdminSetUserMFAPreference</a> instead."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateAuthEventFeedback.adminUpdateAuthEventFeedback",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateAuthEventFeedback.adminUpdateAuthEventFeedback",
+      "description": "Provides feedback for an authentication event indicating if it was from a valid user. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateDeviceStatus.adminUpdateDeviceStatus",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateDeviceStatus.adminUpdateDeviceStatus",
+      "description": "<p>Updates the device status as an administrator.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateUserAttributes.adminUpdateUserAttributes",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminUpdateUserAttributes.adminUpdateUserAttributes",
+      "description": "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In addition to updating user attributes, this API can also be used to mark phone and email as verified.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAdminUserGlobalSignOut.adminUserGlobalSignOut",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAdminUserGlobalSignOut.adminUserGlobalSignOut",
+      "description": "<p>Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code> requests with Amazon Web Services credentials. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. The user's current access and ID tokens remain valid until they expire. By default, access and ID tokens expire one hour after they're issued. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the cookie validity period of 1 hour.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceAssociateSoftwareToken.associateSoftwareToken",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceAssociateSoftwareToken.associateSoftwareToken",
+      "description": "<p>Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique private key that Amazon Cognito generates and returns in the API response. You can authorize an <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a challenge response that you received from Amazon Cognito.</p> <note> <p>Amazon Cognito disassociates an existing software token when you verify the new token in a <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html\"> VerifySoftwareToken</a> API request. If you don't verify the software token and your user pool doesn't require MFA, the user can then authenticate with user name and password credentials alone. If your user pool requires TOTP MFA, Amazon Cognito generates an <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code> challenge each time your user signs. Complete setup with <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.</p> <p>After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code> challenge when they authenticate. Respond to this challenge with your user's TOTP.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceChangePassword.changePassword",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceChangePassword.changePassword",
+      "description": "Changes the password for a specified user in a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceConfirmDevice.confirmDevice",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceConfirmDevice.confirmDevice",
+      "description": "Confirms tracking of the device. This API call is the call that begins device tracking."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceConfirmForgotPassword.confirmForgotPassword",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceConfirmForgotPassword.confirmForgotPassword",
+      "description": "Allows a user to enter a confirmation code to reset a forgotten password."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceConfirmSignUp.confirmSignUp",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceConfirmSignUp.confirmSignUp",
+      "description": "Confirms registration of a new user."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateGroup.createGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateGroup.createGroup",
+      "description": "<p>Creates a new group in the specified user pool.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateIdentityProvider.createIdentityProvider",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateIdentityProvider.createIdentityProvider",
+      "description": "Creates an IdP for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateResourceServer.createResourceServer",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateResourceServer.createResourceServer",
+      "description": "Creates a new OAuth2.0 resource server and defines custom scopes within it."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateUserImportJob.createUserImportJob",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateUserImportJob.createUserImportJob",
+      "description": "Creates the user import job."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPool.createUserPool",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPool.createUserPool",
+      "description": "<p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPoolClient.createUserPoolClient",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPoolClient.createUserPoolClient",
+      "description": "<p>Creates the user pool client.</p> <p>When you create a new user pool client, token revocation is automatically activated. For more information about revoking tokens, see <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html\">RevokeToken</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPoolDomain.createUserPoolDomain",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceCreateUserPoolDomain.createUserPoolDomain",
+      "description": "Creates a new domain for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteGroup.deleteGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteGroup.deleteGroup",
+      "description": "<p>Deletes a group.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteIdentityProvider.deleteIdentityProvider",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteIdentityProvider.deleteIdentityProvider",
+      "description": "Deletes an IdP for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteResourceServer.deleteResourceServer",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteResourceServer.deleteResourceServer",
+      "description": "Deletes a resource server."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteUser.deleteUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteUser.deleteUser",
+      "description": "Allows a user to delete himself or herself."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserAttributes.deleteUserAttributes",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserAttributes.deleteUserAttributes",
+      "description": "Deletes the attributes for a user."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPool.deleteUserPool",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPool.deleteUserPool",
+      "description": "Deletes the specified Amazon Cognito user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPoolClient.deleteUserPoolClient",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPoolClient.deleteUserPoolClient",
+      "description": "Allows the developer to delete the user pool client."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPoolDomain.deleteUserPoolDomain",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDeleteUserPoolDomain.deleteUserPoolDomain",
+      "description": "Deletes a domain for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeIdentityProvider.describeIdentityProvider",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeIdentityProvider.describeIdentityProvider",
+      "description": "Gets information about a specific IdP."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeResourceServer.describeResourceServer",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeResourceServer.describeResourceServer",
+      "description": "Describes a resource server."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeRiskConfiguration.describeRiskConfiguration",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeRiskConfiguration.describeRiskConfiguration",
+      "description": "Describes the risk configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserImportJob.describeUserImportJob",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserImportJob.describeUserImportJob",
+      "description": "Describes the user import job."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPool.describeUserPool",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPool.describeUserPool",
+      "description": "Returns the configuration information and metadata of the specified user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPoolClient.describeUserPoolClient",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPoolClient.describeUserPoolClient",
+      "description": "Client method for returning the configuration information and metadata of the specified user pool app client."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPoolDomain.describeUserPoolDomain",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceDescribeUserPoolDomain.describeUserPoolDomain",
+      "description": "Gets information about a domain."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceForgetDevice.forgetDevice",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceForgetDevice.forgetDevice",
+      "description": "Forgets the specified device."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceForgotPassword.forgotPassword",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceForgotPassword.forgotPassword",
+      "description": "<p>Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html\">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified phone number nor a verified email exists, an <code>InvalidParameterException</code> is thrown. To use the confirmation code for resetting the password, call <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html\">ConfirmForgotPassword</a>. </p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetCsvHeader.getCsvHeader",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetCsvHeader.getCsvHeader",
+      "description": "Gets the header information for the comma-separated value (CSV) file to be used as input for the user import job."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetDevice.getDevice",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetDevice.getDevice",
+      "description": "Gets the device."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetGroup.getGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetGroup.getGroup",
+      "description": "<p>Gets a group.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetIdentityProviderByIdentifier.getIdentityProviderByIdentifier",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetIdentityProviderByIdentifier.getIdentityProviderByIdentifier",
+      "description": "Gets the specified IdP."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetSigningCertificate.getSigningCertificate",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetSigningCertificate.getSigningCertificate",
+      "description": "<p>This method takes a user pool ID, and returns the signing certificate. The issued certificate is valid for 10 years from the date of issue.</p> <p>Amazon Cognito issues and assigns a new signing certificate annually. This process returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't invalidate the original certificate.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetUiCustomization.getUiCustomization",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetUiCustomization.getUiCustomization",
+      "description": "Gets the user interface (UI) Customization information for a particular app client's app UI, if any such information exists for the client. If nothing is set for the particular client, but there is an existing pool level customization (the app <code>clientId</code> is <code>ALL</code>), then that information is returned. If nothing is present, then an empty shape is returned."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetUser.getUser",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetUser.getUser",
+      "description": "Gets the user attributes and metadata for a user."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetUserAttributeVerificationCode.getUserAttributeVerificationCode",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetUserAttributeVerificationCode.getUserAttributeVerificationCode",
+      "description": "<p>Generates a user attribute verification code for the specified attribute name. Sends a message to a user with a code that they must return in a VerifyUserAttribute request.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGetUserPoolMfaConfig.getUserPoolMfaConfig",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGetUserPoolMfaConfig.getUserPoolMfaConfig",
+      "description": "Gets the user pool multi-factor authentication (MFA) configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceGlobalSignOut.globalSignOut",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceGlobalSignOut.globalSignOut",
+      "description": "Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the 1-hour cookie validity period."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceInitiateAuth.initiateAuth",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceInitiateAuth.initiateAuth",
+      "description": "<p>Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign in a user with a federated IdP with <code>InitiateAuth</code>. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html\"> Adding user pool sign-in through a third party</a>.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListDevices.listDevices",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListDevices.listDevices",
+      "description": "Lists the sign-in devices that Amazon Cognito has registered to the current user."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListGroups.listGroups",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListGroups.listGroups",
+      "description": "<p>Lists the groups associated with a user pool.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListIdentityProviders.listIdentityProviders",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListIdentityProviders.listIdentityProviders",
+      "description": "Lists information about all IdPs for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListResourceServers.listResourceServers",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListResourceServers.listResourceServers",
+      "description": "Lists the resource servers for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListTagsForResource.listTagsForResource",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListTagsForResource.listTagsForResource",
+      "description": "<p>Lists the tags that are assigned to an Amazon Cognito user pool.</p> <p>A tag is a label that you can apply to user pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p> <p>You can use this action up to 10 times per second, per account.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListUserImportJobs.listUserImportJobs",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListUserImportJobs.listUserImportJobs",
+      "description": "Lists the user import jobs."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListUserPoolClients.listUserPoolClients",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListUserPoolClients.listUserPoolClients",
+      "description": "Lists the clients that have been created for the specified user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListUserPools.listUserPools",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListUserPools.listUserPools",
+      "description": "Lists the user pools associated with an Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListUsers.listUsers",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListUsers.listUsers",
+      "description": "Lists the users in the Amazon Cognito user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceListUsersInGroup.listUsersInGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceListUsersInGroup.listUsersInGroup",
+      "description": "<p>Lists the users in the specified group.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceResendConfirmationCode.resendConfirmationCode",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceResendConfirmationCode.resendConfirmationCode",
+      "description": "<p>Resends the confirmation (for confirmation of registration) to a specific user in the user pool.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceRespondToAuthChallenge.respondToAuthChallenge",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceRespondToAuthChallenge.respondToAuthChallenge",
+      "description": "<p>Responds to the authentication challenge.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceRevokeToken.revokeToken",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceRevokeToken.revokeToken",
+      "description": "Revokes all of the access tokens generated by, and at the same time as, the specified refresh token. After a token is revoked, you can't use the revoked token to access Amazon Cognito user APIs, or to authorize access to your resource server."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSetRiskConfiguration.setRiskConfiguration",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSetRiskConfiguration.setRiskConfiguration",
+      "description": "<p>Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four configuration types.</p> <p>To activate Amazon Cognito advanced security features, update the user pool to include the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSetUiCustomization.setUiCustomization",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSetUiCustomization.setUiCustomization",
+      "description": "<p>Sets the user interface (UI) customization information for a user pool's built-in app UI.</p> <p>You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the default configuration is used for every client that has no previously set UI customization. If you specify UI customization settings for a particular client, it will no longer return to the <code>ALL</code> configuration.</p> <note> <p>To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the app's pages, and the service will throw an error.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSetUserMfaPreference.setUserMfaPreference",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSetUserMfaPreference.setUserMfaPreference",
+      "description": "Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are activated and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSetUserPoolMfaConfig.setUserPoolMfaConfig",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSetUserPoolMfaConfig.setUserPoolMfaConfig",
+      "description": "<p>Sets the user pool multi-factor authentication (MFA) configuration.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSetUserSettings.setUserSettings",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSetUserSettings.setUserSettings",
+      "description": " <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token MFA. To configure either type of MFA, use <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html\">SetUserMFAPreference</a> instead."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceSignUp.signUp",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceSignUp.signUp",
+      "description": "<p>Registers the user in the specified user pool and creates a user name, password, and user attributes.</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceStartUserImportJob.startUserImportJob",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceStartUserImportJob.startUserImportJob",
+      "description": "Starts the user import."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceStopUserImportJob.stopUserImportJob",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceStopUserImportJob.stopUserImportJob",
+      "description": "Stops the user import job."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceTagResource.tagResource",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceTagResource.tagResource",
+      "description": "<p>Assigns a set of tags to an Amazon Cognito user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p> <p>Each tag consists of a key and value, both of which you define. A key is a general category for more specific values. For example, if you have two versions of a user pool, one for testing and another for production, you might assign an <code>Environment</code> tag key to both user pools. The value of this key might be <code>Test</code> for one user pool, and <code>Production</code> for the other.</p> <p>Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the Billing and Cost Management console, where you can track the costs associated with your user pools. In an Identity and Access Management policy, you can constrain permissions for user pools based on specific tags or tag values.</p> <p>You can use this action up to 5 times per second, per account. A user pool can have as many as 50 tags.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUntagResource.untagResource",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUntagResource.untagResource",
+      "description": "Removes the specified tags from an Amazon Cognito user pool. You can use this action up to 5 times per second, per account."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateAuthEventFeedback.updateAuthEventFeedback",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateAuthEventFeedback.updateAuthEventFeedback",
+      "description": "Provides the feedback for an authentication event, whether it was from a valid user or not. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateDeviceStatus.updateDeviceStatus",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateDeviceStatus.updateDeviceStatus",
+      "description": "Updates the device status."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateGroup.updateGroup",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateGroup.updateGroup",
+      "description": "<p>Updates the specified group with the specified attributes.</p> <p>Calling this action requires developer credentials.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateIdentityProvider.updateIdentityProvider",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateIdentityProvider.updateIdentityProvider",
+      "description": "Updates IdP information for a user pool."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateResourceServer.updateResourceServer",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateResourceServer.updateResourceServer",
+      "description": "<p>Updates the name and scopes of resource server. All other fields are read-only.</p> <important> <p>If you don't provide a value for an attribute, it is set to the default value.</p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserAttributes.updateUserAttributes",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserAttributes.updateUserAttributes",
+      "description": "<p>Allows a user to update a specific attribute (one at a time).</p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPool.updateUserPool",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPool.updateUserPool",
+      "description": "<p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html\">DescribeUserPool</a>. If you don't provide a value for an attribute, it will be set to the default value. </p> <note> <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href=\"https://console.aws.amazon.com/pinpoint/home/\">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p> <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href=\"https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html\">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html\"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPoolClient.updateUserPoolClient",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPoolClient.updateUserPoolClient",
+      "description": "<p>Updates the specified user pool app client with the specified attributes. You can get a list of the current user pool app client settings using <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html\">DescribeUserPoolClient</a>.</p> <important> <p>If you don't provide a value for an attribute, it will be set to the default value.</p> </important> <p>You can also use this operation to enable token revocation for user pool clients. For more information about revoking tokens, see <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html\">RevokeToken</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPoolDomain.updateUserPoolDomain",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceUpdateUserPoolDomain.updateUserPoolDomain",
+      "description": "<p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.</p> <p>You can use this operation to provide the Amazon Resource Name (ARN) of a new certificate to Amazon Cognito. You can't use it to change the domain for a user pool.</p> <p>A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up and sign-in pages for your application. When you set up a custom domain, you provide a certificate that you manage with Certificate Manager (ACM). When necessary, you can use this operation to change the certificate that you applied to your custom domain.</p> <p>Usually, this is unnecessary following routine certificate renewal with ACM. When you renew your existing certificate in ACM, the ARN for your certificate remains the same, and your custom domain uses the new certificate automatically.</p> <p>However, if you replace your existing certificate with a new one, ACM gives the new certificate a new ARN. To apply the new certificate to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When you add your new certificate in ACM, you must choose US East (N. Virginia) as the Amazon Web Services Region.</p> <p>After you submit your request, Amazon Cognito requires up to 1 hour to distribute your new certificate to your custom domain.</p> <p>For more information about adding a custom domain to your user pool, see <a href=\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html\">Using Your Own Domain for the Hosted UI</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceVerifySoftwareToken.verifySoftwareToken",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceVerifySoftwareToken.verifySoftwareToken",
+      "description": "Use this API to register a user's entered time-based one-time password (TOTP) code and mark the user's software token MFA status as \"verified\" if successful. The request takes an access token or a session string, but not both."
+    },
+    {
+      "id": "openapi_amazonaws_com_cognito_idp_cognito_idp.xAmzTargetAwsCognitoIdentityProviderServiceVerifyUserAttribute.verifyUserAttribute",
+      "name": "xAmzTargetAwsCognitoIdentityProviderServiceVerifyUserAttribute.verifyUserAttribute",
+      "description": "<p>Verifies the specified user attributes in the user pool.</p> <p> If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute updates the affected attribute to its pending value. For more information, see <a href=\"https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html\"> UserAttributeUpdateSettingsType</a>. </p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

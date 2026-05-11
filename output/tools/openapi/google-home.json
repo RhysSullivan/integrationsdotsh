@@ -1,0 +1,167 @@
+{
+  "fetchedAt": "2026-04-30T15:22:30.726Z",
+  "status": "ok",
+  "count": 32,
+  "tools": [
+    {
+      "id": "openapi_google_home.assistant.accessibility",
+      "name": "assistant.accessibility",
+      "description": "This controls Accessibility sounds. `hotword_enabled` is for 'Play start sound' and `endpoint_enabled` is for 'Play end sound'.  \nSending an empty-body POST request returns the current values.  \nEither of the fields or both can be sent and new values will be saved."
+    },
+    {
+      "id": "openapi_google_home.assistant.alarmVolume",
+      "name": "assistant.alarmVolume",
+      "description": "This gets and sets alarms and timers volume.  \n**Note:** This is not the same as normal volume.\n\nVolume is a float number in [0, 1] where 0 is minimum and 1 is maximum.  \nSending an empty body gets the volume. Sending `volume` sets the volume."
+    },
+    {
+      "id": "openapi_google_home.assistant.deleteAlarmsandTimers",
+      "name": "assistant.deleteAlarmsandTimers",
+      "description": "This deletes alarms and timers by their id.\n\n`ids` is a list of ids to be deleted. Sending invalid id still returns a 200 OK. The `/` in the ids have to be escaped like `\\/`."
+    },
+    {
+      "id": "openapi_google_home.assistant.doNotDisturb",
+      "name": "assistant.doNotDisturb",
+      "description": "This is for the Do Not Disturb option. Sending an empty-body POST returns the current value. Sending a new value changes it."
+    },
+    {
+      "id": "openapi_google_home.assistant.getAlarmsandTimers",
+      "name": "assistant.getAlarmsandTimers",
+      "description": "This gives a list of all active alarms and timers.\n\nBoth alarms and timers have `id`s which can be used to delete them. (There is no known way of creating/deleting yet). The value of `status` have different meanings for alarms and timers (given below).\n\nAlarms have `date_pattern` and `time_pattern` with day, month, year, hour, minute, second. `fire_time` is the same in unix time (milliseconds, not seconds).  \n`status` is 1 for set up and 2 for ringing.\n\nTimers have `original_duration` is the original duration.  \n`status` is 1 for set up and 3 for ringing."
+    },
+    {
+      "id": "openapi_google_home.assistant.setEqualizerValues",
+      "name": "assistant.setEqualizerValues",
+      "description": "This can only set new equalizer values. To get already set values, use /setup/eureka_info.\n\nThe body is mandatory. It can either contain `low_shelf` or `high_shelf` or both.\n\n`low_shelf.gain_db` and `high_shelf.gain_db` refer to **bass** and **treble** respectively.\n\nDefault values are 0 for both.  \nWhile the slider in the Home app only ranges from -6 to +6, they can be set to any integer like 50 or -100. These changes persist."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.changeDiscoverability",
+      "name": "bluetooth.changeDiscoverability",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 1 only**\n\nThis enables/disables Home's bluetooth discovery and other devices can pair with Home (where Home acts as a speaker)."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.forgetpaireddevice",
+      "name": "bluetooth.forgetpaireddevice",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For both parts**\n\nThis is to forget paired devices by mac address. Works for both kinds of devices (Part 1 and Part 2)."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.getPairedDevices",
+      "name": "bluetooth.getPairedDevices",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For both parts**\n\nThis gives a list of all paired or 'bonded' devices. The response field names are self-descriptive."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.getScanResults",
+      "name": "bluetooth.getScanResults",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis returns a list of all nearby bluetooth devices. While the Home app only shows speakers, this list contains all devices including TVs, mobiles, etc.\n\n`rssi` is signal strength, `name` is name, `mac_address` is mac address.  \n`device_class` and `device_type` are bluetooth codes.  \n\nThe Home app only lists those devices with `expected_profiles` > 0. Basically, the device should function as a speaker."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.pairwithSpeaker",
+      "name": "bluetooth.pairwithSpeaker",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis pairs with other bluetooth speakers by mac address."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.scanfordevices",
+      "name": "bluetooth.scanfordevices",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis initiates scan for other bluetooth speakers/devices. Scan results will be updated continuously for `timeout` seconds.  \nTo get the scan results, see /setup/bluetooth/scan_results."
+    },
+    {
+      "id": "openapi_google_home.bluetooth.status",
+      "name": "bluetooth.status",
+      "description": "> **There are 2 parts of Bluetooth.**\n>\n> *Part 1*: Devices like phones connect to Home and play audio through Home.  \n> For this, /setup/bluetooth/discovery is used to make Home discoverable. Then devices can connect to it as if Home is just another bluetooth speaker.\n>\n> *Part 2*: Bluetooth speakers connect to Home and Home plays audio through the speakers.\n> For this, /setup/bluetooth/scan and /setup/bluetooth/scan_results are used to connect to other speakers.\n>\n> The other endpoints are common for both parts.\n\n\n**For both parts**\n\nThis gives the status of all bluetooth things.\n- Not sure what `audio_mode` is.\n- `discovery_enabled` states whether Home is discoverable. (**Part 1**)\n- `connecting_devices` is a list of all media sources (like phones) connected to Home. (**Part 1**)\n- `scanning_enabled` states whether Home scanning for other bluetooth speakers/devices. (**Part 2**)\n- `connected_devices` is a list of all speakers connected to Home. (**Part 2**)"
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.appDeviceId",
+      "name": "deviceInfo.appDeviceId",
+      "description": "This gives \"app device id\", \"certificate\" and \"signed data\".  \nThe `app_id` in the request is mandatory and refers to Chromecast backdrop/screensaver app. It has to be set to `E8C28D3C`.  \n\nThe certificate is valid and issued by `Chromecast ICA 6 (Audio Assist), Google Inc`.\n\nNot sure what the other two are."
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.checkReadyStatus",
+      "name": "deviceInfo.checkReadyStatus",
+      "description": "**Update:** This seems to have changed now and is no longer possible. The error is also new.\n\nSetting `play_ready_message` to true plays a welcome message on the device saying \"Hi, I'm your Google Assistant. I'm here to help. To learn a few things you can do, continue in the Google Home app.\""
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.eurekaInfo",
+      "name": "deviceInfo.eurekaInfo",
+      "description": "This gives most of the device info. The GET parameter `param` is a comma separated list of json keys to fetch. Currently, these params are known: `version,audio,name,build_info,detail,device_info,net,wifi,setup,settings,opt_in,opencast,multizone,proxy,night_mode_params,user_eq,room_equalizer,sign,aogh,ultrasound,mesh`\n\nNested items can also be filtered using the dot notation. Example: `audio.digital`\n\nThe `options` GET parameter is always set to `detail` or `detail,sign`. `sign` signs the `nonce` and returns some value.\n\nThe `nonce` GET parameter is an integer value signed with needed (see `option` parameter above)."
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.locales",
+      "name": "deviceInfo.locales",
+      "description": "Simply returns a list of all supported locales."
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.offer",
+      "name": "deviceInfo.offer",
+      "description": "This gives a token which is used by the Home app to get offers. The offers themselves are not stored on the device.  \nA new token is generated for every request."
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.testInternetDownloadSpeed",
+      "name": "deviceInfo.testInternetDownloadSpeed",
+      "description": "**Update:** This seems to have been removed. Returns 404 Not Found.\n\nThis endpoint tests internet download speed. Any sample file URL can be provided."
+    },
+    {
+      "id": "openapi_google_home.deviceInfo.timezones",
+      "name": "deviceInfo.timezones",
+      "description": "Simply returns a list of all supported timezones."
+    },
+    {
+      "id": "openapi_google_home.deviceSettings.nightModesettings",
+      "name": "deviceSettings.nightModesettings",
+      "description": "This sets night mode options.  \nTo view currently set values, use /setup/eureka_info.  \nIf `enabled` is set to false, night mode is disabled and the other values do not matter.  \n`led_brightness` and `volume` refer to the maximum LED Brightness and Volume that is set during night mode.  \n`demo_to_user` is always set to `true` so change in values will be visible in realtime (like brightness).  \n`windows`: A combination of `length_hours` and `start_hour` is used to define start and end times for night mode. In this example, night mode starts at 10 PM (22) and ends at 6 AM (8 hours later). `windows.days` is an array of days of week when night mode will be enabled. Example: 0->Sunday, 1-> Monday, ..., 6->Saturday."
+    },
+    {
+      "id": "openapi_google_home.deviceSettings.rebootandFactoryReset",
+      "name": "deviceSettings.rebootandFactoryReset",
+      "description": "This can simply reboot the device (`params: \"now\"`) or factory reset the device (`params: \"fdr\"`)."
+    },
+    {
+      "id": "openapi_google_home.deviceSettings.setEurekaInfo",
+      "name": "deviceSettings.setEurekaInfo",
+      "description": "This can set custom values to some options.\n\nOnly fields to be modified need to be sent, not all. The example has some modifiable fields.\n\nTODO: List all modifiable fields.\n\nSending non-existant fields will still return a 200 OK, but they are not saved."
+    },
+    {
+      "id": "openapi_google_home.staticFiles.chromecastIcon",
+      "name": "staticFiles.chromecastIcon",
+      "description": "**Update:** This no longer exists. It's not useful, anyway.\n\nA redirect to `http://www.gstatic.com/eureka/images/eureka_device.png`"
+    },
+    {
+      "id": "openapi_google_home.staticFiles.legalNotice",
+      "name": "staticFiles.legalNotice",
+      "description": "All licenses of programs used by Home."
+    },
+    {
+      "id": "openapi_google_home.wifi.connecttoWiFiNetwork",
+      "name": "wifi.connecttoWiFiNetwork",
+      "description": "**Note:** Not sure how the password is encrypted. Might be using the public certificate from /setup/eureka_info. So this cannot be used as of now. If someone figures it out, please [create a new issue here](https://github.com/rithvikvibhu/GHLocalApi/issues/new)."
+    },
+    {
+      "id": "openapi_google_home.wifi.forgetWiFiNetwork",
+      "name": "wifi.forgetWiFiNetwork",
+      "description": "This is to forget a saved network by `wpa_id`. Get the `wpa_id` from /setup/configured_networks"
+    },
+    {
+      "id": "openapi_google_home.wifi.getSavedNetworks",
+      "name": "wifi.getSavedNetworks",
+      "description": "This gets a list of all saved Wi-Fi networks.\n\nEach network has `ssid`, `wpa_auth`, `wpa_cipher` and `wpa_id`.  \n`wpa_id` is an incrementing number used to identify a saved network.  \n#TODO: Add values for `wpa_auth` and `wpa_cipher`."
+    },
+    {
+      "id": "openapi_google_home.wifi.getWiFiScanResults",
+      "name": "wifi.getWiFiScanResults",
+      "description": "This gets a list of all nearby Wi-Fi access points.\n\nThe list only has the connected AP by default. Once a scan is triggered by `/setup/scan_wifi`, the whole list is cached for ~3 minutes. Then it will revert to returning only the connected AP again."
+    },
+    {
+      "id": "openapi_google_home.wifi.scanforNetworks",
+      "name": "wifi.scanforNetworks",
+      "description": "This initiates scanning for Wi-Fi networks.\n\nThe results can be obtained with `/setup/scan_results` after triggering the scan with this request."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

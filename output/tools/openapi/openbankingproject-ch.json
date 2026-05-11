@@ -1,0 +1,187 @@
+{
+  "fetchedAt": "2026-04-30T15:26:40.844Z",
+  "status": "ok",
+  "count": 36,
+  "tools": [
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.createConsent",
+      "name": "accountInformationServiceAis.createConsent",
+      "description": "This method create a consent resource, defining access rights to dedicated accounts of \na given PSU-ID. These accounts are addressed explicitly in the method as \nparameters as a core function.\n\n**Side Effects**\nWhen this consent request is a request where the \"recurringIndicator\" equals \"true\",\nand if it exists already a former consent for recurring access on account information \nfor the addressed PSU, then the former consent automatically expires as soon as the new \nconsent request is authorised by the PSU.\n\nOptional Extension:\nAs an option, an ASPSP might optionally accept a specific access right on the access on all PSD2 related services for all available accounts.\n\nAs another option an ASPSP might optionally also accept a command, where only access rights are inserted without mentioning the addressed account. \nThe relation to accounts is then handled afterwards between PSU and ASPSP. \nThis option is not supported for the Embedded SCA Approach. \nAs a last option, an ASPSP might in addition accept a command with access rights\n  * to see the list of available payment accounts or\n  * to see the list of available payment accounts with balances.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.deleteConsent",
+      "name": "accountInformationServiceAis.deleteConsent",
+      "description": "The TPP can delete an account information consent object if needed."
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getAccountList",
+      "name": "accountInformationServiceAis.getAccountList",
+      "description": "Read the identifiers of the available payment account together with \nbooking balance information, depending on the consent granted.\n\nIt is assumed that a consent of the PSU to this access is already given and stored on the ASPSP system.\nThe addressed list of accounts depends then on the PSU ID and the stored consent addressed by consentId,\nrespectively the OAuth2 access token.\n\nReturns all identifiers of the accounts, to which an account access has been granted to through\nthe /consents endpoint by the PSU.\nIn addition, relevant information about the accounts and hyperlinks to corresponding account\ninformation resources are provided if a related consent has been already granted.\n\nRemark: Note that the /consents endpoint optionally offers to grant an access on all available\npayment accounts of a PSU.\nIn this case, this endpoint will deliver the information about all available payment accounts\nof the PSU at this ASPSP.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getBalances",
+      "name": "accountInformationServiceAis.getBalances",
+      "description": "Reads account data from a given account addressed by \"account-id\". \n\n**Remark:** This account-id can be a tokenised identification due to data protection reason since the path \ninformation might be logged on intermediary servers within the ASPSP sphere. \nThis account-id then can be retrieved by the \"Get account list\" call.\n\nThe account-id is constant at least throughout the lifecycle of a given consent.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getConsentAuthorisation",
+      "name": "accountInformationServiceAis.getConsentAuthorisation",
+      "description": "Return a list of all authorisation subresources IDs which have been created.\n\nThis function returns an array of hyperlinks to all generated authorisation sub-resources.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getConsentInformation",
+      "name": "accountInformationServiceAis.getConsentInformation",
+      "description": "Returns the content of an account information consent object. \nThis is returning the data for the TPP especially in cases, \nwhere the consent was directly managed between ASPSP and PSU e.g. in a redirect SCA Approach.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getConsentScaStatus",
+      "name": "accountInformationServiceAis.getConsentScaStatus",
+      "description": "This method returns the SCA status of a consent initiation's authorisation sub-resource.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getConsentStatus",
+      "name": "accountInformationServiceAis.getConsentStatus",
+      "description": "Read the status of an account information consent resource."
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getTransactionDetails",
+      "name": "accountInformationServiceAis.getTransactionDetails",
+      "description": "Reads transaction details from a given transaction addressed by \"transactionId\" on a given account addressed by \"account-id\".\nThis call is only available on transactions as reported in a JSON format.\n\n**Remark:** Please note that the PATH might be already given in detail by the corresponding entry of the response of the\n\"Read Transaction List\" call within the _links subfield.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.getTransactionList",
+      "name": "accountInformationServiceAis.getTransactionList",
+      "description": "Read transaction reports or transaction lists of a given account ddressed by \"account-id\", depending on the steering parameter\n\"bookingStatus\" together with balances.\n\nFor a given account, additional parameters are e.g. the attributes \"dateFrom\" and \"dateTo\".\nThe ASPSP might add balance information, if transaction lists without balances are not supported.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.readAccountDetails",
+      "name": "accountInformationServiceAis.readAccountDetails",
+      "description": "Reads details about an account, with balances where required. \nIt is assumed that a consent of the PSU to \nthis access is already given and stored on the ASPSP system. \nThe addressed details of this account depends then on the stored consent addressed by consentId, \nrespectively the OAuth2 access token.\n\n**NOTE:** The account-id can represent a multicurrency account.\nIn this case the currency code is set to \"XXX\".\n\nGive detailed information about the addressed account.\n\nGive detailed information about the addressed account together with balance information\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.startConsentAuthorisation",
+      "name": "accountInformationServiceAis.startConsentAuthorisation",
+      "description": "Create an authorisation sub-resource and start the authorisation process of a consent.\nThe message might in addition transmit authentication and authorisation related data.\n\nhis method is iterated n times for a n times SCA authorisation in a\ncorporate context, each creating an own authorisation sub-endpoint for\nthe corresponding PSU authorising the consent.\n\nThe ASPSP might make the usage of this access method unnecessary,\nsince the related authorisation resource will be automatically created by\nthe ASPSP after the submission of the consent data with the first POST consents call.\n\nThe start authorisation process is a process which is needed for creating a new authorisation\nor cancellation sub-resource.\n\nThis applies in the following scenarios:\n\n  * The ASPSP has indicated with an 'startAuthorisation' hyperlink in the preceding Payment \n    initiation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be \n    uploaded by using the extended forms:\n    * 'startAuthorisationWithPsuIdentfication', \n    * 'startAuthorisationWithPsuAuthentication' \n    * 'startAuthorisationWithEncryptedPsuAuthentication'\n    * 'startAuthorisationWithAuthentciationMethodSelection'\n  * The related payment initiation cannot yet be executed since a multilevel SCA is mandated.\n  * The ASPSP has indicated with an 'startAuthorisation' hyperlink in the preceding \n    payment cancellation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be uploaded \n    by using the extended forms as indicated above.\n  * The related payment cancellation request cannot be applied yet since a multilevel SCA is mandate for\n    executing the cancellation.\n  * The signing basket needs to be authorised yet.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.accountInformationServiceAis.updateConsentsPsuData",
+      "name": "accountInformationServiceAis.updateConsentsPsuData",
+      "description": "This method update PSU data on the consents  resource if needed.\nIt may authorise a consent within the Embedded SCA Approach where needed.\n\nIndependently from the SCA Approach it supports e.g. the selection of\nthe authentication method and a non-SCA PSU authentication.\n\nThere are several possible update PSU data requests in the context of a consent request if needed, \nwhich depends on the SCA approach:\n\n* Redirect SCA Approach:\n  A specific Update PSU data request is applicable for \n    * the selection of authentication methods, before choosing the actual SCA approach.\n* Decoupled SCA Approach:\n  A specific update PSU data request is only applicable for\n  * adding the PSU Identification, if not provided yet in the payment initiation request or the Account Information Consent Request, or if no OAuth2 access token is used, or\n  * the selection of authentication methods.\n* Embedded SCA Approach: \n  The Update PSU data request might be used \n  * to add credentials as a first factor authentication data of the PSU and\n  * to select the authentication method and\n  * transaction authorisation.\n\nThe SCA Approach might depend on the chosen SCA method. \nFor that reason, the following possible update PSU data request can apply to all SCA approaches:\n\n* Select an SCA method in case of several SCA methods are available for the customer.\n\nThere are the following request types on this access path:\n  * Update PSU identification\n  * Update PSU authentication\n  * Select PSU autorization method \n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n  * Transaction Authorisation\n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.confirmationOfFundsServicePiis.checkAvailabilityOfFunds",
+      "name": "confirmationOfFundsServicePiis.checkAvailabilityOfFunds",
+      "description": "Creates a confirmation of funds request at the ASPSP. Checks whether a specific amount is available at point of time of the request on an account linked to a given tuple card issuer(TPP)/card number, or addressed by IBAN and TPP respectively.\nIf the related extended services are used a conditional Consent-ID is contained in the header. This field is contained but commented out in this specification."
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.cancelPayment",
+      "name": "paymentInitiationServicePis.cancelPayment",
+      "description": "This method initiates the cancellation of a payment. \nDepending on the payment-service, the payment-product and the ASPSP's implementation, \nthis TPP call might be sufficient to cancel a payment. \nIf an authorisation of the payment cancellation is mandated by the ASPSP, \na corresponding hyperlink will be contained in the response message.\n\nCancels the addressed payment with resource identification paymentId if applicable to the payment-service, payment-product and received in product related timelines (e.g. before end of business day for scheduled payments of the last business day before the scheduled execution day). \n\nThe response to this DELETE command will tell the TPP whether the\n  * access method was rejected,\n  * access method was successful, or\n  * access method is generally applicable, but further authorisation processes are needed.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentCancellationScaStatus",
+      "name": "paymentInitiationServicePis.getPaymentCancellationScaStatus",
+      "description": "This method returns the SCA status of a payment initiation's authorisation sub-resource.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentInformation",
+      "name": "paymentInitiationServicePis.getPaymentInformation",
+      "description": "Returns the content of a payment object"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentInitiationAuthorisation",
+      "name": "paymentInitiationServicePis.getPaymentInitiationAuthorisation",
+      "description": "Read a list of all authorisation subresources IDs which have been created.\n\nThis function returns an array of hyperlinks to all generated authorisation sub-resources.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentInitiationCancellationAuthorisationInformation",
+      "name": "paymentInitiationServicePis.getPaymentInitiationCancellationAuthorisationInformation",
+      "description": "Retrieve a list of all created cancellation authorisation sub-resources.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentInitiationScaStatus",
+      "name": "paymentInitiationServicePis.getPaymentInitiationScaStatus",
+      "description": "This method returns the SCA status of a payment initiation's authorisation sub-resource.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.getPaymentInitiationStatus",
+      "name": "paymentInitiationServicePis.getPaymentInitiationStatus",
+      "description": "Check the transaction status of a payment initiation."
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.initiatePayment",
+      "name": "paymentInitiationServicePis.initiatePayment",
+      "description": "This method is used to initiate a payment at the ASPSP.\n\n## Variants of payment initiation requests\n\nThis method to initiate a payment initiation at the ASPSP can be sent with either a JSON body or an pain.001 body depending on the payment product in the path.\n\nThere are the following **payment products**:\n\n  - Payment products with payment information in *JSON* format:\n    - ***domestic-swiss-credit-transfers-isr***\n    - ***domestic-swiss-credit-transfers***\n    - ***domestic-swiss-credit-transfers-qr***\n    - ***domestic-swiss-foreign-credit-transfers***\n    - ***swiss-sepa-credit-transfers***\n    - ***swiss-cross-border-credit-transfers***\n  - Payment products with payment information in *SIX pain.001* XML format:\n    - ***pain.001-sepa-credit-transfers***\n    - ***pain.001-cross-border-credit-transfers***\n    - ***pain.001-swiss-six-credit-transfers***\n\nFurthermore the request body depends on the **payment-service**:\n  * ***payments***: A single payment initiation request.\n  * ***bulk-payments***: A collection of several payment initiation requests.\n  \n    In case of a *pain.001* message there are more than one payments contained in the *pain.001 message.\n\n    In case of a *JSON* there are several JSON payment blocks contained in a joining list.\n  * ***periodic-payments***:\n    Create a standing order initiation resource for recurrent i.e. periodic payments addressable under {paymentId}\n     with all data relevant for the corresponding payment product and the execution of the standing order contained in a JSON body.\n\nThis is the first step in the API to initiate the related recurring/periodic payment.\n\n## Single and mulitilevel SCA Processes\n\nThe payment initiation requests are independent from the need of one or multilevel \nSCA processing, i.e. independent from the number of authorisations needed for the execution of payments. \n\nBut the response messages are specific to either one SCA processing or multilevel SCA processing. \n\nFor payment initiation with multilevel SCA, this specification requires an explicit start of the authorisation, \ni.e. links directly associated with SCA processing like 'scaRedirect' or 'scaOAuth' cannot be contained in the \nresponse message of a Payment Initation Request for a payment, where multiple authorisations are needed. \nAlso if any data is needed for the next action, like selecting an SCA method is not supported in the response, \nsince all starts of the multiple authorisations are fully equal. \nIn these cases, first an authorisation sub-resource has to be generated following the 'startAuthorisation' link.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.startPaymentAuthorisation",
+      "name": "paymentInitiationServicePis.startPaymentAuthorisation",
+      "description": "Create an authorisation sub-resource and start the authorisation process.\nThe message might in addition transmit authentication and authorisation related data.\n\nThis method is iterated n times for a n times SCA authorisation in a\ncorporate context, each creating an own authorisation sub-endpoint for\nthe corresponding PSU authorising the transaction.\n\nThe ASPSP might make the usage of this access method unnecessary in case\nof only one SCA process needed, since the related authorisation resource\nmight be automatically created by the ASPSP after the submission of the\npayment data with the first POST payments/{payment-product} call.\n\nThe start authorisation process is a process which is needed for creating a new authorisation\nor cancellation sub-resource.\n\nThis applies in the following scenarios:\n\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding Payment \n    initiation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be \n    uploaded by using the extended forms:\n    * 'startAuthorisationWithPsuIdentfication'\n    * 'startAuthorisationWithPsuAuthentication'\n    * 'startAuthorisationWithEncryptedPsuAuthentication'\n    * 'startAuthorisationWithAuthentciationMethodSelection'\n  * The related payment initiation cannot yet be executed since a multilevel SCA is mandated.\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding \n    Payment cancellation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be uploaded \n    by using the extended forms as indicated above.\n  * The related payment cancellation request cannot be applied yet since a multilevel SCA is mandate for\n    executing the cancellation.\n  * The signing basket needs to be authorised yet.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.startPaymentInitiationCancellationAuthorisation",
+      "name": "paymentInitiationServicePis.startPaymentInitiationCancellationAuthorisation",
+      "description": "Creates an authorisation sub-resource and start the authorisation process of the cancellation of the addressed payment.\nThe message might in addition transmit authentication and authorisation related data.\n\nThis method is iterated n times for a n times SCA authorisation in a\ncorporate context, each creating an own authorisation sub-endpoint for\nthe corresponding PSU authorising the cancellation-authorisation.\n\nThe ASPSP might make the usage of this access method unnecessary in case\nof only one SCA process needed, since the related authorisation resource\nmight be automatically created by the ASPSP after the submission of the\npayment data with the first POST payments/{payment-product} call.\n\nThe start authorisation process is a process which is needed for creating a new authorisation\nor cancellation sub-resource.\n\nThis applies in the following scenarios:\n\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding payment \n    initiation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be \n    uploaded by using the extended forms:\n    * 'startAuthorisationWithPsuIdentfication'\n    * 'startAuthorisationWithPsuAuthentication'\n    * 'startAuthorisationWithAuthentciationMethodSelection' \n  * The related payment initiation cannot yet be executed since a multilevel SCA is mandated.\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding \n    payment cancellation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be uploaded \n    by using the extended forms as indicated above.\n  * The related payment cancellation request cannot be applied yet since a multilevel SCA is mandate for\n    executing the cancellation.\n  * The signing basket needs to be authorised yet.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.updatePaymentCancellationPsuData",
+      "name": "paymentInitiationServicePis.updatePaymentCancellationPsuData",
+      "description": "This method updates PSU data on the cancellation authorisation resource if needed. \nIt may authorise a cancellation of the payment within the Embedded SCA Approach where needed.\n\nIndependently from the SCA Approach it supports e.g. the selection of\nthe authentication method and a non-SCA PSU authentication.\n\nThere are several possible update PSU data requests in the context of a cancellation authorisation within the payment initiation services needed, \nwhich depends on the SCA approach:\n\n* Redirect SCA Approach:\n  A specific Update PSU data request is applicable for \n    * the selection of authentication methods, before choosing the actual SCA approach.\n* Decoupled SCA Approach:\n  A specific Update PSU data request is only applicable for\n  * adding the PSU Identification, if not provided yet in the payment initiation request or the Account Information Consent Request, or if no OAuth2 access token is used, or\n  * the selection of authentication methods.\n* Embedded SCA Approach: \n  The Update PSU data request might be used \n  * to add credentials as a first factor authentication data of the PSU and\n  * to select the authentication method and\n  * transaction authorisation.\n\nThe SCA approach might depend on the chosen SCA method. \nFor that reason, the following possible update PSU data request can apply to all SCA approaches:\n\n* Select an SCA method in case of several SCA methods are available for the customer.\n\nThere are the following request types on this access path:\n  * Update PSU identification\n  * Update PSU authentication\n  * Select PSU autorization method \n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n  * Transaction Authorisation\n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.paymentInitiationServicePis.updatePaymentPsuData",
+      "name": "paymentInitiationServicePis.updatePaymentPsuData",
+      "description": "This methods updates PSU data on the authorisation resource if needed.\nIt may authorise a payment within the Embedded SCA Approach where needed.\n\nIndependently from the SCA Approach it supports e.g. the selection of\nthe authentication method and a non-SCA PSU authentication.\n\nThere are several possible update PSU data requests in the context of payment initiation services needed, \nwhich depends on the SCA approach:\n\n* Redirect SCA Approach:\n  A specific update PSU data request is applicable for \n    * the selection of authentication methods, before choosing the actual SCA approach.\n* Decoupled SCA Approach:\n  A specific update PSU data request is only applicable for\n  * adding the PSU identification, if not provided yet in the payment initiation request or the account information consent request, or if no OAuth2 access token is used, or\n  * the selection of authentication methods.\n* Embedded SCA Approach: \n  The Update PSU Data request might be used \n  * to add credentials as a first factor authentication data of the PSU and\n  * to select the authentication method and\n  * transaction authorisation.\n\nThe SCA Approach might depend on the chosen SCA method. \nFor that reason, the following possible Update PSU data request can apply to all SCA approaches:\n\n* Select an SCA method in case of several SCA methods are available for the customer.\n\nThere are the following request types on this access path:\n  * Update PSU identification\n  * Update PSU authentication\n  * Select PSU autorization method \n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n  * Transaction authorisation\n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.createSigningBasket",
+      "name": "signingBasketsServiceSbs.createSigningBasket",
+      "description": "Create a signing basket resource for authorising several transactions with one SCA method. \nThe resource identifications of these transactions are contained in the payload of this access method\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.deleteSigningBasket",
+      "name": "signingBasketsServiceSbs.deleteSigningBasket",
+      "description": "Delete the signing basket structure as long as no (partial) authorisation has yet been applied.\nThe undlerying transactions are not affected by this deletion.\n\nRemark: The signing basket as such is not deletable after a first (partial) authorisation has been applied.\nNevertheless, single transactions might be cancelled on an individual basis on the XS2A interface.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.getSigningBasket",
+      "name": "signingBasketsServiceSbs.getSigningBasket",
+      "description": "Returns the content of a signing basket object."
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.getSigningBasketAuthorisation",
+      "name": "signingBasketsServiceSbs.getSigningBasketAuthorisation",
+      "description": "Read a list of all authorisation subresources IDs which have been created.\n\nThis function returns an array of hyperlinks to all generated authorisation sub-resources.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.getSigningBasketScaStatus",
+      "name": "signingBasketsServiceSbs.getSigningBasketScaStatus",
+      "description": "This method returns the SCA status of a signing basket's authorisation sub-resource.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.getSigningBasketStatus",
+      "name": "signingBasketsServiceSbs.getSigningBasketStatus",
+      "description": "Returns the status of a signing basket object.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.startSigningBasketAuthorisation",
+      "name": "signingBasketsServiceSbs.startSigningBasketAuthorisation",
+      "description": "Create an authorisation sub-resource and start the authorisation process of a signing basket.\nThe message might in addition transmit authentication and authorisation related data.\n\nThis method is iterated n times for a n times SCA authorisation in a\ncorporate context, each creating an own authorisation sub-endpoint for\nthe corresponding PSU authorising the signing-baskets.\n\nThe ASPSP might make the usage of this access method unnecessary in case\nof only one SCA process needed, since the related authorisation resource\nmight be automatically created by the ASPSP after the submission of the\npayment data with the first POST signing basket call.\n\nThe start authorisation process is a process which is needed for creating a new authorisation\nor cancellation sub-resource.\n\nThis applies in the following scenarios:\n\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding payment \n    initiation response that an explicit start of the authorisation process is needed by the TPP. \n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be \n    uploaded by using the extended forms:\n    * 'startAuthorisationWithPsuIdentfication', \n    * 'startAuthorisationWithPsuAuthentication' \n    * 'startAuthorisationWithEncryptedPsuAuthentication'\n    * 'startAuthorisationWithAuthentciationMethodSelection'\n  * The related payment initiation cannot yet be executed since a multilevel SCA is mandated.\n  * The ASPSP has indicated with a 'startAuthorisation' hyperlink in the preceding \n    payment cancellation response that an explicit start of the authorisation process is needed by the TPP.\n    The 'startAuthorisation' hyperlink can transport more information about data which needs to be uploaded\n    by using the extended forms as indicated above.\n  * The related payment cancellation request cannot be applied yet since a multilevel SCA is mandate for\n    executing the cancellation.\n  * The signing basket needs to be authorised yet.\n"
+    },
+    {
+      "id": "openapi_openbankingproject_ch.signingBasketsServiceSbs.updateSigningBasketPsuData",
+      "name": "signingBasketsServiceSbs.updateSigningBasketPsuData",
+      "description": "This method update PSU data on the signing basket resource if needed. \nIt may authorise a igning basket within the embedded SCA approach where needed.\n\nIndependently from the SCA Approach it supports e.g. the selection of \nthe authentication method and a non-SCA PSU authentication.\n\nThere are several possible update PSU data requests in the context of a consent request if needed, \nwhich depends on the SCA approach:\n\n* Redirect SCA Approach:\n  A specific Update PSU data request is applicable for \n    * the selection of authentication methods, before choosing the actual SCA approach.\n* Decoupled SCA Approach:\n  A specific Update PSU data request is only applicable for\n  * adding the PSU Identification, if not provided yet in the payment initiation request or the account information consent request, or if no OAuth2 access token is used, or\n  * the selection of authentication methods.\n* Embedded SCA Approach: \n  The update PSU data request might be used \n  * to add credentials as a first factor authentication data of the PSU and\n  * to select the authentication method and\n  * transaction authorisation.\n\nThe SCA approach might depend on the chosen SCA method. \nFor that reason, the following possible update PSU data request can apply to all SCA approaches:\n\n* Select an SCA method in case of several SCA methods are available for the customer.\n\nThere are the following request types on this access path:\n  * Update PSU identification\n  * Update PSU authentication\n  * Select PSU autorization Method \n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n  * Transaction Authorisation\n    WARNING: This method needs a reduced header, \n    therefore many optional elements are not present. \n    Maybe in a later version the access path will change.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

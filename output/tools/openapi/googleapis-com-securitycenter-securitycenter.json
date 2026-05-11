@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:22:41.215Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsAssetsRunDiscovery",
+      "name": "organizations.securitycenterOrganizationsAssetsRunDiscovery",
+      "description": "Runs asset discovery. The discovery is tracked with a long-running operation. This API can only be called with limited frequency for an organization. If it is called too frequently the caller will receive a TOO_MANY_REQUESTS error."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsOperationsCancel",
+      "name": "organizations.securitycenterOrganizationsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsSourcesCreate",
+      "name": "organizations.securitycenterOrganizationsSourcesCreate",
+      "description": "Creates a source."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsSourcesFindingsCreate",
+      "name": "organizations.securitycenterOrganizationsSourcesFindingsCreate",
+      "description": "Creates a finding. The corresponding source must exist for finding creation to succeed."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsSourcesGetIamPolicy",
+      "name": "organizations.securitycenterOrganizationsSourcesGetIamPolicy",
+      "description": "Gets the access control policy on the specified Source."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsSourcesSetIamPolicy",
+      "name": "organizations.securitycenterOrganizationsSourcesSetIamPolicy",
+      "description": "Sets the access control policy on the specified Source."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.organizations.securitycenterOrganizationsSourcesTestIamPermissions",
+      "name": "organizations.securitycenterOrganizationsSourcesTestIamPermissions",
+      "description": "Returns the permissions that a caller has on the specified source."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsAssetsGroup",
+      "name": "projects.securitycenterProjectsAssetsGroup",
+      "description": "Filters an organization's assets and groups them by their specified properties."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsAssetsList",
+      "name": "projects.securitycenterProjectsAssetsList",
+      "description": "Lists an organization's assets."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsBigQueryExportsCreate",
+      "name": "projects.securitycenterProjectsBigQueryExportsCreate",
+      "description": "Creates a BigQuery export."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsBigQueryExportsList",
+      "name": "projects.securitycenterProjectsBigQueryExportsList",
+      "description": "Lists BigQuery exports. Note that when requesting BigQuery exports at a given level all exports under that level are also returned e.g. if requesting BigQuery exports under a folder, then all BigQuery exports immediately under the folder plus the ones created under the projects within the folder are returned."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsFindingsBulkMute",
+      "name": "projects.securitycenterProjectsFindingsBulkMute",
+      "description": "Kicks off an LRO to bulk mute findings for a parent based on a filter. The parent can be either an organization, folder or project. The findings matched by the filter will be muted after the LRO is done."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsMuteConfigsCreate",
+      "name": "projects.securitycenterProjectsMuteConfigsCreate",
+      "description": "Creates a mute config."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsMuteConfigsList",
+      "name": "projects.securitycenterProjectsMuteConfigsList",
+      "description": "Lists mute configs."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsNotificationConfigsCreate",
+      "name": "projects.securitycenterProjectsNotificationConfigsCreate",
+      "description": "Creates a notification config."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsNotificationConfigsList",
+      "name": "projects.securitycenterProjectsNotificationConfigsList",
+      "description": "Lists notification configs."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesCreate",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesCreate",
+      "description": "Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent, and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the given parent. These modules are enabled by default."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesDelete",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesDelete",
+      "description": "Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM hierarchy. This method is only supported for resident custom modules."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesList",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesList",
+      "description": "Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesListDescendant",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsCustomModulesListDescendant",
+      "description": "Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent and all of the parent’s CRM descendants."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsEffectiveCustomModulesGet",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsEffectiveCustomModulesGet",
+      "description": "Retrieves an EffectiveSecurityHealthAnalyticsCustomModule."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSecurityHealthAnalyticsSettingsEffectiveCustomModulesList",
+      "name": "projects.securitycenterProjectsSecurityHealthAnalyticsSettingsEffectiveCustomModulesList",
+      "description": "Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This includes resident modules defined at the scope of the parent, and inherited modules, inherited from CRM ancestors."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesFindingsExternalSystemsPatch",
+      "name": "projects.securitycenterProjectsSourcesFindingsExternalSystemsPatch",
+      "description": "Updates external system. This is for a given finding."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesFindingsGroup",
+      "name": "projects.securitycenterProjectsSourcesFindingsGroup",
+      "description": "Filters an organization or source's findings and groups them by their specified properties. To group across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings, /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings"
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesFindingsList",
+      "name": "projects.securitycenterProjectsSourcesFindingsList",
+      "description": "Lists an organization or source's findings. To list across all sources provide a `-` as the source id. Example: /v1/organizations/{organization_id}/sources/-/findings"
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesFindingsSetMute",
+      "name": "projects.securitycenterProjectsSourcesFindingsSetMute",
+      "description": "Updates the mute state of a finding."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesFindingsSetState",
+      "name": "projects.securitycenterProjectsSourcesFindingsSetState",
+      "description": "Updates the state of a finding."
+    },
+    {
+      "id": "openapi_googleapis_com_securitycenter_securitycenter.projects.securitycenterProjectsSourcesList",
+      "name": "projects.securitycenterProjectsSourcesList",
+      "description": "Lists all sources belonging to an organization."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

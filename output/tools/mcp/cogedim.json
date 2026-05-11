@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:20:08.462Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "mcp_cogedim.search_programs",
+      "name": "search_programs",
+      "description": "Search for real estate programs (new residential developments) by location criteria. Use as FALLBACK when search_lots returns no results, or when the user asks broadly about available developments. Also useful for finding programs in preview (avant-première) which don't have lots available yet. Returns a list of programs with basic info and their nid (program ID). Once you have results, always call get_program with the nid to get the full marketing description, URL, features, and current offers before presenting to the user."
+    },
+    {
+      "id": "mcp_cogedim.search_lots",
+      "name": "search_lots",
+      "description": "Search for individual real estate lots (specific apartments, houses) within programs. This should be your FIRST tool for property searches — it returns lots with detailed information including lot_number, prices (with multiple price types like VAT included, LMNP, LLI, etc. each with formatted prices and return rates), return_rates (lmnp_vat_ex, lmnp_vat_inc, lli, lli_furnished), surface area, rooms, floor, orientation, location, delivery date, regulations, and monthly payment amounts for access lots. If this returns no results, fall back to search_programs. Once you have results, always call get_program with the program nid to get full details before presenting to the user."
+    },
+    {
+      "id": "mcp_cogedim.get_program",
+      "name": "get_program",
+      "description": "Get full details of a specific real estate program by its nid. IMPORTANT: Always use this after search_programs to get the marketing description, complete URL, program features, available lots count, and current promotional offers before presenting a program to the user."
+    },
+    {
+      "id": "mcp_cogedim.search_content",
+      "name": "search_content",
+      "description": "Search Cogedim website for content (articles, landing pages, FAQs, journeys which are just pages) by keywords. Returns matching content with snippets. Use this to find relevant information about investment regulations (LMNP, LLI, etc.), real estate guides, and other editorial content. Always call this first to discover relevant content, then use get_content to fetch the full article or page for detailed information."
+    },
+    {
+      "id": "mcp_cogedim.get_content",
+      "name": "get_content",
+      "description": "Retrieve the full content of a specific article, landing page, FAQ, or journey by its nid. Use this after search_content to get the complete text, detailed explanations, and context for presenting accurate, sourced information to users."
+    },
+    {
+      "id": "mcp_cogedim.render_search_programs",
+      "name": "render_search_programs",
+      "description": "Render the program search results widget. Use this ONLY after you already have the final structured data from search_programs. Pass the previous tool's structuredContent into this tool unchanged so ChatGPT can mount the UI with those programs immediately."
+    },
+    {
+      "id": "mcp_cogedim.render_search_lots",
+      "name": "render_search_lots",
+      "description": "Render the lot search results widget. Use this ONLY after you already have the final structured data from search_lots. Pass the previous tool's structuredContent into this tool unchanged so ChatGPT can mount the UI with those lots immediately."
+    },
+    {
+      "id": "mcp_cogedim.render_program",
+      "name": "render_program",
+      "description": "Render the program details widget. Use this ONLY after you already fetched the final program data with get_program. Pass that tool's structuredContent into this tool unchanged so ChatGPT can mount the UI with the program details immediately."
+    }
+  ]
+}

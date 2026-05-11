@@ -1,0 +1,257 @@
+{
+  "fetchedAt": "2026-04-30T15:26:37.559Z",
+  "status": "ok",
+  "count": 50,
+  "tools": [
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.cmFacing.postV05PatientsSmsOnNotify",
+      "name": "cmFacing.postV05PatientsSmsOnNotify",
+      "description": "If the SMS notification is successfully sent to patient then \"status\" will be \"ACKNOWLEDGED\" with no error.\nIf the SMS notification is failed then \"status\" will be \"ERRORED\" with error.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentRequestsInit",
+      "name": "consentFlow.postV05ConsentRequestsInit",
+      "description": "Creates a consent request to get data about a patient by HIU user."
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentRequestsOnInit",
+      "name": "consentFlow.postV05ConsentRequestsOnInit",
+      "description": "Result of consent request creation for a patient. **consentRequest.id** represents the consentrequest id created by CM. The result must contain either **consentRequest** or the **error** caused. <br/>\n  Reasons for error may be\n  * Invalid references (e.g patient id, hiu id), purpose, hiTypes, ranges, persmission\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentRequestsOnStatus",
+      "name": "consentFlow.postV05ConsentRequestsOnStatus",
+      "description": "Result of consent request done previously. Status of request can be GRANTED,  DENIED, EXPIRED. If the request was GRANTED, then \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentRequestsStatus",
+      "name": "consentFlow.postV05ConsentRequestsStatus",
+      "description": "Get status of consent request done previously"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsFetch",
+      "name": "consentFlow.postV05ConsentsFetch",
+      "description": "Get consent artefact"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsHipNotify",
+      "name": "consentFlow.postV05ConsentsHipNotify",
+      "description": "Notification of consents to health information providers consent request granted, consent revoked, consent expired. Only the GRANTED, REVOKED and EXPIRED status notifications will be sent to HIP.\n  1. If consent is granted, status=GRANTED, then consentDetail contains the consent artefact details and signature is available. \n  2. If consent is revoked, then status=REVOKED, and consentId specifes which consent artefact is revoked. \n  3. If the consent has expired, then status=EXPIRED, and consentId specifies which consent artefact has expired. Note, this is also responsibility of the HIP to keep track of consent expiry. Any data request on expired consent artefact must not be done. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsHipOnNotify",
+      "name": "consentFlow.postV05ConsentsHipOnNotify",
+      "description": "This API is called by HIP as acknowledgement to notification of consents, in cases of consent revocation and expiration. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsHiuNotify",
+      "name": "consentFlow.postV05ConsentsHiuNotify",
+      "description": "Health information user will get notified about the consent request granted or denied, consent revoked, consent expired. \n1. For consent request grant, status=GRANTED, consentRequestId=<consent-request-id>, and consentArtefacts is an array of generated consent artefact Ids.\n2. For consent request expiry, status=EXPIRED, consentRequestId=<consent-request-id>\n3. For consent request denied, status=DENIED, consentRequestId=<consent-request-id>\n4. For consent revocation, status=REVOKED, consentArtefacts is an array of revoked consent artefact ids\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsHiuOnNotify",
+      "name": "consentFlow.postV05ConsentsHiuOnNotify",
+      "description": "This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.consentFlow.postV05ConsentsOnFetch",
+      "name": "consentFlow.postV05ConsentsOnFetch",
+      "description": "Must contain either consentDetail or error. Possible reason of errors are \n1. consentId passed through /fetch is invalid\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.dataFlow.postV05HealthInformationCmOnRequest",
+      "name": "dataFlow.postV05HealthInformationCmOnRequest",
+      "description": "Callback API for acknowledgement of Health information request of HIU. CM calls this API when it has validated the Health Information request given the consent id. Either the **hiRequest** or **error** would need to be specified. If the health info request was valid, then the ***hiRequest.transactionId*** specifies the transaction context against which HIP would send over the data.  Possible cases of errors are\n  1. **Invalid consent artefact id**\n  2. **Consent has expired**\n  3. **Date ranges are invalid**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.dataFlow.postV05HealthInformationCmRequest",
+      "name": "dataFlow.postV05HealthInformationCmRequest",
+      "description": "Request for Health information against a consent id. CM would generate a transactionId against each consent and pass it as trnasaction context / correlation id to the HIP and also return the same to HIU via /on-request. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.dataFlow.postV05HealthInformationHipOnRequest",
+      "name": "dataFlow.postV05HealthInformationHipOnRequest",
+      "description": "API called by HIP to acknowledge Health information request receipt. Either the **hiRequest** or **error** must be specified. **hiRequest** element returns the same transactionId as before with a status indicating that the request is acknowledged.  \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.dataFlow.postV05HealthInformationHipRequest",
+      "name": "dataFlow.postV05HealthInformationHipRequest",
+      "description": "API called by CM to request Health information from HIP against a validated consent artefact. The transactionId is the correlation id that HIP should use use when pushing data to the **dataPushUrl**. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.dataFlow.postV05HealthInformationNotify",
+      "name": "dataFlow.postV05HealthInformationNotify",
+      "description": "API called by HIU and HIP during data-transfer. \n1. HIP on transfer of data would send **sessionStatus** - one of [TRANSFERRED, FAILED]\n2. HIP would also send **hiStatus** for each *careContextReference* - on of [DELIVERED, ERRORED]\n3. HIU on receipt of data would send **sessionStatus** - one of [TRANSFERRED, FAILED]. For example, FAILED when if data was not sent or if invalid data was sent\n4. HIU would also send **hiStatus** for each *careContextReference* - one of [OK, ERRORED] \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.discovery.postV05CareContextsDiscover",
+      "name": "discovery.postV05CareContextsDiscover",
+      "description": "Request for patient care context discover, made by CM for a specific HIP. It is expected that HIP will subsequently return either zero or one patient record with (potentially masked) associated care contexts\n  1. **At least one of the verified identifier matches**\n  2. **Name (fuzzy), gender matches**\n  3. **If YoB was given, age band(+-2) matches**\n  4. **If unverified identifiers were given, one of them matches**\n  5. **If more than one patient records would be found after aforementioned steps, then patient who matches most verified and unverified identifiers would be returned.**\n  6. **If there would be still more than one patients (after ranking) error would be returned**\n  7. **Intended HIP should be able to resolve and identify results returned in the subsequent link confirmation request via the specified transactionId**\n  8. **Intended HIP should store the discovery results with transactionId and care contexts discovered for subsequent link initiation**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.discovery.postV05CareContextsOnDiscover",
+      "name": "discovery.postV05CareContextsOnDiscover",
+      "description": "Result of patient care-context discovery request at HIP end. If a matching patient found with zero or more care contexts associated, it is specified as result attribute. If the prior discovery request, resulted in errors then it is specified in the error attribute. Reasons of errors can be \n  1. **more than one definitive match for the given request** \n  2. **no verified identifer was specified**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.hipFacing.postV05PatientsSmsNotify",
+      "name": "hipFacing.postV05PatientsSmsNotify",
+      "description": "API to send SMS notifications to patient with custom deeplink.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.identification.postV05PatientsFind",
+      "name": "identification.postV05PatientsFind",
+      "description": "This API is meant for identify to patient given her consent-manager-user-id\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.identification.postV05PatientsOnFind",
+      "name": "identification.postV05PatientsOnFind",
+      "description": "If a patient is found then patient.name contains the patients name. \nOtherwise, patient is not provided, and possibly error is raised for invalid requests\nNote in addition to the \"Authorization\" header, one of the following headers must be specified\n1. specify **X-HIU-ID** if the requester is HIU (identified from /find requester.id)\n2. specify **X-HIP-ID** if the requester is HIP (identified from /find requester.id)\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkAddContexts",
+      "name": "link.postV05LinksLinkAddContexts",
+      "description": "API to submit care-context to CM for HIP initiated linking. The API must accompany the \"accessToken\" fetched in the users/auth process.  \n  1. subsequent usage for accessToken may be invalid if it was meant for one-time usage or if it expired\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkConfirm",
+      "name": "link.postV05LinksLinkConfirm",
+      "description": "API to submit the token that was sent by HIP during the link request. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkInit",
+      "name": "link.postV05LinksLinkInit",
+      "description": "Request from CM to links care contexts associated with only one patient\n  1. **Validate account reference number and care context reference number**\n  2. **Validate transactionId in the request with discovery request entry to check whether there was a discovery\n      and were these care contexts discovered or not for a given patient**\n  3. **Before eventual link confirmation, HIP needs to authenticate the request with the patient(eg: OTP verification)**\n  4. **HIP should communicate the mode of authentication of a successful request to Consent Manager**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkOnAddContexts",
+      "name": "link.postV05LinksLinkOnAddContexts",
+      "description": "If the accessToken is valid for purpose of linking, and specified details provided, CM will send \"acknoweldgement.status\" as SUCCESS. If any error occcurred, for example invalid token, or other required patient or care-context information not provided, then \"error\" attribute conveys so. \n  1. **accessToken must be valid and must be for the purpose of linking**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkOnConfirm",
+      "name": "link.postV05LinksLinkOnConfirm",
+      "description": "Returns a list of linked care contexts with patient reference number.\n  1. **Validated and linked account reference number**\n  2. **Validated that the token sent from Consent Manager is same as the one generated by HIP**\n  3. **Verified that same Consent Manager which made the link request is sending the token**\n  4. **Results of unmasked linked care contexts with patient reference number**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.link.postV05LinksLinkOnInit",
+      "name": "link.postV05LinksLinkOnInit",
+      "description": "Result of patient care-context link request from HIP end. This happens in context of previous discovery of patient found at HIP end, therefore the link requests ought to be in reference to the patient reference and care-context references previously returned by the HIP. The correlation of discovery and link request is maintained through the transactionId. HIP should have\n  1. **Validated transactionId in the request to check whether there was a discovery done previously, and the link request corresponds to returned patient care care context references**\n  2. **Before returning the response, HIP should have sent an authentication request to the patient(eg: OTP verification)**\n  3. **HIP should communicate the mode of authentication of a successful request**\n  4. **HIP subsequently should expect the token passed via /link/confirm against the link.referenceNumber passed in this call**\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \nThe error section in the body, represents the potential errors that may have occurred. Possible reasons:\n  1. **Patient reference number is invalid**\n  2. **Care context reference numbers are invalid**\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.monitoring.getV05Heartbeat",
+      "name": "monitoring.getV05Heartbeat",
+      "description": "Get consent request status"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.profile.postV05PatientsProfileOnShare",
+      "name": "profile.postV05PatientsProfileOnShare",
+      "description": "Result of patient share profile request at HIP end.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.profile.postV05PatientsProfileShare",
+      "name": "profile.postV05PatientsProfileShare",
+      "description": "Request for sharing patient's profile details to HIP\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.services.getV05HiServicesServiceId",
+      "name": "services.getV05HiServicesServiceId",
+      "description": "This API is meant for displaying the bridge service details by the serviceId provided .\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.sessions.getV05Certs",
+      "name": "sessions.getV05Certs",
+      "description": "Get certs for JWT verification"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.sessions.getV05WellKnownOpenidConfiguration",
+      "name": "sessions.getV05WellKnownOpenidConfiguration",
+      "description": "Get openid configuration"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.sessions.postV05Sessions",
+      "name": "sessions.postV05Sessions",
+      "description": "Get access token"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionRequestsCmInit",
+      "name": "subscriptions.postV05SubscriptionRequestsCmInit",
+      "description": "creates a request for subscription. The subscription categories can be for care-contexts linkages or availability of data against existing care-contexts. Note that the requester must have HIU role"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionRequestsCmOnInit",
+      "name": "subscriptions.postV05SubscriptionRequestsCmOnInit",
+      "description": "This callback API acknowledges the request for subscription from a HIU, and sends back a \"id\" that will be used when the patient/user approves or denies the subscription. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionRequestsHiuNotify",
+      "name": "subscriptions.postV05SubscriptionRequestsHiuNotify",
+      "description": "This API is used by CM to notify a HIU to grant or deny a request for subscription, and also to notify that in case an existing subscription is revoked or expired. For notifying that a particular subscription request was GRANTED or DENIED, the **subscriptionRequestId** is passed. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionRequestsHiuOnNotify",
+      "name": "subscriptions.postV05SubscriptionRequestsHiuOnNotify",
+      "description": "This API is called by HIU as acknowledgement to subscription request relevant notifications. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionsHiuNotify",
+      "name": "subscriptions.postV05SubscriptionsHiuNotify",
+      "description": "This API is used by CM to notify a HIU for notification relevant to subscription. Notifications are sent to subscribed HIUs whenever a new care-context is linked or new data is available on an existing linked care-context. \n1. if event.category = LINK, then only care-contexts are passed when new care-contexts are linked for patient. \n2. If event.category = DATA, then hiTypes are passed. Care-context is passed only if the subscribed HIU has any valid consent for that care-context\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.subscriptions.postV05SubscriptionsHiuOnNotify",
+      "name": "subscriptions.postV05SubscriptionsHiuOnNotify",
+      "description": "This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthConfirm",
+      "name": "userAuth.postV05UsersAuthConfirm",
+      "description": "This API is called by HIP/HIUs to confirm authentication of users. The transactionId returned by the previous callback API /users/auth/on-init must be sent. If Authentication is successful the callback API will send an \"access token\" for subsequent purpose specific API calls. Note only **credential.authCode** or **credential.demographic** should be sent\n  1. demographic details are only required for  demographic auth as of now. \n  2. demographic details are required only in MEDIATED cases and if the **auth.mode** so demands. e.g. if **auth.mode** is DEMOGRAPHICS. Usually for demographic authentication, the name, gender and DOB must be exactly as specified in User Account.\n  3. demographic.identifier is optional, however maybe required if authentication so mandates. \n  4. credential.authCode is required for other MEDIATED authentication like MOBILE_OTP, AADHAAR_OTP. \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthFetchModes",
+      "name": "userAuth.postV05UsersAuthFetchModes",
+      "description": "This API is meant for identify supported authentication modes for a patient given a specific purpose\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthInit",
+      "name": "userAuth.postV05UsersAuthInit",
+      "description": "This API is called by HIPs to initiate authentication of users. A transactionId is retuned by the corresponding callback API for confirmation of user auth.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthNotify",
+      "name": "userAuth.postV05UsersAuthNotify",
+      "description": "This API is called by CM to confirm authentication of users. The transactionId returned is same as that passed in /auth/on-init. The \"auth.status\" conveys whether the request was GRANTED or DENIED.\n\n  1. **auth.accessToken** - is specific to the purpose mentioned in the /auth/init. This token needs to be used for initiating the intended action. For example for HIP initiated linking of care-contexts\n  2. **NOTE**, only one of **X-HIP-ID** or **X-HIU-ID** will be sent as part of header, not both.\n  3. The payload is conditional to the purpose of auth. If purpose specified in /auth/init is KYC or KYC_AND_LINK, then patient details are passed. **auth.accessToken** is passed only if the purpose is LINK or KYC_AND_LINK.\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthOnConfirm",
+      "name": "userAuth.postV05UsersAuthOnConfirm",
+      "description": "This API is called by CM to confirm authentication of users.\n\n  1. **auth.accessToken** - is specific to the purpose mentioned in the /auth/init. This token needs to be used for initiating the intended action. For example for HIP initiated linking of care-contexts\n  2. **NOTE**, only one of **X-HIP-ID** or **X-HIU-ID** will be sent as part of header, not both.     \n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthOnFetchModes",
+      "name": "userAuth.postV05UsersAuthOnFetchModes",
+      "description": "If a patient is found then **auth** attribute contains the supported modes for the specified purpose. \nOtherwise, error is raised for invalid requests or for non-existent id.\nNote in addition to the \"Authorization\" header, one of the following headers must be specified\n1. **X-HIU-ID** if the requester is HIU (identified from /auth/fetch-modes requester.id)\n2. **X-HIP-ID** if the requester is HIP (identified from /auth/fetch-modes requester.id)\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthOnInit",
+      "name": "userAuth.postV05UsersAuthOnInit",
+      "description": "If the patient's id is valid, CM will return a transactionId as initialization of user auth. If the request is valid, then 'auth.mode' will convey how the authentication should be done. The authentication can be *mediated* or *direct*. For mediated authentication modes, HIP or HIU is epected to send over relevant code (OTP/token) or demographic info via subsequent API call to /auth/confirm. for direct authentication case, CM will notify requester through/users/auth/notify API. \n\n  1. **auth.mode** conveys whats the mode of authentication is, and what is expected from HIP/HIU in the subsequent /auth/confirm API call. Possible values \n      1. MOBILE_OTP - auth via OTP to registered mobile. Mediated. \n      2. AADHAAR_OTP - auth initiated with Aadhaar with OTP. Mediated. \n      3. DEMOGRAPHICS - auth initiated with demographic verification\n      4. DIRECT - for authentication directly with the patient. e.g. Mobile App, SMS. In this case, the HIP/HIU is not expected to call subsequent /auth/confirm call. CM will do direct authentication with the User (e.g. Mobile App, SMS etc) and will notify requester\n  2. **meta.expiry** conveys the expiry time of the token and the authentication session\n  3. **NOTE**, only one of **X-HIP-ID** or **X-HIU-ID** will be sent as part of header, not both. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \nThe error section in the body, represents the potential errors that may have occurred. Possible reasons:\n  1. Patient id is invalid\n"
+    },
+    {
+      "id": "openapi_ndhm_gov_in_ndhm_gateway_ndhm_gateway.userAuth.postV05UsersAuthOnNotify",
+      "name": "userAuth.postV05UsersAuthOnNotify",
+      "description": "This API is called by HIU/HIPs to confirm acknowledgement for receipt of auth notification is case of DIRECT authentication. \n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

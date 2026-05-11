@@ -1,0 +1,117 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.914Z",
+  "status": "ok",
+  "count": 22,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.attachments.retrieveattachment",
+      "name": "attachments.retrieveattachment",
+      "description": "Use this API to retrieve a file.\r\n\r\nBe sure to include the file extension in the name. Like in this example:\r\n```\r\n/dataentities/CL/documents/123/file/attachments/image.png\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.attachments.saveattachment",
+      "name": "attachments.saveattachment",
+      "description": "This API allows you to save a file in a field of type `File`.\n\r\n\rWhen using in javascript, you must add the header `content-type` with value `multipart/form-data;`\n\r\n\rYou can upload more than one file. Just add a new field in the `form-data` with type `File`."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.clusters.validateDocumentbyClusters",
+      "name": "clusters.validateDocumentbyClusters",
+      "description": ""
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.dataEntities.getdataentitystructure",
+      "name": "dataEntities.getdataentitystructure",
+      "description": "Returns the data entity structure with its respective fields and data type.\r\n\r\n### Response status code\r\n\r\n1. Status Code `403`: Access not allowed\r\n2. Status Code `200`: Retrieves data entity structure\r\n\r\n> All headers listed below are required."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.dataEntities.listdataentities",
+      "name": "dataEntities.listdataentities",
+      "description": "Retrieves the list of existing data entities in the store.\r\n\r\n### Response status code\r\n\r\n1. Status Code `403`: Access not allowed\r\n2. Status Code `200`: Retrieves data entity list\r\n\r\n> All headers listed below are required."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.createnewdocument",
+      "name": "documents.createnewdocument",
+      "description": "Creates documents through a JSON object where the key is the name of the field."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.createorupdateentiredocument",
+      "name": "documents.createorupdateentiredocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.createorupdatepartialdocument",
+      "name": "documents.createorupdatepartialdocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.deletedocument",
+      "name": "documents.deletedocument",
+      "description": "It allows to delete a document."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.getdocument",
+      "name": "documents.getdocument",
+      "description": "Retrieves a document.\r\n\r\nAssign the `_fields` parameter in the query string to retrieve the desired fields. If you want to return all the fields use `_fields=_all`."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.updateentiredocument",
+      "name": "documents.updateentiredocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.documents.updatepartialdocument",
+      "name": "documents.updatepartialdocument",
+      "description": ""
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.score.deletescorebyfield",
+      "name": "score.deletescorebyfield",
+      "description": "Allows you to remove a key from a specific field."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.score.putscorebyfield",
+      "name": "score.putscorebyfield",
+      "description": "It allows to punctuate in a specific field."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.score.putscores",
+      "name": "score.putscores",
+      "description": "It allows punctuate in more than one field and more than one key."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.scroll.scrolldocuments",
+      "name": "scroll.scrolldocuments",
+      "description": "Scrolls through documents according to the query parameter filters.\n\r\n\r> Avoid sending too many requests with wildcards (`*`) in the search parameters or that use the `keyword` parameter. This may lead to this endpoint being temporarily blocked for your account. If this happens you will receive an error with status code `429`.\n\r\n\rUse all the features of `search` API to perform filters.\r\n\r\nIn the first request, the `X-VTEX-MD-TOKEN` token will be obtained in the header. This token must be passed to the next request in the query string `_token` parameter. The token has a timeout of 10 minutes, which refreshes after each request.\r\n\r\n**ATTENTION:** To inform the number of documents per request, use the query string parameter `_size`, which has the maximum value of 1000.\r\n\r\nAfter the token is obtained it is no longer necessary to send the filter or document size per page parameters. You only need to resend the token until the document collection is empty.\r\n\r\n### First request example:\r\n```\r\n/dataentities/CL/scroll?isCluster=true&_size=250&_fields=email,firstName\r\n```\r\n\r\nAfter the first request, retrieve the token in the header `X-VTEX-MD-TOKEN` and make the next requests.\r\n\r\n### Example of subsequent requests:\r\n```\r\n/dataentities/CL/scroll?_token=tokenvalueexample\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.search.searchdocuments",
+      "name": "search.searchdocuments",
+      "description": "Search documents by the query parameters described below.\n\r\n\r> Avoid sending too many requests with wildcards (`*`) in the search parameters or that use the `keyword` parameter. This may lead to this endpoint being temporarily blocked for your account. If this happens you will receive an error with status code `503`."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.versions.getversion",
+      "name": "versions.getversion",
+      "description": "Returns the version of a document."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.versions.listversions",
+      "name": "versions.listversions",
+      "description": "Allows to list the versions of a document."
+    },
+    {
+      "id": "openapi_vtex_local_masterdata_api_masterdata_api.versions.putversion",
+      "name": "versions.putversion",
+      "description": "Updates document with version values."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

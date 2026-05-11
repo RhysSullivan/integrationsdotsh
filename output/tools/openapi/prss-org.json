@@ -1,0 +1,197 @@
+{
+  "fetchedAt": "2026-04-30T15:26:44.214Z",
+  "status": "ok",
+  "count": 38,
+  "tools": [
+    {
+      "id": "openapi_prss_org.broadcastServices.getApiV2Broadcastservices",
+      "name": "broadcastServices.getApiV2Broadcastservices",
+      "description": "Gets broadcast services matching the given criteria."
+    },
+    {
+      "id": "openapi_prss_org.broadcastServices.getApiV2BroadcastservicesId",
+      "name": "broadcastServices.getApiV2BroadcastservicesId",
+      "description": "Returns the broadcast service matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.deleteApiV2CddriveFilesFileId",
+      "name": "cdDrive.deleteApiV2CddriveFilesFileId",
+      "description": "Delete a file from the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.deleteApiV2CddriveFoldersFolderId",
+      "name": "cdDrive.deleteApiV2CddriveFoldersFolderId",
+      "description": "Delete a file from the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.getApiV2CddriveFilesFileId",
+      "name": "cdDrive.getApiV2CddriveFilesFileId",
+      "description": "Get the information about a file in the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.getApiV2CddriveFilesFileIdContent",
+      "name": "cdDrive.getApiV2CddriveFilesFileIdContent",
+      "description": "Download a file from the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.getApiV2CddriveFoldersFolderId",
+      "name": "cdDrive.getApiV2CddriveFoldersFolderId",
+      "description": "Get the information about a folder in the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.getApiV2CddriveFoldersFolderIdItems",
+      "name": "cdDrive.getApiV2CddriveFoldersFolderIdItems",
+      "description": "Get the information about a folder in the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.postApiV2CddriveFilesContent",
+      "name": "cdDrive.postApiV2CddriveFilesContent",
+      "description": "Upload a file to the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.cdDrive.postApiV2CddriveFolders",
+      "name": "cdDrive.postApiV2CddriveFolders",
+      "description": "Create a new folder in the customer's private CD Drive."
+    },
+    {
+      "id": "openapi_prss_org.episodes.getApiV2Episodes",
+      "name": "episodes.getApiV2Episodes",
+      "description": "Gets episodes matching the given criteria."
+    },
+    {
+      "id": "openapi_prss_org.episodes.getApiV2EpisodesId",
+      "name": "episodes.getApiV2EpisodesId",
+      "description": "Returns the episode matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.metaPub.getApiV2MetapubProgramInformationBatchBatchId",
+      "name": "metaPub.getApiV2MetapubProgramInformationBatchBatchId",
+      "description": "Gets the batch information which can be used to check the status of the operation or retrieve more details if the batch fails."
+    },
+    {
+      "id": "openapi_prss_org.metaPub.postApiV2MetapubProgramInformationBatch",
+      "name": "metaPub.postApiV2MetapubProgramInformationBatch",
+      "description": "Create a batch to process the metadata of one or more electronic program guide (EPG) programs using metadata that has been uploaded to the customer's CD Drive. If multiple EPG programs are present in the metadata, they will all be updated, however updates across programs are not atomic. Note that an EPG program maps to the ContentDepot concept of an episode which is also known as a \"program instance\".\n\nA batch operation must be explicitly created rather than the server attempting to detect new metadata in order to allow for all the content to be uploaded including any supporting content like images. A batch operation is accepted and queued for asynchronous processing at a later time. A client can poll the batch periodically to determine when it completes and the resulting state.\n"
+    },
+    {
+      "id": "openapi_prss_org.pieces.deleteApiV2PiecesId",
+      "name": "pieces.deleteApiV2PiecesId",
+      "description": "Deletes the piece with the given ID."
+    },
+    {
+      "id": "openapi_prss_org.pieces.getApiV2Pieces",
+      "name": "pieces.getApiV2Pieces",
+      "description": "Returns the pieces matching the query parameters."
+    },
+    {
+      "id": "openapi_prss_org.pieces.getApiV2PiecesId",
+      "name": "pieces.getApiV2PiecesId",
+      "description": "Returns the piece matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.pieces.postApiV2Pieces",
+      "name": "pieces.postApiV2Pieces",
+      "description": "Create a new piece."
+    },
+    {
+      "id": "openapi_prss_org.programs.getApiV2ProgramsId",
+      "name": "programs.getApiV2ProgramsId",
+      "description": "Returns the program matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.programs.getApiV2ProgramsSearch",
+      "name": "programs.getApiV2ProgramsSearch",
+      "description": "Optimized free-text search for programs using various filters."
+    },
+    {
+      "id": "openapi_prss_org.radioDns.getRadiodnsSpi31GiXml",
+      "name": "radioDns.getRadiodnsSpi31GiXml",
+      "description": "The group information (GI) document allows programs to be put into groups such as serials, series, shows, or general themes and provide additional metadata for that group such as a description, links, and a logo. A program in the guide can be linked to its group using the \"memberOf\" field to allow clients to easily link programs together for a given Content Depot Program/Show in the EPG. GI will be published for all Content Depot programs that have the \"publish metadata\" option enabled. By using the group information, clients have the ability to access a single list of all metadata supported program titles, links, images, and descriptions. This information can be used to assist a station when setting up a schedule or it can be used in the end user metadata to provide additional information about the content such as displaying \"other episodes from this program\" or displaying the group, program, and program event images.\n\nCurrently all programs with \"publish metadata\" enabled will be included in the group information even if they are not active in the program guide. This may change in the future if the number of programs grows.\n\nNote that while the location of the GI document isn't expected to change in the near future, as per the RadioDNS specification the authoritative link to the document is defined in the SI document with the mime value ```application/xml+gi```.\n\nThe response will use standard HTTP cache-control headers to indicate when the document should be refreshed as well as an ETag to allow for lightweight change detection.\n"
+    },
+    {
+      "id": "openapi_prss_org.radioDns.getRadiodnsSpi31IdFqdnSidDatePiXml",
+      "name": "radioDns.getRadiodnsSpi31IdFqdnSidDatePiXml",
+      "description": "The program information (PI) document holds the linear and the on-demand schedule of programs for a service over a 24 hour period. This information provides an electronic program guide (EPG) to clients that defines the program metadata such as:\n\n*   Names\n*   Descriptions\n*   Logos\n*   Links\n*   Genres\n*   Program Events (a.k.a. pieces)\n\nMetaPub provides both _National PI documents_ and _Station PI documents_. For both documents, only programs with metadata publishing enabled are listed in the document. As per the RadioDNS specification, the authoritative list of services is defined in the corresponding SI document.\n\nThe National PI documents correspond to the services listed in the National SI document (streams and files). This EPG contains two types of programming, live and on-demand (a.k.a files). A \"live with subsequent file (LWSF)\" program may appear in both the streams and files services EPG data because it will both a live stream and an on-demand file. File programs with multi-day air windows will appear in the PI file on every day that the air window is open. That is, the EPG data for each day contains the information about programming available that day, even if the programming is also available on other days. The program ID can be used to resolve these duplicates down to a single instance when processing multiple services or multiple days of EPG data.\n\nThe Station PI documents correspond to the services listed in the Station SI document, and list program and schedule metadata for programs which are subscribed to by the given service. Note that stations may opt into \"static\" metadata publishing (station and broadcast service metadata) but not \"dynamic\" metadata publishing (program and schedule metadata). If this is the case, a service that is listed in the Station SI document will not have a corresponding PI document, and a 404 status code will be returned.\n\nEach PI document will contain 24 hours of program guide information. The current day, the previous day, and the next day will contain detailed program event information (a.k.a. Content Depot pieces) while PI files outside of this range will only contain the program (a.k.a Content Depot episode) level information. This may change in the future with the use of an API key as defined by the RadioDNS specification to identify \"trusted\" clients. If metadata for any program in the guide(s) changes, the PI document will be regenerated. Using standard HTTP cache mechanisms, the PI document for the current day can be fetched frequently (e.g. every 5 minutes) to receive last minute changes while future and past days will only be fetched and processed occasionally (e.g. every two hours).\n\nBy obtaining the full 24 hour guide, clients such as middleware can build a local database/lookup table of program and program event information that allows for more specific program selection based on user configuration, automation events, and other possible inputs. In the event that MetaPub is unreachable for a short period of time, the client has the full guide to prevent any interruption to the on-air broadcast.\n\nConstruction of the URL to the PI document is described in [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 10.3. Currently, MetaPub only supports PI URLs constructed from SPI SI, as described in [ETSI TS 103 270 v1.4.1](https://www.etsi.org/deliver/etsi_ts/103200_103299/103270/01.04.01_60/ts_103270v010401p.pdf) section 7.\n\nThe response will use standard HTTP cache-control headers to indicate when the document should be refreshed as well as an ETag to allow for lightweight change detection.\n"
+    },
+    {
+      "id": "openapi_prss_org.radioDns.getRadiodnsSpi31SiXml",
+      "name": "radioDns.getRadiodnsSpi31SiXml",
+      "description": "The service information (SI) document holds a definition of services provided by the service provider (e.g. MetaPub), including any relevant metadata and bearer details, such as:\n\n* Names\n* Descriptions\n* Logos\n* Bearers (broadcast and IP)\n\nMetaPub provides two SI documents. The _National SI document_ describes the distribution services provided by PRSS including basic service metadata, logos, and bearers. The current design defines two IP based services, although this may change in the future:\n\n* Streams\n    * Bearer ID: prss:streams\n    * Service ID: streams\n* Files\n    * Bearer ID: prss:files\n    * Service ID: files\n\nThe _Station SI document_ describes the stations and broadcast services served by PRSS. Only stations and broadcast services that have opted into metadata publishing are listed in this document.\n\nBased on [ETSI TS 102 818 v3.4.1](https://www.etsi.org/deliver/etsi_ts/102800_102899/102818/03.04.01_60/ts_102818v030401p.pdf) section 10.2.4, the SI document will be placed in a defined location on the service website. Using standard HTTP cache mechanisms, the SI document will only need to be fetched and processed occasionally.\n\nThe response will use standard HTTP cache-control headers to indicate when the document should be refreshed as well as an ETag to allow for lightweight change detection.\n"
+    },
+    {
+      "id": "openapi_prss_org.segments.deleteApiV2SegmentsId",
+      "name": "segments.deleteApiV2SegmentsId",
+      "description": "Deletes the segment with the given ID."
+    },
+    {
+      "id": "openapi_prss_org.segments.getApiV2Segments",
+      "name": "segments.getApiV2Segments",
+      "description": "Returns the segments matching the query parameters."
+    },
+    {
+      "id": "openapi_prss_org.segments.getApiV2SegmentsId",
+      "name": "segments.getApiV2SegmentsId",
+      "description": "Returns the segment matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.segments.getApiV2SegmentsIdContent",
+      "name": "segments.getApiV2SegmentsIdContent",
+      "description": "UNDER DEVELOPMENT - Returns the audio content segment matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.segments.postApiV2Segments",
+      "name": "segments.postApiV2Segments",
+      "description": "Creates a new segment."
+    },
+    {
+      "id": "openapi_prss_org.spotInsertions.deleteApiV2SpotinsertionsId",
+      "name": "spotInsertions.deleteApiV2SpotinsertionsId",
+      "description": "Deletes the spot insertion with the given ID."
+    },
+    {
+      "id": "openapi_prss_org.spotInsertions.getApiV2Spotinsertions",
+      "name": "spotInsertions.getApiV2Spotinsertions",
+      "description": "Returns the spot insertions matching the query parameters."
+    },
+    {
+      "id": "openapi_prss_org.spotInsertions.getApiV2SpotinsertionsId",
+      "name": "spotInsertions.getApiV2SpotinsertionsId",
+      "description": "Returns the spot insertion matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.spotInsertions.postApiV2Spotinsertions",
+      "name": "spotInsertions.postApiV2Spotinsertions",
+      "description": "Creates a new spot insertion."
+    },
+    {
+      "id": "openapi_prss_org.spots.deleteApiV2SpotsId",
+      "name": "spots.deleteApiV2SpotsId",
+      "description": "Deletes the spot with the given ID."
+    },
+    {
+      "id": "openapi_prss_org.spots.getApiV2Spots",
+      "name": "spots.getApiV2Spots",
+      "description": "Returns the spots matching the query parameters."
+    },
+    {
+      "id": "openapi_prss_org.spots.getApiV2SpotsId",
+      "name": "spots.getApiV2SpotsId",
+      "description": "Returns the spot matching the given ID."
+    },
+    {
+      "id": "openapi_prss_org.spots.postApiV2Spots",
+      "name": "spots.postApiV2Spots",
+      "description": "Creates a new spot."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

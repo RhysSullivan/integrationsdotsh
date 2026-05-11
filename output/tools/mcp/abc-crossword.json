@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:22:00.387Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_abc_crossword.crossword",
+      "name": "crossword",
+      "description": "Use to generate and display an interactive crossword from a requested square grid size and a list of answer words with clues. This tool is appropriate when you already know the candidate entries and want ChatGPT to lay them out into a deterministic crossword structure, number the resulting clues, and render a widget the user can fill in. The tool normalizes the supplied answers into letter-only uppercase entries for placement, seeds the grid with the longest answer that fits, and then adds remaining answers only when they can intersect validly with the existing layout. It enforces crossword-style placement constraints so letters cannot conflict, words cannot run out of bounds, and new entries do not create unintended side-adjacent strings. If every requested entry cannot fit, the tool still returns the best connected partial puzzle it can build inside the requested dimensions instead of failing, and the widget only displays clues that were actually placed. The result includes the solution grid, empty user-guess fields for each playable cell, a list of placed clues with empty guesses, and explicit placement metadata containing the row, column, direction, clue number, and answer length for each rendered clue. Use this tool when the user wants to solve or inspect a crossword in a visual interface. Do not use it for freeform clue brainstorming, for non-square puzzles, or when you only need textual crossword suggestions without rendering a playable board."
+    }
+  ]
+}

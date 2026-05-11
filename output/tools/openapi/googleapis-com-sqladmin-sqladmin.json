@@ -1,0 +1,282 @@
+{
+  "fetchedAt": "2026-04-30T15:22:42.177Z",
+  "status": "ok",
+  "count": 55,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.backupRuns.sqlBackupRunsDelete",
+      "name": "backupRuns.sqlBackupRunsDelete",
+      "description": "Deletes the backup taken by a backup run."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.backupRuns.sqlBackupRunsGet",
+      "name": "backupRuns.sqlBackupRunsGet",
+      "description": "Retrieves a resource containing information about a backup run."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.backupRuns.sqlBackupRunsInsert",
+      "name": "backupRuns.sqlBackupRunsInsert",
+      "description": "Creates a new backup run on demand."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.backupRuns.sqlBackupRunsList",
+      "name": "backupRuns.sqlBackupRunsList",
+      "description": "Lists all backup runs associated with the project or a given instance and configuration in the reverse chronological order of the backup initiation time."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.connect.sqlConnectGenerateEphemeral",
+      "name": "connect.sqlConnectGenerateEphemeral",
+      "description": "Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.connect.sqlConnectGet",
+      "name": "connect.sqlConnectGet",
+      "description": "Retrieves connect settings about a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesDelete",
+      "name": "databases.sqlDatabasesDelete",
+      "description": "Deletes a database from a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesGet",
+      "name": "databases.sqlDatabasesGet",
+      "description": "Retrieves a resource containing information about a database inside a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesInsert",
+      "name": "databases.sqlDatabasesInsert",
+      "description": "Inserts a resource containing information about a database inside a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesList",
+      "name": "databases.sqlDatabasesList",
+      "description": "Lists databases in the specified Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesPatch",
+      "name": "databases.sqlDatabasesPatch",
+      "description": "Partially updates a resource containing information about a database inside a Cloud SQL instance. This method supports patch semantics."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.databases.sqlDatabasesUpdate",
+      "name": "databases.sqlDatabasesUpdate",
+      "description": "Updates a resource containing information about a database inside a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.flags.sqlFlagsList",
+      "name": "flags.sqlFlagsList",
+      "description": "Lists all available database flags for Cloud SQL instances."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesAddServerCa",
+      "name": "instances.sqlInstancesAddServerCa",
+      "description": "Adds a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesClone",
+      "name": "instances.sqlInstancesClone",
+      "description": "Creates a Cloud SQL instance as a clone of the source instance. Using this operation might cause your instance to restart."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesDelete",
+      "name": "instances.sqlInstancesDelete",
+      "description": "Deletes a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesDemoteMaster",
+      "name": "instances.sqlInstancesDemoteMaster",
+      "description": "Demotes the stand-alone instance to be a Cloud SQL read replica for an external database server."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesExport",
+      "name": "instances.sqlInstancesExport",
+      "description": "Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesFailover",
+      "name": "instances.sqlInstancesFailover",
+      "description": "Initiates a manual failover of a high availability (HA) primary instance to a standby instance, which becomes the primary instance. Users are then rerouted to the new primary. For more information, see the [Overview of high availability](https://cloud.google.com/sql/docs/mysql/high-availability) page in the Cloud SQL documentation. If using Legacy HA (MySQL only), this causes the instance to failover to its failover replica instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesGet",
+      "name": "instances.sqlInstancesGet",
+      "description": "Retrieves a resource containing information about a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesImport",
+      "name": "instances.sqlInstancesImport",
+      "description": "Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesInsert",
+      "name": "instances.sqlInstancesInsert",
+      "description": "Creates a new Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesList",
+      "name": "instances.sqlInstancesList",
+      "description": "Lists instances under a given project."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesListServerCas",
+      "name": "instances.sqlInstancesListServerCas",
+      "description": "Lists all of the trusted Certificate Authorities (CAs) for the specified instance. There can be up to three CAs listed: the CA that was used to sign the certificate that is currently in use, a CA that has been added but not yet used to sign a certificate, and a CA used to sign a certificate that has previously rotated out."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesPatch",
+      "name": "instances.sqlInstancesPatch",
+      "description": "Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. This method supports patch semantics."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesPromoteReplica",
+      "name": "instances.sqlInstancesPromoteReplica",
+      "description": "Promotes the read replica instance to be a stand-alone Cloud SQL instance. Using this operation might cause your instance to restart."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesResetSslConfig",
+      "name": "instances.sqlInstancesResetSslConfig",
+      "description": "Deletes all client certificates and generates a new server SSL certificate for the instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesRestart",
+      "name": "instances.sqlInstancesRestart",
+      "description": "Restarts a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesRestoreBackup",
+      "name": "instances.sqlInstancesRestoreBackup",
+      "description": "Restores a backup of a Cloud SQL instance. Using this operation might cause your instance to restart."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesRotateServerCa",
+      "name": "instances.sqlInstancesRotateServerCa",
+      "description": "Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesStartReplica",
+      "name": "instances.sqlInstancesStartReplica",
+      "description": "Starts the replication in the read replica instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesStopReplica",
+      "name": "instances.sqlInstancesStopReplica",
+      "description": "Stops the replication in the read replica instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesTruncateLog",
+      "name": "instances.sqlInstancesTruncateLog",
+      "description": "Truncate MySQL general and slow query log tables MySQL only."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.instances.sqlInstancesUpdate",
+      "name": "instances.sqlInstancesUpdate",
+      "description": "Updates settings of a Cloud SQL instance. Using this operation might cause your instance to restart."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.operations.sqlOperationsGet",
+      "name": "operations.sqlOperationsGet",
+      "description": "Retrieves an instance operation that has been performed on an instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.operations.sqlOperationsList",
+      "name": "operations.sqlOperationsList",
+      "description": "Lists all instance operations that have been performed on the given Cloud SQL instance in the reverse chronological order of the start time."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesGetDiskShrinkConfig",
+      "name": "projects.sqlProjectsInstancesGetDiskShrinkConfig",
+      "description": "Get Disk Shrink Config for a given instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesPerformDiskShrink",
+      "name": "projects.sqlProjectsInstancesPerformDiskShrink",
+      "description": "Perform Disk Shrink on primary instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesRescheduleMaintenance",
+      "name": "projects.sqlProjectsInstancesRescheduleMaintenance",
+      "description": "Reschedules the maintenance on the given instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesResetReplicaSize",
+      "name": "projects.sqlProjectsInstancesResetReplicaSize",
+      "description": "Reset Replica Size to primary instance disk size."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesStartExternalSync",
+      "name": "projects.sqlProjectsInstancesStartExternalSync",
+      "description": "Start External primary instance migration."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.projects.sqlProjectsInstancesVerifyExternalSyncSettings",
+      "name": "projects.sqlProjectsInstancesVerifyExternalSyncSettings",
+      "description": "Verify External primary instance external sync settings."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.sslCerts.sqlSslCertsCreateEphemeral",
+      "name": "sslCerts.sqlSslCertsCreateEphemeral",
+      "description": "Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.sslCerts.sqlSslCertsDelete",
+      "name": "sslCerts.sqlSslCertsDelete",
+      "description": "Deletes the SSL certificate. For First Generation instances, the certificate remains valid until the instance is restarted."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.sslCerts.sqlSslCertsGet",
+      "name": "sslCerts.sqlSslCertsGet",
+      "description": "Retrieves a particular SSL certificate. Does not include the private key (required for usage). The private key must be saved from the response to initial creation."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.sslCerts.sqlSslCertsInsert",
+      "name": "sslCerts.sqlSslCertsInsert",
+      "description": "Creates an SSL certificate and returns it along with the private key and server certificate authority. The new certificate will not be usable until the instance is restarted."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.sslCerts.sqlSslCertsList",
+      "name": "sslCerts.sqlSslCertsList",
+      "description": "Lists all of the current SSL certificates for the instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.tiers.sqlTiersList",
+      "name": "tiers.sqlTiersList",
+      "description": "Lists all available machine types (tiers) for Cloud SQL, for example, `db-custom-1-3840`. For more information, see https://cloud.google.com/sql/pricing."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.users.sqlUsersDelete",
+      "name": "users.sqlUsersDelete",
+      "description": "Deletes a user from a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.users.sqlUsersGet",
+      "name": "users.sqlUsersGet",
+      "description": "Retrieves a resource containing information about a user."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.users.sqlUsersInsert",
+      "name": "users.sqlUsersInsert",
+      "description": "Creates a new user in a Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.users.sqlUsersList",
+      "name": "users.sqlUsersList",
+      "description": "Lists users in the specified Cloud SQL instance."
+    },
+    {
+      "id": "openapi_googleapis_com_sqladmin_sqladmin.users.sqlUsersUpdate",
+      "name": "users.sqlUsersUpdate",
+      "description": "Updates an existing user in a Cloud SQL instance."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

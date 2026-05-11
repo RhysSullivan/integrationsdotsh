@@ -1,0 +1,77 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.955Z",
+  "status": "ok",
+  "count": 14,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.account.getAccount",
+      "name": "account.getAccount",
+      "description": "Retrieves information from an account, such as company and sponsor user details, stores, and appTokens.\n\r\n\rThis endpoint only accepts requests from the host list designated for that store. If you want to try this request from this portal, be sure to add it to the list. Learn how to add hosts to the list in [How to manage accounts](https://help.vtex.com/en/tutorial/how-to-manage-accounts--tutorials_6285#)."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.appKeys.createnewappkey",
+      "name": "appKeys.createnewappkey",
+      "description": "Creates a new pair of `appKey` and `appToken`."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.appKeys.getappkeysfromaccount",
+      "name": "appKeys.getappkeysfromaccount",
+      "description": "Gets all application keys from an account."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.appKeys.updateappkey",
+      "name": "appKeys.updateappkey",
+      "description": "Activates or deactivates an `appKey` by its ID."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.roles.getListRoles",
+      "name": "roles.getListRoles",
+      "description": "Returns a list of available roles. The response is divided in pages. The query parameter `numItems` defines the number of items in each page, and consequently the amount of pages for the whole list."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.roles.getRolesbyUser",
+      "name": "roles.getRolesbyUser",
+      "description": "Gets roles of a particular user or application key."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.roles.putRolesinUser",
+      "name": "roles.putRolesinUser",
+      "description": "Allows you to add roles to a particular user or application key by specifying the list of roles' IDs on the request's body."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.roles.removeRolefromUser",
+      "name": "roles.removeRolefromUser",
+      "description": "Allows you to remove a role from a specific user or application key. This method only allows the removal of one role per request. The role's ID must be specified on the request path, not on the request body.\n\r\n\r> Note that a successful response returns a `204` response with an empty body. A deletion on a role or user that does not exist will also return a `204`. Thus, this method should not be used to verify the existence of a specific user or role."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.store.getByAccount",
+      "name": "store.getByAccount",
+      "description": "Gets the stores and respective hosts of the account"
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.user.createUser",
+      "name": "user.createUser",
+      "description": "Allows you to create a user by providing an email (mandatory) and name (optional). The email must be in a valid format. The success response will contain the generated `userId` for that user."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.user.getListUsers",
+      "name": "user.getListUsers",
+      "description": "Returns a list of registered users. The response is divided in pages. The query parameter `numItems` defines the number of items in each page, and consequently the amount of pages for the whole list."
+    },
+    {
+      "id": "openapi_vtex_local_license_manager_api_license_manager_api.user.getUser",
+      "name": "user.getUser",
+      "description": "Allows you to get a user from the database, using the `userId` as the identifier."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "fetchedAt": "2026-04-30T15:21:17.536Z",
+  "status": "ok",
+  "count": 24,
+  "tools": [
+    {
+      "id": "mcp_alpaca.get_asset",
+      "name": "get_asset",
+      "description": "\n    Retrieves and formats detailed information about a specific asset.\n    \n    Args:\n        symbol (str): The symbol of the asset to get information for\n    \n    Returns:\n        str: Compact JSON asset payload with the asset details with name, exchange, class, status, and trading properties\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_all_assets",
+      "name": "get_all_assets",
+      "description": "\n    Get all available assets with optional filtering.\n    \n    Args:\n        status (Optional[str]): Filter by asset status (e.g., 'active', 'inactive')\n        asset_class (Optional[str]): Filter by asset class (e.g., 'us_equity', 'crypto')\n        exchange (Optional[str]): Filter by exchange (e.g., 'NYSE', 'NASDAQ')\n        attributes (Optional[str]): Comma-separated values for multiple attributes\n\n    Returns:\n        str: Compact JSON assets payload with assets with symbol, name, exchange, class, and status\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_corporate_actions",
+      "name": "get_corporate_actions",
+      "description": "\n    Retrieves and formats corporate action announcements.\n    \n    Args:\n        ca_types (Optional[List[CorporateActionsType]]): List of corporate action types to filter by (default: all types)\n            Available types: CorporateActionsType.REVERSE_SPLIT, CorporateActionsType.FORWARD_SPLIT, CorporateActionsType.UNIT_SPLIT, CorporateActionsType.CASH_DIVIDEND, CorporateActionsType.STOCK_DIVIDEND, CorporateActionsType.SPIN_OFF, CorporateActionsType.CASH_MERGER, CorporateActionsType.STOCK_MERGER, CorporateActionsType.STOCK_AND_CASH_MERGER, CorporateActionsType.REDEMPTION, CorporateActionsType.NAME_CHANGE, CorporateActionsType.WORTHLESS_REMOVAL, CorporateActionsType.RIGHTS_DISTRIBUTION\n        start (Optional[date]): Start date for the announcements (default: current day)\n        end (Optional[date]): End date for the announcements (default: current day)\n        symbols (Optional[List[str]]): Optional list of stock symbols to filter by\n        cusips (Optional[List[str]]): Optional list of CUSIPs to filter by\n        ids (Optional[List[str]]): Optional list of corporate action IDs (mutually exclusive with other filters)\n        limit (Optional[int]): Maximum number of results to return (default: 1000)\n        sort (Optional[str]): Sort order (asc or desc, default: asc)\n    \n    Returns:\n        str: Formatted string containing corporate announcement details\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_calendar",
+      "name": "get_calendar",
+      "description": "\n    Retrieves and formats market calendar for specified date range.\n    \n    Args:\n        start_date (str): Start date in YYYY-MM-DD format\n        end_date (str): End date in YYYY-MM-DD format\n    \n    Returns:\n        str: Compact JSON market calendar payload about market calendar information\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_clock",
+      "name": "get_clock",
+      "description": "\n    Retrieves and formats current market status and next open/close times.\n    \n    Returns:\n        str: Compact JSON market clock payload with current time, open/closed state, and next open/close times\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_bars",
+      "name": "get_stock_bars",
+      "description": "\n    Retrieves and formats historical price bars for a stock with configurable timeframe and time range.\n    \n    Args:\n        symbol (Union[str, List[str]]): Stock ticker symbol(s) (e.g., 'AAPL', 'MSFT' or ['AAPL', 'MSFT'])\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        timeframe (str): Bar timeframe - supports flexible Alpaca's formats:\n            - Minutes: \"1Min\" to \"59Min\" (or \"1T\" to \"59T\")\n            - Hours: \"1Hour\" to \"23Hour\" (or \"1H\" to \"23H\")\n            - Days: \"1Day\" (or \"1D\")\n            - Weeks: \"1Week\" (or \"1W\")\n            - Months: \"1Month\", \"2Month\", \"3Month\", \"4Month\", \"6Month\", or \"12Month\" (or use \"M\" suffix)\n            (default: \"1Day\")\n        limit (Optional[int]): Maximum number of bars to return (default: 1000)\n        start (Optional[str]): Start time in ISO format\n        end (Optional[str]): End time in ISO format\n        sort (Optional[Sort]): Chronological order of response (ASC or DESC)\n        feed (Optional[DataFeed]): The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP, default: None)\n        currency (Optional[SupportedCurrencies]): Currency for prices (default: USD)\n        asof (Optional[str]): The asof date in YYYY-MM-DD format\n        tz (str): Timezone for naive datetime strings (default: \"America/New_York\")\n    \n    Returns:\n        str: Historical price data with timestamps, OHLCV data\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_quotes",
+      "name": "get_stock_quotes",
+      "description": "\n    Retrieves and formats historical quote data (level 1 bid/ask) for a stock.\n    \n    Args:\n        symbol (Union[str, List[str]]): Stock ticker symbol(s) (e.g., 'AAPL', 'MSFT' or ['AAPL', 'MSFT'])\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        limit (Optional[int]): Upper limit of number of data points to return (default: 1000)\n        start (Optional[str]): Start time in ISO format\n        end (Optional[str]): End time in ISO format\n        sort (Optional[Sort]): Chronological order of response (ASC or DESC)\n        feed (Optional[DataFeed]): The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP)\n        currency (Optional[SupportedCurrencies]): Currency for prices (default: USD)\n        asof (Optional[str]): The asof date in YYYY-MM-DD format\n        tz (str): Timezone for naive datetime strings (default: \"America/New_York\")\n        \n    Returns:\n        str: Formatted string containing quote summary or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_trades",
+      "name": "get_stock_trades",
+      "description": "\n    Retrieves and formats historical trades for a stock.\n    \n    Args:\n        symbol (Union[str, List[str]]): Stock ticker symbol(s)\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        limit (Optional[int]): Upper limit of number of data points to return\n        start (Optional[str]): Start time in ISO format\n        end (Optional[str]): End time in ISO format\n        sort (Optional[Sort]): Chronological order of response (ASC or DESC)\n        feed (Optional[DataFeed]): The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP)\n        currency (Optional[SupportedCurrencies]): Currency for prices\n        asof (Optional[str]): The asof date in YYYY-MM-DD format\n        tz (str): Timezone for naive datetime strings\n            Supported: \"UTC\", \"ET\", \"EST\", \"EDT\", \"America/New_York\"\n    \n    Returns:\n        str: Formatted string containing trade history or an error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_latest_bar",
+      "name": "get_stock_latest_bar",
+      "description": "\n    Get the latest minute bar for one or more stocks.\n    \n    Args:\n        symbol_or_symbols: Stock ticker symbol(s) (e.g., 'AAPL' or ['AAPL', 'MSFT'])\n        feed: The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP, default: None)\n        currency: The currency for prices (optional, defaults to USD)\n    \n    Returns:\n        str: Latest bar(s) for one or more stocks\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_latest_quote",
+      "name": "get_stock_latest_quote",
+      "description": "\n    Retrieves and formats the latest quote for one or more stocks.\n    \n    Args:\n        symbol_or_symbols (Union[str, List[str]]): Stock ticker symbol(s) (e.g., 'AAPL' or ['AAPL', 'MSFT'])\n        feed (Optional[DataFeed]): Data feed source (IEX or SIP)\n        currency (Optional[SupportedCurrencies]): Currency for prices (default: USD)\n    \n    Returns:\n        str: Latest bid/ask prices, sizes, and timestamp for each symbol\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_latest_trade",
+      "name": "get_stock_latest_trade",
+      "description": "Get the latest trade for one or more stocks.\n    \n    Args:\n        symbol_or_symbols: Stock ticker symbol(s) (e.g., 'AAPL' or ['AAPL', 'MSFT'])\n        feed: The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP, default: None)\n        currency: The currency for prices (optional, defaults to USD)\n    \n    Returns:\n        str: Latest trade(s) for one or more stocks\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_stock_snapshot",
+      "name": "get_stock_snapshot",
+      "description": "\n    Retrieves comprehensive snapshots of stock symbols including latest trade, quote, minute bar, daily bar, and previous daily bar.\n    \n    Args:\n        symbol_or_symbols: Single stock symbol or list of stock symbols\n        feed: The stock data feed to retrieve from (DataFeed.IEX or DataFeed.SIP)\n        currency: The currency the data should be returned in\n    \n    Returns:\n        str: Comprehensive snapshots including latest_quote, latest_trade, minute_bar, daily_bar, previous_daily_bar\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_bars",
+      "name": "get_crypto_bars",
+      "description": "\n    Retrieves and formats historical price bars for a cryptocurrency with configurable timeframe and time range.\n    \n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD', 'ETH/USD' or ['BTC/USD', 'ETH/USD'])\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        timeframe (str): Bar timeframe - supports flexible Alpaca's formats:\n            - Minutes, Hours, Days, Weeks, Months (default: \"1Hour\")\n        limit (Optional[int]): Maximum number of bars to return (optional)\n        start (Optional[str]): Start time in ISO format\n        end (Optional[str]): End time in ISO format\n        feed (CryptoFeed): The crypto data feed to retrieve from\n        tz (str): Timezone for naive datetime strings (default: \"America/New_York\")\n            Supported: \"UTC\", \"ET\", \"EST\", \"EDT\", \"America/New_York\"\n    \n    Returns:\n        str: Formatted string containing historical crypto price data with timestamps, OHLCV data\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_quotes",
+      "name": "get_crypto_quotes",
+      "description": "\n    Returns historical quote data for one or more crypto symbols.\n    \n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        limit (Optional[int]): Maximum number of quotes to return (optional)\n        start (Optional[str]): Start time in ISO format\n        end (Optional[str]): End time in ISO format\n        feed (CryptoFeed): The crypto data feed to retrieve from\n        tz (str): Timezone for naive datetime strings\n            Supported: \"UTC\", \"ET\", \"EST\", \"EDT\", \"America/New_York\"\n    \n    Returns:\n        str: Formatted string containing historical crypto quote data with timestamps, bid/ask prices and sizes\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_trades",
+      "name": "get_crypto_trades",
+      "description": "\n    Returns historical trade data for one or more crypto symbols.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        days (int): Number of days to look back\n        hours (int): Number of hours to look back\n        minutes (int): Number of minutes to look back\n        limit (Optional[int]): Maximum number of trades to return\n        start (Optional[str]): ISO start time\n        end (Optional[str]): ISO end time\n        sort (Optional[str]): 'asc' or 'desc'\n        feed (CryptoFeed): Crypto data feed\n        tz (str): Timezone for naive datetime strings\n            Supported: \"UTC\", \"ET\", \"EST\", \"EDT\", \"America/New_York\"\n\n    Returns:\n        str: Formatted string containing trade history or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_latest_bar",
+      "name": "get_crypto_latest_bar",
+      "description": "\n    Returns the latest minute bar for one or more crypto symbols.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        feed (CryptoFeed): The crypto data feed (default: US)\n\n    Returns:\n        str: Formatted string containing latest bar(s) or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_latest_quote",
+      "name": "get_crypto_latest_quote",
+      "description": "\n    Returns the latest quote for one or more crypto symbols.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        feed (CryptoFeed): The crypto data feed (default: US)\n\n    Returns:\n        str: Formatted string containing latest quote(s) or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_latest_trade",
+      "name": "get_crypto_latest_trade",
+      "description": "\n    Returns the latest trade for one or more crypto symbols.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        feed (CryptoFeed): The crypto data feed (default: US)\n\n    Returns:\n        str: Formatted string containing latest trade(s) or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_snapshot",
+      "name": "get_crypto_snapshot",
+      "description": "\n    Returns a snapshot for one or more crypto symbols including latest trade, quote,\n    minute bar, daily bar, and previous daily bar.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD', 'ETH/USD'])\n        feed (CryptoFeed): Data feed source (default: US)\n\n    Returns:\n        str: Snapshot with latest quote, trade, and OHLCV bars for each symbol\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_crypto_latest_orderbook",
+      "name": "get_crypto_latest_orderbook",
+      "description": "\n    Returns the latest orderbook for one or more crypto symbols.\n\n    Args:\n        symbol (Union[str, List[str]]): Crypto symbol(s) (e.g., 'BTC/USD' or ['BTC/USD','ETH/USD'])\n        feed (CryptoFeed): The crypto data feed (default: US)\n\n    Returns:\n        str: Formatted string containing latest orderbook(s) or error message\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_option_contracts",
+      "name": "get_option_contracts",
+      "description": "\n    Retrieves option contracts for underlying symbol(s).\n\n    Args:\n        underlying_symbols (Union[str, List[str]]): Underlying asset symbol(s)\n        expiration_date (Optional[date]): Specific expiration date\n        expiration_date_gte (Optional[date]): Minimum expiration date\n        expiration_date_lte (Optional[date]): Maximum expiration date\n        expiration_expression (Optional[str]): Natural language\n        strike_price_gte (Optional[str]): Minimum strike price\n        strike_price_lte (Optional[str]): Maximum strike price\n        contract_type (Optional[str]): Filter by 'call' or 'put'\n        status (Optional[AssetStatus]): Filter by status\n        root_symbol (Optional[str]): Filter by root symbol\n        limit (Optional[int]): Maximum number of contracts to return\n\n    Returns:\n        str: List of option contracts with symbol, strike, expiration, type, and status\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_option_latest_quote",
+      "name": "get_option_latest_quote",
+      "description": "\n    Retrieves and formats the latest quote for one or more option contracts. This endpoint returns real-time\n    pricing and market data, including bid/ask prices, sizes, and exchange information.\n    \n    Args:\n        symbol_or_symbols (Union[str, List[str]]): Option contract symbol(s) (e.g., 'AAPL230616C00150000' or ['AAPL230616C00150000', 'MSFT230616P00300000'])\n        feed (Optional[OptionsFeed]): Data feed source (OptionsFeed.OPRA or OptionsFeed.INDICATIVE)\n            Default: OptionsFeed.OPRA if the user has the options subscription, OptionsFeed.INDICATIVE otherwise\n    \n    Returns:\n        str: Formatted string containing the latest quote information including:\n            - Ask Price, Ask Size, Bid Price, Bid Size, Ask Exchange, Bid Exchange, Trade Conditions, Tape Information, Timestamp (in UTC)\n    \n    Note:\n        This endpoint returns real-time market data. For contract specifications and static data,\n        use get_option_contracts instead.\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_option_snapshot",
+      "name": "get_option_snapshot",
+      "description": "\n    Retrieves comprehensive snapshots of option contracts including latest trade, quote,\n    implied volatility, and Greeks.\n\n    Args:\n        symbol_or_symbols (Union[str, List[str]]): Option symbol(s)\n        feed (Optional[OptionsFeed]): Data feed source (OPRA or INDICATIVE)\n\n    Returns:\n        str: Snapshot with quote, trade, implied volatility, and Greeks for each contract\n    "
+    },
+    {
+      "id": "mcp_alpaca.get_option_chain",
+      "name": "get_option_chain",
+      "description": "\n    Retrieves option chain data for an underlying symbol, including latest trade, quote,\n    implied volatility, and greeks for each contract.\n\n    Args:\n        underlying_symbol (str): The underlying symbol\n        feed (Optional[OptionsFeed]): Data feed source (OPRA or INDICATIVE)\n        contract_type (Optional[str]): Filter by contract type ('call', 'put', or None for both)\n        strike_price_gte (Optional[float]): Minimum strike price filter\n        strike_price_lte (Optional[float]): Maximum strike price filter\n        expiration_date (Optional[Union[date, str]]): Exact expiration date (YYYY-MM-DD)\n        expiration_date_gte (Optional[Union[date, str]]): Minimum expiration date\n        expiration_date_lte (Optional[Union[date, str]]): Maximum expiration date\n        root_symbol (Optional[str]): Filter by root symbol\n        limit (Optional[int]): Max snapshots to return (1-1000)\n\n    Returns:\n        str: Option chain with quote, trade, IV, and greeks for each contract\n    "
+    }
+  ]
+}

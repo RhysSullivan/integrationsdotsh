@@ -1,0 +1,887 @@
+{
+  "fetchedAt": "2026-04-30T15:26:47.545Z",
+  "status": "ok",
+  "count": 176,
+  "tools": [
+    {
+      "id": "openapi_slack_com.adminApps.adminAppsApprove",
+      "name": "adminApps.adminAppsApprove",
+      "description": "Approve an app for installation on a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminApps.adminAppsRestrict",
+      "name": "adminApps.adminAppsRestrict",
+      "description": "Restrict an app for installation on a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminAppsApproved.adminAppsApprovedList",
+      "name": "adminAppsApproved.adminAppsApprovedList",
+      "description": "List approved apps for an org or workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminAppsRequests.adminAppsRequestsList",
+      "name": "adminAppsRequests.adminAppsRequestsList",
+      "description": "List app requests for a team/workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminAppsRestricted.adminAppsRestrictedList",
+      "name": "adminAppsRestricted.adminAppsRestrictedList",
+      "description": "List restricted apps for an org or workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsArchive",
+      "name": "adminConversations.adminConversationsArchive",
+      "description": "Archive a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsConvertToPrivate",
+      "name": "adminConversations.adminConversationsConvertToPrivate",
+      "description": "Convert a public channel to a private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsCreate",
+      "name": "adminConversations.adminConversationsCreate",
+      "description": "Create a public or private channel-based conversation."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsDelete",
+      "name": "adminConversations.adminConversationsDelete",
+      "description": "Delete a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsDisconnectShared",
+      "name": "adminConversations.adminConversationsDisconnectShared",
+      "description": "Disconnect a connected channel from one or more workspaces."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsGetConversationPrefs",
+      "name": "adminConversations.adminConversationsGetConversationPrefs",
+      "description": "Get conversation preferences for a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsGetTeams",
+      "name": "adminConversations.adminConversationsGetTeams",
+      "description": "Get all the workspaces a given public or private channel is connected to within this Enterprise org."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsInvite",
+      "name": "adminConversations.adminConversationsInvite",
+      "description": "Invite a user to a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsRename",
+      "name": "adminConversations.adminConversationsRename",
+      "description": "Rename a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsSearch",
+      "name": "adminConversations.adminConversationsSearch",
+      "description": "Search for public or private channels in an Enterprise organization."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsSetConversationPrefs",
+      "name": "adminConversations.adminConversationsSetConversationPrefs",
+      "description": "Set the posting permissions for a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsSetTeams",
+      "name": "adminConversations.adminConversationsSetTeams",
+      "description": "Set the workspaces in an Enterprise grid org that connect to a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversations.adminConversationsUnarchive",
+      "name": "adminConversations.adminConversationsUnarchive",
+      "description": "Unarchive a public or private channel."
+    },
+    {
+      "id": "openapi_slack_com.adminConversationsEkm.adminConversationsEkmListOriginalConnectedChannelInfo",
+      "name": "adminConversationsEkm.adminConversationsEkmListOriginalConnectedChannelInfo",
+      "description": "List all disconnected channels—i.e., channels that were once connected to other workspaces and then disconnected—and the corresponding original channel IDs for key revocation with EKM."
+    },
+    {
+      "id": "openapi_slack_com.adminConversationsRestrictAccess.adminConversationsRestrictAccessAddGroup",
+      "name": "adminConversationsRestrictAccess.adminConversationsRestrictAccessAddGroup",
+      "description": "Add an allowlist of IDP groups for accessing a channel"
+    },
+    {
+      "id": "openapi_slack_com.adminConversationsRestrictAccess.adminConversationsRestrictAccessListGroups",
+      "name": "adminConversationsRestrictAccess.adminConversationsRestrictAccessListGroups",
+      "description": "List all IDP Groups linked to a channel"
+    },
+    {
+      "id": "openapi_slack_com.adminConversationsRestrictAccess.adminConversationsRestrictAccessRemoveGroup",
+      "name": "adminConversationsRestrictAccess.adminConversationsRestrictAccessRemoveGroup",
+      "description": "Remove a linked IDP group linked from a private channel"
+    },
+    {
+      "id": "openapi_slack_com.adminEmoji.adminEmojiAdd",
+      "name": "adminEmoji.adminEmojiAdd",
+      "description": "Add an emoji."
+    },
+    {
+      "id": "openapi_slack_com.adminEmoji.adminEmojiAddAlias",
+      "name": "adminEmoji.adminEmojiAddAlias",
+      "description": "Add an emoji alias."
+    },
+    {
+      "id": "openapi_slack_com.adminEmoji.adminEmojiList",
+      "name": "adminEmoji.adminEmojiList",
+      "description": "List emoji for an Enterprise Grid organization."
+    },
+    {
+      "id": "openapi_slack_com.adminEmoji.adminEmojiRemove",
+      "name": "adminEmoji.adminEmojiRemove",
+      "description": "Remove an emoji across an Enterprise Grid organization"
+    },
+    {
+      "id": "openapi_slack_com.adminEmoji.adminEmojiRename",
+      "name": "adminEmoji.adminEmojiRename",
+      "description": "Rename an emoji."
+    },
+    {
+      "id": "openapi_slack_com.adminInviteRequests.adminInviteRequestsApprove",
+      "name": "adminInviteRequests.adminInviteRequestsApprove",
+      "description": "Approve a workspace invite request."
+    },
+    {
+      "id": "openapi_slack_com.adminInviteRequests.adminInviteRequestsDeny",
+      "name": "adminInviteRequests.adminInviteRequestsDeny",
+      "description": "Deny a workspace invite request."
+    },
+    {
+      "id": "openapi_slack_com.adminInviteRequests.adminInviteRequestsList",
+      "name": "adminInviteRequests.adminInviteRequestsList",
+      "description": "List all pending workspace invite requests."
+    },
+    {
+      "id": "openapi_slack_com.adminInviteRequestsApproved.adminInviteRequestsApprovedList",
+      "name": "adminInviteRequestsApproved.adminInviteRequestsApprovedList",
+      "description": "List all approved workspace invite requests."
+    },
+    {
+      "id": "openapi_slack_com.adminInviteRequestsDenied.adminInviteRequestsDeniedList",
+      "name": "adminInviteRequestsDenied.adminInviteRequestsDeniedList",
+      "description": "List all denied workspace invite requests."
+    },
+    {
+      "id": "openapi_slack_com.adminTeams.adminTeamsCreate",
+      "name": "adminTeams.adminTeamsCreate",
+      "description": "Create an Enterprise team."
+    },
+    {
+      "id": "openapi_slack_com.adminTeams.adminTeamsList",
+      "name": "adminTeams.adminTeamsList",
+      "description": "List all teams on an Enterprise organization"
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsAdmins.adminTeamsAdminsList",
+      "name": "adminTeamsAdmins.adminTeamsAdminsList",
+      "description": "List all of the admins on a given workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsOwners.adminTeamsOwnersList",
+      "name": "adminTeamsOwners.adminTeamsOwnersList",
+      "description": "List all of the owners on a given workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsInfo",
+      "name": "adminTeamsSettings.adminTeamsSettingsInfo",
+      "description": "Fetch information about settings in a workspace"
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsSetDefaultChannels",
+      "name": "adminTeamsSettings.adminTeamsSettingsSetDefaultChannels",
+      "description": "Set the default channels of a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsSetDescription",
+      "name": "adminTeamsSettings.adminTeamsSettingsSetDescription",
+      "description": "Set the description of a given workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsSetDiscoverability",
+      "name": "adminTeamsSettings.adminTeamsSettingsSetDiscoverability",
+      "description": "An API method that allows admins to set the discoverability of a given workspace"
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsSetIcon",
+      "name": "adminTeamsSettings.adminTeamsSettingsSetIcon",
+      "description": "Sets the icon of a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminTeamsSettings.adminTeamsSettingsSetName",
+      "name": "adminTeamsSettings.adminTeamsSettingsSetName",
+      "description": "Set the name of a given workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminUsergroups.adminUsergroupsAddChannels",
+      "name": "adminUsergroups.adminUsergroupsAddChannels",
+      "description": "Add one or more default channels to an IDP group."
+    },
+    {
+      "id": "openapi_slack_com.adminUsergroups.adminUsergroupsAddTeams",
+      "name": "adminUsergroups.adminUsergroupsAddTeams",
+      "description": "Associate one or more default workspaces with an organization-wide IDP group."
+    },
+    {
+      "id": "openapi_slack_com.adminUsergroups.adminUsergroupsListChannels",
+      "name": "adminUsergroups.adminUsergroupsListChannels",
+      "description": "List the channels linked to an org-level IDP group (user group)."
+    },
+    {
+      "id": "openapi_slack_com.adminUsergroups.adminUsergroupsRemoveChannels",
+      "name": "adminUsergroups.adminUsergroupsRemoveChannels",
+      "description": "Remove one or more default channels from an org-level IDP group (user group)."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersAssign",
+      "name": "adminUsers.adminUsersAssign",
+      "description": "Add an Enterprise user to a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersInvite",
+      "name": "adminUsers.adminUsersInvite",
+      "description": "Invite a user to a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersList",
+      "name": "adminUsers.adminUsersList",
+      "description": "List users on a workspace"
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersRemove",
+      "name": "adminUsers.adminUsersRemove",
+      "description": "Remove a user from a workspace."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersSetAdmin",
+      "name": "adminUsers.adminUsersSetAdmin",
+      "description": "Set an existing guest, regular user, or owner to be an admin user."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersSetExpiration",
+      "name": "adminUsers.adminUsersSetExpiration",
+      "description": "Set an expiration for a guest user"
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersSetOwner",
+      "name": "adminUsers.adminUsersSetOwner",
+      "description": "Set an existing guest, regular user, or admin user to be a workspace owner."
+    },
+    {
+      "id": "openapi_slack_com.adminUsers.adminUsersSetRegular",
+      "name": "adminUsers.adminUsersSetRegular",
+      "description": "Set an existing guest user, admin user, or owner to be a regular user."
+    },
+    {
+      "id": "openapi_slack_com.adminUsersSession.adminUsersSessionInvalidate",
+      "name": "adminUsersSession.adminUsersSessionInvalidate",
+      "description": "Invalidate a single session for a user by session_id"
+    },
+    {
+      "id": "openapi_slack_com.adminUsersSession.adminUsersSessionReset",
+      "name": "adminUsersSession.adminUsersSessionReset",
+      "description": "Wipes all valid sessions on all devices for a given user"
+    },
+    {
+      "id": "openapi_slack_com.api.apiTest",
+      "name": "api.apiTest",
+      "description": "Checks API calling code."
+    },
+    {
+      "id": "openapi_slack_com.apps.appsUninstall",
+      "name": "apps.appsUninstall",
+      "description": "Uninstalls your app from a workspace."
+    },
+    {
+      "id": "openapi_slack_com.appsEventAuthorizations.appsEventAuthorizationsList",
+      "name": "appsEventAuthorizations.appsEventAuthorizationsList",
+      "description": "Get a list of authorizations for the given event context. Each authorization represents an app installation that the event is visible to."
+    },
+    {
+      "id": "openapi_slack_com.appsPermissions.appsPermissionsInfo",
+      "name": "appsPermissions.appsPermissionsInfo",
+      "description": "Returns list of permissions this app has on a team."
+    },
+    {
+      "id": "openapi_slack_com.appsPermissions.appsPermissionsRequest",
+      "name": "appsPermissions.appsPermissionsRequest",
+      "description": "Allows an app to request additional scopes"
+    },
+    {
+      "id": "openapi_slack_com.appsPermissionsResources.appsPermissionsResourcesList",
+      "name": "appsPermissionsResources.appsPermissionsResourcesList",
+      "description": "Returns list of resource grants this app has on a team."
+    },
+    {
+      "id": "openapi_slack_com.appsPermissionsScopes.appsPermissionsScopesList",
+      "name": "appsPermissionsScopes.appsPermissionsScopesList",
+      "description": "Returns list of scopes this app has on a team."
+    },
+    {
+      "id": "openapi_slack_com.appsPermissionsUsers.appsPermissionsUsersList",
+      "name": "appsPermissionsUsers.appsPermissionsUsersList",
+      "description": "Returns list of user grants and corresponding scopes this app has on a team."
+    },
+    {
+      "id": "openapi_slack_com.appsPermissionsUsers.appsPermissionsUsersRequest",
+      "name": "appsPermissionsUsers.appsPermissionsUsersRequest",
+      "description": "Enables an app to trigger a permissions modal to grant an app access to a user access scope."
+    },
+    {
+      "id": "openapi_slack_com.auth.authRevoke",
+      "name": "auth.authRevoke",
+      "description": "Revokes a token."
+    },
+    {
+      "id": "openapi_slack_com.auth.authTest",
+      "name": "auth.authTest",
+      "description": "Checks authentication & identity."
+    },
+    {
+      "id": "openapi_slack_com.bots.botsInfo",
+      "name": "bots.botsInfo",
+      "description": "Gets information about a bot user."
+    },
+    {
+      "id": "openapi_slack_com.calls.callsAdd",
+      "name": "calls.callsAdd",
+      "description": "Registers a new Call."
+    },
+    {
+      "id": "openapi_slack_com.calls.callsEnd",
+      "name": "calls.callsEnd",
+      "description": "Ends a Call."
+    },
+    {
+      "id": "openapi_slack_com.calls.callsInfo",
+      "name": "calls.callsInfo",
+      "description": "Returns information about a Call."
+    },
+    {
+      "id": "openapi_slack_com.calls.callsUpdate",
+      "name": "calls.callsUpdate",
+      "description": "Updates information about a Call."
+    },
+    {
+      "id": "openapi_slack_com.callsParticipants.callsParticipantsAdd",
+      "name": "callsParticipants.callsParticipantsAdd",
+      "description": "Registers new participants added to a Call."
+    },
+    {
+      "id": "openapi_slack_com.callsParticipants.callsParticipantsRemove",
+      "name": "callsParticipants.callsParticipantsRemove",
+      "description": "Registers participants removed from a Call."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatDelete",
+      "name": "chat.chatDelete",
+      "description": "Deletes a message."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatDeleteScheduledMessage",
+      "name": "chat.chatDeleteScheduledMessage",
+      "description": "Deletes a pending scheduled message from the queue."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatGetPermalink",
+      "name": "chat.chatGetPermalink",
+      "description": "Retrieve a permalink URL for a specific extant message"
+    },
+    {
+      "id": "openapi_slack_com.chat.chatMeMessage",
+      "name": "chat.chatMeMessage",
+      "description": "Share a me message into a channel."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatPostEphemeral",
+      "name": "chat.chatPostEphemeral",
+      "description": "Sends an ephemeral message to a user in a channel."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatPostMessage",
+      "name": "chat.chatPostMessage",
+      "description": "Sends a message to a channel."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatScheduleMessage",
+      "name": "chat.chatScheduleMessage",
+      "description": "Schedules a message to be sent to a channel."
+    },
+    {
+      "id": "openapi_slack_com.chat.chatUnfurl",
+      "name": "chat.chatUnfurl",
+      "description": "Provide custom unfurl behavior for user-posted URLs"
+    },
+    {
+      "id": "openapi_slack_com.chat.chatUpdate",
+      "name": "chat.chatUpdate",
+      "description": "Updates a message."
+    },
+    {
+      "id": "openapi_slack_com.chatScheduledMessages.chatScheduledMessagesList",
+      "name": "chatScheduledMessages.chatScheduledMessagesList",
+      "description": "Returns a list of scheduled messages."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsArchive",
+      "name": "conversations.conversationsArchive",
+      "description": "Archives a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsClose",
+      "name": "conversations.conversationsClose",
+      "description": "Closes a direct message or multi-person direct message."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsCreate",
+      "name": "conversations.conversationsCreate",
+      "description": "Initiates a public or private channel-based conversation"
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsHistory",
+      "name": "conversations.conversationsHistory",
+      "description": "Fetches a conversation's history of messages and events."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsInfo",
+      "name": "conversations.conversationsInfo",
+      "description": "Retrieve information about a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsInvite",
+      "name": "conversations.conversationsInvite",
+      "description": "Invites users to a channel."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsJoin",
+      "name": "conversations.conversationsJoin",
+      "description": "Joins an existing conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsKick",
+      "name": "conversations.conversationsKick",
+      "description": "Removes a user from a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsLeave",
+      "name": "conversations.conversationsLeave",
+      "description": "Leaves a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsList",
+      "name": "conversations.conversationsList",
+      "description": "Lists all channels in a Slack team."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsMark",
+      "name": "conversations.conversationsMark",
+      "description": "Sets the read cursor in a channel."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsMembers",
+      "name": "conversations.conversationsMembers",
+      "description": "Retrieve members of a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsOpen",
+      "name": "conversations.conversationsOpen",
+      "description": "Opens or resumes a direct message or multi-person direct message."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsRename",
+      "name": "conversations.conversationsRename",
+      "description": "Renames a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsReplies",
+      "name": "conversations.conversationsReplies",
+      "description": "Retrieve a thread of messages posted to a conversation"
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsSetPurpose",
+      "name": "conversations.conversationsSetPurpose",
+      "description": "Sets the purpose for a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsSetTopic",
+      "name": "conversations.conversationsSetTopic",
+      "description": "Sets the topic for a conversation."
+    },
+    {
+      "id": "openapi_slack_com.conversations.conversationsUnarchive",
+      "name": "conversations.conversationsUnarchive",
+      "description": "Reverses conversation archival."
+    },
+    {
+      "id": "openapi_slack_com.dialog.dialogOpen",
+      "name": "dialog.dialogOpen",
+      "description": "Open a dialog with a user"
+    },
+    {
+      "id": "openapi_slack_com.dnd.dndEndDnd",
+      "name": "dnd.dndEndDnd",
+      "description": "Ends the current user's Do Not Disturb session immediately."
+    },
+    {
+      "id": "openapi_slack_com.dnd.dndEndSnooze",
+      "name": "dnd.dndEndSnooze",
+      "description": "Ends the current user's snooze mode immediately."
+    },
+    {
+      "id": "openapi_slack_com.dnd.dndInfo",
+      "name": "dnd.dndInfo",
+      "description": "Retrieves a user's current Do Not Disturb status."
+    },
+    {
+      "id": "openapi_slack_com.dnd.dndSetSnooze",
+      "name": "dnd.dndSetSnooze",
+      "description": "Turns on Do Not Disturb mode for the current user, or changes its duration."
+    },
+    {
+      "id": "openapi_slack_com.dnd.dndTeamInfo",
+      "name": "dnd.dndTeamInfo",
+      "description": "Retrieves the Do Not Disturb status for up to 50 users on a team."
+    },
+    {
+      "id": "openapi_slack_com.emoji.emojiList",
+      "name": "emoji.emojiList",
+      "description": "Lists custom emoji for a team."
+    },
+    {
+      "id": "openapi_slack_com.files.filesDelete",
+      "name": "files.filesDelete",
+      "description": "Deletes a file."
+    },
+    {
+      "id": "openapi_slack_com.files.filesInfo",
+      "name": "files.filesInfo",
+      "description": "Gets information about a file."
+    },
+    {
+      "id": "openapi_slack_com.files.filesList",
+      "name": "files.filesList",
+      "description": "List for a team, in a channel, or from a user with applied filters."
+    },
+    {
+      "id": "openapi_slack_com.files.filesRevokePublicUrl",
+      "name": "files.filesRevokePublicUrl",
+      "description": "Revokes public/external sharing access for a file"
+    },
+    {
+      "id": "openapi_slack_com.files.filesSharedPublicUrl",
+      "name": "files.filesSharedPublicUrl",
+      "description": "Enables a file for public/external sharing."
+    },
+    {
+      "id": "openapi_slack_com.files.filesUpload",
+      "name": "files.filesUpload",
+      "description": "Uploads or creates a file."
+    },
+    {
+      "id": "openapi_slack_com.filesComments.filesCommentsDelete",
+      "name": "filesComments.filesCommentsDelete",
+      "description": "Deletes an existing comment on a file."
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteAdd",
+      "name": "filesRemote.filesRemoteAdd",
+      "description": "Adds a file from a remote service"
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteInfo",
+      "name": "filesRemote.filesRemoteInfo",
+      "description": "Retrieve information about a remote file added to Slack"
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteList",
+      "name": "filesRemote.filesRemoteList",
+      "description": "Retrieve information about a remote file added to Slack"
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteRemove",
+      "name": "filesRemote.filesRemoteRemove",
+      "description": "Remove a remote file."
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteShare",
+      "name": "filesRemote.filesRemoteShare",
+      "description": "Share a remote file into a channel."
+    },
+    {
+      "id": "openapi_slack_com.filesRemote.filesRemoteUpdate",
+      "name": "filesRemote.filesRemoteUpdate",
+      "description": "Updates an existing remote file."
+    },
+    {
+      "id": "openapi_slack_com.migration.migrationExchange",
+      "name": "migration.migrationExchange",
+      "description": "For Enterprise Grid workspaces, map local user IDs to global user IDs"
+    },
+    {
+      "id": "openapi_slack_com.oauth.oauthAccess",
+      "name": "oauth.oauthAccess",
+      "description": "Exchanges a temporary OAuth verifier code for an access token."
+    },
+    {
+      "id": "openapi_slack_com.oauth.oauthToken",
+      "name": "oauth.oauthToken",
+      "description": "Exchanges a temporary OAuth verifier code for a workspace token."
+    },
+    {
+      "id": "openapi_slack_com.oauthV2.oauthV2Access",
+      "name": "oauthV2.oauthV2Access",
+      "description": "Exchanges a temporary OAuth verifier code for an access token."
+    },
+    {
+      "id": "openapi_slack_com.pins.pinsAdd",
+      "name": "pins.pinsAdd",
+      "description": "Pins an item to a channel."
+    },
+    {
+      "id": "openapi_slack_com.pins.pinsList",
+      "name": "pins.pinsList",
+      "description": "Lists items pinned to a channel."
+    },
+    {
+      "id": "openapi_slack_com.pins.pinsRemove",
+      "name": "pins.pinsRemove",
+      "description": "Un-pins an item from a channel."
+    },
+    {
+      "id": "openapi_slack_com.reactions.reactionsAdd",
+      "name": "reactions.reactionsAdd",
+      "description": "Adds a reaction to an item."
+    },
+    {
+      "id": "openapi_slack_com.reactions.reactionsGet",
+      "name": "reactions.reactionsGet",
+      "description": "Gets reactions for an item."
+    },
+    {
+      "id": "openapi_slack_com.reactions.reactionsList",
+      "name": "reactions.reactionsList",
+      "description": "Lists reactions made by a user."
+    },
+    {
+      "id": "openapi_slack_com.reactions.reactionsRemove",
+      "name": "reactions.reactionsRemove",
+      "description": "Removes a reaction from an item."
+    },
+    {
+      "id": "openapi_slack_com.reminders.remindersAdd",
+      "name": "reminders.remindersAdd",
+      "description": "Creates a reminder."
+    },
+    {
+      "id": "openapi_slack_com.reminders.remindersComplete",
+      "name": "reminders.remindersComplete",
+      "description": "Marks a reminder as complete."
+    },
+    {
+      "id": "openapi_slack_com.reminders.remindersDelete",
+      "name": "reminders.remindersDelete",
+      "description": "Deletes a reminder."
+    },
+    {
+      "id": "openapi_slack_com.reminders.remindersInfo",
+      "name": "reminders.remindersInfo",
+      "description": "Gets information about a reminder."
+    },
+    {
+      "id": "openapi_slack_com.reminders.remindersList",
+      "name": "reminders.remindersList",
+      "description": "Lists all reminders created by or for a given user."
+    },
+    {
+      "id": "openapi_slack_com.rtm.rtmConnect",
+      "name": "rtm.rtmConnect",
+      "description": "Starts a Real Time Messaging session."
+    },
+    {
+      "id": "openapi_slack_com.search.searchMessages",
+      "name": "search.searchMessages",
+      "description": "Searches for messages matching a query."
+    },
+    {
+      "id": "openapi_slack_com.stars.starsAdd",
+      "name": "stars.starsAdd",
+      "description": "Adds a star to an item."
+    },
+    {
+      "id": "openapi_slack_com.stars.starsList",
+      "name": "stars.starsList",
+      "description": "Lists stars for a user."
+    },
+    {
+      "id": "openapi_slack_com.stars.starsRemove",
+      "name": "stars.starsRemove",
+      "description": "Removes a star from an item."
+    },
+    {
+      "id": "openapi_slack_com.team.teamAccessLogs",
+      "name": "team.teamAccessLogs",
+      "description": "Gets the access logs for the current team."
+    },
+    {
+      "id": "openapi_slack_com.team.teamBillableInfo",
+      "name": "team.teamBillableInfo",
+      "description": "Gets billable users information for the current team."
+    },
+    {
+      "id": "openapi_slack_com.team.teamInfo",
+      "name": "team.teamInfo",
+      "description": "Gets information about the current team."
+    },
+    {
+      "id": "openapi_slack_com.team.teamIntegrationLogs",
+      "name": "team.teamIntegrationLogs",
+      "description": "Gets the integration logs for the current team."
+    },
+    {
+      "id": "openapi_slack_com.teamProfile.teamProfileGet",
+      "name": "teamProfile.teamProfileGet",
+      "description": "Retrieve a team's profile."
+    },
+    {
+      "id": "openapi_slack_com.usergroups.usergroupsCreate",
+      "name": "usergroups.usergroupsCreate",
+      "description": "Create a User Group"
+    },
+    {
+      "id": "openapi_slack_com.usergroups.usergroupsDisable",
+      "name": "usergroups.usergroupsDisable",
+      "description": "Disable an existing User Group"
+    },
+    {
+      "id": "openapi_slack_com.usergroups.usergroupsEnable",
+      "name": "usergroups.usergroupsEnable",
+      "description": "Enable a User Group"
+    },
+    {
+      "id": "openapi_slack_com.usergroups.usergroupsList",
+      "name": "usergroups.usergroupsList",
+      "description": "List all User Groups for a team"
+    },
+    {
+      "id": "openapi_slack_com.usergroups.usergroupsUpdate",
+      "name": "usergroups.usergroupsUpdate",
+      "description": "Update an existing User Group"
+    },
+    {
+      "id": "openapi_slack_com.usergroupsUsers.usergroupsUsersList",
+      "name": "usergroupsUsers.usergroupsUsersList",
+      "description": "List all users in a User Group"
+    },
+    {
+      "id": "openapi_slack_com.usergroupsUsers.usergroupsUsersUpdate",
+      "name": "usergroupsUsers.usergroupsUsersUpdate",
+      "description": "Update the list of users for a User Group"
+    },
+    {
+      "id": "openapi_slack_com.users.usersConversations",
+      "name": "users.usersConversations",
+      "description": "List conversations the calling user may access."
+    },
+    {
+      "id": "openapi_slack_com.users.usersDeletePhoto",
+      "name": "users.usersDeletePhoto",
+      "description": "Delete the user profile photo"
+    },
+    {
+      "id": "openapi_slack_com.users.usersGetPresence",
+      "name": "users.usersGetPresence",
+      "description": "Gets user presence information."
+    },
+    {
+      "id": "openapi_slack_com.users.usersIdentity",
+      "name": "users.usersIdentity",
+      "description": "Get a user's identity."
+    },
+    {
+      "id": "openapi_slack_com.users.usersInfo",
+      "name": "users.usersInfo",
+      "description": "Gets information about a user."
+    },
+    {
+      "id": "openapi_slack_com.users.usersList",
+      "name": "users.usersList",
+      "description": "Lists all users in a Slack team."
+    },
+    {
+      "id": "openapi_slack_com.users.usersLookupByEmail",
+      "name": "users.usersLookupByEmail",
+      "description": "Find a user with an email address."
+    },
+    {
+      "id": "openapi_slack_com.users.usersSetActive",
+      "name": "users.usersSetActive",
+      "description": "Marked a user as active. Deprecated and non-functional."
+    },
+    {
+      "id": "openapi_slack_com.users.usersSetPhoto",
+      "name": "users.usersSetPhoto",
+      "description": "Set the user profile photo"
+    },
+    {
+      "id": "openapi_slack_com.users.usersSetPresence",
+      "name": "users.usersSetPresence",
+      "description": "Manually sets user presence."
+    },
+    {
+      "id": "openapi_slack_com.usersProfile.usersProfileGet",
+      "name": "usersProfile.usersProfileGet",
+      "description": "Retrieves a user's profile information."
+    },
+    {
+      "id": "openapi_slack_com.usersProfile.usersProfileSet",
+      "name": "usersProfile.usersProfileSet",
+      "description": "Set the profile information for a user."
+    },
+    {
+      "id": "openapi_slack_com.views.viewsOpen",
+      "name": "views.viewsOpen",
+      "description": "Open a view for a user."
+    },
+    {
+      "id": "openapi_slack_com.views.viewsPublish",
+      "name": "views.viewsPublish",
+      "description": "Publish a static view for a User."
+    },
+    {
+      "id": "openapi_slack_com.views.viewsPush",
+      "name": "views.viewsPush",
+      "description": "Push a view onto the stack of a root view."
+    },
+    {
+      "id": "openapi_slack_com.views.viewsUpdate",
+      "name": "views.viewsUpdate",
+      "description": "Update an existing view."
+    },
+    {
+      "id": "openapi_slack_com.workflows.workflowsStepCompleted",
+      "name": "workflows.workflowsStepCompleted",
+      "description": "Indicate that an app's step in a workflow completed execution."
+    },
+    {
+      "id": "openapi_slack_com.workflows.workflowsStepFailed",
+      "name": "workflows.workflowsStepFailed",
+      "description": "Indicate that an app's step in a workflow failed to execute."
+    },
+    {
+      "id": "openapi_slack_com.workflows.workflowsUpdateStep",
+      "name": "workflows.workflowsUpdateStep",
+      "description": "Update the configuration for a workflow extension step."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

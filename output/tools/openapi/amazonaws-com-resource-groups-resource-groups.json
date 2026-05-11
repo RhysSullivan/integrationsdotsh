@@ -1,0 +1,107 @@
+{
+  "fetchedAt": "2026-04-30T15:45:09.494Z",
+  "status": "ok",
+  "count": 20,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.deleteGroup.postOperation",
+      "name": "deleteGroup.postOperation",
+      "description": "<p>Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of the group; it only deletes the group structure.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:DeleteGroup</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.getAccountSettings.postOperation",
+      "name": "getAccountSettings.postOperation",
+      "description": "Retrieves the current status of optional features in Resource Groups."
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.getGroup.postOperation",
+      "name": "getGroup.postOperation",
+      "description": "<p>Returns information about a specified resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetGroup</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.getGroupConfiguration.postOperation",
+      "name": "getGroupConfiguration.postOperation",
+      "description": "<p>Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href=\"https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html\">Service configurations for Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetGroupConfiguration</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.getGroupQuery.postOperation",
+      "name": "getGroupQuery.postOperation",
+      "description": "<p>Retrieves the resource query associated with the specified resource group. For more information about resource queries, see <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag\">Create a tag-based group in Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetGroupQuery</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.groupResources.postOperation",
+      "name": "groupResources.postOperation",
+      "description": "<p>Adds the specified resources to the specified group.</p> <important> <p>You can use this operation with only resource groups that are configured with the following types:</p> <ul> <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li> </ul> <p>Other resource group type and resource types aren't currently supported by this operation.</p> </important> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GroupResources</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.groups.createGroup",
+      "name": "groups.createGroup",
+      "description": "<p>Creates a resource group with the specified name and description. You can optionally include either a resource query or a service configuration. For more information about constructing a resource query, see <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html\">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i>. For more information about service-linked groups and service configurations, see <a href=\"https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html\">Service configurations for Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:CreateGroup</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.groupsList.listGroups",
+      "name": "groupsList.listGroups",
+      "description": "<p>Returns a list of existing Resource Groups in your account.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:ListGroups</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.listGroupResources.postOperation",
+      "name": "listGroupResources.postOperation",
+      "description": "<p>Returns a list of ARNs of the resources that are members of a specified resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:ListGroupResources</code> </p> </li> <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p> <code>cloudformation:ListStackResources</code> </p> </li> <li> <p> <code>tag:GetResources</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.putGroupConfiguration.postOperation",
+      "name": "putGroupConfiguration.postOperation",
+      "description": "<p>Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use <a>GetGroupConfiguration</a> to check the status of the update.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:PutGroupConfiguration</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.resources.getTags",
+      "name": "resources.getTags",
+      "description": "<p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetTags</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.resources.searchResources",
+      "name": "resources.searchResources",
+      "description": "<p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <a>CreateGroup</a> or <a>UpdateGroupQuery</a> operation.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:SearchResources</code> </p> </li> <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p> <code>cloudformation:ListStackResources</code> </p> </li> <li> <p> <code>tag:GetResources</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.resources.tag",
+      "name": "resources.tag",
+      "description": "<p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important> <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> </important> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Tag</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.resources.untag",
+      "name": "resources.untag",
+      "description": "<p>Deletes tags from a specified resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Untag</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.ungroupResources.postOperation",
+      "name": "ungroupResources.postOperation",
+      "description": "<p>Removes the specified resources from the specified group. This operation works only with static groups that you populated using the <a>GroupResources</a> operation. It doesn't work with any resource groups that are automatically populated by tag-based or CloudFormation stack-based queries.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:UngroupResources</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.updateAccountSettings.postOperation",
+      "name": "updateAccountSettings.postOperation",
+      "description": "<p>Turns on or turns off optional features in Resource Groups.</p> <p>The preceding example shows that the request to turn on group lifecycle events is <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change to <code>ACTIVE</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.updateGroup.postOperation",
+      "name": "updateGroup.postOperation",
+      "description": "<p>Updates the description for an existing group. You cannot update the name of a resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:UpdateGroup</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_resource_groups_resource_groups.updateGroupQuery.postOperation",
+      "name": "updateGroupQuery.postOperation",
+      "description": "<p>Updates the resource query of a group. For more information about resource queries, see <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag\">Create a tag-based group in Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:UpdateGroupQuery</code> </p> </li> </ul>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

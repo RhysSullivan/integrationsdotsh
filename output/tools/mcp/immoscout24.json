@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:37.226Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_immoscout24.property_search",
+      "name": "property_search",
+      "description": "Search for real estate properties in Germany using natural language criteria.\n\nInput intent\nUse when the user wants to see property listings, such as:\n* Apartments, houses, or commercial properties matching criteria\n* Price, size, location, or room-based searches\n* \"Show me listings…\" or \"Find properties…\"\n\nKey inputs\n* One or more German cities or regions (Berlin, Munich, Hamburg, etc.)\n* Only user-specified filters (price range, number of rooms, property type, rent vs. buy)\n* Optional: specific neighborhoods or districts\n\nOutput intent\nReturns up to 25 property listings in a carousel view, including:\n* Location and full address\n* Photos (or placeholder if unavailable)\n* Price and key property details (rooms, size if available)\n* Direct link to property details\n\nDesigned for quick browsing and selection.\n\nWhat it does not do\n* No affordability recommendations\n* No suggestions on which property to choose\n* No financial advice"
+    },
+    {
+      "id": "mcp_immoscout24.property_map",
+      "name": "property_map",
+      "description": "Search for real estate properties in Germany and display results on an interactive map.\n\nInput intent\nUse when the user wants to visualize property locations, such as:\n* \"Show me on a map…\"\n* \"Map view of properties…\"\n* Understanding property distribution across neighborhoods\n* Comparing locations geographically\n\nKey inputs\n* One or more German cities or regions\n* Only user-specified filters (same as property_search)\n* All matching properties displayed (not limited to 8)\n\nOutput intent\nReturns all properties with coordinates displayed on interactive map, including:\n* Map pins showing property locations and prices\n* Clickable pins revealing property cards with photos and details\n* Region boundary overlays showing search area\n* Direct links to property details\n\nDesigned for geographic exploration and location-based decisions.\n\nWhat it does not do\n* No neighborhood recommendations\n* No commute time calculations\n* No location quality judgments"
+    }
+  ]
+}

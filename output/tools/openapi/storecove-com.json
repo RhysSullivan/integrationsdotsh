@@ -1,0 +1,167 @@
+{
+  "fetchedAt": "2026-04-30T15:26:49.072Z",
+  "status": "ok",
+  "count": 32,
+  "tools": [
+    {
+      "id": "openapi_storecove_com.additionalTaxIdentifiers.createAdditionalTaxIdentifier",
+      "name": "additionalTaxIdentifiers.createAdditionalTaxIdentifier",
+      "description": "Create a new AdditionalTaxIdentifier. An AdditionalTaxIdentifier is a seconday tax identifier that is used inside the EU when sending invoices to consumers. In that case, the VAT of the receiving country is used and if the sender has a local VAT identifier, that is used to identifiy the sender, instead of the sender's origin country VAT number. To use these identifiers, use the invoice.consumerTaxMode = true property."
+    },
+    {
+      "id": "openapi_storecove_com.additionalTaxIdentifiers.deleteAdditionalTaxIdentifier",
+      "name": "additionalTaxIdentifiers.deleteAdditionalTaxIdentifier",
+      "description": "Delete an AdditionalTaxIdentifier"
+    },
+    {
+      "id": "openapi_storecove_com.additionalTaxIdentifiers.getAdditionalTaxIdentifier",
+      "name": "additionalTaxIdentifiers.getAdditionalTaxIdentifier",
+      "description": "Get an AdditionalTaxIdentifier"
+    },
+    {
+      "id": "openapi_storecove_com.additionalTaxIdentifiers.updateAdditionalTaxIdentifier",
+      "name": "additionalTaxIdentifiers.updateAdditionalTaxIdentifier",
+      "description": "Update an AdditionalTaxIdentifier"
+    },
+    {
+      "id": "openapi_storecove_com.administrations.createAdministration",
+      "name": "administrations.createAdministration",
+      "description": "Deprecated. Create a new Administration. An Administration is an email destination for purchase invoices."
+    },
+    {
+      "id": "openapi_storecove_com.administrations.deleteAdministration",
+      "name": "administrations.deleteAdministration",
+      "description": "Deprecated. Delete an Administration"
+    },
+    {
+      "id": "openapi_storecove_com.administrations.getAdministration",
+      "name": "administrations.getAdministration",
+      "description": "Deprecated. Get an Administration"
+    },
+    {
+      "id": "openapi_storecove_com.administrations.updateAdministration",
+      "name": "administrations.updateAdministration",
+      "description": "Deprecated. Update an Administration"
+    },
+    {
+      "id": "openapi_storecove_com.discovery.discoveryExists",
+      "name": "discovery.discoveryExists",
+      "description": "Discover if a network participant exists."
+    },
+    {
+      "id": "openapi_storecove_com.discovery.discoveryIdentifiers",
+      "name": "discovery.discoveryIdentifiers",
+      "description": "Discover the identifiers used in each country, for routing, for legal identification as well as for tax identification purposes. We are currently testing this endpoint with selected Customers. If you would like to participate, please contact us."
+    },
+    {
+      "id": "openapi_storecove_com.discovery.discoveryReceives",
+      "name": "discovery.discoveryReceives",
+      "description": "Discover a network participant and capabilities."
+    },
+    {
+      "id": "openapi_storecove_com.documentSubmissions.createDocumentSubmission",
+      "name": "documentSubmissions.createDocumentSubmission",
+      "description": "Submit a document for delivery. This endpoint will replaces the /invoice_submissions endpoint which will soon be deprecated."
+    },
+    {
+      "id": "openapi_storecove_com.documentSubmissions.showDocumentSubmissionEvidence",
+      "name": "documentSubmissions.showDocumentSubmissionEvidence",
+      "description": "Get evidence for a DocumentSubmission by GUID with corresponding status"
+    },
+    {
+      "id": "openapi_storecove_com.invoiceSubmissions.createInvoiceSubmission",
+      "name": "invoiceSubmissions.createInvoiceSubmission",
+      "description": "DEPRECATED. Use the new /document_submissions endpoint. Submit an invoice for delivery."
+    },
+    {
+      "id": "openapi_storecove_com.invoiceSubmissions.preflightInvoiceRecipient",
+      "name": "invoiceSubmissions.preflightInvoiceRecipient",
+      "description": "Deprecated. Use the new /discovery endpoint. Check whether Storecove can deliver an invoice for a list of ids."
+    },
+    {
+      "id": "openapi_storecove_com.invoiceSubmissions.showInvoiceSubmissionEvidence",
+      "name": "invoiceSubmissions.showInvoiceSubmissionEvidence",
+      "description": "Deprecated. Use the new /document_submissions/{guid}/evidence endpoint. Get evidence for an InvoiceSubmission by GUID with corresponding status"
+    },
+    {
+      "id": "openapi_storecove_com.legalEntities.createLegalEntity",
+      "name": "legalEntities.createLegalEntity",
+      "description": "Create a new LegalEntity."
+    },
+    {
+      "id": "openapi_storecove_com.legalEntities.deleteLegalEntity",
+      "name": "legalEntities.deleteLegalEntity",
+      "description": "Delete a specific LegalEntity."
+    },
+    {
+      "id": "openapi_storecove_com.legalEntities.getLegalEntity",
+      "name": "legalEntities.getLegalEntity",
+      "description": "Get a specific LegalEntity."
+    },
+    {
+      "id": "openapi_storecove_com.legalEntities.updateLegalEntity",
+      "name": "legalEntities.updateLegalEntity",
+      "description": "Update a specific LegalEntity."
+    },
+    {
+      "id": "openapi_storecove_com.peppolIdentifiers.createPeppolIdentifier",
+      "name": "peppolIdentifiers.createPeppolIdentifier",
+      "description": "Create a brand new new PeppolIdentifier. For <<_sg_singapore>>, special rules apply."
+    },
+    {
+      "id": "openapi_storecove_com.peppolIdentifiers.deletePeppolIdentifier",
+      "name": "peppolIdentifiers.deletePeppolIdentifier",
+      "description": "Delete a PeppolIdentifier."
+    },
+    {
+      "id": "openapi_storecove_com.purchaseInvoices.getInvoiceJson",
+      "name": "purchaseInvoices.getInvoiceJson",
+      "description": "Get a specific PurchaseInvoice, in JSON format."
+    },
+    {
+      "id": "openapi_storecove_com.purchaseInvoices.getInvoiceUbl",
+      "name": "purchaseInvoices.getInvoiceUbl",
+      "description": "Get a specific PurchaseInvoice."
+    },
+    {
+      "id": "openapi_storecove_com.purchaseInvoices.getInvoiceUblVersioned",
+      "name": "purchaseInvoices.getInvoiceUblVersioned",
+      "description": "Get a specific PurchaseInvoice in UBL format"
+    },
+    {
+      "id": "openapi_storecove_com.receivedDocuments.createReceivedDocument",
+      "name": "receivedDocuments.createReceivedDocument",
+      "description": "Create a new received document."
+    },
+    {
+      "id": "openapi_storecove_com.receivedDocuments.getReceivedDocument",
+      "name": "receivedDocuments.getReceivedDocument",
+      "description": "EXPERIMENTAL: use only for orders. Get a new ReceivedDocument."
+    },
+    {
+      "id": "openapi_storecove_com.receivedDocuments.receiveDocumenht",
+      "name": "receivedDocuments.receiveDocumenht",
+      "description": "DEPRECATED - use new path /received_documents. Receive a new Document."
+    },
+    {
+      "id": "openapi_storecove_com.webhookInstances.deleteWebhookInstance",
+      "name": "webhookInstances.deleteWebhookInstance",
+      "description": "DELETE a specific WebhookInstance"
+    },
+    {
+      "id": "openapi_storecove_com.webhookInstances.getWebhookInstances",
+      "name": "webhookInstances.getWebhookInstances",
+      "description": "GET a WebhookInstance from the queue. After processing it successfully, DELETE it and GET the next one. When a 204 is received, the queue is empty and the polling process can sleep for a while."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

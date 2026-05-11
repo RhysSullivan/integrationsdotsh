@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:39.815Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_job_search_by_jobtome.search_jobs",
+      "name": "search_jobs",
+      "description": "Use this when the user wants to find, search, view, or compare job listings.\n\nPut all search intent in `query` using natural language; do not split filters into extra fields.\n\nThe backend query parser can extract (when explicit in query):\n- occupation/title and synonyms\n- skills/languages/certifications\n- city, province/county/state/region (administrative area)\n- proximity intent (e.g. near me / vicino a me / cerca de mi) and radius\n- companies\n- seniority (entry, mid-senior, manager, director)\n- experience required or no experience\n- remote policy (remote, hybrid, on-site)\n- contract type (full-time, part-time, permanent, fixed-term, contract, temporary, internship, apprenticeship)\n- education level\n- salary constraints or high-paying intent\n- recency (today, last week, etc.)\n\nExamples of strong `query` values:\n- 'python developer remote in London, full-time, 60k+'\n- 'jobs near Bristol within 20 miles, customer service, no experience'\n- 'magazziniere a Milano part-time senza esperienza'\n- 'cherche emploi comptable a Lyon CDI hybride'\n- 'trabajo de consultor cerca de mi con ingles, remoto'\n- 'data analyst in Berlin posted in last 7 days'\n- 'infermiera notturno a Roma weekend'\n\nParameter guidance:\n- `country`: required lowercase ISO 3166-1 alpha-2 (e.g. 'uk', 'us', 'de').\n- `query`: natural language intent and constraints.\n- `user_language`: ISO 639-1 for localized tags/widget labels.\n- `limit`: results per page (1-25).\n- `page`: page number (1-10).\n\nSet `user_language` to the user's language (ISO 639-1 like 'it', 'en'). Supported: en, it, de, fr, es, pt, nl, sv, pl, cs, da, fi, hu, ro, id, zh, hi, tl. Default: en.\n\nTags in `structuredContent.jobs[*].tags` are localized using `user_language` (salary is not translated) and are returned in this order: salary, remote_policy, seniority, (No experience required if applicable), contract_type, education_level, night shift, weekends availability.\n\nSupported countries: DE, PT, UK, IT, NL, FR, ES, CH, BE, AT, SE, ZA, PL, CZ, DK, FI, HU, IE, RO, AR, BR, CA, CL, CO, MX, US, AU, IN, NZ, HK, PH, ID, SG\n\nUse lowercase ISO 3166-1 alpha-2 codes (e.g., 'uk', 'us', 'de')."
+    },
+    {
+      "id": "mcp_job_search_by_jobtome.get_job_details",
+      "name": "get_job_details",
+      "description": "Fetch job details by job_id (use the id returned by search_jobs). Description fields are truncated."
+    }
+  ]
+}

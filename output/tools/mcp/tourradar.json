@@ -1,0 +1,97 @@
+{
+  "fetchedAt": "2026-04-30T15:20:04.037Z",
+  "status": "ok",
+  "count": 18,
+  "tools": [
+    {
+      "id": "mcp_tourradar.b2b_operator_details",
+      "name": "b2b-operator-details",
+      "description": "Use this when the user wants information about a tour operator, such as their terms and policies.\n\nFetches operator details including name, code, and terms & conditions based on operator ID."
+    },
+    {
+      "id": "mcp_tourradar.b2b_cities_search",
+      "name": "b2b-cities-search",
+      "description": "Use this when you need to find city IDs for tour search filters like start city, end city, or cities to visit.\n\nSearches for cities by name within a specific country. Supports multiple name variants to handle different spellings (e.g., Krakow, Kraków, Cracow)."
+    },
+    {
+      "id": "mcp_tourradar.b2b_continents_list",
+      "name": "b2b-continents-list",
+      "description": "Use this when you need continent IDs for filtering tours by region.\n\nReturns a list of all supported continents with their IDs and names for use in tour search filters."
+    },
+    {
+      "id": "mcp_tourradar.b2b_countries_list",
+      "name": "b2b-countries-list",
+      "description": "Use this when you need to look up country IDs for filtering tours or validating country names.\n\nReturns a complete list of all supported countries with their IDs, names, and ISO country codes."
+    },
+    {
+      "id": "mcp_tourradar.b2b_currencies_list",
+      "name": "b2b-currencies-list",
+      "description": "Use this when you need to check supported currencies or get currency details like symbols.\n\nReturns a list of all supported currencies with their codes (USD, EUR), names, and symbols ($, €)."
+    },
+    {
+      "id": "mcp_tourradar.b2b_languages_list",
+      "name": "b2b-languages-list",
+      "description": "Use this when you need language IDs for filtering tours by guide language.\n\nReturns a list of all supported languages with their IDs, codes, and names for use in tour search filters."
+    },
+    {
+      "id": "mcp_tourradar.b2b_tour_types_list",
+      "name": "b2b-tour-types-list",
+      "description": "Use this when you need tour type IDs for filtering tours by category like adventure, cultural, or wildlife.\n\nReturns a hierarchical list of tour type groups and their individual types with IDs and names."
+    },
+    {
+      "id": "mcp_tourradar.b2b_tour_departures",
+      "name": "b2b-tour-departures",
+      "description": "Use this when the user asks about available departure dates, pricing for specific dates, or needs to validate if a departure date is available.\n\nReturns a list of departures for a specific tour within a date range, including availability status, pricing, and booking information."
+    },
+    {
+      "id": "mcp_tourradar.b2b_tour_details",
+      "name": "b2b-tour-details",
+      "description": "Use this when the user wants to see detailed information about a specific tour.\n\nFetches comprehensive tour details including itinerary, pricing, operator info, images, and booking links based on tour ID."
+    },
+    {
+      "id": "mcp_tourradar.b2b_tour_faq",
+      "name": "b2b-tour-faq",
+      "description": "Use this when the user has questions about a tour that might be answered in the FAQ section.\n\nReturns a paginated list of frequently asked questions and answers about a specific tour, covering topics like inclusions, requirements, and policies."
+    },
+    {
+      "id": "mcp_tourradar.b2b_tour_map",
+      "name": "b2b-tour-map",
+      "description": "Use this when the user wants to see tour routes on a map or compare itineraries visually.\n\nFetches tour details for one or more tours and prepares map data with all itinerary locations, coordinates, and day-by-day information for visual display."
+    },
+    {
+      "id": "mcp_tourradar.general_current_date",
+      "name": "general-current-date",
+      "description": "Use this when you need to know the current date, especially before setting departure date filters.\n\nReturns the current date and time in ISO format. Essential for calculating valid date ranges for tour searches."
+    },
+    {
+      "id": "mcp_tourradar.vertex_tour_search",
+      "name": "vertex-tour-search",
+      "description": "Use this when the user describes what they want in natural language and you need AI-powered semantic search to understand their intent.\n\nBefore use this tool, please READ all possible filters.\nPLESE USE FILTERS, when can be used, to make search faster and much more precise.\nPlease use start_city, end_city, cities, countries, start_country, end_country filters if possible.  You can use multiple of them.\n\nAI-powered semantic search for tours using natural language queries combined with optional filters. Uses Google Vertex AI to understand intent and find relevant tours based on descriptions, themes, or specific requests.\n\nUse `vertex-tour-search` when:\n\n- The user describes what they want in natural language\n- You need semantic/AI-powered search to understand intent\n- Combining natural language with filters for refined results\n\nExamples:\n\n- \"Family-friendly safari with kids under 12\"\n- \"Romantic honeymoon trip with beach and mountains\"\n- \"Adventure tour with hiking and camping for beginners\"\n- \"Cultural immersion experience with local homestays\"\n- \"Wine tasting tour through European countryside\"\n\n## Input\n\n### Required\n\n- `textSearch`: Natural language description of what the user is looking for\n- `display_mode`: How to display results — `\"listing\"` (default, carousel of tour cards) or `\"map\"` (interactive map view)\n\n### Optional Filters\n\n#### Location Filters\n\n| Filter          | Type     | Description                                                                |\n| --------------- | -------- | -------------------------------------------------------------------------- |\n| `start_country` | string[] | Country where tour BEGINS (ISO 3166-1 alpha-2 codes). OR logic.            |\n| `end_country`   | string[] | Country where tour ENDS (ISO 3166-1 alpha-2 codes). OR logic.              |\n| `start_city`    | number[] | City IDs where tour starts. Use `b2b-cities-search` to find IDs. OR logic. |\n| `end_city`      | number[] | City IDs where tour ends. Use `b2b-cities-search` to find IDs. OR logic.   |\n| `countries`     | object   | Countries visited DURING the itinerary. Supports AND/OR operator.          |\n| `cities`        | object   | Cities visited on the itinerary. Supports AND/OR operator.                 |\n\n#### Range Filters\n\n| Filter           | Type                     | Description                                                                          |\n| ---------------- | ------------------------ | ------------------------------------------------------------------------------------ |\n| `duration`       | `{ min, max }`           | Tour length in days                                                                  |\n| `max_group_size` | `{ min, max }`           | Maximum group size range                                                             |\n| `min_group_size` | `{ min, max }`           | Minimum group size range                                                             |\n| `min_age`        | `{ min, max }`           | Minimum age requirement range. E.g., `{ min: 1, max: 12 }` finds family-friendly tours |\n| `max_age`        | `{ min, max }`           | Maximum age limit range. E.g., `{ min: 18, max: 39 }` finds youth-specific tours       |\n| `price`          | `{ min, max, currency }` | Price range (currency: \"EUR\")                                                        |\n\n#### AND/OR Filters\n\nThese filters support both AND and OR operators:\n\n| Filter       | Values                   | Description                        |\n| ------------ | ------------------------ | ---------------------------------- |\n| `departures` | YYYY-MM strings          | Filter by departure months         |\n| `countries`  | ISO 3166-1 alpha-2 codes | Countries visited during itinerary |\n| `cities`     | City IDs                 | Cities visited on itinerary        |\n\nStructure: `{ values: [...], operator: \"AND\" | \"OR\" }`\n\n- `OR` (default): Tour matches ANY of the specified values\n- `AND`: Tour must match ALL specified values\n\n## Examples\n\n### Simple text search\n\n```json\n{ \"textSearch\": \"family adventure with wildlife\" }\n```\n\n### With location filters\n\n```json\n{\n  \"textSearch\": \"hiking adventure\",\n  \"start_country\": [\"DE\", \"AT\"],\n  \"countries\": { \"values\": [\"IT\", \"CH\"], \"operator\": \"AND\" }\n}\n```\n\n### With range filters\n\n```json\n{\n  \"textSearch\": \"luxury beach vacation\",\n  \"duration\": { \"min\": 7, \"max\": 14 },\n  \"price\": { \"min\": 2000, \"max\": 5000, \"currency\": \"EUR\" },\n  \"max_group_size\": { \"min\": 1, \"max\": 16 }\n}\n```\n\n### With age filters\n\n```json\n{\n  \"textSearch\": \"family safari with young children\",\n  \"min_age\": { \"min\": 1, \"max\": 6 },\n  \"duration\": { \"min\": 7, \"max\": 14 }\n}\n```\n\n### With departure dates\n\n```json\n{\n  \"textSearch\": \"northern lights tour\",\n  \"departures\": { \"values\": [\"2026-01\", \"2026-02\", \"2026-03\"], \"operator\": \"OR\" }\n}\n```\n\n### Map display mode\n\n```json\n{\n  \"textSearch\": \"hiking tours in the Alps\",\n  \"display_mode\": \"map\",\n  \"countries\": { \"values\": [\"AT\", \"CH\"], \"operator\": \"OR\" }\n}\n```\n\n## Response\n\nReturns a list of tours matching the query, each containing:\n\n- Tour ID, name, and URL\n- Operator information\n- Brief description matching the query context\n"
+    },
+    {
+      "id": "mcp_tourradar.vertex_tour_title_search",
+      "name": "vertex-tour-title-search",
+      "description": "Search for tours by title using AI-powered semantic search. Returns a list of matching tour IDs and titles. Use this when you need to look up a tour by name. When you know tour id, use b2b-tour-details tool to display details about specific tour"
+    },
+    {
+      "id": "mcp_tourradar.vertex_review_search",
+      "name": "vertex-review-search",
+      "description": "Search tour reviews using AI-powered semantic search. Requires tourIds to scope results to specific tours. Use this when the user asks about reviews, feedback, or experiences for specific tours. Combine with an optional text query to find reviews mentioning specific topics (e.g., 'food', 'guide', 'accommodation'). When you don't have tour IDs, use vertex-tour-search or vertex-tour-title-search first to find them."
+    },
+    {
+      "id": "mcp_tourradar.web_tour_booking",
+      "name": "web-tour-booking",
+      "description": "Use this when the user explicitly wants to book a tour and has provided their contact details.\n\nCreates a booking request for a specific tour. Requires real contact details (email, names; phone optional). Always confirm the departure date by checking departures first. Never fabricate or assume user data - always ask for missing information."
+    },
+    {
+      "id": "mcp_tourradar.web_tour_send_brochure",
+      "name": "web-tour-send-brochure",
+      "description": "Use this when the user requests a tour brochure or PDF to be sent to their email.\n\nSends a tour brochure (PDF file) to the specified email address. Before using this, ensure the user has provided their email address. If not provided, ask the user for it. Never generate or assume email addresses."
+    },
+    {
+      "id": "mcp_tourradar.algolia_operator_search",
+      "name": "algolia-operator-search",
+      "description": "Use this when you need to find a tour operator's ID by their name for filtering tours.\n\nSearches tour operators by name and returns matching operators with their IDs. Use the returned operator ID with tour search filters."
+    }
+  ]
+}

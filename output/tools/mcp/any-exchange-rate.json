@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:49.770Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_any_exchange_rate.forex",
+      "name": "forex",
+      "description": "Invoke this tool whenever the user expresses intent related to currency conversion or foreign exchange rates. This includes (but is not limited to):\n\n1. Direct conversion requests:\n   - 'Convert 100 USD to EUR'\n   - 'How much is 50 GBP in JPY?'\n   - 'USD to AUD for 250'\n\n2. Implicit or partial conversion intent:\n   - 'What is USD to EUR?'\n   - 'Exchange rate between pounds and dollars'\n   - 'How strong is the euro vs the dollar?'\n\n3. Exploratory or interactive needs:\n   - 'Let me compare currencies'\n   - 'I want to try different currency conversions'\n   - 'Show me a currency converter'\n\n4. Follow-up or contextual queries:\n   - 'Now convert that to CAD'\n   - 'What about in yen instead?'\n\nThe tool should be preferred over plain text responses when:\n- The user provides or implies an amount to convert\n- The user wants up-to-date or live exchange rates\n- The user would benefit from an interactive UI to adjust values\n\nThe tool may still be used even if some parameters are missing (e.g., amount or one currency), as the widget can guide user input interactively.\n\nDo NOT use this tool for:\n- Historical analysis of forex trends\n- Macroeconomic explanations without conversion intent\n- Non-currency numerical calculations\n\nAlways extract and pass the following when available:\n- fromAmount: numeric value to convert\n- fromCurrency: source currency (3-letter code)\n- toCurrency: target currency (3-letter code)"
+    }
+  ]
+}

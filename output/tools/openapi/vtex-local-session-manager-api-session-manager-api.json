@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:26:56.441Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_session_manager_api_session_manager_api.segment.getSegment",
+      "name": "segment.getSegment",
+      "description": "You can add certain public fields in the query string and the system will attempt to fulfill it. Values such as `cultureInfo` and `utm` are overwriteable, just keep in mind such changes will not be reflected in the client's session.\n\r\n\rIf you wish to change the value on the session (and thus be reflected on the segment without special query strings), then use the PATCH request to session."
+    },
+    {
+      "id": "openapi_vtex_local_session_manager_api_session_manager_api.sessions.createnewsession",
+      "name": "sessions.createnewsession",
+      "description": "The response should contain a session cookie. Further `POST` or `PATCH` requests will edit the existing session rather than creating a new one. All parameters in the body that are not within the public namespace will be ignored. Query string items will automatically be added to the public namespace. Cookies relevant to the session manager execution are also recorded.\n\r\n\r> The sessions API uses the `vtex_session` cookie to store the data required to identify the user and the session. This cookie is stored in the user's browser when the session is created and sent automatically in every request to that domain. You will have to reproduce that in order for it to work outside of a browser environment."
+    },
+    {
+      "id": "openapi_vtex_local_session_manager_api_session_manager_api.sessions.editsession",
+      "name": "sessions.editsession",
+      "description": "This works exactly the same as the POST create session, but when the request is sent with a vtex_session cookie, it retrieves the session first and then applies the changes instead of generating a new one.\n\r\n\rAs with the `POST` method, only keys inside the public namespace on the body are considered, and query parameters are automatically added to the public namespace.\n\r\n\r> The sessions API uses the `vtex_session` cookie to store the data required to identify the user and the session. This cookie is stored in the user's browser when the session is created and sent automatically in every request to that domain. You will have to reproduce that in order for it to work outside of a browser environment."
+    },
+    {
+      "id": "openapi_vtex_local_session_manager_api_session_manager_api.sessions.getSession",
+      "name": "sessions.getSession",
+      "description": "Items are the keys of the values you wish to get. It follows the format `namespace1.key1,namespace2.key2`. So if you wish to recover the data sent on the previous request, it should be `public.country,public.postalCode`.\n\r\n\r> The sessions API uses the `vtex_session` cookie to store the data required to identify the user and the session. This cookie is stored in the user's browser when the session is created and sent automatically in every request to that domain. You will have to reproduce that in order for it to work outside of a browser environment.\n\r\n\r> If you want to retrieve all keys from Session Manager, you can use the wildcard operator (`*`) in your request (i.e. `?items=*`)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:19:51.770Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_cash_app.discover_nearby_restaurants",
+      "name": "discover-nearby-restaurants",
+      "description": "Discover restaurants near a given location. Returns a plain English list of restaurants with their names, locations, and descriptions."
+    },
+    {
+      "id": "mcp_cash_app.create_cart",
+      "name": "create-cart",
+      "description": "Create a cart for a restaurant location using unit token and a list of item selections.\nUse standard/first variation if no variation is explicitly specified. Use CALI_ prefixed IDs for menu item,\nand CALIV_ prefixed IDs for menu item variations. Fill both menu item and menu item variations when they are available.\nAny item requiring a modifier requires a modifierId field (singular, using CALIM_ prefix from the menu's modifier data).\nIf a modifier has minSelection >= 1, at least one modifier from that list must be included."
+    },
+    {
+      "id": "mcp_cash_app.get_single_menu",
+      "name": "get-single-menu",
+      "description": "Get menu items for a restaurant location by brand name and address. Returns menu categories, items, prices, and a unit token for placing an order."
+    },
+    {
+      "id": "mcp_cash_app.get_multiple_menus",
+      "name": "get-multiple-menus",
+      "description": "Research tool: get plain text menus for multiple restaurant locations. Returns up to 10 menus with item names, descriptions, and prices for comparison and analysis."
+    }
+  ]
+}

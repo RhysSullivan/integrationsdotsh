@@ -1,0 +1,312 @@
+{
+  "fetchedAt": "2026-04-30T15:22:14.237Z",
+  "status": "ok",
+  "count": 61,
+  "tools": [
+    {
+      "id": "openapi_exavault_com.account.getAccount",
+      "name": "account.getAccount",
+      "description": "Get settings for your account, such as current space usage, webhooks settings, welcome email content and IP address restrictions."
+    },
+    {
+      "id": "openapi_exavault_com.account.updateAccount",
+      "name": "account.updateAccount",
+      "description": "Update account settings, such as welcome email content, IP address restrictions, webhooks settings and secure password requirements.\n\n**Notes**\n\n- You must have [admin-level access](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to change account settings."
+    },
+    {
+      "id": "openapi_exavault_com.activity.getSessionLogs",
+      "name": "activity.getSessionLogs",
+      "description": "Returns the detailed activity logs for your account. Optional query paramaters will filter the returned results based on a number of options including usernames, activity types, or date ranges. \n\n**NOTE:** Total Results will always return as 0 to avoid quering data you're not using and stay as performant as possible. \n  \n**Operation Types**\nSession activity is logged with an operation type that is different from what is visible through the [activity log interface in the web file manager](/docs/account/10-activity-logs/00-activity-logs). Consult the table below to compare the two:\n\n| File Manager Value | API Value | Notes |\n|-----|----|---|\n| Connect | PASS | |\n| Disconnect | EXIT | |\n| Upload | STOR | |\n| Download | RETR | |\n| Delete | DELE | |\n| Create Folder | MKD | |\n| Rename | RNTO | |\n| Move | MOVE | |\n| Copy | COPY | |\n| Compress | COMPR | |\n| Extract | EXTRACT | |\n| Shared Folders | SHARE | |\n| Send Files | SEND | |\n| Receive Files | RECV | |\n| _N/A_ | EDIT\\_SEND | Update send. Not shown in file manager |\n| Update Share | EDIT\\_SHARE| | \n| Update Receive | EDIT\\_RECV | |\n| Delete Send | DELE\\_SEND | |\n| Delete Receive | DELE\\_RECV | |\n| Delete Share | DELE\\_SHARE | |\n| Create Notification | NOTIFY | |\n| Update Notification | EDIT\\_NTFY| |\n| Delete Notification | DELE\\_NTFY | |\n| Create User | USER | |\n| Update User | EDIT\\_USER | |\n| Delete User | DELE\\_USER | |\n| _N/A_ | DFA | Create direct link. Not shown in file manager |\n| _N/A_ | EDIT\\_DFA | Update direct link options. Not shown in file manager |\n| _N/A_ | DELE\\_DFA | Deactivate direct link. Not shown in file manager|\n"
+    },
+    {
+      "id": "openapi_exavault_com.activity.getWebhookLogs",
+      "name": "activity.getWebhookLogs",
+      "description": "Returns the webhook logs for your account. Use the available query parameters to filter the listing of activity that is returned.\n\n**NOTE:** Total Results will always return as 0 to avoid querying data you're not using and stay as performant as possible. \n\n**Event Types**\n\nWebhooks are triggered by enabled event types for your account, which are configured on the [developer settings page](/docs/account/09-settings/06-developer-settings). Not all event types may be allowed for your account type. These are the valid options for event types:\n\n- resources.upload\n- resources.download\n- resources.delete\n- resources.createFolder\n- resources.rename\n- resources.move\n- resources.copy\n- resources.compress\n- resources.extract\n- shares.formSubmit\n"
+    },
+    {
+      "id": "openapi_exavault_com.email.sendReferralEmail",
+      "name": "email.sendReferralEmail",
+      "description": "Invite a friend to sign up for a free trial of ExaVault. Send a [referral](/lp/referafriend/) email to an email address. If the recipient signs up for ExaVault, we'll apply a credit to your account for the referral. "
+    },
+    {
+      "id": "openapi_exavault_com.email.sendWelcomeEmail",
+      "name": "email.sendWelcomeEmail",
+      "description": "Send a welcome email to a user. The contents of the welcome email can be set by [PATCH /accounts](#operation/updateAccount)."
+    },
+    {
+      "id": "openapi_exavault_com.emailLists.addEmailList",
+      "name": "emailLists.addEmailList",
+      "description": "Create a new email list. Among other things, email lists can be used to send files or share folders with a group of email addresses at once."
+    },
+    {
+      "id": "openapi_exavault_com.emailLists.deleteEmailListById",
+      "name": "emailLists.deleteEmailListById",
+      "description": "Permanently delete an email group. This action is not reversible. We recommend making a user confirm this action before sending the API call. "
+    },
+    {
+      "id": "openapi_exavault_com.emailLists.getEmailListById",
+      "name": "emailLists.getEmailListById",
+      "description": "Retrieve all the details of a specific email list including it's name, when it was created and all the email addresses that belong to the group."
+    },
+    {
+      "id": "openapi_exavault_com.emailLists.getEmailLists",
+      "name": "emailLists.getEmailLists",
+      "description": "List all email groups for authenticated user"
+    },
+    {
+      "id": "openapi_exavault_com.emailLists.updateEmailListById",
+      "name": "emailLists.updateEmailListById",
+      "description": "Add or remove emails from an email list that can be used to send and share files with groups. \n\n**Notes**\n\n*This call will **replace** your current email list in its entirety.* If you want to keep any existing emails on the list, be sure to submit the call with any current emails you want to keep on the list.  "
+    },
+    {
+      "id": "openapi_exavault_com.form.deleteFormMessageById",
+      "name": "form.deleteFormMessageById",
+      "description": "Deletes a form submission entry, which represents one time that a visitor filled out the form and uploaded files. This deletes only the record of the submission (the date, the values entered in the form and the names of the files uploaded by the visitor).The share and any associated file resources will not be deleted by this. \n\n**Notes**:\n\n- Use the [GET /form/entries/{formId}](#operation/getFormMessageById) to list the submissions and obtain the ID of the entry you want to delete\n- You must have the [DeleteFormData permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) in order to use this operation\n- It is not possible to un-delete data that is removed in this way\n"
+    },
+    {
+      "id": "openapi_exavault_com.form.getFormById",
+      "name": "form.getFormById",
+      "description": "Returns the [file upload form](/docs/account/05-file-sharing/05-form-builder) assigned to a [receive folder](/docs/account/05-file-sharing/04-receive-folders). The form details will return all the input fields and their settings. \n\nUse the `include` parameter (with the value **share**) to also retrieve the details of the associated receive folder. \n\n**Note**\n\nIf you prefer to find a form by its shareHash, you can use the [GET /forms](#operation/getFormByShareHash) endpoint instead. \n"
+    },
+    {
+      "id": "openapi_exavault_com.form.getFormByShareHash",
+      "name": "form.getFormByShareHash",
+      "description": "Get the information for the [file upload form](/docs/account/05-file-sharing/05-form-builder) assigned to a [receive folder](/docs/account/05-file-sharing/04-receive-folders) by its shareHash. The form details will return all the input field settings and the CSS for the form.\n\nUse the `include` parameter (with the value **share**) to also get the details of the associated receive folder.\n\n**Note**\n\n- If you prefer to find a form by its ID, you can use the [GET /forms/{id}](#operation/getFormById) endpoint instead. \n"
+    },
+    {
+      "id": "openapi_exavault_com.form.getFormEntries",
+      "name": "form.getFormEntries",
+      "description": "Returns the form data entries for a specific form for a receive. Optional parameters can be included in the call to manage larger data sets.\n"
+    },
+    {
+      "id": "openapi_exavault_com.form.updateFormById",
+      "name": "form.updateFormById",
+      "description": "Add, update, or delete a form's parameters. This will alter how your users/customers will see and interact with the form when sending you files. \n\n**Notes**\n\n*This call will **replace** your current form in its entirety.* If you want to keep any existing elements unchanged, be sure to submit the call with an element's current settings to preserve them.                          "
+    },
+    {
+      "id": "openapi_exavault_com.notifications.addNotification",
+      "name": "notifications.addNotification",
+      "description": "Create a new notification for a [resource](#section/Identifying-Resources) in your account. Notifications can be sent via email or webhook;\n\n- To enable email, pass an array of email addresses to the `recipients` parameter of this call. \n- To enable webhooks, setup the webhook callback URL in your account settings via [PATCH /account](#operation/updateAccount). \n\n**Notes:**\n  - Authenticated user should have [notifications permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions)\n"
+    },
+    {
+      "id": "openapi_exavault_com.notifications.deleteNotificationById",
+      "name": "notifications.deleteNotificationById",
+      "description": "Deletes a notification. Note that deleting a notification _only_ deletes the notification &ndash; it does not delete any underlying files or folders.\n\n**Notes:**\n\n- You need to have the [notifications permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to update a notification.\n- You can only delete notifications owned by your user account."
+    },
+    {
+      "id": "openapi_exavault_com.notifications.getNotificationById",
+      "name": "notifications.getNotificationById",
+      "description": "Get the details for a notification with a specific ID number. You'll be able to review its path, triggers and who's getting the notification. \n\n**Notes**\n\n- You need to have the [notifications permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to view the detail for a notification.\n- You can only retrieve notifications owned by your user account."
+    },
+    {
+      "id": "openapi_exavault_com.notifications.listNotifications",
+      "name": "notifications.listNotifications",
+      "description": "Get a list of all the [notifications](/docs/account/06-notifications) you have access to. You can use sorting and filtering to limit the returned list.\n\n**Notes:**\n  - Authenticated user should have [notifications permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions)"
+    },
+    {
+      "id": "openapi_exavault_com.notifications.updateNotificationById",
+      "name": "notifications.updateNotificationById",
+      "description": "Update an existing notification. You can add additional emails or change the action or users that cause a notification to trigger. \n\nWhen updating recipient emails, make sure your `recipients` parameter contains the full list of people who should be included on the notification. If you resend the list without an existing recipient, they will be deleted from the notification emails. \n\n**Notes:**\n\n- You need to have the [notifications permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to update a notification.\n- You can only change notifications owned by your user account."
+    },
+    {
+      "id": "openapi_exavault_com.recipients.resendInvitationsForShare",
+      "name": "recipients.resendInvitationsForShare",
+      "description": "Resend invitations to one or all recipients attached to specified share. The most recent message that was sent for the share will be re-used for this email.\n\nYou can use [GET /shares/{id}](#operation/getShareById) to view the recipient list and message history for a share. Use [PATCH /shares/{id}](#operation/updateShareById) to add or remove recipients."
+    },
+    {
+      "id": "openapi_exavault_com.resources.addFolder",
+      "name": "resources.addFolder",
+      "description": "Create a new empty folder at the specified path. New files can be uploaded via the [/resources/upload](#operation/uploadFile) endpoint.\n\n**Notes:**\n- Authenticated user should have modify permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.compressFiles",
+      "name": "resources.compressFiles",
+      "description": "Create a zip archive containing the files from given set of paths. Note that this can be a very slow operation if you have indicated many files should be included in the archive.\n\n**Notes:**\n- Authenticated user should have modify permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.copyResources",
+      "name": "resources.copyResources",
+      "description": "Copies a set of exisiting files/folders (provided by an array `resources`) to the requested `parentResource` in your account.\nIn the `resources` array, you may specify paths pointing files/folders throughout the account, but everything will be copied to the \nroot of the `parentResource`.\n\n**Notes:**\n- Authenticated user should have modify permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.deleteResourceById",
+      "name": "resources.deleteResourceById",
+      "description": "Delete a single file or folder resource. Deleting a folder will also delete all of the contents.\n\n**Notes:**\n- Authenticated user should have [delete permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions).\n- There is no way to un-delete a deleted resource.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.deleteResources",
+      "name": "resources.deleteResources",
+      "description": "Delete multiple file or folder resourcess. Deleting a folder resource will also delete any resources in that folder.\n\n**Notes:**\n- Authenticated user should have [delete permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions).\n- It is not possible to un-delete a deleted resource.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.download",
+      "name": "resources.download",
+      "description": "Downloads a file from the server. Whenever more than one file is being downloaded, the file are first zipped into  a single file before the download starts, and the resulting zip file is named to match the `downloadArchiveName` parameter.\n\n**NOTE**: Downloading many files at once  may result in a long delay before the API will return a response. You may need to override default timeout values in your API client, or download files individually."
+    },
+    {
+      "id": "openapi_exavault_com.resources.extractFiles",
+      "name": "resources.extractFiles",
+      "description": "Extract the contents of a zip archive to a specified directory. Note that this can be a very slow operation.\n\n**Notes:**\n- You must have  [modify permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to do this.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.getPreviewImage",
+      "name": "resources.getPreviewImage",
+      "description": "Returns a resized image of the specified document for supported file types.\n\nImage data returned is encoded in base64 format and can be viewed using the `<img>` element. \n\n```<img src='data:image/jpeg;base64' + meta.image/>```\n\n**Notes:**\n- Supported files types are `'jpg'`, `'jpeg'`, `'gif'`, `'png'`, `'bmp'`, `'pdf'`, `'psd'`, `'doc'`\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.getResourceInfo",
+      "name": "resources.getResourceInfo",
+      "description": "Returns details for specified file/folder id or hash, including upload date, size and type. For the full list of returned properties, see the response syntax, below.\n\n**Notes:**\n- Authenticated user should have list permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.getResourceInfoById",
+      "name": "resources.getResourceInfoById",
+      "description": "Returns metadata for specified file/folder path, including upload date, size and type. For the full list of returned properties, see the response syntax, below.\n\n**Notes:**\n- Authenticated user should have list permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.listResourceContents",
+      "name": "resources.listResourceContents",
+      "description": "Returns a list of files/folders for the parent resource ID. \n\nYou can use this API call to get information about all files and folders at a specified path. By default, the API returns basic metadata on each file/folder. An optional `include` parameter forces the return of additional metadata. As with all API calls, the path should be the full path relative to the user's home directory (e.g. **/myfiles/some_folder**).\n\n**Notes:**\n- Authenticated user should have list permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.listResources",
+      "name": "resources.listResources",
+      "description": "Returns a list of files and folders in the account. Use the `resource` query parameter to indicate the folder you wish to search in (which can be /). \n\n**Searching for Files and Folders**\n\nUsing the `name` parameter triggers search mode, which will search the entire directory structure under the provided `resource` for files or folders with names matching the provided `name`. This supports wildcard matching such as:\n\n- \\*Report\\* would find any files or folders with \"Report\" in the name.\n- Data\\_202?-09-30.xlsx would match items such as \"Data\\_2020-09-30.xlsx\", \"DATA\\_2021-09-30.xlsx\", \"data\\_2022-09-30.xlsx\" etc.\n- sales\\* would find any files or folders starting with the word \"Sales\"\n- \\*.csv would locate any files ending in \".csv\"\n- \\* matches everything within the directory tree starting at your given `resource`\n\nThe search is not case-sensitive. Searching for Clients\\* or clients\\* or CLIENTS\\*, etc. will provide identical results\n\nIf you are using the `name` parameter to run a search, the `type` parameter will be ignored by the server."
+    },
+    {
+      "id": "openapi_exavault_com.resources.moveResources",
+      "name": "resources.moveResources",
+      "description": "Moves a set of exisiting files/folders (provided by an array `resources`) to the requested `parentResource` in your account.\nIn the `resources` array, you may specify paths pointing files/folders throughout the account, but everything will be moved to the root of the `parentResource`.\n\n**Notes:**\n- Authenticated user should have modify permission.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.updateResourceById",
+      "name": "resources.updateResourceById",
+      "description": "Update the specified file or folder resource record's \"name\" parameter. The resource is identified by the numeric resource ID that is passed in as the last segment of the URI.\n"
+    },
+    {
+      "id": "openapi_exavault_com.resources.uploadFile",
+      "name": "resources.uploadFile",
+      "description": "Uploads a file to a specified path, with optional support for resuming a partially uploaded existing file.\n"
+    },
+    {
+      "id": "openapi_exavault_com.shares.addShare",
+      "name": "shares.addShare",
+      "description": "Creates a new share object for the given path in your account. We support three types of shares:\n\n  - A **shared folder** allows you to let outside parties access a folder in your account (including any files and nested subfolders) using just a link. Shared folders can be restricted; e.g. with an expiration date, password, download-only, etc. Shared folders are 'live'; if someone makes a change to a file in your shared folder, it will be immediately reflected in your account, and vice-versa.\n  - A file **send** lets you send one or more files via an easy download link. File sends are different than shared folders because file sends are 'point in time' -- the recipient will get the files as you sent them. If you later make a change to the source file, it will not be updated for the recipient.\n  - A **receive** folder lets you receive files into your account. You can either send users a link, or optionally [embed a customized form](/docs/account/05-file-sharing/05-upload-widget) on your website.\n  \n**How to send files from your computer using the API**:\n\nIn order to use the API to send files which are not already stored in your account, you'll need to follow a three-step process:\n\n1. Use the [POST /shares](#operation/addShare) endpoint to set up your send, including password, recipients, expiration, etc. You must include **upload** among the permissions in the `accessMode` and set the `sendingLocalFiles` parameter to **true**. The response that is returned will include a \"meta\" attribute, which contains an **accessToken** attribute. This new access token is valid only for the send.\n2. Use the [POST /resources/upload](#operation/uploadFile) endpoint to upload your files to the send you've created. The \"/\" path represents the root of the share, not your home directory. **You must send the access token that you received from the first step in the `ev-access-token` header**\n3. Use the [POST /shares/complete-send/{id}](#operation/completeDirectSend) endpoint to indicate that you have finished uploading files to your send. This will trigger the system to remove the **upload** permission from the share and send any invitation emails you set up in the first step of the process. **You must send YOUR access token in the `ev-access-token` header, not the temporary access token**\n\n**Setting the Share Permissions**\n\nOnly 5 different combinations of permissions are valid for the `accessMode` object:\n\n- **Upload Only**: This allows share visitors to upload to a share but do nothing else to the contained files. To use this mode, set `upload` to **true** and all other permissions to **false**\n- **Download Only**: This allows share visitors to download files from a share but do nothing else to the contained files. To use this mode, set `download` to **true** and all other permissions to **false**\n- **Upload and Download**: This allows share visitors to upload new files to the share or download files within the share, but not make any other changes to the share contents. To use this mode, set `upload` and `download` to **true** and set both `modify` and `delete` to **false**\n- **All but Delete**: This allows share visitors to make any changes to the contents of a share except deleting files. To use this mode, set `upload`, `download`, and `modify` to **true** and set `delete` to **false**\n- **Full Access**: This allows share visitors to make any changes to the contents of a share. To use this mode, set all 4 permissions `upload`, `download`, `modify`, and `delete` to **true**\n\nAny other combination of permissions provided as the `accessMode` will be rejected as a bad request.\n\n**Notes:**\n\nAuthenticated user requires [share permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions)."
+    },
+    {
+      "id": "openapi_exavault_com.shares.completeDirectSend",
+      "name": "shares.completeDirectSend",
+      "description": "After uploading the file(s) to be sent, this method will trigger invitation emails and finish the send files setup. If you are not sending files from your own computer in a send, you will not need this step.\n  \n**How to send files from your computer using the API**:\n\nIn order to use the API to send files which are not already stored in your account, you'll need to follow a three-step process:\n\n1. Use the [POST /shares](#operation/addShare) endpoint to set up your send, including password, recipients, expiration, etc. You must include **upload** among the permissions in the `accessMode` and set the `sendingLocalFiles` paramter to **true**. The response that is returned will include a \"meta\" attribute, which contains an **accessToken** attribute. This new access token is valid only for the send.\n2. Use the [POST /resources/upload](#operation/uploadFile) endpoint to upload your files to the send you've created. The \"/\" path represents the root of the share, not your home directory. **You must send the access token that you received from the first step in the `ev-access-token` header**\n3. Use the [POST /shares/complete-send/{id}](#operation/completeDirectSend) endpoint to indicate that you have finished uploading files to your send. This will trigger the system to remove the **upload** permission from the share and send any invitation emails you set up in the first step of the process. **You must send YOUR access token in the `ev-access-token` header, not the temporary access token**\n"
+    },
+    {
+      "id": "openapi_exavault_com.shares.deleteShareById",
+      "name": "shares.deleteShareById",
+      "description": "Deactivate a share. Deactivating a share does not remove the underlying files for **shared_folder** and **receive** share types; it merely removes the access URL. Deleting a **send** share type does remove the associated files, as files that have been sent are only associated with the share, and aren't stored anywhere else in the account.\n\n**Notes:**\n\n- You must have [sharing permissons](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to use this.\n- You must have [admin-level access](/docs/account/04-users/01-admin-users), or you must be the owner of the specified share you wish to delete."
+    },
+    {
+      "id": "openapi_exavault_com.shares.getShareById",
+      "name": "shares.getShareById",
+      "description": "Get the details for a specific share entry. You can use the `include` parameter to also get the details of related records, such as the owning user or the resources involved in the share.\n\n**Notes:**\n\n- Authenticated user requires [share permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions).\n- To get share objects with type send, authenticated user's role must be admin or master."
+    },
+    {
+      "id": "openapi_exavault_com.shares.listShares",
+      "name": "shares.listShares",
+      "description": "Get a list of shares that you would have access to view through the web interface. You can limit which results are returned by specifying specific types of shares you wish to view, finding things shared with a specific email address, as well as finding shares for specific folder names.\n\n\n**Notes:**\n\n- Authenticated user requires [share permission](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions).\n- To get share objects with type send, authenticated user's role must be admin or master."
+    },
+    {
+      "id": "openapi_exavault_com.shares.updateShareById",
+      "name": "shares.updateShareById",
+      "description": "Change the settings on an active share. Any changes made will affect all users that have access to the share. \n\nWhen updating invitees, pass the `recipients` body paramater with the full list of people who should be included on the share. If you resend the list without an existing recipient, they will be removed from the share.\n\n**Setting the Share Permissions**\n\nOnly 5 different combinations of permissions are valid for the `accessMode` object:\n\n- **Upload Only**: This allows share visitors to upload to a share but do nothing else to the contained files. To use this mode, set `upload` to **true** and all other permissions to **false**\n- **Download Only**: This allows share visitors to download files from a share but do nothing else to the contained files. To use this mode, set `download` to **true** and all other permissions to **false**\n- **Upload and Download**: This allows share visitors to upload new files to the share or download files within the share, but not make any other changes to the share contents. To use this mode, set `upload` and `download` to **true** and set both `modify` and `delete` to **false**\n- **All but Delete**: This allows share visitors to make any changes to the contents of a share except deleting files. To use this mode, set `upload`, `download`, and `modify` to **true** and set `delete` to **false**\n- **Full Access**: This allows share visitors to make any changes to the contents of a share. To use this mode, set all 4 permissions `upload`, `download`, `modify`, and `delete` to **true**\n\nAny other combination of permissions provided as the `accessMode` will be rejected as a bad request.\n\n**Notes:**\n\n  - Authenticated user should be the owner of the specified share."
+    },
+    {
+      "id": "openapi_exavault_com.sshKeys.addSshKey",
+      "name": "sshKeys.addSshKey",
+      "description": "Create a new SSH Key for a user. Provide the Public Key as formatted from the ssh-keygen command (openssh format or RFC-4716 format).\n\nIf you'd prefer to let us generate your key automatically, you can log in to your account via the web portal and set up new keys via the SSH Keys page. "
+    },
+    {
+      "id": "openapi_exavault_com.sshKeys.deleteSshKey",
+      "name": "sshKeys.deleteSshKey",
+      "description": "Delete the specified SSH key. This will not delete or deactivate the user tied to the key."
+    },
+    {
+      "id": "openapi_exavault_com.sshKeys.getSshKey",
+      "name": "sshKeys.getSshKey",
+      "description": "Return the information for a single SSH Key"
+    },
+    {
+      "id": "openapi_exavault_com.sshKeys.getSshKeysList",
+      "name": "sshKeys.getSshKeysList",
+      "description": "Returns a list of SSH Keys within the account. Can be filtered for a single user."
+    },
+    {
+      "id": "openapi_exavault_com.users.addUser",
+      "name": "users.addUser",
+      "description": "Adds a new user to the account. The user may be configured as an admin or standard user, and (if a standard user) may be assigned a restricted [home directory](/docs/account/04-users/00-introduction#setting-the-user-s-home-directory) and restricted [permissions](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions). \n\n**Notes:**\n\n- You must be an [admin-level user](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to use this."
+    },
+    {
+      "id": "openapi_exavault_com.users.deleteUser",
+      "name": "users.deleteUser",
+      "description": "Delete a user from the account. Deleting a user does **NOT** delete any files from the account; it merely removes a user's access. Aternatively, locking a user via the [PATCH /users/{id}](#operation/updateUser) will keep the user in your account, but make it unable to log in. \n\nResources and shares owned by the deleted user will be owned by the master user after the deletion.\n\n**Notes:**\n \n- You must have [admin-level access](/docs/account/04-users/01-admin-users) to delete a user.\n- The primary owner of the account cannot be deleted.\n"
+    },
+    {
+      "id": "openapi_exavault_com.users.getUserById",
+      "name": "users.getUserById",
+      "description": "Get the details for a specific user. You can use the `include` parameter to also get the details of related records, such as the account or the home directory.\n\n**Notes:**\n\n- You must have [admin or master](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) access to use this."
+    },
+    {
+      "id": "openapi_exavault_com.users.listUsers",
+      "name": "users.listUsers",
+      "description": "Get a list of the users in your account. There are three main types of searches you can do with this method:\n\n1. Search for a user by username. If you provide the `username` parameter in your call, then only the user who exactly matches that username will be in the list of matches. Any other parameters are ignored.\n1. Search for a user by individual filter fields (`nickname`,`email`,`role`,`status`,`homeDir`). Users in the list will be ones who match all of the filters you choose to search by. For example, you could look for users with the \"admin\" `role` AND `email` addresses ending in \"*@acme.com\". \n1. Search for a user by search string. If you provide the `search` parameter, users whose nickname OR email OR role OR homeDir match value your provide.\n\n**Notes:**\n\n- You must be an [admin-level user](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) to use this.\n- The homeDir is the full path to the user's home directory, not a resource ID or hash."
+    },
+    {
+      "id": "openapi_exavault_com.users.updateUser",
+      "name": "users.updateUser",
+      "description": "Updates the settings for the user. Note that the unique key for this API call is our internal ID, and _not_ the username, as the username can be changed.\n\nIn the request body, you should only send the parameters for values that you wish to change for the user.\n\n**Notes:**\n\n- You must have [admin or master](/docs/account/04-users/00-introduction#managing-user-roles-and-permissions) access to edit other users. If you have user-level access, you can only update your own user settings.\n- You cannot edit a master user with this method."
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.addWebhook",
+      "name": "webhooks.addWebhook",
+      "description": "Create a new Webhook on your account. Creating a Webhook will require an endpoint URL, a path, what events should trigger a webhook, and what request version to use. "
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.deleteWebhook",
+      "name": "webhooks.deleteWebhook",
+      "description": "Deleted the specified webhook. This will not affect logs or any resources the webhook is connected to. "
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.getWebhookById",
+      "name": "webhooks.getWebhookById",
+      "description": "Returns the metadata for a specific webhook. Webhook IDs can be retrieve from GET /webhooks"
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.getWehooksList",
+      "name": "webhooks.getWehooksList",
+      "description": "Returns a list of Webhooks. By default, this will return metadata on all Webhooks within the account. "
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.regenerateWebhookToken",
+      "name": "webhooks.regenerateWebhookToken",
+      "description": "This endpoint will allow you to regenerate the security token for a webhook if you believe it’s been compromised in any way. "
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.resendWebhookActivityEntry",
+      "name": "webhooks.resendWebhookActivityEntry",
+      "description": "This endpoint will allow you to resend a webhook that was previously sent. Resent webhooks will send exactly the same as the original webhook with the exception of the “sent” timestamp. Activity IDs can be retrieve from the webhook logs in your account or via GET /activity/webhooks"
+    },
+    {
+      "id": "openapi_exavault_com.webhooks.updateWebhook",
+      "name": "webhooks.updateWebhook",
+      "description": "Update the specified webhook. Updated webhooks will take effect immediately and could impact active workflows. Please be certain the webhook is not currently in use prior to updating. \n\nYou only need to send the portions of the webhook configuration you wish to change, rather than the entire webhook object."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

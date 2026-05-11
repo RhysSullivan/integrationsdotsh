@@ -1,0 +1,777 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.140Z",
+  "status": "ok",
+  "count": 154,
+  "tools": [
+    {
+      "id": "openapi_visualstudio_com.agents.getApiV1AgentsFamily",
+      "name": "agents.getApiV1AgentsFamily",
+      "description": "GET /api/v1/Agents/{family}"
+    },
+    {
+      "id": "openapi_visualstudio_com.agentTelemetry.postApiV1AgentTelemetry",
+      "name": "agentTelemetry.postApiV1AgentTelemetry",
+      "description": "POST /api/v1/AgentTelemetry"
+    },
+    {
+      "id": "openapi_visualstudio_com.agentTelemetry.postApiV1AgentTelemetryStandalone",
+      "name": "agentTelemetry.postApiV1AgentTelemetryStandalone",
+      "description": "POST /api/v1/AgentTelemetry/standalone"
+    },
+    {
+      "id": "openapi_visualstudio_com.authentication.getTunnelauth",
+      "name": "authentication.getTunnelauth",
+      "description": "GET /tunnelauth"
+    },
+    {
+      "id": "openapi_visualstudio_com.authentication.postTunnelauth",
+      "name": "authentication.postTunnelauth",
+      "description": "POST /tunnelauth"
+    },
+    {
+      "id": "openapi_visualstudio_com.billing.getApiV1GenevaActionsBillingEnvironmentId",
+      "name": "billing.getApiV1GenevaActionsBillingEnvironmentId",
+      "description": "GET /api/v1/GenevaActions/Billing/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.billing.getApiV1GenevaActionsBillingEnvironmentIdStateChanges",
+      "name": "billing.getApiV1GenevaActionsBillingEnvironmentIdStateChanges",
+      "description": "GET /api/v1/GenevaActions/Billing/{environmentId}/state-changes"
+    },
+    {
+      "id": "openapi_visualstudio_com.billing.postApiV1GenevaActionsBillingEnvironmentIdStateChanges",
+      "name": "billing.postApiV1GenevaActionsBillingEnvironmentIdStateChanges",
+      "description": "POST /api/v1/GenevaActions/Billing/{environmentId}/state-changes"
+    },
+    {
+      "id": "openapi_visualstudio_com.billing.postApiV1GenevaActionsBillingResend",
+      "name": "billing.postApiV1GenevaActionsBillingResend",
+      "description": "POST /api/v1/GenevaActions/Billing/resend"
+    },
+    {
+      "id": "openapi_visualstudio_com.configuration.deleteApiV1GenevaActionsConfigurationTargetKey",
+      "name": "configuration.deleteApiV1GenevaActionsConfigurationTargetKey",
+      "description": "DELETE /api/v1/GenevaActions/Configuration/{target}/{key}"
+    },
+    {
+      "id": "openapi_visualstudio_com.configuration.getApiV1GenevaActionsConfigurationTargetKey",
+      "name": "configuration.getApiV1GenevaActionsConfigurationTargetKey",
+      "description": "GET /api/v1/GenevaActions/Configuration/{target}/{key}"
+    },
+    {
+      "id": "openapi_visualstudio_com.configuration.postApiV1GenevaActionsConfigurationTarget",
+      "name": "configuration.postApiV1GenevaActionsConfigurationTarget",
+      "description": "POST /api/v1/GenevaActions/Configuration/{target}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.deleteApiV1EnvironmentsEnvironmentId",
+      "name": "environments.deleteApiV1EnvironmentsEnvironmentId",
+      "description": "DELETE /api/v1/Environments/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.deleteApiV1EnvironmentsEnvironmentIdPortsPort",
+      "name": "environments.deleteApiV1EnvironmentsEnvironmentIdPortsPort",
+      "description": "DELETE /api/v1/Environments/{environmentId}/ports/{port}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.deleteApiV1GenevaActionsEnvironmentsEnvironmentId",
+      "name": "environments.deleteApiV1GenevaActionsEnvironmentsEnvironmentId",
+      "description": "DELETE /api/v1/GenevaActions/Environments/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1Environments",
+      "name": "environments.getApiV1Environments",
+      "description": "GET /api/v1/Environments"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1EnvironmentsEnvironmentIdArchive",
+      "name": "environments.getApiV1EnvironmentsEnvironmentIdArchive",
+      "description": "GET /api/v1/Environments/{environmentId}/archive"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1EnvironmentsEnvironmentIdHeartbeattoken",
+      "name": "environments.getApiV1EnvironmentsEnvironmentIdHeartbeattoken",
+      "description": "GET /api/v1/Environments/{environmentId}/heartbeattoken"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1EnvironmentsEnvironmentIdState",
+      "name": "environments.getApiV1EnvironmentsEnvironmentIdState",
+      "description": "GET /api/v1/Environments/{environmentId}/state"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1EnvironmentsEnvironmentIdUpdates",
+      "name": "environments.getApiV1EnvironmentsEnvironmentIdUpdates",
+      "description": "GET /api/v1/Environments/{environmentId}/updates"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1GenevaActionsEnvironmentsEnvironmentId",
+      "name": "environments.getApiV1GenevaActionsEnvironmentsEnvironmentId",
+      "description": "GET /api/v1/GenevaActions/Environments/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getApiV1GenevaActionsEnvironmentsEnvironmentIdArchivedStorageSasTargetBlob",
+      "name": "environments.getApiV1GenevaActionsEnvironmentsEnvironmentIdArchivedStorageSasTargetBlob",
+      "description": "GET /api/v1/GenevaActions/Environments/{environmentId}/archived_storage_sas/{targetBlob}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.getEnvironmentRoute",
+      "name": "environments.getEnvironmentRoute",
+      "description": "GET /api/v1/Environments/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.patchApiV1EnvironmentsEnvironmentId",
+      "name": "environments.patchApiV1EnvironmentsEnvironmentId",
+      "description": "PATCH /api/v1/Environments/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.patchApiV1EnvironmentsEnvironmentIdFolder",
+      "name": "environments.patchApiV1EnvironmentsEnvironmentIdFolder",
+      "description": "PATCH /api/v1/Environments/{environmentId}/folder"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.patchApiV1EnvironmentsEnvironmentIdRestore",
+      "name": "environments.patchApiV1EnvironmentsEnvironmentIdRestore",
+      "description": "PATCH /api/v1/Environments/{environmentId}/restore"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1Environments",
+      "name": "environments.postApiV1Environments",
+      "description": "POST /api/v1/Environments"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1EnvironmentsEnvironmentIdArchive",
+      "name": "environments.postApiV1EnvironmentsEnvironmentIdArchive",
+      "description": "POST /api/v1/Environments/{environmentId}/archive"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1EnvironmentsEnvironmentIdExport",
+      "name": "environments.postApiV1EnvironmentsEnvironmentIdExport",
+      "description": "POST /api/v1/Environments/{environmentId}/export"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1EnvironmentsEnvironmentIdNotify",
+      "name": "environments.postApiV1EnvironmentsEnvironmentIdNotify",
+      "description": "POST /api/v1/Environments/{environmentId}/notify"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1EnvironmentsEnvironmentIdShutdown",
+      "name": "environments.postApiV1EnvironmentsEnvironmentIdShutdown",
+      "description": "POST /api/v1/Environments/{environmentId}/shutdown"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1EnvironmentsEnvironmentIdStart",
+      "name": "environments.postApiV1EnvironmentsEnvironmentIdStart",
+      "description": "POST /api/v1/Environments/{environmentId}/start"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.postApiV1GenevaActionsEnvironmentsEnvironmentIdUploadRunningVmLogs",
+      "name": "environments.postApiV1GenevaActionsEnvironmentsEnvironmentIdUploadRunningVmLogs",
+      "description": "POST /api/v1/GenevaActions/Environments/{environmentId}/upload/running/vm/logs"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.putApiV1EnvironmentsEnvironmentIdPortsPort",
+      "name": "environments.putApiV1EnvironmentsEnvironmentIdPortsPort",
+      "description": "PUT /api/v1/Environments/{environmentId}/ports/{port}"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.putApiV1EnvironmentsEnvironmentIdSecrets",
+      "name": "environments.putApiV1EnvironmentsEnvironmentIdSecrets",
+      "description": "PUT /api/v1/Environments/{environmentId}/secrets"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.putApiV1GenevaActionsEnvironmentsEnvironmentIdArchive",
+      "name": "environments.putApiV1GenevaActionsEnvironmentsEnvironmentIdArchive",
+      "description": "PUT /api/v1/GenevaActions/Environments/{environmentId}/archive"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.putApiV1GenevaActionsEnvironmentsEnvironmentIdShutdown",
+      "name": "environments.putApiV1GenevaActionsEnvironmentsEnvironmentIdShutdown",
+      "description": "PUT /api/v1/GenevaActions/Environments/{environmentId}/shutdown"
+    },
+    {
+      "id": "openapi_visualstudio_com.environments.updateEnvironmentRoute",
+      "name": "environments.updateEnvironmentRoute",
+      "description": "POST /api/v1/Environments/{environmentId}/_callback"
+    },
+    {
+      "id": "openapi_visualstudio_com.health.getHealth",
+      "name": "health.getHealth",
+      "description": "GET /health"
+    },
+    {
+      "id": "openapi_visualstudio_com.heartBeat.postApiV1HeartBeat",
+      "name": "heartBeat.postApiV1HeartBeat",
+      "description": "POST /api/v1/HeartBeat"
+    },
+    {
+      "id": "openapi_visualstudio_com.locations.getApiV1Locations",
+      "name": "locations.getApiV1Locations",
+      "description": "GET /api/v1/Locations"
+    },
+    {
+      "id": "openapi_visualstudio_com.locations.getApiV1LocationsLocation",
+      "name": "locations.getApiV1LocationsLocation",
+      "description": "GET /api/v1/Locations/{location}"
+    },
+    {
+      "id": "openapi_visualstudio_com.netmon.getInternalNetmonCorrelation",
+      "name": "netmon.getInternalNetmonCorrelation",
+      "description": "GET /internal/Netmon/correlation"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.deleteApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "name": "networkSettings.deleteApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "description": "DELETE /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.patchApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "name": "networkSettings.patchApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "description": "PATCH /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdProvidersGitHubNetworkResourceTypeResourceReadBegin",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdProvidersGitHubNetworkResourceTypeResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/providers/GitHub.Network/{resourceType}/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceCreationCompleted",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceCreationCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourceCreationCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceCreationValidate",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceCreationValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourceCreationValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceDeletionCompleted",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceDeletionCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourceDeletionCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceDeletionValidate",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceDeletionValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourceDeletionValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourcePatchCompleted",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourcePatchCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourcePatchCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourcePatchValidate",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourcePatchValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourcePatchValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceReadBegin",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceNameResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceReadBegin",
+      "name": "networkSettings.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.putApiV1SubscriptionsSubscriptionIdProvidersGitHubNetworkResourceTypeSubscriptionLifeCycleNotification",
+      "name": "networkSettings.putApiV1SubscriptionsSubscriptionIdProvidersGitHubNetworkResourceTypeSubscriptionLifeCycleNotification",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/providers/GitHub.Network/{resourceType}/SubscriptionLifeCycleNotification"
+    },
+    {
+      "id": "openapi_visualstudio_com.networkSettings.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "name": "networkSettings.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersGitHubNetworkResourceTypeResourceName",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/GitHub.Network/{resourceType}/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdProvidersMicrosoftCodespacesPlansResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdProvidersMicrosoftCodespacesPlansResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/providers/Microsoft.Codespaces/plans/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdProvidersMicrosoftVsOnlinePlansResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdProvidersMicrosoftVsOnlinePlansResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/providers/Microsoft.VSOnline/plans/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/deleteDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/deleteDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteAllCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteAllCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/deleteAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteAllEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameDeleteAllEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/deleteAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadAllCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadAllCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/readAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadAllEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadAllEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/readAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameReadDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/readDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceCreationCompleted",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceCreationCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourceCreationCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceCreationValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceCreationValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourceCreationValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceDeletionValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceDeletionValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourceDeletionValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourcePatchCompleted",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourcePatchCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourcePatchCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourcePatchValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourcePatchValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourcePatchValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/writeCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/writeDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceNameWriteEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}/writeEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteAllCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteAllCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/deleteAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteAllEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameDeleteAllEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/deleteAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadAllCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadAllCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/readAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadAllEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadAllEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/readAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameReadDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/readDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceCreationCompleted",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceCreationCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourceCreationCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceCreationValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceCreationValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourceCreationValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceDeletionValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceDeletionValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourceDeletionValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourcePatchCompleted",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourcePatchCompleted",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourcePatchCompleted"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourcePatchValidate",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourcePatchValidate",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourcePatchValidate"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteCodespaces",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteCodespaces",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/writeCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteDelegates",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteDelegates",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/writeDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteEnvironments",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceNameWriteEnvironments",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}/writeEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceReadBegin",
+      "name": "plans.postApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceReadBegin",
+      "description": "POST /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/resourceReadBegin"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.putApiV1SubscriptionsSubscriptionIdProvidersMicrosoftCodespacesPlansSubscriptionLifeCycleNotification",
+      "name": "plans.putApiV1SubscriptionsSubscriptionIdProvidersMicrosoftCodespacesPlansSubscriptionLifeCycleNotification",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/providers/Microsoft.Codespaces/plans/SubscriptionLifeCycleNotification"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.putApiV1SubscriptionsSubscriptionIdProvidersMicrosoftVsOnlinePlansSubscriptionLifeCycleNotification",
+      "name": "plans.putApiV1SubscriptionsSubscriptionIdProvidersMicrosoftVsOnlinePlansSubscriptionLifeCycleNotification",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/providers/Microsoft.VSOnline/plans/SubscriptionLifeCycleNotification"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceName",
+      "name": "plans.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftCodespacesPlansResourceName",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Codespaces/plans/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.plans.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceName",
+      "name": "plans.putApiV1SubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersMicrosoftVsOnlinePlansResourceName",
+      "description": "PUT /api/v1/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.VSOnline/plans/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.pool.deleteApiV1TenantTenantIdPoolPoolName",
+      "name": "pool.deleteApiV1TenantTenantIdPoolPoolName",
+      "description": "DELETE /api/v1/tenant/{tenantId}/Pool/{poolName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.pool.getApiV1TenantTenantIdPoolPoolName",
+      "name": "pool.getApiV1TenantTenantIdPoolPoolName",
+      "description": "GET /api/v1/tenant/{tenantId}/Pool/{poolName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.pool.patchApiV1TenantTenantIdPoolPoolName",
+      "name": "pool.patchApiV1TenantTenantIdPoolPoolName",
+      "description": "PATCH /api/v1/tenant/{tenantId}/Pool/{poolName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.pool.putApiV1TenantTenantIdPoolPoolName",
+      "name": "pool.putApiV1TenantTenantIdPoolPoolName",
+      "description": "PUT /api/v1/tenant/{tenantId}/Pool/{poolName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.poolGroup.deleteApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "name": "poolGroup.deleteApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "description": "DELETE /api/v1/tenant/{tenantId}/PoolGroup/{poolGroupName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.poolGroup.getApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "name": "poolGroup.getApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "description": "GET /api/v1/tenant/{tenantId}/PoolGroup/{poolGroupName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.poolGroup.patchApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "name": "poolGroup.patchApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "description": "PATCH /api/v1/tenant/{tenantId}/PoolGroup/{poolGroupName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.poolGroup.putApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "name": "poolGroup.putApiV1TenantTenantIdPoolGroupPoolGroupName",
+      "description": "PUT /api/v1/tenant/{tenantId}/PoolGroup/{poolGroupName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.pools.getApiV1PoolsDefault",
+      "name": "pools.getApiV1PoolsDefault",
+      "description": "GET /api/v1/pools/default"
+    },
+    {
+      "id": "openapi_visualstudio_com.pools.postApiV1GenevaActionsPoolsChangeResourceDeletionSetting",
+      "name": "pools.postApiV1GenevaActionsPoolsChangeResourceDeletionSetting",
+      "description": "POST /api/v1/GenevaActions/Pools/change-resource-deletion-setting"
+    },
+    {
+      "id": "openapi_visualstudio_com.pools.postApiV1GenevaActionsPoolsPoolCodeRotatePool",
+      "name": "pools.postApiV1GenevaActionsPoolsPoolCodeRotatePool",
+      "description": "POST /api/v1/GenevaActions/Pools/{poolCode}/rotate-pool"
+    },
+    {
+      "id": "openapi_visualstudio_com.pools.postApiV1GenevaActionsPoolsTarget",
+      "name": "pools.postApiV1GenevaActionsPoolsTarget",
+      "description": "POST /api/v1/GenevaActions/Pools/{target}"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.getPrebuildReadinessRoute",
+      "name": "prebuilds.getPrebuildReadinessRoute",
+      "description": "GET /api/v1/Prebuilds/templates/repo/{repoId}/branch/{branchName}/hash/{prebuildHash}/location/{location}/skus"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.getTemplateInfoRoute",
+      "name": "prebuilds.getTemplateInfoRoute",
+      "description": "GET /api/v1/Prebuilds/template/{environmentId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.postApiV1GenevaActionsPrebuildsPoolsCreateorupdatesettings",
+      "name": "prebuilds.postApiV1GenevaActionsPrebuildsPoolsCreateorupdatesettings",
+      "description": "POST /api/v1/GenevaActions/Prebuilds/pools/createorupdatesettings"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.postApiV1GenevaActionsPrebuildsPoolsDelete",
+      "name": "prebuilds.postApiV1GenevaActionsPrebuildsPoolsDelete",
+      "description": "POST /api/v1/GenevaActions/Prebuilds/pools/delete"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.postApiV1PrebuildsPoolsPoolIdInstances",
+      "name": "prebuilds.postApiV1PrebuildsPoolsPoolIdInstances",
+      "description": "POST /api/v1/Prebuilds/pools/{poolId}/instances"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuilds.putApiV1PrebuildsPoolsPoolIdInstances",
+      "name": "prebuilds.putApiV1PrebuildsPoolsPoolIdInstances",
+      "description": "PUT /api/v1/Prebuilds/pools/{poolId}/instances"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.deleteApiV2PrebuildsRepositoryRepoIdBranchBranchName",
+      "name": "prebuildsV.deleteApiV2PrebuildsRepositoryRepoIdBranchBranchName",
+      "description": "DELETE /api/v2/prebuilds/repository/{repoId}/branch/{branchName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.getPrebuildReadinessSkusRoute",
+      "name": "prebuildsV.getPrebuildReadinessSkusRoute",
+      "description": "GET /api/v2/prebuilds/templates/skus/repo/{repoId}/branch/{branchName}/hash/{prebuildHash}/location/{location}/devcontainerpath/{devContainerPath}"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.postApiV2PrebuildsDelete",
+      "name": "prebuildsV.postApiV2PrebuildsDelete",
+      "description": "POST /api/v2/prebuilds/delete"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.postApiV2PrebuildsTemplates",
+      "name": "prebuildsV.postApiV2PrebuildsTemplates",
+      "description": "POST /api/v2/prebuilds/templates"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.postApiV2PrebuildsTemplatesTemplateIdUpdatestatus",
+      "name": "prebuildsV.postApiV2PrebuildsTemplatesTemplateIdUpdatestatus",
+      "description": "POST /api/v2/prebuilds/templates/{templateId}/updatestatus"
+    },
+    {
+      "id": "openapi_visualstudio_com.prebuildsV.postApiV2PrebuildsTemplatesUpdatemaxversions",
+      "name": "prebuildsV.postApiV2PrebuildsTemplatesUpdatemaxversions",
+      "description": "POST /api/v2/prebuilds/templates/updatemaxversions"
+    },
+    {
+      "id": "openapi_visualstudio_com.privacy.postApiV1GenevaActionsPrivacyRefreshProfileTelemetryProperties",
+      "name": "privacy.postApiV1GenevaActionsPrivacyRefreshProfileTelemetryProperties",
+      "description": "POST /api/v1/GenevaActions/Privacy/refresh-profile-telemetry-properties"
+    },
+    {
+      "id": "openapi_visualstudio_com.resources.postApiV1GenevaActionsResourcesResourceIdUnderInvestigation",
+      "name": "resources.postApiV1GenevaActionsResourcesResourceIdUnderInvestigation",
+      "description": "POST /api/v1/GenevaActions/Resources/{resourceId}/under-investigation"
+    },
+    {
+      "id": "openapi_visualstudio_com.sas.getApiV1Sas",
+      "name": "sas.getApiV1Sas",
+      "description": "GET /api/v1/Sas"
+    },
+    {
+      "id": "openapi_visualstudio_com.secrets.deleteApiV1SecretsSecretId",
+      "name": "secrets.deleteApiV1SecretsSecretId",
+      "description": "DELETE /api/v1/Secrets/{secretId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.secrets.getApiV1Secrets",
+      "name": "secrets.getApiV1Secrets",
+      "description": "GET /api/v1/Secrets"
+    },
+    {
+      "id": "openapi_visualstudio_com.secrets.postApiV1Secrets",
+      "name": "secrets.postApiV1Secrets",
+      "description": "POST /api/v1/Secrets"
+    },
+    {
+      "id": "openapi_visualstudio_com.secrets.putApiV1SecretsSecretId",
+      "name": "secrets.putApiV1SecretsSecretId",
+      "description": "PUT /api/v1/Secrets/{secretId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.tenant.deleteApiV1TenantTenantId",
+      "name": "tenant.deleteApiV1TenantTenantId",
+      "description": "DELETE /api/v1/Tenant/{tenantId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.tenant.getApiV1TenantTenantId",
+      "name": "tenant.getApiV1TenantTenantId",
+      "description": "GET /api/v1/Tenant/{tenantId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.tenant.putApiV1TenantTenantId",
+      "name": "tenant.putApiV1TenantTenantId",
+      "description": "PUT /api/v1/Tenant/{tenantId}"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensPlansPlanNameDeleteAllCodespaces",
+      "name": "tokens.postApiV1TokensPlansPlanNameDeleteAllCodespaces",
+      "description": "POST /api/v1/Tokens/plans/{planName}/deleteAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensPlansPlanNameReadAllCodespaces",
+      "name": "tokens.postApiV1TokensPlansPlanNameReadAllCodespaces",
+      "description": "POST /api/v1/Tokens/plans/{planName}/readAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensPlansPlanNameWriteCodespaces",
+      "name": "tokens.postApiV1TokensPlansPlanNameWriteCodespaces",
+      "description": "POST /api/v1/Tokens/plans/{planName}/writeCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensPlansPlanNameWriteDelegates",
+      "name": "tokens.postApiV1TokensPlansPlanNameWriteDelegates",
+      "description": "POST /api/v1/Tokens/plans/{planName}/writeDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameDeleteAllCodespaces",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameDeleteAllCodespaces",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/deleteAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameDeleteAllEnvironments",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameDeleteAllEnvironments",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/deleteAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameReadAllCodespaces",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameReadAllCodespaces",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/readAllCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameReadAllEnvironments",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameReadAllEnvironments",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/readAllEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteCodespaces",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteCodespaces",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/writeCodespaces"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteDelegates",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteDelegates",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/writeDelegates"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteEnvironments",
+      "name": "tokens.postApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceNameWriteEnvironments",
+      "description": "POST /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}/writeEnvironments"
+    },
+    {
+      "id": "openapi_visualstudio_com.tokens.putApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceName",
+      "name": "tokens.putApiV1TokensSubscriptionsSubscriptionIdResourceGroupsResourceGroupProvidersProviderNamespacePlansResourceName",
+      "description": "PUT /api/v1/Tokens/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/{providerNamespace}/plans/{resourceName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.tunnel.getApiV1TunnelEnvironmentIdPortInfo",
+      "name": "tunnel.getApiV1TunnelEnvironmentIdPortInfo",
+      "description": "GET /api/v1/Tunnel/{environmentId}/portInfo"
+    },
+    {
+      "id": "openapi_visualstudio_com.userSubscriptions.deleteApiV1UserSubscriptions",
+      "name": "userSubscriptions.deleteApiV1UserSubscriptions",
+      "description": "DELETE /api/v1/UserSubscriptions"
+    },
+    {
+      "id": "openapi_visualstudio_com.userSubscriptions.postApiV1UserSubscriptions",
+      "name": "userSubscriptions.postApiV1UserSubscriptions",
+      "description": "POST /api/v1/UserSubscriptions"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.deleteApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "name": "vm.deleteApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "description": "DELETE /api/v1/tenant/{tenantId}/pool/{poolName}/Vm/{vmName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.getApiV1TenantTenantIdPoolPoolNameVm",
+      "name": "vm.getApiV1TenantTenantIdPoolPoolNameVm",
+      "description": "GET /api/v1/tenant/{tenantId}/pool/{poolName}/Vm"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.getApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "name": "vm.getApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "description": "GET /api/v1/tenant/{tenantId}/pool/{poolName}/Vm/{vmName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.postApiV1TenantTenantIdPoolPoolNameVmVmNameStart",
+      "name": "vm.postApiV1TenantTenantIdPoolPoolNameVmVmNameStart",
+      "description": "POST /api/v1/tenant/{tenantId}/pool/{poolName}/Vm/{vmName}/start"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.postApiV1TenantTenantIdPoolPoolNameVmVmNameStop",
+      "name": "vm.postApiV1TenantTenantIdPoolPoolNameVmVmNameStop",
+      "description": "POST /api/v1/tenant/{tenantId}/pool/{poolName}/Vm/{vmName}/stop"
+    },
+    {
+      "id": "openapi_visualstudio_com.vm.putApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "name": "vm.putApiV1TenantTenantIdPoolPoolNameVmVmName",
+      "description": "PUT /api/v1/tenant/{tenantId}/pool/{poolName}/Vm/{vmName}"
+    },
+    {
+      "id": "openapi_visualstudio_com.vnetPoolDefinitions.deleteApiV1GenevaActionsVnetPoolDefinitions",
+      "name": "vnetPoolDefinitions.deleteApiV1GenevaActionsVnetPoolDefinitions",
+      "description": "DELETE /api/v1/GenevaActions/VnetPoolDefinitions"
+    },
+    {
+      "id": "openapi_visualstudio_com.vnetPoolDefinitions.postApiV1GenevaActionsVnetPoolDefinitions",
+      "name": "vnetPoolDefinitions.postApiV1GenevaActionsVnetPoolDefinitions",
+      "description": "POST /api/v1/GenevaActions/VnetPoolDefinitions"
+    },
+    {
+      "id": "openapi_visualstudio_com.warmup.getWarmup",
+      "name": "warmup.getWarmup",
+      "description": "GET /warmup"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

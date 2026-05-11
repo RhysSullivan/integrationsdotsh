@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:19:57.247Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_mando_armory.submit_contact_form",
+      "name": "submit_contact_form",
+      "description": "Use this when the user wants to contact the business or send a direct inquiry. Displays an interactive contact form widget that collects name, email, phone (optional), and message. This tool supports two modes: interactive form display and explicit submission. Use name, email, phone, and message for both context-derived prefill and explicit submission. Submission mode is triggered only when name, email, and message are provided together; otherwise the widget opens for interactive completion. Form submission is explicitly triggered by the user in the widget or by an explicit user request to submit now. Use this tool for requests like: 'I want to contact you', 'I want to discuss this', 'Send this message to the business'. Do NOT use for booking appointments (use book_appointment tool instead). DO NOT use for listing products/services (use show_products tool instead)."
+    },
+    {
+      "id": "mcp_mando_armory.show_products",
+      "name": "show_products",
+      "description": "Use this when the user wants to browse what products or services the business offers. Displays an interactive product catalog widget with names, descriptions, pricing, images, and product actions. Catalog browsing is read-only; purchases are not completed through this tool. Use optional filters to narrow results: search, category, min_price, and max_price. Use this tool for requests like: 'What products do you sell?', 'Show me services under $300', 'Do you have running shorts?'. If the user requests a general catalog view, call with no filters to return all available products/services. Do NOT use for submitting inquiries (use submit_contact_form tool instead). DO NOT use for scheduling appointments (use book_appointment tool instead)."
+    },
+    {
+      "id": "mcp_mando_armory.show_business_info",
+      "name": "show_business_info",
+      "description": "Use this when the user asks for general business profile information. Displays a read-only business information widget with business name, description, email, phone, address, and website. Use this tool for requests like: 'Tell me about your business', 'What is your phone number?', 'What is your website?'. Do NOT use for detailed policy/procedure questions (use ask_question tool instead). DO NOT use for map/location exploration (use show_locations tool instead)."
+    }
+  ]
+}

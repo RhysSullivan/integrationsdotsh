@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:19:54.718Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_graphos_tools.apolloconnectorsspec",
+      "name": "ApolloConnectorsSpec",
+      "description": "This tool provides the agent with the specification which describes how to use Apollo Connectors in a graphql schema to send an HTTP request or use any REST API with a graph. A user may refer to an Apollo Connector as 'Apollo Connector', 'REST Connector', or even just 'Connector'. Treat these all as synonyms for the same thing. You MUST ALWAYS call this tool to use this specification as a guide BEFORE planning, making, or proposing ANY edits or additions to a connectors schema file and/or a graphql file containing @connect or @source. This tool is to provide the agent with guidance, not the user."
+    },
+    {
+      "id": "mcp_graphos_tools.apollodocsread",
+      "name": "ApolloDocsRead",
+      "description": "Fetches the complete markdown content of an Apollo documentation page using its slug, or everything after https://apollographql.com/docs. Documentation slugs can be obtained from the SearchDocs tool results. Use this after ApolloDocsSearch to read full pages rather than just excerpts. Content will be given in chunks with the totalCount field specifying the total number of chunks. Start with a chunkIndex of 0 and fetch each chunk."
+    },
+    {
+      "id": "mcp_graphos_tools.apollodocssearch",
+      "name": "ApolloDocsSearch",
+      "description": "Searches official Apollo GraphQL documentation (Apollo GraphQL, GraphOS, Apollo Router, Apollo Client, API orchestration, MCP Server, schema design, deployment best practices, connectors, and platform usage). Returns url, slug, and markdown content excerpts. For complete page content, you MUST use the returned slug with the ApolloDocsRead tool. Use this tool when you need technical information, configuration examples, best practices, and troubleshooting guides for any Apollo GraphQL technology.\n\n Use the ApolloDocsRead tool to get all of the content for a given search result using the slug, don't use a WebSearch."
+    }
+  ]
+}

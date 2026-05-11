@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:21:35.065Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_sixt.getoffers",
+      "name": "GetOffers",
+      "description": "Use this when you want to get Sixt car offers for a certain location. User should provide a station, date and time for pickup and return as well as a type of car they want to book.SelectLocation tool MUST be called first. LocationSelectionID from that endpoint's is used here."
+    },
+    {
+      "id": "mcp_sixt.selectlocation",
+      "name": "SelectLocation",
+      "description": "Use this to select a Sixt location the user has picked. If pickup and return are the same, use the same location selection id.  If the location is not a direct branch (e.g., if it is a city or address), nearby Sixt branches will be returned in the response for the user to choose from.\","
+    },
+    {
+      "id": "mcp_sixt.suggestlocations",
+      "name": "SuggestLocations",
+      "description": "Use this when you need to search for Sixt stations with a query, when there are multiple locations returned, always ask the user to pick which one he wants."
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "fetchedAt": "2026-04-30T15:26:46.451Z",
+  "status": "ok",
+  "count": 86,
+  "tools": [
+    {
+      "id": "openapi_shipengine_com.addresses.parseAddress",
+      "name": "addresses.parseAddress",
+      "description": "The address-recognition API makes it easy for you to extract address data from unstructured text, including the recipient name, line 1, line 2, city, postal code, and more.\n\nData often enters your system as unstructured text (for example: emails, SMS messages, support tickets, or other documents). ShipEngine's address-recognition API helps you extract meaningful, structured data from this unstructured text. The parsed address data is returned in the same structure that's used for other ShipEngine APIs, such as address validation, rate quotes, and shipping labels.\n\n> **Note:** Address recognition is currently supported for the United States, Canada, Australia, New Zealand, the United Kingdom, and Ireland.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.addresses.validateAddress",
+      "name": "addresses.validateAddress",
+      "description": "Address validation ensures accurate addresses and can lead to reduced shipping costs by preventing address correction surcharges.\nShipEngine cross references multiple databases to validate addresses and identify potential deliverability issues.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.addToBatch",
+      "name": "batches.addToBatch",
+      "description": "Add a Shipment or Rate to a Batch"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.createBatch",
+      "name": "batches.createBatch",
+      "description": "Create a Batch"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.deleteBatch",
+      "name": "batches.deleteBatch",
+      "description": "Delete Batch By Id"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.getBatchByExternalId",
+      "name": "batches.getBatchByExternalId",
+      "description": "Get Batch By External ID"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.getBatchById",
+      "name": "batches.getBatchById",
+      "description": "Get Batch By ID"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.listBatchErrors",
+      "name": "batches.listBatchErrors",
+      "description": "Error handling in batches are handled differently than in a single synchronous request.\nYou must retrieve the status of your batch by [getting a batch](https://www.shipengine.com/docs/reference/get-batch-by-id/) and getting an overview of the statuses or you can list errors directly here below to get detailed information about the errors.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.listBatches",
+      "name": "batches.listBatches",
+      "description": "List Batches associated with your Shipengine account"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.processBatch",
+      "name": "batches.processBatch",
+      "description": "Process Batch ID Labels"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.removeFromBatch",
+      "name": "batches.removeFromBatch",
+      "description": "Remove a shipment or rate from a batch"
+    },
+    {
+      "id": "openapi_shipengine_com.batches.updateBatch",
+      "name": "batches.updateBatch",
+      "description": "Update Batch By Id"
+    },
+    {
+      "id": "openapi_shipengine_com.carrierAccounts.connectCarrier",
+      "name": "carrierAccounts.connectCarrier",
+      "description": "Connect a carrier account"
+    },
+    {
+      "id": "openapi_shipengine_com.carrierAccounts.disconnectCarrier",
+      "name": "carrierAccounts.disconnectCarrier",
+      "description": "Disconnect a carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.carrierAccounts.getCarrierSettings",
+      "name": "carrierAccounts.getCarrierSettings",
+      "description": "Get carrier settings"
+    },
+    {
+      "id": "openapi_shipengine_com.carrierAccounts.updateCarrierSettings",
+      "name": "carrierAccounts.updateCarrierSettings",
+      "description": "Update carrier settings"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.addFundsToCarrier",
+      "name": "carriers.addFundsToCarrier",
+      "description": "Add Funds To A Carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.getCarrierById",
+      "name": "carriers.getCarrierById",
+      "description": "Retrive carrier info by ID"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.getCarrierOptions",
+      "name": "carriers.getCarrierOptions",
+      "description": "Get a list of the options available for the carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.listCarrierPackageTypes",
+      "name": "carriers.listCarrierPackageTypes",
+      "description": "List the package types associated with the carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.listCarriers",
+      "name": "carriers.listCarriers",
+      "description": "List all carriers that have been added to this account"
+    },
+    {
+      "id": "openapi_shipengine_com.carriers.listCarrierServices",
+      "name": "carriers.listCarrierServices",
+      "description": "List the services associated with the carrier ID"
+    },
+    {
+      "id": "openapi_shipengine_com.downloads.downloadFile",
+      "name": "downloads.downloadFile",
+      "description": "Get File"
+    },
+    {
+      "id": "openapi_shipengine_com.insurance.addFundsToInsurance",
+      "name": "insurance.addFundsToInsurance",
+      "description": "You may need to auto fund your account from time to time. For example, if you don't normally ship items over $100,\nand may want to add funds to insurance rather than keeping the account funded.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.insurance.connectInsurer",
+      "name": "insurance.connectInsurer",
+      "description": "Connect a Shipsurance Account"
+    },
+    {
+      "id": "openapi_shipengine_com.insurance.disconnectInsurer",
+      "name": "insurance.disconnectInsurer",
+      "description": "Disconnect a Shipsurance Account"
+    },
+    {
+      "id": "openapi_shipengine_com.insurance.getInsuranceBalance",
+      "name": "insurance.getInsuranceBalance",
+      "description": "Retrieve the balance of your Shipsurance account."
+    },
+    {
+      "id": "openapi_shipengine_com.labels.createLabel",
+      "name": "labels.createLabel",
+      "description": "Purchase and print a label for shipment"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.createLabelFromRate",
+      "name": "labels.createLabelFromRate",
+      "description": "When retrieving rates for shipments using the `/rates` endpoint, the returned information contains a `rate_id` property that can be used\nto generate a label without having to refill in the shipment information repeatedly.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.createLabelFromShipment",
+      "name": "labels.createLabelFromShipment",
+      "description": "Purchase a label using a shipment ID that has already been created with the desired address and\npackage info.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.createReturnLabel",
+      "name": "labels.createReturnLabel",
+      "description": "Create a return label"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.getLabelByExternalShipmentId",
+      "name": "labels.getLabelByExternalShipmentId",
+      "description": "Find a label by using the external shipment id that was used during label creation\n"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.getLabelById",
+      "name": "labels.getLabelById",
+      "description": "Retrieve information for individual labels."
+    },
+    {
+      "id": "openapi_shipengine_com.labels.getTrackingLogFromLabel",
+      "name": "labels.getTrackingLogFromLabel",
+      "description": "Retrieve the label's tracking information"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.listLabels",
+      "name": "labels.listLabels",
+      "description": "This endpoint returns a list of labels that you've [created](https://www.shipengine.com/docs/labels/create-a-label/). You can optionally filter the results as well as control their sort order and the number of results returned at a time.\n\nBy default, all labels are returned, 25 at a time, starting with the most recently created ones.  You can combine multiple filter options to narrow-down the results.  For example, if you only want to get your UPS labels for your east coast warehouse you could query by both `warehouse_id` and `carrier_id`\n"
+    },
+    {
+      "id": "openapi_shipengine_com.labels.voidLabel",
+      "name": "labels.voidLabel",
+      "description": "Void a label by ID to get a refund."
+    },
+    {
+      "id": "openapi_shipengine_com.manifests.createManifest",
+      "name": "manifests.createManifest",
+      "description": "Each ShipEngine manifest is created for a specific warehouse, so you'll need to provide the warehouse_id\nrather than the ship_from address. You can create a warehouse for each location that you want to create manifests for.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.manifests.getManifestById",
+      "name": "manifests.getManifestById",
+      "description": "Get Manifest By Id"
+    },
+    {
+      "id": "openapi_shipengine_com.manifests.getManifestRequestById",
+      "name": "manifests.getManifestRequestById",
+      "description": "Get Manifest Request By Id"
+    },
+    {
+      "id": "openapi_shipengine_com.manifests.listManifests",
+      "name": "manifests.listManifests",
+      "description": "Similar to querying shipments, we allow you to query manifests since there will likely be a large number over a long period of time."
+    },
+    {
+      "id": "openapi_shipengine_com.packagePickups.deleteScheduledPickup",
+      "name": "packagePickups.deleteScheduledPickup",
+      "description": "Delete a previously-scheduled pickup by ID"
+    },
+    {
+      "id": "openapi_shipengine_com.packagePickups.getPickupById",
+      "name": "packagePickups.getPickupById",
+      "description": "Get Pickup By ID"
+    },
+    {
+      "id": "openapi_shipengine_com.packagePickups.listScheduledPickups",
+      "name": "packagePickups.listScheduledPickups",
+      "description": "List all pickups that have been scheduled for this carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.packagePickups.schedulePickup",
+      "name": "packagePickups.schedulePickup",
+      "description": "Schedule a package pickup with a carrier"
+    },
+    {
+      "id": "openapi_shipengine_com.packageTypes.createPackageType",
+      "name": "packageTypes.createPackageType",
+      "description": "Create a custom package type to better assist in getting accurate rate estimates"
+    },
+    {
+      "id": "openapi_shipengine_com.packageTypes.deletePackageType",
+      "name": "packageTypes.deletePackageType",
+      "description": "Delete a custom package using the ID"
+    },
+    {
+      "id": "openapi_shipengine_com.packageTypes.getPackageTypeById",
+      "name": "packageTypes.getPackageTypeById",
+      "description": "Get Custom Package Type by ID"
+    },
+    {
+      "id": "openapi_shipengine_com.packageTypes.listPackageTypes",
+      "name": "packageTypes.listPackageTypes",
+      "description": "List the custom package types associated with the account"
+    },
+    {
+      "id": "openapi_shipengine_com.packageTypes.updatePackageType",
+      "name": "packageTypes.updatePackageType",
+      "description": "Update the custom package type object by ID"
+    },
+    {
+      "id": "openapi_shipengine_com.rates.calculateRates",
+      "name": "rates.calculateRates",
+      "description": "It's not uncommon that you want to give your customer the choice between whether they want to ship the fastest, cheapest, or the most trusted route. Most companies don't solely ship things using a single shipping option;\nso we provide functionality to show you all your options!\n"
+    },
+    {
+      "id": "openapi_shipengine_com.rates.compareBulkRates",
+      "name": "rates.compareBulkRates",
+      "description": "Get Bulk Shipment Rates"
+    },
+    {
+      "id": "openapi_shipengine_com.rates.estimateRates",
+      "name": "rates.estimateRates",
+      "description": "Get Rate Estimates"
+    },
+    {
+      "id": "openapi_shipengine_com.rates.getRateById",
+      "name": "rates.getRateById",
+      "description": "Retrieve a previously queried rate by its ID"
+    },
+    {
+      "id": "openapi_shipengine_com.servicePoints.servicePointsGetById",
+      "name": "servicePoints.servicePointsGetById",
+      "description": "Returns a carrier service point by using the service_point_id"
+    },
+    {
+      "id": "openapi_shipengine_com.servicePoints.servicePointsList",
+      "name": "servicePoints.servicePointsList",
+      "description": "List carrier service points by location"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.cancelShipments",
+      "name": "shipments.cancelShipments",
+      "description": "Mark a shipment cancelled, if it is no longer needed or being used by your organized. Any label associated with the shipment needs to be voided first\nAn example use case would be if a batch label creation job is going to run at a set time and only queries `pending` shipments. Marking a shipment as cancelled\nwould remove it from this process\n"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.createShipments",
+      "name": "shipments.createShipments",
+      "description": "Create one or multiple shipments."
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.getShipmentByExternalId",
+      "name": "shipments.getShipmentByExternalId",
+      "description": "Query Shipments created using your own custom ID convention using this endpint"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.getShipmentById",
+      "name": "shipments.getShipmentById",
+      "description": "Get an individual shipment based on its ID"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.listShipmentRates",
+      "name": "shipments.listShipmentRates",
+      "description": "Get Rates for the shipment information associated with the shipment ID"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.listShipments",
+      "name": "shipments.listShipments",
+      "description": "Get list of Shipments"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.parseShipment",
+      "name": "shipments.parseShipment",
+      "description": "The shipment-recognition API makes it easy for you to extract shipping data from unstructured text, including people's names, addresses, package weights and dimensions, insurance and delivery requirements, and more.\n\nData often enters your system as unstructured text (for example: emails, SMS messages, support tickets, or other documents). ShipEngine's shipment-recognition API helps you extract meaningful, structured data from this unstructured text. The parsed shipment data is returned in the same structure that's used for other ShipEngine APIs, so you can easily use the parsed data to create a shipping label.\n\n> **Note:** Shipment recognition is currently supported for the United States, Canada, Australia, New Zealand, the United Kingdom, and Ireland.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.tagShipment",
+      "name": "shipments.tagShipment",
+      "description": "Add a tag to the shipment object"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.untagShipment",
+      "name": "shipments.untagShipment",
+      "description": "Remove an existing tag from the Shipment object"
+    },
+    {
+      "id": "openapi_shipengine_com.shipments.updateShipment",
+      "name": "shipments.updateShipment",
+      "description": "Update a shipment object based on its ID"
+    },
+    {
+      "id": "openapi_shipengine_com.tags.createTag",
+      "name": "tags.createTag",
+      "description": "Create a new Tag for customizing how you track your shipments"
+    },
+    {
+      "id": "openapi_shipengine_com.tags.deleteTag",
+      "name": "tags.deleteTag",
+      "description": "Delete a tag that is no longer needed"
+    },
+    {
+      "id": "openapi_shipengine_com.tags.listTags",
+      "name": "tags.listTags",
+      "description": "Get a list of all tags associated with an account."
+    },
+    {
+      "id": "openapi_shipengine_com.tags.renameTag",
+      "name": "tags.renameTag",
+      "description": "Change a tag name while still keeping the relevant shipments attached to it"
+    },
+    {
+      "id": "openapi_shipengine_com.tokens.tokensGetEphemeralToken",
+      "name": "tokens.tokensGetEphemeralToken",
+      "description": "This endpoint returns a token that can be passed to an application for authorized access.  The lifetime of this token is 10 seconds."
+    },
+    {
+      "id": "openapi_shipengine_com.tracking.getTrackingLog",
+      "name": "tracking.getTrackingLog",
+      "description": "Retrieve package tracking information"
+    },
+    {
+      "id": "openapi_shipengine_com.tracking.startTracking",
+      "name": "tracking.startTracking",
+      "description": "Allows you to subscribe to tracking updates for a package. You specify the carrier_code and tracking_number of the package,\nand receive notifications via webhooks whenever the shipping status changes.\n"
+    },
+    {
+      "id": "openapi_shipengine_com.tracking.stopTracking",
+      "name": "tracking.stopTracking",
+      "description": "Unsubscribe from tracking updates for a package."
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.createWarehouse",
+      "name": "warehouses.createWarehouse",
+      "description": "Create a warehouse location that you can use to create shipping items by simply passing in the generated warehouse id.\nIf the return address is not supplied in the request body then it is assumed that the origin address is the return address as well\n"
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.deleteWarehouse",
+      "name": "warehouses.deleteWarehouse",
+      "description": "Delete a warehouse by ID"
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.getWarehouseById",
+      "name": "warehouses.getWarehouseById",
+      "description": "Retrieve warehouse data based on the warehouse ID"
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.listWarehouses",
+      "name": "warehouses.listWarehouses",
+      "description": "Retrieve a list of warehouses associated with this account."
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.updateWarehouse",
+      "name": "warehouses.updateWarehouse",
+      "description": "Update Warehouse object information"
+    },
+    {
+      "id": "openapi_shipengine_com.warehouses.updateWarehouseSettings",
+      "name": "warehouses.updateWarehouseSettings",
+      "description": "Update Warehouse settings object information"
+    },
+    {
+      "id": "openapi_shipengine_com.webhooks.createWebhook",
+      "name": "webhooks.createWebhook",
+      "description": "Create a webook for specific events in the environment."
+    },
+    {
+      "id": "openapi_shipengine_com.webhooks.deleteWebhook",
+      "name": "webhooks.deleteWebhook",
+      "description": "Delete a webhook"
+    },
+    {
+      "id": "openapi_shipengine_com.webhooks.getWebhookById",
+      "name": "webhooks.getWebhookById",
+      "description": "Retrieve individual webhook by an ID"
+    },
+    {
+      "id": "openapi_shipengine_com.webhooks.listWebhooks",
+      "name": "webhooks.listWebhooks",
+      "description": "List all webhooks currently enabled for the account."
+    },
+    {
+      "id": "openapi_shipengine_com.webhooks.updateWebhook",
+      "name": "webhooks.updateWebhook",
+      "description": "Update the webhook url property"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

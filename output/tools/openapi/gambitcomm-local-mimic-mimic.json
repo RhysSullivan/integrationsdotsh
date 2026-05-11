@@ -1,0 +1,1797 @@
+{
+  "fetchedAt": "2026-04-30T15:22:16.182Z",
+  "status": "ok",
+  "count": 358,
+  "tools": [
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessAdd",
+      "name": "access.accessAdd",
+      "description": "Adds/Overwrites the user entry in the access control database."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessDel",
+      "name": "access.accessDel",
+      "description": "Using '*' for user clears all the users."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessGetAcldb",
+      "name": "access.accessGetAcldb",
+      "description": "If nothing is specified then this returns \"\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessGetAdmindir",
+      "name": "access.accessGetAdmindir",
+      "description": "If nothing is specified in admin/settings.cfg then returns \"\". If no admin directory is specified then the shared area will be used where needed (e.g. for persistent info, access control data files etc. )"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessGetAdminuser",
+      "name": "access.accessGetAdminuser",
+      "description": "If nothing is specified in admin/settings.cfg then returns \"\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessGetEnabled",
+      "name": "access.accessGetEnabled",
+      "description": "0 indicates that it is disabled, 1 indicates it is enabled."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessList",
+      "name": "access.accessList",
+      "description": "Each entry consists of user, agents (in minimal range representation) and access mask (not used currently)."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessLoad",
+      "name": "access.accessLoad",
+      "description": "If filename is not specified then the currently set 'acldb' parameter is used."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessSave",
+      "name": "access.accessSave",
+      "description": "If filename is not specified then the currently set 'acldb' parameter is used."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessSetAcldb",
+      "name": "access.accessSetAcldb",
+      "description": "This will be used for subsequent load and save operations."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.access.accessSetEnabled",
+      "name": "access.accessSetEnabled",
+      "description": "0 indicates disabled, 1 indicates enabled."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.addIpalias",
+      "name": "agent.addIpalias",
+      "description": "port defaults to 161 if not specified. mask defaults to the class-based network mask for the address. interface defaults to the default network interface.  If port is set to 0, the system will automatically select a port number. This is useful for client-mode protocols, such as TFTP or TOD. Upon start of an IP alias with a 0 (auto-assigned) port number, its port will change to contain the value of the selected system port."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.addTimerScript",
+      "name": "agent.addTimerScript",
+      "description": "Add a new timer script to be executed at specified interval (in msec) with the specified argument."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentRemove",
+      "name": "agent.agentRemove",
+      "description": "For speed, this operation will complete asynchronously. The same synchronization considerations apply as in /mimic/agent/start."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreCopy",
+      "name": "agent.agentStoreCopy",
+      "description": "This command copies the variable store from the other agent to this agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreExists",
+      "name": "agent.agentStoreExists",
+      "description": "It returns \"1\" if the variable exists, else \"0\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreGet",
+      "name": "agent.agentStoreGet",
+      "description": "The value will be returned as a string (like all Tcl values)."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreList",
+      "name": "agent.agentStoreList",
+      "description": "The list will be a Tcl format list with curly braces \"{}\" around each list element. These elements in turn are space separated."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreLreplace",
+      "name": "agent.agentStoreLreplace",
+      "description": "These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStorePersists",
+      "name": "agent.agentStorePersists",
+      "description": "It returns \"1\" if the variable is persistent, else \"0\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreSet",
+      "name": "agent.agentStoreSet",
+      "description": "The append sub-command will append the value to an existing variable, or create a new one. The set sub-command will overwrite an existing variable, or create a new one. The optional persist flag can be used to indicate if the variable is to be persistent as described above. By default a value of '0' will be implied for the persist flag. To avoid mistakes, for existing variables the persist flag can only be set. If you want to reset it, you first need to unset the variable."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.agentStoreUnset",
+      "name": "agent.agentStoreUnset",
+      "description": "This will cleanup persistent variables if needed"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.delIpalias",
+      "name": "agent.delIpalias",
+      "description": "port defaults to 161 if not specified."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.delTimerScript",
+      "name": "agent.delTimerScript",
+      "description": "The first scheduled script that matches the script name, and optionally the interval and argument will be deleted."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.fromAdd",
+      "name": "agent.fromAdd",
+      "description": "An empty ipaddress or 0.0.0.0 both imply any address. Similarly an empty port or 0 both imply any port. For agents with source-address-indexing enabled, messages which do not match any source address will be discarded with an ERROR message, similar to community string mismatches."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.fromDel",
+      "name": "agent.fromDel",
+      "description": "An empty ipaddress or 0.0.0.0 both imply any address. Similarly an empty port or 0 both imply any port. For agents with source-address-indexing enabled, messages which do not match any source address will be discarded with an ERROR message, similar to community string mismatches."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.fromList",
+      "name": "agent.fromList",
+      "description": "This in effect implements source-address-indexing, where 2 agents with the same address can be configured, each accepting messages from different management stations."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getAgentState",
+      "name": "agent.getAgentState",
+      "description": "0-Unknown 1-Running 2-Stopped 3-Halted 4-Paused 5-Deleted 6-Stopping"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getChanged",
+      "name": "agent.getChanged",
+      "description": "has the agent value space changed?"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getConfigChanged",
+      "name": "agent.getConfigChanged",
+      "description": "has the lab configuration changed?"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getDelay",
+      "name": "agent.getDelay",
+      "description": "The minimum granularity is 10 msec."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getDrops",
+      "name": "agent.getDrops",
+      "description": "drop rate (every N-th PDU). 0 means no drops."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getHost",
+      "name": "agent.getHost",
+      "description": "Currently, only IPv4 addresses are allowed as the main address of the agent, but both IPv4 and IPv6 addresses are allowed as IP aliases for the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getInformTimeout",
+      "name": "agent.getInformTimeout",
+      "description": "The agent will retransmit INFORM PDUs at this interval until it has received a reply from the manager."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getInterface",
+      "name": "agent.getInterface",
+      "description": "network interface card for the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getMask",
+      "name": "agent.getMask",
+      "description": "subnet mask of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getMibs",
+      "name": "agent.getMibs",
+      "description": "set of MIBs, simulations and scenarios"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getNumberStarts",
+      "name": "agent.getNumberStarts",
+      "description": "This count is incremented each time an agent starts. It affects the SNMPv3 EngineBoots parameter."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getOiddir",
+      "name": "agent.getOiddir",
+      "description": "MIB directory of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getOwner",
+      "name": "agent.getOwner",
+      "description": "owner of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getPdusize",
+      "name": "agent.getPdusize",
+      "description": "The limit for this configurable is 65536."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getPort",
+      "name": "agent.getPort",
+      "description": "port number"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getPrivdir",
+      "name": "agent.getPrivdir",
+      "description": "private directory of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getProtocols",
+      "name": "agent.getProtocols",
+      "description": "protocols supported by agent as an array of strings"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getReadCommunity",
+      "name": "agent.getReadCommunity",
+      "description": "read community string"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getScen",
+      "name": "agent.getScen",
+      "description": "first scenario name"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getSim",
+      "name": "agent.getSim",
+      "description": "first simulation name"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getStarttime",
+      "name": "agent.getStarttime",
+      "description": "relative start time"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getStateChanged",
+      "name": "agent.getStateChanged",
+      "description": "has the agent state changed?"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getStatistics",
+      "name": "agent.getStatistics",
+      "description": "The statistics are returned as 64-bit decimal numbers for the following statistics, total, discarded, error, GET, GETNEXT, SET, GETBULK, trap, GET variables, GETNEXT variables, SET variables, GETBULK variables, INFORM sent, INFORM re-sent, INFORM timed out, INFORM acked, INFORM REPORT"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getTrace",
+      "name": "agent.getTrace",
+      "description": "SNMP PDU tracing"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getValidate",
+      "name": "agent.getValidate",
+      "description": "Is a bitmask in which with the following bits (from LSB) check for type, length, range, access"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.getWriteCommunity",
+      "name": "agent.getWriteCommunity",
+      "description": "write community string"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.halt",
+      "name": "agent.halt",
+      "description": "Halt the current agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.listIpaliases",
+      "name": "agent.listIpaliases",
+      "description": "The agent host address (set with mimic agent set host) is not in this list, since it is already accessible separately with mimic agent get host."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.listTimerScripts",
+      "name": "agent.listTimerScripts",
+      "description": "The command mimic timer script list lists global timer scripts, the command /mimic/timer/script/{agentNum}/list is the per-agent equivalent NOTE Global timer scripts run globally but within them you can address individual agents using {agentNum}. To schedule timerscripts for an individual agent, use /mimic/timer/script/{agentNum}."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.new",
+      "name": "agent.new",
+      "description": "Add an agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.pauseNow",
+      "name": "agent.pauseNow",
+      "description": "Pause the current agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.protocolGetConfig",
+      "name": "agent.protocolGetConfig",
+      "description": "Returns the protocol's configuration."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.reload",
+      "name": "agent.reload",
+      "description": "This only works for halted agents. The net effect is the same as restarting an agent (ie. stop, start, halt), but without disconnecting the network (and thus existing connections)."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.resume",
+      "name": "agent.resume",
+      "description": "Resume the current agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.save",
+      "name": "agent.save",
+      "description": "Save agent MIB values."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setDelay",
+      "name": "agent.setDelay",
+      "description": "The minimum granularity is 10 msec."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setDrops",
+      "name": "agent.setDrops",
+      "description": "0 means no drops"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setHost",
+      "name": "agent.setHost",
+      "description": "Currently, only IPv4 addresses are allowed as the main address of the agent, but both IPv4 and IPv6 addresses are allowed as IP aliases for the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setInformTimeout",
+      "name": "agent.setInformTimeout",
+      "description": "The agent will retransmit INFORM PDUs at this interval until it has received a reply from the manager."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setInterface",
+      "name": "agent.setInterface",
+      "description": "network interface card for the agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setMask",
+      "name": "agent.setMask",
+      "description": "subnet mask of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setMibs",
+      "name": "agent.setMibs",
+      "description": "set of MIBs, simulations and scenarios"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setOiddir",
+      "name": "agent.setOiddir",
+      "description": "MIB directory of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setOwner",
+      "name": "agent.setOwner",
+      "description": "owner of the agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setPdusize",
+      "name": "agent.setPdusize",
+      "description": "The limit for this configurable is 65536"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setPort",
+      "name": "agent.setPort",
+      "description": "port number"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setPrivdir",
+      "name": "agent.setPrivdir",
+      "description": "private directory of the agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setProtocols",
+      "name": "agent.setProtocols",
+      "description": "protocols supported by agent as a comma-separated list"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setReadCommunity",
+      "name": "agent.setReadCommunity",
+      "description": "read community string"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setStarttime",
+      "name": "agent.setStarttime",
+      "description": "relative start time"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setTrace",
+      "name": "agent.setTrace",
+      "description": "SNMP PDU tracing"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setValidate",
+      "name": "agent.setValidate",
+      "description": "Is a bitmask in which with the following bits (from LSB) check for type, length, range, access. A default value of 65535 does all validation checking."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.setWriteCommunity",
+      "name": "agent.setWriteCommunity",
+      "description": "write community string"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.start",
+      "name": "agent.start",
+      "description": "For speed, this operation will complete asynchronously. A successful return from this command means the starting of the agent is in progress. If you need to rely on the agent to have completed startup, you should wait for it's state to become RUNNING."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.startIpalias",
+      "name": "agent.startIpalias",
+      "description": "port defaults to 161 if not specified."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.statusIpalias",
+      "name": "agent.statusIpalias",
+      "description": "port defaults to 161 if not specified."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.stop",
+      "name": "agent.stop",
+      "description": "Agent primary IP address"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.stopIpalias",
+      "name": "agent.stopIpalias",
+      "description": "port defaults to 161 if not specified."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.trapConfigAdd",
+      "name": "agent.trapConfigAdd",
+      "description": "Add a trap destination to the set of destinations."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.trapConfigDel",
+      "name": "agent.trapConfigDel",
+      "description": "Remove a trap destination from the set of destinations."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.trapConfigList",
+      "name": "agent.trapConfigList",
+      "description": "Each trap destination is identified with an IP address and a port number. The default port number is the standard SNMP trap port 162."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.agent.trapList",
+      "name": "agent.trapList",
+      "description": "List the outstanding asynchronous traps for this agent instance."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapGetArgs",
+      "name": "coap.protocolCoapGetArgs",
+      "description": "Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapGetConfig",
+      "name": "coap.protocolCoapGetConfig",
+      "description": "Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapGetStatistics",
+      "name": "coap.protocolCoapGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapGetStatsHdr",
+      "name": "coap.protocolCoapGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapGetTrace",
+      "name": "coap.protocolCoapGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapSetConfig",
+      "name": "coap.protocolCoapSetConfig",
+      "description": "Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.coap.protocolCoapSetTrace",
+      "name": "coap.protocolCoapSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.addDaemonTimerScript",
+      "name": "daemon.addDaemonTimerScript",
+      "description": "Add a new timer script to be executed at specified interval (in msec) with the specified argument."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.cfgLoad",
+      "name": "daemon.cfgLoad",
+      "description": "Load agents in cfgFile from firstAgentNum to lastAgentNum on startAgentNum of current configuration"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.cfgNew",
+      "name": "daemon.cfgNew",
+      "description": "Clear the lab configuration."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.cfgSave",
+      "name": "daemon.cfgSave",
+      "description": "Save the lab configuration."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.cfgSaveas",
+      "name": "daemon.cfgSaveas",
+      "description": "Save the lab configuration in file."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.delDaemonTimerScript",
+      "name": "daemon.delDaemonTimerScript",
+      "description": "The first scheduled script that matches the script name, and optionally the interval and argument will be deleted."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getActiveDataList",
+      "name": "daemon.getActiveDataList",
+      "description": "This list is guaranteed to be sorted into increasing order."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getActiveList",
+      "name": "daemon.getActiveList",
+      "description": "This list is guaranteed to be sorted into increasing order."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getCfgfile",
+      "name": "daemon.getCfgfile",
+      "description": "In the case of multi-user access this command returns a different configuration file loaded for each user."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getCfgFileChanged",
+      "name": "daemon.getCfgFileChanged",
+      "description": "Whether the loaded agent configuration file has changed since the last time this predicate was queried. This allows for a client to detect agent configuration changes and to synchronize those changes from the MIMIC daemon."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getChangedConfigList",
+      "name": "daemon.getChangedConfigList",
+      "description": "This list contains at most 5000 agent(s), and is guaranteed to be sorted into increasing order."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getChangedStateList",
+      "name": "daemon.getChangedStateList",
+      "description": "This list contains at most 5000 agent(s), and is guaranteed to be sorted into increasing order."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getClients",
+      "name": "daemon.getClients",
+      "description": "The number of clients currently connected to the daemon."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getConfiguredList",
+      "name": "daemon.getConfiguredList",
+      "description": "This list is guaranteed to be sorted into increasing order."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getDaemonProtocols",
+      "name": "daemon.getDaemonProtocols",
+      "description": "The set of protocols supported by the Simulator."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getInterfaces",
+      "name": "daemon.getInterfaces",
+      "description": "The set of network interfaces that can be used for simulations."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getLast",
+      "name": "daemon.getLast",
+      "description": "The last configured agent instance."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getLog",
+      "name": "daemon.getLog",
+      "description": "The current log file for the Simulator."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getMax",
+      "name": "daemon.getMax",
+      "description": "The maximum number of agent instances."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getNetaddr",
+      "name": "daemon.getNetaddr",
+      "description": "The network address of the host where the MIMIC simulator is running."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getNetdev",
+      "name": "daemon.getNetdev",
+      "description": "The default network device to be used for agent addresses if the interface is not explicitly specified for an agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getProduct",
+      "name": "daemon.getProduct",
+      "description": "The product number that is licensed."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getReturn",
+      "name": "daemon.getReturn",
+      "description": "The OpenAPI daemon operates in two modes, nocatch, where error returns from MIMIC operations return error; or catch, where the TCL catch semantics are used (these are similar to C++ exceptions)"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.getVersion",
+      "name": "daemon.getVersion",
+      "description": "The version of the MIMIC command interface."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.listDaemonTimerScripts",
+      "name": "daemon.listDaemonTimerScripts",
+      "description": "The command mimic timer script list lists global timer scripts, the command /mimic/timer/script/{agentNum}/list is the per-agent equivalent NOTE Global timer scripts run globally but within them you can address individual agents using {agentNum}. To schedule timerscripts for an individual agent, use /mimic/timer/script/{agentNum}."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.mgetInfo",
+      "name": "daemon.mgetInfo",
+      "description": "Get multiple sets of information about MIMIC, where infoArray is one of the parameters defined in the mimic get command."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.setLog",
+      "name": "daemon.setLog",
+      "description": "The current log file for the Simulator."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.setNetdev",
+      "name": "daemon.setNetdev",
+      "description": "The network address of the host where the MIMIC simulator is running."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.startAllAgents",
+      "name": "daemon.startAllAgents",
+      "description": "Start MIMIC."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.stopAllAgents",
+      "name": "daemon.stopAllAgents",
+      "description": "Stop MIMIC."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeExists",
+      "name": "daemon.storeExists",
+      "description": "It returns \"1\" if the variable exists, else \"0\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeGet",
+      "name": "daemon.storeGet",
+      "description": "The value will be returned as a string (like all Tcl values)."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeList",
+      "name": "daemon.storeList",
+      "description": "The list will be a Tcl format list with curly braces \"{}\" around each list element. These elements in turn are space separated."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeLreplace",
+      "name": "daemon.storeLreplace",
+      "description": "These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storePersists",
+      "name": "daemon.storePersists",
+      "description": "It returns \"1\" if the variable is persistent, else \"0\"."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeSave",
+      "name": "daemon.storeSave",
+      "description": "The MIMIC daemon caches persistent objects and their changes, and writes them to disk at program termination. If it were to crash, these changes would be lost. This operation allows to checkpoint the cache, ie. write changes to persistent objects to disk. To save the lab configuration with per-agent persistent information the mimic save operation needs to be used."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeSet",
+      "name": "daemon.storeSet",
+      "description": "Persist 1 means persistent , 0 means non-persistent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.storeUnset",
+      "name": "daemon.storeUnset",
+      "description": "This will cleanup persistent variables if needed"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.daemon.terminate",
+      "name": "daemon.terminate",
+      "description": "Terminate the MIMIC daemon."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpGetArgs",
+      "name": "dhcp.protocolDhcpGetArgs",
+      "description": "Agent's DHCP configuration particulars"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpGetConfig",
+      "name": "dhcp.protocolDhcpGetConfig",
+      "description": "Agent's DHCP configuration hwaddr,classid,add_options,script"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpGetStatistics",
+      "name": "dhcp.protocolDhcpGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpGetStatsHdr",
+      "name": "dhcp.protocolDhcpGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpGetTrace",
+      "name": "dhcp.protocolDhcpGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpParams",
+      "name": "dhcp.protocolDhcpParams",
+      "description": "DHCP-OFFER message parameters"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpSetConfig",
+      "name": "dhcp.protocolDhcpSetConfig",
+      "description": "Agent's DHCP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.dhcp.protocolDhcpSetTrace",
+      "name": "dhcp.protocolDhcpSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetArgs",
+      "name": "ipmi.protocolIpmiGetArgs",
+      "description": "Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetAttr",
+      "name": "ipmi.protocolIpmiGetAttr",
+      "description": "Attribute can be working_authtype ,session_id, outbound_seq, inbound_seq , field_N"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetConfig",
+      "name": "ipmi.protocolIpmiGetConfig",
+      "description": "Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetStatistics",
+      "name": "ipmi.protocolIpmiGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetStatsHdr",
+      "name": "ipmi.protocolIpmiGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiGetTrace",
+      "name": "ipmi.protocolIpmiGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiSetAttr",
+      "name": "ipmi.protocolIpmiSetAttr",
+      "description": "Attribute can be working_authtype ,session_id, outbound_seq, inbound_seq , field_N"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiSetConfig",
+      "name": "ipmi.protocolIpmiSetConfig",
+      "description": "Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ipmi.protocolIpmiSetTrace",
+      "name": "ipmi.protocolIpmiSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientGetProtstate",
+      "name": "mqtt.protocolMqttClientGetProtstate",
+      "description": "0 - stopped, 2 - disconnected, 3 - connecting, 4 - connected, 5 - waiting for CONNACK, 6 - waiting for SUBACK, 7 - CONNACK received, in steady state"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientGetState",
+      "name": "mqtt.protocolMqttClientGetState",
+      "description": "0 means stopped, 1 means running"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientMessageCard",
+      "name": "mqtt.protocolMqttClientMessageCard",
+      "description": "0 or more"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientMessageGet",
+      "name": "mqtt.protocolMqttClientMessageGet",
+      "description": "Attribute can be topic, interval, count, sent , pre, post, properties(list of PUBLISH properties), properties.i (i-th PUBLISH property), properties.PROP-NAME (PUBLISH property with name PROP-NAME)"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientMessageSet",
+      "name": "mqtt.protocolMqttClientMessageSet",
+      "description": "Attribute can not be sent or properties . Use set/{msgNum}/count/{value} together with get/{msgNum}/count to throttle the outgoing MQTT message to the broker."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientResubscribe",
+      "name": "mqtt.protocolMqttClientResubscribe",
+      "description": "Restarts a subscription"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientRuntimeAbort",
+      "name": "mqtt.protocolMqttClientRuntimeAbort",
+      "description": "Abort a connection"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientRuntimeConnect",
+      "name": "mqtt.protocolMqttClientRuntimeConnect",
+      "description": "Start a connection"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientRuntimeDisconnect",
+      "name": "mqtt.protocolMqttClientRuntimeDisconnect",
+      "description": "Graceful disconnect"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetBroker",
+      "name": "mqtt.protocolMqttClientSetBroker",
+      "description": "Broker IP address"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetCleansession",
+      "name": "mqtt.protocolMqttClientSetCleansession",
+      "description": "1 for clean session , 0 not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetClientid",
+      "name": "mqtt.protocolMqttClientSetClientid",
+      "description": "MQTT client ID"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetKeepalive",
+      "name": "mqtt.protocolMqttClientSetKeepalive",
+      "description": "Keep alive the TCP connection"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetOnDisconnect",
+      "name": "mqtt.protocolMqttClientSetOnDisconnect",
+      "description": "Action to take when MQTT session is disconnected"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetPassword",
+      "name": "mqtt.protocolMqttClientSetPassword",
+      "description": "Client password"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetPort",
+      "name": "mqtt.protocolMqttClientSetPort",
+      "description": "target TCP port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetUsername",
+      "name": "mqtt.protocolMqttClientSetUsername",
+      "description": "Client username"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetWillmsg",
+      "name": "mqtt.protocolMqttClientSetWillmsg",
+      "description": "Will message"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetWillqos",
+      "name": "mqtt.protocolMqttClientSetWillqos",
+      "description": "QOS field"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetWillretain",
+      "name": "mqtt.protocolMqttClientSetWillretain",
+      "description": "Retaining will"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSetWilltopic",
+      "name": "mqtt.protocolMqttClientSetWilltopic",
+      "description": "Will topic for the will message"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSubscribeCard",
+      "name": "mqtt.protocolMqttClientSubscribeCard",
+      "description": "0 or more"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSubscribeGet",
+      "name": "mqtt.protocolMqttClientSubscribeGet",
+      "description": "Attribute can be topic, properties(list of SUBSCRIBE properties), properties.i (i-th SUBSCRIBE property), properties.PROP-NAME (SUBSCRIBE property with name PROP-NAME)"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientSubscribeSet",
+      "name": "mqtt.protocolMqttClientSubscribeSet",
+      "description": "Attribute can not be properties ."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttClientUnsubscribe",
+      "name": "mqtt.protocolMqttClientUnsubscribe",
+      "description": "Stops a subscription"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttGetArgs",
+      "name": "mqtt.protocolMqttGetArgs",
+      "description": "Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttGetConfig",
+      "name": "mqtt.protocolMqttGetConfig",
+      "description": "Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttGetStatistics",
+      "name": "mqtt.protocolMqttGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttGetStatsHdr",
+      "name": "mqtt.protocolMqttGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttGetTrace",
+      "name": "mqtt.protocolMqttGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttSetConfig",
+      "name": "mqtt.protocolMqttSetConfig",
+      "description": "Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.mqtt.protocolMqttSetTrace",
+      "name": "mqtt.protocolMqttSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowChangeAttr",
+      "name": "netflow.protocolNetflowChangeAttr",
+      "description": "Change attributes"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowChangeDfs",
+      "name": "netflow.protocolNetflowChangeDfs",
+      "description": "Interval in msec ."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowChangeTfs",
+      "name": "netflow.protocolNetflowChangeTfs",
+      "description": "Interval in msec ."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowGetArgs",
+      "name": "netflow.protocolNetflowGetArgs",
+      "description": "Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowGetConfig",
+      "name": "netflow.protocolNetflowGetConfig",
+      "description": "Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowGetStatistics",
+      "name": "netflow.protocolNetflowGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowGetStatsHdr",
+      "name": "netflow.protocolNetflowGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowGetTrace",
+      "name": "netflow.protocolNetflowGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowHalt",
+      "name": "netflow.protocolNetflowHalt",
+      "description": "Halt NETFLOW traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowList",
+      "name": "netflow.protocolNetflowList",
+      "description": "Show list of NETFLOW exports"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowReload",
+      "name": "netflow.protocolNetflowReload",
+      "description": "Reload NETFLOW configuration before resuming traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowResume",
+      "name": "netflow.protocolNetflowResume",
+      "description": "Resuming traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowSetCollector",
+      "name": "netflow.protocolNetflowSetCollector",
+      "description": "Allow changing collector without stopping agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowSetConfig",
+      "name": "netflow.protocolNetflowSetConfig",
+      "description": "Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowSetFileName",
+      "name": "netflow.protocolNetflowSetFileName",
+      "description": "Allow reloading the configuration file for an agent without stopping agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.netflow.protocolNetflowSetTrace",
+      "name": "netflow.protocolNetflowSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyGetArgs",
+      "name": "proxy.protocolProxyGetArgs",
+      "description": "Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyGetConfig",
+      "name": "proxy.protocolProxyGetConfig",
+      "description": "Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyGetStatistics",
+      "name": "proxy.protocolProxyGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyGetStatsHdr",
+      "name": "proxy.protocolProxyGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyGetTrace",
+      "name": "proxy.protocolProxyGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortAdd",
+      "name": "proxy.protocolProxyPortAdd",
+      "description": "Additional proxy target"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortIsstarted",
+      "name": "proxy.protocolProxyPortIsstarted",
+      "description": "Check individual target"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortList",
+      "name": "proxy.protocolProxyPortList",
+      "description": "List all proxy targets"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortRemove",
+      "name": "proxy.protocolProxyPortRemove",
+      "description": "Remove proxy target"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortStart",
+      "name": "proxy.protocolProxyPortStart",
+      "description": "Start additional target"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxyPortStop",
+      "name": "proxy.protocolProxyPortStop",
+      "description": "Stop additional target"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxySetConfig",
+      "name": "proxy.protocolProxySetConfig",
+      "description": "Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.proxy.protocolProxySetTrace",
+      "name": "proxy.protocolProxySetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowGetArgs",
+      "name": "sflow.protocolSflowGetArgs",
+      "description": "Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowGetConfig",
+      "name": "sflow.protocolSflowGetConfig",
+      "description": "Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowGetStatistics",
+      "name": "sflow.protocolSflowGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowGetStatsHdr",
+      "name": "sflow.protocolSflowGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowGetTrace",
+      "name": "sflow.protocolSflowGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowHalt",
+      "name": "sflow.protocolSflowHalt",
+      "description": "Halt SFLOW traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowReload",
+      "name": "sflow.protocolSflowReload",
+      "description": "Reload SFLOW configuration before resuming traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowResume",
+      "name": "sflow.protocolSflowResume",
+      "description": "Resuming traffic"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowSetConfig",
+      "name": "sflow.protocolSflowSetConfig",
+      "description": "Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.sflow.protocolSflowSetTrace",
+      "name": "sflow.protocolSflowSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpGetArgs",
+      "name": "snmptcp.protocolSnmptcpGetArgs",
+      "description": "Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpGetConfig",
+      "name": "snmptcp.protocolSnmptcpGetConfig",
+      "description": "Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpGetStatistics",
+      "name": "snmptcp.protocolSnmptcpGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpGetStatsHdr",
+      "name": "snmptcp.protocolSnmptcpGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpGetTrace",
+      "name": "snmptcp.protocolSnmptcpGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpIpaliasDisable",
+      "name": "snmptcp.protocolSnmptcpIpaliasDisable",
+      "description": "By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpIpaliasEnable",
+      "name": "snmptcp.protocolSnmptcpIpaliasEnable",
+      "description": "By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpIpaliasIsenabled",
+      "name": "snmptcp.protocolSnmptcpIpaliasIsenabled",
+      "description": "By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpIpaliasList",
+      "name": "snmptcp.protocolSnmptcpIpaliasList",
+      "description": "By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpSetConfig",
+      "name": "snmptcp.protocolSnmptcpSetConfig",
+      "description": "Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmptcp.protocolSnmptcpSetTrace",
+      "name": "snmptcp.protocolSnmptcpSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3AccessAdd",
+      "name": "snmPv3.protocolSnmpv3AccessAdd",
+      "description": "Adds a new access entry with the specified parameters."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3AccessClear",
+      "name": "snmPv3.protocolSnmpv3AccessClear",
+      "description": "Clears all access entries."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3AccessDel",
+      "name": "snmPv3.protocolSnmpv3AccessDel",
+      "description": "Deletes the specified access entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3AccessList",
+      "name": "snmPv3.protocolSnmpv3AccessList",
+      "description": "Returns the current acccess entries as an array of strings."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GetConfig",
+      "name": "snmPv3.protocolSnmpv3GetConfig",
+      "description": "Returns the SNMPv3 configuration."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GetContextEngineid",
+      "name": "snmPv3.protocolSnmpv3GetContextEngineid",
+      "description": "Retrieves the contextEngineID for the agent instance."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GetEngineboots",
+      "name": "snmPv3.protocolSnmpv3GetEngineboots",
+      "description": "Retrieves the number of times the agent has been restarted."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GetEngineid",
+      "name": "snmPv3.protocolSnmpv3GetEngineid",
+      "description": "For stopped agents, this operation is meaningless. If not explicitly set by the user then the autogenerated engineID is returned. The format of the engineID is in the familiar hex format, eg. \\x01 23 45 67 89..."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GetEnginetime",
+      "name": "snmPv3.protocolSnmpv3GetEnginetime",
+      "description": "Retrieves the time in seconds for which the agent has been running."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GroupAdd",
+      "name": "snmPv3.protocolSnmpv3GroupAdd",
+      "description": "Adds a new group entry with the specified parameters."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GroupClear",
+      "name": "snmPv3.protocolSnmpv3GroupClear",
+      "description": "Clears all group entries."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GroupDel",
+      "name": "snmPv3.protocolSnmpv3GroupDel",
+      "description": "Deletes the specified group entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3GroupList",
+      "name": "snmPv3.protocolSnmpv3GroupList",
+      "description": "Returns the current group entries as an array of strings."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3SetConfig",
+      "name": "snmPv3.protocolSnmpv3SetConfig",
+      "description": "Changes the SNMPv3 configuration."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UserAdd",
+      "name": "snmPv3.protocolSnmpv3UserAdd",
+      "description": "Adds a new user entry with the specified parameters."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UserClear",
+      "name": "snmPv3.protocolSnmpv3UserClear",
+      "description": "Clears all user entries."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UserDel",
+      "name": "snmPv3.protocolSnmpv3UserDel",
+      "description": "Deletes the specified user entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UserList",
+      "name": "snmPv3.protocolSnmpv3UserList",
+      "description": "Returns the current user entries as a Tcl list."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UsmSave",
+      "name": "snmPv3.protocolSnmpv3UsmSave",
+      "description": "Saves current user settings in the currently loaded USM config file."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3UsmSaveas",
+      "name": "snmPv3.protocolSnmpv3UsmSaveas",
+      "description": "Saves current user settings in the specified USM config file."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3VacmSave",
+      "name": "snmPv3.protocolSnmpv3VacmSave",
+      "description": "Saves current group, access, view settings in the currently loaded VACM config file."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3VacmSaveas",
+      "name": "snmPv3.protocolSnmpv3VacmSaveas",
+      "description": "Saves current group, access, view settings in the specified VACM config file."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3ViewAdd",
+      "name": "snmPv3.protocolSnmpv3ViewAdd",
+      "description": "Adds a new view entry with the specified parameters."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3ViewClear",
+      "name": "snmPv3.protocolSnmpv3ViewClear",
+      "description": "Clears all view entries."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3ViewDel",
+      "name": "snmPv3.protocolSnmpv3ViewDel",
+      "description": "Deletes the specified view entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.snmPv3.protocolSnmpv3ViewList",
+      "name": "snmPv3.protocolSnmpv3ViewList",
+      "description": "Returns the current view entries as an array of strings."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshGetArgs",
+      "name": "ssh.protocolSshGetArgs",
+      "description": "Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshGetConfig",
+      "name": "ssh.protocolSshGetConfig",
+      "description": "Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshGetStatistics",
+      "name": "ssh.protocolSshGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshGetStatsHdr",
+      "name": "ssh.protocolSshGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshGetTrace",
+      "name": "ssh.protocolSshGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshIpaliasDisable",
+      "name": "ssh.protocolSshIpaliasDisable",
+      "description": "By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshIpaliasEnable",
+      "name": "ssh.protocolSshIpaliasEnable",
+      "description": "By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshIpaliasIsenabled",
+      "name": "ssh.protocolSshIpaliasIsenabled",
+      "description": "By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshIpaliasList",
+      "name": "ssh.protocolSshIpaliasList",
+      "description": "By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshSetConfig",
+      "name": "ssh.protocolSshSetConfig",
+      "description": "Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.ssh.protocolSshSetTrace",
+      "name": "ssh.protocolSshSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetArgs",
+      "name": "syslog.protocolSyslogGetArgs",
+      "description": "Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetAttr",
+      "name": "syslog.protocolSyslogGetAttr",
+      "description": "Attribute can be server , sequence , separator , hostname , timestamp"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetConfig",
+      "name": "syslog.protocolSyslogGetConfig",
+      "description": "Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetStatistics",
+      "name": "syslog.protocolSyslogGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetStatsHdr",
+      "name": "syslog.protocolSyslogGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogGetTrace",
+      "name": "syslog.protocolSyslogGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogSend",
+      "name": "syslog.protocolSyslogSend",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogSetAttr",
+      "name": "syslog.protocolSyslogSetAttr",
+      "description": "Attribute can be server , sequence , separator , hostname , timestamp"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogSetConfig",
+      "name": "syslog.protocolSyslogSetConfig",
+      "description": "Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.syslog.protocolSyslogSetTrace",
+      "name": "syslog.protocolSyslogSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetConnectionLogon",
+      "name": "telnet.protocolTelnetConnectionLogon",
+      "description": "Logon change allows (hidden) commands for a different access mode to run."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetConnectionRequest",
+      "name": "telnet.protocolTelnetConnectionRequest",
+      "description": "Equivalent of the command typed in by the user."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetConnectionSignal",
+      "name": "telnet.protocolTelnetConnectionSignal",
+      "description": "Signal name is either connect or idle"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetGetArgs",
+      "name": "telnet.protocolTelnetGetArgs",
+      "description": "Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetGetConfig",
+      "name": "telnet.protocolTelnetGetConfig",
+      "description": "Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetGetStatistics",
+      "name": "telnet.protocolTelnetGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetGetStatsHdr",
+      "name": "telnet.protocolTelnetGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetGetTrace",
+      "name": "telnet.protocolTelnetGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetIpaliasDisable",
+      "name": "telnet.protocolTelnetIpaliasDisable",
+      "description": "By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetIpaliasEnable",
+      "name": "telnet.protocolTelnetIpaliasEnable",
+      "description": "By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetIpaliasIsenabled",
+      "name": "telnet.protocolTelnetIpaliasIsenabled",
+      "description": "By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetIpaliasList",
+      "name": "telnet.protocolTelnetIpaliasList",
+      "description": "By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetConnections",
+      "name": "telnet.protocolTelnetServerGetConnections",
+      "description": "IDs of all connected connections"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetKeymap",
+      "name": "telnet.protocolTelnetServerGetKeymap",
+      "description": "Keymap file name"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetRulesdb",
+      "name": "telnet.protocolTelnetServerGetRulesdb",
+      "description": "Rules db file name"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetState",
+      "name": "telnet.protocolTelnetServerGetState",
+      "description": "Return 1 means accepting connections, 0 not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetUserdb",
+      "name": "telnet.protocolTelnetServerGetUserdb",
+      "description": "User db file name"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetServerGetUsers",
+      "name": "telnet.protocolTelnetServerGetUsers",
+      "description": "List of users"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetSetConfig",
+      "name": "telnet.protocolTelnetSetConfig",
+      "description": "Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.telnet.protocolTelnetSetTrace",
+      "name": "telnet.protocolTelnetSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpGetArgs",
+      "name": "tftp.protocolTftpGetArgs",
+      "description": "Agent's TFTP configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpGetConfig",
+      "name": "tftp.protocolTftpGetConfig",
+      "description": "Agent's TFTP configuration"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpGetStatistics",
+      "name": "tftp.protocolTftpGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpGetStatsHdr",
+      "name": "tftp.protocolTftpGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpGetTrace",
+      "name": "tftp.protocolTftpGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionGetParameter",
+      "name": "tftp.protocolTftpSessionGetParameter",
+      "description": "Parameter is server , port , or dstfile"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionRead",
+      "name": "tftp.protocolTftpSessionRead",
+      "description": "Session ID is returned"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionSetParameter",
+      "name": "tftp.protocolTftpSessionSetParameter",
+      "description": "Parameter is server , port , or dstfile"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionStart",
+      "name": "tftp.protocolTftpSessionStart",
+      "description": "Start uploading or downloading the file"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionStatus",
+      "name": "tftp.protocolTftpSessionStatus",
+      "description": "Status includes running state, bytes transfered, and time elapsed"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionStop",
+      "name": "tftp.protocolTftpSessionStop",
+      "description": "Stop uploading or downloading the file"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSessionWrite",
+      "name": "tftp.protocolTftpSessionWrite",
+      "description": "Session ID is returned"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSetConfig",
+      "name": "tftp.protocolTftpSetConfig",
+      "description": "Agent's TFTP configuration"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tftp.protocolTftpSetTrace",
+      "name": "tftp.protocolTftpSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGetArgs",
+      "name": "tod.protocolTodGetArgs",
+      "description": "Agent's TOD configuration"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGetConfig",
+      "name": "tod.protocolTodGetConfig",
+      "description": "Agent's TOD configuration"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGetStatistics",
+      "name": "tod.protocolTodGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGetStatsHdr",
+      "name": "tod.protocolTodGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGettime",
+      "name": "tod.protocolTodGettime",
+      "description": "Retrive time from server"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodGetTrace",
+      "name": "tod.protocolTodGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodSetConfig",
+      "name": "tod.protocolTodSetConfig",
+      "description": "Agent's TOD configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.tod.protocolTodSetTrace",
+      "name": "tod.protocolTodSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.add",
+      "name": "valuespace.add",
+      "description": "The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.evalValue",
+      "name": "valuespace.evalValue",
+      "description": "Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getInfo",
+      "name": "valuespace.getInfo",
+      "description": "Return the syntactical information for the specified object, such as type, size, range, enumerations, and ACCESS."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getInstances",
+      "name": "valuespace.getInstances",
+      "description": "This enables MIB browsing of the MIB on the current agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getMib",
+      "name": "valuespace.getMib",
+      "description": "This will only return a MIB name if the object is unmistakeably defined in a MIB."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getName",
+      "name": "valuespace.getName",
+      "description": "Return the symbolic name of the specified object identifier."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getObjects",
+      "name": "valuespace.getObjects",
+      "description": "This command is similar to the ls or dir operating system commands to list filesystem directories."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getOid",
+      "name": "valuespace.getOid",
+      "description": "Return the numeric OID of the specified object."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getState",
+      "name": "valuespace.getState",
+      "description": "To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getValue",
+      "name": "valuespace.getValue",
+      "description": "Get a variable in the Value Space."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.getVariables",
+      "name": "valuespace.getVariables",
+      "description": "This enables variable browsing of the MIB on the current agent."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.mevalValue",
+      "name": "valuespace.mevalValue",
+      "description": "Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.mgetValue",
+      "name": "valuespace.mgetValue",
+      "description": "This is a performance optimization of the mimic value get command, to be used when many variables are requested."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.msetValue",
+      "name": "valuespace.msetValue",
+      "description": "This is a performance optimization of the mimic value set command, to be used when many variables are to be set."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.munsetValue",
+      "name": "valuespace.munsetValue",
+      "description": "This is a performance optimization of the mimic value unset command, to be used when many variables are to be unset."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.remove",
+      "name": "valuespace.remove",
+      "description": "The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.setState",
+      "name": "valuespace.setState",
+      "description": "To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.setValue",
+      "name": "valuespace.setValue",
+      "description": "NOTE to set a binary string value, specify a string starting with \\\\x followed by pairs of hexadecimal digits, eg. \"\\\\x 01 23 45\". This command also assigns SNMP PDU action scripts for GET* and SET requests on a MIB object. The instance parameter must be 0. The following variables enable actions, g - The specified TCL script will be run on GET or GETNEXT requests. It has to exist under the simulation directory. s - The specified script will be run on SET requests. It has to exist under the simulation directory. This command also controls advanced trap generation functionality. The following variables control trap generation r, tu, c - These variables together represent the rate settings for the trap. r and tu is the actual per second rate and c represents the total duration in seconds for which the trap is sent. As soon as the c variable is set, the trap generation begins, for this reason it should be the last variable set for a particular trap. The following variables have to be set before setting the c variable to modify the behavior of the generated trap(s). OBJECT - An object name when used as a variable is looked up during the trap send and the value of that variable is included in the PDU. OBJECT.i - This type of variable will be used to assign an optional instance for the specified object in the traps varbind. The value of this variable identifies the index. e.g. The commands below will send ifIndex.2 with a value of 5 in the linkUp trap PDU. i - This variable is used to specify any extra version specific information to the trap generation code. Here is what it can be used to represent for various SNMP versions SNMPv1 - [community_string][,[enterprise][,agent_addr]] SNMPv2c - community_string SNMPv2 - source_party,destination_party,context SNMPv3 - user_name,context v - This variable lets the user override the version of the PDU being generated. The possible values are - \"1\", \"2c\", \"2\" and \"3\". o - This variable is used for traps that need extra variables to be added to the PDU along with the ones defined in the MIB as its variables. This lets the user force extra objects (along with instances if needed). All variables to be sent need to be assigned to the o variable. O - To omit any variables which are defined in the MIB you can use the O (capital o) variable. This needs to be set to the list of OIDs of the variable bindings in the order defined in the MIB. ip - The variable ip is used for generating the trap from the N-th IP alias address. a - This variable associates an action script to the trap or INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. It will be executed before each instance of the trap is sent out. I - This optional variable controls the generation of INFORM PDUs. An INFORM is sent only if the variable is non-zero, else a TRAP is generated. R, T, E - This variable associates an action script to the INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. The action script associated with the R variable will be executed on receiving a INFORM RESPONSE, the one associated with the T variable on a timeout (ie. no response), the one associated with the E variable on a report PDU. eid.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine id for the destination specified by IP-ADDRESS and optionally by PORT. eb.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine boots. et.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine time."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.splitOid",
+      "name": "valuespace.splitOid",
+      "description": "This is useful if you have an OID which is a combination of object and instance."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.valuespace.unsetValue",
+      "name": "valuespace.unsetValue",
+      "description": "Only variables that have previously been set can be unset."
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebGetArgs",
+      "name": "web.protocolWebGetArgs",
+      "description": "Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebGetConfig",
+      "name": "web.protocolWebGetConfig",
+      "description": "Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebGetStatistics",
+      "name": "web.protocolWebGetStatistics",
+      "description": "Statistics of fields indicated in the headers"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebGetStatsHdr",
+      "name": "web.protocolWebGetStatsHdr",
+      "description": "The headers of statistics fields"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebGetTrace",
+      "name": "web.protocolWebGetTrace",
+      "description": "Trace 1 means enabled, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortAdd",
+      "name": "web.protocolWebPortAdd",
+      "description": "Add port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortExists",
+      "name": "web.protocolWebPortExists",
+      "description": "Check the port. 1 means existing, 0 means not"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortRemove",
+      "name": "web.protocolWebPortRemove",
+      "description": "Remove port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortSet",
+      "name": "web.protocolWebPortSet",
+      "description": "Set port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortStart",
+      "name": "web.protocolWebPortStart",
+      "description": "Start port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebPortStop",
+      "name": "web.protocolWebPortStop",
+      "description": "Stop port"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebSetConfig",
+      "name": "web.protocolWebSetConfig",
+      "description": "Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap"
+    },
+    {
+      "id": "openapi_gambitcomm_local_mimic_mimic.web.protocolWebSetTrace",
+      "name": "web.protocolWebSetTrace",
+      "description": "1 to enable, 0 to disable"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

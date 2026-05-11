@@ -1,0 +1,137 @@
+{
+  "fetchedAt": "2026-04-30T15:44:58.378Z",
+  "status": "ok",
+  "count": 26,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.batchGetGraphMemberDatasources",
+      "name": "graph.batchGetGraphMemberDatasources",
+      "description": "Gets data source package information for the behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.createGraph",
+      "name": "graph.createGraph",
+      "description": "<p>Creates a new behavior graph for the calling account, and sets that account as the administrator account. This operation is called by the account that is enabling Detective.</p> <p>Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within the Detective quota. If it exceeds the quota, then you cannot enable Detective. </p> <p>The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a process to create the corresponding data tables for the new behavior graph.</p> <p>An account can only be the administrator account for one behavior graph within a Region. If the same account calls <code>CreateGraph</code> with the same administrator account, it always returns the same behavior graph ARN. It does not create a new behavior graph.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.createMembers",
+      "name": "graph.createMembers",
+      "description": "<p> <code>CreateMembers</code> is used to send invitations to accounts. For the organization behavior graph, the Detective administrator account uses <code>CreateMembers</code> to enable organization accounts as member accounts.</p> <p>For invited accounts, <code>CreateMembers</code> sends a request to invite the specified Amazon Web Services accounts to be member accounts in the behavior graph. This operation can only be called by the administrator account for a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and then invites the verified accounts. The administrator can optionally specify to not send invitation emails to the member accounts. This would be used when the administrator manages their member accounts centrally.</p> <p>For organization accounts in the organization behavior graph, <code>CreateMembers</code> attempts to enable the accounts. The organization accounts do not receive invitations.</p> <p>The request provides the behavior graph ARN and the list of accounts to invite or to enable.</p> <p>The response separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts that <code>CreateMembers</code> was able to process. For invited accounts, includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification. For organization accounts in the organization behavior graph, includes accounts that can be enabled and that cannot be enabled.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.deleteGraph",
+      "name": "graph.deleteGraph",
+      "description": "<p>Disables the specified behavior graph and queues it to be deleted. This operation removes the behavior graph from each member account's list of behavior graphs.</p> <p> <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.deleteMembers",
+      "name": "graph.deleteMembers",
+      "description": "<p>Removes the specified member accounts from the behavior graph. The removed accounts no longer contribute data to the behavior graph. This operation can only be called by the administrator account for the behavior graph.</p> <p>For invited accounts, the removed accounts are deleted from the list of accounts in the behavior graph. To restore the account, the administrator account must send another invitation.</p> <p>For organization accounts in the organization behavior graph, the Detective administrator account can always enable the organization account again. Organization accounts that are not enabled as member accounts are not included in the <code>ListMembers</code> results for the organization behavior graph.</p> <p>An administrator account cannot use <code>DeleteMembers</code> to remove their own account from the behavior graph. To disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API method.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.getMembers",
+      "name": "graph.getMembers",
+      "description": "Returns the membership details for specified member accounts for a behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.listDatasourcePackages",
+      "name": "graph.listDatasourcePackages",
+      "description": "Lists data source packages in the behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.listMembers",
+      "name": "graph.listMembers",
+      "description": "<p>Retrieves the list of member accounts for a behavior graph.</p> <p>For invited accounts, the results do not include member accounts that were removed from the behavior graph.</p> <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.startMonitoringMember",
+      "name": "graph.startMonitoringMember",
+      "description": "<p>Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.</p> <p>For valid member accounts, the status is updated as follows.</p> <ul> <li> <p>If Detective enabled the member account, then the new status is <code>ENABLED</code>.</p> </li> <li> <p>If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>. </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graph.updateDatasourcePackages",
+      "name": "graph.updateDatasourcePackages",
+      "description": "Starts a data source packages for the behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.graphs.listGraphs",
+      "name": "graphs.listGraphs",
+      "description": "<p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p> <p>Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.invitation.acceptInvitation",
+      "name": "invitation.acceptInvitation",
+      "description": "<p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account. </p> <p>The request provides the ARN of behavior graph.</p> <p>The member account status in the graph must be <code>INVITED</code>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.invitation.rejectInvitation",
+      "name": "invitation.rejectInvitation",
+      "description": "<p>Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by an invited member account that has the <code>INVITED</code> status.</p> <p> <code>RejectInvitation</code> cannot be called by an organization account in the organization behavior graph. In the organization behavior graph, organization accounts do not receive an invitation.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.invitations.listInvitations",
+      "name": "invitations.listInvitations",
+      "description": "<p>Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can only be called by an invited member account.</p> <p>Open invitations are invitations that the member account has not responded to.</p> <p>The results do not include behavior graphs for which the member account declined the invitation. The results also do not include behavior graphs that the member account resigned from or was removed from.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.membership.batchGetMembershipDatasources",
+      "name": "membership.batchGetMembershipDatasources",
+      "description": "Gets information on the data source package history for an account."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.membership.disassociateMembership",
+      "name": "membership.disassociateMembership",
+      "description": "<p>Removes the member account from the specified behavior graph. This operation can only be called by an invited member account that has the <code>ENABLED</code> status.</p> <p> <code>DisassociateMembership</code> cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.orgs.describeOrganizationConfiguration",
+      "name": "orgs.describeOrganizationConfiguration",
+      "description": "<p>Returns information about the configuration for the organization behavior graph. Currently indicates whether to automatically enable new organization accounts as member accounts.</p> <p>Can only be called by the Detective administrator account for the organization. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.orgs.disableOrganizationAdminAccount",
+      "name": "orgs.disableOrganizationAdminAccount",
+      "description": "<p>Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.</p> <p>Can only be called by the organization management account.</p> <p>Removing the Detective administrator account does not affect the delegated administrator account for Detective in Organizations.</p> <p>To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated administrator account also removes the Detective administrator account in all Regions, except for Regions where the Detective administrator account is the organization management account.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.orgs.enableOrganizationAdminAccount",
+      "name": "orgs.enableOrganizationAdminAccount",
+      "description": "<p>Designates the Detective administrator account for the organization in the current Region.</p> <p>If the account does not have Detective enabled, then enables Detective for that account and creates a new behavior graph.</p> <p>Can only be called by the organization management account.</p> <p>If the organization has a delegated administrator account in Organizations, then the Detective administrator account must be either the delegated administrator account or the organization management account.</p> <p>If the organization does not have a delegated administrator account in Organizations, then you can choose any account in the organization. If you choose an account other than the organization management account, Detective calls Organizations to make that account the delegated administrator account for Detective. The organization management account cannot be the delegated administrator account.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.orgs.listOrganizationAdminAccounts",
+      "name": "orgs.listOrganizationAdminAccounts",
+      "description": "Returns information about the Detective administrator account for an organization. Can only be called by the organization management account."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.orgs.updateOrganizationConfiguration",
+      "name": "orgs.updateOrganizationConfiguration",
+      "description": "Updates the configuration for the Organizations integration in the current Region. Can only be called by the Detective administrator account for the organization."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Returns the tag values that are assigned to a behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Applies tag values to a behavior graph."
+    },
+    {
+      "id": "openapi_amazonaws_com_detective_detective.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes tags from a behavior graph."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

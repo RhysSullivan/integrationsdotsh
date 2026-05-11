@@ -1,0 +1,102 @@
+{
+  "fetchedAt": "2026-04-30T15:22:45.653Z",
+  "status": "ok",
+  "count": 19,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsCatalogItemsCreate",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsCatalogItemsCreate",
+      "description": "Creates a catalog item."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsCatalogItemsImport",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsCatalogItemsImport",
+      "description": "Bulk import of multiple catalog items. Request processing may be synchronous. No partial updating supported. Non-existing items will be created. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully updated."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsCatalogItemsList",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsCatalogItemsList",
+      "description": "Gets a list of catalog items."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsCatalogItemsPatch",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsCatalogItemsPatch",
+      "description": "Updates a catalog item. Partial updating is supported. Non-existing items will be created."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresPlacementsPredict",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresPlacementsPredict",
+      "description": "Makes a recommendation prediction. If using API Key based authentication, the API Key must be registered using the PredictionApiKeyRegistry service. [Learn more](https://cloud.google.com/recommendations-ai/docs/setting-up#register-key)."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsCreate",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsCreate",
+      "description": "Register an API key for use with predict method."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsDelete",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsDelete",
+      "description": "Unregister an apiKey from using for predict method."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsList",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresPredictionApiKeyRegistrationsList",
+      "description": "List the registered apiKeys for use with predict method."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsCollect",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsCollect",
+      "description": "Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a 3rd party domain. This method is used only by the Recommendations AI JavaScript pixel. Users should not call this method directly."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsImport",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsImport",
+      "description": "Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsList",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsList",
+      "description": "Gets a list of user events within a time range, with potential filtering. The method does not list unjoined user events. Unjoined user event definition: when a user event is ingested from Recommendations AI User Event APIs, the catalog item included in the user event is connected with the current catalog. If a catalog item of the ingested event is not in the current catalog, it could lead to degraded model quality. This is called an unjoined event."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsPurge",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsPurge",
+      "description": "Deletes permanently all user events specified by the filter provided. Depending on the number of events specified by the filter, this operation could take hours or days to complete. To test a filter, use the list command first."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsRejoin",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsRejoin",
+      "description": "Triggers a user event rejoin operation with latest catalog data. Events will not be annotated with detailed catalog information if catalog item is missing at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This API can be used to trigger a 'join' operation on specified events with latest version of catalog items. It can also be used to correct events joined with wrong catalog items."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsWrite",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsEventStoresUserEventsWrite",
+      "description": "Writes a single user event."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsList",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsList",
+      "description": "Lists all the catalog configurations associated with the project."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsOperationsGet",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsOperationsGet",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+    },
+    {
+      "id": "openapi_googleapis_com_recommendationengine_recommendationengine.projects.recommendationengineProjectsLocationsCatalogsOperationsList",
+      "name": "projects.recommendationengineProjectsLocationsCatalogsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

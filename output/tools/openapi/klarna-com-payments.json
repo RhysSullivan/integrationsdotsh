@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:22:47.667Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_klarna_com_payments.orders.cancelAuthorization",
+      "name": "orders.cancelAuthorization",
+      "description": "Use this API call to cancel/release an authorization. If the `authorization_token` received during a Klarna Payments won’t be used to place an order immediately you could release the authorization.\nRead more on **[Cancel an existing authorization](https://docs.klarna.com/klarna-payments/other-actions/cancel-an-authorization/)**."
+    },
+    {
+      "id": "openapi_klarna_com_payments.orders.createOrder",
+      "name": "orders.createOrder",
+      "description": "Use this API call to create a new order. Placing an order towards Klarna means that the Klarna Payments session will be closed and that an order will be created in Klarna's system.<br/>When you have received the `authorization_token` for a successful authorization you can place the order. Among the other order details in this request, you include a URL to the confirmation page for the customer.<br/>When the Order has been successfully placed at Klarna, you need to handle it either through the Merchant Portal or using [Klarna’s Order Management API](#order-management-api).\nRead more on **[Create a new order](https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-3-create-an-order/)**."
+    },
+    {
+      "id": "openapi_klarna_com_payments.orders.purchaseToken",
+      "name": "orders.purchaseToken",
+      "description": "Use this API call to create a Klarna Customer Token.<br/>After having obtained an `authorization_token` for a successful authorization, this can be used to create a purchase token instead of placing the order. Creating a Klarna Customer Token results in Klarna storing customer and payment method details.\nRead more on **[Generate a consumer token](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-token/)**."
+    },
+    {
+      "id": "openapi_klarna_com_payments.sessions.createCreditSession",
+      "name": "sessions.createCreditSession",
+      "description": "Use this API call to create a Klarna Payments session.<br/>When a session is created you will receive the available `payment_method_categories` for the session, a `session_id` and a `client_token`. The `session_id` can be used to read or update the session using the REST API. The `client_token` should be passed to the browser.\nRead more on **[Create a new payment session](https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-1-initiate-a-payment/)**."
+    },
+    {
+      "id": "openapi_klarna_com_payments.sessions.readCreditSession",
+      "name": "sessions.readCreditSession",
+      "description": "Use this API call to read a Klarna Payments session. You can read the Klarna Payments session at any time after it has been created, to get information about it. This will return all data that has been collected during the session.\nRead more on **[Read an existing payment session](https://docs.klarna.com/klarna-payments/other-actions/check-the-details-of-a-payment-session/)**."
+    },
+    {
+      "id": "openapi_klarna_com_payments.sessions.updateCreditSession",
+      "name": "sessions.updateCreditSession",
+      "description": "Use this API call to update a Klarna Payments session with new details, in case something in the order has changed and the checkout has been reloaded. Including if the consumer adds a new item to the cart or if consumer details are updated.\nRead more on **[Update an existing payment session](https://docs.klarna.com/klarna-payments/other-actions/update-the-cart/)**."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

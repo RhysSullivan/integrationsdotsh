@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:20:00.729Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "mcp_x_ycorrw.get_broadcast_schedule_by_date",
+      "name": "get_broadcast_schedule_by_date",
+      "description": "\n***Definition***\n: 입력받은 날짜에 방영하는 상품 정보들을 반환\n\n***Tool trigger condition***\n: 사용자가 특정 날짜의 방영 상품 정보에 대해 질의할 떄, 이 tool의 반환 값을 참조\n\n***Rule***\n- 정중한 표현을 사용\n- 사용자 요구가 불명확하다면 사용자에게 다시 물어보세요.\n- suffix_msg 또는 fallback_msg를 참조해 정보 반환\n\n***Workflow (must follow)***\n1) 'bdDate' 필드 값을 입력 받을 때, 'get_current_date' tool의 반환 값을 참조해 계산"
+    },
+    {
+      "id": "mcp_x_ycorrw.get_broadcast_schedule_by_program",
+      "name": "get_broadcast_schedule_by_program",
+      "description": "\n***Definition***\n: 입력받은 방송 프로그램에서 방영하는 상품 정보들을 반환\n\n***Tool trigger condition***\n: 사용자가 특정 방송 프로그램에서 방영하는 상품 정보에 대해 질의할 떄, 이 tool의 반환 값을 참조\n\n***Rule***\n- 정중한 표현을 사용\n- 사용자 요구가 불명확하다면 사용자에게 다시 물어보세요.\n- suffix_msg 또는 fallback_msg를 참조해 정보 반환\n\n\n***Workflow (must follow)***\n1) 'pg_name' 필드 값을 입력 받을 때, 'list_broadcast_programs' tool의 반환 값을 참조해 사용자 질의에서 추출"
+    },
+    {
+      "id": "mcp_x_ycorrw.get_broadcast_schedule_by_category",
+      "name": "get_broadcast_schedule_by_category",
+      "description": "\n***Definition***\n: 입력받은 카테고리의 방송 프로그램과 상품 정보들을 반환\n\n***Tool trigger condition***\n: 사용자가 특정 카테고리에서 판매하는 상품이나 방송 프로그램에 대해 질의할 때, 이 tool의 반환 값을 참조\n\n***Rule***\n- 정중한 표현을 사용\n- 사용자가 입력한 카테고리의 상품이 아니더라도 모든 정보를 포함해 응답해주세요.\n- 사용자 요구가 불명확하다면 사용자에게 다시 물어보세요.\n- suffix_msg 또는 fallback_msg를 참조해 정보 반환=\n\n***Workflow (must follow)***\n1) 'category' 필드 값을 입력 받을 때, 'list_product_categories' tool의 반환 값을 참조해 사용자 질의에서 추출"
+    },
+    {
+      "id": "mcp_x_ycorrw.get_broadcast_schedule_by_product",
+      "name": "get_broadcast_schedule_by_product",
+      "description": "\n***Definition***\n: 입력받은 상품의 방송 프로그램 정보를 반환\n\n***Tool trigger condition***\n: 사용자가 특정 상품에 대해 질의할 때, 이 tool의 반환 값을 참조\n\n***Rule***\n- 정중한 표현을 사용\n- 사용자 요구가 불명확하다면 사용자에게 다시 물어보세요.\n- suffix_msg 또는 fallback_msg를 참조해 정보 반환\n\n***Workflow (must follow)***\n1) 'product_name' 필드 값을 입력 받을 때, 사용자 질의에서 상품명을 추출 ex) 'LBL 여성 패딩'"
+    },
+    {
+      "id": "mcp_x_ycorrw.get_current_date",
+      "name": "get_current_date",
+      "description": "***Definition***\n: 현재 날짜를 YYYYMMDD 형태로 반환하는 lookup tool입니다.\n\n***Public tool name***\n: get_current_date\n\n***Tool trigger condition***\n: 다른 tool에서 날짜 파라미터를 입력받을 때, 이 tool의 반환 값을 참조"
+    },
+    {
+      "id": "mcp_x_ycorrw.list_broadcast_programs",
+      "name": "list_broadcast_programs",
+      "description": "***Definition***\n: 방영중인 방송 프로그램 리스트를 반환하는 lookup tool입니다.\n\n***Public tool name***\n: list_broadcast_programs\n\n***Tool trigger condition***\n: 다른 tool에서 프로그램 리스트를 입력받을 떄, 이 tool의 반환 값을 참조"
+    },
+    {
+      "id": "mcp_x_ycorrw.list_product_categories",
+      "name": "list_product_categories",
+      "description": "***Definition***\n: 정의된 방송 프로그램 카테고리를 반환하는 lookup tool입니다.\n\n***Public tool name***\n: list_product_categories\n\n***Tool trigger condition***\n: 다른 tool에서 방송 카테고리를 입력받을 떄, 이 tool의 반환 값을 참조"
+    }
+  ]
+}

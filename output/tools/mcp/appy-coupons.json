@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:21:19.040Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_appy_coupons.coupons",
+      "name": "coupons",
+      "description": "Use to display a concrete list of coupons in the coupons widget. This tool should be called after you have already identified or assembled the coupon objects you want to show. Each coupon should include a human-readable name and description, and may optionally include a coupon code, notes about restrictions, and a source URL. The tool renders those coupons in a structured table so the user can scan them quickly, expand one row at a time for more detail, copy any available code, and open the source domain in an external browser when a URL is provided.\n\nUse this tool when the user would benefit from an interactive presentation of multiple coupon options instead of plain prose. It is especially useful when you have several offers to compare, when coupon codes should be easy to copy, or when you want the user to inspect supporting notes without cluttering the main conversation. Do not call this tool if you do not yet have actual coupon objects to show, if you only want to discuss general savings advice, or if the content is not really a coupon list. The tool does not fetch, verify, rank, or transform the coupons beyond returning the same array it was given. Treat it as a presentation tool for finalized coupon suggestions rather than a discovery or validation capability.\n\nA good invocation typically follows reasoning such as: the user asked for deals or coupon ideas, the model or another tool has assembled a small set of candidate offers, and the next best step is to present them in a way that is easy to browse and act on. The tool is not meant for vague shopping inspiration, raw search snippets, or speculative discounts that have not been normalized into the expected schema. Prefer it when you can provide a clean list with one object per offer. The user experience is strongest when the coupon names are short, descriptions are concrete, notes call out important restrictions, and URLs point to a relevant listing page. In short, call this tool to present finalized coupon data, not to gather it."
+    }
+  ]
+}

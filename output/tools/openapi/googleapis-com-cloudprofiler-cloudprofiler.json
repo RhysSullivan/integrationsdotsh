@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:22:32.942Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_cloudprofiler_cloudprofiler.projects.cloudprofilerProjectsProfilesCreate",
+      "name": "projects.cloudprofilerProjectsProfilesCreate",
+      "description": "CreateProfile creates a new profile resource in the online mode. The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available. The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named \"google.rpc.retryinfo-bin\". "
+    },
+    {
+      "id": "openapi_googleapis_com_cloudprofiler_cloudprofiler.projects.cloudprofilerProjectsProfilesCreateOffline",
+      "name": "projects.cloudprofilerProjectsProfilesCreateOffline",
+      "description": "CreateOfflineProfile creates a new profile resource in the offline mode. The client provides the profile to create along with the profile bytes, the server records it."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudprofiler_cloudprofiler.projects.cloudprofilerProjectsProfilesPatch",
+      "name": "projects.cloudprofilerProjectsProfilesPatch",
+      "description": "UpdateProfile updates the profile bytes and labels on the profile resource created in the online mode. Updating the bytes for profiles created in the offline mode is currently not supported: the profile content must be provided at the time of the profile creation."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

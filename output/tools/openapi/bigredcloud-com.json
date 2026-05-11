@@ -1,0 +1,572 @@
+{
+  "fetchedAt": "2026-04-30T15:22:05.350Z",
+  "status": "ok",
+  "count": 113,
+  "tools": [
+    {
+      "id": "openapi_bigredcloud_com.accounts.accountsGet",
+      "name": "accounts.accountsGet",
+      "description": "Returns a list of company's Accounts. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.analysisCategories.analysisCategoriesGet",
+      "name": "analysisCategories.analysisCategoriesGet",
+      "description": "Returns a list of company's Analysis Categories. Supports OData querying protocol.\r\nFiltering is allowed by \"categoryTypeId\" field.\r\nOrdering is allowed by \"id\" and \"orderIndex\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.bankAccountsDelete",
+      "name": "bankAccounts.bankAccountsDelete",
+      "description": "Removes an existing Bank Account."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.bankAccountsGet",
+      "name": "bankAccounts.bankAccountsGet",
+      "description": "Returns a list of company's Bank Account. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"acCode\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.bankAccountsPost",
+      "name": "bankAccounts.bankAccountsPost",
+      "description": "Creates a new Bank Account."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.bankAccountsProcessBatch",
+      "name": "bankAccounts.bankAccountsProcessBatch",
+      "description": "Processes a batch of Bank Accounts."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.bankAccountsPut",
+      "name": "bankAccounts.bankAccountsPut",
+      "description": "Updates an existing Bank Account."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bankAccounts.getV1BankAccountsId",
+      "name": "bankAccounts.getV1BankAccountsId",
+      "description": "Returns information about a single Bank Account."
+    },
+    {
+      "id": "openapi_bigredcloud_com.bookTranTypes.bookTranTypesGet",
+      "name": "bookTranTypes.bookTranTypesGet",
+      "description": "Returns a list of global Book Transactions' Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.cashPaymentsDelete",
+      "name": "cashPayments.cashPaymentsDelete",
+      "description": "Removes an existing Cash Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.cashPaymentsGet",
+      "name": "cashPayments.cashPaymentsGet",
+      "description": "Returns a list of company's Cash Payments. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.cashPaymentsPost",
+      "name": "cashPayments.cashPaymentsPost",
+      "description": "Creates a new Cash Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.cashPaymentsProcessBatch",
+      "name": "cashPayments.cashPaymentsProcessBatch",
+      "description": "Processes a batch of Cash Payments."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.cashPaymentsPut",
+      "name": "cashPayments.cashPaymentsPut",
+      "description": "Updates an existing Cash Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashPayments.getV1CashPaymentsId",
+      "name": "cashPayments.getV1CashPaymentsId",
+      "description": "Returns information about a single Cash Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.cashReceiptsDelete",
+      "name": "cashReceipts.cashReceiptsDelete",
+      "description": "Removes an existing Cash Receipt."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.cashReceiptsGet",
+      "name": "cashReceipts.cashReceiptsGet",
+      "description": "Returns a list of company's Cash Receipts. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.cashReceiptsPost",
+      "name": "cashReceipts.cashReceiptsPost",
+      "description": "Creates a new Cash Receipt."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.cashReceiptsProcessBatch",
+      "name": "cashReceipts.cashReceiptsProcessBatch",
+      "description": "Processes a batch of Cash Receipts."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.cashReceiptsPut",
+      "name": "cashReceipts.cashReceiptsPut",
+      "description": "Updates an existing Cash Receipt."
+    },
+    {
+      "id": "openapi_bigredcloud_com.cashReceipts.getV1CashReceiptsId",
+      "name": "cashReceipts.getV1CashReceiptsId",
+      "description": "Returns information about a single Cash Receipt."
+    },
+    {
+      "id": "openapi_bigredcloud_com.categoryTypes.categoryTypesGet",
+      "name": "categoryTypes.categoryTypesGet",
+      "description": "Returns a list of company's Category Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.companySettings.companySettingsGet",
+      "name": "companySettings.companySettingsGet",
+      "description": "Returns a list of company settings. Supports OData querying protocol.\r\nFiltering is forbidden."
+    },
+    {
+      "id": "openapi_bigredcloud_com.companySetupConfig.companySetupConfigGet",
+      "name": "companySetupConfig.companySetupConfigGet",
+      "description": "Returns the company configuration settings."
+    },
+    {
+      "id": "openapi_bigredcloud_com.companySetupConfig.companySetupConfigGetCompanyOptions",
+      "name": "companySetupConfig.companySetupConfigGetCompanyOptions",
+      "description": "Returns the company option setting."
+    },
+    {
+      "id": "openapi_bigredcloud_com.companySetupConfig.companySetupConfigGetFinancialYear",
+      "name": "companySetupConfig.companySetupConfigGetFinancialYear",
+      "description": "Returns the financial year."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersDelete",
+      "name": "customers.customersDelete",
+      "description": "Removes an existing Customer."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersGet",
+      "name": "customers.customersGet",
+      "description": "Returns a list of company's Customers. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersGetAccountTrans",
+      "name": "customers.customersGetAccountTrans",
+      "description": "Returns a list of Customer's account transactions."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersGetOpeningBalance",
+      "name": "customers.customersGetOpeningBalance",
+      "description": "Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersGetOpeningBalanceList",
+      "name": "customers.customersGetOpeningBalanceList",
+      "description": "Returns a list of Customer's opening balance transactions."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersGetQuotes",
+      "name": "customers.customersGetQuotes",
+      "description": "Returns a list of Customer's quotes."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersPost",
+      "name": "customers.customersPost",
+      "description": "Creates a new Customer."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersProcessBatch",
+      "name": "customers.customersProcessBatch",
+      "description": "Processes a batch of Customers."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.customersPut",
+      "name": "customers.customersPut",
+      "description": "Updates an existing Customer."
+    },
+    {
+      "id": "openapi_bigredcloud_com.customers.getV1CustomersId",
+      "name": "customers.getV1CustomersId",
+      "description": "Returns information about a single Customer. You may specify that Customer's ledger balance should be calculated."
+    },
+    {
+      "id": "openapi_bigredcloud_com.email.emailSendEmailStatement",
+      "name": "email.emailSendEmailStatement",
+      "description": "Sends a Statement email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address."
+    },
+    {
+      "id": "openapi_bigredcloud_com.email.emailSendQuote",
+      "name": "email.emailSendQuote",
+      "description": "Sends a Quote email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address."
+    },
+    {
+      "id": "openapi_bigredcloud_com.email.emailSendSalesInvoice",
+      "name": "email.emailSendSalesInvoice",
+      "description": "Sends a Sales Invoice email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Sales Invoice Customer's address."
+    },
+    {
+      "id": "openapi_bigredcloud_com.ownerTypeGroups.ownerTypeGroupsGet",
+      "name": "ownerTypeGroups.ownerTypeGroupsGet",
+      "description": "Returns a list of global Owner Type Groups. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.ownerTypes.ownerTypesGet",
+      "name": "ownerTypes.ownerTypesGet",
+      "description": "Returns a list of global Owner Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.getV1PaymentsId",
+      "name": "payments.getV1PaymentsId",
+      "description": "Returns information about a single Payments."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.paymentsDelete",
+      "name": "payments.paymentsDelete",
+      "description": "Removes an existing Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.paymentsGet",
+      "name": "payments.paymentsGet",
+      "description": "Returns a list of company's Payments. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.paymentsPost",
+      "name": "payments.paymentsPost",
+      "description": "Creates a new Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.paymentsProcessBatch",
+      "name": "payments.paymentsProcessBatch",
+      "description": "Processes a batch of Payments."
+    },
+    {
+      "id": "openapi_bigredcloud_com.payments.paymentsPut",
+      "name": "payments.paymentsPut",
+      "description": "Updates an existing Payment."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.getV1ProductsId",
+      "name": "products.getV1ProductsId",
+      "description": "Returns information about a single Product."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.productsDelete",
+      "name": "products.productsDelete",
+      "description": "Removes an existing Product."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.productsGet",
+      "name": "products.productsGet",
+      "description": "Returns a list of company's Products. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"stockCode\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.productsPost",
+      "name": "products.productsPost",
+      "description": "Creates a new Product."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.productsProcessBatch",
+      "name": "products.productsProcessBatch",
+      "description": "Processes a batch of Products."
+    },
+    {
+      "id": "openapi_bigredcloud_com.products.productsPut",
+      "name": "products.productsPut",
+      "description": "Updates an existing Product."
+    },
+    {
+      "id": "openapi_bigredcloud_com.productTypes.productTypesGet",
+      "name": "productTypes.productTypesGet",
+      "description": "Returns a list of global Product Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.getV1PurchasesId",
+      "name": "purchases.getV1PurchasesId",
+      "description": "Returns information about a single Purchases."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.purchasesDelete",
+      "name": "purchases.purchasesDelete",
+      "description": "Removes an existing Purchase."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.purchasesGet",
+      "name": "purchases.purchasesGet",
+      "description": "Returns a list of company's Purchases. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.purchasesPost",
+      "name": "purchases.purchasesPost",
+      "description": "Creates a new Purchase."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.purchasesProcessBatch",
+      "name": "purchases.purchasesProcessBatch",
+      "description": "Processes a batch of Purchases."
+    },
+    {
+      "id": "openapi_bigredcloud_com.purchases.purchasesPut",
+      "name": "purchases.purchasesPut",
+      "description": "Updates an existing Purchase."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.getV1QuotesId",
+      "name": "quote.getV1QuotesId",
+      "description": "Returns information about a single Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quoteClose",
+      "name": "quote.quoteClose",
+      "description": "Close a Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quoteDelete",
+      "name": "quote.quoteDelete",
+      "description": "Removes an existing Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quoteGet",
+      "name": "quote.quoteGet",
+      "description": "Returns a list of company's Quotes.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\"."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quotePost",
+      "name": "quote.quotePost",
+      "description": "Creates a new Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quotePostCreateQuoteWithGeneratingReference",
+      "name": "quote.quotePostCreateQuoteWithGeneratingReference",
+      "description": "Creates a new Quote with auto generating reference."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quotePostGenerateSaleInvoice",
+      "name": "quote.quotePostGenerateSaleInvoice",
+      "description": "Generate a sale invoice from a Quote.\r\nWhen sale invoice is empty, new sale invoice will be generated from Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quoteProcessBatch",
+      "name": "quote.quoteProcessBatch",
+      "description": "Processes a batch of Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quotePut",
+      "name": "quote.quotePut",
+      "description": "Updates an existing Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.quote.quoteReopen",
+      "name": "quote.quoteReopen",
+      "description": "Reopen a Quote."
+    },
+    {
+      "id": "openapi_bigredcloud_com.sales.salesGet",
+      "name": "sales.salesGet",
+      "description": "Returns a list of company's Sales Entries, Sales Invoices and Sales Credit Notes. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.getV1SalesCreditNotesId",
+      "name": "salesCreditNotes.getV1SalesCreditNotesId",
+      "description": "Returns information about a single Sales Credit Note."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.salesCreditNotesDelete",
+      "name": "salesCreditNotes.salesCreditNotesDelete",
+      "description": "Removes an existing Sales Credit Note."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.salesCreditNotesGet",
+      "name": "salesCreditNotes.salesCreditNotesGet",
+      "description": "Returns a list of company's Sales Credit Notes. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.salesCreditNotesPost",
+      "name": "salesCreditNotes.salesCreditNotesPost",
+      "description": "Creates a new Sales Credit Note."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.salesCreditNotesProcessBatch",
+      "name": "salesCreditNotes.salesCreditNotesProcessBatch",
+      "description": "Processes a batch of Sales Credit Notes."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesCreditNotes.salesCreditNotesPut",
+      "name": "salesCreditNotes.salesCreditNotesPut",
+      "description": "Updates an existing Sales Credit Note."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.getV1SalesEntriesId",
+      "name": "salesEntries.getV1SalesEntriesId",
+      "description": "Returns information about a single Sales Entry."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.salesEntriesDelete",
+      "name": "salesEntries.salesEntriesDelete",
+      "description": "Removes an existing Sales Entry."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.salesEntriesGet",
+      "name": "salesEntries.salesEntriesGet",
+      "description": "Returns a list of company's Sales Entries. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.salesEntriesPost",
+      "name": "salesEntries.salesEntriesPost",
+      "description": "Creates a new Sales Entry."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.salesEntriesProcessBatch",
+      "name": "salesEntries.salesEntriesProcessBatch",
+      "description": "Processes a batch of Sales Entries."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesEntries.salesEntriesPut",
+      "name": "salesEntries.salesEntriesPut",
+      "description": "Updates an existing Sales Entry."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.getV1SalesInvoicesId",
+      "name": "salesInvoices.getV1SalesInvoicesId",
+      "description": "Returns information about a single Sales Invoice."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesDelete",
+      "name": "salesInvoices.salesInvoicesDelete",
+      "description": "Removes an existing Sales Invoice."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesGet",
+      "name": "salesInvoices.salesInvoicesGet",
+      "description": "Returns a list of company's Sales Invoices. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesPost",
+      "name": "salesInvoices.salesInvoicesPost",
+      "description": "Creates a new Sales Invoice."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesPostCreateSaleInvoiceWithGeneratingReference",
+      "name": "salesInvoices.salesInvoicesPostCreateSaleInvoiceWithGeneratingReference",
+      "description": "Creates a new Sale Invoice with auto generating reference."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesProcessBatch",
+      "name": "salesInvoices.salesInvoicesProcessBatch",
+      "description": "Processes a batch of Sales Invoices."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesInvoices.salesInvoicesPut",
+      "name": "salesInvoices.salesInvoicesPut",
+      "description": "Updates an existing Sales Invoice."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.getV1SalesRepsId",
+      "name": "salesRep.getV1SalesRepsId",
+      "description": "Returns information about a single SaleRep."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.salesRepDelete",
+      "name": "salesRep.salesRepDelete",
+      "description": "Removes an existing Sale Rep."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.salesRepGet",
+      "name": "salesRep.salesRepGet",
+      "description": "Returns a list of company's SaleRep.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\"."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.salesRepPost",
+      "name": "salesRep.salesRepPost",
+      "description": "Creates a new SaleRep."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.salesRepProcessBatch",
+      "name": "salesRep.salesRepProcessBatch",
+      "description": "Processes a batch of Sale Rep."
+    },
+    {
+      "id": "openapi_bigredcloud_com.salesRep.salesRepPut",
+      "name": "salesRep.salesRepPut",
+      "description": "Updates an existing Sale Rep."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.getV1SuppliersId",
+      "name": "suppliers.getV1SuppliersId",
+      "description": "Returns information about a single Supplier. You may specify that Supplier's ledger balance should be calculated."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersDelete",
+      "name": "suppliers.suppliersDelete",
+      "description": "Removes an existing Supplier."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersGet",
+      "name": "suppliers.suppliersGet",
+      "description": "Returns a list of company's Suppliers. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersGetAccountTrans",
+      "name": "suppliers.suppliersGetAccountTrans",
+      "description": "Returns a list of Supplier's account transactions."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersGetOpeningBalance",
+      "name": "suppliers.suppliersGetOpeningBalance",
+      "description": "Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersGetOpeningBalanceList",
+      "name": "suppliers.suppliersGetOpeningBalanceList",
+      "description": "Returns a list of Supplier's opening balance transactions."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersPost",
+      "name": "suppliers.suppliersPost",
+      "description": "Creates a new Supplier."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersProcessBatch",
+      "name": "suppliers.suppliersProcessBatch",
+      "description": "Processes a batch of Suppliers."
+    },
+    {
+      "id": "openapi_bigredcloud_com.suppliers.suppliersPut",
+      "name": "suppliers.suppliersPut",
+      "description": "Updates an existing Supplier."
+    },
+    {
+      "id": "openapi_bigredcloud_com.userDefinedFields.userDefinedFieldsGet",
+      "name": "userDefinedFields.userDefinedFieldsGet",
+      "description": "Returns a list of company's User Defined Fields. Supports OData querying protocol.\r\nFiltering is allowed by \"categoryTypeId\" field.\r\nOrdering is allowed by \"id\" and \"orderIndex\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.vatAnalysisTypes.vatAnalysisTypesGet",
+      "name": "vatAnalysisTypes.vatAnalysisTypesGet",
+      "description": "Returns a list of global Vat Analysis Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.vatCategories.vatCategoriesGet",
+      "name": "vatCategories.vatCategoriesGet",
+      "description": "Returns a list of global Vat Categories. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi_bigredcloud_com.vatCategories.vatCategoriesProcessVatRates",
+      "name": "vatCategories.vatCategoriesProcessVatRates",
+      "description": "Process Vat Rates"
+    },
+    {
+      "id": "openapi_bigredcloud_com.vatRates.vatRatesGet",
+      "name": "vatRates.vatRatesGet",
+      "description": "Returns a list of company's Vat Rates. Supports OData querying protocol.\r\nFiltering is allowed by \"vatCategoryId\" field.\r\nOrdering is allowed by \"id\" and \"orderIndex\" fields."
+    },
+    {
+      "id": "openapi_bigredcloud_com.vatTypes.vatTypesGet",
+      "name": "vatTypes.vatTypesGet",
+      "description": "Returns a list of global Vat Types. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" field."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

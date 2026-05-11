@@ -1,0 +1,72 @@
+{
+  "fetchedAt": "2026-04-30T15:22:08.566Z",
+  "status": "ok",
+  "count": 13,
+  "tools": [
+    {
+      "id": "openapi_cloudrf_com.analyse.interference",
+      "name": "analyse.interference",
+      "description": "Merge and analyse sites within a network channel to determine the best server at a given location. Each site will be dynamically allocated a monochrome colour from a palette and the strongest signal promoted at a given location."
+    },
+    {
+      "id": "openapi_cloudrf_com.analyse.mesh",
+      "name": "analyse.mesh",
+      "description": "A merge of 'area' calculations for a network to create a single super layer. Stronger signals are promoted over weaker ones. The same colour key must be used."
+    },
+    {
+      "id": "openapi_cloudrf_com.analyse.network",
+      "name": "analyse.network",
+      "description": "Query your network to find the best server(s) for a given receiver/customer location. A previously generated network is required."
+    },
+    {
+      "id": "openapi_cloudrf_com.create.area",
+      "name": "create.area",
+      "description": "An area coverage assumes the same receiver height at all locations out to fixed radius (maximum 300km). Due to it's exhaustive processing it is the slowest of all the API calls. Speed can be improved significantly by adjusting the resolution 'res' parameter. A basic request needs transmitter, receiver, antenna and output objects defined as a minimum. Model and environment options will enhance accuracy."
+    },
+    {
+      "id": "openapi_cloudrf_com.create.path",
+      "name": "create.path",
+      "description": "A path profile is a single link from A to B. It is much faster than an area calculation and can be used out to 300km. A basic request needs transmitter, receiver, antenna and output objects defined as a minimum. Model and environment options will enhance accuracy."
+    },
+    {
+      "id": "openapi_cloudrf_com.create.points",
+      "name": "create.points",
+      "description": "The points function tests many transmitters and one receiver and is designed for route analysis. A minimal request needs a transmitters array of (latitude,longitude,altitude) locations, antenna, receiver and output objects defined as a minimum. Model and environment options will enhance accuracy."
+    },
+    {
+      "id": "openapi_cloudrf_com.manage.addClutter",
+      "name": "manage.addClutter",
+      "description": "Upload GeoJSON lineString and polygon features to your account. The height property is in metres and the material code / type / attenuation are.. 1\tTrees –\t0.25,2Trees +\t0.5,3\tTimber –\t1.0,4\tTimber +\t1.5,5\tBrick – \t1.5,6\tBrick +\t2.0,7\tConcrete –\t3.0,8\tConcrete +\t4.0,9\tMetal\t6.0"
+    },
+    {
+      "id": "openapi_cloudrf_com.manage.delete",
+      "name": "manage.delete",
+      "description": "Warning! you could lose data. This function will delete the entry from the database and the file from the disk. Accidental deletion can be reversed by contacting support with biscuits who maintain an offsite backup."
+    },
+    {
+      "id": "openapi_cloudrf_com.manage.deleteNetwork",
+      "name": "manage.deleteNetwork",
+      "description": "Warning! you could lose data. This function will delete the entry from the database and the file from the disk. Accidental deletion can be reversed by contacting support with biscuits who maintain an offsite backup."
+    },
+    {
+      "id": "openapi_cloudrf_com.manage.export",
+      "name": "manage.export",
+      "description": "Download your data in a format suitable for a third party viewer like Google Earth or ESRI Arcmap."
+    },
+    {
+      "id": "openapi_cloudrf_com.manage.list",
+      "name": "manage.list",
+      "description": "List your area and path calculations, sorted by time and limited to the last few hundred. To fetch all for a given network append a 'net' filter with the network name."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

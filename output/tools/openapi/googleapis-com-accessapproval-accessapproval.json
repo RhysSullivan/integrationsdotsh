@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:22:30.781Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsApprovalRequestsApprove",
+      "name": "projects.accessapprovalProjectsApprovalRequestsApprove",
+      "description": "Approves a request and returns the updated ApprovalRequest. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsApprovalRequestsDismiss",
+      "name": "projects.accessapprovalProjectsApprovalRequestsDismiss",
+      "description": "Dismisses a request. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It is equivalent in effect to ignoring the request altogether. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsApprovalRequestsGet",
+      "name": "projects.accessapprovalProjectsApprovalRequestsGet",
+      "description": "Gets an approval request. Returns NOT_FOUND if the request does not exist."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsApprovalRequestsInvalidate",
+      "name": "projects.accessapprovalProjectsApprovalRequestsInvalidate",
+      "description": "Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsApprovalRequestsList",
+      "name": "projects.accessapprovalProjectsApprovalRequestsList",
+      "description": "Lists approval requests associated with a project, folder, or organization. Approval requests can be filtered by state (pending, active, dismissed). The order is reverse chronological."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsDeleteAccessApprovalSettings",
+      "name": "projects.accessapprovalProjectsDeleteAccessApprovalSettings",
+      "description": "Deletes the settings associated with a project, folder, or organization. This will have the effect of disabling Access Approval for the project, folder, or organization, but only if all ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level of the hierarchy, then Access Approval will still be enabled at this level as the settings are inherited."
+    },
+    {
+      "id": "openapi_googleapis_com_accessapproval_accessapproval.projects.accessapprovalProjectsUpdateAccessApprovalSettings",
+      "name": "projects.accessapprovalProjectsUpdateAccessApprovalSettings",
+      "description": "Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

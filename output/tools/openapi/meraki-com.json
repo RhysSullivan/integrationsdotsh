@@ -1,0 +1,1332 @@
+{
+  "fetchedAt": "2026-04-30T15:22:51.176Z",
+  "status": "ok",
+  "count": 265,
+  "tools": [
+    {
+      "id": "openapi_meraki_com.actionBatches.createOrganizationActionBatch",
+      "name": "actionBatches.createOrganizationActionBatch",
+      "description": "Create an action batch"
+    },
+    {
+      "id": "openapi_meraki_com.actionBatches.deleteOrganizationActionBatch",
+      "name": "actionBatches.deleteOrganizationActionBatch",
+      "description": "Delete an action batch"
+    },
+    {
+      "id": "openapi_meraki_com.actionBatches.getOrganizationActionBatches",
+      "name": "actionBatches.getOrganizationActionBatches",
+      "description": "Return the list of action batches in the organization"
+    },
+    {
+      "id": "openapi_meraki_com.actionBatches.updateOrganizationActionBatch",
+      "name": "actionBatches.updateOrganizationActionBatch",
+      "description": "Update an action batch"
+    },
+    {
+      "id": "openapi_meraki_com.admins.createOrganizationAdmin",
+      "name": "admins.createOrganizationAdmin",
+      "description": "Create a new dashboard administrator"
+    },
+    {
+      "id": "openapi_meraki_com.admins.deleteOrganizationAdmin",
+      "name": "admins.deleteOrganizationAdmin",
+      "description": "Revoke all access for a dashboard administrator within this organization"
+    },
+    {
+      "id": "openapi_meraki_com.admins.getOrganizationAdmins",
+      "name": "admins.getOrganizationAdmins",
+      "description": "List the dashboard administrators in this organization"
+    },
+    {
+      "id": "openapi_meraki_com.admins.updateOrganizationAdmin",
+      "name": "admins.updateOrganizationAdmin",
+      "description": "Update an administrator"
+    },
+    {
+      "id": "openapi_meraki_com.alertSettings.getNetworkAlertSettings",
+      "name": "alertSettings.getNetworkAlertSettings",
+      "description": "Return the alert configuration for this network"
+    },
+    {
+      "id": "openapi_meraki_com.alertSettings.updateNetworkAlertSettings",
+      "name": "alertSettings.updateNetworkAlertSettings",
+      "description": "Update the alert configuration for this network"
+    },
+    {
+      "id": "openapi_meraki_com.apiUsage.getOrganizationApiRequests",
+      "name": "apiUsage.getOrganizationApiRequests",
+      "description": "List the API requests made by an organization"
+    },
+    {
+      "id": "openapi_meraki_com.apiUsage.getOrganizationApiRequestsOverview",
+      "name": "apiUsage.getOrganizationApiRequestsOverview",
+      "description": "Return an aggregated overview of API requests data"
+    },
+    {
+      "id": "openapi_meraki_com.bluetoothClients.getNetworkBluetoothClient",
+      "name": "bluetoothClients.getNetworkBluetoothClient",
+      "description": "Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC."
+    },
+    {
+      "id": "openapi_meraki_com.bluetoothClients.getNetworkBluetoothClients",
+      "name": "bluetoothClients.getNetworkBluetoothClients",
+      "description": "List the Bluetooth clients seen by APs in this network"
+    },
+    {
+      "id": "openapi_meraki_com.bluetoothSettings.getNetworkBluetoothSettings",
+      "name": "bluetoothSettings.getNetworkBluetoothSettings",
+      "description": "Return the Bluetooth settings for a network. <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a> must be enabled on the network."
+    },
+    {
+      "id": "openapi_meraki_com.bluetoothSettings.updateDeviceWirelessBluetoothSettings",
+      "name": "bluetoothSettings.updateDeviceWirelessBluetoothSettings",
+      "description": "Update the bluetooth settings for a wireless device"
+    },
+    {
+      "id": "openapi_meraki_com.bluetoothSettings.updateNetworkBluetoothSettings",
+      "name": "bluetoothSettings.updateNetworkBluetoothSettings",
+      "description": "Update the Bluetooth settings for a network. See the docs page for <a href=\"https://documentation.meraki.com/MR/Bluetooth/Bluetooth_Low_Energy_(BLE)\">Bluetooth settings</a>."
+    },
+    {
+      "id": "openapi_meraki_com.cameraQualityRetentionProfiles.createNetworkCameraQualityRetentionProfile",
+      "name": "cameraQualityRetentionProfiles.createNetworkCameraQualityRetentionProfile",
+      "description": "Creates new quality retention profile for this network."
+    },
+    {
+      "id": "openapi_meraki_com.cameraQualityRetentionProfiles.deleteNetworkCameraQualityRetentionProfile",
+      "name": "cameraQualityRetentionProfiles.deleteNetworkCameraQualityRetentionProfile",
+      "description": "Delete an existing quality retention profile for this network."
+    },
+    {
+      "id": "openapi_meraki_com.cameraQualityRetentionProfiles.getNetworkCameraQualityRetentionProfile",
+      "name": "cameraQualityRetentionProfiles.getNetworkCameraQualityRetentionProfile",
+      "description": "Retrieve a single quality retention profile"
+    },
+    {
+      "id": "openapi_meraki_com.cameraQualityRetentionProfiles.getNetworkCameraQualityRetentionProfiles",
+      "name": "cameraQualityRetentionProfiles.getNetworkCameraQualityRetentionProfiles",
+      "description": "List the quality retention profiles for this network"
+    },
+    {
+      "id": "openapi_meraki_com.cameraQualityRetentionProfiles.updateNetworkCameraQualityRetentionProfile",
+      "name": "cameraQualityRetentionProfiles.updateNetworkCameraQualityRetentionProfile",
+      "description": "Update an existing quality retention profile for this network."
+    },
+    {
+      "id": "openapi_meraki_com.cameras.generateNetworkCameraSnapshot",
+      "name": "cameras.generateNetworkCameraSnapshot",
+      "description": "Generate a snapshot of what the camera sees at the specified time and return a link to that image."
+    },
+    {
+      "id": "openapi_meraki_com.cameras.getDeviceCameraQualityAndRetentionSettings",
+      "name": "cameras.getDeviceCameraQualityAndRetentionSettings",
+      "description": "Returns quality and retention settings for the given camera"
+    },
+    {
+      "id": "openapi_meraki_com.cameras.getDeviceCameraVideoSettings",
+      "name": "cameras.getDeviceCameraVideoSettings",
+      "description": "Returns video settings for the given camera"
+    },
+    {
+      "id": "openapi_meraki_com.cameras.getNetworkCameraSchedules",
+      "name": "cameras.getNetworkCameraSchedules",
+      "description": "Returns a list of all camera recording schedules."
+    },
+    {
+      "id": "openapi_meraki_com.cameras.getNetworkCameraVideoLink",
+      "name": "cameras.getNetworkCameraVideoLink",
+      "description": "Returns video link to the specified camera. If a timestamp is supplied, it links to that timestamp."
+    },
+    {
+      "id": "openapi_meraki_com.cameras.updateDeviceCameraQualityAndRetentionSettings",
+      "name": "cameras.updateDeviceCameraQualityAndRetentionSettings",
+      "description": "Update quality and retention settings for the given camera"
+    },
+    {
+      "id": "openapi_meraki_com.cameras.updateDeviceCameraVideoSettings",
+      "name": "cameras.updateDeviceCameraVideoSettings",
+      "description": "Update video settings for the given camera"
+    },
+    {
+      "id": "openapi_meraki_com.changeLog.getOrganizationConfigurationChanges",
+      "name": "changeLog.getOrganizationConfigurationChanges",
+      "description": "View the Change Log for your organization"
+    },
+    {
+      "id": "openapi_meraki_com.clients.getDeviceClients",
+      "name": "clients.getDeviceClients",
+      "description": "List the clients of a device, up to a maximum of a month ago. The usage of each client is returned in kilobytes. If the device is a switch, the switchport is returned; otherwise the switchport field is null."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClient",
+      "name": "clients.getNetworkClient",
+      "description": "Return the client associated with the given identifier. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClientEvents",
+      "name": "clients.getNetworkClientEvents",
+      "description": "Return the events associated with this client. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClientLatencyHistory",
+      "name": "clients.getNetworkClientLatencyHistory",
+      "description": "Return the latency history for a client. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP. The latency data is from a sample of 2% of packets and is grouped into 4 traffic categories: background, best effort, video, voice. Within these categories the sampled packet counters are bucketed by latency in milliseconds."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClientPolicy",
+      "name": "clients.getNetworkClientPolicy",
+      "description": "Return the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClients",
+      "name": "clients.getNetworkClients",
+      "description": "List the clients that have used this network in the timespan"
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClientSplashAuthorizationStatus",
+      "name": "clients.getNetworkClientSplashAuthorizationStatus",
+      "description": "Return the splash authorization for a client, for each SSID they've associated with through splash. Only enabled SSIDs with Click-through splash enabled will be included. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.getNetworkClientUsageHistory",
+      "name": "clients.getNetworkClientUsageHistory",
+      "description": "Return the client's daily usage history. Usage data is in kilobytes. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.provisionNetworkClients",
+      "name": "clients.provisionNetworkClients",
+      "description": "Provisions a client with a name and policy. Clients can be provisioned before they associate to the network."
+    },
+    {
+      "id": "openapi_meraki_com.clients.updateNetworkClientPolicy",
+      "name": "clients.updateNetworkClientPolicy",
+      "description": "Update the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.clients.updateNetworkClientSplashAuthorizationStatus",
+      "name": "clients.updateNetworkClientSplashAuthorizationStatus",
+      "description": "Update a client's splash authorization. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP."
+    },
+    {
+      "id": "openapi_meraki_com.configTemplates.deleteOrganizationConfigTemplate",
+      "name": "configTemplates.deleteOrganizationConfigTemplate",
+      "description": "Remove a configuration template"
+    },
+    {
+      "id": "openapi_meraki_com.configTemplates.getOrganizationConfigTemplates",
+      "name": "configTemplates.getOrganizationConfigTemplates",
+      "description": "List the configuration templates for this organization"
+    },
+    {
+      "id": "openapi_meraki_com.contentFilteringCategories.getNetworkContentFilteringCategories",
+      "name": "contentFilteringCategories.getNetworkContentFilteringCategories",
+      "description": "List all available content filtering categories for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.contentFilteringRules.getNetworkContentFiltering",
+      "name": "contentFilteringRules.getNetworkContentFiltering",
+      "description": "Return the content filtering settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.contentFilteringRules.updateNetworkContentFiltering",
+      "name": "contentFilteringRules.updateNetworkContentFiltering",
+      "description": "Update the content filtering settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.devices.claimNetworkDevices",
+      "name": "devices.claimNetworkDevices",
+      "description": "Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed)"
+    },
+    {
+      "id": "openapi_meraki_com.devices.cycleDeviceSwitchPorts",
+      "name": "devices.cycleDeviceSwitchPorts",
+      "description": "Cycle a set of switch ports"
+    },
+    {
+      "id": "openapi_meraki_com.devices.getNetworkDevice",
+      "name": "devices.getNetworkDevice",
+      "description": "Return a single device"
+    },
+    {
+      "id": "openapi_meraki_com.devices.getNetworkDeviceLossAndLatencyHistory",
+      "name": "devices.getNetworkDeviceLossAndLatencyHistory",
+      "description": "Get the uplink loss percentage and latency in milliseconds for a wired network device."
+    },
+    {
+      "id": "openapi_meraki_com.devices.getNetworkDevicePerformance",
+      "name": "devices.getNetworkDevicePerformance",
+      "description": "Return the performance score for a single MX. Only primary MX devices supported. If no data is available, a 204 error code is returned."
+    },
+    {
+      "id": "openapi_meraki_com.devices.getNetworkDevices",
+      "name": "devices.getNetworkDevices",
+      "description": "List the devices in a network"
+    },
+    {
+      "id": "openapi_meraki_com.devices.getNetworkDeviceUplink",
+      "name": "devices.getNetworkDeviceUplink",
+      "description": "Return the uplink information for a device."
+    },
+    {
+      "id": "openapi_meraki_com.devices.getOrganizationDevices",
+      "name": "devices.getOrganizationDevices",
+      "description": "List the devices in an organization"
+    },
+    {
+      "id": "openapi_meraki_com.devices.rebootNetworkDevice",
+      "name": "devices.rebootNetworkDevice",
+      "description": "Reboot a device"
+    },
+    {
+      "id": "openapi_meraki_com.devices.removeNetworkDevice",
+      "name": "devices.removeNetworkDevice",
+      "description": "Remove a single device"
+    },
+    {
+      "id": "openapi_meraki_com.devices.updateNetworkDevice",
+      "name": "devices.updateNetworkDevice",
+      "description": "Update the attributes of a device"
+    },
+    {
+      "id": "openapi_meraki_com.events.getNetworkEvents",
+      "name": "events.getNetworkEvents",
+      "description": "List the events for the network"
+    },
+    {
+      "id": "openapi_meraki_com.events.getNetworkEventsEventTypes",
+      "name": "events.getNetworkEventsEventTypes",
+      "description": "List the event type to human-readable description"
+    },
+    {
+      "id": "openapi_meraki_com.firewalledServices.getNetworkFirewalledService",
+      "name": "firewalledServices.getNetworkFirewalledService",
+      "description": "Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP')"
+    },
+    {
+      "id": "openapi_meraki_com.firewalledServices.getNetworkFirewalledServices",
+      "name": "firewalledServices.getNetworkFirewalledServices",
+      "description": "List the appliance services and their accessibility rules"
+    },
+    {
+      "id": "openapi_meraki_com.firewalledServices.updateNetworkFirewalledService",
+      "name": "firewalledServices.updateNetworkFirewalledService",
+      "description": "Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNMP')"
+    },
+    {
+      "id": "openapi_meraki_com.floorPlans.createNetworkFloorPlan",
+      "name": "floorPlans.createNetworkFloorPlan",
+      "description": "Upload a floor plan"
+    },
+    {
+      "id": "openapi_meraki_com.floorPlans.deleteNetworkFloorPlan",
+      "name": "floorPlans.deleteNetworkFloorPlan",
+      "description": "Destroy a floor plan"
+    },
+    {
+      "id": "openapi_meraki_com.floorPlans.getNetworkFloorPlan",
+      "name": "floorPlans.getNetworkFloorPlan",
+      "description": "Find a floor plan by ID"
+    },
+    {
+      "id": "openapi_meraki_com.floorPlans.getNetworkFloorPlans",
+      "name": "floorPlans.getNetworkFloorPlans",
+      "description": "List the floor plans that belong to your network"
+    },
+    {
+      "id": "openapi_meraki_com.floorPlans.updateNetworkFloorPlan",
+      "name": "floorPlans.updateNetworkFloorPlan",
+      "description": "Update a floor plan's geolocation and other meta data"
+    },
+    {
+      "id": "openapi_meraki_com.intrusionSettings.getNetworkSecurityIntrusionSettings",
+      "name": "intrusionSettings.getNetworkSecurityIntrusionSettings",
+      "description": "Returns all supported intrusion settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.intrusionSettings.getOrganizationSecurityIntrusionSettings",
+      "name": "intrusionSettings.getOrganizationSecurityIntrusionSettings",
+      "description": "Returns all supported intrusion settings for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.intrusionSettings.updateNetworkSecurityIntrusionSettings",
+      "name": "intrusionSettings.updateNetworkSecurityIntrusionSettings",
+      "description": "Set the supported intrusion settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.intrusionSettings.updateOrganizationSecurityIntrusionSettings",
+      "name": "intrusionSettings.updateOrganizationSecurityIntrusionSettings",
+      "description": "Sets supported intrusion settings for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.assignOrganizationLicensesSeats",
+      "name": "licenses.assignOrganizationLicensesSeats",
+      "description": "Assign SM seats to a network. This will increase the managed SM device limit of the network"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.getOrganizationLicense",
+      "name": "licenses.getOrganizationLicense",
+      "description": "Display a license"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.getOrganizationLicenses",
+      "name": "licenses.getOrganizationLicenses",
+      "description": "List the licenses for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.getOrganizationLicenseState",
+      "name": "licenses.getOrganizationLicenseState",
+      "description": "Return an overview of the license state for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.moveOrganizationLicensesSeats",
+      "name": "licenses.moveOrganizationLicensesSeats",
+      "description": "Move SM seats to another organization"
+    },
+    {
+      "id": "openapi_meraki_com.licenses.renewOrganizationLicensesSeats",
+      "name": "licenses.renewOrganizationLicensesSeats",
+      "description": "Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license"
+    },
+    {
+      "id": "openapi_meraki_com.linkAggregations.createNetworkSwitchLinkAggregation",
+      "name": "linkAggregations.createNetworkSwitchLinkAggregation",
+      "description": "Create a link aggregation group"
+    },
+    {
+      "id": "openapi_meraki_com.linkAggregations.deleteNetworkSwitchLinkAggregation",
+      "name": "linkAggregations.deleteNetworkSwitchLinkAggregation",
+      "description": "Split a link aggregation group into separate ports"
+    },
+    {
+      "id": "openapi_meraki_com.linkAggregations.getNetworkSwitchLinkAggregations",
+      "name": "linkAggregations.getNetworkSwitchLinkAggregations",
+      "description": "List link aggregation groups"
+    },
+    {
+      "id": "openapi_meraki_com.linkAggregations.updateNetworkSwitchLinkAggregation",
+      "name": "linkAggregations.updateNetworkSwitchLinkAggregation",
+      "description": "Update a link aggregation group"
+    },
+    {
+      "id": "openapi_meraki_com.malwareSettings.getNetworkSecurityMalwareSettings",
+      "name": "malwareSettings.getNetworkSecurityMalwareSettings",
+      "description": "Returns all supported malware settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.malwareSettings.updateNetworkSecurityMalwareSettings",
+      "name": "malwareSettings.updateNetworkSecurityMalwareSettings",
+      "description": "Set the supported malware settings for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.merakiAuthUsers.getNetworkMerakiAuthUser",
+      "name": "merakiAuthUsers.getNetworkMerakiAuthUser",
+      "description": "Return the Meraki Auth splash or RADIUS user"
+    },
+    {
+      "id": "openapi_meraki_com.merakiAuthUsers.getNetworkMerakiAuthUsers",
+      "name": "merakiAuthUsers.getNetworkMerakiAuthUsers",
+      "description": "List the splash or RADIUS users configured under Meraki Authentication for a network"
+    },
+    {
+      "id": "openapi_meraki_com.mgLanSettings.getDeviceCellularGatewaySettings",
+      "name": "mgLanSettings.getDeviceCellularGatewaySettings",
+      "description": "Show the LAN Settings of a MG"
+    },
+    {
+      "id": "openapi_meraki_com.mgLanSettings.updateDeviceCellularGatewaySettings",
+      "name": "mgLanSettings.updateDeviceCellularGatewaySettings",
+      "description": "Update the LAN Settings for a single MG."
+    },
+    {
+      "id": "openapi_meraki_com.mgPortForwardingRules.getDeviceCellularGatewaySettingsPortForwardingRules",
+      "name": "mgPortForwardingRules.getDeviceCellularGatewaySettingsPortForwardingRules",
+      "description": "Returns the port forwarding rules for a single MG."
+    },
+    {
+      "id": "openapi_meraki_com.mgPortForwardingRules.updateDeviceCellularGatewaySettingsPortForwardingRules",
+      "name": "mgPortForwardingRules.updateDeviceCellularGatewaySettingsPortForwardingRules",
+      "description": "Updates the port forwarding rules for a single MG."
+    },
+    {
+      "id": "openapi_meraki_com.monitoredMediaServers.createOrganizationInsightMonitoredMediaServer",
+      "name": "monitoredMediaServers.createOrganizationInsightMonitoredMediaServer",
+      "description": "Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight."
+    },
+    {
+      "id": "openapi_meraki_com.monitoredMediaServers.deleteOrganizationInsightMonitoredMediaServer",
+      "name": "monitoredMediaServers.deleteOrganizationInsightMonitoredMediaServer",
+      "description": "Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight."
+    },
+    {
+      "id": "openapi_meraki_com.monitoredMediaServers.getOrganizationInsightMonitoredMediaServer",
+      "name": "monitoredMediaServers.getOrganizationInsightMonitoredMediaServer",
+      "description": "Return a monitored media server for this organization. Only valid for organizations with Meraki Insight."
+    },
+    {
+      "id": "openapi_meraki_com.monitoredMediaServers.getOrganizationInsightMonitoredMediaServers",
+      "name": "monitoredMediaServers.getOrganizationInsightMonitoredMediaServers",
+      "description": "List the monitored media servers for this organization. Only valid for organizations with Meraki Insight."
+    },
+    {
+      "id": "openapi_meraki_com.monitoredMediaServers.updateOrganizationInsightMonitoredMediaServer",
+      "name": "monitoredMediaServers.updateOrganizationInsightMonitoredMediaServer",
+      "description": "Update a monitored media server for this organization. Only valid for organizations with Meraki Insight."
+    },
+    {
+      "id": "openapi_meraki_com.mrL3Firewall.getNetworkSsidL3FirewallRules",
+      "name": "mrL3Firewall.getNetworkSsidL3FirewallRules",
+      "description": "Return the L3 firewall rules for an SSID on an MR network"
+    },
+    {
+      "id": "openapi_meraki_com.mrL3Firewall.updateNetworkSsidL3FirewallRules",
+      "name": "mrL3Firewall.updateNetworkSsidL3FirewallRules",
+      "description": "Update the L3 firewall rules of an SSID on an MR network"
+    },
+    {
+      "id": "openapi_meraki_com.mvSense.getDeviceCameraAnalyticsLive",
+      "name": "mvSense.getDeviceCameraAnalyticsLive",
+      "description": "Returns live state from camera of analytics zones"
+    },
+    {
+      "id": "openapi_meraki_com.mvSense.getDeviceCameraAnalyticsOverview",
+      "name": "mvSense.getDeviceCameraAnalyticsOverview",
+      "description": "Returns an overview of aggregate analytics data for a timespan"
+    },
+    {
+      "id": "openapi_meraki_com.mvSense.getDeviceCameraAnalyticsRecent",
+      "name": "mvSense.getDeviceCameraAnalyticsRecent",
+      "description": "Returns most recent record for analytics zones"
+    },
+    {
+      "id": "openapi_meraki_com.mvSense.getDeviceCameraAnalyticsZoneHistory",
+      "name": "mvSense.getDeviceCameraAnalyticsZoneHistory",
+      "description": "Return historical records for analytic zones"
+    },
+    {
+      "id": "openapi_meraki_com.mvSense.getDeviceCameraAnalyticsZones",
+      "name": "mvSense.getDeviceCameraAnalyticsZones",
+      "description": "Returns all configured analytic zones for this camera"
+    },
+    {
+      "id": "openapi_meraki_com.mx11NatRules.getNetworkOneToOneNatRules",
+      "name": "mx11NatRules.getNetworkOneToOneNatRules",
+      "description": "Return the 1:1 NAT mapping rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mx11NatRules.updateNetworkOneToOneNatRules",
+      "name": "mx11NatRules.updateNetworkOneToOneNatRules",
+      "description": "Set the 1:1 NAT mapping rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mx1ManyNatRules.getNetworkOneToManyNatRules",
+      "name": "mx1ManyNatRules.getNetworkOneToManyNatRules",
+      "description": "Return the 1:Many NAT mapping rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mx1ManyNatRules.updateNetworkOneToManyNatRules",
+      "name": "mx1ManyNatRules.updateNetworkOneToManyNatRules",
+      "description": "Set the 1:Many NAT mapping rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxCellularFirewall.getNetworkCellularFirewallRules",
+      "name": "mxCellularFirewall.getNetworkCellularFirewallRules",
+      "description": "Return the cellular firewall rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxCellularFirewall.updateNetworkCellularFirewallRules",
+      "name": "mxCellularFirewall.updateNetworkCellularFirewallRules",
+      "description": "Update the cellular firewall rules of an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL3InboundFirewall.getNetworkApplianceFirewallInboundFirewallRules",
+      "name": "mxL3InboundFirewall.getNetworkApplianceFirewallInboundFirewallRules",
+      "description": "Return the inbound firewall rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL3InboundFirewall.updateNetworkApplianceFirewallInboundFirewallRules",
+      "name": "mxL3InboundFirewall.updateNetworkApplianceFirewallInboundFirewallRules",
+      "description": "Update the inbound firewall rules of an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL3OutboundFirewall.getNetworkL3FirewallRules",
+      "name": "mxL3OutboundFirewall.getNetworkL3FirewallRules",
+      "description": "Return the L3 firewall rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL3OutboundFirewall.updateNetworkL3FirewallRules",
+      "name": "mxL3OutboundFirewall.updateNetworkL3FirewallRules",
+      "description": "Update the L3 firewall rules of an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL7ApplicationCategories.getNetworkL7FirewallRulesApplicationCategories",
+      "name": "mxL7ApplicationCategories.getNetworkL7FirewallRulesApplicationCategories",
+      "description": "Return the L7 firewall application categories and their associated applications for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL7Firewall.getNetworkL7FirewallRules",
+      "name": "mxL7Firewall.getNetworkL7FirewallRules",
+      "description": "List the MX L7 firewall rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxL7Firewall.updateNetworkL7FirewallRules",
+      "name": "mxL7Firewall.updateNetworkL7FirewallRules",
+      "description": "Update the MX L7 firewall rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxPortForwardingRules.getNetworkPortForwardingRules",
+      "name": "mxPortForwardingRules.getNetworkPortForwardingRules",
+      "description": "Return the port forwarding rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxPortForwardingRules.updateNetworkPortForwardingRules",
+      "name": "mxPortForwardingRules.updateNetworkPortForwardingRules",
+      "description": "Update the port forwarding rules for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.mxStaticRoutes.createNetworkStaticRoute",
+      "name": "mxStaticRoutes.createNetworkStaticRoute",
+      "description": "Add a static route for an MX or teleworker network"
+    },
+    {
+      "id": "openapi_meraki_com.mxStaticRoutes.deleteNetworkStaticRoute",
+      "name": "mxStaticRoutes.deleteNetworkStaticRoute",
+      "description": "Delete a static route from an MX or teleworker network"
+    },
+    {
+      "id": "openapi_meraki_com.mxStaticRoutes.getNetworkStaticRoute",
+      "name": "mxStaticRoutes.getNetworkStaticRoute",
+      "description": "Return a static route for an MX or teleworker network"
+    },
+    {
+      "id": "openapi_meraki_com.mxStaticRoutes.getNetworkStaticRoutes",
+      "name": "mxStaticRoutes.getNetworkStaticRoutes",
+      "description": "List the static routes for an MX or teleworker network"
+    },
+    {
+      "id": "openapi_meraki_com.mxStaticRoutes.updateNetworkStaticRoute",
+      "name": "mxStaticRoutes.updateNetworkStaticRoute",
+      "description": "Update a static route for an MX or teleworker network"
+    },
+    {
+      "id": "openapi_meraki_com.mxVlanPorts.getNetworkAppliancePort",
+      "name": "mxVlanPorts.getNetworkAppliancePort",
+      "description": "Return per-port VLAN settings for a single MX port."
+    },
+    {
+      "id": "openapi_meraki_com.mxVlanPorts.getNetworkAppliancePorts",
+      "name": "mxVlanPorts.getNetworkAppliancePorts",
+      "description": "List per-port VLAN settings for all ports of a MX."
+    },
+    {
+      "id": "openapi_meraki_com.mxVlanPorts.updateNetworkAppliancePort",
+      "name": "mxVlanPorts.updateNetworkAppliancePort",
+      "description": "Update the per-port VLAN settings for a single MX port."
+    },
+    {
+      "id": "openapi_meraki_com.mxVpnFirewall.getOrganizationVpnFirewallRules",
+      "name": "mxVpnFirewall.getOrganizationVpnFirewallRules",
+      "description": "Return the firewall rules for an organization's site-to-site VPN"
+    },
+    {
+      "id": "openapi_meraki_com.mxVpnFirewall.updateOrganizationVpnFirewallRules",
+      "name": "mxVpnFirewall.updateOrganizationVpnFirewallRules",
+      "description": "Update the firewall rules of an organization's site-to-site VPN"
+    },
+    {
+      "id": "openapi_meraki_com.mxWarmSpareSettings.getNetworkWarmSpareSettings",
+      "name": "mxWarmSpareSettings.getNetworkWarmSpareSettings",
+      "description": "Return MX warm spare settings"
+    },
+    {
+      "id": "openapi_meraki_com.mxWarmSpareSettings.swapNetworkWarmSpare",
+      "name": "mxWarmSpareSettings.swapNetworkWarmSpare",
+      "description": "Swap MX primary and warm spare appliances"
+    },
+    {
+      "id": "openapi_meraki_com.mxWarmSpareSettings.updateNetworkWarmSpareSettings",
+      "name": "mxWarmSpareSettings.updateNetworkWarmSpareSettings",
+      "description": "Update MX warm spare settings"
+    },
+    {
+      "id": "openapi_meraki_com.namedTagScope.createNetworkSmTargetGroup",
+      "name": "namedTagScope.createNetworkSmTargetGroup",
+      "description": "Add a target group"
+    },
+    {
+      "id": "openapi_meraki_com.namedTagScope.deleteNetworkSmTargetGroup",
+      "name": "namedTagScope.deleteNetworkSmTargetGroup",
+      "description": "Delete a target group from a network"
+    },
+    {
+      "id": "openapi_meraki_com.namedTagScope.getNetworkSmTargetGroup",
+      "name": "namedTagScope.getNetworkSmTargetGroup",
+      "description": "Return a target group"
+    },
+    {
+      "id": "openapi_meraki_com.namedTagScope.getNetworkSmTargetGroups",
+      "name": "namedTagScope.getNetworkSmTargetGroups",
+      "description": "List the target groups in this network"
+    },
+    {
+      "id": "openapi_meraki_com.namedTagScope.updateNetworkSmTargetGroup",
+      "name": "namedTagScope.updateNetworkSmTargetGroup",
+      "description": "Update a target group"
+    },
+    {
+      "id": "openapi_meraki_com.networks.bindNetwork",
+      "name": "networks.bindNetwork",
+      "description": "Bind a network to a template."
+    },
+    {
+      "id": "openapi_meraki_com.networks.combineOrganizationNetworks",
+      "name": "networks.combineOrganizationNetworks",
+      "description": "Combine multiple networks into a single network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.createOrganizationNetwork",
+      "name": "networks.createOrganizationNetwork",
+      "description": "Create a network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.deleteNetwork",
+      "name": "networks.deleteNetwork",
+      "description": "Delete a network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.getNetwork",
+      "name": "networks.getNetwork",
+      "description": "Return a network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.getNetworkAirMarshal",
+      "name": "networks.getNetworkAirMarshal",
+      "description": "List Air Marshal scan results from a network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.getNetworkSiteToSiteVpn",
+      "name": "networks.getNetworkSiteToSiteVpn",
+      "description": "Return the site-to-site VPN settings of a network. Only valid for MX networks."
+    },
+    {
+      "id": "openapi_meraki_com.networks.getNetworkTraffic",
+      "name": "networks.getNetworkTraffic",
+      "description": "Return the traffic analysis data for this network. Traffic analysis with hostname visibility must be enabled on the network."
+    },
+    {
+      "id": "openapi_meraki_com.networks.getOrganizationNetworks",
+      "name": "networks.getOrganizationNetworks",
+      "description": "List the networks in an organization"
+    },
+    {
+      "id": "openapi_meraki_com.networks.splitNetwork",
+      "name": "networks.splitNetwork",
+      "description": "Split a combined network into individual networks for each type of device"
+    },
+    {
+      "id": "openapi_meraki_com.networks.unbindNetwork",
+      "name": "networks.unbindNetwork",
+      "description": "Unbind a network from a template."
+    },
+    {
+      "id": "openapi_meraki_com.networks.updateNetwork",
+      "name": "networks.updateNetwork",
+      "description": "Update a network"
+    },
+    {
+      "id": "openapi_meraki_com.networks.updateNetworkSiteToSiteVpn",
+      "name": "networks.updateNetworkSiteToSiteVpn",
+      "description": "Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode."
+    },
+    {
+      "id": "openapi_meraki_com.openApiSpec.getOrganizationOpenapiSpec",
+      "name": "openApiSpec.getOrganizationOpenapiSpec",
+      "description": "Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.claimIntoOrganization",
+      "name": "organizations.claimIntoOrganization",
+      "description": "Claim a list of devices, licenses, and/or orders into an organization. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be placed in the organization's inventory."
+    },
+    {
+      "id": "openapi_meraki_com.organizations.cloneOrganization",
+      "name": "organizations.cloneOrganization",
+      "description": "Create a new organization by cloning the addressed organization"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganization",
+      "name": "organizations.getOrganization",
+      "description": "Return an organization"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganizationDeviceStatuses",
+      "name": "organizations.getOrganizationDeviceStatuses",
+      "description": "List the status of every Meraki device in the organization"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganizationInventory",
+      "name": "organizations.getOrganizationInventory",
+      "description": "Return the inventory for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganizations",
+      "name": "organizations.getOrganizations",
+      "description": "List the organizations that the user has privileges on"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganizationThirdPartyVpnPeers",
+      "name": "organizations.getOrganizationThirdPartyVpnPeers",
+      "description": "Return the third party VPN peers for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.getOrganizationUplinksLossAndLatency",
+      "name": "organizations.getOrganizationUplinksLossAndLatency",
+      "description": "Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago"
+    },
+    {
+      "id": "openapi_meraki_com.organizations.updateOrganizationThirdPartyVpnPeers",
+      "name": "organizations.updateOrganizationThirdPartyVpnPeers",
+      "description": "Update the third party VPN peers for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.pii.createNetworkPiiRequest",
+      "name": "pii.createNetworkPiiRequest",
+      "description": "Submit a new delete or restrict processing PII request\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/requests\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.deleteNetworkPiiRequest",
+      "name": "pii.deleteNetworkPiiRequest",
+      "description": "Delete a restrict processing PII request\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/requests/{requestId}\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.getNetworkPiiPiiKeys",
+      "name": "pii.getNetworkPiiPiiKeys",
+      "description": "List the keys required to access Personally Identifiable Information (PII) for a given identifier. Exactly one identifier will be accepted. If the organization contains org-wide Systems Manager users matching the key provided then there will be an entry with the key \"0\" containing the applicable keys.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/piiKeys\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.getNetworkPiiRequest",
+      "name": "pii.getNetworkPiiRequest",
+      "description": "Return a PII request\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/requests/{requestId}\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.getNetworkPiiRequests",
+      "name": "pii.getNetworkPiiRequests",
+      "description": "List the PII requests for this network or organization\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/requests\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.getNetworkPiiSmDevicesForKey",
+      "name": "pii.getNetworkPiiSmDevicesForKey",
+      "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smDevicesForKey\n```"
+    },
+    {
+      "id": "openapi_meraki_com.pii.getNetworkPiiSmOwnersForKey",
+      "name": "pii.getNetworkPiiSmOwnersForKey",
+      "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smOwnersForKey\n```"
+    },
+    {
+      "id": "openapi_meraki_com.radioSettings.createNetworkWirelessRfProfile",
+      "name": "radioSettings.createNetworkWirelessRfProfile",
+      "description": "Creates new RF profile for this network"
+    },
+    {
+      "id": "openapi_meraki_com.radioSettings.deleteNetworkWirelessRfProfile",
+      "name": "radioSettings.deleteNetworkWirelessRfProfile",
+      "description": "Delete a RF Profile"
+    },
+    {
+      "id": "openapi_meraki_com.radioSettings.getNetworkWirelessRfProfile",
+      "name": "radioSettings.getNetworkWirelessRfProfile",
+      "description": "Return a RF profile"
+    },
+    {
+      "id": "openapi_meraki_com.radioSettings.getNetworkWirelessRfProfiles",
+      "name": "radioSettings.getNetworkWirelessRfProfiles",
+      "description": "List the non-basic RF profiles for this network"
+    },
+    {
+      "id": "openapi_meraki_com.radioSettings.updateNetworkWirelessRfProfile",
+      "name": "radioSettings.updateNetworkWirelessRfProfile",
+      "description": "Updates specified RF profile for this network"
+    },
+    {
+      "id": "openapi_meraki_com.samlRoles.createOrganizationSamlRole",
+      "name": "samlRoles.createOrganizationSamlRole",
+      "description": "Create a SAML role"
+    },
+    {
+      "id": "openapi_meraki_com.samlRoles.getOrganizationSamlRole",
+      "name": "samlRoles.getOrganizationSamlRole",
+      "description": "Return a SAML role"
+    },
+    {
+      "id": "openapi_meraki_com.samlRoles.getOrganizationSamlRoles",
+      "name": "samlRoles.getOrganizationSamlRoles",
+      "description": "List the SAML roles for this organization"
+    },
+    {
+      "id": "openapi_meraki_com.samlRoles.updateOrganizationSamlRole",
+      "name": "samlRoles.updateOrganizationSamlRole",
+      "description": "Update a SAML role"
+    },
+    {
+      "id": "openapi_meraki_com.securityEvents.getNetworkSecurityEvents",
+      "name": "securityEvents.getNetworkSecurityEvents",
+      "description": "List the security events (intrusion detection only) for a network"
+    },
+    {
+      "id": "openapi_meraki_com.securityEvents.getOrganizationSecurityEvents",
+      "name": "securityEvents.getOrganizationSecurityEvents",
+      "description": "List the security events (intrusion detection only) for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.sm.checkinNetworkSmDevices",
+      "name": "sm.checkinNetworkSmDevices",
+      "description": "Force check-in a set of devices"
+    },
+    {
+      "id": "openapi_meraki_com.sm.createNetworkSmBypassActivationLockAttempt",
+      "name": "sm.createNetworkSmBypassActivationLockAttempt",
+      "description": "Bypass activation lock attempt"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmBypassActivationLockAttempt",
+      "name": "sm.getNetworkSmBypassActivationLockAttempt",
+      "description": "Bypass activation lock attempt status"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmCellularUsageHistory",
+      "name": "sm.getNetworkSmCellularUsageHistory",
+      "description": "Return the client's daily cellular data usage history. Usage data is in kilobytes."
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmCerts",
+      "name": "sm.getNetworkSmCerts",
+      "description": "List the certs on a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmConnectivity",
+      "name": "sm.getNetworkSmConnectivity",
+      "description": "Returns historical connectivity data (whether a device is regularly checking in to Dashboard)."
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmDesktopLogs",
+      "name": "sm.getNetworkSmDesktopLogs",
+      "description": "Return historical records of various Systems Manager network connection details for desktop devices."
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmDeviceCommandLogs",
+      "name": "sm.getNetworkSmDeviceCommandLogs",
+      "description": "Return historical records of commands sent to Systems Manager devices. Note that this will include the name of the Dashboard user who initiated the command if it was generated by a Dashboard admin rather than the automatic behavior of the system; you may wish to filter this out of any reports."
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmDeviceProfiles",
+      "name": "sm.getNetworkSmDeviceProfiles",
+      "description": "Get the profiles associated with a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmDevices",
+      "name": "sm.getNetworkSmDevices",
+      "description": "List the devices enrolled in an SM network with various specified fields and filters"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmNetworkAdapters",
+      "name": "sm.getNetworkSmNetworkAdapters",
+      "description": "List the network adapters of a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmPerformanceHistory",
+      "name": "sm.getNetworkSmPerformanceHistory",
+      "description": "Return historical records of various Systems Manager client metrics for desktop devices."
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmProfiles",
+      "name": "sm.getNetworkSmProfiles",
+      "description": "List all the profiles in the network"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmRestrictions",
+      "name": "sm.getNetworkSmRestrictions",
+      "description": "List the restrictions on a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmSecurityCenters",
+      "name": "sm.getNetworkSmSecurityCenters",
+      "description": "List the security centers on a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmSoftwares",
+      "name": "sm.getNetworkSmSoftwares",
+      "description": "Get a list of softwares associated with a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmUserDeviceProfiles",
+      "name": "sm.getNetworkSmUserDeviceProfiles",
+      "description": "Get the profiles associated with a user"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmUsers",
+      "name": "sm.getNetworkSmUsers",
+      "description": "List the owners in an SM network with various specified fields and filters"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmUserSoftwares",
+      "name": "sm.getNetworkSmUserSoftwares",
+      "description": "Get a list of softwares associated with a user"
+    },
+    {
+      "id": "openapi_meraki_com.sm.getNetworkSmWlanLists",
+      "name": "sm.getNetworkSmWlanLists",
+      "description": "List the saved SSID names on a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.lockNetworkSmDevices",
+      "name": "sm.lockNetworkSmDevices",
+      "description": "Lock a set of devices"
+    },
+    {
+      "id": "openapi_meraki_com.sm.refreshNetworkSmDeviceDetails",
+      "name": "sm.refreshNetworkSmDeviceDetails",
+      "description": "Refresh the details of a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.unenrollNetworkSmDevice",
+      "name": "sm.unenrollNetworkSmDevice",
+      "description": "Unenroll a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.updateNetworkSmDeviceFields",
+      "name": "sm.updateNetworkSmDeviceFields",
+      "description": "Modify the fields of a device"
+    },
+    {
+      "id": "openapi_meraki_com.sm.updateNetworkSmDevicesTags",
+      "name": "sm.updateNetworkSmDevicesTags",
+      "description": "Add, delete, or update the tags of a set of devices"
+    },
+    {
+      "id": "openapi_meraki_com.sm.wipeNetworkSmDevice",
+      "name": "sm.wipeNetworkSmDevice",
+      "description": "Wipe a device"
+    },
+    {
+      "id": "openapi_meraki_com.snmpSettings.getNetworkSnmpSettings",
+      "name": "snmpSettings.getNetworkSnmpSettings",
+      "description": "Return the SNMP settings for a network"
+    },
+    {
+      "id": "openapi_meraki_com.snmpSettings.getOrganizationSnmp",
+      "name": "snmpSettings.getOrganizationSnmp",
+      "description": "Return the SNMP settings for an organization"
+    },
+    {
+      "id": "openapi_meraki_com.splashLoginAttempts.getNetworkSplashLoginAttempts",
+      "name": "splashLoginAttempts.getNetworkSplashLoginAttempts",
+      "description": "List the splash login attempts for a network"
+    },
+    {
+      "id": "openapi_meraki_com.splashSettings.getNetworkSsidSplashSettings",
+      "name": "splashSettings.getNetworkSsidSplashSettings",
+      "description": "Display the splash page settings for the given SSID"
+    },
+    {
+      "id": "openapi_meraki_com.splashSettings.updateNetworkSsidSplashSettings",
+      "name": "splashSettings.updateNetworkSsidSplashSettings",
+      "description": "Modify the splash page settings for the given SSID"
+    },
+    {
+      "id": "openapi_meraki_com.ssiDs.getNetworkDeviceWirelessStatus",
+      "name": "ssiDs.getNetworkDeviceWirelessStatus",
+      "description": "Return the SSID statuses of an access point"
+    },
+    {
+      "id": "openapi_meraki_com.ssiDs.getNetworkSsid",
+      "name": "ssiDs.getNetworkSsid",
+      "description": "Return a single SSID"
+    },
+    {
+      "id": "openapi_meraki_com.ssiDs.getNetworkSsids",
+      "name": "ssiDs.getNetworkSsids",
+      "description": "List the SSIDs in a network. Supports networks with access points or wireless-enabled security appliances and teleworker gateways."
+    },
+    {
+      "id": "openapi_meraki_com.ssiDs.updateNetworkSsid",
+      "name": "ssiDs.updateNetworkSsid",
+      "description": "Update the attributes of an SSID"
+    },
+    {
+      "id": "openapi_meraki_com.switchAccessPolicies.getNetworkAccessPolicies",
+      "name": "switchAccessPolicies.getNetworkAccessPolicies",
+      "description": "List the access policies for this network. Only valid for MS networks."
+    },
+    {
+      "id": "openapi_meraki_com.switchPorts.getDeviceSwitchPortStatuses",
+      "name": "switchPorts.getDeviceSwitchPortStatuses",
+      "description": "Return the status for all the ports of a switch"
+    },
+    {
+      "id": "openapi_meraki_com.switchPorts.getDeviceSwitchPortStatusesPackets",
+      "name": "switchPorts.getDeviceSwitchPortStatusesPackets",
+      "description": "Return the packet counters for all the ports of a switch"
+    },
+    {
+      "id": "openapi_meraki_com.switchPortSchedules.createNetworkSwitchPortSchedule",
+      "name": "switchPortSchedules.createNetworkSwitchPortSchedule",
+      "description": "Add a switch port schedule"
+    },
+    {
+      "id": "openapi_meraki_com.switchPortSchedules.deleteNetworkSwitchPortSchedule",
+      "name": "switchPortSchedules.deleteNetworkSwitchPortSchedule",
+      "description": "Delete a switch port schedule"
+    },
+    {
+      "id": "openapi_meraki_com.switchPortSchedules.getNetworkSwitchPortSchedules",
+      "name": "switchPortSchedules.getNetworkSwitchPortSchedules",
+      "description": "List switch port schedules"
+    },
+    {
+      "id": "openapi_meraki_com.switchPortSchedules.updateNetworkSwitchPortSchedule",
+      "name": "switchPortSchedules.updateNetworkSwitchPortSchedule",
+      "description": "Update a switch port schedule"
+    },
+    {
+      "id": "openapi_meraki_com.switchProfiles.getOrganizationConfigTemplateSwitchProfiles",
+      "name": "switchProfiles.getOrganizationConfigTemplateSwitchProfiles",
+      "description": "List the switch profiles for your switch template configuration"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.createNetworkSwitchSettingsQosRule",
+      "name": "switchSettings.createNetworkSwitchSettingsQosRule",
+      "description": "Add a quality of service rule"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.deleteNetworkSwitchSettingsQosRule",
+      "name": "switchSettings.deleteNetworkSwitchSettingsQosRule",
+      "description": "Delete a quality of service rule"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettings",
+      "name": "switchSettings.getNetworkSwitchSettings",
+      "description": "Returns the switch network settings"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsMtu",
+      "name": "switchSettings.getNetworkSwitchSettingsMtu",
+      "description": "Return the MTU configuration"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsMulticast",
+      "name": "switchSettings.getNetworkSwitchSettingsMulticast",
+      "description": "Return multicast settings for a network"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsQosRule",
+      "name": "switchSettings.getNetworkSwitchSettingsQosRule",
+      "description": "Return a quality of service rule"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsQosRules",
+      "name": "switchSettings.getNetworkSwitchSettingsQosRules",
+      "description": "List quality of service rules"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsQosRulesOrder",
+      "name": "switchSettings.getNetworkSwitchSettingsQosRulesOrder",
+      "description": "Return the quality of service rule IDs by order in which they will be processed by the switch"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.getNetworkSwitchSettingsStormControl",
+      "name": "switchSettings.getNetworkSwitchSettingsStormControl",
+      "description": "Return the storm control configuration for a switch network"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettings",
+      "name": "switchSettings.updateNetworkSwitchSettings",
+      "description": "Update switch network settings"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettingsMtu",
+      "name": "switchSettings.updateNetworkSwitchSettingsMtu",
+      "description": "Update the MTU configuration"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettingsMulticast",
+      "name": "switchSettings.updateNetworkSwitchSettingsMulticast",
+      "description": "Update multicast settings for a network"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettingsQosRule",
+      "name": "switchSettings.updateNetworkSwitchSettingsQosRule",
+      "description": "Update a quality of service rule"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettingsQosRulesOrder",
+      "name": "switchSettings.updateNetworkSwitchSettingsQosRulesOrder",
+      "description": "Update the order in which the rules should be processed by the switch"
+    },
+    {
+      "id": "openapi_meraki_com.switchSettings.updateNetworkSwitchSettingsStormControl",
+      "name": "switchSettings.updateNetworkSwitchSettingsStormControl",
+      "description": "Update the storm control configuration for a switch network"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.addNetworkSwitchStack",
+      "name": "switchStacks.addNetworkSwitchStack",
+      "description": "Add a switch to a stack"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.createNetworkSwitchStack",
+      "name": "switchStacks.createNetworkSwitchStack",
+      "description": "Create a stack"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.deleteNetworkSwitchStack",
+      "name": "switchStacks.deleteNetworkSwitchStack",
+      "description": "Delete a stack"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.getNetworkSwitchStack",
+      "name": "switchStacks.getNetworkSwitchStack",
+      "description": "Show a switch stack"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.getNetworkSwitchStacks",
+      "name": "switchStacks.getNetworkSwitchStacks",
+      "description": "List the switch stacks in a network"
+    },
+    {
+      "id": "openapi_meraki_com.switchStacks.removeNetworkSwitchStack",
+      "name": "switchStacks.removeNetworkSwitchStack",
+      "description": "Remove a switch from a stack"
+    },
+    {
+      "id": "openapi_meraki_com.syslogServers.getNetworkSyslogServers",
+      "name": "syslogServers.getNetworkSyslogServers",
+      "description": "List the syslog servers for a network"
+    },
+    {
+      "id": "openapi_meraki_com.syslogServers.updateNetworkSyslogServers",
+      "name": "syslogServers.updateNetworkSyslogServers",
+      "description": "Update the syslog servers for a network"
+    },
+    {
+      "id": "openapi_meraki_com.trafficShapingUplinkSettings.getNetworkUplinkSettings",
+      "name": "trafficShapingUplinkSettings.getNetworkUplinkSettings",
+      "description": "Returns the uplink settings for your MX network."
+    },
+    {
+      "id": "openapi_meraki_com.trafficShapingUplinkSettings.updateNetworkUplinkSettings",
+      "name": "trafficShapingUplinkSettings.updateNetworkUplinkSettings",
+      "description": "Updates the uplink settings for your MX network."
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.createNetworkVlan",
+      "name": "vlaNs.createNetworkVlan",
+      "description": "Add a VLAN"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.deleteNetworkVlan",
+      "name": "vlaNs.deleteNetworkVlan",
+      "description": "Delete a VLAN from a network"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.getNetworkVlan",
+      "name": "vlaNs.getNetworkVlan",
+      "description": "Return a VLAN"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.getNetworkVlans",
+      "name": "vlaNs.getNetworkVlans",
+      "description": "List the VLANs for an MX network"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.getNetworkVlansEnabledState",
+      "name": "vlaNs.getNetworkVlansEnabledState",
+      "description": "Returns the enabled status of VLANs for the network"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.updateNetworkVlan",
+      "name": "vlaNs.updateNetworkVlan",
+      "description": "Update a VLAN"
+    },
+    {
+      "id": "openapi_meraki_com.vlaNs.updateNetworkVlansEnabledState",
+      "name": "vlaNs.updateNetworkVlansEnabledState",
+      "description": "Enable/Disable VLANs for the given network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkClientConnectionStats",
+      "name": "wirelessHealth.getNetworkClientConnectionStats",
+      "description": "Aggregated connectivity info for a given client on this network. Clients are identified by their MAC."
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkClientLatencyStats",
+      "name": "wirelessHealth.getNetworkClientLatencyStats",
+      "description": "Aggregated latency info for a given client on this network. Clients are identified by their MAC."
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkClientsConnectionStats",
+      "name": "wirelessHealth.getNetworkClientsConnectionStats",
+      "description": "Aggregated connectivity info for this network, grouped by clients"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkClientsLatencyStats",
+      "name": "wirelessHealth.getNetworkClientsLatencyStats",
+      "description": "Aggregated latency info for this network, grouped by clients"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkConnectionStats",
+      "name": "wirelessHealth.getNetworkConnectionStats",
+      "description": "Aggregated connectivity info for this network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkDeviceConnectionStats",
+      "name": "wirelessHealth.getNetworkDeviceConnectionStats",
+      "description": "Aggregated connectivity info for a given AP on this network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkDeviceLatencyStats",
+      "name": "wirelessHealth.getNetworkDeviceLatencyStats",
+      "description": "Aggregated latency info for a given AP on this network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkDevicesConnectionStats",
+      "name": "wirelessHealth.getNetworkDevicesConnectionStats",
+      "description": "Aggregated connectivity info for this network, grouped by node"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkDevicesLatencyStats",
+      "name": "wirelessHealth.getNetworkDevicesLatencyStats",
+      "description": "Aggregated latency info for this network, grouped by node"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkFailedConnections",
+      "name": "wirelessHealth.getNetworkFailedConnections",
+      "description": "List of all failed client connection events on this network in a given time range"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessHealth.getNetworkLatencyStats",
+      "name": "wirelessHealth.getNetworkLatencyStats",
+      "description": "Aggregated latency info for this network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessSettings.getNetworkWirelessSettings",
+      "name": "wirelessSettings.getNetworkWirelessSettings",
+      "description": "Return the wireless settings for a network"
+    },
+    {
+      "id": "openapi_meraki_com.wirelessSettings.updateNetworkWirelessSettings",
+      "name": "wirelessSettings.updateNetworkWirelessSettings",
+      "description": "Update the wireless settings for a network"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

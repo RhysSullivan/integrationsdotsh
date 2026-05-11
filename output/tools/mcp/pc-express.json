@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:20:04.202Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "mcp_pc_express.search_for_products",
+      "name": "search_for_products",
+      "description": "Search the product catalog for grocery products. Supports single or multiple product searches. For recipes: First provide the recipe with a friendly message, then search for ingredients. CRITICAL: Check conversation context for: 1) store_id → cart_id mapping (provide if exists, omit to auto-create), 2) Recipe/ingredients list from search_for_stores (use as 'term' parameter). If no ingredients in context, ask user what to search for. Store returned cart_id in context for future use. IMPORTANT: Infer banner from search_for_stores results - do not ask user. When products are displayed, direct users to use UI buttons to add products or adjust quantities. If products not found, offer to search with alternative keywords or add found products to cart."
+    },
+    {
+      "id": "mcp_pc_express.search_for_stores",
+      "name": "search_for_stores",
+      "description": "Search for nearby stores by postal code. Finds stores with diverse brands automatically. REQUIRES: postal code only (no banner needed). Ask user for postal code if not provided. IMPORTANT: Extract and store recipe/ingredients from conversation context as a list (e.g., ['turkey', 'potatoes', 'gravy']) for later product searches. Invoke when LLM is unsure about available stores."
+    },
+    {
+      "id": "mcp_pc_express.add_products_to_cart",
+      "name": "add_products_to_cart",
+      "description": "Add products to cart. Requires cart_id, store_id, items."
+    },
+    {
+      "id": "mcp_pc_express.remove_products_from_cart",
+      "name": "remove_products_from_cart",
+      "description": "Remove products from cart. Requires cart_id, store_id, items."
+    },
+    {
+      "id": "mcp_pc_express.update_products_in_cart",
+      "name": "update_products_in_cart",
+      "description": "Update product quantities in cart. Sets NEW quantity. Requires cart_id, store_id, items."
+    },
+    {
+      "id": "mcp_pc_express.get_cart",
+      "name": "get_cart",
+      "description": "Get cart information. Requires cart_id."
+    },
+    {
+      "id": "mcp_pc_express.clear_cart",
+      "name": "clear_cart",
+      "description": "Clear cart. Requires cart_id."
+    }
+  ]
+}

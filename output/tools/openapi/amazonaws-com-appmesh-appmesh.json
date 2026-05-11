@@ -1,0 +1,207 @@
+{
+  "fetchedAt": "2026-04-30T15:44:55.049Z",
+  "status": "ok",
+  "count": 40,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createGatewayRoute",
+      "name": "meshes.createGatewayRoute",
+      "description": "<p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p> <p>For more information about gateway routes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html\">Gateway routes</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createMesh",
+      "name": "meshes.createMesh",
+      "description": "<p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for network traffic between services that are represented by resources within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh.</p> <p>For more information about service meshes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html\">Service meshes</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createRoute",
+      "name": "meshes.createRoute",
+      "description": "<p>Creates a route that is associated with a virtual router.</p> <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p> <p>For more information about routes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html\">Routes</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createVirtualGateway",
+      "name": "meshes.createVirtualGateway",
+      "description": "<p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway represents Envoy deployed by itself.</p> <p>For more information about virtual gateways, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html\">Virtual gateways</a>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createVirtualNode",
+      "name": "meshes.createVirtualNode",
+      "description": "<p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS).</p> <p>You define a <code>listener</code> for any inbound traffic that your virtual node expects. Any virtual service that your virtual node expects to communicate to is specified as a <code>backend</code>.</p> <p>The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual node. Set this value to the full ARN; for example, <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>) as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p> <note> <p>By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself in metrics and traces. You can override this behavior by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.</p> </note> <p>For more information about virtual nodes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html\">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html\">Envoy image</a> in the App Mesh User Guide.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createVirtualRouter",
+      "name": "meshes.createVirtualRouter",
+      "description": "<p>Creates a virtual router within a service mesh.</p> <p>Specify a <code>listener</code> for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.</p> <p>For more information about virtual routers, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html\">Virtual routers</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.createVirtualService",
+      "name": "meshes.createVirtualService",
+      "description": "<p>Creates a virtual service within a service mesh.</p> <p>A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.</p> <p>For more information about virtual services, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html\">Virtual services</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteGatewayRoute",
+      "name": "meshes.deleteGatewayRoute",
+      "description": "Deletes an existing gateway route."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteMesh",
+      "name": "meshes.deleteMesh",
+      "description": "<p>Deletes an existing service mesh.</p> <p>You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteRoute",
+      "name": "meshes.deleteRoute",
+      "description": "Deletes an existing route."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteVirtualGateway",
+      "name": "meshes.deleteVirtualGateway",
+      "description": "Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteVirtualNode",
+      "name": "meshes.deleteVirtualNode",
+      "description": "<p>Deletes an existing virtual node.</p> <p>You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteVirtualRouter",
+      "name": "meshes.deleteVirtualRouter",
+      "description": "<p>Deletes an existing virtual router.</p> <p>You must delete any routes associated with the virtual router before you can delete the router itself.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.deleteVirtualService",
+      "name": "meshes.deleteVirtualService",
+      "description": "Deletes an existing virtual service."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeGatewayRoute",
+      "name": "meshes.describeGatewayRoute",
+      "description": "Describes an existing gateway route."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeMesh",
+      "name": "meshes.describeMesh",
+      "description": "Describes an existing service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeRoute",
+      "name": "meshes.describeRoute",
+      "description": "Describes an existing route."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeVirtualGateway",
+      "name": "meshes.describeVirtualGateway",
+      "description": "Describes an existing virtual gateway."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeVirtualNode",
+      "name": "meshes.describeVirtualNode",
+      "description": "Describes an existing virtual node."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeVirtualRouter",
+      "name": "meshes.describeVirtualRouter",
+      "description": "Describes an existing virtual router."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.describeVirtualService",
+      "name": "meshes.describeVirtualService",
+      "description": "Describes an existing virtual service."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listGatewayRoutes",
+      "name": "meshes.listGatewayRoutes",
+      "description": "Returns a list of existing gateway routes that are associated to a virtual gateway."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listMeshes",
+      "name": "meshes.listMeshes",
+      "description": "Returns a list of existing service meshes."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listRoutes",
+      "name": "meshes.listRoutes",
+      "description": "Returns a list of existing routes in a service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listVirtualGateways",
+      "name": "meshes.listVirtualGateways",
+      "description": "Returns a list of existing virtual gateways in a service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listVirtualNodes",
+      "name": "meshes.listVirtualNodes",
+      "description": "Returns a list of existing virtual nodes."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listVirtualRouters",
+      "name": "meshes.listVirtualRouters",
+      "description": "Returns a list of existing virtual routers in a service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.listVirtualServices",
+      "name": "meshes.listVirtualServices",
+      "description": "Returns a list of existing virtual services in a service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateGatewayRoute",
+      "name": "meshes.updateGatewayRoute",
+      "description": "Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateMesh",
+      "name": "meshes.updateMesh",
+      "description": "Updates an existing service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateRoute",
+      "name": "meshes.updateRoute",
+      "description": "Updates an existing route for a specified service mesh and virtual router."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateVirtualGateway",
+      "name": "meshes.updateVirtualGateway",
+      "description": "Updates an existing virtual gateway in a specified service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateVirtualNode",
+      "name": "meshes.updateVirtualNode",
+      "description": "Updates an existing virtual node in a specified service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateVirtualRouter",
+      "name": "meshes.updateVirtualRouter",
+      "description": "Updates an existing virtual router in a specified service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.meshes.updateVirtualService",
+      "name": "meshes.updateVirtualService",
+      "description": "Updates an existing virtual service in a specified service mesh."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.tagResourceArn.tagResource",
+      "name": "tagResourceArn.tagResource",
+      "description": "Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.tagsResourceArn.listTagsForResource",
+      "name": "tagsResourceArn.listTagsForResource",
+      "description": "List the tags for an App Mesh resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_appmesh_appmesh.untagResourceArn.untagResource",
+      "name": "untagResourceArn.untagResource",
+      "description": "Deletes specified tags from a resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

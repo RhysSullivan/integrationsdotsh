@@ -1,0 +1,697 @@
+{
+  "fetchedAt": "2026-04-30T15:22:16.290Z",
+  "status": "ok",
+  "count": 138,
+  "tools": [
+    {
+      "id": "openapi_figshare_com.articles.accountArticleReport",
+      "name": "articles.accountArticleReport",
+      "description": "Return status on all reports generated for the account from the oauth credentials"
+    },
+    {
+      "id": "openapi_figshare_com.articles.accountArticleReportGenerate",
+      "name": "articles.accountArticleReportGenerate",
+      "description": "Initiate a new Article Report for this Account. There is a limit of 1 report per day."
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleDetails",
+      "name": "articles.articleDetails",
+      "description": "View an article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleFileDetails",
+      "name": "articles.articleFileDetails",
+      "description": "File by id"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleFiles",
+      "name": "articles.articleFiles",
+      "description": "Files list for article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articlesList",
+      "name": "articles.articlesList",
+      "description": "Returns a list of public articles"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articlesSearch",
+      "name": "articles.articlesSearch",
+      "description": "Returns a list of public articles, filtered by the search parameters"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersionConfidentiality",
+      "name": "articles.articleVersionConfidentiality",
+      "description": "Confidentiality for article version. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows."
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersionDetails",
+      "name": "articles.articleVersionDetails",
+      "description": "Article with specified version"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersionEmbargo",
+      "name": "articles.articleVersionEmbargo",
+      "description": "Embargo for article version"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersions",
+      "name": "articles.articleVersions",
+      "description": "List public article versions"
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersionUpdate",
+      "name": "articles.articleVersionUpdate",
+      "description": "Updating an article version by passing body parameters; request can also be made with the PATCH method."
+    },
+    {
+      "id": "openapi_figshare_com.articles.articleVersionUpdateThumb",
+      "name": "articles.articleVersionUpdateThumb",
+      "description": "For a given public article version update the article thumbnail by choosing one of the associated files"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleAuthorDelete",
+      "name": "articles.privateArticleAuthorDelete",
+      "description": "De-associate author from article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleAuthorsAdd",
+      "name": "articles.privateArticleAuthorsAdd",
+      "description": "Associate new authors with the article. This will add new authors to the list of already associated authors"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleAuthorsList",
+      "name": "articles.privateArticleAuthorsList",
+      "description": "List article authors"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleAuthorsReplace",
+      "name": "articles.privateArticleAuthorsReplace",
+      "description": "Associate new authors with the article. This will remove all already associated authors and add these new ones"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleCategoriesAdd",
+      "name": "articles.privateArticleCategoriesAdd",
+      "description": "Associate new categories with the article. This will add new categories to the list of already associated categories"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleCategoriesList",
+      "name": "articles.privateArticleCategoriesList",
+      "description": "List article categories"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleCategoriesReplace",
+      "name": "articles.privateArticleCategoriesReplace",
+      "description": "Associate new categories with the article. This will remove all already associated categories and add these new ones"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleCategoryDelete",
+      "name": "articles.privateArticleCategoryDelete",
+      "description": "De-associate category from article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleConfidentialityDelete",
+      "name": "articles.privateArticleConfidentialityDelete",
+      "description": "Delete confidentiality settings. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleConfidentialityDetails",
+      "name": "articles.privateArticleConfidentialityDetails",
+      "description": "View confidentiality settings. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleConfidentialityUpdate",
+      "name": "articles.privateArticleConfidentialityUpdate",
+      "description": "Update confidentiality settings. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleCreate",
+      "name": "articles.privateArticleCreate",
+      "description": "Create a new Article by sending article information"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleDelete",
+      "name": "articles.privateArticleDelete",
+      "description": "Delete an article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleDetails",
+      "name": "articles.privateArticleDetails",
+      "description": "View a private article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleEmbargoDelete",
+      "name": "articles.privateArticleEmbargoDelete",
+      "description": "Will lift the embargo for the specified article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleEmbargoDetails",
+      "name": "articles.privateArticleEmbargoDetails",
+      "description": "View a private article embargo details"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleEmbargoUpdate",
+      "name": "articles.privateArticleEmbargoUpdate",
+      "description": "Note: setting an article under whole embargo does not imply that the article will be published when the embargo will expire. You must explicitly call the publish endpoint to enable this functionality."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleFile",
+      "name": "articles.privateArticleFile",
+      "description": "View details of file for specified article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleFileDelete",
+      "name": "articles.privateArticleFileDelete",
+      "description": "Complete file upload"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleFilesList",
+      "name": "articles.privateArticleFilesList",
+      "description": "List private files"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlePrivateLink",
+      "name": "articles.privateArticlePrivateLink",
+      "description": "List private links"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlePrivateLinkCreate",
+      "name": "articles.privateArticlePrivateLinkCreate",
+      "description": "Create new private link for this article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlePrivateLinkDelete",
+      "name": "articles.privateArticlePrivateLinkDelete",
+      "description": "Disable/delete private link for this article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlePrivateLinkUpdate",
+      "name": "articles.privateArticlePrivateLinkUpdate",
+      "description": "Update existing private link for this article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlePublish",
+      "name": "articles.privateArticlePublish",
+      "description": "- If the whole article is under embargo, it will not be published immediately, but when the embargo expires or is lifted.\n- When an article is published, a new public version will be generated. Any further updates to the article will affect the private article data. In order to make these changes publicly visible, an explicit publish operation is needed."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleReserveDoi",
+      "name": "articles.privateArticleReserveDoi",
+      "description": "Reserve DOI for article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleReserveHandle",
+      "name": "articles.privateArticleReserveHandle",
+      "description": "Reserve Handle for article"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleResource",
+      "name": "articles.privateArticleResource",
+      "description": "Edit article resource data."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlesList",
+      "name": "articles.privateArticlesList",
+      "description": "Get Own Articles"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticlesSearch",
+      "name": "articles.privateArticlesSearch",
+      "description": "Returns a list of private articles filtered by the search parameters"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleUpdate",
+      "name": "articles.privateArticleUpdate",
+      "description": "Updating an article by passing body parameters; request can also be made with the PATCH method."
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleUploadComplete",
+      "name": "articles.privateArticleUploadComplete",
+      "description": "Complete file upload"
+    },
+    {
+      "id": "openapi_figshare_com.articles.privateArticleUploadInitiate",
+      "name": "articles.privateArticleUploadInitiate",
+      "description": "Initiate a new file upload within the article. Either use the link property to point to an existing file that resides elsewhere and will not be uploaded to Figshare or use the other 3 parameters (md5, name, size)."
+    },
+    {
+      "id": "openapi_figshare_com.authors.privateAuthorDetails",
+      "name": "authors.privateAuthorDetails",
+      "description": "View author details"
+    },
+    {
+      "id": "openapi_figshare_com.authors.privateAuthorsSearch",
+      "name": "authors.privateAuthorsSearch",
+      "description": "Search for authors"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionArticles",
+      "name": "collections.collectionArticles",
+      "description": "Returns a list of public collection articles"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionDetails",
+      "name": "collections.collectionDetails",
+      "description": "View a collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionsList",
+      "name": "collections.collectionsList",
+      "description": "Returns a list of public collections"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionsSearch",
+      "name": "collections.collectionsSearch",
+      "description": "Returns a list of public collections"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionVersionDetails",
+      "name": "collections.collectionVersionDetails",
+      "description": "View details for a certain version of a collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.collectionVersions",
+      "name": "collections.collectionVersions",
+      "description": "Returns a list of public collection Versions"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionArticleDelete",
+      "name": "collections.privateCollectionArticleDelete",
+      "description": "De-associate article from collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionArticlesAdd",
+      "name": "collections.privateCollectionArticlesAdd",
+      "description": "Associate new articles with the collection. This will add new articles to the list of already associated articles"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionArticlesList",
+      "name": "collections.privateCollectionArticlesList",
+      "description": "List collection articles"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionArticlesReplace",
+      "name": "collections.privateCollectionArticlesReplace",
+      "description": "Associate new articles with the collection. This will remove all already associated articles and add these new ones"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionAuthorDelete",
+      "name": "collections.privateCollectionAuthorDelete",
+      "description": "Delete collection author"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionAuthorsAdd",
+      "name": "collections.privateCollectionAuthorsAdd",
+      "description": "Associate new authors with the collection. This will add new authors to the list of already associated authors"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionAuthorsList",
+      "name": "collections.privateCollectionAuthorsList",
+      "description": "List collection authors"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionAuthorsReplace",
+      "name": "collections.privateCollectionAuthorsReplace",
+      "description": "Associate new authors with the collection. This will remove all already associated authors and add these new ones"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionCategoriesAdd",
+      "name": "collections.privateCollectionCategoriesAdd",
+      "description": "Associate new categories with the collection. This will add new categories to the list of already associated categories"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionCategoriesList",
+      "name": "collections.privateCollectionCategoriesList",
+      "description": "List collection categories"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionCategoriesReplace",
+      "name": "collections.privateCollectionCategoriesReplace",
+      "description": "Associate new categories with the collection. This will remove all already associated categories and add these new ones"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionCategoryDelete",
+      "name": "collections.privateCollectionCategoryDelete",
+      "description": "De-associate category from collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionCreate",
+      "name": "collections.privateCollectionCreate",
+      "description": "Create a new Collection by sending collection information"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionDelete",
+      "name": "collections.privateCollectionDelete",
+      "description": "Delete n collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionDetails",
+      "name": "collections.privateCollectionDetails",
+      "description": "View a collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionPrivateLinkCreate",
+      "name": "collections.privateCollectionPrivateLinkCreate",
+      "description": "Create new private link"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionPrivateLinkDelete",
+      "name": "collections.privateCollectionPrivateLinkDelete",
+      "description": "Disable/delete private link for this collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionPrivateLinksList",
+      "name": "collections.privateCollectionPrivateLinksList",
+      "description": "List article private links"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionPrivateLinkUpdate",
+      "name": "collections.privateCollectionPrivateLinkUpdate",
+      "description": "Update existing private link for this collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionPublish",
+      "name": "collections.privateCollectionPublish",
+      "description": "When a collection is published, a new public version will be generated. Any further updates to the collection will affect the private collection data. In order to make these changes publicly visible, an explicit publish operation is needed."
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionReserveDoi",
+      "name": "collections.privateCollectionReserveDoi",
+      "description": "Reserve DOI for collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionReserveHandle",
+      "name": "collections.privateCollectionReserveHandle",
+      "description": "Reserve Handle for collection"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionResource",
+      "name": "collections.privateCollectionResource",
+      "description": "Edit collection resource data."
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionsList",
+      "name": "collections.privateCollectionsList",
+      "description": "List private collections"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionsSearch",
+      "name": "collections.privateCollectionsSearch",
+      "description": "Returns a list of private Collections"
+    },
+    {
+      "id": "openapi_figshare_com.collections.privateCollectionUpdate",
+      "name": "collections.privateCollectionUpdate",
+      "description": "Update collection details; request can also be made with the PATCH method."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.accountInstitutionCuration",
+      "name": "institutions.accountInstitutionCuration",
+      "description": "Retrieve a certain curation review by its ID"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.accountInstitutionCurationComments",
+      "name": "institutions.accountInstitutionCurationComments",
+      "description": "Retrieve a certain curation review's comments."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.accountInstitutionCurations",
+      "name": "institutions.accountInstitutionCurations",
+      "description": "Retrieve a list of curation reviews for this institution"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.customFieldsList",
+      "name": "institutions.customFieldsList",
+      "description": "Returns the custom fields in the group the user belongs to, or the ones in the group specified, if the user has access."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.customFieldsUpload",
+      "name": "institutions.customFieldsUpload",
+      "description": "Uploads a CSV containing values for a specific custom field of type <b>dropdown_large_list</b>. More details in the <a href=\"#custom_fields\">Custom Fields section</a>"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.institutionArticles",
+      "name": "institutions.institutionArticles",
+      "description": "Returns a list of articles belonging to the institution"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.institutionHrfeedUpload",
+      "name": "institutions.institutionHrfeedUpload",
+      "description": "More info in the <a href=\"#hr_feed\">HR Feed section</a>"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.postAccountInstitutionReviewCurationIdComments",
+      "name": "institutions.postAccountInstitutionReviewCurationIdComments",
+      "description": "Add a new comment to the review."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateAccountInstitutionUser",
+      "name": "institutions.privateAccountInstitutionUser",
+      "description": "Retrieve institution user information using the account_id"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateCategoriesList",
+      "name": "institutions.privateCategoriesList",
+      "description": "List institution categories (including parent Categories)"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateGroupEmbargoOptionsDetails",
+      "name": "institutions.privateGroupEmbargoOptionsDetails",
+      "description": "Account institution group embargo options details"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountGroupRoleDelete",
+      "name": "institutions.privateInstitutionAccountGroupRoleDelete",
+      "description": "Delete Institution Account Group Role"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountGroupRoles",
+      "name": "institutions.privateInstitutionAccountGroupRoles",
+      "description": "List Institution Account Group Roles"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountGroupRolesCreate",
+      "name": "institutions.privateInstitutionAccountGroupRolesCreate",
+      "description": "Add Institution Account Group Roles"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountsCreate",
+      "name": "institutions.privateInstitutionAccountsCreate",
+      "description": "Create a new Account by sending account information"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountsList",
+      "name": "institutions.privateInstitutionAccountsList",
+      "description": "Returns the accounts for which the account has administrative privileges (assigned and inherited)."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountsSearch",
+      "name": "institutions.privateInstitutionAccountsSearch",
+      "description": "Returns the accounts for which the account has administrative privileges (assigned and inherited)."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionAccountsUpdate",
+      "name": "institutions.privateInstitutionAccountsUpdate",
+      "description": "Update Institution Account"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionArticles",
+      "name": "institutions.privateInstitutionArticles",
+      "description": "Get Articles from own institution. User must be administrator of the institution"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionDetails",
+      "name": "institutions.privateInstitutionDetails",
+      "description": "Account institution details"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionEmbargoOptionsDetails",
+      "name": "institutions.privateInstitutionEmbargoOptionsDetails",
+      "description": "Account institution embargo options details"
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionGroupsList",
+      "name": "institutions.privateInstitutionGroupsList",
+      "description": "Returns the groups for which the account has administrative privileges (assigned and inherited)."
+    },
+    {
+      "id": "openapi_figshare_com.institutions.privateInstitutionRolesList",
+      "name": "institutions.privateInstitutionRolesList",
+      "description": "Returns the roles available for groups and the institution group."
+    },
+    {
+      "id": "openapi_figshare_com.other.categoriesList",
+      "name": "other.categoriesList",
+      "description": "Returns a list of public categories"
+    },
+    {
+      "id": "openapi_figshare_com.other.fileDownload",
+      "name": "other.fileDownload",
+      "description": "Starts the download of a file"
+    },
+    {
+      "id": "openapi_figshare_com.other.itemTypesList",
+      "name": "other.itemTypesList",
+      "description": "Returns the list of Item Types of the requested group. If no user is authenticated, returns the item types available for Figshare."
+    },
+    {
+      "id": "openapi_figshare_com.other.licensesList",
+      "name": "other.licensesList",
+      "description": "Returns a list of public licenses"
+    },
+    {
+      "id": "openapi_figshare_com.other.privateAccount",
+      "name": "other.privateAccount",
+      "description": "Account information for token/personal token"
+    },
+    {
+      "id": "openapi_figshare_com.other.privateFundingSearch",
+      "name": "other.privateFundingSearch",
+      "description": "Search for fundings"
+    },
+    {
+      "id": "openapi_figshare_com.other.privateLicensesList",
+      "name": "other.privateLicensesList",
+      "description": "This is a private endpoint that requires OAuth. It will return a list with figshare public licenses AND licenses defined for account's institution."
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticleDelete",
+      "name": "projects.privateProjectArticleDelete",
+      "description": "Delete project article"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticleDetails",
+      "name": "projects.privateProjectArticleDetails",
+      "description": "Project article details"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticleFile",
+      "name": "projects.privateProjectArticleFile",
+      "description": "Project article file details"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticleFiles",
+      "name": "projects.privateProjectArticleFiles",
+      "description": "List article files"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticlesCreate",
+      "name": "projects.privateProjectArticlesCreate",
+      "description": "Create a new Article and associate it with this project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectArticlesList",
+      "name": "projects.privateProjectArticlesList",
+      "description": "List project articles"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectCollaboratorDelete",
+      "name": "projects.privateProjectCollaboratorDelete",
+      "description": "Remove project collaborator"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectCollaboratorsInvite",
+      "name": "projects.privateProjectCollaboratorsInvite",
+      "description": "Invite users to collaborate on project or view the project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectCollaboratorsList",
+      "name": "projects.privateProjectCollaboratorsList",
+      "description": "List Project collaborators and invited users"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectCreate",
+      "name": "projects.privateProjectCreate",
+      "description": "Create a new project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectDelete",
+      "name": "projects.privateProjectDelete",
+      "description": "A project can be deleted only if: - it is not public - it does not have public articles.\n\nWhen an individual project is deleted, all the articles are moved to my data of each owner.\n\nWhen a group project is deleted, all the articles and files are deleted as well. Only project owner, group admin and above can delete a project.\n"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectDetails",
+      "name": "projects.privateProjectDetails",
+      "description": "View a private project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectLeave",
+      "name": "projects.privateProjectLeave",
+      "description": "Please note: project's owner cannot leave the project."
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectNote",
+      "name": "projects.privateProjectNote",
+      "description": "Project note details"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectNoteDelete",
+      "name": "projects.privateProjectNoteDelete",
+      "description": "Delete project note"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectNotesCreate",
+      "name": "projects.privateProjectNotesCreate",
+      "description": "Create a new project note"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectNotesList",
+      "name": "projects.privateProjectNotesList",
+      "description": "List project notes"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectNoteUpdate",
+      "name": "projects.privateProjectNoteUpdate",
+      "description": "Update project note"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectPublish",
+      "name": "projects.privateProjectPublish",
+      "description": "Publish a project. Possible after all items inside it are public"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectsList",
+      "name": "projects.privateProjectsList",
+      "description": "List private projects"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectsSearch",
+      "name": "projects.privateProjectsSearch",
+      "description": "Search inside the private projects"
+    },
+    {
+      "id": "openapi_figshare_com.projects.privateProjectUpdate",
+      "name": "projects.privateProjectUpdate",
+      "description": "Updating an project by passing body parameters; request can also be made with the PATCH method."
+    },
+    {
+      "id": "openapi_figshare_com.projects.projectArticles",
+      "name": "projects.projectArticles",
+      "description": "List articles in project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.projectDetails",
+      "name": "projects.projectDetails",
+      "description": "View a project"
+    },
+    {
+      "id": "openapi_figshare_com.projects.projectsList",
+      "name": "projects.projectsList",
+      "description": "Returns a list of public projects"
+    },
+    {
+      "id": "openapi_figshare_com.projects.projectsSearch",
+      "name": "projects.projectsSearch",
+      "description": "Returns a list of public articles"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

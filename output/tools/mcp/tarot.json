@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:35.334Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_tarot.create_tarot_spread",
+      "name": "create_tarot_spread",
+      "description": "Initialize a tarot reading session by creating a 3-card spread based on the user's question.\n\n【Language Rule】\n⚠️ ALL user-facing text (user_question, position names/meanings, opening_message) MUST be in the SAME language as user's input. If user asks in Spanish, output Spanish. If user asks in Chinese, output Chinese. English definition below is for structure only.\n\n【When to Use】\n• User requests tarot guidance explicitly\n• User seeks spiritual/intuitive insight on a decision or situation\n\n【Core Function】\nAnalyze the question and select the most appropriate 3-card spread structure. Prioritize proven classic spreads, customize only when needed.\n\n【Key Principles】\n1. **Classic First**: Use established spreads (Past-Present-Future, Problem-Cause-Solution, etc.) for 80%+ of questions\n2. **Semantic Adaptation**: Adjust position wording to match question context while keeping proven structure\n3. **Innovate Sparingly**: Create new structures only when classics genuinely don't fit\n\n【Call Timing】\nCall immediately after understanding the question. Don't output lengthy text beforehand.\n\n【After Tool Execution】\nSystem renders card drawing interface. Output brief guidance (3-4 lines) in user's language:\n\n```\n✨ [Acknowledge their question]\n[Preview what the 3 positions explore]\n👆 [Call-to-action pointing to interface]\n```\n\n**Important**:\n✅ Keep brief (3-5 lines max)\n✅ Don't interpret cards before they're drawn\n✅ Clear call-to-action pointing to interface\n✅ Use user's language\n\n【Version】: Supports exactly 3 cards. Architecture designed for 1-7 cards in future."
+    }
+  ]
+}

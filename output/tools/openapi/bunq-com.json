@@ -1,0 +1,2122 @@
+{
+  "fetchedAt": "2026-04-30T15:22:07.866Z",
+  "status": "ok",
+  "count": 423,
+  "tools": [
+    {
+      "id": "openapi_bunq_com.attachment.createAttachmentForUserMonetaryAccount",
+      "name": "attachment.createAttachmentForUserMonetaryAccount",
+      "description": "Create a new monetary account attachment. Create a POST request with a payload that contains the binary representation of the file, without any JSON wrapping. Make sure you define the MIME type (i.e. image/jpeg) in the Content-Type header. You are required to provide a description of the attachment using the X-Bunq-Attachment-Description header."
+    },
+    {
+      "id": "openapi_bunq_com.attachment.readAttachmentForUser",
+      "name": "attachment.readAttachmentForUser",
+      "description": "Get a specific attachment. The header of the response contains the content-type of the attachment."
+    },
+    {
+      "id": "openapi_bunq_com.attachmentPublic.createAttachmentPublic",
+      "name": "attachmentPublic.createAttachmentPublic",
+      "description": "Create a new public attachment. Create a POST request with a payload that contains a binary representation of the file, without any JSON wrapping. Make sure you define the MIME type (i.e. image/jpeg, or image/png) in the Content-Type header. You are required to provide a description of the attachment using the X-Bunq-Attachment-Description header."
+    },
+    {
+      "id": "openapi_bunq_com.attachmentPublic.readAttachmentPublic",
+      "name": "attachmentPublic.readAttachmentPublic",
+      "description": "Get a specific attachment's metadata through its UUID. The Content-Type header of the response will describe the MIME type of the attachment file."
+    },
+    {
+      "id": "openapi_bunq_com.avatar.createAvatar",
+      "name": "avatar.createAvatar",
+      "description": "Avatars are public images used to represent you or your company. Avatars are used to represent users, monetary accounts and cash registers. Avatars cannot be deleted, only replaced. Avatars can be updated after uploading the image you would like to use through AttachmentPublic. Using the attachment_public_uuid which is returned you can update your Avatar. Avatars used for cash registers and company accounts will be reviewed by bunq."
+    },
+    {
+      "id": "openapi_bunq_com.avatar.readAvatar",
+      "name": "avatar.readAvatar",
+      "description": "Avatars are public images used to represent you or your company. Avatars are used to represent users, monetary accounts and cash registers. Avatars cannot be deleted, only replaced. Avatars can be updated after uploading the image you would like to use through AttachmentPublic. Using the attachment_public_uuid which is returned you can update your Avatar. Avatars used for cash registers and company accounts will be reviewed by bunq."
+    },
+    {
+      "id": "openapi_bunq_com.billingContractSubscription.listAllBillingContractSubscriptionForUser",
+      "name": "billingContractSubscription.listAllBillingContractSubscriptionForUser",
+      "description": "Get all subscription billing contract for the authenticated user."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeFundraiserProfile.listAllBunqmeFundraiserProfileForUser",
+      "name": "bunqmeFundraiserProfile.listAllBunqmeFundraiserProfileForUser",
+      "description": "bunq.me public profile of the user."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeFundraiserProfile.readBunqmeFundraiserProfileForUser",
+      "name": "bunqmeFundraiserProfile.readBunqmeFundraiserProfileForUser",
+      "description": "bunq.me public profile of the user."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeFundraiserResult.readBunqmeFundraiserResultForUserMonetaryAccount",
+      "name": "bunqmeFundraiserResult.readBunqmeFundraiserResultForUserMonetaryAccount",
+      "description": "bunq.me fundraiser result containing all payments."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeTab.createBunqmeTabForUserMonetaryAccount",
+      "name": "bunqmeTab.createBunqmeTabForUserMonetaryAccount",
+      "description": "bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeTab.listAllBunqmeTabForUserMonetaryAccount",
+      "name": "bunqmeTab.listAllBunqmeTabForUserMonetaryAccount",
+      "description": "bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeTab.readBunqmeTabForUserMonetaryAccount",
+      "name": "bunqmeTab.readBunqmeTabForUserMonetaryAccount",
+      "description": "bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeTab.updateBunqmeTabForUserMonetaryAccount",
+      "name": "bunqmeTab.updateBunqmeTabForUserMonetaryAccount",
+      "description": "bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT."
+    },
+    {
+      "id": "openapi_bunq_com.bunqmeTabResultResponse.readBunqmeTabResultResponseForUserMonetaryAccount",
+      "name": "bunqmeTabResultResponse.readBunqmeTabResultResponseForUserMonetaryAccount",
+      "description": "Used to view bunq.me TabResultResponse objects belonging to a tab. A TabResultResponse is an object that holds details on a tab which has been paid from the provided monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.callbackUrl.createCallbackUrlForUserOauthClient",
+      "name": "callbackUrl.createCallbackUrlForUserOauthClient",
+      "description": "Used for managing OAuth Client Callback URLs."
+    },
+    {
+      "id": "openapi_bunq_com.callbackUrl.deleteCallbackUrlForUserOauthClient",
+      "name": "callbackUrl.deleteCallbackUrlForUserOauthClient",
+      "description": "Used for managing OAuth Client Callback URLs."
+    },
+    {
+      "id": "openapi_bunq_com.callbackUrl.listAllCallbackUrlForUserOauthClient",
+      "name": "callbackUrl.listAllCallbackUrlForUserOauthClient",
+      "description": "Used for managing OAuth Client Callback URLs."
+    },
+    {
+      "id": "openapi_bunq_com.callbackUrl.readCallbackUrlForUserOauthClient",
+      "name": "callbackUrl.readCallbackUrlForUserOauthClient",
+      "description": "Used for managing OAuth Client Callback URLs."
+    },
+    {
+      "id": "openapi_bunq_com.callbackUrl.updateCallbackUrlForUserOauthClient",
+      "name": "callbackUrl.updateCallbackUrlForUserOauthClient",
+      "description": "Used for managing OAuth Client Callback URLs."
+    },
+    {
+      "id": "openapi_bunq_com.card.listAllCardForUser",
+      "name": "card.listAllCardForUser",
+      "description": "Return all the cards available to the user."
+    },
+    {
+      "id": "openapi_bunq_com.card.readCardForUser",
+      "name": "card.readCardForUser",
+      "description": "Return the details of a specific card."
+    },
+    {
+      "id": "openapi_bunq_com.card.updateCardForUser",
+      "name": "card.updateCardForUser",
+      "description": "Update the card details. Allow to change pin code, status, limits, country permissions and the monetary account connected to the card. When the card has been received, it can be also activated through this endpoint."
+    },
+    {
+      "id": "openapi_bunq_com.cardBatch.createCardBatchForUser",
+      "name": "cardBatch.createCardBatchForUser",
+      "description": "Used to update multiple cards in a batch."
+    },
+    {
+      "id": "openapi_bunq_com.cardBatchReplace.createCardBatchReplaceForUser",
+      "name": "cardBatchReplace.createCardBatchReplaceForUser",
+      "description": "Used to replace multiple cards in a batch."
+    },
+    {
+      "id": "openapi_bunq_com.cardCredit.createCardCreditForUser",
+      "name": "cardCredit.createCardCreditForUser",
+      "description": "Create a new credit card request."
+    },
+    {
+      "id": "openapi_bunq_com.cardDebit.createCardDebitForUser",
+      "name": "cardDebit.createCardDebitForUser",
+      "description": "Create a new debit card request."
+    },
+    {
+      "id": "openapi_bunq_com.cardName.listAllCardNameForUser",
+      "name": "cardName.listAllCardNameForUser",
+      "description": "Return all the accepted card names for a specific user."
+    },
+    {
+      "id": "openapi_bunq_com.certificatePinned.createCertificatePinnedForUser",
+      "name": "certificatePinned.createCertificatePinnedForUser",
+      "description": "Pin the certificate chain."
+    },
+    {
+      "id": "openapi_bunq_com.certificatePinned.deleteCertificatePinnedForUser",
+      "name": "certificatePinned.deleteCertificatePinnedForUser",
+      "description": "Remove the pinned certificate chain with the specific ID."
+    },
+    {
+      "id": "openapi_bunq_com.certificatePinned.listAllCertificatePinnedForUser",
+      "name": "certificatePinned.listAllCertificatePinnedForUser",
+      "description": "List all the pinned certificate chain for the given user."
+    },
+    {
+      "id": "openapi_bunq_com.certificatePinned.readCertificatePinnedForUser",
+      "name": "certificatePinned.readCertificatePinnedForUser",
+      "description": "Get the pinned certificate chain with the specified ID."
+    },
+    {
+      "id": "openapi_bunq_com.challengeRequest.readChallengeRequestForUser",
+      "name": "challengeRequest.readChallengeRequestForUser",
+      "description": "Endpoint for apps to fetch a challenge request."
+    },
+    {
+      "id": "openapi_bunq_com.challengeRequest.updateChallengeRequestForUser",
+      "name": "challengeRequest.updateChallengeRequestForUser",
+      "description": "Endpoint for apps to fetch a challenge request."
+    },
+    {
+      "id": "openapi_bunq_com.company.createCompanyForUser",
+      "name": "company.createCompanyForUser",
+      "description": "Create and manage companies."
+    },
+    {
+      "id": "openapi_bunq_com.company.listAllCompanyForUser",
+      "name": "company.listAllCompanyForUser",
+      "description": "Create and manage companies."
+    },
+    {
+      "id": "openapi_bunq_com.company.readCompanyForUser",
+      "name": "company.readCompanyForUser",
+      "description": "Create and manage companies."
+    },
+    {
+      "id": "openapi_bunq_com.company.updateCompanyForUser",
+      "name": "company.updateCompanyForUser",
+      "description": "Create and manage companies."
+    },
+    {
+      "id": "openapi_bunq_com.confirmationOfFunds.createConfirmationOfFundsForUser",
+      "name": "confirmationOfFunds.createConfirmationOfFundsForUser",
+      "description": "Used to confirm availability of funds on an account."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForAttachmentPublic",
+      "name": "content.listAllContentForAttachmentPublic",
+      "description": "Get the raw content of a specific attachment."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForPlaceLookupPhoto",
+      "name": "content.listAllContentForPlaceLookupPhoto",
+      "description": "View endpoint for place opening periods."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserAttachment",
+      "name": "content.listAllContentForUserAttachment",
+      "description": "Get the raw content of a specific attachment."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserCardExportStatementCard",
+      "name": "content.listAllContentForUserCardExportStatementCard",
+      "description": "Fetch the raw content of a card statement export. The returned file format could be CSV or PDF depending on the statement format specified during the statement creation. The doc won't display the response of a request to get the content of a statement export."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserChatConversationAttachment",
+      "name": "content.listAllContentForUserChatConversationAttachment",
+      "description": "Get the raw content of a specific attachment."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserExportAnnualOverview",
+      "name": "content.listAllContentForUserExportAnnualOverview",
+      "description": "Used to retrieve the raw content of an annual overview."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserMonetaryAccountAttachment",
+      "name": "content.listAllContentForUserMonetaryAccountAttachment",
+      "description": "Get the raw content of a specific attachment."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserMonetaryAccountCustomerStatement",
+      "name": "content.listAllContentForUserMonetaryAccountCustomerStatement",
+      "description": "Fetch the raw content of a statement export. The returned file format could be MT940, CSV or PDF depending on the statement format specified during the statement creation. The doc won't display the response of a request to get the content of a statement export."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserMonetaryAccountEventStatement",
+      "name": "content.listAllContentForUserMonetaryAccountEventStatement",
+      "description": "Fetch the raw content of a payment statement export."
+    },
+    {
+      "id": "openapi_bunq_com.content.listAllContentForUserMonetaryAccountExportRib",
+      "name": "content.listAllContentForUserMonetaryAccountExportRib",
+      "description": "Used to retrieve the raw content of an RIB."
+    },
+    {
+      "id": "openapi_bunq_com.credentialPasswordIp.listAllCredentialPasswordIpForUser",
+      "name": "credentialPasswordIp.listAllCredentialPasswordIpForUser",
+      "description": "Create a credential of a user for server authentication, or delete the credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.credentialPasswordIp.readCredentialPasswordIpForUser",
+      "name": "credentialPasswordIp.readCredentialPasswordIpForUser",
+      "description": "Create a credential of a user for server authentication, or delete the credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.currencyCloudBeneficiary.createCurrencyCloudBeneficiaryForUser",
+      "name": "currencyCloudBeneficiary.createCurrencyCloudBeneficiaryForUser",
+      "description": "Endpoint to manage CurrencyCloud beneficiaries."
+    },
+    {
+      "id": "openapi_bunq_com.currencyCloudBeneficiary.listAllCurrencyCloudBeneficiaryForUser",
+      "name": "currencyCloudBeneficiary.listAllCurrencyCloudBeneficiaryForUser",
+      "description": "Endpoint to manage CurrencyCloud beneficiaries."
+    },
+    {
+      "id": "openapi_bunq_com.currencyCloudBeneficiary.readCurrencyCloudBeneficiaryForUser",
+      "name": "currencyCloudBeneficiary.readCurrencyCloudBeneficiaryForUser",
+      "description": "Endpoint to manage CurrencyCloud beneficiaries."
+    },
+    {
+      "id": "openapi_bunq_com.currencyCloudBeneficiaryRequirement.listAllCurrencyCloudBeneficiaryRequirementForUser",
+      "name": "currencyCloudBeneficiaryRequirement.listAllCurrencyCloudBeneficiaryRequirementForUser",
+      "description": "Endpoint to list requirements for CurrencyCloud beneficiaries."
+    },
+    {
+      "id": "openapi_bunq_com.currencyCloudPaymentQuote.createCurrencyCloudPaymentQuoteForUserMonetaryAccount",
+      "name": "currencyCloudPaymentQuote.createCurrencyCloudPaymentQuoteForUserMonetaryAccount",
+      "description": "Endpoint for managing currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.currencyConversion.listAllCurrencyConversionForUserMonetaryAccount",
+      "name": "currencyConversion.listAllCurrencyConversionForUserMonetaryAccount",
+      "description": "Endpoint for managing currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.currencyConversion.readCurrencyConversionForUserMonetaryAccount",
+      "name": "currencyConversion.readCurrencyConversionForUserMonetaryAccount",
+      "description": "Endpoint for managing currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.currencyConversionQuote.createCurrencyConversionQuoteForUserMonetaryAccount",
+      "name": "currencyConversionQuote.createCurrencyConversionQuoteForUserMonetaryAccount",
+      "description": "Endpoint to create a quote for currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.currencyConversionQuote.readCurrencyConversionQuoteForUserMonetaryAccount",
+      "name": "currencyConversionQuote.readCurrencyConversionQuoteForUserMonetaryAccount",
+      "description": "Endpoint to create a quote for currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.currencyConversionQuote.updateCurrencyConversionQuoteForUserMonetaryAccount",
+      "name": "currencyConversionQuote.updateCurrencyConversionQuoteForUserMonetaryAccount",
+      "description": "Endpoint to create a quote for currency conversions."
+    },
+    {
+      "id": "openapi_bunq_com.customerStatement.createCustomerStatementForUserMonetaryAccount",
+      "name": "customerStatement.createCustomerStatementForUserMonetaryAccount",
+      "description": "Used to create new and read existing statement exports. Statement exports can be created in either CSV, MT940 or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.customerStatement.deleteCustomerStatementForUserMonetaryAccount",
+      "name": "customerStatement.deleteCustomerStatementForUserMonetaryAccount",
+      "description": "Used to create new and read existing statement exports. Statement exports can be created in either CSV, MT940 or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.customerStatement.listAllCustomerStatementForUserMonetaryAccount",
+      "name": "customerStatement.listAllCustomerStatementForUserMonetaryAccount",
+      "description": "Used to create new and read existing statement exports. Statement exports can be created in either CSV, MT940 or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.customerStatement.readCustomerStatementForUserMonetaryAccount",
+      "name": "customerStatement.readCustomerStatementForUserMonetaryAccount",
+      "description": "Used to create new and read existing statement exports. Statement exports can be created in either CSV, MT940 or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.definition.listAllDefinitionForUserMonetaryAccountPaymentAutoAllocate",
+      "name": "definition.listAllDefinitionForUserMonetaryAccountPaymentAutoAllocate",
+      "description": "List all the definitions in a payment auto allocate."
+    },
+    {
+      "id": "openapi_bunq_com.device.listAllDevice",
+      "name": "device.listAllDevice",
+      "description": "Get a collection of Devices. A Device is either a DevicePhone or a DeviceServer."
+    },
+    {
+      "id": "openapi_bunq_com.device.readDevice",
+      "name": "device.readDevice",
+      "description": "Get a single Device. A Device is either a DevicePhone or a DeviceServer."
+    },
+    {
+      "id": "openapi_bunq_com.deviceServer.createDeviceServer",
+      "name": "deviceServer.createDeviceServer",
+      "description": "Create a new DeviceServer providing the installation token in the header and signing the request with the private part of the key you used to create the installation. The API Key that you are using will be bound to the IP address of the DeviceServer which you have created.<br/><br/>Using a Wildcard API Key gives you the freedom to make API calls even if the IP address has changed after the POST device-server.<br/><br/>Find out more at this link <a href=\"https:/bunq.com/en/apikey-dynamic-ip\" target=\"_blank\">https:/bunq.com/en/apikey-dynamic-ip</a>."
+    },
+    {
+      "id": "openapi_bunq_com.deviceServer.listAllDeviceServer",
+      "name": "deviceServer.listAllDeviceServer",
+      "description": "Get a collection of all the DeviceServers you have created."
+    },
+    {
+      "id": "openapi_bunq_com.deviceServer.readDeviceServer",
+      "name": "deviceServer.readDeviceServer",
+      "description": "Get one of your DeviceServers."
+    },
+    {
+      "id": "openapi_bunq_com.draftPayment.createDraftPaymentForUserMonetaryAccount",
+      "name": "draftPayment.createDraftPaymentForUserMonetaryAccount",
+      "description": "Create a new DraftPayment."
+    },
+    {
+      "id": "openapi_bunq_com.draftPayment.listAllDraftPaymentForUserMonetaryAccount",
+      "name": "draftPayment.listAllDraftPaymentForUserMonetaryAccount",
+      "description": "Get a listing of all DraftPayments from a given MonetaryAccount."
+    },
+    {
+      "id": "openapi_bunq_com.draftPayment.readDraftPaymentForUserMonetaryAccount",
+      "name": "draftPayment.readDraftPaymentForUserMonetaryAccount",
+      "description": "Get a specific DraftPayment."
+    },
+    {
+      "id": "openapi_bunq_com.draftPayment.updateDraftPaymentForUserMonetaryAccount",
+      "name": "draftPayment.updateDraftPaymentForUserMonetaryAccount",
+      "description": "Update a DraftPayment."
+    },
+    {
+      "id": "openapi_bunq_com.event.listAllEventForUser",
+      "name": "event.listAllEventForUser",
+      "description": "Get a collection of events for a given user. You can add query the parameters monetary_account_id, status and/or display_user_event to filter the response. When monetary_account_id={id,id} is provided only events that relate to these monetary account ids are returned. When status={AWAITING_REPLY/FINALIZED} is provided the response only contains events with the status AWAITING_REPLY or FINALIZED. When display_user_event={true/false} is set to false user events are excluded from the response, when not provided user events are displayed. User events are events that are not related to a monetary account (for example: connect invites)."
+    },
+    {
+      "id": "openapi_bunq_com.event.readEventForUser",
+      "name": "event.readEventForUser",
+      "description": "Get a specific event for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.exportAnnualOverview.createExportAnnualOverviewForUser",
+      "name": "exportAnnualOverview.createExportAnnualOverviewForUser",
+      "description": "Create a new annual overview for a specific year. An overview can be generated only for a past year."
+    },
+    {
+      "id": "openapi_bunq_com.exportAnnualOverview.deleteExportAnnualOverviewForUser",
+      "name": "exportAnnualOverview.deleteExportAnnualOverviewForUser",
+      "description": "Used to create new and read existing annual overviews of all the user's monetary accounts. Once created, annual overviews can be downloaded in PDF format via the 'export-annual-overview/{id}/content' endpoint."
+    },
+    {
+      "id": "openapi_bunq_com.exportAnnualOverview.listAllExportAnnualOverviewForUser",
+      "name": "exportAnnualOverview.listAllExportAnnualOverviewForUser",
+      "description": "List all the annual overviews for a user."
+    },
+    {
+      "id": "openapi_bunq_com.exportAnnualOverview.readExportAnnualOverviewForUser",
+      "name": "exportAnnualOverview.readExportAnnualOverviewForUser",
+      "description": "Get an annual overview for a user by its id."
+    },
+    {
+      "id": "openapi_bunq_com.exportRib.createExportRibForUserMonetaryAccount",
+      "name": "exportRib.createExportRibForUserMonetaryAccount",
+      "description": "Create a new RIB."
+    },
+    {
+      "id": "openapi_bunq_com.exportRib.deleteExportRibForUserMonetaryAccount",
+      "name": "exportRib.deleteExportRibForUserMonetaryAccount",
+      "description": "Used to create new and read existing RIBs of a monetary account"
+    },
+    {
+      "id": "openapi_bunq_com.exportRib.listAllExportRibForUserMonetaryAccount",
+      "name": "exportRib.listAllExportRibForUserMonetaryAccount",
+      "description": "List all the RIBs for a monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.exportRib.readExportRibForUserMonetaryAccount",
+      "name": "exportRib.readExportRibForUserMonetaryAccount",
+      "description": "Get a RIB for a monetary account by its id."
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCard.listAllExportStatementCardForUserCard",
+      "name": "exportStatementCard.listAllExportStatementCardForUserCard",
+      "description": "Used to create new and read existing card statement exports. Statement exports can be created in either CSV or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCard.readExportStatementCardForUserCard",
+      "name": "exportStatementCard.readExportStatementCardForUserCard",
+      "description": "Used to create new and read existing card statement exports. Statement exports can be created in either CSV or PDF file format."
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardCsv.createExportStatementCardCsvForUserCard",
+      "name": "exportStatementCardCsv.createExportStatementCardCsvForUserCard",
+      "description": "Used to serialize ExportStatementCardCsv"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardCsv.deleteExportStatementCardCsvForUserCard",
+      "name": "exportStatementCardCsv.deleteExportStatementCardCsvForUserCard",
+      "description": "Used to serialize ExportStatementCardCsv"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardCsv.listAllExportStatementCardCsvForUserCard",
+      "name": "exportStatementCardCsv.listAllExportStatementCardCsvForUserCard",
+      "description": "Used to serialize ExportStatementCardCsv"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardCsv.readExportStatementCardCsvForUserCard",
+      "name": "exportStatementCardCsv.readExportStatementCardCsvForUserCard",
+      "description": "Used to serialize ExportStatementCardCsv"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardPdf.createExportStatementCardPdfForUserCard",
+      "name": "exportStatementCardPdf.createExportStatementCardPdfForUserCard",
+      "description": "Used to serialize ExportStatementCardPdf"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardPdf.deleteExportStatementCardPdfForUserCard",
+      "name": "exportStatementCardPdf.deleteExportStatementCardPdfForUserCard",
+      "description": "Used to serialize ExportStatementCardPdf"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardPdf.listAllExportStatementCardPdfForUserCard",
+      "name": "exportStatementCardPdf.listAllExportStatementCardPdfForUserCard",
+      "description": "Used to serialize ExportStatementCardPdf"
+    },
+    {
+      "id": "openapi_bunq_com.exportStatementCardPdf.readExportStatementCardPdfForUserCard",
+      "name": "exportStatementCardPdf.readExportStatementCardPdfForUserCard",
+      "description": "Used to serialize ExportStatementCardPdf"
+    },
+    {
+      "id": "openapi_bunq_com.featureAnnouncement.readFeatureAnnouncementForUser",
+      "name": "featureAnnouncement.readFeatureAnnouncementForUser",
+      "description": "view for updating the feature display."
+    },
+    {
+      "id": "openapi_bunq_com.generatedCvc2.createGeneratedCvc2ForUserCard",
+      "name": "generatedCvc2.createGeneratedCvc2ForUserCard",
+      "description": "Generate a new CVC2 code for a card."
+    },
+    {
+      "id": "openapi_bunq_com.generatedCvc2.listAllGeneratedCvc2ForUserCard",
+      "name": "generatedCvc2.listAllGeneratedCvc2ForUserCard",
+      "description": "Get all generated CVC2 codes for a card."
+    },
+    {
+      "id": "openapi_bunq_com.generatedCvc2.readGeneratedCvc2ForUserCard",
+      "name": "generatedCvc2.readGeneratedCvc2ForUserCard",
+      "description": "Get the details for a specific generated CVC2 code."
+    },
+    {
+      "id": "openapi_bunq_com.generatedCvc2.updateGeneratedCvc2ForUserCard",
+      "name": "generatedCvc2.updateGeneratedCvc2ForUserCard",
+      "description": "Endpoint for generating and retrieving a new CVC2 code."
+    },
+    {
+      "id": "openapi_bunq_com.idealMerchantTransaction.createIdealMerchantTransactionForUserMonetaryAccount",
+      "name": "idealMerchantTransaction.createIdealMerchantTransactionForUserMonetaryAccount",
+      "description": "View for requesting iDEAL transactions and polling their status."
+    },
+    {
+      "id": "openapi_bunq_com.idealMerchantTransaction.listAllIdealMerchantTransactionForUserMonetaryAccount",
+      "name": "idealMerchantTransaction.listAllIdealMerchantTransactionForUserMonetaryAccount",
+      "description": "View for requesting iDEAL transactions and polling their status."
+    },
+    {
+      "id": "openapi_bunq_com.idealMerchantTransaction.readIdealMerchantTransactionForUserMonetaryAccount",
+      "name": "idealMerchantTransaction.readIdealMerchantTransactionForUserMonetaryAccount",
+      "description": "View for requesting iDEAL transactions and polling their status."
+    },
+    {
+      "id": "openapi_bunq_com.insightPreferenceDate.listAllInsightPreferenceDateForUser",
+      "name": "insightPreferenceDate.listAllInsightPreferenceDateForUser",
+      "description": "Used to allow users to set insight/budget preferences."
+    },
+    {
+      "id": "openapi_bunq_com.insights.listAllInsightsForUser",
+      "name": "insights.listAllInsightsForUser",
+      "description": "Used to get insights about transactions between given time range."
+    },
+    {
+      "id": "openapi_bunq_com.insightsSearch.listAllInsightsSearchForUser",
+      "name": "insightsSearch.listAllInsightsSearchForUser",
+      "description": "Used to get events based on time and insight category."
+    },
+    {
+      "id": "openapi_bunq_com.installation.createInstallation",
+      "name": "installation.createInstallation",
+      "description": "This is the only API call that does not require you to use the \"X-Bunq-Client-Authentication\" and \"X-Bunq-Client-Signature\" headers.\n You provide the server with the public part of the key pair that you are going to use to create the value of the signature header for all future API calls. The server creates an installation for you. Store the Installation Token and ServerPublicKey from the response. This token is used in the \"X-Bunq-Client-Authentication\" header for the creation of a DeviceServer and SessionServer."
+    },
+    {
+      "id": "openapi_bunq_com.installation.listAllInstallation",
+      "name": "installation.listAllInstallation",
+      "description": "You must have an active session to make this call. This call returns the Id of the the Installation you are using in your session."
+    },
+    {
+      "id": "openapi_bunq_com.installation.readInstallation",
+      "name": "installation.readInstallation",
+      "description": "You must have an active session to make this call. This call is used to check whether the Id you provide is the Id of your current installation or not."
+    },
+    {
+      "id": "openapi_bunq_com.instance.listAllInstanceForUserMonetaryAccountPaymentAutoAllocate",
+      "name": "instance.listAllInstanceForUserMonetaryAccountPaymentAutoAllocate",
+      "description": "List all the times a users payment was automatically allocated."
+    },
+    {
+      "id": "openapi_bunq_com.instance.readInstanceForUserMonetaryAccountPaymentAutoAllocate",
+      "name": "instance.readInstanceForUserMonetaryAccountPaymentAutoAllocate",
+      "description": "List all the times a users payment was automatically allocated."
+    },
+    {
+      "id": "openapi_bunq_com.invoice.listAllInvoiceForUser",
+      "name": "invoice.listAllInvoiceForUser",
+      "description": "Used to list bunq invoices by user."
+    },
+    {
+      "id": "openapi_bunq_com.invoice.listAllInvoiceForUserMonetaryAccount",
+      "name": "invoice.listAllInvoiceForUserMonetaryAccount",
+      "description": "Used to view a bunq invoice."
+    },
+    {
+      "id": "openapi_bunq_com.invoice.readInvoiceForUser",
+      "name": "invoice.readInvoiceForUser",
+      "description": "Used to list bunq invoices by user."
+    },
+    {
+      "id": "openapi_bunq_com.invoice.readInvoiceForUserMonetaryAccount",
+      "name": "invoice.readInvoiceForUserMonetaryAccount",
+      "description": "Used to view a bunq invoice."
+    },
+    {
+      "id": "openapi_bunq_com.ip.createIpForUserCredentialPasswordIp",
+      "name": "ip.createIpForUserCredentialPasswordIp",
+      "description": "Manage the IPs which may be used for a credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.ip.listAllIpForUserCredentialPasswordIp",
+      "name": "ip.listAllIpForUserCredentialPasswordIp",
+      "description": "Manage the IPs which may be used for a credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.ip.readIpForUserCredentialPasswordIp",
+      "name": "ip.readIpForUserCredentialPasswordIp",
+      "description": "Manage the IPs which may be used for a credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.ip.updateIpForUserCredentialPasswordIp",
+      "name": "ip.updateIpForUserCredentialPasswordIp",
+      "description": "Manage the IPs which may be used for a credential of a user for server authentication."
+    },
+    {
+      "id": "openapi_bunq_com.legalName.listAllLegalNameForUser",
+      "name": "legalName.listAllLegalNameForUser",
+      "description": "Endpoint for getting available legal names that can be used by the user."
+    },
+    {
+      "id": "openapi_bunq_com.limit.listAllLimitForUser",
+      "name": "limit.listAllLimitForUser",
+      "description": "Get all limits for the authenticated user."
+    },
+    {
+      "id": "openapi_bunq_com.mastercardAction.listAllMastercardActionForUserMonetaryAccount",
+      "name": "mastercardAction.listAllMastercardActionForUserMonetaryAccount",
+      "description": "MasterCard transaction view."
+    },
+    {
+      "id": "openapi_bunq_com.mastercardAction.readMastercardActionForUserMonetaryAccount",
+      "name": "mastercardAction.readMastercardActionForUserMonetaryAccount",
+      "description": "MasterCard transaction view."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccount.listAllMonetaryAccountForUser",
+      "name": "monetaryAccount.listAllMonetaryAccountForUser",
+      "description": "Get a collection of all your MonetaryAccounts."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccount.readMonetaryAccountForUser",
+      "name": "monetaryAccount.readMonetaryAccountForUser",
+      "description": "Get a specific MonetaryAccount."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountBank.createMonetaryAccountBankForUser",
+      "name": "monetaryAccountBank.createMonetaryAccountBankForUser",
+      "description": "Create new MonetaryAccountBank."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountBank.listAllMonetaryAccountBankForUser",
+      "name": "monetaryAccountBank.listAllMonetaryAccountBankForUser",
+      "description": "Gets a listing of all MonetaryAccountBanks of a given user."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountBank.readMonetaryAccountBankForUser",
+      "name": "monetaryAccountBank.readMonetaryAccountBankForUser",
+      "description": "Get a specific MonetaryAccountBank."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountBank.updateMonetaryAccountBankForUser",
+      "name": "monetaryAccountBank.updateMonetaryAccountBankForUser",
+      "description": "Update a specific existing MonetaryAccountBank."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountExternal.listAllMonetaryAccountExternalForUser",
+      "name": "monetaryAccountExternal.listAllMonetaryAccountExternalForUser",
+      "description": "Endpoint for managing monetary accounts which are connected to external services."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountExternal.readMonetaryAccountExternalForUser",
+      "name": "monetaryAccountExternal.readMonetaryAccountExternalForUser",
+      "description": "Endpoint for managing monetary accounts which are connected to external services."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountJoint.createMonetaryAccountJointForUser",
+      "name": "monetaryAccountJoint.createMonetaryAccountJointForUser",
+      "description": "The endpoint for joint monetary accounts."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountJoint.listAllMonetaryAccountJointForUser",
+      "name": "monetaryAccountJoint.listAllMonetaryAccountJointForUser",
+      "description": "The endpoint for joint monetary accounts."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountJoint.readMonetaryAccountJointForUser",
+      "name": "monetaryAccountJoint.readMonetaryAccountJointForUser",
+      "description": "The endpoint for joint monetary accounts."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountJoint.updateMonetaryAccountJointForUser",
+      "name": "monetaryAccountJoint.updateMonetaryAccountJointForUser",
+      "description": "The endpoint for joint monetary accounts."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountSavings.createMonetaryAccountSavingsForUser",
+      "name": "monetaryAccountSavings.createMonetaryAccountSavingsForUser",
+      "description": "Create new MonetaryAccountSavings."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountSavings.listAllMonetaryAccountSavingsForUser",
+      "name": "monetaryAccountSavings.listAllMonetaryAccountSavingsForUser",
+      "description": "Gets a listing of all MonetaryAccountSavingss of a given user."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountSavings.readMonetaryAccountSavingsForUser",
+      "name": "monetaryAccountSavings.readMonetaryAccountSavingsForUser",
+      "description": "Get a specific MonetaryAccountSavings."
+    },
+    {
+      "id": "openapi_bunq_com.monetaryAccountSavings.updateMonetaryAccountSavingsForUser",
+      "name": "monetaryAccountSavings.updateMonetaryAccountSavingsForUser",
+      "description": "Update a specific existing MonetaryAccountSavings."
+    },
+    {
+      "id": "openapi_bunq_com.name.listAllNameForUserCompany",
+      "name": "name.listAllNameForUserCompany",
+      "description": "Return all the known (trade) names for a specific user company."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountPayment",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.createNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteAttachment.createNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountPayment",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.deleteNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteAttachment.deleteNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountPayment",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountPayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.listAllNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteAttachment.listAllNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountPayment",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.readNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteAttachment.readNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountPayment",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountPayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteAttachment.updateNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteAttachment.updateNoteAttachmentForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage attachment notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteText.createNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountDraftPayment",
+      "name": "noteText.createNoteTextForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteText.createNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountMastercardAction",
+      "name": "noteText.createNoteTextForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountPayment",
+      "name": "noteText.createNoteTextForUserMonetaryAccountPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountPaymentBatch",
+      "name": "noteText.createNoteTextForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountRequestInquiry",
+      "name": "noteText.createNoteTextForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteText.createNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountRequestResponse",
+      "name": "noteText.createNoteTextForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountSchedulePayment",
+      "name": "noteText.createNoteTextForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteText.createNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteText.createNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteText.createNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteText.createNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.createNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteText.createNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountDraftPayment",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountMastercardAction",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountPayment",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountPaymentBatch",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountRequestInquiry",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountRequestResponse",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountSchedulePayment",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.deleteNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteText.deleteNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountDraftPayment",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountDraftPayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountMastercardAction",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountMastercardAction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountPayment",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountPayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountPaymentBatch",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountPaymentBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountRequestInquiry",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountRequestInquiry",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountRequestResponse",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountRequestResponse",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountSchedulePayment",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountSchedulePayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.listAllNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteText.listAllNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Manage the notes for a given user."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteText.readNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountDraftPayment",
+      "name": "noteText.readNoteTextForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteText.readNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountMastercardAction",
+      "name": "noteText.readNoteTextForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountPayment",
+      "name": "noteText.readNoteTextForUserMonetaryAccountPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountPaymentBatch",
+      "name": "noteText.readNoteTextForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountRequestInquiry",
+      "name": "noteText.readNoteTextForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteText.readNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountRequestResponse",
+      "name": "noteText.readNoteTextForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountSchedulePayment",
+      "name": "noteText.readNoteTextForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteText.readNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteText.readNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteText.readNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteText.readNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.readNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteText.readNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountBunqmeFundraiserResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountDraftPayment",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountDraftPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountIdealMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountMastercardAction",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountMastercardAction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountPayment",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountPayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountPaymentBatch",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountPaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountRequestInquiry",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountRequestInquiry",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountRequestInquiryBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountRequestResponse",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountRequestResponse",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountSchedulePayment",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountSchedulePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountSchedulePaymentBatch",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountScheduleScheduleInstance",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountSofortMerchantTransaction",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountSwitchServicePayment",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.noteText.updateNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "name": "noteText.updateNoteTextForUserMonetaryAccountWhitelistWhitelistResult",
+      "description": "Used to manage text notes."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterEmail.createNotificationFilterEmailForUser",
+      "name": "notificationFilterEmail.createNotificationFilterEmailForUser",
+      "description": "Manage the email notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterEmail.listAllNotificationFilterEmailForUser",
+      "name": "notificationFilterEmail.listAllNotificationFilterEmailForUser",
+      "description": "Manage the email notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterPush.createNotificationFilterPushForUser",
+      "name": "notificationFilterPush.createNotificationFilterPushForUser",
+      "description": "Manage the push notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterPush.listAllNotificationFilterPushForUser",
+      "name": "notificationFilterPush.listAllNotificationFilterPushForUser",
+      "description": "Manage the push notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterUrl.createNotificationFilterUrlForUser",
+      "name": "notificationFilterUrl.createNotificationFilterUrlForUser",
+      "description": "Manage the url notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterUrl.createNotificationFilterUrlForUserMonetaryAccount",
+      "name": "notificationFilterUrl.createNotificationFilterUrlForUserMonetaryAccount",
+      "description": "Manage the url notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterUrl.listAllNotificationFilterUrlForUser",
+      "name": "notificationFilterUrl.listAllNotificationFilterUrlForUser",
+      "description": "Manage the url notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.notificationFilterUrl.listAllNotificationFilterUrlForUserMonetaryAccount",
+      "name": "notificationFilterUrl.listAllNotificationFilterUrlForUserMonetaryAccount",
+      "description": "Manage the url notification filters for a user."
+    },
+    {
+      "id": "openapi_bunq_com.oauthClient.createOauthClientForUser",
+      "name": "oauthClient.createOauthClientForUser",
+      "description": "Used for managing OAuth Clients."
+    },
+    {
+      "id": "openapi_bunq_com.oauthClient.listAllOauthClientForUser",
+      "name": "oauthClient.listAllOauthClientForUser",
+      "description": "Used for managing OAuth Clients."
+    },
+    {
+      "id": "openapi_bunq_com.oauthClient.readOauthClientForUser",
+      "name": "oauthClient.readOauthClientForUser",
+      "description": "Used for managing OAuth Clients."
+    },
+    {
+      "id": "openapi_bunq_com.oauthClient.updateOauthClientForUser",
+      "name": "oauthClient.updateOauthClientForUser",
+      "description": "Used for managing OAuth Clients."
+    },
+    {
+      "id": "openapi_bunq_com.payment.createPaymentForUserMonetaryAccount",
+      "name": "payment.createPaymentForUserMonetaryAccount",
+      "description": "Create a new Payment."
+    },
+    {
+      "id": "openapi_bunq_com.payment.listAllPaymentForUserMonetaryAccount",
+      "name": "payment.listAllPaymentForUserMonetaryAccount",
+      "description": "Get a listing of all Payments performed on a given MonetaryAccount (incoming and outgoing)."
+    },
+    {
+      "id": "openapi_bunq_com.payment.listAllPaymentForUserMonetaryAccountMastercardAction",
+      "name": "payment.listAllPaymentForUserMonetaryAccountMastercardAction",
+      "description": "MasterCard transaction view."
+    },
+    {
+      "id": "openapi_bunq_com.payment.readPaymentForUserMonetaryAccount",
+      "name": "payment.readPaymentForUserMonetaryAccount",
+      "description": "Get a specific previous Payment."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.createPaymentAutoAllocateForUserMonetaryAccount",
+      "name": "paymentAutoAllocate.createPaymentAutoAllocateForUserMonetaryAccount",
+      "description": "Manage a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.deletePaymentAutoAllocateForUserMonetaryAccount",
+      "name": "paymentAutoAllocate.deletePaymentAutoAllocateForUserMonetaryAccount",
+      "description": "Manage a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.listAllPaymentAutoAllocateForUser",
+      "name": "paymentAutoAllocate.listAllPaymentAutoAllocateForUser",
+      "description": "List a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.listAllPaymentAutoAllocateForUserMonetaryAccount",
+      "name": "paymentAutoAllocate.listAllPaymentAutoAllocateForUserMonetaryAccount",
+      "description": "Manage a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.readPaymentAutoAllocateForUserMonetaryAccount",
+      "name": "paymentAutoAllocate.readPaymentAutoAllocateForUserMonetaryAccount",
+      "description": "Manage a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentAutoAllocate.updatePaymentAutoAllocateForUserMonetaryAccount",
+      "name": "paymentAutoAllocate.updatePaymentAutoAllocateForUserMonetaryAccount",
+      "description": "Manage a users automatic payment auto allocated settings."
+    },
+    {
+      "id": "openapi_bunq_com.paymentBatch.createPaymentBatchForUserMonetaryAccount",
+      "name": "paymentBatch.createPaymentBatchForUserMonetaryAccount",
+      "description": "Create a payment batch by sending an array of single payment objects, that will become part of the batch."
+    },
+    {
+      "id": "openapi_bunq_com.paymentBatch.listAllPaymentBatchForUserMonetaryAccount",
+      "name": "paymentBatch.listAllPaymentBatchForUserMonetaryAccount",
+      "description": "Return all the payment batches for a monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.paymentBatch.readPaymentBatchForUserMonetaryAccount",
+      "name": "paymentBatch.readPaymentBatchForUserMonetaryAccount",
+      "description": "Return the details of a specific payment batch."
+    },
+    {
+      "id": "openapi_bunq_com.paymentBatch.updatePaymentBatchForUserMonetaryAccount",
+      "name": "paymentBatch.updatePaymentBatchForUserMonetaryAccount",
+      "description": "Revoke a bunq.to payment batch. The status of all the payments will be set to REVOKED."
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderCredential.createPaymentServiceProviderCredential",
+      "name": "paymentServiceProviderCredential.createPaymentServiceProviderCredential",
+      "description": "Register a Payment Service Provider and provide credentials"
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderCredential.readPaymentServiceProviderCredential",
+      "name": "paymentServiceProviderCredential.readPaymentServiceProviderCredential",
+      "description": "Register a Payment Service Provider and provide credentials"
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderDraftPayment.createPaymentServiceProviderDraftPaymentForUser",
+      "name": "paymentServiceProviderDraftPayment.createPaymentServiceProviderDraftPaymentForUser",
+      "description": "Manage the PaymentServiceProviderDraftPayment's for a PISP."
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderDraftPayment.listAllPaymentServiceProviderDraftPaymentForUser",
+      "name": "paymentServiceProviderDraftPayment.listAllPaymentServiceProviderDraftPaymentForUser",
+      "description": "Manage the PaymentServiceProviderDraftPayment's for a PISP."
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderDraftPayment.readPaymentServiceProviderDraftPaymentForUser",
+      "name": "paymentServiceProviderDraftPayment.readPaymentServiceProviderDraftPaymentForUser",
+      "description": "Manage the PaymentServiceProviderDraftPayment's for a PISP."
+    },
+    {
+      "id": "openapi_bunq_com.paymentServiceProviderDraftPayment.updatePaymentServiceProviderDraftPaymentForUser",
+      "name": "paymentServiceProviderDraftPayment.updatePaymentServiceProviderDraftPaymentForUser",
+      "description": "Manage the PaymentServiceProviderDraftPayment's for a PISP."
+    },
+    {
+      "id": "openapi_bunq_com.pdfContent.listAllPdfContentForUserInvoice",
+      "name": "pdfContent.listAllPdfContentForUserInvoice",
+      "description": "Get a PDF export of an invoice."
+    },
+    {
+      "id": "openapi_bunq_com.registrySettlement.createRegistrySettlementForUserRegistry",
+      "name": "registrySettlement.createRegistrySettlementForUserRegistry",
+      "description": "Create a new Slice group settlement."
+    },
+    {
+      "id": "openapi_bunq_com.registrySettlement.listAllRegistrySettlementForUserRegistry",
+      "name": "registrySettlement.listAllRegistrySettlementForUserRegistry",
+      "description": "Get a listing of all Slice group settlements."
+    },
+    {
+      "id": "openapi_bunq_com.registrySettlement.readRegistrySettlementForUserRegistry",
+      "name": "registrySettlement.readRegistrySettlementForUserRegistry",
+      "description": "Get a specific Slice group settlement."
+    },
+    {
+      "id": "openapi_bunq_com.replace.createReplaceForUserCard",
+      "name": "replace.createReplaceForUserCard",
+      "description": "Request a card replacement."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiry.createRequestInquiryForUserMonetaryAccount",
+      "name": "requestInquiry.createRequestInquiryForUserMonetaryAccount",
+      "description": "Create a new payment request."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiry.listAllRequestInquiryForUserMonetaryAccount",
+      "name": "requestInquiry.listAllRequestInquiryForUserMonetaryAccount",
+      "description": "Get all payment requests for a user's monetary account. bunqme_share_url is always null if the counterparty is a bunq user."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiry.readRequestInquiryForUserMonetaryAccount",
+      "name": "requestInquiry.readRequestInquiryForUserMonetaryAccount",
+      "description": "Get the details of a specific payment request, including its status. bunqme_share_url is always null if the counterparty is a bunq user."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiry.updateRequestInquiryForUserMonetaryAccount",
+      "name": "requestInquiry.updateRequestInquiryForUserMonetaryAccount",
+      "description": "Revoke a request for payment, by updating the status to REVOKED."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiryBatch.createRequestInquiryBatchForUserMonetaryAccount",
+      "name": "requestInquiryBatch.createRequestInquiryBatchForUserMonetaryAccount",
+      "description": "Create a request batch by sending an array of single request objects, that will become part of the batch."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiryBatch.listAllRequestInquiryBatchForUserMonetaryAccount",
+      "name": "requestInquiryBatch.listAllRequestInquiryBatchForUserMonetaryAccount",
+      "description": "Return all the request batches for a monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiryBatch.readRequestInquiryBatchForUserMonetaryAccount",
+      "name": "requestInquiryBatch.readRequestInquiryBatchForUserMonetaryAccount",
+      "description": "Return the details of a specific request batch."
+    },
+    {
+      "id": "openapi_bunq_com.requestInquiryBatch.updateRequestInquiryBatchForUserMonetaryAccount",
+      "name": "requestInquiryBatch.updateRequestInquiryBatchForUserMonetaryAccount",
+      "description": "Revoke a request batch. The status of all the requests will be set to REVOKED."
+    },
+    {
+      "id": "openapi_bunq_com.requestResponse.listAllRequestResponseForUserMonetaryAccount",
+      "name": "requestResponse.listAllRequestResponseForUserMonetaryAccount",
+      "description": "Get all RequestResponses for a MonetaryAccount."
+    },
+    {
+      "id": "openapi_bunq_com.requestResponse.readRequestResponseForUserMonetaryAccount",
+      "name": "requestResponse.readRequestResponseForUserMonetaryAccount",
+      "description": "Get the details for a specific existing RequestResponse."
+    },
+    {
+      "id": "openapi_bunq_com.requestResponse.updateRequestResponseForUserMonetaryAccount",
+      "name": "requestResponse.updateRequestResponseForUserMonetaryAccount",
+      "description": "Update the status to accept or reject the RequestResponse."
+    },
+    {
+      "id": "openapi_bunq_com.reward.listAllRewardForUser",
+      "name": "reward.listAllRewardForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.reward.readRewardForUser",
+      "name": "reward.readRewardForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.rewardRecipient.listAllRewardRecipientForUser",
+      "name": "rewardRecipient.listAllRewardRecipientForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.rewardRecipient.readRewardRecipientForUser",
+      "name": "rewardRecipient.readRewardRecipientForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.rewardSender.listAllRewardSenderForUser",
+      "name": "rewardSender.listAllRewardSenderForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.rewardSender.readRewardSenderForUser",
+      "name": "rewardSender.readRewardSenderForUser",
+      "description": "Used to view Rewards."
+    },
+    {
+      "id": "openapi_bunq_com.sandboxUserCompany.createSandboxUserCompany",
+      "name": "sandboxUserCompany.createSandboxUserCompany",
+      "description": "Used to create a sandbox userCompany."
+    },
+    {
+      "id": "openapi_bunq_com.sandboxUserPerson.createSandboxUserPerson",
+      "name": "sandboxUserPerson.createSandboxUserPerson",
+      "description": "Used to create a sandbox userPerson."
+    },
+    {
+      "id": "openapi_bunq_com.schedule.listAllScheduleForUser",
+      "name": "schedule.listAllScheduleForUser",
+      "description": "Get a collection of scheduled definition for all accessible monetary accounts of the user. You can add the parameter type to filter the response. When type={SCHEDULE_DEFINITION_PAYMENT,SCHEDULE_DEFINITION_PAYMENT_BATCH} is provided only schedule definition object that relate to these definitions are returned."
+    },
+    {
+      "id": "openapi_bunq_com.schedule.listAllScheduleForUserMonetaryAccount",
+      "name": "schedule.listAllScheduleForUserMonetaryAccount",
+      "description": "Get a collection of scheduled definition for a given monetary account. You can add the parameter type to filter the response. When type={SCHEDULE_DEFINITION_PAYMENT,SCHEDULE_DEFINITION_PAYMENT_BATCH} is provided only schedule definition object that relate to these definitions are returned."
+    },
+    {
+      "id": "openapi_bunq_com.schedule.readScheduleForUserMonetaryAccount",
+      "name": "schedule.readScheduleForUserMonetaryAccount",
+      "description": "Get a specific schedule definition for a given monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.scheduleInstance.listAllScheduleInstanceForUserMonetaryAccountSchedule",
+      "name": "scheduleInstance.listAllScheduleInstanceForUserMonetaryAccountSchedule",
+      "description": "view for reading, updating and listing the scheduled instance."
+    },
+    {
+      "id": "openapi_bunq_com.scheduleInstance.readScheduleInstanceForUserMonetaryAccountSchedule",
+      "name": "scheduleInstance.readScheduleInstanceForUserMonetaryAccountSchedule",
+      "description": "view for reading, updating and listing the scheduled instance."
+    },
+    {
+      "id": "openapi_bunq_com.scheduleInstance.updateScheduleInstanceForUserMonetaryAccountSchedule",
+      "name": "scheduleInstance.updateScheduleInstanceForUserMonetaryAccountSchedule",
+      "description": "view for reading, updating and listing the scheduled instance."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePayment.createSchedulePaymentForUserMonetaryAccount",
+      "name": "schedulePayment.createSchedulePaymentForUserMonetaryAccount",
+      "description": "Endpoint for schedule payments."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePayment.deleteSchedulePaymentForUserMonetaryAccount",
+      "name": "schedulePayment.deleteSchedulePaymentForUserMonetaryAccount",
+      "description": "Endpoint for schedule payments."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePayment.listAllSchedulePaymentForUserMonetaryAccount",
+      "name": "schedulePayment.listAllSchedulePaymentForUserMonetaryAccount",
+      "description": "Endpoint for schedule payments."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePayment.readSchedulePaymentForUserMonetaryAccount",
+      "name": "schedulePayment.readSchedulePaymentForUserMonetaryAccount",
+      "description": "Endpoint for schedule payments."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePayment.updateSchedulePaymentForUserMonetaryAccount",
+      "name": "schedulePayment.updateSchedulePaymentForUserMonetaryAccount",
+      "description": "Endpoint for schedule payments."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePaymentBatch.createSchedulePaymentBatchForUserMonetaryAccount",
+      "name": "schedulePaymentBatch.createSchedulePaymentBatchForUserMonetaryAccount",
+      "description": "Endpoint for schedule payment batches."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePaymentBatch.deleteSchedulePaymentBatchForUserMonetaryAccount",
+      "name": "schedulePaymentBatch.deleteSchedulePaymentBatchForUserMonetaryAccount",
+      "description": "Endpoint for schedule payment batches."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePaymentBatch.readSchedulePaymentBatchForUserMonetaryAccount",
+      "name": "schedulePaymentBatch.readSchedulePaymentBatchForUserMonetaryAccount",
+      "description": "Endpoint for schedule payment batches."
+    },
+    {
+      "id": "openapi_bunq_com.schedulePaymentBatch.updateSchedulePaymentBatchForUserMonetaryAccount",
+      "name": "schedulePaymentBatch.updateSchedulePaymentBatchForUserMonetaryAccount",
+      "description": "Endpoint for schedule payment batches."
+    },
+    {
+      "id": "openapi_bunq_com.serverError.createServerError",
+      "name": "serverError.createServerError",
+      "description": "An endpoint that will always throw an error."
+    },
+    {
+      "id": "openapi_bunq_com.serverPublicKey.listAllServerPublicKeyForInstallation",
+      "name": "serverPublicKey.listAllServerPublicKeyForInstallation",
+      "description": "Show the ServerPublicKey for this Installation."
+    },
+    {
+      "id": "openapi_bunq_com.session.deleteSession",
+      "name": "session.deleteSession",
+      "description": "Deletes the current session."
+    },
+    {
+      "id": "openapi_bunq_com.sessionServer.createSessionServer",
+      "name": "sessionServer.createSessionServer",
+      "description": "Create a new session for a DeviceServer. Provide the Installation token in the \"X-Bunq-Client-Authentication\" header. And don't forget to create the \"X-Bunq-Client-Signature\" header. The response contains a Session token that should be used for as the \"X-Bunq-Client-Authentication\" header for all future API calls. The ip address making this call needs to match the ip address bound to your API key."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountInquiry.createShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "name": "shareInviteMonetaryAccountInquiry.createShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "description": "[DEPRECATED - use /share-invite-monetary-account-response] Create a new share inquiry for a monetary account, specifying the permission the other bunq user will have on it."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountInquiry.listAllShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "name": "shareInviteMonetaryAccountInquiry.listAllShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "description": "[DEPRECATED - use /share-invite-monetary-account-response] Get a list with all the share inquiries for a monetary account, only if the requesting user has permission to change the details of the various ones."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountInquiry.readShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "name": "shareInviteMonetaryAccountInquiry.readShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "description": "[DEPRECATED - use /share-invite-monetary-account-response] Get the details of a specific share inquiry."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountInquiry.updateShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "name": "shareInviteMonetaryAccountInquiry.updateShareInviteMonetaryAccountInquiryForUserMonetaryAccount",
+      "description": "[DEPRECATED - use /share-invite-monetary-account-response] Update the details of a share. This includes updating status (revoking or cancelling it), granted permission and validity period of this share."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountResponse.listAllShareInviteMonetaryAccountResponseForUser",
+      "name": "shareInviteMonetaryAccountResponse.listAllShareInviteMonetaryAccountResponseForUser",
+      "description": "Return all the shares a user was invited to."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountResponse.readShareInviteMonetaryAccountResponseForUser",
+      "name": "shareInviteMonetaryAccountResponse.readShareInviteMonetaryAccountResponseForUser",
+      "description": "Return the details of a specific share a user was invited to."
+    },
+    {
+      "id": "openapi_bunq_com.shareInviteMonetaryAccountResponse.updateShareInviteMonetaryAccountResponseForUser",
+      "name": "shareInviteMonetaryAccountResponse.updateShareInviteMonetaryAccountResponseForUser",
+      "description": "Accept or reject a share a user was invited to."
+    },
+    {
+      "id": "openapi_bunq_com.sofortMerchantTransaction.listAllSofortMerchantTransactionForUserMonetaryAccount",
+      "name": "sofortMerchantTransaction.listAllSofortMerchantTransactionForUserMonetaryAccount",
+      "description": "View for requesting Sofort transactions and polling their status."
+    },
+    {
+      "id": "openapi_bunq_com.sofortMerchantTransaction.readSofortMerchantTransactionForUserMonetaryAccount",
+      "name": "sofortMerchantTransaction.readSofortMerchantTransactionForUserMonetaryAccount",
+      "description": "View for requesting Sofort transactions and polling their status."
+    },
+    {
+      "id": "openapi_bunq_com.statement.createStatementForUserMonetaryAccountEvent",
+      "name": "statement.createStatementForUserMonetaryAccountEvent",
+      "description": "Used to create a statement export of a single payment."
+    },
+    {
+      "id": "openapi_bunq_com.statement.readStatementForUserMonetaryAccountEvent",
+      "name": "statement.readStatementForUserMonetaryAccountEvent",
+      "description": "Used to create a statement export of a single payment."
+    },
+    {
+      "id": "openapi_bunq_com.switchServicePayment.readSwitchServicePaymentForUserMonetaryAccount",
+      "name": "switchServicePayment.readSwitchServicePaymentForUserMonetaryAccount",
+      "description": "An incoming payment made towards an account of an external bank and redirected to a bunq account via switch service."
+    },
+    {
+      "id": "openapi_bunq_com.tokenQrRequestIdeal.createTokenQrRequestIdealForUser",
+      "name": "tokenQrRequestIdeal.createTokenQrRequestIdealForUser",
+      "description": "Create a request from an ideal transaction."
+    },
+    {
+      "id": "openapi_bunq_com.tokenQrRequestSofort.createTokenQrRequestSofortForUser",
+      "name": "tokenQrRequestSofort.createTokenQrRequestSofortForUser",
+      "description": "Create a request from an SOFORT transaction."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseCurrency.listAllTransferwiseCurrencyForUser",
+      "name": "transferwiseCurrency.listAllTransferwiseCurrencyForUser",
+      "description": "Used to get a list of supported currencies for Transferwise."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseQuote.createTransferwiseQuoteForUser",
+      "name": "transferwiseQuote.createTransferwiseQuoteForUser",
+      "description": "Used to get quotes from Transferwise. These can be used to initiate payments."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseQuote.readTransferwiseQuoteForUser",
+      "name": "transferwiseQuote.readTransferwiseQuoteForUser",
+      "description": "Used to get quotes from Transferwise. These can be used to initiate payments."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseQuoteTemporary.createTransferwiseQuoteTemporaryForUser",
+      "name": "transferwiseQuoteTemporary.createTransferwiseQuoteTemporaryForUser",
+      "description": "Used to get temporary quotes from Transferwise. These cannot be used to initiate payments"
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseQuoteTemporary.readTransferwiseQuoteTemporaryForUser",
+      "name": "transferwiseQuoteTemporary.readTransferwiseQuoteTemporaryForUser",
+      "description": "Used to get temporary quotes from Transferwise. These cannot be used to initiate payments"
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipient.createTransferwiseRecipientForUserTransferwiseQuote",
+      "name": "transferwiseRecipient.createTransferwiseRecipientForUserTransferwiseQuote",
+      "description": "Used to manage recipient accounts with Transferwise."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipient.deleteTransferwiseRecipientForUserTransferwiseQuote",
+      "name": "transferwiseRecipient.deleteTransferwiseRecipientForUserTransferwiseQuote",
+      "description": "Used to manage recipient accounts with Transferwise."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipient.listAllTransferwiseRecipientForUserTransferwiseQuote",
+      "name": "transferwiseRecipient.listAllTransferwiseRecipientForUserTransferwiseQuote",
+      "description": "Used to manage recipient accounts with Transferwise."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipient.readTransferwiseRecipientForUserTransferwiseQuote",
+      "name": "transferwiseRecipient.readTransferwiseRecipientForUserTransferwiseQuote",
+      "description": "Used to manage recipient accounts with Transferwise."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipientRequirement.createTransferwiseRecipientRequirementForUserTransferwiseQuote",
+      "name": "transferwiseRecipientRequirement.createTransferwiseRecipientRequirementForUserTransferwiseQuote",
+      "description": "Used to determine the recipient account requirements for Transferwise transfers."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseRecipientRequirement.listAllTransferwiseRecipientRequirementForUserTransferwiseQuote",
+      "name": "transferwiseRecipientRequirement.listAllTransferwiseRecipientRequirementForUserTransferwiseQuote",
+      "description": "Used to determine the recipient account requirements for Transferwise transfers."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseTransfer.createTransferwiseTransferForUserTransferwiseQuote",
+      "name": "transferwiseTransfer.createTransferwiseTransferForUserTransferwiseQuote",
+      "description": "Used to create Transferwise payments."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseTransfer.listAllTransferwiseTransferForUserTransferwiseQuote",
+      "name": "transferwiseTransfer.listAllTransferwiseTransferForUserTransferwiseQuote",
+      "description": "Used to create Transferwise payments."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseTransfer.readTransferwiseTransferForUserTransferwiseQuote",
+      "name": "transferwiseTransfer.readTransferwiseTransferForUserTransferwiseQuote",
+      "description": "Used to create Transferwise payments."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseTransferRequirement.createTransferwiseTransferRequirementForUserTransferwiseQuote",
+      "name": "transferwiseTransferRequirement.createTransferwiseTransferRequirementForUserTransferwiseQuote",
+      "description": "Used to determine the account requirements for Transferwise transfers."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseUser.createTransferwiseUserForUser",
+      "name": "transferwiseUser.createTransferwiseUserForUser",
+      "description": "Used to manage Transferwise users."
+    },
+    {
+      "id": "openapi_bunq_com.transferwiseUser.listAllTransferwiseUserForUser",
+      "name": "transferwiseUser.listAllTransferwiseUserForUser",
+      "description": "Used to manage Transferwise users."
+    },
+    {
+      "id": "openapi_bunq_com.translinkTransaction.createTranslinkTransactionForUserMonetaryAccount",
+      "name": "translinkTransaction.createTranslinkTransactionForUserMonetaryAccount",
+      "description": "Used to create translink transactions."
+    },
+    {
+      "id": "openapi_bunq_com.translinkTransaction.listAllTranslinkTransactionForUserMonetaryAccount",
+      "name": "translinkTransaction.listAllTranslinkTransactionForUserMonetaryAccount",
+      "description": "Used to create translink transactions."
+    },
+    {
+      "id": "openapi_bunq_com.translinkTransaction.readTranslinkTransactionForUserMonetaryAccount",
+      "name": "translinkTransaction.readTranslinkTransactionForUserMonetaryAccount",
+      "description": "Used to create translink transactions."
+    },
+    {
+      "id": "openapi_bunq_com.treeProgress.listAllTreeProgressForUser",
+      "name": "treeProgress.listAllTreeProgressForUser",
+      "description": "See how many trees this user has planted."
+    },
+    {
+      "id": "openapi_bunq_com.user.listAllUser",
+      "name": "user.listAllUser",
+      "description": "Get a collection of all available users."
+    },
+    {
+      "id": "openapi_bunq_com.user.readUser",
+      "name": "user.readUser",
+      "description": "Get a specific user."
+    },
+    {
+      "id": "openapi_bunq_com.userCompany.readUserCompany",
+      "name": "userCompany.readUserCompany",
+      "description": "Get a specific company."
+    },
+    {
+      "id": "openapi_bunq_com.userCompany.updateUserCompany",
+      "name": "userCompany.updateUserCompany",
+      "description": "Modify a specific company's data."
+    },
+    {
+      "id": "openapi_bunq_com.userPaymentServiceProvider.readUserPaymentServiceProvider",
+      "name": "userPaymentServiceProvider.readUserPaymentServiceProvider",
+      "description": "Used to view UserPaymentServiceProvider for session creation."
+    },
+    {
+      "id": "openapi_bunq_com.userPerson.readUserPerson",
+      "name": "userPerson.readUserPerson",
+      "description": "Get a specific person."
+    },
+    {
+      "id": "openapi_bunq_com.userPerson.updateUserPerson",
+      "name": "userPerson.updateUserPerson",
+      "description": "Modify a specific person object's data."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSdd.listAllWhitelistSddForUser",
+      "name": "whitelistSdd.listAllWhitelistSddForUser",
+      "description": "Get a listing of all recurring SDD whitelist entries for a target monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSdd.listAllWhitelistSddForUserMonetaryAccount",
+      "name": "whitelistSdd.listAllWhitelistSddForUserMonetaryAccount",
+      "description": "Get a listing of all SDD whitelist entries for a target monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSdd.readWhitelistSddForUser",
+      "name": "whitelistSdd.readWhitelistSddForUser",
+      "description": "Get a specific recurring SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSdd.readWhitelistSddForUserMonetaryAccount",
+      "name": "whitelistSdd.readWhitelistSddForUserMonetaryAccount",
+      "description": "Get a specific SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddOneOff.createWhitelistSddOneOffForUser",
+      "name": "whitelistSddOneOff.createWhitelistSddOneOffForUser",
+      "description": "Create a new one off SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddOneOff.deleteWhitelistSddOneOffForUser",
+      "name": "whitelistSddOneOff.deleteWhitelistSddOneOffForUser",
+      "description": "Whitelist an one off SDD so that when another one off SDD from the creditor comes in, it is automatically accepted."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddOneOff.listAllWhitelistSddOneOffForUser",
+      "name": "whitelistSddOneOff.listAllWhitelistSddOneOffForUser",
+      "description": "Get a listing of all one off SDD whitelist entries for a target monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddOneOff.readWhitelistSddOneOffForUser",
+      "name": "whitelistSddOneOff.readWhitelistSddOneOffForUser",
+      "description": "Get a specific one off SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddOneOff.updateWhitelistSddOneOffForUser",
+      "name": "whitelistSddOneOff.updateWhitelistSddOneOffForUser",
+      "description": "Whitelist an one off SDD so that when another one off SDD from the creditor comes in, it is automatically accepted."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddRecurring.createWhitelistSddRecurringForUser",
+      "name": "whitelistSddRecurring.createWhitelistSddRecurringForUser",
+      "description": "Create a new recurring SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddRecurring.deleteWhitelistSddRecurringForUser",
+      "name": "whitelistSddRecurring.deleteWhitelistSddRecurringForUser",
+      "description": "Whitelist a recurring SDD so that when another recurrence comes in, it is automatically accepted."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddRecurring.listAllWhitelistSddRecurringForUser",
+      "name": "whitelistSddRecurring.listAllWhitelistSddRecurringForUser",
+      "description": "Get a listing of all recurring SDD whitelist entries for a target monetary account."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddRecurring.readWhitelistSddRecurringForUser",
+      "name": "whitelistSddRecurring.readWhitelistSddRecurringForUser",
+      "description": "Get a specific recurring SDD whitelist entry."
+    },
+    {
+      "id": "openapi_bunq_com.whitelistSddRecurring.updateWhitelistSddRecurringForUser",
+      "name": "whitelistSddRecurring.updateWhitelistSddRecurringForUser",
+      "description": "Whitelist a recurring SDD so that when another recurrence comes in, it is automatically accepted."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

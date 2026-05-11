@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.370Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_recurringservice_recurringservice.general.postDisable",
+      "name": "general.postDisable",
+      "description": "Disables stored payment details to stop charging a shopper with this particular recurring detail ID.\n\nFor more information, refer to [Disable stored details](https://docs.adyen.com/classic-integration/recurring-payments/disable-stored-details/)."
+    },
+    {
+      "id": "openapi_adyen_com_recurringservice_recurringservice.general.postListRecurringDetails",
+      "name": "general.postListRecurringDetails",
+      "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.\n\nFor more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/)."
+    },
+    {
+      "id": "openapi_adyen_com_recurringservice_recurringservice.general.postNotifyShopper",
+      "name": "general.postNotifyShopper",
+      "description": "Sends a request to the issuer so they can inform the shopper about the upcoming recurring payment. This endpoint is used only for local acquiring in India. For more information, refer to [Recurring card payments in India](https://docs.adyen.com/payment-methods/cards/cards-recurring-india)."
+    },
+    {
+      "id": "openapi_adyen_com_recurringservice_recurringservice.general.postScheduleAccountUpdater",
+      "name": "general.postScheduleAccountUpdater",
+      "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference:\n* If the card information is provided, all the sub-fields for `card` are mandatory.\n* If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

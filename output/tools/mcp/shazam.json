@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-04-30T15:20:19.902Z",
+  "status": "ok",
+  "count": 10,
+  "tools": [
+    {
+      "id": "mcp_shazam.recognizemusic",
+      "name": "recognizeMusic",
+      "description": "A tag button to invoke music identification for a song playing around the user.  This tool should be used for a user who wants to \"Shazam\" or \"Tag\" or asks \"What song is this?\".  When the tool is invoked ONLY respond in the conversation with \"Powered by Shazam\".  Shazam WILL not work by uploading an audio file or the user singing or humming.  Absolutely, DO NOT respond with any instructions on how to use this tool."
+    },
+    {
+      "id": "mcp_shazam.searchmusic",
+      "name": "searchMusic",
+      "description": "Searches the Apple Music catalog using the Search API (songs, albums, artists, playlists, music-videos, stations). Accepts a free-text term, optional resource types, result limit per type, and storefront code. Returns grouped catalog search results with full metadata."
+    },
+    {
+      "id": "mcp_shazam.getalbum",
+      "name": "getAlbum",
+      "description": "Retrieves one or more Apple Music catalog albums by ID using the Catalog Albums API. Supports batch IDs, storefront selection, and optional inclusion of related tracks or artists. Returns full album metadata including artwork, release info, and embedded relationships if requested."
+    },
+    {
+      "id": "mcp_shazam.getartist",
+      "name": "getArtist",
+      "description": "Fetches one or more Apple Music catalog artists by ID. Supports storefront selection and optional inclusion of related albums, songs, or music-videos. Returns artist metadata including name, genres, artwork, editorial notes, and relationship data where available."
+    },
+    {
+      "id": "mcp_shazam.getsong",
+      "name": "getSong",
+      "description": "Retrieves one or more Apple Music catalog songs by ID. Supports storefront selection and optional inclusion of related albums or artists. Returns detailed song metadata including name, artistName, albumName, duration, artwork, previews, and catalog relationships."
+    },
+    {
+      "id": "mcp_shazam.getplaylist",
+      "name": "getPlaylist",
+      "description": "Retrieves a specific Apple Music catalog playlist by ID. Supports storefront selection and optional inclusion of tracks or curator metadata. Returns playlist details including name, artwork, description, playlistType, and ordered track listings when requested."
+    },
+    {
+      "id": "mcp_shazam.getcharts",
+      "name": "getCharts",
+      "description": "Retrieves Apple Music charts for songs, albums, music-videos, or playlists, optionally filtered by storefront, genre ID, or custom limit. Returns ranked chart collections containing full catalog resources and chart metadata."
+    },
+    {
+      "id": "mcp_shazam.getinfluencers",
+      "name": "getInfluencers",
+      "description": "Returns artists who influenced a given artist based on Apple Music’s editorial relationships. Accepts artist ID, storefront, and locale. Returns a list of catalog artist resources representing influential predecessors; empty when Apple does not provide influence data."
+    },
+    {
+      "id": "mcp_shazam.getinfluencerof",
+      "name": "getInfluencerOf",
+      "description": "Returns artists who were influenced by a given artist based on Apple Music’s editorial relationships. Accepts artist ID, storefront, and locale. Returns catalog artist resources representing artists inspired by the given one; empty if Apple does not expose such data."
+    },
+    {
+      "id": "mcp_shazam.getbandmembers",
+      "name": "getBandMembers",
+      "description": "Returns individual members of a band or group when Apple Music publishes membership metadata. Accepts an artist ID, storefront, and locale. Returns artist resources representing members, including their own metadata and catalog relationships; empty if no band info exists."
+    }
+  ]
+}

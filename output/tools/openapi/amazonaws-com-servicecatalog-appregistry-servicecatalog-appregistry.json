@@ -1,0 +1,137 @@
+{
+  "fetchedAt": "2026-04-30T15:45:11.509Z",
+  "status": "ok",
+  "count": 26,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.associateAttributeGroup",
+      "name": "applications.associateAttributeGroup",
+      "description": "Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.associateResource",
+      "name": "applications.associateResource",
+      "description": " Associates a resource with an application. The resource can be specified by its ARN or name. The application can be specified by ARN, ID, or name. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.createApplication",
+      "name": "applications.createApplication",
+      "description": "Creates a new application that is the top-level node in a hierarchy of related cloud resource abstractions."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.deleteApplication",
+      "name": "applications.deleteApplication",
+      "description": "Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute groups and resources must be disassociated from it before deleting an application."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.disassociateAttributeGroup",
+      "name": "applications.disassociateAttributeGroup",
+      "description": "Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.disassociateResource",
+      "name": "applications.disassociateResource",
+      "description": "Disassociates a resource from application. Both the resource and the application can be specified either by ID or name."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.getApplication",
+      "name": "applications.getApplication",
+      "description": " Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.getAssociatedResource",
+      "name": "applications.getAssociatedResource",
+      "description": "Gets the resource associated with the application."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.listApplications",
+      "name": "applications.listApplications",
+      "description": "Retrieves a list of all of your applications. Results are paginated."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.listAssociatedAttributeGroups",
+      "name": "applications.listAssociatedAttributeGroups",
+      "description": "Lists all attribute groups that are associated with specified application. Results are paginated."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.listAssociatedResources",
+      "name": "applications.listAssociatedResources",
+      "description": "<p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note> <p> If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API. </p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.listAttributeGroupsForApplication",
+      "name": "applications.listAttributeGroupsForApplication",
+      "description": "Lists the details of all attribute groups associated with a specific application. The results display in pages."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.applications.updateApplication",
+      "name": "applications.updateApplication",
+      "description": "Updates an existing application with new attributes."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.attributeGroups.createAttributeGroup",
+      "name": "attributeGroups.createAttributeGroup",
+      "description": "Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application's metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.attributeGroups.deleteAttributeGroup",
+      "name": "attributeGroups.deleteAttributeGroup",
+      "description": "Deletes an attribute group, specified either by its attribute group ID, name, or ARN."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.attributeGroups.getAttributeGroup",
+      "name": "attributeGroups.getAttributeGroup",
+      "description": " Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.attributeGroups.listAttributeGroups",
+      "name": "attributeGroups.listAttributeGroups",
+      "description": "Lists all attribute groups which you have access to. Results are paginated."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.attributeGroups.updateAttributeGroup",
+      "name": "attributeGroups.updateAttributeGroup",
+      "description": "Updates an existing attribute group with new details. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.configuration.getConfiguration",
+      "name": "configuration.getConfiguration",
+      "description": " Retrieves a <code>TagKey</code> configuration from an account. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.configuration.putConfiguration",
+      "name": "configuration.putConfiguration",
+      "description": " Associates a <code>TagKey</code> configuration to an account. "
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.sync.syncResource",
+      "name": "sync.syncResource",
+      "description": "<p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Lists all of the tags on the resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "<p>Assigns one or more tags (key-value pairs) to the specified resource.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p> <p>This operation returns an empty response if the call was successful.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_servicecatalog_appregistry_servicecatalog_appregistry.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "<p>Removes tags from a resource.</p> <p>This operation returns an empty response if the call was successful.</p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

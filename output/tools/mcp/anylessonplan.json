@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:17.803Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_anylessonplan.display_lesson_plan",
+      "name": "display-lesson-plan",
+      "description": "Use to render a complete lesson plan inside the lesson-plan widget whenever the user wants a plan displayed in a polished teacher-friendly interface instead of plain prose. This tool is appropriate after you have already generated or revised the lesson plan content and can supply it as structured data. Call it for brand-new lesson plans, for updates to a plan discussed earlier in the conversation, and for cases where the user wants something they can read clearly, tweak manually in the widget, and export as a PDF. Provide the full lessonPlan object that you want the user to see, including any known class, subject, topic, title, learning objectives, materials, stages, and assessment details. The widget is especially useful when the user asks for a lesson plan for a specific year group, class age, topic, or subject and would benefit from a structured view rather than a paragraph response.\n\nThe lesson-plan widget shows all major lesson fields in dedicated sections, keeps empty fields visible so the user can complete them later, supports in-place editing after the tool returns, offers display-mode controls, and lets the user export the current plan to PDF. Because of that, prefer this tool when the goal is an actionable lesson-plan artifact the teacher can work from. It is also the right choice when the user pastes or references an existing plan and asks for changes, because you can apply the revisions and then show the updated structured plan in the same surface.\n\nDo not call this tool if the user explicitly asks for plain text only, explicitly asks you not to use tools, or if you do not yet have enough information to construct at least the required main lesson stage. Do not use it for general teaching advice, brainstorming that has not yet produced a concrete lesson plan, or unrelated educational discussion. This tool is read-only from the server perspective: it does not publish, send, or permanently save the plan. It simply returns the supplied lessonPlan unchanged as structured widget data and includes a timestamp for the widget session."
+    }
+  ]
+}

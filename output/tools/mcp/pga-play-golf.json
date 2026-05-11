@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:22:01.157Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_pga_play_golf.search_golf_coaches",
+      "name": "search_golf_coaches",
+      "description": "Search for qualified PGA golf coaches listed on pga.com/coach in the specified location (required).\nUse this tool when the user asks to find, browse, or compare coaches in a location.\nIf the user asks for availability for a specific coach, use `get_golf_coach_availability` instead.\nInternal record identifiers (for example coach `slug` and offering `id`) are for tool calls only and must never be shown or mentioned to the user.\n- Search results include the coach's profile information, offerings, and pricing.\n- Results are ordered by proximity to the search location, so list them to the user in this order.\n- Results are paginated, so use the pagination cursor provided at the end of the response to retrieve the next page of results."
+    },
+    {
+      "id": "mcp_pga_play_golf.get_golf_coach_availability",
+      "name": "get_golf_coach_availability",
+      "description": "Retrieve offering details and available lesson times for one specific coach.\nUse this when the user asks for schedule, openings, or available times for a known coach.\nIf the user has not selected a coach yet, call `search_golf_coaches` first.\nCoach `slug` and offering `id` values are internal identifiers and must never be shown or mentioned to the user."
+    },
+    {
+      "id": "mcp_pga_play_golf.book_golf_lesson",
+      "name": "book_golf_lesson",
+      "description": "Request to book a golf lesson for a specific coach's offering.\n- `offeringId` is an internal identifier; never show or mention it to the user.\n- A continuation URL will be returned that you can direct the user to after calling this tool.\n- If the offering was booked automatically (e.g., free lesson or no prepayment required), the confirmation code will also be included."
+    }
+  ]
+}

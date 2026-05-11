@@ -1,0 +1,132 @@
+{
+  "fetchedAt": "2026-04-30T15:22:31.422Z",
+  "status": "ok",
+  "count": 25,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersConfigurationsCreate",
+      "name": "customers.androiddeviceprovisioningCustomersConfigurationsCreate",
+      "description": "Creates a new configuration. Once created, a customer can apply the configuration to devices."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersConfigurationsDelete",
+      "name": "customers.androiddeviceprovisioningCustomersConfigurationsDelete",
+      "description": "Deletes an unused configuration. The API call fails if the customer has devices with the configuration applied."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersConfigurationsList",
+      "name": "customers.androiddeviceprovisioningCustomersConfigurationsList",
+      "description": "Lists a customer's configurations."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersConfigurationsPatch",
+      "name": "customers.androiddeviceprovisioningCustomersConfigurationsPatch",
+      "description": "Updates a configuration's field values."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersDevicesApplyConfiguration",
+      "name": "customers.androiddeviceprovisioningCustomersDevicesApplyConfiguration",
+      "description": "Applies a Configuration to the device to register the device for zero-touch enrollment. After applying a configuration to a device, the device automatically provisions itself on first boot, or next factory reset."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersDevicesList",
+      "name": "customers.androiddeviceprovisioningCustomersDevicesList",
+      "description": "Lists a customer's devices."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersDevicesRemoveConfiguration",
+      "name": "customers.androiddeviceprovisioningCustomersDevicesRemoveConfiguration",
+      "description": "Removes a configuration from device."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersDevicesUnclaim",
+      "name": "customers.androiddeviceprovisioningCustomersDevicesUnclaim",
+      "description": "Unclaims a device from a customer and removes it from zero-touch enrollment. After removing a device, a customer must contact their reseller to register the device into zero-touch enrollment again."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersDpcsList",
+      "name": "customers.androiddeviceprovisioningCustomersDpcsList",
+      "description": "Lists the DPCs (device policy controllers) that support zero-touch enrollment."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.customers.androiddeviceprovisioningCustomersList",
+      "name": "customers.androiddeviceprovisioningCustomersList",
+      "description": "Lists the user's customer accounts."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersCustomersCreate",
+      "name": "partners.androiddeviceprovisioningPartnersCustomersCreate",
+      "description": "Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The customer receives an email that welcomes them to zero-touch enrollment and explains how to sign into the portal."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersCustomersList",
+      "name": "partners.androiddeviceprovisioningPartnersCustomersList",
+      "description": "Lists the customers that are enrolled to the reseller identified by the `partnerId` argument. This list includes customers that the reseller created and customers that enrolled themselves using the portal."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesClaim",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesClaim",
+      "description": "Claims a device for a customer and adds it to zero-touch enrollment. If the device is already claimed by another customer, the call returns an error."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesClaimAsync",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesClaimAsync",
+      "description": "Claims a batch of devices for a customer asynchronously. Adds the devices to zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations)."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesFindByIdentifier",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesFindByIdentifier",
+      "description": "Finds devices by hardware identifiers, such as IMEI."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesFindByOwner",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesFindByOwner",
+      "description": "Finds devices claimed for customers. The results only contain devices registered to the reseller that's identified by the `partnerId` argument. The customer's devices purchased from other resellers don't appear in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesGet",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesGet",
+      "description": "Gets a device."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesMetadata",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesMetadata",
+      "description": "Updates reseller metadata associated with the device. Android devices only."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesUnclaim",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesUnclaim",
+      "description": "Unclaims a device from a customer and removes it from zero-touch enrollment."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesUnclaimAsync",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesUnclaimAsync",
+      "description": "Unclaims a batch of devices for a customer asynchronously. Removes the devices from zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations)."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersDevicesUpdateMetadataAsync",
+      "name": "partners.androiddeviceprovisioningPartnersDevicesUpdateMetadataAsync",
+      "description": "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersVendorsCustomersList",
+      "name": "partners.androiddeviceprovisioningPartnersVendorsCustomersList",
+      "description": "Lists the customers of the vendor."
+    },
+    {
+      "id": "openapi_googleapis_com_androiddeviceprovisioning_androiddeviceprovisioning.partners.androiddeviceprovisioningPartnersVendorsList",
+      "name": "partners.androiddeviceprovisioningPartnersVendorsList",
+      "description": "Lists the vendors of the partner."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

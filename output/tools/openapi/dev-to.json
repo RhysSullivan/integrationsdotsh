@@ -1,0 +1,217 @@
+{
+  "fetchedAt": "2026-04-30T15:22:10.737Z",
+  "status": "ok",
+  "count": 42,
+  "tools": [
+    {
+      "id": "openapi_dev_to.articles.createArticle",
+      "name": "articles.createArticle",
+      "description": "This endpoint allows the client to create a new article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+    },
+    {
+      "id": "openapi_dev_to.articles.getArticleById",
+      "name": "articles.getArticleById",
+      "description": "This endpoint allows the client to retrieve a single published article given its `id`."
+    },
+    {
+      "id": "openapi_dev_to.articles.getArticleByPath",
+      "name": "articles.getArticleByPath",
+      "description": "This endpoint allows the client to retrieve a single published article given its `path`."
+    },
+    {
+      "id": "openapi_dev_to.articles.getArticles",
+      "name": "articles.getArticles",
+      "description": "This endpoint allows the client to retrieve a list of articles.\n\n\"Articles\" are all the posts that users create on DEV that typically\nshow up in the feed. They can be a blog post, a discussion question,\na help thread etc. but is referred to as article within the code.\n\nBy default it will return featured, published articles ordered\nby descending popularity.\n\nIt supports pagination, each page will contain `30` articles by default."
+    },
+    {
+      "id": "openapi_dev_to.articles.getLatestArticles",
+      "name": "articles.getLatestArticles",
+      "description": "This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.\n\nIt supports pagination, each page will contain 30 articles by default."
+    },
+    {
+      "id": "openapi_dev_to.articles.getUserAllArticles",
+      "name": "articles.getUserAllArticles",
+      "description": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nIt will return both published and unpublished articles with pagination.\n\nUnpublished articles will be at the top of the list in reverse chronological creation order. Published articles will follow in reverse chronological publication order.\n\nBy default a page will contain 30 articles."
+    },
+    {
+      "id": "openapi_dev_to.articles.getUserArticles",
+      "name": "articles.getUserArticles",
+      "description": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+    },
+    {
+      "id": "openapi_dev_to.articles.getUserPublishedArticles",
+      "name": "articles.getUserPublishedArticles",
+      "description": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+    },
+    {
+      "id": "openapi_dev_to.articles.getUserUnpublishedArticles",
+      "name": "articles.getUserUnpublishedArticles",
+      "description": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nUnpublished articles will be in reverse chronological creation order.\n\nIt will return unpublished articles with pagination. By default a page will contain 30 articles."
+    },
+    {
+      "id": "openapi_dev_to.articles.unpublishArticle",
+      "name": "articles.unpublishArticle",
+      "description": "This endpoint allows the client to unpublish an article.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThe article will be unpublished and will no longer be visible to the public. It will remain\nin the database and will set back to draft status on the author's posts dashboard. Any\nnotifications associated with the article will be deleted. Any comments on the article\nwill remain."
+    },
+    {
+      "id": "openapi_dev_to.articles.updateArticle",
+      "name": "articles.updateArticle",
+      "description": "This endpoint allows the client to update an existing article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+    },
+    {
+      "id": "openapi_dev_to.comments.getCommentById",
+      "name": "comments.getCommentById",
+      "description": "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details."
+    },
+    {
+      "id": "openapi_dev_to.comments.getCommentsByArticleId",
+      "name": "comments.getCommentsByArticleId",
+      "description": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.\n\nIt will return the all top level comments with their nested comments as threads. See the format specification for further details."
+    },
+    {
+      "id": "openapi_dev_to.displayAds.getApiDisplayAds",
+      "name": "displayAds.getApiDisplayAds",
+      "description": "This endpoint allows the client to retrieve a list of all display ads."
+    },
+    {
+      "id": "openapi_dev_to.displayAds.getApiDisplayAdsId",
+      "name": "displayAds.getApiDisplayAdsId",
+      "description": "This endpoint allows the client to retrieve a single display ad, via its id."
+    },
+    {
+      "id": "openapi_dev_to.displayAds.postApiDisplayAds",
+      "name": "displayAds.postApiDisplayAds",
+      "description": "This endpoint allows the client to create a new display ad."
+    },
+    {
+      "id": "openapi_dev_to.displayAds.putApiDisplayAdsId",
+      "name": "displayAds.putApiDisplayAdsId",
+      "description": "This endpoint allows the client to update the attributes of a single display ad, via its id."
+    },
+    {
+      "id": "openapi_dev_to.displayAds.putApiDisplayAdsIdUnpublish",
+      "name": "displayAds.putApiDisplayAdsIdUnpublish",
+      "description": "This endpoint allows the client to remove a display ad from rotation by un-publishing it."
+    },
+    {
+      "id": "openapi_dev_to.followedTags.getFollowedTags",
+      "name": "followedTags.getFollowedTags",
+      "description": "This endpoint allows the client to retrieve a list of the tags they follow."
+    },
+    {
+      "id": "openapi_dev_to.followers.getFollowers",
+      "name": "followers.getFollowers",
+      "description": "This endpoint allows the client to retrieve a list of the followers they have.\n        \"Followers\" are users that are following other users on the website.\n        It supports pagination, each page will contain 80 followers by default."
+    },
+    {
+      "id": "openapi_dev_to.organizations.getOrganization",
+      "name": "organizations.getOrganization",
+      "description": "This endpoint allows the client to retrieve a single organization by their username"
+    },
+    {
+      "id": "openapi_dev_to.organizations.getOrgArticles",
+      "name": "organizations.getOrgArticles",
+      "description": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+    },
+    {
+      "id": "openapi_dev_to.organizations.getOrgUsers",
+      "name": "organizations.getOrgUsers",
+      "description": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+    },
+    {
+      "id": "openapi_dev_to.pages.deleteApiPagesId",
+      "name": "pages.deleteApiPagesId",
+      "description": "This endpoint allows the client to delete a single Page object, specified by ID."
+    },
+    {
+      "id": "openapi_dev_to.pages.getApiPages",
+      "name": "pages.getApiPages",
+      "description": "This endpoint allows the client to retrieve details for all Page objects."
+    },
+    {
+      "id": "openapi_dev_to.pages.getApiPagesId",
+      "name": "pages.getApiPagesId",
+      "description": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+    },
+    {
+      "id": "openapi_dev_to.pages.postApiPages",
+      "name": "pages.postApiPages",
+      "description": "This endpoint allows the client to create a new page."
+    },
+    {
+      "id": "openapi_dev_to.pages.putApiPagesId",
+      "name": "pages.putApiPagesId",
+      "description": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+    },
+    {
+      "id": "openapi_dev_to.podcastEpisodes.getPodcastEpisodes",
+      "name": "podcastEpisodes.getPodcastEpisodes",
+      "description": "This endpoint allows the client to retrieve a list of podcast episodes.\n        \"Podcast episodes\" are episodes belonging to podcasts.\n        It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.\n        It supports pagination, each page will contain 30 articles by default."
+    },
+    {
+      "id": "openapi_dev_to.profileImages.getProfileImage",
+      "name": "profileImages.getProfileImage",
+      "description": "This endpoint allows the client to retrieve a user or organization profile image information by its\n        corresponding username."
+    },
+    {
+      "id": "openapi_dev_to.reactions.postApiReactions",
+      "name": "reactions.postApiReactions",
+      "description": "This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will return the previous \"like\""
+    },
+    {
+      "id": "openapi_dev_to.reactions.postApiReactionsToggle",
+      "name": "reactions.postApiReactionsToggle",
+      "description": "This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will remove the \"like\" from the user"
+    },
+    {
+      "id": "openapi_dev_to.readinglist.getReadinglist",
+      "name": "readinglist.getReadinglist",
+      "description": "This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.\n        It supports pagination, each page will contain `30` articles by default"
+    },
+    {
+      "id": "openapi_dev_to.tags.getTags",
+      "name": "tags.getTags",
+      "description": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.\n\nIt will return tags ordered by popularity.\n\nIt supports pagination, each page will contain 10 tags by default."
+    },
+    {
+      "id": "openapi_dev_to.users.getUser",
+      "name": "users.getUser",
+      "description": "This endpoint allows the client to retrieve a single user, either by id\nor by the user's username.\n\nFor complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser"
+    },
+    {
+      "id": "openapi_dev_to.users.getUserMe",
+      "name": "users.getUserMe",
+      "description": "This endpoint allows the client to retrieve information about the authenticated user"
+    },
+    {
+      "id": "openapi_dev_to.users.postAdminUsersCreate",
+      "name": "users.postAdminUsersCreate",
+      "description": "This endpoint allows the client to trigger an invitation to the provided email address.\n\n        It requires a token from a user with `super_admin` privileges."
+    },
+    {
+      "id": "openapi_dev_to.users.suspendUser",
+      "name": "users.suspendUser",
+      "description": "This endpoint allows the client to suspend a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user will be assigned the 'suspended' role. Suspending a user will stop the\nuser from posting new posts and comments. It doesn't delete any of the user's content, just\nprevents them from creating new content while suspended. Users are not notified of their suspension\nin the UI, so if you want them to know about this, you must notify them."
+    },
+    {
+      "id": "openapi_dev_to.users.unpublishUser",
+      "name": "users.unpublishUser",
+      "description": "This endpoint allows the client to unpublish all of the articles and\ncomments created by a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user's articles and comments will be unpublished and will no longer be\nvisible to the public. They will remain in the database and will set back to draft status\non the specified user's  dashboard. Any notifications associated with the specified user's\narticles and comments will be deleted.\n\nNote this endpoint unpublishes articles and comments asychronously: it will return a 204 NO CONTENT\nstatus code immediately, but the articles and comments will not be unpublished until the\nrequest is completed on the server."
+    },
+    {
+      "id": "openapi_dev_to.videos.getOperation",
+      "name": "videos.getOperation",
+      "description": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

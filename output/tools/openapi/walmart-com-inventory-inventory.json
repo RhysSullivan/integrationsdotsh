@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:26:56.541Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.getInventory",
+      "name": "inventory.getInventory",
+      "description": "You can use this API to get the inventory for a given item."
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.getMultiNodeInventoryForAllSkuAndAllShipNodes",
+      "name": "inventory.getMultiNodeInventoryForAllSkuAndAllShipNodes",
+      "description": "This API will retrieve the inventory count for all of a seller's items across all ship nodes by item to ship node mapping. Inventory can be zero or non-zero. Please note that NextCursor value changes and it needs to be passed on from the previous call to next call."
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.getMultiNodeInventoryForSkuAndAllShipnodes",
+      "name": "inventory.getMultiNodeInventoryForSkuAndAllShipnodes",
+      "description": "This API will retrieve the inventory count for an item across all ship nodes or one specific ship node. You can specify the ship node for which you want to fetch the inventory"
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.getWfsInventory",
+      "name": "inventory.getWfsInventory",
+      "description": "You can use this API to get the current Available to Sell inventory quantities for all WFS items in your catalog. You can also query specific SKUs or filter to only items updated after a specific date in order to reduce the response size."
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.updateBulkInventory",
+      "name": "inventory.updateBulkInventory",
+      "description": "Updates inventory for items in bulk. \nSeller Can either use feed type \"inventory\" or \"MP_INVENTORY\" \n* Inventory spec 1.4 feed type: inventory \n* Inventory spec 1.5 feed type: MP_INVENTORY \n\nPlease Note: Multi Node Inventory Update Feed (feedType=MP_INVENTORY) only supports JSON Request and Responses. Refer to \"MultiNode_Bulk_Inventory_Update_Request.json\" for the corresponding request sample \n \nRefer to the <a href=\"https://developer.walmart.com/doc/us/us-mp/us-mp-inventory/\">guide section</a> for more detailed guide around each of the feed types \n\n Refer to the throttling limits before uploading the Feed Files."
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.updateInventoryForAnItem",
+      "name": "inventory.updateInventoryForAnItem",
+      "description": "Updates the inventory for a given item."
+    },
+    {
+      "id": "openapi_walmart_com_inventory_inventory.inventory.updateMultiNodeInventory",
+      "name": "inventory.updateMultiNodeInventory",
+      "description": "This API will update the inventory for an item across one or more fulfillment centers, known as ship nodes."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

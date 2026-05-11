@@ -1,0 +1,232 @@
+{
+  "fetchedAt": "2026-04-30T15:22:34.661Z",
+  "status": "ok",
+  "count": 45,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.debug.cloudsearchDebugDatasourcesItemsCheckAccess",
+      "name": "debug.cloudsearchDebugDatasourcesItemsCheckAccess",
+      "description": "Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.debug.cloudsearchDebugDatasourcesItemsSearchByViewUrl",
+      "name": "debug.cloudsearchDebugDatasourcesItemsSearchByViewUrl",
+      "description": "Fetches the item whose viewUrl exactly matches that of the URL provided in the request. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.debug.cloudsearchDebugIdentitysourcesItemsListForunmappedidentity",
+      "name": "debug.cloudsearchDebugIdentitysourcesItemsListForunmappedidentity",
+      "description": "Lists names of items associated with an unmapped identity. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.debug.cloudsearchDebugIdentitysourcesUnmappedidsList",
+      "name": "debug.cloudsearchDebugIdentitysourcesUnmappedidsList",
+      "description": "Lists unmapped user identities for an identity source. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesDeleteSchema",
+      "name": "indexing.cloudsearchIndexingDatasourcesDeleteSchema",
+      "description": "Deletes the schema of a data source. **Note:** This API requires an admin or service account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesGetSchema",
+      "name": "indexing.cloudsearchIndexingDatasourcesGetSchema",
+      "description": "Gets the schema of a data source. **Note:** This API requires an admin or service account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsDelete",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsDelete",
+      "description": "Deletes Item resource for the specified resource name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsDeleteQueueItems",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsDeleteQueueItems",
+      "description": "Deletes all items in a queue. This method is useful for deleting stale items. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsGet",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsGet",
+      "description": "Gets Item resource by item name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsIndex",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsIndex",
+      "description": "Updates Item ACL, metadata, and content. It will insert the Item if it does not exist. This method does not support partial updates. Fields with no provided values are cleared out in the Cloud Search index. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsList",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsList",
+      "description": "Lists all or a subset of Item resources. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsPoll",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsPoll",
+      "description": "Polls for unreserved items from the indexing queue and marks a set as reserved, starting with items that have the oldest timestamp from the highest priority ItemStatus. The priority order is as follows: ERROR MODIFIED NEW_ITEM ACCEPTED Reserving items ensures that polling from other threads cannot create overlapping sets. After handling the reserved items, the client should put items back into the unreserved state, either by calling index, or by calling push with the type REQUEUE. Items automatically become available (unreserved) after 4 hours even if no update or push method is called. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsPush",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsPush",
+      "description": "Pushes an item onto a queue for later polling and updating. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsUnreserve",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsUnreserve",
+      "description": "Unreserves all items from a queue, making them all eligible to be polled. This method is useful for resetting the indexing queue after a connector has been restarted. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesItemsUpload",
+      "name": "indexing.cloudsearchIndexingDatasourcesItemsUpload",
+      "description": "Creates an upload session for uploading item content. For items smaller than 100 KB, it's easier to embed the content inline within an index request. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.indexing.cloudsearchIndexingDatasourcesUpdateSchema",
+      "name": "indexing.cloudsearchIndexingDatasourcesUpdateSchema",
+      "description": "Updates the schema of a data source. This method does not perform incremental updates to the schema. Instead, this method updates the schema by overwriting the entire schema. **Note:** This API requires an admin or service account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.media.cloudsearchMediaUpload",
+      "name": "media.cloudsearchMediaUpload",
+      "description": "Uploads media for indexing. The upload endpoint supports direct and resumable upload protocols and is intended for large items that can not be [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent). To index large content: 1. Call indexing.datasources.items.upload with the item name to begin an upload session and retrieve the UploadItemRef. 1. Call media.upload to upload the content, as a streaming request, using the same resource name from the UploadItemRef from step 1. 1. Call indexing.datasources.items.index to index the item. Populate the [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent) with the UploadItemRef from step 1. For additional information, see [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest). **Note:** This API requires a service account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.operations.cloudsearchOperationsGet",
+      "name": "operations.cloudsearchOperationsGet",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.operations.cloudsearchOperationsLroList",
+      "name": "operations.cloudsearchOperationsLroList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.query.cloudsearchQuerySearch",
+      "name": "query.cloudsearchQuerySearch",
+      "description": "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from Google Workspace apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.query.cloudsearchQuerySourcesList",
+      "name": "query.cloudsearchQuerySourcesList",
+      "description": "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.query.cloudsearchQuerySuggest",
+      "name": "query.cloudsearchQuerySuggest",
+      "description": "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/)."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsDatasourcesCreate",
+      "name": "settings.cloudsearchSettingsDatasourcesCreate",
+      "description": "Creates a datasource. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsDatasourcesList",
+      "name": "settings.cloudsearchSettingsDatasourcesList",
+      "description": "Lists datasources. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsGetCustomer",
+      "name": "settings.cloudsearchSettingsGetCustomer",
+      "description": "Get customer settings. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsCreate",
+      "name": "settings.cloudsearchSettingsSearchapplicationsCreate",
+      "description": "Creates a search application. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsDelete",
+      "name": "settings.cloudsearchSettingsSearchapplicationsDelete",
+      "description": "Deletes a search application. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsGet",
+      "name": "settings.cloudsearchSettingsSearchapplicationsGet",
+      "description": "Gets the specified search application. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsList",
+      "name": "settings.cloudsearchSettingsSearchapplicationsList",
+      "description": "Lists all search applications. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsPatch",
+      "name": "settings.cloudsearchSettingsSearchapplicationsPatch",
+      "description": "Updates a search application. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsReset",
+      "name": "settings.cloudsearchSettingsSearchapplicationsReset",
+      "description": "Resets a search application to default settings. This will return an empty response. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsSearchapplicationsUpdate",
+      "name": "settings.cloudsearchSettingsSearchapplicationsUpdate",
+      "description": "Updates a search application. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.settings.cloudsearchSettingsUpdateCustomer",
+      "name": "settings.cloudsearchSettingsUpdateCustomer",
+      "description": "Update customer settings. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsGetIndex",
+      "name": "stats.cloudsearchStatsGetIndex",
+      "description": "Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn't return statistics for the current day. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsGetQuery",
+      "name": "stats.cloudsearchStatsGetQuery",
+      "description": "Get the query statistics for customer. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsGetSearchapplication",
+      "name": "stats.cloudsearchStatsGetSearchapplication",
+      "description": "Get search application stats for customer. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsGetSession",
+      "name": "stats.cloudsearchStatsGetSession",
+      "description": "Get the # of search sessions, % of successful sessions with a click query statistics for customer. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsGetUser",
+      "name": "stats.cloudsearchStatsGetUser",
+      "description": "Get the users statistics for customer. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsIndexDatasourcesGet",
+      "name": "stats.cloudsearchStatsIndexDatasourcesGet",
+      "description": "Gets indexed item statistics for a single data source. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsQuerySearchapplicationsGet",
+      "name": "stats.cloudsearchStatsQuerySearchapplicationsGet",
+      "description": "Get the query statistics for search application. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsSessionSearchapplicationsGet",
+      "name": "stats.cloudsearchStatsSessionSearchapplicationsGet",
+      "description": "Get the # of search sessions, % of successful sessions with a click query statistics for search application. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.stats.cloudsearchStatsUserSearchapplicationsGet",
+      "name": "stats.cloudsearchStatsUserSearchapplicationsGet",
+      "description": "Get the users statistics for search application. **Note:** This API requires a standard end user account to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudsearch_cloudsearch.v1.cloudsearchInitializeCustomer",
+      "name": "v1.cloudsearchInitializeCustomer",
+      "description": "Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

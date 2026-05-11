@@ -1,0 +1,627 @@
+{
+  "fetchedAt": "2026-04-30T15:22:06.575Z",
+  "status": "ok",
+  "count": 124,
+  "tools": [
+    {
+      "id": "openapi_callfire_com.calls.addCallBroadcastBatch",
+      "name": "calls.addCallBroadcastBatch",
+      "description": "The 'add batch' API allows user to add additional batches to an already created voice broadcast campaign. The added batch will go through the CallFire validation process, unlike in the recipients version of this API. That is why you can use the scrubDuplicates flag to remove duplicates from your batch. Batches may be added as a contact list id, a list of contact ids, or a list of numbers"
+    },
+    {
+      "id": "openapi_callfire_com.calls.addCallBroadcastRecipients",
+      "name": "calls.addCallBroadcastRecipients",
+      "description": "Use this API to add the recipients to an existing voice broadcast. Post a list of Recipient objects to be added to the voice broadcast campaign. These contacts will not go through validation process, and will be acted upon as they are added. Recipients may be added as a list of contact ids, or list of numbers"
+    },
+    {
+      "id": "openapi_callfire_com.calls.archiveVoiceBroadcast",
+      "name": "calls.archiveVoiceBroadcast",
+      "description": "Archives a voice broadcast (voice broadcast will be hidden in search results)"
+    },
+    {
+      "id": "openapi_callfire_com.calls.createCallBroadcast",
+      "name": "calls.createCallBroadcast",
+      "description": "Creates a call broadcast campaign using the Call Broadcast API. Send a CallBroadcast in the message body to add details in a voice broadcast campaign. The campaign can be created without contacts and bare minimum configuration, but contacts will have to be added further on to use the campaign"
+    },
+    {
+      "id": "openapi_callfire_com.calls.findCallBroadcasts",
+      "name": "calls.findCallBroadcasts",
+      "description": "Searches for all voice broadcasts created by user. Can query on label, name, and the current running status of the campaign. Returns a paged list of voice broadcasts"
+    },
+    {
+      "id": "openapi_callfire_com.calls.findCalls",
+      "name": "calls.findCalls",
+      "description": "To search for all calls sent or received by the user. Use \"id=0\" for the campaignId parameter to query for all calls sent through the POST /calls API. See [call states and results](https://developers.callfire.com/results-responses-errors.html)"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCall",
+      "name": "calls.getCall",
+      "description": "Returns a single Call instance for a given call id."
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallBroadcast",
+      "name": "calls.getCallBroadcast",
+      "description": "Returns a single CallBroadcast instance for a given call broadcast campaign id"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallBroadcastBatches",
+      "name": "calls.getCallBroadcastBatches",
+      "description": "This endpoint will enable the user to page through all of the batches for a particular voice broadcast campaign"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallBroadcastCalls",
+      "name": "calls.getCallBroadcastCalls",
+      "description": "This endpoint will enable the user to page through all calls for a particular call broadcast campaign"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallBroadcastStats",
+      "name": "calls.getCallBroadcastStats",
+      "description": "Returns broadcast statistics like total number of sent/received actions, total cost, number of remaining outbound actions, error count, etc"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallRecording",
+      "name": "calls.getCallRecording",
+      "description": "Returns metadata of recording of a particular call. Metadata contains a link to a MP3 recording"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallRecordingByName",
+      "name": "calls.getCallRecordingByName",
+      "description": "Returns recording metadata of particular call. Metadata contains link to a MP3 recording"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallRecordingMp3",
+      "name": "calls.getCallRecordingMp3",
+      "description": "Returns an MP3 recording of particular call, response contains binary data, content type is 'audio/mpeg'"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallRecordingMp3ByName",
+      "name": "calls.getCallRecordingMp3ByName",
+      "description": "Returns a MP3 recording of a particular call, response contains binary data, content type is 'audio/mpeg'"
+    },
+    {
+      "id": "openapi_callfire_com.calls.getCallRecordings",
+      "name": "calls.getCallRecordings",
+      "description": "Returns a list of recordings metadata of particular call. Metadata contains link to a MP3 recording"
+    },
+    {
+      "id": "openapi_callfire_com.calls.sendCalls",
+      "name": "calls.sendCalls",
+      "description": "Use the /calls API to send individual calls quickly. A verified Caller ID and sufficient credits are required to make a call. CallRecipient represents a single recipient identified by phone number or contact id in CallFire system. You can attach user-defined attributes to a Call action via CallRecipient.attributes property, attributes are available in Call action response"
+    },
+    {
+      "id": "openapi_callfire_com.calls.startVoiceBroadcast",
+      "name": "calls.startVoiceBroadcast",
+      "description": "Start a voice broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.calls.stopVoiceBroadcast",
+      "name": "calls.stopVoiceBroadcast",
+      "description": "Stop a voice broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.calls.toggleCallBroadcastRecipientsStatus",
+      "name": "calls.toggleCallBroadcastRecipientsStatus",
+      "description": "This operation lets the user to disable/enable undialed recipients in created broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.calls.updateCallBroadcast",
+      "name": "calls.updateCallBroadcast",
+      "description": "This operation lets the user modify the configuration of a voice broadcast campaign after call broadcast campaign is created. See CallBroadcast for more information on what can/can't be updated on this API"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.deleteCampaignSound",
+      "name": "campaigns.deleteCampaignSound",
+      "description": "Deletes a single campaign sound instance for a specific campaign sound id, this operation does not delete sound completely, it sets sound status to ARCHIVED which means that sound will no longer appear in 'find' operation results, but still accessible via 'get' operation"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.findCampaignSounds",
+      "name": "campaigns.findCampaignSounds",
+      "description": "To find all campaign sounds which were created by user. Returns all sounds available to be used in campaigns"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.getCampaignBatch",
+      "name": "campaigns.getCampaignBatch",
+      "description": "Returns a single Batch instance for a given batch id. This API is useful for determining the state of a validating batch"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.getCampaignSound",
+      "name": "campaigns.getCampaignSound",
+      "description": "Returns a single CampaignSound instance for a given sound id in campaign. This is a meta data to the sounds. No audio data is returned from this API"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.getCampaignSoundDataMp3",
+      "name": "campaigns.getCampaignSoundDataMp3",
+      "description": "Download the MP3 version of a hosted file. This is an audio data endpoint. Returns binary response of the 'audio/mpeg' content type"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.getCampaignSoundDataWav",
+      "name": "campaigns.getCampaignSoundDataWav",
+      "description": "Download the WAV version of the hosted file. This is an audio data endpoint. Returns binary response of the 'audio/mpeg' content type"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.postCallCampaignSound",
+      "name": "campaigns.postCallCampaignSound",
+      "description": "Use this API to create a sound via a phone call. Provide the required phone number in the CallCreateSound object inside the request, and user will receive a call shortly after with instructions on how to record a sound over the phone."
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.postFileCampaignSound",
+      "name": "campaigns.postFileCampaignSound",
+      "description": "Create a campaign sound file via a supplied .mp3 or .wav file"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.postTtsCampaignSound",
+      "name": "campaigns.postTtsCampaignSound",
+      "description": "Use this API to create a sound file via a supplied string of text. Add a text in the TextToSpeech.message field, and pick a voice in the TextToSpeech.voice field. Available voices are: MALE1, FEMALE1, FEMALE2, SPANISH1, FRENCHCANADIAN1"
+    },
+    {
+      "id": "openapi_callfire_com.campaigns.updateCampaignBatch",
+      "name": "campaigns.updateCampaignBatch",
+      "description": "Updates a single Batch instance, currently batch can only be turned \"on/off\""
+    },
+    {
+      "id": "openapi_callfire_com.contacts.addContactListItems",
+      "name": "contacts.addContactListItems",
+      "description": "Adds contacts to a contact list. Available contact sources are: list of the contact entities, list of ids of existing contacts in user's account, list of phone numbers in E.164 format (11-digits)"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.addDoNotContacts",
+      "name": "contacts.addDoNotContacts",
+      "description": "Add or update a list of Do Not Contact (DNC) contact entries. Can toggle whether the DNCs are enabled for calls/texts."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.createContactList",
+      "name": "contacts.createContactList",
+      "description": "Creates a contact list for use with campaigns using 1 of 3 inputs. A List of Contact objects, a list of String E.164 numbers, or a list of CallFire contactIds can be used as the data source for the created contact list. After contact list is added into the CallFire system, contact lists goes through seven system safeguards that check the accuracy and consistency of the data. For example, our system checks that contact number is formatted correctly, is valid, is not duplicated in another contact list, or is not added on a specific DNC list. You can configure to keep/merge or remove contacts which do not complies these rules. If contacts were not added to a contact list after the validation, this means the data needs to be properly formatted and corrected before calling this API"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.createContactListFromFile",
+      "name": "contacts.createContactListFromFile",
+      "description": "Creates a contact list to be used with campaigns through uploading a .csv file. Returns the id of created list"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.createContacts",
+      "name": "contacts.createContacts",
+      "description": "Creates contacts in CallFire system. Only values from the next list can be used as external system parameter in contact creation: **NATION_BUILDER, SALES_FORCE_CONTACTS, SALES_FORCE_LEADS, SALES_FORCE_REPORTS, ZOHO, MAIL_CHIMP**. See [contacts validation rules](https://www.callfire.com/help/docs/getting-started/managing-contacts/validating-contacts#section1)"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.deleteContact",
+      "name": "contacts.deleteContact",
+      "description": "Deletes a contact instance from account"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.deleteContactList",
+      "name": "contacts.deleteContactList",
+      "description": "Deletes a contact list, included contacts will not be deleted."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.deleteDoNotContact",
+      "name": "contacts.deleteDoNotContact",
+      "description": "Delete a Do Not Contact (DNC) contact entry."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.deleteDoNotContactsBySource",
+      "name": "contacts.deleteDoNotContactsBySource",
+      "description": "Delete Do Not Contact (DNC) contact entries contained in source."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.findContactLists",
+      "name": "contacts.findContactLists",
+      "description": "Searches for all contact lists which are available for the current user. Returns a paged list of contact lists"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.findContacts",
+      "name": "contacts.findContacts",
+      "description": "Find user's contacts by id, contact list, or on any property name. Returns a paged list of contacts"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.findDoNotContacts",
+      "name": "contacts.findDoNotContacts",
+      "description": "Searches for all Do Not Contact (DNC) objects created by user. These DoNotContact entries only affect calls/texts/campaigns on this account. Returns a paged list of DoNotContact objects"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getContact",
+      "name": "contacts.getContact",
+      "description": "Returns a Contact instance for a given contact id. Deleted contacts can be still retrieved but will be marked as deleted. Deleted contacts will not be shown in search request."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getContactHistory",
+      "name": "contacts.getContactHistory",
+      "description": "Searches for all texts and calls attributed to a contact. Returns a list of calls and texts a contact has been involved with"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getContactList",
+      "name": "contacts.getContactList",
+      "description": "Returns a single ContactList instance for a given contact list id"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getContactListItems",
+      "name": "contacts.getContactListItems",
+      "description": "Searches for all entries in a contact list with specified id. Returns a paged list of contact entries"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getDoNotContact",
+      "name": "contacts.getDoNotContact",
+      "description": "Get Do Not Contact (DNC) object create by user. This DoNotContact entry only affects calls/texts/campaigns on this account."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.getUniversalDoNotContacts",
+      "name": "contacts.getUniversalDoNotContacts",
+      "description": "Searches for a UniversalDoNotContact object for a given phone number. Shows whether inbound/outbound actions are allowed for a given number"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.removeContactListItem",
+      "name": "contacts.removeContactListItem",
+      "description": "Deletes a single contact from a contact list"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.removeContactListItems",
+      "name": "contacts.removeContactListItems",
+      "description": "Deletes contacts from a contact list. List the contact ids in request to delete multiple contacts with one request."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.updateContact",
+      "name": "contacts.updateContact",
+      "description": "Updates a single contact instance with id specified. See [contact validation rules](https://www.callfire.com/help/docs/getting-started/managing-contacts/validating-contacts#section1)"
+    },
+    {
+      "id": "openapi_callfire_com.contacts.updateContactList",
+      "name": "contacts.updateContactList",
+      "description": "Updates contact list instance."
+    },
+    {
+      "id": "openapi_callfire_com.contacts.updateDoNotContact",
+      "name": "contacts.updateDoNotContact",
+      "description": "Update a Do Not Contact (DNC) contact entry. Can toggle whether the DNC is enabled for calls/texts."
+    },
+    {
+      "id": "openapi_callfire_com.keywords.findKeywordLeaseConfigs",
+      "name": "keywords.findKeywordLeaseConfigs",
+      "description": "Searches for all keyword lease configs for the user. Returns a paged list of KeywordConfig"
+    },
+    {
+      "id": "openapi_callfire_com.keywords.findKeywordLeases",
+      "name": "keywords.findKeywordLeases",
+      "description": "Searches for all keywords owned by user. A keyword lease is the ownership information involving a keyword"
+    },
+    {
+      "id": "openapi_callfire_com.keywords.findKeywords",
+      "name": "keywords.findKeywords",
+      "description": "Searches for all keywords available for purchase on the CallFire platform. If a keyword appears in the response, it is available for purchase. List the 'keywords' in a query parameter to search for multiple keywords (at least one keyword should be sent in request). Keyword should only consist of uppercase and lowercase letters and numbers. Number of characters must be greater than 2, but less than 65."
+    },
+    {
+      "id": "openapi_callfire_com.keywords.getKeywordLease",
+      "name": "keywords.getKeywordLease",
+      "description": "Searches for all keywords owned by user"
+    },
+    {
+      "id": "openapi_callfire_com.keywords.getKeywordLeaseById",
+      "name": "keywords.getKeywordLeaseById",
+      "description": "Get keyword by id"
+    },
+    {
+      "id": "openapi_callfire_com.keywords.getKeywordLeaseConfig",
+      "name": "keywords.getKeywordLeaseConfig",
+      "description": "Returns a single KeywordConfig instance for a given keyword lease"
+    },
+    {
+      "id": "openapi_callfire_com.keywords.isKeywordAvailable",
+      "name": "keywords.isKeywordAvailable",
+      "description": "Searches for the specific keyword to purchase on the CallFire platform. Returns 'true' if keyword is available. Keyword should only consist of uppercase and lowercase letters and numbers. Number of characters must be greater than 2, but less than 65."
+    },
+    {
+      "id": "openapi_callfire_com.keywords.updateKeywordLease",
+      "name": "keywords.updateKeywordLease",
+      "description": "Updates a keyword lease. Turns the autoRenew on/off. Configure double opt in feature. Add/remove contact list from keyword."
+    },
+    {
+      "id": "openapi_callfire_com.keywords.updateKeywordLeaseConfig",
+      "name": "keywords.updateKeywordLeaseConfig",
+      "description": "Updates a keyword lease configuration. Use this API endpoint to enable/disable inbound SMS forwarding, set forward number. Forward number must be in E.164 format)"
+    },
+    {
+      "id": "openapi_callfire_com.me.createApiCredential",
+      "name": "me.createApiCredential",
+      "description": "Creates an API credentials for the CallFire API. This endpoint requires full CallFire account credentials to be used, authenticated using Basic Authentication. At the moment user provides only the name for the credentials. The generated credentials can be used to access any CallFire APIs. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.deleteApiCredential",
+      "name": "me.deleteApiCredential",
+      "description": "Deletes a specified API credential. Currently, removes the ability to access the API. Only ACCOUNT_HOLDER can invoke this API. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.disableApiCredentials",
+      "name": "me.disableApiCredentials",
+      "description": "Disables a specified API credential. Currently, removes the ability to access the API. Only ACCOUNT_HOLDER can invoke this API. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.enableApiCredentials",
+      "name": "me.enableApiCredentials",
+      "description": "Enables a specified API credential. Currently, adds the ability to access the API. Only ACCOUNT_HOLDER can invoke this API. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.findApiCredentials",
+      "name": "me.findApiCredentials",
+      "description": "Searches for all credentials generated by user. Returns a paged list of the API credentials. Only ACCOUNT_HOLDER can invoke this API. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.getAccount",
+      "name": "me.getAccount",
+      "description": "Searches for the user account details. Details include name, email, and basic account permissions. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.getApiCredential",
+      "name": "me.getApiCredential",
+      "description": "Returns an API credential instance for a given api credential id. Only ACCOUNT_HOLDER can invoke this API. For authentication use account credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.getBillingPlanUsage",
+      "name": "me.getBillingPlanUsage",
+      "description": "Searches for the data of a billing plan usage for the user. Returns the data of a billing plan usage for the current month. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.getCallerIds",
+      "name": "me.getCallerIds",
+      "description": "Returns a list of verified caller ids. If the number is not shown in the list, then it is not verified. In this case sending of a verification code is required. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.getCreditUsage",
+      "name": "me.getCreditUsage",
+      "description": "Find credit usage for the user. Returns credits usage for time period specified or if unspecified then total for all time. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.sendVerificationCodeToCallerId",
+      "name": "me.sendVerificationCodeToCallerId",
+      "description": "Generates and sends a verification code to the phone number provided in the path. The verification code is delivered via a phone call. This code needs to be submitted to the verify caller id API endpoint to complete verification. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.me.verifyCallerId",
+      "name": "me.verifyCallerId",
+      "description": "With the verification code received from the Create caller id endpoint, a call to this endpoint is required to finish verification. For authentication use api credentials."
+    },
+    {
+      "id": "openapi_callfire_com.media.createMedia",
+      "name": "media.createMedia",
+      "description": "Uploads media file to account, acceptable media formats: bmp, gif, jpg, m4a, mp3, mp4, png, wav"
+    },
+    {
+      "id": "openapi_callfire_com.media.findMedia",
+      "name": "media.findMedia",
+      "description": "Find media files created by user"
+    },
+    {
+      "id": "openapi_callfire_com.media.getMedia",
+      "name": "media.getMedia",
+      "description": "Get media resource by id"
+    },
+    {
+      "id": "openapi_callfire_com.media.getMediaData",
+      "name": "media.getMediaData",
+      "description": "Download a media file. Available types of files: bmp, gif, jpg, m4a, mp3, mp4, png, wav. Content type in response depends on 'extension' parameter, e.g. image/jpeg, image/png, audio/mp3, etc"
+    },
+    {
+      "id": "openapi_callfire_com.media.getMediaDataBinary",
+      "name": "media.getMediaDataBinary",
+      "description": "Download a MP3 media, endpoint returns application/binary content-type"
+    },
+    {
+      "id": "openapi_callfire_com.media.getMediaDataByKey",
+      "name": "media.getMediaDataByKey",
+      "description": "Download a media file. Available types of files: bmp, gif, jpg, m4a, mp3, mp4, png, wav. Content type in response depends on 'extension' parameter, e.g. image/jpeg, image/png, audio/mp3, etc"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.findNumberLeaseConfigs",
+      "name": "numbers.findNumberLeaseConfigs",
+      "description": "Searches for all number lease configs for the user. Returns a paged list of NumberConfig"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.findNumberLeases",
+      "name": "numbers.findNumberLeases",
+      "description": "Searches for all numbers leased by account user. This API is useful for finding all numbers currently owned by the user. Returns a paged list of number leases."
+    },
+    {
+      "id": "openapi_callfire_com.numbers.findNumberRegions",
+      "name": "numbers.findNumberRegions",
+      "description": "Searches for region information. Use this API to obtain detailed region information that can be used to query for more specific phone numbers than a general query."
+    },
+    {
+      "id": "openapi_callfire_com.numbers.findNumbersLocal",
+      "name": "numbers.findNumbersLocal",
+      "description": "Searches for numbers available for purchase in CallFire local numbers catalog . At least one additional parameter is required. User may filter local numbers by their region information. If all numbers with desirable zip code is already busy search will return available numbers with nearest zip code."
+    },
+    {
+      "id": "openapi_callfire_com.numbers.findNumbersTollfree",
+      "name": "numbers.findNumbersTollfree",
+      "description": "Searches for the toll free numbers which are available for purchase in the CallFire catalog"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.getNumberLease",
+      "name": "numbers.getNumberLease",
+      "description": "Returns a single NumberLease instance for a given number"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.getNumberLeaseConfig",
+      "name": "numbers.getNumberLeaseConfig",
+      "description": "Returns a single NumberConfig instance for a given number lease"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.updateNumberLease",
+      "name": "numbers.updateNumberLease",
+      "description": "Updates a number lease instance. Ability to turn on/off autoRenew and toggle call/text features for a particular number"
+    },
+    {
+      "id": "openapi_callfire_com.numbers.updateNumberLeaseConfig",
+      "name": "numbers.updateNumberLeaseConfig",
+      "description": "Updates a phone number lease configuration. Use this API endpoint to add an Inbound IVR or Call Tracking feature to a CallFire phone number. Call tracking configuration allows you to track the incoming calls, to analyze and to respond customers using sms or voice replies. For more information see [call tracking page](https://www.callfire.com/products/call-tracking)"
+    },
+    {
+      "id": "openapi_callfire_com.orders.findOrders",
+      "name": "orders.findOrders",
+      "description": "Searches for account orders"
+    },
+    {
+      "id": "openapi_callfire_com.orders.getOrder",
+      "name": "orders.getOrder",
+      "description": "Returns a single NumberOrder instance for a given order id. Order contains information about purchased keywords, local, toll-free numbers"
+    },
+    {
+      "id": "openapi_callfire_com.orders.orderKeywords",
+      "name": "orders.orderKeywords",
+      "description": "Purchase keywords. Send a list of available keywords into this API to purchase them using CallFire credits. Make sure the account has enough credits before trying to purchase the keywords. Keyword should only consist of uppercase and lowercase letters and numbers. Number of characters must be greater than 2, but less than 65."
+    },
+    {
+      "id": "openapi_callfire_com.orders.orderNumbers",
+      "name": "orders.orderNumbers",
+      "description": "Purchase numbers. There are many ways to purchase a number. Set either 'tollFreeCount' or 'localCount' along with some querying fields to purchase numbers by bulk query. Set the list of numbers to purchase by list. Available numbers will be purchased using CallFire credits owned by the user. Make sure the account has enough credits before trying to purchase"
+    },
+    {
+      "id": "openapi_callfire_com.reports.getDeliveryReports",
+      "name": "reports.getDeliveryReports",
+      "description": "Get delivery reports"
+    },
+    {
+      "id": "openapi_callfire_com.texts.addTextBroadcastBatch",
+      "name": "texts.addTextBroadcastBatch",
+      "description": "Allows adding an extra batches to an already created text broadcast campaign. The batches which being  added pass the CallFire validation process (unlike in the recipients version of this API). That is why using of a scrubDuplicates flag remove duplicates from your batch. Batches may be added as a contact list id, a list of contact ids, or a list of numbers"
+    },
+    {
+      "id": "openapi_callfire_com.texts.addTextBroadcastRecipients",
+      "name": "texts.addTextBroadcastRecipients",
+      "description": "Use this API to add recipients to a text broadcast which is already created. Post a list of Recipient objects to be immediately added to the text broadcast campaign. These contacts will not go through validation process, and will be acted upon as they are added. Recipients may be added as a list of contact ids, or list of numbers"
+    },
+    {
+      "id": "openapi_callfire_com.texts.archiveTextBroadcast",
+      "name": "texts.archiveTextBroadcast",
+      "description": "Archives a text broadcast (and hides it in the search results)"
+    },
+    {
+      "id": "openapi_callfire_com.texts.createTextAutoReply",
+      "name": "texts.createTextAutoReply",
+      "description": "CallFire gives you possibility to set up auto reply messages for your numbers and keywords. You can set a general auto reply for anyone who texts your number, keyword, and/or include a text to match, so that the auto reply would be sent only to those who text the matched text"
+    },
+    {
+      "id": "openapi_callfire_com.texts.createTextBroadcast",
+      "name": "texts.createTextBroadcast",
+      "description": "Creates a text broadcast campaign using the Text Broadcast API. Send a TextBroadcast object in the message body to detail a text broadcast campaign. A campaign can be created without contacts and with bare minimum configuration, but contacts have to be added further on to use the campaign. It supports scheduling, retry logic, pattern-based messages."
+    },
+    {
+      "id": "openapi_callfire_com.texts.deleteTextAutoReply",
+      "name": "texts.deleteTextAutoReply",
+      "description": "Deletes a text auto reply and removes the configuration. Can not delete a TextAutoReply which is currently active for a campaign"
+    },
+    {
+      "id": "openapi_callfire_com.texts.findTextAutoReplys",
+      "name": "texts.findTextAutoReplys",
+      "description": "Find all text autoreplies created by user. Returns a paged list of TextAutoReply"
+    },
+    {
+      "id": "openapi_callfire_com.texts.findTextBroadcasts",
+      "name": "texts.findTextBroadcasts",
+      "description": "Searches for all text broadcasts created by user. Can query on label, name, and the current running status of the campaign. Returns a paged list of text broadcasts"
+    },
+    {
+      "id": "openapi_callfire_com.texts.findTexts",
+      "name": "texts.findTexts",
+      "description": "Searches for texts sent or received by user. Use \"campaignId=0\" parameter to query for all texts sent through the POST /texts API. See [call states and results](https://developers.callfire.com/results-responses-errors.html)"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getText",
+      "name": "texts.getText",
+      "description": "Returns a single Text instance for a given text id"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getTextAutoReply",
+      "name": "texts.getTextAutoReply",
+      "description": "Returns a single TextAutoReply instance for a given text auto reply id"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getTextBroadcast",
+      "name": "texts.getTextBroadcast",
+      "description": "Returns a single TextBroadcast instance for a given text broadcast id"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getTextBroadcastBatches",
+      "name": "texts.getTextBroadcastBatches",
+      "description": "This endpoint will enable the user to page through all of the batches for a particular text broadcast campaign"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getTextBroadcastStats",
+      "name": "texts.getTextBroadcastStats",
+      "description": "Returns the broadcast statistics. Example: total number of the sent/received actions, total cost, number of remaining outbound actions, error count, etc"
+    },
+    {
+      "id": "openapi_callfire_com.texts.getTextBroadcastTexts",
+      "name": "texts.getTextBroadcastTexts",
+      "description": "This endpoint will enable the user to page through all of the texts for a particular text broadcast campaign"
+    },
+    {
+      "id": "openapi_callfire_com.texts.sendTexts",
+      "name": "texts.sendTexts",
+      "description": "Use the /texts API to send individual texts quickly. By default all texts are going out from CallFire's dedicated short code. Example: 67076, 818818 etc"
+    },
+    {
+      "id": "openapi_callfire_com.texts.startTextBroadcast",
+      "name": "texts.startTextBroadcast",
+      "description": "Starts a text broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.texts.stopTextBroadcast",
+      "name": "texts.stopTextBroadcast",
+      "description": "Stops a text broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.texts.toggleTextBroadcastRecipientsStatus",
+      "name": "texts.toggleTextBroadcastRecipientsStatus",
+      "description": "This operation lets the user to disable/enable undialed contacts in created broadcast"
+    },
+    {
+      "id": "openapi_callfire_com.texts.updateTextBroadcast",
+      "name": "texts.updateTextBroadcast",
+      "description": "Allows modifying the configuration of existing text broadcast campaign. See TextBroadcast for more information on what can/can't be updated on this API"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.createWebhook",
+      "name": "webhooks.createWebhook",
+      "description": "Create a Webhook for notification in the CallFire system. Use the webhooks API to receive notifications of important CallFire events. Select the resource to listen to, and then choose the resource events to receive notifications on. When an event triggers, a POST will be made to the callback URL with a payload of notification information. Available resources and their events include 'CccCampaign': ['started', 'stopped', 'finished'], 'CallBroadcast': ['started', 'stopped', 'finished'], 'TextBroadcast': ['started', 'stopped', 'finished'], 'OutboundCall': ['finished'], 'InboundCall': ['finished'], 'OutboundText': ['finished'], 'InboundText': ['finished'], 'ContactList': ['validationFinished', 'validationFailed'], 'MonthlyRenewal': ['failed', 'finished'], 'LowBalance': ['failed', 'finished']. Webhooks support secret token which is used as signing key to HmacSHA1 hash of json payload which is returned in 'X-CallFire-Signature' header. This header can be used to verify callback POST is coming from CallFire. See [security guide](https://developers.callfire.com/security-guide.html)"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.deleteWebhook",
+      "name": "webhooks.deleteWebhook",
+      "description": "Deletes a webhook instance. Will be removed permanently"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.findWebhookResources",
+      "name": "webhooks.findWebhookResources",
+      "description": "Searches for webhook resources. Available resources include 'CccCampaign': ['started', 'stopped', 'finished'], 'CallBroadcast': ['started', 'stopped', 'finished'], 'TextBroadcast': ['started', 'stopped', 'finished'], 'OutboundCall': ['finished'], 'InboundCall': ['finished'], 'OutboundText': ['finished'], 'InboundText': ['finished'], 'ContactList': ['validationFinished', 'validationFailed'], 'MonthlyRenewal': ['failed', 'finished'], 'LowBalance': ['failed', 'finished']"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.findWebhooks",
+      "name": "webhooks.findWebhooks",
+      "description": "Searches all webhooks available for a current user. Searches by name, resource, event, callback URL, or whether they are enabled. Returns a paged list of Webhooks"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.getWebhook",
+      "name": "webhooks.getWebhook",
+      "description": "Returns a single Webhook instance for a given webhook id"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.getWebhookResource",
+      "name": "webhooks.getWebhookResource",
+      "description": "Returns information about supported events for a given webhook resource"
+    },
+    {
+      "id": "openapi_callfire_com.webhooks.updateWebhook",
+      "name": "webhooks.updateWebhook",
+      "description": "Updates the information in existing webhook"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "fetchedAt": "2026-04-30T15:22:30.998Z",
+  "status": "ok",
+  "count": 124,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_admin_admin.asps.directoryAspsDelete",
+      "name": "asps.directoryAspsDelete",
+      "description": "Deletes an ASP issued by a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.asps.directoryAspsGet",
+      "name": "asps.directoryAspsGet",
+      "description": "Gets information about an ASP issued by a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.asps.directoryAspsList",
+      "name": "asps.directoryAspsList",
+      "description": "Lists the ASPs issued by a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.channels.adminChannelsStop",
+      "name": "channels.adminChannelsStop",
+      "description": "Stops watching resources through this channel."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesAction",
+      "name": "chromeosdevices.directoryChromeosdevicesAction",
+      "description": "Takes an action that affects a Chrome OS Device. This includes deprovisioning, disabling, and re-enabling devices. *Warning:* * Deprovisioning a device will stop device policy syncing and remove device-level printers. After a device is deprovisioned, it must be wiped before it can be re-enrolled. * Lost or stolen devices should use the disable action. * Re-enabling a disabled device will consume a device license. If you do not have sufficient licenses available when completing the re-enable action, you will receive an error. For more information about deprovisioning and disabling devices, visit the [help center](https://support.google.com/chrome/a/answer/3523633)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesGet",
+      "name": "chromeosdevices.directoryChromeosdevicesGet",
+      "description": "Retrieves a Chrome OS device's properties."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesList",
+      "name": "chromeosdevices.directoryChromeosdevicesList",
+      "description": "Retrieves a paginated list of Chrome OS devices within an account."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesMoveDevicesToOu",
+      "name": "chromeosdevices.directoryChromeosdevicesMoveDevicesToOu",
+      "description": "Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesPatch",
+      "name": "chromeosdevices.directoryChromeosdevicesPatch",
+      "description": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.chromeosdevices.directoryChromeosdevicesUpdate",
+      "name": "chromeosdevices.directoryChromeosdevicesUpdate",
+      "description": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customer.adminCustomerDevicesChromeosCommandsGet",
+      "name": "customer.adminCustomerDevicesChromeosCommandsGet",
+      "description": "Gets command data a specific command issued to the device."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customer.adminCustomerDevicesChromeosIssueCommand",
+      "name": "customer.adminCustomerDevicesChromeosIssueCommand",
+      "description": "Issues a command for the device to execute."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintersBatchCreatePrinters",
+      "name": "customers.adminCustomersChromePrintersBatchCreatePrinters",
+      "description": "Creates printers under given Organization Unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintersBatchDeletePrinters",
+      "name": "customers.adminCustomersChromePrintersBatchDeletePrinters",
+      "description": "Deletes printers in batch."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintersCreate",
+      "name": "customers.adminCustomersChromePrintersCreate",
+      "description": "Creates a printer under given Organization Unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintersList",
+      "name": "customers.adminCustomersChromePrintersList",
+      "description": "List printers configs."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintersListPrinterModels",
+      "name": "customers.adminCustomersChromePrintersListPrinterModels",
+      "description": "Lists the supported printer models."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersBatchCreatePrintServers",
+      "name": "customers.adminCustomersChromePrintServersBatchCreatePrintServers",
+      "description": "Creates multiple print servers."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersBatchDeletePrintServers",
+      "name": "customers.adminCustomersChromePrintServersBatchDeletePrintServers",
+      "description": "Deletes multiple print servers."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersCreate",
+      "name": "customers.adminCustomersChromePrintServersCreate",
+      "description": "Creates a print server."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersDelete",
+      "name": "customers.adminCustomersChromePrintServersDelete",
+      "description": "Deletes a print server."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersGet",
+      "name": "customers.adminCustomersChromePrintServersGet",
+      "description": "Returns a print server's configuration."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersList",
+      "name": "customers.adminCustomersChromePrintServersList",
+      "description": "Lists print server configurations."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.adminCustomersChromePrintServersPatch",
+      "name": "customers.adminCustomersChromePrintServersPatch",
+      "description": "Updates a print server's configuration."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.directoryCustomersGet",
+      "name": "customers.directoryCustomersGet",
+      "description": "Retrieves a customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.directoryCustomersPatch",
+      "name": "customers.directoryCustomersPatch",
+      "description": "Patches a customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.customers.directoryCustomersUpdate",
+      "name": "customers.directoryCustomersUpdate",
+      "description": "Updates a customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domainAliases.directoryDomainAliasesDelete",
+      "name": "domainAliases.directoryDomainAliasesDelete",
+      "description": "Deletes a domain Alias of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domainAliases.directoryDomainAliasesGet",
+      "name": "domainAliases.directoryDomainAliasesGet",
+      "description": "Retrieves a domain alias of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domainAliases.directoryDomainAliasesInsert",
+      "name": "domainAliases.directoryDomainAliasesInsert",
+      "description": "Inserts a domain alias of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domainAliases.directoryDomainAliasesList",
+      "name": "domainAliases.directoryDomainAliasesList",
+      "description": "Lists the domain aliases of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domains.directoryDomainsDelete",
+      "name": "domains.directoryDomainsDelete",
+      "description": "Deletes a domain of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domains.directoryDomainsGet",
+      "name": "domains.directoryDomainsGet",
+      "description": "Retrieves a domain of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domains.directoryDomainsInsert",
+      "name": "domains.directoryDomainsInsert",
+      "description": "Inserts a domain of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.domains.directoryDomainsList",
+      "name": "domains.directoryDomainsList",
+      "description": "Lists the domains of the customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsAliasesDelete",
+      "name": "groups.directoryGroupsAliasesDelete",
+      "description": "Removes an alias."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsAliasesInsert",
+      "name": "groups.directoryGroupsAliasesInsert",
+      "description": "Adds an alias for the group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsAliasesList",
+      "name": "groups.directoryGroupsAliasesList",
+      "description": "Lists all aliases for a group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsDelete",
+      "name": "groups.directoryGroupsDelete",
+      "description": "Deletes a group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsGet",
+      "name": "groups.directoryGroupsGet",
+      "description": "Retrieves a group's properties."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsInsert",
+      "name": "groups.directoryGroupsInsert",
+      "description": "Creates a group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsList",
+      "name": "groups.directoryGroupsList",
+      "description": "Retrieves all groups of a domain or of a user given a userKey (paginated)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsPatch",
+      "name": "groups.directoryGroupsPatch",
+      "description": "Updates a group's properties. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.groups.directoryGroupsUpdate",
+      "name": "groups.directoryGroupsUpdate",
+      "description": "Updates a group's properties."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersDelete",
+      "name": "members.directoryMembersDelete",
+      "description": "Removes a member from a group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersGet",
+      "name": "members.directoryMembersGet",
+      "description": "Retrieves a group member's properties."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersHasMember",
+      "name": "members.directoryMembersHasMember",
+      "description": "Checks whether the given user is a member of the group. Membership can be direct or nested, but if nested, the `memberKey` and `groupKey` must be entities in the same domain or an `Invalid input` error is returned. To check for nested memberships that include entities outside of the group's domain, use the [`checkTransitiveMembership()`](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership) method in the Cloud Identity Groups API."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersInsert",
+      "name": "members.directoryMembersInsert",
+      "description": "Adds a user to the specified group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersList",
+      "name": "members.directoryMembersList",
+      "description": "Retrieves a paginated list of all members in a group. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersPatch",
+      "name": "members.directoryMembersPatch",
+      "description": "Updates the membership properties of a user in the specified group. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.members.directoryMembersUpdate",
+      "name": "members.directoryMembersUpdate",
+      "description": "Updates the membership of a user in the specified group."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.mobiledevices.directoryMobiledevicesAction",
+      "name": "mobiledevices.directoryMobiledevicesAction",
+      "description": "Takes an action that affects a mobile device. For example, remotely wiping a device."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.mobiledevices.directoryMobiledevicesDelete",
+      "name": "mobiledevices.directoryMobiledevicesDelete",
+      "description": "Removes a mobile device."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.mobiledevices.directoryMobiledevicesGet",
+      "name": "mobiledevices.directoryMobiledevicesGet",
+      "description": "Retrieves a mobile device's properties."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.mobiledevices.directoryMobiledevicesList",
+      "name": "mobiledevices.directoryMobiledevicesList",
+      "description": "Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsDelete",
+      "name": "orgunits.directoryOrgunitsDelete",
+      "description": "Removes an organizational unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsGet",
+      "name": "orgunits.directoryOrgunitsGet",
+      "description": "Retrieves an organizational unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsInsert",
+      "name": "orgunits.directoryOrgunitsInsert",
+      "description": "Adds an organizational unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsList",
+      "name": "orgunits.directoryOrgunitsList",
+      "description": "Retrieves a list of all organizational units for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsPatch",
+      "name": "orgunits.directoryOrgunitsPatch",
+      "description": "Updates an organizational unit. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)"
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.orgunits.directoryOrgunitsUpdate",
+      "name": "orgunits.directoryOrgunitsUpdate",
+      "description": "Updates an organizational unit."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.privileges.directoryPrivilegesList",
+      "name": "privileges.directoryPrivilegesList",
+      "description": "Retrieves a paginated list of all privileges for a customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsDelete",
+      "name": "resources.directoryResourcesBuildingsDelete",
+      "description": "Deletes a building."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsGet",
+      "name": "resources.directoryResourcesBuildingsGet",
+      "description": "Retrieves a building."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsInsert",
+      "name": "resources.directoryResourcesBuildingsInsert",
+      "description": "Inserts a building."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsList",
+      "name": "resources.directoryResourcesBuildingsList",
+      "description": "Retrieves a list of buildings for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsPatch",
+      "name": "resources.directoryResourcesBuildingsPatch",
+      "description": "Patches a building."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesBuildingsUpdate",
+      "name": "resources.directoryResourcesBuildingsUpdate",
+      "description": "Updates a building."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsDelete",
+      "name": "resources.directoryResourcesCalendarsDelete",
+      "description": "Deletes a calendar resource."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsGet",
+      "name": "resources.directoryResourcesCalendarsGet",
+      "description": "Retrieves a calendar resource."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsInsert",
+      "name": "resources.directoryResourcesCalendarsInsert",
+      "description": "Inserts a calendar resource."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsList",
+      "name": "resources.directoryResourcesCalendarsList",
+      "description": "Retrieves a list of calendar resources for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsPatch",
+      "name": "resources.directoryResourcesCalendarsPatch",
+      "description": "Patches a calendar resource."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesCalendarsUpdate",
+      "name": "resources.directoryResourcesCalendarsUpdate",
+      "description": "Updates a calendar resource. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesDelete",
+      "name": "resources.directoryResourcesFeaturesDelete",
+      "description": "Deletes a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesGet",
+      "name": "resources.directoryResourcesFeaturesGet",
+      "description": "Retrieves a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesInsert",
+      "name": "resources.directoryResourcesFeaturesInsert",
+      "description": "Inserts a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesList",
+      "name": "resources.directoryResourcesFeaturesList",
+      "description": "Retrieves a list of features for an account."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesPatch",
+      "name": "resources.directoryResourcesFeaturesPatch",
+      "description": "Patches a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesRename",
+      "name": "resources.directoryResourcesFeaturesRename",
+      "description": "Renames a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.resources.directoryResourcesFeaturesUpdate",
+      "name": "resources.directoryResourcesFeaturesUpdate",
+      "description": "Updates a feature."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roleAssignments.directoryRoleAssignmentsDelete",
+      "name": "roleAssignments.directoryRoleAssignmentsDelete",
+      "description": "Deletes a role assignment."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roleAssignments.directoryRoleAssignmentsGet",
+      "name": "roleAssignments.directoryRoleAssignmentsGet",
+      "description": "Retrieves a role assignment."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roleAssignments.directoryRoleAssignmentsInsert",
+      "name": "roleAssignments.directoryRoleAssignmentsInsert",
+      "description": "Creates a role assignment."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roleAssignments.directoryRoleAssignmentsList",
+      "name": "roleAssignments.directoryRoleAssignmentsList",
+      "description": "Retrieves a paginated list of all roleAssignments."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesDelete",
+      "name": "roles.directoryRolesDelete",
+      "description": "Deletes a role."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesGet",
+      "name": "roles.directoryRolesGet",
+      "description": "Retrieves a role."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesInsert",
+      "name": "roles.directoryRolesInsert",
+      "description": "Creates a role."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesList",
+      "name": "roles.directoryRolesList",
+      "description": "Retrieves a paginated list of all the roles in a domain."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesPatch",
+      "name": "roles.directoryRolesPatch",
+      "description": "Patches a role."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.roles.directoryRolesUpdate",
+      "name": "roles.directoryRolesUpdate",
+      "description": "Updates a role."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasDelete",
+      "name": "schemas.directorySchemasDelete",
+      "description": "Deletes a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasGet",
+      "name": "schemas.directorySchemasGet",
+      "description": "Retrieves a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasInsert",
+      "name": "schemas.directorySchemasInsert",
+      "description": "Creates a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasList",
+      "name": "schemas.directorySchemasList",
+      "description": "Retrieves all schemas for a customer."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasPatch",
+      "name": "schemas.directorySchemasPatch",
+      "description": "Patches a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.schemas.directorySchemasUpdate",
+      "name": "schemas.directorySchemasUpdate",
+      "description": "Updates a schema."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.tokens.directoryTokensDelete",
+      "name": "tokens.directoryTokensDelete",
+      "description": "Deletes all access tokens issued by a user for an application."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.tokens.directoryTokensGet",
+      "name": "tokens.directoryTokensGet",
+      "description": "Gets information about an access token issued by a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.tokens.directoryTokensList",
+      "name": "tokens.directoryTokensList",
+      "description": "Returns the set of tokens specified user has issued to 3rd party applications."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.twoStepVerification.directoryTwoStepVerificationTurnOff",
+      "name": "twoStepVerification.directoryTwoStepVerificationTurnOff",
+      "description": "Turns off 2-Step Verification for user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersAliasesDelete",
+      "name": "users.directoryUsersAliasesDelete",
+      "description": "Removes an alias."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersAliasesInsert",
+      "name": "users.directoryUsersAliasesInsert",
+      "description": "Adds an alias."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersAliasesList",
+      "name": "users.directoryUsersAliasesList",
+      "description": "Lists all aliases for a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersAliasesWatch",
+      "name": "users.directoryUsersAliasesWatch",
+      "description": "Watches for changes in users list."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersDelete",
+      "name": "users.directoryUsersDelete",
+      "description": "Deletes a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersGet",
+      "name": "users.directoryUsersGet",
+      "description": "Retrieves a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersInsert",
+      "name": "users.directoryUsersInsert",
+      "description": "Creates a user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersList",
+      "name": "users.directoryUsersList",
+      "description": "Retrieves a paginated list of either deleted users or all users in a domain."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersMakeAdmin",
+      "name": "users.directoryUsersMakeAdmin",
+      "description": "Makes a user a super administrator."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersPatch",
+      "name": "users.directoryUsersPatch",
+      "description": "Updates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you're mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/admin-sdk/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersPhotosDelete",
+      "name": "users.directoryUsersPhotosDelete",
+      "description": "Removes the user's photo."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersPhotosGet",
+      "name": "users.directoryUsersPhotosGet",
+      "description": "Retrieves the user's photo."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersPhotosPatch",
+      "name": "users.directoryUsersPhotosPatch",
+      "description": "Adds a photo for the user. This method supports [patch semantics](/admin-sdk/directory/v1/guides/performance#patch)."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersPhotosUpdate",
+      "name": "users.directoryUsersPhotosUpdate",
+      "description": "Adds a photo for the user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersSignOut",
+      "name": "users.directoryUsersSignOut",
+      "description": "Signs a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersUndelete",
+      "name": "users.directoryUsersUndelete",
+      "description": "Undeletes a deleted user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersUpdate",
+      "name": "users.directoryUsersUpdate",
+      "description": "Updates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can't be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-users#update_user) for more information."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.users.directoryUsersWatch",
+      "name": "users.directoryUsersWatch",
+      "description": "Watches for changes in users list."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.verificationCodes.directoryVerificationCodesGenerate",
+      "name": "verificationCodes.directoryVerificationCodesGenerate",
+      "description": "Generates new backup verification codes for the user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.verificationCodes.directoryVerificationCodesInvalidate",
+      "name": "verificationCodes.directoryVerificationCodesInvalidate",
+      "description": "Invalidates the current backup verification codes for the user."
+    },
+    {
+      "id": "openapi_googleapis_com_admin_admin.verificationCodes.directoryVerificationCodesList",
+      "name": "verificationCodes.directoryVerificationCodesList",
+      "description": "Returns the current set of valid backup verification codes for the specified user."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

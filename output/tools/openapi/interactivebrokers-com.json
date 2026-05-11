@@ -1,0 +1,97 @@
+{
+  "fetchedAt": "2026-04-30T15:22:46.328Z",
+  "status": "ok",
+  "count": 18,
+  "tools": [
+    {
+      "id": "openapi_interactivebrokers_com.accountPortfolio.getAccounts",
+      "name": "accountPortfolio.getAccounts",
+      "description": "Allows the caller to request a list of accounts associated with the session."
+    },
+    {
+      "id": "openapi_interactivebrokers_com.accountPortfolio.getAccountsAccountPositions",
+      "name": "accountPortfolio.getAccountsAccountPositions",
+      "description": "Returns a list of positions for the indicated account. "
+    },
+    {
+      "id": "openapi_interactivebrokers_com.accountPortfolio.getAccountsAccountSummary",
+      "name": "accountPortfolio.getAccountsAccountSummary",
+      "description": "Returns a list of account and margin balances associated with the account passed in the URL"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.financialInstrumentDefinitions.getSecdef",
+      "name": "financialInstrumentDefinitions.getSecdef",
+      "description": "Fields that compose security definition. Allowed combinations,\n(1) type and symbol and currency, or\n(2) type, symbol, exchange, and currency, or\n(3) conid\n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.marketData.getMarketdataExchangeComponents",
+      "name": "marketData.getMarketdataExchangeComponents",
+      "description": "This endpoint provides a bit mapping for the bid/ask/last 'market' values in the snapshot response. "
+    },
+    {
+      "id": "openapi_interactivebrokers_com.marketData.getMarketdataSnapshot",
+      "name": "marketData.getMarketdataSnapshot",
+      "description": "This endpoint allows the consumer to request a market data snapshot for one or more trading products. \nConsumers need to provide unique identifiers (conids) for the products in the IB product database (retrievable using the /secdef endpoint). The 'market' values are integers whose bits indicate the exchange(s) making up the quote. \n\nThe mapping of bit to exchange is obtained from the marketdata/exchange_component endpoint. For example, if a bid has a 'market' value of 5 and the exchange_component result has the map \n0 => NYSE, 1 => ISLAND, 2 => ARCA then the exchanges contributing to the bid size are NYSE and ARCA. \n\nSimilarly, if market=2, then only ISLAND is contributing.\n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.oAuth.postOauthAccessToken",
+      "name": "oAuth.postOauthAccessToken",
+      "description": "Obtain an access token using the request token and the verification code you received after the user provided authorization. See section 6.3 of the OAuth v1.0a specification for more details. \n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.oAuth.postOauthLiveSessionToken",
+      "name": "oAuth.postOauthLiveSessionToken",
+      "description": "In order to access protected IB resources, a live session token is required. This endpoint allows consumers to obtain a live session token to access these resources using an OAuth access token and the Diffie-Hellman prime and generator supplied during the registration process.\nNote this is an additional IB-specific step, and not part of the OAuth v1.0a specification. Please refer to the \"OAuth at Interactive Brokers\" document for more details.  https://www.interactivebrokers.com/webtradingapi/oauth.pdf\n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.oAuth.postOauthRequestToken",
+      "name": "oAuth.postOauthRequestToken",
+      "description": "Obtain a request token. See section 6.1 of the OAuth v1.0a specification for more information. http://oauth.net/core/1.0a/#auth_step1\n\nNote we do not return an oauth_token_secret in the response as we are using RSA signatures rather than PLAINTEXT authentication. \n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orderMarginRequirements.postAccountsAccountOrderImpact",
+      "name": "orderMarginRequirements.postAccountsAccountOrderImpact",
+      "description": "This endpoint allows the consumer to check the impact that an order would have on the account, including margin, NLV and estimated commission costs.\nTo specify the contract, you provide a value for the ContractId field, OR Ticker/ListingExchange/InstrumentType=STK for stocks OR Ticker/Currency/InstrumentType=CASH for FX.\n"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orders.deleteAccountsAccountOrdersCustomerOrderId",
+      "name": "orders.deleteAccountsAccountOrdersCustomerOrderId",
+      "description": "Cancels the order with the referenced Customer Order ID for the account passed in the URL."
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orders.getAccountsAccountOrders",
+      "name": "orders.getAccountsAccountOrders",
+      "description": "Returns a list of orders for the account passed in the URL"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orders.getAccountsAccountOrdersCustomerOrderId",
+      "name": "orders.getAccountsAccountOrdersCustomerOrderId",
+      "description": "Returns the order with the referenced Customer Order ID for the account passed in the URL."
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orders.postAccountsAccountOrders",
+      "name": "orders.postAccountsAccountOrders",
+      "description": "Places order"
+    },
+    {
+      "id": "openapi_interactivebrokers_com.orders.putAccountsAccountOrdersCustomerOrderId",
+      "name": "orders.putAccountsAccountOrdersCustomerOrderId",
+      "description": "Allows the caller to modify the order with the referenced Customer Order ID specified in the URL. A separate Customer Order ID must be provided in the request body for the modification."
+    },
+    {
+      "id": "openapi_interactivebrokers_com.trades.getAccountsAccountTrades",
+      "name": "trades.getAccountsAccountTrades",
+      "description": "Returns a list of trades for the account starting at the given 'since' date to the current time (now()). Timezone is UTC. Any request with a future since date or going further than one week will result in an HTTP 400 bad request response. Calling /trades without since will return all trades for the past 24 hours.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

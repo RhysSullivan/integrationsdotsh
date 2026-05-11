@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:21:38.931Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_overstappen_nl.compare_energy",
+      "name": "compare-energy",
+      "description": "Generates an interactive energy contract comparison widget for the Netherlands.\nRequired: `postcode` (format: 1234AB, no spaces) and `housenumber`.\nElectricity Logic:\n- For single meters: Input total usage in `electricityusagehigh` and leave `electricityusagelow` at 0.\n- For dual meters: Split usage between `electricityusagehigh` (peak) and `electricityusagelow` (off-peak).\n- Use the same logic for solar generation in `electricitysupplyhigh` and `electricitysupplylow`.\nDefaults: If usage is unspecified, the system defaults to 2500 kWh (high) and 1200 m3 gas."
+    }
+  ]
+}

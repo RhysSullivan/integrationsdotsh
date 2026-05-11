@@ -1,0 +1,442 @@
+{
+  "fetchedAt": "2026-04-30T15:45:07.343Z",
+  "status": "ok",
+  "count": 87,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.attachments.acceptAttachment",
+      "name": "attachments.acceptAttachment",
+      "description": "<p>Accepts a core network attachment request. </p> <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.attachments.deleteAttachment",
+      "name": "attachments.deleteAttachment",
+      "description": "Deletes an attachment. Supports all attachment types."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.attachments.listAttachments",
+      "name": "attachments.listAttachments",
+      "description": "Returns a list of core network attachments."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.attachments.rejectAttachment",
+      "name": "attachments.rejectAttachment",
+      "description": "Rejects a core network attachment request."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectAttachments.createConnectAttachment",
+      "name": "connectAttachments.createConnectAttachment",
+      "description": "<p>Creates a core network Connect attachment from a specified core network attachment. </p> <p>A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectAttachments.getConnectAttachment",
+      "name": "connectAttachments.getConnectAttachment",
+      "description": "Returns information about a core network Connect attachment."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectPeers.createConnectPeer",
+      "name": "connectPeers.createConnectPeer",
+      "description": "Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6)."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectPeers.deleteConnectPeer",
+      "name": "connectPeers.deleteConnectPeer",
+      "description": "Deletes a Connect peer."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectPeers.getConnectPeer",
+      "name": "connectPeers.getConnectPeer",
+      "description": "Returns information about a core network Connect peer."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.connectPeers.listConnectPeers",
+      "name": "connectPeers.listConnectPeers",
+      "description": "Returns a list of core network Connect peers."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.createCoreNetwork",
+      "name": "coreNetworks.createCoreNetwork",
+      "description": "Creates a core network as part of your global network, and optionally, with a core network policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.deleteCoreNetwork",
+      "name": "coreNetworks.deleteCoreNetwork",
+      "description": "Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.deleteCoreNetworkPolicyVersion",
+      "name": "coreNetworks.deleteCoreNetworkPolicyVersion",
+      "description": "Deletes a policy version from a core network. You can't delete the current LIVE policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.executeCoreNetworkChangeSet",
+      "name": "coreNetworks.executeCoreNetworkChangeSet",
+      "description": "Executes a change set on your core network. Deploys changes globally based on the policy submitted.."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.getCoreNetwork",
+      "name": "coreNetworks.getCoreNetwork",
+      "description": "Returns information about the LIVE policy for a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.getCoreNetworkChangeEvents",
+      "name": "coreNetworks.getCoreNetworkChangeEvents",
+      "description": "Returns information about a core network change event."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.getCoreNetworkChangeSet",
+      "name": "coreNetworks.getCoreNetworkChangeSet",
+      "description": "Returns a change set between the LIVE core network policy and a submitted policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.getCoreNetworkPolicy",
+      "name": "coreNetworks.getCoreNetworkPolicy",
+      "description": "Returns details about a core network policy. You can get details about your current live policy or any previous policy version."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.listCoreNetworkPolicyVersions",
+      "name": "coreNetworks.listCoreNetworkPolicyVersions",
+      "description": "Returns a list of core network policy versions."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.listCoreNetworks",
+      "name": "coreNetworks.listCoreNetworks",
+      "description": "Returns a list of owned and shared core networks."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.putCoreNetworkPolicy",
+      "name": "coreNetworks.putCoreNetworkPolicy",
+      "description": "Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.restoreCoreNetworkPolicyVersion",
+      "name": "coreNetworks.restoreCoreNetworkPolicyVersion",
+      "description": "Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.coreNetworks.updateCoreNetwork",
+      "name": "coreNetworks.updateCoreNetwork",
+      "description": "Updates the description of a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.associateConnectPeer",
+      "name": "globalNetworks.associateConnectPeer",
+      "description": "<p>Associates a core network Connect peer with a device and optionally, with a link. </p> <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.associateCustomerGateway",
+      "name": "globalNetworks.associateCustomerGateway",
+      "description": "<p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html\">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot associate a customer gateway with more than one device and link. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.associateLink",
+      "name": "globalNetworks.associateLink",
+      "description": "Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.associateTransitGatewayConnectPeer",
+      "name": "globalNetworks.associateTransitGatewayConnectPeer",
+      "description": "<p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p> <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.createConnection",
+      "name": "globalNetworks.createConnection",
+      "description": "Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.createDevice",
+      "name": "globalNetworks.createDevice",
+      "description": "Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.createGlobalNetwork",
+      "name": "globalNetworks.createGlobalNetwork",
+      "description": "Creates a new, empty global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.createLink",
+      "name": "globalNetworks.createLink",
+      "description": "Creates a new link for a specified site."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.createSite",
+      "name": "globalNetworks.createSite",
+      "description": "Creates a new site in a global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deleteConnection",
+      "name": "globalNetworks.deleteConnection",
+      "description": "Deletes the specified connection in your global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deleteDevice",
+      "name": "globalNetworks.deleteDevice",
+      "description": "Deletes an existing device. You must first disassociate the device from any links and customer gateways."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deleteGlobalNetwork",
+      "name": "globalNetworks.deleteGlobalNetwork",
+      "description": "Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deleteLink",
+      "name": "globalNetworks.deleteLink",
+      "description": "Deletes an existing link. You must first disassociate the link from any devices and customer gateways."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deleteSite",
+      "name": "globalNetworks.deleteSite",
+      "description": "Deletes an existing site. The site cannot be associated with any device or link."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.deregisterTransitGateway",
+      "name": "globalNetworks.deregisterTransitGateway",
+      "description": "Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.describeGlobalNetworks",
+      "name": "globalNetworks.describeGlobalNetworks",
+      "description": "Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate <code>Get*</code> action. For example, to list the transit gateways in your global network, use <a>GetTransitGatewayRegistrations</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.disassociateConnectPeer",
+      "name": "globalNetworks.disassociateConnectPeer",
+      "description": "Disassociates a core network Connect peer from a device and a link. "
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.disassociateCustomerGateway",
+      "name": "globalNetworks.disassociateCustomerGateway",
+      "description": "Disassociates a customer gateway from a device and a link."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.disassociateLink",
+      "name": "globalNetworks.disassociateLink",
+      "description": "Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.disassociateTransitGatewayConnectPeer",
+      "name": "globalNetworks.disassociateTransitGatewayConnectPeer",
+      "description": "Disassociates a transit gateway Connect peer from a device and link."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getConnections",
+      "name": "globalNetworks.getConnections",
+      "description": "Gets information about one or more of your connections in a global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getConnectPeerAssociations",
+      "name": "globalNetworks.getConnectPeerAssociations",
+      "description": "Returns information about a core network Connect peer associations."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getCustomerGatewayAssociations",
+      "name": "globalNetworks.getCustomerGatewayAssociations",
+      "description": "Gets the association information for customer gateways that are associated with devices and links in your global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getDevices",
+      "name": "globalNetworks.getDevices",
+      "description": "Gets information about one or more of your devices in a global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getLinkAssociations",
+      "name": "globalNetworks.getLinkAssociations",
+      "description": "Gets the link associations for a device or a link. Either the device ID or the link ID must be specified."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getLinks",
+      "name": "globalNetworks.getLinks",
+      "description": "<p>Gets information about one or more links in a specified global network.</p> <p>If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getNetworkResourceCounts",
+      "name": "globalNetworks.getNetworkResourceCounts",
+      "description": "Gets the count of network resources, by resource type, for the specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getNetworkResourceRelationships",
+      "name": "globalNetworks.getNetworkResourceRelationships",
+      "description": "Gets the network resource relationships for the specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getNetworkResources",
+      "name": "globalNetworks.getNetworkResources",
+      "description": "<p>Describes the network resources for the specified global network.</p> <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getNetworkRoutes",
+      "name": "globalNetworks.getNetworkRoutes",
+      "description": "Gets the network routes of the specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getNetworkTelemetry",
+      "name": "globalNetworks.getNetworkTelemetry",
+      "description": "Gets the network telemetry of the specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getRouteAnalysis",
+      "name": "globalNetworks.getRouteAnalysis",
+      "description": "Gets information about the specified route analysis."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getSites",
+      "name": "globalNetworks.getSites",
+      "description": "Gets information about one or more of your sites in a global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getTransitGatewayConnectPeerAssociations",
+      "name": "globalNetworks.getTransitGatewayConnectPeerAssociations",
+      "description": "Gets information about one or more of your transit gateway Connect peer associations in a global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.getTransitGatewayRegistrations",
+      "name": "globalNetworks.getTransitGatewayRegistrations",
+      "description": "Gets information about the transit gateway registrations in a specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.registerTransitGateway",
+      "name": "globalNetworks.registerTransitGateway",
+      "description": "Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see <a href=\"https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions\">Region Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.startRouteAnalysis",
+      "name": "globalNetworks.startRouteAnalysis",
+      "description": "Starts analyzing the routing path between the specified source and destination. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html\">Route Analyzer</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateConnection",
+      "name": "globalNetworks.updateConnection",
+      "description": "Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateDevice",
+      "name": "globalNetworks.updateDevice",
+      "description": "Updates the details for an existing device. To remove information for any of the parameters, specify an empty string."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateGlobalNetwork",
+      "name": "globalNetworks.updateGlobalNetwork",
+      "description": "Updates an existing global network. To remove information for any of the parameters, specify an empty string."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateLink",
+      "name": "globalNetworks.updateLink",
+      "description": "Updates the details for an existing link. To remove information for any of the parameters, specify an empty string."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateNetworkResourceMetadata",
+      "name": "globalNetworks.updateNetworkResourceMetadata",
+      "description": "Updates the resource metadata for the specified global network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.globalNetworks.updateSite",
+      "name": "globalNetworks.updateSite",
+      "description": "Updates the information for an existing site. To remove information for any of the parameters, specify an empty string."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.organizations.listOrganizationServiceAccessStatus",
+      "name": "organizations.listOrganizationServiceAccessStatus",
+      "description": "Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.organizations.startOrganizationServiceAccessUpdate",
+      "name": "organizations.startOrganizationServiceAccessUpdate",
+      "description": "Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. "
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.peerings.deletePeering",
+      "name": "peerings.deletePeering",
+      "description": "Deletes an existing peering connection."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.peerings.listPeerings",
+      "name": "peerings.listPeerings",
+      "description": "Lists the peerings for a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.resourcePolicy.deleteResourcePolicy",
+      "name": "resourcePolicy.deleteResourcePolicy",
+      "description": "Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.resourcePolicy.getResourcePolicy",
+      "name": "resourcePolicy.getResourcePolicy",
+      "description": "Returns information about a resource policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.resourcePolicy.putResourcePolicy",
+      "name": "resourcePolicy.putResourcePolicy",
+      "description": "Creates or updates a resource policy."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.siteToSiteVpnAttachments.createSiteToSiteVpnAttachment",
+      "name": "siteToSiteVpnAttachments.createSiteToSiteVpnAttachment",
+      "description": "Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.siteToSiteVpnAttachments.getSiteToSiteVpnAttachment",
+      "name": "siteToSiteVpnAttachments.getSiteToSiteVpnAttachment",
+      "description": "Returns information about a site-to-site VPN attachment."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Lists the tags for a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Tags a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes tags from a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.transitGatewayPeerings.createTransitGatewayPeering",
+      "name": "transitGatewayPeerings.createTransitGatewayPeering",
+      "description": "Creates a transit gateway peering connection."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.transitGatewayPeerings.getTransitGatewayPeering",
+      "name": "transitGatewayPeerings.getTransitGatewayPeering",
+      "description": "Returns information about a transit gateway peer."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.transitGatewayRouteTableAttachments.createTransitGatewayRouteTableAttachment",
+      "name": "transitGatewayRouteTableAttachments.createTransitGatewayRouteTableAttachment",
+      "description": "Creates a transit gateway route table attachment."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.transitGatewayRouteTableAttachments.getTransitGatewayRouteTableAttachment",
+      "name": "transitGatewayRouteTableAttachments.getTransitGatewayRouteTableAttachment",
+      "description": "Returns information about a transit gateway route table attachment."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.vpcAttachments.createVpcAttachment",
+      "name": "vpcAttachments.createVpcAttachment",
+      "description": "Creates a VPC attachment on an edge location of a core network."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.vpcAttachments.getVpcAttachment",
+      "name": "vpcAttachments.getVpcAttachment",
+      "description": "Returns information about a VPC attachment."
+    },
+    {
+      "id": "openapi_amazonaws_com_networkmanager_networkmanager.vpcAttachments.updateVpcAttachment",
+      "name": "vpcAttachments.updateVpcAttachment",
+      "description": "Updates a VPC attachment."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:21:36.647Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_zumper.search_rentals",
+      "name": "search_rentals",
+      "description": "🚨 MANDATORY: Call this tool IMMEDIATELY when user searches for RESIDENTIAL rental apartments, houses, or condos to live in. DO NOT call for: real estate for sale, car/vehicle rentals, rental insurance, or other non-residential rental products. NO conversational responses. NO confirmations. TOOL CALL ONLY. Map natural language to nearest parameter (fitness center→building_amenities:['gym'], dog-friendly→pet_policies:['small_dogs','large_dogs']). Merge new filters with CURRENT ACTIVE FILTERS from previous response. Returns widget with photos, map, trends."
+    },
+    {
+      "id": "mcp_zumper.get_listing_cardback",
+      "name": "get_listing_cardback",
+      "description": "Retrieve detailed listing information including full description, amenities list, pet policies, lease terms, and complete photo gallery. Called by widget for detail views."
+    },
+    {
+      "id": "mcp_zumper.get_building_floorplans",
+      "name": "get_building_floorplans",
+      "description": "Fetch available floor plans for a building with pricing, specifications, and layout photos. Returns floorplan listings grouped by bedroom type. Called by widget when user views building details."
+    },
+    {
+      "id": "mcp_zumper.get_rent_trends",
+      "name": "get_rent_trends",
+      "description": "Get historical rent trend data for a city or neighborhood, including median rent by bedroom type, month-over-month and year-over-year percent changes. Called by widget for rent trends tab. Falls back to city-level data if neighborhood data unavailable."
+    }
+  ]
+}

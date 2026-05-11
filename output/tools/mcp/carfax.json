@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:21:58.654Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_carfax.find_vehicles_for_sale",
+      "name": "find_vehicles_for_sale",
+      "description": "Search for vehicles based on various criteria. Do NOT pass multiple makes or models — \"Honda,Toyota\" is NOT supported. If the user requests multiple makes or models, do not use this tool.\nReturns:\n     dict: A dictionary containing the search results.\n "
+    },
+    {
+      "id": "mcp_carfax.search_multiple_makes_models_for_sale",
+      "name": "search_multiple_makes_models_for_sale",
+      "description": "Widen a vehicle search by including multiple makes/models or geographic areas.\n\nUse this tool to broaden results when the user would consider several similar vehicles,\nwants to search across multiple locations, or both. Up to 5 searches per call.\nReturns up to 25 vehicles total across all searches.\n\nNote, you must NOT mix used and new vehicles in the searches. If you do, the server will only return used vehicles, and you will get an indication in the return message.\n\nExamples:\n- \"best deal on a Civic, Corolla, or Mazda 3 near 22030\" → 3 entries, same zip, different make/model\n- \"Subaru WRX near St. Louis and Kansas City\" → 2 entries, same make/model, different zip_code\n- \"find me a WRX or GTI along my road trip route\" → entries with different make/model AND zip_code\n\nEach entry accepts the same fields as the single-search tool (zip_code, radius, make, model, etc.).\nWhen a sort order is specified, results are ranked across all searches by that criteria.\nOtherwise, results are interleaved round-robin from each search.\n\nReturns:\n    dict: Combined search results from all searches."
+    },
+    {
+      "id": "mcp_carfax.submit_contact_dealer_form",
+      "name": "submit_contact_dealer_form",
+      "description": "This tool should not be called directly. It should only be called from the dealer contact widget. If you're trying to use this tool, please use the \"render_contact_dealer_widget\" tool instead."
+    },
+    {
+      "id": "mcp_carfax.render_contact_dealer_widget",
+      "name": "render_contact_dealer_widget",
+      "description": "This tool should be called whenever the user wants to reach out to a dealer about a specific vehicle, including when they say \"check availability\", \"contact dealer\", \"contact the dealer\", \"I'm interested\", \"request more info\", or ask to get in touch with a dealer. It renders a contact form you can pre-fill with the user's information if you have it."
+    },
+    {
+      "id": "mcp_carfax.get_vehicle_details",
+      "name": "get_vehicle_details",
+      "description": "Get detailed information about a vehicle listed for sale on CARFAX."
+    },
+    {
+      "id": "mcp_carfax.report_missing_functionality_tool",
+      "name": "report_missing_functionality_tool",
+      "description": "This tool should be called ONLY if the user requests a CARFAX-specific feature that the server does not yet implement. Do NOT call this tool for generic requests unrelated to CARFAX or car shopping. The request will be logged and used for review to add future enhancements."
+    }
+  ]
+}

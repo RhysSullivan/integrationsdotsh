@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:21:48.368Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_leapscholar.search_courses",
+      "name": "search_courses",
+      "description": "Search university programs abroad. Required: countryName (1–5 countries), courseTag (discipline — use concrete fields like Computer Science, Mechanical Engineering, MBA, Public Health; avoid vague tags like Masters alone), pageIndex (use 1 unless the user asks for another page), and totalPerPage (how many courses the backend should return per page, default 12). Optional: intake (e.g. SEP_2026), tuitionFeesMax as max tuition in INR: prefer **whole rupees** in the tool call (e.g. 4500000 for ₹45 lakhs). Values 1–500 are accepted as **lakhs** and converted server-side; do not use USD; this server does not re-filter on fee, degreeCode UG|PG, optional **courseDurationMin** and **courseDurationMax** as the same **whole-month** integer (e.g. both **24** for two years, **12** for one year; you may send only one — the server copies it to the other; not re-filtered locally), sortBy RANKING, sortOrder, and limit (caps how many cards are returned to ChatGPT/the widget after local filters only — not sent to the course API). Returned cards include tuitionFee as overall fee in ₹ lakhs (from tuitionFeeOverallInr) when present, optional tuitionFeeUSD when the API supplies it, intakePeriods[], scholarshipAvailable, logoUrl, and program links."
+    }
+  ]
+}

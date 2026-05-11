@@ -1,0 +1,62 @@
+{
+  "fetchedAt": "2026-04-30T15:22:03.950Z",
+  "status": "ok",
+  "count": 11,
+  "tools": [
+    {
+      "id": "mcp_remitly.lookupdeliverymethods",
+      "name": "LookupDeliveryMethods",
+      "description": "Gets the available delivery methods for a money transfer between two countries\n        You MUST call this tool if the customer's question is about \"What's the best way to send\" for a given corridor.\n        You MUST call this tool if the customer's question is about specifically what delivery methods are available for a transfer to a specific country."
+    },
+    {
+      "id": "mcp_remitly.lookupexchangerateinfo",
+      "name": "LookupExchangeRateInfo",
+      "description": "Fetches the exchange rate information for a money transfer between two countries\n        You MUST call this tool if the customer's intent is an imperative to send money.\n        You MUST call this tool if the customer's question is about exchange rates between two countries.\n        You MUST call this tool if the customer's question is about sending money to a specific country.\n        You MUST NOT call this tool for questions about fees or costs, only for exchange rates."
+    },
+    {
+      "id": "mcp_remitly.lookupsendingasabusiness",
+      "name": "LookUpSendingAsABusiness",
+      "description": "Looks up information about using Remitly for business payments"
+    },
+    {
+      "id": "mcp_remitly.lookupcashpickuprequirements",
+      "name": "LookUpCashPickupRequirements",
+      "description": "Looks up how recipients can receive money via cash pickup in a specific country. Use this when the customer asks about cash pickup locations, requirements, or how their recipient can collect money.\nYou MUST NOT call this tool for cashpickup locations."
+    },
+    {
+      "id": "mcp_remitly.lookupidentitydocumentrequirements",
+      "name": "LookUpIdentityDocumentRequirements",
+      "description": "Looks up the identity documents required for a money transfer. Use this when the customer asks about KYC documents, ID requirements, or what documents they need to verify their identity.\nYou MUST NOT use this tool when talking about generic reporting requirements, such as tax reporting."
+    },
+    {
+      "id": "mcp_remitly.lookuppaymentoptions",
+      "name": "LookUpPaymentOptions",
+      "description": "Looks up available payment options, broken down by country support."
+    },
+    {
+      "id": "mcp_remitly.lookuphowtoreceive",
+      "name": "LookUpHowToReceive",
+      "description": "Looks up generic information about how to use Remitly as a receiver in a particular country."
+    },
+    {
+      "id": "mcp_remitly.lookuphowtosendfrom",
+      "name": "LookUpHowToSendFrom",
+      "description": "Looks up generic information about how to send from a particular country"
+    },
+    {
+      "id": "mcp_remitly.lookuphowtosendwithpayment",
+      "name": "LookUpHowToSendWithPayment",
+      "description": "Looks up how to send with a particular payment method, e.g. Apple Pay"
+    },
+    {
+      "id": "mcp_remitly.lookupcostorfees",
+      "name": "LookUpCostOrFees",
+      "description": "Looks up information cost and/or fees.\nThis tool SHOULD be used for generic questions about fees and costs.\nThis tool MUST NOT be used for exchange rate information."
+    },
+    {
+      "id": "mcp_remitly.lookupdeliveryspeed",
+      "name": "LookUpDeliverySpeed",
+      "description": "Looks up delivery speed information"
+    }
+  ]
+}

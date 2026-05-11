@@ -1,0 +1,242 @@
+{
+  "fetchedAt": "2026-04-30T15:26:45.594Z",
+  "status": "ok",
+  "count": 47,
+  "tools": [
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.authorization.generateTokenV2",
+      "name": "authorization.generateTokenV2",
+      "description": "Returns an OAuth access token or a refresh token. You must pass a valid access token in the header of each API call."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.authorization.revokeRefreshTokenV2",
+      "name": "authorization.revokeRefreshTokenV2",
+      "description": "Delete a Refresh Token"
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.checkApiUsage.getApiUsagePlansV2",
+      "name": "checkApiUsage.getApiUsagePlansV2",
+      "description": "Returns prediction usage on a monthly basis for the current calendar month and future months. Each apiusage object in the response corresponds to a calendar month in your plan."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.deleteDataset",
+      "name": "languageDatasets.deleteDataset",
+      "description": "Deletes the specified dataset and associated labels and examples."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.get",
+      "name": "languageDatasets.get",
+      "description": "Returns the status of a language dataset or model deletion. When you delete a dataset or model, the deletion may not occur immediately. Use this call to find out when the deletion is complete."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.getDataset",
+      "name": "languageDatasets.getDataset",
+      "description": "Returns a single dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.listDatasets",
+      "name": "languageDatasets.listDatasets",
+      "description": "Returns a list of datasets and their labels that were created by the current user. The response is sorted by dataset ID."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.uploadDatasetAsync",
+      "name": "languageDatasets.uploadDatasetAsync",
+      "description": "Creates a dataset, labels, and examples from the specified .csv, .tsv, or .json file. The call returns immediately and continues to upload data in the background."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageDatasets.uploadDatasetSync",
+      "name": "languageDatasets.uploadDatasetSync",
+      "description": "Creates a dataset, labels, and examples from the specified .csv, .tsv, or .json file. The call returns after the dataset is created and all of the data is uploaded."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageExamples.getExamples",
+      "name": "languageExamples.getExamples",
+      "description": "Returns all the examples for the specified dataset,"
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageExamples.getExamplesByLabel",
+      "name": "languageExamples.getExamplesByLabel",
+      "description": "Returns all the examples for the specified label. Returns both uploaded examples and feedback examples."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageExamples.provideFeedback",
+      "name": "languageExamples.provideFeedback",
+      "description": "Adds a feedback example to the dataset associated with the specified model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageExamples.updateDatasetAsync",
+      "name": "languageExamples.updateDatasetAsync",
+      "description": "Adds examples from a .csv, .tsv, or .json file to a dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageModels.deleteModel",
+      "name": "languageModels.deleteModel",
+      "description": "Deletes the specified model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageModels.getTrainedModelLearningCurve",
+      "name": "languageModels.getTrainedModelLearningCurve",
+      "description": "Returns the metrics for each epoch in a model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageModels.getTrainedModelMetrics",
+      "name": "languageModels.getTrainedModelMetrics",
+      "description": "Returns the metrics for a model"
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageModels.getTrainedModels",
+      "name": "languageModels.getTrainedModels",
+      "description": "Returns all models for the specified dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languagePrediction.intentMultipart",
+      "name": "languagePrediction.intentMultipart",
+      "description": "Returns an intent prediction for the given string."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languagePrediction.sentimentMultipart",
+      "name": "languagePrediction.sentimentMultipart",
+      "description": "Returns a sentiment prediction for the given string."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageTraining.getTrainStatusAndProgress",
+      "name": "languageTraining.getTrainStatusAndProgress",
+      "description": "Returns the status of a model's training process. Use the progress field to determine how far the training has progressed. When training completes successfully, the status is SUCCEEDED and the progress is 1."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageTraining.retrain",
+      "name": "languageTraining.retrain",
+      "description": "Retrains a dataset and updates a model. Use this API call when you want to update a model and keep the model ID instead of creating a new model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.languageTraining.train",
+      "name": "languageTraining.train",
+      "description": "Trains a dataset and creates a model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.createDataset",
+      "name": "visionDatasets.createDataset",
+      "description": "Creates a dataset and labels, if they're specified."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.deleteDataset1",
+      "name": "visionDatasets.deleteDataset1",
+      "description": "Deletes the specified dataset and associated labels and examples."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.get1",
+      "name": "visionDatasets.get1",
+      "description": "Returns the status of an image dataset or model deletion. When you delete a dataset or model, the deletion may not occur immediately. Use this call to find out when the deletion is complete."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.getDataset1",
+      "name": "visionDatasets.getDataset1",
+      "description": "Returns a single dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.listDatasets1",
+      "name": "visionDatasets.listDatasets1",
+      "description": "Returns a list of datasets and their labels that were created by the current user. The response is sorted by dataset ID."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.uploadDatasetAsync1",
+      "name": "visionDatasets.uploadDatasetAsync1",
+      "description": "Creates a dataset, labels, and examples from the specified .zip file. The call returns immediately and continues to upload the images in the background."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionDatasets.uploadDatasetSync1",
+      "name": "visionDatasets.uploadDatasetSync1",
+      "description": "Creates a dataset, labels, and examples from the specified .zip file. The call returns after the dataset is created and all of the images are uploaded."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.addExample",
+      "name": "visionExamples.addExample",
+      "description": "Adds an example with the specified label to a dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.getExamples1",
+      "name": "visionExamples.getExamples1",
+      "description": "Returns all the examples for the specified dataset. By default, returns examples created by uploading them from a .zip file."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.getExamplesByLabel1",
+      "name": "visionExamples.getExamplesByLabel1",
+      "description": "Returns all the examples for the specified label. Returns both uploaded examples and feedback examples."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.provideFeedback1",
+      "name": "visionExamples.provideFeedback1",
+      "description": "Adds a feedback example to the dataset associated with the specified model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.updateDatasetAsync1",
+      "name": "visionExamples.updateDatasetAsync1",
+      "description": "Adds feedback examples to the dataset associated with the specified object detection model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionExamples.updateDatasetAsync2",
+      "name": "visionExamples.updateDatasetAsync2",
+      "description": "Adds examples from a .zip file to a dataset. You can use this call only with a dataset that was created from a .zip file."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionModels.deleteModel1",
+      "name": "visionModels.deleteModel1",
+      "description": "Deletes the specified model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionModels.getTrainedModelLearningCurve1",
+      "name": "visionModels.getTrainedModelLearningCurve1",
+      "description": "Returns the metrics for each epoch in a model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionModels.getTrainedModelMetrics1",
+      "name": "visionModels.getTrainedModelMetrics1",
+      "description": "Returns the metrics for a model"
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionModels.getTrainedModels1",
+      "name": "visionModels.getTrainedModels1",
+      "description": "Returns all models for the specified dataset."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionPrediction.detectMultipart",
+      "name": "visionPrediction.detectMultipart",
+      "description": "Returns labels, probabilities, and bounding box coordinates for items detected in the specified local image file."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionPrediction.ocrMultipart",
+      "name": "visionPrediction.ocrMultipart",
+      "description": "Returns a prediction from an OCR model for the specified image URL or local image file."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionPrediction.predictMultipart",
+      "name": "visionPrediction.predictMultipart",
+      "description": "Returns a prediction from an image or multi-label model for the specified image."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionTraining.getTrainStatusAndProgress1",
+      "name": "visionTraining.getTrainStatusAndProgress1",
+      "description": "Returns the status of a model's training process. Use the progress field to determine how far the training has progressed. When training completes successfully, the status is SUCCEEDED and the progress is 1."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionTraining.retrain1",
+      "name": "visionTraining.retrain1",
+      "description": "Retrains a dataset and updates a model. Use this API call when you want to update a model and keep the model ID instead of creating a new model."
+    },
+    {
+      "id": "openapi_salesforce_local_einstein_einstein.visionTraining.train1",
+      "name": "visionTraining.train1",
+      "description": "Trains a dataset and creates a model."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

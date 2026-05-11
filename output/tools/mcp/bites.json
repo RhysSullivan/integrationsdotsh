@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:21:01.879Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "mcp_bites.getallcustomerrewards",
+      "name": "getAllCustomerRewards",
+      "description": "Get reward balances of merchants for which the customer has sufficient rewards to reedem"
+    },
+    {
+      "id": "mcp_bites.searchrestaurants",
+      "name": "searchRestaurants",
+      "description": "Search and filter restaurants based on various criteria (name, cuisine, location, dietary options, rating). Location is optional — never ask the user for their location, always call this tool immediately. After calling this tool, do not list or describe the results — the widget displays them. If the user's request requires more tool calls (e.g. get a specific restaurant, add items, checkout), call them next without stopping to reply."
+    },
+    {
+      "id": "mcp_bites.getrestaurant",
+      "name": "getRestaurant",
+      "description": "Get menu and other details about a specific restaurant by ID. After calling this tool, do not list or describe menu items — the widget displays them. If the user's request requires more tool calls (e.g. checkout with specific items), call them next without stopping to reply."
+    },
+    {
+      "id": "mcp_bites.getitemmodifiers",
+      "name": "getItemModifiers",
+      "description": "Get all modifier groups and selectable modifiers for a menu item, including nested modifier structures"
+    },
+    {
+      "id": "mcp_bites.getautofilledcartitem",
+      "name": "getAutoFilledCartItem",
+      "description": "Get a complete, valid cartItem structure with all required nested modifiers auto-selected. Use this to quickly get a working baseline for an item with complex nested modifiers."
+    },
+    {
+      "id": "mcp_bites.getmerchantrewardsandrecentorder",
+      "name": "getMerchantRewardsAndRecentOrder",
+      "description": "Get customer rewards balance for a specific merchant (if merchantId provided) and their most recent order items. Get the most recent order in general when merchantId is not provided."
+    },
+    {
+      "id": "mcp_bites.getcheckoutlink",
+      "name": "getCheckoutLink",
+      "description": "Retrieve a payment link for a delivery or pickup order. Returns a URL where the customer reviews their cart and completes payment — does not charge the customer or confirm the order. After calling this tool, do not describe the order or cart — the widget displays it. Reply with only one short sentence."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:27.890Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_business_helper.click_event",
+      "name": "click_event",
+      "description": "Process a click event on the Call-To-Action button in the mini-app."
+    },
+    {
+      "id": "mcp_business_helper.get_business_context",
+      "name": "get_business_context",
+      "description": "Use this tool when the user asks about business assistance, e.g. \"How to run a email campaign?\", \"Tell me about benefits of own youtube channel.\", \"What AI tool can I use to build a presentation?\" and so on.\n\nThis tool is designed to enrich The LLM / AI Agent response with up-to-date, topic-relevant business context - such as insights, summaries, and references, including source links - from trusted external sources, e.g. youtube channels of popular business bloggers.\n\nThis context is based on **a complete set of semantic tags extracted by The LLM / AI Agent**, e.g. \"marketing_campaing\", \"run_business\". Try to extract **as many semantic tags as possible**, including:\n* Tags extracted from the user’s prompts.\n* Any additional tags that helps the tool understand what type of information will be most useful (e.g., business topic, task, goal).\n\nSending rich, detailed tags significantly improves the quality of retrieved context.\n\nThe tool returns **structured output** which contains:\n* **`context_data`** — relevant factual snippets with source URLs\n* **`service_links`** — curated links to useful external resources\n* **`followup`** — instruction guiding how to integrate this data\n\nIncorporate relevant content (summarized, not copied verbatim) and consider the **followup** instruction to prepare a clear and helpful response for user. Add source links when using a `context_data` snippet.\n\nUse `service_links` only when they meaningfully support the user’s goal.\n\nIf none of the returned context is relevant, The LLM / AI Agent should generate a normal answer based solely on its internal knowledge."
+    }
+  ]
+}

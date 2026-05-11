@@ -1,0 +1,87 @@
+{
+  "fetchedAt": "2026-04-30T15:26:56.172Z",
+  "status": "ok",
+  "count": 16,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.createorupdatefixedpricesonpricetableortradepolicy",
+      "name": "pricesAndFixedPrices.createorupdatefixedpricesonpricetableortradepolicy",
+      "description": "Creates or updates the fixed prices of an SKU for a specific price table or trade policy. You can add one or multiple fixed prices per SKU.\r\n\r\n ## Request body example\r\n\r\n```json\r\n[\r\n  {\r\n    \"value\": 50.5,\r\n    \"listPrice\": 50.5,\r\n    \"minQuantity\": 2,\r\n    \"dateRange\": {\r\n      \"from\": \"2021-12-30T22:00:00-03:00\",\r\n      \"to\": \"2021-12-30T22:00:00-04:00\"\r\n    }\r\n  }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.createUpdatePriceOrFixedPrice",
+      "name": "pricesAndFixedPrices.createUpdatePriceOrFixedPrice",
+      "description": "Creates or updates an SKU Base Price or Fixed Prices. The **base price** is the basic selling price of a product, it comprises the cost price and the markup wanted in the sale of the product. The **fixed price** is an optional price of the SKU for a specific trade policy with a specific minimum quantity to be activated.\r\n\r\n <p> You may optionally set a list price. Additionally, you may set either a cost price or a markup value. By defining either one of them, the other will be calculated to conform to the formula <code>costPrice * (1 + markup) = basePrice</code>.</p> <h2>Request body example</h2>\r\n\r\n```json\r\n{\r\n    \"markup\": 30,\r\n    \"basePrice\": 100,\r\n    \"listPrice\": 35,\r\n    \"fixedPrices\": [\r\n        {\r\n            \"tradePolicyId\": \"1\",\r\n            \"value\": 31,\r\n            \"listPrice\": 32,\r\n            \"minQuantity\": 1,\r\n            \"dateRange\": {\r\n                \"from\": \"2022-05-21T22:00:00Z\",\r\n                \"to\": \"2023-05-28T22:00:00Z\"\r\n            }\r\n        },\r\n        {\r\n            \"tradePolicyId\": \"1\",\r\n            \"value\": 31.5,\r\n            \"listPrice\": 33,\r\n            \"minQuantity\": 2\r\n        }\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.deletefixedpricesonapricetableortradepolicy",
+      "name": "pricesAndFixedPrices.deletefixedpricesonapricetableortradepolicy",
+      "description": "Deletes all Fixed Prices of an SKU in a specific Price Table or Trade Policy."
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.deletePrice",
+      "name": "pricesAndFixedPrices.deletePrice",
+      "description": "Deletes the Base Price and all available Fixed Prices for an SKU in all trade policies."
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.getComputedPricebypricetable",
+      "name": "pricesAndFixedPrices.getComputedPricebypricetable",
+      "description": "Gets the Computed Price, which is the price after all the steps in the Pricing pipeline, for an SKU in a specific price table or trade policy. \r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"tradePolicyId\": \"1\",\r\n    \"listPrice\": 30,\r\n    \"costPrice\": 76.92,\r\n    \"sellingPrice\": 18.9,\r\n    \"priceValidUntil\": \"2018-12-20T18:12:14Z\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.getFixedPrices",
+      "name": "pricesAndFixedPrices.getFixedPrices",
+      "description": "The **fixed price** is an optional price of the SKU for a specific trade policy with a specific minimum quantity to be activated. This method retrieves an array of Fixed Prices for an SKU in a Trade Policy with Minimum Quantities.\r\n\r\n The default value for a Minimum Quantity is `1`. This means a Fixed Price will be valid for a SKU in a Trade Policy for orders containing the specified number of Minimum Quantity or above, unless a higher Minimum Quantity is specified.\r\n\r\n Fixed prices may, optionally, be scheduled. If so, these objects will contain the `dateRange` object with `from` and `to` properties, indicating the start and end time of the scheduled fixed price in the RFC3339 timestamp format (`YYYY-MM-DDT23:59:60Z`).\r\n\r\n Note that the 'Z', at the end, represents the UTC time (GMT+00:00). If it was in GMT-03:00, for example, it would be (`YYYY-MM-DDT23:59:60-03:00`).\r\n\r\n ## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"tradePolicyId\": \"6\",\r\n        \"value\": 20.9,\r\n        \"listPrice\": 22.9,\r\n        \"minQuantity\": 1,\r\n        \"dateRange\": {\r\n            \"from\": \"2021-12-30T22:00:00-03:00\",\r\n            \"to\": \"2021-12-30T22:00:00-03:00\"\r\n        }\r\n    },\r\n    {\r\n        \"tradePolicyId\": \"1\",\r\n        \"value\": 18.9,\r\n        \"listPrice\": null,\r\n        \"minQuantity\": 1,\r\n        \"dateRange\": {\r\n            \"from\": \"2021-12-30T22:00:00-03:00\",\r\n            \"to\": \"2021-12-30T22:00:00-03:00\"\r\n        }\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.getFixedPricesonapricetable",
+      "name": "pricesAndFixedPrices.getFixedPricesonapricetable",
+      "description": "Retrieves all Fixed Prices on a price table or trade policy. \r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"tradePolicyId\": \"6\",\r\n        \"value\": 20.9,\r\n        \"listPrice\": 22.9,\r\n        \"minQuantity\": 1,\r\n        \"dateRange\": {\r\n            \"from\": \"2021-12-30T22:00:00-03:00\",\r\n            \"to\": \"2021-12-30T22:00:00-04:00\"\r\n        }\r\n    },\r\n    {\r\n        \"tradePolicyId\": \"1\",\r\n        \"value\": 18.9,\r\n        \"listPrice\": null,\r\n        \"minQuantity\": 1\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricesAndFixedPrices.getPrice",
+      "name": "pricesAndFixedPrices.getPrice",
+      "description": "Retrieves price data given a specific SKU ID. Within the `fixedPrices` object, there might be a list of prices for specific Trade Policies and Minimium Quantities of the SKU. Fixed Prices may also be scheduled.\r\n\r\n ## Response body example\r\n\r\n```json\r\n{\r\n    \"itemId\": \"1\",\r\n    \"listPrice\": 50,\r\n    \"costPrice\": 90,\r\n    \"markup\": 30,\r\n    \"basePrice\": 117,\r\n    \"fixedPrices\": [\r\n        {\r\n            \"tradePolicyId\": \"1\",\r\n            \"value\": 50.5,\r\n            \"listPrice\": 50.5,\r\n            \"minQuantity\": 2,\r\n            \"dateRange\": {\r\n                \"from\": \"2021-12-31T01:00:00Z\",\r\n                \"to\": \"2022-12-31T01:00:00Z\"\r\n            }\r\n        },\r\n        {\r\n            \"tradePolicyId\": \"2\",\r\n            \"value\": 30,\r\n            \"listPrice\": 50,\r\n            \"minQuantity\": 2\r\n        }\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.priceTables.getallpricetablesandrules",
+      "name": "priceTables.getallpricetablesandrules",
+      "description": "This method will retrieve all price tables and their rules.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"tradePolicyId\": \"2\",\r\n        \"rules\": [\r\n            {\r\n                \"id\": 0,\r\n                \"context\": {\r\n                    \"categories\": {},\r\n                    \"brands\": {},\r\n                    \"stockStatuses\": null,\r\n                    \"internalCategories\": null,\r\n                    \"markupRange\": null,\r\n                    \"dateRange\": null\r\n                },\r\n                \"percentualModifier\": 20\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"tradePolicyId\": \"b2c\",\r\n        \"rules\": [\r\n            {\r\n                \"id\": 0,\r\n                \"context\": {\r\n                    \"categories\": {},\r\n                    \"brands\": {\r\n                        \"2000009\": \"Whiskas\"\r\n                    },\r\n                    \"stockStatuses\": null,\r\n                    \"internalCategories\": null,\r\n                    \"markupRange\": null,\r\n                    \"dateRange\": null\r\n                },\r\n                \"percentualModifier\": 15\r\n            }\r\n        ]\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.priceTables.getrulesforapricetable",
+      "name": "priceTables.getrulesforapricetable",
+      "description": "This method will retrieve the rules from a specific Price Table.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"tradePolicyId\": \"b2c\",\r\n    \"rules\": [{\r\n        \"id\": 0,\r\n        \"context\": {\r\n            \"categories\": {},\r\n            \"brands\": {\r\n                \"2000009\": \"Whiskas\"\r\n            },\r\n            \"stockStatuses\": null,\r\n            \"internalCategories\": null,\r\n            \"markupRange\": null,\r\n            \"dateRange\": null\r\n        },\r\n        \"percentualModifier\": 15\r\n    }]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.priceTables.listpricetables",
+      "name": "priceTables.listpricetables",
+      "description": "This method will list all price tables.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    \"1\",\r\n    \"2\",\r\n    \"3\",\r\n    \"b2c\",\r\n    \"b2b\",\r\n    \"gold\"\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.priceTables.putPricingPipelineCatalogPriceTableId",
+      "name": "priceTables.putPricingPipelineCatalogPriceTableId",
+      "description": "This method will update the rules from a specific Price Table. It will delete all the rules from the requested Price Table and create new rules based on the content of the request.\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"rules\": [\r\n          {\r\n               \"id\": 1,\r\n               \"context\": {\r\n                    \"categories\": {\r\n                         \"Category ID\": \"1\",\r\n                         \"Category Name\": \"Alimentação\"\r\n                    },\r\n                    \"brands\": {\r\n                         \"Brand ID\": \"2000002\",\r\n                         \"Brand Name\": \"Whiskas\"\r\n                    },\r\n                    \"markupRange\": {\r\n                         \"from\": 0,\r\n                         \"to\": 200\r\n                    },\r\n                    \"dateRange\": {\r\n                         \"from\": \"2022-01-23T19:00:00.000Z\",\r\n                         \"to\": \"2023-10-26T00:00:00.000Z\"\r\n                    }\r\n               },\r\n               \"percentualModifier\": 0\r\n          }\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricingConfiguration.getPricingConfig",
+      "name": "pricingConfiguration.getPricingConfig",
+      "description": "Retrieves Pricing Configuration.\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"hasMigrated\": true,\r\n    \"migrationStatus\": \"Completed\",\r\n    \"defaultMarkup\": 100,\r\n    \"priceVariation\": {\r\n        \"upperLimit\": null,\r\n        \"lowerLimit\": null\r\n    },\r\n    \"minimumMarkups\": {\r\n        \"1\": 100,\r\n        \"2\": 90\r\n    },\r\n    \"tradePolicyConfigs\": [],\r\n    \"sellersToOverride\": [],\r\n    \"hasPriceInheritance\": false,\r\n    \"priceInheritance\": \"never\",\r\n    \"hasOptionalBasePrice\": false,\r\n    \"blockAccount\": false,\r\n    \"blockedRoutes\": null,\r\n    \"priceTableSelectionStrategy\": \"first\",\r\n    \"priceTableLimit\": null\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_pricing_api_pricing_api.pricingConfiguration.getPricingv2Status",
+      "name": "pricingConfiguration.getPricingv2Status",
+      "description": "Retrieves Pricing v2 Status. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"isActive\": true,\r\n    \"hasMigrated\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,1642 @@
+{
+  "fetchedAt": "2026-04-30T15:22:16.438Z",
+  "status": "ok",
+  "count": 327,
+  "tools": [
+    {
+      "id": "openapi_gitea_io.activitypub.activitypubPerson",
+      "name": "activitypub.activitypubPerson",
+      "description": "Returns the Person actor for a user"
+    },
+    {
+      "id": "openapi_gitea_io.activitypub.activitypubPersonInbox",
+      "name": "activitypub.activitypubPersonInbox",
+      "description": "Send to the inbox"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminAdoptRepository",
+      "name": "admin.adminAdoptRepository",
+      "description": "Adopt unadopted files as a repository"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCreateHook",
+      "name": "admin.adminCreateHook",
+      "description": "Create a hook"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCreateOrg",
+      "name": "admin.adminCreateOrg",
+      "description": "Create an organization"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCreatePublicKey",
+      "name": "admin.adminCreatePublicKey",
+      "description": "Add a public key on behalf of a user"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCreateRepo",
+      "name": "admin.adminCreateRepo",
+      "description": "Create a repository on behalf of a user"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCreateUser",
+      "name": "admin.adminCreateUser",
+      "description": "Create a user"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCronList",
+      "name": "admin.adminCronList",
+      "description": "List cron tasks"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminCronRun",
+      "name": "admin.adminCronRun",
+      "description": "Run cron task"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminDeleteHook",
+      "name": "admin.adminDeleteHook",
+      "description": "Delete a hook"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminDeleteUnadoptedRepository",
+      "name": "admin.adminDeleteUnadoptedRepository",
+      "description": "Delete unadopted files"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminDeleteUser",
+      "name": "admin.adminDeleteUser",
+      "description": "Delete a user"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminDeleteUserPublicKey",
+      "name": "admin.adminDeleteUserPublicKey",
+      "description": "Delete a user's public key"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminEditHook",
+      "name": "admin.adminEditHook",
+      "description": "Update a hook"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminEditUser",
+      "name": "admin.adminEditUser",
+      "description": "Edit an existing user"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminGetAllOrgs",
+      "name": "admin.adminGetAllOrgs",
+      "description": "List all organizations"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminGetAllUsers",
+      "name": "admin.adminGetAllUsers",
+      "description": "List all users"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminGetHook",
+      "name": "admin.adminGetHook",
+      "description": "Get a hook"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminListHooks",
+      "name": "admin.adminListHooks",
+      "description": "List system's webhooks"
+    },
+    {
+      "id": "openapi_gitea_io.admin.adminUnadoptedList",
+      "name": "admin.adminUnadoptedList",
+      "description": "List unadopted repositories"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueAddLabel",
+      "name": "issue.issueAddLabel",
+      "description": "Add a label to an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueAddSubscription",
+      "name": "issue.issueAddSubscription",
+      "description": "Subscribe user to issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueAddTime",
+      "name": "issue.issueAddTime",
+      "description": "Add tracked time to a issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCheckSubscription",
+      "name": "issue.issueCheckSubscription",
+      "description": "Check if user is subscribed to an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueClearLabels",
+      "name": "issue.issueClearLabels",
+      "description": "Remove all labels from an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateComment",
+      "name": "issue.issueCreateComment",
+      "description": "Add a comment to an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateIssue",
+      "name": "issue.issueCreateIssue",
+      "description": "Create an issue. If using deadline only the date will be taken into account, and time of day ignored."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateIssueAttachment",
+      "name": "issue.issueCreateIssueAttachment",
+      "description": "Create an issue attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateIssueCommentAttachment",
+      "name": "issue.issueCreateIssueCommentAttachment",
+      "description": "Create a comment attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateLabel",
+      "name": "issue.issueCreateLabel",
+      "description": "Create a label"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueCreateMilestone",
+      "name": "issue.issueCreateMilestone",
+      "description": "Create a milestone"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDelete",
+      "name": "issue.issueDelete",
+      "description": "Delete an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteComment",
+      "name": "issue.issueDeleteComment",
+      "description": "Delete a comment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteCommentDeprecated",
+      "name": "issue.issueDeleteCommentDeprecated",
+      "description": "Delete a comment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteCommentReaction",
+      "name": "issue.issueDeleteCommentReaction",
+      "description": "Remove a reaction from a comment of an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteIssueAttachment",
+      "name": "issue.issueDeleteIssueAttachment",
+      "description": "Delete an issue attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteIssueCommentAttachment",
+      "name": "issue.issueDeleteIssueCommentAttachment",
+      "description": "Delete a comment attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteIssueReaction",
+      "name": "issue.issueDeleteIssueReaction",
+      "description": "Remove a reaction from an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteLabel",
+      "name": "issue.issueDeleteLabel",
+      "description": "Delete a label"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteMilestone",
+      "name": "issue.issueDeleteMilestone",
+      "description": "Delete a milestone"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteStopWatch",
+      "name": "issue.issueDeleteStopWatch",
+      "description": "Delete an issue's existing stopwatch."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteSubscription",
+      "name": "issue.issueDeleteSubscription",
+      "description": "Unsubscribe user from issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueDeleteTime",
+      "name": "issue.issueDeleteTime",
+      "description": "Delete specific tracked time"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditComment",
+      "name": "issue.issueEditComment",
+      "description": "Edit a comment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditCommentDeprecated",
+      "name": "issue.issueEditCommentDeprecated",
+      "description": "Edit a comment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditIssue",
+      "name": "issue.issueEditIssue",
+      "description": "Edit an issue. If using deadline only the date will be taken into account, and time of day ignored."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditIssueAttachment",
+      "name": "issue.issueEditIssueAttachment",
+      "description": "Edit an issue attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditIssueCommentAttachment",
+      "name": "issue.issueEditIssueCommentAttachment",
+      "description": "Edit a comment attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditIssueDeadline",
+      "name": "issue.issueEditIssueDeadline",
+      "description": "Set an issue deadline. If set to null, the deadline is deleted. If using deadline only the date will be taken into account, and time of day ignored."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditLabel",
+      "name": "issue.issueEditLabel",
+      "description": "Update a label"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueEditMilestone",
+      "name": "issue.issueEditMilestone",
+      "description": "Update a milestone"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetComment",
+      "name": "issue.issueGetComment",
+      "description": "Get a comment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetCommentReactions",
+      "name": "issue.issueGetCommentReactions",
+      "description": "Get a list of reactions from a comment of an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetComments",
+      "name": "issue.issueGetComments",
+      "description": "List all comments on an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetCommentsAndTimeline",
+      "name": "issue.issueGetCommentsAndTimeline",
+      "description": "List all comments and events on an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetIssue",
+      "name": "issue.issueGetIssue",
+      "description": "Get an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetIssueAttachment",
+      "name": "issue.issueGetIssueAttachment",
+      "description": "Get an issue attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetIssueCommentAttachment",
+      "name": "issue.issueGetIssueCommentAttachment",
+      "description": "Get a comment attachment"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetIssueReactions",
+      "name": "issue.issueGetIssueReactions",
+      "description": "Get a list reactions of an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetLabel",
+      "name": "issue.issueGetLabel",
+      "description": "Get a single label"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetLabels",
+      "name": "issue.issueGetLabels",
+      "description": "Get an issue's labels"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetMilestone",
+      "name": "issue.issueGetMilestone",
+      "description": "Get a milestone"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetMilestonesList",
+      "name": "issue.issueGetMilestonesList",
+      "description": "Get all of a repository's opened milestones"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueGetRepoComments",
+      "name": "issue.issueGetRepoComments",
+      "description": "List all comments in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueListIssueAttachments",
+      "name": "issue.issueListIssueAttachments",
+      "description": "List issue's attachments"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueListIssueCommentAttachments",
+      "name": "issue.issueListIssueCommentAttachments",
+      "description": "List comment's attachments"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueListIssues",
+      "name": "issue.issueListIssues",
+      "description": "List a repository's issues"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueListLabels",
+      "name": "issue.issueListLabels",
+      "description": "Get all of a repository's labels"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issuePostCommentReaction",
+      "name": "issue.issuePostCommentReaction",
+      "description": "Add a reaction to a comment of an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issuePostIssueReaction",
+      "name": "issue.issuePostIssueReaction",
+      "description": "Add a reaction to an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueRemoveLabel",
+      "name": "issue.issueRemoveLabel",
+      "description": "Remove a label from an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueReplaceLabels",
+      "name": "issue.issueReplaceLabels",
+      "description": "Replace an issue's labels"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueResetTime",
+      "name": "issue.issueResetTime",
+      "description": "Reset a tracked time of an issue"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueSearchIssues",
+      "name": "issue.issueSearchIssues",
+      "description": "Search for issues across the repositories that the user has access to"
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueStartStopWatch",
+      "name": "issue.issueStartStopWatch",
+      "description": "Start stopwatch on an issue."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueStopStopWatch",
+      "name": "issue.issueStopStopWatch",
+      "description": "Stop an issue's existing stopwatch."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueSubscriptions",
+      "name": "issue.issueSubscriptions",
+      "description": "Get users who subscribed on an issue."
+    },
+    {
+      "id": "openapi_gitea_io.issue.issueTrackedTimes",
+      "name": "issue.issueTrackedTimes",
+      "description": "List an issue's tracked times"
+    },
+    {
+      "id": "openapi_gitea_io.miscellaneous.getNodeInfo",
+      "name": "miscellaneous.getNodeInfo",
+      "description": "Returns the nodeinfo of the Gitea application"
+    },
+    {
+      "id": "openapi_gitea_io.miscellaneous.getSigningKey",
+      "name": "miscellaneous.getSigningKey",
+      "description": "Get default signing-key.gpg"
+    },
+    {
+      "id": "openapi_gitea_io.miscellaneous.getVersion",
+      "name": "miscellaneous.getVersion",
+      "description": "Returns the version of the Gitea application"
+    },
+    {
+      "id": "openapi_gitea_io.miscellaneous.renderMarkdown",
+      "name": "miscellaneous.renderMarkdown",
+      "description": "Render a markdown document as HTML"
+    },
+    {
+      "id": "openapi_gitea_io.miscellaneous.renderMarkdownRaw",
+      "name": "miscellaneous.renderMarkdownRaw",
+      "description": "Render raw markdown as HTML"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyGetList",
+      "name": "notification.notifyGetList",
+      "description": "List users's notification threads"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyGetRepoList",
+      "name": "notification.notifyGetRepoList",
+      "description": "List users's notification threads on a specific repo"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyGetThread",
+      "name": "notification.notifyGetThread",
+      "description": "Get notification thread by ID"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyNewAvailable",
+      "name": "notification.notifyNewAvailable",
+      "description": "Check if unread notifications exist"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyReadList",
+      "name": "notification.notifyReadList",
+      "description": "Mark notification threads as read, pinned or unread"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyReadRepoList",
+      "name": "notification.notifyReadRepoList",
+      "description": "Mark notification threads as read, pinned or unread on a specific repo"
+    },
+    {
+      "id": "openapi_gitea_io.notification.notifyReadThread",
+      "name": "notification.notifyReadThread",
+      "description": "Mark notification thread as read by ID"
+    },
+    {
+      "id": "openapi_gitea_io.organization.createOrgRepo",
+      "name": "organization.createOrgRepo",
+      "description": "Create a repository in an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.createOrgRepoDeprecated",
+      "name": "organization.createOrgRepoDeprecated",
+      "description": "Create a repository in an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgAddTeamMember",
+      "name": "organization.orgAddTeamMember",
+      "description": "Add a team member"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgAddTeamRepository",
+      "name": "organization.orgAddTeamRepository",
+      "description": "Add a repository to a team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgConcealMember",
+      "name": "organization.orgConcealMember",
+      "description": "Conceal a user's membership"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgCreate",
+      "name": "organization.orgCreate",
+      "description": "Create an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgCreateHook",
+      "name": "organization.orgCreateHook",
+      "description": "Create a hook"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgCreateLabel",
+      "name": "organization.orgCreateLabel",
+      "description": "Create a label for an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgCreateTeam",
+      "name": "organization.orgCreateTeam",
+      "description": "Create a team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgDelete",
+      "name": "organization.orgDelete",
+      "description": "Delete an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgDeleteHook",
+      "name": "organization.orgDeleteHook",
+      "description": "Delete a hook"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgDeleteLabel",
+      "name": "organization.orgDeleteLabel",
+      "description": "Delete a label"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgDeleteMember",
+      "name": "organization.orgDeleteMember",
+      "description": "Remove a member from an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgDeleteTeam",
+      "name": "organization.orgDeleteTeam",
+      "description": "Delete a team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgEdit",
+      "name": "organization.orgEdit",
+      "description": "Edit an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgEditHook",
+      "name": "organization.orgEditHook",
+      "description": "Update a hook"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgEditLabel",
+      "name": "organization.orgEditLabel",
+      "description": "Update a label"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgEditTeam",
+      "name": "organization.orgEditTeam",
+      "description": "Edit a team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGet",
+      "name": "organization.orgGet",
+      "description": "Get an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGetAll",
+      "name": "organization.orgGetAll",
+      "description": "Get list of organizations"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGetHook",
+      "name": "organization.orgGetHook",
+      "description": "Get a hook"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGetLabel",
+      "name": "organization.orgGetLabel",
+      "description": "Get a single label"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGetTeam",
+      "name": "organization.orgGetTeam",
+      "description": "Get a team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgGetUserPermissions",
+      "name": "organization.orgGetUserPermissions",
+      "description": "Get user permissions in organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgIsMember",
+      "name": "organization.orgIsMember",
+      "description": "Check if a user is a member of an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgIsPublicMember",
+      "name": "organization.orgIsPublicMember",
+      "description": "Check if a user is a public member of an organization"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListCurrentUserOrgs",
+      "name": "organization.orgListCurrentUserOrgs",
+      "description": "List the current user's organizations"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListHooks",
+      "name": "organization.orgListHooks",
+      "description": "List an organization's webhooks"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListLabels",
+      "name": "organization.orgListLabels",
+      "description": "List an organization's labels"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListMembers",
+      "name": "organization.orgListMembers",
+      "description": "List an organization's members"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListPublicMembers",
+      "name": "organization.orgListPublicMembers",
+      "description": "List an organization's public members"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListRepos",
+      "name": "organization.orgListRepos",
+      "description": "List an organization's repos"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListTeamMember",
+      "name": "organization.orgListTeamMember",
+      "description": "List a particular member of team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListTeamMembers",
+      "name": "organization.orgListTeamMembers",
+      "description": "List a team's members"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListTeamRepo",
+      "name": "organization.orgListTeamRepo",
+      "description": "List a particular repo of team"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListTeamRepos",
+      "name": "organization.orgListTeamRepos",
+      "description": "List a team's repos"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListTeams",
+      "name": "organization.orgListTeams",
+      "description": "List an organization's teams"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgListUserOrgs",
+      "name": "organization.orgListUserOrgs",
+      "description": "List a user's organizations"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgPublicizeMember",
+      "name": "organization.orgPublicizeMember",
+      "description": "Publicize a user's membership"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgRemoveTeamMember",
+      "name": "organization.orgRemoveTeamMember",
+      "description": "Remove a team member"
+    },
+    {
+      "id": "openapi_gitea_io.organization.orgRemoveTeamRepository",
+      "name": "organization.orgRemoveTeamRepository",
+      "description": "This does not delete the repository, it only removes the repository from the team."
+    },
+    {
+      "id": "openapi_gitea_io.organization.teamSearch",
+      "name": "organization.teamSearch",
+      "description": "Search for teams within an organization"
+    },
+    {
+      "id": "openapi_gitea_io.package.deletePackage",
+      "name": "package.deletePackage",
+      "description": "Delete a package"
+    },
+    {
+      "id": "openapi_gitea_io.package.getPackage",
+      "name": "package.getPackage",
+      "description": "Gets a package"
+    },
+    {
+      "id": "openapi_gitea_io.package.listPackageFiles",
+      "name": "package.listPackageFiles",
+      "description": "Gets all files of a package"
+    },
+    {
+      "id": "openapi_gitea_io.package.listPackages",
+      "name": "package.listPackages",
+      "description": "Gets all packages of an owner"
+    },
+    {
+      "id": "openapi_gitea_io.repository.acceptRepoTransfer",
+      "name": "repository.acceptRepoTransfer",
+      "description": "Accept a repo transfer"
+    },
+    {
+      "id": "openapi_gitea_io.repository.createCurrentUserRepo",
+      "name": "repository.createCurrentUserRepo",
+      "description": "Create a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.createFork",
+      "name": "repository.createFork",
+      "description": "Fork a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.generateRepo",
+      "name": "repository.generateRepo",
+      "description": "Create a repository using a template"
+    },
+    {
+      "id": "openapi_gitea_io.repository.getAnnotatedTag",
+      "name": "repository.getAnnotatedTag",
+      "description": "Gets the tag object of an annotated tag (not lightweight tags)"
+    },
+    {
+      "id": "openapi_gitea_io.repository.getBlob",
+      "name": "repository.getBlob",
+      "description": "Gets the blob of a repository."
+    },
+    {
+      "id": "openapi_gitea_io.repository.getTree",
+      "name": "repository.getTree",
+      "description": "Gets the tree of a repository."
+    },
+    {
+      "id": "openapi_gitea_io.repository.listForks",
+      "name": "repository.listForks",
+      "description": "List a repository's forks"
+    },
+    {
+      "id": "openapi_gitea_io.repository.rejectRepoTransfer",
+      "name": "repository.rejectRepoTransfer",
+      "description": "Reject a repo transfer"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoAddCollaborator",
+      "name": "repository.repoAddCollaborator",
+      "description": "Add a collaborator to a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoAddPushMirror",
+      "name": "repository.repoAddPushMirror",
+      "description": "add a push mirror to the repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoAddTeam",
+      "name": "repository.repoAddTeam",
+      "description": "Add a team to a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoAddTopic",
+      "name": "repository.repoAddTopic",
+      "description": "Add a topic to a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoApplyDiffPatch",
+      "name": "repository.repoApplyDiffPatch",
+      "description": "Apply diff patch to repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCancelScheduledAutoMerge",
+      "name": "repository.repoCancelScheduledAutoMerge",
+      "description": "Cancel the scheduled auto merge for the given pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCheckCollaborator",
+      "name": "repository.repoCheckCollaborator",
+      "description": "Check if a user is a collaborator of a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCheckTeam",
+      "name": "repository.repoCheckTeam",
+      "description": "Check if a team is assigned to a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateBranch",
+      "name": "repository.repoCreateBranch",
+      "description": "Create a branch"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateBranchProtection",
+      "name": "repository.repoCreateBranchProtection",
+      "description": "Create a branch protections for a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateFile",
+      "name": "repository.repoCreateFile",
+      "description": "Create a file in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateHook",
+      "name": "repository.repoCreateHook",
+      "description": "Create a hook"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateKey",
+      "name": "repository.repoCreateKey",
+      "description": "Add a key to a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreatePullRequest",
+      "name": "repository.repoCreatePullRequest",
+      "description": "Create a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreatePullReview",
+      "name": "repository.repoCreatePullReview",
+      "description": "Create a review to an pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreatePullReviewRequests",
+      "name": "repository.repoCreatePullReviewRequests",
+      "description": "create review requests for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateRelease",
+      "name": "repository.repoCreateRelease",
+      "description": "Create a release"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateReleaseAttachment",
+      "name": "repository.repoCreateReleaseAttachment",
+      "description": "Create a release attachment"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateStatus",
+      "name": "repository.repoCreateStatus",
+      "description": "Create a commit status"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateTag",
+      "name": "repository.repoCreateTag",
+      "description": "Create a new git tag in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoCreateWikiPage",
+      "name": "repository.repoCreateWikiPage",
+      "description": "Create a wiki page"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDelete",
+      "name": "repository.repoDelete",
+      "description": "Delete a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteBranch",
+      "name": "repository.repoDeleteBranch",
+      "description": "Delete a specific branch from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteBranchProtection",
+      "name": "repository.repoDeleteBranchProtection",
+      "description": "Delete a specific branch protection for the repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteCollaborator",
+      "name": "repository.repoDeleteCollaborator",
+      "description": "Delete a collaborator from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteFile",
+      "name": "repository.repoDeleteFile",
+      "description": "Delete a file in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteGitHook",
+      "name": "repository.repoDeleteGitHook",
+      "description": "Delete a Git hook in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteHook",
+      "name": "repository.repoDeleteHook",
+      "description": "Delete a hook in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteKey",
+      "name": "repository.repoDeleteKey",
+      "description": "Delete a key from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeletePullReview",
+      "name": "repository.repoDeletePullReview",
+      "description": "Delete a specific review from a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeletePullReviewRequests",
+      "name": "repository.repoDeletePullReviewRequests",
+      "description": "cancel review requests for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeletePushMirror",
+      "name": "repository.repoDeletePushMirror",
+      "description": "deletes a push mirror from a repository by remoteName"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteRelease",
+      "name": "repository.repoDeleteRelease",
+      "description": "Delete a release"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteReleaseAttachment",
+      "name": "repository.repoDeleteReleaseAttachment",
+      "description": "Delete a release attachment"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteReleaseByTag",
+      "name": "repository.repoDeleteReleaseByTag",
+      "description": "Delete a release by tag name"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteTag",
+      "name": "repository.repoDeleteTag",
+      "description": "Delete a repository's tag by name"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteTeam",
+      "name": "repository.repoDeleteTeam",
+      "description": "Delete a team from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteTopic",
+      "name": "repository.repoDeleteTopic",
+      "description": "Delete a topic from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDeleteWikiPage",
+      "name": "repository.repoDeleteWikiPage",
+      "description": "Delete a wiki page"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDismissPullReview",
+      "name": "repository.repoDismissPullReview",
+      "description": "Dismiss a review for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDownloadCommitDiffOrPatch",
+      "name": "repository.repoDownloadCommitDiffOrPatch",
+      "description": "Get a commit's diff or patch"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoDownloadPullDiffOrPatch",
+      "name": "repository.repoDownloadPullDiffOrPatch",
+      "description": "Get a pull request diff or patch"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEdit",
+      "name": "repository.repoEdit",
+      "description": "Edit a repository's properties. Only fields that are set will be changed."
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditBranchProtection",
+      "name": "repository.repoEditBranchProtection",
+      "description": "Edit a branch protections for a repository. Only fields that are set will be changed"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditGitHook",
+      "name": "repository.repoEditGitHook",
+      "description": "Edit a Git hook in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditHook",
+      "name": "repository.repoEditHook",
+      "description": "Edit a hook in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditPullRequest",
+      "name": "repository.repoEditPullRequest",
+      "description": "Update a pull request. If using deadline only the date will be taken into account, and time of day ignored."
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditRelease",
+      "name": "repository.repoEditRelease",
+      "description": "Update a release"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditReleaseAttachment",
+      "name": "repository.repoEditReleaseAttachment",
+      "description": "Edit a release attachment"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoEditWikiPage",
+      "name": "repository.repoEditWikiPage",
+      "description": "Edit a wiki page"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGet",
+      "name": "repository.repoGet",
+      "description": "Get a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetAllCommits",
+      "name": "repository.repoGetAllCommits",
+      "description": "Get a list of all commits from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetArchive",
+      "name": "repository.repoGetArchive",
+      "description": "Get an archive of a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetAssignees",
+      "name": "repository.repoGetAssignees",
+      "description": "Return all users that have write access and can be assigned to issues"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetBranch",
+      "name": "repository.repoGetBranch",
+      "description": "Retrieve a specific branch from a repository, including its effective branch protection"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetBranchProtection",
+      "name": "repository.repoGetBranchProtection",
+      "description": "Get a specific branch protection for the repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetById",
+      "name": "repository.repoGetById",
+      "description": "Get a repository by id"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetCombinedStatusByRef",
+      "name": "repository.repoGetCombinedStatusByRef",
+      "description": "Get a commit's combined status, by branch/tag/commit reference"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetContents",
+      "name": "repository.repoGetContents",
+      "description": "Gets the metadata and contents (if a file) of an entry in a repository, or a list of entries if a dir"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetContentsList",
+      "name": "repository.repoGetContentsList",
+      "description": "Gets the metadata of all the entries of the root dir"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetEditorConfig",
+      "name": "repository.repoGetEditorConfig",
+      "description": "Get the EditorConfig definitions of a file in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetGitHook",
+      "name": "repository.repoGetGitHook",
+      "description": "Get a Git hook"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetHook",
+      "name": "repository.repoGetHook",
+      "description": "Get a hook"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetIssueTemplates",
+      "name": "repository.repoGetIssueTemplates",
+      "description": "Get available issue templates for a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetKey",
+      "name": "repository.repoGetKey",
+      "description": "Get a repository's key by id"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetLanguages",
+      "name": "repository.repoGetLanguages",
+      "description": "Get languages and number of bytes of code written"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetLatestRelease",
+      "name": "repository.repoGetLatestRelease",
+      "description": "Gets the most recent non-prerelease, non-draft release of a repository, sorted by created_at"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetNote",
+      "name": "repository.repoGetNote",
+      "description": "Get a note corresponding to a single commit from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPullRequest",
+      "name": "repository.repoGetPullRequest",
+      "description": "Get a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPullRequestCommits",
+      "name": "repository.repoGetPullRequestCommits",
+      "description": "Get commits for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPullRequestFiles",
+      "name": "repository.repoGetPullRequestFiles",
+      "description": "Get changed files for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPullReview",
+      "name": "repository.repoGetPullReview",
+      "description": "Get a specific review for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPullReviewComments",
+      "name": "repository.repoGetPullReviewComments",
+      "description": "Get a specific review for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetPushMirrorByRemoteName",
+      "name": "repository.repoGetPushMirrorByRemoteName",
+      "description": "Get push mirror of the repository by remoteName"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetRawFile",
+      "name": "repository.repoGetRawFile",
+      "description": "Get a file from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetRawFileOrLfs",
+      "name": "repository.repoGetRawFileOrLfs",
+      "description": "Get a file or it's LFS object from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetRelease",
+      "name": "repository.repoGetRelease",
+      "description": "Get a release"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetReleaseAttachment",
+      "name": "repository.repoGetReleaseAttachment",
+      "description": "Get a release attachment"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetReleaseByTag",
+      "name": "repository.repoGetReleaseByTag",
+      "description": "Get a release by tag name"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetRepoPermissions",
+      "name": "repository.repoGetRepoPermissions",
+      "description": "Get repository permissions for a user"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetReviewers",
+      "name": "repository.repoGetReviewers",
+      "description": "Return all users that can be requested to review in this repo"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetSingleCommit",
+      "name": "repository.repoGetSingleCommit",
+      "description": "Get a single commit from a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetTag",
+      "name": "repository.repoGetTag",
+      "description": "Get the tag of a repository by tag name"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetWikiPage",
+      "name": "repository.repoGetWikiPage",
+      "description": "Get a wiki page"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetWikiPageRevisions",
+      "name": "repository.repoGetWikiPageRevisions",
+      "description": "Get revisions of a wiki page"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoGetWikiPages",
+      "name": "repository.repoGetWikiPages",
+      "description": "Get all wiki pages"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListAllGitRefs",
+      "name": "repository.repoListAllGitRefs",
+      "description": "Get specified ref or filtered repository's refs"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListBranches",
+      "name": "repository.repoListBranches",
+      "description": "List a repository's branches"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListBranchProtection",
+      "name": "repository.repoListBranchProtection",
+      "description": "List branch protections for a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListCollaborators",
+      "name": "repository.repoListCollaborators",
+      "description": "List a repository's collaborators"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListGitHooks",
+      "name": "repository.repoListGitHooks",
+      "description": "List the Git hooks in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListGitRefs",
+      "name": "repository.repoListGitRefs",
+      "description": "Get specified ref or filtered repository's refs"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListHooks",
+      "name": "repository.repoListHooks",
+      "description": "List the hooks in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListKeys",
+      "name": "repository.repoListKeys",
+      "description": "List a repository's keys"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListPullRequests",
+      "name": "repository.repoListPullRequests",
+      "description": "List a repo's pull requests"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListPullReviews",
+      "name": "repository.repoListPullReviews",
+      "description": "List all reviews for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListPushMirrors",
+      "name": "repository.repoListPushMirrors",
+      "description": "Get all push mirrors of the repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListReleaseAttachments",
+      "name": "repository.repoListReleaseAttachments",
+      "description": "List release's attachments"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListReleases",
+      "name": "repository.repoListReleases",
+      "description": "List a repo's releases"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListStargazers",
+      "name": "repository.repoListStargazers",
+      "description": "List a repo's stargazers"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListStatuses",
+      "name": "repository.repoListStatuses",
+      "description": "Get a commit's statuses"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListStatusesByRef",
+      "name": "repository.repoListStatusesByRef",
+      "description": "Get a commit's statuses, by branch/tag/commit reference"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListSubscribers",
+      "name": "repository.repoListSubscribers",
+      "description": "List a repo's watchers"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListTags",
+      "name": "repository.repoListTags",
+      "description": "List a repository's tags"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListTeams",
+      "name": "repository.repoListTeams",
+      "description": "List a repository's teams"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoListTopics",
+      "name": "repository.repoListTopics",
+      "description": "Get list of topics that a repository has"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoMergePullRequest",
+      "name": "repository.repoMergePullRequest",
+      "description": "Merge a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoMigrate",
+      "name": "repository.repoMigrate",
+      "description": "Migrate a remote git repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoMirrorSync",
+      "name": "repository.repoMirrorSync",
+      "description": "Sync a mirrored repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoPullRequestIsMerged",
+      "name": "repository.repoPullRequestIsMerged",
+      "description": "Check if a pull request has been merged"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoPushMirrorSync",
+      "name": "repository.repoPushMirrorSync",
+      "description": "Sync all push mirrored repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoSearch",
+      "name": "repository.repoSearch",
+      "description": "Search for repositories"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoSigningKey",
+      "name": "repository.repoSigningKey",
+      "description": "Get signing-key.gpg for given repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoSubmitPullReview",
+      "name": "repository.repoSubmitPullReview",
+      "description": "Submit a pending review to an pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoTestHook",
+      "name": "repository.repoTestHook",
+      "description": "Test a push webhook"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoTrackedTimes",
+      "name": "repository.repoTrackedTimes",
+      "description": "List a repo's tracked times"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoTransfer",
+      "name": "repository.repoTransfer",
+      "description": "Transfer a repo ownership"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoUnDismissPullReview",
+      "name": "repository.repoUnDismissPullReview",
+      "description": "Cancel to dismiss a review for a pull request"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoUpdateFile",
+      "name": "repository.repoUpdateFile",
+      "description": "Update a file in a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoUpdatePullRequest",
+      "name": "repository.repoUpdatePullRequest",
+      "description": "Merge PR's baseBranch into headBranch"
+    },
+    {
+      "id": "openapi_gitea_io.repository.repoUpdateTopics",
+      "name": "repository.repoUpdateTopics",
+      "description": "Replace list of topics for a repository"
+    },
+    {
+      "id": "openapi_gitea_io.repository.topicSearch",
+      "name": "repository.topicSearch",
+      "description": "search topics via keyword"
+    },
+    {
+      "id": "openapi_gitea_io.repository.userCurrentCheckSubscription",
+      "name": "repository.userCurrentCheckSubscription",
+      "description": "Check if the current user is watching a repo"
+    },
+    {
+      "id": "openapi_gitea_io.repository.userCurrentDeleteSubscription",
+      "name": "repository.userCurrentDeleteSubscription",
+      "description": "Unwatch a repo"
+    },
+    {
+      "id": "openapi_gitea_io.repository.userCurrentPutSubscription",
+      "name": "repository.userCurrentPutSubscription",
+      "description": "Watch a repo"
+    },
+    {
+      "id": "openapi_gitea_io.repository.userTrackedTimes",
+      "name": "repository.userTrackedTimes",
+      "description": "List a user's tracked times in a repo"
+    },
+    {
+      "id": "openapi_gitea_io.settings.getGeneralApiSettings",
+      "name": "settings.getGeneralApiSettings",
+      "description": "Get instance's global settings for api"
+    },
+    {
+      "id": "openapi_gitea_io.settings.getGeneralAttachmentSettings",
+      "name": "settings.getGeneralAttachmentSettings",
+      "description": "Get instance's global settings for Attachment"
+    },
+    {
+      "id": "openapi_gitea_io.settings.getGeneralRepositorySettings",
+      "name": "settings.getGeneralRepositorySettings",
+      "description": "Get instance's global settings for repositories"
+    },
+    {
+      "id": "openapi_gitea_io.settings.getGeneralUiSettings",
+      "name": "settings.getGeneralUiSettings",
+      "description": "Get instance's global settings for ui"
+    },
+    {
+      "id": "openapi_gitea_io.user.getUserSettings",
+      "name": "user.getUserSettings",
+      "description": "Get user settings"
+    },
+    {
+      "id": "openapi_gitea_io.user.getVerificationToken",
+      "name": "user.getVerificationToken",
+      "description": "Get a Token to verify"
+    },
+    {
+      "id": "openapi_gitea_io.user.updateUserSettings",
+      "name": "user.updateUserSettings",
+      "description": "Update user settings"
+    },
+    {
+      "id": "openapi_gitea_io.user.userAddEmail",
+      "name": "user.userAddEmail",
+      "description": "Add email addresses"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCheckFollowing",
+      "name": "user.userCheckFollowing",
+      "description": "Check if one user is following another user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCreateOAuth2Application",
+      "name": "user.userCreateOAuth2Application",
+      "description": "creates a new OAuth2 application"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCreateToken",
+      "name": "user.userCreateToken",
+      "description": "Create an access token"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentCheckFollowing",
+      "name": "user.userCurrentCheckFollowing",
+      "description": "Check whether a user is followed by the authenticated user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentCheckStarring",
+      "name": "user.userCurrentCheckStarring",
+      "description": "Whether the authenticated is starring the repo"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentDeleteFollow",
+      "name": "user.userCurrentDeleteFollow",
+      "description": "Unfollow a user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentDeleteGpgKey",
+      "name": "user.userCurrentDeleteGpgKey",
+      "description": "Remove a GPG key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentDeleteKey",
+      "name": "user.userCurrentDeleteKey",
+      "description": "Delete a public key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentDeleteStar",
+      "name": "user.userCurrentDeleteStar",
+      "description": "Unstar the given repo"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentGetGpgKey",
+      "name": "user.userCurrentGetGpgKey",
+      "description": "Get a GPG key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentGetKey",
+      "name": "user.userCurrentGetKey",
+      "description": "Get a public key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListFollowers",
+      "name": "user.userCurrentListFollowers",
+      "description": "List the authenticated user's followers"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListFollowing",
+      "name": "user.userCurrentListFollowing",
+      "description": "List the users that the authenticated user is following"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListGpgKeys",
+      "name": "user.userCurrentListGpgKeys",
+      "description": "List the authenticated user's GPG keys"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListKeys",
+      "name": "user.userCurrentListKeys",
+      "description": "List the authenticated user's public keys"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListRepos",
+      "name": "user.userCurrentListRepos",
+      "description": "List the repos that the authenticated user owns"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListStarred",
+      "name": "user.userCurrentListStarred",
+      "description": "The repos that the authenticated user has starred"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentListSubscriptions",
+      "name": "user.userCurrentListSubscriptions",
+      "description": "List repositories watched by the authenticated user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentPostGpgKey",
+      "name": "user.userCurrentPostGpgKey",
+      "description": "Create a GPG key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentPostKey",
+      "name": "user.userCurrentPostKey",
+      "description": "Create a public key"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentPutFollow",
+      "name": "user.userCurrentPutFollow",
+      "description": "Follow a user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentPutStar",
+      "name": "user.userCurrentPutStar",
+      "description": "Star the given repo"
+    },
+    {
+      "id": "openapi_gitea_io.user.userCurrentTrackedTimes",
+      "name": "user.userCurrentTrackedTimes",
+      "description": "List the current user's tracked times"
+    },
+    {
+      "id": "openapi_gitea_io.user.userDeleteAccessToken",
+      "name": "user.userDeleteAccessToken",
+      "description": "delete an access token"
+    },
+    {
+      "id": "openapi_gitea_io.user.userDeleteEmail",
+      "name": "user.userDeleteEmail",
+      "description": "Delete email addresses"
+    },
+    {
+      "id": "openapi_gitea_io.user.userDeleteOAuth2Application",
+      "name": "user.userDeleteOAuth2Application",
+      "description": "delete an OAuth2 Application"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGet",
+      "name": "user.userGet",
+      "description": "Get a user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetCurrent",
+      "name": "user.userGetCurrent",
+      "description": "Get the authenticated user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetHeatmapData",
+      "name": "user.userGetHeatmapData",
+      "description": "Get a user's heatmap"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetOauth2Application",
+      "name": "user.userGetOauth2Application",
+      "description": "List the authenticated user's oauth2 applications"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetOAuth2Application",
+      "name": "user.userGetOAuth2Application",
+      "description": "get an OAuth2 Application"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetStopWatches",
+      "name": "user.userGetStopWatches",
+      "description": "Get list of all existing stopwatches"
+    },
+    {
+      "id": "openapi_gitea_io.user.userGetTokens",
+      "name": "user.userGetTokens",
+      "description": "List the authenticated user's access tokens"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListEmails",
+      "name": "user.userListEmails",
+      "description": "List the authenticated user's email addresses"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListFollowers",
+      "name": "user.userListFollowers",
+      "description": "List the given user's followers"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListFollowing",
+      "name": "user.userListFollowing",
+      "description": "List the users that the given user is following"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListGpgKeys",
+      "name": "user.userListGpgKeys",
+      "description": "List the given user's GPG keys"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListKeys",
+      "name": "user.userListKeys",
+      "description": "List the given user's public keys"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListRepos",
+      "name": "user.userListRepos",
+      "description": "List the repos owned by the given user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListStarred",
+      "name": "user.userListStarred",
+      "description": "The repos that the given user has starred"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListSubscriptions",
+      "name": "user.userListSubscriptions",
+      "description": "List the repositories watched by a user"
+    },
+    {
+      "id": "openapi_gitea_io.user.userListTeams",
+      "name": "user.userListTeams",
+      "description": "List all the teams a user belongs to"
+    },
+    {
+      "id": "openapi_gitea_io.user.userSearch",
+      "name": "user.userSearch",
+      "description": "Search for users"
+    },
+    {
+      "id": "openapi_gitea_io.user.userUpdateOAuth2Application",
+      "name": "user.userUpdateOAuth2Application",
+      "description": "update an OAuth2 Application, this includes regenerating the client secret"
+    },
+    {
+      "id": "openapi_gitea_io.user.userVerifyGpgKey",
+      "name": "user.userVerifyGpgKey",
+      "description": "Verify a GPG key"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

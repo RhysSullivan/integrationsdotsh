@@ -1,0 +1,107 @@
+{
+  "fetchedAt": "2026-04-30T15:22:37.093Z",
+  "status": "ok",
+  "count": 20,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.media.firebaseappdistributionMediaUpload",
+      "name": "media.firebaseappdistributionMediaUpload",
+      "description": "Uploads a binary. Uploading a binary can result in a new release being created, an update to an existing release, or a no-op if a release with the same binary already exists."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesBatchDelete",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesBatchDelete",
+      "description": "Deletes releases. A maximum of 100 releases can be deleted per request."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesDistribute",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesDistribute",
+      "description": "Distributes a release to testers. This call does the following: 1. Creates testers for the specified emails, if none exist. 2. Adds the testers and groups to the release. 3. Sends new testers an invitation email. 4. Sends existing testers a new release email. The request will fail with a `INVALID_ARGUMENT` if it contains a group that doesn't exist."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesFeedbackReportsList",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesFeedbackReportsList",
+      "description": "Lists feedback reports. By default, sorts by `createTime` in descending order."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesList",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesList",
+      "description": "Lists releases. By default, sorts by `createTime` in descending order."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesOperationsCancel",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesOperationsList",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsAppsReleasesOperationsWait",
+      "name": "projects.firebaseappdistributionProjectsAppsReleasesOperationsWait",
+      "description": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsBatchJoin",
+      "name": "projects.firebaseappdistributionProjectsGroupsBatchJoin",
+      "description": "Batch adds members to a group. The testers will gain access to all releases that the groups have access to."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsBatchLeave",
+      "name": "projects.firebaseappdistributionProjectsGroupsBatchLeave",
+      "description": "Batch removed members from a group. The testers will lose access to all releases that the groups have access to."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsCreate",
+      "name": "projects.firebaseappdistributionProjectsGroupsCreate",
+      "description": "Create a group."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsDelete",
+      "name": "projects.firebaseappdistributionProjectsGroupsDelete",
+      "description": "Delete a group."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsGet",
+      "name": "projects.firebaseappdistributionProjectsGroupsGet",
+      "description": "Get a group."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsGroupsList",
+      "name": "projects.firebaseappdistributionProjectsGroupsList",
+      "description": "List groups."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsTestersBatchAdd",
+      "name": "projects.firebaseappdistributionProjectsTestersBatchAdd",
+      "description": "Batch adds testers. This call adds testers for the specified emails if they don't already exist. Returns all testers specified in the request, including newly created and previously existing testers. This action is idempotent."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsTestersBatchRemove",
+      "name": "projects.firebaseappdistributionProjectsTestersBatchRemove",
+      "description": "Batch removes testers. If found, this call deletes testers for the specified emails. Returns all deleted testers."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsTestersList",
+      "name": "projects.firebaseappdistributionProjectsTestersList",
+      "description": "Lists testers and their resource ids."
+    },
+    {
+      "id": "openapi_googleapis_com_firebaseappdistribution_firebaseappdistribution.projects.firebaseappdistributionProjectsTestersPatch",
+      "name": "projects.firebaseappdistributionProjectsTestersPatch",
+      "description": "Update a tester. If the testers joins a group they gain access to all releases that the group has access to."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

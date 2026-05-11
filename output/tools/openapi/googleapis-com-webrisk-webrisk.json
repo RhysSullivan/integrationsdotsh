@@ -1,0 +1,57 @@
+{
+  "fetchedAt": "2026-04-30T15:22:43.019Z",
+  "status": "ok",
+  "count": 10,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.hashes.webriskHashesSearch",
+      "name": "hashes.webriskHashesSearch",
+      "description": "Gets the full hashes that match the requested hash prefix. This is used after a hash prefix is looked up in a threatList and there is a match. The client side threatList only holds partial hashes so the client must query this method to determine if there is a full hash match of a threat."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.projects.webriskProjectsOperationsCancel",
+      "name": "projects.webriskProjectsOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.projects.webriskProjectsOperationsDelete",
+      "name": "projects.webriskProjectsOperationsDelete",
+      "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.projects.webriskProjectsOperationsGet",
+      "name": "projects.webriskProjectsOperationsGet",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.projects.webriskProjectsOperationsList",
+      "name": "projects.webriskProjectsOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.projects.webriskProjectsSubmissionsCreate",
+      "name": "projects.webriskProjectsSubmissionsCreate",
+      "description": "Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the result verifies the existence of malicious phishing content, the site will be added to the [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that could get exposed to this threat in the future. Only allowlisted projects can use this method during Early Access. Please reach out to Sales or your customer engineer to obtain access."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.threatLists.webriskThreatListsComputeDiff",
+      "name": "threatLists.webriskThreatListsComputeDiff",
+      "description": "Gets the most recent threat list diffs. These diffs should be applied to a local database of hashes to keep it up-to-date. If the local database is empty or excessively out-of-date, a complete snapshot of the database will be returned. This Method only updates a single ThreatList at a time. To update multiple ThreatList databases, this method needs to be called once for each list."
+    },
+    {
+      "id": "openapi_googleapis_com_webrisk_webrisk.uris.webriskUrisSearch",
+      "name": "uris.webriskUrisSearch",
+      "description": "This method is used to check whether a URI is on a given threatList. Multiple threatLists may be searched in a single query. The response will list all requested threatLists the URI was found to match. If the URI is not found on any of the requested ThreatList an empty response will be returned."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

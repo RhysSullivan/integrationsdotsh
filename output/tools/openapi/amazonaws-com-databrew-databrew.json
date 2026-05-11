@@ -1,0 +1,237 @@
+{
+  "fetchedAt": "2026-04-30T15:44:58.158Z",
+  "status": "ok",
+  "count": 46,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.datasets.createDataset",
+      "name": "datasets.createDataset",
+      "description": "Creates a new DataBrew dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.datasets.deleteDataset",
+      "name": "datasets.deleteDataset",
+      "description": "Deletes a dataset from DataBrew."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.datasets.describeDataset",
+      "name": "datasets.describeDataset",
+      "description": "Returns the definition of a specific DataBrew dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.datasets.listDatasets",
+      "name": "datasets.listDatasets",
+      "description": "Lists all of the DataBrew datasets."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.datasets.updateDataset",
+      "name": "datasets.updateDataset",
+      "description": "Modifies the definition of an existing DataBrew dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.deleteJob",
+      "name": "jobs.deleteJob",
+      "description": "Deletes the specified DataBrew job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.describeJob",
+      "name": "jobs.describeJob",
+      "description": "Returns the definition of a specific DataBrew job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.describeJobRun",
+      "name": "jobs.describeJobRun",
+      "description": "Represents one run of a DataBrew job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.listJobRuns",
+      "name": "jobs.listJobRuns",
+      "description": "Lists all of the previous runs of a particular DataBrew job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.listJobs",
+      "name": "jobs.listJobs",
+      "description": "Lists all of the DataBrew jobs that are defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.startJobRun",
+      "name": "jobs.startJobRun",
+      "description": "Runs a DataBrew job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.jobs.stopJobRun",
+      "name": "jobs.stopJobRun",
+      "description": "Stops a particular run of a job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.profileJobs.createProfileJob",
+      "name": "profileJobs.createProfileJob",
+      "description": "Creates a new job to analyze a dataset and create its data profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.profileJobs.updateProfileJob",
+      "name": "profileJobs.updateProfileJob",
+      "description": "Modifies the definition of an existing profile job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.createProject",
+      "name": "projects.createProject",
+      "description": "Creates a new DataBrew project."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.deleteProject",
+      "name": "projects.deleteProject",
+      "description": "Deletes an existing DataBrew project."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.describeProject",
+      "name": "projects.describeProject",
+      "description": "Returns the definition of a specific DataBrew project."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.listProjects",
+      "name": "projects.listProjects",
+      "description": "Lists all of the DataBrew projects that are defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.sendProjectSessionAction",
+      "name": "projects.sendProjectSessionAction",
+      "description": "Performs a recipe step within an interactive DataBrew session that's currently open."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.startProjectSession",
+      "name": "projects.startProjectSession",
+      "description": "Creates an interactive session, enabling you to manipulate data in a DataBrew project."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.projects.updateProject",
+      "name": "projects.updateProject",
+      "description": "Modifies the definition of an existing DataBrew project."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipeJobs.createRecipeJob",
+      "name": "recipeJobs.createRecipeJob",
+      "description": "Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe"
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipeJobs.updateRecipeJob",
+      "name": "recipeJobs.updateRecipeJob",
+      "description": "Modifies the definition of an existing DataBrew recipe job."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.batchDeleteRecipeVersion",
+      "name": "recipes.batchDeleteRecipeVersion",
+      "description": "<p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The version list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.createRecipe",
+      "name": "recipes.createRecipe",
+      "description": "Creates a new DataBrew recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.deleteRecipeVersion",
+      "name": "recipes.deleteRecipeVersion",
+      "description": "Deletes a single version of a DataBrew recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.describeRecipe",
+      "name": "recipes.describeRecipe",
+      "description": "Returns the definition of a specific DataBrew recipe corresponding to a particular version."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.listRecipes",
+      "name": "recipes.listRecipes",
+      "description": "Lists all of the DataBrew recipes that are defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.publishRecipe",
+      "name": "recipes.publishRecipe",
+      "description": "Publishes a new version of a DataBrew recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipes.updateRecipe",
+      "name": "recipes.updateRecipe",
+      "description": "Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.recipeVersionsName.listRecipeVersions",
+      "name": "recipeVersionsName.listRecipeVersions",
+      "description": "Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.rulesets.createRuleset",
+      "name": "rulesets.createRuleset",
+      "description": "Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.rulesets.deleteRuleset",
+      "name": "rulesets.deleteRuleset",
+      "description": "Deletes a ruleset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.rulesets.describeRuleset",
+      "name": "rulesets.describeRuleset",
+      "description": "Retrieves detailed information about the ruleset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.rulesets.listRulesets",
+      "name": "rulesets.listRulesets",
+      "description": "List all rulesets available in the current account or rulesets associated with a specific resource (dataset)."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.rulesets.updateRuleset",
+      "name": "rulesets.updateRuleset",
+      "description": "Updates specified ruleset."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.schedules.createSchedule",
+      "name": "schedules.createSchedule",
+      "description": "Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.schedules.deleteSchedule",
+      "name": "schedules.deleteSchedule",
+      "description": "Deletes the specified DataBrew schedule."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.schedules.describeSchedule",
+      "name": "schedules.describeSchedule",
+      "description": "Returns the definition of a specific DataBrew schedule."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.schedules.listSchedules",
+      "name": "schedules.listSchedules",
+      "description": "Lists the DataBrew schedules that are defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.schedules.updateSchedule",
+      "name": "schedules.updateSchedule",
+      "description": "Modifies the definition of an existing DataBrew schedule."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Lists all the tags for a DataBrew resource. "
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule."
+    },
+    {
+      "id": "openapi_amazonaws_com_databrew_databrew.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes metadata tags from a DataBrew resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

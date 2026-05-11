@@ -1,0 +1,737 @@
+{
+  "fetchedAt": "2026-04-30T15:22:44.622Z",
+  "status": "ok",
+  "count": 146,
+  "tools": [
+    {
+      "id": "openapi_hetzner_cloud.actions.getActions",
+      "name": "actions.getActions",
+      "description": "Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.actions.getActionsId",
+      "name": "actions.getActionsId",
+      "description": "Returns a specific Action object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificateActions.getCertificatesIdActions",
+      "name": "certificateActions.getCertificatesIdActions",
+      "description": "Returns all Action objects for a Certificate. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.\n\nOnly type `managed` Certificates can have Actions. For type `uploaded` Certificates the `actions` key will always contain an empty array.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificateActions.getCertificatesIdActionsActionId",
+      "name": "certificateActions.getCertificatesIdActionsActionId",
+      "description": "Returns a specific Action for a Certificate. Only type `managed` Certificates have Actions."
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificateActions.postCertificatesIdActionsRetry",
+      "name": "certificateActions.postCertificatesIdActionsRetry",
+      "description": "Retry a failed Certificate issuance or renewal.\n\nOnly applicable if the type of the Certificate is `managed` and the issuance or renewal status is `failed`.\n\n#### Call specific error codes\n\n| Code                                                    | Description                                                               |\n|---------------------------------------------------------|---------------------------------------------------------------------------|\n| `caa_record_does_not_allow_ca`                          | CAA record does not allow certificate authority                           |\n| `ca_dns_validation_failed`                              | Certificate Authority: DNS validation failed                              |\n| `ca_too_many_authorizations_failed_recently`            | Certificate Authority: Too many authorizations failed recently            |\n| `ca_too_many_certificates_issued_for_registered_domain` | Certificate Authority: Too many certificates issued for registered domain |\n| `ca_too_many_duplicate_certificates`                    | Certificate Authority: Too many duplicate certificates                    |\n| `could_not_verify_domain_delegated_to_zone`             | Could not verify domain delegated to zone                                 |\n| `dns_zone_not_found`                                    | DNS zone not found                                                        |\n| `dns_zone_is_secondary_zone`                            | DNS zone is a secondary zone                                              |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificates.deleteCertificatesId",
+      "name": "certificates.deleteCertificatesId",
+      "description": "Deletes a Certificate."
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificates.getCertificates",
+      "name": "certificates.getCertificates",
+      "description": "Returns all Certificate objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificates.getCertificatesId",
+      "name": "certificates.getCertificatesId",
+      "description": "Gets a specific Certificate object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificates.postCertificates",
+      "name": "certificates.postCertificates",
+      "description": "Creates a new Certificate.\n\nThe default type **uploaded** allows for uploading your existing `certificate` and `private_key` in PEM format. You have to monitor its expiration date and handle renewal yourself.\n\nIn contrast, type **managed** requests a new Certificate from *Let's Encrypt* for the specified `domain_names`. Only domains managed by *Hetzner DNS* are supported. We handle renewal and timely alert the project owner via email if problems occur.\n\nFor type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.certificates.putCertificatesId",
+      "name": "certificates.putCertificatesId",
+      "description": "Updates the Certificate properties.\n\nNote that when updating labels, the Certificate’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Certificate object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.datacenters.getDatacenters",
+      "name": "datacenters.getDatacenters",
+      "description": "Returns all Datacenter objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.datacenters.getDatacentersId",
+      "name": "datacenters.getDatacentersId",
+      "description": "Returns a specific Datacenter object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewallActions.getFirewallsIdActions",
+      "name": "firewallActions.getFirewallsIdActions",
+      "description": "Returns all Action objects for a Firewall. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewallActions.getFirewallsIdActionsActionId",
+      "name": "firewallActions.getFirewallsIdActionsActionId",
+      "description": "Returns a specific Action for a Firewall."
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewallActions.postFirewallsIdActionsApplyToResources",
+      "name": "firewallActions.postFirewallsIdActionsApplyToResources",
+      "description": "Applies one Firewall to multiple resources.\n\nCurrently servers (public network interface) and label selectors are supported.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_already_applied`    | Firewall was already applied on resource                      |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewallActions.postFirewallsIdActionsRemoveFromResources",
+      "name": "firewallActions.postFirewallsIdActionsRemoveFromResources",
+      "description": "Removes one Firewall from multiple resources.\n\nCurrently only Servers (and their public network interfaces) are supported.\n\n#### Call specific error codes\n\n| Code                                  | Description                                                            |\n|---------------------------------------|------------------------------------------------------------------------|\n| `firewall_already_removed`            | Firewall was already removed from the resource                         |\n| `firewall_resource_not_found`         | The resource the Firewall should be attached to was not found          |\n| `firewall_managed_by_label_selector`  | Firewall was applied via label selector and cannot be removed manually |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewallActions.postFirewallsIdActionsSetRules",
+      "name": "firewallActions.postFirewallsIdActionsSetRules",
+      "description": "Sets the rules of a Firewall.\n\nAll existing rules will be overwritten. Pass an empty `rules` array to remove all rules.\nThe maximum amount of rules that can be defined is 50.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewalls.deleteFirewallsId",
+      "name": "firewalls.deleteFirewallsId",
+      "description": "Deletes a Firewall.\n\n#### Call specific error codes\n\n| Code                 | Description                               |\n|--------------------- |-------------------------------------------|\n| `resource_in_use`    | Firewall must not be in use to be deleted |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewalls.getFirewalls",
+      "name": "firewalls.getFirewalls",
+      "description": "Returns all Firewall objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewalls.getFirewallsId",
+      "name": "firewalls.getFirewallsId",
+      "description": "Gets a specific Firewall object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewalls.postFirewalls",
+      "name": "firewalls.postFirewalls",
+      "description": "Creates a new Firewall.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_already_added`        | Server added more than one time to resource                   |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.firewalls.putFirewallsId",
+      "name": "firewalls.putFirewallsId",
+      "description": "Updates the Firewall.\n\nNote that when updating labels, the Firewall's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Firewall object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.getFloatingIpsIdActions",
+      "name": "floatingIpActions.getFloatingIpsIdActions",
+      "description": "Returns all Action objects for a Floating IP. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.getFloatingIpsIdActionsActionId",
+      "name": "floatingIpActions.getFloatingIpsIdActionsActionId",
+      "description": "Returns a specific Action object for a Floating IP."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.postFloatingIpsIdActionsAssign",
+      "name": "floatingIpActions.postFloatingIpsIdActionsAssign",
+      "description": "Assigns a Floating IP to a Server."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.postFloatingIpsIdActionsChangeDnsPtr",
+      "name": "floatingIpActions.postFloatingIpsIdActionsChangeDnsPtr",
+      "description": "Changes the hostname that will appear when getting the hostname belonging to this Floating IP."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.postFloatingIpsIdActionsChangeProtection",
+      "name": "floatingIpActions.postFloatingIpsIdActionsChangeProtection",
+      "description": "Changes the protection configuration of the Floating IP."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIpActions.postFloatingIpsIdActionsUnassign",
+      "name": "floatingIpActions.postFloatingIpsIdActionsUnassign",
+      "description": "Unassigns a Floating IP, resulting in it being unreachable. You may assign it to a Server again at a later time."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIPs.deleteFloatingIpsId",
+      "name": "floatingIPs.deleteFloatingIpsId",
+      "description": "Deletes a Floating IP. If it is currently assigned to a Server it will automatically get unassigned."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIPs.getFloatingIps",
+      "name": "floatingIPs.getFloatingIps",
+      "description": "Returns all Floating IP objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIPs.getFloatingIpsId",
+      "name": "floatingIPs.getFloatingIpsId",
+      "description": "Returns a specific Floating IP object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIPs.postFloatingIps",
+      "name": "floatingIPs.postFloatingIps",
+      "description": "Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in."
+    },
+    {
+      "id": "openapi_hetzner_cloud.floatingIPs.putFloatingIpsId",
+      "name": "floatingIPs.putFloatingIpsId",
+      "description": "Updates the description or labels of a Floating IP.\nAlso note that when updating labels, the Floating IP’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    },
+    {
+      "id": "openapi_hetzner_cloud.imageActions.getImagesIdActions",
+      "name": "imageActions.getImagesIdActions",
+      "description": "Returns all Action objects for an Image. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.imageActions.getImagesIdActionsActionId",
+      "name": "imageActions.getImagesIdActionsActionId",
+      "description": "Returns a specific Action for an Image."
+    },
+    {
+      "id": "openapi_hetzner_cloud.imageActions.postImagesIdActionsChangeProtection",
+      "name": "imageActions.postImagesIdActionsChangeProtection",
+      "description": "Changes the protection configuration of the Image. Can only be used on snapshots."
+    },
+    {
+      "id": "openapi_hetzner_cloud.images.deleteImagesId",
+      "name": "images.deleteImagesId",
+      "description": "Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted."
+    },
+    {
+      "id": "openapi_hetzner_cloud.images.getImages",
+      "name": "images.getImages",
+      "description": "Returns all Image objects. You can select specific Image types only and sort the results by using URI parameters."
+    },
+    {
+      "id": "openapi_hetzner_cloud.images.getImagesId",
+      "name": "images.getImagesId",
+      "description": "Returns a specific Image object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.images.putImagesId",
+      "name": "images.putImagesId",
+      "description": "Updates the Image. You may change the description, convert a Backup Image to a Snapshot Image or change the Image labels. Only Images of type `snapshot` and `backup` can be updated.\n\nNote that when updating labels, the current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.isOs.getIsos",
+      "name": "isOs.getIsos",
+      "description": "Returns all available ISO objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.isOs.getIsosId",
+      "name": "isOs.getIsosId",
+      "description": "Returns a specific ISO object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.getLoadBalancersIdActions",
+      "name": "loadBalancerActions.getLoadBalancersIdActions",
+      "description": "Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.getLoadBalancersIdActionsActionId",
+      "name": "loadBalancerActions.getLoadBalancersIdActionsActionId",
+      "description": "Returns a specific Action for a Load Balancer."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsAddService",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsAddService",
+      "description": "Adds a service to a Load Balancer.\n\n#### Call specific error codes\n\n| Code                       | Description                                             |\n|----------------------------|---------------------------------------------------------|\n| `source_port_already_used` | The source port you are trying to add is already in use |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsAddTarget",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsAddTarget",
+      "description": "Adds a target to a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP you are trying to add as a target is not owned by the Project owner                            |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsAttachToNetwork",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsAttachToNetwork",
+      "description": "Attach a Load Balancer to a Network.\n\n**Call specific error codes**\n\n| Code                             | Description                                                           |\n|----------------------------------|-----------------------------------------------------------------------|\n| `load_balancer_already_attached` | The Load Balancer is already attached to a network                    |\n| `ip_not_available`               | The provided Network IP is not available                              |\n| `no_subnet_available`            | No Subnet or IP is available for the Load Balancer within the network |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsChangeAlgorithm",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsChangeAlgorithm",
+      "description": "Change the algorithm that determines to which target new requests are sent."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsChangeDnsPtr",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsChangeDnsPtr",
+      "description": "Changes the hostname that will appear when getting the hostname belonging to the public IPs (IPv4 and IPv6) of this Load Balancer.\n\nFloating IPs assigned to the Server are not affected by this.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsChangeProtection",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsChangeProtection",
+      "description": "Changes the protection configuration of a Load Balancer."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsChangeType",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsChangeType",
+      "description": "Changes the type (Max Services, Max Targets and Max Connections) of a Load Balancer.\n\n**Call specific error codes**\n\n| Code                         | Description                                                     |\n|------------------------------|-----------------------------------------------------------------|\n| `invalid_load_balancer_type` | The Load Balancer type does not fit for the given Load Balancer |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsDeleteService",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsDeleteService",
+      "description": "Delete a service of a Load Balancer."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsDetachFromNetwork",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsDetachFromNetwork",
+      "description": "Detaches a Load Balancer from a network."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsDisablePublicInterface",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsDisablePublicInterface",
+      "description": "Disable the public interface of a Load Balancer. The Load Balancer will be not accessible from the internet via its public IPs.\n\n#### Call specific error codes\n\n| Code                                      | Description                                                                    |\n|-------------------------------------------|--------------------------------------------------------------------------------|\n| `load_balancer_not_attached_to_network`   |  The Load Balancer is not attached to a network                                |\n| `targets_without_use_private_ip`          | The Load Balancer has targets that use the public IP instead of the private IP |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsEnablePublicInterface",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsEnablePublicInterface",
+      "description": "Enable the public interface of a Load Balancer. The Load Balancer will be accessible from the internet via its public IPs."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsRemoveTarget",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsRemoveTarget",
+      "description": "Removes a target from a Load Balancer."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerActions.postLoadBalancersIdActionsUpdateService",
+      "name": "loadBalancerActions.postLoadBalancersIdActionsUpdateService",
+      "description": "Updates a Load Balancer Service.\n\n#### Call specific error codes\n\n| Code                       | Description                                             |\n|----------------------------|---------------------------------------------------------|\n| `source_port_already_used` | The source port you are trying to add is already in use |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.deleteLoadBalancersId",
+      "name": "loadBalancers.deleteLoadBalancersId",
+      "description": "Deletes a Load Balancer."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.getLoadBalancers",
+      "name": "loadBalancers.getLoadBalancers",
+      "description": "Gets all existing Load Balancers that you have available."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.getLoadBalancersId",
+      "name": "loadBalancers.getLoadBalancersId",
+      "description": "Gets a specific Load Balancer object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.getLoadBalancersIdMetrics",
+      "name": "loadBalancers.getLoadBalancersIdMetrics",
+      "description": "You must specify the type of metric to get: `open_connections`, `connections_per_second`, `requests_per_second` or `bandwidth`. You can also specify more than one type by comma separation, e.g. `requests_per_second,bandwidth`.\n\nDepending on the type you will get different time series data:\n\n|Type | Timeseries | Unit | Description |\n|---- |------------|------|-------------|\n| open_connections | open_connections | number | Open connections |\n| connections_per_second | connections_per_second | connections/s | Connections per second |\n| requests_per_second | requests_per_second | requests/s | Requests per second |\n| bandwidth | bandwidth.in | bytes/s | Ingress bandwidth |\n|| bandwidth.out | bytes/s | Egress bandwidth |\n\nMetrics are available for the last 30 days only.\n\nIf you do not provide the step argument we will automatically adjust it so that 200 samples are returned.\n\nWe limit the number of samples to a maximum of 500 and will adjust the step parameter accordingly.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.postLoadBalancers",
+      "name": "loadBalancers.postLoadBalancers",
+      "description": "Creates a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP is not owned by the owner of the project of the Load Balancer                                  |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `source_port_already_used`              | The source port you are trying to add is already in use                                               |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancers.putLoadBalancersId",
+      "name": "loadBalancers.putLoadBalancersId",
+      "description": "Updates a Load Balancer. You can update a Load Balancer’s name and a Load Balancer’s labels.\n\nNote that when updating labels, the Load Balancer’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Load Balancer object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerTypes.getLoadBalancerTypes",
+      "name": "loadBalancerTypes.getLoadBalancerTypes",
+      "description": "Gets all Load Balancer type objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.loadBalancerTypes.getLoadBalancerTypesId",
+      "name": "loadBalancerTypes.getLoadBalancerTypesId",
+      "description": "Gets a specific Load Balancer type object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.locations.getLocations",
+      "name": "locations.getLocations",
+      "description": "Returns all Location objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.locations.getLocationsId",
+      "name": "locations.getLocationsId",
+      "description": "Returns a specific Location object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.getNetworksIdActions",
+      "name": "networkActions.getNetworksIdActions",
+      "description": "Returns all Action objects for a Network. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.getNetworksIdActionsActionId",
+      "name": "networkActions.getNetworksIdActionsActionId",
+      "description": "Returns a specific Action for a Network."
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsAddRoute",
+      "name": "networkActions.postNetworksIdActionsAddRoute",
+      "description": "Adds a route entry to a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsAddSubnet",
+      "name": "networkActions.postNetworksIdActionsAddSubnet",
+      "description": "Adds a new subnet object to the Network. If you do not specify an `ip_range` for the subnet we will automatically pick the first available /24 range for you if possible.\n\nNote: if the parent Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsChangeIpRange",
+      "name": "networkActions.postNetworksIdActionsChangeIpRange",
+      "description": "Changes the IP range of a Network. IP ranges can only be extended and never shrunk. You can only add IPs at the end of an existing IP range. This means that the IP part of your existing range must stay the same and you can only change its netmask.\n\nFor example if you have a range `10.0.0.0/16` you want to extend then your new range must also start with the IP `10.0.0.0`. Your CIDR netmask `/16` may change to a number that is smaller than `16` thereby increasing the IP range. So valid entries would be `10.0.0.0/15`, `10.0.0.0/14`, `10.0.0.0/13` and so on.\n\nAfter changing the IP range you will have to adjust the routes on your connected Servers by either rebooting them or manually changing the routes to your private Network interface.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsChangeProtection",
+      "name": "networkActions.postNetworksIdActionsChangeProtection",
+      "description": "Changes the protection configuration of a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsDeleteRoute",
+      "name": "networkActions.postNetworksIdActionsDeleteRoute",
+      "description": "Delete a route entry from a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networkActions.postNetworksIdActionsDeleteSubnet",
+      "name": "networkActions.postNetworksIdActionsDeleteSubnet",
+      "description": "Deletes a single subnet entry from a Network. You cannot delete subnets which still have Servers attached. If you have Servers attached you first need to detach all Servers that use IPs from this subnet before you can delete the subnet.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networks.deleteNetworksId",
+      "name": "networks.deleteNetworksId",
+      "description": "Deletes a network. If there are Servers attached they will be detached in the background.\n\nNote: if the network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networks.getNetworks",
+      "name": "networks.getNetworks",
+      "description": "Gets all existing networks that you have available."
+    },
+    {
+      "id": "openapi_hetzner_cloud.networks.getNetworksId",
+      "name": "networks.getNetworksId",
+      "description": "Gets a specific network object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.networks.postNetworks",
+      "name": "networks.postNetworks",
+      "description": "Creates a network with the specified `ip_range`.\n\nYou may specify one or more `subnets`. You can also add more Subnets later by using the [add subnet action](https://docs.hetzner.cloud/#network-actions-add-a-subnet-to-a-network). If you do not specify an `ip_range` in the subnet we will automatically pick the first available /24 range for you.\n\nYou may specify one or more routes in `routes`. You can also add more routes later by using the [add route action](https://docs.hetzner.cloud/#network-actions-add-a-route-to-a-network).\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.networks.putNetworksId",
+      "name": "networks.putNetworksId",
+      "description": "Updates the network properties.\n\nNote that when updating labels, the network’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the network object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.placementGroups.deletePlacementGroupsId",
+      "name": "placementGroups.deletePlacementGroupsId",
+      "description": "Deletes a PlacementGroup."
+    },
+    {
+      "id": "openapi_hetzner_cloud.placementGroups.getPlacementGroups",
+      "name": "placementGroups.getPlacementGroups",
+      "description": "Returns all PlacementGroup objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.placementGroups.getPlacementGroupsId",
+      "name": "placementGroups.getPlacementGroupsId",
+      "description": "Gets a specific PlacementGroup object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.placementGroups.postPlacementGroups",
+      "name": "placementGroups.postPlacementGroups",
+      "description": "Creates a new PlacementGroup.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.placementGroups.putPlacementGroupsId",
+      "name": "placementGroups.putPlacementGroupsId",
+      "description": "Updates the PlacementGroup properties.\n\nNote that when updating labels, the PlacementGroup’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the PlacementGroup object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.pricing.getPricing",
+      "name": "pricing.getPricing",
+      "description": "Returns prices for all resources available on the platform. VAT and currency of the Project owner are used for calculations.\n\nBoth net and gross prices are included in the response.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIpActions.postPrimaryIpsIdActionsAssign",
+      "name": "primaryIpActions.postPrimaryIpsIdActionsAssign",
+      "description": "Assigns a Primary IP to a Server.\n\nA Server can only have one Primary IP of type `ipv4` and one of type `ipv6` assigned. If you need more IPs use Floating IPs.\n\nThe Server must be powered off (status `off`) in order for this operation to succeed.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_not_stopped`          | The server is running, but needs to be powered off            |\n| `primary_ip_already_assigned` | Primary ip is already assigned to a different server          |\n| `server_has_ipv4`             | The server already has an ipv4 address                        |\n| `server_has_ipv6`             | The server already has an ipv6 address                        |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIpActions.postPrimaryIpsIdActionsChangeDnsPtr",
+      "name": "primaryIpActions.postPrimaryIpsIdActionsChangeDnsPtr",
+      "description": "Changes the hostname that will appear when getting the hostname belonging to this Primary IP."
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIpActions.postPrimaryIpsIdActionsChangeProtection",
+      "name": "primaryIpActions.postPrimaryIpsIdActionsChangeProtection",
+      "description": "Changes the protection configuration of a Primary IP.\n\nA Primary IP can only be delete protected if its `auto_delete` property is set to `false`.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIpActions.postPrimaryIpsIdActionsUnassign",
+      "name": "primaryIpActions.postPrimaryIpsIdActionsUnassign",
+      "description": "Unassigns a Primary IP from a Server.\n\nThe Server must be powered off (status `off`) in order for this operation to succeed.\n\nNote that only Servers that have at least one network interface (public or private) attached can be powered on.\n\n#### Call specific error codes\n\n| Code                              | Description                                                   |\n|---------------------------------- |-------------------------------------------------------------- |\n| `server_not_stopped`              | The server is running, but needs to be powered off            |\n| `server_is_load_balancer_target`  | The server ipv4 address is a loadbalancer target              |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIPs.deletePrimaryIpsId",
+      "name": "primaryIPs.deletePrimaryIpsId",
+      "description": "Deletes a Primary IP.\n\nThe Primary IP may be assigned to a Server. In this case it is unassigned automatically. The Server must be powered off (status `off`) in order for this operation to succeed.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIPs.getPrimaryIps",
+      "name": "primaryIPs.getPrimaryIps",
+      "description": "Returns all Primary IP objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIPs.getPrimaryIpsId",
+      "name": "primaryIPs.getPrimaryIpsId",
+      "description": "Returns a specific Primary IP object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIPs.postPrimaryIps",
+      "name": "primaryIPs.postPrimaryIps",
+      "description": "Creates a new Primary IP, optionally assigned to a Server.\n\nIf you want to create a Primary IP that is not assigned to a Server, you need to provide the `datacenter` key instead of `assignee_id`. This can be either the ID or the name of the Datacenter this Primary IP shall be created in.\n\nNote that a Primary IP can only be assigned to a Server in the same Datacenter later on.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_not_stopped`          | The specified server is running, but needs to be powered off  |\n| `server_has_ipv4`             | The server already has an ipv4 address                        |\n| `server_has_ipv6`             | The server already has an ipv6 address                        |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.primaryIPs.putPrimaryIpsId",
+      "name": "primaryIPs.putPrimaryIpsId",
+      "description": "Updates the Primary IP.\n\nNote that when updating labels, the Primary IP's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nIf the Primary IP object changes during the request, the response will be a “conflict” error.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.getServersIdActions",
+      "name": "serverActions.getServersIdActions",
+      "description": "Returns all Action objects for a Server. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.getServersIdActionsActionId",
+      "name": "serverActions.getServersIdActionsActionId",
+      "description": "Returns a specific Action object for a Server."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsAddToPlacementGroup",
+      "name": "serverActions.postServersIdActionsAddToPlacementGroup",
+      "description": "Adds a Server to a Placement Group.\n\nServer must be powered off for this command to succeed.\n\n#### Call specific error codes\n\n| Code                          | Description                                                          |\n|-------------------------------|----------------------------------------------------------------------|\n| `server_not_stopped`          | The action requires a stopped server                                 |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsAttachIso",
+      "name": "serverActions.postServersIdActionsAttachIso",
+      "description": "Attaches an ISO to a Server. The Server will immediately see it as a new disk. An already attached ISO will automatically be detached before the new ISO is attached.\n\nServers with attached ISOs have a modified boot order: They will try to boot from the ISO first before falling back to hard disk.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsAttachToNetwork",
+      "name": "serverActions.postServersIdActionsAttachToNetwork",
+      "description": "Attaches a Server to a network. This will complement the fixed public Server interface by adding an additional ethernet interface to the Server which is connected to the specified network.\n\nThe Server will get an IP auto assigned from a subnet of type `server` in the same `network_zone`.\n\nUsing the `alias_ips` attribute you can also define one or more additional IPs to the Servers. Please note that you will have to configure these IPs by hand on your Server since only the primary IP will be given out by DHCP.\n\n**Call specific error codes**\n\n| Code                             | Description                                                           |\n|----------------------------------|-----------------------------------------------------------------------|\n| `server_already_attached`        | The server is already attached to the network                         |\n| `ip_not_available`               | The provided Network IP is not available                              |\n| `no_subnet_available`            | No Subnet or IP is available for the Server within the network        |\n| `networks_overlap`               | The network IP range overlaps with one of the server networks         |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsChangeAliasIps",
+      "name": "serverActions.postServersIdActionsChangeAliasIps",
+      "description": "Changes the alias IPs of an already attached Network. Note that the existing aliases for the specified Network will be replaced with these provided in the request body. So if you want to add an alias IP, you have to provide the existing ones from the Network plus the new alias IP in the request body."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsChangeDnsPtr",
+      "name": "serverActions.postServersIdActionsChangeDnsPtr",
+      "description": "Changes the hostname that will appear when getting the hostname belonging to the primary IPs (IPv4 and IPv6) of this Server.\n\nFloating IPs assigned to the Server are not affected by this.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsChangeProtection",
+      "name": "serverActions.postServersIdActionsChangeProtection",
+      "description": "Changes the protection configuration of the Server."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsChangeType",
+      "name": "serverActions.postServersIdActionsChangeType",
+      "description": "Changes the type (Cores, RAM and disk sizes) of a Server.\n\nServer must be powered off for this command to succeed.\n\nThis copies the content of its disk, and starts it again.\n\nYou can only migrate to Server types with the same `storage_type` and equal or bigger disks. Shrinking disks is not possible as it might destroy data.\n\nIf the disk gets upgraded, the Server type can not be downgraded any more. If you plan to downgrade the Server type, set `upgrade_disk` to `false`.\n\n#### Call specific error codes\n\n| Code                          | Description                                                          |\n|-------------------------------|----------------------------------------------------------------------|\n| `invalid_server_type`         | The server type does not fit for the given server or is deprecated   |\n| `server_not_stopped`          | The action requires a stopped server                                 |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsCreateImage",
+      "name": "serverActions.postServersIdActionsCreateImage",
+      "description": "Creates an Image (snapshot) from a Server by copying the contents of its disks. This creates a snapshot of the current state of the disk and copies it into an Image. If the Server is currently running you must make sure that its disk content is consistent. Otherwise, the created Image may not be readable.\n\nTo make sure disk content is consistent, we recommend to shut down the Server prior to creating an Image.\n\nYou can either create a `backup` Image that is bound to the Server and therefore will be deleted when the Server is deleted, or you can create an `snapshot` Image which is completely independent of the Server it was created from and will survive Server deletion. Backup Images are only available when the backup option is enabled for the Server. Snapshot Images are billed on a per GB basis.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsDetachFromNetwork",
+      "name": "serverActions.postServersIdActionsDetachFromNetwork",
+      "description": "Detaches a Server from a network. The interface for this network will vanish."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsDetachIso",
+      "name": "serverActions.postServersIdActionsDetachIso",
+      "description": "Detaches an ISO from a Server. In case no ISO Image is attached to the Server, the status of the returned Action is immediately set to `success`"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsDisableBackup",
+      "name": "serverActions.postServersIdActionsDisableBackup",
+      "description": "Disables the automatic backup option and deletes all existing Backups for a Server. No more additional charges for backups will be made.\n\nCaution: This immediately removes all existing backups for the Server!\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsDisableRescue",
+      "name": "serverActions.postServersIdActionsDisableRescue",
+      "description": "Disables the Hetzner Rescue System for a Server. This makes a Server start from its disks on next reboot.\n\nRescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.\n\nDisabling rescue mode will not reboot your Server — you will have to do this yourself.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsEnableBackup",
+      "name": "serverActions.postServersIdActionsEnableBackup",
+      "description": "Enables and configures the automatic daily backup option for the Server. Enabling automatic backups will increase the price of the Server by 20%. In return, you will get seven slots where Images of type backup can be stored.\n\nBackups are automatically created daily.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsEnableRescue",
+      "name": "serverActions.postServersIdActionsEnableRescue",
+      "description": "Enable the Hetzner Rescue System for this Server. The next time a Server with enabled rescue mode boots it will start a special minimal Linux distribution designed for repair and reinstall.\n\nIn case a Server cannot boot on its own you can use this to access a Server’s disks.\n\nRescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.\n\nEnabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-actions-soft-reboot-a-server) your Server — you will have to do this yourself.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsPoweroff",
+      "name": "serverActions.postServersIdActionsPoweroff",
+      "description": "Cuts power to the Server. This forcefully stops it without giving the Server operating system time to gracefully stop. May lead to data loss, equivalent to pulling the power cord. Power off should only be used when shutdown does not work."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsPoweron",
+      "name": "serverActions.postServersIdActionsPoweron",
+      "description": "Starts a Server by turning its power on."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsReboot",
+      "name": "serverActions.postServersIdActionsReboot",
+      "description": "Reboots a Server gracefully by sending an ACPI request. The Server operating system must support ACPI and react to the request, otherwise the Server will not reboot."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsRebuild",
+      "name": "serverActions.postServersIdActionsRebuild",
+      "description": "Rebuilds a Server overwriting its disk with the content of an Image, thereby **destroying all data** on the target Server\n\nThe Image can either be one you have created earlier (`backup` or `snapshot` Image) or it can be a completely fresh `system` Image provided by us. You can get a list of all available Images with `GET /images`.\n\nYour Server will automatically be powered off before the rebuild command executes.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsRemoveFromPlacementGroup",
+      "name": "serverActions.postServersIdActionsRemoveFromPlacementGroup",
+      "description": "Removes a Server from a Placement Group.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsRequestConsole",
+      "name": "serverActions.postServersIdActionsRequestConsole",
+      "description": "Requests credentials for remote access via VNC over websocket to keyboard, monitor, and mouse for a Server. The provided URL is valid for 1 minute, after this period a new url needs to be created to connect to the Server. How long the connection is open after the initial connect is not subject to this timeout."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsReset",
+      "name": "serverActions.postServersIdActionsReset",
+      "description": "Cuts power to a Server and starts it again. This forcefully stops it without giving the Server operating system time to gracefully stop. This may lead to data loss, it’s equivalent to pulling the power cord and plugging it in again. Reset should only be used when reboot does not work."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsResetPassword",
+      "name": "serverActions.postServersIdActionsResetPassword",
+      "description": "Resets the root password. Only works for Linux systems that are running the qemu guest agent. Server must be powered on (status `running`) in order for this operation to succeed.\n\nThis will generate a new password for this Server and return it.\n\nIf this does not succeed you can use the rescue system to netboot the Server and manually change your Server password by hand.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverActions.postServersIdActionsShutdown",
+      "name": "serverActions.postServersIdActionsShutdown",
+      "description": "Shuts down a Server gracefully by sending an ACPI shutdown request. The Server operating system must support ACPI and react to the request, otherwise the Server will not shut down."
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.deleteServersId",
+      "name": "servers.deleteServersId",
+      "description": "Deletes a Server. This immediately removes the Server from your account, and it is no longer accessible."
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.getServers",
+      "name": "servers.getServers",
+      "description": "Returns all existing Server objects"
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.getServersId",
+      "name": "servers.getServersId",
+      "description": "Returns a specific Server object. The Server must exist inside the Project"
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.getServersIdMetrics",
+      "name": "servers.getServersIdMetrics",
+      "description": "Get Metrics for specified Server.\n\nYou must specify the type of metric to get: cpu, disk or network. You can also specify more than one type by comma separation, e.g. cpu,disk.\n\nDepending on the type you will get different time series data\n\n| Type    | Timeseries              | Unit      | Description                                          |\n|---------|-------------------------|-----------|------------------------------------------------------|\n| cpu     | cpu                     | percent   | Percent CPU usage                                    |\n| disk    | disk.0.iops.read        | iop/s     | Number of read IO operations per second              |\n|         | disk.0.iops.write       | iop/s     | Number of write IO operations per second             |\n|         | disk.0.bandwidth.read   | bytes/s   | Bytes read per second                                |\n|         | disk.0.bandwidth.write  | bytes/s   | Bytes written per second                             |\n| network | network.0.pps.in        | packets/s | Public Network interface packets per second received |\n|         | network.0.pps.out       | packets/s | Public Network interface packets per second sent     |\n|         | network.0.bandwidth.in  | bytes/s   | Public Network interface bytes/s received            |\n|         | network.0.bandwidth.out | bytes/s   | Public Network interface bytes/s sent                |\n\nMetrics are available for the last 30 days only.\n\nIf you do not provide the step argument we will automatically adjust it so that a maximum of 200 samples are returned.\n\nWe limit the number of samples returned to a maximum of 500 and will adjust the step parameter accordingly.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.postServers",
+      "name": "servers.postServers",
+      "description": "Creates a new Server. Returns preliminary information about the Server as well as an Action that covers progress of creation."
+    },
+    {
+      "id": "openapi_hetzner_cloud.servers.putServersId",
+      "name": "servers.putServersId",
+      "description": "Updates a Server. You can update a Server’s name and a Server’s labels.\nPlease note that Server names must be unique per Project and valid hostnames as per RFC 1123 (i.e. may only contain letters, digits, periods, and dashes).\nAlso note that when updating labels, the Server’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverTypes.getServerTypes",
+      "name": "serverTypes.getServerTypes",
+      "description": "Gets all Server type objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.serverTypes.getServerTypesId",
+      "name": "serverTypes.getServerTypesId",
+      "description": "Gets a specific Server type object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.sshKeys.deleteSshKeysId",
+      "name": "sshKeys.deleteSshKeysId",
+      "description": "Deletes an SSH key. It cannot be used anymore."
+    },
+    {
+      "id": "openapi_hetzner_cloud.sshKeys.getSshKeys",
+      "name": "sshKeys.getSshKeys",
+      "description": "Returns all SSH key objects."
+    },
+    {
+      "id": "openapi_hetzner_cloud.sshKeys.getSshKeysId",
+      "name": "sshKeys.getSshKeysId",
+      "description": "Returns a specific SSH key object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.sshKeys.postSshKeys",
+      "name": "sshKeys.postSshKeys",
+      "description": "Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is created, it can be used in other calls such as creating Servers."
+    },
+    {
+      "id": "openapi_hetzner_cloud.sshKeys.putSshKeysId",
+      "name": "sshKeys.putSshKeysId",
+      "description": "Updates an SSH key. You can update an SSH key name and an SSH key labels.\n\nPlease note that when updating labels, the SSH key current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.getVolumesIdActions",
+      "name": "volumeActions.getVolumesIdActions",
+      "description": "Returns all Action objects for a Volume. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.getVolumesIdActionsActionId",
+      "name": "volumeActions.getVolumesIdActionsActionId",
+      "description": "Returns a specific Action for a Volume."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.postVolumesIdActionsAttach",
+      "name": "volumeActions.postVolumesIdActionsAttach",
+      "description": "Attaches a Volume to a Server. Works only if the Server is in the same Location as the Volume."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.postVolumesIdActionsChangeProtection",
+      "name": "volumeActions.postVolumesIdActionsChangeProtection",
+      "description": "Changes the protection configuration of a Volume."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.postVolumesIdActionsDetach",
+      "name": "volumeActions.postVolumesIdActionsDetach",
+      "description": "Detaches a Volume from the Server it’s attached to. You may attach it to a Server again at a later time."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumeActions.postVolumesIdActionsResize",
+      "name": "volumeActions.postVolumesIdActionsResize",
+      "description": "Changes the size of a Volume. Note that downsizing a Volume is not possible."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumes.deleteVolumesId",
+      "name": "volumes.deleteVolumesId",
+      "description": "Deletes a volume. All Volume data is irreversibly destroyed. The Volume must not be attached to a Server and it must not have delete protection enabled."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumes.getVolumes",
+      "name": "volumes.getVolumes",
+      "description": "Gets all existing Volumes that you have available."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumes.getVolumesId",
+      "name": "volumes.getVolumesId",
+      "description": "Gets a specific Volume object."
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumes.postVolumes",
+      "name": "volumes.postVolumes",
+      "description": "Creates a new Volume attached to a Server. If you want to create a Volume that is not attached to a Server, you need to provide the `location` key instead of `server`. This can be either the ID or the name of the Location this Volume will be created in. Note that a Volume can be attached to a Server only in the same Location as the Volume itself.\n\nSpecifying the Server during Volume creation will automatically attach the Volume to that Server after it has been initialized. In that case, the `next_actions` key in the response is an array which contains a single `attach_volume` action.\n\nThe minimum Volume size is 10GB and the maximum size is 10TB (10240GB).\n\nA volume’s name can consist of alphanumeric characters, dashes, underscores, and dots, but has to start and end with an alphanumeric character. The total length is limited to 64 characters. Volume names must be unique per Project.\n\n#### Call specific error codes\n\n| Code                                | Description                                         |\n|-------------------------------------|-----------------------------------------------------|\n| `no_space_left_in_location`         | There is no volume space left in the given location |\n"
+    },
+    {
+      "id": "openapi_hetzner_cloud.volumes.putVolumesId",
+      "name": "volumes.putVolumesId",
+      "description": "Updates the Volume properties.\n\nNote that when updating labels, the volume’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

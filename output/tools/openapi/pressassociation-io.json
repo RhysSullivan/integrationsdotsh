@@ -1,0 +1,107 @@
+{
+  "fetchedAt": "2026-04-30T15:26:44.109Z",
+  "status": "ok",
+  "count": 20,
+  "tools": [
+    {
+      "id": "openapi_pressassociation_io.asset.getAsset",
+      "name": "asset.getAsset",
+      "description": "Return the content of the selected asset."
+    },
+    {
+      "id": "openapi_pressassociation_io.asset.getAssetContributors",
+      "name": "asset.getAssetContributors",
+      "description": "Return the contributors of the selected asset."
+    },
+    {
+      "id": "openapi_pressassociation_io.asset.listAssets",
+      "name": "asset.listAssets",
+      "description": "Return a collection of Assets."
+    },
+    {
+      "id": "openapi_pressassociation_io.catalogue.getCatalogue",
+      "name": "catalogue.getCatalogue",
+      "description": "Return the content of the selected catalogue."
+    },
+    {
+      "id": "openapi_pressassociation_io.catalogue.getCatalogueAsset",
+      "name": "catalogue.getCatalogueAsset",
+      "description": "Return the content of the selected catalogue."
+    },
+    {
+      "id": "openapi_pressassociation_io.catalogue.getCatalogueAssetDetail",
+      "name": "catalogue.getCatalogueAssetDetail",
+      "description": "Return the content of the selected catalogue asset."
+    },
+    {
+      "id": "openapi_pressassociation_io.catalogue.listCatalogues",
+      "name": "catalogue.listCatalogues",
+      "description": "Return a collection of Catalogues."
+    },
+    {
+      "id": "openapi_pressassociation_io.channel.getChannel",
+      "name": "channel.getChannel",
+      "description": "Return the content of the selected channel."
+    },
+    {
+      "id": "openapi_pressassociation_io.channel.listChannels",
+      "name": "channel.listChannels",
+      "description": "If you are interested in a list of channels that have had there schedule updated you can filter by the following query params.\n - scheduleStart\n - scheduleEnd\n - scheduleUpdatedSince\n\nadding these query params will filter the channel collection to only return channels that have been updated within the given range, updatedSince stores the state of your previous call.\n\nExample Usage: Every 10 minutes get me the channels that have updated schedules for the next 2 weeks.\n\n/channel?platform={uuid}&scheduleStart={today}&scheduleEnd={today + 2 weeks}&updatedSince={10 minutes ago}\n\nAlso please note epg numbers are only exposed when a platform and region are passed to the query."
+    },
+    {
+      "id": "openapi_pressassociation_io.contributor.getContributor",
+      "name": "contributor.getContributor",
+      "description": "Return the content of the selected contributor."
+    },
+    {
+      "id": "openapi_pressassociation_io.contributor.listContributor",
+      "name": "contributor.listContributor",
+      "description": "Return a collection of Contributors."
+    },
+    {
+      "id": "openapi_pressassociation_io.feature.getFeature",
+      "name": "feature.getFeature",
+      "description": "Return the content of the selected feature."
+    },
+    {
+      "id": "openapi_pressassociation_io.feature.listFeatures",
+      "name": "feature.listFeatures",
+      "description": "Return a collection of Feature."
+    },
+    {
+      "id": "openapi_pressassociation_io.feature.listFeatureTypes",
+      "name": "feature.listFeatureTypes",
+      "description": "Return a collection of Feature Types."
+    },
+    {
+      "id": "openapi_pressassociation_io.platform.getPlatform",
+      "name": "platform.getPlatform",
+      "description": "Return the content of the selected platform."
+    },
+    {
+      "id": "openapi_pressassociation_io.platform.listPlatformRegions",
+      "name": "platform.listPlatformRegions",
+      "description": "Return a list of regions for a platform."
+    },
+    {
+      "id": "openapi_pressassociation_io.platform.listPlatforms",
+      "name": "platform.listPlatforms",
+      "description": "Return a list of available platforms."
+    },
+    {
+      "id": "openapi_pressassociation_io.schedule.listSchedule",
+      "name": "schedule.listSchedule",
+      "description": "The schedule endpoint produces a linear TV schedule for a given channel and date range.\n\n - The date range supplied must be no larger than 21 days.\n - If no end data is passed the API will default to start date + 24 hours."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

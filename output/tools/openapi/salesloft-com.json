@@ -1,0 +1,607 @@
+{
+  "fetchedAt": "2026-04-30T15:26:45.640Z",
+  "status": "ok",
+  "count": 120,
+  "tools": [
+    {
+      "id": "openapi_salesloft_com.accounts.deleteV2AccountsIdJson",
+      "name": "accounts.deleteV2AccountsIdJson",
+      "description": "Deletes an account. This operation is not reversible without contacting support.\nThis operation can be called multiple times successfully.\n\nDeleting an account will remove all connected people from that account.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accounts.getV2AccountsIdJson",
+      "name": "accounts.getV2AccountsIdJson",
+      "description": "Fetches an account, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accounts.getV2AccountsJson",
+      "name": "accounts.getV2AccountsJson",
+      "description": "Fetches multiple account records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accounts.postV2AccountsJson",
+      "name": "accounts.postV2AccountsJson",
+      "description": "Creates an account.\n\n\"domain\" must be unique on the current team.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accounts.putV2AccountsIdJson",
+      "name": "accounts.putV2AccountsIdJson",
+      "description": "Updates an account.\n\n\"domain\" must be unique on the current team.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accountStages.getV2AccountStagesIdJson",
+      "name": "accountStages.getV2AccountStagesIdJson",
+      "description": "Fetches an account stage, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accountStages.getV2AccountStagesJson",
+      "name": "accountStages.getV2AccountStagesJson",
+      "description": "Fetches multiple account stage records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accountTiers.getV2AccountTiersIdJson",
+      "name": "accountTiers.getV2AccountTiersIdJson",
+      "description": "Fetches an account tier, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accountTiers.getV2AccountTiersJson",
+      "name": "accountTiers.getV2AccountTiersJson",
+      "description": "Fetches multiple account tier records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.accountUpsert.postV2AccountUpsertsJson",
+      "name": "accountUpsert.postV2AccountUpsertsJson",
+      "description": "Upserts an account record. The upsert_key dictates how the upsert will be performed. The create and update behavior\nis exactly the same as the individual create and update endpoints.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.actionDetailsCallInstructions.getV2ActionDetailsCallInstructionsIdJson",
+      "name": "actionDetailsCallInstructions.getV2ActionDetailsCallInstructionsIdJson",
+      "description": "Fetches a call instruction, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.actionDetailsCallInstructions.getV2ActionDetailsCallInstructionsJson",
+      "name": "actionDetailsCallInstructions.getV2ActionDetailsCallInstructionsJson",
+      "description": "Fetches multiple call instruction records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.actions.getV2ActionsIdJson",
+      "name": "actions.getV2ActionsIdJson",
+      "description": "Fetches an action, by ID only.\nThis endpoint will only return actions that are in_progress or pending_activity.\nOnce an action is complete, the request for that action will return a 404 status code.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.actions.getV2ActionsJson",
+      "name": "actions.getV2ActionsJson",
+      "description": "Fetches multiple action records. The records can be filtered, paged, and sorted according to\nthe respective parameters. Only actions that are currently \"in_progess\" will be returned by\nthis endpoint.\n\nIf the requester is not an admin, this endpoint will only return actions belonging to the requester.\nIf the request is an admin, this endpoint will return actions for the entire team. Additionaly, an admin\nmay use the user_guid parameter to request actions that belong to specific users on the team.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.activities.postV2ActivitiesJson",
+      "name": "activities.postV2ActivitiesJson",
+      "description": "Creates an activity. An activity will mark the associated action as completed. Currently,\nonly certain action types can have an activity explicitly created for them.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.activityHistories.getV2ActivityHistories",
+      "name": "activityHistories.getV2ActivityHistories",
+      "description": "Fetches all of the customer's past activities for your application. Returns all the Activities that are found on the Salesloft Activity Feed. <a href=\"/activity-history.html\" target=\"_blank\" rel=\"noopener noreferrer\">Visit here for more details</a>."
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobs.getV2BulkJobs",
+      "name": "bulkJobs.getV2BulkJobs",
+      "description": "Fetches multiple bulk job records. The records can be filtered, paged, and sorted according to the respective parameters."
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobs.getV2BulkJobsId",
+      "name": "bulkJobs.getV2BulkJobsId",
+      "description": "Fetches a bulk job, by ID only."
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobs.postV2BulkJobs",
+      "name": "bulkJobs.postV2BulkJobs",
+      "description": "Creates a bulk job. The type of the bulk job must be included when created.\n\nFor additional information on creating bulk jobs, the types of supported bulk jobs, and examples of the bulk job flow, visit the <a href=\"/bulk.html\" target=\"_blank\" rel=\"noopener noreferrer\">bulk job details page</a>.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobs.putV2BulkJobsId",
+      "name": "bulkJobs.putV2BulkJobsId",
+      "description": "Updates a bulk job's name and / or marks a bulk job as 'ready_to_execute'.  May only be updated if the bulk job is still in an \"open\" state.\n\nFor additional information on creating bulk jobs, the types of supported bulk jobs, and examples of the bulk job flow, visit the <a href=\"/bulk.html\" target=\"_blank\" rel=\"noopener noreferrer\">bulk job details page</a>.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobsJobData.getV2BulkJobsBulkJobsIdJobData",
+      "name": "bulkJobsJobData.getV2BulkJobsBulkJobsIdJobData",
+      "description": "Fetches multiple job data records for a given bulk job. Pagination is not supported, but cursor based polling is via use of the `id[gt]` filter. Pass the last id seen (i.e. `id[gt]=1234`) in order to get the next batch of records."
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobsJobData.postV2BulkJobsBulkJobsIdJobData",
+      "name": "bulkJobsJobData.postV2BulkJobsBulkJobsIdJobData",
+      "description": "Upload job data for the specified bulk job. Upload an array of objects, where element contains the parameters necessary to execute the individual calls. Each call to this endpoint can handle up to 5,000 records at a time. There is no limit to how many times you can create job data for a given bulk job.\n\nFor additional information on creating bulk jobs, the types of supported bulk jobs, and examples of the bulk job flow, visit the <a href=\"/bulk.html\" target=\"_blank\" rel=\"noopener noreferrer\">bulk job details page</a>.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.bulkJobsResults.getV2BulkJobsBulkJobsIdResults",
+      "name": "bulkJobsResults.getV2BulkJobsBulkJobsIdResults",
+      "description": "Fetches multiple job data records for a completed bulk job. Note that until a bulk job's state is set to `done` the returned `data` will be an empty array. Pagination is not supported, but cursor based polling is via use of the `id[gt]` filter. Pass the last id seen (i.e. `id[gt]=1234`) in order to get the next batch of records."
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceExports.getV2CadenceExportsIdJson",
+      "name": "cadenceExports.getV2CadenceExportsIdJson",
+      "description": "Exports a cadence as JSON.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceImports.postV2CadenceImportsJson",
+      "name": "cadenceImports.postV2CadenceImportsJson",
+      "description": "New cadences can be created or steps can be imported onto existing cadences which do not have steps.\n<a href=\"/cadence-imports.html\" target=\"_blank\" rel=\"noopener noreferrer\">Visit here for more details</a>.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceMemberships.deleteV2CadenceMembershipsIdJson",
+      "name": "cadenceMemberships.deleteV2CadenceMembershipsIdJson",
+      "description": "Cadence Membership\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceMemberships.getV2CadenceMembershipsIdJson",
+      "name": "cadenceMemberships.getV2CadenceMembershipsIdJson",
+      "description": "Fetches a cadence membership, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceMemberships.getV2CadenceMembershipsJson",
+      "name": "cadenceMemberships.getV2CadenceMembershipsJson",
+      "description": "Fetches multiple cadence membership records. The records can be filtered, paged, and sorted according to\nthe respective parameters. A cadence membership is the association between a person and their current and\nhistorical time on a cadence. Cadence membership records are mutable and change over time. If a person is\nadded to a cadence and re-added to the same cadence in the future, there is a single membership record.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadenceMemberships.postV2CadenceMembershipsJson",
+      "name": "cadenceMemberships.postV2CadenceMembershipsJson",
+      "description": "Adds a person to a cadence. person_id and cadence_id are required, and must be visible to the authenticated user. user_id will\ndefault to the authenticated user, but can be set to any visible user on the authenticated team.\n\nA person cannot be added to a cadence on behalf of a teammate unless the cadence is a team cadence, the cadence is owned by\nthe teammate, or the teammate has the Personal Cadence Admin permission.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadences.getV2CadencesIdJson",
+      "name": "cadences.getV2CadencesIdJson",
+      "description": "Fetches a cadence, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.cadences.getV2CadencesJson",
+      "name": "cadences.getV2CadencesJson",
+      "description": "Fetches multiple cadence records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.calendarEvents.getV2CalendarEvents",
+      "name": "calendarEvents.getV2CalendarEvents",
+      "description": "Returns all calendar events, paginated and filtered by the date."
+    },
+    {
+      "id": "openapi_salesloft_com.calendarEvents.postV2CalendarEventsUpsert",
+      "name": "calendarEvents.postV2CalendarEventsUpsert",
+      "description": "  Upserts a calendar event object.\n  Upsert key is a combination of `id` and `i_cal_uid` scoped to the given `calendar_id`.\n  Bulk operations:\n  This endpoint is used for bulk operations, see https://developers.salesloft.com/bulk.html for integration instructions.\n  Use `calendar/events/upsert` as an event type, and this spec as a data spec.\n  This endpoint should be used directly for the time sensitive calendar event updates.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.callDataRecords.getV2CallDataRecordsIdJson",
+      "name": "callDataRecords.getV2CallDataRecordsIdJson",
+      "description": "Fetches a call data record, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.callDataRecords.getV2CallDataRecordsJson",
+      "name": "callDataRecords.getV2CallDataRecordsJson",
+      "description": "Fetches multiple call data records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n\nCall data records are records of all inbound and outbound calls through Salesloft. A call data record may\nbe associated with a call, but does not have to be.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.callDispositions.getV2CallDispositionsJson",
+      "name": "callDispositions.getV2CallDispositionsJson",
+      "description": "Fetches multiple call disposition records. The records can be sorted according to\nthe respective parameters. Call dispositions must be configured in application. This will\nchange in the future, but please contact us if you have a pressing use case.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.callerIDs.getV2PhoneNumbersCallerIdsJson",
+      "name": "callerIDs.getV2PhoneNumbersCallerIdsJson",
+      "description": "Each entry is a possible caller ID match for the number. Multiple\nentries may be returned if the phone number is present on more than one\nperson in the system.  Phone number should be in E.164 format.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.calls.getV2ActivitiesCallsIdJson",
+      "name": "calls.getV2ActivitiesCallsIdJson",
+      "description": "Fetches a call, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.calls.getV2ActivitiesCallsJson",
+      "name": "calls.getV2ActivitiesCallsJson",
+      "description": "Fetches multiple call records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.calls.postV2ActivitiesCallsJson",
+      "name": "calls.postV2ActivitiesCallsJson",
+      "description": "Creates a call. The parameters of this endpoint can be used to create an action\nand ensure that the CRM Task is mapped correctly.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.callSentiments.getV2CallSentimentsJson",
+      "name": "callSentiments.getV2CallSentimentsJson",
+      "description": "Fetches multiple call sentiment records. The records can be sorted according to\nthe respective parameters. Call sentiments must be configured in application. This will\nchange in the future, but please contact us if you have a pressing use case.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.conversationsCalls.postV2ConversationsCalls",
+      "name": "conversationsCalls.postV2ConversationsCalls",
+      "description": "Enqueue a Conversations Call for processing"
+    },
+    {
+      "id": "openapi_salesloft_com.crmActivities.getV2CrmActivitiesIdJson",
+      "name": "crmActivities.getV2CrmActivitiesIdJson",
+      "description": "Fetches a crm activity, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.crmActivities.getV2CrmActivitiesJson",
+      "name": "crmActivities.getV2CrmActivitiesJson",
+      "description": "Fetches multiple crm activity records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.crmActivityFields.getV2CrmActivityFieldsJson",
+      "name": "crmActivityFields.getV2CrmActivityFieldsJson",
+      "description": "Fetches multiple crm activity field records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.crmUsers.getV2CrmUsersJson",
+      "name": "crmUsers.getV2CrmUsersJson",
+      "description": "Crm Users\n"
+    },
+    {
+      "id": "openapi_salesloft_com.customFields.deleteV2CustomFieldsIdJson",
+      "name": "customFields.deleteV2CustomFieldsIdJson",
+      "description": "Deletes a custom field.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.customFields.getV2CustomFieldsIdJson",
+      "name": "customFields.getV2CustomFieldsIdJson",
+      "description": "Fetches a custom field, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.customFields.getV2CustomFieldsJson",
+      "name": "customFields.getV2CustomFieldsJson",
+      "description": "Fetches multiple custom field records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.customFields.postV2CustomFieldsJson",
+      "name": "customFields.postV2CustomFieldsJson",
+      "description": "Creates a custom field.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.customFields.putV2CustomFieldsIdJson",
+      "name": "customFields.putV2CustomFieldsIdJson",
+      "description": "Update a custom field.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.emails.getV2ActivitiesEmailsIdJson",
+      "name": "emails.getV2ActivitiesEmailsIdJson",
+      "description": "Fetches an email, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.emails.getV2ActivitiesEmailsJson",
+      "name": "emails.getV2ActivitiesEmailsJson",
+      "description": "Fetches multiple email records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.emailTemplateAttachments.getV2EmailTemplateAttachmentsJson",
+      "name": "emailTemplateAttachments.getV2EmailTemplateAttachmentsJson",
+      "description": "Fetches multiple email template attachment records. The records can be filtered and paged according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.emailTemplates.getV2EmailTemplatesIdJson",
+      "name": "emailTemplates.getV2EmailTemplatesIdJson",
+      "description": "Fetches an email template, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.emailTemplates.getV2EmailTemplatesJson",
+      "name": "emailTemplates.getV2EmailTemplatesJson",
+      "description": "Fetches multiple email template records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.externalEmails.postV2ExternalEmailsJson",
+      "name": "externalEmails.postV2ExternalEmailsJson",
+      "description": "Creates an external email object.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.groups.getV2GroupsIdJson",
+      "name": "groups.getV2GroupsIdJson",
+      "description": "Fetches a group, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.groups.getV2GroupsJson",
+      "name": "groups.getV2GroupsJson",
+      "description": "Fetches multiple group records. The records can be filtered, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.imports.deleteV2ImportsIdJson",
+      "name": "imports.deleteV2ImportsIdJson",
+      "description": "Deletes an import, by ID only. The associated people can be deleted as part of the deletion process.\n\nAdmin users can access imports for the entire team, but non-admin users can only access their own imports.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.imports.getV2ImportsIdJson",
+      "name": "imports.getV2ImportsIdJson",
+      "description": "Fetches an import, by ID only.\n\nAdmin users can access imports for the entire team, but non-admin users can only access their own imports.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.imports.getV2ImportsJson",
+      "name": "imports.getV2ImportsJson",
+      "description": "Fetches multiple imports.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.imports.postV2ImportsJson",
+      "name": "imports.postV2ImportsJson",
+      "description": "Creates an import.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.imports.putV2ImportsIdJson",
+      "name": "imports.putV2ImportsIdJson",
+      "description": "Updates an import, by ID only.\n\nAdmin users can access imports for the entire team, but non-admin users can only access their own imports.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.liveFeedItems.postV2ThirdPartyLiveFeedItems",
+      "name": "liveFeedItems.postV2ThirdPartyLiveFeedItems",
+      "description": "Creates a live feed item that can be sent to users. May only be used by whitelisted Frontend Integrations. Reference the Salesloft App Directory and Frontend Integrations sections for additional details."
+    },
+    {
+      "id": "openapi_salesloft_com.liveWebsiteTrackingParameters.postV2LiveWebsiteTrackingParametersJson",
+      "name": "liveWebsiteTrackingParameters.postV2LiveWebsiteTrackingParametersJson",
+      "description": "Creates a Live Website Tracking parameter to identify a person\n"
+    },
+    {
+      "id": "openapi_salesloft_com.me.getV2MeJson",
+      "name": "me.getV2MeJson",
+      "description": "Authenticated user information. This endpoint does not accept any parameters as it is\nrepresents your authenticated user. The \"Users\" resource provides user information\nfor other users on the team.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.meetings.getV2MeetingsJson",
+      "name": "meetings.getV2MeetingsJson",
+      "description": "Fetches multiple meeting records. The records can be filtered, paged, and sorted according to the respective parameters.\nMeetings resource is responsible for events created via the Salesloft platform using calendaring features.\nThese events can relate to cadences, people, and accounts.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.meetings.putV2MeetingsIdJson",
+      "name": "meetings.putV2MeetingsIdJson",
+      "description": "Updates a meeting, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.meetingSettings.putV2MeetingsSettingsIdJson",
+      "name": "meetingSettings.putV2MeetingsSettingsIdJson",
+      "description": "Updates a meeting setting, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.meetingsSettingsSearches.postV2MeetingsSettingsSearchesJson",
+      "name": "meetingsSettingsSearches.postV2MeetingsSettingsSearchesJson",
+      "description": "Fetches multiple meeting setting records. The records can be filtered, paged, and sorted according to the respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.mimeEmailPayloads.getV2MimeEmailPayloadsIdJson",
+      "name": "mimeEmailPayloads.getV2MimeEmailPayloadsIdJson",
+      "description": "Fetch the MIME content for email.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.notes.deleteV2NotesIdJson",
+      "name": "notes.deleteV2NotesIdJson",
+      "description": "Deletes a note owned by authorized account.\nThis operation is not reversible without contacting support.\nThis operation can be called multiple times successfully.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.notes.getV2NotesIdJson",
+      "name": "notes.getV2NotesIdJson",
+      "description": "Fetches a note, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.notes.getV2NotesJson",
+      "name": "notes.getV2NotesJson",
+      "description": "Fetches multiple note records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.notes.postV2NotesJson",
+      "name": "notes.postV2NotesJson",
+      "description": "Creates a note.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.notes.putV2NotesIdJson",
+      "name": "notes.putV2NotesIdJson",
+      "description": "Updates a note. Any changes to the note or associated records will not reflect in your CRM.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.ongoingActions.postV2OngoingActionsJson",
+      "name": "ongoingActions.postV2OngoingActionsJson",
+      "description": "Creates an ongoing action. An ongoing action is an action that is not yet completed,\nbut progress has been made towards the completion. The user should not need to do\nanything for an ongoing action to be completed. An ongoing action can be later completed\nby creating an activity.\n\nOngoing actions are marked as status=pending_activity.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.pendingEmails.getV2PendingEmailsJson",
+      "name": "pendingEmails.getV2PendingEmailsJson",
+      "description": "Fetches a list of emails ready to be sent by an external email service.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.pendingEmails.putV2PendingEmailsIdJson",
+      "name": "pendingEmails.putV2PendingEmailsIdJson",
+      "description": "Updates the status of an email sent by an External Email Client. Does not affect lofted emails.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.people.deleteV2PeopleIdJson",
+      "name": "people.deleteV2PeopleIdJson",
+      "description": "Deletes a person. This operation is not reversible without contacting support.\nThis operation can be called multiple times successfully.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.people.getV2PeopleIdJson",
+      "name": "people.getV2PeopleIdJson",
+      "description": "Fetches a person, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.people.getV2PeopleJson",
+      "name": "people.getV2PeopleJson",
+      "description": "Fetches multiple person records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.people.postV2PeopleJson",
+      "name": "people.postV2PeopleJson",
+      "description": "Creates a person. Either email_address or phone/last_name must be provided as a unique lookup\non the team.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.people.putV2PeopleIdJson",
+      "name": "people.putV2PeopleIdJson",
+      "description": "Updates a person.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personStages.deleteV2PersonStagesIdJson",
+      "name": "personStages.deleteV2PersonStagesIdJson",
+      "description": "Deletes a person stage. This operation is not reversible without contacting support.\nThis operation can be called multiple times successfully.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personStages.getV2PersonStagesIdJson",
+      "name": "personStages.getV2PersonStagesIdJson",
+      "description": "Fetches a person stage, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personStages.getV2PersonStagesJson",
+      "name": "personStages.getV2PersonStagesJson",
+      "description": "Fetches multiple person stage records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personStages.postV2PersonStagesJson",
+      "name": "personStages.postV2PersonStagesJson",
+      "description": "Creates a person stage.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personStages.putV2PersonStagesIdJson",
+      "name": "personStages.putV2PersonStagesIdJson",
+      "description": "Updates a person stage.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.personUpsert.postV2PersonUpsertsJson",
+      "name": "personUpsert.postV2PersonUpsertsJson",
+      "description": "Upserts a person record. The upsert_key dictates how the upsert will be performed. The create and update behavior\nis exactly the same as the individual create and update endpoints.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.phoneNumberAssignments.getV2PhoneNumberAssignmentsIdJson",
+      "name": "phoneNumberAssignments.getV2PhoneNumberAssignmentsIdJson",
+      "description": "Fetches a phone number assignment, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.phoneNumberAssignments.getV2PhoneNumberAssignmentsJson",
+      "name": "phoneNumberAssignments.getV2PhoneNumberAssignmentsJson",
+      "description": "Fetches multiple phone number assignment records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.recordingSettings.getV2PhoneNumbersRecordingSettingsIdJson",
+      "name": "recordingSettings.getV2PhoneNumbersRecordingSettingsIdJson",
+      "description": "Fetches the recording status for a given phone number, based on Do Not Record and Recording Governance for your team.\nPhone number should be in E.164 format.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.savedListViews.deleteV2SavedListViewsIdJson",
+      "name": "savedListViews.deleteV2SavedListViewsIdJson",
+      "description": "Deletes a saved list view. This operation is not reversible without contacting support.\nThis operation can be called multiple times successfully.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.savedListViews.getV2SavedListViewsIdJson",
+      "name": "savedListViews.getV2SavedListViewsIdJson",
+      "description": "Fetches a saved list view, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.savedListViews.getV2SavedListViewsJson",
+      "name": "savedListViews.getV2SavedListViewsJson",
+      "description": "Fetches multiple saved list view records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.savedListViews.postV2SavedListViewsJson",
+      "name": "savedListViews.postV2SavedListViewsJson",
+      "description": "Creates a saved list view.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.savedListViews.putV2SavedListViewsIdJson",
+      "name": "savedListViews.putV2SavedListViewsIdJson",
+      "description": "Updates a saved list view.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.steps.getV2StepsIdJson",
+      "name": "steps.getV2StepsIdJson",
+      "description": "Fetches a step, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.steps.getV2StepsJson",
+      "name": "steps.getV2StepsJson",
+      "description": "Fetches multiple step records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.successes.getV2SuccessesJson",
+      "name": "successes.getV2SuccessesJson",
+      "description": "Fetches multiple success records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.tags.getV2TagsJson",
+      "name": "tags.getV2TagsJson",
+      "description": "Fetches a list of the tags used for a team. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n\nTags can be applied to mulitple resource types.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.tasks.getV2TasksIdJson",
+      "name": "tasks.getV2TasksIdJson",
+      "description": "Fetches a task, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.tasks.getV2TasksJson",
+      "name": "tasks.getV2TasksJson",
+      "description": "Fetches multiple task records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.tasks.postV2TasksJson",
+      "name": "tasks.postV2TasksJson",
+      "description": "Creates a task.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.tasks.putV2TasksIdJson",
+      "name": "tasks.putV2TasksIdJson",
+      "description": "Updates a task.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.team.getV2TeamJson",
+      "name": "team.getV2TeamJson",
+      "description": "Fetches the team of the authenticated user.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.teamTemplateAttachments.getV2TeamTemplateAttachmentsJson",
+      "name": "teamTemplateAttachments.getV2TeamTemplateAttachmentsJson",
+      "description": "Fetches multiple team template attachment records. The records can be filtered and paged according to\nthe respective parameters.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.teamTemplates.getV2TeamTemplatesIdJson",
+      "name": "teamTemplates.getV2TeamTemplatesIdJson",
+      "description": "Fetches a team template, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.teamTemplates.getV2TeamTemplatesJson",
+      "name": "teamTemplates.getV2TeamTemplatesJson",
+      "description": "Fetches multiple team template records. The records can be filtered, paged, and sorted according to\nthe respective parameters.\n\nTeam templates are templates that are available team-wide. Admins may use\nteam templates to create original content for the entire team, monitor version control to ensure templates are always up to date,\nand track template performance across the entire organization. All metrics on a team template reflect usage across the team; individual metrics can be found with the email_templates API endpoint.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.users.getV2UsersIdJson",
+      "name": "users.getV2UsersIdJson",
+      "description": "Fetches a user, by ID only.\n"
+    },
+    {
+      "id": "openapi_salesloft_com.users.getV2UsersJson",
+      "name": "users.getV2UsersJson",
+      "description": "Non Admin: Lists only your user, or all on team depending on group visibility policy\nTeam Admin: Lists users associated with your team\n"
+    },
+    {
+      "id": "openapi_salesloft_com.webhookSubscriptions.deleteV2WebhookSubscriptionsId",
+      "name": "webhookSubscriptions.deleteV2WebhookSubscriptionsId",
+      "description": "Deletes a webhook subscription. This operation is not reversible without contacting support. This operation can be called multiple times successfully."
+    },
+    {
+      "id": "openapi_salesloft_com.webhookSubscriptions.getV2WebhookSubscriptions",
+      "name": "webhookSubscriptions.getV2WebhookSubscriptions",
+      "description": "Fetches all of the customer's webhook subscriptions for your application."
+    },
+    {
+      "id": "openapi_salesloft_com.webhookSubscriptions.getV2WebhookSubscriptionsId",
+      "name": "webhookSubscriptions.getV2WebhookSubscriptionsId",
+      "description": "Fetches a webhook subscription, by ID only."
+    },
+    {
+      "id": "openapi_salesloft_com.webhookSubscriptions.postV2WebhookSubscriptions",
+      "name": "webhookSubscriptions.postV2WebhookSubscriptions",
+      "description": "Creates a webhook subscription. Visit the <a href=\"/webhooks.html\" target=\"_blank\" rel=\"noopener noreferrer\">webhooks page</a> for additional details and a list of available webhooks.\nRequest must be made with a valid Oauth token or API key."
+    },
+    {
+      "id": "openapi_salesloft_com.webhookSubscriptions.putV2WebhookSubscriptionsId",
+      "name": "webhookSubscriptions.putV2WebhookSubscriptionsId",
+      "description": "Updates a webhook subscription.\nRequest must be made with a valid Oauth token or API key."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

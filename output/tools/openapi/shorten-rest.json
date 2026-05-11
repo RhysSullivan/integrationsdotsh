@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:26:46.569Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_shorten_rest.alias.createAlias",
+      "name": "alias.createAlias",
+      "description": "This POST method creates a new alias under a specified domain. If no domain is specified in the request the alias will be attached to the default domain Short.fyi \n\n **NOTE:** You can override the domain level Meta Tags and Tracking Snippets by specifying them for each URL. Any variables you add to a specific URL will always override domain level settings."
+    },
+    {
+      "id": "openapi_shorten_rest.alias.deleteAlias",
+      "name": "alias.deleteAlias",
+      "description": "Deletes a single alias by providing alias and domain. If no domain is provided the API will search for the matching alias within the Short.fyi domain"
+    },
+    {
+      "id": "openapi_shorten_rest.alias.getAlias",
+      "name": "alias.getAlias",
+      "description": "Get detailed information for a single alias by providing its alias and domain name"
+    },
+    {
+      "id": "openapi_shorten_rest.alias.getAliases",
+      "name": "alias.getAliases",
+      "description": "Obtain a list of all alias names associated with your account and given domain. Result array is in descending order by creation date. \n\n If no domain is specified you will receive a list of all the alias names you have created using the Short.fyi domain. \n\n If there are more results than the limit for the request the response will return you a value in lastId property you can specify it in the continueFrom query parameter to get the next batch of records."
+    },
+    {
+      "id": "openapi_shorten_rest.alias.updateAlias",
+      "name": "alias.updateAlias",
+      "description": "Update a single short URL by providing its alias and domain as a parameter, and the data you wish to update in the body of the request. If no domain is provided you will receive the alias found attached to the Short.fyi domain (if it exists and is linked to your account!)\n\n ### NOTE: \n\n ( * )If you add a metatag or a snippet with a same name to an alias and the domain it's related to, the value will be taken from the alias and not the domain \n\n ( ** ) When you update any array property (like destinations) the block is updated **completely** so you have to specify the old records to avoid deleting them\n\n ( *** ) The method updates only the specified properties so if there was no change in one of them you don't have to send it."
+    },
+    {
+      "id": "openapi_shorten_rest.click.getClicks",
+      "name": "click.getClicks",
+      "description": "Retrieve the raw click data for your account. Clicks are retrieved by creation date in descending order. \n\n If there are more results than the limit for the request the response will return you a value in lastId property you can specify it in the continueFrom query parameter to get the next batch of records."
+    },
+    {
+      "id": "openapi_shorten_rest.statistics.getStatistics",
+      "name": "statistics.getStatistics",
+      "description": "Retrieve the raw click statistics for your account. Clicks are retrieved by creation date in descending order."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

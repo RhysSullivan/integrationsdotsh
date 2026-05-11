@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:39.066Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_luxauto.vehicle_carousel",
+      "name": "vehicle-carousel",
+      "description": "Search for vehicle listings for sale, rent, or lease in Luxembourg on luxauto.lu using user criteria.\nMANDATORY CALL ORDER WHEN A MODEL NAME IS MENTIONED:\n- If the user mentions model text (examples: 'Aprilia RS', 'BMW X5', 'Golf'), first call 'fetch-vehicle-models' to resolve makeIds and modelIds.\n- Then call 'vehicle-carousel' immediately after with the returned makeIds and modelIds'.\n- Never stop after 'fetch-vehicle-models' when the user asks to find/buy/search vehicles, because that tool does not return listings.\n- If no makeIds and  modelIds match, still call 'vehicle-carousel' with make + other user filters.\nUse this tool when the user wants to see matching listings such as:\n- Cars, motorcycles, or vans matching criteria\n- Price, mileage, year, make/model, fuel, or gearbox searches\nKey expected inputs:\n- Vehicle type (vehicleId: 1 car, 2 motorcycle, 9 van)\n- One or more makes and optional modelIds(from 'fetch-vehicle-models')\n- User-specified filters (price range, mileage, year, fuel, gearbox, options)\n- Optional: Category/body style, colors, or seats\nOutput intent: Returns a carousel with up to 20 vehicles matching criteria with details like first photo, make/model, price, year, mileage, fuel, gearbox.\nWhat it does not do:\n- No financing recommendations or financial advice\n- No suggestions on which vehicle to choose\n- No adding search criteria the user did not explicitly mention"
+    },
+    {
+      "id": "mcp_luxauto.fetch_vehicle_models",
+      "name": "fetch-vehicle-models",
+      "description": "Use this tool to retrieve vehicle makeIds and modelIds unique identifiers for a given vehicle type and make name. This is a preparation step for listing search: when user intent is to find/buy/search vehicles, call this tool first and then call 'vehicle-carousel' with the returned unique identifiers. Do not end the workflow after this tool because it does not return listings."
+    }
+  ]
+}

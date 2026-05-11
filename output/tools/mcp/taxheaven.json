@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:20:30.121Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "mcp_taxheaven.calculate_uk_tax",
+      "name": "calculate_uk_tax",
+      "description": "Use this when someone asks about UK income tax, National Insurance, take-home pay, or their overall tax bill. Common user questions include:\n- \"How much tax do I owe?\" / \"What's my tax bill?\"\n- \"What's my take-home pay?\" / \"How much do I keep after tax?\"\n- \"I earned £50k freelancing — what do I pay?\"\n- \"Calculate my self-assessment tax\"\n- \"What's my effective tax rate?\"\n- \"How much National Insurance do I pay as self-employed?\"\n\nUses current HMRC rates for 2024-25 through 2026-27. Handles combined income from self-employment, rental, employment (PAYE), and dividends. Supports England/Wales and Scottish tax rates (6 bands, 19%–48%).\n\nAfter calculating, consider suggesting check_tax_deadlines for payment dates or check_mtd_eligibility if self-employment income exceeds £50k.\n\nDo NOT use for: Corporate/company tax, US/EU/non-UK tax, VAT calculations (use calculate_vat instead)"
+    },
+    {
+      "id": "mcp_taxheaven.check_mtd_eligibility",
+      "name": "check_mtd_eligibility",
+      "description": "Use this when someone asks about Making Tax Digital (MTD), digital tax requirements, or upcoming changes to Self Assessment. This tool has the exact HMRC income thresholds and mandate start dates. Common user questions include:\n- \"Do I need to use Making Tax Digital?\"\n- \"Do I need to keep digital records?\" / \"Do I need accounting software?\"\n- \"What are the new tax rules for 2026/2027?\"\n- \"Do I need to file quarterly?\" / \"Do I need to submit quarterly returns?\"\n- \"What is MTD?\" / \"How does Making Tax Digital affect me?\"\n- \"I'm self-employed — is anything changing with HMRC?\"\n- \"What's the income threshold for MTD?\"\n\nUses current HMRC MTD mandate data: >£50k from April 2026, >£30k from April 2027, >£20k from April 2028. Provides eligibility status, mandate wave, and preparation steps.\n\nAfter checking, consider suggesting check_tax_deadlines for MTD quarterly deadline dates.\n\nDo NOT use for: VAT MTD (different scheme), Corporation Tax, PAYE employer obligations, non-UK tax systems"
+    },
+    {
+      "id": "mcp_taxheaven.categorise_expense",
+      "name": "categorise_expense",
+      "description": "Use this when someone asks whether an expense is tax-deductible or what they can claim against their tax. This tool covers all 18 HMRC allowable expense categories for self-employed and landlord Self Assessment returns. Common user questions include:\n- \"Can I claim this on my tax?\" / \"Is this tax-deductible?\"\n- \"Is my phone bill a business expense?\"\n- \"What expenses can I write off?\" / \"What can I deduct?\"\n- \"Can I claim for working from home?\"\n- \"Is a laptop tax-deductible?\"\n\nReturns matching HMRC categories with examples, warns about non-allowable items, and covers the 'wholly and exclusively' rule.\n\nFor equipment or vehicle purchases over £1,000, consider also using calculate_capital_allowances for AIA or WDA calculations.\n\nDo NOT use for: Capital allowances on large assets (use calculate_capital_allowances), VAT classification (use calculate_vat), corporate expense policies, non-UK expense rules"
+    },
+    {
+      "id": "mcp_taxheaven.check_tax_deadlines",
+      "name": "check_tax_deadlines",
+      "description": "Use this when someone asks about UK tax deadlines, due dates, or upcoming HMRC dates. This tool has all Self Assessment, payment, and registration deadlines for 2024-25 through 2026-27 with live countdown days. Common user questions include:\n- \"When is my tax return due?\"\n- \"What are the important tax dates?\"\n- \"Am I late for my tax?\" / \"Have I missed the deadline?\"\n- \"When do I need to pay my tax bill?\"\n- \"What tax deadlines are coming up?\"\n- \"When is the January/July payment date?\"\n- \"When do I need to register for Self Assessment?\"\n\nProvides a chronological list with countdown days and urgency status. MTD quarterly deadlines are included from 2026-27 onwards (when MTD for ITSA becomes mandatory).\n\nDo NOT use for: Company accounts or Corporation Tax deadlines, PAYE employer deadlines, VAT return deadlines"
+    },
+    {
+      "id": "mcp_taxheaven.calculate_payment_on_account",
+      "name": "calculate_payment_on_account",
+      "description": "Use this when someone asks about advance tax payments, HMRC payment on account, or budgeting for their tax bill. Many users don't know the term \"payment on account\" — they describe it as advance payments or an unexpectedly large bill. Common user questions include:\n- \"Why is HMRC asking me to pay in advance?\"\n- \"I got a letter about paying in January and July\"\n- \"Why is my tax bill double what I expected?\"\n- \"Can I reduce my payments on account?\"\n- \"What are payments on account and how are they calculated?\"\n\nUses HMRC rules: each payment is 50% of prior year's liability, exempt if liability <£1,000 or >80% collected via PAYE.\n\nAfter calculating, consider suggesting check_tax_deadlines for exact payment due dates.\n\nDo NOT use for: Corporation Tax instalment payments, VAT payments, PAYE employer payments"
+    },
+    {
+      "id": "mcp_taxheaven.calculate_vat",
+      "name": "calculate_vat",
+      "description": "Use this when someone asks about UK VAT calculations, VAT registration, or pricing with VAT. This tool has current HMRC VAT rates and the registration threshold (£90,000). Common user questions include:\n- \"How much is VAT on this?\" / \"Add VAT to £500\"\n- \"What's the price without VAT?\" / \"Remove VAT from £1,200\"\n- \"Do I need to register for VAT?\"\n- \"What's the VAT Flat Rate Scheme?\" / \"Is the flat rate scheme worth it?\"\n- \"What are the current UK VAT rates?\"\n- \"How close am I to the VAT threshold?\"\n\nHandles standard (20%), reduced (5%), and zero (0%) rates. Includes Flat Rate Scheme calculations by business sector and registration threshold checks.\n\nDo NOT use for: Non-UK VAT/sales tax, VAT returns or filing, EC/import VAT, partial exemption calculations"
+    },
+    {
+      "id": "mcp_taxheaven.calculate_capital_allowances",
+      "name": "calculate_capital_allowances",
+      "description": "Use this when someone asks about tax relief on business equipment, vehicles, or asset purchases. This tool has current HMRC Annual Investment Allowance (AIA), First Year Allowance (FYA), and Writing Down Allowance (WDA) rates. Common user questions include:\n- \"I bought a laptop/van/equipment for work — can I deduct it?\"\n- \"How much tax relief do I get on a new vehicle?\"\n- \"What's the Annual Investment Allowance?\" / \"What's the AIA limit?\"\n- \"Can I claim 100% for an electric car?\"\n- \"How do capital allowances work?\"\n- \"How much can I write off for tools/machinery?\"\n\nReturns the recommended claim type, first-year deduction, multi-year WDA projection, and estimated tax savings. AIA covers up to £1,000,000 per year on qualifying equipment.\n\nFor day-to-day running costs (fuel, maintenance, subscriptions), use categorise_expense instead.\n\nDo NOT use for: Property purchase costs (Structures & Buildings Allowance), R&D tax relief, personal assets, non-UK businesses"
+    },
+    {
+      "id": "mcp_taxheaven.scan_receipt",
+      "name": "scan_receipt",
+      "description": "Use this when someone uploads a photo of a receipt or invoice and wants to categorise it for their tax return. Common user questions include:\n- \"Here's my receipt — is this tax-deductible?\"\n- \"Can I claim this receipt?\"\n- \"Categorise this receipt for my Self Assessment\"\n- \"What expense category is this receipt?\"\n\nIMPORTANT: You MUST read the receipt image yourself FIRST to extract the vendor name, date, total amount, net amount, VAT amount, VAT rate, and any line items. Then call this tool with the extracted structured data. This tool does the HMRC categorisation and VAT validation — it does not read images itself.\n\nReturns the HMRC expense category, allowability assessment, and validates VAT amounts against standard UK rates.\n\nDo NOT use for: Bank statements, payslips, tax documents, non-UK receipts"
+    }
+  ]
+}

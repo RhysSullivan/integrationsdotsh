@@ -1,0 +1,227 @@
+{
+  "fetchedAt": "2026-04-30T15:26:52.684Z",
+  "status": "ok",
+  "count": 44,
+  "tools": [
+    {
+      "id": "openapi_tvmaze_com.auth.getAuthValidate",
+      "name": "auth.getAuthValidate",
+      "description": "If the credentials supplied as HTTP basic are valid, the user's level of premium - if any - is returned."
+    },
+    {
+      "id": "openapi_tvmaze_com.auth.postAuthPoll",
+      "name": "auth.postAuthPoll",
+      "description": "Using the token acquired in the `start` endpoint, you can start polling this endpoint once every 10 seconds.\n\nWhen the user has confirmed the authentication request on their end, this endpoint will return the user's API key that you can use in subsequent authenticated endpoints. Note that it'll do so only once, subsequent requests after the initial 200 response will return a 404.\n\nFor as long as the user did not yet confirm their authentication request, this endpoint will return a 403.\n"
+    },
+    {
+      "id": "openapi_tvmaze_com.auth.postAuthStart",
+      "name": "auth.postAuthStart",
+      "description": "If you want to access the TVmaze API on behalf of a user without querying them for their password, use this endpoint.\n\nTo get started, send a POST request containing the user's email address. The response will contain a `token`, which you can use as input to the `poll` endpoint. The user will receive an email prompting them to confirm the authentication request.\n\nAlternatively, if you expect the user to be logged in to TVmaze on the device they are currently interacting with, you can set `email_confirmation` to false and redirect them to the `confirm_url` URL. If they are logged in to TVmaze, they will be able to confirm the authentication request instantly.\n"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedNetworks.deleteUserFollowsNetworksNetworkId",
+      "name": "followedNetworks.deleteUserFollowsNetworksNetworkId",
+      "description": "Unfollow a network"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedNetworks.getUserFollowsNetworks",
+      "name": "followedNetworks.getUserFollowsNetworks",
+      "description": "List the followed networks"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedNetworks.getUserFollowsNetworksNetworkId",
+      "name": "followedNetworks.getUserFollowsNetworksNetworkId",
+      "description": "Check if a network is followed"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedNetworks.putUserFollowsNetworksNetworkId",
+      "name": "followedNetworks.putUserFollowsNetworksNetworkId",
+      "description": "Follow a network"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedPeople.deleteUserFollowsPeoplePersonId",
+      "name": "followedPeople.deleteUserFollowsPeoplePersonId",
+      "description": "Unfollow a person"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedPeople.getUserFollowsPeople",
+      "name": "followedPeople.getUserFollowsPeople",
+      "description": "List the followed people"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedPeople.getUserFollowsPeoplePersonId",
+      "name": "followedPeople.getUserFollowsPeoplePersonId",
+      "description": "Check if a person is followed"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedPeople.putUserFollowsPeoplePersonId",
+      "name": "followedPeople.putUserFollowsPeoplePersonId",
+      "description": "Follow a person"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedShows.deleteUserFollowsShowsShowId",
+      "name": "followedShows.deleteUserFollowsShowsShowId",
+      "description": "Unfollow a show"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedShows.getUserFollowsShows",
+      "name": "followedShows.getUserFollowsShows",
+      "description": "List the followed shows"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedShows.getUserFollowsShowsShowId",
+      "name": "followedShows.getUserFollowsShowsShowId",
+      "description": "Check if a show is followed"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedShows.putUserFollowsShowsShowId",
+      "name": "followedShows.putUserFollowsShowsShowId",
+      "description": "Follow a show"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedWebchannels.deleteUserFollowsWebchannelsWebchannelId",
+      "name": "followedWebchannels.deleteUserFollowsWebchannelsWebchannelId",
+      "description": "Unfollow a webchannel"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedWebchannels.getUserFollowsWebchannels",
+      "name": "followedWebchannels.getUserFollowsWebchannels",
+      "description": "List the followed webchannels"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedWebchannels.getUserFollowsWebchannelsWebchannelId",
+      "name": "followedWebchannels.getUserFollowsWebchannelsWebchannelId",
+      "description": "Check if a webchannel is followed"
+    },
+    {
+      "id": "openapi_tvmaze_com.followedWebchannels.putUserFollowsWebchannelsWebchannelId",
+      "name": "followedWebchannels.putUserFollowsWebchannelsWebchannelId",
+      "description": "Follow a webchannel"
+    },
+    {
+      "id": "openapi_tvmaze_com.markedEpisodes.deleteUserEpisodesEpisodeId",
+      "name": "markedEpisodes.deleteUserEpisodesEpisodeId",
+      "description": "Unmark an episode"
+    },
+    {
+      "id": "openapi_tvmaze_com.markedEpisodes.getUserEpisodes",
+      "name": "markedEpisodes.getUserEpisodes",
+      "description": "List the marked episodes"
+    },
+    {
+      "id": "openapi_tvmaze_com.markedEpisodes.getUserEpisodesEpisodeId",
+      "name": "markedEpisodes.getUserEpisodesEpisodeId",
+      "description": "Check if an episode is marked"
+    },
+    {
+      "id": "openapi_tvmaze_com.markedEpisodes.putUserEpisodesEpisodeId",
+      "name": "markedEpisodes.putUserEpisodesEpisodeId",
+      "description": "Set `marked_at` to `NULL` or leave it out to use the current time."
+    },
+    {
+      "id": "openapi_tvmaze_com.scrobbling.getScrobbleShowsShowId",
+      "name": "scrobbling.getScrobbleShowsShowId",
+      "description": "This endpoint can be used by all users, even without premium"
+    },
+    {
+      "id": "openapi_tvmaze_com.scrobbling.postScrobbleEpisodes",
+      "name": "scrobbling.postScrobbleEpisodes",
+      "description": "This endpoint can be used by all users, even without premium"
+    },
+    {
+      "id": "openapi_tvmaze_com.scrobbling.postScrobbleShows",
+      "name": "scrobbling.postScrobbleShows",
+      "description": "To specify a show, supply either `tvmaze_id`, `thetvdb_id` or `imdb_id`. To specify an episode, supply either both `season` and `episode`, or `airdate`.\n\nThis endpoint can be used by all users, even without premium.\n"
+    },
+    {
+      "id": "openapi_tvmaze_com.scrobbling.putScrobbleEpisodesEpisodeId",
+      "name": "scrobbling.putScrobbleEpisodesEpisodeId",
+      "description": "This endpoint can be used by all users, even without premium"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.deleteUserTagsTagId",
+      "name": "taggedShows.deleteUserTagsTagId",
+      "description": "Delete a specific tag"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.deleteUserTagsTagIdShowsShowId",
+      "name": "taggedShows.deleteUserTagsTagIdShowsShowId",
+      "description": "Untag a show"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.getUserTags",
+      "name": "taggedShows.getUserTags",
+      "description": "List all tags"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.getUserTagsTagIdShows",
+      "name": "taggedShows.getUserTagsTagIdShows",
+      "description": "List all shows under this tag"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.patchUserTagsTagId",
+      "name": "taggedShows.patchUserTagsTagId",
+      "description": "Update a specific tag"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.postUserTags",
+      "name": "taggedShows.postUserTags",
+      "description": "Create a new tag"
+    },
+    {
+      "id": "openapi_tvmaze_com.taggedShows.putUserTagsTagIdShowsShowId",
+      "name": "taggedShows.putUserTagsTagIdShowsShowId",
+      "description": "Tag a show"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedEpisodes.deleteUserVotesEpisodesEpisodeId",
+      "name": "votedEpisodes.deleteUserVotesEpisodesEpisodeId",
+      "description": "Remove an episode vote"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedEpisodes.getUserVotesEpisodes",
+      "name": "votedEpisodes.getUserVotesEpisodes",
+      "description": "List the episodes voted for"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedEpisodes.getUserVotesEpisodesEpisodeId",
+      "name": "votedEpisodes.getUserVotesEpisodesEpisodeId",
+      "description": "Check if an episode is voted for"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedEpisodes.putUserVotesEpisodesEpisodeId",
+      "name": "votedEpisodes.putUserVotesEpisodesEpisodeId",
+      "description": "Vote for an episode"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedShows.deleteUserVotesShowsShowId",
+      "name": "votedShows.deleteUserVotesShowsShowId",
+      "description": "Remove a show vote"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedShows.getUserVotesShows",
+      "name": "votedShows.getUserVotesShows",
+      "description": "List the shows voted for"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedShows.getUserVotesShowsShowId",
+      "name": "votedShows.getUserVotesShowsShowId",
+      "description": "Check if a show is voted for"
+    },
+    {
+      "id": "openapi_tvmaze_com.votedShows.putUserVotesShowsShowId",
+      "name": "votedShows.putUserVotesShowsShowId",
+      "description": "Set `voted_at` to `NULL` or leave it out to use the current time."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

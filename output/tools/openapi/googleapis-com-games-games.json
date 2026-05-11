@@ -1,0 +1,172 @@
+{
+  "fetchedAt": "2026-04-30T15:22:37.564Z",
+  "status": "ok",
+  "count": 33,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_games_games.achievementDefinitions.gamesAchievementDefinitionsList",
+      "name": "achievementDefinitions.gamesAchievementDefinitionsList",
+      "description": "Lists all the achievement definitions for your application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsIncrement",
+      "name": "achievements.gamesAchievementsIncrement",
+      "description": "Increments the steps of the achievement with the given ID for the currently authenticated player."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsList",
+      "name": "achievements.gamesAchievementsList",
+      "description": "Lists the progress for all your application's achievements for the currently authenticated player."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsReveal",
+      "name": "achievements.gamesAchievementsReveal",
+      "description": "Sets the state of the achievement with the given ID to `REVEALED` for the currently authenticated player."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsSetStepsAtLeast",
+      "name": "achievements.gamesAchievementsSetStepsAtLeast",
+      "description": "Sets the steps for the currently authenticated player towards unlocking an achievement. If the steps parameter is less than the current number of steps that the player already gained for the achievement, the achievement is not modified."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsUnlock",
+      "name": "achievements.gamesAchievementsUnlock",
+      "description": "Unlocks this achievement for the currently authenticated player."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.achievements.gamesAchievementsUpdateMultiple",
+      "name": "achievements.gamesAchievementsUpdateMultiple",
+      "description": "Updates multiple achievements for the currently authenticated player."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.applications.gamesApplicationsGet",
+      "name": "applications.gamesApplicationsGet",
+      "description": "Retrieves the metadata of the application with the given ID. If the requested application is not available for the specified `platformType`, the returned response will not include any instance data."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.applications.gamesApplicationsGetEndPoint",
+      "name": "applications.gamesApplicationsGetEndPoint",
+      "description": "Returns a URL for the requested end point type."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.applications.gamesApplicationsPlayed",
+      "name": "applications.gamesApplicationsPlayed",
+      "description": "Indicate that the currently authenticated user is playing your application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.applications.gamesApplicationsVerify",
+      "name": "applications.gamesApplicationsVerify",
+      "description": "Verifies the auth token provided with this request is for the application with the specified ID, and returns the ID of the player it was granted for."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.events.gamesEventsListByPlayer",
+      "name": "events.gamesEventsListByPlayer",
+      "description": "Returns a list showing the current progress on events in this application for the currently authenticated user."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.events.gamesEventsListDefinitions",
+      "name": "events.gamesEventsListDefinitions",
+      "description": "Returns a list of the event definitions in this application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.events.gamesEventsRecord",
+      "name": "events.gamesEventsRecord",
+      "description": "Records a batch of changes to the number of times events have occurred for the currently authenticated user of this application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.leaderboards.gamesLeaderboardsGet",
+      "name": "leaderboards.gamesLeaderboardsGet",
+      "description": "Retrieves the metadata of the leaderboard with the given ID."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.leaderboards.gamesLeaderboardsList",
+      "name": "leaderboards.gamesLeaderboardsList",
+      "description": "Lists all the leaderboard metadata for your application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.metagame.gamesMetagameGetMetagameConfig",
+      "name": "metagame.gamesMetagameGetMetagameConfig",
+      "description": "Return the metagame configuration data for the calling application."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.metagame.gamesMetagameListCategoriesByPlayer",
+      "name": "metagame.gamesMetagameListCategoriesByPlayer",
+      "description": "List play data aggregated per category for the player corresponding to `playerId`."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.players.gamesPlayersGet",
+      "name": "players.gamesPlayersGet",
+      "description": "Retrieves the Player resource with the given ID. To retrieve the player for the currently authenticated user, set `playerId` to `me`."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.players.gamesPlayersGetMultipleApplicationPlayerIds",
+      "name": "players.gamesPlayersGetMultipleApplicationPlayerIds",
+      "description": "Get the application player ids for the currently authenticated player across all requested games by the same developer as the calling application. This will only return ids for players that actually have an id (scoped or otherwise) with that game."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.players.gamesPlayersGetScopedPlayerIds",
+      "name": "players.gamesPlayersGetScopedPlayerIds",
+      "description": "Retrieves scoped player identifiers for currently authenticated user."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.players.gamesPlayersList",
+      "name": "players.gamesPlayersList",
+      "description": "Get the collection of players for the currently authenticated user."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.revisions.gamesRevisionsCheck",
+      "name": "revisions.gamesRevisionsCheck",
+      "description": "Checks whether the games client is out of date."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.scores.gamesScoresGet",
+      "name": "scores.gamesScoresGet",
+      "description": "Get high scores, and optionally ranks, in leaderboards for the currently authenticated player. For a specific time span, `leaderboardId` can be set to `ALL` to retrieve data for all leaderboards in a given time span. `NOTE: You cannot ask for 'ALL' leaderboards and 'ALL' timeSpans in the same request; only one parameter may be set to 'ALL'."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.scores.gamesScoresList",
+      "name": "scores.gamesScoresList",
+      "description": "Lists the scores in a leaderboard, starting from the top."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.scores.gamesScoresListWindow",
+      "name": "scores.gamesScoresListWindow",
+      "description": "Lists the scores in a leaderboard around (and including) a player's score."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.scores.gamesScoresSubmit",
+      "name": "scores.gamesScoresSubmit",
+      "description": "Submits a score to the specified leaderboard."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.scores.gamesScoresSubmitMultiple",
+      "name": "scores.gamesScoresSubmitMultiple",
+      "description": "Submits multiple scores to leaderboards."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.snapshots.gamesSnapshotsGet",
+      "name": "snapshots.gamesSnapshotsGet",
+      "description": "Retrieves the metadata for a given snapshot ID."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.snapshots.gamesSnapshotsList",
+      "name": "snapshots.gamesSnapshotsList",
+      "description": "Retrieves a list of snapshots created by your application for the player corresponding to the player ID."
+    },
+    {
+      "id": "openapi_googleapis_com_games_games.stats.gamesStatsGet",
+      "name": "stats.gamesStatsGet",
+      "description": "Returns engagement and spend statistics in this application for the currently authenticated user."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

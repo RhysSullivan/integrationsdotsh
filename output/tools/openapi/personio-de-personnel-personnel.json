@@ -1,0 +1,82 @@
+{
+  "fetchedAt": "2026-04-30T15:26:43.322Z",
+  "status": "ok",
+  "count": 15,
+  "tools": [
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.deleteCompanyAttendancesId",
+      "name": "company.deleteCompanyAttendancesId",
+      "description": "This endpoint is responsible for deleting attendance data for the company employees."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.deleteCompanyTimeOffsId",
+      "name": "company.deleteCompanyTimeOffsId",
+      "description": "This endpoint is responsible for deleting absence period data for the company employees."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyAttendances",
+      "name": "company.getCompanyAttendances",
+      "description": "This endpoint is responsible for fetching attendance data for the company employees. It is possible to paginate results, filter by period, the date and/or time it was updated, and/or specific employees. The result will contain a list of attendance periods, structured as defined here."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyEmployees",
+      "name": "company.getCompanyEmployees",
+      "description": "List Employees"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyEmployeesEmployeeId",
+      "name": "company.getCompanyEmployeesEmployeeId",
+      "description": "Show employee by ID"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyEmployeesEmployeeIdProfilePictureWidth",
+      "name": "company.getCompanyEmployeesEmployeeIdProfilePictureWidth",
+      "description": "Show employee profile picture"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyTimeOffs",
+      "name": "company.getCompanyTimeOffs",
+      "description": "This endpoint is responsible for fetching absence data for the company employees. It is possible to paginate results, filter by period and/or specific employees. The result will contain a list of absence periods, structured as defined here."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyTimeOffsId",
+      "name": "company.getCompanyTimeOffsId",
+      "description": "Absence Period"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.getCompanyTimeOffTypes",
+      "name": "company.getCompanyTimeOffTypes",
+      "description": "Provides a list of available time-off types, for example 'Paid vacation', 'Parental leave' or 'Home office'"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.patchCompanyAttendancesId",
+      "name": "company.patchCompanyAttendancesId",
+      "description": "This endpoint is responsible for updating attendance data for the company employees. Attributes are not required and if not specified, the current value will be used. It is not possible to change the employee id."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.postCompanyAttendances",
+      "name": "company.postCompanyAttendances",
+      "description": "This endpoint is responsible for adding attendance data for the company employees. It is possible to add attendances for one or many employees at the same time. The payload sent on the request should be a list of attendance periods, in the form of an array containing attendance period objects."
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.postCompanyEmployees",
+      "name": "company.postCompanyEmployees",
+      "description": "Creates new employee. Status of the employee will be set to `active` if `hire_date` provided is in past. Otherwise status will be set to `onboarding`. This endpoint will respond with `id` of created employee in case of success.\n"
+    },
+    {
+      "id": "openapi_personio_de_personnel_personnel.company.postCompanyTimeOffs",
+      "name": "company.postCompanyTimeOffs",
+      "description": "This endpoint is responsible for adding absence data for the company employees."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

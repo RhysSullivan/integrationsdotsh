@@ -1,0 +1,267 @@
+{
+  "fetchedAt": "2026-04-30T15:22:39.273Z",
+  "status": "ok",
+  "count": 52,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsCreate",
+      "name": "accounts.mybusinessAccountsCreate",
+      "description": "Creates an account with the specified name and type under the given parent. - Personal accounts and Organizations cannot be created. - User Groups cannot be created with a Personal account as primary owner. - Location Groups cannot be created with a primary owner of a Personal account if the Personal account is in an Organization. - Location Groups cannot own Location Groups. "
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsGenerateAccountNumber",
+      "name": "accounts.mybusinessAccountsGenerateAccountNumber",
+      "description": "Generates an account number for this account. The account number is not provisioned when an account is created. Use this request to create an account number when it is required."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsInvitationsAccept",
+      "name": "accounts.mybusinessAccountsInvitationsAccept",
+      "description": "Accepts the specified invitation."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsInvitationsDecline",
+      "name": "accounts.mybusinessAccountsInvitationsDecline",
+      "description": "Declines the specified invitation."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsInvitationsList",
+      "name": "accounts.mybusinessAccountsInvitationsList",
+      "description": "Lists pending invitations for the specified account."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsList",
+      "name": "accounts.mybusinessAccountsList",
+      "description": "Lists all of the accounts for the authenticated user. This includes all accounts that the user owns, as well as any accounts for which the user has management rights."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsListRecommendGoogleLocations",
+      "name": "accounts.mybusinessAccountsListRecommendGoogleLocations",
+      "description": "List all the GoogleLocations that have been recommended to the specified Business Profile account. Recommendations are provided for personal accounts and location groups only, requests for all other account types will result in an error. The recommendations for location groups are based on the locations in that group. The recommendations for personal accounts are based on all of the locations that the user has access to on Business Profile (which includes locations they can access through location groups), and is a superset of all recommendations generated for the user."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsAdminsCreate",
+      "name": "accounts.mybusinessAccountsLocationsAdminsCreate",
+      "description": "Invites the specified user to become an administrator for the specified location. The invitee must accept the invitation in order to be granted access to the location. See AcceptInvitation to programmatically accept an invitation."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsAdminsList",
+      "name": "accounts.mybusinessAccountsLocationsAdminsList",
+      "description": "Lists all of the admins for the specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsAssociate",
+      "name": "accounts.mybusinessAccountsLocationsAssociate",
+      "description": "Associates a location to a place ID. Any previous association is overwritten. This operation is only valid if the location is unverified. The association must be valid, that is, it appears in the list of `FindMatchingLocations`."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsBatchGet",
+      "name": "accounts.mybusinessAccountsLocationsBatchGet",
+      "description": "Gets all of the specified locations in the given account."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsBatchGetReviews",
+      "name": "accounts.mybusinessAccountsLocationsBatchGetReviews",
+      "description": "Returns the paginated list of reviews for all specified locations. This operation is only valid if the specified locations are verified. *Note:* Reviews are limited to a batch size of 200 `location_names` per call."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsClearAssociation",
+      "name": "accounts.mybusinessAccountsLocationsClearAssociation",
+      "description": "Clears an association between a location and its place ID. This operation is only valid if the location is unverified."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsCreate",
+      "name": "accounts.mybusinessAccountsLocationsCreate",
+      "description": "Creates a new location owned by the specified account, and returns it."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsFetchVerificationOptions",
+      "name": "accounts.mybusinessAccountsLocationsFetchVerificationOptions",
+      "description": "Reports all eligible verification options for a location in a specific language."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsFindMatches",
+      "name": "accounts.mybusinessAccountsLocationsFindMatches",
+      "description": "Finds all of the possible locations that are a match to the specified location. This operation is only valid if the location is unverified."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsGetGoogleUpdated",
+      "name": "accounts.mybusinessAccountsLocationsGetGoogleUpdated",
+      "description": "Gets the Google-updated version of the specified location. Returns `NOT_FOUND` if the location does not exist."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsInsuranceNetworksList",
+      "name": "accounts.mybusinessAccountsLocationsInsuranceNetworksList",
+      "description": "Returns a list of all insurance networks supported by Google."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsList",
+      "name": "accounts.mybusinessAccountsLocationsList",
+      "description": "Lists the locations for the specified account."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsLocalPostsCreate",
+      "name": "accounts.mybusinessAccountsLocationsLocalPostsCreate",
+      "description": "Creates a new local post associated with the specified location, and returns it."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsLocalPostsList",
+      "name": "accounts.mybusinessAccountsLocationsLocalPostsList",
+      "description": "Returns a list of local posts associated with a location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsLocalPostsReportInsights",
+      "name": "accounts.mybusinessAccountsLocationsLocalPostsReportInsights",
+      "description": "Returns insights for a set of local posts associated with a single listing. Which metrics and how they are reported are options specified in the request proto. *Note:* Insight reports are limited to 100 `local_post_names` per call."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsLodgingGetGoogleUpdated",
+      "name": "accounts.mybusinessAccountsLocationsLodgingGetGoogleUpdated",
+      "description": "Returns the Google updated Lodging of a specific location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsMediaCreate",
+      "name": "accounts.mybusinessAccountsLocationsMediaCreate",
+      "description": "Creates a new media item for the location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsMediaCustomersList",
+      "name": "accounts.mybusinessAccountsLocationsMediaCustomersList",
+      "description": "Returns a list of media items associated with a location that have been contributed by customers."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsMediaList",
+      "name": "accounts.mybusinessAccountsLocationsMediaList",
+      "description": "Returns a list of media items associated with a location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsMediaStartUpload",
+      "name": "accounts.mybusinessAccountsLocationsMediaStartUpload",
+      "description": "Generates a `MediaItemDataRef` for media item uploading."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsAnswersDelete",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsAnswersDelete",
+      "description": "Deletes the answer written by the current user to a question."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsAnswersList",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsAnswersList",
+      "description": "Returns the paginated list of answers for a specified question."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsAnswersUpsert",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsAnswersUpsert",
+      "description": "Creates an answer or updates the existing answer written by the user for the specified question. A user can only create one answer per question."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsCreate",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsCreate",
+      "description": "Adds a question for the specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsDelete",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsDelete",
+      "description": "Deletes a specific question written by the current user."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsList",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsList",
+      "description": "Returns the paginated list of questions and some of its answers for a specified location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsQuestionsPatch",
+      "name": "accounts.mybusinessAccountsLocationsQuestionsPatch",
+      "description": "Updates a specific question written by the current user."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsReportInsights",
+      "name": "accounts.mybusinessAccountsLocationsReportInsights",
+      "description": "Returns a report containing insights on one or more metrics by location. *Note:* Insight reports are limited to a batch size of 10 `location_names` per call."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsReviewsDeleteReply",
+      "name": "accounts.mybusinessAccountsLocationsReviewsDeleteReply",
+      "description": "Deletes the response to the specified review. This operation is only valid if the specified location is verified."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsReviewsList",
+      "name": "accounts.mybusinessAccountsLocationsReviewsList",
+      "description": "Returns the paginated list of reviews for the specified location. This operation is only valid if the specified location is verified."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsReviewsUpdateReply",
+      "name": "accounts.mybusinessAccountsLocationsReviewsUpdateReply",
+      "description": "Updates the reply to the specified review. A reply is created if one does not exist. This operation is only valid if the specified location is verified."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsTransfer",
+      "name": "accounts.mybusinessAccountsLocationsTransfer",
+      "description": "Moves a location from an account that the user owns to another account that the same user administers. The user must be an owner of the account the location is currently associated with and must also be at least a manager of the destination account. Returns the Location with its new resource name."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsVerificationsComplete",
+      "name": "accounts.mybusinessAccountsLocationsVerificationsComplete",
+      "description": "Completes a `PENDING` verification. It is only necessary for non `AUTO` verification methods. `AUTO` verification request is instantly `VERIFIED` upon creation."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsVerificationsList",
+      "name": "accounts.mybusinessAccountsLocationsVerificationsList",
+      "description": "List verifications of a location, ordered by create time."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsLocationsVerify",
+      "name": "accounts.mybusinessAccountsLocationsVerify",
+      "description": "Starts the verification process for a location."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.accounts.mybusinessAccountsUpdateNotifications",
+      "name": "accounts.mybusinessAccountsUpdateNotifications",
+      "description": "Sets the pubsub notification settings for the account informing Business Profile which topic to send pubsub notifications for: - New reviews for locations administered by the account. - Updated reviews for locations administered by the account. - New `GoogleUpdates` for locations administered by the account. An account will only have one notification settings resource, and only one pubsub topic can be set."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.attributes.mybusinessAttributesList",
+      "name": "attributes.mybusinessAttributesList",
+      "description": "Returns the list of available attributes that would be available for a location with the given primary category and country."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.categories.mybusinessCategoriesBatchGet",
+      "name": "categories.mybusinessCategoriesBatchGet",
+      "description": "Returns a list of business categories for the provided language and GConcept ids."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.categories.mybusinessCategoriesList",
+      "name": "categories.mybusinessCategoriesList",
+      "description": "Returns a list of business categories. Search will match the category name but not the category ID. *Note:* Search only matches the front of a category name (that is, 'food' may return 'Food Court' but not 'Fast Food Restaurant')."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.chains.mybusinessChainsGet",
+      "name": "chains.mybusinessChainsGet",
+      "description": "Gets the specified chain. Returns `NOT_FOUND` if the chain does not exist."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.chains.mybusinessChainsSearch",
+      "name": "chains.mybusinessChainsSearch",
+      "description": "Searches the chain based on chain name."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.googleLocations.mybusinessGoogleLocationsReport",
+      "name": "googleLocations.mybusinessGoogleLocationsReport",
+      "description": "Report a GoogleLocation."
+    },
+    {
+      "id": "openapi_googleapis_com_my_business_my_business.googleLocations.mybusinessGoogleLocationsSearch",
+      "name": "googleLocations.mybusinessGoogleLocationsSearch",
+      "description": "Search all of the possible locations that are a match to the specified request."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

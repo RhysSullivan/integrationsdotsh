@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:15.249Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_a_z_dog_breeds.search_for_breeds",
+      "name": "search-for-breeds",
+      "description": "Use to search the local dog breed dataset for breeds that match one or more structured criteria before showing details in the display widget. This tool is the first step whenever the conversation needs breed ids. Call it when the user mentions a specific breed name that must be resolved to an id, such as 'Show me information about the Yorkshire Terrier', and also call it for broader discovery prompts like 'What dog breeds are easy to train?', 'Tell me some friendly small dogs', or 'Show me working breeds with high energy'. The tool supports a fuzzy `name` filter for breed names, exact matching for `group`, inclusion matching for `temperament`, and relative `high`, `medium`, or `low` filters for popularity, height, weight, expectancy, grooming frequency, shedding, energy level, trainability, and demeanor. All provided filters are combined with strict AND semantics, so every returned breed satisfies every supplied criterion. Results are deterministic, capped, and intended to guide the next tool call rather than fully answer the user on their own. Do not use this tool when the user explicitly asks for plain text only and no tool usage. Do not use it for generic dog ownership advice, medical advice, or questions that do not require breed ids. After this tool returns, choose the most appropriate returned id or ids and call `display-breeds` to render the breed information widget for the user. After calling this tool, you should usually call display-breeds to display the returned breed ids"
+    },
+    {
+      "id": "mcp_a_z_dog_breeds.display_breeds",
+      "name": "display-breeds",
+      "description": "Use to render the dog breed information widget for one or more specific breed ids that were already resolved from the local dataset. This tool should usually be called after `search-for-breeds`, because search returns the canonical ids required here. The input is one or more breed ids, and the output opens the `display-breeds` widget so the user can browse photos and structured details for each selected breed inside the conversation. It is appropriate for direct breed lookups, follow-up requests to compare several matching breeds, or any case where the assistant has already decided which concrete breeds should be shown. The tool returns full breed records from the dataset, preserving input order and gracefully ignoring ids that are unknown. The widget then presents available images, breed description, group, temperaments, popularity summary, size, expectancy, grooming frequency, shedding, energy level, trainability, and demeanor. Because the widget is designed for visual presentation, prefer this tool over long textual dumps whenever the user wants to see the breeds directly. Do not call this tool with guessed ids. Resolve ids first with `search-for-breeds` unless the id is already known from earlier tool output in the same conversation."
+    }
+  ]
+}

@@ -1,0 +1,827 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.699Z",
+  "status": "ok",
+  "count": 164,
+  "tools": [
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.attachment.deleteApiCatalogPvtAttachmentAttachmentid",
+      "name": "attachment.deleteApiCatalogPvtAttachmentAttachmentid",
+      "description": "Deletes a previously existing SKU attachment."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.attachment.getApiCatalogPvtAttachmentAttachmentid",
+      "name": "attachment.getApiCatalogPvtAttachmentAttachmentid",
+      "description": "Gets information about a registered attachment. \r\n >⚠️ To understand the specific syntax for Assembly Options attachments, read the [Assembly Options](https://help.vtex.com/en/tutorial/assembly-options--5x5FhNr4f5RUGDEGWzV1nH#assembly-options-syntax) documentation.\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 8,\r\n  \"Name\": \"Test\",\r\n  \"IsRequired\": true,\r\n  \"IsActive\": true,\r\n  \"Domains\": [\r\n    {\r\n      \"FieldName\": \"Basic test\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n    },\r\n    {\r\n      \"FieldName\": \"teste\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n    }\r\n  ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.attachment.getApiCatalogPvtAttachments",
+      "name": "attachment.getApiCatalogPvtAttachments",
+      "description": "Retrieves information about all registered attachments. \r\n >⚠️ To understand the specific syntax for Assembly Options attachments, read the [Assembly Options](https://help.vtex.com/en/tutorial/assembly-options--5x5FhNr4f5RUGDEGWzV1nH#assembly-options-syntax) documentation. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Page\": 1,\r\n    \"Size\": 11,\r\n    \"TotalRows\": 11,\r\n    \"TotalPage\": 1,\r\n    \"Data\": [\r\n        {\r\n            \"Id\": 1,\r\n            \"Name\": \"Acessórios do bicho\",\r\n            \"IsRequired\": true,\r\n            \"IsActive\": true,\r\n            \"Domains\": [\r\n                {\r\n                    \"FieldName\": \"extra\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"[0-3]#1[1-2][1]pricetable1;#3[0-2][0]pricetable2;#5[0-2][0]pricetable3\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"Id\": 2,\r\n            \"Name\": \"Sobrenome\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 3,\r\n            \"Name\": \"Assinatura Teste\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": [\r\n                {\r\n                    \"FieldName\": \" vtex.subscription.key.frequency\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"1 day, 7 day, 1 month, 6 month\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"vtex.subscription.key.validity.begin\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"1\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"vtex.subscription.key.validity.end\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"31\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"vtex.subscription.key.purchaseday\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"1, 2, 20, 31\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"Id\": 5,\r\n            \"Name\": \"teste\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 6,\r\n            \"Name\": \"teste2\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 7,\r\n            \"Name\": \"vtex.subscription.teste3\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 8,\r\n            \"Name\": \"teste api nova\",\r\n            \"IsRequired\": true,\r\n            \"IsActive\": true,\r\n            \"Domains\": [\r\n                {\r\n                    \"FieldName\": \"Basic teste\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"teste\",\r\n                    \"MaxCaracters\": \"\",\r\n                    \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"Id\": 9,\r\n            \"Name\": \"vtex.subscription.teste\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 10,\r\n            \"Name\": \"Montagens\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": []\r\n        },\r\n        {\r\n            \"Id\": 11,\r\n            \"Name\": \"vtex.subscription.subscription\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": [\r\n                {\r\n                    \"FieldName\": \"vtex.subscription.key.frequency\",\r\n                    \"MaxCaracters\": \"15\",\r\n                    \"DomainValues\": \"1 month\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"vtex.subscription.key.purchaseday\",\r\n                    \"MaxCaracters\": \"15\",\r\n                    \"DomainValues\": \"1,15,28\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"Id\": 12,\r\n            \"Name\": \"T-Shirt Customization\",\r\n            \"IsRequired\": false,\r\n            \"IsActive\": true,\r\n            \"Domains\": [\r\n                {\r\n                    \"FieldName\": \"T-Shirt Name\",\r\n                    \"MaxCaracters\": \"15\",\r\n                    \"DomainValues\": \"[]\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.attachment.postApiCatalogPvtAttachment",
+      "name": "attachment.postApiCatalogPvtAttachment",
+      "description": "Creates a new SKU attachment.\r\n >⚠️ To understand the specific syntax for Assembly Options attachments, read the [Assembly Options](https://help.vtex.com/en/tutorial/assembly-options--5x5FhNr4f5RUGDEGWzV1nH#assembly-options-syntax) documentation. \r\n## Request body example\r\n\r\n```json\r\n{\r\n  \"Name\": \"Test\",\r\n  \"IsRequired\": true,\r\n  \"IsActive\": true,\r\n  \"Domains\": [\r\n    {\r\n      \"FieldName\": \"Basic test\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n    },\r\n    {\r\n      \"FieldName\": \"teste\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n    }\r\n  ]\r\n}\r\n```\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 8,\r\n  \"Name\": \"Test\",\r\n  \"IsRequired\": true,\r\n  \"IsActive\": true,\r\n  \"Domains\": [\r\n    {\r\n      \"FieldName\": \"Basic test\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n    },\r\n    {\r\n      \"FieldName\": \"teste\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n    }\r\n  ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.attachment.putApiCatalogPvtAttachmentAttachmentid",
+      "name": "attachment.putApiCatalogPvtAttachmentAttachmentid",
+      "description": "Updates a previously existing SKU attachment with new information. \r\n >⚠️ To understand the specific syntax for Assembly Options attachments, read the [Assembly Options](https://help.vtex.com/en/tutorial/assembly-options--5x5FhNr4f5RUGDEGWzV1nH#assembly-options-syntax) documentation. \r\n## Request body example\r\n\r\n```json\r\n{\r\n  \"Name\": \"Test\",\r\n  \"IsRequired\": true,\r\n  \"IsActive\": true,\r\n  \"Domains\": [\r\n    {\r\n      \"FieldName\": \"Basic test\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n    },\r\n    {\r\n      \"FieldName\": \"teste\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n    }\r\n  ]\r\n}\r\n```\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 8,\r\n  \"Name\": \"Test\",\r\n  \"IsRequired\": true,\r\n  \"IsActive\": true,\r\n  \"Domains\": [\r\n    {\r\n      \"FieldName\": \"Basic test\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[1-2]#9[1-1][1]basic;#11[0-1][1]basic\"\r\n    },\r\n    {\r\n      \"FieldName\": \"teste\",\r\n      \"MaxCaracters\": \"\",\r\n      \"DomainValues\": \"[0-10]#8[0-3][0]medium;#9[0-3][0]medium;#10[0-3][0]medium;#11[0-3][0]medium;#36[0-3][0]medium;#37[0-3][0]medium;#38[0-3][0]medium\"\r\n    }\r\n  ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.brandList",
+      "name": "brand.brandList",
+      "description": "Retrieves all Brands registered in the store's Catalog. \r\n>⚠️ This route's response is limited to 20k results. If you need to obtain more results, please use the [Get Brand List](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-get-brand-list) endpoint instead to get a paginated response. \r\n## Response body example\r\n\r\n```json\r\n[\r\n  {\r\n    \"id\": 9280,\r\n    \"name\": \"Brand\",\r\n    \"isActive\": true,\r\n    \"title\": \"Brand\",\r\n    \"metaTagDescription\": \"Brand\",\r\n    \"imageUrl\": null\r\n  },\r\n  {\r\n    \"id\": 2000000,\r\n    \"name\": \"Orma Carbon\",\r\n    \"isActive\": true,\r\n    \"title\": \"Orma Carbon\",\r\n    \"metaTagDescription\": \"Orma Carbon\",\r\n    \"imageUrl\": null\r\n  },\r\n  {\r\n    \"id\": 2000001,\r\n    \"name\": \"Pedigree\",\r\n    \"isActive\": true,\r\n    \"title\": \"Pedigree\",\r\n    \"metaTagDescription\": \"\",\r\n    \"imageUrl\": null\r\n  }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.brandListPerPage",
+      "name": "brand.brandListPerPage",
+      "description": "Retrieves all Brands registered in the store's Catalog by page number.\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"items\": [\r\n    {\r\n      \"id\": 2000000,\r\n      \"name\": \"Farm\",\r\n      \"isActive\": true,\r\n      \"title\": \"Farm\",\r\n      \"metaTagDescription\": \"Farm\",\r\n      \"imageUrl\": null\r\n    },\r\n    {\r\n      \"id\": 2000001,\r\n      \"name\": \"Adidas\",\r\n      \"isActive\": true,\r\n      \"title\": \"\",\r\n      \"metaTagDescription\": \"\",\r\n      \"imageUrl\": null\r\n    },\r\n    {\r\n      \"id\": 2000002,\r\n      \"name\": \"Brastemp\",\r\n      \"isActive\": true,\r\n      \"title\": \"Brastemp\",\r\n      \"metaTagDescription\": \"Brastemp\",\r\n      \"imageUrl\": null\r\n    }\r\n  ],\r\n    \"paging\": {\r\n      \"page\": 1,\r\n        \"perPage\": 3,\r\n          \"total\": 6,\r\n            \"pages\": 2\r\n    }\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.deleteApiCatalogPvtBrandBrandId",
+      "name": "brand.deleteApiCatalogPvtBrandBrandId",
+      "description": "Deletes an existing Brand."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.getApiCatalogPvtBrandBrandId",
+      "name": "brand.getApiCatalogPvtBrandBrandId",
+      "description": "Retrieves information about a specific Brand and its context.\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 2000013,\r\n  \"Name\": \"Orma Carbon\",\r\n  \"Text\": \"Orma Carbon\",\r\n  \"Keywords\": \"orma\",\r\n  \"SiteTitle\": \"Orma Carbon\",\r\n  \"Active\": true,\r\n  \"MenuHome\": true,\r\n  \"AdWordsRemarketingCode\": \"\",\r\n  \"LomadeeCampaignCode\": \"\",\r\n  \"Score\": null,\r\n  \"LinkId\": \"orma-carbon\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.getCatalogSystemPvt",
+      "name": "brand.getCatalogSystemPvt",
+      "description": "Retrieves a specific Brand by its ID.\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"id\": 7000000,\r\n  \"name\": \"Pedigree\",\r\n  \"isActive\": true,\r\n  \"title\": \"Pedigree\",\r\n  \"metaTagDescription\": \"Pedigree\",\r\n  \"imageUrl\": null\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.postApiCatalogPvtBrand",
+      "name": "brand.postApiCatalogPvtBrand",
+      "description": "Creates a new Brand.\r\n## Request and response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 2000013,\r\n  \"Name\": \"Orma Carbon\",\r\n  \"Text\": \"Orma Carbon\",\r\n  \"Keywords\": \"orma\",\r\n  \"SiteTitle\": \"Orma Carbon\",\r\n  \"Active\": true,\r\n  \"MenuHome\": true,\r\n  \"AdWordsRemarketingCode\": \"\",\r\n  \"LomadeeCampaignCode\": \"\",\r\n  \"Score\": null,\r\n  \"LinkId\": \"orma-carbon\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.brand.putApiCatalogPvtBrandBrandId",
+      "name": "brand.putApiCatalogPvtBrandBrandId",
+      "description": "Updates a previously existing Brand.\r\n## Request and response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 2000013,\r\n  \"Name\": \"Orma Carbon\",\r\n  \"Text\": \"Orma Carbon\",\r\n  \"Keywords\": \"orma\",\r\n  \"SiteTitle\": \"Orma Carbon\",\r\n  \"Active\": true,\r\n  \"MenuHome\": true,\r\n  \"AdWordsRemarketingCode\": \"\",\r\n  \"LomadeeCampaignCode\": \"\",\r\n  \"Score\": null,\r\n  \"LinkId\": \"orma-carbon\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.category.categoryTree",
+      "name": "category.categoryTree",
+      "description": "Retrieves the Category Tree of your store. Get all the category levels registered in the Catalog or define the level up to which you want to get.  \r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Alimentação\",\r\n        \"hasChildren\": true,\r\n        \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao\",\r\n        \"children\": [\r\n            {\r\n                \"id\": 6,\r\n                \"name\": \"Bebedouro\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/bebedouro\",\r\n                \"children\": [],\r\n                \"Title\": \"Bebedouro para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 7,\r\n                \"name\": \"Comedouro\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/comedouro\",\r\n                \"children\": [],\r\n                \"Title\": \"Comedouro para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 8,\r\n                \"name\": \"Biscoitos\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/biscoitos\",\r\n                \"children\": [],\r\n                \"Title\": \"Biscoitos para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 9,\r\n                \"name\": \"Petiscos\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/petiscos\",\r\n                \"children\": [],\r\n                \"Title\": \"Petiscos para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 10,\r\n                \"name\": \"Ração Seca\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/racao-seca\",\r\n                \"children\": [],\r\n                \"Title\": \"Ração Seca para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 11,\r\n                \"name\": \"Ração Úmida\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/alimentacao/racao-umida\",\r\n                \"children\": [],\r\n                \"Title\": \"Ração Úmida para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            }\r\n        ],\r\n        \"Title\": \"Alimentação para Gatos\",\r\n        \"MetaTagDescription\": \"\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Brinquedos\",\r\n        \"hasChildren\": true,\r\n        \"url\": \"https://lojadobreno.vtexcommercestable.com.br/brinquedos\",\r\n        \"children\": [\r\n            {\r\n                \"id\": 12,\r\n                \"name\": \"Bolinhas\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/brinquedos/bolinhas\",\r\n                \"children\": [],\r\n                \"Title\": \"Bolinhas para Gatos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 13,\r\n                \"name\": \"Ratinhos\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/brinquedos/ratinhos\",\r\n                \"children\": [],\r\n                \"Title\": \"Ratinhos\",\r\n                \"MetaTagDescription\": \"\"\r\n            },\r\n            {\r\n                \"id\": 19,\r\n                \"name\": \"Arranhador para gato\",\r\n                \"hasChildren\": false,\r\n                \"url\": \"https://lojadobreno.vtexcommercestable.com.br/brinquedos/arranhador-para-gato\",\r\n                \"children\": [],\r\n                \"Title\": \"Brinquedo Arranhador para gatos\",\r\n                \"MetaTagDescription\": \"Arranhador gatos é indispensável no lar com felinos. Ideais para afiar as unhas e garantir a diversão\"\r\n            }\r\n        ],\r\n        \"Title\": \"Brinquedos para Gatos\",\r\n        \"MetaTagDescription\": \"\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.category.getApiCatalogPvtCategoryCategoryId",
+      "name": "category.getApiCatalogPvtCategoryCategoryId",
+      "description": "Retrieves general information about a Category. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": \"\",\r\n    \"AdWordsRemarketingCode\": \"\",\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 3367,\r\n    \"StockKeepingUnitSelectionMode\": \"LIST\",\r\n    \"Score\": null,\r\n    \"LinkId\": \"Alimentacao\",\r\n    \"HasChildren\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.category.postApiCatalogPvtCategory",
+      "name": "category.postApiCatalogPvtCategory",
+      "description": "Creates a new Category.\r\n\r\nIf there is a need to create a new category with a specific custom ID, specify the `Id` (integer) in the request. Otherwise, VTEX will generate the ID automatically.\r\n\r\n## Request body example (automatically generated ID)\r\n\r\n```json\r\n{\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": null,\r\n    \"AdWordsRemarketingCode\": null,\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 604,\r\n    \"StockKeepingUnitSelectionMode\": \"SPECIFICATION\",\r\n    \"Score\": null\r\n}\r\n```\r\n\r\n## Request body example (custom ID)\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": null,\r\n    \"AdWordsRemarketingCode\": null,\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 604,\r\n    \"StockKeepingUnitSelectionMode\": \"SPECIFICATION\",\r\n    \"Score\": null\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": \"\",\r\n    \"AdWordsRemarketingCode\": \"\",\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 604,\r\n    \"StockKeepingUnitSelectionMode\": \"LIST\",\r\n    \"Score\": null,\r\n    \"LinkId\": \"Alimentacao\",\r\n    \"HasChildren\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.category.putApiCatalogPvtCategoryCategoryId",
+      "name": "category.putApiCatalogPvtCategoryCategoryId",
+      "description": "Updates a previously existing Category.\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": null,\r\n    \"AdWordsRemarketingCode\": null,\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 604,\r\n    \"StockKeepingUnitSelectionMode\": \"SPECIFICATION\",\r\n    \"Score\": null\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Home Appliances\",\r\n    \"FatherCategoryId\": null,\r\n    \"Title\": \"Home Appliances\",\r\n    \"Description\": \"Discover our range of home appliances. Find smart vacuums, kitchen and laundry appliances to suit your needs. Order online now.\",\r\n    \"Keywords\": \"Kitchen, Laundry, Appliances\",\r\n    \"IsActive\": true,\r\n    \"LomadeeCampaignCode\": \"\",\r\n    \"AdWordsRemarketingCode\": \"\",\r\n    \"ShowInStoreFront\": true,\r\n    \"ShowBrandFilter\": true,\r\n    \"ActiveStoreFrontLink\": true,\r\n    \"GlobalCategoryId\": 604,\r\n    \"StockKeepingUnitSelectionMode\": \"LIST\",\r\n    \"Score\": null,\r\n    \"LinkId\": \"Alimentacao\",\r\n    \"HasChildren\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.categorySpecification.specificationsByCategoryId",
+      "name": "categorySpecification.specificationsByCategoryId",
+      "description": "Retrieves all specifications from a category by its ID.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Name\": \"Specification A\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 33,\r\n        \"IsActive\": true,\r\n        \"IsStockKeepingUnit\": false\r\n    },\r\n    {\r\n        \"Name\": \"Specification B\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 34,\r\n        \"IsActive\": true,\r\n        \"IsStockKeepingUnit\": false\r\n    },\r\n    {\r\n        \"Name\": \"Specification C\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 35,\r\n        \"IsActive\": false,\r\n        \"IsStockKeepingUnit\": false\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.categorySpecification.specificationsTreeByCategoryId",
+      "name": "categorySpecification.specificationsTreeByCategoryId",
+      "description": "Lists all specifications including the current category and the level zero specifications from a category by its ID. \r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Name\": \"Specification A\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 33,\r\n        \"IsActive\": true,\r\n        \"IsStockKeepingUnit\": false\r\n    },\r\n    {\r\n        \"Name\": \"Specification B\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 34,\r\n        \"IsActive\": true,\r\n        \"IsStockKeepingUnit\": false\r\n    },\r\n    {\r\n        \"Name\": \"Specification C\",\r\n        \"CategoryId\": 1,\r\n        \"FieldId\": 35,\r\n        \"IsActive\": false,\r\n        \"IsStockKeepingUnit\": false\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.getAllCollections",
+      "name": "collectionBeta.getAllCollections",
+      "description": "Retrieves a list of all collections matching a filter."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.getAllInactiveCollections",
+      "name": "collectionBeta.getAllInactiveCollections",
+      "description": "Retrieves a list of Collection IDs of the inactive Collections."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.getCollectionsbyseachterms",
+      "name": "collectionBeta.getCollectionsbyseachterms",
+      "description": "Retrieves a list of collections matching a filter."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.getImportfileexample",
+      "name": "collectionBeta.getImportfileexample",
+      "description": "Imports a sample of the imported XLS file. You need to save the response file to your device."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.getProductsfromacollection",
+      "name": "collectionBeta.getProductsfromacollection",
+      "description": "Retrieves information about the products from a collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.postAddproductsbyimportfile",
+      "name": "collectionBeta.postAddproductsbyimportfile",
+      "description": "Adds products to a collection from the request body file. The file must be an imported template."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.postCreateCollection",
+      "name": "collectionBeta.postCreateCollection",
+      "description": "Creates a new collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.collectionBeta.postRemoveproductsbyimportfile",
+      "name": "collectionBeta.postRemoveproductsbyimportfile",
+      "description": "Removes products from a collection from the request body file. The file must be an imported template."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.commercialConditions.getAllCommercialConditions",
+      "name": "commercialConditions.getAllCommercialConditions",
+      "description": "Lists all commercial conditions on the store. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 1,\r\n        \"Name\": \"Padrão\",\r\n        \"IsDefault\": true\r\n    },\r\n    {\r\n        \"Id\": 2,\r\n        \"Name\": \"Teste Fast\",\r\n        \"IsDefault\": false\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.commercialConditions.getCommercialConditions",
+      "name": "commercialConditions.getCommercialConditions",
+      "description": "Retrieves information of a commercial condition by its ID. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Padrão\",\r\n    \"IsDefault\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.giftList.getGiftList",
+      "name": "giftList.getGiftList",
+      "description": "Retrieves information about a Gift List by its ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacyCollection.deleteApiCatalogPvtCollectionCollectionId",
+      "name": "legacyCollection.deleteApiCatalogPvtCollectionCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nDeletes a previously existing Collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacyCollection.getApiCatalogPvtCollectionCollectionId",
+      "name": "legacyCollection.getApiCatalogPvtCollectionCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nRetrieves general information of a Collection.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 159,\r\n    \"Name\": \"Winter\",\r\n    \"Description\": null,\r\n    \"Searchable\": false,\r\n    \"Highlight\": false,\r\n    \"DateFrom\": \"2021-09-27T10:47:00\",\r\n    \"DateTo\": \"2027-09-27T10:47:00\",\r\n    \"TotalProducts\": 0,\r\n    \"Type\": \"Manual\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacyCollection.postApiCatalogPvtCollection",
+      "name": "legacyCollection.postApiCatalogPvtCollection",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nCreates a new Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Winter\",\r\n    \"Searchable\": false,\r\n    \"Highlight\": false,\r\n    \"DateFrom\": \"2021-09-27T10:47:00\",\r\n    \"DateTo\": \"2027-09-27T10:47:00\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 159,\r\n    \"Name\": \"Winter\",\r\n    \"Description\": null,\r\n    \"Searchable\": false,\r\n    \"Highlight\": false,\r\n    \"DateFrom\": \"2021-09-27T10:47:00\",\r\n    \"DateTo\": \"2027-09-27T10:47:00\",\r\n    \"TotalProducts\": 0,\r\n    \"Type\": \"Manual\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacyCollection.putApiCatalogPvtCollectionCollectionId",
+      "name": "legacyCollection.putApiCatalogPvtCollectionCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nUpdates a previously created Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Winter\",\r\n    \"Searchable\": false,\r\n    \"Highlight\": false,\r\n    \"DateFrom\": \"2021-09-27T10:47:00\",\r\n    \"DateTo\": \"2027-09-27T10:47:00\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 159,\r\n    \"Name\": \"Winter\",\r\n    \"Description\": null,\r\n    \"Searchable\": false,\r\n    \"Highlight\": false,\r\n    \"DateFrom\": \"2021-09-27T10:47:00\",\r\n    \"DateTo\": \"2027-09-27T10:47:00\",\r\n    \"TotalProducts\": 0,\r\n    \"Type\": \"Manual\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionId",
+      "name": "legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nDeletes a previously created Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdBrandBrandId",
+      "name": "legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdBrandBrandId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nDeletes a Brand from a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdBrandCategoryId",
+      "name": "legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdBrandCategoryId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nDeletes a Category from a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdStockkeepingunitSkuId",
+      "name": "legacySubcollection.deleteApiCatalogPvtSubcollectionSubCollectionIdStockkeepingunitSkuId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nDeletes an SKU from a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.getApiCatalogPvtCollectionCollectionIdSubcollection",
+      "name": "legacySubcollection.getApiCatalogPvtCollectionCollectionIdSubcollection",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nRetrieves all Subcollections given a Collection ID. A Subcollection is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 12,\r\n        \"CollectionId\": 149,\r\n        \"Name\": \"Subcollection\",\r\n        \"Type\": \"Inclusive\",\r\n        \"PreSale\": false,\r\n        \"Release\": true\r\n    },\r\n    {\r\n        \"Id\": 13,\r\n        \"CollectionId\": 149,\r\n        \"Name\": \"Test\",\r\n        \"Type\": \"Exclusive\",\r\n        \"PreSale\": true,\r\n        \"Release\": false\r\n    },\r\n    {\r\n        \"Id\": 14,\r\n        \"CollectionId\": 149,\r\n        \"Name\": \"asdfghj\",\r\n        \"Type\": \"Inclusive\",\r\n        \"PreSale\": false,\r\n        \"Release\": false\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.getApiCatalogPvtSubcollectionSubCollectionId",
+      "name": "legacySubcollection.getApiCatalogPvtSubcollectionSubCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nRetrieves information about a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 13,\r\n    \"CollectionId\": 149,\r\n    \"Name\": \"Test\",\r\n    \"Type\": \"Exclusive\",\r\n    \"PreSale\": true,\r\n    \"Release\": false\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.postApiCatalogPvtCollectionCollectionIdPosition",
+      "name": "legacySubcollection.postApiCatalogPvtCollectionCollectionIdPosition",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nEdits the position of an SKU that already exists in the Subcollection,  which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n     \"skuId\": 1,\r\n     \"position\": 1,\r\n     \"subCollectionId\": 17\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.postApiCatalogPvtSubcollection",
+      "name": "legacySubcollection.postApiCatalogPvtSubcollection",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nCreates a new Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection. A Subcollection can be either “Exclusive” (all the products contained in it will not be used) or “Inclusive” (all the products contained in it will be used).\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"CollectionId\": 149,\r\n    \"Name\": \"Test\",\r\n    \"Type\": \"Exclusive\",\r\n    \"PreSale\": true,\r\n    \"Release\": false\r\n}\r\n```\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 13,\r\n    \"CollectionId\": 149,\r\n    \"Name\": \"Test\",\r\n    \"Type\": \"Exclusive\",\r\n    \"PreSale\": true,\r\n    \"Release\": false\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdBrand",
+      "name": "legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdBrand",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nAssociates a single Brand to a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"BrandId\": 2000000\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"SubCollectionId\": 17,\r\n    \"BrandId\": 2000000\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdCategory",
+      "name": "legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdCategory",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nAssociates a single Category to a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"CategoryId\": 1\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"SubCollectionId\": 17,\r\n    \"CategoryId\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdStockkeepingunit",
+      "name": "legacySubcollection.postApiCatalogPvtSubcollectionSubCollectionIdStockkeepingunit",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nAssociates a single SKU to a Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"SkuId\": 1\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"SubCollectionId\": 17,\r\n    \"SkuId\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.legacySubcollection.putApiCatalogPvtSubcollectionSubCollectionId",
+      "name": "legacySubcollection.putApiCatalogPvtSubcollectionSubCollectionId",
+      "description": " >⚠️ There are two ways to configure collections, through Legacy CMS Portal or using the Beta Collection module. This endpoint is compatible with [collections configured through the Legacy CMS Portal](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L).\n\nUpdates a previously created Subcollection, which is a [Group](https://help.vtex.com/en/tutorial/adding-collections-cms--2YBy6P6X0NFRpkD2ZBxF6L#group-types) within a  Collection.\r\n\r\n## Request or response body example\r\n\r\n```json\r\n{\r\n    \"CollectionId\": 149,\r\n    \"Name\": \"Test\",\r\n    \"Type\": \"Exclusive\",\r\n    \"PreSale\": true,\r\n    \"Release\": false\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.nonStructuredSpecification.deleteApiCatalogPvtSpecificationNonstructured",
+      "name": "nonStructuredSpecification.deleteApiCatalogPvtSpecificationNonstructured",
+      "description": "Deletes unmapped Specifications of a Seller'S SKU in a Marketplace by SKU ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.nonStructuredSpecification.deleteApiCatalogPvtSpecificationNonstructuredId",
+      "name": "nonStructuredSpecification.deleteApiCatalogPvtSpecificationNonstructuredId",
+      "description": "Deletes unmapped Specifications of a Seller'S SKU in a Marketplace by its unique ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.nonStructuredSpecification.getApiCatalogPvtSpecificationNonstructured",
+      "name": "nonStructuredSpecification.getApiCatalogPvtSpecificationNonstructured",
+      "description": "Gets general information about unmapped Specifications of a Seller's SKU in a Marketplace by SKU ID. \r\n## Response body example\r\n\r\n```json\r\n[\r\n{\r\n    \"Id\": 1010,\r\n    \"SkuId\": 310119072,\r\n    \"SpecificationName\": \"size\",\r\n    \"SpecificationValue\": \"Small\"\r\n}\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.nonStructuredSpecification.getApiCatalogPvtSpecificationNonstructuredId",
+      "name": "nonStructuredSpecification.getApiCatalogPvtSpecificationNonstructuredId",
+      "description": "Retrieves general information about unmapped Specifications of a Seller's SKU in a Marketplace. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1010,\r\n    \"SkuId\": 310119072,\r\n    \"SpecificationName\": \"size\",\r\n    \"SpecificationValue\": \"Small\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.getProductbyid",
+      "name": "product.getProductbyid",
+      "description": "Retrieves a specific Product by its ID. This information is exactly what is needed to create a new Product. \r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.postApiCatalogPvtProduct",
+      "name": "product.postApiCatalogPvtProduct",
+      "description": "This endpoint allows two types of request:\r\n\r\n**Type 1:** Creating a new Product as well as a new Category path (including subcategories) and a new Brand by using `CategoryPath` and `BrandName` parameters.\r\n\r\n**Type 2:** Creating a new Product given an existing `BrandId` and an existing `CategoryId`.\r\n\r\nWhen creating a product, regardless of the type of request, if there is a need to create a new product with a specific custom product ID, specify the `Id` (integer) in the request body. Otherwise, VTEX will generate the ID automatically.\r\n\r\n ## Request body examples\r\n\r\n ### Type 1\r\n\r\n Request to create a product, associating it to a new Category and a new Brand by using `CategoryPath` and `BrandName`:\r\n\r\n```json\r\n{\r\n    \"Name\": \"Black T-Shirt\",\r\n    \"CategoryPath\": \"Mens/Clothing/T-Shirts\",\r\n    \"BrandName\": \"Nike\",\r\n    \"RefId\": \"31011706925\",\r\n    \"Title\": \"Black T-Shirt\",\r\n    \"LinkId\": \"tshirt-black\",\r\n    \"Description\": \"This is a cool Tshirt\",\r\n    \"ReleaseDate\": \"2022-01-01T00:00:00\",\r\n    \"IsVisible\": true,\r\n    \"IsActive\": true,\r\n    \"TaxCode\": \"\",\r\n    \"MetaTagDescription\": \"tshirt black\",\r\n    \"ShowWithoutStock\": true,\r\n    \"Score\": 1\r\n}\r\n```\r\n\r\n ### Type 2\r\n\r\nRequest to create a product, associating it to an existing `CategoryId` and `BrandId`:\r\n\r\n```json\r\n{\r\n   \"Name\": \"insert product test\",\r\n   \"DepartmentId\": 1,\r\n   \"CategoryId\": 2,\r\n   \"BrandId\": 2000000,\r\n   \"LinkId\": \"insert-product-test\",\r\n   \"RefId\": \"310117869\",\r\n   \"IsVisible\": true,\r\n   \"Description\": \"texto de descrição\",\r\n   \"DescriptionShort\": \"Utilize o CEP 04548-005 para frete grátis\",\r\n   \"ReleaseDate\": \"2019-01-01T00:00:00\",\r\n   \"KeyWords\": \"teste,teste2\",\r\n   \"Title\": \"product de teste\",\r\n   \"IsActive\": true,\r\n   \"TaxCode\": \"\",\r\n   \"MetaTagDescription\": \"tag test\",\r\n   \"SupplierId\": 1,\r\n   \"ShowWithoutStock\": true,\r\n   \"AdWordsRemarketingCode\": null,\r\n   \"LomadeeCampaignCode\": null,\r\n   \"Score\": 1\r\n}\r\n```\r\n\r\n ## Response body example\r\n\r\n```json\r\n{\r\n   \"Id\": 52,\r\n   \"Name\": \"insert product test\",\r\n   \"DepartmentId\": 1,\r\n   \"CategoryId\": 2,\r\n   \"BrandId\": 2000000,\r\n   \"LinkId\": \"insert-product-test\",\r\n   \"RefId\": \"310117869\",\r\n   \"IsVisible\": true,\r\n   \"Description\": \"texto de descrição\",\r\n   \"DescriptionShort\": \"Utilize o CEP 04548-005 para frete grátis\",\r\n   \"ReleaseDate\": \"2019-01-01T00:00:00\",\r\n   \"KeyWords\": \"teste,teste2\",\r\n   \"Title\": \"product de teste\",\r\n   \"IsActive\": true,\r\n   \"TaxCode\": \"\",\r\n   \"MetaTagDescription\": \"tag test\",\r\n   \"SupplierId\": 1,\r\n   \"ShowWithoutStock\": true,\r\n   \"AdWordsRemarketingCode\": null,\r\n   \"LomadeeCampaignCode\": null,\r\n   \"Score\": 1\r\n}\r\n```\r\n  \r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.productAndSkuIds",
+      "name": "product.productAndSkuIds",
+      "description": "Retrieves the IDs of products and SKUs. \r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.productandTradePolicy",
+      "name": "product.productandTradePolicy",
+      "description": "Retrieves a specific product's general information as name, description and the trade policies that it is included."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.productbyRefId",
+      "name": "product.productbyRefId",
+      "description": "Retrieves a specific product by its Reference ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.productVariations",
+      "name": "product.productVariations",
+      "description": "Retrieves data about the product and all SKUs related to it by the product's ID.\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"productId\": 9,\r\n    \"name\": \"Camisa Masculina\",\r\n    \"salesChannel\": \"2\",\r\n    \"available\": true,\r\n    \"displayMode\": \"lista\",\r\n    \"dimensions\": [\r\n        \"Cores\",\r\n        \"Tamanho\",\r\n        \"País de origem\",\r\n        \"Gênero\"\r\n    ],\r\n    \"dimensionsInputType\": {\r\n        \"Cores\": \"Combo\",\r\n        \"Tamanho\": \"Combo\",\r\n        \"País de origem\": \"Combo\",\r\n        \"Gênero\": \"Combo\"\r\n    },\r\n    \"dimensionsMap\": {\r\n        \"Cores\": [\r\n            \"Amarelo\",\r\n            \"Azul\",\r\n            \"Vermelho\"\r\n        ],\r\n        \"Tamanho\": [\r\n            \"P\",\r\n            \"M\",\r\n            \"G\"\r\n        ],\r\n        \"País de origem\": [\r\n            \"Brasil\"\r\n        ],\r\n        \"Gênero\": [\r\n            \"Masculino\"\r\n        ]\r\n    },\r\n    \"skus\": [\r\n        {\r\n            \"sku\": 310118454,\r\n            \"skuname\": \"Amarela - G\",\r\n            \"dimensions\": {\r\n                \"Cores\": \"Amarelo\",\r\n                \"Tamanho\": \"G\",\r\n                \"País de origem\": \"Brasil\",\r\n                \"Gênero\": \"Masculino\"\r\n            },\r\n            \"available\": false,\r\n            \"availablequantity\": 0,\r\n            \"cacheVersionUsedToCallCheckout\": null,\r\n            \"listPriceFormated\": \"R$ 0,00\",\r\n            \"listPrice\": 0,\r\n            \"taxFormated\": \"R$ 0,00\",\r\n            \"taxAsInt\": 0,\r\n            \"bestPriceFormated\": \"R$ 9.999.876,00\",\r\n            \"bestPrice\": 999987600,\r\n            \"spotPrice\": 999987600,\r\n            \"installments\": 0,\r\n            \"installmentsValue\": 0,\r\n            \"installmentsInsterestRate\": null,\r\n            \"image\": \"https://lojadobreno.vteximg.com.br/arquivos/ids/155467-292-292/image-5d7ad76ad1954c53adecab4138319034.jpg?v=637321899584500000\",\r\n            \"sellerId\": \"1\",\r\n            \"seller\": \"lojadobreno\",\r\n            \"measures\": {\r\n                \"cubicweight\": 1.0000,\r\n                \"height\": 5.0000,\r\n                \"length\": 20.0000,\r\n                \"weight\": 200.0000,\r\n                \"width\": 20.0000\r\n            },\r\n            \"unitMultiplier\": 1.0000,\r\n            \"rewardValue\": 0\r\n        },\r\n        {\r\n            \"sku\": 310118455,\r\n            \"skuname\": \"Vermelha - M\",\r\n            \"dimensions\": {\r\n                \"Cores\": \"Vermelho\",\r\n                \"Tamanho\": \"M\",\r\n                \"País de origem\": \"Brasil\",\r\n                \"Gênero\": \"Masculino\"\r\n            },\r\n            \"available\": true,\r\n            \"availablequantity\": 99999,\r\n            \"cacheVersionUsedToCallCheckout\": \"38395F1AEF59DF5CEAEDE472328145CD_\",\r\n            \"listPriceFormated\": \"R$ 0,00\",\r\n            \"listPrice\": 0,\r\n            \"taxFormated\": \"R$ 0,00\",\r\n            \"taxAsInt\": 0,\r\n            \"bestPriceFormated\": \"R$ 20,00\",\r\n            \"bestPrice\": 2000,\r\n            \"spotPrice\": 2000,\r\n            \"installments\": 1,\r\n            \"installmentsValue\": 2000,\r\n            \"installmentsInsterestRate\": 0,\r\n            \"image\": \"https://lojadobreno.vteximg.com.br/arquivos/ids/155468-292-292/image-601a6099aace48b89d26fc9f22e8e611.jpg?v=637321906602470000\",\r\n            \"sellerId\": \"pedrostore\",\r\n            \"seller\": \"pedrostore\",\r\n            \"measures\": {\r\n                \"cubicweight\": 0.4167,\r\n                \"height\": 5.0000,\r\n                \"length\": 20.0000,\r\n                \"weight\": 200.0000,\r\n                \"width\": 20.0000\r\n            },\r\n            \"unitMultiplier\": 1.0000,\r\n            \"rewardValue\": 0\r\n        }\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.putApiCatalogPvtProductProductId",
+      "name": "product.putApiCatalogPvtProductProductId",
+      "description": "Updates an existing Product."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.product.reviewRateProduct",
+      "name": "product.reviewRateProduct",
+      "description": "Retrieves the review rate of a product by this product's ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productIndexing.indexedInfo",
+      "name": "productIndexing.indexedInfo",
+      "description": "Retrieve details of a Product's Indexed Information in XML format. \r\n## Response body example\r\n\r\n```xml\r\n\"\r\n<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n\r\n<response>\\n\r\n    <lst name=\\\"responseHeader\\\">\r\n        <bool name=\\\"zkConnected\\\">true</bool>\r\n        <int name=\\\"status\\\">0</int>\r\n        <int name=\\\"QTime\\\">2</int>\r\n        <lst name=\\\"params\\\">\r\n            <str name=\\\"fl\\\">*</str>\r\n            <arr name=\\\"fq\\\">\r\n                <str>instanceId:394dbdc8-b1f4-4dea-adfa-1ec104f3bfe1</str>\r\n                <str>productId:1</str>\r\n            </arr>\r\n        </lst>\r\n    </lst>\r\n    <result name=\\\"response\\\" numFound=\\\"0\\\" start=\\\"0\\\" maxScore=\\\"0.0\\\"></result>\r\n    <lst name=\\\"facet_counts\\\">\r\n        <lst name=\\\"facet_queries\\\"/>\r\n        <lst name=\\\"facet_fields\\\"/>\r\n        <lst name=\\\"facet_ranges\\\"/>\r\n        <lst name=\\\"facet_intervals\\\"/>\r\n        <lst name=\\\"facet_heatmaps\\\"/></lst>\\n\r\n</response>\\n\"\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.deleteAllProductSpecifications",
+      "name": "productSpecification.deleteAllProductSpecifications",
+      "description": "Deletes all Product Specifications given a specific Product ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.deleteaProductSpecification",
+      "name": "productSpecification.deleteaProductSpecification",
+      "description": "Deletes a specific Product Specification given a Product ID and a Specification ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.getProductSpecification",
+      "name": "productSpecification.getProductSpecification",
+      "description": "Retrieves all specifications of a product by the product's ID.\r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey.\r\n\r\n### Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Value\": [\r\n            \"Iron\",\r\n            \"Plastic\"\r\n        ],\r\n        \"Id\": 30,\r\n        \"Name\": \"Material\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.getProductSpecificationbyProductId",
+      "name": "productSpecification.getProductSpecificationbyProductId",
+      "description": "Retrieves information of all specifications of a product by the product's ID.\r\n\r\n ### Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 227,\r\n        \"ProductId\": 1,\r\n        \"FieldId\": 33,\r\n        \"FieldValueId\": 135,\r\n        \"Text\": \"ValueA\"\r\n    },\r\n    {\r\n        \"Id\": 228,\r\n        \"ProductId\": 1,\r\n        \"FieldId\": 34,\r\n        \"FieldValueId\": 1,\r\n        \"Text\": \"Giant\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.postApiCatalogPvtProductProductIdSpecification",
+      "name": "productSpecification.postApiCatalogPvtProductProductIdSpecification",
+      "description": "Associates a previously defined Specification to a Product.\r\n\r\n### Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 19,\r\n    \"FieldValueId\": 1,\r\n    \"Text\": \"test\"\r\n}\r\n```\r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 41,\r\n    \"FieldId\": 19,\r\n    \"FieldValueId\": 1,\r\n    \"Text\": \"test\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.putApiCatalogPvtProductProductIdSpecificationvalue",
+      "name": "productSpecification.putApiCatalogPvtProductProductIdSpecificationvalue",
+      "description": "Associates a specification to a product using specification name and group name. Automatically creates the informed group, specification and values if they had not been created before.\r\n\r\n ## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldName\": \"Material\",\r\n    \"GroupName\": \"Additional Information\",\r\n    \"RootLevelSpecification\": false,\r\n    \"FieldValues\": [\r\n        \"Cotton\",\r\n       \"Polyester\"\r\n        ]\r\n}\r\n```\r\n \r\n \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 53,\r\n        \"ProductId\": 3,\r\n        \"FieldId\": 21,\r\n        \"FieldValueId\": 60,\r\n        \"Text\": \"Cotton\"\r\n    },\r\n    {\r\n        \"Id\": 54,\r\n        \"ProductId\": 3,\r\n        \"FieldId\": 21,\r\n        \"FieldValueId\": 61,\r\n        \"Text\": \"Polyester\"\r\n    }\r\n]\r\n```\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.productSpecification.updateProductSpecification",
+      "name": "productSpecification.updateProductSpecification",
+      "description": "Updates the value of a product specification by the product's ID. The ID or name can be used to identify what product specification will be updated. Specification fields must be previously created in your Catalog.\r\n\r\n### Request body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Value\": [\r\n            \"Iron\",\r\n            \"Plastic\"\r\n        ],\r\n        \"Id\": 30,\r\n        \"Name\": \"Material\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.salesChannel.salesChannelbyId",
+      "name": "salesChannel.salesChannelbyId",
+      "description": "Retrieves a specific sales channel by its ID. \r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Loja Principal\",\r\n    \"IsActive\": true,\r\n    \"ProductClusterId\": null,\r\n    \"CountryCode\": \"BRA\",\r\n    \"CultureInfo\": \"pt-BR\",\r\n    \"TimeZone\": \"E. South America Standard Time\",\r\n    \"CurrencyCode\": \"BRL\",\r\n    \"CurrencySymbol\": \"R$\",\r\n    \"CurrencyLocale\": 1046,\r\n    \"CurrencyFormatInfo\": {\r\n        \"CurrencyDecimalDigits\": 1,\r\n        \"CurrencyDecimalSeparator\": \",\",\r\n        \"CurrencyGroupSeparator\": \".\",\r\n        \"CurrencyGroupSize\": 3,\r\n        \"StartsWithCurrencySymbol\": true\r\n    },\r\n    \"Origin\": null,\r\n    \"Position\": 2,\r\n    \"ConditionRule\": null,\r\n    \"CurrencyDecimalDigits\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.salesChannel.salesChannelList",
+      "name": "salesChannel.salesChannelList",
+      "description": "Retrieves a list with details about the store's sales channels. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 1,\r\n        \"Name\": \"Loja Principal\",\r\n        \"IsActive\": true,\r\n        \"ProductClusterId\": null,\r\n        \"CountryCode\": \"BRA\",\r\n        \"CultureInfo\": \"pt-BR\",\r\n        \"TimeZone\": \"E. South America Standard Time\",\r\n        \"CurrencyCode\": \"BRL\",\r\n        \"CurrencySymbol\": \"R$\",\r\n        \"CurrencyLocale\": 1046,\r\n        \"CurrencyFormatInfo\": {\r\n            \"CurrencyDecimalDigits\": 1,\r\n            \"CurrencyDecimalSeparator\": \",\",\r\n            \"CurrencyGroupSeparator\": \".\",\r\n            \"CurrencyGroupSize\": 3,\r\n            \"StartsWithCurrencySymbol\": true\r\n        },\r\n        \"Origin\": null,\r\n        \"Position\": 2,\r\n        \"ConditionRule\": null,\r\n        \"CurrencyDecimalDigits\": 1\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.seller.createSeller",
+      "name": "seller.createSeller",
+      "description": "Creates a new seller."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.seller.getSellerbyId",
+      "name": "seller.getSellerbyId",
+      "description": "Retrieves the seller's details by its ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.seller.getSellersbyId",
+      "name": "seller.getSellersbyId",
+      "description": "Retrieves the seller's details by its ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.seller.sellerList",
+      "name": "seller.sellerList",
+      "description": "Retrieves the seller's details by its ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.seller.updateSeller",
+      "name": "seller.updateSeller",
+      "description": "Updates a seller."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.similarCategory.deleteApiCatalogPvtProductProductIdSimilarcategoryCategoryId",
+      "name": "similarCategory.deleteApiCatalogPvtProductProductIdSimilarcategoryCategoryId",
+      "description": "Deletes a Similar Category from a Product."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.similarCategory.getApiCatalogPvtProductProductIdSimilarcategory",
+      "name": "similarCategory.getApiCatalogPvtProductProductIdSimilarcategory",
+      "description": "Retrieves Similar Categories from a Product.\r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"ProductId\": 1,\r\n        \"CategoryId\": 1\r\n    },\r\n    {\r\n        \"ProductId\": 1,\r\n        \"CategoryId\": 20\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.similarCategory.postApiCatalogPvtProductProductIdSimilarcategoryCategoryId",
+      "name": "similarCategory.postApiCatalogPvtProductProductIdSimilarcategoryCategoryId",
+      "description": "Adds a Similar Category to a Product.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"ProductId\": 1,\r\n    \"StoreId\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.getApiCatalogPvtStockkeepingunit",
+      "name": "sku.getApiCatalogPvtStockkeepingunit",
+      "description": "Retrieves information about a specific SKU by its `RefId`. \r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"ProductId\": 1,\r\n    \"IsActive\": true,\r\n    \"Name\": \"Royal Canin Feline Urinary 500g\",\r\n    \"RefId\": \"0001\",\r\n    \"PackagedHeight\": 6.0000,\r\n    \"PackagedLength\": 24.0000,\r\n    \"PackagedWidth\": 14.0000,\r\n    \"PackagedWeightKg\": 550.0000,\r\n    \"Height\": null,\r\n    \"Length\": null,\r\n    \"Width\": null,\r\n    \"WeightKg\": null,\r\n    \"CubicWeight\": 1.0000,\r\n    \"IsKit\": false,\r\n    \"CreationDate\": \"2020-03-12T15:42:00\",\r\n    \"RewardValue\": null,\r\n    \"EstimatedDateArrival\": null,\r\n    \"ManufacturerCode\": \"\",\r\n    \"CommercialConditionId\": 1,\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 1.0000,\r\n    \"ModalType\": null,\r\n    \"KitItensSellApart\": false,\r\n    \"Videos\": null\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.getCatalogPvtStockkeepingunit",
+      "name": "sku.getCatalogPvtStockkeepingunit",
+      "description": "Retrieves a specific SKU by its ID.\r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"ProductId\": 1,\r\n    \"IsActive\": true,\r\n    \"ActivateIfPossible\": true,\r\n    \"Name\": \"Ração Royal Canin Feline Urinary 500g\",\r\n    \"RefId\": \"0001\",\r\n    \"PackagedHeight\": 6.5000,\r\n    \"PackagedLength\": 24.0000,\r\n    \"PackagedWidth\": 14.0000,\r\n    \"PackagedWeightKg\": 550.0000,\r\n    \"Height\": 2.2000,\r\n    \"Length\": 4.4000,\r\n    \"Width\": 3.3000,\r\n    \"WeightKg\": 1.1000,\r\n    \"CubicWeight\": 0.4550,\r\n    \"IsKit\": false,\r\n    \"CreationDate\": \"2021-06-08T15:25:00\",\r\n    \"RewardValue\": null,\r\n    \"EstimatedDateArrival\": null,\r\n    \"ManufacturerCode\": \"\",\r\n    \"CommercialConditionId\": 1,\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 300.0000,\r\n    \"ModalType\": null,\r\n    \"KitItensSellApart\": false,\r\n    \"Videos\": [\r\n        \"www.google.com\"\r\n    ]\r\n}\r\n```  \r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.listallSkuiDs",
+      "name": "sku.listallSkuiDs",
+      "description": "Retrieves the IDs of all SKUs in your store. Presents the results with page size and pagination.\r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey.\r\n\r\n### Response body example\r\n\r\n```json\r\n[\r\n  1,\r\n  2,\r\n  3,\r\n  4,\r\n  5,\r\n  6,\r\n  7,\r\n  8,\r\n  9,\r\n  10\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.postApiCatalogPvtStockkeepingunit",
+      "name": "sku.postApiCatalogPvtStockkeepingunit",
+      "description": "\r\n\r\nCreates a new SKU.\r\n\r\nIf there is a need to create a new SKU with a specific custom ID, specify the `Id` (integer) in the request. Otherwise, VTEX will generate the ID automatically.\r\n\r\n### Request body example (custom ID)\r\n\r\n```json\r\n{\r\n   \"Id\": 1, \r\n   \"ProductId\": 310117069,\r\n   \"IsActive\": true,\r\n   \"ActivateIfPossible\": true,\r\n   \"Name\": \"sku test\",\r\n   \"RefId\": \"125478\",\r\n   \"Ean\": \"8949461894984\",\r\n   \"PackagedHeight\": 10,\r\n   \"PackagedLength\": 10,\r\n   \"PackagedWidth\": 10,\r\n   \"PackagedWeightKg\": 10,\r\n   \"Height\": null,\r\n   \"Length\": null,\r\n   \"Width\": null,\r\n   \"WeightKg\": null,\r\n   \"CubicWeight\": 0.1667,\r\n   \"IsKit\": false,\r\n   \"CreationDate\": null,\r\n   \"RewardValue\": null,\r\n   \"EstimatedDateArrival\": null,\r\n   \"ManufacturerCode\": \"123\",\r\n   \"CommercialConditionId\": 1,\r\n   \"MeasurementUnit\": \"un\",\r\n   \"UnitMultiplier\": 2.0000,\r\n   \"ModalType\": null,\r\n   \"KitItensSellApart\": false,\r\n   \"Videos\": [ \"https://www.youtube.com/\" ]\r\n}\r\n``` \r\n\r\n### Request body example (automatically generated ID)\r\n\r\n```json\r\n{\r\n   \"ProductId\": 310117069,\r\n   \"IsActive\": true,\r\n   \"ActivateIfPossible\": true,\r\n   \"Name\": \"sku test\",\r\n   \"RefId\": \"125478\",\r\n   \"Ean\": \"8949461894984\",\r\n   \"PackagedHeight\": 10,\r\n   \"PackagedLength\": 10,\r\n   \"PackagedWidth\": 10,\r\n   \"PackagedWeightKg\": 10,\r\n   \"Height\": null,\r\n   \"Length\": null,\r\n   \"Width\": null,\r\n   \"WeightKg\": null,\r\n   \"CubicWeight\": 0.1667,\r\n   \"IsKit\": false,\r\n   \"CreationDate\": null,\r\n   \"RewardValue\": null,\r\n   \"EstimatedDateArrival\": null,\r\n   \"ManufacturerCode\": \"123\",\r\n   \"CommercialConditionId\": 1,\r\n   \"MeasurementUnit\": \"un\",\r\n   \"UnitMultiplier\": 2.0000,\r\n   \"ModalType\": null,\r\n   \"KitItensSellApart\": false,\r\n   \"Videos\": [ \"https://www.youtube.com/\" ]\r\n}\r\n``` \r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n   \"Id\":1,\r\n   \"ProductId\": 310117069,\r\n   \"IsActive\": true,\r\n   \"ActivateIfPossible\": true,\r\n   \"Name\": \"sku test\",\r\n   \"RefId\": \"125478\",\r\n   \"Ean\": \"8949461894984\",\r\n   \"PackagedHeight\": 10,\r\n   \"PackagedLength\": 10,\r\n   \"PackagedWidth\": 10,\r\n   \"PackagedWeightKg\": 10,\r\n   \"Height\": null,\r\n   \"Length\": null,\r\n   \"Width\": null,\r\n   \"WeightKg\": null,\r\n   \"CubicWeight\": 0.1667,\r\n   \"IsKit\": false,\r\n   \"CreationDate\": null,\r\n   \"RewardValue\": null,\r\n   \"EstimatedDateArrival\": null,\r\n   \"ManufacturerCode\": \"123\",\r\n   \"CommercialConditionId\": 1,\r\n   \"MeasurementUnit\": \"un\",\r\n   \"UnitMultiplier\": 2.0000,\r\n   \"ModalType\": null,\r\n   \"KitItensSellApart\": false,\r\n   \"Videos\": [ \"https://www.youtube.com/\" ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.putApiCatalogPvtStockkeepingunitSkuId",
+      "name": "sku.putApiCatalogPvtStockkeepingunitSkuId",
+      "description": "Updates an existing SKU. \r\n\r\n### Request body example\r\n\r\n```json\r\n{\r\n   \"Id\": 310118448,\r\n   \"ProductId\": 310117069,\r\n   \"IsActive\": true,\r\n   \"ActivateIfPossible\": true,\r\n   \"Name\": \"sku test\",\r\n   \"RefId\": \"125478\",\r\n   \"PackagedHeight\": 10,\r\n   \"PackagedLength\": 10,\r\n   \"PackagedWidth\": 10,\r\n   \"PackagedWeightKg\": 10,\r\n   \"Height\": null,\r\n   \"Length\": null,\r\n   \"Width\": null,\r\n   \"WeightKg\": null,\r\n   \"CubicWeight\": 0.1667,\r\n   \"IsKit\": false,\r\n   \"CreationDate\": null,\r\n   \"RewardValue\": null,\r\n   \"EstimatedDateArrival\": null,\r\n   \"ManufacturerCode\": \"123\",\r\n   \"CommercialConditionId\": 1,\r\n   \"MeasurementUnit\": \"un\",\r\n   \"UnitMultiplier\": 2.0000,\r\n   \"ModalType\": null,\r\n   \"KitItensSellApart\": false,\r\n   \"Videos\": [ \"https://www.youtube.com/\" ]\r\n}\r\n```\r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 310118449,\r\n    \"ProductId\": 1,\r\n    \"IsActive\": true,\r\n    \"ActivateIfPossible\": true,\r\n    \"Name\": \"sku test\",\r\n    \"RefId\": \"1254789\",\r\n    \"PackagedHeight\": 10.0,\r\n    \"PackagedLength\": 10.0,\r\n    \"PackagedWidth\": 10.0,\r\n    \"PackagedWeightKg\": 10.0,\r\n    \"Height\": null,\r\n    \"Length\": null,\r\n    \"Width\": null,\r\n    \"WeightKg\": null,\r\n    \"CubicWeight\": 0.1667,\r\n    \"IsKit\": false,\r\n    \"CreationDate\": \"2020-04-22T12:12:47.5219561\",\r\n    \"RewardValue\": null,\r\n    \"EstimatedDateArrival\": null,\r\n    \"ManufacturerCode\": \"123\",\r\n    \"CommercialConditionId\": 1,\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 2.0000,\r\n    \"ModalType\": null,\r\n    \"KitItensSellApart\": false,\r\n    \"Videos\": [ \"https://www.youtube.com/\" ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.skubyAlternateId",
+      "name": "sku.skubyAlternateId",
+      "description": "Retrieves an SKU by its Alternate ID.\r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 310118450,\r\n    \"ProductId\": 2,\r\n    \"NameComplete\": \"Caixa de Areia Azul Petmate sku test\",\r\n    \"ComplementName\": \"\",\r\n    \"ProductName\": \"Caixa de Areia Azul Petmate\",\r\n    \"ProductDescription\": \"\",\r\n    \"ProductRefId\": \"\",\r\n    \"TaxCode\": \"\",\r\n    \"SkuName\": \"sku test\",\r\n    \"IsActive\": true,\r\n    \"IsTransported\": true,\r\n    \"IsInventoried\": true,\r\n    \"IsGiftCardRecharge\": false,\r\n    \"ImageUrl\": \"https://lojadobreno.vteximg.com.br/arquivos/ids/155451-55-55/caixa-areia-azul-petmate.jpg?v=637139451191670000\",\r\n    \"DetailUrl\": \"/caixa-de-areia-azul-petmate/p\",\r\n    \"CSCIdentification\": null,\r\n    \"BrandId\": \"2000005\",\r\n    \"BrandName\": \"Petmate\",\r\n    \"IsBrandActive\": true,\r\n    \"Dimension\": {\r\n        \"cubicweight\": 0.2083,\r\n        \"height\": 10.0000,\r\n        \"length\": 10.0000,\r\n        \"weight\": 10.0000,\r\n        \"width\": 10.0000\r\n    },\r\n    \"RealDimension\": {\r\n        \"realCubicWeight\": 0.000,\r\n        \"realHeight\": 0.0,\r\n        \"realLength\": 0.0,\r\n        \"realWeight\": 0.0,\r\n        \"realWidth\": 0.0\r\n    },\r\n    \"ManufacturerCode\": \"123\",\r\n    \"IsKit\": false,\r\n    \"KitItems\": [],\r\n    \"Services\": [],\r\n    \"Categories\": [],\r\n    \"CategoriesFullPath\": [\r\n        \"/3/15/\",\r\n        \"/3/\",\r\n        \"/1/\"\r\n    ],\r\n    \"Attachments\": [],\r\n    \"Collections\": [],\r\n    \"SkuSellers\": [\r\n        {\r\n            \"SellerId\": \"1\",\r\n            \"StockKeepingUnitId\": 310118450,\r\n            \"SellerStockKeepingUnitId\": \"310118450\",\r\n            \"IsActive\": true,\r\n            \"FreightCommissionPercentage\": 0.0,\r\n            \"ProductCommissionPercentage\": 0.0\r\n        }\r\n    ],\r\n    \"SalesChannels\": [\r\n        1,\r\n        3\r\n    ],\r\n    \"Images\": [\r\n        {\r\n            \"ImageUrl\": \"https://lojadobreno.vteximg.com.br/arquivos/ids/155451/caixa-areia-azul-petmate.jpg?v=637139451191670000\",\r\n            \"ImageName\": null,\r\n            \"FileId\": 155451\r\n        }\r\n    ],\r\n    \"Videos\": [],\r\n    \"SkuSpecifications\": [],\r\n    \"ProductSpecifications\": [],\r\n    \"ProductClustersIds\": \"151,158\",\r\n    \"PositionsInClusters\": {\r\n        \"151\": 1,\r\n        \"158\": 2\r\n    },\r\n    \"ProductClusterNames\": {\r\n        \"151\": \"asdfghj\",\r\n        \"158\": \"Coleção halloween\"\r\n    },\r\n    \"ProductClusterHighlights\": {\r\n        \"151\": \"asdfghj\"\r\n    },\r\n    \"ProductCategoryIds\": \"/3/15/\",\r\n    \"IsDirectCategoryActive\": true,\r\n    \"ProductGlobalCategoryId\": 5000,\r\n    \"ProductCategories\": {\r\n        \"15\": \"Caixa de Areia\",\r\n        \"3\": \"Higiene\",\r\n        \"1\": \"Alimentação\"\r\n    },\r\n    \"CommercialConditionId\": 1,\r\n    \"RewardValue\": 0.0,\r\n    \"AlternateIds\": {\r\n        \"RefId\": \"1\"\r\n    },\r\n    \"AlternateIdValues\": [\r\n        \"1\"\r\n    ],\r\n    \"EstimatedDateArrival\": null,\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 1.0000,\r\n    \"InformationSource\": null,\r\n    \"ModalType\": null,\r\n    \"KeyWords\": \"\",\r\n    \"ReleaseDate\": \"2020-01-06T00:00:00Z\",\r\n    \"ProductIsVisible\": true,\r\n    \"ShowIfNotAvailable\": true,\r\n    \"IsProductActive\": true,\r\n    \"ProductFinalScore\": 0\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.skuContext",
+      "name": "sku.skuContext",
+      "description": "Retrieves context of an SKU.\r\n> 📘 Onboarding guide \r\n>\r\n> Check the new [Catalog onboarding guide](https://developers.vtex.com/vtex-rest-api/docs/catalog-overview). We created this guide to improve the onboarding experience for developers at VTEX. It assembles all documentation on our Developer Portal about Catalog and is organized by focusing on the developer's journey.\r\n\r\n ## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2001773,\r\n    \"ProductId\": 2001426,\r\n    \"NameComplete\": \"Tabela de Basquete\",\r\n    \"ComplementName\": \"\",\r\n    \"ProductName\": \"Tabela de Basquete\",\r\n    \"ProductDescription\": \"Tabela de Basquete\",\r\n    \"SkuName\": \"Tabela de Basquete\",\r\n    \"ProductRefId\": \"0987\",\r\n    \"TaxCode\": \"\",\r\n    \"IsActive\": true,\r\n    \"IsTransported\": true,\r\n    \"IsInventoried\": true,\r\n    \"IsGiftCardRecharge\": false,\r\n    \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168952-55-55/7508800GG.jpg\",\r\n    \"DetailUrl\": \"/tabela-de-basquete/p\",\r\n    \"CSCIdentification\": null,\r\n    \"BrandId\": \"2000018\",\r\n    \"BrandName\": \"MARCA ARGOLO TESTE\",\r\n    \"IsBrandActive\": true,\r\n    \"Dimension\": {\r\n        \"cubicweight\": 81.6833,\r\n        \"height\": 65,\r\n        \"length\": 58,\r\n        \"weight\": 10000,\r\n        \"width\": 130\r\n    },\r\n    \"RealDimension\": {\r\n        \"realCubicWeight\": 274.1375,\r\n        \"realHeight\": 241,\r\n        \"realLength\": 65,\r\n        \"realWeight\": 9800,\r\n        \"realWidth\": 105\r\n    },\r\n    \"ManufacturerCode\": \"\",\r\n    \"IsKit\": false,\r\n    \"KitItems\": [],\r\n    \"Services\": [],\r\n    \"Categories\": [],\r\n    \"CategoriesFullPath\": [\r\n        \"/1/10/\",\r\n        \"/1/\",\r\n        \"/20/\"\r\n    ],\r\n    \"Attachments\": [\r\n        {\r\n            \"Id\": 3,\r\n            \"Name\": \"Mensagem\",\r\n            \"Keys\": [\r\n                \"nome;20\",\r\n                \"foto;40\"\r\n            ],\r\n            \"Fields\": [\r\n                {\r\n                    \"FieldName\": \"nome\",\r\n                    \"MaxCaracters\": \"20\",\r\n                    \"DomainValues\": \"Adalberto,Pedro,João\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"foto\",\r\n                    \"MaxCaracters\": \"40\",\r\n                    \"DomainValues\": null\r\n                }\r\n            ],\r\n            \"IsActive\": true,\r\n            \"IsRequired\": false\r\n        }\r\n    ],\r\n    \"Collections\": [],\r\n    \"SkuSellers\": [\r\n        {\r\n            \"SellerId\": \"1\",\r\n            \"StockKeepingUnitId\": 2001773,\r\n            \"SellerStockKeepingUnitId\": \"2001773\",\r\n            \"IsActive\": true,\r\n            \"FreightCommissionPercentage\": 0,\r\n            \"ProductCommissionPercentage\": 0\r\n        }\r\n    ],\r\n    \"SalesChannels\": [\r\n        1,\r\n        2,\r\n        3,\r\n        10\r\n    ],\r\n    \"Images\": [\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168952/7508800GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168952\r\n        },\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168953/7508800_1GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168953\r\n        },\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168954/7508800_2GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168954\r\n        }\r\n    ],\r\n    \"Videos\": [\r\n        \"www.google.com\"\r\n    ],\r\n    \"SkuSpecifications\": [\r\n        {\r\n            \"FieldId\": 102,\r\n            \"FieldName\": \"Cor\",\r\n            \"FieldValueIds\": [\r\n                266\r\n            ],\r\n            \"FieldValues\": [\r\n                \"Padrão\"\r\n            ],\r\n            \"IsFilter\": false,\r\n            \"FieldGroupId\": 11,\r\n            \"FieldGroupName\": \"Especificações\"\r\n        }\r\n    ],\r\n    \"ProductSpecifications\": [\r\n        {\r\n            \"FieldId\": 7,\r\n            \"FieldName\": \"Faixa Etária\",\r\n            \"FieldValueIds\": [\r\n                58,\r\n                56,\r\n                55,\r\n                52\r\n            ],\r\n            \"FieldValues\": [\r\n                \"5 a 6 anos\",\r\n                \"7 a 8 anos\",\r\n                \"9 a 10 anos\",\r\n                \"Acima de 10 anos\"\r\n            ],\r\n            \"IsFilter\": true,\r\n            \"FieldGroupId\": 17,\r\n            \"FieldGroupName\": \"NewGroupName 2\"\r\n        },\r\n        {\r\n            \"FieldId\": 23,\r\n            \"FieldName\": \"Fabricante\",\r\n            \"FieldValueIds\": [],\r\n            \"FieldValues\": [\r\n                \"Xalingo\"\r\n            ],\r\n            \"IsFilter\": false,\r\n            \"FieldGroupId\": 17,\r\n            \"FieldGroupName\": \"NewGroupName 2\"\r\n        }\r\n    ],\r\n    \"ProductClustersIds\": \"176,187,192,194,211,217,235,242\",\r\n    \"PositionsInClusters\": {\r\n        \"151\": 3,\r\n        \"152\": 0,\r\n        \"158\": 1\r\n    },\r\n    \"ProductClusterNames\": {\r\n        \"151\": \"asdfghj\",\r\n        \"152\": \"George\",\r\n        \"158\": \"Coleção halloween\"\r\n    },\r\n    \"ProductClusterHighlights\": {\r\n        \"151\": \"asdfghj\",\r\n        \"152\": \"George\"\r\n    },\r\n    \"ProductCategoryIds\": \"/59/\",\r\n    \"IsDirectCategoryActive\": false,\r\n    \"ProductGlobalCategoryId\": null,\r\n    \"ProductCategories\": {\r\n        \"59\": \"Brinquedos\"\r\n    },\r\n    \"CommercialConditionId\": 1,\r\n    \"RewardValue\": 100.0,\r\n    \"AlternateIds\": {\r\n        \"Ean\": \"8781\",\r\n        \"RefId\": \"878181\"\r\n    },\r\n    \"AlternateIdValues\": [\r\n        \"8781\",\r\n        \"878181\"\r\n    ],\r\n    \"EstimatedDateArrival\": \"\",\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 2.0000,\r\n    \"InformationSource\": \"Indexer\",\r\n    \"ModalType\": \"\",\r\n    \"KeyWords\": \"basquete, tabela\",\r\n    \"ReleaseDate\": \"2020-01-06T00:00:00\",\r\n    \"ProductIsVisible\": true,\r\n    \"ShowIfNotAvailable\": true,\r\n    \"IsProductActive\": true,\r\n    \"ProductFinalScore\": 0\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.skuIdbyRefId",
+      "name": "sku.skuIdbyRefId",
+      "description": "Retrieves an SKU ID by the SKU's Reference ID. \r\n\r\n### Response body example\r\n\r\n```json\r\n\"310118450\"\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.skuIdlistbyRefIdlist",
+      "name": "sku.skuIdlistbyRefIdlist",
+      "description": "Receives a list of Reference IDs and returns a list with the corresponding SKU IDs.\r\n\r\n>⚠️ The list of Reference IDs in the request body cannot have repeated Reference IDs, or the API will return an error 500. \r\n\r\n## Request body example\r\n\r\n```json\r\n[\r\n    \"123\",\r\n    \"D25133K-B2\",\r\n    \"14-556\",\r\n    \"DCF880L2-BR\"\r\n]\r\n```\r\n\r\n### Response body example\r\n\r\n```json\r\n{\r\n    \"123\": \"435\",\r\n    \"D25133K-B2\": \"4351\",\r\n    \"14-556\": \"3155\",\r\n    \"DCF880L2-BR\": \"4500\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.sku.skulistbyProductId",
+      "name": "sku.skulistbyProductId",
+      "description": "Retrieves a list with the SKUs related to a product by the product's ID.\r\n\r\n### Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"IsPersisted\": true,\r\n        \"IsRemoved\": false,\r\n        \"Id\": 2000035,\r\n        \"ProductId\": 2000024,\r\n        \"IsActive\": true,\r\n        \"Name\": \"33 - Preto\",\r\n        \"Height\": 8,\r\n        \"RealHeight\": null,\r\n        \"Width\": 15,\r\n        \"RealWidth\": null,\r\n        \"Length\": 8,\r\n        \"RealLength\": null,\r\n        \"WeightKg\": 340,\r\n        \"RealWeightKg\": null,\r\n        \"ModalId\": 1,\r\n        \"RefId\": \"\",\r\n        \"CubicWeight\": 0.2,\r\n        \"IsKit\": false,\r\n        \"IsDynamicKit\": null,\r\n        \"InternalNote\": null,\r\n        \"DateUpdated\": \"2015-11-06T19:10:00\",\r\n        \"RewardValue\": 0.01,\r\n        \"CommercialConditionId\": 1,\r\n        \"EstimatedDateArrival\": \"\",\r\n        \"FlagKitItensSellApart\": false,\r\n        \"ManufacturerCode\": \"\",\r\n        \"ReferenceStockKeepingUnitId\": null,\r\n        \"Position\": 0,\r\n        \"EditionSkuId\": null,\r\n        \"ApprovedAdminId\": 123,\r\n        \"EditionAdminId\": 123,\r\n        \"ActivateIfPossible\": true,\r\n        \"SupplierCode\": null,\r\n        \"MeasurementUnit\": \"un\",\r\n        \"UnitMultiplier\": 2.0000,\r\n        \"IsInventoried\": null,\r\n        \"IsTransported\": null,\r\n        \"IsGiftCardRecharge\": null,\r\n        \"ModalType\": \"\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuAttachment.associateattachmentstoSku",
+      "name": "skuAttachment.associateattachmentstoSku",
+      "description": "Associates attachments to an SKU based on a given SKU ID and attachment names.\n\rThis request removes existing SKU attachment associations and recreates the associations with the attachments being sent. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"SkuId\": 1,\r\n    \"AttachmentNames\": [\r\n        \"T-Shirt Customization\"\r\n    ]\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuAttachment.deleteApiCatalogPvtSkuattachment",
+      "name": "skuAttachment.deleteApiCatalogPvtSkuattachment",
+      "description": "Dissociates attachments and SKUs based on an SKU ID or an attachment ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuAttachment.deleteApiCatalogPvtSkuattachmentSkuAttachmentAssociationId",
+      "name": "skuAttachment.deleteApiCatalogPvtSkuattachmentSkuAttachmentAssociationId",
+      "description": "Deletes the association of an SKU to an Attachment."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuAttachment.getApiCatalogPvtStockkeepingunitSkuIdAttachment",
+      "name": "skuAttachment.getApiCatalogPvtStockkeepingunitSkuIdAttachment",
+      "description": "Retrieves existing SKU Attachments by SKU ID. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 97,\r\n        \"AttachmentId\": 1,\r\n        \"SkuId\": 1\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuAttachment.postApiCatalogPvtSkuattachment",
+      "name": "skuAttachment.postApiCatalogPvtSkuattachment",
+      "description": "Associates an existing SKU to an existing Attachment. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"AttachmentId\": 1,\r\n    \"SkuId\": 7\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 31,\r\n    \"AttachmentId\": 1,\r\n    \"SkuId\": 7\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.createSkuComplement",
+      "name": "skuComplement.createSkuComplement",
+      "description": "Creates a new SKU Complement on a Parent SKU. \r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"SkuId\": 2,\r\n    \"ParentSkuId\": 1,\r\n    \"ComplementTypeId\": 2\r\n}\r\n```\r\n \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 62,\r\n    \"SkuId\": 2,\r\n    \"ParentSkuId\": 1,\r\n    \"ComplementTypeId\": 2\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.deleteSkuComplementbySkuComplementId",
+      "name": "skuComplement.deleteSkuComplementbySkuComplementId",
+      "description": "Deletes a previously existing SKU Complement by SKU Complement ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.getSkuComplementbySkuComplementId",
+      "name": "skuComplement.getSkuComplementbySkuComplementId",
+      "description": "Retrieves an existing SKU Complement by its SKU Complement ID. \r\n \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 62,\r\n    \"SkuId\": 2,\r\n    \"ParentSkuId\": 1,\r\n    \"ComplementTypeId\": 2\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.getSkuComplementbySkuid",
+      "name": "skuComplement.getSkuComplementbySkuid",
+      "description": "Retrieves an existing SKU Complement by its SKU ID. \r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 61,\r\n        \"SkuId\": 7,\r\n        \"ParentSkuId\": 1,\r\n        \"ComplementTypeId\": 1\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.getSkuComplementsbyComplementTypeId",
+      "name": "skuComplement.getSkuComplementsbyComplementTypeId",
+      "description": "Retrieves all the existing SKU Complements with the same Complement Type ID of a specific SKU. \r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 61,\r\n        \"SkuId\": 7,\r\n        \"ParentSkuId\": 1,\r\n        \"ComplementTypeId\": 1\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuComplement.getSkUcomplementsbytype",
+      "name": "skuComplement.getSkUcomplementsbytype",
+      "description": "Retrieves all the existing SKU complements with the same complement type ID of a specific SKU. \r\n \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"ParentSkuId\": 1,\r\n    \"ComplementSkuIds\": [\r\n        7\r\n    ],\r\n    \"Type\": \"1\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuEan.deleteApiCatalogPvtStockkeepingunitSkuIdEan",
+      "name": "skuEan.deleteApiCatalogPvtStockkeepingunitSkuIdEan",
+      "description": "Deletes all EAN values of an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuEan.deleteApiCatalogPvtStockkeepingunitSkuIdEanEan",
+      "name": "skuEan.deleteApiCatalogPvtStockkeepingunitSkuIdEanEan",
+      "description": "Deletes the EAN value of an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuEan.getApiCatalogPvtStockkeepingunitSkuIdEan",
+      "name": "skuEan.getApiCatalogPvtStockkeepingunitSkuIdEan",
+      "description": "Retrieves the EAN of the SKU. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    \"1234567890123\"\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuEan.postApiCatalogPvtStockkeepingunitSkuIdEanEan",
+      "name": "skuEan.postApiCatalogPvtStockkeepingunitSkuIdEanEan",
+      "description": "Creates or updates the EAN value of an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuEan.skubyEan",
+      "name": "skuEan.skubyEan",
+      "description": "Retrieves an SKU by its EAN ID. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2001773,\r\n    \"ProductId\": 2001426,\r\n    \"NameComplete\": \"Tabela de Basquete\",\r\n    \"ProductName\": \"Tabela de Basquete\",\r\n    \"ProductDescription\": \"Tabela de Basquete\",\r\n    \"SkuName\": \"Tabela de Basquete\",\r\n    \"IsActive\": true,\r\n    \"IsTransported\": true,\r\n    \"IsInventoried\": true,\r\n    \"IsGiftCardRecharge\": false,\r\n    \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168952-55-55/7508800GG.jpg\",\r\n    \"DetailUrl\": \"/tabela-de-basquete/p\",\r\n    \"CSCIdentification\": null,\r\n    \"BrandId\": \"2000018\",\r\n    \"BrandName\": \"MARCA ARGOLO TESTE\",\r\n    \"Dimension\": {\r\n        \"cubicweight\": 81.6833,\r\n        \"height\": 65,\r\n        \"length\": 58,\r\n        \"weight\": 10000,\r\n        \"width\": 130\r\n    },\r\n    \"RealDimension\": {\r\n        \"realCubicWeight\": 274.1375,\r\n        \"realHeight\": 241,\r\n        \"realLength\": 65,\r\n        \"realWeight\": 9800,\r\n        \"realWidth\": 105\r\n    },\r\n    \"ManufacturerCode\": \"\",\r\n    \"IsKit\": false,\r\n    \"KitItems\": [],\r\n    \"Services\": [],\r\n    \"Categories\": [],\r\n    \"Attachments\": [\r\n        {\r\n            \"Id\": 3,\r\n            \"Name\": \"Mensagem\",\r\n            \"Keys\": [\r\n                \"nome;20\",\r\n                \"foto;40\"\r\n            ],\r\n            \"Fields\": [\r\n                {\r\n                    \"FieldName\": \"nome\",\r\n                    \"MaxCaracters\": \"20\",\r\n                    \"DomainValues\": \"Adalberto,Pedro,João\"\r\n                },\r\n                {\r\n                    \"FieldName\": \"foto\",\r\n                    \"MaxCaracters\": \"40\",\r\n                    \"DomainValues\": null\r\n                }\r\n            ],\r\n            \"IsActive\": true,\r\n            \"IsRequired\": false\r\n        }\r\n    ],\r\n    \"Collections\": [],\r\n    \"SkuSellers\": [\r\n        {\r\n            \"SellerId\": \"1\",\r\n            \"StockKeepingUnitId\": 2001773,\r\n            \"SellerStockKeepingUnitId\": \"2001773\",\r\n            \"IsActive\": true,\r\n            \"FreightCommissionPercentage\": 0,\r\n            \"ProductCommissionPercentage\": 0\r\n        }\r\n    ],\r\n    \"SalesChannels\": [\r\n        1,\r\n        2,\r\n        3,\r\n        10\r\n    ],\r\n    \"Images\": [\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168952/7508800GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168952\r\n        },\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168953/7508800_1GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168953\r\n        },\r\n        {\r\n            \"ImageUrl\": \"http://ambienteqa.vteximg.com.br/arquivos/ids/168954/7508800_2GG.jpg\",\r\n            \"ImageName\": \"\",\r\n            \"FileId\": 168954\r\n        }\r\n    ],\r\n    \"SkuSpecifications\": [\r\n        {\r\n            \"FieldId\": 102,\r\n            \"FieldName\": \"Cor\",\r\n            \"FieldValueIds\": [\r\n                266\r\n            ],\r\n            \"FieldValues\": [\r\n                \"Padrão\"\r\n            ]\r\n        }\r\n    ],\r\n    \"ProductSpecifications\": [\r\n        {\r\n            \"FieldId\": 7,\r\n            \"FieldName\": \"Faixa Etária\",\r\n            \"FieldValueIds\": [\r\n                58,\r\n                56,\r\n                55,\r\n                52\r\n            ],\r\n            \"FieldValues\": [\r\n                \"5 a 6 anos\",\r\n                \"7 a 8 anos\",\r\n                \"9 a 10 anos\",\r\n                \"Acima de 10 anos\"\r\n            ]\r\n        },\r\n        {\r\n            \"FieldId\": 23,\r\n            \"FieldName\": \"Fabricante\",\r\n            \"FieldValueIds\": [],\r\n            \"FieldValues\": [\r\n                \"Xalingo\"\r\n            ]\r\n        }\r\n    ],\r\n    \"ProductClustersIds\": \"176,187,192,194,211,217,235,242\",\r\n    \"ProductCategoryIds\": \"/59/\",\r\n    \"ProductGlobalCategoryId\": null,\r\n    \"ProductCategories\": {\r\n        \"59\": \"Brinquedos\"\r\n    },\r\n    \"CommercialConditionId\": 1,\r\n    \"RewardValue\": 100.0,\r\n    \"AlternateIds\": {\r\n        \"Ean\": \"8781\",\r\n        \"RefId\": \"878181\"\r\n    },\r\n    \"AlternateIdValues\": [\r\n        \"8781\",\r\n        \"878181\"\r\n    ],\r\n    \"EstimatedDateArrival\": \"\",\r\n    \"MeasurementUnit\": \"un\",\r\n    \"UnitMultiplier\": 2.0000,\r\n    \"InformationSource\": null,\r\n    \"ModalType\": \"\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.deleteApiCatalogPvtStockkeepingunitDisassociateSkuIdFileSkuFileId",
+      "name": "skuFile.deleteApiCatalogPvtStockkeepingunitDisassociateSkuIdFileSkuFileId",
+      "description": "Disassociates an SKU File from an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.deleteApiCatalogPvtStockkeepingunitSkuIdFile",
+      "name": "skuFile.deleteApiCatalogPvtStockkeepingunitSkuIdFile",
+      "description": "Deletes all SKU Image Files."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.deleteApiCatalogPvtStockkeepingunitSkuIdFileSkuFileId",
+      "name": "skuFile.deleteApiCatalogPvtStockkeepingunitSkuIdFileSkuFileId",
+      "description": "Deletes a specific SKU Image File."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.getApiCatalogPvtStockkeepingunitSkuIdFile",
+      "name": "skuFile.getApiCatalogPvtStockkeepingunitSkuIdFile",
+      "description": "Gets general information about all Files in the SKU. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 549,\r\n        \"ArchiveId\": 155485,\r\n        \"SkuId\": 310118490,\r\n        \"Name\": \"chimera-cat-quimera-5\",\r\n        \"IsMain\": true,\r\n        \"Label\": \"miau\"\r\n    },\r\n    {\r\n        \"Id\": 550,\r\n        \"ArchiveId\": 155486,\r\n        \"SkuId\": 310118490,\r\n        \"Name\": \"Gato-siames\",\r\n        \"IsMain\": false,\r\n        \"Label\": \"Gato siames\"\r\n    },\r\n    {\r\n        \"Id\": 555,\r\n        \"ArchiveId\": 155491,\r\n        \"SkuId\": 310118490,\r\n        \"Name\": \"Cat-Sleeping-Pics\",\r\n        \"IsMain\": false,\r\n        \"Label\": null\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.postApiCatalogPvtStockkeepingunitSkuIdFile",
+      "name": "skuFile.postApiCatalogPvtStockkeepingunitSkuIdFile",
+      "description": "Creates a new Image for an SKU based on its URL or on a form-data request body. \r\n## Request body example\r\n\r\n```json\r\n{\r\n      \"IsMain\": true,\r\n      \"Label\": \"\",\r\n      \"Name\": \"Royal-Canin-Feline-Urinary-SO\",\r\n      \"Text\": null,\r\n      \"Url\": \"https://1.bp.blogspot.com/_SLQk9aAv9-o/S7NNbJPv7NI/AAAAAAAAAN8/V1LcO0ViDc4/s1600/waterbottle.jpg\"\r\n      \r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n      \"Id\": 503,\r\n      \"ArchiveId\": 155491,\r\n      \"SkuId\": 1,\r\n      \"Name\": \"Royal-Canin-Feline-Urinary-SO\",\r\n      \"IsMain\": true,\r\n      \"Label\": \"\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.putApiCatalogPvtStockkeepingunitCopySkuIdfromSkuIdtoFile",
+      "name": "skuFile.putApiCatalogPvtStockkeepingunitCopySkuIdfromSkuIdtoFile",
+      "description": "Copy all existing files from an SKU to another SKU. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 1964,\r\n        \"ArchiveId\": 155404,\r\n        \"SkuId\": 1,\r\n        \"IsMain\": true,\r\n        \"Label\": \"\"\r\n    },\r\n    {\r\n        \"Id\": 1965,\r\n        \"ArchiveId\": 155429,\r\n        \"SkuId\": 1,\r\n        \"IsMain\": false,\r\n        \"Label\": \"\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuFile.putApiCatalogPvtStockkeepingunitSkuIdFileSkuFileId",
+      "name": "skuFile.putApiCatalogPvtStockkeepingunitSkuIdFileSkuFileId",
+      "description": "Updates a new Image on an SKU based on its URL or on a form-data request body. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"IsMain\": true,\r\n    \"Label\": null,\r\n    \"Name\": \"toilet-paper\",\r\n    \"Text\": null,\r\n    \"Url\": \"https://images-na.ssl-images-amazon.com/images/I/81DLLXaGI7L._SL1500_.jpg\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 508,\r\n    \"ArchiveId\": 155491,\r\n    \"SkuId\": 7,\r\n    \"IsMain\": true,\r\n    \"Label\": null\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuKit.deleteApiCatalogPvtStockkeepingunitkit",
+      "name": "skuKit.deleteApiCatalogPvtStockkeepingunitkit",
+      "description": "Deletes all Kit’s components based on the Parent SKU ID or deletes a specific Kit’s component based on the SKU ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuKit.deleteApiCatalogPvtStockkeepingunitkitKitId",
+      "name": "skuKit.deleteApiCatalogPvtStockkeepingunitkitKitId",
+      "description": "Deletes a specific Kit’s component based on its Kit ID."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuKit.getApiCatalogPvtStockkeepingunitkit",
+      "name": "skuKit.getApiCatalogPvtStockkeepingunitkit",
+      "description": "Retrieves general information about the components of an SKU Kit by SKU ID or Parent SKU ID. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 7,\r\n    \"StockKeepingUnitParent\": 7,\r\n    \"StockKeepingUnitId\": 1,\r\n    \"Quantity\": 1,\r\n    \"UnitPrice\": 50.0000\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuKit.getApiCatalogPvtStockkeepingunitkitKitId",
+      "name": "skuKit.getApiCatalogPvtStockkeepingunitkitKitId",
+      "description": "Retrieves general information about a component of a Kit."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuKit.postApiCatalogPvtStockkeepingunitkit",
+      "name": "skuKit.postApiCatalogPvtStockkeepingunitkit",
+      "description": "Adds a component to a specific Kit. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"StockKeepingUnitParent\": 7,\r\n    \"StockKeepingUnitId\": 1,\r\n    \"Quantity\": 1,\r\n    \"UnitPrice\": 50.0000\r\n}\r\n``` \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 7,\r\n    \"StockKeepingUnitParent\": 7,\r\n    \"StockKeepingUnitId\": 1,\r\n    \"Quantity\": 1,\r\n    \"UnitPrice\": 50.0000\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSeller.changeNotification",
+      "name": "skuSeller.changeNotification",
+      "description": " > ⚠️ Check out the updated version of the SKU Seller endpoints in our [SKU Bindings API documentation](https://developers.vtex.com/vtex-rest-api/reference/getbyskuid). If you are doing this integration for the first time, we recommend that you follow the updated documentation.\n\nThe seller is responsible for suggesting new SKUs to be sold in the VTEX marketplace and also for informing the marketplace about changes in their SKUs that already exist in the marketplace. Both actions start with a catalog notification, which is made by this request.\n\nWith this notification, the seller is telling the marketplace that something has changed about a specific SKU, like price or inventory, or that this is a new SKU that the seller would like to offer to the marketplace.\n\nThe body of the request should be empty.\r\n## Example\r\n\r\nLet's say your seller has the ID `123` in the marketplace and you want to inform the marketplace that has been a change in the SKU with ID `700`.\r\n\r\nIn this case, you would have to replace the `sellerId` parameter with the value `123` and the `skuId` parameter with the value `700`. The URL of the request would be the following.\r\n\r\n```\r\nhttps://{{accountName}}.vtexcommercestable.com.br/api/catalog_system/pvt/skuseller/changenotification/123/700\r\n```\r\n\r\n## Response codes\r\n\r\nThe following response codes are possible for this request.\r\n\r\n* 404: the SKU was not found in the marketplace. The body of the response, in this case, should follow this format: \"Seller StockKeepingUnit `{{skuId}}` not found for this seller id `{{sellerId}}`\". This means that the seller can now proceed with sending an offer to the marketplace in order to suggest that this SKU is sold there.\r\n* 200: the SKU whose ID was informed in the URL already exists in the marketplace and was found. The marketplace can now proceed with a fulfillment simulation in order to get updated information about this SKU's inventory and price.\r\n* 429 - Failure due to too many requests.\r\n* 403 - Failure in the authentication."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSeller.deleteSkUsellerassociation",
+      "name": "skuSeller.deleteSkUsellerassociation",
+      "description": " > ⚠️ Check out the updated version of the SKU Seller endpoints in our [SKU Bindings API documentation](https://developers.vtex.com/vtex-rest-api/reference/getbyskuid). If you are doing this integration for the first time, we recommend that you follow the updated documentation.\n\nRemove a seller's SKU binding, given the seller ID and the SKU ID in the seller's store."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSeller.getSkUseller",
+      "name": "skuSeller.getSkUseller",
+      "description": " > ⚠️ Check out the updated version of the SKU Seller endpoints in our [SKU Bindings API documentation](https://developers.vtex.com/vtex-rest-api/reference/getbyskuid). If you are doing this integration for the first time, we recommend that you follow the updated documentation.\n\nRetrieves the details of a seller's SKU given a seller ID and the SKU ID in the seller's store. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"IsPersisted\": true,\r\n    \"IsRemoved\": false,\r\n    \"SkuSellerId\": 799,\r\n    \"SellerId\": \"myseller\",\r\n    \"StockKeepingUnitId\": 50,\r\n    \"SellerStockKeepingUnitId\": \"502\",\r\n    \"IsActive\": true,\r\n    \"UpdateDate\": \"2018-10-11T04:52:42.1\",\r\n    \"RequestedUpdateDate\": null\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSeller.postApiCatalogSystemPvtSkusellerChangenotificationSellerIdSellerSkuId",
+      "name": "skuSeller.postApiCatalogSystemPvtSkusellerChangenotificationSellerIdSellerSkuId",
+      "description": " > ⚠️ Check out the updated version of the SKU Seller endpoints in our [SKU Bindings API documentation](https://developers.vtex.com/vtex-rest-api/reference/getbyskuid). If you are doing this integration for the first time, we recommend that you follow the updated documentation.\n\nThe seller is responsible for suggesting new SKUs to be sold in the VTEX marketplace and also for informing the marketplace about changes in their SKUs that already exist in the marketplace. Both actions start with a catalog notification, which is made by this request.\n\nWith this notification, the seller is telling the marketplace that something has changed about a specific SKU, like price or inventory, or that this is a new SKU that the seller would like to offer to the marketplace.\n\nThere are two information expected by the marketplace in this request: the `sellerId`, which identifies the seller, and the `sellerSkuId`, which identifies the binding of the seller with the SKU.\n\nBoth information are passed through the request URL. The body of the request should be empty."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuService.deleteApiCatalogPvtSkuserviceSkuServiceId",
+      "name": "skuService.deleteApiCatalogPvtSkuserviceSkuServiceId",
+      "description": "Dissociates an SKU Service from an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuService.getApiCatalogPvtSkuserviceSkuServiceId",
+      "name": "skuService.getApiCatalogPvtSkuserviceSkuServiceId",
+      "description": "Retrieves an SKU Service. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"SkuServiceTypeId\": 1,\r\n    \"SkuServiceValueId\": 1,\r\n    \"SkuId\": 1,\r\n    \"Name\": \"name\",\r\n    \"Text\": \"text\",\r\n    \"IsActive\": false\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuService.postApiCatalogPvtSkuservice",
+      "name": "skuService.postApiCatalogPvtSkuservice",
+      "description": "Associates an SKU Service to an SKU."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuService.putApiCatalogPvtSkuserviceSkuServiceId",
+      "name": "skuService.putApiCatalogPvtSkuserviceSkuServiceId",
+      "description": "Updates an SKU Service. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"name\",\r\n    \"Text\": \"text\",\r\n    \"IsActive\": false\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"SkuServiceTypeId\": 1,\r\n    \"SkuServiceValueId\": 1,\r\n    \"SkuId\": 1,\r\n    \"Name\": \"name\",\r\n    \"Text\": \"text\",\r\n    \"IsActive\": false\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceAttachment.deleteApiCatalogPvtSkuservicetypeattachment",
+      "name": "skuServiceAttachment.deleteApiCatalogPvtSkuservicetypeattachment",
+      "description": "Dissociates an Attachment by its Attachment ID or SKU Service Type ID from an SKU Service Type."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceAttachment.deleteApiCatalogPvtSkuservicetypeattachmentSkuServiceTypeAttachmentId",
+      "name": "skuServiceAttachment.deleteApiCatalogPvtSkuservicetypeattachmentSkuServiceTypeAttachmentId",
+      "description": "Dissociates an Attachment from an SKU Service Type"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceAttachment.postApiCatalogPvtSkuservicetypeattachment",
+      "name": "skuServiceAttachment.postApiCatalogPvtSkuservicetypeattachment",
+      "description": "Associates an Attachment for an existing SKU Service Type. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"AttachmentId\": 1,\r\n    \"SkuServiceTypeId\": 1\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"AttachmentId\": 1,\r\n    \"SkuServiceTypeId\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceType.deleteApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "name": "skuServiceType.deleteApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "description": "Deletes an existing SKU Service Type."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceType.getApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "name": "skuServiceType.getApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "description": "Retrieves information about an existing SKU Service Type. \r\n## Response body example:\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"Name\": \"Test API SKU Services\",\r\n    \"IsActive\": true,\r\n    \"ShowOnProductFront\": true,\r\n    \"ShowOnCartFront\": true,\r\n    \"ShowOnAttachmentFront\": true,\r\n    \"ShowOnFileUpload\": true,\r\n    \"IsGiftCard\": true,\r\n    \"IsRequired\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceType.postApiCatalogPvtSkuservicetype",
+      "name": "skuServiceType.postApiCatalogPvtSkuservicetype",
+      "description": "Creates a new SKU Service Type. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Test API Sku Services\",\r\n    \"IsActive\": true,\r\n    \"ShowOnProductFront\": true,\r\n    \"ShowOnCartFront\": true,\r\n    \"ShowOnAttachmentFront\": true,\r\n    \"ShowOnFileUpload\": true,\r\n    \"IsGiftCard\": true,\r\n    \"IsRequired\": true\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"Name\": \"Teste API Sku Services\",\r\n    \"IsActive\": true,\r\n    \"ShowOnProductFront\": true,\r\n    \"ShowOnCartFront\": true,\r\n    \"ShowOnAttachmentFront\": true,\r\n    \"ShowOnFileUpload\": true,\r\n    \"IsGiftCard\": true,\r\n    \"IsRequired\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceType.putApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "name": "skuServiceType.putApiCatalogPvtSkuservicetypeSkuServiceTypeId",
+      "description": "Updates an existing SKU Service Type.  \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Test API Sku Services\",\r\n    \"IsActive\": true,\r\n    \"ShowOnProductFront\": true,\r\n    \"ShowOnCartFront\": true,\r\n    \"ShowOnAttachmentFront\": true,\r\n    \"ShowOnFileUpload\": true,\r\n    \"IsGiftCard\": true,\r\n    \"IsRequired\": true\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"Name\": \"Teste API Sku Services\",\r\n    \"IsActive\": true,\r\n    \"ShowOnProductFront\": true,\r\n    \"ShowOnCartFront\": true,\r\n    \"ShowOnAttachmentFront\": true,\r\n    \"ShowOnFileUpload\": true,\r\n    \"IsGiftCard\": true,\r\n    \"IsRequired\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceValue.deleteApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "name": "skuServiceValue.deleteApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "description": "Deletes an existing SKU Service Value."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceValue.getApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "name": "skuServiceValue.getApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "description": "Retrieves an existing SKU Service Value. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"SkuServiceTypeId\": 2,\r\n    \"Name\": \"Test ServiceValue API\",\r\n    \"Value\": 10.5,\r\n    \"Cost\": 10.5\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceValue.postApiCatalogPvtSkuservicevalue",
+      "name": "skuServiceValue.postApiCatalogPvtSkuservicevalue",
+      "description": "Creates an SKU Service Value for an existing SKU Service Type. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"SkuServiceTypeId\": 2,\r\n    \"Name\": \"Test ServiceValue API\",\r\n    \"Value\": 10.5,\r\n    \"Cost\": 10.5\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"SkuServiceTypeId\": 2,\r\n    \"Name\": \"Test ServiceValue API\",\r\n    \"Value\": 10.5,\r\n    \"Cost\": 10.5\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuServiceValue.putApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "name": "skuServiceValue.putApiCatalogPvtSkuservicevalueSkuServiceValueId",
+      "description": "Updates an existing SKU Service Value. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"SkuServiceTypeId\": 2,\r\n    \"Name\": \"Test ServiceValue API\",\r\n    \"Value\": 10.5,\r\n    \"Cost\": 10.5\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 2,\r\n    \"SkuServiceTypeId\": 2,\r\n    \"Name\": \"Test ServiceValue API\",\r\n    \"Value\": 10.5,\r\n    \"Cost\": 10.5\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.deleteApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "name": "skuSpecification.deleteApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "description": "Deletes all SKU Specifications."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.deleteApiCatalogPvtStockkeepingunitSkuIdSpecificationSpecificationId",
+      "name": "skuSpecification.deleteApiCatalogPvtStockkeepingunitSkuIdSpecificationSpecificationId",
+      "description": "Deletes a specific SKU Specification."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.getApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "name": "skuSpecification.getApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "description": "Retrieves information about an SKU's Specifications. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 427,\r\n        \"SkuId\": 7,\r\n        \"FieldId\": 32,\r\n        \"FieldValueId\": 131,\r\n        \"Text\": \"500g\"\r\n    },\r\n    {\r\n        \"Id\": 428,\r\n        \"SkuId\": 7,\r\n        \"FieldId\": 40,\r\n        \"FieldValueId\": 133,\r\n        \"Text\": \"A\"\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.postApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "name": "skuSpecification.postApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "description": "Associates a previously created Specification to an SKU. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 65,\r\n    \"FieldValueId\": 138\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 730,\r\n    \"SkuId\": 31,\r\n    \"FieldId\": 65,\r\n    \"FieldValueId\": 138,\r\n    \"Text\": \"Size\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.putApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "name": "skuSpecification.putApiCatalogPvtStockkeepingunitSkuIdSpecification",
+      "description": "Updates an existing Specification on an existing SKU. This endpoint only updates the `FieldValueId`. \r\n## Request body example\r\n\r\n```json\r\n{\r\n  \"Id\": 65,\r\n  \"SkuId\": 21,\r\n  \"FieldId\": 32,\r\n  \"FieldValueId\": 131,\r\n  \"Text\": \"Red\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 65,\r\n  \"SkuId\": 21,\r\n  \"FieldId\": 32,\r\n  \"FieldValueId\": 131,\r\n  \"Text\": \"Red\"\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.skuSpecification.putApiCatalogPvtStockkeepingunitSkuIdSpecificationvalue",
+      "name": "skuSpecification.putApiCatalogPvtStockkeepingunitSkuIdSpecificationvalue",
+      "description": "Associates a specification to an SKU using specification name and group name. Automatically creates the informed group, specification and values if they had not been created before.\r\n\r\n ## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldName\": \"Size\",\r\n    \"GroupName\": \"Sizes\",\r\n    \"RootLevelSpecification\": false,\r\n    \"FieldValues\": [\r\n        \"M\"\r\n        ]\r\n}\r\n```\r\n \r\n \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"Id\": 419,\r\n        \"SkuId\": 5,\r\n        \"FieldId\": 22,\r\n        \"FieldValueId\": 62,\r\n        \"Text\": \"M\"\r\n    }\r\n]\r\n```\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specification.getApiCatalogPvtSpecificationSpecificationId",
+      "name": "specification.getApiCatalogPvtSpecificationSpecificationId",
+      "description": "Retrieves information of a Product or SKU Specification. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 88,\r\n    \"FieldTypeId\": 1,\r\n    \"CategoryId\": 4,\r\n    \"FieldGroupId\": 20,\r\n    \"Name\": \"Material\",\r\n    \"Description\": \"Composition of the product.\",\r\n    \"Position\": 1,\r\n    \"IsFilter\": true,\r\n    \"IsRequired\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsWizard\": false,\r\n    \"IsActive\": true,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": \"Cotton\"\r\n}\r\n```\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specification.postApiCatalogPvtSpecification",
+      "name": "specification.postApiCatalogPvtSpecification",
+      "description": "Creates a new Product or SKU Specification. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldTypeId\": 1,\r\n    \"CategoryId\": 4,\r\n    \"FieldGroupId\": 20,\r\n    \"Name\": \"Material\",\r\n    \"Description\": \"Composition of the product.\",\r\n    \"Position\": 1,\r\n    \"IsFilter\": true,\r\n    \"IsRequired\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsActive\": true,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": \"Cotton\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 88,\r\n    \"FieldTypeId\": 1,\r\n    \"CategoryId\": 4,\r\n    \"FieldGroupId\": 20,\r\n    \"Name\": \"Material\",\r\n    \"Description\": \"Composition of the product.\",\r\n    \"Position\": 1,\r\n    \"IsFilter\": true,\r\n    \"IsRequired\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsWizard\": false,\r\n    \"IsActive\": true,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": \"Cotton\"\r\n}\r\n```\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specification.putApiCatalogPvtSpecificationSpecificationId",
+      "name": "specification.putApiCatalogPvtSpecificationSpecificationId",
+      "description": "Updates a Product or SKU Specification. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldTypeId\": 1,\r\n    \"CategoryId\": 4,\r\n    \"FieldGroupId\": 20,\r\n    \"Name\": \"Material\",\r\n    \"Description\": \"Composition of the product.\",\r\n    \"Position\": 1,\r\n    \"IsFilter\": true,\r\n    \"IsRequired\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsActive\": true,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": \"Leather\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 88,\r\n    \"FieldTypeId\": 1,\r\n    \"CategoryId\": 4,\r\n    \"FieldGroupId\": 20,\r\n    \"Name\": \"Material\",\r\n    \"Description\": \"Composition of the product.\",\r\n    \"Position\": 1,\r\n    \"IsFilter\": true,\r\n    \"IsRequired\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsWizard\": false,\r\n    \"IsActive\": true,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": \"Leather\"\r\n}\r\n```\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationField.specificationsField",
+      "name": "specificationField.specificationsField",
+      "description": "Retrieves details from a specification field by this field's ID. \r\n>⚠️ This is a legacy endpoint. We recommend using [Get Specification](https://developers.vtex.com/vtex-rest-api/reference/get_api-catalog-pvt-specification-specificationid) instead.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Material\",\r\n    \"CategoryId\": 4,\r\n    \"FieldId\": 88,\r\n    \"IsActive\": true,\r\n    \"IsRequired\": true,\r\n    \"FieldTypeId\": 1,\r\n    \"FieldTypeName\": \"Texto\",\r\n    \"FieldValueId\": null,\r\n    \"Description\": \"Composition of the product.\",\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsFilter\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"Position\": 1,\r\n    \"IsWizard\": false,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": null,\r\n    \"FieldGroupId\": 20,\r\n    \"FieldGroupName\": \"Clothes specifications\"\r\n}\r\n```\r\n\r\n"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationField.specificationsInsertField",
+      "name": "specificationField.specificationsInsertField",
+      "description": "Creates a specification field in a category. \r\n>⚠️ This is a legacy endpoint. We recommend using [Create Specification](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-post-specification) instead.\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Material\",\r\n    \"CategoryId\": 4,\r\n    \"FieldId\": 88,\r\n    \"IsActive\": true,\r\n    \"IsRequired\": true,\r\n    \"FieldTypeId\": 1,\r\n    \"FieldValueId\": 1,\r\n    \"IsStockKeepingUnit\": false,\r\n    \"Description\": \"Composition of the product.\",\r\n    \"IsFilter\": true,\r\n    \"IsOnProductDetails\": false,\r\n    \"Position\": 1,\r\n    \"IsWizard\": false,\r\n    \"IsTopMenuLinkActive\": true,\r\n    \"IsSideMenuLinkActive\": true,\r\n    \"DefaultValue\": null,\r\n    \"FieldGroupId\": 20,\r\n    \"FieldGroupName\": \"Clothes specifications\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n89\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationField.specificationsInsertFieldUpdate",
+      "name": "specificationField.specificationsInsertFieldUpdate",
+      "description": "Updates a specification field in a category. \r\n>⚠️ This is a legacy endpoint. We recommend using [Update Specification](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-put-specification) instead.\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 89,\r\n    \"Name\": \"Material\",\r\n    \"CategoryId\": 4,\r\n    \"IsActive\": true,\r\n    \"IsRequired\": true,\r\n    \"FieldTypeId\": 1,\r\n    \"Description\": \"Composition of the product.\",\r\n    \"IsStockKeepingUnit\": false,\r\n    \"IsFilter\": true,\r\n    \"IsOnProductDetails\": true,\r\n    \"Position\": 1,\r\n    \"IsWizard\": false,\r\n    \"IsTopMenuLinkActive\": false,\r\n    \"IsSideMenuLinkActive\": false,\r\n    \"DefaultValue\": \"Cotton\",\r\n    \"FieldGroupId\": 20,\r\n    \"FieldGroupName\": \"Clothes specifications\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n89\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationFieldValue.specificationsGetFieldValue",
+      "name": "specificationFieldValue.specificationsGetFieldValue",
+      "description": "Retrieves details from a specification field's value by this value's ID. \r\n>⚠️ This is a legacy endpoint. We recommend using [Get Specification Value](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-get-specification-value-id) instead.\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"FieldValueId\": 143,\r\n    \"FieldId\": 34,\r\n    \"Name\": \"TesteInsert\",\r\n    \"Text\": \"Value Description\",\r\n    \"IsActive\": true,\r\n    \"Position\": 100\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationFieldValue.specificationsInsertFieldValue",
+      "name": "specificationFieldValue.specificationsInsertFieldValue",
+      "description": "Creates a specification field value by the specification field's ID. \r\n>⚠️ This is a legacy endpoint. We recommend using [Create Specification Value](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-post-specification-value) instead.\r\n\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 34,\r\n    \"Name\": \"Cotton\",\r\n    \"Text\": \"Cotton fibers\",\r\n    \"IsActive\": true,\r\n    \"Position\": 100\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"FieldValueId\": 143,\r\n    \"FieldId\": 34,\r\n    \"Name\": \"Cotton\",\r\n    \"Text\": \"Cotton fibers\",\r\n    \"IsActive\": true,\r\n    \"Position\": 100\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationFieldValue.specificationsUpdateFieldValue",
+      "name": "specificationFieldValue.specificationsUpdateFieldValue",
+      "description": "Updates a specification field value by the specification field's ID. \r\n>⚠️ This is a legacy endpoint. We recommend using [Update Specification Field Value](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-put-specification-value-id) instead.\r\n\r\n\r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 1,\r\n    \"FieldValueId\": 143,\r\n    \"Name\": \"Cotton\",\r\n    \"Text\": \"Cotton fibers\",\r\n    \"IsActive\": true,\r\n    \"Position\": 100\r\n}\r\n```\r\n\r\n## Response body example (200 OK)\r\n\r\n```json\r\n\"Field Value Updated\"\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationFieldValue.specificationsValuesByFieldId",
+      "name": "specificationFieldValue.specificationsValuesByFieldId",
+      "description": "Gets a list of all specification values from a Specification Field by this field's ID. \r\n\r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"FieldValueId\": 52,\r\n        \"Value\": \"0 a 6 meses\",\r\n        \"IsActive\": true,\r\n        \"Position\": 1\r\n    },\r\n    {\r\n        \"FieldValueId\": 53,\r\n        \"Value\": \"1 a 2 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 4\r\n    },\r\n    {\r\n        \"FieldValueId\": 54,\r\n        \"Value\": \"3 a 4 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 3\r\n    },\r\n    {\r\n        \"FieldValueId\": 55,\r\n        \"Value\": \"5 a 6 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 2\r\n    },\r\n    {\r\n        \"FieldValueId\": 56,\r\n        \"Value\": \"7 a 8 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 5\r\n    },\r\n    {\r\n        \"FieldValueId\": 57,\r\n        \"Value\": \"9 a 10 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 6\r\n    },\r\n    {\r\n        \"FieldValueId\": 58,\r\n        \"Value\": \"Acima de 10 anos\",\r\n        \"IsActive\": true,\r\n        \"Position\": 7\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationGroup.putApiCatalogPvtSpecificationgroupGroupId",
+      "name": "specificationGroup.putApiCatalogPvtSpecificationgroupGroupId",
+      "description": "Update a specification group. \r\n>⚠️ It is also possible to update a Specification Group by using an alternative legacy route: `/api/catalog_system/pvt/specification/group`.\r\n\r\n## Request and response body example\r\n\r\n```json\r\n{\r\n    \"CategoryId\": 1,\r\n    \"Id\": 17,\r\n    \"Name\": \"NewGroupName\",\r\n    \"Position\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationGroup.specificationGroupInsert2",
+      "name": "specificationGroup.specificationGroupInsert2",
+      "description": "Create a specification group. \r\n>⚠️ It is also possible to create a Specification Group by using an alternative legacy route: `/api/catalog_system/pvt/specification/group`. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"CategoryId\": 1,\r\n    \"Name\": \"Sizes\"\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"Id\": 6,\r\n  \"CategoryId\": 1,\r\n  \"Name\": \"Sizes\",\r\n  \"Position\": 3\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationGroup.specificationsGroupGet",
+      "name": "specificationGroup.specificationsGroupGet",
+      "description": "Retrieves details from a specification group by the ID of the group. \r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"CategoryId\": 1,\r\n  \"Id\": 6,\r\n  \"Name\": \"Sizes\",\r\n  \"Position\": 3\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationGroup.specificationsGroupListbyCategory",
+      "name": "specificationGroup.specificationsGroupListbyCategory",
+      "description": "Retrieves a list of specification groups by the category ID. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n      \"CategoryId\": 1,\r\n      \"Id\": 5,\r\n      \"Name\": \"Materials\",\r\n      \"Position\": 2\r\n    },\r\n    {\r\n      \"CategoryId\": 1,\r\n      \"Id\": 6,\r\n      \"Name\": \"Sizes\",\r\n      \"Position\": 3\r\n    }\r\n  ]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationValue.getApiCatalogPvtSpecificationvalueSpecificationValueId",
+      "name": "specificationValue.getApiCatalogPvtSpecificationvalueSpecificationValueId",
+      "description": "Retrieves general information about a Specification Value. \r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"FieldValueId\": 143,\r\n    \"FieldId\": 34,\r\n    \"Name\": \"Cotton\",\r\n    \"Text\": \"Cotton fibers\",\r\n    \"IsActive\": true,\r\n    \"Position\": 100\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationValue.postApiCatalogPvtSpecificationvalue",
+      "name": "specificationValue.postApiCatalogPvtSpecificationvalue",
+      "description": "Creates a new Specification Value for a Category. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 193,\r\n    \"Name\": \"Metal\",\r\n    \"IsActive\": true,\r\n    \"Position\": 1\r\n  }\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"FieldValueId\": 360,\r\n  \"FieldId\": 193,\r\n  \"Name\": \"Metal\",\r\n  \"Text\": null,\r\n  \"IsActive\": true,\r\n  \"Position\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.specificationValue.putApiCatalogPvtSpecificationvalueSpecificationValueId",
+      "name": "specificationValue.putApiCatalogPvtSpecificationvalueSpecificationValueId",
+      "description": "Updates a new Specification Value for a Category. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"FieldId\": 193,\r\n    \"Name\": \"Metal\",\r\n    \"Text\": null,\r\n    \"IsActive\": true,\r\n    \"Position\": 1\r\n  }\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n  \"FieldValueId\": 360,\r\n  \"FieldId\": 193,\r\n  \"Name\": \"Metal\",\r\n  \"Text\": null,\r\n  \"IsActive\": true,\r\n  \"Position\": 1\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.supplier.deleteApiCatalogPvtSupplierSupplierId",
+      "name": "supplier.deleteApiCatalogPvtSupplierSupplierId",
+      "description": "Deletes an existing Supplier."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.supplier.postApiCatalogPvtSupplier",
+      "name": "supplier.postApiCatalogPvtSupplier",
+      "description": "Creates a new Supplier. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Supplier\",\r\n    \"CorporateName\": \"TopStore\",\r\n    \"StateInscription\": \"\",\r\n    \"Cnpj\": \"33304981001272\",\r\n    \"Phone\": \"3333333333\",\r\n    \"CellPhone\": \"4444444444\",\r\n    \"CorportePhone\": \"5555555555\",\r\n    \"Email\": \"email@email.com\",\r\n    \"IsActive\": true\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Supplier\",\r\n    \"CorporateName\": \"TopStore\",\r\n    \"StateInscription\": \"\",\r\n    \"Cnpj\": \"33304981001272\",\r\n    \"Phone\": \"3333333333\",\r\n    \"CellPhone\": \"4444444444\",\r\n    \"CorportePhone\": \"5555555555\",\r\n    \"Email\": \"email@email.com\",\r\n    \"IsActive\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.supplier.putApiCatalogPvtSupplierSupplierId",
+      "name": "supplier.putApiCatalogPvtSupplierSupplierId",
+      "description": "Updates general information of an existing Supplier. \r\n## Request body example\r\n\r\n```json\r\n{\r\n    \"Name\": \"Supplier\",\r\n    \"CorporateName\": \"TopStore\",\r\n    \"StateInscription\": \"\",\r\n    \"Cnpj\": \"33304981001272\",\r\n    \"Phone\": \"3333333333\",\r\n    \"CellPhone\": \"4444444444\",\r\n    \"CorportePhone\": \"5555555555\",\r\n    \"Email\": \"email@email.com\",\r\n    \"IsActive\": true\r\n}\r\n```\r\n\r\n## Response body example\r\n\r\n```json\r\n{\r\n    \"Id\": 1,\r\n    \"Name\": \"Supplier\",\r\n    \"CorporateName\": \"TopStore\",\r\n    \"StateInscription\": \"\",\r\n    \"Cnpj\": \"33304981001272\",\r\n    \"Phone\": \"3333333333\",\r\n    \"CellPhone\": \"4444444444\",\r\n    \"CorportePhone\": \"5555555555\",\r\n    \"Email\": \"email@email.com\",\r\n    \"IsActive\": true\r\n}\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.tradePolicy.deleteApiCatalogPvtProductProductIdSalespolicyTradepolicyId",
+      "name": "tradePolicy.deleteApiCatalogPvtProductProductIdSalespolicyTradepolicyId",
+      "description": "Disassociates a Trade Policy of a Product."
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.tradePolicy.getApiCatalogPvtProductProductIdSalespolicy",
+      "name": "tradePolicy.getApiCatalogPvtProductProductIdSalespolicy",
+      "description": "Retrieves a list of Trade Policies associated to a Product based on the Product's ID. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    {\r\n        \"ProductId\": 1,\r\n        \"StoreId\": 1\r\n    },\r\n    {\r\n        \"ProductId\": 1,\r\n        \"StoreId\": 2\r\n    },\r\n    {\r\n        \"ProductId\": 1,\r\n        \"StoreId\": 3\r\n    },\r\n    {\r\n        \"ProductId\": 1,\r\n        \"StoreId\": 4\r\n    }\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.tradePolicy.getApiCatalogSystemPvtSkuStockkeepingunitidsbysaleschannel",
+      "name": "tradePolicy.getApiCatalogSystemPvtSkuStockkeepingunitidsbysaleschannel",
+      "description": "Retrieves a list of SKU IDs of a Trade Policy. \r\n## Response body example\r\n\r\n```json\r\n[\r\n    405380,\r\n    405381,\r\n    405382,\r\n    405383,\r\n    405384,\r\n    405385,\r\n    405386,\r\n    405387,\r\n    405388,\r\n    405389,\r\n    405390,\r\n    405391,\r\n    405392,\r\n    405393,\r\n    405394,\r\n    405395,\r\n    405396,\r\n    405397,\r\n    405398,\r\n    405399,\r\n    405400,\r\n    405556\r\n]\r\n```"
+    },
+    {
+      "id": "openapi_vtex_local_catalog_api_catalog_api.tradePolicy.postApiCatalogPvtProductProductIdSalespolicyTradepolicyId",
+      "name": "tradePolicy.postApiCatalogPvtProductProductIdSalespolicyTradepolicyId",
+      "description": "Associates an existing Trade Policy with a Product."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

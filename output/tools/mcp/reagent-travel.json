@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:18.935Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_reagent_travel.createitineraryrequest",
+      "name": "CreateItineraryRequest",
+      "description": "If the user wants to book a flight, this tool can be used to create a flight itinerary request once the user has provided an origin, a destination, and a single outbound date. Ask clarifying questions only if required information is missing or ambiguous (e.g., missing location(s), missing date(s), user specified date range(s), or unclear one-way vs round-trip when only outbound date is given). Do not delay for preferences or confirmation; default to economy cabin unless specified otherwise and infer the traveller persona from knowledge about the user. Normalize dates safely (never past dates; infer the next future year if missing). Include time preferences only when explicitly stated. Flights only; do not use for lodging or ground transportation."
+    },
+    {
+      "id": "mcp_reagent_travel.getnextbestitinerary",
+      "name": "GetNextBestItinerary",
+      "description": "Retrieve flight itineraries for an existing itinerary request. The initial call (when no prior results exist) returns 1–4 top results. Each subsequent call iteratively returns the next best available itinerary based on the requested feature improvement(s), refining results across calls and surfacing strong alternatives when tradeoffs are required. Use the relevant current itinerary’s position (as shown in the UI list) when requesting improvements."
+    }
+  ]
+}

@@ -1,0 +1,852 @@
+{
+  "fetchedAt": "2026-04-30T15:45:20.790Z",
+  "status": "ok",
+  "count": 169,
+  "tools": [
+    {
+      "id": "openapi_asana_com.attachments.createAttachmentForObject",
+      "name": "attachments.createAttachmentForObject",
+      "description": "Upload an attachment.\n\nThis method uploads an attachment on an object and returns the compact\nrecord for the created attachment object. This is possible by either:\n\n- Providing the URL of the external resource being attached, or\n- Downloading the file content first and then uploading it as any other attachment. Note that it is not possible to attach\nfiles from third party services such as Dropbox, Box, Vimeo & Google Drive via the API\n\nThe 100MB size limit on attachments in Asana is enforced on this endpoint.\n\nThis endpoint expects a multipart/form-data encoded request containing the full contents of the file to be uploaded.\n\nRequests made should follow the HTTP/1.1 specification that line\nterminators are of the form `CRLF` or `\\r\\n` outlined\n[here](http://www.w3.org/Protocols/HTTP/1.1/draft-ietf-http-v11-spec-01#Basic-Rules) in order for the server to reliably and properly handle the request."
+    },
+    {
+      "id": "openapi_asana_com.attachments.deleteAttachment",
+      "name": "attachments.deleteAttachment",
+      "description": "Deletes a specific, existing attachment.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.attachments.getAttachment",
+      "name": "attachments.getAttachment",
+      "description": "Get the full record for a single attachment."
+    },
+    {
+      "id": "openapi_asana_com.attachments.getAttachmentsForObject",
+      "name": "attachments.getAttachmentsForObject",
+      "description": "Returns the compact records for all attachments on the object.\n\nThere are three possible `parent` values for this request: `project`, `project_brief`, and `task`. For a project, an attachment refers to a file uploaded to the \"Key resources\" section in the project Overview. For a project brief, an attachment refers to inline files in the project brief itself. For a task, an attachment refers to a file directly associated to that task."
+    },
+    {
+      "id": "openapi_asana_com.auditLogApi.getAuditLogEvents",
+      "name": "auditLogApi.getAuditLogEvents",
+      "description": "Retrieve the audit log events that have been captured in your domain.\n\nThis endpoint will return a list of [AuditLogEvent](/docs/audit-log-event) objects, sorted by creation time in ascending order. Note that the Audit Log API captures events from October 8th, 2021 and later. Queries for events before this date will not return results.\n\nThere are a number of query parameters (below) that can be used to filter the set of [AuditLogEvent](/docs/audit-log-event) objects that are returned in the response. Any combination of query parameters is valid. When no filters are provided, all of the events that have been captured in your domain will match.\n\nThe list of events will always be [paginated](/docs/pagination). The default limit is 1000 events. The next set of events can be retrieved using the `offset` from the previous response. If there are no events that match the provided filters in your domain, the endpoint will return `null` for the `next_page` field. Querying again with the same filters may return new events if they were captured after the last request. Once a response includes a `next_page` with an `offset`, subsequent requests can be made with the latest `offset` to poll for new events that match the provided filters.\n\nWhen no `offset` is provided, the response will begin with the oldest events that match the provided filters. It is important to note that [AuditLogEvent](/docs/audit-log-event) objects will be permanently deleted from our systems after 90 days. If you wish to keep a permanent record of these events, we recommend using a SIEM tool to ingest and store these logs."
+    },
+    {
+      "id": "openapi_asana_com.batchApi.createBatchRequest",
+      "name": "batchApi.createBatchRequest",
+      "description": "Make multiple requests in parallel to Asana's API."
+    },
+    {
+      "id": "openapi_asana_com.customFields.createCustomField",
+      "name": "customFields.createCustomField",
+      "description": "Creates a new custom field in a workspace. Every custom field is required\nto be created in a specific workspace, and this workspace cannot be\nchanged once set.\n\nA custom field’s name must be unique within a workspace and not conflict\nwith names of existing task properties such as `Due Date` or `Assignee`.\nA custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`,\n`date`, or `people`.\n\nReturns the full record of the newly created custom field."
+    },
+    {
+      "id": "openapi_asana_com.customFields.createEnumOptionForCustomField",
+      "name": "customFields.createEnumOptionForCustomField",
+      "description": "Creates an enum option and adds it to this custom field’s list of enum options. A custom field can have at most 500 enum options (including disabled options). By default new enum options are inserted at the end of a custom field’s list.\nLocked custom fields can only have enum options added by the user who locked the field.\nReturns the full record of the newly created enum option."
+    },
+    {
+      "id": "openapi_asana_com.customFields.deleteCustomField",
+      "name": "customFields.deleteCustomField",
+      "description": "A specific, existing custom field can be deleted by making a DELETE request on the URL for that custom field.\nLocked custom fields can only be deleted by the user who locked the field.\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.customFields.getCustomField",
+      "name": "customFields.getCustomField",
+      "description": "Get the complete definition of a custom field’s metadata.\n\nSince custom fields can be defined for one of a number of types, and\nthese types have different data and behaviors, there are fields that are\nrelevant to a particular type. For instance, as noted above, enum_options\nis only relevant for the enum type and defines the set of choices that\nthe enum could represent. The examples below show some of these\ntype-specific custom field definitions."
+    },
+    {
+      "id": "openapi_asana_com.customFields.getCustomFieldsForWorkspace",
+      "name": "customFields.getCustomFieldsForWorkspace",
+      "description": "Returns a list of the compact representation of all of the custom fields in a workspace."
+    },
+    {
+      "id": "openapi_asana_com.customFields.insertEnumOptionForCustomField",
+      "name": "customFields.insertEnumOptionForCustomField",
+      "description": "Moves a particular enum option to be either before or after another specified enum option in the custom field.\nLocked custom fields can only be reordered by the user who locked the field."
+    },
+    {
+      "id": "openapi_asana_com.customFields.updateCustomField",
+      "name": "customFields.updateCustomField",
+      "description": "A specific, existing custom field can be updated by making a PUT request on the URL for that custom field. Only the fields provided in the `data` block will be updated; any unspecified fields will remain unchanged\nWhen using this method, it is best to specify only those fields you wish to change, or else you may overwrite changes made by another user since you last retrieved the custom field.\nA custom field’s `type` cannot be updated.\nAn enum custom field’s `enum_options` cannot be updated with this endpoint. Instead see “Work With Enum Options” for information on how to update `enum_options`.\nLocked custom fields can only be updated by the user who locked the field.\nReturns the complete updated custom field record."
+    },
+    {
+      "id": "openapi_asana_com.customFields.updateEnumOption",
+      "name": "customFields.updateEnumOption",
+      "description": "Updates an existing enum option. Enum custom fields require at least one enabled enum option.\nLocked custom fields can only be updated by the user who locked the field.\nReturns the full record of the updated enum option."
+    },
+    {
+      "id": "openapi_asana_com.customFieldSettings.getCustomFieldSettingsForPortfolio",
+      "name": "customFieldSettings.getCustomFieldSettingsForPortfolio",
+      "description": "Returns a list of all of the custom fields settings on a portfolio, in compact form."
+    },
+    {
+      "id": "openapi_asana_com.customFieldSettings.getCustomFieldSettingsForProject",
+      "name": "customFieldSettings.getCustomFieldSettingsForProject",
+      "description": "Returns a list of all of the custom fields settings on a project, in compact form. Note that, as in all queries to collections which return compact representation, `opt_fields` can be used to include more data than is returned in the compact representation. See the [getting started guide on input/output options](https://developers.asana.com/docs/#input-output-options) for more information."
+    },
+    {
+      "id": "openapi_asana_com.events.getEvents",
+      "name": "events.getEvents",
+      "description": "Returns the full record for all events that have occurred since the sync\ntoken was created.\n\nA `GET` request to the endpoint `/[path_to_resource]/events` can be made in\nlieu of including the resource ID in the data for the request.\n\nAsana limits a single sync token to 100 events. If more than 100 events exist\nfor a given resource, `has_more: true` will be returned in the response, indicating\nthat there are more events to pull. \n\n*Note: The resource returned will be the resource that triggered the\nevent. This may be different from the one that the events were requested\nfor. For example, a subscription to a project will contain events for\ntasks contained within the project.*"
+    },
+    {
+      "id": "openapi_asana_com.goalRelationships.addSupportingRelationship",
+      "name": "goalRelationships.addSupportingRelationship",
+      "description": "Creates a goal relationship by adding a supporting resource to a given goal.\n\nReturns the newly created goal relationship record."
+    },
+    {
+      "id": "openapi_asana_com.goalRelationships.getGoalRelationship",
+      "name": "goalRelationships.getGoalRelationship",
+      "description": "Returns the complete updated goal relationship record for a single goal relationship."
+    },
+    {
+      "id": "openapi_asana_com.goalRelationships.getGoalRelationships",
+      "name": "goalRelationships.getGoalRelationships",
+      "description": "Returns compact goal relationship records."
+    },
+    {
+      "id": "openapi_asana_com.goalRelationships.removeSupportingRelationship",
+      "name": "goalRelationships.removeSupportingRelationship",
+      "description": "Removes a goal relationship for a given parent goal."
+    },
+    {
+      "id": "openapi_asana_com.goalRelationships.updateGoalRelationship",
+      "name": "goalRelationships.updateGoalRelationship",
+      "description": "An existing goal relationship can be updated by making a PUT request on the URL for\nthat goal relationship. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated goal relationship record."
+    },
+    {
+      "id": "openapi_asana_com.goals.addFollowers",
+      "name": "goals.addFollowers",
+      "description": "Adds followers to a goal. Returns the goal the followers were added to.\nEach goal can be associated with zero or more followers in the system.\nRequests to add/remove followers, if successful, will return the complete updated goal record, described above."
+    },
+    {
+      "id": "openapi_asana_com.goals.createGoal",
+      "name": "goals.createGoal",
+      "description": "Creates a new goal in a workspace or team.\n\nReturns the full record of the newly created goal."
+    },
+    {
+      "id": "openapi_asana_com.goals.createGoalMetric",
+      "name": "goals.createGoalMetric",
+      "description": "Creates and adds a goal metric to a specified goal. Note that this replaces an existing goal metric if one already exists."
+    },
+    {
+      "id": "openapi_asana_com.goals.deleteGoal",
+      "name": "goals.deleteGoal",
+      "description": "A specific, existing goal can be deleted by making a DELETE request on the URL for that goal.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.goals.getGoal",
+      "name": "goals.getGoal",
+      "description": "Returns the complete goal record for a single goal."
+    },
+    {
+      "id": "openapi_asana_com.goals.getGoals",
+      "name": "goals.getGoals",
+      "description": "Returns compact goal records."
+    },
+    {
+      "id": "openapi_asana_com.goals.getParentGoalsForGoal",
+      "name": "goals.getParentGoalsForGoal",
+      "description": "Returns a compact representation of all of the parent goals of a goal."
+    },
+    {
+      "id": "openapi_asana_com.goals.removeFollowers",
+      "name": "goals.removeFollowers",
+      "description": "Removes followers from a goal. Returns the goal the followers were removed from.\nEach goal can be associated with zero or more followers in the system.\nRequests to add/remove followers, if successful, will return the complete updated goal record, described above."
+    },
+    {
+      "id": "openapi_asana_com.goals.updateGoal",
+      "name": "goals.updateGoal",
+      "description": "An existing goal can be updated by making a PUT request on the URL for\nthat goal. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated goal record."
+    },
+    {
+      "id": "openapi_asana_com.goals.updateGoalMetric",
+      "name": "goals.updateGoalMetric",
+      "description": "Updates a goal's existing metric's `current_number_value` if one exists,\notherwise responds with a 400 status code.\n\nReturns the complete updated goal metric record."
+    },
+    {
+      "id": "openapi_asana_com.jobs.getJob",
+      "name": "jobs.getJob",
+      "description": "Returns the full record for a job."
+    },
+    {
+      "id": "openapi_asana_com.organizationExports.createOrganizationExport",
+      "name": "organizationExports.createOrganizationExport",
+      "description": "This method creates a request to export an Organization. Asana will complete the export at some point after you create the request."
+    },
+    {
+      "id": "openapi_asana_com.organizationExports.getOrganizationExport",
+      "name": "organizationExports.getOrganizationExport",
+      "description": "Returns details of a previously-requested Organization export."
+    },
+    {
+      "id": "openapi_asana_com.portfolioMemberships.getPortfolioMembership",
+      "name": "portfolioMemberships.getPortfolioMembership",
+      "description": "Returns the complete portfolio record for a single portfolio membership."
+    },
+    {
+      "id": "openapi_asana_com.portfolioMemberships.getPortfolioMemberships",
+      "name": "portfolioMemberships.getPortfolioMemberships",
+      "description": "Returns a list of portfolio memberships in compact representation. You must specify `portfolio`, `portfolio` and `user`, or `workspace` and `user`."
+    },
+    {
+      "id": "openapi_asana_com.portfolioMemberships.getPortfolioMembershipsForPortfolio",
+      "name": "portfolioMemberships.getPortfolioMembershipsForPortfolio",
+      "description": "Returns the compact portfolio membership records for the portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.addCustomFieldSettingForPortfolio",
+      "name": "portfolios.addCustomFieldSettingForPortfolio",
+      "description": "Custom fields are associated with portfolios by way of custom field settings.  This method creates a setting for the portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.addItemForPortfolio",
+      "name": "portfolios.addItemForPortfolio",
+      "description": "Add an item to a portfolio.\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.addMembersForPortfolio",
+      "name": "portfolios.addMembersForPortfolio",
+      "description": "Adds the specified list of users as members of the portfolio.\nReturns the updated portfolio record."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.createPortfolio",
+      "name": "portfolios.createPortfolio",
+      "description": "Creates a new portfolio in the given workspace with the supplied name.\n\nNote that portfolios created in the Asana UI may have some state\n(like the “Priority” custom field) which is automatically added\nto the portfolio when it is created. Portfolios created via our\nAPI will *not* be created with the same initial state to allow\nintegrations to create their own starting state on a portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.deletePortfolio",
+      "name": "portfolios.deletePortfolio",
+      "description": "An existing portfolio can be deleted by making a DELETE request on\nthe URL for that portfolio.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.getItemsForPortfolio",
+      "name": "portfolios.getItemsForPortfolio",
+      "description": "Get a list of the items in compact form in a portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.getPortfolio",
+      "name": "portfolios.getPortfolio",
+      "description": "Returns the complete portfolio record for a single portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.getPortfolios",
+      "name": "portfolios.getPortfolios",
+      "description": "Returns a list of the portfolios in compact representation that are owned by the current API user."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.removeCustomFieldSettingForPortfolio",
+      "name": "portfolios.removeCustomFieldSettingForPortfolio",
+      "description": "Removes a custom field setting from a portfolio."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.removeItemForPortfolio",
+      "name": "portfolios.removeItemForPortfolio",
+      "description": "Remove an item from a portfolio.\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.removeMembersForPortfolio",
+      "name": "portfolios.removeMembersForPortfolio",
+      "description": "Removes the specified list of users from members of the portfolio.\nReturns the updated portfolio record."
+    },
+    {
+      "id": "openapi_asana_com.portfolios.updatePortfolio",
+      "name": "portfolios.updatePortfolio",
+      "description": "An existing portfolio can be updated by making a PUT request on the URL for\nthat portfolio. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated portfolio record."
+    },
+    {
+      "id": "openapi_asana_com.projectBriefs.createProjectBrief",
+      "name": "projectBriefs.createProjectBrief",
+      "description": "Creates a new project brief.\n\nReturns the full record of the newly created project brief."
+    },
+    {
+      "id": "openapi_asana_com.projectBriefs.deleteProjectBrief",
+      "name": "projectBriefs.deleteProjectBrief",
+      "description": "Deletes a specific, existing project brief.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.projectBriefs.getProjectBrief",
+      "name": "projectBriefs.getProjectBrief",
+      "description": "Get the full record for a project brief."
+    },
+    {
+      "id": "openapi_asana_com.projectBriefs.updateProjectBrief",
+      "name": "projectBriefs.updateProjectBrief",
+      "description": "An existing project brief can be updated by making a PUT request on the URL for\nthat project brief. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated project brief record."
+    },
+    {
+      "id": "openapi_asana_com.projectMemberships.getProjectMembership",
+      "name": "projectMemberships.getProjectMembership",
+      "description": "Returns the complete project record for a single project membership."
+    },
+    {
+      "id": "openapi_asana_com.projectMemberships.getProjectMembershipsForProject",
+      "name": "projectMemberships.getProjectMembershipsForProject",
+      "description": "Returns the compact project membership records for the project."
+    },
+    {
+      "id": "openapi_asana_com.projects.addCustomFieldSettingForProject",
+      "name": "projects.addCustomFieldSettingForProject",
+      "description": "Custom fields are associated with projects by way of custom field settings.  This method creates a setting for the project."
+    },
+    {
+      "id": "openapi_asana_com.projects.addFollowersForProject",
+      "name": "projects.addFollowersForProject",
+      "description": "Adds the specified list of users as followers to the project. Followers are a subset of members who have opted in to receive \"tasks added\" notifications for a project. Therefore, if the users are not already members of the project, they will also become members as a result of this operation.\nReturns the updated project record."
+    },
+    {
+      "id": "openapi_asana_com.projects.addMembersForProject",
+      "name": "projects.addMembersForProject",
+      "description": "Adds the specified list of users as members of the project. Note that a user being added as a member may also be added as a *follower* as a result of this operation. This is because the user's default notification settings (i.e., in the \"Notifcations\" tab of \"My Profile Settings\") will override this endpoint's default behavior of setting \"Tasks added\" notifications to `false`.\nReturns the updated project record."
+    },
+    {
+      "id": "openapi_asana_com.projects.createProject",
+      "name": "projects.createProject",
+      "description": "Create a new project in a workspace or team.\n\nEvery project is required to be created in a specific workspace or\norganization, and this cannot be changed once set. Note that you can use\nthe `workspace` parameter regardless of whether or not it is an\norganization.\n\nIf the workspace for your project is an organization, you must also\nsupply a `team` to share the project with.\n\nReturns the full record of the newly created project."
+    },
+    {
+      "id": "openapi_asana_com.projects.createProjectForTeam",
+      "name": "projects.createProjectForTeam",
+      "description": "Creates a project shared with the given team.\n\nReturns the full record of the newly created project."
+    },
+    {
+      "id": "openapi_asana_com.projects.createProjectForWorkspace",
+      "name": "projects.createProjectForWorkspace",
+      "description": "Returns the compact project records for all projects in the workspace.\n\nIf the workspace for your project is an organization, you must also\nsupply a team to share the project with.\n\nReturns the full record of the newly created project."
+    },
+    {
+      "id": "openapi_asana_com.projects.deleteProject",
+      "name": "projects.deleteProject",
+      "description": "A specific, existing project can be deleted by making a DELETE request on\nthe URL for that project.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.projects.duplicateProject",
+      "name": "projects.duplicateProject",
+      "description": "Creates and returns a job that will asynchronously handle the duplication."
+    },
+    {
+      "id": "openapi_asana_com.projects.getProject",
+      "name": "projects.getProject",
+      "description": "Returns the complete project record for a single project."
+    },
+    {
+      "id": "openapi_asana_com.projects.getProjects",
+      "name": "projects.getProjects",
+      "description": "Returns the compact project records for some filtered set of projects. Use one or more of the parameters provided to filter the projects returned.\n*Note: This endpoint may timeout for large domains. Try filtering by team!*"
+    },
+    {
+      "id": "openapi_asana_com.projects.getProjectsForTask",
+      "name": "projects.getProjectsForTask",
+      "description": "Returns a compact representation of all of the projects the task is in."
+    },
+    {
+      "id": "openapi_asana_com.projects.getProjectsForTeam",
+      "name": "projects.getProjectsForTeam",
+      "description": "Returns the compact project records for all projects in the team."
+    },
+    {
+      "id": "openapi_asana_com.projects.getProjectsForWorkspace",
+      "name": "projects.getProjectsForWorkspace",
+      "description": "Returns the compact project records for all projects in the workspace.\n*Note: This endpoint may timeout for large domains. Prefer the `/teams/{team_gid}/projects` endpoint.*"
+    },
+    {
+      "id": "openapi_asana_com.projects.getTaskCountsForProject",
+      "name": "projects.getTaskCountsForProject",
+      "description": "Get an object that holds task count fields. **All fields are excluded by default**. You must [opt in](/docs/input-output-options) using `opt_fields` to get any information from this endpoint.\n\nThis endpoint has an additional [rate limit](/docs/standard-rate-limits) and each field counts especially high against our [cost limits](/docs/cost-limits).\n\nMilestones are just tasks, so they are included in the `num_tasks`, `num_incomplete_tasks`, and `num_completed_tasks` counts."
+    },
+    {
+      "id": "openapi_asana_com.projects.projectSaveAsTemplate",
+      "name": "projects.projectSaveAsTemplate",
+      "description": "Creates and returns a job that will asynchronously handle the project template creation. Note that\nwhile the resulting project template can be accessed with the API, it won't be visible in the Asana\nUI until Project Templates 2.0 is launched in the app. See more in [this forum post](https://forum.asana.com/t/a-new-api-for-project-templates/156432)."
+    },
+    {
+      "id": "openapi_asana_com.projects.removeCustomFieldSettingForProject",
+      "name": "projects.removeCustomFieldSettingForProject",
+      "description": "Removes a custom field setting from a project."
+    },
+    {
+      "id": "openapi_asana_com.projects.removeFollowersForProject",
+      "name": "projects.removeFollowersForProject",
+      "description": "Removes the specified list of users from following the project, this will not affect project membership status.\nReturns the updated project record."
+    },
+    {
+      "id": "openapi_asana_com.projects.removeMembersForProject",
+      "name": "projects.removeMembersForProject",
+      "description": "Removes the specified list of users from members of the project.\nReturns the updated project record."
+    },
+    {
+      "id": "openapi_asana_com.projects.updateProject",
+      "name": "projects.updateProject",
+      "description": "A specific, existing project can be updated by making a PUT request on\nthe URL for that project. Only the fields provided in the `data` block\nwill be updated; any unspecified fields will remain unchanged.\n\nWhen using this method, it is best to specify only those fields you wish\nto change, or else you may overwrite changes made by another user since\nyou last retrieved the task.\n\nReturns the complete updated project record."
+    },
+    {
+      "id": "openapi_asana_com.projectStatuses.createProjectStatusForProject",
+      "name": "projectStatuses.createProjectStatusForProject",
+      "description": "*Deprecated: new integrations should prefer the `/status_updates` route.*\n\nCreates a new status update on the project.\n\nReturns the full record of the newly created project status update."
+    },
+    {
+      "id": "openapi_asana_com.projectStatuses.deleteProjectStatus",
+      "name": "projectStatuses.deleteProjectStatus",
+      "description": "*Deprecated: new integrations should prefer the `/status_updates/{status_gid}` route.*\n\nDeletes a specific, existing project status update.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.projectStatuses.getProjectStatus",
+      "name": "projectStatuses.getProjectStatus",
+      "description": "*Deprecated: new integrations should prefer the `/status_updates/{status_gid}` route.*\n\nReturns the complete record for a single status update."
+    },
+    {
+      "id": "openapi_asana_com.projectStatuses.getProjectStatusesForProject",
+      "name": "projectStatuses.getProjectStatusesForProject",
+      "description": "*Deprecated: new integrations should prefer the `/status_updates` route.*\n\nReturns the compact project status update records for all updates on the project."
+    },
+    {
+      "id": "openapi_asana_com.projectTemplates.getProjectTemplate",
+      "name": "projectTemplates.getProjectTemplate",
+      "description": "Returns the complete project template record for a single project template."
+    },
+    {
+      "id": "openapi_asana_com.projectTemplates.getProjectTemplates",
+      "name": "projectTemplates.getProjectTemplates",
+      "description": "Returns the compact project template records for all project templates in the given team or workspace."
+    },
+    {
+      "id": "openapi_asana_com.projectTemplates.getProjectTemplatesForTeam",
+      "name": "projectTemplates.getProjectTemplatesForTeam",
+      "description": "Returns the compact project template records for all project templates in the team."
+    },
+    {
+      "id": "openapi_asana_com.projectTemplates.instantiateProject",
+      "name": "projectTemplates.instantiateProject",
+      "description": "Creates and returns a job that will asynchronously handle the project instantiation.\n\nTo form this request, it is recommended to first make a request to [get a project template](/docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.\n\n_Note: The body of this request will differ if your workspace is an organization. To determine if your workspace is an organization, use the [is_organization](/docs/workspace) parameter._"
+    },
+    {
+      "id": "openapi_asana_com.sections.addTaskForSection",
+      "name": "sections.addTaskForSection",
+      "description": "Add a task to a specific, existing section. This will remove the task from other sections of the project.\n\nThe task will be inserted at the top of a section unless an insert_before or insert_after parameter is declared.\n\nThis does not work for separators (tasks with the resource_subtype of section)."
+    },
+    {
+      "id": "openapi_asana_com.sections.createSectionForProject",
+      "name": "sections.createSectionForProject",
+      "description": "Creates a new section in a project.\nReturns the full record of the newly created section."
+    },
+    {
+      "id": "openapi_asana_com.sections.deleteSection",
+      "name": "sections.deleteSection",
+      "description": "A specific, existing section can be deleted by making a DELETE request on\nthe URL for that section.\n\nNote that sections must be empty to be deleted.\n\nThe last remaining section cannot be deleted.\n\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.sections.getSection",
+      "name": "sections.getSection",
+      "description": "Returns the complete record for a single section."
+    },
+    {
+      "id": "openapi_asana_com.sections.getSectionsForProject",
+      "name": "sections.getSectionsForProject",
+      "description": "Returns the compact records for all sections in the specified project."
+    },
+    {
+      "id": "openapi_asana_com.sections.insertSectionForProject",
+      "name": "sections.insertSectionForProject",
+      "description": "Move sections relative to each other. One of\n`before_section` or `after_section` is required.\n\nSections cannot be moved between projects.\n\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.sections.updateSection",
+      "name": "sections.updateSection",
+      "description": "A specific, existing section can be updated by making a PUT request on\nthe URL for that project. Only the fields provided in the `data` block\nwill be updated; any unspecified fields will remain unchanged. (note that\nat this time, the only field that can be updated is the `name` field.)\n\nWhen using this method, it is best to specify only those fields you wish\nto change, or else you may overwrite changes made by another user since\nyou last retrieved the task.\n\nReturns the complete updated section record."
+    },
+    {
+      "id": "openapi_asana_com.statusUpdates.createStatusForObject",
+      "name": "statusUpdates.createStatusForObject",
+      "description": "Creates a new status update on an object.\nReturns the full record of the newly created status update."
+    },
+    {
+      "id": "openapi_asana_com.statusUpdates.deleteStatus",
+      "name": "statusUpdates.deleteStatus",
+      "description": "Deletes a specific, existing status update.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.statusUpdates.getStatus",
+      "name": "statusUpdates.getStatus",
+      "description": "Returns the complete record for a single status update."
+    },
+    {
+      "id": "openapi_asana_com.statusUpdates.getStatusesForObject",
+      "name": "statusUpdates.getStatusesForObject",
+      "description": "Returns the compact status update records for all updates on the object."
+    },
+    {
+      "id": "openapi_asana_com.stories.createStoryForTask",
+      "name": "stories.createStoryForTask",
+      "description": "Adds a story to a task. This endpoint currently only allows for comment\nstories to be created. The comment will be authored by the currently\nauthenticated user, and timestamped when the server receives the request.\n\nReturns the full record for the new story added to the task."
+    },
+    {
+      "id": "openapi_asana_com.stories.deleteStory",
+      "name": "stories.deleteStory",
+      "description": "Deletes a story. A user can only delete stories they have created.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.stories.getStoriesForTask",
+      "name": "stories.getStoriesForTask",
+      "description": "Returns the compact records for all stories on the task."
+    },
+    {
+      "id": "openapi_asana_com.stories.getStory",
+      "name": "stories.getStory",
+      "description": "Returns the full record for a single story."
+    },
+    {
+      "id": "openapi_asana_com.stories.updateStory",
+      "name": "stories.updateStory",
+      "description": "Updates the story and returns the full record for the updated story. Only comment stories can have their text updated, and only comment stories and attachment stories can be pinned. Only one of `text` and `html_text` can be specified."
+    },
+    {
+      "id": "openapi_asana_com.tags.createTag",
+      "name": "tags.createTag",
+      "description": "Creates a new tag in a workspace or organization.\n\nEvery tag is required to be created in a specific workspace or\norganization, and this cannot be changed once set. Note that you can use\nthe workspace parameter regardless of whether or not it is an\norganization.\n\nReturns the full record of the newly created tag."
+    },
+    {
+      "id": "openapi_asana_com.tags.createTagForWorkspace",
+      "name": "tags.createTagForWorkspace",
+      "description": "Creates a new tag in a workspace or organization.\n\nEvery tag is required to be created in a specific workspace or\norganization, and this cannot be changed once set. Note that you can use\nthe workspace parameter regardless of whether or not it is an\norganization.\n\nReturns the full record of the newly created tag."
+    },
+    {
+      "id": "openapi_asana_com.tags.deleteTag",
+      "name": "tags.deleteTag",
+      "description": "A specific, existing tag can be deleted by making a DELETE request on\nthe URL for that tag.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.tags.getTag",
+      "name": "tags.getTag",
+      "description": "Returns the complete tag record for a single tag."
+    },
+    {
+      "id": "openapi_asana_com.tags.getTags",
+      "name": "tags.getTags",
+      "description": "Returns the compact tag records for some filtered set of tags. Use one or more of the parameters provided to filter the tags returned."
+    },
+    {
+      "id": "openapi_asana_com.tags.getTagsForTask",
+      "name": "tags.getTagsForTask",
+      "description": "Get a compact representation of all of the tags the task has."
+    },
+    {
+      "id": "openapi_asana_com.tags.getTagsForWorkspace",
+      "name": "tags.getTagsForWorkspace",
+      "description": "Returns the compact tag records for some filtered set of tags. Use one or more of the parameters provided to filter the tags returned."
+    },
+    {
+      "id": "openapi_asana_com.tags.updateTag",
+      "name": "tags.updateTag",
+      "description": "Updates the properties of a tag. Only the fields provided in the `data`\nblock will be updated; any unspecified fields will remain unchanged.\n\nWhen using this method, it is best to specify only those fields you wish\nto change, or else you may overwrite changes made by another user since\nyou last retrieved the tag.\n\nReturns the complete updated tag record."
+    },
+    {
+      "id": "openapi_asana_com.tasks.addDependenciesForTask",
+      "name": "tasks.addDependenciesForTask",
+      "description": "Marks a set of tasks as dependencies of this task, if they are not already dependencies. *A task can have at most 30 dependents and dependencies combined*."
+    },
+    {
+      "id": "openapi_asana_com.tasks.addDependentsForTask",
+      "name": "tasks.addDependentsForTask",
+      "description": "Marks a set of tasks as dependents of this task, if they are not already dependents. *A task can have at most 30 dependents and dependencies combined*."
+    },
+    {
+      "id": "openapi_asana_com.tasks.addFollowersForTask",
+      "name": "tasks.addFollowersForTask",
+      "description": "Adds followers to a task. Returns an empty data block.\nEach task can be associated with zero or more followers in the system.\nRequests to add/remove followers, if successful, will return the complete updated task record, described above."
+    },
+    {
+      "id": "openapi_asana_com.tasks.addProjectForTask",
+      "name": "tasks.addProjectForTask",
+      "description": "Adds the task to the specified project, in the optional location\nspecified. If no location arguments are given, the task will be added to\nthe end of the project.\n\n`addProject` can also be used to reorder a task within a project or\nsection that already contains it.\n\nAt most one of `insert_before`, `insert_after`, or `section` should be\nspecified. Inserting into a section in an non-order-dependent way can be\ndone by specifying section, otherwise, to insert within a section in a\nparticular place, specify `insert_before` or `insert_after` and a task\nwithin the section to anchor the position of this task.\n\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.tasks.addTagForTask",
+      "name": "tasks.addTagForTask",
+      "description": "Adds a tag to a task. Returns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.tasks.createSubtaskForTask",
+      "name": "tasks.createSubtaskForTask",
+      "description": "Creates a new subtask and adds it to the parent task. Returns the full record for the newly created subtask."
+    },
+    {
+      "id": "openapi_asana_com.tasks.createTask",
+      "name": "tasks.createTask",
+      "description": "Creating a new task is as easy as POSTing to the `/tasks` endpoint with a\ndata block containing the fields you’d like to set on the task. Any\nunspecified fields will take on default values.\n\nEvery task is required to be created in a specific workspace, and this\nworkspace cannot be changed once set. The workspace need not be set\nexplicitly if you specify `projects` or a `parent` task instead."
+    },
+    {
+      "id": "openapi_asana_com.tasks.deleteTask",
+      "name": "tasks.deleteTask",
+      "description": "A specific, existing task can be deleted by making a DELETE request on\nthe URL for that task. Deleted tasks go into the “trash” of the user\nmaking the delete request. Tasks can be recovered from the trash within a\nperiod of 30 days; afterward they are completely removed from the system.\n\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.tasks.duplicateTask",
+      "name": "tasks.duplicateTask",
+      "description": "Creates and returns a job that will asynchronously handle the duplication."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getDependenciesForTask",
+      "name": "tasks.getDependenciesForTask",
+      "description": "Returns the compact representations of all of the dependencies of a task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getDependentsForTask",
+      "name": "tasks.getDependentsForTask",
+      "description": "Returns the compact representations of all of the dependents of a task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getSubtasksForTask",
+      "name": "tasks.getSubtasksForTask",
+      "description": "Returns a compact representation of all of the subtasks of a task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTask",
+      "name": "tasks.getTask",
+      "description": "Returns the complete task record for a single task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTasks",
+      "name": "tasks.getTasks",
+      "description": "Returns the compact task records for some filtered set of tasks. Use one or more of the parameters provided to filter the tasks returned. You must specify a `project` or `tag` if you do not specify `assignee` and `workspace`.\n\nFor more complex task retrieval, use [workspaces/{workspace_gid}/tasks/search](/docs/search-tasks-in-a-workspace)."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTasksForProject",
+      "name": "tasks.getTasksForProject",
+      "description": "Returns the compact task records for all tasks within the given project, ordered by their priority within the project. Tasks can exist in more than one project at a time."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTasksForSection",
+      "name": "tasks.getTasksForSection",
+      "description": "*Board view only*: Returns the compact section records for all tasks within the given section."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTasksForTag",
+      "name": "tasks.getTasksForTag",
+      "description": "Returns the compact task records for all tasks with the given tag. Tasks can have more than one tag at a time."
+    },
+    {
+      "id": "openapi_asana_com.tasks.getTasksForUserTaskList",
+      "name": "tasks.getTasksForUserTaskList",
+      "description": "Returns the compact list of tasks in a user’s My Tasks list.\n*Note: Access control is enforced for this endpoint as with all Asana API endpoints, meaning a user’s private tasks will be filtered out if the API-authenticated user does not have access to them.*\n*Note: Both complete and incomplete tasks are returned by default unless they are filtered out (for example, setting `completed_since=now` will return only incomplete tasks, which is the default view for “My Tasks” in Asana.)*"
+    },
+    {
+      "id": "openapi_asana_com.tasks.removeDependenciesForTask",
+      "name": "tasks.removeDependenciesForTask",
+      "description": "Unlinks a set of dependencies from this task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.removeDependentsForTask",
+      "name": "tasks.removeDependentsForTask",
+      "description": "Unlinks a set of dependents from this task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.removeFollowerForTask",
+      "name": "tasks.removeFollowerForTask",
+      "description": "Removes each of the specified followers from the task if they are following. Returns the complete, updated record for the affected task."
+    },
+    {
+      "id": "openapi_asana_com.tasks.removeProjectForTask",
+      "name": "tasks.removeProjectForTask",
+      "description": "Removes the task from the specified project. The task will still exist in\nthe system, but it will not be in the project anymore.\n\nReturns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.tasks.removeTagForTask",
+      "name": "tasks.removeTagForTask",
+      "description": "Removes a tag from a task. Returns an empty data block."
+    },
+    {
+      "id": "openapi_asana_com.tasks.searchTasksForWorkspace",
+      "name": "tasks.searchTasksForWorkspace",
+      "description": "To mirror the functionality of the Asana web app's advanced search feature, the Asana API has a task search endpoint that allows you to build complex filters to find and retrieve the exact data you need.\n#### Premium access\nLike the Asana web product's advance search feature, this search endpoint will only be available to premium Asana users. A user is premium if any of the following is true:\n\n- The workspace in which the search is being performed is a premium workspace - The user is a member of a premium team inside the workspace\n\nEven if a user is only a member of a premium team inside a non-premium workspace, search will allow them to find data anywhere in the workspace, not just inside the premium team. Making a search request using credentials of a non-premium user will result in a `402 Payment Required` error.\n#### Pagination\nSearch results are not stable; repeating the same query multiple times may return the data in a different order, even if the data do not change. Because of this, the traditional [pagination](https://developers.asana.com/docs/#pagination) available elsewhere in the Asana API is not available here. However, you can paginate manually by sorting the search results by their creation time and then modifying each subsequent query to exclude data you have already seen. Page sizes are limited to a maximum of 100 items, and can be specified by the `limit` query parameter.\n#### Eventual consistency\nChanges in Asana (regardless of whether they’re made though the web product or the API) are forwarded to our search infrastructure to be indexed. This process can take between 10 and 60 seconds to complete under normal operation, and longer during some production incidents. Making a change to a task that would alter its presence in a particular search query will not be reflected immediately. This is also true of the advanced search feature in the web product.\n#### Rate limits\nYou may receive a `429 Too Many Requests` response if you hit any of our [rate limits](https://developers.asana.com/docs/#rate-limits).\n#### Custom field parameters\n| Parameter name | Custom field type | Accepted type |\n|---|---|---|\n| custom_fields.{gid}.is_set | All | Boolean |\n| custom_fields.{gid}.value | Text | String |\n| custom_fields.{gid}.value | Number | Number |\n| custom_fields.{gid}.value | Enum | Enum option ID |\n| custom_fields.{gid}.starts_with | Text only | String |\n| custom_fields.{gid}.ends_with | Text only | String |\n| custom_fields.{gid}.contains | Text only | String |\n| custom_fields.{gid}.less_than | Number only | Number |\n| custom_fields.{gid}.greater_than | Number only | Number |\n\n\nFor example, if the gid of the custom field is 12345, these query parameter to find tasks where it is set would be `custom_fields.12345.is_set=true`. To match an exact value for an enum custom field, use the gid of the desired enum option and not the name of the enum option: `custom_fields.12345.value=67890`.\n\n**Not Supported**: searching for multiple exact matches of a custom field, searching for multi-enum custom field\n\n*Note: If you specify `projects.any` and `sections.any`, you will receive tasks for the project **and** tasks for the section. If you're looking for only tasks in a section, omit the `projects.any` from the request.*"
+    },
+    {
+      "id": "openapi_asana_com.tasks.setParentForTask",
+      "name": "tasks.setParentForTask",
+      "description": "parent, or no parent task at all. Returns an empty data block. When using `insert_before` and `insert_after`, at most one of those two options can be specified, and they must already be subtasks of the parent."
+    },
+    {
+      "id": "openapi_asana_com.tasks.updateTask",
+      "name": "tasks.updateTask",
+      "description": "A specific, existing task can be updated by making a PUT request on the\nURL for that task. Only the fields provided in the `data` block will be\nupdated; any unspecified fields will remain unchanged.\n\nWhen using this method, it is best to specify only those fields you wish\nto change, or else you may overwrite changes made by another user since\nyou last retrieved the task.\n\nReturns the complete updated task record."
+    },
+    {
+      "id": "openapi_asana_com.teamMemberships.getTeamMembership",
+      "name": "teamMemberships.getTeamMembership",
+      "description": "Returns the complete team membership record for a single team membership."
+    },
+    {
+      "id": "openapi_asana_com.teamMemberships.getTeamMemberships",
+      "name": "teamMemberships.getTeamMemberships",
+      "description": "Returns compact team membership records."
+    },
+    {
+      "id": "openapi_asana_com.teamMemberships.getTeamMembershipsForTeam",
+      "name": "teamMemberships.getTeamMembershipsForTeam",
+      "description": "Returns the compact team memberships for the team."
+    },
+    {
+      "id": "openapi_asana_com.teamMemberships.getTeamMembershipsForUser",
+      "name": "teamMemberships.getTeamMembershipsForUser",
+      "description": "Returns the compact team membership records for the user."
+    },
+    {
+      "id": "openapi_asana_com.teams.addUserForTeam",
+      "name": "teams.addUserForTeam",
+      "description": "The user making this call must be a member of the team in order to add others. The user being added must exist in the same organization as the team.\n\nReturns the complete team membership record for the newly added user."
+    },
+    {
+      "id": "openapi_asana_com.teams.createTeam",
+      "name": "teams.createTeam",
+      "description": "Creates a team within the current workspace."
+    },
+    {
+      "id": "openapi_asana_com.teams.getTeam",
+      "name": "teams.getTeam",
+      "description": "Returns the full record for a single team."
+    },
+    {
+      "id": "openapi_asana_com.teams.getTeamsForUser",
+      "name": "teams.getTeamsForUser",
+      "description": "Returns the compact records for all teams to which the given user is assigned."
+    },
+    {
+      "id": "openapi_asana_com.teams.getTeamsForWorkspace",
+      "name": "teams.getTeamsForWorkspace",
+      "description": "Returns the compact records for all teams in the workspace visible to the authorized user."
+    },
+    {
+      "id": "openapi_asana_com.teams.removeUserForTeam",
+      "name": "teams.removeUserForTeam",
+      "description": "The user making this call must be a member of the team in order to remove themselves or others."
+    },
+    {
+      "id": "openapi_asana_com.teams.updateTeam",
+      "name": "teams.updateTeam",
+      "description": "Updates a team within the current workspace."
+    },
+    {
+      "id": "openapi_asana_com.timePeriods.getTimePeriod",
+      "name": "timePeriods.getTimePeriod",
+      "description": "Returns the full record for a single time period."
+    },
+    {
+      "id": "openapi_asana_com.timePeriods.getTimePeriods",
+      "name": "timePeriods.getTimePeriods",
+      "description": "Returns compact time period records."
+    },
+    {
+      "id": "openapi_asana_com.typeahead.typeaheadForWorkspace",
+      "name": "typeahead.typeaheadForWorkspace",
+      "description": "Retrieves objects in the workspace based via an auto-completion/typeahead\nsearch algorithm. This feature is meant to provide results quickly, so do\nnot rely on this API to provide extremely accurate search results. The\nresult set is limited to a single page of results with a maximum size, so\nyou won’t be able to fetch large numbers of results.\n\nThe typeahead search API provides search for objects from a single\nworkspace. This endpoint should be used to query for objects when\ncreating an auto-completion/typeahead search feature. This API is meant\nto provide results quickly and should not be relied upon for accurate or\nexhaustive search results. The results sets are limited in size and\ncannot be paginated.\n\nQueries return a compact representation of each object which is typically\nthe gid and name fields. Interested in a specific set of fields or all of\nthe fields?! Of course you are. Use field selectors to manipulate what\ndata is included in a response.\n\nResources with type `user` are returned in order of most contacted to\nleast contacted. This is determined by task assignments, adding the user\nto projects, and adding the user as a follower to tasks, messages,\netc.\n\nResources with type `project` are returned in order of recency. This is\ndetermined when the user visits the project, is added to the project, and\ncompletes tasks in the project.\n\nResources with type `task` are returned with priority placed on tasks\nthe user is following, but no guarantee on the order of those tasks.\n\nResources with type `project_template` are returned with priority\nplaced on favorited project templates.\n\nLeaving the `query` string empty or omitted will give you results, still\nfollowing the resource ordering above. This could be used to list users or\nprojects that are relevant for the requesting user's api token."
+    },
+    {
+      "id": "openapi_asana_com.users.getFavoritesForUser",
+      "name": "users.getFavoritesForUser",
+      "description": "Returns all of a user's favorites in the given workspace, of the given type.\nResults are given in order (The same order as Asana's sidebar)."
+    },
+    {
+      "id": "openapi_asana_com.users.getUser",
+      "name": "users.getUser",
+      "description": "Returns the full user record for the single user with the provided ID."
+    },
+    {
+      "id": "openapi_asana_com.users.getUsers",
+      "name": "users.getUsers",
+      "description": "Returns the user records for all users in all workspaces and organizations accessible to the authenticated user. Accepts an optional workspace ID parameter.\nResults are sorted by user ID."
+    },
+    {
+      "id": "openapi_asana_com.users.getUsersForTeam",
+      "name": "users.getUsersForTeam",
+      "description": "Returns the compact records for all users that are members of the team.\nResults are sorted alphabetically and limited to 2000. For more results use the `/users` endpoint."
+    },
+    {
+      "id": "openapi_asana_com.users.getUsersForWorkspace",
+      "name": "users.getUsersForWorkspace",
+      "description": "Returns the compact records for all users in the specified workspace or organization.\nResults are sorted alphabetically and limited to 2000. For more results use the `/users` endpoint."
+    },
+    {
+      "id": "openapi_asana_com.userTaskLists.getUserTaskList",
+      "name": "userTaskLists.getUserTaskList",
+      "description": "Returns the full record for a user task list."
+    },
+    {
+      "id": "openapi_asana_com.userTaskLists.getUserTaskListForUser",
+      "name": "userTaskLists.getUserTaskListForUser",
+      "description": "Returns the full record for a user's task list."
+    },
+    {
+      "id": "openapi_asana_com.webhooks.createWebhook",
+      "name": "webhooks.createWebhook",
+      "description": "Establishing a webhook is a two-part process. First, a simple HTTP POST\nrequest initiates the creation similar to creating any other resource.\n\nNext, in the middle of this request comes the confirmation handshake.\nWhen a webhook is created, we will send a test POST to the target with an\n`X-Hook-Secret` header. The target must respond with a `200 OK` or `204\nNo Content` and a matching `X-Hook-Secret` header to confirm that this\nwebhook subscription is indeed expected. We strongly recommend storing\nthis secret to be used to verify future webhook event signatures.\n\nThe POST request to create the webhook will then return with the status\nof the request. If you do not acknowledge the webhook’s confirmation\nhandshake it will fail to setup, and you will receive an error in\nresponse to your attempt to create it. This means you need to be able to\nreceive and complete the webhook *while* the POST request is in-flight\n(in other words, have a server that can handle requests asynchronously).\n\nInvalid hostnames like localhost will recieve a 403 Forbidden status code.\n\n```\n# Request\ncurl -H \"Authorization: Bearer <personal_access_token>\" \\\n-X POST https://app.asana.com/api/1.0/webhooks \\\n-d \"resource=8675309\" \\\n-d \"target=https://example.com/receive-webhook/7654\"\n```\n\n```\n# Handshake sent to https://example.com/\nPOST /receive-webhook/7654\nX-Hook-Secret: b537207f20cbfa02357cf448134da559e8bd39d61597dcd5631b8012eae53e81\n```\n\n```\n# Handshake response sent by example.com\nHTTP/1.1 200\nX-Hook-Secret: b537207f20cbfa02357cf448134da559e8bd39d61597dcd5631b8012eae53e81\n```\n\n```\n# Response\nHTTP/1.1 201\n{\n  \"data\": {\n    \"gid\": \"43214\",\n    \"resource\": {\n      \"gid\": \"8675309\",\n      \"name\": \"Bugs\"\n    },\n    \"target\": \"https://example.com/receive-webhook/7654\",\n    \"active\": false,\n    \"last_success_at\": null,\n    \"last_failure_at\": null,\n    \"last_failure_content\": null\n  }\n}\n```"
+    },
+    {
+      "id": "openapi_asana_com.webhooks.deleteWebhook",
+      "name": "webhooks.deleteWebhook",
+      "description": "This method *permanently* removes a webhook. Note that it may be possible to receive a request that was already in flight after deleting the webhook, but no further requests will be issued."
+    },
+    {
+      "id": "openapi_asana_com.webhooks.getWebhook",
+      "name": "webhooks.getWebhook",
+      "description": "Returns the full record for the given webhook."
+    },
+    {
+      "id": "openapi_asana_com.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Get the compact representation of all webhooks your app has registered for the authenticated user in the given workspace."
+    },
+    {
+      "id": "openapi_asana_com.webhooks.updateWebhook",
+      "name": "webhooks.updateWebhook",
+      "description": "An existing webhook's filters can be updated by making a PUT request on the URL for that webhook. Note that the webhook's previous `filters` array will be completely overwritten by the `filters` sent in the PUT request."
+    },
+    {
+      "id": "openapi_asana_com.workspaceMemberships.getWorkspaceMembership",
+      "name": "workspaceMemberships.getWorkspaceMembership",
+      "description": "Returns the complete workspace record for a single workspace membership."
+    },
+    {
+      "id": "openapi_asana_com.workspaceMemberships.getWorkspaceMembershipsForUser",
+      "name": "workspaceMemberships.getWorkspaceMembershipsForUser",
+      "description": "Returns the compact workspace membership records for the user."
+    },
+    {
+      "id": "openapi_asana_com.workspaceMemberships.getWorkspaceMembershipsForWorkspace",
+      "name": "workspaceMemberships.getWorkspaceMembershipsForWorkspace",
+      "description": "Returns the compact workspace membership records for the workspace."
+    },
+    {
+      "id": "openapi_asana_com.workspaces.addUserForWorkspace",
+      "name": "workspaces.addUserForWorkspace",
+      "description": "Add a user to a workspace or organization.\nThe user can be referenced by their globally unique user ID or their email address. Returns the full user record for the invited user."
+    },
+    {
+      "id": "openapi_asana_com.workspaces.getWorkspace",
+      "name": "workspaces.getWorkspace",
+      "description": "Returns the full workspace record for a single workspace."
+    },
+    {
+      "id": "openapi_asana_com.workspaces.getWorkspaces",
+      "name": "workspaces.getWorkspaces",
+      "description": "Returns the compact records for all workspaces visible to the authorized user."
+    },
+    {
+      "id": "openapi_asana_com.workspaces.removeUserForWorkspace",
+      "name": "workspaces.removeUserForWorkspace",
+      "description": "Remove a user from a workspace or organization.\nThe user making this call must be an admin in the workspace. The user can be referenced by their globally unique user ID or their email address.\nReturns an empty data record."
+    },
+    {
+      "id": "openapi_asana_com.workspaces.updateWorkspace",
+      "name": "workspaces.updateWorkspace",
+      "description": "A specific, existing workspace can be updated by making a PUT request on the URL for that workspace. Only the fields provided in the data block will be updated; any unspecified fields will remain unchanged.\nCurrently the only field that can be modified for a workspace is its name.\nReturns the complete, updated workspace record."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

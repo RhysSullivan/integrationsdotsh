@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:20:20.431Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_makemytrip.fetch_flights",
+      "name": "fetch-flights",
+      "description": "Fetch the flight listing for the given departure city and destination city"
+    },
+    {
+      "id": "mcp_makemytrip.fetch_hotels",
+      "name": "fetch-hotels",
+      "description": "Get hotel search results by first using autosuggest to find the city code, then fetching hotel listings for that city"
+    },
+    {
+      "id": "mcp_makemytrip.resolve_cab_location",
+      "name": "resolve-cab-location",
+      "description": "Resolve a pickup or drop-off location for cab booking. Call this tool BEFORE fetch-cabs to get the place_id for each location. For city or town level queries (e.g., 'Bangalore', 'Mysore', 'Delhi'), the tool auto-resolves to the best match — no disambiguation step is needed. For specific locations (neighborhoods, airports, railway stations, tech parks), multiple matches may be returned for the user to choose from. If the user provides both source and destination in their message, resolve both locations without waiting — do NOT ask for the second one again. Do NOT suggest or guess location names yourself — ALWAYS call this tool to get real options. Never present your own list of guessed locations. If multiple matches are found, present the numbered options to the user and ask them to pick one (or say 'none' for a different location). Then call this tool again with the selected place_id. Once both source and destination place_ids are resolved, call fetch-cabs with them."
+    },
+    {
+      "id": "mcp_makemytrip.fetch_cabs",
+      "name": "fetch-cabs",
+      "description": "Search available cabs between source and destination. Supports optional filters (cab type, fuel type, seats, luggage, AC, price range) and sorting (cheapest, priciest, rating). Include filters when the user specifies preferences like 'CNG cab', 'cab for 4 passengers', 'cheapest option', or 'luxury cab', both in initial requests and follow-ups. IMPORTANT: Before calling this tool, you MUST first resolve both source and destination locations using the resolve-cab-location tool to get their place_ids. Do NOT call this tool without valid place_ids from resolve-cab-location. Always ask the user explicitly for: travel date and pickup time. Never use default or assumed values for date and time - the user must provide them. If the response has status 'no_cabs_found', apologize politely and share the message and suggestion. Never say 'server error' or show raw error codes to the user."
+    }
+  ]
+}

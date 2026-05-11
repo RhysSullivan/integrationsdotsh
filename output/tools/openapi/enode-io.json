@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:22:13.135Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_enode_io.chargers.controlChargerCharging",
+      "name": "chargers.controlChargerCharging",
+      "description": "Instruct the charger to start or stop charging"
+    },
+    {
+      "id": "openapi_enode_io.chargers.getCharger",
+      "name": "chargers.getCharger",
+      "description": "Get Charger"
+    },
+    {
+      "id": "openapi_enode_io.chargers.getChargers",
+      "name": "chargers.getChargers",
+      "description": "List Chargers"
+    },
+    {
+      "id": "openapi_enode_io.chargingLocations.deleteCharginglocationsCharginglocationid",
+      "name": "chargingLocations.deleteCharginglocationsCharginglocationid",
+      "description": "Delete a Charging Location"
+    },
+    {
+      "id": "openapi_enode_io.chargingLocations.getCharginglocations",
+      "name": "chargingLocations.getCharginglocations",
+      "description": "Returns a list of Charging Locations registered to the User"
+    },
+    {
+      "id": "openapi_enode_io.chargingLocations.getCharginglocationsCharginglocationid",
+      "name": "chargingLocations.getCharginglocationsCharginglocationid",
+      "description": "Get Charging Location"
+    },
+    {
+      "id": "openapi_enode_io.chargingLocations.postCharginglocations",
+      "name": "chargingLocations.postCharginglocations",
+      "description": "Create Charging Location"
+    },
+    {
+      "id": "openapi_enode_io.chargingLocations.putCharginglocationsCharginglocationid",
+      "name": "chargingLocations.putCharginglocationsCharginglocationid",
+      "description": "Updates a charging location with new configuration"
+    },
+    {
+      "id": "openapi_enode_io.me.disconnectVendor",
+      "name": "me.disconnectVendor",
+      "description": "Disconnect a single Vendor from the User's account.\n\nAll stored data about their Vendor account will be deleted, and any vehicles that were provided by that Vendor will disappear from the system."
+    },
+    {
+      "id": "openapi_enode_io.me.getMe",
+      "name": "me.getMe",
+      "description": "Returns metadata about the authenticated User, including a list of vendors for which the user has provided credentials."
+    },
+    {
+      "id": "openapi_enode_io.serviceHealth.getHealthReady",
+      "name": "serviceHealth.getHealthReady",
+      "description": "Gets the combined health status of the service and all functionalities and dependencies."
+    },
+    {
+      "id": "openapi_enode_io.serviceHealth.getHealthVendors",
+      "name": "serviceHealth.getHealthVendors",
+      "description": "List the supported vendors and their current status."
+    },
+    {
+      "id": "openapi_enode_io.statistics.getStatisticsCharging",
+      "name": "statistics.getStatisticsCharging",
+      "description": "Returns a normalized timeseries of statistics about power consumption and price for the User."
+    },
+    {
+      "id": "openapi_enode_io.userManagement.deleteUsersUserid",
+      "name": "userManagement.deleteUsersUserid",
+      "description": "Deletes a User and all of their data permanently, and invalidates any associated sessions, authorization codes, and access/refresh tokens"
+    },
+    {
+      "id": "openapi_enode_io.userManagement.deleteUsersUseridAuthorization",
+      "name": "userManagement.deleteUsersUseridAuthorization",
+      "description": "Deletes the User's stored vendor authorizations and credentials, invalidates any associated sessions, authorization codes, and access/refresh tokens.\n\nAll other User data is retained, and if the User is sent through the Link User flow in the future their account will be just as they left it.\n\nNo webhook events will be generated for a deauthorized user."
+    },
+    {
+      "id": "openapi_enode_io.userManagement.postUsersUseridLink",
+      "name": "userManagement.postUsersUseridLink",
+      "description": "Creates an Enode Link session attached to the provided User ID. If this User does not exist, it will be created. The returned `linkState` gives the user short-lived access to Enode Link."
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehicleChargestate",
+      "name": "vehicles.getVehicleChargestate",
+      "description": "Get Vehicle Charge State"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehicles",
+      "name": "vehicles.getVehicles",
+      "description": "List Vehicles"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehiclesVehicleid",
+      "name": "vehicles.getVehiclesVehicleid",
+      "description": "Get Vehicle"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehiclesVehicleidInformation",
+      "name": "vehicles.getVehiclesVehicleidInformation",
+      "description": "Get Vehicle Information"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehiclesVehicleidLocation",
+      "name": "vehicles.getVehiclesVehicleidLocation",
+      "description": "Get Vehicle Location"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehiclesVehicleidOdometer",
+      "name": "vehicles.getVehiclesVehicleidOdometer",
+      "description": "Get Vehicle Odometer"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.getVehiclesVehicleidSmartchargingpolicy",
+      "name": "vehicles.getVehiclesVehicleidSmartchargingpolicy",
+      "description": "Get Vehicle Smart Charging Policy"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.postVehiclesVehicleidCharging",
+      "name": "vehicles.postVehiclesVehicleidCharging",
+      "description": "Instruct the vehicle to start or stop charging. \n\n#### Precedence over smart charging\nIf the vehicle is at a charging location where smart charging is activated:\n- a request to `start` charging will override smart charging and charging will stay on until fully charged. \n- a request to `stop` charging will override smart charging and charging will be kept off for the duration of the current smart charging cycle.\n\nThe smart charging settings are not altered by these actions."
+    },
+    {
+      "id": "openapi_enode_io.vehicles.postVehiclesVehicleidWatch",
+      "name": "vehicles.postVehiclesVehicleidWatch",
+      "description": "Temporarily triggers high-rate updates of the vehicle's properties, and this state expires automatically. This gives you a way to tell us that user may be interacting with your application and are expecting as-fast-as-possible updates on the status of their vehicle in your UI.\n\nAny data changes resulting from this high-rate updating are reflected everywhere, whether you pull data from the `Vehicles` endpoint, or recieve it via the [Firehose Webhook](#tag/Webhooks)\n\nThe specifics of the expiration times, watch behaviors, and change thresholds are tuned by us to make sure that they work as expected, without causing undue interruption to the vehicle. For many vendors, it is not appropriate to let the high-rate monitoring last indefinitely, as it will keep systems within the car awake that should be allowed to fall into low-power/standby modes.\n"
+    },
+    {
+      "id": "openapi_enode_io.vehicles.putVehiclesVehicleidSmartchargingpolicy",
+      "name": "vehicles.putVehiclesVehicleidSmartchargingpolicy",
+      "description": "Updates the Smart Charging settings for a vehicle"
+    },
+    {
+      "id": "openapi_enode_io.webhooks.postWebhooksFirehoseTest",
+      "name": "webhooks.postWebhooksFirehoseTest",
+      "description": "Trigger a test payload to be sent to your configured Firehose Webhook url."
+    },
+    {
+      "id": "openapi_enode_io.webhooks.putWebhooksFirehose",
+      "name": "webhooks.putWebhooksFirehose",
+      "description": "Update Firehose Webhook"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

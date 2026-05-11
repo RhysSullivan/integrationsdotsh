@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:22:04.836Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_bee_spelling.display_spelling_test",
+      "name": "display-spelling-test",
+      "description": "Use to open an interactive spelling-practice widget when the user wants to test or practice spelling a specific set of words, whether they asked for general spelling practice or for words in a particular category, theme, age level, difficulty level, language variety, or learning context. This tool is appropriate when the model can supply a concrete ordered list of one to ten quiz words and wants the user to complete the activity inside a widget rather than through a plain-text back-and-forth. Each supplied word must include three pieces of information: the word itself, a definition, and an example sentence. The widget uses those fields to support the practice flow, including spoken hints and the final scoring display.\n\nThe best use case for this tool is a short self-contained quiz. For example, use it when a user asks to practice spelling everyday words, classroom vocabulary, spelling-bee style words, travel phrases, animal names, food words, or beginner foreign-language words. It is also a good fit when the user requests a spelling test with a stated tone or style such as easy, advanced, formal, child-friendly, themed, or domain-specific. When you call the tool, choose the words yourself based on the user's request, keep the set reasonably small, and provide definitions and examples that make the intended meaning of each word clear.\n\nAfter calling this tool, DO NOT output the chosen words to the user, that defeats the point of the tool!\n\nDo not use this tool when the user only wants a word list without an interactive test, when they want rules or explanations about spelling, when they want proofreading or correction of their own writing, or when they explicitly asked for a response without tools or widgets. Do not call it with missing definitions or examples, and do not call it with more than ten words. The tool is read-only and deterministic: it simply packages the model-selected spelling words into structured widget data, initializes every attempt as unanswered, and opens the spelling-test widget so the user can complete the quiz locally."
+    }
+  ]
+}

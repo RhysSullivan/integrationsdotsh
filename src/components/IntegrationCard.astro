@@ -1,0 +1,76 @@
+---
+import type { Integration } from "~/lib/types.ts";
+import { kindLabel } from "~/lib/data.ts";
+
+interface Props { item: Integration }
+const { item } = Astro.props;
+
+// Plain-text excerpt for the card. Strip markdown syntax that would be ugly
+// without a renderer, and truncate. The detail page renders the full
+// description through streamdown.
+const plain = (item.description ?? "")
+  .replace(/```[\s\S]*?```/g, "")           // fenced code blocks
+  .replace(/`([^`]+)`/g, "$1")              // inline code
+  .replace(/!\[[^\]]*\]\([^)]+\)/g, "")     // images
+  .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")  // links → text
+  .replace(/[*_]{1,3}([^*_]+?)[*_]{1,3}/g, "$1") // bold / italic
+  .replace(/^#+\s+/gm, "")                  // headings
+  .replace(/^\s*[-*+]\s+/gm, "")            // bullets
+  .replace(/\s+/g, " ")
+  .trim();
+const excerpt = plain.length > 180 ? plain.slice(0, 180).trimEnd() + "…" : plain;
+
+const haystack = [item.name, plain, item.categories.join(" "), item.feeds.join(" ")]
+  .join(" ")
+  .toLowerCase();
+---
+
+<a
+  class="card"
+  href={`/${item.kind}/${item.slug}/`}
+  data-kind={item.kind}
+  data-feeds={item.feeds.join(",")}
+  data-search={haystack}
+>
+  <div class="row">
+    {item.icon && <img src={item.icon} alt="" loading="lazy" width="32" height="32" />}
+    <div class="text">
+      <div class="title">{item.name}</div>
+      <div class="meta">
+        <span class={`badge ${item.kind}`}>{kindLabel[item.kind]}</span>
+        {item.feeds.map((f) => <span class="feed">{f}</span>)}
+      </div>
+    </div>
+  </div>
+  {excerpt && <p class="desc">{excerpt}</p>}
+</a>
+
+<style>
+  .card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--fg);
+    transition: border-color 0.12s;
+  }
+  .card:hover { border-color: #2c333d; }
+  .row { display: flex; gap: 12px; align-items: flex-start; }
+  img { border-radius: 6px; background: #fff; object-fit: contain; flex-shrink: 0; }
+  .text { min-width: 0; flex: 1; }
+  .title { font-weight: 600; letter-spacing: -0.005em; }
+  .meta { display: flex; gap: 8px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
+  .feed { font-size: 11px; color: var(--muted); }
+  .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 8px 0 0;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

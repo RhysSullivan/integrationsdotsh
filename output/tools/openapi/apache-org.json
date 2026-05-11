@@ -1,0 +1,382 @@
+{
+  "fetchedAt": "2026-04-30T15:45:13.448Z",
+  "status": "ok",
+  "count": 75,
+  "tools": [
+    {
+      "id": "openapi_apache_org.config.getConfig",
+      "name": "config.getConfig",
+      "description": "Get current configuration"
+    },
+    {
+      "id": "openapi_apache_org.connection.deleteConnection",
+      "name": "connection.deleteConnection",
+      "description": "Delete a connection"
+    },
+    {
+      "id": "openapi_apache_org.connection.getConnection",
+      "name": "connection.getConnection",
+      "description": "Get a connection"
+    },
+    {
+      "id": "openapi_apache_org.connection.getConnections",
+      "name": "connection.getConnections",
+      "description": "List connections"
+    },
+    {
+      "id": "openapi_apache_org.connection.patchConnection",
+      "name": "connection.patchConnection",
+      "description": "Update a connection"
+    },
+    {
+      "id": "openapi_apache_org.connection.postConnection",
+      "name": "connection.postConnection",
+      "description": "Create a connection"
+    },
+    {
+      "id": "openapi_apache_org.connection.testConnection",
+      "name": "connection.testConnection",
+      "description": "Test a connection.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.deleteDag",
+      "name": "dag.deleteDag",
+      "description": "Deletes all metadata related to the DAG, including finished DAG Runs and Tasks.\nLogs are not deleted. This action cannot be undone.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.getDag",
+      "name": "dag.getDag",
+      "description": "Presents only information available in database (DAGModel).\nIf you need detailed information, consider using GET /dags/{dag_id}/details.\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.getDagDetails",
+      "name": "dag.getDagDetails",
+      "description": "The response contains many DAG attributes, so the response can be large. If possible, consider using GET /dags/{dag_id}.\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.getDags",
+      "name": "dag.getDags",
+      "description": "List DAGs in the database.\n`dag_id_pattern` can be set to match dags of a specific pattern\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.getDagSource",
+      "name": "dag.getDagSource",
+      "description": "Get a source code using file token.\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.getTask",
+      "name": "dag.getTask",
+      "description": "Get simplified representation of a task"
+    },
+    {
+      "id": "openapi_apache_org.dag.getTasks",
+      "name": "dag.getTasks",
+      "description": "Get tasks for DAG"
+    },
+    {
+      "id": "openapi_apache_org.dag.patchDag",
+      "name": "dag.patchDag",
+      "description": "Update a DAG"
+    },
+    {
+      "id": "openapi_apache_org.dag.patchDags",
+      "name": "dag.patchDags",
+      "description": "Update DAGs of a given dag_id_pattern using UpdateMask.\nThis endpoint allows specifying `~` as the dag_id_pattern to update all DAGs.\n*New in version 2.3.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.postClearTaskInstances",
+      "name": "dag.postClearTaskInstances",
+      "description": "Clears a set of task instances associated with the DAG for a specified date range.\n"
+    },
+    {
+      "id": "openapi_apache_org.dag.postSetTaskInstancesState",
+      "name": "dag.postSetTaskInstancesState",
+      "description": "Updates the state for multiple task instances simultaneously.\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.clearDagRun",
+      "name": "dagRun.clearDagRun",
+      "description": "Clear a DAG run.\n\n*New in version 2.4.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.deleteDagRun",
+      "name": "dagRun.deleteDagRun",
+      "description": "Delete a DAG run"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.getDagRun",
+      "name": "dagRun.getDagRun",
+      "description": "Get a DAG run"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.getDagRuns",
+      "name": "dagRun.getDagRuns",
+      "description": "This endpoint allows specifying `~` as the dag_id to retrieve DAG runs for all DAGs.\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.getDagRunsBatch",
+      "name": "dagRun.getDagRunsBatch",
+      "description": "This endpoint is a POST to allow filtering across a large number of DAG IDs, where as a GET it would run in to maximum HTTP request URL length limit.\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.getUpstreamDatasetEvents",
+      "name": "dagRun.getUpstreamDatasetEvents",
+      "description": "Get datasets for a dag run.\n\n*New in version 2.4.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.postDagRun",
+      "name": "dagRun.postDagRun",
+      "description": "Trigger a new DAG run"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.setDagRunNote",
+      "name": "dagRun.setDagRunNote",
+      "description": "Update the manual user note of a DagRun.\n\n*New in version 2.5.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dagRun.updateDagRunState",
+      "name": "dagRun.updateDagRunState",
+      "description": "Modify a DAG run.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.dagWarning.getDagWarnings",
+      "name": "dagWarning.getDagWarnings",
+      "description": "List dag warnings"
+    },
+    {
+      "id": "openapi_apache_org.dataset.getDataset",
+      "name": "dataset.getDataset",
+      "description": "Get a dataset by uri."
+    },
+    {
+      "id": "openapi_apache_org.dataset.getDatasetEvents",
+      "name": "dataset.getDatasetEvents",
+      "description": "Get dataset events"
+    },
+    {
+      "id": "openapi_apache_org.dataset.getDatasets",
+      "name": "dataset.getDatasets",
+      "description": "List datasets"
+    },
+    {
+      "id": "openapi_apache_org.eventLog.getEventLog",
+      "name": "eventLog.getEventLog",
+      "description": "Get a log entry"
+    },
+    {
+      "id": "openapi_apache_org.eventLog.getEventLogs",
+      "name": "eventLog.getEventLogs",
+      "description": "List log entries from event log."
+    },
+    {
+      "id": "openapi_apache_org.importError.getImportError",
+      "name": "importError.getImportError",
+      "description": "Get an import error"
+    },
+    {
+      "id": "openapi_apache_org.importError.getImportErrors",
+      "name": "importError.getImportErrors",
+      "description": "List import errors"
+    },
+    {
+      "id": "openapi_apache_org.monitoring.getHealth",
+      "name": "monitoring.getHealth",
+      "description": "Get the status of Airflow's metadatabase and scheduler. It includes info about\nmetadatabase and last heartbeat of scheduler.\n"
+    },
+    {
+      "id": "openapi_apache_org.monitoring.getVersion",
+      "name": "monitoring.getVersion",
+      "description": "Get version information"
+    },
+    {
+      "id": "openapi_apache_org.permission.getPermissions",
+      "name": "permission.getPermissions",
+      "description": "Get a list of permissions.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.plugin.getPlugins",
+      "name": "plugin.getPlugins",
+      "description": "Get a list of loaded plugins.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.pool.deletePool",
+      "name": "pool.deletePool",
+      "description": "Delete a pool"
+    },
+    {
+      "id": "openapi_apache_org.pool.getPool",
+      "name": "pool.getPool",
+      "description": "Get a pool"
+    },
+    {
+      "id": "openapi_apache_org.pool.getPools",
+      "name": "pool.getPools",
+      "description": "List pools"
+    },
+    {
+      "id": "openapi_apache_org.pool.patchPool",
+      "name": "pool.patchPool",
+      "description": "Update a pool"
+    },
+    {
+      "id": "openapi_apache_org.pool.postPool",
+      "name": "pool.postPool",
+      "description": "Create a pool"
+    },
+    {
+      "id": "openapi_apache_org.provider.getProviders",
+      "name": "provider.getProviders",
+      "description": "Get a list of providers.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.role.deleteRole",
+      "name": "role.deleteRole",
+      "description": "Delete a role.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.role.getRole",
+      "name": "role.getRole",
+      "description": "Get a role.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.role.getRoles",
+      "name": "role.getRoles",
+      "description": "Get a list of roles.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.role.patchRole",
+      "name": "role.patchRole",
+      "description": "Update a role.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.role.postRole",
+      "name": "role.postRole",
+      "description": "Create a new role.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getExtraLinks",
+      "name": "taskInstance.getExtraLinks",
+      "description": "List extra links for task instance.\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getLog",
+      "name": "taskInstance.getLog",
+      "description": "Get logs for a specific task instance and its try number."
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getMappedTaskInstance",
+      "name": "taskInstance.getMappedTaskInstance",
+      "description": "Get details of a mapped task instance.\n\n*New in version 2.3.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getMappedTaskInstances",
+      "name": "taskInstance.getMappedTaskInstances",
+      "description": "Get details of all mapped task instances.\n\n*New in version 2.3.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getTaskInstance",
+      "name": "taskInstance.getTaskInstance",
+      "description": "Get a task instance"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getTaskInstances",
+      "name": "taskInstance.getTaskInstances",
+      "description": "This endpoint allows specifying `~` as the dag_id, dag_run_id to retrieve DAG runs for all DAGs and DAG runs.\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.getTaskInstancesBatch",
+      "name": "taskInstance.getTaskInstancesBatch",
+      "description": "List task instances from all DAGs and DAG runs.\nThis endpoint is a POST to allow filtering across a large number of DAG IDs, where as a GET it would run in to maximum HTTP request URL length limits.\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.patchMappedTaskInstance",
+      "name": "taskInstance.patchMappedTaskInstance",
+      "description": "Updates the state for single mapped task instance.\n*New in version 2.5.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.patchTaskInstance",
+      "name": "taskInstance.patchTaskInstance",
+      "description": "Updates the state for single task instance.\n*New in version 2.5.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.setMappedTaskInstanceNote",
+      "name": "taskInstance.setMappedTaskInstanceNote",
+      "description": "Update the manual user note of a mapped Task Instance.\n\n*New in version 2.5.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.taskInstance.setTaskInstanceNote",
+      "name": "taskInstance.setTaskInstanceNote",
+      "description": "Update the manual user note of a non-mapped Task Instance.\n\n*New in version 2.5.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.user.deleteUser",
+      "name": "user.deleteUser",
+      "description": "Delete a user with a specific username.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.user.getUser",
+      "name": "user.getUser",
+      "description": "Get a user with a specific username.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.user.getUsers",
+      "name": "user.getUsers",
+      "description": "Get a list of users.\n\n*New in version 2.1.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.user.patchUser",
+      "name": "user.patchUser",
+      "description": "Update fields for a user.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.user.postUser",
+      "name": "user.postUser",
+      "description": "Create a new user with unique username and email.\n\n*New in version 2.2.0*\n"
+    },
+    {
+      "id": "openapi_apache_org.variable.deleteVariable",
+      "name": "variable.deleteVariable",
+      "description": "Delete a variable"
+    },
+    {
+      "id": "openapi_apache_org.variable.getVariable",
+      "name": "variable.getVariable",
+      "description": "Get a variable by key."
+    },
+    {
+      "id": "openapi_apache_org.variable.getVariables",
+      "name": "variable.getVariables",
+      "description": "The collection does not contain data. To get data, you must get a single entity."
+    },
+    {
+      "id": "openapi_apache_org.variable.patchVariable",
+      "name": "variable.patchVariable",
+      "description": "Update a variable by key."
+    },
+    {
+      "id": "openapi_apache_org.variable.postVariables",
+      "name": "variable.postVariables",
+      "description": "Create a variable"
+    },
+    {
+      "id": "openapi_apache_org.xCom.getXcomEntries",
+      "name": "xCom.getXcomEntries",
+      "description": "This endpoint allows specifying `~` as the dag_id, dag_run_id, task_id to retrieve XCOM entries for for all DAGs, DAG runs and task instances. XCom values won't be returned as they can be large. Use this endpoint to get a list of XCom entries and then fetch individual entry to get value."
+    },
+    {
+      "id": "openapi_apache_org.xCom.getXcomEntry",
+      "name": "xCom.getXcomEntry",
+      "description": "Get an XCom entry"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

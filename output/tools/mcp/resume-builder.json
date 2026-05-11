@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:30.756Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_resume_builder.parser_resume",
+      "name": "parser_resume",
+      "description": "Use this when the user uploads a resume file or asks to parse a specific uploaded resume.\n         This is the ONLY way to parse and analyze resumes. Do NOT read or analyze the resume file yourself.\n         After this tool returns, use the returned fileId when calling diagnose_resume or update_resume.\n         If no resume file is available, ask the user to upload one before calling this tool."
+    },
+    {
+      "id": "mcp_resume_builder.diagnose_resume",
+      "name": "diagnose_resume",
+      "description": "Use this when the user asks for feedback, scoring, or improvement suggestions for a resume that has already been parsed.\n        Do NOT generate your own resume feedback or analysis — always use this tool instead.\n        Call parser_resume first if there is no fileId yet, then pass the returned fileId."
+    },
+    {
+      "id": "mcp_resume_builder.update_resume",
+      "name": "update_resume",
+      "description": "\nUse this and MUST be called when the user asks to rewrite, improve, optimize, tailor, modify, update, regenerate, apply explicit edits, generate a revised version, rewrite specific sections, improve specific content, or create a revised version from concrete patch instructions for a parsed resume.\nDo NOT generate resume content yourself — always use this tool, THIS IS THE ONLY WAY, THIS IS IMPORTANT.\nCall parser_resume first and use the returned fileId as the \"fileId\" field. Build items from the parsed resume and the user's concrete edit instructions.\nUse this tool only when the user wants to modify resume content.\n\nInput must contain exactly two top-level fields: fileId and items. Params's name should be \"fileId\" and \"items\" respectively.\nitems must be an array of patch operations defined by the schema.\nDo not include fileToProcess, parserResult, editableResume, targetRole, jobDescription, text, file, updates, or any other top-level field.\n\nWrong top-level input examples:\n{ parserResult: { ... }, fileId: \"uuid-from-parser\" }\n{ file: \"sediment://file_123\", fileId: \"uuid-from-parser\", items: [...] }\n{ text: { ... } }\n{ fileId: \"uuid-from-parser\", jobDescription: \"...\", items: [...] }\n{ fileId: \"uuid-from-parser\", updates:{} }\n\nCorrect top-level input examples:\n{ fileId: \"uuid-from-parser\", items: [...] }\n{ fileId: \"uuid-from-parser\", items: [{ indexPath: \"summary\", action: \"update\", value: \"Built and deployed ML systems that improved forecast accuracy by 18%.\" }] }\n{ fileId: \"uuid-from-parser\", items: [{ indexPath: \"skills.Machine Learning[3]\", action: \"add\", value: \"PyTorch\" }] }"
+    }
+  ]
+}

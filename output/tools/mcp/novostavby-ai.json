@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:21:13.570Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_novostavby_ai.search_units",
+      "name": "search_units",
+      "description": "Vyhledej dostupné byty uvnitř konkrétního projektu.\n\nVyžaduje `project_slug`. Volitelné filtry: `dispozice`, `cena_min`, `cena_max`, `plocha_min`, `podlazi_min`, `podlazi_max`, `limit`.\n\nVrací seznam jednotek a souhrn výsledků pro zobrazení v widgetu."
+    },
+    {
+      "id": "mcp_novostavby_ai.get_unit",
+      "name": "get_unit",
+      "description": "Načti detail konkrétního bytu podle `unit_id`.\n\nVrací detail jednotky včetně ceny, plochy, stavu, patra, projektu, lokality, vybavení a dostupných odkazů."
+    },
+    {
+      "id": "mcp_novostavby_ai.search_projects_by_units",
+      "name": "search_projects_by_units",
+      "description": "Vyhledej developerské projekty podle kritérií bytů, například lokality, dispozice, ceny, plochy nebo developera.\n\nVrací projekty seřazené podle počtu odpovídajících bytů a data pro zobrazení mapy i seznamu v widgetu."
+    },
+    {
+      "id": "mcp_novostavby_ai.get_project_detail",
+      "name": "get_project_detail",
+      "description": "Načti detail projektu a seznam bytů v projektu.\n\nPodporuje stránkování a volitelné filtry přes `unit_filters`. Vrací detail projektu, seznam jednotek a související metadata pro widget."
+    },
+    {
+      "id": "mcp_novostavby_ai.create_lead",
+      "name": "create_lead",
+      "description": "Odešli poptávku na konkrétní byt do systému novostavby.ai.\n\nPovinná pole: `unit_id`, `name`, `email`.\nVolitelná pole: `phone`, `message`, `project_id`."
+    },
+    {
+      "id": "mcp_novostavby_ai.schedule_viewing",
+      "name": "schedule_viewing",
+      "description": "Naplánuj prohlídku konkrétního bytu v systému novostavby.ai.\n\nVyžaduje `unit_id`, `name`, `email` a `requested_time_iso`. Volitelně lze přidat `phone`."
+    }
+  ]
+}

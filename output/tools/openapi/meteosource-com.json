@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:22:51.079Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_meteosource_com.locationEndpoints.findPlacesFindPlacesGet",
+      "name": "locationEndpoints.findPlacesFindPlacesGet",
+      "description": "## Search for places\n\nYou can use this endpoint to obtain `place_id` of the location you want, to be used in `point` endpoint.\nThe response also contains detailed information about the location, such as coordinates, timezone and the country the place belongs to.\n\nUnlike the `/find_place_prefix` endpoint, complete words are required here. You can search for cities,\nmountains, lakes, countries, ZIP codes, etc. The response can contain multiple places, sorted by relevance.\nYou can then identify the one you want by coordinates, country, or the administrative area.\n"
+    },
+    {
+      "id": "openapi_meteosource_com.locationEndpoints.findPlacesPrefixFindPlacesPrefixGet",
+      "name": "locationEndpoints.findPlacesPrefixFindPlacesPrefixGet",
+      "description": "## Search for places by prefix\n\nYou can use this endpoint to obtain `place_id` of the location you want, to be used in `point` endpoint. The response also contains detailed information about the location, such as coordinates, timezone and the country the place belongs to.\n\nUnlike the `/find_places` endpoint, you should only specify the prefix of the place you are looking for. This is particularly useful for autocomplete forms. You can search for cities, mountains, lakes, countries, ZIP codes, etc. The response can contain multiple places, sorted by relevance. You can then identify the one you want by coordinates, country, or the administrative area.\n"
+    },
+    {
+      "id": "openapi_meteosource_com.locationEndpoints.nearestPlaceNearestPlaceGet",
+      "name": "locationEndpoints.nearestPlaceNearestPlaceGet",
+      "description": "## Search for nearest place by coordinates\n\nYou can use this endpoint to find the nearest place from given coordinates.\n\n*Note: If you specify coordinates of a secluded place (e.g. middle of the ocean), the nearest point can be very far from the coordinates.*\n"
+    },
+    {
+      "id": "openapi_meteosource_com.pointWeather.airQualityAirQualityGet",
+      "name": "pointWeather.airQualityAirQualityGet",
+      "description": "## Air quality forecast for a single location\n\n### Location specification\nThe location of the weather data is the only parameter that is required and must be specified. There are two ways to do this:\n1. Specify the GPS coordinates of the location using the parameters `lat` and `lon`.\n2. **OR** specify the name of the place using the parameter `place_id`. To obtain the `place_id` for the location you want, please use endpoints `/find_places_prefix` (search by prefix) or `/find_places` (search by full name).\n\n### Notes\n* **For a detailed description of variables, please consult ⚠️ <a href=\"https://www.meteosource.com/documentation#description_aq\" target=\"_blank\">description of variables</a> ⚠️ in Documentation or `Schema` of the response (link next to Example value in the Responses section below).**\n* Do **not** make any assumptions about the number and ordering of the variables. New variables and sections may be introduced in the future. Always check the data are present before you try to use them.\n* The response contains an `Expires` header, which defines the point at which the API response will not change for the same request. We highly recommend using this to avoid unnecessary requests and **increase the performance of your app**.\n* Meteosource API supports HTTP compression. To enable it, simply add an `Accept-Encoding: gzip` header to your request.\n* When daylight saving time starts, one hourly record will be missing (typically `2:00:00 AM`). When daylight saving time ends, the hourly forecast will contain two records with duplicate times (typically `2:00:00 AM`).\n"
+    },
+    {
+      "id": "openapi_meteosource_com.pointWeather.pointPointGet",
+      "name": "pointWeather.pointPointGet",
+      "description": "## Current weather and forecast for single location\n\n### Location specification\nThe location of the weather data is the only parameter that is required and must be specified. There are two ways to do this:\n1. Specify the GPS coordinates of the location using the parameters `lat` and `lon`.\n2. **OR** specify the name of the place using the parameter `place_id`. To obtain the `place_id` for the location you want, please use endpoints `/find_places_prefix` (search by prefix) or `/find_places` (search by full name).\n\n*Note: For mountains, it is usually better to specify the `place_id` rather than the `lat` and `lon`. When you use `place_id`, you are guaranteed to receive forecasts for the precise elevation of the peak. When you specify the coordinates, the elevation can be less precise.*\n\n### Sections\nThe endpoint can return multiple sections of data. To obtain the best performance, we advise only requesting the sections you actually need. The available sections are as follows:\n\n* Current weather situation\n* Hourly forecast (for 24/48/96/168 hours, depending on the tier)\n* Daily forecast (for 7/10/30 days, depending on the tier)\n* Minutely precipitation forecast (for 60 minutes in the following hour, only for higher tiers)\n* Weather alerts (only for higher tiers)\n\nBy default, only the current and hourly sections are returned. The division into daily parts (morning, afternoon and evening) is only available for the first 7 days of the forecast. For details regarding available parameters, see the parameter description below.\n\n### Notes\n* **For a detailed description of variables (e.g. icons), please consult ⚠️ <a href=\"https://www.meteosource.com/documentation#description\" target=\"_blank\">description of variables</a> ⚠️ in Documentation or `Schema` of the response (link next to Example value in the Responses section below).**\n* Variables can be instantaneous, averaged, or accumulated over certain time. For example, `precipitation` forecast provides the precipitation accumulated until the next hour (data with timestamp as `12:00:00` is rain accumulated from `12:00:00` to `13:00:00`).\n* Do **not** make any assumptions about the number and ordering of the variables. New variables and sections may be introduced in the future. Always check the data are present before you try to use them.\n* The response contains an `Expires` header, which defines the point at which the API response will not change for the same request. We highly recommend using this to avoid unnecessary requests and **increase the performance of your app**.\n* Meteosource API supports HTTP compression. To enable it, simply add an `Accept-Encoding: gzip` header to your request.\n* When daylight saving time starts, one hourly record will be missing (typically `2:00:00 AM`). When daylight saving time ends, the hourly forecast will contain two records with duplicate times (typically `2:00:00 AM`).\n* The detailed description of weather alerts is only available in English. The alert category is translated into selected language.\n"
+    },
+    {
+      "id": "openapi_meteosource_com.timeMachineHistoricalWeather.timeMachineTimeMachineGet",
+      "name": "timeMachineHistoricalWeather.timeMachineTimeMachineGet",
+      "description": "## Actual weather data for a single location and day in the past\n\nThe output contains actual weather data for each day up to 8 years in the past, and long-term statistics of selected weather variables aggregated over 40 years.\n\n### Location specification\nThe location of the weather data must be specified. There are two ways to do this:\n1. Specify the GPS coordinates of the location using the parameters `lat` and `lon`.\n2. **OR** specify the name of the place using the parameter `place_id`. To obtain the `place_id` for the location you want, please use endpoints `/find_places_prefix` (search by prefix) or `/find_places` (search by full name).\n\n*Note: For mountains, it is usually better to specify the `place_id` rather than the `lat` and `lon`. When you use `place_id`, you are guaranteed to receive data for the precise elevation of the peak. When you specify the coordinates, the elevation can be less precise.*\n"
+    },
+    {
+      "id": "openapi_meteosource_com.weatherMaps.mapMapGet",
+      "name": "weatherMaps.mapMapGet",
+      "description": "## PNG weather forecast maps for given area and variable\n\n### Area specification\nThere are two ways to specify geographical area you need for your map:\n1. Specify `X` and `Y` coordinates and zoom level `Z` of desired tile in <a href=\"https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/\" rel=\"nofollow\" target=\"_blank\">Google Maps Tile notation</a>.\n2. Specify latitude and longitude bounds of the area you want to cover.\n\n### Notes\n* The resulting PNG maps are **always** in <a href=\"https://epsg.io/3857\" rel=\"nofollow\" target=\"_blank\">Google Mercator projection (EPSG:3857)</a>.\n* As Meteosource only covers areas between latitudes 80° and -80°, you can only request maps within these bounds, when specifying the latitude and longitude boundaries. When specifying the area using Google Maps Tile notation, the regions outside our supported latitudes will be fully transparent.\n* The finest resolution is not available for maps covering very large regions. The resulting map will be automatically downscaled in this case, to guarantee high-speed responses.\n* Weather maps are only supported for forecasts, not for archive data.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

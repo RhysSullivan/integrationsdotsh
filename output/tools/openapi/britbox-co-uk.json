@@ -1,0 +1,622 @@
+{
+  "fetchedAt": "2026-04-30T15:22:06.227Z",
+  "status": "ok",
+  "count": 123,
+  "tools": [
+    {
+      "id": "openapi_britbox_co_uk.account.addPaymentMethod",
+      "name": "account.addPaymentMethod",
+      "description": "Add a new payment method to an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.authorizeDevice",
+      "name": "account.authorizeDevice",
+      "description": "Authorize a device from a generated device authorization code.\n\nThis is the second step in the process of authorizing a device by pin code.\n\nFirstly the device must request a generated authorization code via the\n`/authorization/device/code` endpoint.\n\nThis endpoint then authorizes the device associated with the code to sign in\nto a user account. Typically this endpoint will be called from a page\npresented in the web app under the account section.\n\nOnce authorized, the device will then be able to sign in to that account\nvia the `/authorization/device` endpoint, without needing to provide the \ncredentials of the user.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.cancelSubscription",
+      "name": "account.cancelSubscription",
+      "description": "Cancel a plan subscription.\n\nA cancelled subscription will continue to be valid until the subscription\nexpiry date or next renewal date.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.changePassword",
+      "name": "account.changePassword",
+      "description": "Change the password of an account.\n\nThe expected token scope is Settings.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.changePin",
+      "name": "account.changePin",
+      "description": "Change the pin of an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.createProfile",
+      "name": "account.createProfile",
+      "description": "Create a new profile under the active account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.deleteProfileWithId",
+      "name": "account.deleteProfileWithId",
+      "description": "Delete a profile with a specific id under the active account.\n\nNote that you cannot delete the primary profile.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.deregisterDevice",
+      "name": "account.deregisterDevice",
+      "description": "Deregister a playback device from an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.generateNonce",
+      "name": "account.generateNonce",
+      "description": "Generate a new account nonce.\n\nA nonce may be required to help sign a response from a third party\nservice which will be passed back to these services.\n\nFor example a Facebook single-sign-on request initiated by a client\napplication may first get a nonce from here to include in the request.\nFacebook will then include the nonce in the auth token it issues. This\ntoken can be passed back to our services and the nonce checked for validity.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getAccount",
+      "name": "account.getAccount",
+      "description": "Get the details of an account along with the profiles and entitlements under it."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getDevice",
+      "name": "account.getDevice",
+      "description": "Get a registered device."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getDevices",
+      "name": "account.getDevices",
+      "description": "Get all devices registered under this account.\n\nAlso includes information around device registration and deregistration limits.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getEntitlements",
+      "name": "account.getEntitlements",
+      "description": "Get all entitlements under the account.\n\nThis list is returned under the call to get account information so a call here is\nonly required when wishing to refresh a local copy of entitlements.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getItemMediaFiles",
+      "name": "account.getItemMediaFiles",
+      "description": "Get the video files associated with an item given maximum resolution, device type\nand one or more delivery types.\n\nThis endpoint accepts an Account Catalog token, however if when requesting\nplayback files you receive an *403 status code with error code 1* then the file\nyou're requesting is classification restricted. This means you should switch\nto target the `/account/items/{id}/videos-guarded` endpoint, passing it an Account\nPlayback token. If not already obtained, this token can be requested via the\n`/itv/pinauthorization` endpoint with an account level pin.\n\nFor convenience you may also access free / public files through this endpoint\ninstead of the /items/{id}/videos endpoint, when authenticated.\n\nReturns an array of video file objects which each include a url to a video.\n\nThe first entry in the array contains what is predicted to be the best match.\nThe remainder of the entries, if any, may contain resolutions below what was\nrequests. For example if you request HD-720 the response may also contain\nSD entries.\n\nIf you specify multiple delivery types, then the response array will insert\ntypes in the order you specify them in the query. For example `stream,progressive`\nwould return an array with 0 or more stream files followed by 0 or more progressive files.\n\nIf no files are found a 404 is returned.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getItemMediaFilesGuarded",
+      "name": "account.getItemMediaFilesGuarded",
+      "description": "Get the video files associated with an item given maximum resolution, device type\nand one or more delivery types.\n\nThis endpoint is identical to the `/account/items/{id}/videos` however it expects\nan Account Playback token. This token, and in association this endpoint, is specifically\nfor use when playback files are classification restricted and require an account\nlevel pin to access them.\n\nReturns an array of video file objects which each include a url to a video.\n\nThe first entry in the array contains what is predicted to be the best match.\nThe remainder of the entries, if any, may contain resolutions below what was\nrequests. For example if you request HD-720 the response may also contain\nSD entries.\n\nIf you specify multiple delivery types, then the response array will insert\ntypes in the order you specify them in the query. For example `stream,progressive`\nwould return an array with 0 or more stream files followed by 0 or more progressive files.\n\nIf no files are found a 404 is returned.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getPaymentMethod",
+      "name": "account.getPaymentMethod",
+      "description": "Get a payment method under an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getPaymentMethods",
+      "name": "account.getPaymentMethods",
+      "description": "Get the available payment methods under an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getProfileWithId",
+      "name": "account.getProfileWithId",
+      "description": "Get the summary of a profile with a specific id under the active account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.getPurchases",
+      "name": "account.getPurchases",
+      "description": "Get a list of all purchases made under an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.makePurchase",
+      "name": "account.makePurchase",
+      "description": "Purchase a plan or item offer.\nThe result of a successful transaction is a new entitlement.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.registerDevice",
+      "name": "account.registerDevice",
+      "description": "Register a playback device under an account.\n\nIf a device with the same id already exists a `409` conflict will be returned.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.removePaymentMethod",
+      "name": "account.removePaymentMethod",
+      "description": "Remove a payment method from an account."
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.renameDevice",
+      "name": "account.renameDevice",
+      "description": "Rename a device"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.requestEmailVerification",
+      "name": "account.requestEmailVerification",
+      "description": "Request that the email address tied to an account be verified.\n\nThis will send a verification email to the email address of the primary profile containing\na link which, once clicked, completes the verification process via the /verify-email endpoint.\n\nNote that when an account is created this email is sent automatically so there's no need\nto call this directly.\n\nIf the user doesn't click the link before it expires then this endpoint can be called\nto request a new verification email. In the future it may also be used if we add support\nfor changing an account email address.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.updateAccount",
+      "name": "account.updateAccount",
+      "description": "Update the details of an account.\n\nWith the exception of the address, this supports partial updates, so you can send just the\nproperties you wish to update.\n\nWhen the address is provided any properties which are omitted from the address will be cleared.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.updateProfileWithId",
+      "name": "account.updateProfileWithId",
+      "description": "Update the summary of a profile with a specific id under the active account.\n\nThis supports partial updates so you can send just the properties you wish to update.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.account.updateSubscription",
+      "name": "account.updateSubscription",
+      "description": "Renew a cancelled subscription or switch subscription to a different plan.\n\nWhen renewing a cancelled subscription membership, hit this endpoint with\nthe id of subscription to renew.\n\nTo switch plans provide the id of the current active subscription membership\nof the account, and in the query specify the id of the plan to switch to.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.app.getAppConfig",
+      "name": "app.getAppConfig",
+      "description": "Get the global configuration for an application. Should be called during app statup.\n\nThis includes things like device and playback rules, classifications,\nsitemap and subscriptions.\n\nYou have the option to select specific configuration objects using the 'include'\nparameter, or if unspecified, getting all configuration.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.app.getItvPage",
+      "name": "app.getItvPage",
+      "description": "Returns a page with the specified id.\n\nThis is a cut down version for low memory devices.123\n\nIf targeting the search page you must url encode the search term as a parameter\nusing the `q` key. For example if your browser path looks like `/search?q=the`\nthen what you pass to this endpoint would look like `/itv/page?path=/search%3Fq%3Dthe`.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.app.getPage",
+      "name": "app.getPage",
+      "description": "Returns a page with the specified id.\n\nIf targeting the search page you must url encode the search term as a parameter\nusing the `q` key. For example if your browser path looks like `/search?q=the`\nthen what you pass to this endpoint would look like `/page?path=/search%3Fq%3Dthe`.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.generateDeviceAuthorizationCode",
+      "name": "authorization.generateDeviceAuthorizationCode",
+      "description": "Get a generated device authorization code.\n\nThis is the first step in the process of authorizing a device by pin code.\nThe device will make a request to this endpoint providing a unique identifier\nfor the device such as a serial number. This endpoint will then return a\ngenerated code which is tied to the given device.\n\nThe code may subsequently be used to authorize the device to sign in to an\naccount via the `/account/devices/authorization` endpoint. Typically this\nwill be from a page presented in the web app under the account section.\n\nOnce authorized, the device will then be able to sign in to that account\nvia the `/authorization/device` endpoint, without needing to provide the \ncredentials of the user.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.getAccountToken",
+      "name": "authorization.getAccountToken",
+      "description": "Request one or more `Account` level authorization tokens each with a chosen scope.\n\nTokens are used to access restricted service endpoints. These restricted endpoints\nwill require a specific token type (e.g Account) with a specific scope (e.g. Catalog)\nbefore access is granted.\n\nFor convenience, where a Profile level token with the same scope exists it will also be returned.\n\nAuthorization with pin is not supported on this endpoint anymore. Use `/itv/pinauthorization`\nendpoint instead.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.getAccountTokenByCode",
+      "name": "authorization.getAccountTokenByCode",
+      "description": "Get Catalog tokens for an account using a device authorization code.\nWhere a Profile level token of Catalog scope exists it will also be returned.\n\nThis is the final step in the process of authorizing a device by pin code.\n\nFirstly the device must request a generated authorization code via the\n`/authorization/device/code` endpoint.\n\nThe code is subsequently used to authorize the device to sign in to a given\naccount via the `/account/devices/authorization` endpoint. Typically this\nwill be from a page presented in the web app under the account section.\n\nOnce authorized, this endpoint will allow the device to sign in without\nneeding to provide the credentials of the user.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.getProfileToken",
+      "name": "authorization.getProfileToken",
+      "description": "Request one or more `Profile` level authorization tokens each with a chosen scope.\n\nTokens are used to access restricted service endpoints. These restriced endpoints\nwill require a specific token type (e.g Profile) with a specific scope (e.g. Catalog)\nbefore access is granted.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.refreshToken",
+      "name": "authorization.refreshToken",
+      "description": "Refresh an account or profile level authorization token which is marked as refreshable."
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.signOut",
+      "name": "authorization.signOut",
+      "description": "When a user signs out of an application we need to clear some\nbasic cookies we assigned them during token authorization.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.authorization.singleSignOn",
+      "name": "authorization.singleSignOn",
+      "description": "Exchange a third party single-sign-on token for our own authorization tokens."
+    },
+    {
+      "id": "openapi_britbox_co_uk.bt.assignToken",
+      "name": "bt.assignToken",
+      "description": "Assigns an UserToken to a profile on the ITV side. Currently throws an exception."
+    },
+    {
+      "id": "openapi_britbox_co_uk.bt.checkUserToken",
+      "name": "bt.checkUserToken",
+      "description": "Checks a provided token for BT eligible user.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.bt.getPlanByToken",
+      "name": "bt.getPlanByToken",
+      "description": "Returns all the plans available for BT flow including additional description data."
+    },
+    {
+      "id": "openapi_britbox_co_uk.bt.getPlans",
+      "name": "bt.getPlans",
+      "description": "Returns all the plans available for BT flow including additional description data."
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getAnonNextPlaybackItem",
+      "name": "content.getAnonNextPlaybackItem",
+      "description": "Identical to GET /account/profile/items/{itemId}/next route but for users\nthat are not logged in i.e. this endpoint does not require authorisation\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getItem",
+      "name": "content.getItem",
+      "description": "Returns the details of an item with the specified id."
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getItemChildrenList",
+      "name": "content.getItemChildrenList",
+      "description": "Returns the List of child summary items under an item.\n\nIf the item is a Season then the children will be episodes and ordered by episode number.\n\nIf the item is a Show then the children will be Seasons and ordered by season number.\n\nReturns 404 if no children found.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getItemDownloadables",
+      "name": "content.getItemDownloadables",
+      "description": "Returns the details of an item with the specified id."
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getItemRelatedList",
+      "name": "content.getItemRelatedList",
+      "description": "Returns the list of items related to the parent item.\n\nNote for now, due to the size of the list being unknown, only a single page will be returned.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getItemsMediaClipFiles",
+      "name": "content.getItemsMediaClipFiles",
+      "description": "Get the media clip files associated with items.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getList",
+      "name": "content.getList",
+      "description": "Returns a list of items under the specified item list"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getLists",
+      "name": "content.getLists",
+      "description": "Returns an array of item lists with their first page of content resolved."
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getPlansId",
+      "name": "content.getPlansId",
+      "description": "Returns the details of a Plan with the specified id."
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getPublicItemMediaFiles",
+      "name": "content.getPublicItemMediaFiles",
+      "description": "Get the free / public video files associated with an item given maximum resolution,\ndevice type and one or more delivery types.\n\nReturns an array of video file objects which each include a url to a video.\n\nThe first entry in the array contains what is predicted to be the best match.\nThe remainder of the entries, if any, may contain resolutions below what was\nrequests. For example if you request HD-720 the response may also contain\nSD entries.\n\nIf you specify multiple delivery types, then the response array will insert\ntypes in the order you specify them in the query. For example `stream,progressive`\nwould return an array with 0 or more stream files followed by 0 or more progressive files.\n\nIf no files are found a 404 is returned.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.getSchedules",
+      "name": "content.getSchedules",
+      "description": "Returns schedules for a defined set of channels over a requested period.\n\nSchedules are requested in hour blocks and returned grouped by the channel\nthey belong to.\n\nFor example, to load 12 hours of schedules for channels `4343` and `5234`,\non 21/2/2017 starting from 08:00.\n\n```\nchannels=4343,5234\ndate=2017-02-21\nhour=8\nduration=12\n```\n\nPlease remember that `date` and `hour` combined represent a normal datetime, \nso they should be converted to UTC on the client - this will help to avoid \nissues with EPG schedules near midnight.\n\nIf a channel id is passed which doesn't exist then this endpoint will\nreturn an empty schedule list for it. If instead we returned 404,\nthis would invalidate all other channel schedules in the same request\nwhich would be unfriendly for clients presenting these channel schedules.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.content.search",
+      "name": "content.search",
+      "description": "Search the catalog of items and people."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.assignMsisdn",
+      "name": "ee.assignMsisdn",
+      "description": "Assigns a msisdn to a profile on ITV side."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.checkEeBtEligibility",
+      "name": "ee.checkEeBtEligibility",
+      "description": "Check whether or not a user is eligible for switching to Bt or EE offers."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.createPinRequest",
+      "name": "ee.createPinRequest",
+      "description": "Creates a PIN request that will send an SMS to the given msisdn.\nThis call is to validate MSISDN entered by a user not comming through EE network.\nThis call should be followed by POST ee/pin.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.createToken",
+      "name": "ee.createToken",
+      "description": "Returns a token for later calls to EE API. TTL is one hour. Recommended is FE refreshes this token before each call."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.getEePlans",
+      "name": "ee.getEePlans",
+      "description": "Returns all the plans available for EE flow including additional description data."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.getEligibleOffers",
+      "name": "ee.getEligibleOffers",
+      "description": "Returns eligible partner specific offers for the querying partner for an EE MSISDN.\nThis call is supposed to be called after we have MSISDN accired.\nThis call should be followed by POST /ee/msisdn.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.getPlan",
+      "name": "ee.getPlan",
+      "description": "Returns the plan description for EE flow including additional description data."
+    },
+    {
+      "id": "openapi_britbox_co_uk.ee.validatePinRequest",
+      "name": "ee.validatePinRequest",
+      "description": "Validate PIN request created by calling POST /ee/pin This call is to validate MSISDN entered by a user not comming through EE network. This call should be called after PUT /ee/pin. This call should be followed by POST /ee/offers."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.activateSaveOffer",
+      "name": "itv.activateSaveOffer",
+      "description": "Activates the discount for a user. Only Stripe platform is currently supported."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.changeCardDetails",
+      "name": "itv.changeCardDetails",
+      "description": "Change payment card details."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.changeEmail",
+      "name": "itv.changeEmail",
+      "description": "Change email address related to account/profile.\n\nThe expected token scope is Settings.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.changeMarketing",
+      "name": "itv.changeMarketing",
+      "description": "Change marketing preferences related to account/profile.\n\nThe expected token scope is Settings.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.checkPreviousEntitlements",
+      "name": "itv.checkPreviousEntitlements",
+      "description": "Check whether the user has been previously entitled."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.checkVoucher",
+      "name": "itv.checkVoucher",
+      "description": "Validates the coupon/voucher for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.confirmPurchase",
+      "name": "itv.confirmPurchase",
+      "description": "Confirms purchase and returns the details of purchased subscription for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.confirmPurchaseStrong",
+      "name": "itv.confirmPurchaseStrong",
+      "description": "Confirms purchase and returns the details of purchased subscription for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.confirmPurchaseWithOffer",
+      "name": "itv.confirmPurchaseWithOffer",
+      "description": "Confirms purchase and returns the details of purchased subscription for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.deleteAccount",
+      "name": "itv.deleteAccount",
+      "description": "Delete account in compliance with GDPR.\n\nThe expected token scope is Settings.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.deleteItvPurchasePlatform",
+      "name": "itv.deleteItvPurchasePlatform",
+      "description": "Cancel a plan subscription.\n\nA cancelled subscription will continue to be valid until the subscription\nexpiry date or next renewal date.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.executeTransaction",
+      "name": "itv.executeTransaction",
+      "description": "Sends request to execute specified transaction."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getAccountTokenWithPin",
+      "name": "itv.getAccountTokenWithPin",
+      "description": "Provides authorization with parental control pin.\n\nReturns an array containing account token with Playback scope.\n\nRequires access token with Catalog scope.\n\nPin must be a 4-digit string\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getBillingHistory",
+      "name": "itv.getBillingHistory",
+      "description": "Returns the list of billing records for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getCardDetails",
+      "name": "itv.getCardDetails",
+      "description": "Get payment card details."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getCurrentEntitlement",
+      "name": "itv.getCurrentEntitlement",
+      "description": "Returns current entitlement."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getCurrentSubscription",
+      "name": "itv.getCurrentSubscription",
+      "description": "Returns the details of current subscription for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getEntitlementsHistory",
+      "name": "itv.getEntitlementsHistory",
+      "description": "Returns the state of subscription for any payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getFeatureFlag",
+      "name": "itv.getFeatureFlag",
+      "description": "Gets info whether or not a feature is enabled or disabled using a feature flag. Feature flags are set as a custom field within PM. It also supports custom feature flag data if needed. Such data can be return as well."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getFullPriceRenewal",
+      "name": "itv.getFullPriceRenewal",
+      "description": "Returns full price renewal state and reason for specific user."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getItvItemsummaryExternalId",
+      "name": "itv.getItvItemsummaryExternalId",
+      "description": "Redirects to corresponding Axis Item details page."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getItvPlansPlatform",
+      "name": "itv.getItvPlansPlatform",
+      "description": "Returns the plans available for specified payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getItvProfile",
+      "name": "itv.getItvProfile",
+      "description": "Returns the ITV profile object."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getItvProfileToken",
+      "name": "itv.getItvProfileToken",
+      "description": "Returns the ITV profile token."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getItvRokuPlans",
+      "name": "itv.getItvRokuPlans",
+      "description": "Gets available Roku plans."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getPublicPreview",
+      "name": "itv.getPublicPreview",
+      "description": "Returns public preview for Samsung based on the page '/samsung-preview' configured in PresentationManager.\nThere is a hard limit of max 40 items to be returned. It splits evenly items count into the page rows, remaining items are added into the first row.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getRecommendedList",
+      "name": "itv.getRecommendedList",
+      "description": "Get the list of recommended items under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getSaveOffer",
+      "name": "itv.getSaveOffer",
+      "description": "Checks the provided coupon id for a user. Only Stripe platform is currently supported."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getSubscriptionState",
+      "name": "itv.getSubscriptionState",
+      "description": "Returns the state of subscription for any payment platform."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getSubscriptionStatus",
+      "name": "itv.getSubscriptionStatus",
+      "description": "Returns status of latest payment intent."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getUpcomingInvoice",
+      "name": "itv.getUpcomingInvoice",
+      "description": "Returns an upcoming invoice"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.getVoucherById",
+      "name": "itv.getVoucherById",
+      "description": "Checks the provided coupon id for a user. Only Stripe platform is currently supported."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.googlePaySubscription",
+      "name": "itv.googlePaySubscription",
+      "description": "Get the list of recommended items under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.resubscribe",
+      "name": "itv.resubscribe",
+      "description": "Resubscription for a user."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.updatePaymentIntentStrong",
+      "name": "itv.updatePaymentIntentStrong",
+      "description": "Change payment method details."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.updatePaymentMethodStrong",
+      "name": "itv.updatePaymentMethodStrong",
+      "description": "Change payment method details."
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.updateProfile",
+      "name": "itv.updateProfile",
+      "description": "Update ITV profile.\n\nThe expected token scope is Settings.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.itv.upgradePlan",
+      "name": "itv.upgradePlan",
+      "description": "Upgrades the plan for the current user."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.bookmarkItem",
+      "name": "profile.bookmarkItem",
+      "description": "Bookmark an item under the active profile.\n\nCreates one if it doesn't exist, overwrites one if it does.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.deleteItemBookmark",
+      "name": "profile.deleteItemBookmark",
+      "description": "Unbookmark an item under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.deleteWatched",
+      "name": "profile.deleteWatched",
+      "description": "Remove the watched status of items under the active profile. Passing in\nspecific `itemId`s to the `item_ids` query parameter will cause only these\nitems to be removed. **If this list is missing all watched items will be\nremoved**\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getBookmarkList",
+      "name": "profile.getBookmarkList",
+      "description": "Returns the list of bookmarked items under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getBookmarks",
+      "name": "profile.getBookmarks",
+      "description": "Get the map of bookmarked item ids (itemId => creationDate) under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getContinueWatchingList",
+      "name": "profile.getContinueWatchingList",
+      "description": "Returns a list of items which have been watched but not completed under the active\nprofile.\n\nMultiple episodes under the same show may be watched or in progress, however only a\nsingle item belonging to a particular show will be included in the returned list.\n\nThe next episode to continue watching for a particular show will be the most recent\nincompletely watched episode, or the next episode following the most recently\ncompletely watched episode. Based on the specified `show_item_type` type, either the next\nepisode, the season of the next episode, or the show will be included in the list.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getItemBookmark",
+      "name": "profile.getItemBookmark",
+      "description": "Get the bookmark for an item under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getItemRating",
+      "name": "profile.getItemRating",
+      "description": "Get the rating info for an item under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getItemWatchedStatus",
+      "name": "profile.getItemWatchedStatus",
+      "description": "Get the watched status info for an item under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getNextPlaybackItem",
+      "name": "profile.getNextPlaybackItem",
+      "description": "Returns the next item to play given a source item id.\n\nFor an unwatched show it returns the first episode available to the account.\n\nFor a watched show it returns the last incompletely watched episode by the profile,\nor the episode that immediately follows the last completely watched episode \nor nothing.\n\nFor an episode it always returns the immediately following episode, if available to\nthe account, or nothing.\n\nIf the response does not contain a `next` property then no item was found.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getProfile",
+      "name": "profile.getProfile",
+      "description": "Get the details of the active profile, including watched, bookmarked and rated items."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getRatings",
+      "name": "profile.getRatings",
+      "description": "Get the map of rated item ids (itemId => rating out of 10) under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getRatingsList",
+      "name": "profile.getRatingsList",
+      "description": "Returns the list of rated items under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getWatched",
+      "name": "profile.getWatched",
+      "description": "Get the map of watched item ids (itemId => last playhead position) under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.getWatchedList",
+      "name": "profile.getWatchedList",
+      "description": "Returns the list of watched items under the active profile."
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.rateItem",
+      "name": "profile.rateItem",
+      "description": "Rate an item under the active profile.\n\nCreates one if it doesn't exist, overwrites one if it does.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.profile.setItemWatchedStatus",
+      "name": "profile.setItemWatchedStatus",
+      "description": "Record the watched playhead position of a video under the active profile.\n\nCan be used later to resume a video from where it was last watched.\n\nCreates one if it doesn't exist, overwrites one if it does.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.registration.register",
+      "name": "registration.register",
+      "description": "Register a new user, creating them an account.\n\nRegistration, when successful, will return an array of access tokens so the user is\nimmediately signed in.\n\nIt returns Catalog and Commerce scoped tokens for both Account and Profile.\nThe Commerce ones are intended to allow the purchase of a subscription plan\nin the step after registration, without the user being prompted to enter\ntheir username and password again.\n\nAn email will also be sent with a link they need to click to confirm their\nemail address. This confirmation is done via the /verify-email endpoint.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.support.forgotPassword",
+      "name": "support.forgotPassword",
+      "description": "Request the password of an account's primary profile be reset.\n\nShould be called when a user has forgotten their password.\n\nThis will send an email with a password reset link to the email address of the\nprimary profile of an account.\n\nThe link, once clicked, should take the user to the \"reset-password\" page of the\nwebsite. Here they will enter their new password and submit to the /reset-password\nendpoint here, along with the password reset token provided in the original link.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.support.getSubscriptionData",
+      "name": "support.getSubscriptionData",
+      "description": "Returns the details of subscription data for a user with specified id."
+    },
+    {
+      "id": "openapi_britbox_co_uk.support.resetPassword",
+      "name": "support.resetPassword",
+      "description": "When a user requests to reset their password via the /request-password-reset endpoint, an\nemail is sent to the email address of the primary profile of the account. This email contains a link\nwith a reset token as query parameter. The link should take the user to the \"reset-password\"\npage of the website.\n\nFrom the reset-password page a user should enter the new password they wish to use. \nIt should then be submitted to this endpoint,\nalong with the reset token from the email link. \nThe token should be provided in the body as resetToken property.\n"
+    },
+    {
+      "id": "openapi_britbox_co_uk.support.verifyEmail",
+      "name": "support.verifyEmail",
+      "description": "When an account is created an email is sent to the email address of the new account.\nThis contains a link, which once clicked, verifies the email address of the account is correct.\n\nThe link contains a token as a query parameter which should be passed as the authorization\nbearer token to this endpoint to complete email verification.\n\nThe token has en expiry, so if the link is not clicked before it expires, the account holder\nmay need to request a new verification email be sent. This can be done via the endpoint\n/account/request-email-verification.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

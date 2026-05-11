@@ -1,0 +1,77 @@
+{
+  "fetchedAt": "2026-04-30T15:45:06.094Z",
+  "status": "ok",
+  "count": 14,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.cancelChangeSetCatalogChangeSetId.cancelChangeSet",
+      "name": "cancelChangeSetCatalogChangeSetId.cancelChangeSet",
+      "description": "Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.deleteResourcePolicyResourceArn.deleteResourcePolicy",
+      "name": "deleteResourcePolicyResourceArn.deleteResourcePolicy",
+      "description": "Deletes a resource-based policy on an Entity that is identified by its resource ARN."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.describeChangeSetCatalogChangeSetId.describeChangeSet",
+      "name": "describeChangeSetCatalogChangeSetId.describeChangeSet",
+      "description": "Provides information about a given change set."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.describeEntityCatalogEntityId.describeEntity",
+      "name": "describeEntityCatalogEntityId.describeEntity",
+      "description": "Returns the metadata and content of the entity."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.getResourcePolicyResourceArn.getResourcePolicy",
+      "name": "getResourcePolicyResourceArn.getResourcePolicy",
+      "description": "Gets a resource-based policy of an Entity that is identified by its resource ARN."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.listChangeSets.postOperation",
+      "name": "listChangeSets.postOperation",
+      "description": "<p>Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.</p> <p>You can describe a change during the 60-day request history retention period for API calls.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.listEntities.postOperation",
+      "name": "listEntities.postOperation",
+      "description": "Provides the list of entities of a given type."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.listTagsForResource.postOperation",
+      "name": "listTagsForResource.postOperation",
+      "description": "Lists all tags that have been added to a resource (either an <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities\">entity</a> or <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\">change set</a>)."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.putResourcePolicy.postOperation",
+      "name": "putResourcePolicy.postOperation",
+      "description": "Attaches a resource-based policy to an Entity. Examples of an entity include: <code>AmiProduct</code> and <code>ContainerProduct</code>."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.startChangeSet.postOperation",
+      "name": "startChangeSet.postOperation",
+      "description": "<p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p> <p>For example, you can't start the <code>ChangeSet</code> described in the <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples\">example</a> later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).</p> <p>For more information about working with change sets, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\"> Working with change sets</a>. For information on change types for single-AMI products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products\">Working with single-AMI products</a>. Als, for more information on change types available for container-based products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products\">Working with container products</a>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.tagResource.postOperation",
+      "name": "tagResource.postOperation",
+      "description": "Tags a resource (either an <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities\">entity</a> or <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\">change set</a>)."
+    },
+    {
+      "id": "openapi_amazonaws_com_marketplace_catalog_marketplace_catalog.untagResource.postOperation",
+      "name": "untagResource.postOperation",
+      "description": "Removes a tag or list of tags from a resource (either an <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities\">entity</a> or <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\">change set</a>)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

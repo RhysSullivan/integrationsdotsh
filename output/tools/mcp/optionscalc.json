@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:20:01.423Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "mcp_optionscalc.get_server_info",
+      "name": "get_server_info",
+      "description": "Use this only when you need a scope reminder. For stock prices, stock quotes, company info, market data, or news, answer directly with native tools instead of calling OptionsCalc tools."
+    },
+    {
+      "id": "mcp_optionscalc.analyze_strategy",
+      "name": "analyze_strategy",
+      "description": "Use this after valid legs are known. Primary final step for P/L, Greeks, PoP (lognormal), and widget payoff. Supports chart and P/L grid heatmap views; set output_view='pl_grid' to start in heatmap view or output_view='pl_curve' to start in chart view. Default quote_mode='refresh' selectively refreshes matched leg prices. For recommendation-style turns, run this once for the chosen strategy unless the user explicitly asks for comparisons."
+    },
+    {
+      "id": "mcp_optionscalc.get_chain_snapshot",
+      "name": "get_chain_snapshot",
+      "description": "NOT for stock price lookups — use get_server_info for those. Use this for options-chain discovery when strikes/expirations are not fixed. Returns cached chain-all coverage with DTE, ATM IV, and approximate delta landmarks (16-delta and 30-delta strikes) per expiration so you can pick valid strikes for multi-leg strategies without extra chain calls."
+    },
+    {
+      "id": "mcp_optionscalc.get_contract_quotes",
+      "name": "get_contract_quotes",
+      "description": "Use this only when you already have specific contract symbols and need a fresh quote check without refetching chain data."
+    },
+    {
+      "id": "mcp_optionscalc.get_option_chain",
+      "name": "get_option_chain",
+      "description": "Use this after get_chain_snapshot when you need detailed rows for one expiration. Avoid calling repeatedly across many expirations. Skip this for high-level strategy recommendations unless detailed strike rows are required."
+    },
+    {
+      "id": "mcp_optionscalc.search_option_symbols",
+      "name": "search_option_symbols",
+      "description": "Use this read-only utility to find optionable symbols, available expirations, and a lightweight strike preview for one selected expiration. It does not return chain rows."
+    },
+    {
+      "id": "mcp_optionscalc.show_greeks",
+      "name": "show_greeks",
+      "description": "Use this when the user wants to inspect position greeks across price or time. One call returns both views in a tabbed widget — do NOT call twice for different dimensions."
+    },
+    {
+      "id": "mcp_optionscalc.get_strategy_presets",
+      "name": "get_strategy_presets",
+      "description": "Use this when the user asks for strategy ideas or recommendations by outlook/risk profile. Pick one best-fit candidate, then call analyze_strategy once and cite computed risk metrics unless the user asks for side-by-side comparison."
+    }
+  ]
+}

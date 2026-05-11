@@ -1,0 +1,107 @@
+{
+  "fetchedAt": "2026-04-30T15:26:54.031Z",
+  "status": "ok",
+  "count": 20,
+  "tools": [
+    {
+      "id": "openapi_up_com_au.accounts.getAccounts",
+      "name": "accounts.getAccounts",
+      "description": "Retrieve a paginated list of all accounts for the currently\nauthenticated user. The returned list is paginated and can be scrolled\nby following the `prev` and `next` links where present.\n"
+    },
+    {
+      "id": "openapi_up_com_au.accounts.getAccountsId",
+      "name": "accounts.getAccountsId",
+      "description": "Retrieve a specific account by providing its unique identifier.\n"
+    },
+    {
+      "id": "openapi_up_com_au.categories.getCategories",
+      "name": "categories.getCategories",
+      "description": "Retrieve a list of all categories and their ancestry. The returned list\nis not paginated.\n"
+    },
+    {
+      "id": "openapi_up_com_au.categories.getCategoriesId",
+      "name": "categories.getCategoriesId",
+      "description": "Retrieve a specific category by providing its unique identifier.\n"
+    },
+    {
+      "id": "openapi_up_com_au.categories.patchTransactionsTransactionIdRelationshipsCategory",
+      "name": "categories.patchTransactionsTransactionIdRelationshipsCategory",
+      "description": "Updates the category associated with a transaction. Only transactions\nfor which `isCategorizable` is set to true support this operation. The\n`id` is taken from the list exposed on `/categories` and cannot be one of\nthe top-level (parent) categories. To de-categorize a transaction, set\nthe entire `data` key to `null`. An HTTP `204` is returned on success.\nThe associated category, along with its request URL is also exposed via\nthe `category` relationship on the transaction resource returned from\n`/transactions/{id}`.\n"
+    },
+    {
+      "id": "openapi_up_com_au.tags.deleteTransactionsTransactionIdRelationshipsTags",
+      "name": "tags.deleteTransactionsTransactionIdRelationshipsTags",
+      "description": "Disassociates one or more tags from a specific transaction. Tags that are\nnot associated are silently ignored. An HTTP `204` is returned on\nsuccess. The associated tags, along with this request URL, are also\nexposed via the `tags` relationship on the transaction resource returned\nfrom `/transactions/{id}`.\n"
+    },
+    {
+      "id": "openapi_up_com_au.tags.getTags",
+      "name": "tags.getTags",
+      "description": "Retrieve a list of all tags currently in use. The returned list is\n[paginated](#pagination) and can be scrolled by following the `next`\nand `prev` links where present. Results are ordered lexicographically.\nThe `transactions` relationship for each tag exposes a link\nto get the transactions with the given tag.\n"
+    },
+    {
+      "id": "openapi_up_com_au.tags.postTransactionsTransactionIdRelationshipsTags",
+      "name": "tags.postTransactionsTransactionIdRelationshipsTags",
+      "description": "Associates one or more tags with a specific transaction. No more than 6\ntags may be present on any single transaction. Duplicate tags are\nsilently ignored. An HTTP `204` is returned on success. The associated\ntags, along with this request URL, are also exposed via the `tags`\nrelationship on the transaction resource returned from\n`/transactions/{id}`.\n"
+    },
+    {
+      "id": "openapi_up_com_au.transactions.getAccountsAccountIdTransactions",
+      "name": "transactions.getAccountsAccountIdTransactions",
+      "description": "Retrieve a list of all transactions for a specific account. The returned\nlist is [paginated](#pagination) and can be scrolled by following the\n`next` and `prev` links where present. To narrow the results to a\nspecific date range pass one or both of `filter[since]` and\n`filter[until]` in the query string. These filter parameters\n**should not** be used for pagination. Results are ordered newest first\nto oldest last.\n"
+    },
+    {
+      "id": "openapi_up_com_au.transactions.getTransactions",
+      "name": "transactions.getTransactions",
+      "description": "Retrieve a list of all transactions across all accounts for the currently\nauthenticated user. The returned list is [paginated](#pagination) and can\nbe scrolled by following the `next` and `prev` links where present. To\nnarrow the results to a specific date range pass one or both of\n`filter[since]` and `filter[until]` in the query string. These filter\nparameters **should not** be used for pagination. Results are ordered\nnewest first to oldest last.\n"
+    },
+    {
+      "id": "openapi_up_com_au.transactions.getTransactionsId",
+      "name": "transactions.getTransactionsId",
+      "description": "Retrieve a specific transaction by providing its unique identifier.\n"
+    },
+    {
+      "id": "openapi_up_com_au.utilityEndpoints.getUtilPing",
+      "name": "utilityEndpoints.getUtilPing",
+      "description": "Make a basic ping request to the API. This is useful to verify that\nauthentication is functioning correctly. On authentication success an\nHTTP `200` status is returned. On failure an HTTP `401` error response\nis returned.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.deleteWebhooksId",
+      "name": "webhooks.deleteWebhooksId",
+      "description": "Delete a specific webhook by providing its unique identifier. Once\ndeleted, webhook events will no longer be sent to the configured URL.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Retrieve a list of configured webhooks. The returned list is\n[paginated](#pagination) and can be scrolled by following the `next`\nand `prev` links where present. Results are ordered oldest first to\nnewest last.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.getWebhooksId",
+      "name": "webhooks.getWebhooksId",
+      "description": "Retrieve a specific webhook by providing its unique identifier.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.getWebhooksWebhookIdLogs",
+      "name": "webhooks.getWebhooksWebhookIdLogs",
+      "description": "Retrieve a list of delivery logs for a webhook by providing its unique\nidentifier. This is useful for analysis and debugging purposes. The\nreturned list is [paginated](#pagination) and can be scrolled by\nfollowing the `next` and `prev` links where present. Results are ordered\nnewest first to oldest last. Logs may be automatically purged after a\nperiod of time.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.postWebhooks",
+      "name": "webhooks.postWebhooks",
+      "description": "Create a new webhook with a given URL. The URL will receive webhook\nevents as JSON-encoded `POST` requests. The URL must respond with a HTTP\n`200` status on success.\n\nThere is currently a limit of 10 webhooks at any given time. Once this\nlimit is reached, existing webhooks will need to be deleted before new\nwebhooks can be created.\n\nEvent delivery is retried with exponential backoff if the URL is\nunreachable or it does not respond with a `200` status. The response\nincludes a `secretKey` attribute, which is used to sign requests sent to\nthe webhook URL. It will not be returned from any other endpoints within\nthe Up API. If the `secretKey` is lost, simply create a new webhook with\nthe same URL, capture its `secretKey` and then delete the original\nwebhook. See [Handling webhook events](#callback_post_webhookURL) for\ndetails on how to process webhook events.\n\nIt is probably a good idea to test the webhook by\n[sending it a `PING` event](#post_webhooks_webhookId_ping) after creating\nit.\n"
+    },
+    {
+      "id": "openapi_up_com_au.webhooks.postWebhooksWebhookIdPing",
+      "name": "webhooks.postWebhooksWebhookIdPing",
+      "description": "Send a `PING` event to a webhook by providing its unique identifier.\nThis is useful for testing and debugging purposes. The event is delivered\nasynchronously and its data is returned in the response to this request.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

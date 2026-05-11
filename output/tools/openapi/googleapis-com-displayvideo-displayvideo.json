@@ -1,0 +1,717 @@
+{
+  "fetchedAt": "2026-04-30T15:22:36.626Z",
+  "status": "ok",
+  "count": 142,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersAssetsUpload",
+      "name": "advertisers.displayvideoAdvertisersAssetsUpload",
+      "description": "Uploads an asset. Returns the ID of the newly uploaded asset if successful. The asset file size should be no more than 10 MB for images, 200 MB for ZIP files, and 1 GB for videos. Must be used within the [multipart media upload process](/display-video/api/guides/how-tos/upload#multipart). Examples using provided client libraries can be found in our [Creating Creatives guide](/display-video/api/guides/creating-creatives/overview#upload_an_asset)."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersAudit",
+      "name": "advertisers.displayvideoAdvertisersAudit",
+      "description": "Audits an advertiser. Returns the counts of used entities per resource type under the advertiser provided. Used entities count towards their respective resource limit. See https://support.google.com/displayvideo/answer/6071450."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersBulkEditAdvertiserAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersBulkEditAdvertiserAssignedTargetingOptions",
+      "description": "Bulk edits targeting options under a single advertiser. The operation will delete the assigned targeting options provided in BulkEditAdvertiserAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditAdvertiserAssignedTargetingOptionsRequest.create_requests ."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersBulkListAdvertiserAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersBulkListAdvertiserAssignedTargetingOptions",
+      "description": "Lists assigned targeting options of an advertiser across targeting types."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsBulkListCampaignAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersCampaignsBulkListCampaignAssignedTargetingOptions",
+      "description": "Lists assigned targeting options of a campaign across targeting types."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsCreate",
+      "name": "advertisers.displayvideoAdvertisersCampaignsCreate",
+      "description": "Creates a new campaign. Returns the newly created campaign if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsDelete",
+      "name": "advertisers.displayvideoAdvertisersCampaignsDelete",
+      "description": "Permanently deletes a campaign. A deleted campaign cannot be recovered. The campaign should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsGet",
+      "name": "advertisers.displayvideoAdvertisersCampaignsGet",
+      "description": "Gets a campaign."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsList",
+      "name": "advertisers.displayvideoAdvertisersCampaignsList",
+      "description": "Lists campaigns in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, campaigns with `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsPatch",
+      "name": "advertisers.displayvideoAdvertisersCampaignsPatch",
+      "description": "Updates an existing campaign. Returns the updated campaign if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsTargetingTypesAssignedTargetingOptionsGet",
+      "name": "advertisers.displayvideoAdvertisersCampaignsTargetingTypesAssignedTargetingOptionsGet",
+      "description": "Gets a single targeting option assigned to a campaign."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCampaignsTargetingTypesAssignedTargetingOptionsList",
+      "name": "advertisers.displayvideoAdvertisersCampaignsTargetingTypesAssignedTargetingOptionsList",
+      "description": "Lists the targeting options assigned to a campaign for a specified targeting type."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsCreate",
+      "name": "advertisers.displayvideoAdvertisersChannelsCreate",
+      "description": "Creates a new channel. Returns the newly created channel if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsList",
+      "name": "advertisers.displayvideoAdvertisersChannelsList",
+      "description": "Lists channels for a partner or advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsPatch",
+      "name": "advertisers.displayvideoAdvertisersChannelsPatch",
+      "description": "Updates a channel. Returns the updated channel if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsSitesBulkEdit",
+      "name": "advertisers.displayvideoAdvertisersChannelsSitesBulkEdit",
+      "description": "Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsSitesDelete",
+      "name": "advertisers.displayvideoAdvertisersChannelsSitesDelete",
+      "description": "Deletes a site from a channel."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsSitesList",
+      "name": "advertisers.displayvideoAdvertisersChannelsSitesList",
+      "description": "Lists sites in a channel."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersChannelsSitesReplace",
+      "name": "advertisers.displayvideoAdvertisersChannelsSitesReplace",
+      "description": "Replaces all of the sites under a single channel. The operation will replace the sites under a channel with the sites provided in ReplaceSitesRequest.new_sites."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreate",
+      "name": "advertisers.displayvideoAdvertisersCreate",
+      "description": "Creates a new advertiser. Returns the newly created advertiser if successful. This method can take up to 180 seconds to complete."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreativesCreate",
+      "name": "advertisers.displayvideoAdvertisersCreativesCreate",
+      "description": "Creates a new creative. Returns the newly created creative if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreativesDelete",
+      "name": "advertisers.displayvideoAdvertisersCreativesDelete",
+      "description": "Deletes a creative. Returns error code `NOT_FOUND` if the creative does not exist. The creative should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, before it can be deleted."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreativesGet",
+      "name": "advertisers.displayvideoAdvertisersCreativesGet",
+      "description": "Gets a creative."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreativesList",
+      "name": "advertisers.displayvideoAdvertisersCreativesList",
+      "description": "Lists creatives in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, creatives with `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersCreativesPatch",
+      "name": "advertisers.displayvideoAdvertisersCreativesPatch",
+      "description": "Updates an existing creative. Returns the updated creative if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersDelete",
+      "name": "advertisers.displayvideoAdvertisersDelete",
+      "description": "Deletes an advertiser. Deleting an advertiser will delete all of its child resources, for example, campaigns, insertion orders and line items. A deleted advertiser cannot be recovered."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersGet",
+      "name": "advertisers.displayvideoAdvertisersGet",
+      "description": "Gets an advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersBulkListInsertionOrderAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersBulkListInsertionOrderAssignedTargetingOptions",
+      "description": "Lists assigned targeting options of an insertion order across targeting types."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersCreate",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersCreate",
+      "description": "Creates a new insertion order. Returns the newly created insertion order if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersDelete",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersDelete",
+      "description": "Deletes an insertion order. Returns error code `NOT_FOUND` if the insertion order does not exist. The insertion order should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersGet",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersGet",
+      "description": "Gets an insertion order. Returns error code `NOT_FOUND` if the insertion order does not exist."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersList",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersList",
+      "description": "Lists insertion orders in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, insertion orders with `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersPatch",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersPatch",
+      "description": "Updates an existing insertion order. Returns the updated insertion order if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersTargetingTypesAssignedTargetingOptionsGet",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersTargetingTypesAssignedTargetingOptionsGet",
+      "description": "Gets a single targeting option assigned to an insertion order."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInsertionOrdersTargetingTypesAssignedTargetingOptionsList",
+      "name": "advertisers.displayvideoAdvertisersInsertionOrdersTargetingTypesAssignedTargetingOptionsList",
+      "description": "Lists the targeting options assigned to an insertion order."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInvoicesList",
+      "name": "advertisers.displayvideoAdvertisersInvoicesList",
+      "description": "Lists invoices posted for an advertiser in a given month. Invoices generated by billing profiles with a \"Partner\" invoice level are not retrievable through this method."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersInvoicesLookupInvoiceCurrency",
+      "name": "advertisers.displayvideoAdvertisersInvoicesLookupInvoiceCurrency",
+      "description": "Retrieves the invoice currency used by an advertiser in a given month."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsBulkEditLineItemAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersLineItemsBulkEditLineItemAssignedTargetingOptions",
+      "description": "Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsBulkListLineItemAssignedTargetingOptions",
+      "name": "advertisers.displayvideoAdvertisersLineItemsBulkListLineItemAssignedTargetingOptions",
+      "description": "Lists assigned targeting options of a line item across targeting types."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsCreate",
+      "name": "advertisers.displayvideoAdvertisersLineItemsCreate",
+      "description": "Creates a new line item. Returns the newly created line item if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsDelete",
+      "name": "advertisers.displayvideoAdvertisersLineItemsDelete",
+      "description": "Deletes a line item. Returns error code `NOT_FOUND` if the line item does not exist. The line item should be archived first, i.e. set entity_status to `ENTITY_STATUS_ARCHIVED`, to be able to delete it."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsGenerateDefault",
+      "name": "advertisers.displayvideoAdvertisersLineItemsGenerateDefault",
+      "description": "Creates a new line item with settings (including targeting) inherited from the insertion order and an `ENTITY_STATUS_DRAFT` entity_status. Returns the newly created line item if successful. There are default values based on the three fields: * The insertion order's insertion_order_type * The insertion order's automation_type * The given line_item_type"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsGet",
+      "name": "advertisers.displayvideoAdvertisersLineItemsGet",
+      "description": "Gets a line item."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsList",
+      "name": "advertisers.displayvideoAdvertisersLineItemsList",
+      "description": "Lists line items in an advertiser. The order is defined by the order_by parameter. If a filter by entity_status is not specified, line items with `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsPatch",
+      "name": "advertisers.displayvideoAdvertisersLineItemsPatch",
+      "description": "Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdateLineItems * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsCreate",
+      "name": "advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsCreate",
+      "description": "Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * DeleteLineItemAssignedTargetingOption"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsDelete",
+      "name": "advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsDelete",
+      "description": "Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * CreateLineItemAssignedTargetingOption"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsGet",
+      "name": "advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsGet",
+      "description": "Gets a single targeting option assigned to a line item."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsList",
+      "name": "advertisers.displayvideoAdvertisersLineItemsTargetingTypesAssignedTargetingOptionsList",
+      "description": "Lists the targeting options assigned to a line item."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersList",
+      "name": "advertisers.displayvideoAdvertisersList",
+      "description": "Lists advertisers that are accessible to the current user. The order is defined by the order_by parameter. A single partner_id is required. Cross-partner listing is not supported."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsAssignedLocationsBulkEdit",
+      "name": "advertisers.displayvideoAdvertisersLocationListsAssignedLocationsBulkEdit",
+      "description": "Bulk edits multiple assignments between locations and a single location list. The operation will delete the assigned locations provided in BulkEditAssignedLocationsRequest.deleted_assigned_locations and then create the assigned locations provided in BulkEditAssignedLocationsRequest.created_assigned_locations."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsAssignedLocationsCreate",
+      "name": "advertisers.displayvideoAdvertisersLocationListsAssignedLocationsCreate",
+      "description": "Creates an assignment between a location and a location list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsAssignedLocationsDelete",
+      "name": "advertisers.displayvideoAdvertisersLocationListsAssignedLocationsDelete",
+      "description": "Deletes the assignment between a location and a location list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsAssignedLocationsList",
+      "name": "advertisers.displayvideoAdvertisersLocationListsAssignedLocationsList",
+      "description": "Lists locations assigned to a location list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsCreate",
+      "name": "advertisers.displayvideoAdvertisersLocationListsCreate",
+      "description": "Creates a new location list. Returns the newly created location list if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsList",
+      "name": "advertisers.displayvideoAdvertisersLocationListsList",
+      "description": "Lists location lists based on a given advertiser id."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersLocationListsPatch",
+      "name": "advertisers.displayvideoAdvertisersLocationListsPatch",
+      "description": "Updates a location list. Returns the updated location list if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersActivate",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersActivate",
+      "description": "Activates a manual trigger. Each activation of the manual trigger must be at least 5 minutes apart, otherwise an error will be returned."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersCreate",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersCreate",
+      "description": "Creates a new manual trigger. Returns the newly created manual trigger if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersDeactivate",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersDeactivate",
+      "description": "Deactivates a manual trigger."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersGet",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersGet",
+      "description": "Gets a manual trigger."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersList",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersList",
+      "description": "Lists manual triggers that are accessible to the current user for a given advertiser ID. The order is defined by the order_by parameter. A single advertiser_id is required."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersManualTriggersPatch",
+      "name": "advertisers.displayvideoAdvertisersManualTriggersPatch",
+      "description": "Updates a manual trigger. Returns the updated manual trigger if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsCreate",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsCreate",
+      "description": "Creates a new negative keyword list. Returns the newly created negative keyword list if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsList",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsList",
+      "description": "Lists negative keyword lists based on a given advertiser id."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsBulkEdit",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsBulkEdit",
+      "description": "Bulk edits negative keywords in a single negative keyword list. The operation will delete the negative keywords provided in BulkEditNegativeKeywordsRequest.deleted_negative_keywords and then create the negative keywords provided in BulkEditNegativeKeywordsRequest.created_negative_keywords. This operation is guaranteed to be atomic and will never result in a partial success or partial failure."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsDelete",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsDelete",
+      "description": "Deletes a negative keyword from a negative keyword list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsList",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsList",
+      "description": "Lists negative keywords in a negative keyword list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsReplace",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsNegativeKeywordsReplace",
+      "description": "Replaces all negative keywords in a single negative keyword list. The operation will replace the keywords in a negative keyword list with keywords provided in ReplaceNegativeKeywordsRequest.new_negative_keywords."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersNegativeKeywordListsPatch",
+      "name": "advertisers.displayvideoAdvertisersNegativeKeywordListsPatch",
+      "description": "Updates a negative keyword list. Returns the updated negative keyword list if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersPatch",
+      "name": "advertisers.displayvideoAdvertisersPatch",
+      "description": "Updates an existing advertiser. Returns the updated advertiser if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsCreate",
+      "name": "advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsCreate",
+      "description": "Assigns a targeting option to an advertiser. Returns the assigned targeting option if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsDelete",
+      "name": "advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsDelete",
+      "description": "Deletes an assigned targeting option from an advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsGet",
+      "name": "advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsGet",
+      "description": "Gets a single targeting option assigned to an advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsList",
+      "name": "advertisers.displayvideoAdvertisersTargetingTypesAssignedTargetingOptionsList",
+      "description": "Lists the targeting options assigned to an advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.combinedAudiences.displayvideoCombinedAudiencesGet",
+      "name": "combinedAudiences.displayvideoCombinedAudiencesGet",
+      "description": "Gets a combined audience."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.combinedAudiences.displayvideoCombinedAudiencesList",
+      "name": "combinedAudiences.displayvideoCombinedAudiencesList",
+      "description": "Lists combined audiences. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsCreate",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsCreate",
+      "description": "Creates a new custom bidding algorithm. Returns the newly created custom bidding algorithm if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsGet",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsGet",
+      "description": "Gets a custom bidding algorithm."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsList",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsList",
+      "description": "Lists custom bidding algorithms that are accessible to the current user and can be used in bidding stratgies. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsPatch",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsPatch",
+      "description": "Updates an existing custom bidding algorithm. Returns the updated custom bidding algorithm if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsCreate",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsCreate",
+      "description": "Creates a new custom bidding script. Returns the newly created script if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsGet",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsGet",
+      "description": "Gets a custom bidding script."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsList",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsScriptsList",
+      "description": "Lists custom bidding scripts that belong to the given algorithm. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsUploadScript",
+      "name": "customBiddingAlgorithms.displayvideoCustomBiddingAlgorithmsUploadScript",
+      "description": "Creates a custom bidding script reference object for a script file. The resulting reference object provides a resource path to which the script file should be uploaded. This reference object should be included in when creating a new custom bidding script object."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customLists.displayvideoCustomListsGet",
+      "name": "customLists.displayvideoCustomListsGet",
+      "description": "Gets a custom list."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.customLists.displayvideoCustomListsList",
+      "name": "customLists.displayvideoCustomListsList",
+      "description": "Lists custom lists. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesCreate",
+      "name": "firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesCreate",
+      "description": "Creates a FirstAndThirdPartyAudience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesEditCustomerMatchMembers",
+      "name": "firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesEditCustomerMatchMembers",
+      "description": "Updates the member list of a Customer Match audience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesGet",
+      "name": "firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesGet",
+      "description": "Gets a first and third party audience."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesList",
+      "name": "firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesList",
+      "description": "Lists first and third party audiences. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesPatch",
+      "name": "firstAndThirdPartyAudiences.displayvideoFirstAndThirdPartyAudiencesPatch",
+      "description": "Updates an existing FirstAndThirdPartyAudience. Only supported for the following audience_type: * `CUSTOMER_MATCH_CONTACT_INFO` * `CUSTOMER_MATCH_DEVICE_ID`"
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.floodlightGroups.displayvideoFloodlightGroupsGet",
+      "name": "floodlightGroups.displayvideoFloodlightGroupsGet",
+      "description": "Gets a Floodlight group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.googleAudiences.displayvideoGoogleAudiencesGet",
+      "name": "googleAudiences.displayvideoGoogleAudiencesGet",
+      "description": "Gets a Google audience."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.googleAudiences.displayvideoGoogleAudiencesList",
+      "name": "googleAudiences.displayvideoGoogleAudiencesList",
+      "description": "Lists Google audiences. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.guaranteedOrders.displayvideoGuaranteedOrdersCreate",
+      "name": "guaranteedOrders.displayvideoGuaranteedOrdersCreate",
+      "description": "Creates a new guaranteed order. Returns the newly created guaranteed order if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.guaranteedOrders.displayvideoGuaranteedOrdersEditGuaranteedOrderReadAccessors",
+      "name": "guaranteedOrders.displayvideoGuaranteedOrdersEditGuaranteedOrderReadAccessors",
+      "description": "Edits read advertisers of a guaranteed order."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.guaranteedOrders.displayvideoGuaranteedOrdersGet",
+      "name": "guaranteedOrders.displayvideoGuaranteedOrdersGet",
+      "description": "Gets a guaranteed order."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.guaranteedOrders.displayvideoGuaranteedOrdersList",
+      "name": "guaranteedOrders.displayvideoGuaranteedOrdersList",
+      "description": "Lists guaranteed orders that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, guaranteed orders with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.guaranteedOrders.displayvideoGuaranteedOrdersPatch",
+      "name": "guaranteedOrders.displayvideoGuaranteedOrdersPatch",
+      "description": "Updates an existing guaranteed order. Returns the updated guaranteed order if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesBulkEdit",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesBulkEdit",
+      "description": "Bulk edits multiple assignments between inventory sources and a single inventory source group. The operation will delete the assigned inventory sources provided in BulkEditAssignedInventorySourcesRequest.deleted_assigned_inventory_sources and then create the assigned inventory sources provided in BulkEditAssignedInventorySourcesRequest.created_assigned_inventory_sources."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesCreate",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesCreate",
+      "description": "Creates an assignment between an inventory source and an inventory source group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesDelete",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesDelete",
+      "description": "Deletes the assignment between an inventory source and an inventory source group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesList",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsAssignedInventorySourcesList",
+      "description": "Lists inventory sources assigned to an inventory source group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsCreate",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsCreate",
+      "description": "Creates a new inventory source group. Returns the newly created inventory source group if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsDelete",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsDelete",
+      "description": "Deletes an inventory source group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsGet",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsGet",
+      "description": "Gets an inventory source group."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySourceGroups.displayvideoInventorySourceGroupsList",
+      "name": "inventorySourceGroups.displayvideoInventorySourceGroupsList",
+      "description": "Lists inventory source groups that are accessible to the current user. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySources.displayvideoInventorySourcesCreate",
+      "name": "inventorySources.displayvideoInventorySourcesCreate",
+      "description": "Creates a new inventory source. Returns the newly created inventory source if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySources.displayvideoInventorySourcesEditInventorySourceReadWriteAccessors",
+      "name": "inventorySources.displayvideoInventorySourcesEditInventorySourceReadWriteAccessors",
+      "description": "Edits read/write accessors of an inventory source. Returns the updated read_write_accessors for the inventory source."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySources.displayvideoInventorySourcesGet",
+      "name": "inventorySources.displayvideoInventorySourcesGet",
+      "description": "Gets an inventory source."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySources.displayvideoInventorySourcesList",
+      "name": "inventorySources.displayvideoInventorySourcesList",
+      "description": "Lists inventory sources that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, inventory sources with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.inventorySources.displayvideoInventorySourcesPatch",
+      "name": "inventorySources.displayvideoInventorySourcesPatch",
+      "description": "Updates an existing inventory source. Returns the updated inventory source if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.media.displayvideoMediaDownload",
+      "name": "media.displayvideoMediaDownload",
+      "description": "Downloads media. Download is supported on the URI `/download/{resource_name=**}?alt=media.` **Note**: Download requests will not be successful without including `alt=media` query string."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.media.displayvideoMediaUpload",
+      "name": "media.displayvideoMediaUpload",
+      "description": "Uploads media. Upload is supported on the URI `/upload/media/{resource_name=**}?upload_type=media.` **Note**: Upload requests will not be successful without including `upload_type=media` query string."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersBulkEditPartnerAssignedTargetingOptions",
+      "name": "partners.displayvideoPartnersBulkEditPartnerAssignedTargetingOptions",
+      "description": "Bulk edits targeting options under a single partner. The operation will delete the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.deleteRequests and then create the assigned targeting options provided in BulkEditPartnerAssignedTargetingOptionsRequest.createRequests ."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsCreate",
+      "name": "partners.displayvideoPartnersChannelsCreate",
+      "description": "Creates a new channel. Returns the newly created channel if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsList",
+      "name": "partners.displayvideoPartnersChannelsList",
+      "description": "Lists channels for a partner or advertiser."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsPatch",
+      "name": "partners.displayvideoPartnersChannelsPatch",
+      "description": "Updates a channel. Returns the updated channel if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsSitesBulkEdit",
+      "name": "partners.displayvideoPartnersChannelsSitesBulkEdit",
+      "description": "Bulk edits sites under a single channel. The operation will delete the sites provided in BulkEditSitesRequest.deleted_sites and then create the sites provided in BulkEditSitesRequest.created_sites."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsSitesDelete",
+      "name": "partners.displayvideoPartnersChannelsSitesDelete",
+      "description": "Deletes a site from a channel."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsSitesList",
+      "name": "partners.displayvideoPartnersChannelsSitesList",
+      "description": "Lists sites in a channel."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersChannelsSitesReplace",
+      "name": "partners.displayvideoPartnersChannelsSitesReplace",
+      "description": "Replaces all of the sites under a single channel. The operation will replace the sites under a channel with the sites provided in ReplaceSitesRequest.new_sites."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersGet",
+      "name": "partners.displayvideoPartnersGet",
+      "description": "Gets a partner."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersList",
+      "name": "partners.displayvideoPartnersList",
+      "description": "Lists partners that are accessible to the current user. The order is defined by the order_by parameter."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsCreate",
+      "name": "partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsCreate",
+      "description": "Assigns a targeting option to a partner. Returns the assigned targeting option if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsDelete",
+      "name": "partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsDelete",
+      "description": "Deletes an assigned targeting option from a partner."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsGet",
+      "name": "partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsGet",
+      "description": "Gets a single targeting option assigned to a partner."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsList",
+      "name": "partners.displayvideoPartnersTargetingTypesAssignedTargetingOptionsList",
+      "description": "Lists the targeting options assigned to a partner."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.sdfdownloadtasks.displayvideoSdfdownloadtasksCreate",
+      "name": "sdfdownloadtasks.displayvideoSdfdownloadtasksCreate",
+      "description": "Creates an SDF Download Task. Returns an Operation. An SDF Download Task is a long-running, asynchronous operation. The metadata type of this operation is SdfDownloadTaskMetadata. If the request is successful, the response type of the operation is SdfDownloadTask. The response will not include the download files, which must be retrieved with media.download. The state of operation can be retrieved with sdfdownloadtask.operations.get. Any errors can be found in the error.message. Note that error.details is expected to be empty."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.sdfdownloadtasks.displayvideoSdfdownloadtasksOperationsGet",
+      "name": "sdfdownloadtasks.displayvideoSdfdownloadtasksOperationsGet",
+      "description": "Gets the latest state of an asynchronous SDF download task operation. Clients should poll this method at intervals of 30 seconds."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.targetingTypes.displayvideoTargetingTypesTargetingOptionsGet",
+      "name": "targetingTypes.displayvideoTargetingTypesTargetingOptionsGet",
+      "description": "Gets a single targeting option."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.targetingTypes.displayvideoTargetingTypesTargetingOptionsList",
+      "name": "targetingTypes.displayvideoTargetingTypesTargetingOptionsList",
+      "description": "Lists targeting options of a given type."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.targetingTypes.displayvideoTargetingTypesTargetingOptionsSearch",
+      "name": "targetingTypes.displayvideoTargetingTypesTargetingOptionsSearch",
+      "description": "Searches for targeting options of a given type based on the given search terms."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersBulkEditAssignedUserRoles",
+      "name": "users.displayvideoUsersBulkEditAssignedUserRoles",
+      "description": "Bulk edits user roles for a user. The operation will delete the assigned user roles provided in BulkEditAssignedUserRolesRequest.deletedAssignedUserRoles and then assign the user roles provided in BulkEditAssignedUserRolesRequest.createdAssignedUserRoles."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersCreate",
+      "name": "users.displayvideoUsersCreate",
+      "description": "Creates a new user. Returns the newly created user if successful."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersDelete",
+      "name": "users.displayvideoUsersDelete",
+      "description": "Deletes a user."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersGet",
+      "name": "users.displayvideoUsersGet",
+      "description": "Gets a user."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersList",
+      "name": "users.displayvideoUsersList",
+      "description": "Lists users that are accessible to the current user. If two users have user roles on the same partner or advertiser, they can access each other."
+    },
+    {
+      "id": "openapi_googleapis_com_displayvideo_displayvideo.users.displayvideoUsersPatch",
+      "name": "users.displayvideoUsersPatch",
+      "description": "Updates an existing user. Returns the updated user if successful."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

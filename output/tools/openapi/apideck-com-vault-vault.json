@@ -1,0 +1,117 @@
+{
+  "fetchedAt": "2026-04-30T15:45:14.551Z",
+  "status": "ok",
+  "count": 22,
+  "tools": [
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsAdd",
+      "name": "connections.connectionsAdd",
+      "description": "Create an authorized connection\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsAll",
+      "name": "connections.connectionsAll",
+      "description": "This endpoint includes all the configured integrations and contains the required assets\nto build an integrations page where your users can install integrations.\nOAuth2 supported integrations will contain authorize and revoke links to handle the authentication flows.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsAuthorize",
+      "name": "connections.connectionsAuthorize",
+      "description": "__In most cases the authorize link is provided in the ``/connections`` endpoint. Normally you don't need to manually generate these links.__\n\nUse this endpoint to authenticate a user with a connector. It will return a 301 redirect to the downstream connector endpoints.\n\nAuth links will have a state parameter included to verify the validity of the request. This is the url your users will use to activate OAuth supported integration providers.\n\nVault handles the complete Authorization Code Grant Type Flow for you and will redirect you to the dynamic redirect uri you have appended to the url in case this is missing the default redirect uri you have configured for your Unify application.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsCallback",
+      "name": "connections.connectionsCallback",
+      "description": "This endpoint gets called after the triggering the authorize flow.\n\nCallback links need a state and code parameter to verify the validity of the request.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsDelete",
+      "name": "connections.connectionsDelete",
+      "description": "Deletes a connection"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionSettingsAll",
+      "name": "connections.connectionSettingsAll",
+      "description": "This endpoint returns custom settings and their defaults required by connection for a given resource.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionSettingsUpdate",
+      "name": "connections.connectionSettingsUpdate",
+      "description": "Update default values for a connection's resource settings"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsImport",
+      "name": "connections.connectionsImport",
+      "description": "Import an authorized connection.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsOne",
+      "name": "connections.connectionsOne",
+      "description": "Get a connection"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsRevoke",
+      "name": "connections.connectionsRevoke",
+      "description": "__In most cases the authorize link is provided in the ``/connections`` endpoint. Normally you don't need to manually generate these links.__\n\nUse this endpoint to revoke an existing OAuth connector.\n\nAuth links will have a state parameter included to verify the validity of the request. This is the url your users will use to activate OAuth supported integration providers.\n\nVault handles the complete revoke flow for you and will redirect you to the dynamic redirect uri you have appended to the url in case this is missing the default redirect uri you have configured for your Unify application.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsToken",
+      "name": "connections.connectionsToken",
+      "description": "Get an access token for a connection and store it in Vault. Currently only supported for connections with the client_credentials OAuth grant type.\n\nNote that the access token will not be returned in the response. A 200 response code indicates a valid access token was stored on the connection.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.connections.connectionsUpdate",
+      "name": "connections.connectionsUpdate",
+      "description": "Update a connection"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumerRequestCountsAll",
+      "name": "consumers.consumerRequestCountsAll",
+      "description": "Get consumer request counts within a given datetime range.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumersAdd",
+      "name": "consumers.consumersAdd",
+      "description": "Create a consumer"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumersAll",
+      "name": "consumers.consumersAll",
+      "description": "This endpoint includes all application consumers, along with an aggregated count of requests made.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumersDelete",
+      "name": "consumers.consumersDelete",
+      "description": "Delete consumer and all their connections, including credentials."
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumersOne",
+      "name": "consumers.consumersOne",
+      "description": "Consumer detail including their aggregated counts with the connections they have authorized.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.consumers.consumersUpdate",
+      "name": "consumers.consumersUpdate",
+      "description": "Update consumer metadata such as name and email."
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.logs.logsAll",
+      "name": "logs.logsAll",
+      "description": "This endpoint includes all consumer request logs.\n"
+    },
+    {
+      "id": "openapi_apideck_com_vault_vault.sessions.sessionsCreate",
+      "name": "sessions.sessionsCreate",
+      "description": "Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned\nURL to allow temporary access to manage their integrations and settings.\n\nNote: This is a short lived token that will expire after 1 hour (TTL: 3600).\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

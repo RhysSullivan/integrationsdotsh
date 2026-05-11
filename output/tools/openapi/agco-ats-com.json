@@ -1,0 +1,1402 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.702Z",
+  "status": "ok",
+  "count": 279,
+  "tools": [
+    {
+      "id": "openapi_agco_ats_com.activities.activitiesDeleteActivity",
+      "name": "activities.activitiesDeleteActivity",
+      "description": "Deletes an Activity. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activities.activitiesGetActivities",
+      "name": "activities.activitiesGetActivities",
+      "description": "Gets a collection of Activities. When successful, the response is a PagedResponse of Activities.  \r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activities.activitiesGetActivity",
+      "name": "activities.activitiesGetActivity",
+      "description": "Gets an Activity by ID. When successful, the response is the requested Activity.  If unsuccessful,\r\n            an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activities.activitiesPostActivity",
+      "name": "activities.activitiesPostActivity",
+      "description": "Creates an Activity.  The body of the POST is the Activity to create.  The ActivityID will be assigned\r\n            on creation of the Activity.  When successful, the response is the ActivityID.  If unsuccessful, an \r\n            appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activities.activitiesPutActivity",
+      "name": "activities.activitiesPutActivity",
+      "description": "Updates an Activity.  The body of the PUT is the updated Activity.  When successful, the response is empty.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activityRuns.activityRunsGetActivityRun",
+      "name": "activityRuns.activityRunsGetActivityRun",
+      "description": "Gets an ActivityRun by ID. When successful, the response is the requested ActivityRun.  If unsuccessful,\r\n            an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activityRuns.activityRunsGetActivityRuns",
+      "name": "activityRuns.activityRunsGetActivityRuns",
+      "description": "Gets a collection of ActivityRuns. When successful, the response is a PagedResponse of ActivityRuns.  \r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activityRuns.activityRunsGetActivityRunStatus",
+      "name": "activityRuns.activityRunsGetActivityRunStatus",
+      "description": "Gets the ActivityRunStatus of an ActivityRun.  When successful, the response is the requested ActivityRunStatus.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activityRuns.activityRunsPutActivityRun",
+      "name": "activityRuns.activityRunsPutActivityRun",
+      "description": "Updates the ActivityRunStatus of an ActivityRun.  The body of the PUT is the updated ActivityRunStatus.\r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.activityRuns.activityRunsPutActivityRunStatus",
+      "name": "activityRuns.activityRunsPutActivityRunStatus",
+      "description": "Updates the ActivityRunStatus of an ActivityRun.  The body of the PUT is the updated ActivityRunStatus.\r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesGetCerts",
+      "name": "aftermarketServices.aftermarketServicesGetCerts",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesGetConnectionStatus",
+      "name": "aftermarketServices.aftermarketServicesGetConnectionStatus",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesGetEngineIqaCodes",
+      "name": "aftermarketServices.aftermarketServicesGetEngineIqaCodes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesGetProductionData",
+      "name": "aftermarketServices.aftermarketServicesGetProductionData",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesGetUserStatus",
+      "name": "aftermarketServices.aftermarketServicesGetUserStatus",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesPutEcu",
+      "name": "aftermarketServices.aftermarketServicesPutEcu",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesPutIqaCodes",
+      "name": "aftermarketServices.aftermarketServicesPutIqaCodes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.aftermarketServices.aftermarketServicesUpdateUserStatus",
+      "name": "aftermarketServices.aftermarketServicesUpdateUserStatus",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsDeleteAgent",
+      "name": "agents.agentsDeleteAgent",
+      "description": "Deletes an Agent. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsGetAgentActivityRun",
+      "name": "agents.agentsGetAgentActivityRun",
+      "description": "Gets the activity run assigned to an agent.  When successful, the response is the ActivityRun\r\n            assigned to the Agent.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsGetAgentAsync",
+      "name": "agents.agentsGetAgentAsync",
+      "description": "Gets an Agent by ID. When successful, the response is the requested Agent.  If unsuccessful,\r\n            an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsGetAgents",
+      "name": "agents.agentsGetAgents",
+      "description": "Gets a collection of Agents. When successful, the response is a PagedResponse of Agents.  \r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsGetCurrentAgentActivityRun",
+      "name": "agents.agentsGetCurrentAgentActivityRun",
+      "description": "Gets the activity run assigned to an agent.  When successful, the response is the ActivityRun\r\n            assigned to the Agent.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsGetCurrentAgentAsync",
+      "name": "agents.agentsGetCurrentAgentAsync",
+      "description": "Gets the Agent associated with the current user. When successful, the response is the requested Agent.  If unsuccessful,\r\n            an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsPostAgent",
+      "name": "agents.agentsPostAgent",
+      "description": "Creates an Agent.  The body of the POST is the Agent to create.  The AgentID will be assigned\r\n            on creation of the Agent.  When successful, the response is the AgentID.  If unsuccessful, an\r\n            appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsPutAgent",
+      "name": "agents.agentsPutAgent",
+      "description": "Updates an Agent.  The body of the PUT is the updated Agent.  When successful, the response is empty.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsPutAgentActivityRun",
+      "name": "agents.agentsPutAgentActivityRun",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.agents.agentsPutAgentStatus",
+      "name": "agents.agentsPutAgentStatus",
+      "description": "Updates the status of an Agent.The body of the PUT is the updated Agent status.  When successful,\r\n            the response is empty.If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.authentication.authenticationDefault",
+      "name": "authentication.authenticationDefault",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authentication.authenticationIsAlive",
+      "name": "authentication.authenticationIsAlive",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authentication.authenticationPutManageTokens",
+      "name": "authentication.authenticationPutManageTokens",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authentication.authenticationRequestPasswordReset",
+      "name": "authentication.authenticationRequestPasswordReset",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authentication.authenticationResetPasword",
+      "name": "authentication.authenticationResetPasword",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesAddUser",
+      "name": "authorizationCategories.authorizationCategoriesAddUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesDelete",
+      "name": "authorizationCategories.authorizationCategoriesDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesGet",
+      "name": "authorizationCategories.authorizationCategoriesGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesGetUsers",
+      "name": "authorizationCategories.authorizationCategoriesGetUsers",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesPost",
+      "name": "authorizationCategories.authorizationCategoriesPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesPut",
+      "name": "authorizationCategories.authorizationCategoriesPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCategories.authorizationCategoriesRemoveUser",
+      "name": "authorizationCategories.authorizationCategoriesRemoveUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsAddCategoryToDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsAddCategoryToDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsDeleteAuthorizationCodeDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsDeleteAuthorizationCodeDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsGetAuthorizationCodeDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsGetAuthorizationCodeDefinition",
+      "description": "Additional searches: validationFields[Name]=true and dataFields[Name]=true. These can be used to search for authorization code definitions that have the specified data or validation fields."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsPostAuthorizationCodeDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsPostAuthorizationCodeDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsPutAuthorizationCodeDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsPutAuthorizationCodeDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.authorizationCodeDefinitionsRemoveCategoryFromDefinition",
+      "name": "authorizationCodeDefinitions.authorizationCodeDefinitionsRemoveCategoryFromDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodeDefinitions.getApiV2AuthorizationCodeDefinitionsId",
+      "name": "authorizationCodeDefinitions.getApiV2AuthorizationCodeDefinitionsId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesDeleteAuthorizationCode",
+      "name": "authorizationCodes.authorizationCodesDeleteAuthorizationCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesGetAuthorizationCode",
+      "name": "authorizationCodes.authorizationCodesGetAuthorizationCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesGetAuthorizationCodes",
+      "name": "authorizationCodes.authorizationCodesGetAuthorizationCodes",
+      "description": "Additional searches: validationParameters[Name]=Value and dataParameters[Name]=Value. These can be used to search for authorization codes that have been generated using specified values for data or validation parameters."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesGetContactInformation",
+      "name": "authorizationCodes.authorizationCodesGetContactInformation",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesPostAuthorizationCode",
+      "name": "authorizationCodes.authorizationCodesPostAuthorizationCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesPutAuthorizationCode",
+      "name": "authorizationCodes.authorizationCodesPutAuthorizationCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationCodes.authorizationCodesValidateAuthorizationCode",
+      "name": "authorizationCodes.authorizationCodesValidateAuthorizationCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationContactInformation.authorizationContactInformationGet",
+      "name": "authorizationContactInformation.authorizationContactInformationGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.authorizationContactInformation.authorizationContactInformationPost",
+      "name": "authorizationContactInformation.authorizationContactInformationPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.brands.brandsBrands",
+      "name": "brands.brandsBrands",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.bundles.bundlesDeleteBundle",
+      "name": "bundles.bundlesDeleteBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.bundles.bundlesGetBundle",
+      "name": "bundles.bundlesGetBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.bundles.bundlesGetBundles",
+      "name": "bundles.bundlesGetBundles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.bundles.bundlesPostBundle",
+      "name": "bundles.bundlesPostBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.bundles.bundlesPutBundle",
+      "name": "bundles.bundlesPutBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.clients.clientsGet",
+      "name": "clients.clientsGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.clients.clientsGetAvailableSubscriptions",
+      "name": "clients.clientsGetAvailableSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.clients.clientsGetSubscriptions",
+      "name": "clients.clientsGetSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.clients.clientsPut",
+      "name": "clients.clientsPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.clients.getApiV2ClientsId",
+      "name": "clients.getApiV2ClientsId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsDeleteContentDefinition",
+      "name": "contentDefinitions.contentDefinitionsDeleteContentDefinition",
+      "description": "Deletes an ContentDefinition. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsDeleteContentDefinitionAttribute",
+      "name": "contentDefinitions.contentDefinitionsDeleteContentDefinitionAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsGetContentDefinition",
+      "name": "contentDefinitions.contentDefinitionsGetContentDefinition",
+      "description": "Gets a ContentDefinition by ID. When successful, the response is the requested ContentDefinition.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsGetContentDefinitionAttributes",
+      "name": "contentDefinitions.contentDefinitionsGetContentDefinitionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsGetContentDefinitions",
+      "name": "contentDefinitions.contentDefinitionsGetContentDefinitions",
+      "description": "Gets a collection of ContentDefinitions. When successful, the response is a PagedResponse of ContentDefinitions.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPostContentDefinition",
+      "name": "contentDefinitions.contentDefinitionsPostContentDefinition",
+      "description": "Creates a ContentDefinition.  The body of the POST is the ContentDefinition to create.\r\n            The ContentDefinitionID will be assigned on creation of the Job.  When successful, the response\r\n            is the JobID.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPostContentDefinitionAttribute",
+      "name": "contentDefinitions.contentDefinitionsPostContentDefinitionAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPostContentDefinitionAttributes",
+      "name": "contentDefinitions.contentDefinitionsPostContentDefinitionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPutContentDefinition",
+      "name": "contentDefinitions.contentDefinitionsPutContentDefinition",
+      "description": "Updates a ContentDefinition.  The body of the PUT is the updated ContentDefinition.  \r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPutContentDefinitionAttributeAsync",
+      "name": "contentDefinitions.contentDefinitionsPutContentDefinitionAttributeAsync",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentDefinitions.contentDefinitionsPutContentDefinitionAttributes",
+      "name": "contentDefinitions.contentDefinitionsPutContentDefinitionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentRelease.contentReleaseDeleteContentReleaseVersionn",
+      "name": "contentRelease.contentReleaseDeleteContentReleaseVersionn",
+      "description": "Deletes an ContentReleaseVersion. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentRelease.contentReleaseGetContentReleaseVersion",
+      "name": "contentRelease.contentReleaseGetContentReleaseVersion",
+      "description": "Gets a collection of ContentReleaseVersion. When successful, the response is a PagedResponse of ContentReleaseVersion.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentRelease.contentReleasePostContentRelease",
+      "name": "contentRelease.contentReleasePostContentRelease",
+      "description": "Creates a ContentReleaseVersion.  The body of the POST is the ContentReleaseVersion to create.\r\n            The ContentReleaseId will be assigned on creation of the Job.  When successful, the response\r\n            is the contentReleaseId.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentRelease.contentReleasePutContentDefinition",
+      "name": "contentRelease.contentReleasePutContentDefinition",
+      "description": "Updates a ContentReleaseVersion.  The body of the PUT is the updated ContentReleaseVersion.  \r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentRelease.getApiV2ContentReleasesContentReleaseId",
+      "name": "contentRelease.getApiV2ContentReleasesContentReleaseId",
+      "description": "Gets a ContentReleaseVersion by ID. When successful, the response is the requested ContentReleaseVersion.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsDeleteContentSubmission",
+      "name": "contentSubmissions.contentSubmissionsDeleteContentSubmission",
+      "description": "Deletes an ContentSubmission. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsDeleteContentSubmissionAttribute",
+      "name": "contentSubmissions.contentSubmissionsDeleteContentSubmissionAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsGetContentSubmission",
+      "name": "contentSubmissions.contentSubmissionsGetContentSubmission",
+      "description": "Gets a ContentSubmission by ID. When successful, the response is the requested ContentSubmission.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsGetContentSubmissionAttributes",
+      "name": "contentSubmissions.contentSubmissionsGetContentSubmissionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsGetContentSubmissions",
+      "name": "contentSubmissions.contentSubmissionsGetContentSubmissions",
+      "description": "Gets a collection of ContentSubmissions. When successful, the response is a PagedResponse of ContentSubmissions. Additional searches: attributes[Name]=Value. This can be used to search for submissions that have the specified values for attributes. Beginning and ending wildcard (*) supported for value.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsGetContentSubmissionStatus",
+      "name": "contentSubmissions.contentSubmissionsGetContentSubmissionStatus",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPostContentSubmission",
+      "name": "contentSubmissions.contentSubmissionsPostContentSubmission",
+      "description": "Creates a ContentSubmission.  The body of the POST is the ContentSubmission to create.\r\n            The ContentSubmissionID will be assigned on creation of the Job.  When successful, the response\r\n            is the ContentSubmissionID.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPostContentSubmissionAttribute",
+      "name": "contentSubmissions.contentSubmissionsPostContentSubmissionAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPostContentSubmissionAttributes",
+      "name": "contentSubmissions.contentSubmissionsPostContentSubmissionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPutContentSubmission",
+      "name": "contentSubmissions.contentSubmissionsPutContentSubmission",
+      "description": "Updates a ContentSubmission.  The body of the PUT is the updated ContentSubmission.  \r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPutContentSubmissionAttributeAsync",
+      "name": "contentSubmissions.contentSubmissionsPutContentSubmissionAttributeAsync",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissions.contentSubmissionsPutContentSubmissionAttributes",
+      "name": "contentSubmissions.contentSubmissionsPutContentSubmissionAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissionTypes.contentSubmissionTypesDeleteContentSubmissionType",
+      "name": "contentSubmissionTypes.contentSubmissionTypesDeleteContentSubmissionType",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissionTypes.contentSubmissionTypesGetContentSubmissionType",
+      "name": "contentSubmissionTypes.contentSubmissionTypesGetContentSubmissionType",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissionTypes.contentSubmissionTypesGetContentSubmissionTypes",
+      "name": "contentSubmissionTypes.contentSubmissionTypesGetContentSubmissionTypes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissionTypes.contentSubmissionTypesPostContentSubmissionType",
+      "name": "contentSubmissionTypes.contentSubmissionTypesPostContentSubmissionType",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.contentSubmissionTypes.contentSubmissionTypesPutContentSubmissionType",
+      "name": "contentSubmissionTypes.contentSubmissionTypesPutContentSubmissionType",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.dealerByCountry.dealerByCountryGetCountries",
+      "name": "dealerByCountry.dealerByCountryGetCountries",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.dealers.dealersGetDealerbyDealerCode",
+      "name": "dealers.dealersGetDealerbyDealerCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.dealers.dealersGetDealers",
+      "name": "dealers.dealersGetDealers",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesDeleteFile",
+      "name": "files.filesDeleteFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesGetFile",
+      "name": "files.filesGetFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesGetFileContents",
+      "name": "files.filesGetFileContents",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesGetFiles",
+      "name": "files.filesGetFiles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesPostFile",
+      "name": "files.filesPostFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesPutFile",
+      "name": "files.filesPutFile",
+      "description": "Update the metadata for a file. Size may not be modified by the client. \r\n                Set status to 'Available' to publish a file. The file must be uploaded.\r\n                Set status to 'Created' to reset a file's contents and re-upload. \r\n                A file may only be 'Removed' by the DELETE method."
+    },
+    {
+      "id": "openapi_agco_ats_com.files.filesPutFileContents",
+      "name": "files.filesPutFileContents",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImageCategories.globalImageCategoriesGetFile",
+      "name": "globalImageCategories.globalImageCategoriesGetFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImageCategories.globalImageCategoriesGetFiles",
+      "name": "globalImageCategories.globalImageCategoriesGetFiles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImageCategories.globalImageCategoriesPostFile",
+      "name": "globalImageCategories.globalImageCategoriesPostFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesDeleteFile",
+      "name": "globalImages.globalImagesDeleteFile",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesGetGlobalImage",
+      "name": "globalImages.globalImagesGetGlobalImage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesGetGlobalImageContents",
+      "name": "globalImages.globalImagesGetGlobalImageContents",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesGetGlobalImages",
+      "name": "globalImages.globalImagesGetGlobalImages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesPostGlobalImage",
+      "name": "globalImages.globalImagesPostGlobalImage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesPutGlobalImage",
+      "name": "globalImages.globalImagesPutGlobalImage",
+      "description": "Update the metadata for an image. Size may not be modified by the client. \r\n                Set status to 'Available' to publish an image. Both the image and thumbnail must be uploaded.\r\n                Set status to 'Created' to reset an image's contents and re-upload. \r\n                A file may only be 'Removed' by the DELETE method."
+    },
+    {
+      "id": "openapi_agco_ats_com.globalImages.globalImagesPutGlobalImageContents",
+      "name": "globalImages.globalImagesPutGlobalImageContents",
+      "description": "Both the image and thumbnail must be uploaded.\r\n                Set isFullImage = 'True' for Full Image, isFullImage = 'False' for Thumbnail"
+    },
+    {
+      "id": "openapi_agco_ats_com.jobRuns.jobRunsDeleteJobRun",
+      "name": "jobRuns.jobRunsDeleteJobRun",
+      "description": "Deletes a JobRun. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobRuns.jobRunsGetJobRun",
+      "name": "jobRuns.jobRunsGetJobRun",
+      "description": "Gets a JobRun by ID. When successful, the response is the requested JobRun.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobRuns.jobRunsGetJobRuns",
+      "name": "jobRuns.jobRunsGetJobRuns",
+      "description": "Gets a collection of JobRuns. When successful, the response is a PagedResponse of JobRuns.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobRuns.jobRunsPostJobRun",
+      "name": "jobRuns.jobRunsPostJobRun",
+      "description": "Creates a JobRun.  The body of the POST is the JobRun to create.  The JobRunID will be assigned on\r\n            creation of the JobRun.  When successful, the response is the JobRunID.  If unsuccessful, an \r\n            appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobRuns.jobRunsPutJobRun",
+      "name": "jobRuns.jobRunsPutJobRun",
+      "description": "/// \r\n            Updates a JobRun.  The body of the PUT is the updated JobRun.\r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobs.jobsDeleteJob",
+      "name": "jobs.jobsDeleteJob",
+      "description": "Deletes a Job. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobs.jobsGetJob",
+      "name": "jobs.jobsGetJob",
+      "description": "Gets a Job by ID. When successful, the response is the requested Job.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobs.jobsGetJobs",
+      "name": "jobs.jobsGetJobs",
+      "description": "Gets a collection of Jobs. When successful, the response is a PagedResponse of Jobs.\r\n            If unsuccessful, an appropriate ApiError is returned. \r\n            ///"
+    },
+    {
+      "id": "openapi_agco_ats_com.jobs.jobsPostJob",
+      "name": "jobs.jobsPostJob",
+      "description": "Creates a Job.  The body of the POST is the Job to create.  The JobID will be assigned on\r\n            creation of the Job.  When successful, the response is the JobID.  If unsuccessful, an \r\n            appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.jobs.jobsPutJob",
+      "name": "jobs.jobsPutJob",
+      "description": "Updates a Job.  The body of the PUT is the updated Job.  When successful, the response is empty.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.languages.languagesCreateLanguage",
+      "name": "languages.languagesCreateLanguage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.languages.languagesDeleteLanguage",
+      "name": "languages.languagesDeleteLanguage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.languages.languagesGetLanguage",
+      "name": "languages.languagesGetLanguage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.languages.languagesGetLanguages",
+      "name": "languages.languagesGetLanguages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.languages.languagesUpdateLanguage",
+      "name": "languages.languagesUpdateLanguage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenseActivations.licenseActivationsPost",
+      "name": "licenseActivations.licenseActivationsPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenseActivations.licenseActivationsPostRegisterEdtLite",
+      "name": "licenseActivations.licenseActivationsPostRegisterEdtLite",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenseActivations.licenseActivationsPut",
+      "name": "licenseActivations.licenseActivationsPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenseActivations.licenseActivationsPutConfirm",
+      "name": "licenseActivations.licenseActivationsPutConfirm",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenses.getApiV2LicensesId",
+      "name": "licenses.getApiV2LicensesId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.licenses.licensesGet",
+      "name": "licenses.licensesGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.logs.logsGetLog",
+      "name": "logs.logsGetLog",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.logs.logsGetLogs",
+      "name": "logs.logsGetLogs",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.logs.logsPostLog",
+      "name": "logs.logsPostLog",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.notifications.notificationsPostMail",
+      "name": "notifications.notificationsPostMail",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageReports.packageReportsBatch",
+      "name": "packageReports.packageReportsBatch",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageReports.packageReportsDefault",
+      "name": "packageReports.packageReportsDefault",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageReports.putApiV2ClientsClientIdPackageReports",
+      "name": "packageReports.putApiV2ClientsClientIdPackageReports",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packages.packagesDeletePackage",
+      "name": "packages.packagesDeletePackage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packages.packagesGetPackage",
+      "name": "packages.packagesGetPackage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packages.packagesGetPackages",
+      "name": "packages.packagesGetPackages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packages.packagesPostPackage",
+      "name": "packages.packagesPostPackage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packages.packagesPutPackage",
+      "name": "packages.packagesPutPackage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.getApiV2PackageTypesId",
+      "name": "packageTypes.getApiV2PackageTypesId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesAddPackageTypeUser",
+      "name": "packageTypes.packageTypesAddPackageTypeUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesDelete",
+      "name": "packageTypes.packageTypesDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesGet",
+      "name": "packageTypes.packageTypesGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesPost",
+      "name": "packageTypes.packageTypesPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesPut",
+      "name": "packageTypes.packageTypesPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypes.packageTypesRemovePackageTypeUser",
+      "name": "packageTypes.packageTypesRemovePackageTypeUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypetoBundles.packageTypetoBundlesDelete",
+      "name": "packageTypetoBundles.packageTypetoBundlesDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypetoBundles.packageTypetoBundlesGet",
+      "name": "packageTypetoBundles.packageTypetoBundlesGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypetoBundles.packageTypetoBundlesPost",
+      "name": "packageTypetoBundles.packageTypetoBundlesPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.packageTypetoBundles.packageTypetoBundlesPut",
+      "name": "packageTypetoBundles.packageTypetoBundlesPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.permissions.permissionsDeletePermission",
+      "name": "permissions.permissionsDeletePermission",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.permissions.permissionsGetPermission",
+      "name": "permissions.permissionsGetPermission",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.permissions.permissionsGetPermissions",
+      "name": "permissions.permissionsGetPermissions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.permissions.permissionsPostPermission",
+      "name": "permissions.permissionsPostPermission",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.permissions.permissionsPutPermission",
+      "name": "permissions.permissionsPutPermission",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.priorityPackages.priorityPackagesDeletePriorityPackages",
+      "name": "priorityPackages.priorityPackagesDeletePriorityPackages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.priorityPackages.priorityPackagesGetPriorityPackage",
+      "name": "priorityPackages.priorityPackagesGetPriorityPackage",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.priorityPackages.priorityPackagesGetPriorityPackages",
+      "name": "priorityPackages.priorityPackagesGetPriorityPackages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.priorityPackages.priorityPackagesPostPriorityPackages",
+      "name": "priorityPackages.priorityPackagesPostPriorityPackages",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releaseDeleteReleaseBundle",
+      "name": "release.releaseDeleteReleaseBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releaseGetRelease",
+      "name": "release.releaseGetRelease",
+      "description": "Gets a Release by ID. When successful, the response is the requested Release.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releaseGetReleases",
+      "name": "release.releaseGetReleases",
+      "description": "Gets a collection of Release. When successful, the response is a PagedResponse of Release.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releasePostRelease",
+      "name": "release.releasePostRelease",
+      "description": "Creates a Release.  The body of the POST is the Release to create.\r\n            The ReleaseId will be assigned on creation of the Job.  When successful, the response\r\n            is the Release Id.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releasePostReleaseBundle",
+      "name": "release.releasePostReleaseBundle",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.release.releasePutContentDefinition",
+      "name": "release.releasePutContentDefinition",
+      "description": "Updates a Release.  The body of the PUT is the updated Release.  \r\n            When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingBundlesInUpdateGroup",
+      "name": "reporting.reportingBundlesInUpdateGroup",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingBundleStatusSummary",
+      "name": "reporting.reportingBundleStatusSummary",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingClientInfo",
+      "name": "reporting.reportingClientInfo",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingCurrentPackagesInUpdateGroup",
+      "name": "reporting.reportingCurrentPackagesInUpdateGroup",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingGetClient",
+      "name": "reporting.reportingGetClient",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingGetSubscriptions",
+      "name": "reporting.reportingGetSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingPackageStatusSummary",
+      "name": "reporting.reportingPackageStatusSummary",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingRegisteredClients",
+      "name": "reporting.reportingRegisteredClients",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingUpdateGroups",
+      "name": "reporting.reportingUpdateGroups",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.reporting.reportingUpdateMetrics",
+      "name": "reporting.reportingUpdateMetrics",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesDeleteRole",
+      "name": "roles.rolesDeleteRole",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesGetRole",
+      "name": "roles.rolesGetRole",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesGetRolePermissions",
+      "name": "roles.rolesGetRolePermissions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesGetRoles",
+      "name": "roles.rolesGetRoles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesPostRole",
+      "name": "roles.rolesPostRole",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesPutRole",
+      "name": "roles.rolesPutRole",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.roles.rolesPutRolePermissions",
+      "name": "roles.rolesPutRolePermissions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.steps.stepsGetStep",
+      "name": "steps.stepsGetStep",
+      "description": "Gets a Step by ID. When successful, the response is the requested Step.\r\n            If unsuccessful, an appropriate ApiError is returned.  Steps.Read permission is required."
+    },
+    {
+      "id": "openapi_agco_ats_com.steps.stepsGetSteps",
+      "name": "steps.stepsGetSteps",
+      "description": "Gets a collection of Steps. When successful, the response is a PagedResponse of Steps.\r\n            If unsuccessful, an appropriate ApiError is returned.  Steps.Read permission is required."
+    },
+    {
+      "id": "openapi_agco_ats_com.steps.stepsPostStep",
+      "name": "steps.stepsPostStep",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.steps.stepsPutStep",
+      "name": "steps.stepsPutStep",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringDefinitions.stringDefinitionsGetDefinition",
+      "name": "stringDefinitions.stringDefinitionsGetDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringDefinitions.stringDefinitionsGetDefinitions",
+      "name": "stringDefinitions.stringDefinitionsGetDefinitions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringDefinitions.stringDefinitionsPostDefinition",
+      "name": "stringDefinitions.stringDefinitionsPostDefinition",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringDefinitions.stringDefinitionsUpdateDefinitions",
+      "name": "stringDefinitions.stringDefinitionsUpdateDefinitions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringTranslations.stringTranslationsGetTranslation",
+      "name": "stringTranslations.stringTranslationsGetTranslation",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringTranslations.stringTranslationsGetTranslations",
+      "name": "stringTranslations.stringTranslationsGetTranslations",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringTranslations.stringTranslationsUpdateTranslation",
+      "name": "stringTranslations.stringTranslationsUpdateTranslation",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.stringTranslations.stringTranslationsUpdateTranslations",
+      "name": "stringTranslations.stringTranslationsUpdateTranslations",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationKeys.translationKeysCreateTranslationKey",
+      "name": "translationKeys.translationKeysCreateTranslationKey",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationKeys.translationKeysGet",
+      "name": "translationKeys.translationKeysGet",
+      "description": ""
+    },
+    {
+      "id": "openapi_agco_ats_com.translationKeys.translationKeysGetTranslationKey",
+      "name": "translationKeys.translationKeysGetTranslationKey",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationKeys.translationKeysUpdateTranslationKey",
+      "name": "translationKeys.translationKeysUpdateTranslationKey",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationRequests.translationRequestsCreateTranslationRequest",
+      "name": "translationRequests.translationRequestsCreateTranslationRequest",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationRequests.translationRequestsGetTranslationRequest",
+      "name": "translationRequests.translationRequestsGetTranslationRequest",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationRequests.translationRequestsGetTranslationRequests",
+      "name": "translationRequests.translationRequestsGetTranslationRequests",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationRequests.translationRequestsUpdateTranslationRequest",
+      "name": "translationRequests.translationRequestsUpdateTranslationRequest",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationRequests.translationRequestsUpdateTranslationRequestStrings",
+      "name": "translationRequests.translationRequestsUpdateTranslationRequestStrings",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsDeleteTranslationSetAttribute",
+      "name": "translationSets.translationSetsDeleteTranslationSetAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetSourceStrings",
+      "name": "translationSets.translationSetsGetSourceStrings",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetStatistics",
+      "name": "translationSets.translationSetsGetStatistics",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetTranslationSet",
+      "name": "translationSets.translationSetsGetTranslationSet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetTranslationSetAttributes",
+      "name": "translationSets.translationSetsGetTranslationSetAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetTranslationSets",
+      "name": "translationSets.translationSetsGetTranslationSets",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsGetTranslationSetStrings",
+      "name": "translationSets.translationSetsGetTranslationSetStrings",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsPostTranslationSetAttribute",
+      "name": "translationSets.translationSetsPostTranslationSetAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsPostTranslationSetAttributes",
+      "name": "translationSets.translationSetsPostTranslationSetAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsUpdateTranslationSet",
+      "name": "translationSets.translationSetsUpdateTranslationSet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsUpdateTranslationSetAttribute",
+      "name": "translationSets.translationSetsUpdateTranslationSetAttribute",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsUpdateTranslationSetAttributes",
+      "name": "translationSets.translationSetsUpdateTranslationSetAttributes",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.translationSets.translationSetsUpdateTranslationSetStrings",
+      "name": "translationSets.translationSetsUpdateTranslationSetStrings",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupClientRelationships.updateGroupClientRelationshipsGetSubscription",
+      "name": "updateGroupClientRelationships.updateGroupClientRelationshipsGetSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupClientRelationships.updateGroupClientRelationshipsGetSubscriptions",
+      "name": "updateGroupClientRelationships.updateGroupClientRelationshipsGetSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupClientRelationships.updateGroupClientRelationshipsPostSubscription",
+      "name": "updateGroupClientRelationships.updateGroupClientRelationshipsPostSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupClientRelationships.updateGroupClientRelationshipsPutSubscription",
+      "name": "updateGroupClientRelationships.updateGroupClientRelationshipsPutSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupClientRelationships.updateGroupClientRelationshipsPutSubscriptionByClientIdUpdateGroupId",
+      "name": "updateGroupClientRelationships.updateGroupClientRelationshipsPutSubscriptionByClientIdUpdateGroupId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.getApiV2UpdateGroupsId",
+      "name": "updateGroups.getApiV2UpdateGroupsId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsAddUpdateGroupUser",
+      "name": "updateGroups.updateGroupsAddUpdateGroupUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsDelete",
+      "name": "updateGroups.updateGroupsDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsGet",
+      "name": "updateGroups.updateGroupsGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsGetUpdateGroupBundles",
+      "name": "updateGroups.updateGroupsGetUpdateGroupBundles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsPost",
+      "name": "updateGroups.updateGroupsPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsPut",
+      "name": "updateGroups.updateGroupsPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroups.updateGroupsRemoveUpdateGroupUser",
+      "name": "updateGroups.updateGroupsRemoveUpdateGroupUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsDeleteUpdateGroupSubscription",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsDeleteUpdateGroupSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsGetUpdateGroupSubscription",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsGetUpdateGroupSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsGetUpdateGroupSubscriptions",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsGetUpdateGroupSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsPostUpdateGroupSubscription",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsPostUpdateGroupSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsPostUpdateGroupSubscriptions",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsPostUpdateGroupSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsPutUpdateGroupSubscription",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsPutUpdateGroupSubscription",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateGroupSubscriptions.updateGroupSubscriptionsPutUpdateGroupSubscriptions",
+      "name": "updateGroupSubscriptions.updateGroupSubscriptionsPutUpdateGroupSubscriptions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateSystem.updateSystemGetCachedFiles",
+      "name": "updateSystem.updateSystemGetCachedFiles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.updateSystem.updateSystemGetCheckin",
+      "name": "updateSystem.updateSystemGetCheckin",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userContentDefinitions.userContentDefinitionsDeleteUserContentDefinition",
+      "name": "userContentDefinitions.userContentDefinitionsDeleteUserContentDefinition",
+      "description": "Deletes an UserContentDefinition. When successful, the response is empty.  If unsuccessful, an appropriate\r\n            ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.userContentDefinitions.userContentDefinitionsGetUserContentDefinition",
+      "name": "userContentDefinitions.userContentDefinitionsGetUserContentDefinition",
+      "description": "Gets a UserContentDefinition by ID. When successful, the response is the requested UserContentDefinition.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.userContentDefinitions.userContentDefinitionsGetUserContentDefinitions",
+      "name": "userContentDefinitions.userContentDefinitionsGetUserContentDefinitions",
+      "description": "Gets a collection of UserContentDefinitions. When successful, the response is a PagedResponse of UserContentDefinitions.\r\n            If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.userContentDefinitions.userContentDefinitionsPostUserContentDefinition",
+      "name": "userContentDefinitions.userContentDefinitionsPostUserContentDefinition",
+      "description": "Creates a UserContentDefinition.  The body of the POST is the UserContentDefinition to create.\r\n            The UserContentDefinitionID will be assigned on creation of the Job.  When successful, the response\r\n            is the UserContentDefinitionID.  If unsuccessful, an appropriate ApiError is returned."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.getApiV2UsersCurrentPermissions",
+      "name": "userPermissions.getApiV2UsersCurrentPermissions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.putApiV2RolesIdUsers",
+      "name": "userPermissions.putApiV2RolesIdUsers",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.userPermissionsGetCurrentUserRoles",
+      "name": "userPermissions.userPermissionsGetCurrentUserRoles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.userPermissionsGetPermissions",
+      "name": "userPermissions.userPermissionsGetPermissions",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.userPermissionsGetRoles",
+      "name": "userPermissions.userPermissionsGetRoles",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.userPermissionsGetUsers",
+      "name": "userPermissions.userPermissionsGetUsers",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.userPermissions.userPermissionsPut",
+      "name": "userPermissions.userPermissionsPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.getApiV2UsersId",
+      "name": "users.getApiV2UsersId",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersDelete",
+      "name": "users.usersDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersGet",
+      "name": "users.usersGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersGetCurrentUser",
+      "name": "users.usersGetCurrentUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersPost",
+      "name": "users.usersPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersPut",
+      "name": "users.usersPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.users.usersPutCurrentUser",
+      "name": "users.usersPutCurrentUser",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.voucherHistory.voucherHistoryGetVoucherHistory",
+      "name": "voucherHistory.voucherHistoryGetVoucherHistory",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.getApiV2VouchersVoucherCode",
+      "name": "vouchers.getApiV2VouchersVoucherCode",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.vouchersDelete",
+      "name": "vouchers.vouchersDelete",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.vouchersGet",
+      "name": "vouchers.vouchersGet",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.vouchersGetVoucherHistory",
+      "name": "vouchers.vouchersGetVoucherHistory",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.vouchersPost",
+      "name": "vouchers.vouchersPost",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi_agco_ats_com.vouchers.vouchersPut",
+      "name": "vouchers.vouchersPut",
+      "description": "No Documentation Found."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

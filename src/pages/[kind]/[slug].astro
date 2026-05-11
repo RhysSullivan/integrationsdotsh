@@ -1,0 +1,174 @@
+---
+import Base from "~/layouts/Base.astro";
+import { byKind, kindLabel } from "~/lib/data.ts";
+import type { Kind } from "~/lib/types.ts";
+import Markdown from "~/components/Markdown.tsx";
+
+export function getStaticPaths() {
+  const kinds = ["mcp", "openapi", "graphql"] satisfies Kind[];
+  return kinds.flatMap((kind) =>
+    byKind[kind].map((item) => ({
+      params: { kind, slug: item.slug },
+      props: { item },
+    })),
+  );
+}
+
+const { item } = Astro.props;
+---
+
+<Base title={`${item.name} — ${kindLabel[item.kind]} on integrations.sh`} description={item.description}>
+  <article data-pagefind-body>
+    <a href="/" class="back">← all integrations</a>
+    <header class="head">
+      {item.icon && <img src={item.icon} alt="" width="56" height="56" />}
+      <div>
+        <h1>{item.name}</h1>
+        <div class="meta">
+          <span class={`badge ${item.kind}`} data-pagefind-filter={`kind:${item.kind}`}>{kindLabel[item.kind]}</span>
+          {item.feeds.map((f) => <span class="feed" data-pagefind-filter={`feed:${f}`}>{f}</span>)}
+          {item.categories.map((c) => <span class="cat" data-pagefind-filter={`category:${c}`}>{c}</span>)}
+        </div>
+      </div>
+    </header>
+
+    {item.description && <Markdown text={item.description} className="desc" />}
+
+    <dl class="kv">
+      {item.url && (
+        <>
+          <dt>Homepage</dt>
+          <dd><a href={item.url} target="_blank" rel="noopener">{item.url}</a></dd>
+        </>
+      )}
+      {item.mcp?.remoteUrl && (
+        <>
+          <dt>Remote URL</dt>
+          <dd><code>{item.mcp.remoteUrl}</code></dd>
+        </>
+      )}
+      {item.mcp?.transport && (
+        <>
+          <dt>Transport</dt>
+          <dd>{item.mcp.transport}</dd>
+        </>
+      )}
+      {item.mcp?.authTypes && item.mcp.authTypes.length > 0 && (
+        <>
+          <dt>Auth</dt>
+          <dd>{item.mcp.authTypes.join(", ")}</dd>
+        </>
+      )}
+      {item.mcp?.toolNames && item.mcp.toolNames.length > 0 && !(item.tools && item.tools.length) && (
+        <>
+          <dt>Tools</dt>
+          <dd>
+            <ul class="tools">
+              {item.mcp.toolNames.map((t) => <li><code>{t}</code></li>)}
+            </ul>
+          </dd>
+        </>
+      )}
+      {item.openapi && (
+        <>
+          <dt>Provider</dt>
+          <dd>{item.openapi.provider}{item.openapi.service ? ` / ${item.openapi.service}` : ""}</dd>
+          <dt>OpenAPI version</dt>
+          <dd>{item.openapi.openapiVer}</dd>
+          {item.openapi.swaggerUrl && (
+            <>
+              <dt>Spec (JSON)</dt>
+              <dd><a href={item.openapi.swaggerUrl} target="_blank" rel="noopener">{item.openapi.swaggerUrl}</a></dd>
+            </>
+          )}
+          {item.openapi.swaggerYamlUrl && (
+            <>
+              <dt>Spec (YAML)</dt>
+              <dd><a href={item.openapi.swaggerYamlUrl} target="_blank" rel="noopener">{item.openapi.swaggerYamlUrl}</a></dd>
+            </>
+          )}
+        </>
+      )}
+      {item.graphql && (
+        <>
+          <dt>Endpoint</dt>
+          <dd><code>{item.graphql.endpoint}</code></dd>
+          <dt>Auth required</dt>
+          <dd>{item.graphql.hasSecurity ? "yes" : "no"}</dd>
+          {item.graphql.docs.length > 0 && (
+            <>
+              <dt>Docs</dt>
+              <dd>
+                <ul>
+                  {item.graphql.docs.map((d) => (
+                    <li><a href={d.url} target="_blank" rel="noopener">{d.description ?? d.url}</a></li>
+                  ))}
+                </ul>
+              </dd>
+            </>
+          )}
+        </>
+      )}
+    </dl>
+
+    {item.tools && item.tools.length > 0 && (
+      <section class="tools-section">
+        <h2>Tools <span class="count">({item.tools.length})</span></h2>
+        <p class="extracted-note">Extracted live via the executor SDK.</p>
+        <ul class="tool-list">
+          {item.tools.map((t) => (
+            <li class="tool">
+              <div class="tool-head">
+                <code class="tool-id">{t.name}</code>
+              </div>
+              {t.description && <Markdown text={t.description} className="tool-desc" />}
+              {t.inputSchema ? (
+                <details class="tool-schema">
+                  <summary>Input schema</summary>
+                  <pre>{JSON.stringify(t.inputSchema, null, 2)}</pre>
+                </details>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {item.toolsStatus === "skipped" && item.toolsReason && (
+      <p class="extracted-note muted">Tool list not extracted: {item.toolsReason}.</p>
+    )}
+    {item.toolsStatus === "error" && item.toolsReason && (
+      <p class="extracted-note muted">Tool extraction failed: {item.toolsReason}.</p>
+    )}
+  </article>
+</Base>
+
+<style>
+  .back { color: var(--muted); font-size: 13px; text-decoration: none; }
+  .back:hover { color: var(--fg); }
+  .head { display: flex; gap: 18px; align-items: center; margin: 16px 0 20px; }
+  .head img { border-radius: 10px; background: #fff; object-fit: contain; flex-shrink: 0; }
+  h1 { font-size: 28px; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .feed, .cat { font-size: 11px; color: var(--muted); padding: 2px 8px; border: 1px solid var(--border); border-radius: 999px; }
+  .desc { color: var(--fg); font-size: 15px; line-height: 1.6; max-width: 72ch; }
+  dl.kv { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 28px 0; font-size: 14px; }
+  dl.kv dt { color: var(--muted); }
+  dl.kv dd { margin: 0; min-width: 0; word-break: break-all; }
+  code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  ul.tools { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+  ul.tools code { background: var(--card); }
+  .tools-section { margin-top: 32px; }
+  .tools-section h2 { font-size: 18px; letter-spacing: -0.005em; margin: 0 0 4px; }
+  .tools-section .count { color: var(--muted); font-weight: 400; font-size: 14px; }
+  .extracted-note { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .extracted-note.muted { margin-top: 24px; }
+  .tool-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .tool { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .tool-head { display: flex; align-items: center; gap: 8px; }
+  .tool-id { background: transparent; padding: 0; font-size: 13px; color: var(--accent); }
+  .tool-desc { color: var(--muted); font-size: 13px; margin: 6px 0 0; line-height: 1.5; }
+  .tool-schema { margin-top: 8px; }
+  .tool-schema summary { cursor: pointer; color: var(--muted); font-size: 12px; }
+  .tool-schema pre { background: var(--bg); padding: 10px; border-radius: 6px; overflow: auto; font-size: 11px; max-height: 320px; margin: 6px 0 0; }
+</style>

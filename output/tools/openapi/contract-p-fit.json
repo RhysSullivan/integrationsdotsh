@@ -1,0 +1,692 @@
+{
+  "fetchedAt": "2026-04-30T15:22:09.582Z",
+  "status": "ok",
+  "count": 137,
+  "tools": [
+    {
+      "id": "openapi_contract_p_fit.about.getReleaseNotes",
+      "name": "about.getReleaseNotes",
+      "description": "GET /about/release_notes"
+    },
+    {
+      "id": "openapi_contract_p_fit.about.getVersion",
+      "name": "about.getVersion",
+      "description": "GET /about/version"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.deleteApiKeyResource",
+      "name": "auth.deleteApiKeyResource",
+      "description": "Completely remove an API Key, thus disabling it. The token won't be recoverable\n\n**Permission required:** edit_backend_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.getApiKeyResource",
+      "name": "auth.getApiKeyResource",
+      "description": "**Permission required:** view_api_keys"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.getApiKeysInboxResource",
+      "name": "auth.getApiKeysInboxResource",
+      "description": "**Permission required:** view_api_keys"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.getApiKeysResource",
+      "name": "auth.getApiKeysResource",
+      "description": "**Permission required:** view_api_keys"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.patchApiKeyResource",
+      "name": "auth.patchApiKeyResource",
+      "description": "**roles** can't be modified after creation: you need to create a new token if you want other roles.\n\n**Permission required:** edit_backend_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postApiKeysInboxResource",
+      "name": "auth.postApiKeysInboxResource",
+      "description": "The requesting user needs to have inbox level permissions\n\nAPI Keys are simple randomly generated strings bound to roles that grant access to resources.\n\nEvery API Key maps to attributes defining its validity and can be revoked at any time.\n\nAPI Key can be passed in the **X-API-Key** HTTP Header and in the querystring **&api_key=**\n\n\n**Permission required:** edit_backend_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postApiKeysResource",
+      "name": "auth.postApiKeysResource",
+      "description": "API Keys are simple randomly generated strings bound to roles that grant access to resources.\n\nEvery API Key maps to attributes defining its validity and can be revoked at any time.\n\nAPI Key can be passed in the **X-API-Key** HTTP Header and in the querystring **&api_key=**\n\n\n**Permission required:** edit_backend_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postAuth",
+      "name": "auth.postAuth",
+      "description": "Login with the provided credentials (POST data) and return a JWT Token for this user."
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postEphemeralTokenResource",
+      "name": "auth.postEphemeralTokenResource",
+      "description": "Ephemeral tokens are short lived tokens that can be used to temporary grant access to resources."
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postGetJwtResource",
+      "name": "auth.postGetJwtResource",
+      "description": "## This endpoint is *deprecated* : use /auth/ephemeral and /auth/token instead\n\nThis endpoint requires authentication and requires the user to have the role **edit_users**: you can\nthen request a JWT on behalf of another user, specified in the request **username** attribute.\n\nThis endpoint has 2 modes depending on the presence or absence of the *roles* attribute in the request\ndata:\n\n## Regular token\n\nWhen sending only a **username**: a regular JWT Token bound to the given user is created and returned.\n\n## Temporary token\n\nWhen sending **username** AND a list **roles** of **role** (defined by the UID, optional the inbox to restrict access to):\na temporary token is created that will behave like a regular user with the given roles until the access token expires.\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postResetPassword",
+      "name": "auth.postResetPassword",
+      "description": "Reset the user password"
+    },
+    {
+      "id": "openapi_contract_p_fit.auth.postTokenResource",
+      "name": "auth.postTokenResource",
+      "description": "Bearer tokens can be used to authenticated without session or without sending credentials.\n\nIf the user making the request has sufficient privileges, he is allowed to create a token on behalf of another user.\nOtherwise only a token for the request current user is allowed.\n\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.connections.deleteConnectionResource",
+      "name": "connections.deleteConnectionResource",
+      "description": "Delete the given connection.\n\n**WARNING** This will completely remove the connection, this is not recoverable\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.connections.getConnectionResource",
+      "name": "connections.getConnectionResource",
+      "description": "Return the connection attributes\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.connections.getConnectionsResource",
+      "name": "connections.getConnectionsResource",
+      "description": "Return the list of set up connections\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.connections.patchConnectionResource",
+      "name": "connections.patchConnectionResource",
+      "description": "attributes\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.connections.postConnectionsResource",
+      "name": "connections.postConnectionsResource",
+      "description": "Create a new connection bound to the given scope (can be a project or inbox)\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.dataRetentionSettings.deleteDataRetentionResource",
+      "name": "dataRetentionSettings.deleteDataRetentionResource",
+      "description": "**Permission required:** edit_data_retention_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.dataRetentionSettings.getDataRetentionResource",
+      "name": "dataRetentionSettings.getDataRetentionResource",
+      "description": "**Permission required:** read_data_retention_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.dataRetentionSettings.getDataRetentionSettingsLevelId",
+      "name": "dataRetentionSettings.getDataRetentionSettingsLevelId",
+      "description": "**Permission required:** read_data_retention_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.dataRetentionSettings.patchDataRetentionResource",
+      "name": "dataRetentionSettings.patchDataRetentionResource",
+      "description": "**Permission required:** edit_data_retention_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.deleteDocumentDeleteResource",
+      "name": "documents.deleteDocumentDeleteResource",
+      "description": "how parameter: if how == \"FULL\", we delete the entire document, including its source files\nif how == \"SOURCE_FILES\", we only remove the (source) files and we set the archived flag. In practice this means\nall information in the database (json) remains available, but you can no longer download / visualise the original document.\n\n**WARNING** The removal (of source files and in the database) is permanent\n\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentDeleteResource",
+      "name": "documents.getDocumentDeleteResource",
+      "description": "Simple endpoint that will fetch the given document\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentLastVersionResource",
+      "name": "documents.getDocumentLastVersionResource",
+      "description": "Get the latest possible version for this document, optionally with constraints on the source or name\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentOriginalFileResource",
+      "name": "documents.getDocumentOriginalFileResource",
+      "description": "Return the document original file, as attachment.\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentPageImageResource",
+      "name": "documents.getDocumentPageImageResource",
+      "description": "GET /documents/{document_id}/page/{page_range}"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentPageImageThumbnailResource",
+      "name": "documents.getDocumentPageImageThumbnailResource",
+      "description": "GET /documents/{document_id}/page_thumbnail/{page_range}"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentReverseResource",
+      "name": "documents.getDocumentReverseResource",
+      "description": "GET /documents/{document_id}/reverse/{page_range}"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentTextResource",
+      "name": "documents.getDocumentTextResource",
+      "description": "Return the optimal text for the document; will either be the OCR text, the native text,\nthe raw text or a translated version.\n\nTo ease the data volume from the DB, we lazy load only the relevant text for the document.\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentTransformResource",
+      "name": "documents.getDocumentTransformResource",
+      "description": "If you have a custom output configured (this is set by contract.fit team), This allows you to\nget the custom output formatted document.\n\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.getDocumentWorkflowResource",
+      "name": "documents.getDocumentWorkflowResource",
+      "description": "**WARNING experimental use only**\n\n\n**Permission required:** upload"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.patchDocumentCopyResource",
+      "name": "documents.patchDocumentCopyResource",
+      "description": "Copy documents in the provided list to another inbox.\n\nIf the destination inbox is the same as the original inbox, the request will be aborted, no duplicates\nwill be created\n\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.patchDocumentMoveResource",
+      "name": "documents.patchDocumentMoveResource",
+      "description": "Move documents in the provided list to another inbox.\n\nIf the destination inbox is the same as the original inbox, the request will be aborted.\n\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentCompareVersionsResource",
+      "name": "documents.postDocumentCompareVersionsResource",
+      "description": "POST /documents/{document_id}/compare_versions"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentCustomOutputResource",
+      "name": "documents.postDocumentCustomOutputResource",
+      "description": "Using the provided filter on documents, will generate a custom output.\n\n**Note:** only excel output is supported at the moment.\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentDataResource",
+      "name": "documents.postDocumentDataResource",
+      "description": "POST /documents/file_query/{data_type}"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentProcessTableAnnotation",
+      "name": "documents.postDocumentProcessTableAnnotation",
+      "description": "A fast and convenient annotation tool that converts a table-level annotation to cell-level feedback.\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentQuery",
+      "name": "documents.postDocumentQuery",
+      "description": "POST /documents/query/{query_type}"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentsResource",
+      "name": "documents.postDocumentsResource",
+      "description": "This endpoint uploads a new file to the given inbox and will process the file.\n\n## Upload mode: sync\n\nWhen sync=true (default), the call will block and wait for the processing to complete.\n\nIf you have a custom output configured (this is set by contract.fit team),\npassing mimetype *application/vnd.cf.custom* will allow you to get the custom output formatted result\n\nSince it might yield inconsistent results if a timeout is raised while waiting,\nit is recommended to use the **async** mode.\n\n## Upload mode: async\n\nWhen sync=false, the call will schedule the processing and return without waiting for completion.\nIt will return the document ID, so that the processed document can be retrieved at a later date.\n\n**Permission required:** upload"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentStatusDataResource",
+      "name": "documents.postDocumentStatusDataResource",
+      "description": "Update the given document status data with the request user and date.\n\nEach document defines some status:\n- lock\n- escalate\n- reject\n- delete\n- archive\n- submitted\n\nThese fields have 3 attributes:\n- status true / false\n- since: datetime (UTC)\n- by: user ID\n\nBy calling this endpoint you can update the given status data with the request user\n(the one authenticated) and the current datetime.\n**Note** : You cannot pass a user in the request nor a datetime\n\n**Permission required:** review"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postDocumentSubmitEvalResource",
+      "name": "documents.postDocumentSubmitEvalResource",
+      "description": "Send a feedback for the given document and optionally evaluate.\n\nWhen a document is to be reviewed, this endpoint is used to send the user feedback.\n\n**Permission required:** submit"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postEnrichmentResource",
+      "name": "documents.postEnrichmentResource",
+      "description": "POST /documents/enrich"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postReprocessDocumentResource",
+      "name": "documents.postReprocessDocumentResource",
+      "description": "This endpoint schedules (async) reprocessing for the given document;\nit will call the async processing with the given desired version name,\nsimilar to the async document upload but skipping OCR.\nIt works asynchronously, so results need to be consulted by a separate call (or webhook)\n\n\n**Permission required:** upload"
+    },
+    {
+      "id": "openapi_contract_p_fit.documents.postSimpleDocumentsResource",
+      "name": "documents.postSimpleDocumentsResource",
+      "description": "This endpoint is a simplified version of the upload document to inbox one - synchronous mode.\n\nThe upload file will be upload to the given inbox if provided, else fallback to the **invoice** inbox.\nThe file will be processed synchronously, ie the request will blocks until the document was processed\n*or* until it timeout; in this case the document might **not** be correctly processed.\n\n\nFor a more reliable processing use the /documents/{inbox_id} endpoint in async mode\n\n\n**Permission required:** upload"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.deleteFormatResource",
+      "name": "formats.deleteFormatResource",
+      "description": "**WARNING** This will completely remove the documents, this is **not recoverable**\n\n**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.getFormatResource",
+      "name": "formats.getFormatResource",
+      "description": "Return the given format attributes\n\n**Deprecated**: display_name\n**Deprecated**: default_format\n\n**Permission required:** edit_format_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.getFormatsDocTypesResource",
+      "name": "formats.getFormatsDocTypesResource",
+      "description": "**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.getFormatsResource",
+      "name": "formats.getFormatsResource",
+      "description": "Return the formats\n\n**Deprecated**: display_name\n**Deprecated**: default_format"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.getFormatTagFieldsResource",
+      "name": "formats.getFormatTagFieldsResource",
+      "description": "Get the tag fields values bound to the given scope.\n\nScope can be an inbox or a project\n\n\n**Permission required:** edit_format_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.patchFormatResource",
+      "name": "formats.patchFormatResource",
+      "description": "settings with the given attributes\n\n**Deprecated**: display_name\n**Deprecated**: default_format\n\n**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.formats.postFormatsResource",
+      "name": "formats.postFormatsResource",
+      "description": "Create an new format\n\n**Deprecated**: display_name\n**Deprecated**: default_format\n\n**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.deleteInboxDocumentResource",
+      "name": "inboxes.deleteInboxDocumentResource",
+      "description": "in the given inbox.\n\nhow parameter: if how == \"FULL\", we delete the entire document, including its source files\nif how == \"SOURCE_FILES\", we only remove the (source) files and we set the archived flag. In practice this means\nall information in the database (json) remains available, but you can no longer download / visualise the original document.\n\nwhat parameter: if what == \"DONE\", we will only delete files which have status_data.feedback == True\nif what == \"ALL\" we will delete all files\n\nStart_date and end_date: when specified we will only delete files which are received after (respectively before) the timestamp\n\n**WARNING** This will completely remove the documents, this is **not recoverable**"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.deleteInboxResource",
+      "name": "inboxes.deleteInboxResource",
+      "description": "Delete the given inbox.\n\n**WARNING** This will completely remove the inbox, this is not recoverable"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.getInboxDocumentResource",
+      "name": "inboxes.getInboxDocumentResource",
+      "description": "**Permission required:** view_list"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.getInboxDocumentVersionsResource",
+      "name": "inboxes.getInboxDocumentVersionsResource",
+      "description": "GET /inboxes/{inbox_id}/document_versions"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.getInboxesResource",
+      "name": "inboxes.getInboxesResource",
+      "description": "Simply return the list of inboxes"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.getInboxPaginatedResource",
+      "name": "inboxes.getInboxPaginatedResource",
+      "description": "**Permission required:** view_list"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.getInboxResource",
+      "name": "inboxes.getInboxResource",
+      "description": "Get the given inbox attributes\n\n**Permission required:** view_list"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.patchInboxResource",
+      "name": "inboxes.patchInboxResource",
+      "description": "Update the given inbox with the provided arguments\n\n**Permission required:** view_list"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.postInboxesResource",
+      "name": "inboxes.postInboxesResource",
+      "description": "Create a new inbox in the given **project**\n\n**Permission required:** create_inbox"
+    },
+    {
+      "id": "openapi_contract_p_fit.inboxes.postInboxReprocessResource",
+      "name": "inboxes.postInboxReprocessResource",
+      "description": "This endpoint schedule reprocessing for documents in the given inbox; this will call the async processing,\njust like async document upload\n\n\n**Permission required:** upload"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.deleteIntegrationResource",
+      "name": "integrations.deleteIntegrationResource",
+      "description": "Delete the given integration.\n\n**WARNING** This will completely remove the integration, this is not recoverable\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.getEmailIntegrationActivationResource",
+      "name": "integrations.getEmailIntegrationActivationResource",
+      "description": "GET /integrations/{integration_id}/activate"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.getIntegrationResource",
+      "name": "integrations.getIntegrationResource",
+      "description": "Return the given integration attributes\n\n**Permission required:** read_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.getIntegrationResources",
+      "name": "integrations.getIntegrationResources",
+      "description": "Return the list of set up integrations\n\n**Permission required:** read_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.patchIntegrationResource",
+      "name": "integrations.patchIntegrationResource",
+      "description": "Update the given integration attributes\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.integrations.postIntegrationResources",
+      "name": "integrations.postIntegrationResources",
+      "description": "Create a new integration. Each type of integration has its own initialization logic and thus may\nyield suitable error codes depending on the underlying issue, such as credentials or connectivity issue.\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.predictorSettings.deletePredictorSettingResource",
+      "name": "predictorSettings.deletePredictorSettingResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.predictorSettings.getPredictorSettingResource",
+      "name": "predictorSettings.getPredictorSettingResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.predictorSettings.getPredictorSettingsResource",
+      "name": "predictorSettings.getPredictorSettingsResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.predictorSettings.patchPredictorSettingResource",
+      "name": "predictorSettings.patchPredictorSettingResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.projects.deleteProjectResource",
+      "name": "projects.deleteProjectResource",
+      "description": "Delete the given project.\n\n**WARNING** This will completely remove the project, this is not recoverable\n\n**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.projects.getProjectResource",
+      "name": "projects.getProjectResource",
+      "description": "Get the attributes of the given project\n\n\n**Deprecated**: default_format"
+    },
+    {
+      "id": "openapi_contract_p_fit.projects.getProjectsResource",
+      "name": "projects.getProjectsResource",
+      "description": "Return the list of projects in the organization\n\n\n**Deprecated**: default_format"
+    },
+    {
+      "id": "openapi_contract_p_fit.projects.patchProjectResource",
+      "name": "projects.patchProjectResource",
+      "description": "Update the project attributes with the provided arguments\n\n\n**Deprecated**: default_format\n\n**Permission required:** edit_format_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.projects.postProjectsResource",
+      "name": "projects.postProjectsResource",
+      "description": "Simply create a new project\n\n**Deprecated**: default_format\n\n**Permission required:** create_inbox"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.deleteReportResource",
+      "name": "reports.deleteReportResource",
+      "description": "Delete the given report.\n\n**WARNING** This will completely remove the report, this is not recoverable\n\n**Permission required:** edit_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.getReportResource",
+      "name": "reports.getReportResource",
+      "description": "Return report attributes\n\n**Permission required:** read_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.getReportsResource",
+      "name": "reports.getReportsResource",
+      "description": "Return the list of reports\n\n**Permission required:** read_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.patchReportResource",
+      "name": "reports.patchReportResource",
+      "description": "Modify the report with the given arguments\n\n**Permission required:** edit_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.postGenerateReportIdResource",
+      "name": "reports.postGenerateReportIdResource",
+      "description": "**Note**: start_date and end_date filter on status update\n\n**Permission required:** read_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.postGenerateReportResource",
+      "name": "reports.postGenerateReportResource",
+      "description": "**Note**: start_date and end_date filter on status update\n\n**Permission required:** read_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.reports.postReportsResource",
+      "name": "reports.postReportsResource",
+      "description": "Create a new report\n\n**Permission required:** edit_reports"
+    },
+    {
+      "id": "openapi_contract_p_fit.roles.deleteRoleResource",
+      "name": "roles.deleteRoleResource",
+      "description": "Delete the given role.\n\n**WARNING** This will completely remove the role, this is not recoverable\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.roles.getRoleResource",
+      "name": "roles.getRoleResource",
+      "description": "Return role attributes"
+    },
+    {
+      "id": "openapi_contract_p_fit.roles.getRolesResource",
+      "name": "roles.getRolesResource",
+      "description": "Return the list of roles"
+    },
+    {
+      "id": "openapi_contract_p_fit.roles.patchRoleResource",
+      "name": "roles.patchRoleResource",
+      "description": "Modify the role with the given arguments\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.roles.postRolesResource",
+      "name": "roles.postRolesResource",
+      "description": "Create a new role\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.deleteRuleConfigResource",
+      "name": "ruleConfig.deleteRuleConfigResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.getRuleConfigResource",
+      "name": "ruleConfig.getRuleConfigResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.getRuleConfigsResource",
+      "name": "ruleConfig.getRuleConfigsResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.patchRuleConfigResource",
+      "name": "ruleConfig.patchRuleConfigResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.postDebugRuleEntityDocumentResource",
+      "name": "ruleConfig.postDebugRuleEntityDocumentResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.postDebugRuleEntityResource",
+      "name": "ruleConfig.postDebugRuleEntityResource",
+      "description": "**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.ruleConfig.postDebugWhereToSearch",
+      "name": "ruleConfig.postDebugWhereToSearch",
+      "description": "Returns a list of strings per granularity. If no granularity is specified. It is considered to be the whole document\n\n**Permission required:** edit_predictor_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.samplingSettings.deleteSettingSamplingResource",
+      "name": "samplingSettings.deleteSettingSamplingResource",
+      "description": "**Permission required:** edit_sampling_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.samplingSettings.getSettingSamplingResource",
+      "name": "samplingSettings.getSettingSamplingResource",
+      "description": "**Permission required:** edit_sampling_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.samplingSettings.getSettingSamplingsResource",
+      "name": "samplingSettings.getSettingSamplingsResource",
+      "description": "**Permission required:** edit_sampling_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.samplingSettings.patchSettingSamplingResource",
+      "name": "samplingSettings.patchSettingSamplingResource",
+      "description": "**Permission required:** edit_sampling_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.settings.getDashboardSettingsAtomicResource",
+      "name": "settings.getDashboardSettingsAtomicResource",
+      "description": "Get the dashboard settings for the given scope (project or inbox)"
+    },
+    {
+      "id": "openapi_contract_p_fit.settings.getReviewSettingsAtomicResource",
+      "name": "settings.getReviewSettingsAtomicResource",
+      "description": "Get the review settings for the given scope (project or inbox)"
+    },
+    {
+      "id": "openapi_contract_p_fit.settings.patchDashboardSettingsAtomicResource",
+      "name": "settings.patchDashboardSettingsAtomicResource",
+      "description": "Update the dashboard settings for the given scope (project or inbox)\n\n**Permission required:** edit_dashboard_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.settings.patchReviewSettingsAtomicResource",
+      "name": "settings.patchReviewSettingsAtomicResource",
+      "description": "Update the review settings for the given scope (project or inbox)\n\n**Permission required:** edit_review_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.sso.deleteSsoConfigResources",
+      "name": "sso.deleteSsoConfigResources",
+      "description": "Return the given integration attributes\n\n**Permission required:** edit_integrations"
+    },
+    {
+      "id": "openapi_contract_p_fit.sso.getSsoConfigResources",
+      "name": "sso.getSsoConfigResources",
+      "description": "GET /sso/config"
+    },
+    {
+      "id": "openapi_contract_p_fit.sso.postOauthLoginResource",
+      "name": "sso.postOauthLoginResource",
+      "description": "POST /sso/login"
+    },
+    {
+      "id": "openapi_contract_p_fit.sso.postSsoConfigResources",
+      "name": "sso.postSsoConfigResources",
+      "description": "POST /sso/config"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getAccuracyResource",
+      "name": "stats.getAccuracyResource",
+      "description": "**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getAutomationBlockersStats",
+      "name": "stats.getAutomationBlockersStats",
+      "description": "**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getEvaluatedVersions",
+      "name": "stats.getEvaluatedVersions",
+      "description": "If filter_on_version_date is True, the document\nversions are filtered by timestamp, otherwise, documents are filtered by receive_time.\n\n**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getProcessingStats",
+      "name": "stats.getProcessingStats",
+      "description": "**This endpoint is in _preview_ and its interface may change.**\n\nCompute statistics over the documents in the inbox. These stats include:\n- mean\n- min\n- max\n- standard deviation\n- 50th percentile\n- 95th percentile\n- 99th percentile\n\nDocuments are grouped by their page count: this is currently the *only* supported group by attribute.\n\nDocuments can be further filter by any given start or end date: the filter will apply to the start\nprocessing date, and *not* to the done date.\n\n**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getStatsResource",
+      "name": "stats.getStatsResource",
+      "description": "Compute and return statistics on the given inbox, optionally restricted to a date range and a field.\n\nStats will return per field:\n- accuracy\n- precision\n- f1 score\n- recall\n\n**Note** Depending on the date range and fields, computation might be intensive\n\n**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getStpResource",
+      "name": "stats.getStpResource",
+      "description": "**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getUsageStatsResource",
+      "name": "stats.getUsageStatsResource",
+      "description": "GET /stats/usage"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.getVolumeStats",
+      "name": "stats.getVolumeStats",
+      "description": "**Permission required:** view_statistics"
+    },
+    {
+      "id": "openapi_contract_p_fit.stats.postBlueDotsResource",
+      "name": "stats.postBlueDotsResource",
+      "description": "Compute and return the blue dots statistics, optionally restricted to date range, fields and versions\n\n**Permission required:** submit"
+    },
+    {
+      "id": "openapi_contract_p_fit.style.getStyleLogoResource",
+      "name": "style.getStyleLogoResource",
+      "description": "Get the custom logo"
+    },
+    {
+      "id": "openapi_contract_p_fit.style.getStyleSheetResource",
+      "name": "style.getStyleSheetResource",
+      "description": "Get the custom CSS file"
+    },
+    {
+      "id": "openapi_contract_p_fit.style.postStyleLogoResource",
+      "name": "style.postStyleLogoResource",
+      "description": "**Permission required:** edit_dashboard_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.style.postStyleSheetResource",
+      "name": "style.postStyleSheetResource",
+      "description": "**Permission required:** edit_dashboard_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.tenant.deleteTenantResource",
+      "name": "tenant.deleteTenantResource",
+      "description": "DELETE /tenant"
+    },
+    {
+      "id": "openapi_contract_p_fit.tenant.patchActivateTenantResource",
+      "name": "tenant.patchActivateTenantResource",
+      "description": "PATCH /tenant/activate"
+    },
+    {
+      "id": "openapi_contract_p_fit.thresholdSettings.deleteSettingThresholdResource",
+      "name": "thresholdSettings.deleteSettingThresholdResource",
+      "description": "**Permission required:** edit_thresholds_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.thresholdSettings.getSettingsThresholdResource",
+      "name": "thresholdSettings.getSettingsThresholdResource",
+      "description": "**Permission required:** read_thresholds_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.thresholdSettings.getSettingThresholdResource",
+      "name": "thresholdSettings.getSettingThresholdResource",
+      "description": "**Permission required:** read_thresholds_settings / review"
+    },
+    {
+      "id": "openapi_contract_p_fit.thresholdSettings.patchSettingThresholdResource",
+      "name": "thresholdSettings.patchSettingThresholdResource",
+      "description": "**Permission required:** edit_thresholds_settings"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.deleteUserResource",
+      "name": "users.deleteUserResource",
+      "description": "Delete the given user.\n\n**WARNING** This will completely remove the user, this is not recoverable"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.getMe",
+      "name": "users.getMe",
+      "description": "Return user info of the authenticated used making the call"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.getUserResource",
+      "name": "users.getUserResource",
+      "description": "Return user attribute\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.getUsersResource",
+      "name": "users.getUsersResource",
+      "description": "Return the list of users\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.patchUserResource",
+      "name": "users.patchUserResource",
+      "description": "Update the given user with the provided attributes\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.postChangePassword",
+      "name": "users.postChangePassword",
+      "description": "Update the current authenticated user password"
+    },
+    {
+      "id": "openapi_contract_p_fit.users.postUsersResource",
+      "name": "users.postUsersResource",
+      "description": "Create a new user with the provided attributes and roles\n\n**Permission required:** edit_users"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

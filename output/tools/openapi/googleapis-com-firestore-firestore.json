@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:22:37.413Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesCollectionGroupsFieldsList",
+      "name": "projects.firestoreProjectsDatabasesCollectionGroupsFieldsList",
+      "description": "Lists the field configuration and metadata for this database. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with the filter set to `indexConfig.usesAncestorConfig:false` ."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesCollectionGroupsIndexesCreate",
+      "name": "projects.firestoreProjectsDatabasesCollectionGroupsIndexesCreate",
+      "description": "Creates a composite index. This returns a google.longrunning.Operation which may be used to track the status of the creation. The metadata for the operation will be the type IndexOperationMetadata."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesCollectionGroupsIndexesList",
+      "name": "projects.firestoreProjectsDatabasesCollectionGroupsIndexesList",
+      "description": "Lists composite indexes."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesCreate",
+      "name": "projects.firestoreProjectsDatabasesCreate",
+      "description": "Create a database."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsBatchGet",
+      "name": "projects.firestoreProjectsDatabasesDocumentsBatchGet",
+      "description": "Gets multiple documents. Documents returned by this method are not guaranteed to be returned in the same order that they were requested."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsBatchWrite",
+      "name": "projects.firestoreProjectsDatabasesDocumentsBatchWrite",
+      "description": "Applies a batch of write operations. The BatchWrite method does not apply the write operations atomically and can apply them out of order. Method does not allow more than one write per document. Each write succeeds or fails independently. See the BatchWriteResponse for the success status of each write. If you require an atomically applied set of writes, use Commit instead."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsBeginTransaction",
+      "name": "projects.firestoreProjectsDatabasesDocumentsBeginTransaction",
+      "description": "Starts a new transaction."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsCommit",
+      "name": "projects.firestoreProjectsDatabasesDocumentsCommit",
+      "description": "Commits a transaction, while optionally updating documents."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsCreateDocument",
+      "name": "projects.firestoreProjectsDatabasesDocumentsCreateDocument",
+      "description": "Creates a new document."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsListCollectionIds",
+      "name": "projects.firestoreProjectsDatabasesDocumentsListCollectionIds",
+      "description": "Lists all the collection IDs underneath a document."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsListDocuments",
+      "name": "projects.firestoreProjectsDatabasesDocumentsListDocuments",
+      "description": "Lists documents."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsListen",
+      "name": "projects.firestoreProjectsDatabasesDocumentsListen",
+      "description": "Listens to changes. This method is only available via gRPC or WebChannel (not REST)."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsPartitionQuery",
+      "name": "projects.firestoreProjectsDatabasesDocumentsPartitionQuery",
+      "description": "Partitions a query by returning partition cursors that can be used to run the query in parallel. The returned partition cursors are split points that can be used by RunQuery as starting/end points for the query results."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsPatch",
+      "name": "projects.firestoreProjectsDatabasesDocumentsPatch",
+      "description": "Updates or inserts a document."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsRollback",
+      "name": "projects.firestoreProjectsDatabasesDocumentsRollback",
+      "description": "Rolls back a transaction."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsRunAggregationQuery",
+      "name": "projects.firestoreProjectsDatabasesDocumentsRunAggregationQuery",
+      "description": "Runs an aggregation query. Rather than producing Document results like Firestore.RunQuery, this API allows running an aggregation to produce a series of AggregationResult server-side. High-Level Example: ``` -- Return the number of documents in table given a filter. SELECT COUNT(*) FROM ( SELECT * FROM k where a = true ); ```"
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsRunQuery",
+      "name": "projects.firestoreProjectsDatabasesDocumentsRunQuery",
+      "description": "Runs a query."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesDocumentsWrite",
+      "name": "projects.firestoreProjectsDatabasesDocumentsWrite",
+      "description": "Streams batches of document updates and deletes, in order. This method is only available via gRPC or WebChannel (not REST)."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesExportDocuments",
+      "name": "projects.firestoreProjectsDatabasesExportDocuments",
+      "description": "Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage. For more details on export behavior and output format, refer to: https://cloud.google.com/firestore/docs/manage-data/export-import"
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesImportDocuments",
+      "name": "projects.firestoreProjectsDatabasesImportDocuments",
+      "description": "Imports documents into Google Cloud Firestore. Existing documents with the same name are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportDocuments operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Firestore."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesList",
+      "name": "projects.firestoreProjectsDatabasesList",
+      "description": "List all the databases in the project."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesOperationsCancel",
+      "name": "projects.firestoreProjectsDatabasesOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesOperationsDelete",
+      "name": "projects.firestoreProjectsDatabasesOperationsDelete",
+      "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsDatabasesOperationsList",
+      "name": "projects.firestoreProjectsDatabasesOperationsList",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsLocationsGet",
+      "name": "projects.firestoreProjectsLocationsGet",
+      "description": "Gets information about a location."
+    },
+    {
+      "id": "openapi_googleapis_com_firestore_firestore.projects.firestoreProjectsLocationsList",
+      "name": "projects.firestoreProjectsLocationsList",
+      "description": "Lists information about the supported locations for this service."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

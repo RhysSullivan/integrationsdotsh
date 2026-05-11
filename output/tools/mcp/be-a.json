@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:26.613Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_be_a.list_hotels",
+      "name": "list_hotels",
+      "description": "List available hotels, optionally filtered by country/city and/or\na geographic bounding box. All filters are optional and combinable.\n\nReturns a text summary of matching hotels for discovery purposes.\nUse get_availability to display results with the interactive widget.\n\n**IMPORTANT: Use English names only** (e.g., \"Prague\" not \"Praha\", \"Vienna\" not \"Wien\")."
+    },
+    {
+      "id": "mcp_be_a.get_availability",
+      "name": "get_availability",
+      "description": "Get available room offers from one or more hotels and display them in an\ninteractive comparison widget with booking buttons.\n\nPass a list of hotel objects, each with hotel_name and city.\nAll hotels are queried in parallel with the same dates and guest configuration.\nOptionally specify a currency to convert all prices.\n\nThe server automatically tries four strategies per hotel to maximise the\nchance of finding availability:\n  1. Single room, exact dates requested\n  2. Multiple rooms, exact dates (when no single room fits all guests)\n  3. Single room, extended checkout (when a minimum-stay restriction applies)\n  4. Multiple rooms, extended checkout (last resort)\n\n**IMPORTANT: Use English city names** (e.g., \"Prague\" not \"Praha\", \"Vienna\" not \"Wien\")."
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "fetchedAt": "2026-04-30T15:26:52.234Z",
+  "status": "ok",
+  "count": 78,
+  "tools": [
+    {
+      "id": "openapi_trashnothing_com.groups.contactModerators",
+      "name": "groups.contactModerators",
+      "description": "Contact group moderators"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.getGroup",
+      "name": "groups.getGroup",
+      "description": "Retrieve a group"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.getGroupsByIds",
+      "name": "groups.getGroupsByIds",
+      "description": "Retrieve multiple groups"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.joinGroups",
+      "name": "groups.joinGroups",
+      "description": "Request membership to one or more groups. <br /><br /> NOTE: Any group with a has_questions field set to true will also require answers to the groups' new member questionnaire to be submitted.  Groups waiting for answers will have their membership field set to 'pending-questions'.  And the questionnaire that needs to be answered can be found in the membership.questionnaire field of the group after a subscribe request is made to that group.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.leaveGroup",
+      "name": "groups.leaveGroup",
+      "description": "Leave a group"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.searchGroups",
+      "name": "groups.searchGroups",
+      "description": "Search groups"
+    },
+    {
+      "id": "openapi_trashnothing_com.groups.submitAnswers",
+      "name": "groups.submitAnswers",
+      "description": "Submits answers to a groups' membership questionnaire. <br /><br /> The request body should be a JSON object mapping each question from the group membership.questionnaire.questions field to an answer (eg. {\"Where do you live?\": \"New York City\"} ). All questions are required so no null or empty string answers are allowed.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.archiveAllConversations",
+      "name": "messages.archiveAllConversations",
+      "description": "Archive all conversations"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.archiveConversation",
+      "name": "messages.archiveConversation",
+      "description": "Archive conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.blockConversation",
+      "name": "messages.blockConversation",
+      "description": "Block conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.deleteConversation",
+      "name": "messages.deleteConversation",
+      "description": "Delete conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.getConversationMessages",
+      "name": "messages.getConversationMessages",
+      "description": "List conversation messages"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.getConversations",
+      "name": "messages.getConversations",
+      "description": "List conversations"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.markAllConversationsRead",
+      "name": "messages.markAllConversationsRead",
+      "description": "Mark all conversations as read"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.markConversationRead",
+      "name": "messages.markConversationRead",
+      "description": "Mark conversation as read"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.replyToConversation",
+      "name": "messages.replyToConversation",
+      "description": "Reply to conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.reportConversation",
+      "name": "messages.reportConversation",
+      "description": "Report conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.searchConversations",
+      "name": "messages.searchConversations",
+      "description": "Searches all conversations except blocked conversations."
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.unarchiveConversation",
+      "name": "messages.unarchiveConversation",
+      "description": "Unarchive conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.messages.unblockConversation",
+      "name": "messages.unblockConversation",
+      "description": "Unblock conversation"
+    },
+    {
+      "id": "openapi_trashnothing_com.misc.sendFeedback",
+      "name": "misc.sendFeedback",
+      "description": "Allows users to send feedback about the trashnothing.com site or apps."
+    },
+    {
+      "id": "openapi_trashnothing_com.photos.deletePhoto",
+      "name": "photos.deletePhoto",
+      "description": "Delete a photo"
+    },
+    {
+      "id": "openapi_trashnothing_com.photos.getPhotosByIds",
+      "name": "photos.getPhotosByIds",
+      "description": "Retrieve multiple photos"
+    },
+    {
+      "id": "openapi_trashnothing_com.photos.rotatePhoto",
+      "name": "photos.rotatePhoto",
+      "description": "Rotate a photo"
+    },
+    {
+      "id": "openapi_trashnothing_com.photos.uploadPhoto",
+      "name": "photos.uploadPhoto",
+      "description": "Create a photo"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.bookmarkPost",
+      "name": "posts.bookmarkPost",
+      "description": "Bookmark a post"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.deleteBookmark",
+      "name": "posts.deleteBookmark",
+      "description": "Delete a post bookmark"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.deletePost",
+      "name": "posts.deletePost",
+      "description": "Users can delete posts they have made that have been satisfied or withdrawn or that have expired. Deleting posts isn't intended to be a normal part of the posting process since it makes reposting and viewing old posts harder.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getAllPosts",
+      "name": "posts.getAllPosts",
+      "description": "This endpoint provides an easy way to get a feed of all the publicly published posts on trash nothing. It provides access to all publicly published offer and wanted posts from the last 30 days. The posts are sorted by date (newest first). <br /><br /> There are fewer options for filtering, sorting and searching posts with this endpoint but there is no 1,000 post limit and posts that are crossposted to multiple groups are not merged together in the response.  In most cases, crossposted posts are easy to detect because they have the same user_id, title and content.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getAllPostsChanges",
+      "name": "posts.getAllPostsChanges",
+      "description": "This endpoint provides an easy way to get a feed of all the changes that have been made to publicly published posts on trash nothing.  Similar to the /posts/all endpoint, only data from the last 30 days is available and the changes are sorted by date (newest first).  Every change includes the date of the change, the post_id of the post that was changed and the type of change. <br /><br /> The different types of changes that are returned are listed below. <br /><br /> - deleted<br /> - undeleted<br /> - satisfied<br /> - promised<br /> - unpromised<br /> - withdrawn<br /> - edited<br /> <br /> For edited changes, clients can use the retrieve post API endpoint to get the edits that have been made to the post.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getPost",
+      "name": "posts.getPost",
+      "description": "Retrieve a post"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getPostAndRelatedData",
+      "name": "posts.getPostAndRelatedData",
+      "description": "Retrieve a post and other data related to the post that is useful for displaying the post such as data about the user who posted the post and the groups the post was posted on.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getPosts",
+      "name": "posts.getPosts",
+      "description": "NOTE: When paging through the posts returned by this endpoint, there will be at most 1,000 posts that can be returned (eg. 50 pages worth of posts with the default per_page value of 20).  In areas where there are more than 1,000 posts, clients can use more specific query parameters to adjust which posts are returned.\nNOTE: Passing the latitude, longitude and radius parameters filters all posts by their location and so these parameters will temporarily override the current users' location preferences. When latitude, longitude and radius are not specified, public posts will be filtered by the current users' location preferences.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.getPostsByIds",
+      "name": "posts.getPostsByIds",
+      "description": "Retrieve multiple posts"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.promisePost",
+      "name": "posts.promisePost",
+      "description": "Mark an offer by the current user as promised to someone. This helps people viewing the post know that the items being offered may soon be given away as long as the person who was promised the items picks them up.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.replyToPost",
+      "name": "posts.replyToPost",
+      "description": "Send a reply to a post from the current user to the post author."
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.reportPost",
+      "name": "posts.reportPost",
+      "description": "Reports a post to be reviewed by the moderators."
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.satisfyPost",
+      "name": "posts.satisfyPost",
+      "description": "Mark an offer or wanted post by the current user as satisfied (eg. an offer has been taken or a wanted has been received)."
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.searchPosts",
+      "name": "posts.searchPosts",
+      "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.\nNOTE: When paging through the posts returned by this endpoint, there will be at most 1,000 posts that can be returned (eg. 50 pages worth of posts with the default per_page value of 20).  In areas where there are more than 1,000 posts, clients can use more specific query parameters to adjust which posts are returned.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.sharePost",
+      "name": "posts.sharePost",
+      "description": "Forwards a copy of the post to the current user so that they can forward it to friends."
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.submitPost",
+      "name": "posts.submitPost",
+      "description": "Submits a new post.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.unpromisePost",
+      "name": "posts.unpromisePost",
+      "description": "Mark an offer by the current user as unpromised."
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.updatePost",
+      "name": "posts.updatePost",
+      "description": "Users can update posts to fix mistakes with their post, add photos, or add more details about the items. Updates should not be used to say that items in a post have been taken or received since the post satisfy endpoint is designed to do that.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.posts.withdrawPost",
+      "name": "posts.withdrawPost",
+      "description": "Mark an offer or wanted post by the current user as withdrawn."
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.getStories",
+      "name": "stories.getStories",
+      "description": "List stories"
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.getStory",
+      "name": "stories.getStory",
+      "description": "Retrieve a story"
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.likeStory",
+      "name": "stories.likeStory",
+      "description": "Like a story"
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.submitStory",
+      "name": "stories.submitStory",
+      "description": "Submit a story"
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.unlikeStory",
+      "name": "stories.unlikeStory",
+      "description": "Unlike a story"
+    },
+    {
+      "id": "openapi_trashnothing_com.stories.viewedStory",
+      "name": "stories.viewedStory",
+      "description": "Records every time a user views the full story (and not just a preview or snippet),"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.changeEmail",
+      "name": "users.changeEmail",
+      "description": "Change the users' current email address.  A verification link will be emailed to the new email address to verify that the email account belongs to the user.  The email change will not take effect until the user clicks the link in the verification email.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.createAlert",
+      "name": "users.createAlert",
+      "description": "Create an email alert"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.deleteAlert",
+      "name": "users.deleteAlert",
+      "description": "Delete an email alert"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getAlerts",
+      "name": "users.getAlerts",
+      "description": "List current users' email alerts"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getCurrentUser",
+      "name": "users.getCurrentUser",
+      "description": "Retrieve current user"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getCurrentUserGroups",
+      "name": "users.getCurrentUserGroups",
+      "description": "List current users' groups"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getCurrentUserPosts",
+      "name": "users.getCurrentUserPosts",
+      "description": "NOTE: In order to make it easier to see all a users&#39; posts, the current users&#39; location preferences are not applied when listing or searching posts from a single user.  If location based filtering of the posts is needed, the latitude, longitude and radius parameters may be used.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getPostLocations",
+      "name": "users.getPostLocations",
+      "description": "Only the most recent 3 post locations are returned."
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getProfileImageFile",
+      "name": "users.getProfileImageFile",
+      "description": "This is designed to be used as the src attribute of an HTML &lt;img&gt; tag to show the profile image of the given user.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getProfileImages",
+      "name": "users.getProfileImages",
+      "description": "List current users' profile images"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getUser",
+      "name": "users.getUser",
+      "description": "Retrieve a user"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getUserAndRelatedData",
+      "name": "users.getUserAndRelatedData",
+      "description": "Retrieve a user and information related to the user (eg. recent posts) that is useful for displaying a more detailed view of the user.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getUserGroupNotices",
+      "name": "users.getUserGroupNotices",
+      "description": "List current users' group notices"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.getUserPosts",
+      "name": "users.getUserPosts",
+      "description": "NOTE: In order to make it easier to see all a users&#39; posts, the current users&#39; location preferences are not applied when listing or searching posts from a single user.  If location based filtering of the posts is needed, the latitude, longitude and radius parameters may be used.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.removeUserFeedback",
+      "name": "users.removeUserFeedback",
+      "description": "Allows the current user to remove feedback that they left on a user.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.reportUser",
+      "name": "users.reportUser",
+      "description": "Report a user"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.resendAccountVerificationEmail",
+      "name": "users.resendAccountVerificationEmail",
+      "description": "Resend account verification email"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.savePostLocation",
+      "name": "users.savePostLocation",
+      "description": "Creates or updates a post location for the current user. Updates will happen when the name of the post location matches a previous post location.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.searchCurrentUserPosts",
+      "name": "users.searchCurrentUserPosts",
+      "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.searchUserPosts",
+      "name": "users.searchUserPosts",
+      "description": "Searching posts takes the same arguments as listing posts except for the addition of the search and sort_by parameters.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.sendPasswordResetEmail",
+      "name": "users.sendPasswordResetEmail",
+      "description": "Send password reset email"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.setEmailNotBouncing",
+      "name": "users.setEmailNotBouncing",
+      "description": "Resets an email address bouncing state to false.  The users' email address may be automatically marked as bouncing again if further emails sent to it are bounced.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.setProfileImage",
+      "name": "users.setProfileImage",
+      "description": "Profile images must be at least 90 pixels wide and tall.  And if the image used is not square it will be automatically cropped to be square.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.submitUserFeedback",
+      "name": "users.submitUserFeedback",
+      "description": "Allows the current user to submit feedback on a user.  The current user can only leave feedback on a user if the feedback allowed property on that user is set to true (see User definition for more details). And the system will only store the most recent feedback submission that the current user has submitted on a user. If the current user submits feedback multiple times, the newest feedback will overwrite the older feedback. This allows users to update their feedback as long as the feedback allowed property allows it.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.updateCurrentUser",
+      "name": "users.updateCurrentUser",
+      "description": "Update the current user.  All fields are optional so requests can update just one or multiple user properties at a time.\n"
+    },
+    {
+      "id": "openapi_trashnothing_com.users.updateLocation",
+      "name": "users.updateLocation",
+      "description": "Update the current users' location. The location is used to determine which posts are shown to the user (both public posts and group posts).\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

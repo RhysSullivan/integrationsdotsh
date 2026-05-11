@@ -1,0 +1,82 @@
+{
+  "fetchedAt": "2026-04-30T15:22:15.127Z",
+  "status": "ok",
+  "count": 15,
+  "tools": [
+    {
+      "id": "openapi_fulfillment_com.accounting.getAccounting",
+      "name": "accounting.getAccounting",
+      "description": "Retrieves accounting activity during the queried timespan."
+    },
+    {
+      "id": "openapi_fulfillment_com.auth.postOauthAccessToken",
+      "name": "auth.postOauthAccessToken",
+      "description": "By default tokens are valid for 7 days while refresh tokens are valid for 30 days. If your `grant_type` is \"password\" include the `username` and `password`, if however your `grant_type` is \"refresh_token\" the username/password are not required, instead set the `refresh_token`"
+    },
+    {
+      "id": "openapi_fulfillment_com.inventory.getInventory",
+      "name": "inventory.getInventory",
+      "description": "Retrieve inventory for one or more items. This API requires elevated permissions, please speak to your success manager."
+    },
+    {
+      "id": "openapi_fulfillment_com.orders.deleteOrdersId",
+      "name": "orders.deleteOrdersId",
+      "description": "Request an order is canceled to prevent shipment."
+    },
+    {
+      "id": "openapi_fulfillment_com.orders.getOrder",
+      "name": "orders.getOrder",
+      "description": "For the fastest results use the FDC provided `id` however you can use your `merchantOrderId` as the `id`."
+    },
+    {
+      "id": "openapi_fulfillment_com.orders.getOrders",
+      "name": "orders.getOrders",
+      "description": "Retrieve many orders at once"
+    },
+    {
+      "id": "openapi_fulfillment_com.orders.postOrders",
+      "name": "orders.postOrders",
+      "description": "Error Notes&#58;\n* When `409 Conflict` is a 'Duplicate Order' the `context` will include the FDC `id`, see samples.\n"
+    },
+    {
+      "id": "openapi_fulfillment_com.partners.putOrdersIdShip",
+      "name": "partners.putOrdersIdShip",
+      "description": "Note, this API is used to update orders and is reserved for our shipping partners."
+    },
+    {
+      "id": "openapi_fulfillment_com.partners.putOrdersIdStatus",
+      "name": "partners.putOrdersIdStatus",
+      "description": "Note, this API is used to update orders and is reserved for our shipping partners."
+    },
+    {
+      "id": "openapi_fulfillment_com.returns.getReturns",
+      "name": "returns.getReturns",
+      "description": "Retrieves summary return activity during the queried timespan. Although return knowledge can be learned from `GET /orders/{id}` it can take an unknown amount of time for an order that is refused or undeliverable to return to an FDC facility. Instead we recommend regularly querying this API."
+    },
+    {
+      "id": "openapi_fulfillment_com.returns.putReturns",
+      "name": "returns.putReturns",
+      "description": "Inform FDC of an expected return."
+    },
+    {
+      "id": "openapi_fulfillment_com.tracking.getTrack",
+      "name": "tracking.getTrack",
+      "description": "Get uniformed tracking events for any package, this response is carrier independent. Please note, an API Key is required for throttling purposes, please contact your success manager for details."
+    },
+    {
+      "id": "openapi_fulfillment_com.users.getUsersMe",
+      "name": "users.getUsersMe",
+      "description": "Returns the user profile of the access token's owner. This could be useful if managing multiple accounts or confirming validity of a token."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

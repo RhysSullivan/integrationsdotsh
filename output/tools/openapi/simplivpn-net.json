@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:26:46.711Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.disableUser",
+      "name": "simpliVpnapi.disableUser",
+      "description": "This route allows you to disable a user's vpn access."
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.enableUser",
+      "name": "simpliVpnapi.enableUser",
+      "description": "This route allows you to enable a user's vpn access. This route can only be called using your user's Bearer Auth token."
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.getServers",
+      "name": "simpliVpnapi.getServers",
+      "description": "GET /servers"
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.getServerSummaries",
+      "name": "simpliVpnapi.getServerSummaries",
+      "description": "GET /server-summaries"
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.login",
+      "name": "simpliVpnapi.login",
+      "description": "This route allows you to login a user. The response will give you a Bearer auth token to use with all rquests pertaining to the user. This token expires in 7 days, so for every request you should check if you get an unauthorized responsve and re-validate the login if needed."
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.register",
+      "name": "simpliVpnapi.register",
+      "description": "This route allows VPN Admin user's with an api key to register a vpn user account. This route can only be called using your api key supplied to you from SimpliVPN. Before calling this you should use your api key to call the /UsernameAvailable route to make sure the username you want is available first. All subsequent user requests following can be done using the user's api token, their token's expire every 7 days, so you should occasionally check them and if you get unauthorized, refresh their token by calling /login route. This route will also auto-enable a new user."
+    },
+    {
+      "id": "openapi_simplivpn_net.simpliVpnapi.usernameAvailable",
+      "name": "simpliVpnapi.usernameAvailable",
+      "description": "This route allows VPN Admin user's to check if a specific username is available before registering an account username. This route can only be called using your api key supplied to you from SimpliVPN."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

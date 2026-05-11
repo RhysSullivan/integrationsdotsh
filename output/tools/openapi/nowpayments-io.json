@@ -1,0 +1,97 @@
+{
+  "fetchedAt": "2026-04-30T15:26:39.176Z",
+  "status": "ok",
+  "count": 18,
+  "tools": [
+    {
+      "id": "openapi_nowpayments_io.billingSubPartnerApi.getAllTransfers",
+      "name": "billingSubPartnerApi.getAllTransfers",
+      "description": "Returns the entire list of transfers created by your sub-partners."
+    },
+    {
+      "id": "openapi_nowpayments_io.billingSubPartnerApi.getSubPartnerBalance",
+      "name": "billingSubPartnerApi.getSubPartnerBalance",
+      "description": "This request can be made only from a whitelisted IP.  \nIf IP whitelisting is disabled, this request can be made by any user that has an API key."
+    },
+    {
+      "id": "openapi_nowpayments_io.billingSubPartnerApi.getSubPartners",
+      "name": "billingSubPartnerApi.getSubPartners",
+      "description": "This method returns the entire list of your sub-partners."
+    },
+    {
+      "id": "openapi_nowpayments_io.billingSubPartnerApi.getTransfer",
+      "name": "billingSubPartnerApi.getTransfer",
+      "description": "Get the actual information about the transfer. You need to provide the transfer ID in the request."
+    },
+    {
+      "id": "openapi_nowpayments_io.paymentsApi.getEstimatedPrice",
+      "name": "paymentsApi.getEstimatedPrice",
+      "description": "This is a method for calculating the approximate price in cryptocurrency for a given value in Fiat currency. You will need to provide the initial cost in the Fiat currency (amount, currency_from) and the necessary cryptocurrency (currency_to)\nCurrently following fiat currencies are available: usd, eur, nzd, brl, gbp."
+    },
+    {
+      "id": "openapi_nowpayments_io.paymentsApi.getListOfPayments",
+      "name": "paymentsApi.getListOfPayments",
+      "description": "Returns the entire list of all transactions, created with certain API key.\nThe list of optional parameters:\n- limit - number of records in one page. (possible values: from 1 to 500)\n- page - the page number you want to get (possible values: from 0 to **page count - 1**)\n- sortBy - sort the received list by a paramenter. Set to **created_at** by default (possible values: payment_id, payment_status, pay_address, price_amount, price_currency, pay_amount, actually_paid, pay_currency, order_id, order_description, purchase_id, outcome_amount, outcome_currency)\n- orderBy - display the list in ascending or descending order. Set to **asc** by default (possible values: asc, desc)\n- dateFrom - select the displayed period start date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ).\n- dateTo - select the displayed period end date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ)."
+    },
+    {
+      "id": "openapi_nowpayments_io.paymentsApi.getPaymentStatus",
+      "name": "paymentsApi.getPaymentStatus",
+      "description": "Get the actual information about the payment. You need to provide the ID of the payment in the request.\n\nNOTE! You should make the get payment status request with the same API key that you used in the create payment request.\nHere is the list of avalable statuses:\n- waiting - waiting for the customer to send the payment. The initial status of each payment.\n- confirming - the transaction is being processed on the blockchain. Appears when NOWPayments detect the funds from the user on the blockchain.\n- confirmed -  the process is confirmed by the blockchain. Customer’s funds have accumulated enough confirmations.\n- sending - the funds are being sent to your personal wallet. We are in the process of sending the funds to you.\n- partially_paid -  it shows that the customer sent the less than the actual price. Appears when the funds have arrived in your wallet.\n- finished - the funds have reached your personal address and the payment is finished.\n- failed -  the payment wasn't completed due to the error of some kind.\n- refunded -  the funds were refunded back to the user.\n- expired - the user didn't send the funds to the specified address in the 24 hour time window.\n\nAdditional info:\n- outcome_amount - this parameter shows the amount that will be (or is already) received on your Outcome Wallet once the transaction is settled.\n- outcome_currency - this parameter shows the currency in which the transaction will be settled.\n- invoice_id - this parameter shows invoice ID from which the payment was created"
+    },
+    {
+      "id": "openapi_nowpayments_io.paymentsApi.getTheMinimumPaymentAmount",
+      "name": "paymentsApi.getTheMinimumPaymentAmount",
+      "description": "Get the minimum payment amount for a specific pair.\n\nYou can provide both currencies in the pair or just currency\\_from, and we will calculate the minimum payment amount for currency\\_from and currency which you have specified as the outcome in the Store Settings.\n\nYou can also specify one of the fiat currencies in the currency\\_from. In this case, the minimum payment will be calculated in this fiat currency.\n\nYou can also add field fiat\\_equivalent (optional field) to get the fiat equivalent of the minimum amount.\n\nIn the case of several outcome wallets we will calculate the minimum amount in the same way we route your payment to a specific wallet."
+    },
+    {
+      "id": "openapi_nowpayments_io.paymentsApi.getUpdatePaymentEstimate",
+      "name": "paymentsApi.getUpdatePaymentEstimate",
+      "description": "This endpoint is required to get the current estimate on the payment, and update the current estimate.  \nPlease note! Calling this estimate before `expiration_estimate_date` will return the current estimate, it won’t be updated.\n\n`:id` \\- payment ID, for which you want to get the estimate\n\nResponse:  \n`id` \\- payment ID  \n`token_id` - id of api key used to create this payment (please discard this parameter)  \n`pay_amount` - payment estimate, the exact amount the user will have to send to complete the payment  \n`expiration_estimate_date` - expiration date of this estimate"
+    },
+    {
+      "id": "openapi_nowpayments_io.payoutsApi.verifyPayout",
+      "name": "payoutsApi.verifyPayout",
+      "description": "This method is required to verify payouts by using your 2fa code.  \nYou’ll have 10 attempts to verify the payout. If it is not verified after 10 attempts, the payout will remain in ‘creating’ status.  \nPayout will be processed only when it is verified.\n\nMake sure to have your 2fa authentication enabled in your NOWPayments Account (in Account Settings).  \nWhen 2fa is disabled, the code automatically goes to your registration email.  \nThe code sent by email is valid for one hour.\n\nNext is a description of the required request fields:\n\n- :batch-withdrawal-id - payout id you received in `2. Create payout` method\n- verification_code - 2fa code you received with your Google Auth app or via email\n    \n\nIn order to establish an automatic verification of payouts, you should switch 2FA through the application.  \nThere are several libraries for different frameworks aimed on generating a 2FA codes based on a secret key from your account settings.  \ne.g: Speakeasy for JavaScript.  \nWe do not recommend to change any default settings.  \n\n```\nconst 2faVerificationCode = speakeasy.totp({\n      your_2fa_secret_key,\n      encoding: 'base32',\n})\n```"
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.deleteRecurringPayment",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.deleteRecurringPayment",
+      "description": "Completely removes a particular payment from the recurring payment plan.  \nYou need to specify the payment plan id in the request."
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.getManyPlans",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.getManyPlans",
+      "description": "This method allows you to obtain information about all the payment plans you’ve created."
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.getManyRecurringPayments",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.getManyRecurringPayments",
+      "description": "The method allows you to view the entire list of recurring payments filtered by payment status and/or payment plan id"
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.getOnePlan",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.getOnePlan",
+      "description": "This method allows you to obtain information about your payment plan.  \n(you need to specify your payment plan id in the request)."
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.getOneRecurringPayment",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.getOneRecurringPayment",
+      "description": "Get information about a particular recurring payment via its ID.\n\nHere’s the list of available statuses:  \n\\- WAITING_PAY  \n\\- PAID  \n\\- PARTIALLY_PAID  \n\\- EXPIRED"
+    },
+    {
+      "id": "openapi_nowpayments_io.recurringPaymentsApiEmailSubscriptionsFeature.updatePlan",
+      "name": "recurringPaymentsApiEmailSubscriptionsFeature.updatePlan",
+      "description": "This method allows you to add necessary changes to a created plan. They won’t affect users who have already paid; however, the changes will take effect when a new payment is to be made."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

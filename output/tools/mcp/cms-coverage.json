@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:19:52.533Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "mcp_cms_coverage.search_national_coverage",
+      "name": "search_national_coverage",
+      "description": "Search national Medicare coverage documents (NCDs, NCAs, CALs, Meetings, Assessments). Unified tool for all national coverage queries. Supports pagination with cursor tokens."
+    },
+    {
+      "id": "mcp_cms_coverage.search_local_coverage",
+      "name": "search_local_coverage",
+      "description": "Search local Medicare coverage documents (LCDs, Proposed LCDs, Articles). Unified tool for all local/regional coverage policies. Supports pagination with cursor tokens."
+    },
+    {
+      "id": "mcp_cms_coverage.get_coverage_document",
+      "name": "get_coverage_document",
+      "description": "Get full details for a specific coverage document by type and ID."
+    },
+    {
+      "id": "mcp_cms_coverage.get_contractors",
+      "name": "get_contractors",
+      "description": "Look up Medicare Administrative Contractors (MACs) - the companies that process Medicare Part B claims. \n\n**CONTEXT:** MACs administer Part B claims and create LCDs for Part B services in their jurisdictions.\nPart D prescription drugs are managed by Part D plan sponsors, not MACs.\n\nMACs are private companies contracted by CMS to process Medicare Part A and Part B claims and develop Local Coverage Determinations (LCDs). \n\n**When to use this tool:**\n- To get a list of all Medicare contractors and their IDs\n- To look up a specific contractor by ID\n- To find contractor_id values for use in LCD/Article searches\n\n**What you'll get:**\n- Contractor ID (needed for LCD/Article searches)\n- Contractor name (e.g., 'CGS Administrators, LLC')\n- Contract number\n\n**Note:** The API does not provide state-to-contractor mapping. To find LCDs for a specific state, search LCDs by keyword and review the contractor_name_type field in the results to identify the relevant regional contractor.\n\n**Example workflow:**\n1. get_contractors() → list all contractors\n2. search_lcds(keyword='oxygen') → find LCDs across all contractors\n3. Filter results by contractor_name_type to find regional coverage"
+    },
+    {
+      "id": "mcp_cms_coverage.get_whats_new_report",
+      "name": "get_whats_new_report",
+      "description": "Get recently published or updated Medicare coverage documents (national or local). Unified tool for tracking policy changes. Supports pagination with cursor tokens."
+    },
+    {
+      "id": "mcp_cms_coverage.batch_get_ncds",
+      "name": "batch_get_ncds",
+      "description": "Retrieve detailed information for multiple National Coverage Determinations (NCDs) in a single call. \n\nThis tool efficiently fetches up to 20 NCDs at once, eliminating the need for multiple separate API calls when analyzing related coverage policies (e.g., all NCDs for diabetes, cardiac conditions, etc.). \n\n**When to use this tool:**\n- After using search_ncds to find multiple relevant NCDs\n- When comparing coverage policies across related conditions\n- When building comprehensive coverage summaries\n- Anytime you need details for 2+ NCDs\n\n**COVERAGE SCOPE:** NCDs are Part B policies for medical services, DME, injectables - not Part D drugs.\n\n**What you'll get:**\n- Complete NCD policy details for each document (indications_limitations, item_service_description)\n- Per-document success/failure status\n- Error details for any documents that failed to fetch\n\n**Workflow:** search_ncds(keyword='cardiac') → collect document_ids → batch_get_ncds(document_ids=[...]) → full details for all"
+    },
+    {
+      "id": "mcp_cms_coverage.sad_exclusion_list",
+      "name": "sad_exclusion_list",
+      "description": "Search the Self-Administered Drug (SAD) Exclusion List - drugs that CANNOT be billed under Medicare Part B. Supports pagination with cursor tokens for large result sets.\n\n**CRITICAL CONCEPT - WHAT IS THE SAD EXCLUSION LIST?**\nThis list identifies drugs that are EXCLUDED from Part B billing because they are self-administered:\n• Part B covers drugs administered BY healthcare providers (injections, infusions in clinics)\n• Part B does NOT cover self-administered drugs (oral pills, self-injections at home)\n• Self-administered drugs are covered by Part D (prescription drug plans)\n\n**WHAT THIS LIST TELLS YOU:**\nIf a drug is on this list, it means:\n• The drug is typically self-administered (oral, subcutaneous self-injection, etc.)\n• The drug CANNOT be billed under Part B\n• The drug would be covered under Part D instead\n\n**EXAMPLES OF SAD (EXCLUDED FROM PART B):**\n• Oral medications (tablets, capsules) - e.g., oral chemotherapy\n• Self-injectable biologics (e.g., adalimumab/Humira, etanercept/Enbrel)\n• Insulin and diabetic supplies for home use\n\n**NOT SAD (BILLABLE UNDER PART B):**\n• Provider-administered infusions (e.g., IV chemotherapy)\n• Injections given in physician offices\n• DME-related drugs administered via equipment\n\n**WHEN TO USE THIS TOOL:**\n• To verify if a specific drug can be billed under Part B\n• To check if a J-code drug is self-administered (excluded)\n• When researching billing options for injectable medications\n• To understand why a drug claim was denied under Part B\n\n**LICENSE:** License token is managed automatically - no manual token required."
+    }
+  ]
+}

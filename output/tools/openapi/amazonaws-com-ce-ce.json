@@ -1,0 +1,202 @@
+{
+  "fetchedAt": "2026-04-30T15:44:56.110Z",
+  "status": "ok",
+  "count": 39,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceCreateAnomalyMonitor.createAnomalyMonitor",
+      "name": "xAmzTargetAwsInsightsIndexServiceCreateAnomalyMonitor.createAnomalyMonitor",
+      "description": "Creates a new cost anomaly detection monitor with the requested type and monitor specification. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceCreateAnomalySubscription.createAnomalySubscription",
+      "name": "xAmzTargetAwsInsightsIndexServiceCreateAnomalySubscription.createAnomalySubscription",
+      "description": "Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a time frequency for receiving notifications. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceCreateCostCategoryDefinition.createCostCategoryDefinition",
+      "name": "xAmzTargetAwsInsightsIndexServiceCreateCostCategoryDefinition.createCostCategoryDefinition",
+      "description": "Creates a new Cost Category with the requested name and rules."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceDeleteAnomalyMonitor.deleteAnomalyMonitor",
+      "name": "xAmzTargetAwsInsightsIndexServiceDeleteAnomalyMonitor.deleteAnomalyMonitor",
+      "description": "Deletes a cost anomaly monitor. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceDeleteAnomalySubscription.deleteAnomalySubscription",
+      "name": "xAmzTargetAwsInsightsIndexServiceDeleteAnomalySubscription.deleteAnomalySubscription",
+      "description": "Deletes a cost anomaly subscription. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceDeleteCostCategoryDefinition.deleteCostCategoryDefinition",
+      "name": "xAmzTargetAwsInsightsIndexServiceDeleteCostCategoryDefinition.deleteCostCategoryDefinition",
+      "description": "Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost Category."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceDescribeCostCategoryDefinition.describeCostCategoryDefinition",
+      "name": "xAmzTargetAwsInsightsIndexServiceDescribeCostCategoryDefinition.describeCostCategoryDefinition",
+      "description": "<p>Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's defined in the account.</p> <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date. If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetAnomalies.getAnomalies",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetAnomalies.getAnomalies",
+      "description": "Retrieves all of the cost anomalies detected on your account during the time period that's specified by the <code>DateInterval</code> object. Anomalies are available for up to 90 days."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetAnomalyMonitors.getAnomalyMonitors",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetAnomalyMonitors.getAnomalyMonitors",
+      "description": "Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetAnomalySubscriptions.getAnomalySubscriptions",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetAnomalySubscriptions.getAnomalySubscriptions",
+      "description": "Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetCostAndUsage.getCostAndUsage",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetCostAndUsage.getCostAndUsage",
+      "description": "<p>Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p> <p>For information about filter limitations, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html\">Quotas and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetCostAndUsageWithResources.getCostAndUsageWithResources",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetCostAndUsageWithResources.getCostAndUsageWithResources",
+      "description": "<p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information about how to access the Settings page, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html\">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetCostCategories.getCostCategories",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetCostCategories.getCostCategories",
+      "description": "<p>Retrieves an array of Cost Category names and values incurred cost.</p> <note> <p>If some Cost Category names and values are not associated with any cost, they will not be returned by this API.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetCostForecast.getCostForecast",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetCostForecast.getCostForecast",
+      "description": "Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetDimensionValues.getDimensionValues",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetDimensionValues.getDimensionValues",
+      "description": "Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetReservationCoverage.getReservationCoverage",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetReservationCoverage.getReservationCoverage",
+      "description": "<p>Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetReservationPurchaseRecommendation.getReservationPurchaseRecommendation",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetReservationPurchaseRecommendation.getReservationPurchaseRecommendation",
+      "description": "<p>Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p> <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings. </p> <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of normalized units. This way, you can purchase any instance size that you want. For this example, your RI recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetReservationUtilization.getReservationUtilization",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetReservationUtilization.getReservationUtilization",
+      "description": "Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetRightsizingRecommendation.getRightsizingRecommendation",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetRightsizingRecommendation.getRightsizingRecommendation",
+      "description": "<p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to either downsize or terminate instances, along with providing savings detail and metrics. For more information about calculation and function, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html\">Optimizing Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetSavingsPlansCoverage.getSavingsPlansCoverage",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetSavingsPlansCoverage.getSavingsPlansCoverage",
+      "description": "<p>Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetSavingsPlansPurchaseRecommendation.getSavingsPlansPurchaseRecommendation",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetSavingsPlansPurchaseRecommendation.getSavingsPlansPurchaseRecommendation",
+      "description": "Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetSavingsPlansUtilization.getSavingsPlansUtilization",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetSavingsPlansUtilization.getSavingsPlansUtilization",
+      "description": "<p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity. Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note> <p>You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetSavingsPlansUtilizationDetails.getSavingsPlansUtilizationDetails",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetSavingsPlansUtilizationDetails.getSavingsPlansUtilizationDetails",
+      "description": "<p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetTags.getTags",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetTags.getTags",
+      "description": "Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceGetUsageForecast.getUsageForecast",
+      "name": "xAmzTargetAwsInsightsIndexServiceGetUsageForecast.getUsageForecast",
+      "description": "Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceListCostAllocationTags.listCostAllocationTags",
+      "name": "xAmzTargetAwsInsightsIndexServiceListCostAllocationTags.listCostAllocationTags",
+      "description": "Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost allocation tags are returned. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceListCostCategoryDefinitions.listCostCategoryDefinitions",
+      "name": "xAmzTargetAwsInsightsIndexServiceListCostCategoryDefinitions.listCostCategoryDefinitions",
+      "description": "Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceListSavingsPlansPurchaseRecommendationGeneration.listSavingsPlansPurchaseRecommendationGeneration",
+      "name": "xAmzTargetAwsInsightsIndexServiceListSavingsPlansPurchaseRecommendationGeneration.listSavingsPlansPurchaseRecommendationGeneration",
+      "description": "Retrieves a list of your historical recommendation generations within the past 30 days."
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceListTagsForResource.listTagsForResource",
+      "name": "xAmzTargetAwsInsightsIndexServiceListTagsForResource.listTagsForResource",
+      "description": "Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN). "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceProvideAnomalyFeedback.provideAnomalyFeedback",
+      "name": "xAmzTargetAwsInsightsIndexServiceProvideAnomalyFeedback.provideAnomalyFeedback",
+      "description": "Modifies the feedback property of a given cost anomaly. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceStartSavingsPlansPurchaseRecommendationGeneration.startSavingsPlansPurchaseRecommendationGeneration",
+      "name": "xAmzTargetAwsInsightsIndexServiceStartSavingsPlansPurchaseRecommendationGeneration.startSavingsPlansPurchaseRecommendationGeneration",
+      "description": "<p>Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans recommendations that takes your latest usage data and current Savings Plans inventory into account. You can refresh Savings Plans recommendations up to three times daily for a consolidated billing family.</p> <note> <p> <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters are needed to support this operation.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceTagResource.tagResource",
+      "name": "xAmzTargetAwsInsightsIndexServiceTagResource.tagResource",
+      "description": "<p>An API operation for adding one or more tags (key-value pairs) to a resource.</p> <p>You can use the <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value you specify replaces the previous value for that tag.</p> <p>Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceUntagResource.untagResource",
+      "name": "xAmzTargetAwsInsightsIndexServiceUntagResource.untagResource",
+      "description": "Removes one or more tags from a resource. Specify only tag keys in your request. Don't specify the value. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceUpdateAnomalyMonitor.updateAnomalyMonitor",
+      "name": "xAmzTargetAwsInsightsIndexServiceUpdateAnomalyMonitor.updateAnomalyMonitor",
+      "description": "Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn't change anomalies detected in the past. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceUpdateAnomalySubscription.updateAnomalySubscription",
+      "name": "xAmzTargetAwsInsightsIndexServiceUpdateAnomalySubscription.updateAnomalySubscription",
+      "description": "Updates an existing cost anomaly monitor subscription. "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceUpdateCostAllocationTagsStatus.updateCostAllocationTagsStatus",
+      "name": "xAmzTargetAwsInsightsIndexServiceUpdateCostAllocationTagsStatus.updateCostAllocationTagsStatus",
+      "description": "Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag). "
+    },
+    {
+      "id": "openapi_amazonaws_com_ce_ce.xAmzTargetAwsInsightsIndexServiceUpdateCostCategoryDefinition.updateCostCategoryDefinition",
+      "name": "xAmzTargetAwsInsightsIndexServiceUpdateCostCategoryDefinition.updateCostCategoryDefinition",
+      "description": "Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

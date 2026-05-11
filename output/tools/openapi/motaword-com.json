@@ -1,0 +1,1127 @@
+{
+  "fetchedAt": "2026-04-30T15:22:51.974Z",
+  "status": "ok",
+  "count": 224,
+  "tools": [
+    {
+      "id": "openapi_motaword_com.activity.getActivities",
+      "name": "activity.getActivities",
+      "description": "Get a list of real-time activities in the project, such as translation suggestion and translation approval."
+    },
+    {
+      "id": "openapi_motaword_com.activity.getActivity",
+      "name": "activity.getActivity",
+      "description": "View the details of an activity in the project."
+    },
+    {
+      "id": "openapi_motaword_com.activity.getActivityComments",
+      "name": "activity.getActivityComments",
+      "description": "View a list of comments added to this activity."
+    },
+    {
+      "id": "openapi_motaword_com.activity.getComments",
+      "name": "activity.getComments",
+      "description": "View a list of activity comments in the project."
+    },
+    {
+      "id": "openapi_motaword_com.activity.getSalesActivities",
+      "name": "activity.getSalesActivities",
+      "description": "Get sales activities for a project"
+    },
+    {
+      "id": "openapi_motaword_com.activity.insertSalesActivity",
+      "name": "activity.insertSalesActivity",
+      "description": "Insert sales activity for a project"
+    },
+    {
+      "id": "openapi_motaword_com.activity.submitComment",
+      "name": "activity.submitComment",
+      "description": "Submit a comment to an activity in the project, such as translation or editing."
+    },
+    {
+      "id": "openapi_motaword_com.async.downloadAsync",
+      "name": "async.downloadAsync",
+      "description": "Download the result of an async operation that you have requested in other endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.auth.getAccessToken",
+      "name": "auth.getAccessToken",
+      "description": "MotaWord API is using OAuth2 procedures when authenticating or authorizing your API call.\n"
+    },
+    {
+      "id": "openapi_motaword_com.blog.getBlogPosts",
+      "name": "blog.getBlogPosts",
+      "description": "Get blog posts - ordered by created desc by default"
+    },
+    {
+      "id": "openapi_motaword_com.cache.deleteCache",
+      "name": "cache.deleteCache",
+      "description": "Clear cache by key"
+    },
+    {
+      "id": "openapi_motaword_com.commission.getCommissions",
+      "name": "commission.getCommissions",
+      "description": "Returns a commission list of current client."
+    },
+    {
+      "id": "openapi_motaword_com.commission.getCommissionsByFilter",
+      "name": "commission.getCommissionsByFilter",
+      "description": "Returns a commission list of current client."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.addDocument",
+      "name": "continuousProject.addDocument",
+      "description": "Add a new document to your continuous project. If the name already exists, it will update the existing document. In most scenarios, this operation will also trigger auto-translation of your document, via MT and/or TM."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.collectAnalytics",
+      "name": "continuousProject.collectAnalytics",
+      "description": "Save/collect analytics data from Active widget"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.complete",
+      "name": "continuousProject.complete",
+      "description": "Complete continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.completeContinuousDocument",
+      "name": "continuousProject.completeContinuousDocument",
+      "description": "Complete a continuous project document. Per your project settings, a continuous project document can be target language-specific or project-wide for all target languages of the project."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.completeLanguage",
+      "name": "continuousProject.completeLanguage",
+      "description": "Complete continuous project language"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.createActiveWidget",
+      "name": "continuousProject.createActiveWidget",
+      "description": "Create a new widget for your Active project to be used in your website. Most website-specific configuration is provided via widgets. This does not create a new Active project, just a separate widget."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.createContinuousProject",
+      "name": "continuousProject.createContinuousProject",
+      "description": "Create a new continuous project for your software, website, CI/CD translation needs."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.createSubscription",
+      "name": "continuousProject.createSubscription",
+      "description": "Create subscription for continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.deleteActiveWidget",
+      "name": "continuousProject.deleteActiveWidget",
+      "description": "Delete a single widget for this Active project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.deleteContinuousProject",
+      "name": "continuousProject.deleteContinuousProject",
+      "description": "Delete an existing continuous project. Your project will be cancelled, and you will still be charged for the amount of translations we have done for you so far."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.deleteSubscription",
+      "name": "continuousProject.deleteSubscription",
+      "description": "Delete subscription for continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getActiveWidget",
+      "name": "continuousProject.getActiveWidget",
+      "description": "View the details of an Active widget to be used in your website. Most website-specific configuration is provided via widgets."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getActiveWidgets",
+      "name": "continuousProject.getActiveWidgets",
+      "description": "View a list of widgets in your Active project to be used in your website. Most website-specific configuration is provided via widgets."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getAnalyticsToken",
+      "name": "continuousProject.getAnalyticsToken",
+      "description": "Get JWT token to be used in analytics dashboards"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProject",
+      "name": "continuousProject.getContinuousProject",
+      "description": "View the details of a continuous project."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjectDocument",
+      "name": "continuousProject.getContinuousProjectDocument",
+      "description": "View the details of a source document in continuous translation project."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjectDocumentProgress",
+      "name": "continuousProject.getContinuousProjectDocumentProgress",
+      "description": "Monitor the translation progress of a document in a continuous project in real-time."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjectDocuments",
+      "name": "continuousProject.getContinuousProjectDocuments",
+      "description": "View the documents under this continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjectInvoices",
+      "name": "continuousProject.getContinuousProjectInvoices",
+      "description": "Get real-time access to a continuous project's invoices."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjectProgress",
+      "name": "continuousProject.getContinuousProjectProgress",
+      "description": "Monitor the translation progress of an ongoing continuous project in real-time."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getContinuousProjects",
+      "name": "continuousProject.getContinuousProjects",
+      "description": "View a list of continuous projects under your account. Continuous projects are those that are constantly updated, such as a CI/CD project, software project, website translation and such."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getQuoteForDocument",
+      "name": "continuousProject.getQuoteForDocument",
+      "description": "Get a new quote for provided document in continuous project. Per your project settings, a continuous project document can be target language-specific or project-wide for all target languages of the project."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getQuoteForDocuments",
+      "name": "continuousProject.getQuoteForDocuments",
+      "description": "Get a new quote for provided documents in continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getQuoteForLanguage",
+      "name": "continuousProject.getQuoteForLanguage",
+      "description": "Get a new quote for provided target language in continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getQuoteForLanguages",
+      "name": "continuousProject.getQuoteForLanguages",
+      "description": "Get a new quote for provided target languages in continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.getSubscription",
+      "name": "continuousProject.getSubscription",
+      "description": "Get subscription for continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.postContinuousProjectDocumentProgress",
+      "name": "continuousProject.postContinuousProjectDocumentProgress",
+      "description": "Get continuous project document progress for multiple IDs"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.resetActiveWidgetToken",
+      "name": "continuousProject.resetActiveWidgetToken",
+      "description": "Reset the public token used with your Active widget. This token is used when communicating from your environment to MotaWord systems for translation, analytics and meta."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.translate",
+      "name": "continuousProject.translate",
+      "description": "Instantly translate your content with your existing TM and MT resources. This is the primary endpoint to translate your files and content on the fly, especially in CI/CD environments. This is a complex endpoint that is configured in your Active or Continuous Project dashboards. For instance, you can configure whether to use your TM, or translate missing strings via MT and then post-edit those new translations. There are various scenarios you can establish via a set of configurations."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.updateActiveWidget",
+      "name": "continuousProject.updateActiveWidget",
+      "description": "Update Active widget settings."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.updateContinuousProject",
+      "name": "continuousProject.updateContinuousProject",
+      "description": "Update the details and settings of continuous project."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.updateDocument",
+      "name": "continuousProject.updateDocument",
+      "description": "Update source document in your continuous project. In most scenarios, this operation will also trigger auto-translation of your document, via MT and/or TM."
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.updateSubscription",
+      "name": "continuousProject.updateSubscription",
+      "description": "Update subscription for continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.continuousProject.updateSubscriptionPaymentMethod",
+      "name": "continuousProject.updateSubscriptionPaymentMethod",
+      "description": "Update subscription payment method for continuous project"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getAvailableCorporatePermissions",
+      "name": "corporate.getAvailableCorporatePermissions",
+      "description": "View a list of available permissions for your corporate account. They are used when assigning permissions to your corporate users."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getAvailableCorporatePermissionsById",
+      "name": "corporate.getAvailableCorporatePermissionsById",
+      "description": "Get a list of available permissions for this corporate account. They are used when assigning permissions to corporate users."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporate",
+      "name": "corporate.getCorporate",
+      "description": "View the details of the corporate account that your user account belongs to."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporateById",
+      "name": "corporate.getCorporateById",
+      "description": "Get details of this corporate account"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporatesList",
+      "name": "corporate.getCorporatesList",
+      "description": "Get a list of corporate accounts"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporateUserGroups",
+      "name": "corporate.getCorporateUserGroups",
+      "description": "View a list of user groups under my corporate account. User groups are a part of our RBAC implementation and can be used to configure complex permission scenarios."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporateUserGroupsById",
+      "name": "corporate.getCorporateUserGroupsById",
+      "description": "Get a list of user groups for this corporate account"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporateUsers",
+      "name": "corporate.getCorporateUsers",
+      "description": "View a list of users under your corporate account. This endpoint will only return information if your user account is permitted to view corporate account users, configured by your administrator."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.getCorporateUsersById",
+      "name": "corporate.getCorporateUsersById",
+      "description": "Get a list of users for this corporate account"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.saveCorporateUser",
+      "name": "corporate.saveCorporateUser",
+      "description": "Create or update a user under your corporate account. This endpoint requires permissions for corporate user management, configured by your administrator."
+    },
+    {
+      "id": "openapi_motaword_com.corporate.saveCorporateUserGroup",
+      "name": "corporate.saveCorporateUserGroup",
+      "description": "Create or update a corporate user group"
+    },
+    {
+      "id": "openapi_motaword_com.corporate.saveCorporateUserGroupById",
+      "name": "corporate.saveCorporateUserGroupById",
+      "description": "Create or update a corporate user group for this corporate account"
+    },
+    {
+      "id": "openapi_motaword_com.document.getAllDocumentSubjects",
+      "name": "document.getAllDocumentSubjects",
+      "description": "Get a list of subjects of projects"
+    },
+    {
+      "id": "openapi_motaword_com.document.getDocument",
+      "name": "document.getDocument",
+      "description": "View a single document from your MotaWord account with its translation info."
+    },
+    {
+      "id": "openapi_motaword_com.document.getDocumentProgress",
+      "name": "document.getDocumentProgress",
+      "description": "View the translation or proofreading progress of a document in your account. You can also track the progress of a document under the project that it was ordered with."
+    },
+    {
+      "id": "openapi_motaword_com.document.getDocuments",
+      "name": "document.getDocuments",
+      "description": "View a list of files and documents that you have translations for. This endpoint lets you view your MotaWord account as a multilingual translated file repository, without needing to go through your projects to interact with files in them."
+    },
+    {
+      "id": "openapi_motaword_com.document.getSimilarDocuments",
+      "name": "document.getSimilarDocuments",
+      "description": "Find documents similar to this document. Optionally, include translation information."
+    },
+    {
+      "id": "openapi_motaword_com.document.getUserDocuments",
+      "name": "document.getUserDocuments",
+      "description": "Get a list of your documents"
+    },
+    {
+      "id": "openapi_motaword_com.document.regeneratePreview",
+      "name": "document.regeneratePreview",
+      "description": "Regenerate preview and return preview URL for given file"
+    },
+    {
+      "id": "openapi_motaword_com.document.useAsDraft",
+      "name": "document.useAsDraft",
+      "description": "Use the translation of given source manual document as manual draft source for the given target document."
+    },
+    {
+      "id": "openapi_motaword_com.document.useAsRegular",
+      "name": "document.useAsRegular",
+      "description": "Use the translation of the given manual document as a regular file."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.createGlossary",
+      "name": "glossary.createGlossary",
+      "description": "Upload a new glossary file to your project to be used during translation. Glossaries can be CSV or TBX files."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.deleteGlossary",
+      "name": "glossary.deleteGlossary",
+      "description": "Delete the existing glossary from the project."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.downloadGlobalGlossary",
+      "name": "glossary.downloadGlobalGlossary",
+      "description": "Download your corporate account's global glossary. This endpoint is available only for corporate account customers. This glossary will be automatically attached to each new project under your account."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.downloadGlossary",
+      "name": "glossary.downloadGlossary",
+      "description": "Download a previously uploaded glossary file."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.getGlossaries",
+      "name": "glossary.getGlossaries",
+      "description": "View a list of glossaries previously uploaded to the project."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.getGlossary",
+      "name": "glossary.getGlossary",
+      "description": "View the details of a glossary file uploaded to a project."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.updateGlobalGlossary",
+      "name": "glossary.updateGlobalGlossary",
+      "description": "Update your corporate account's global glossary. This endpoint is available only for corporate account customers. This glossary will be automatically attached to each new project under your account."
+    },
+    {
+      "id": "openapi_motaword_com.glossary.updateGlossary",
+      "name": "glossary.updateGlossary",
+      "description": "Update the existing glossary file in the project. Public users are allowed to have only 1 glossary per project and file name and contents will replaced with the new glossary file that you are uploading via this endpoint."
+    },
+    {
+      "id": "openapi_motaword_com.integrations.getIntegrationsToken",
+      "name": "integrations.getIntegrationsToken",
+      "description": "Generate a new access token for MotaWord's integrations service"
+    },
+    {
+      "id": "openapi_motaword_com.invitation.getInvitationVendors",
+      "name": "invitation.getInvitationVendors",
+      "description": "Get vendor list for compiled invitation needs"
+    },
+    {
+      "id": "openapi_motaword_com.machineLearning.getDeliveryPrediction",
+      "name": "machineLearning.getDeliveryPrediction",
+      "description": "Get a delivery prediction for a project"
+    },
+    {
+      "id": "openapi_motaword_com.pam.getClientProfileForPam",
+      "name": "pam.getClientProfileForPam",
+      "description": "Get the Pam  profile of a client for this client ID"
+    },
+    {
+      "id": "openapi_motaword_com.pam.getProjectCompletionReportForPam",
+      "name": "pam.getProjectCompletionReportForPam",
+      "description": "Get completion report data of a project"
+    },
+    {
+      "id": "openapi_motaword_com.pam.postMessage",
+      "name": "pam.postMessage",
+      "description": "Sends a message to the channel."
+    },
+    {
+      "id": "openapi_motaword_com.payment.deleteCreditCard",
+      "name": "payment.deleteCreditCard",
+      "description": "Delete credit card"
+    },
+    {
+      "id": "openapi_motaword_com.payment.getCreditCard",
+      "name": "payment.getCreditCard",
+      "description": "View saved credit card"
+    },
+    {
+      "id": "openapi_motaword_com.payment.resetCardPaymentCode",
+      "name": "payment.resetCardPaymentCode",
+      "description": "Reset the payment code used to bypass credit card payment. This will invalidate your current payment code and your users should be aware of this change while ordering translations."
+    },
+    {
+      "id": "openapi_motaword_com.payment.resetCorporatePaymentCode",
+      "name": "payment.resetCorporatePaymentCode",
+      "description": "Reset your corporate account's payment code to bypass credit card payment. This will invalidate your current payment code and your users should be aware of this change while ordering translations."
+    },
+    {
+      "id": "openapi_motaword_com.payment.toggleCorporateAutoCharge",
+      "name": "payment.toggleCorporateAutoCharge",
+      "description": "Toggle (enable/disable) automatic charges on the credit card on file."
+    },
+    {
+      "id": "openapi_motaword_com.project.assignCm",
+      "name": "project.assignCm",
+      "description": "Assign a CM to the project"
+    },
+    {
+      "id": "openapi_motaword_com.project.cancelProject",
+      "name": "project.cancelProject",
+      "description": "If you haven't launched your translation project yet, we will delete it. If MotaWord already started working on your project, we will cancel the project and refund the volume that we haven't worked on yet."
+    },
+    {
+      "id": "openapi_motaword_com.project.createProject",
+      "name": "project.createProject",
+      "description": "Create a new translation project. Projects are not launched (you are not charged) until you `/launch` the created project."
+    },
+    {
+      "id": "openapi_motaword_com.project.deleteProject",
+      "name": "project.deleteProject",
+      "description": "If you haven't launched your translation project yet, we will delete it. If MotaWord already started working on your project, we will cancel the project and refund the volume that we haven't worked on yet."
+    },
+    {
+      "id": "openapi_motaword_com.project.deliverProject",
+      "name": "project.deliverProject",
+      "description": "Deliver project to the owner of the project. You can also download your translations in `/package` and `/download` endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.project.download",
+      "name": "project.download",
+      "description": "Download the latest translation package. You must have requested a `/package` call beforehand and wait until the packaging status is 'completed'."
+    },
+    {
+      "id": "openapi_motaword_com.project.downloadHtmlInvoice",
+      "name": "project.downloadHtmlInvoice",
+      "description": "Download your project invoice as HTML. This is useful when you want to show your users the invoice in a webpage."
+    },
+    {
+      "id": "openapi_motaword_com.project.downloadLanguage",
+      "name": "project.downloadLanguage",
+      "description": "Download the latest translation package for your target language. You must have requested a `/package` call beforehand and wait until the packaging status is 'completed'."
+    },
+    {
+      "id": "openapi_motaword_com.project.downloadPdfInvoice",
+      "name": "project.downloadPdfInvoice",
+      "description": "Download your project invoice as PDF. Your invoice may be in \"unpaid\" status, in which case youn can see the payment instructions in the PDF file."
+    },
+    {
+      "id": "openapi_motaword_com.project.getInvoice",
+      "name": "project.getInvoice",
+      "description": "View your invoice details for your translation project."
+    },
+    {
+      "id": "openapi_motaword_com.project.getProgress",
+      "name": "project.getProgress",
+      "description": "Monitor the translation progress of an already launched project in real-time."
+    },
+    {
+      "id": "openapi_motaword_com.project.getProject",
+      "name": "project.getProject",
+      "description": "View the details of a translation project in your account."
+    },
+    {
+      "id": "openapi_motaword_com.project.getProjects",
+      "name": "project.getProjects",
+      "description": "View the translation projects ordered in your account. If you have the related permission (configured by your account administrator), you can view the projects of your colleagues under the same company account."
+    },
+    {
+      "id": "openapi_motaword_com.project.getProjectVendors",
+      "name": "project.getProjectVendors",
+      "description": "Get a list of vendors."
+    },
+    {
+      "id": "openapi_motaword_com.project.getQuoteIdFromInternalId",
+      "name": "project.getQuoteIdFromInternalId",
+      "description": "Get Quote Id"
+    },
+    {
+      "id": "openapi_motaword_com.project.getVendorProjects",
+      "name": "project.getVendorProjects",
+      "description": "Get a list of projects that are available to you to work on as a vendor. This is not a list of projects that you ordered as a customer."
+    },
+    {
+      "id": "openapi_motaword_com.project.getVendorProjectsByUserId",
+      "name": "project.getVendorProjectsByUserId",
+      "description": "Get a list of user/vendor projects"
+    },
+    {
+      "id": "openapi_motaword_com.project.launchProject",
+      "name": "project.launchProject",
+      "description": "Launch your translation project so MotaWord can actually start working on your translation."
+    },
+    {
+      "id": "openapi_motaword_com.project.package",
+      "name": "project.package",
+      "description": "Package the translations in your project, prepare translated documents and make it ready to be downloaded. Once packaged, you can download your translated project."
+    },
+    {
+      "id": "openapi_motaword_com.project.packageLanguage",
+      "name": "project.packageLanguage",
+      "description": "Package the translations in your project for a specific target language, prepare translated documents and make it ready to be downloaded. Once packaged, you can download your translated project in this target language."
+    },
+    {
+      "id": "openapi_motaword_com.project.recreateProject",
+      "name": "project.recreateProject",
+      "description": "Recreate your translation project from scratch. This is a risky action, you will lose current translations."
+    },
+    {
+      "id": "openapi_motaword_com.project.sendQuoteEmail",
+      "name": "project.sendQuoteEmail",
+      "description": "Send a quote email"
+    },
+    {
+      "id": "openapi_motaword_com.project.submitProjectReports",
+      "name": "project.submitProjectReports",
+      "description": "Submit feedback report for a project"
+    },
+    {
+      "id": "openapi_motaword_com.project.trackPackage",
+      "name": "project.trackPackage",
+      "description": "Track the packaging status of your translations, by using the `key` from packaging request. Once packaging is completed, you can download your translations via `/download` endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.project.triggerCallback",
+      "name": "project.triggerCallback",
+      "description": "Trigger a call to your callback URL related to this project."
+    },
+    {
+      "id": "openapi_motaword_com.project.updateProject",
+      "name": "project.updateProject",
+      "description": "Update project info and settings"
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.createProjectDocument",
+      "name": "projectDocument.createProjectDocument",
+      "description": "Upload a new document"
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.deleteProjectDocument",
+      "name": "projectDocument.deleteProjectDocument",
+      "description": "Delete the document"
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.downloadProjectDocument",
+      "name": "projectDocument.downloadProjectDocument",
+      "description": "Download an actual source file you uploaded to be translated in your project."
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.downloadTranslatedDocumentForLanguage",
+      "name": "projectDocument.downloadTranslatedDocumentForLanguage",
+      "description": "Download translated document in the given target language."
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.getProjectDocument",
+      "name": "projectDocument.getProjectDocument",
+      "description": "View the details of a source file you uploaded to be translated in your project."
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.getProjectDocuments",
+      "name": "projectDocument.getProjectDocuments",
+      "description": "Get a list of source files you uploaded to be translated in your project."
+    },
+    {
+      "id": "openapi_motaword_com.projectDocument.updateProjectDocument",
+      "name": "projectDocument.updateProjectDocument",
+      "description": "Update the document. File name and contents will replaced with the new one."
+    },
+    {
+      "id": "openapi_motaword_com.projectWebhooks.deleteProjectWebhook",
+      "name": "projectWebhooks.deleteProjectWebhook",
+      "description": "Delete project webhooks. Projects currently support registering only 1 webhook. This endpoint deletes the previously registered webhook."
+    },
+    {
+      "id": "openapi_motaword_com.projectWebhooks.getProjectWebhooks",
+      "name": "projectWebhooks.getProjectWebhooks",
+      "description": "This endpoint returns Project entity which contains `callback_url` field for webhook URL. Currently projects can have only 1 webhook registered."
+    },
+    {
+      "id": "openapi_motaword_com.projectWebhooks.postProjectWebhook",
+      "name": "projectWebhooks.postProjectWebhook",
+      "description": "Update project webhook URL"
+    },
+    {
+      "id": "openapi_motaword_com.projectWebhooks.updateProjectWebhook",
+      "name": "projectWebhooks.updateProjectWebhook",
+      "description": "Update project webhook URL"
+    },
+    {
+      "id": "openapi_motaword_com.report.generateQaReport",
+      "name": "report.generateQaReport",
+      "description": "Generate a QA report for given filter"
+    },
+    {
+      "id": "openapi_motaword_com.report.getFilterContents",
+      "name": "report.getFilterContents",
+      "description": "Returns available options for selected timeframe."
+    },
+    {
+      "id": "openapi_motaword_com.report.getLanguagePairsReport",
+      "name": "report.getLanguagePairsReport",
+      "description": "View translation reports for each language pair with translations under your account. You can view company-wide language pairs if you have the user permission."
+    },
+    {
+      "id": "openapi_motaword_com.report.getProjectsReport",
+      "name": "report.getProjectsReport",
+      "description": "View projects under your account, with advanced filtering. You can view company-wide projects if you have the user permission."
+    },
+    {
+      "id": "openapi_motaword_com.report.getUsersReport",
+      "name": "report.getUsersReport",
+      "description": "View translation reports for each user under your company account. You need the permission to view users in your company."
+    },
+    {
+      "id": "openapi_motaword_com.search.checkDocumentsReindex",
+      "name": "search.checkDocumentsReindex",
+      "description": "Check reindex status of the client source and translation documents."
+    },
+    {
+      "id": "openapi_motaword_com.search.reindexDocuments",
+      "name": "search.reindexDocuments",
+      "description": "Reindex for search all of the client source and translation documents."
+    },
+    {
+      "id": "openapi_motaword_com.search.searchEverywhere",
+      "name": "search.searchEverywhere",
+      "description": "Search through everything in your account, from projects to documents, from source strings to translations..."
+    },
+    {
+      "id": "openapi_motaword_com.static.getEndpoints",
+      "name": "static.getEndpoints",
+      "description": "The root endpoint will provide you with an OpenAPI definition of MotaWord API.\n"
+    },
+    {
+      "id": "openapi_motaword_com.static.getFormats",
+      "name": "static.getFormats",
+      "description": "Get a list of supported formats for documents, style guides and extensions.\n"
+    },
+    {
+      "id": "openapi_motaword_com.static.getLanguages",
+      "name": "static.getLanguages",
+      "description": "Get a list of supported languages"
+    },
+    {
+      "id": "openapi_motaword_com.static.getSwaggerYaml",
+      "name": "static.getSwaggerYaml",
+      "description": "Get Swagger YAML"
+    },
+    {
+      "id": "openapi_motaword_com.stats.getCommissionStats",
+      "name": "stats.getCommissionStats",
+      "description": "Returns the total commissions stats."
+    },
+    {
+      "id": "openapi_motaword_com.stats.getCommissionStatsByFilter",
+      "name": "stats.getCommissionStatsByFilter",
+      "description": "Returns the total commissions stats by report filter."
+    },
+    {
+      "id": "openapi_motaword_com.stats.getPopularPairs",
+      "name": "stats.getPopularPairs",
+      "description": "View your popular language pairs"
+    },
+    {
+      "id": "openapi_motaword_com.stats.getProjectStats",
+      "name": "stats.getProjectStats",
+      "description": "View your project statistics"
+    },
+    {
+      "id": "openapi_motaword_com.stats.getStringStats",
+      "name": "stats.getStringStats",
+      "description": "View your translation statistics"
+    },
+    {
+      "id": "openapi_motaword_com.strings.clearTranslationCache",
+      "name": "strings.clearTranslationCache",
+      "description": "Clear/delete continuous project translation cache."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getContinuousProjectFileStrings",
+      "name": "strings.getContinuousProjectFileStrings",
+      "description": "View the strings from a document and their translations in your continuous translation project, for all target languages. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getContinuousProjectStrings",
+      "name": "strings.getContinuousProjectStrings",
+      "description": "View the strings and their translations in your continuous translation project, for all target languages. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getDocumentTranslations",
+      "name": "strings.getDocumentTranslations",
+      "description": "View the strings and their translations in your translation project for the specified source document. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getDocumentTranslationsForLanguage",
+      "name": "strings.getDocumentTranslationsForLanguage",
+      "description": "View the strings and their translations in the given target language for the specified source document. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getProjectStrings",
+      "name": "strings.getProjectStrings",
+      "description": "View the strings and their translations in your translation project, for all target languages. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getProjectStringsForLanguage",
+      "name": "strings.getProjectStringsForLanguage",
+      "description": "View the strings and their translations in your translation project for the specified target language. The list of translations is live if your project is not completed yet. If you need the translated version of your source document/file, then you need to use package and download endpoints."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getProjectTranslations",
+      "name": "strings.getProjectTranslations",
+      "description": "Deprecated. Use /projects/{projectId}/strings instead."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getProjectTranslationsForLanguage",
+      "name": "strings.getProjectTranslationsForLanguage",
+      "description": "Deprecated. use /projects/{projectId}/strings/{language} instead."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getStrings",
+      "name": "strings.getStrings",
+      "description": "Get a list of all strings and their translations under your account, from all projects. This is your MotaWord translation memory. If you have the related permission, this endpoint will also return strings from your company account."
+    },
+    {
+      "id": "openapi_motaword_com.strings.getTranslationCache",
+      "name": "strings.getTranslationCache",
+      "description": "MotaWord caches your account intensively (and in a smart way) in real-time translation environments. This endpoint will return the currently cached strings and translations in your continuous translation project."
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageProjectTranslationMemory",
+      "name": "strings.packageProjectTranslationMemory",
+      "description": "Package and download project translation memory in TMX format"
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageProjectTranslationMemoryForLanguage",
+      "name": "strings.packageProjectTranslationMemoryForLanguage",
+      "description": "Package and download project translation memory in TMX format for a specific target language."
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageProjectTranslationMemoryForLanguageStatus",
+      "name": "strings.packageProjectTranslationMemoryForLanguageStatus",
+      "description": "Check translation memory packaging status for async packaging requests, using the key returned from strings/package call."
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageProjectTranslationMemoryStatus",
+      "name": "strings.packageProjectTranslationMemoryStatus",
+      "description": "Check translation memory packaging status for async packaging requests, using the key returned from strings/package call."
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageUserTranslationMemory",
+      "name": "strings.packageUserTranslationMemory",
+      "description": "Package and download account translation memory in TMX format. If you have the related permission, this will also download your company translation memory."
+    },
+    {
+      "id": "openapi_motaword_com.strings.packageUserTranslationMemoryForLanguageStatus",
+      "name": "strings.packageUserTranslationMemoryForLanguageStatus",
+      "description": "Check translation memory packaging status for async packaging requests, using the key returned from strings/package call."
+    },
+    {
+      "id": "openapi_motaword_com.strings.postContinuousProjectFileStrings",
+      "name": "strings.postContinuousProjectFileStrings",
+      "description": "Get a list of strings and its translations in the project."
+    },
+    {
+      "id": "openapi_motaword_com.strings.postStrings",
+      "name": "strings.postStrings",
+      "description": "Deprecated, use instant translation mechanism for continuous projects."
+    },
+    {
+      "id": "openapi_motaword_com.strings.recacheTranslations",
+      "name": "strings.recacheTranslations",
+      "description": "Recache translations for the continuous project."
+    },
+    {
+      "id": "openapi_motaword_com.strings.updateTranslationMemoryUnit",
+      "name": "strings.updateTranslationMemoryUnit",
+      "description": "Update the translation of a string from your account strings/translation memory."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.createStyleGuide",
+      "name": "styleGuide.createStyleGuide",
+      "description": "Upload a new style guide"
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.deleteStyleGuide",
+      "name": "styleGuide.deleteStyleGuide",
+      "description": "Delete the existing style guide from the project."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.downloadGlobalStyleGuide",
+      "name": "styleGuide.downloadGlobalStyleGuide",
+      "description": "Download your account's global style guide. This endpoint is available only for corporate account customers. This style guide will be automatically attached to each new project under your account."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.downloadStyleGuide",
+      "name": "styleGuide.downloadStyleGuide",
+      "description": "Download a previously uploaded style guide file."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.getStyleGuide",
+      "name": "styleGuide.getStyleGuide",
+      "description": "View the details of a style guide uploaded to a project"
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.getStyleGuides",
+      "name": "styleGuide.getStyleGuides",
+      "description": "View a list of style guides in your project."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.updateGlobalStyleGuide",
+      "name": "styleGuide.updateGlobalStyleGuide",
+      "description": "Update your corporate account's global style guide. This endpoint is available only for corporate account customers. This style guide will be automatically attached to each new project under your account."
+    },
+    {
+      "id": "openapi_motaword_com.styleGuide.updateStyleGuide",
+      "name": "styleGuide.updateStyleGuide",
+      "description": "Update the existing style guide in the project. Public users are allowed to have only 1 style guide per project and file name and contents will replaced with the new style guide that you are uploading via this endpoint."
+    },
+    {
+      "id": "openapi_motaword_com.surveys.getQuestions",
+      "name": "surveys.getQuestions",
+      "description": "Get survey questions in given scope and type"
+    },
+    {
+      "id": "openapi_motaword_com.surveys.submitAnswers",
+      "name": "surveys.submitAnswers",
+      "description": "Post survey answers for scope and type"
+    },
+    {
+      "id": "openapi_motaword_com.user.approveVendorApplication",
+      "name": "user.approveVendorApplication",
+      "description": "POST /{userId}/approve"
+    },
+    {
+      "id": "openapi_motaword_com.user.createUser",
+      "name": "user.createUser",
+      "description": "Create a new platform user"
+    },
+    {
+      "id": "openapi_motaword_com.user.deleteAccount",
+      "name": "user.deleteAccount",
+      "description": "Delete your MotaWord account. Be careful; once deleted, you will not have access to MotaWord via API or your dashboards."
+    },
+    {
+      "id": "openapi_motaword_com.user.deleteUserAccount",
+      "name": "user.deleteUserAccount",
+      "description": "Delete requester account"
+    },
+    {
+      "id": "openapi_motaword_com.user.downgradeProofreader",
+      "name": "user.downgradeProofreader",
+      "description": "POST /downgrade-proofreader"
+    },
+    {
+      "id": "openapi_motaword_com.user.downgradeUserProofreader",
+      "name": "user.downgradeUserProofreader",
+      "description": "POST /{userId}/downgrade-proofreader"
+    },
+    {
+      "id": "openapi_motaword_com.user.freezeAccount",
+      "name": "user.freezeAccount",
+      "description": "Freeze your account temporarily, especially to stop receiving project notifications."
+    },
+    {
+      "id": "openapi_motaword_com.user.freezeUserAccount",
+      "name": "user.freezeUserAccount",
+      "description": "Freeze requester account for project notifications"
+    },
+    {
+      "id": "openapi_motaword_com.user.getAllVendorTags",
+      "name": "user.getAllVendorTags",
+      "description": "Returns all vendor tags for vendors filter"
+    },
+    {
+      "id": "openapi_motaword_com.user.getEarnings",
+      "name": "user.getEarnings",
+      "description": "View your vendor earnings from your translation activites. Includes real-time earnings from ongoing projects, and fixed earnings from completed projects, as well as total earnings and string edits."
+    },
+    {
+      "id": "openapi_motaword_com.user.getFilteredVendors",
+      "name": "user.getFilteredVendors",
+      "description": "Get a list of vendors available for the criteria given"
+    },
+    {
+      "id": "openapi_motaword_com.user.getMe",
+      "name": "user.getMe",
+      "description": "Get your user information, including client, corporate account and vendor account information."
+    },
+    {
+      "id": "openapi_motaword_com.user.getPaymentInfo",
+      "name": "user.getPaymentInfo",
+      "description": "Returns billing and saved credit card information for user, and their corporate account if present & allowed."
+    },
+    {
+      "id": "openapi_motaword_com.user.getPermissions",
+      "name": "user.getPermissions",
+      "description": "View a list of permissions that your user account is authorized for, configured either by default, or by your account administator."
+    },
+    {
+      "id": "openapi_motaword_com.user.getResponsivity",
+      "name": "user.getResponsivity",
+      "description": "View your statistical analysis of responsiveness to our translation projects, invitations, notifications and such."
+    },
+    {
+      "id": "openapi_motaword_com.user.getStats",
+      "name": "user.getStats",
+      "description": "View your client and vendor statistics."
+    },
+    {
+      "id": "openapi_motaword_com.user.getThisUserGroups",
+      "name": "user.getThisUserGroups",
+      "description": "Returns a list of user groups that this user belongs to."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUser",
+      "name": "user.getUser",
+      "description": "Get user information, including client or vendor specific info."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserEarnings",
+      "name": "user.getUserEarnings",
+      "description": "Returns your vendor earnings. Includes real-time earnings from ongoing projects, and fixed earnings from completed projects. Also includes total earnings and string edits."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserGroups",
+      "name": "user.getUserGroups",
+      "description": "View the user groups that your user account belongs to. This is typically configured by your account administator's dashboard."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserPaymentInfo",
+      "name": "user.getUserPaymentInfo",
+      "description": "Returns billing and saved credit card information for user, and their corporate account if present & allowed."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserPermissions",
+      "name": "user.getUserPermissions",
+      "description": "Returns a list of permissions that this user is authorized for."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserPopularPairs",
+      "name": "user.getUserPopularPairs",
+      "description": "Returns the language pairs that the user has ordered most."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserProjectStats",
+      "name": "user.getUserProjectStats",
+      "description": "Returns a user's project statistics."
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserResponsivity",
+      "name": "user.getUserResponsivity",
+      "description": "Returns a user's vendor responsivity stats"
+    },
+    {
+      "id": "openapi_motaword_com.user.getUsers",
+      "name": "user.getUsers",
+      "description": "Get a list of platform users"
+    },
+    {
+      "id": "openapi_motaword_com.user.getUserStats",
+      "name": "user.getUserStats",
+      "description": "Returns a user's client and vendor statistics. This used to be called \"summary\" (\\@deprecated)."
+    },
+    {
+      "id": "openapi_motaword_com.user.logLocation",
+      "name": "user.logLocation",
+      "description": "Log user's current location. This data is used in our Intelligent Project Manager for various data analysis, including project prioritization for vendors and account validation."
+    },
+    {
+      "id": "openapi_motaword_com.user.makeProofreader",
+      "name": "user.makeProofreader",
+      "description": "POST /make-proofreader"
+    },
+    {
+      "id": "openapi_motaword_com.user.makeUserProofreader",
+      "name": "user.makeUserProofreader",
+      "description": "POST /{userId}/make-proofreader"
+    },
+    {
+      "id": "openapi_motaword_com.user.rejectVendorApplication",
+      "name": "user.rejectVendorApplication",
+      "description": "POST /{userId}/reject"
+    },
+    {
+      "id": "openapi_motaword_com.user.sendEmailConfirmation",
+      "name": "user.sendEmailConfirmation",
+      "description": "Sends email confirmation email for current user"
+    },
+    {
+      "id": "openapi_motaword_com.user.sendPasswordReminder",
+      "name": "user.sendPasswordReminder",
+      "description": "Sends password reset email to the user's registered email address"
+    },
+    {
+      "id": "openapi_motaword_com.user.sendUserEmailConfirmation",
+      "name": "user.sendUserEmailConfirmation",
+      "description": "Sends email confirmation email for a user"
+    },
+    {
+      "id": "openapi_motaword_com.user.subscribeNotification",
+      "name": "user.subscribeNotification",
+      "description": "Subscribe to push notifications to receive project and platform notifications."
+    },
+    {
+      "id": "openapi_motaword_com.user.subscribeUserNotification",
+      "name": "user.subscribeUserNotification",
+      "description": "POST /{userId}/notifications/subscribe"
+    },
+    {
+      "id": "openapi_motaword_com.user.suspendUser",
+      "name": "user.suspendUser",
+      "description": "POST /{userId}/suspend"
+    },
+    {
+      "id": "openapi_motaword_com.user.unfreezeAccount",
+      "name": "user.unfreezeAccount",
+      "description": "Reactive your account to start receiving notifications."
+    },
+    {
+      "id": "openapi_motaword_com.user.unfreezeUserAccount",
+      "name": "user.unfreezeUserAccount",
+      "description": "Unfreeze requester account for project notifications"
+    },
+    {
+      "id": "openapi_motaword_com.user.unsubscribeNotification",
+      "name": "user.unsubscribeNotification",
+      "description": "POST /notifications/unsubscribe"
+    },
+    {
+      "id": "openapi_motaword_com.user.unsubscribeUserNotification",
+      "name": "user.unsubscribeUserNotification",
+      "description": "POST /{userId}/notifications/unsubscribe"
+    },
+    {
+      "id": "openapi_motaword_com.user.updateMe",
+      "name": "user.updateMe",
+      "description": "Update your account info"
+    },
+    {
+      "id": "openapi_motaword_com.user.updatePassword",
+      "name": "user.updatePassword",
+      "description": "Password should contain at least one uppercase, lowercase character and one number"
+    },
+    {
+      "id": "openapi_motaword_com.user.updatePaymentInfo",
+      "name": "user.updatePaymentInfo",
+      "description": "Update your billing and saved credit card information"
+    },
+    {
+      "id": "openapi_motaword_com.user.updateUser",
+      "name": "user.updateUser",
+      "description": "POST /{userId}"
+    },
+    {
+      "id": "openapi_motaword_com.user.updateUserGroup",
+      "name": "user.updateUserGroup",
+      "description": "POST /{userId}/user-groups"
+    },
+    {
+      "id": "openapi_motaword_com.user.updateUserPaymentInfo",
+      "name": "user.updateUserPaymentInfo",
+      "description": "Update user's billing and saved credit card information"
+    },
+    {
+      "id": "openapi_motaword_com.user.uploadProfilePicture",
+      "name": "user.uploadProfilePicture",
+      "description": "Upload a profile picture on your account. This is used where your profile is mentioned throughout the platform. Your picture is not used publicly."
+    },
+    {
+      "id": "openapi_motaword_com.user.uploadUserProfilePicture",
+      "name": "user.uploadUserProfilePicture",
+      "description": "POST /{userId}/profile-picture"
+    },
+    {
+      "id": "openapi_motaword_com.vendor.getAvailableVendors",
+      "name": "vendor.getAvailableVendors",
+      "description": "Get a list of vendors available for the criteria given"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

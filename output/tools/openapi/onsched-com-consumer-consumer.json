@@ -1,0 +1,207 @@
+{
+  "fetchedAt": "2026-04-30T15:26:40.412Z",
+  "status": "ok",
+  "count": 40,
+  "tools": [
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.deleteConsumerV1AppointmentsId",
+      "name": "appointments.deleteConsumerV1AppointmentsId",
+      "description": "<p>Use this endpoint to permanently <b>Delete</b> an appointment. Only appointments with a of \"IN\" status, initial, can be deleted. Past dated appointments cannot be deleted. A valid <b>appointment id</b> is required. Use the appointment id returned from the initial <i>POST /consumer/v1/appointments</i> endpoint.</p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointment Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.getConsumerV1Appointments",
+      "name": "appointments.getConsumerV1Appointments",
+      "description": "<p>Use this endpoint to return a <b>List of Appointments</b>. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further. For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointments Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.getConsumerV1AppointmentsBookingfields",
+      "name": "appointments.getConsumerV1AppointmentsBookingfields",
+      "description": "<p>Use this endpoint to return a locations <b>Appointment Booking Fields</b>. Appointment booking fields are stored with each Appointment record. They are used when you need additional information collected during your booking process. It is tied to an appointment/visit and will be stored in the appointment record. Use the field name, type, and length to determine how to update these field values when posting an appointment.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.getConsumerV1AppointmentsCustomfields",
+      "name": "appointments.getConsumerV1AppointmentsCustomfields",
+      "description": "<p>Use this endpoint to return a locations <b>Appointment Custom Field</b> definitions. Appointment custom fields are stored with each appointment. They are used when the information collected during the booking is specific to a particular appointment/visit. The response will list the custom fields used (customField1 - 10), the field type (string, number, date, boolean) and the length of each one.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.getConsumerV1AppointmentsId",
+      "name": "appointments.getConsumerV1AppointmentsId",
+      "description": "<p>Use this endpoint to return an <b>Appointment</b> object. A valid <b>appointment id</b> is required. For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointments Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.postConsumerV1Appointments",
+      "name": "appointments.postConsumerV1Appointments",
+      "description": "<p>Use this endpoint to <b>Create</b> a new appointment. The appointment will be created with an \"IN\", Initial status. Posting an appointment with \"IN\" status requires minimal information and requires a \"PUT book\" call to complete the booking transaction, <i>PUT ​/consumer​/v1​/appointments​/{id}​/book</i>. Alternatively, you can post an appointment using the <b>completeBooking</b> option which completes the booking in one transaction, but it will require more data. The method you choose depends on your solutions workflow. </p>\r\n<p>\r\n  <b>StartDateTime</b> and <b>EndDateTime</b> are required. Use the ISO 8601 format for DateTime Timezone, e.g., <b>2016-10-30T09:00:00-5:00</b></p>\r\n<p>A valid <b>serviceId</b> is required. The serviceId provided must be valid for the location being booked. A valid serviceId is one that is scoped to a Primary Company Location or is associated with a Business Location</p>\r\n<p>OPTIONAL FIELDS INCLUDE: </p>\r\n<p>\r\n  <b>locationId</b> - if not supplied, the appointment will be posted to the primary business location. If you support multiple location, we recommend always supplying the locationId. </p>\r\n<p>\r\n  <b>resourceId</b> - not required when posting with an \"IN\" status but is required when the appointment is booked. Use <i>GET /consumer/v1/resources</i> for a list of resources. </p>\r\n<p>\r\n  <b>customerId</b> - if supplied the name and email will be retrieved from the customer record. </p>\r\n<p>\r\n  <b>BookedBy</b> - if not supplied the email address of the booked appointment is used or the ip address if no email address is provided. BookedBy is used in the Appointment Audit trail which can be viewed in the appointment object.</p>\r\n<p>\r\n  <b>Location</b> - is a string value representing the location of the appointment. It provides no added functionality in OnSched and should not be confused with locationId.</p>\r\n<p>\r\n  <b>TimezoneName</b> - if used timezoneName must be in IANA format, <i>America/New_York</i>. This is the timezone the appointment was booked in. Populating this information can help later in situations where appointments are booked before a Daylight Savings change. If no timezoneName is supplied, the Business Locations timezone will be used.</p>\r\n<p>\r\n  <b>COMPLETE BOOKING:</b> This parameter provides a mechanism for immediate booking with the POST appointment endpoint. To complete the booking in one transaction, populate the <b>completeBooking</b> parameter with a \"BK\", booked or an \"RS\", reserved status and provide an (<b>email</b> and <b>name</b>) or a <b>customerId</b> in the post body. Doing so will book the appointment and send notifications all in one transaction. <b>Note:</b> \"IN\" can also be used as a completeBooking option to support payment flows. With the \"IN\" option, notifications are NOT sent.</p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointments Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdBook",
+      "name": "appointments.putConsumerV1AppointmentsIdBook",
+      "description": "<p>Use this endpoint to <b>Book</b> an appointment. Only appointments with an \"IN\" status, Initial, can be booked. A valid <b>appointment id</b> is required. Use the appointment id returned from the initial <i>POST /consumer/v1/appointments</i> endpoint. Other pertinent fields can also be updated at the time of booking by including them in the post body. <b>Note: If no name or email address was provided in the initial Post Appointment, it will be required in the post body.</b></p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointments Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdCancel",
+      "name": "appointments.putConsumerV1AppointmentsIdCancel",
+      "description": "<p>Use this endpoint to <b>Cancel</b> an appointment booking or reservation. Only appointments with a \"BK\", booked or \"RS\", reserved status can be cancelled. Past dated appointments cannot be cancelled. A valid <b>appointment id</b> is required. For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointment Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdConfirm",
+      "name": "appointments.putConsumerV1AppointmentsIdConfirm",
+      "description": "<p>Use this endpoint to <b>Confirm</b> an appointment. This updates the boolean confirmed field to TRUE. <b>NOTE:</b> If the appointment status is set to \"RS\", Reserved, it also updates the status of the appointment to \"BK\", Booked. </p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointment Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdNoshow",
+      "name": "appointments.putConsumerV1AppointmentsIdNoshow",
+      "description": "<p>Use this endpoint to change the status of an appointment from \"BK\", Booked to <b>\"NS\", NoShow</b>. This gives API consumers a way to internally track No Show appointments. It provides no added functionality in OnSched.</p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointment Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdReschedule",
+      "name": "appointments.putConsumerV1AppointmentsIdReschedule",
+      "description": "<p>Use this endpoint to <b>Reschedule</b> an appointment booking. Only appointments in \"BK\", booked status, can be Rescheduled. Past dated appointments cannot be rescheduled. A valid <b>appointment id</b> is required.</p>\r\n<p>The <b>StartDateTime</b> and <b>EndDateTime</b> are required. Use the ISO 8601 format for DateTime Timezone, e.g., <b>2016-10-30T09:00:00-5:00</b>.</p>\r\n<p>The serviceId is optional. If changing the <b>serviceId</b>, the new service id's duration must match the original service's duration.</p>\r\n<p>The resourceId is optional. If changing the <b>resourceId</b>, verify the availability of the new resource prior to rescheduling.</p>\r\n<p>\r\n  <b>IMPORTANT:</b> Always run availability before rescheduling an appointment to verify the timeslot is open and available for the new time, service and/or resource requested. This is the only way to assure the slot is available. You cannot reschedule an appointment to a different location. If necessary, you should cancel and then book an appointment in the other location.</p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointment Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.appointments.putConsumerV1AppointmentsIdReserve",
+      "name": "appointments.putConsumerV1AppointmentsIdReserve",
+      "description": "<p>Use this endpoint to <b>Reserve</b> an appointment. Only appointments with an \"IN\" status, Initial, can be reserved. A valid <b>appointment id</b> is required. Use the appointment id returned from the initial <i>POST /consumer/v1/appointments</i> endpoint.</p>\r\n<p>\r\n  <b>NOTE: Reservations are different from Bookings as reservations are a two-step booking process that must be managed by the API consumer.</b> An appointment that is reserved is not completely booked until other business conditions have been met. For example, an appointment may be reserved if it is not yet assigned to a resource or until the customer or resource explicitly confirms it.</p>\r\n<p>With reservations you have the ability to notify the customer of a reservation prior to officially booking and the workflow can be designed to indicate what conditions will need to be met in order to convert the reservation to a complete booking. A reservation converts to a complete booking when it is either Confirmed or Booked. </p>\r\n<p>\r\n  <b>IMPORTANT: A reserved appointment time will not be released, i.e., become available to others, until it is Cancelled. The booking timer is not used with reserved appointments.</b>\r\n</p>\r\n<p>For more information: <a href=\"https://onsched.readme.io/docs/appointments-overview\">Appointments Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.availability.getConsumerV1AvailabilityServiceIdStartDateEndDate",
+      "name": "availability.getConsumerV1AvailabilityServiceIdStartDateEndDate",
+      "description": "<p>\r\n  <b>Choose your search criteria carefully. Availability is an expensive call.</b> If you search availability for all resources, you should only do so for a single date. If you search availability for multiple dates, you should only do so for a specific resource by specifying the optional resourceId parameter.</p>\r\n<p>A <b>serviceId</b> is required. The <b>startDate</b> and <b>endDate</b> are required and are formatted as: <b>YYYY-MM-DD</b></p>\r\n<p>A <b>resourceId</b> is optional, it is recommended if known at the time of availability call.</p>\r\n<p>\r\n  <b>timezoneName</b> is optional, it allows you to specify the IANA formatted name for the end user's timezone to view availability. e.g., <i>America/New_York</i>. <b>NOTE: This is the recommended approach for your implementation.</b>  The \"tzOffset\" parameter remains for backward compatibility.  For JavaScript, use moment.js in your client for ease of timezone detection and selection. For iOS, use the name property of the NSTimeZone returned from the localTimeZone method. For .NET, consider NodaTime or TimeZoneConverter via NuGet. </p>\r\n<p>\r\n  <b>duration</b> should only be populated if you allow the end user to select a duration, otherwise the service's duration will be used.</p>\r\n<p>\r\n  <b>startTime</b> and <b>endTime</b> are optional and are specified in <b>military time e.g., 800 = 8:00am, 2230 = 10:30pm</b>. Note: You will only see availability within the boundary of your business location start and end times.</p>\r\n<p>\r\n  <b>dayAvailability</b> will return day level availability for the number of days requested from the start date. See <i>GET /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/days</i> for details.</p>\r\n<p>\r\n  <b>firstDayAvailable</b> only works with day availability. If set to true it will look for the first day available within the range specified by the dayAvailability parameter. The two parameters together can be a clever way to display availability for a week or month. Tip - pass in the beginning of the week or month, and available times are displayed for the first available date if exists.</p>\r\n<p>\r\n  <b>tzOffset</b> allows you to pass in the timezone offset for the end user's timezone of choice, e.g., (-240) for EST. If you use this option, your application should be timezone aware. The requested timezone is specified as an offset (plus or minus) from GMT time.</p>\r\n<p>Availability can be complex. For further troubleshooting refer to the: <i><b>GET /consumer/v1/availability/{serviceId}/{startDate}/{endDate}/unavailable</b></i> endpoint. This endpoint will show you all unavailable times for a given date range. Available times are created from any unblocked time periods. For more information: <a href=\"https://onsched.readme.io/docs/availability-overview\">Availability Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.availability.getConsumerV1AvailabilityServiceIdStartDateEndDateDays",
+      "name": "availability.getConsumerV1AvailabilityServiceIdStartDateEndDateDays",
+      "description": "<p>This endpoint will return <b>Day Level Availability</b> for the range of dates requested. For example, if the business is closed, or there is a public holiday this endpoint will return that the \"Day is unavailable\".</p>\r\n<p>Day Availability is a high-level check for Holidays and Open/Available hours of a location, service and/or resource and should be used to restrict your choices of days available in your application to improve usability and performance.</p>\r\n<p>A <b>serviceId</b> is required. The <b>startDate</b> and <b>endDate</b> are required and are formatted as: <b>YYYY-MM-DD</b></p>\r\n<p>The locationId is optional, however if not supplied it defaults to the Primary Business Location for open/closed hours information. It is recommended you always provide the locationId.</p>\r\n<p>A <b>resourceId</b> is optional. If used the available days will be return day availability for the resource specified.</p>\r\n<p>The <b>tzOffset</b> parameter should be used if the appointment requester, the end user, is in a different timezone than the location or resource.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.availability.getConsumerV1AvailabilityServiceIdStartDateEndDateUnavailable",
+      "name": "availability.getConsumerV1AvailabilityServiceIdStartDateEndDateUnavailable",
+      "description": "<p>This endpoint is used to show <b>Unavailable</b> times and provides valuable information as to why a time slot is unavailable. If you question your availability results, populate the same parameters to this endpoint to find out why.</p>\r\n<p>A <b>serviceId</b> is required. The <b>startDate</b> and <b>endDate</b> are required and are formatted as: <b>YYYY-MM-DD</b></p>\r\n<p>Location hours, holidays, services, resources, blocks, allocations, and appointments are just some of variables that may cause time slots to become unavailable. Use this endpoint to understand why you don't see availability.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.deleteConsumerV1CustomersId",
+      "name": "customers.deleteConsumerV1CustomersId",
+      "description": "<p>Use this endpoint to permanently <b>Delete</b> a Customer object. A valid <b>customer id</b> is required.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1Customers",
+      "name": "customers.getConsumerV1Customers",
+      "description": "<p>Use this endpoint to return a <b>List of Customers</b>. The results are returned in pages. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1CustomersBookingfields",
+      "name": "customers.getConsumerV1CustomersBookingfields",
+      "description": "<p>Use this endpoint to return <b>Customer Booking Fields</b>. Customer booking fields are stored with each customer object. They are used when the information collected during the booking is for a particular customer. Customer Booking Fields include any custom customer fields you define and want to capture with the Booking.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1CustomersCountries",
+      "name": "customers.getConsumerV1CustomersCountries",
+      "description": "<p>Use this endpoint to return a <b>List of Countries with their associated Country Code</b>. Country codes are based on the 2-character ANSI standard. If your countries of operation are not currently listed, contact us at <i><b>support@onsched.com</b></i>.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1CustomersCustomfields",
+      "name": "customers.getConsumerV1CustomersCustomfields",
+      "description": "<p>Use this endpoint to return <b>Customer Custom Fields</b>. Customer custom fields are stored with the customer object. They are used when the information collected during the booking is specific to a particular customer.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1CustomersId",
+      "name": "customers.getConsumerV1CustomersId",
+      "description": "<p>Use this endpoint to return a <b>Customer</b> object. A valid <b>customer id</b> is required. Find customer id's by using the <i>GET /consumer/v1/customers</i> endpoint.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.getConsumerV1CustomersStates",
+      "name": "customers.getConsumerV1CustomersStates",
+      "description": "<p>Use this endpoint to return a <b>List of Countries with their associated State Codes</b>. Supply a country code to filter results further. If states for your countries of operation are not currently listed, contact us at <i><b>support@onsched.com</b></i>.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.postConsumerV1Customers",
+      "name": "customers.postConsumerV1Customers",
+      "description": "<p>Use this endpoint to <b>Create</b> a new Customer. A customer object is automatically created with the first appointment booking if it doesn't already exist. If not specified, the business location id defaults to the primary business location.</p>\r\n<p>Required Fields: <b>Email</b> and <b>Name</b> or <b>First and Lastname</b> depending on customer type. Type 0 = Person, Type 1 = Business. For type 0, the firstname and lastname fields are used. For type 1, the Name field is used, and the name field is also used to populate the lastname.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.customers.putConsumerV1CustomersId",
+      "name": "customers.putConsumerV1CustomersId",
+      "description": "<p>Use this endpoint to <b>Update</b> a Customer object. A valid <b>customer id</b> is required. Note: Blank fields are not changed.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.locations.getConsumerV1Locations",
+      "name": "locations.getConsumerV1Locations",
+      "description": "<p>Use this endpoint to return a <b>List of Business Locations</b>. The results are returned in pages. Use the offset and limit parameters to control the page start and size. Default offset is 0, and limit is 20 and maximum is 100. Use the other query parameters to filter the results further. </p>\r\n<p>\r\n  <b>IMPORTANT DEPRECATION NOTICE</b>: The following online settings parameters were intended for internal use in our Portal application only. They will be deprecated on <b>OCTOBER 15, 2022</b>. These fields are currently part of the <b>SETTINGS</b> object in all location endpoints: <b>businessId, enabled, familyMembersEnabled, serviceLabel, resourceLabel, resourceAnyLabel, resourceSelection, liveMode, formFlow, availabilityForm, showServiceGroups, showOnSchedLogo, showBusinessLogo, disableAuthorization, hideNavBar, hideLocationNav, hideServiceGroupsNav, hideServicesNav, hideContinueBooking, returnToService, returnToAvailability, hideBreadCrumbNav.</b> If you are using these fields, please adjust your code to handle the deprecation or let us know by submitting a ticket to: <b><i>support@onsched.com</i></b> as we do not want to interrupt your existing workflows.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.locations.getConsumerV1LocationsId",
+      "name": "locations.getConsumerV1LocationsId",
+      "description": "<p>Use this endpoint to return a <b>Location</b> object. A valid business <b>location id</b> is required. Find all location id's by using the <i>GET /consumer/v1/locations</i> endpoint.</p>\r\n<p>\r\n  <b>IMPORTANT DEPRECATION NOTICE</b>: The following online settings parameters were intended for internal use in our Portal application only. They will be deprecated on <b>OCTOBER 15, 2022</b>. These fields are currently part of the <b>SETTINGS</b> object in all location endpoints: <b>businessId, enabled, familyMembersEnabled, serviceLabel, resourceLabel, resourceAnyLabel, resourceSelection, liveMode, formFlow, availabilityForm, showServiceGroups, showOnSchedLogo, showBusinessLogo, disableAuthorization, hideNavBar, hideLocationNav, hideServiceGroupsNav, hideServicesNav, hideContinueBooking, returnToService, returnToAvailability, hideBreadCrumbNav.</b> If you are using these fields, please adjust your code to handle the deprecation or let us know by submitting a ticket to: <b><i>support@onsched.com</i></b> as we do not want to interrupt your existing workflows.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.resourceGroups.getConsumerV1Resourcegroups",
+      "name": "resourceGroups.getConsumerV1Resourcegroups",
+      "description": "<p>Use this endpoint to return a list of <b>Resource Groups</b> for the requested location. If not specified, the business location defaults to the primary business location.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.resourceGroups.getConsumerV1ResourcegroupsId",
+      "name": "resourceGroups.getConsumerV1ResourcegroupsId",
+      "description": "<p>Use this endpoint to return a <b>Resource Group</b> object. A valid <b>resourceGroup id</b> is required. Find resourceGroup id's by using the <i>GET /consumer/v1/resourceGroups</i> endpoint.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.resources.getConsumerV1Resources",
+      "name": "resources.getConsumerV1Resources",
+      "description": "<p>Use this endpoint to return a <b>List of Resources</b> associated with a business location. If not specified, the business location defaults to the primary business location. The results are returned in pages. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.resources.getConsumerV1ResourcesId",
+      "name": "resources.getConsumerV1ResourcesId",
+      "description": "<p>Use this endpoint to return a <b>Resource</b> object. A valid <b>resource id</b> is required. Find resource id's by using the <i>GET consumer/v1/resources</i> endpoint. </p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.resources.getConsumerV1ResourcesIdServices",
+      "name": "resources.getConsumerV1ResourcesIdServices",
+      "description": "<p>Use this endpoint to get a <b>List of Linked Services</b> associated with the resource requested. The results are returned in pages. Use the offset and limit parameters to control the page start and size. Default offset is 0, limit is 20, the maximum limit is 100. Use the other query parameters to filter the results further.</p>\r\n<p>Resource linked services are used to explicitly define the services that can be booked for a specified resource. By default, all services are bookable for any resource. For more information: <a href=\"https://docs.onsched.com/docs/linked-services\">Linked Services Overview</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.serviceGroups.getConsumerV1Servicegroups",
+      "name": "serviceGroups.getConsumerV1Servicegroups",
+      "description": "<p>Use this endpoint to return a list of <b>Service Groups</b> for the requested location. If not specified, the business location defaults to the primary business location. Use the offset and limit parameters to control the page start and size. Default offset is 0, limit is 20, maximum is 100. Use the other query parameters to filter the results further.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.serviceGroups.getConsumerV1ServicegroupsId",
+      "name": "serviceGroups.getConsumerV1ServicegroupsId",
+      "description": "<p>Use this endpoint to return a <b>Service Group</b> object. A valid <b>serviceGroup id</b> is required. Find serviceGroup id's by using the <i>GET /consumer/v1/serviceGroups</i> endpoint.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.services.getConsumerV1Services",
+      "name": "services.getConsumerV1Services",
+      "description": "<p>Use this endpoint to <b>List Services</b> available at your business location and/or company. If not specified, the business location defaults to the primary business location. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.services.getConsumerV1ServicesAllocationsId",
+      "name": "services.getConsumerV1ServicesAllocationsId",
+      "description": "<p>Use this endpoint to return a <b>Service Allocation</b> object. A valid <b>serviceAllocation id</b> is required. Find service allocation id's by using the <i>GET/consumer​/v1​/services​/{id}​/allocations</i> endpoint.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.services.getConsumerV1ServicesId",
+      "name": "services.getConsumerV1ServicesId",
+      "description": "<p>Use this endpoint to return a <b>Service</b> object. A valid <b>service id</b> is required. Find service id's by using the <i>GET /consumer/v1/services</i> endpoint.</p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.services.getConsumerV1ServicesIdAllocations",
+      "name": "services.getConsumerV1ServicesIdAllocations",
+      "description": "<p>Use this endpoint to return a <b>List of Service Allocations</b> associated with the requested service. A valid <b>service id</b> is required. Allocations are used for Event type services/bookings. Retrieve all allocations for a location by passing in zero as the service id. Otherwise, to get allocations for a specific service supply the service id. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further. For more information: <a href=\"https://docs.onsched.com/reference/post_setup-v1-services-id-allocations\">Create Service Allocations</a></p>"
+    },
+    {
+      "id": "openapi_onsched_com_consumer_consumer.services.getConsumerV1ServicesIdResources",
+      "name": "services.getConsumerV1ServicesIdResources",
+      "description": "<p>Use this endpoint to return a list of <b>Resources that provide the Service requested</b>. A valid <b>service id</b> is required. The results are returned in pages. Use the offset and limit parameters to control the page start and number of results. Default offset is 0, limit is 20, max is 100. Use the query parameters to filter the results further.</p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

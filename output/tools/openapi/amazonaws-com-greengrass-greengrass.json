@@ -1,0 +1,477 @@
+{
+  "fetchedAt": "2026-04-30T15:45:03.312Z",
+  "status": "ok",
+  "count": 94,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.associateRoleToGroup",
+      "name": "greengrass.associateRoleToGroup",
+      "description": "Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.associateServiceRoleToAccount",
+      "name": "greengrass.associateServiceRoleToAccount",
+      "description": "Associates a role with your account. AWS IoT Greengrass will use the role to access your Lambda functions and AWS IoT resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createConnectorDefinition",
+      "name": "greengrass.createConnectorDefinition",
+      "description": "Creates a connector definition. You may provide the initial version of the connector definition now or use ''CreateConnectorDefinitionVersion'' at a later time."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createConnectorDefinitionVersion",
+      "name": "greengrass.createConnectorDefinitionVersion",
+      "description": "Creates a version of a connector definition which has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createCoreDefinition",
+      "name": "greengrass.createCoreDefinition",
+      "description": "Creates a core definition. You may provide the initial version of the core definition now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must each contain exactly one Greengrass core."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createCoreDefinitionVersion",
+      "name": "greengrass.createCoreDefinitionVersion",
+      "description": "Creates a version of a core definition that has already been defined. Greengrass groups must each contain exactly one Greengrass core."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createDeployment",
+      "name": "greengrass.createDeployment",
+      "description": "Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createDeviceDefinition",
+      "name": "greengrass.createDeviceDefinition",
+      "description": "Creates a device definition. You may provide the initial version of the device definition now or use ''CreateDeviceDefinitionVersion'' at a later time."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createDeviceDefinitionVersion",
+      "name": "greengrass.createDeviceDefinitionVersion",
+      "description": "Creates a version of a device definition that has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createFunctionDefinition",
+      "name": "greengrass.createFunctionDefinition",
+      "description": "Creates a Lambda function definition which contains a list of Lambda functions and their configurations to be used in a group. You can create an initial version of the definition by providing a list of Lambda functions and their configurations now, or use ''CreateFunctionDefinitionVersion'' later."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createFunctionDefinitionVersion",
+      "name": "greengrass.createFunctionDefinitionVersion",
+      "description": "Creates a version of a Lambda function definition that has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createGroup",
+      "name": "greengrass.createGroup",
+      "description": "Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup) as a library or command-line application to create and deploy Greengrass groups."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createGroupCertificateAuthority",
+      "name": "greengrass.createGroupCertificateAuthority",
+      "description": "Creates a CA for the group. If a CA already exists, it will rotate the existing CA."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createGroupVersion",
+      "name": "greengrass.createGroupVersion",
+      "description": "Creates a version of a group which has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createLoggerDefinition",
+      "name": "greengrass.createLoggerDefinition",
+      "description": "Creates a logger definition. You may provide the initial version of the logger definition now or use ''CreateLoggerDefinitionVersion'' at a later time."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createLoggerDefinitionVersion",
+      "name": "greengrass.createLoggerDefinitionVersion",
+      "description": "Creates a version of a logger definition that has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createResourceDefinition",
+      "name": "greengrass.createResourceDefinition",
+      "description": "Creates a resource definition which contains a list of resources to be used in a group. You can create an initial version of the definition by providing a list of resources now, or use ''CreateResourceDefinitionVersion'' later."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createResourceDefinitionVersion",
+      "name": "greengrass.createResourceDefinitionVersion",
+      "description": "Creates a version of a resource definition that has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createSoftwareUpdateJob",
+      "name": "greengrass.createSoftwareUpdateJob",
+      "description": "Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this to update the OTA Agent as well as the Greengrass core software. It makes use of the IoT Jobs feature which provides additional commands to manage a Greengrass core software update job."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createSubscriptionDefinition",
+      "name": "greengrass.createSubscriptionDefinition",
+      "description": "Creates a subscription definition. You may provide the initial version of the subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.createSubscriptionDefinitionVersion",
+      "name": "greengrass.createSubscriptionDefinitionVersion",
+      "description": "Creates a version of a subscription definition which has already been defined."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteConnectorDefinition",
+      "name": "greengrass.deleteConnectorDefinition",
+      "description": "Deletes a connector definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteCoreDefinition",
+      "name": "greengrass.deleteCoreDefinition",
+      "description": "Deletes a core definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteDeviceDefinition",
+      "name": "greengrass.deleteDeviceDefinition",
+      "description": "Deletes a device definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteFunctionDefinition",
+      "name": "greengrass.deleteFunctionDefinition",
+      "description": "Deletes a Lambda function definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteGroup",
+      "name": "greengrass.deleteGroup",
+      "description": "Deletes a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteLoggerDefinition",
+      "name": "greengrass.deleteLoggerDefinition",
+      "description": "Deletes a logger definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteResourceDefinition",
+      "name": "greengrass.deleteResourceDefinition",
+      "description": "Deletes a resource definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.deleteSubscriptionDefinition",
+      "name": "greengrass.deleteSubscriptionDefinition",
+      "description": "Deletes a subscription definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.disassociateRoleFromGroup",
+      "name": "greengrass.disassociateRoleFromGroup",
+      "description": "Disassociates the role from a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.disassociateServiceRoleFromAccount",
+      "name": "greengrass.disassociateServiceRoleFromAccount",
+      "description": "Disassociates the service role from your account. Without a service role, deployments will not work."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getAssociatedRole",
+      "name": "greengrass.getAssociatedRole",
+      "description": "Retrieves the role associated with a particular group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getBulkDeploymentStatus",
+      "name": "greengrass.getBulkDeploymentStatus",
+      "description": "Returns the status of a bulk deployment."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getConnectivityInfo",
+      "name": "greengrass.getConnectivityInfo",
+      "description": "Retrieves the connectivity information for a core."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getConnectorDefinition",
+      "name": "greengrass.getConnectorDefinition",
+      "description": "Retrieves information about a connector definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getConnectorDefinitionVersion",
+      "name": "greengrass.getConnectorDefinitionVersion",
+      "description": "Retrieves information about a connector definition version, including the connectors that the version contains. Connectors are prebuilt modules that interact with local infrastructure, device protocols, AWS, and other cloud services."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getCoreDefinition",
+      "name": "greengrass.getCoreDefinition",
+      "description": "Retrieves information about a core definition version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getCoreDefinitionVersion",
+      "name": "greengrass.getCoreDefinitionVersion",
+      "description": "Retrieves information about a core definition version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getDeploymentStatus",
+      "name": "greengrass.getDeploymentStatus",
+      "description": "Returns the status of a deployment."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getDeviceDefinition",
+      "name": "greengrass.getDeviceDefinition",
+      "description": "Retrieves information about a device definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getDeviceDefinitionVersion",
+      "name": "greengrass.getDeviceDefinitionVersion",
+      "description": "Retrieves information about a device definition version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getFunctionDefinition",
+      "name": "greengrass.getFunctionDefinition",
+      "description": "Retrieves information about a Lambda function definition, including its creation time and latest version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getFunctionDefinitionVersion",
+      "name": "greengrass.getFunctionDefinitionVersion",
+      "description": "Retrieves information about a Lambda function definition version, including which Lambda functions are included in the version and their configurations."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getGroup",
+      "name": "greengrass.getGroup",
+      "description": "Retrieves information about a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getGroupCertificateAuthority",
+      "name": "greengrass.getGroupCertificateAuthority",
+      "description": "Retreives the CA associated with a group. Returns the public key of the CA."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getGroupCertificateConfiguration",
+      "name": "greengrass.getGroupCertificateConfiguration",
+      "description": "Retrieves the current configuration for the CA used by the group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getGroupVersion",
+      "name": "greengrass.getGroupVersion",
+      "description": "Retrieves information about a group version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getLoggerDefinition",
+      "name": "greengrass.getLoggerDefinition",
+      "description": "Retrieves information about a logger definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getLoggerDefinitionVersion",
+      "name": "greengrass.getLoggerDefinitionVersion",
+      "description": "Retrieves information about a logger definition version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getResourceDefinition",
+      "name": "greengrass.getResourceDefinition",
+      "description": "Retrieves information about a resource definition, including its creation time and latest version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getResourceDefinitionVersion",
+      "name": "greengrass.getResourceDefinitionVersion",
+      "description": "Retrieves information about a resource definition version, including which resources are included in the version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getServiceRoleForAccount",
+      "name": "greengrass.getServiceRoleForAccount",
+      "description": "Retrieves the service role that is attached to your account."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getSubscriptionDefinition",
+      "name": "greengrass.getSubscriptionDefinition",
+      "description": "Retrieves information about a subscription definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getSubscriptionDefinitionVersion",
+      "name": "greengrass.getSubscriptionDefinitionVersion",
+      "description": "Retrieves information about a subscription definition version."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.getThingRuntimeConfiguration",
+      "name": "greengrass.getThingRuntimeConfiguration",
+      "description": "Get the runtime configuration of a thing."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listBulkDeploymentDetailedReports",
+      "name": "greengrass.listBulkDeploymentDetailedReports",
+      "description": "Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listBulkDeployments",
+      "name": "greengrass.listBulkDeployments",
+      "description": "Returns a list of bulk deployments."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listConnectorDefinitions",
+      "name": "greengrass.listConnectorDefinitions",
+      "description": "Retrieves a list of connector definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listConnectorDefinitionVersions",
+      "name": "greengrass.listConnectorDefinitionVersions",
+      "description": "Lists the versions of a connector definition, which are containers for connectors. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listCoreDefinitions",
+      "name": "greengrass.listCoreDefinitions",
+      "description": "Retrieves a list of core definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listCoreDefinitionVersions",
+      "name": "greengrass.listCoreDefinitionVersions",
+      "description": "Lists the versions of a core definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listDeployments",
+      "name": "greengrass.listDeployments",
+      "description": "Returns a history of deployments for the group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listDeviceDefinitions",
+      "name": "greengrass.listDeviceDefinitions",
+      "description": "Retrieves a list of device definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listDeviceDefinitionVersions",
+      "name": "greengrass.listDeviceDefinitionVersions",
+      "description": "Lists the versions of a device definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listFunctionDefinitions",
+      "name": "greengrass.listFunctionDefinitions",
+      "description": "Retrieves a list of Lambda function definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listFunctionDefinitionVersions",
+      "name": "greengrass.listFunctionDefinitionVersions",
+      "description": "Lists the versions of a Lambda function definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listGroupCertificateAuthorities",
+      "name": "greengrass.listGroupCertificateAuthorities",
+      "description": "Retrieves the current CAs for a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listGroups",
+      "name": "greengrass.listGroups",
+      "description": "Retrieves a list of groups."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listGroupVersions",
+      "name": "greengrass.listGroupVersions",
+      "description": "Lists the versions of a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listLoggerDefinitions",
+      "name": "greengrass.listLoggerDefinitions",
+      "description": "Retrieves a list of logger definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listLoggerDefinitionVersions",
+      "name": "greengrass.listLoggerDefinitionVersions",
+      "description": "Lists the versions of a logger definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listResourceDefinitions",
+      "name": "greengrass.listResourceDefinitions",
+      "description": "Retrieves a list of resource definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listResourceDefinitionVersions",
+      "name": "greengrass.listResourceDefinitionVersions",
+      "description": "Lists the versions of a resource definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listSubscriptionDefinitions",
+      "name": "greengrass.listSubscriptionDefinitions",
+      "description": "Retrieves a list of subscription definitions."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.listSubscriptionDefinitionVersions",
+      "name": "greengrass.listSubscriptionDefinitionVersions",
+      "description": "Lists the versions of a subscription definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.resetDeployments",
+      "name": "greengrass.resetDeployments",
+      "description": "Resets a group's deployments."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.startBulkDeployment",
+      "name": "greengrass.startBulkDeployment",
+      "description": "Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.stopBulkDeployment",
+      "name": "greengrass.stopBulkDeployment",
+      "description": "Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateConnectivityInfo",
+      "name": "greengrass.updateConnectivityInfo",
+      "description": "Updates the connectivity information for the core. Any devices that belong to the group which has this core will receive this information in order to find the location of the core and connect to it."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateConnectorDefinition",
+      "name": "greengrass.updateConnectorDefinition",
+      "description": "Updates a connector definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateCoreDefinition",
+      "name": "greengrass.updateCoreDefinition",
+      "description": "Updates a core definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateDeviceDefinition",
+      "name": "greengrass.updateDeviceDefinition",
+      "description": "Updates a device definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateFunctionDefinition",
+      "name": "greengrass.updateFunctionDefinition",
+      "description": "Updates a Lambda function definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateGroup",
+      "name": "greengrass.updateGroup",
+      "description": "Updates a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateGroupCertificateConfiguration",
+      "name": "greengrass.updateGroupCertificateConfiguration",
+      "description": "Updates the Certificate expiry time for a group."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateLoggerDefinition",
+      "name": "greengrass.updateLoggerDefinition",
+      "description": "Updates a logger definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateResourceDefinition",
+      "name": "greengrass.updateResourceDefinition",
+      "description": "Updates a resource definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateSubscriptionDefinition",
+      "name": "greengrass.updateSubscriptionDefinition",
+      "description": "Updates a subscription definition."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.greengrass.updateThingRuntimeConfiguration",
+      "name": "greengrass.updateThingRuntimeConfiguration",
+      "description": "Updates the runtime configuration of a thing."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Retrieves a list of resource tags for a resource arn."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds tags to a Greengrass resource. Valid resources are 'Group', 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition', 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition', 'ResourceDefinition', and 'BulkDeployment'."
+    },
+    {
+      "id": "openapi_amazonaws_com_greengrass_greengrass.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Remove resource tags from a Greengrass Resource."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

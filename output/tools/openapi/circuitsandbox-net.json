@@ -1,0 +1,632 @@
+{
+  "fetchedAt": "2026-04-30T15:22:08.290Z",
+  "status": "ok",
+  "count": 125,
+  "tools": [
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addFavorite",
+      "name": "conversations.addFavorite",
+      "description": "Adds a conversation to the favorites. Favorites can be displayed in a separate side tab inside of the Circuit client to have a better overview of important conversations.\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addLabel",
+      "name": "conversations.addLabel",
+      "description": "Add a label to the list of user labels\nOauthScopes: WRITE_USER_PROFILE, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addModerators",
+      "name": "conversations.addModerators",
+      "description": "Adds a list of moderators to a conversation\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addParticipantCommunity",
+      "name": "conversations.addParticipantCommunity",
+      "description": "Adds one or more participants to the given community. This operation can only be performed by a user who is already a member of the community.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addParticipantGroup",
+      "name": "conversations.addParticipantGroup",
+      "description": "Adds one or more participants to the given group conversation. This operation can only be performed by a user who is already a member of the conversation.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addTextItem",
+      "name": "conversations.addTextItem",
+      "description": "Adds a message to the given conversation. This operation can be only performed on behalf of a user who is already a member of the conversation.\nOauthScopes: WRITE_CONVERSATIONS, CREATE_CONVERSATIONS_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.addTextItemWithParent",
+      "name": "conversations.addTextItemWithParent",
+      "description": "Adds a message to the existing item. The added message will be a child item of the message with the given itemId.\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.archiveConversation",
+      "name": "conversations.archiveConversation",
+      "description": "Archives a conversation by muting it\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.assignLabel",
+      "name": "conversations.assignLabel",
+      "description": "Adds a label to a conversation, you can search and organize your conversations based on these labels\nOauthScopes: WRITE_CONVERSATIONS, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.createCommunityConversation",
+      "name": "conversations.createCommunityConversation",
+      "description": "Creates a community. Communities are open conversations that anyone in a Circuit domain (tenant) can join without having to be added by another user.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.createDirectConversation",
+      "name": "conversations.createDirectConversation",
+      "description": "Creates a 1-to-1 conversation between the authenticated user and the user with the provided userId. In case there is already an existing 1-to-1 conversation between these users, the endpoint returns the existing conversation.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.createGroupConversation",
+      "name": "conversations.createGroupConversation",
+      "description": "Creates a group conversation between three or more users. The authenticated user is directly added to this conversation.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.deleteFavorite",
+      "name": "conversations.deleteFavorite",
+      "description": "Removes a conversation from favorites. Favorites can be displayed in a separate side tab inside of the Circuit client to have a better overview of important conversations.\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.deleteTextItem",
+      "name": "conversations.deleteTextItem",
+      "description": "Marks a message in the given conversation as deleted. Deleted messages are still part of the conversation, but their content is no more visible. This operation can only be performed on behalf of the message's creator.\nOauthScopes: WRITE_CONVERSATIONS, DELETE_CONVERSATIONS_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.flagItem",
+      "name": "conversations.flagItem",
+      "description": "Adds a flag to the given message in the given conversation.\nOauthScopes: WRITE_CONVERSATIONS, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getCommunityConversations",
+      "name": "conversations.getCommunityConversations",
+      "description": "Gets a list of communities. This endpoint can be used to explore the communities the authenticated user could join.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getConversationbyId",
+      "name": "conversations.getConversationbyId",
+      "description": "Gets a conversation based on the given ID.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getConversationItems",
+      "name": "conversations.getConversationItems",
+      "description": "Gets a list of conversation items.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getConversations",
+      "name": "conversations.getConversations",
+      "description": "Gets a list of conversations and communities the authenticated user participates in.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getConversationsById",
+      "name": "conversations.getConversationsById",
+      "description": "Gets conversation based on the given IDs.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getConversationsByLabel",
+      "name": "conversations.getConversationsByLabel",
+      "description": "Returns conversations with matching labels and paginated \nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getDirectConversation",
+      "name": "conversations.getDirectConversation",
+      "description": "Checks if a 1-to-1 conversation between the authenticated user and the user with the provided userId exists.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getFavoriteConversations",
+      "name": "conversations.getFavoriteConversations",
+      "description": "Gets the conversationIds which are marked as favorites.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getFlagItem",
+      "name": "conversations.getFlagItem",
+      "description": "Gets a list of all the flagged messages in the given conversation.\nOauthScopes: READ_CONVERSATIONS, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getFlagItemConv",
+      "name": "conversations.getFlagItemConv",
+      "description": "Gets a list of all the messages the authenticated user has flagged. This endpoint should be used carefully in case where the authenticated user has a lot of flagged messages.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getJoinDetails",
+      "name": "conversations.getJoinDetails",
+      "description": "Gets the conference details of the given conversation. Conference details include the URL, which is used to join the conference through a web or mobile application, as well as the dial-in phone numbers and conference PIN, which are used to join the conference by phone.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getJoinDetailsMultiple",
+      "name": "conversations.getJoinDetailsMultiple",
+      "description": "Gets the conference details of the given conversations. Conference details include the URL, which is used to join the conference through a web or mobile application, as well as the dial-in phone numbers and conference PIN, which are used to join the conference by phone.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getParticipantsByConvId",
+      "name": "conversations.getParticipantsByConvId",
+      "description": "Performs a search for participants. The max number of participants is configurable. If more participants are available a search pointer is returned for consecutive calls.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getPinnedConversations",
+      "name": "conversations.getPinnedConversations",
+      "description": "Returns pinned topics of a conversation\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.getSingleConversationtem",
+      "name": "conversations.getSingleConversationtem",
+      "description": "Returns a text item for a given item id\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.joinCommunityConversation",
+      "name": "conversations.joinCommunityConversation",
+      "description": "Adds the authenticated user to the given community (i.e., allows the user to join this community). Contrary to the operation of adding a new participant, this operation can only be performed by a user who is not yet a member of the community.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.likeItem",
+      "name": "conversations.likeItem",
+      "description": "Adds a \"like\" to the given message in the given conversation\nOauthScopes: WRITE_CONVERSATIONS, UPDATE_CONVERSATION_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.moderateConversation",
+      "name": "conversations.moderateConversation",
+      "description": "Set a conversation in moderatd mode. Moderators can be added and removed\nOauthScopes: WRITE_CONVERSATIONS, MODERATE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.pinAConversation",
+      "name": "conversations.pinAConversation",
+      "description": "Pins a topic of a conversation\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.removeLabel",
+      "name": "conversations.removeLabel",
+      "description": "Remove a label from the list of user labels\nOauthScopes: WRITE_USER_PROFILE, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.removeModerators",
+      "name": "conversations.removeModerators",
+      "description": "Removes a list of moderators from a conversation\nOauthScopes: WRITE_CONVERSATIONS, MODERATE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.removeParticipantCommunity",
+      "name": "conversations.removeParticipantCommunity",
+      "description": "Removes one or more participants from the given community. The last participant of a community cannot be removed. This operation can only be performed by a user who is already a member of the community.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.removeParticipantGroup",
+      "name": "conversations.removeParticipantGroup",
+      "description": "Removes one or more participants from the given group conversation. The last participant of a group conversation cannot be removed. This operation can only be performed on behalf of a user who is already a member of the conversation.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.resolveInvitationToken",
+      "name": "conversations.resolveInvitationToken",
+      "description": "Resolves an invite token to a conversation\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.searchConversations",
+      "name": "conversations.searchConversations",
+      "description": "Performs a search for conversation content. A maximum of 100 conversations is returned. If you hit this limit you should refine the search term.\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.unassignLabel",
+      "name": "conversations.unassignLabel",
+      "description": "Removes a label from a conversation, you can search and organize your conversations based on these labels\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.undoArchiveConversation",
+      "name": "conversations.undoArchiveConversation",
+      "description": "The conversation will no longer be archived but active again\nOauthScopes: WRITE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.unFlagItem",
+      "name": "conversations.unFlagItem",
+      "description": "Removes the flag from a given message that is posted to the given conversation.\nOauthScopes: WRITE_CONVERSATIONS, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.unlikeItem",
+      "name": "conversations.unlikeItem",
+      "description": "Removes a \"like\" from the given message in the given conversation\nOauthScopes: WRITE_CONVERSATIONS, UPDATE_CONVERSATION_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.unmoderateConversation",
+      "name": "conversations.unmoderateConversation",
+      "description": "Set a conversation to unmoderatd mode\nOauthScopes: WRITE_CONVERSATIONS, MODERATE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.unPinAConversation",
+      "name": "conversations.unPinAConversation",
+      "description": "Unpins a topic of a conversation\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.updateConversationCommunity",
+      "name": "conversations.updateConversationCommunity",
+      "description": "Updates the information of the given community.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.updateConversationGroup",
+      "name": "conversations.updateConversationGroup",
+      "description": "Updates the information of the given group conversation.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.updateProfile",
+      "name": "conversations.updateProfile",
+      "description": "Updates the user profile of the authenticated user\nOauthScopes: WRITE_USER_PROFILE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.conversations.updateTextItem",
+      "name": "conversations.updateTextItem",
+      "description": "Updates the content or subject of the existing message. Only the creator of the message is allowed to perform this operation.\nOauthScopes: WRITE_CONVERSATIONS, UPDATE_CONVERSATION_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.incomingWebhooks.createIncomingWebhook",
+      "name": "incomingWebhooks.createIncomingWebhook",
+      "description": "Create a new webhook. Conversation must exist and creater has to be participant.\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.incomingWebhooks.deleteIncomingWebhook",
+      "name": "incomingWebhooks.deleteIncomingWebhook",
+      "description": "Delete a new webhook. Webhook must exist\nOauthScopes: WRITE_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.incomingWebhooks.getIncomingWebhookByUser",
+      "name": "incomingWebhooks.getIncomingWebhookByUser",
+      "description": "Get all webhooks of a special user.\nOauthScopes: READ_CONVERSATIONS, MANAGE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.incomingWebhooks.postWebhookAsSlackMessage",
+      "name": "incomingWebhooks.postWebhookAsSlackMessage",
+      "description": "Post text items to conversations via slack apps."
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.addPresenceWebHook",
+      "name": "outgoingWebhooks.addPresenceWebHook",
+      "description": "Registers a webHook that has a presence filter with the given URL and userIds. There is a maximum number of userIds allowed\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.addWebHook",
+      "name": "outgoingWebhooks.addWebHook",
+      "description": "Registers the webHook with the given filter and callback URL.\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.getWebHook",
+      "name": "outgoingWebhooks.getWebHook",
+      "description": "Gets the list of webHooks registered for this user or API.\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.getWebHookById",
+      "name": "outgoingWebhooks.getWebHookById",
+      "description": "Gets the registered webHook with the given ID.\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.removeWebHook",
+      "name": "outgoingWebhooks.removeWebHook",
+      "description": "Unregisters the webHook with the given ID.\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.removeWebHooks",
+      "name": "outgoingWebhooks.removeWebHooks",
+      "description": "Unregisters all webHooks of the authenticated user\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.updatePresenceWebHook",
+      "name": "outgoingWebhooks.updatePresenceWebHook",
+      "description": "Updates a registration of a webHook that has a presence filter. The update can be performed either on the URL and/or the userIds. The new userIds, if any, will override any existing userIds.\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.outgoingWebhooks.updateWebHook",
+      "name": "outgoingWebhooks.updateWebHook",
+      "description": "Updates a webHook registration with the given filter and callback URL.\nOauthScopes: READ_CONVERSATIONS, READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.rtc.getActiveSessions",
+      "name": "rtc.getActiveSessions",
+      "description": "Gets a list of active RTCsessions\nOauthScopes: CALLS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.addParticipantsToSpace",
+      "name": "spaces.addParticipantsToSpace",
+      "description": "Add a participant to a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.addRecentSpaceSearch",
+      "name": "spaces.addRecentSpaceSearch",
+      "description": "Add recent search of a client to search controller.\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.assignLabels",
+      "name": "spaces.assignLabels",
+      "description": "Assign labels to space\nOauthScopes: WRITE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.cancelSpaceSearch",
+      "name": "spaces.cancelSpaceSearch",
+      "description": "Cancels a space search of a client.\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.createReply",
+      "name": "spaces.createReply",
+      "description": "creates a reply to a topic\nOauthScopes: WRITE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.createSpace",
+      "name": "spaces.createSpace",
+      "description": "Create a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, CREATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.createSpaceTopic",
+      "name": "spaces.createSpaceTopic",
+      "description": "creates a new space topic\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, CREATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.deleteSpace",
+      "name": "spaces.deleteSpace",
+      "description": "Delete a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, DELETE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.deleteSpaceItem",
+      "name": "spaces.deleteSpaceItem",
+      "description": "deletes a space item\nOauthScopes: WRITE_SPACE, DELETE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.denySpaceAcces",
+      "name": "spaces.denySpaceAcces",
+      "description": "Deny access for a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.existsSpaceName",
+      "name": "spaces.existsSpaceName",
+      "description": "Find out if a space name already exists for non-secret spaces.\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.flagSpaceItem",
+      "name": "spaces.flagSpaceItem",
+      "description": "flag a space item\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getDirectory",
+      "name": "spaces.getDirectory",
+      "description": "Get the directory by a search query in ordered way\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getFlaggedItems",
+      "name": "spaces.getFlaggedItems",
+      "description": "Get flagged items\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getLikes",
+      "name": "spaces.getLikes",
+      "description": "Get the likes of an item\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getParticipantsImportData",
+      "name": "spaces.getParticipantsImportData",
+      "description": "missing documentation\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getPendingParticipants",
+      "name": "spaces.getPendingParticipants",
+      "description": "Get the pending participants of a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getPinnedTopics",
+      "name": "spaces.getPinnedTopics",
+      "description": "Retrieve pinned topics of a space\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getRecentSearches",
+      "name": "spaces.getRecentSearches",
+      "description": "Retrieve recent space searches for a user.\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getSpaceParticipants",
+      "name": "spaces.getSpaceParticipants",
+      "description": "Get the participants of a space\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getSpaceReplies",
+      "name": "spaces.getSpaceReplies",
+      "description": "Gets a number of Space replies\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getSpaces",
+      "name": "spaces.getSpaces",
+      "description": "Get the spaces\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getSpacesByIds",
+      "name": "spaces.getSpacesByIds",
+      "description": "Get the spaces by their ids\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.getSpaceTopics",
+      "name": "spaces.getSpaceTopics",
+      "description": "Gets a number of Space topics\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.grantSpaceAcces",
+      "name": "spaces.grantSpaceAcces",
+      "description": "grant access for a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.joinSpace",
+      "name": "spaces.joinSpace",
+      "description": "Join a space\nOauthScopes: WRITE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.leaveSpace",
+      "name": "spaces.leaveSpace",
+      "description": "Leave a space\nOauthScopes: WRITE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.likeSpaceItem",
+      "name": "spaces.likeSpaceItem",
+      "description": "Like a space item\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.pinTopic",
+      "name": "spaces.pinTopic",
+      "description": "Pin a topic\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.requestSpaceAcces",
+      "name": "spaces.requestSpaceAcces",
+      "description": "request access for a space\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.searchParticipantsToAdd",
+      "name": "spaces.searchParticipantsToAdd",
+      "description": "Finds participants to add to a space \nOauthScopes: WRITE_SPACE, MANAGE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.searchSpaceParticipants",
+      "name": "spaces.searchSpaceParticipants",
+      "description": "Get the participants of a space\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.startBasicSpacesSearch",
+      "name": "spaces.startBasicSpacesSearch",
+      "description": "starts a basic search in spaces\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.startDetailedSpaceSearch",
+      "name": "spaces.startDetailedSpaceSearch",
+      "description": "starts a detailed search in a space\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.unassignLabels",
+      "name": "spaces.unassignLabels",
+      "description": "Unassign labels from a space\nOauthScopes: WRITE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.unflagSpaceItem",
+      "name": "spaces.unflagSpaceItem",
+      "description": "Unflag a space item\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.unlikeSpaceItem",
+      "name": "spaces.unlikeSpaceItem",
+      "description": "Unlike a space item\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.unpinTopic",
+      "name": "spaces.unpinTopic",
+      "description": "Unpin a topic\nOauthScopes: WRITE_SPACE, MANAGE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateParticipantInSpace",
+      "name": "spaces.updateParticipantInSpace",
+      "description": "Update participant in space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateReadTimestamp",
+      "name": "spaces.updateReadTimestamp",
+      "description": "Update read timestamp\nOauthScopes: READ_SPACE, WRITE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateSpace",
+      "name": "spaces.updateSpace",
+      "description": "Update a space\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateSpaceReply",
+      "name": "spaces.updateSpaceReply",
+      "description": "Updates a space reply\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateSpaceTopic",
+      "name": "spaces.updateSpaceTopic",
+      "description": "Updates a topic\nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.updateTopicTags",
+      "name": "spaces.updateTopicTags",
+      "description": "Update the tags of a topic  \nOauthScopes: WRITE_SPACE, UPDATE_SPACE_CONTENT"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.v2GetTopicWithReplies",
+      "name": "spaces.v2GetTopicWithReplies",
+      "description": "Gets a number of Space replies with a matching topic\nOauthScopes: READ_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.v2RemoveParticipantsFromSpace",
+      "name": "spaces.v2RemoveParticipantsFromSpace",
+      "description": "removes Participants from a space\nOauthScopes: WRITE_SPACE, MANAGE_SPACE, ORGANIZE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.spaces.v2UpdateWelcomeBoxContent",
+      "name": "spaces.v2UpdateWelcomeBoxContent",
+      "description": "Update content of the welcome box of a space\nOauthScopes: MANAGE_SPACE, WRITE_SPACE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.telephony.getJournalEntries",
+      "name": "telephony.getJournalEntries",
+      "description": "Get telephony journal\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.telephony.v2GetDeviceInfos",
+      "name": "telephony.v2GetDeviceInfos",
+      "description": "Get the device infos of the requesting user\nOauthScopes: READ_USER_PROFILE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.telephony.v2GetTelephonyConversationId",
+      "name": "telephony.v2GetTelephonyConversationId",
+      "description": "Get telephony conversation id for requesting client\nOauthScopes: READ_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getLabel",
+      "name": "users.getLabel",
+      "description": "Returns all labels of the user that were defined either explicit or implicit via assignment to conversations.\nOauthScopes: READ_USER_PROFILE, ORGANIZE_CONVERSATIONS"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getPresence",
+      "name": "users.getPresence",
+      "description": "Gets the presence status of the users whose IDs or email addresses are given.\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getProfile",
+      "name": "users.getProfile",
+      "description": "Gets the authenticated user's profile information.\nOauthScopes: READ_USER_PROFILE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getSupportInfo",
+      "name": "users.getSupportInfo",
+      "description": "Gets the support information for the tenant of the requesting user\nOauthScopes: READ_USER_PROFILE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getUserByEmailAddress",
+      "name": "users.getUserByEmailAddress",
+      "description": "Get user by first or secondary email address\nOauthScopes: READ_USER_PROFILE"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getUserById",
+      "name": "users.getUserById",
+      "description": "Gets the profile information of the user with the given ID.\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.getUserPresence",
+      "name": "users.getUserPresence",
+      "description": "Gets the presence status of the users whose ID or email address is given.\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.searchUser",
+      "name": "users.searchUser",
+      "description": "Search for users based on an email address or username\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.searchUsersList",
+      "name": "users.searchUsersList",
+      "description": "Search multiple users given by id or email address.\nOauthScopes: READ_USER"
+    },
+    {
+      "id": "openapi_circuitsandbox_net.users.setUserPresence",
+      "name": "users.setUserPresence",
+      "description": "Updates the presence status of the authenticated user.\nOauthScopes: WRITE_USER_PROFILE, MANAGE_PRESENCE"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

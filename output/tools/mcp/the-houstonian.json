@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:21:58.836Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_the_houstonian.get_lead_rates",
+      "name": "get_lead_rates",
+      "description": "Show a 2-month rate calendar for a hotel property. Invoke when a user asks about pricing, rates, availability calendar, or wants to pick travel dates. Automatically fetches the next 2 months of nightly rates. The user will select check-in and check-out dates interactively from the calendar widget. Do NOT pass date parameters — dates are computed automatically."
+    },
+    {
+      "id": "mcp_the_houstonian.get_room_rates",
+      "name": "get_room_rates",
+      "description": "This tool must be invoked whenever a user requests specific pricing, availability, or cost breakdowns for defined travel dates and occupancy. Do not provide rate information without calling this tool. It returns live room-level availability, date-specific pricing, rate plans, and full cost breakdowns for the selected property within the specified stay period. Each invocation is a complete, independent pricing event and replaces prior rate outputs. If dates, occupancy, or property selection changes, this tool must be invoked again. Its purpose is to present authoritative CRS-backed pricing and enable confident booking decisions within the conversational interface."
+    },
+    {
+      "id": "mcp_the_houstonian.get_basic_hotel_details",
+      "name": "get_basic_hotel_details",
+      "description": "This tool must be invoked immediately after a specific property has been identified or selected. It establishes the authoritative property profile and serves as the foundation for all subsequent property-level interactions. Do not provide hotel descriptions, check-in times, contact details, or imagery from memory. Always retrieve structured data through this tool. It returns the official property name, full address, contact information, check-in and check-out times, brand-approved description, accepted payment methods, active alerts, and curated images. Each invocation is atomic and replaces any previously displayed property summary. If the user switches to a different property, this tool must be called again before proceeding. Its primary function is to ensure brand accuracy, operational alignment, and compliance before amenities, room types, or pricing are discussed."
+    },
+    {
+      "id": "mcp_the_houstonian.get_hotel_amenities",
+      "name": "get_hotel_amenities",
+      "description": "This tool must be invoked whenever a user requests information related to amenities, experiences, dining, recreation, spa services, meetings, or property features. Do not summarize or assume amenities without calling this tool. It retrieves the complete structured amenity inventory for the selected property, including room amenities, pools, recreation facilities, fitness centers, spa offerings, dining outlets, bars and lounges, entertainment, parking, transportation options, nearby attractions, and meetings or event capabilities. It may only be used after the property has been initialized through get_basic_hotel_details. Each invocation is independent and replaces prior amenity output. If the user changes properties, this tool must be called again. Strategically, it supports experience-led selling and strengthens perceived value before rate presentation."
+    },
+    {
+      "id": "mcp_the_houstonian.get_hotel_rooms",
+      "name": "get_hotel_rooms",
+      "description": "This tool must be invoked whenever a user asks about room types, bedding configurations, square footage, guest limits, views, or room comparisons. Never describe room categories from memory. It returns the complete room inventory for the selected property, including room names, category codes, descriptions, square footage, bedding configurations, maximum occupancy, view types, in-room features, and associated images. It may only be called after get_basic_hotel_details has established the active property context. Each invocation is atomic and generates a new room inventory display. If the property changes, this tool must be invoked again. Its purpose is to enable structured room-level merchandising and informed guest comparison prior to rate retrieval."
+    },
+    {
+      "id": "mcp_the_houstonian.get_hotel_policies",
+      "name": "get_hotel_policies",
+      "description": "This tool must be invoked whenever a user asks about cancellation terms, deposits, guarantees, pet rules, resort fees, taxes, or any stay-related conditions. Do not paraphrase policy language without retrieving it from this tool. It returns the complete and current policy framework for the selected property, including cancellation rules, no-show policies, deposit requirements, guarantee conditions, pet policies, family and group policies, tax structures, resort fees, extended stay rules, and ancillary charges such as rollaway beds, cribs, and extra person fees. It may only be used after the property has been initialized. Each invocation is independent and replaces prior policy output. Its role is to reduce booking friction, improve transparency, and protect operational compliance."
+    }
+  ]
+}

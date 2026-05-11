@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:26:40.163Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_openai_com.openAi.cancelFineTune",
+      "name": "openAi.cancelFineTune",
+      "description": "Immediately cancel a fine-tune job.\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createAnswer",
+      "name": "openAi.createAnswer",
+      "description": "Answers the specified question using the provided documents and examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createChatCompletion",
+      "name": "openAi.createChatCompletion",
+      "description": "Creates a completion for the chat message"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createClassification",
+      "name": "openAi.createClassification",
+      "description": "Classifies the specified `query` using provided examples.\n\nThe endpoint first [searches](/docs/api-reference/searches) over the labeled examples\nto select the ones most relevant for the particular query. Then, the relevant examples\nare combined with the query to construct a prompt to produce the final label via the\n[completions](/docs/api-reference/completions) endpoint.\n\nLabeled examples can be provided via an uploaded `file`, or explicitly listed in the\nrequest using the `examples` parameter for quick tests and small scale use cases.\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createCompletion",
+      "name": "openAi.createCompletion",
+      "description": "Creates a completion for the provided prompt and parameters"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createEdit",
+      "name": "openAi.createEdit",
+      "description": "Creates a new edit for the provided input, instruction, and parameters."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createEmbedding",
+      "name": "openAi.createEmbedding",
+      "description": "Creates an embedding vector representing the input text."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createFile",
+      "name": "openAi.createFile",
+      "description": "Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createFineTune",
+      "name": "openAi.createFineTune",
+      "description": "Creates a job that fine-tunes a specified model from a given dataset.\n\nResponse includes details of the enqueued job including job status and the name of the fine-tuned models once complete.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createImage",
+      "name": "openAi.createImage",
+      "description": "Creates an image given a prompt."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createImageEdit",
+      "name": "openAi.createImageEdit",
+      "description": "Creates an edited or extended image given an original image and a prompt."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createImageVariation",
+      "name": "openAi.createImageVariation",
+      "description": "Creates a variation of a given image."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createModeration",
+      "name": "openAi.createModeration",
+      "description": "Classifies if text violates OpenAI's Content Policy"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createSearch",
+      "name": "openAi.createSearch",
+      "description": "The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.\n\nTo go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.\n\nThe similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.createTranscription",
+      "name": "openAi.createTranscription",
+      "description": "Transcribes audio into the input language."
+    },
+    {
+      "id": "openapi_openai_com.openAi.createTranslation",
+      "name": "openAi.createTranslation",
+      "description": "Translates audio into into English."
+    },
+    {
+      "id": "openapi_openai_com.openAi.deleteFile",
+      "name": "openAi.deleteFile",
+      "description": "Delete a file."
+    },
+    {
+      "id": "openapi_openai_com.openAi.deleteModel",
+      "name": "openAi.deleteModel",
+      "description": "Delete a fine-tuned model. You must have the Owner role in your organization."
+    },
+    {
+      "id": "openapi_openai_com.openAi.downloadFile",
+      "name": "openAi.downloadFile",
+      "description": "Returns the contents of the specified file"
+    },
+    {
+      "id": "openapi_openai_com.openAi.listEngines",
+      "name": "openAi.listEngines",
+      "description": "Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability."
+    },
+    {
+      "id": "openapi_openai_com.openAi.listFiles",
+      "name": "openAi.listFiles",
+      "description": "Returns a list of files that belong to the user's organization."
+    },
+    {
+      "id": "openapi_openai_com.openAi.listFineTuneEvents",
+      "name": "openAi.listFineTuneEvents",
+      "description": "Get fine-grained status updates for a fine-tune job.\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.listFineTunes",
+      "name": "openAi.listFineTunes",
+      "description": "List your organization's fine-tuning jobs\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.listModels",
+      "name": "openAi.listModels",
+      "description": "Lists the currently available models, and provides basic information about each one such as the owner and availability."
+    },
+    {
+      "id": "openapi_openai_com.openAi.retrieveEngine",
+      "name": "openAi.retrieveEngine",
+      "description": "Retrieves a model instance, providing basic information about it such as the owner and availability."
+    },
+    {
+      "id": "openapi_openai_com.openAi.retrieveFile",
+      "name": "openAi.retrieveFile",
+      "description": "Returns information about a specific file."
+    },
+    {
+      "id": "openapi_openai_com.openAi.retrieveFineTune",
+      "name": "openAi.retrieveFineTune",
+      "description": "Gets info about the fine-tune job.\n\n[Learn more about Fine-tuning](/docs/guides/fine-tuning)\n"
+    },
+    {
+      "id": "openapi_openai_com.openAi.retrieveModel",
+      "name": "openAi.retrieveModel",
+      "description": "Retrieves a model instance, providing basic information about the model such as the owner and permissioning."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

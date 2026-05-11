@@ -1,0 +1,1322 @@
+{
+  "fetchedAt": "2026-04-30T15:22:44.018Z",
+  "status": "ok",
+  "count": 263,
+  "tools": [
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesActivateCreate",
+      "name": "accountRoles.accountRolesActivateCreate",
+      "description": "POST /account_roles/{id}/activate/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesCreate",
+      "name": "accountRoles.accountRolesCreate",
+      "description": "POST /account_roles/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesDestroy",
+      "name": "accountRoles.accountRolesDestroy",
+      "description": "DELETE /account_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesList",
+      "name": "accountRoles.accountRolesList",
+      "description": "GET /account_roles/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesNotifyCreate",
+      "name": "accountRoles.accountRolesNotifyCreate",
+      "description": "POST /account_roles/{id}/notify/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesPartialUpdate",
+      "name": "accountRoles.accountRolesPartialUpdate",
+      "description": "PATCH /account_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesRetrieve",
+      "name": "accountRoles.accountRolesRetrieve",
+      "description": "GET /account_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesTokenRetrieve",
+      "name": "accountRoles.accountRolesTokenRetrieve",
+      "description": "GET /account_roles/{id}/token/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accountRoles.accountRolesUpdate",
+      "name": "accountRoles.accountRolesUpdate",
+      "description": "PUT /account_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsBraintreeCustomerRetrieve",
+      "name": "accounts.accountsBraintreeCustomerRetrieve",
+      "description": "GET /accounts/{id}/braintree_customer/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsChangeOwnerCreate",
+      "name": "accounts.accountsChangeOwnerCreate",
+      "description": "POST /accounts/{id}/change_owner/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsList",
+      "name": "accounts.accountsList",
+      "description": "GET /accounts/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsManagersCreate",
+      "name": "accounts.accountsManagersCreate",
+      "description": "POST /accounts/{id}/managers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsManagersDestroy",
+      "name": "accounts.accountsManagersDestroy",
+      "description": "DELETE /accounts/{id}/managers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsManagersRetrieve",
+      "name": "accounts.accountsManagersRetrieve",
+      "description": "GET /accounts/{id}/managers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsPartialUpdate",
+      "name": "accounts.accountsPartialUpdate",
+      "description": "PATCH /accounts/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsRetrieve",
+      "name": "accounts.accountsRetrieve",
+      "description": "GET /accounts/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeAttachPaymentMethodUpdate",
+      "name": "accounts.accountsStripeAttachPaymentMethodUpdate",
+      "description": "Action to (re)set the account stripe customer and payment method to new values.\nBy default the attached method will also be set as default.\nIf this is not desired, you can send\n\n    'set_default': False"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeCreateSetupIntentCreate",
+      "name": "accounts.accountsStripeCreateSetupIntentCreate",
+      "description": "Action to start a new setup intent."
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeCreateSetupIntentUpdate",
+      "name": "accounts.accountsStripeCreateSetupIntentUpdate",
+      "description": "Action to start a new setup intent."
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeDetachPaymentMethodUpdate",
+      "name": "accounts.accountsStripeDetachPaymentMethodUpdate",
+      "description": "Detached payment method from the customer.\nThe payment method itself will remain somewhere in stripe, but as its no longer linked to the customer,\nit might as well be deleted for us"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeGetPaymentMethodRetrieve",
+      "name": "accounts.accountsStripeGetPaymentMethodRetrieve",
+      "description": "Fetch a single payment method from stripe.\nThis will also return non-attached payment methods (from setup intents for example)"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeGetSetupAttemptRetrieve",
+      "name": "accounts.accountsStripeGetSetupAttemptRetrieve",
+      "description": "Fetch a single setup intent"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeGetSetupIntentRetrieve",
+      "name": "accounts.accountsStripeGetSetupIntentRetrieve",
+      "description": "Fetch a single setup intent"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripePaymentMethodsRetrieve",
+      "name": "accounts.accountsStripePaymentMethodsRetrieve",
+      "description": "Fetch all customer payment methods.\nThis includes all attached payment methods, default method_id"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeSetDefaultPaymentMethodUpdate",
+      "name": "accounts.accountsStripeSetDefaultPaymentMethodUpdate",
+      "description": "Action to set a payment method to default."
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsStripeSetupIntentsRetrieve",
+      "name": "accounts.accountsStripeSetupIntentsRetrieve",
+      "description": "Fetch existing setup intents"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsUpdate",
+      "name": "accounts.accountsUpdate",
+      "description": "PUT /accounts/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsWorkersCreate",
+      "name": "accounts.accountsWorkersCreate",
+      "description": "POST /accounts/{id}/workers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsWorkersDestroy",
+      "name": "accounts.accountsWorkersDestroy",
+      "description": "DELETE /accounts/{id}/workers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.accounts.accountsWorkersRetrieve",
+      "name": "accounts.accountsWorkersRetrieve",
+      "description": "GET /accounts/{id}/workers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.addons.addonsList",
+      "name": "addons.addonsList",
+      "description": "GET /addons/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.addons.addonsRetrieve",
+      "name": "addons.addonsRetrieve",
+      "description": "GET /addons/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.authenticate.authenticateCreate",
+      "name": "authenticate.authenticateCreate",
+      "description": "POST /authenticate/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersClientTokenRetrieve",
+      "name": "billing.billingCustomersClientTokenRetrieve",
+      "description": "GET /billing/customers/{id}/client_token/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersCreate",
+      "name": "billing.billingCustomersCreate",
+      "description": "POST /billing/customers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersList",
+      "name": "billing.billingCustomersList",
+      "description": "GET /billing/customers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersPartialUpdate",
+      "name": "billing.billingCustomersPartialUpdate",
+      "description": "PATCH /billing/customers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersRetrieve",
+      "name": "billing.billingCustomersRetrieve",
+      "description": "GET /billing/customers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingCustomersUpdate",
+      "name": "billing.billingCustomersUpdate",
+      "description": "PUT /billing/customers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingInvoicesList",
+      "name": "billing.billingInvoicesList",
+      "description": "GET /billing/invoices/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingInvoicesMarkAsPaidCreate",
+      "name": "billing.billingInvoicesMarkAsPaidCreate",
+      "description": "POST /billing/invoices/{id}/mark_as_paid/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingInvoicesPartialUpdate",
+      "name": "billing.billingInvoicesPartialUpdate",
+      "description": "PATCH /billing/invoices/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingInvoicesRetrieve",
+      "name": "billing.billingInvoicesRetrieve",
+      "description": "GET /billing/invoices/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingInvoicesUpdate",
+      "name": "billing.billingInvoicesUpdate",
+      "description": "PUT /billing/invoices/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingStripePaymentsList",
+      "name": "billing.billingStripePaymentsList",
+      "description": "GET /billing/stripe_payments/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingStripePaymentsRetrieve",
+      "name": "billing.billingStripePaymentsRetrieve",
+      "description": "GET /billing/stripe_payments/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingTransactionsList",
+      "name": "billing.billingTransactionsList",
+      "description": "GET /billing/transactions/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.billing.billingTransactionsRetrieve",
+      "name": "billing.billingTransactionsRetrieve",
+      "description": "GET /billing/transactions/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesCreate",
+      "name": "clientRoles.clientRolesCreate",
+      "description": "POST /client_roles/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesList",
+      "name": "clientRoles.clientRolesList",
+      "description": "GET /client_roles/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesNotifyCreate",
+      "name": "clientRoles.clientRolesNotifyCreate",
+      "description": "POST /client_roles/{id}/notify/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesPartialUpdate",
+      "name": "clientRoles.clientRolesPartialUpdate",
+      "description": "PATCH /client_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesRetrieve",
+      "name": "clientRoles.clientRolesRetrieve",
+      "description": "GET /client_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clientRoles.clientRolesUpdate",
+      "name": "clientRoles.clientRolesUpdate",
+      "description": "PUT /client_roles/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clients.clientsCreate",
+      "name": "clients.clientsCreate",
+      "description": "POST /clients/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clients.clientsList",
+      "name": "clients.clientsList",
+      "description": "GET /clients/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clients.clientsPartialUpdate",
+      "name": "clients.clientsPartialUpdate",
+      "description": "PATCH /clients/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clients.clientsRetrieve",
+      "name": "clients.clientsRetrieve",
+      "description": "GET /clients/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.clients.clientsUpdate",
+      "name": "clients.clientsUpdate",
+      "description": "PUT /clients/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.configurations.configurationsList",
+      "name": "configurations.configurationsList",
+      "description": "GET /configurations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddresses.contactAddressesCreate",
+      "name": "contactAddresses.contactAddressesCreate",
+      "description": "POST /contact_addresses/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddresses.contactAddressesList",
+      "name": "contactAddresses.contactAddressesList",
+      "description": "GET /contact_addresses/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddresses.contactAddressesPartialUpdate",
+      "name": "contactAddresses.contactAddressesPartialUpdate",
+      "description": "PATCH /contact_addresses/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddresses.contactAddressesRetrieve",
+      "name": "contactAddresses.contactAddressesRetrieve",
+      "description": "GET /contact_addresses/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddresses.contactAddressesUpdate",
+      "name": "contactAddresses.contactAddressesUpdate",
+      "description": "PUT /contact_addresses/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddressExports.contactAddressExportsList",
+      "name": "contactAddressExports.contactAddressExportsList",
+      "description": "This view has multiple renderer classes available: `json` and `xlsx`. In order to export the data as an excel file, just set query argument `format` to `xlsx`.When downloading `xlsx` format, use Accept header `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; version=...`\n\nThe user can request what fields and in what order will be rendered using query argument `fields`. This is a comma separated list of field names used in the API.\n\nWhen exporting to **excel**, the column names may be changed based on pre-defined field names and width mapping.\n\nAvailable since version 2.2.1"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddressImport.contactAddressImportCreate",
+      "name": "contactAddressImport.contactAddressImportCreate",
+      "description": "POST /contact_address_import/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddressImport.contactAddressImportList",
+      "name": "contactAddressImport.contactAddressImportList",
+      "description": "GET /contact_address_import/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.contactAddressImport.contactAddressImportRetrieve",
+      "name": "contactAddressImport.contactAddressImportRetrieve",
+      "description": "GET /contact_address_import/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.devices.devicesCreate",
+      "name": "devices.devicesCreate",
+      "description": "POST /devices/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.devices.devicesList",
+      "name": "devices.devicesList",
+      "description": "GET /devices/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.devices.devicesRetrieve",
+      "name": "devices.devicesRetrieve",
+      "description": "GET /devices/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.docs.docsSchemaRetrieve",
+      "name": "docs.docsSchemaRetrieve",
+      "description": "OpenApi3 schema for this API. Format can be selected via content negotiation.\n\n- YAML: application/vnd.oai.openapi\n- JSON: application/vnd.oai.openapi+json"
+    },
+    {
+      "id": "openapi_gsmtasks_com.documents.documentsBatchDeleteCreate",
+      "name": "documents.documentsBatchDeleteCreate",
+      "description": "Available from version 2.4.2"
+    },
+    {
+      "id": "openapi_gsmtasks_com.documents.documentsCreate",
+      "name": "documents.documentsCreate",
+      "description": "POST /documents/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.documents.documentsDestroy",
+      "name": "documents.documentsDestroy",
+      "description": "DELETE /documents/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.documents.documentsList",
+      "name": "documents.documentsList",
+      "description": "GET /documents/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.documents.documentsRetrieve",
+      "name": "documents.documentsRetrieve",
+      "description": "GET /documents/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsCreate",
+      "name": "emails.emailsCreate",
+      "description": "POST /emails/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsDestroy",
+      "name": "emails.emailsDestroy",
+      "description": "DELETE /emails/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsList",
+      "name": "emails.emailsList",
+      "description": "GET /emails/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsPartialUpdate",
+      "name": "emails.emailsPartialUpdate",
+      "description": "PATCH /emails/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsResendCreate",
+      "name": "emails.emailsResendCreate",
+      "description": "POST /emails/{id}/resend/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsRetrieve",
+      "name": "emails.emailsRetrieve",
+      "description": "GET /emails/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.emails.emailsUpdate",
+      "name": "emails.emailsUpdate",
+      "description": "PUT /emails/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsCreate",
+      "name": "exports.exportsCreate",
+      "description": "POST /exports/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsDestroy",
+      "name": "exports.exportsDestroy",
+      "description": "DELETE /exports/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsList",
+      "name": "exports.exportsList",
+      "description": "GET /exports/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsPartialUpdate",
+      "name": "exports.exportsPartialUpdate",
+      "description": "PATCH /exports/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsRetrieve",
+      "name": "exports.exportsRetrieve",
+      "description": "GET /exports/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.exports.exportsUpdate",
+      "name": "exports.exportsUpdate",
+      "description": "PUT /exports/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.fileUploads.fileUploadsCreate",
+      "name": "fileUploads.fileUploadsCreate",
+      "description": "POST /file_uploads/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.fileUploads.fileUploadsList",
+      "name": "fileUploads.fileUploadsList",
+      "description": "GET /file_uploads/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.fileUploads.fileUploadsRetrieve",
+      "name": "fileUploads.fileUploadsRetrieve",
+      "description": "GET /file_uploads/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesCreate",
+      "name": "formrules.formrulesCreate",
+      "description": "POST /formrules/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesDestroy",
+      "name": "formrules.formrulesDestroy",
+      "description": "DELETE /formrules/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesList",
+      "name": "formrules.formrulesList",
+      "description": "GET /formrules/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesPartialUpdate",
+      "name": "formrules.formrulesPartialUpdate",
+      "description": "PATCH /formrules/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesRetrieve",
+      "name": "formrules.formrulesRetrieve",
+      "description": "GET /formrules/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.formrules.formrulesUpdate",
+      "name": "formrules.formrulesUpdate",
+      "description": "PUT /formrules/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.integrations.integrationsCreate",
+      "name": "integrations.integrationsCreate",
+      "description": "POST /integrations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsCreate",
+      "name": "metafields.metafieldsCreate",
+      "description": "POST /metafields/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsDestroy",
+      "name": "metafields.metafieldsDestroy",
+      "description": "DELETE /metafields/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsList",
+      "name": "metafields.metafieldsList",
+      "description": "GET /metafields/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsPartialUpdate",
+      "name": "metafields.metafieldsPartialUpdate",
+      "description": "PATCH /metafields/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsRetrieve",
+      "name": "metafields.metafieldsRetrieve",
+      "description": "GET /metafields/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.metafields.metafieldsUpdate",
+      "name": "metafields.metafieldsUpdate",
+      "description": "PUT /metafields/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notifications.notificationsCreate",
+      "name": "notifications.notificationsCreate",
+      "description": "POST /notifications/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notifications.notificationsList",
+      "name": "notifications.notificationsList",
+      "description": "GET /notifications/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notifications.notificationsRetrieve",
+      "name": "notifications.notificationsRetrieve",
+      "description": "GET /notifications/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesCreate",
+      "name": "notificationTemplates.notificationTemplatesCreate",
+      "description": "POST /notification_templates/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesDestroy",
+      "name": "notificationTemplates.notificationTemplatesDestroy",
+      "description": "DELETE /notification_templates/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesList",
+      "name": "notificationTemplates.notificationTemplatesList",
+      "description": "GET /notification_templates/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesPartialUpdate",
+      "name": "notificationTemplates.notificationTemplatesPartialUpdate",
+      "description": "PATCH /notification_templates/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesRenderCreate",
+      "name": "notificationTemplates.notificationTemplatesRenderCreate",
+      "description": "POST /notification_templates/{id}/render/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesRetrieve",
+      "name": "notificationTemplates.notificationTemplatesRetrieve",
+      "description": "GET /notification_templates/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.notificationTemplates.notificationTemplatesUpdate",
+      "name": "notificationTemplates.notificationTemplatesUpdate",
+      "description": "PUT /notification_templates/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.orders.ordersCreate",
+      "name": "orders.ordersCreate",
+      "description": "POST /orders/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.orders.ordersList",
+      "name": "orders.ordersList",
+      "description": "GET /orders/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.orders.ordersPartialUpdate",
+      "name": "orders.ordersPartialUpdate",
+      "description": "PATCH /orders/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.orders.ordersRetrieve",
+      "name": "orders.ordersRetrieve",
+      "description": "GET /orders/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.orders.ordersUpdate",
+      "name": "orders.ordersUpdate",
+      "description": "PUT /orders/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.passwordChange.passwordChangeCreate",
+      "name": "passwordChange.passwordChangeCreate",
+      "description": "POST /password_change/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.passwordReset.passwordResetCreate",
+      "name": "passwordReset.passwordResetCreate",
+      "description": "POST /password_reset/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.passwordResetConfirm.passwordResetConfirmCreate",
+      "name": "passwordResetConfirm.passwordResetConfirmCreate",
+      "description": "POST /password_reset_confirm/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsCreate",
+      "name": "pushNotifications.pushNotificationsCreate",
+      "description": "POST /push_notifications/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsDestroy",
+      "name": "pushNotifications.pushNotificationsDestroy",
+      "description": "DELETE /push_notifications/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsList",
+      "name": "pushNotifications.pushNotificationsList",
+      "description": "GET /push_notifications/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsPartialUpdate",
+      "name": "pushNotifications.pushNotificationsPartialUpdate",
+      "description": "PATCH /push_notifications/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsResendCreate",
+      "name": "pushNotifications.pushNotificationsResendCreate",
+      "description": "POST /push_notifications/{id}/resend/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsRetrieve",
+      "name": "pushNotifications.pushNotificationsRetrieve",
+      "description": "GET /push_notifications/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.pushNotifications.pushNotificationsUpdate",
+      "name": "pushNotifications.pushNotificationsUpdate",
+      "description": "PUT /push_notifications/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.recurrences.recurrencesCreate",
+      "name": "recurrences.recurrencesCreate",
+      "description": "POST /recurrences/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.recurrences.recurrencesList",
+      "name": "recurrences.recurrencesList",
+      "description": "GET /recurrences/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.recurrences.recurrencesPartialUpdate",
+      "name": "recurrences.recurrencesPartialUpdate",
+      "description": "PATCH /recurrences/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.recurrences.recurrencesRetrieve",
+      "name": "recurrences.recurrencesRetrieve",
+      "description": "GET /recurrences/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.recurrences.recurrencesUpdate",
+      "name": "recurrences.recurrencesUpdate",
+      "description": "PUT /recurrences/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.register.registerCreate",
+      "name": "register.registerCreate",
+      "description": "POST /register/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.reports.reportsTasksStatesCountRetrieve",
+      "name": "reports.reportsTasksStatesCountRetrieve",
+      "description": "GET /reports/tasks/states_count/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.reviews.reviewsCreate",
+      "name": "reviews.reviewsCreate",
+      "description": "POST /reviews/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.reviews.reviewsList",
+      "name": "reviews.reviewsList",
+      "description": "GET /reviews/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.reviews.reviewsRetrieve",
+      "name": "reviews.reviewsRetrieve",
+      "description": "GET /reviews/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsCommitCreate",
+      "name": "routeOptimizations.routeOptimizationsCommitCreate",
+      "description": "POST /route_optimizations/{id}/commit/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsCreate",
+      "name": "routeOptimizations.routeOptimizationsCreate",
+      "description": "POST /route_optimizations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsList",
+      "name": "routeOptimizations.routeOptimizationsList",
+      "description": "GET /route_optimizations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsResultsRetrieve",
+      "name": "routeOptimizations.routeOptimizationsResultsRetrieve",
+      "description": "GET /route_optimizations/{id}/results/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsRetrieve",
+      "name": "routeOptimizations.routeOptimizationsRetrieve",
+      "description": "GET /route_optimizations/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsRoutesCreate",
+      "name": "routeOptimizations.routeOptimizationsRoutesCreate",
+      "description": "POST /route_optimizations/{id}/routes/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsRoutesRetrieve",
+      "name": "routeOptimizations.routeOptimizationsRoutesRetrieve",
+      "description": "GET /route_optimizations/{id}/routes/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routeOptimizations.routeOptimizationsScheduleCreate",
+      "name": "routeOptimizations.routeOptimizationsScheduleCreate",
+      "description": "POST /route_optimizations/{id}/schedule/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesCreate",
+      "name": "routes.routesCreate",
+      "description": "POST /routes/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesDestroy",
+      "name": "routes.routesDestroy",
+      "description": "DELETE /routes/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesList",
+      "name": "routes.routesList",
+      "description": "GET /routes/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesPartialUpdate",
+      "name": "routes.routesPartialUpdate",
+      "description": "PATCH /routes/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesRetrieve",
+      "name": "routes.routesRetrieve",
+      "description": "GET /routes/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.routes.routesUpdate",
+      "name": "routes.routesUpdate",
+      "description": "PUT /routes/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.scenes.scenesDashboardList",
+      "name": "scenes.scenesDashboardList",
+      "description": "GET /scenes/dashboard/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.scenes.scenesOrderListList",
+      "name": "scenes.scenesOrderListList",
+      "description": "GET /scenes/order_list/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.scenes.scenesRecurrenceListList",
+      "name": "scenes.scenesRecurrenceListList",
+      "description": "GET /scenes/recurrence_list/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.scenes.scenesTaskListList",
+      "name": "scenes.scenesTaskListList",
+      "description": "GET /scenes/task_list/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.signatures.signaturesBatchDeleteCreate",
+      "name": "signatures.signaturesBatchDeleteCreate",
+      "description": "Available from version 2.4.2"
+    },
+    {
+      "id": "openapi_gsmtasks_com.signatures.signaturesCreate",
+      "name": "signatures.signaturesCreate",
+      "description": "POST /signatures/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.signatures.signaturesDestroy",
+      "name": "signatures.signaturesDestroy",
+      "description": "DELETE /signatures/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.signatures.signaturesList",
+      "name": "signatures.signaturesList",
+      "description": "GET /signatures/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.signatures.signaturesRetrieve",
+      "name": "signatures.signaturesRetrieve",
+      "description": "GET /signatures/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsCreate",
+      "name": "sms.smsCreate",
+      "description": "POST /sms/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsDestroy",
+      "name": "sms.smsDestroy",
+      "description": "DELETE /sms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsList",
+      "name": "sms.smsList",
+      "description": "GET /sms/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsPartialUpdate",
+      "name": "sms.smsPartialUpdate",
+      "description": "PATCH /sms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsResendCreate",
+      "name": "sms.smsResendCreate",
+      "description": "POST /sms/{id}/resend/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsRetrieve",
+      "name": "sms.smsRetrieve",
+      "description": "GET /sms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.sms.smsUpdate",
+      "name": "sms.smsUpdate",
+      "description": "PUT /sms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskAddressFeatures.taskAddressFeaturesList",
+      "name": "taskAddressFeatures.taskAddressFeaturesList",
+      "description": "GET /task_address_features/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskAddressFeatures.taskAddressFeaturesRetrieve",
+      "name": "taskAddressFeatures.taskAddressFeaturesRetrieve",
+      "description": "GET /task_address_features/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskCommands.taskCommandsCreate",
+      "name": "taskCommands.taskCommandsCreate",
+      "description": "POST /task_commands/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskCommands.taskCommandsList",
+      "name": "taskCommands.taskCommandsList",
+      "description": "GET /task_commands/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskCommands.taskCommandsRetrieve",
+      "name": "taskCommands.taskCommandsRetrieve",
+      "description": "GET /task_commands/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskCommands.taskCommandsUpdate",
+      "name": "taskCommands.taskCommandsUpdate",
+      "description": "PUT /task_commands/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskEvents.taskEventsList",
+      "name": "taskEvents.taskEventsList",
+      "description": "Mixin which allows the override of the filename being\npassed back to the user when the spreadsheet is downloaded."
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskEvents.taskEventsRetrieve",
+      "name": "taskEvents.taskEventsRetrieve",
+      "description": "Mixin which allows the override of the filename being\npassed back to the user when the spreadsheet is downloaded."
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskEventTracks.taskEventTracksList",
+      "name": "taskEventTracks.taskEventTracksList",
+      "description": "GET /task_event_tracks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskEventTracks.taskEventTracksRetrieve",
+      "name": "taskEventTracks.taskEventTracksRetrieve",
+      "description": "GET /task_event_tracks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskExports.taskExportsList",
+      "name": "taskExports.taskExportsList",
+      "description": "This view has multiple renderer classes available: `json` and `xlsx`. In order to export the data as an excel file, just set query argument `format` to `xlsx`.When downloading `xlsx` format, use Accept header `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; version=...`\n\nThe user can request what fields and in what order will be rendered using query argument `fields`. This is a comma separated list of field names used in the API. Available fields are visible in the example.\nAlso metafields can be added to the response. For this just add them as fields, using structure `metafields__{metafield.namespace}:{metafield.key}`. \n\nWhen exporting to **excel**, the column names may be changed based on account metafield names or pre-defined field name and width mapping.\n\nChanges in version 2.2.1:\n * field names have been updated to reflect the Task fields schema and filters.\n * Invalid fields in fields request will return a ValidationError.\n * Account filter is required.\n * AccountRole display name is annotated to user objects.\n * 'task_event_notes' is dropped.\n * 'contact_phone' and 'contact_email' is replaced with 'contact_phones' and 'contact_emails'.\n"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsCreate",
+      "name": "taskForms.taskFormsCreate",
+      "description": "POST /task_forms/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsDestroy",
+      "name": "taskForms.taskFormsDestroy",
+      "description": "DELETE /task_forms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsList",
+      "name": "taskForms.taskFormsList",
+      "description": "GET /task_forms/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsPartialUpdate",
+      "name": "taskForms.taskFormsPartialUpdate",
+      "description": "PATCH /task_forms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsRetrieve",
+      "name": "taskForms.taskFormsRetrieve",
+      "description": "GET /task_forms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskForms.taskFormsUpdate",
+      "name": "taskForms.taskFormsUpdate",
+      "description": "PUT /task_forms/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImport.taskImportCreate",
+      "name": "taskImport.taskImportCreate",
+      "description": "POST /task_import/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImport.taskImportList",
+      "name": "taskImport.taskImportList",
+      "description": "GET /task_import/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImport.taskImportRetrieve",
+      "name": "taskImport.taskImportRetrieve",
+      "description": "GET /task_import/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImportMapping.taskImportMappingCreate",
+      "name": "taskImportMapping.taskImportMappingCreate",
+      "description": "POST /task_import_mapping/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImportMapping.taskImportMappingList",
+      "name": "taskImportMapping.taskImportMappingList",
+      "description": "GET /task_import_mapping/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskImportMapping.taskImportMappingRetrieve",
+      "name": "taskImportMapping.taskImportMappingRetrieve",
+      "description": "GET /task_import_mapping/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskMetadatas.taskMetadatasList",
+      "name": "taskMetadatas.taskMetadatasList",
+      "description": "GET /task_metadatas/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.taskMetadatas.taskMetadatasRetrieve",
+      "name": "taskMetadatas.taskMetadatasRetrieve",
+      "description": "GET /task_metadatas/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksAcceptCreate",
+      "name": "tasks.tasksAcceptCreate",
+      "description": "POST /tasks/{id}/accept/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksAccountChangeCreate",
+      "name": "tasks.tasksAccountChangeCreate",
+      "description": "POST /tasks/{id}/account_change/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksActivateCreate",
+      "name": "tasks.tasksActivateCreate",
+      "description": "POST /tasks/{id}/activate/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksAssignCreate",
+      "name": "tasks.tasksAssignCreate",
+      "description": "POST /tasks/{id}/assign/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksCancelCreate",
+      "name": "tasks.tasksCancelCreate",
+      "description": "POST /tasks/{id}/cancel/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksCompleteCreate",
+      "name": "tasks.tasksCompleteCreate",
+      "description": "POST /tasks/{id}/complete/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksCreate",
+      "name": "tasks.tasksCreate",
+      "description": "POST /tasks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksDocumentsRetrieve",
+      "name": "tasks.tasksDocumentsRetrieve",
+      "description": "GET /tasks/{id}/documents/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksEventsRetrieve",
+      "name": "tasks.tasksEventsRetrieve",
+      "description": "GET /tasks/{id}/events/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksFailCreate",
+      "name": "tasks.tasksFailCreate",
+      "description": "POST /tasks/{id}/fail/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksList",
+      "name": "tasks.tasksList",
+      "description": "GET /tasks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksPartialUpdate",
+      "name": "tasks.tasksPartialUpdate",
+      "description": "PATCH /tasks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksRejectCreate",
+      "name": "tasks.tasksRejectCreate",
+      "description": "POST /tasks/{id}/reject/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksReorderCreate",
+      "name": "tasks.tasksReorderCreate",
+      "description": "POST /tasks/reorder/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksRepositionCreate",
+      "name": "tasks.tasksRepositionCreate",
+      "description": "POST /tasks/reposition/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksRetrieve",
+      "name": "tasks.tasksRetrieve",
+      "description": "GET /tasks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksSignaturesRetrieve",
+      "name": "tasks.tasksSignaturesRetrieve",
+      "description": "GET /tasks/{id}/signatures/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksTransitCreate",
+      "name": "tasks.tasksTransitCreate",
+      "description": "POST /tasks/{id}/transit/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksUnacceptCreate",
+      "name": "tasks.tasksUnacceptCreate",
+      "description": "POST /tasks/{id}/unaccept/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksUnassignCreate",
+      "name": "tasks.tasksUnassignCreate",
+      "description": "POST /tasks/{id}/unassign/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.tasks.tasksUpdate",
+      "name": "tasks.tasksUpdate",
+      "description": "PUT /tasks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesCreate",
+      "name": "timeLocationFeatures.timeLocationFeaturesCreate",
+      "description": "POST /time_location_features/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesDestroy",
+      "name": "timeLocationFeatures.timeLocationFeaturesDestroy",
+      "description": "DELETE /time_location_features/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesList",
+      "name": "timeLocationFeatures.timeLocationFeaturesList",
+      "description": "GET /time_location_features/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesPartialUpdate",
+      "name": "timeLocationFeatures.timeLocationFeaturesPartialUpdate",
+      "description": "PATCH /time_location_features/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesRetrieve",
+      "name": "timeLocationFeatures.timeLocationFeaturesRetrieve",
+      "description": "GET /time_location_features/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocationFeatures.timeLocationFeaturesUpdate",
+      "name": "timeLocationFeatures.timeLocationFeaturesUpdate",
+      "description": "PUT /time_location_features/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocations.timeLocationsCreate",
+      "name": "timeLocations.timeLocationsCreate",
+      "description": "POST /time_locations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocations.timeLocationsList",
+      "name": "timeLocations.timeLocationsList",
+      "description": "GET /time_locations/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.timeLocations.timeLocationsRetrieve",
+      "name": "timeLocations.timeLocationsRetrieve",
+      "description": "GET /time_locations/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersCreate",
+      "name": "trackers.trackersCreate",
+      "description": "POST /trackers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersList",
+      "name": "trackers.trackersList",
+      "description": "GET /trackers/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersPartialUpdate",
+      "name": "trackers.trackersPartialUpdate",
+      "description": "PATCH /trackers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersPublicRetrieve",
+      "name": "trackers.trackersPublicRetrieve",
+      "description": "GET /trackers/{id}/public/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersRetrieve",
+      "name": "trackers.trackersRetrieve",
+      "description": "GET /trackers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.trackers.trackersUpdate",
+      "name": "trackers.trackersUpdate",
+      "description": "PUT /trackers/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersActivateCreate",
+      "name": "users.usersActivateCreate",
+      "description": "POST /users/{id}/activate/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersCreate",
+      "name": "users.usersCreate",
+      "description": "POST /users/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersDestroy",
+      "name": "users.usersDestroy",
+      "description": "DELETE /users/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersList",
+      "name": "users.usersList",
+      "description": "GET /users/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersOnDutyDestroy",
+      "name": "users.usersOnDutyDestroy",
+      "description": "DELETE /users/{id}/on_duty/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersOnDutyRetrieve",
+      "name": "users.usersOnDutyRetrieve",
+      "description": "GET /users/{id}/on_duty/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersOnDutyUpdate",
+      "name": "users.usersOnDutyUpdate",
+      "description": "PUT /users/{id}/on_duty/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersPartialUpdate",
+      "name": "users.usersPartialUpdate",
+      "description": "PATCH /users/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersRetrieve",
+      "name": "users.usersRetrieve",
+      "description": "GET /users/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.users.usersUpdate",
+      "name": "users.usersUpdate",
+      "description": "PUT /users/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.usersOnDutyLog.usersOnDutyLogCreate",
+      "name": "usersOnDutyLog.usersOnDutyLogCreate",
+      "description": "POST /users_on_duty_log/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.usersOnDutyLog.usersOnDutyLogList",
+      "name": "usersOnDutyLog.usersOnDutyLogList",
+      "description": "GET /users_on_duty_log/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.usersOnDutyLog.usersOnDutyLogRetrieve",
+      "name": "usersOnDutyLog.usersOnDutyLogRetrieve",
+      "description": "GET /users_on_duty_log/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksActiveCreate",
+      "name": "webhooks.webhooksActiveCreate",
+      "description": "POST /webhooks/{id}/active/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksCreate",
+      "name": "webhooks.webhooksCreate",
+      "description": "POST /webhooks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksDestroy",
+      "name": "webhooks.webhooksDestroy",
+      "description": "DELETE /webhooks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksInactiveCreate",
+      "name": "webhooks.webhooksInactiveCreate",
+      "description": "POST /webhooks/{id}/inactive/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksList",
+      "name": "webhooks.webhooksList",
+      "description": "GET /webhooks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksPartialUpdate",
+      "name": "webhooks.webhooksPartialUpdate",
+      "description": "PATCH /webhooks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksRetrieve",
+      "name": "webhooks.webhooksRetrieve",
+      "description": "GET /webhooks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.webhooks.webhooksUpdate",
+      "name": "webhooks.webhooksUpdate",
+      "description": "PUT /webhooks/{id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workerFeatures.workerFeaturesList",
+      "name": "workerFeatures.workerFeaturesList",
+      "description": "GET /worker_features/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workerFeatures.workerFeaturesRetrieve",
+      "name": "workerFeatures.workerFeaturesRetrieve",
+      "description": "GET /worker_features/{user_id}/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workerTracks.workerTracksList",
+      "name": "workerTracks.workerTracksList",
+      "description": "GET /worker_tracks/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workingState.workingStateCreate",
+      "name": "workingState.workingStateCreate",
+      "description": "POST /working_state/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workingState.workingStateList",
+      "name": "workingState.workingStateList",
+      "description": "GET /working_state/"
+    },
+    {
+      "id": "openapi_gsmtasks_com.workingState.workingStateRetrieve",
+      "name": "workingState.workingStateRetrieve",
+      "description": "GET /working_state/{id}/"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

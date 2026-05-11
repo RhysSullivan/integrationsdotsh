@@ -1,0 +1,797 @@
+{
+  "fetchedAt": "2026-04-30T15:26:41.817Z",
+  "status": "ok",
+  "count": 158,
+  "tools": [
+    {
+      "id": "openapi_osf_io.addons.addonsList",
+      "name": "addons.addonsList",
+      "description": "\nA paginated list of addons configurable with the OSF, for read purposes only.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 addons. Each resource in the array is a separate addon object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.base.baseRead",
+      "name": "base.baseRead",
+      "description": "#### Returns\nA JSON object with `meta` and `links` keys.\n\nThe `meta` key contains information such as a welcome message from the API, the specified version of the request, and the full representation of the current user, if authentication credentials were provided in the request.\n\nThe `links` key contains links to the following entity collections: [addons](#tag/Addons), [collections](), [institutions](#tag/Institutions), [licenses](#tag/Licenses), [registration schemas](#tag/Registration Schemas), [nodes](#tag/Nodes), [registrations](#tag/Registrations), [users](#tag/Users)"
+    },
+    {
+      "id": "openapi_osf_io.citations.citationsStylesList",
+      "name": "citations.citationsStylesList",
+      "description": "\nA paginated list of all standard citation styles available for rendering citations.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 citation styles. Each resource in the array is a separate citation syle and contains the full representation of the citation style object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include citation styles that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/citations/styles/?filter[title]=open.\n\nCitation styles may be filtered by their `id`, `title`, `short-title`, and `summary`.\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.citations.citationsStylesRead",
+      "name": "citations.citationsStylesRead",
+      "description": "Retrieves the details of a citation style.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested citation style, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsAddMetadata",
+      "name": "collections.collectionsAddMetadata",
+      "description": "List of user created metadata for entities within a collection.\n#### Permissions\nTo edit this collection a user must have collections write permissions\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsCollectedMetadata",
+      "name": "collections.collectionsCollectedMetadata",
+      "description": "\n#### Permissions\nIn order to view these subject it must be a public collection or a user must have read permissions for collection.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error, other then permissions errors."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsCreate",
+      "name": "collections.collectionsCreate",
+      "description": "Retrieves a list collections, either public or related to the user\n#### Permissions\nAnonymous users are able to see all public collections at this endpoint. Logged in users will only be able to see their own content.\n\nComments on private nodes are only visible to contributors and administrators on the parent node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of comment objects. Each resource in the array is a separate comment object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsDelete",
+      "name": "collections.collectionsDelete",
+      "description": "Deletes a collection, if the user has appropriate permissions.\n#### Permissions\nUsers must have write permissions on a collection in order to delete it\n#### Returns\nNothing is returned in the body"
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsDetail",
+      "name": "collections.collectionsDetail",
+      "description": "Retrieves a collection, if the user has appropriate permissions.\n\n#### Permissions\nAnonymous users are able to see all public collections at this endpoint. Logged in users will only be able to see their own content.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedNodesList",
+      "name": "collections.collectionsLinkedNodesList",
+      "description": "List of all nodes linked to the given collection.\n#### Permissions\nThis returns all public nodes associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedNodesRelationships",
+      "name": "collections.collectionsLinkedNodesRelationships",
+      "description": "This endpoint allow users to a add a node to a collection by issuing a POST request.\n#### Permissions\nThis returns all public nodes associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of comment objects. Each resource in the array is a separate comment object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedNodesRelationshipsCreate",
+      "name": "collections.collectionsLinkedNodesRelationshipsCreate",
+      "description": "List of all the node ids linked to the given collection.\n#### Permissions\nThis returns all public nodes associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedNodesRelationshipsDelete",
+      "name": "collections.collectionsLinkedNodesRelationshipsDelete",
+      "description": "\nThis removes associated nodes from a collection\n#### Permissions\nAny user with write permissions on this collection should be to remove nodes from this collection.\n#### Returns\nNothing in the response body."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedPreprintsList",
+      "name": "collections.collectionsLinkedPreprintsList",
+      "description": "List of all preprints linked to the given collection.\n#### Permissions\nThis returns all public preprints associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedRegistrationsList",
+      "name": "collections.collectionsLinkedRegistrationsList",
+      "description": "List of all registrations linked to the given collection.\n#### Permissions\nThis returns all public registrations associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedRegistrationsRelationships",
+      "name": "collections.collectionsLinkedRegistrationsRelationships",
+      "description": "This endpoint allow users to a add a registration to a collection by issuing a POST request.\n#### Permissions\nThis returns all public registrations associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of comment objects. Each resource in the array is a separate comment object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedRegistrationsRelationshipsCreate",
+      "name": "collections.collectionsLinkedRegistrationsRelationshipsCreate",
+      "description": "List of all the registration ids linked to the given collection.\n#### Permissions\nThis returns all public registrations associated with this collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsLinkedRegistrationsRelationshipsDelete",
+      "name": "collections.collectionsLinkedRegistrationsRelationshipsDelete",
+      "description": "\nThis removes associated registrations from a collection\n#### Permissions\nAny user with write permissions on this collection should be to remove registrations from this collection.\n#### Returns\nNothing in the response body."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsList",
+      "name": "collections.collectionsList",
+      "description": "Retrieves a list collections, either public or related to the user\n#### Permissions\nAnonymous users are able to see all public collections at this endpoint. Logged in users will only be able to see their own content.\n\nComments on private nodes are only visible to contributors and administrators on the parent node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataDelete",
+      "name": "collections.collectionsMetadataDelete",
+      "description": "\n#### Permissions\nOnly a user with collection admin permissions can delete collected metadata\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataDetail",
+      "name": "collections.collectionsMetadataDetail",
+      "description": "List of user created metadata for entities within a collection.\n#### Permissions\nTo edit this collection a user must have collections write permissions\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataRegistrationsDetail",
+      "name": "collections.collectionsMetadataRegistrationsDetail",
+      "description": "\n#### Permissions\nIn order to view this metadata it must be public or a user must have read permissions for collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataRegistrationsList",
+      "name": "collections.collectionsMetadataRegistrationsList",
+      "description": "List of user created metadata for entities within a collection.\n#### Permissions\nIn order to view this metadata it must be public or a user must have read permissions for collection.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataSubjectsRelationships",
+      "name": "collections.collectionsMetadataSubjectsRelationships",
+      "description": "\n#### Permissions\nThis is public for a logged out user when an entity is public.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.collections.collectionsMetadataSubjectsRelationshipsUpdate",
+      "name": "collections.collectionsMetadataSubjectsRelationshipsUpdate",
+      "description": "\n#### Permissions\nThis is editable for a user with a write permission for this collection.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of nodes ids.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.comments.commentsDelete",
+      "name": "comments.commentsDelete",
+      "description": "Deletes a comment. This action can be undone by setting deleted to False in a comment update request.\n#### Returns\nIf the request is successful, no content is returned.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.comments.commentsPut",
+      "name": "comments.commentsPut",
+      "description": "Updates the specified comment by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\n#### Returns\nReturns JSON with a `data` key containing the new representation of the updated comment, if the request is successful.\n\nIf the request is unsuccessful, JSON with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.comments.commentsRead",
+      "name": "comments.commentsRead",
+      "description": "Retrieves the details of a comment\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested comment, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.deleteDraftRegistrationsDraftId",
+      "name": "draftRegistrations.deleteDraftRegistrationsDraftId",
+      "description": "Permanently deletes a draft registration. A draft that has already been registered cannot be deleted.\n#### Permissions\nOnly draft registration contributors with ADMIN permissions may delete draft registrations\n#### Returns\nIf the request is successful, no content is returned.\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes]() to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.draftRegistrationContributorsCreate",
+      "name": "draftRegistrations.draftRegistrationContributorsCreate",
+      "description": "Adds a contributor to a Draft Registration, contributors can view, edit, register or delete a Draft Registration depending on their permissions.\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\" contributors. From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n#### Permissions\nOnly project administrators can add contributors to a Draft Registration.\n#### Required\nA relationship object with a `data` key, containing the `users` type and valid user ID is required.\nAll attributes describing the relationship between the node and the user are optional.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the new contributor, if the request is successful.\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.draftRegistrationContributorsList",
+      "name": "draftRegistrations.draftRegistrationContributorsList",
+      "description": "Retrieves the details of all given Contributors for a Draft Registration.\nContributors are users who can make changes to the Draft Registration.\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.draftRegistrationsCreate",
+      "name": "draftRegistrations.draftRegistrationsCreate",
+      "description": "This creates a Draft Registration that can be used to edit and register research.\nDraft Registrations contain Registration questions that will become part of the Registration. A Registration is a frozen version of the project that can never be deleted, but can be withdrawn and have it's metadata edited.\nA Draft Registration created by this endpoint will not have a Project linked with it by default, but if the user includes a `branched_from` attribute in their Draft Registration creation payload with the value of the `branched_from` being guid of a Project they have permissions for the Draft Registration will be linked to the Project. If you linked your Draft Registration on a Project, your original Project remains editable and will now have the Draft Registration linked to it. \n#### Permissions\nAny user can create a Draft Registration. If the `branched_from` attribute is provided, then the user must be an ADMIN contributor on the Project being registered.\n#### Required\nRequired fields for creating a Draft Registration include:\n\n&nbsp;&nbsp;&nbsp;&nbsp;`schema_id`\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the created Draft Registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.draftRegistrationsRead",
+      "name": "draftRegistrations.draftRegistrationsRead",
+      "description": "Retrieve a list of all currently available Draft Registrations for that user.\n#### Permissions\nOnly Draft Registration contributors may view draft registrations.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested draft registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.getDraftRegistrationsDraftId",
+      "name": "draftRegistrations.getDraftRegistrationsDraftId",
+      "description": "Retrieve the details of a given Draft Registration\nDraft Registrations contain Registration questions that will become part of the Registration. A Registration is a frozen version of the project that can never be deleted, but can be withdrawn and have it's metadata edited.\n\nIf you based your Draft Registration on a Project, your original Project remains editable but will now have the Draft Registration linked to it.\n#### Permissions\nOnly draft registration contributors may view draft registrations.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested draft registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.getDraftRegistrationsDraftIdContributorsUserId",
+      "name": "draftRegistrations.getDraftRegistrationsDraftIdContributorsUserId",
+      "description": "Retrieves the details of a given contributor.\n\nContributors are users who can view or edit to the Draft Registrations.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.getDraftRegistrationsDraftIdInstitutions",
+      "name": "draftRegistrations.getDraftRegistrationsDraftIdInstitutions",
+      "description": "Once a properly authenticated user has marked their registration as affiliated with an institution, that institution and any others added will appear in this list."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.nodesDraftRegistrationsRead",
+      "name": "draftRegistrations.nodesDraftRegistrationsRead",
+      "description": "Retrieve the details of a given draft registration.\nDraft Registrations contain Registration questions that will become part of the Registration. A Registration is a frozen version of the project that can never be deleted, but can be withdrawn and have it's metadata edited.\n\nYour original project remains editable but will now have the draft registration linked to it.\n#### Permissions\nOnly project administrators may view draft registrations.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested draft registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.nodesDraftRegistrationsSubjects",
+      "name": "draftRegistrations.nodesDraftRegistrationsSubjects",
+      "description": "This retrieves a list of subjects associated with a Draft Registration. Subjects are formatted here in a flat paginated list, but are hierarchical and nested by specificity of subject matter."
+    },
+    {
+      "id": "openapi_osf_io.draftRegistrations.patchDraftRegistrationsDraftId",
+      "name": "draftRegistrations.patchDraftRegistrationsDraftId",
+      "description": "Updates a Draft Registration by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged. Note this will not register or change the machine state of a Draft Registration, it can only edit the Draft Registration's attributes prior to its registration.\n#### Permissions\nOnly draft registration contributors may view draft registrations and only draft registration contributors with WRITE or ADMIN permissions may update draft registrations.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated draft registration, if the request is successful.\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.files.filesDetail",
+      "name": "files.filesDetail",
+      "description": "Retrieves the details of a file (or folder)\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested file, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n### Waterbutler API actions\n\nFiles can be modified through the Waterbutler API routes found in `links` (`new_folder`, `move`, `upload`, `download`, and `delete`).\n\n#### Download (files)\n\nTo download a file, issue a GET request against the download link. The response will have the Content-Disposition header set, which will will trigger a download in a browser.\n\n#### Create Subfolder (folders)\n\nYou can create a subfolder of an existing folder by issuing a PUT request against the new_folder link. The ?kind=folder portion of the query parameter is already included in the new_folder link. The name of the new subfolder should be provided in the name query parameter. The response will contain a WaterButler folder entity. If a folder with that name already exists in the parent directory, the server will return a 409 Conflict error response.\n\n#### Upload New File (folders)\n\n\n  To upload a file to a folder, issue a PUT request to the folder's upload link with the raw file data in the request body, and the kind and name query parameters set to 'file' and the desired name of the file. The response will contain a WaterButler file entity that describes the new file. If a file with the same name already exists in the folder, the server will return a 409 Conflict error response.\n\n\n#### Update Existing File (file)\n\nTo update an existing file, issue a PUT request to the file's upload link with the raw file data in the request body and the kind query parameter set to \"file\". The update action will create a new version of the file. The response will contain a WaterButler file entity that describes the updated file.\n\n#### Rename (files, folders)\n\nTo rename a file or folder, issue a POST request to the move link with the action body parameter set to \"rename\" and the rename body parameter set to the desired name. The response will contain either a folder entity or file entity with the new name.\n\n#### Move & Copy (files, folders)\n\nMove and copy actions both use the same request structure, a POST to the move url, but with different values for the action body parameters. The path parameter is also required and should be the OSF path attribute of the folder being written to. The rename and conflict parameters are optional. If you wish to change the name of the file or folder at its destination, set the rename parameter to the new name. The conflict param governs how name clashes are resolved. Possible values are replace and keep. replace is the default and will overwrite the file that already exists in the target folder. keep will attempt to keep both by adding a suffix to the new file's name until it no longer conflicts. The suffix will be ' (x)' where x is a increasing integer starting from 1. This behavior is intended to mimic that of the OS X Finder. The response will contain either a folder entity or file entity with the new name.\nFiles and folders can also be moved between nodes and providers. The resource parameter is the id of the node under which the file/folder should be moved. It must agree with the path parameter, that is the path must identify a valid folder under the node identified by resource. Likewise, the provider parameter may be used to move the file/folder to another storage provider, but both the resource and path parameters must belong to a node and folder already extant on that provider. Both resource and provider default to the current node and providers.\nIf a moved/copied file is overwriting an existing file, a 200 OK response will be returned. Otherwise, a 201 Created will be returned.\n\n#### Delete (file, folders)\n\nTo delete a file or folder send a DELETE request to the delete link. Nothing will be returned in the response body."
+    },
+    {
+      "id": "openapi_osf_io.files.filesPatch",
+      "name": "files.filesPatch",
+      "description": "Updates the specified file by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\n#### Returns\nReturns JSON with a `data` key containing the new representation of the updated file, if the request is successful.\n\nIf the request is unsuccessful, JSON with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.files.filesVersionDetail",
+      "name": "files.filesVersionDetail",
+      "description": "Retrieves the details of a file version\n#### Returns\n\nReturns a JSON object with a `data` key containing the representation of the requested file, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.files.filesVersions",
+      "name": "files.filesVersions",
+      "description": "\nA paginated list of all file versions.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 file versions. Each resource in the array is a separate file version object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.institutions.institutionsDetail",
+      "name": "institutions.institutionsDetail",
+      "description": "Retrieves the details of an institution\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested institution, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.institutions.institutionsList",
+      "name": "institutions.institutionsList",
+      "description": "\nA paginated list of all verified institutions.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 institutions. Each resource in the array is a separate institution object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include institutions that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/institutions/?filter[id]=cos.\n\nInstitutions may be filtered by their `id`, `name`, and `auth_url`"
+    },
+    {
+      "id": "openapi_osf_io.institutions.institutionsNodeList",
+      "name": "institutions.institutionsNodeList",
+      "description": "A paginated list of all nodes affiliated with an institution.\n#### Versioning\nAs of version `2.2`, affiliated components (in addition to affiliated top-level projects) are returned from this endpoint.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 nodes. Each resource in the array is a separate nodes object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/institutions/cos/nodes?filter[title]=science.\n\nNodes may be filtered by their `id`, `title`, `description`, `public`, `tags`, `category`, `date_created`, `date_modified`, `root`, `parent`, `contributors`, and `preprint`"
+    },
+    {
+      "id": "openapi_osf_io.institutions.institutionsRegistrationList",
+      "name": "institutions.institutionsRegistrationList",
+      "description": "A paginated list of all registrations affiliated with an institution.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 registrations. Each resource in the array is a separate users object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Filtering\nYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/institutions/cos/registrations?filter[title]=science.\n\nRegistrations may be filtered by their  `id`, `title`, `description`, `public`, `tags`, `category`, `date_created`, `date_modified`, `root`, `parent`, `contributors`, and `preprint`"
+    },
+    {
+      "id": "openapi_osf_io.institutions.institutionsUsersList",
+      "name": "institutions.institutionsUsersList",
+      "description": "A paginated list of all users affiliated with an institution.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 users. Each resource in the array is a separate users object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Filtering\nYou can optionally request that the response only include users that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/institutions/cos/users?filter[family_name]=Nosek.\n\nUsers may be filtered by their `id`, `full_name`, `given_name`, `middle_names`, and `family_name`"
+    },
+    {
+      "id": "openapi_osf_io.licenses.licenseList",
+      "name": "licenses.licenseList",
+      "description": "A paginated list of licenses. The returned licenses are sorted by their name.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\nThe `data` key contains an array of 10 licenses. Each resource in the array is a separate license object and contains the full representation of the license, meaning additional requests to a license's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include licenses that match your filters by utilizing the `filter` query parameter, e.g. [https://api.osf.io/v2/licenses/?filter[name]=apache](https://api.osf.io/v2/licenses/?filter[name]=apache).\n\nLicenses may be filtered by their `id`, and `name`."
+    },
+    {
+      "id": "openapi_osf_io.licenses.licensesRead",
+      "name": "licenses.licensesRead",
+      "description": "Retrieves the details of a license.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested license, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.logs.logsActions",
+      "name": "logs.logsActions",
+      "description": "\nA log can have one of many actions. The complete list of loggable actions (in the format {identifier}: {description}) is as follows:\n* `project_created`: A Node is created\n* `project_registered`: A Node is registered\n* `project_deleted`: A Node is deleted\n* `created_from`: A Node is created using an existing Node as a template\n* `pointer_created`: A Pointer is created\n* `pointer_forked`: A Pointer is forked\n* `pointer_removed`: A Pointer is removed\n* `node_removed`: A component is deleted\n* `node_forked`: A Node is forked\n---\n* `made_public`: A Node is made public\n* `made_private`: A Node is made private\n* `tag_added`: A tag is added to a Node\n* `tag_removed`: A tag is removed from a Node\n* `edit_title`: A Node's title is changed\n* `edit_description`: A Node's description is changed\n* `updated_fields`: One or more of a Node's fields are changed\n* `external_ids_added`: An external identifier is added to a Node (e.g. DOI, ARK)\n* `view_only_link_added`: A view-only link was added to a Node\n* `view_only_link_removed`:  A view-only link was removed from a Node\n---\n* `contributor_added`: A Contributor is added to a Node\n* `contributor_removed`: A Contributor is removed from a Node\n* `contributors_reordered`: A Contributor's position in a Node's bibliography is changed\n* `permissions_updated`: A Contributor`s permissions on a Node are changed\n* `made_contributor_visible`: A Contributor is made bibliographically visible on a Node\n* `made_contributor_invisible`: A Contributor is made bibliographically invisible on a Node\n---\n* `wiki_updated`: A Node's wiki is updated\n* `wiki_deleted`: A Node's wiki is deleted\n* `wiki_renamed`: A Node's wiki is renamed\n* `made_wiki_public`: A Node's wiki is made public\n* `made_wiki_private`: A Node's wiki is made private\n---\n* `addon_added`: An add-on is linked to a Node\n* `addon_removed`: An add-on is unlinked from a Node\n* `addon_file_moved`: A File in a Node's linked add-on is moved\n* `addon_file_copied`: A File in a Node's linked add-on is copied\n* `addon_file_renamed`: A File in a Node's linked add-on is renamed\n* `node_authorized`: An addon is authorized for a project\n* `node_deauthorized`: An addon is deauthorized for a project\n* `folder_created`: A Folder is created in a Node's linked add-on\n* `file_added`: A File is added to a Node's linked add-on\n* `file_updated`: A File is updated on a Node's linked add-on\n* `file_removed`: A File is removed from a Node's linked add-on\n* `file_restored`: A File is restored in a Node's linked add-on\n---\n* `comment_added`: A Comment is added to some item\n* `comment_removed`: A Comment is removed from some item\n* `comment_updated`: A Comment is updated on some item\n---\n* `embargo_initiated`: An embargoed Registration is proposed on a Node\n* `embargo_approved`: A proposed Embargo of a Node is approved\n* `embargo_cancelled`: A proposed Embargo of a Node is cancelled\n* `embargo_completed`: A proposed Embargo of a Node is completed\n* `retraction_initiated`: A Withdrawal of a Registration is proposed\n* `retraction_approved`: A Withdrawal of a Registration is approved\n* `retraction_cancelled`: A Withdrawal of a Registration is cancelled\n* `registration_initiated`: A Registration of a Node is proposed\n* `registration_approved`: A proposed Registration is approved\n* `registration_cancelled`: A proposed Registration is cancelled"
+    },
+    {
+      "id": "openapi_osf_io.logs.logsRead",
+      "name": "logs.logsRead",
+      "description": "Retrieves the details of a log.\nA log is permanent immutable record of a node's history. A log is created when a user performs one of many actions. See the [actions](#Logs_logs_actions) section for more details.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested log, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesAddonRead",
+      "name": "nodes.nodesAddonRead",
+      "description": "Retrieve details of an individual addon connected to this node.\n#### Permissions\nNodeSettings that are attached to public nodes will give read-only access to everyone. Private nodes require explicit read permission. Write and admin access are the same for public and private nodes. Administrators on a parent node have implicit read permissions for all child nodes.\nAny users with write or admin access to the node are able to deauthorize an enabled addon, but only the addon authorizer is able to change the configuration (i.e. selected folder) of an already-configured NodeSettings entity.\n#### Returns\nReturns a JSON object with a `data` key containing the details of the requested addon, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesAddonsFoldersList",
+      "name": "nodes.nodesAddonsFoldersList",
+      "description": "\nA paginated list of folders retrieved from the associated third-party (provider) service.\n#### Permissions\nFolders are visible only to the user that authorized the addon.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of addon folder objects. Each resource in the array is a separate addon folder object and contains the full representation of the addon folder, meaning additional requests to a addon folder's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesAddonsList",
+      "name": "nodes.nodesAddonsList",
+      "description": "\nA paginated list of addons connected to the given node or project.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of at most 10 addon objects. Each resource in the array is a separate addon object and contains the full representation of the addon, meaning additional requests to a addon's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesChildrenCreate",
+      "name": "nodes.nodesChildrenCreate",
+      "description": "Creates a new child node.\n\nNote: Creating a child node via this endpoint will function the same as creating a node via the node list endpoint, but the child node will have the given node set as its parent.\n#### Permissions\nOnly write contributors may create children nodes.\n#### Required\nRequired fields for creating a node include:\n\n&nbsp;&nbsp;&nbsp;&nbsp`title`\n\n&nbsp;&nbsp;&nbsp;&nbsp`category`\n\nNote: nodes default to **private** unless the `public` field is explicitly set to **true** in the request payload.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the created node, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesChildrenList",
+      "name": "nodes.nodesChildrenList",
+      "description": "\nA paginated list of the next level child nodes for the given node. The returned nodes are sorted by their `date_modified`, with the most recently updated child nodes appearing first.\n\nThe list will include child nodes that are public, as well as child nodes that are private, if the authenticated user has permission to view them.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 child nodes. If the given node has zero child nodes, the `data` key will contain an empty array. Each resource in the array is a separate node object and contains the full representation of the child node, meaning additional requests to the child node's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/children/?filter[title]=reproducibility.\n\nNodes may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, `preprint`, and `contributors`.\n\nMost fields are string fields and will be filtered using simple substring matching. Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**. Note that quoting true or false in the query will cause the match to fail."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesCitationList",
+      "name": "nodes.nodesCitationList",
+      "description": "The citation details for a node, in CSL format.\n#### Returns\nReturns a JSON object with a `data` key that contains the representation of the details necessary for the node citation."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesCitationRead",
+      "name": "nodes.nodesCitationRead",
+      "description": "The citation for a node in a specific style.\n#### Returns\nReturns a JSON object with a `data` key that contains the representation of the node citation, in the requested style."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesCommentCreate",
+      "name": "nodes.nodesCommentCreate",
+      "description": "Create a comment on a given node overview page or a reply to a comment on that node.\n\nTo create a comment on the node overview page, the target `type` would be \"nodes\" and the target `id` would be the node `id`.\n\nTo reply to a comment on this node, the target `type` would be \"comments\" and the target `id` would be the `id` of the comment to reply to.\n#### Required\nA relationship object with a `data` key, containing the target (`comments` or `nodes`) type and a target `id` is required.\nIn addition, the `content` attribute describing the relationship between the node and the comment is required.\n#### Returns\nReturns a JSON object with a data key containing the representation of the new comment, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesCommentsList",
+      "name": "nodes.nodesCommentsList",
+      "description": "\nA paginated list of comments related to a given node.\n\nThe returned comments are sorted by their creation date, with the most recent comments appearing first.\n#### Permissions\nComments on public nodes are given read-only access to everyone.\n\nIf the node comment-level is `private`, only contributors have permission to comment.\n\nIf the comment-level is `public`, any logged-in OSF user can comment.\n\nComments on private nodes are only visible to contributors and administrators on the parent node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of comment objects. Each resource in the array is a separate comment object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include comments that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/comments/?filter[target_id]=jg7sezmdnt93\n\nNodes may be filtered by their `deleted`, `target_id`, `date_created`, `date_modified`.\n\nMost fields are string fields and will be filtered using simple substring matching. Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**. Note that quoting `true` or `false` in the query will cause the match to fail."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesContributorsCreate",
+      "name": "nodes.nodesContributorsCreate",
+      "description": "Adds a contributor to a node, effectively creating a relationship between the node and a user.\n\nContributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\" contributors. From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n#### Permissions\nOnly project administrators can add contributors to a node.\n#### Required\nA relationship object with a `data` key, containing the `users` type and valid user ID is required.\n\nAll attributes describing the relationship between the node and the user are optional.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the new contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesContributorsDelete",
+      "name": "nodes.nodesContributorsDelete",
+      "description": "Removes a contributor from a node. This request only removes the relationship between the node and the user, it does not delete the user itself.\n\nA node must always have at least one admin, and attempting to remove the only admin from a node will result in a **400 Bad Request** response.\n#### Permissions\nA user can remove themselves as a node contributor. Otherwise, only project administrators can remove contributors.\n#### Returns\nIf the request is successful, no content is returned.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesContributorsList",
+      "name": "nodes.nodesContributorsList",
+      "description": "A paginated list of the node's contributors, sorted by their index.\n\nContributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n\nNote that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 contributors. Each resource in the array contains the full representation of the contributor, meaning additional requests to a contributor's detail view are not necessary. Additionally, the full representation of the user this contributor represents is automatically embedded within the `data` key of the response.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include contributors that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/y9jdt/contributors/?filter[bibliographic]=true.\n\nContributors may be filtered by their `bibliographic` and `permission` attributes."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesContributorsPartialUpdate",
+      "name": "nodes.nodesContributorsPartialUpdate",
+      "description": "Updates a contributor by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged.\n\nContributors can be updated with either a **PUT** or **PATCH** request. Since this endpoint has no mandatory attributes, PUT and PATCH are functionally the same.\n#### Permissions\nOnly project administrators can update the contributors on a node.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n\nIf the given user is not already in the contributor list, a 404 Not Found error will be returned. A node must always have at least one admin, and any attempt to downgrade the permissions of a sole admin will result in a 400 Bad Request error."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesContributorsRead",
+      "name": "nodes.nodesContributorsRead",
+      "description": "Retrieves the details of a given contributor.\n\nContributors are users who can make changes to the node or, in the case of private nodes, have read access to the node.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesCreate",
+      "name": "nodes.nodesCreate",
+      "description": "Creates a new node.\n\nOn the OSF, nodes are considered **projects** or **components**. The difference between a project and a component is that a project is a top-level node, and a component is a child of a project.\n\nAdditionally, nodes have a `category` field that includes **project** as an option. The categorization determines what icon is displayed with the node on the OSF, and helps with search organization. Projects (top-level nodes) may have a category other than project, and components (children) may have a category of **project**.\n#### Required\nRequired fields for creating a node include:\n\n&nbsp;&nbsp;&nbsp;&nbsp`title`\n\n&nbsp;&nbsp;&nbsp;&nbsp`category`\n\nNote: Nodes default to **private** unless the `public` field is explicitly set to **true** in the request payload.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the created node, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesDelete",
+      "name": "nodes.nodesDelete",
+      "description": "\nPermanently deletes a node. This action cannot be undone.\n#### Permissions\nOnly project administrators may delete a node. Attempting to delete a node for which you are not an administrator will result in a **403 Forbidden** response.\n#### Returns\nIf the request is successful, no content is returned.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesDraftRegistrationsCreate",
+      "name": "nodes.nodesDraftRegistrationsCreate",
+      "description": "Initiate a draft registration of the current node.\nDraft Registrations contain Registration questions that will become part of the Registration. A Registration is a frozen version of the project that can never be deleted, but can be withdrawn and have it's metadata edited.\n\nYour original project remains editable but will now have the draft registration linked to it.\n#### Permissions\nOnly project administrators may view create registrations.\n#### Required\nRequired fields for creating a draft registration include:\n\n&nbsp;&nbsp;&nbsp;&nbsp;`schema_id`\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the created draft registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesDraftRegistrationsDelete",
+      "name": "nodes.nodesDraftRegistrationsDelete",
+      "description": "Permanently deletes a draft registration. A draft that has already been registered cannot be deleted.\n#### Permissions\nOnly project administrators may delete draft registrations.\n#### Returns\nIf the request is successful, no content is returned.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes]() to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesDraftRegistrationsList",
+      "name": "nodes.nodesDraftRegistrationsList",
+      "description": "A paginated list of all of the draft registrations of a given node.\n\nDraft Registrations contain Registration questions that will become part of the Registration. A Registration is a frozen version of the project that can never be deleted, but can be withdrawn and have it's metadata edited.\n\nYour original project remains editable but will now have the draft registration linked to it.\n#### Permissions\nOnly project administrators may view draft registrations.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 draft registrations. Each resource in the array is a separate draft registration object and contains the full representation of the draft registration, meaning additional requests to a draft registration's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesDraftRegistrationsPartialUpdate",
+      "name": "nodes.nodesDraftRegistrationsPartialUpdate",
+      "description": "Updates a draft registration by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged.\n\nDraft Registrations contain Registration questions that will become part of the Registration. Answer the questions in the draft registration supplement by sending update requests until you are ready to submit the draft.\n\nThe registration supplement of a draft registration cannot be updated after the draft has been created.\n\nWhen updating a draft registration, `registration_metadata` is required. It must be a dictionary with keys as question ids in the registration form, and values as nested dictionaries matching the specific format in the [registration schema](TODO: link me pls).\n\nIf a question is multiple-choice, the question response must exactly match one of the possible choices.\n#### Permissions\nOnly project administrators may update draft registrations.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated draft registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesFilesList",
+      "name": "nodes.nodesFilesList",
+      "description": "List of all the files/folders that are attached to your project for a given storage provider.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of files. Each resource in the array is a separate file object and contains the full representation of the file.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\n#### Filtering\n\nYou can optionally request that the response only include files that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/files/osfstorage/?filter[kind]=file\n\nNode files may be filtered by `id`, `name`, `node`, `kind`, `path`, `provider`, `size`, and `last_touched`.\n\n### Waterbutler API actions\n\nFiles can be modified through the Waterbutler API routes found in `links` (`new_folder`, `move`, `upload`, `download`, and `delete`).\n\n#### Download (files)\n\nTo download a file, issue a GET request against the download link. The response will have the Content-Disposition header set, which will will trigger a download in a browser.\n\n#### Create Subfolder (folders)\n\nYou can create a subfolder of an existing folder by issuing a PUT request against the new_folder link. The ?kind=folder portion of the query parameter is already included in the new_folder link. The name of the new subfolder should be provided in the name query parameter. The response will contain a WaterButler folder entity. If a folder with that name already exists in the parent directory, the server will return a 409 Conflict error response.\n\n#### Upload New File (folders)\n\nTo upload a file to a folder, issue a PUT request to the folder's upload link with the raw file data in the request body, and the kind and name query parameters set to 'file' and the desired name of the file. The response will contain a WaterButler file entity that describes the new file. If a file with the same name already exists in the folder, the server will return a 409 Conflict error response.\n\n#### Update Existing File (file)\n\nTo update an existing file, issue a PUT request to the file's upload link with the raw file data in the request body and the kind query parameter set to \"file\". The update action will create a new version of the file. The response will contain a WaterButler file entity that describes the updated file.\n\n#### Rename (files, folders)\n\nTo rename a file or folder, issue a POST request to the move link with the action body parameter set to \"rename\" and the rename body parameter set to the desired name. The response will contain either a folder entity or file entity with the new name.\n\n#### Move & Copy (files, folders)\n\nMove and copy actions both use the same request structure, a POST to the move url, but with different values for the action body parameters. The path parameter is also required and should be the OSF path attribute of the folder being written to. The rename and conflict parameters are optional. If you wish to change the name of the file or folder at its destination, set the rename parameter to the new name. The conflict param governs how name clashes are resolved. Possible values are replace and keep. replace is the default and will overwrite the file that already exists in the target folder. keep will attempt to keep both by adding a suffix to the new file's name until it no longer conflicts. The suffix will be ' (x)' where x is a increasing integer starting from 1. This behavior is intended to mimic that of the OS X Finder. The response will contain either a folder entity or file entity with the new name.\nFiles and folders can also be moved between nodes and providers. The resource parameter is the id of the node under which the file/folder should be moved. It must agree with the path parameter, that is the path must identify a valid folder under the node identified by resource. Likewise, the provider parameter may be used to move the file/folder to another storage provider, but both the resource and path parameters must belong to a node and folder already extant on that provider. Both resource and provider default to the current node and providers.\nIf a moved/copied file is overwriting an existing file, a 200 OK response will be returned. Otherwise, a 201 Created will be returned.\n\n#### Delete (file, folders)\n\nTo delete a file or folder send a DELETE request to the delete link. Nothing will be returned in the response body."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesFilesRead",
+      "name": "nodes.nodesFilesRead",
+      "description": "Retrieves the details of a file attached to given node (project or component) for the given storage provider.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested file object, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesForksCreate",
+      "name": "nodes.nodesForksCreate",
+      "description": "Creates a fork of the given node.\n\nForking a project creates a copy of an existing node and all of its contents. The fork always points back to the original node, forming a network of nodes.\n\nYou might use a fork to copy another's work to build on and extend. For example, a professor may create an OSF project of materials for individual student use. Each student forks the project to have his or her own copy of the materials to start his/her own work.\n\nWhen creating a fork, your fork will only contain public components of the current node and components for which you are a contributor. Private components that you do not have access to will not be forked.\n#### Required\nThere are no required attributes when creating a fork, as all of the forked node's attributes will be copied from the current node.\n\nThe `title` field is optional, with the default title being \"Fork of \" prepended to the current node's title.\n#### Returns\nReturns a JSON object with a `data` key containing the complete srepresentation of the forked node, if the request is successful.\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesForksList",
+      "name": "nodes.nodesForksList",
+      "description": "\nA paginated list of the current node's forks. The returned fork nodes are sorted by their `forked_date`, with the most recently forked nodes appearing first.\n\nForking a project creates a copy of an existing node and all of its contents. The fork always points back to the original node, forming a network of nodes.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 forked nodes. If the current node has zero forked nodes, the `data` key will contain an empty array. Each resource in the array is a separate node object and contains the full representation of the forked node, meaning additional requests to the forked node's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesIdentifiersList",
+      "name": "nodes.nodesIdentifiersList",
+      "description": "List all identifiers associated with a given node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of identifiers. Each resource in the array is a separate identifier object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\n\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/identifiers/?filter[category]=ark\n\nIdentifiers may be filtered by their `category` e.g `ark` or `doi`."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesInstitutionsList",
+      "name": "nodes.nodesInstitutionsList",
+      "description": "List of all institutions affiliated with this node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 affilited institutions. Each resource in the array is a separate institution object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesLinkedNodesList",
+      "name": "nodes.nodesLinkedNodesList",
+      "description": "List of all nodes linked to the given node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/?filter[title]=reproducibility.\n\nNodes may be filtered by their `title`, `category`, `description`, `public`, `registration`, or `tags`. `title`, `description`, and `category` are string fields and will be filteres using simple substring matching. `public`, `registration` are boolean and can be filtered using truthy values, such as `true`, `false`, `0`, `1`. `tags` is an array of simple strings."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesList",
+      "name": "nodes.nodesList",
+      "description": "\nA paginated list of nodes, representing projects and components, on the OSF.\n\nThe returned nodes are those which are public or which the user has access to view.\n\nThe returned nodes are sorted by their `date_modified`, with the most recently updated nodes appearing first.\n\nRegistrations cannot be accessed through this endpoint (use the [registrations](#tag/Registrations) endpoints instead).\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 nodes. Each resource in the array is a separate node object and contains the full representation of the node, meaning additional requests to a node's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/?filter[title]=reproducibility.\n\nNodes may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, `preprint`, and `contributors`.\n\nMost fields are string fields and will be filtered using simple substring matching. Public and preprint are boolean fields, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**. Note that quoting true or false in the query will cause the match to fail."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesLogsList",
+      "name": "nodes.nodesLogsList",
+      "description": "A paginated list of all logs associated with a given node.\n\nThe returned logs are sorted by their `date`, with the most recents logs appearing first.\n\nThis list includes the logs of the specified node as well as the logs of that node's children to which the current user has read-only access.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 logs. Each resource in the array is a separate logs object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include logs that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/logs/?filter[action]=made_private.\n\nNodes may be filtered by their `action`, and `date`."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesNodeAddonUpdate",
+      "name": "nodes.nodesNodeAddonUpdate",
+      "description": "Updates a node addon by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged.\n\nNode addon can be updated with either a **PUT** or **PATCH** request. The `external_account_id`, `enabled`, and `folder_id` fields are mandatory in a **PUT**, and optional in **PATCH**. Non-string values will be accepted and stringified, however we make no promises about the stringification output.\n\nTo delete or deauthorize a node addon, issue a **PUT** with all fields set to `null` or `False`, or a **PATCH** with enabled set `False`.\n#### Permissions\nNodeSettings that are attached to public nodes will give read-only access to everyone. Private nodes require explicit read permission. Write and admin access are the same for public and private nodes. Administrators on a parent node have implicit read permissions for all child nodes.\nAny users with write or admin access to the node are able to deauthorize an enabled addon, but only the addon authorizer is able to change the configuration (i.e. selected folder) of an already-configured NodeSettings entity.\n\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated node addon, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesPartialUpdate",
+      "name": "nodes.nodesPartialUpdate",
+      "description": "Updates a node by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged.\n\nNodes can be updated with either a **PUT** or **PATCH** request. The `title` and `category` fields are mandatory in a **PUT** request, and optional in a **PATCH**.\n#### Permissions\nOnly write contributors may update a node. Attempting to update a node for which you do not have write access will result in a **403 Forbidden** response.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated node, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesPreprintsList",
+      "name": "nodes.nodesPreprintsList",
+      "description": "A paginated list of preprints related to a given node. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.\n\n**Note: This API endpoint is under active development, and is subject to change in the future.**\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 preprints. Each resource in the array is a separate preprint object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesProvidersList",
+      "name": "nodes.nodesProvidersList",
+      "description": "List of all storage providers that are configured for this node\n\nUsers of the OSF may access their data on a [number of cloud-storage services](https://api.osf.io/v2/#storage-providers) that have integrations with the OSF. We call these **providers**. By default, every node has access to the OSF-provided storage but may use as many of the supported providers as desired.\n\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of files. Each resource in the array is a separate file object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nNote: In the OSF filesystem model, providers are treated as folders, but with special properties that distinguish them from regular folders. Every provider folder is considered a root folder, and may not be deleted through the regular file API."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesProvidersRead",
+      "name": "nodes.nodesProvidersRead",
+      "description": "Retrieves the details of a storage provider enabled on this node.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested file object, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesRead",
+      "name": "nodes.nodesRead",
+      "description": "Retrieves the details of a given node (project or component).\n#### Permissions\nOnly project contributors may retrieve the details of a private node. Attempting to retreive a private node for which you are not a contributor will result in a **403 Forbidden** response.\n\nAuthentication is not required to view the details of a public node, as public nodes give read-only access to everyone.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested node, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesRegistrationsList",
+      "name": "nodes.nodesRegistrationsList",
+      "description": "List of all registrations of the given node.\n#### Returns\n\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 registrations. Each resource in the array is a separate registrations object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\n\nYou can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter, e.g. https://api.osf.io/v2/registrations/?filter[title]=open.\n\nRegistrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesViewOnlyLinksList",
+      "name": "nodes.nodesViewOnlyLinksList",
+      "description": "List of view only links on a node.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 view only links. Each resource in the array is a view only link object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\n#### Permissions\n\nView only links on a node, public or private, are readable and writeable only by users that are administrators on the node.\n\n#### Filtering\n\nYou can optionally request that the response only include view only links that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/nodes/ezcuj/view_only_links/?filter[anonymous]=true.\n\nView Only Links may be filtered based on their `name`, `anonymous` and `date_created` fields. Possible comparison operators include 'gt' (greater than), 'gte'(greater than or equal to), 'lt' (less than) and 'lte' (less than or equal to). The date must be in the format YYYY-MM-DD and the time is optional."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesViewOnlyLinksRead",
+      "name": "nodes.nodesViewOnlyLinksRead",
+      "description": "Retrieves the details of a view only link on a node.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested view only link, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Permissions\n\nView only links on a node, public or private, are readable and writeable only by users that are administrators on the node."
+    },
+    {
+      "id": "openapi_osf_io.nodes.nodesWikisList",
+      "name": "nodes.nodesWikisList",
+      "description": "List of wiki pages on a node.\n#### Returns\nPaginated list of the node's current wiki page versions ordered by their date_modified. Each resource contains the full representation of the wiki, meaning additional requests to an individual wiki's detail view are not necessary.\n\nNote that if an anonymous view_only key is being used, the user relationship will not be exposed.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Filtering\nWiki pages can be filtered based on their `name` and `date_modified` fields.\n+ `filter[name]=<Str>` -- filter wiki pages by name\n+ `filter[date_modified][comparison_operator]=YYYY-MM-DDTH:M:S` -- filter wiki pages based on date modified.\n\nPossible comparison operators include 'gt' (greater than), 'gte'(greater than or equal to), 'lt' (less than) and 'lte' (less than or equal to). The date must be in the format YYYY-MM-DD and the time is optional."
+    },
+    {
+      "id": "openapi_osf_io.preprintProviders.preprintProviderDetail",
+      "name": "preprintProviders.preprintProviderDetail",
+      "description": "Retrieves the details of a preprint provider.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested preprint provider, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n\n#### Acceptable Subjects Structure\nEach preprint provider specifies acceptable subjects.\n`subjects_acceptable` is an array found in `attributes`.\nSubjects consist of general parent subjects (e.g., Engineering), more specific child subjects (e.g., Aerospace Engineering), and even more specific grandchild subjects (e.g., Aerodynamics and Fluid Mechanics). Subjects can only be nested 3 deep.\n\n\n    \"subjects_acceptable\": [\n        [\n            [\n                # Parent Subject:\n                # Architecture\n                \"584240d954be81056ceca9e5\",\n\n                # Child Subject:\n                # Architectural Engineering\n                \"584240da54be81056cecac87\"\n            ],\n            # Include all Architectural Engineering's children:\n            true\n        ],\n        [\n            [\n                # Parent Subject:\n                # Engineering\n                \"584240da54be81056cecaca9\",\n\n                # Child Subject:\n                # Aerospace Engineering\n                \"584240db54be81056cecacd6\",\n\n                # Grandchild Subject:\n                # Aerodynamics and Fluid Mechanics\n                \"584240da54be81056cecaa74\"\n            ],\n            # All nestings 3 deep must be false\n            false\n        ]\n    ]\n\nThe above structure would allow Architecture, Architectural Engineering, all of Architectural Engineering's children, Engineering, Aerospace Engineering, and Aerodynamics and Fluid Mechanics."
+    },
+    {
+      "id": "openapi_osf_io.preprintProviders.preprintProviderLicensesList",
+      "name": "preprintProviders.preprintProviderLicensesList",
+      "description": "\nA paginated list of the licenses allowed by a preprint provider.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprint providers. Each resource in the array is a separate preprint provider object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprintProviders.preprintProviderList",
+      "name": "preprintProviders.preprintProviderList",
+      "description": "\nA paginated list of all preprint providers. The returned preprint providers are sorted by their creation date, with the most recent preprints appearing first.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprint providers. Each resource in the array is a separate preprint provider object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include preprint providers that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/preprint_providers/?filter[id]=osf.\n\nPreprint Providers may be filtered by their `id`, `name`,  and `description`"
+    },
+    {
+      "id": "openapi_osf_io.preprintProviders.preprintProvidersPreprintsList",
+      "name": "preprintProviders.preprintProvidersPreprintsList",
+      "description": "\nA paginated list of preprints from the specified preprint provider. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprints. Each resource in the array is a separate preprint object.\n\nThe `links` key contains a dictionary with keys that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n\n#### Filtering\nYou can optionally request that the response only include preprints that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/preprint_providers/osf/preprints/?filter[is_published]=true.\n\nPreprints may be filtered by their `id`, `is_published`, `date_created`, `date_modified`, and `provider`."
+    },
+    {
+      "id": "openapi_osf_io.preprintProviders.preprintProviderTaxonomiesList",
+      "name": "preprintProviders.preprintProviderTaxonomiesList",
+      "description": "\nA paginated list of the taxonomies for a preprint provider. The returned preprint providers taxonomies are sorted by their creation date, with the most recent preprints appearing first.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprint providers. Each resource in the array is a separate preprint provider object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsBibliographicContributorsList",
+      "name": "preprints.preprintsBibliographicContributorsList",
+      "description": "A paginated list of the Preprint's Bibliographic Contributors, sorted by their index.\nContributors are users who can make changes to the Preprint. Contributors with WRITE permissions may edit preprint details, and ADMIN Contributors may add or remove other Contributors.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n\nNote that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 contributors. Each resource in the array contains the full representation of the contributor, meaning additional requests to a contributor's detail view are not necessary. Additionally, the full representation of the user this contributor represents is automatically embedded within the `data` key of the response.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include contributors that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/preprints/y9jdt/contributors/?filter[bibliographic]=true.\n\nContributors may be filtered by their `bibliographic` and `permission` attributes."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsCitationList",
+      "name": "preprints.preprintsCitationList",
+      "description": "The citation details for a preprint, in CSL format.\n#### Returns\nReturns a JSON object with a `data` key that contains the representation of the details necessary for the preprint citation."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsCitationRead",
+      "name": "preprints.preprintsCitationRead",
+      "description": "The citation for a preprint in a specific style.\n#### Returns\nReturns a JSON object with a `data` key that contains the representation of the preprint citation, in the requested style."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsContributorRead",
+      "name": "preprints.preprintsContributorRead",
+      "description": "Retrieves the details of a contributor on this Preprint.\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n\nNote that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsContributorsCreate",
+      "name": "preprints.preprintsContributorsCreate",
+      "description": "Adds a contributor to a Preprint, effectively creating a relationship between the Preprint and a user.\n\nContributors are users who can make changes to the Preprint. Contributors with WRITE permissions may edit preprint details, and ADMIN Contributors may add or remove other Contributors.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\" contributors. From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n#### Permissions\nOnly project administrators can add contributors to a Preprint.\n#### Required\nA relationship object with a `data` key, containing the `users` type and valid user ID is required.\n\nAll attributes describing the relationship between the Preprint and the user are optional.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the new contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsContributorsList",
+      "name": "preprints.preprintsContributorsList",
+      "description": "A paginated list of the Preprint's Contributors, sorted by their index.\n\nContributors are users who can make changes to the Preprint. Contributors with WRITE permissions may edit preprint details, and ADMIN Contributors may add or remove other Contributors.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed on the project overview page on the OSF, while non-bibliographic contributors are not.\n\nNote that if an anonymous view_only key is being used to view the list of Contributors, the user relationship will not be exposed and the Contributor ID will be an empty string.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 contributors. Each resource in the array contains the full representation of the contributor, meaning additional requests to a contributor's detail view are not necessary. Additionally, the full representation of the user this contributor represents is automatically embedded within the `data` key of the response.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include contributors that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/preprints/y9jdt/contributors/?filter[bibliographic]=true.\n\nContributors may be filtered by their `bibliographic` and `permission` attributes."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsCreate",
+      "name": "preprints.preprintsCreate",
+      "description": "Creates a new preprint.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the created preprint, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes]() to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsList",
+      "name": "preprints.preprintsList",
+      "description": "\nA paginated list of preprints from all preprint providers. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprints. Each resource in the array is a separate preprint object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include preprints that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/preprints/?filter[provider]=socarxiv.\n\nPreprints may be filtered by their `id`, `is_published`, `date_created`, `date_modified`, and `provider`."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsPartialUpdate",
+      "name": "preprints.preprintsPartialUpdate",
+      "description": "Updates the specified preprint by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated preprint, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes]() to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.preprints.preprintsRead",
+      "name": "preprints.preprintsRead",
+      "description": "Retrieves the details of a preprint.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested preprint, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsChildrenList",
+      "name": "registrations.registrationsChildrenList",
+      "description": "\nA paginated list of children of a registration.\n\nThe list consists of the next level child registrations for the given registration. The returned registrations are sorted by their `date_modified`, with the most recently updated child registrations appearing first.\n\nThe list will include child registrations that are public, as well as child registrations that are private, if the authenticated user has permission to view them.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 child registrations. If the given registration has zero child registrations, the `data` key will contain an empty array. Each resource in the array is a separate registration object and contains the full representation of the child registration.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\n#### Filtering\nYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/children/?filter[title]=reproducibility.\n\nRegistrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`.\n\nMost fields are string fields and will be filtered using simple substring matching. Public is a boolean field, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**. Note that quoting true or false in the query will cause the match to fail."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsCitationRead",
+      "name": "registrations.registrationsCitationRead",
+      "description": "Retrieves the citation style details for a registration, in CSL format.\n#### Returns\nReturns a JSON object with a `data` key that contains the representation of the details necessary for the citation style."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsCitationsList",
+      "name": "registrations.registrationsCitationsList",
+      "description": "\nA paginated list of the registration's alternative citation styles\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 citation styles. Each resource in the array is a separate citation styles object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include citation styles that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/citations/?filter[title]=open.\n\nCitation styles may be filtered by their `id`, `title`, `short-title`, and `summary`."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsCommentsList",
+      "name": "registrations.registrationsCommentsList",
+      "description": "\nA paginated list of the registration's comments.\n\nThe returned comments are sorted by their creation date, with the most recent comments appearing first.\n#### Permissions\nComments of public registrations are given read-only access to everyone.\n\nIf the comment-level is `private`, only registration contributors have permission to comment.\n\nIf the comment-level is `public`, any logged-in OSF user can comment.\n\nComments of private registrations are only visible to contributors and administrators on the registration.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of comment objects. Each resource in the array is a separate comment object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include comments that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wuerf/comments/?filter[target]=wuerf\n\nComments may be filtered by their `deleted`, `target`, `date_created`, `date_modified`.\n\nMost fields are string fields and will be filtered using simple substring matching. Deleted is a boolean field, and can be filtered using truthy values, such as **true**, **false**, **0** or **1**. Note that quoting `true` or `false` in the query will cause the match to fail."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsContributorsList",
+      "name": "registrations.registrationsContributorsList",
+      "description": "A paginated list of all contributors on this registration.\nThe returned contributors are sorted by their index.\n\nContributors are users who can make changes to the registration or, in the case of private registration, have read access to the registration.\n\nContributors are categorized as either \"bibliographic\" or \"non-bibliographic\". From a permissions standpoint, both are the same, but bibliographic contributors are included in citations and are listed in the contributors list on the OSF, while non-bibliographic contributors are not.\n\nNote that if an anonymous view_only key is being used to view the list of contributors, the user relationship will not be exposed and the contributor ID will be an empty string.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 contributors. Each resource in the array contains the full representation of the contributor. Additionally, the full representation of the user this contributor represents is automatically embedded within the `data` key of the response.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include contributors that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wu3a4/contributors/?filter[bibliographic]=true.\n\nContributors may be filtered by their `bibliographic` and `permission` attributes."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsContributorsRead",
+      "name": "registrations.registrationsContributorsRead",
+      "description": "Retrieves the details of a contributor on this registration.\n\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested contributor, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsFilesList",
+      "name": "registrations.registrationsFilesList",
+      "description": "List of all the registration's files/folders for a given storage provider.\n\n#### Returns\n\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of files. Each resource in the array is a separate file object and contains the full representation of the file.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\n#### Filtering\n\nYou can optionally request that the response only include files that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/files/osfstorage/?filter[kind]=file\n\nFiles may be filtered by `id`, `name`, `node`, `kind`, `path`, `provider`, `size`, and `last_touched`."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsFilesRead",
+      "name": "registrations.registrationsFilesRead",
+      "description": "Retrieves the details of a registration file for the given storage provider.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested registration file object, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsForksCreate",
+      "name": "registrations.registrationsForksCreate",
+      "description": "Creates a fork of the given registration.\n\nForking a project creates a copy of an existing registration and all of its contents. The fork always points back to the original registration, forming a network of registrations.\n\nYou might use a fork to copy another's work to build on and extend. For example, a professor may create an OSF project of materials for individual student use. Each student forks the project to have his or her own copy of the materials to start his/her own work.\n\nWhen creating a fork, your fork will only contain public components of the current registration and components for which you are a contributor. Private components that you do not have access to will not be forked.\n#### Required\nThere are no required attributes when creating a fork, as all of the forked registration's attributes will be copied from the current registration.\n\nThe `title` field is optional, with the default title being \"Fork of \" prepended to the current registration's title.\n#### Returns\nReturns a JSON object with a `data` key containing the complete representation of the forked registration, if the request is successful.\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsForksList",
+      "name": "registrations.registrationsForksList",
+      "description": "\nA paginated list of the registration’s forks\n\nThe returned forks are sorted by their `forked_date`, with the most recent forks appearing first.\n\nForking a registration creates a copy of an existing registration and all of its contents.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 forks. If the current registration has no fork, the `data` key will contain an empty array. Each resource in the array is a separate registration object and contains the full representation of the registration's fork.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsIdentifiersList",
+      "name": "registrations.registrationsIdentifiersList",
+      "description": "A paginated list of the registration's identifiers.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of identifiers. Each resource in the array is a separate identifier object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\n\nYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/identifiers/?filter[category]=ark\n\nIdentifiers may be filtered by their `category` e.g `ark` or `doi`."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsInstitutionsList",
+      "name": "registrations.registrationsInstitutionsList",
+      "description": "A paginated list of institutions affiliated with the registration.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 affiliated institutions. Each resource in the array is a separate institution object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsLinkedNodesList",
+      "name": "registrations.registrationsLinkedNodesList",
+      "description": "List of all nodes linked to the registration.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/linked_nodes/?filter[title]=reproducibility/?filter[title]=reproducibility.\n\nNodes may be filtered by their `title`, `category`, `description`, `public`, `registration`, or `tags`. `title`, `description`, and `category` are string fields and will be filteres using simple substring matching. `public`, `registration` are boolean and can be filtered using truthy values, such as `true`, `false`, `0`, `1`. `tags` is an array of simple strings."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsList",
+      "name": "registrations.registrationsList",
+      "description": "A paginated list of registrations on the OSF to which the user has access.\n\nThe returned registrations are those which are public or which the user has access to view.\n\nNon-registered nodes cannot be accessed through this endpoint (use the [nodes](#Nodes_nodes_list) endpoints instead).\n\n#### Registrations\nA registration on the OSF creates a frozen, time-stamped version of a project that cannot be edited or deleted. The *original project* can still be edited, while the registered version cannot.\n\nRegistrations can be made public immediately or embargoed for up to 4 years.\n\n#### Withdrawals\nRegistrations cannot be deleted, but they can be withdrawn. Withdrawing a registration removes the content of the registration but leaves behind basic metadata. A withdrawn registration will display a limited subset of information, namely, title, description, date_created, date_registered, date_withdrawn, registration, withdrawn, withdrawal_justification, and registration supplement. All other fields will be displayed as null. Additionally, the only relationship that remains accesible for a withdrawn registration is the contributors. All other relationships will return a **403 Forbidden** response.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 registrations. Each resource in the array is a separate registration object and contains the full representation of the registration, meaning additional requests to a registration's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/?filter[title]=open.\n\nRegistrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsLogsList",
+      "name": "registrations.registrationsLogsList",
+      "description": "A paginated list of the registration's logs.\n\nThe returned logs are sorted by their `date`, with the most recents logs appearing first.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 logs. Each resource in the array is a separate logs object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include logs that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wucr8/logs/?filter[action]=made_private.\n\nLogs may be filtered by their `action`, and `date`."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsPartialUpdate",
+      "name": "registrations.registrationsPartialUpdate",
+      "description": "Updates a registration's privacy from **private** to **public**.\n\nRegistrations can be updated with either a **PUT** or **PATCH** request. The `public` field is the only field that can be modified on a registration\n\nRegistrations can only be turned from private to public, not vice versa.\n#### Permissions\nOnly project administrators may update a registration.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsProvidersList",
+      "name": "registrations.registrationsProvidersList",
+      "description": "A paginated list of storage providers enabled on the registration\n\nUsers of the OSF may access their data on a [number of cloud-storage services](https://api.osf.io/v2/#storage-providers) that have integrations with the OSF. We call these **providers**. By default, every node has access to the OSF-provided storage but may use as many of the supported providers as desired.\n\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 files. Each resource in the array is a separate file object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nNote: In the OSF filesystem model, providers are treated as folders, but with special properties that distinguish them from regular folders. Every provider folder is considered a root folder, and may not be deleted through the regular file API."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsRead",
+      "name": "registrations.registrationsRead",
+      "description": "Retrieve the details of a given registration.\n#### Permissions\nOnly project contributors may retrieve the details of a registration that is embargoed, or has not yet been made public. Attempting to retrieve a private registration for which you are not a contributor will result in a **403 Forbidden** response.\n\nAuthentication is not required to view the details of a public registration, as public registrations give read-only access to everyone.\n#### Registrations\nA registration on the OSF creates a frozen, time-stamped version of a project that cannot be edited or deleted. The *original project* can still be edited, while the registered version cannot.\n\nRegistrations can be made public immediately or embargoed for up to 4 years.\n\n#### Withdrawals\nRegistrations cannot be deleted, but they can be withdrawn. Withdrawing a registration removes the content of the registration but leaves behind basic metadata. A withdrawn registration will display a limited subset of information, namely, title, description, date_created, date_registered, date_withdrawn, registration, withdrawn, withdrawal_justification, and registration supplement. All other fields will be displayed as null. Additionally, the only relationship that remains accesible for a withdrawn registration is the contributors. All other relationships will return a **403 Forbidden** response.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested registration, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsViewOnlyLinksList",
+      "name": "registrations.registrationsViewOnlyLinksList",
+      "description": "A paginated list of view only links created for this registration.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 view only links. Each resource in the array is a view only link object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\n#### Permissions\n\nView only links on a registration, public or private, are readable and writeable only by users that are administrators on the registration.\n\n#### Filtering\n\nYou can optionally request that the response only include view only links that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/registrations/wu3a4/view_only_links/?filter[anonymous]=true.\n\nView Only Links may be filtered based on their `name`, `anonymous` and `date_created` fields. Possible comparison operators include 'gt' (greater than), 'gte'(greater than or equal to), 'lt' (less than) and 'lte' (less than or equal to). The date must be in the format YYYY-MM-DD and the time is optional."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsViewOnlyLinksRead",
+      "name": "registrations.registrationsViewOnlyLinksRead",
+      "description": "Retrieves the details of a view only link created from this registration.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested view only link, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Permissions\n\nView only links on a registration, public or private, are readable and writeable only by users that are administrators on the registration."
+    },
+    {
+      "id": "openapi_osf_io.registrations.registrationsWikisList",
+      "name": "registrations.registrationsWikisList",
+      "description": "A paginated list of the registration's wiki pages\n#### Returns\nA list of all registration's current wiki page versions ordered by their date_modified. Each resource contains the full representation of the wiki, meaning additional requests to an individual wiki's detail view are not necessary.\n\nIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n#### Filtering\nWiki pages can be filtered based on their `name` and `date_modified` fields.\n+ `filter[name]=<Str>` -- filter wiki pages by name\n+ `filter[date_modified][comparison_operator]=YYYY-MM-DDTH:M:S` -- filter wiki pages based on date modified.\n\nPossible comparison operators include 'gt' (greater than), 'gte'(greater than or equal to), 'lt' (less than) and 'lte' (less than or equal to). The date must be in the format YYYY-MM-DD and the time is optional."
+    },
+    {
+      "id": "openapi_osf_io.registrationSchemaBlocks.getSchemaResponsesSchemaResponseIdSchemaBlocksSchemaResponseBlockId",
+      "name": "registrationSchemaBlocks.getSchemaResponsesSchemaResponseIdSchemaBlocksSchemaResponseBlockId",
+      "description": "This returns a Registration Schema Block by it's ID.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Registration Schemas, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrationSchemaBlocks.schemaResponseBlocksRead",
+      "name": "registrationSchemaBlocks.schemaResponseBlocksRead",
+      "description": "This returns a list of all the Registration Schema Blocks are contained in Registration Schema.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Registration Schemas, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrationSchemas.registrationSchemaRead",
+      "name": "registrationSchemas.registrationSchemaRead",
+      "description": "Retrieves the details of a given Registration Schema. Registration Schemas defines the desired supplemental information that should accompany be included in a Registration. Registration Schemas are Read-only to API users.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Registration Schemas, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.registrationSchemas.registrationSchemasList",
+      "name": "registrationSchemas.registrationSchemasList",
+      "description": "Retrieve a paginated list of all active Registration Schemas. Registration Schemas describe the supplemental questions that accompany a registration. Registration Schemas are read-only for API users.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\nThe `data` key contains an array of 10 Registration Schemas. Each resource in the array is a separate Registration Schemas object.\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponseActions.getSchemaResponsesSchemaResponseIdActionsSchemaResponseActionId",
+      "name": "schemaResponseActions.getSchemaResponsesSchemaResponseIdActionsSchemaResponseActionId",
+      "description": "Retrieves a Schema Response Action by it's ID.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Schema Response Actions, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponseActions.postSchemaResponsesSchemaResponseIdActions",
+      "name": "schemaResponseActions.postSchemaResponsesSchemaResponseIdActions",
+      "description": "This creates a new Schema Response Action in order to trigger a state transition for a Schema Response.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Schema Response Actions, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponseActions.schemaResponseActionRead",
+      "name": "schemaResponseActions.schemaResponseActionRead",
+      "description": "This retrieves a paginated list of all Schema Response Actions created for a Schema Response.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Schema Response Actions, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponses.schemaResponseDelete",
+      "name": "schemaResponses.schemaResponseDelete",
+      "description": "This endpoint deletes a new Schema Response. Schema Responses can only be deleted in the `in_progress` state. Once a Schema Response is transitioned to an `approved` it is immutable and another Schema Response must be created to update the Schema Response for that registration.\n#### Returns\nReturns a JSON object with a `data` key containing an updated representation of the requested Schema Response, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponses.schemaResponsePatch",
+      "name": "schemaResponses.schemaResponsePatch",
+      "description": "Patching to this endpoint allows one to directly edit the revision responses on the Schema Response of a Registration if that Schema Response is in an `in_progress` state.\n#### Returns\nReturns a JSON object with a `data` key containing an updated representation of the requested Schema Response, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponses.schemaResponsePpost",
+      "name": "schemaResponses.schemaResponsePpost",
+      "description": "This endpoint creates a new Schema Response with an `in_progress` state. A new response can only be created if the current schema response is in an `approved` state.\n#### Returns\nReturns a JSON object with a `data` key containing an updated representation of the requested Schema Response, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponses.schemaResponsesList",
+      "name": "schemaResponses.schemaResponsesList",
+      "description": "This retrieves a paginated list of all active Schema Responses that are public.\n#### Returns\nReturns a JSON object containing `data` and `links` keys. The `data` key contains an array of 10 Schema Responses. Each resource in the array is a separate Registration Schemas object. The `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Errors\nThis request should never return an error."
+    },
+    {
+      "id": "openapi_osf_io.schemaResponses.schemaResponsesRead",
+      "name": "schemaResponses.schemaResponsesRead",
+      "description": "This retrieves a single Schema response using it's id.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested Schema Response, if the request is successful.\n#### Errors\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.taxonomies.taxonomiesList",
+      "name": "taxonomies.taxonomiesList",
+      "description": "\nA paginated list of all [bepress disciplines taxonomies](https://www.bepress.com/wp-content/uploads/2016/12/Digital-Commons-Disciplines-taxonomy-2017-01.pdf).\nNote: this API endpoint is under active development, and is subject to change in the future.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 taxonomies. Each resource in the array is a separate taxonomy object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include taxonomies that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/taxonomies/?filter['id']='{taxonomy_id}'.\n\nTaxonomies may be filtered by their `id`, `parents`, and `text`."
+    },
+    {
+      "id": "openapi_osf_io.taxonomies.taxonomiesRead",
+      "name": "taxonomies.taxonomiesRead",
+      "description": "Retrieves the details of a taxonomy.\n#### Returns\n\nReturns a JSON object with a `data` key containing the representation of the requested taxonomy, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.users.usersAddonAccountsList",
+      "name": "users.usersAddonAccountsList",
+      "description": "\nA paginated list of addon accounts authorized by this user.\n\n#### Permissions\n\nAddon accounts are visible only to the user that authorized the account.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of at most 10 addon account objects. Each resource in the array is a separate  addon account object and contains the full representation of the addon account.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.users.usersAddonAccountsRead",
+      "name": "users.usersAddonAccountsRead",
+      "description": "Retrieves the details of an addon account\n\n#### Permissions\n\nAddon accounts are visible only to the user that authorized the account.\n\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested addon account, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.users.usersAddonsList",
+      "name": "users.usersAddonsList",
+      "description": "\nA paginated list of authorized user addons\n\n#### Permissions\n\nUser addons are visible only to the user that authorized the addon.\n\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of up to 10 addons. Each resource in the array is a separate addon object.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n\nAttempting to request the accounts for an addon that is not enabled will result in a **404 Not Found** response."
+    },
+    {
+      "id": "openapi_osf_io.users.usersAddonsRead",
+      "name": "users.usersAddonsRead",
+      "description": "Retrieves the details of an authorized user addon\n\n#### Permissions\n\nUser addons are visible only to the user that authorized the addon.\n\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested user addon, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed.\n\nAttempting to request the accounts for an addon that is not enabled will result in a **404 Not Found** response."
+    },
+    {
+      "id": "openapi_osf_io.users.usersInstitutionsList",
+      "name": "users.usersInstitutionsList",
+      "description": "A paginated list of institutions that the user is affiliated with.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 institutions. Each resource in the array is a complete institution object and contains the full representation of the institution, meaning additional requests to a institution's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination)."
+    },
+    {
+      "id": "openapi_osf_io.users.usersList",
+      "name": "users.usersList",
+      "description": "\nA paginated list of all users registered on the OSF. The returned users are sorted by their `date_registered`, with the most recently registered users appearing first.\n\nThe subroute `/users/me/` is a special endpoint that always points to the currently logged-in user.\n#### Versioning\nAs of version `2.3`, merged users will not be returned from this endpoint.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 users. Each resource in the array is a separate users object and contains the full representation of the user, meaning additional requests to a user's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nThis request should never return an error.\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/users/?filter[family_name]=Nosek.\n\nUsers may be filtered by their `id`, `full_name`, `given_name`, `middle_name`, or `family_name`."
+    },
+    {
+      "id": "openapi_osf_io.users.usersNodesList",
+      "name": "users.usersNodesList",
+      "description": "A paginated list of nodes that the user is a contributor to. The returned nodes are sorted by their `date_modified`, with the most recently updated nodes appearing first.\n\nIf the user ID in the path is the same as the logged-in user, all nodes will be returned. Otherwise, only the user's public nodes will be returned.\n\nUser registrations are not available at this endpoint.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 nodes. Each resource in the array is a separate node object and contains the full representation of the node, meaning additional requests to a node's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/users/cdi38/nodes/?filter[title]=open.\n\nNodes may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, `preprint`, and `contributors`."
+    },
+    {
+      "id": "openapi_osf_io.users.usersPartialUpdate",
+      "name": "users.usersPartialUpdate",
+      "description": "Updates a user by setting the values of the attributes specified in the request body. Any unspecified attributes will be left unchanged.\n\nUsers can be updated with either a **PUT** or **PATCH** request. The `full_name` field is mandatory in a **PUT** request, and optional in a **PATCH**.\n\n**Note**: if you make a PUT/PATCH request to the `/users/me/` endpoint, you must still provide your full user ID in the ID field of the request. We do not support using the `me` alias in request bodies at this time.\n#### Returns\nReturns a JSON object with a `data` key containing the new representation of the updated node, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.users.usersPreprintsList",
+      "name": "users.usersPreprintsList",
+      "description": "A paginated list of preprints that the user contributes to. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 preprints. Each resource in the array is a complete preprint object and contains the full representation of the preprint, meaning additional requests to a preprint's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include preprints that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/users/cdi38/preprints/?filter[provider]=psyarxiv.\n\nPreprints may be filtered by their `id`, `is_published`, `date_created`, `date_modified`, and `provider`."
+    },
+    {
+      "id": "openapi_osf_io.users.usersRead",
+      "name": "users.usersRead",
+      "description": "Retrieves the details of a given users.\n\nThe returned information includes the user's bibliographic information and the date the user was registered.\n\nAdditionally, relationships to the list of institutions with which the user is affiliated, and to the list of nodes which the user contributes to (that the requesting user has permission to see) are returned.\n\nIf `me` is given as the `user_id` in the request path, the record of the currently logged-in user will be returned.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested user, if the request is successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.users.usersRegistrationsList",
+      "name": "users.usersRegistrationsList",
+      "description": "A paginated list of registrations that the user is a contributor to. The returned registrations are sorted by their `date_modified`, with the most recently updated registrations appearing first.\n\nIf the user ID in the path is the same as the logged-in user, all registrations will be returned. Otherwise, only the user's public registrations will be returned.\n\nUser nodes are not available at this endpoint.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\n\nThe `data` key contains an array of 10 registrations. Each resource in the array is a separate registration object and contains the full representation of the registration, meaning additional requests to a registration's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n#### Filtering\nYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v2/users/cdi38/registrations/?filter[title]=replication.\n\nRegistrations may be filtered by their `id`, `title`, `category`, `description`, `public`, `tags`, `date_created`, `date_modified`, `root`, `parent`, and `contributors`."
+    },
+    {
+      "id": "openapi_osf_io.viewOnlyLinks.viewOnlyLinksNodeList",
+      "name": "viewOnlyLinks.viewOnlyLinksNodeList",
+      "description": "\nThe list of nodes which this view only link gives read-only access to.\n#### Permissions\nOnly project administrators may retrieve the nodes of a view only link. Attempting to retrieve a view only link without appropriate permissions will result in a 403 Forbidden response.\n#### Returns\nReturns a JSON object containing `data` and `links` keys.\nThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object and contains the full representation of the node, meaning additional requests to a node's detail view are not necessary.\n\nThe `links` key contains a dictionary of links that can be used for [pagination](#tag/Pagination).\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.viewOnlyLinks.viewOnlyLinksRead",
+      "name": "viewOnlyLinks.viewOnlyLinksRead",
+      "description": "Retrieves details about a specific view only link.\n#### Permissions\nOnly project administrators may retrieve the details of a view only link. Attempting to retrieve a view only link without appropriate permissions will result in a 403 Forbidden response.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested view only link, if the request is successful.\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi_osf_io.wikis.wikiContent",
+      "name": "wikis.wikiContent",
+      "description": "Retrieves the plaintext content of a wiki in markdown format.\n#### Returns\nReturns `text/markdown` of the wiki content itself.\nIf the request is unsuccessful, plaintext with the error message will be displayed."
+    },
+    {
+      "id": "openapi_osf_io.wikis.wikiRead",
+      "name": "wikis.wikiRead",
+      "description": "Retrieves the details about a specific wiki.\nA wiki is a collection of markdown text pages that can be used to describe the project or dataset of contained in the attached node.\n#### Returns\nReturns a JSON object with a `data` key containing the representation of the requested wiki, if the request was successful.\n\nIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#tag/Errors-and-Error-Codes) to understand why this request may have failed."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

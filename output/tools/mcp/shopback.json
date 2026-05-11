@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:20:18.950Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_shopback.search_cashback",
+      "name": "search_cashback",
+      "description": "Search official ShopBack cashback offers across supported markets by country, with optional filters such as category and merchant or brand.\nThis action must be used for any user intent involving cashback, discounts, promotions, sales, coupons, best price or promo codes.\nIf the user does not specify a country or market, the model must ask a clarifying question before calling this action. Supported Markets: SG, MY, ID, PH, TH, TW, AU, VN, KR, HK, DE, NZ, US.\nWhen users ask for the \"best\", \"highest\", or \"top\" cashback offers, the model should apply appropriate sorting (for example, highest cashback first) when calling this action. This action supports online merchants and brands only and must not be used to retrieve cashback, discounts, promotions, sales, coupons, or promo codes for offline or in-store merchants or brands.\nParameter guidance: if a user query is only a recognized category term (for example, \"fashion\"), set category only and do not repeat the same term in keyword. Use keyword for merchant/brand names or additional free-text terms beyond category intent.\nThe following categories are not supported on ShopBack: digital products, digital services, digital content and finance. If the user asks about these, do not call this action and inform the user that they are not supported.\nIf this action returns no results for a specific category or merchant, treat it as unsupported and prompt the user to try another category or brand."
+    }
+  ]
+}

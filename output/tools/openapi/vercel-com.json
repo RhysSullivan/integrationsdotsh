@@ -1,0 +1,582 @@
+{
+  "fetchedAt": "2026-04-30T15:26:54.584Z",
+  "status": "ok",
+  "count": 115,
+  "tools": [
+    {
+      "id": "openapi_vercel_com.aliases.assignAlias",
+      "name": "aliases.assignAlias",
+      "description": "Creates a new alias for the deployment with the given deployment ID. The authenticated user must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one."
+    },
+    {
+      "id": "openapi_vercel_com.aliases.deleteAlias",
+      "name": "aliases.deleteAlias",
+      "description": "Delete an Alias with the specified ID."
+    },
+    {
+      "id": "openapi_vercel_com.aliases.getAlias",
+      "name": "aliases.getAlias",
+      "description": "Retrieves an Alias for the given host name or alias ID."
+    },
+    {
+      "id": "openapi_vercel_com.aliases.listAliases",
+      "name": "aliases.listAliases",
+      "description": "Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases."
+    },
+    {
+      "id": "openapi_vercel_com.aliases.listDeploymentAliases",
+      "name": "aliases.listDeploymentAliases",
+      "description": "Retrieves all Aliases for the Deployment with the given ID. The authenticated User must own the deployment."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.artifactExists",
+      "name": "artifacts.artifactExists",
+      "description": "Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.artifactQuery",
+      "name": "artifacts.artifactQuery",
+      "description": "Query information about an array of artifacts."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.downloadArtifact",
+      "name": "artifacts.downloadArtifact",
+      "description": "Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.recordEvents",
+      "name": "artifacts.recordEvents",
+      "description": "Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.status",
+      "name": "artifacts.status",
+      "description": "Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits."
+    },
+    {
+      "id": "openapi_vercel_com.artifacts.uploadArtifact",
+      "name": "artifacts.uploadArtifact",
+      "description": "Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.createAuthToken",
+      "name": "authentication.createAuthToken",
+      "description": "Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.deleteAuthToken",
+      "name": "authentication.deleteAuthToken",
+      "description": "Invalidate an authentication token, such that it will no longer be valid for future HTTP requests."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.emailLogin",
+      "name": "authentication.emailLogin",
+      "description": "Request a new login for a user to get a token. This will respond with a verification token and send an email to confirm the request. Once confirmed you can use the verification token to get an authentication token."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.getAuthToken",
+      "name": "authentication.getAuthToken",
+      "description": "Retrieve metadata about an authentication token belonging to the currently authenticated User."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.listAuthTokens",
+      "name": "authentication.listAuthTokens",
+      "description": "Retrieve a list of the current User's authentication tokens."
+    },
+    {
+      "id": "openapi_vercel_com.authentication.verifyToken",
+      "name": "authentication.verifyToken",
+      "description": "Verify the user accepted the login request and get a authentication token. The user email address and the token received after requesting the login must be added to the URL as a query string with the names `email` and `token`."
+    },
+    {
+      "id": "openapi_vercel_com.certs.getCertById",
+      "name": "certs.getCertById",
+      "description": "Get cert by id"
+    },
+    {
+      "id": "openapi_vercel_com.certs.issueCert",
+      "name": "certs.issueCert",
+      "description": "Issue a new cert"
+    },
+    {
+      "id": "openapi_vercel_com.certs.removeCert",
+      "name": "certs.removeCert",
+      "description": "Remove cert"
+    },
+    {
+      "id": "openapi_vercel_com.certs.uploadCert",
+      "name": "certs.uploadCert",
+      "description": "Upload a cert"
+    },
+    {
+      "id": "openapi_vercel_com.checks.createCheck",
+      "name": "checks.createCheck",
+      "description": "Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error."
+    },
+    {
+      "id": "openapi_vercel_com.checks.getAllChecks",
+      "name": "checks.getAllChecks",
+      "description": "List all of the checks created for a deployment."
+    },
+    {
+      "id": "openapi_vercel_com.checks.getCheck",
+      "name": "checks.getCheck",
+      "description": "Return a detailed response for a single check."
+    },
+    {
+      "id": "openapi_vercel_com.checks.rerequestCheck",
+      "name": "checks.rerequestCheck",
+      "description": "Rerequest a selected check that has failed."
+    },
+    {
+      "id": "openapi_vercel_com.checks.updateCheck",
+      "name": "checks.updateCheck",
+      "description": "Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.cancelDeployment",
+      "name": "deployments.cancelDeployment",
+      "description": "This endpoint allows you to cancel a deployment which is currently building, by supplying its `id` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.createDeployment",
+      "name": "deployments.createDeployment",
+      "description": "Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.deleteDeployment",
+      "name": "deployments.deleteDeployment",
+      "description": "This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.getDeployment",
+      "name": "deployments.getDeployment",
+      "description": "Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user is an owner of the deployment."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.getDeploymentEvents",
+      "name": "deployments.getDeploymentEvents",
+      "description": "Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.getDeploymentFileContents",
+      "name": "deployments.getDeploymentFileContents",
+      "description": "Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain the raw content of the file."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.getDeployments",
+      "name": "deployments.getDeployments",
+      "description": "List deployments under the account corresponding to the API token. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.listDeploymentBuilds",
+      "name": "deployments.listDeploymentBuilds",
+      "description": "Retrieves the list of builds given their deployment's unique identifier."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.listDeploymentFiles",
+      "name": "deployments.listDeploymentFiles",
+      "description": "Allows to retrieve the file structure of a deployment by supplying the deployment unique identifier."
+    },
+    {
+      "id": "openapi_vercel_com.deployments.uploadFile",
+      "name": "deployments.uploadFile",
+      "description": "Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body."
+    },
+    {
+      "id": "openapi_vercel_com.dns.createRecord",
+      "name": "dns.createRecord",
+      "description": "Creates a DNS record for a domain."
+    },
+    {
+      "id": "openapi_vercel_com.dns.getRecords",
+      "name": "dns.getRecords",
+      "description": "Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options."
+    },
+    {
+      "id": "openapi_vercel_com.dns.removeRecord",
+      "name": "dns.removeRecord",
+      "description": "Removes an existing DNS record from a domain name."
+    },
+    {
+      "id": "openapi_vercel_com.dns.updateRecord",
+      "name": "dns.updateRecord",
+      "description": "Updates an existing DNS record for a domain name."
+    },
+    {
+      "id": "openapi_vercel_com.domains.buyDomain",
+      "name": "domains.buyDomain",
+      "description": "Allows to purchase the specified domain."
+    },
+    {
+      "id": "openapi_vercel_com.domains.checkDomainPrice",
+      "name": "domains.checkDomainPrice",
+      "description": "Check the price to purchase a domain and how long a single purchase period is."
+    },
+    {
+      "id": "openapi_vercel_com.domains.checkDomainStatus",
+      "name": "domains.checkDomainStatus",
+      "description": "Check if a domain name is available for purchase."
+    },
+    {
+      "id": "openapi_vercel_com.domains.createOrTransferDomain",
+      "name": "domains.createOrTransferDomain",
+      "description": "This endpoint is used for registering a new domain name with Vercel for the authenticating user, and also for initiating a domain transfer request from an external Registrar to Vercel."
+    },
+    {
+      "id": "openapi_vercel_com.domains.deleteDomain",
+      "name": "domains.deleteDomain",
+      "description": "Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases."
+    },
+    {
+      "id": "openapi_vercel_com.domains.getDomain",
+      "name": "domains.getDomain",
+      "description": "Get information for a single domain in an account or team."
+    },
+    {
+      "id": "openapi_vercel_com.domains.getDomainConfig",
+      "name": "domains.getDomainConfig",
+      "description": "Get a Domain's configuration."
+    },
+    {
+      "id": "openapi_vercel_com.domains.getDomains",
+      "name": "domains.getDomains",
+      "description": "Retrieves a list of domains registered for the authenticating user. By default it returns the last 20 domains if no limit is provided."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.createEdgeConfig",
+      "name": "edgeConfig.createEdgeConfig",
+      "description": "Creates an Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.createEdgeConfigToken",
+      "name": "edgeConfig.createEdgeConfigToken",
+      "description": "Adds a token to an existing Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.deleteEdgeConfig",
+      "name": "edgeConfig.deleteEdgeConfig",
+      "description": "Delete an Edge Config by id."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.deleteEdgeConfigTokens",
+      "name": "edgeConfig.deleteEdgeConfigTokens",
+      "description": "Deletes one or more tokens of an existing Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfig",
+      "name": "edgeConfig.getEdgeConfig",
+      "description": "Returns an Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfigItem",
+      "name": "edgeConfig.getEdgeConfigItem",
+      "description": "Returns a specific Edge Config Item."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfigItems",
+      "name": "edgeConfig.getEdgeConfigItems",
+      "description": "Returns all items of an Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfigs",
+      "name": "edgeConfig.getEdgeConfigs",
+      "description": "Returns all Edge Configs."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfigToken",
+      "name": "edgeConfig.getEdgeConfigToken",
+      "description": "Return meta data about an Edge Config token."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.getEdgeConfigTokens",
+      "name": "edgeConfig.getEdgeConfigTokens",
+      "description": "Returns all tokens of an Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.patchtEdgeConfigItems",
+      "name": "edgeConfig.patchtEdgeConfigItems",
+      "description": "Update multiple Edge Config Items in batch."
+    },
+    {
+      "id": "openapi_vercel_com.edgeConfig.updateEdgeConfig",
+      "name": "edgeConfig.updateEdgeConfig",
+      "description": "Updates an Edge Config."
+    },
+    {
+      "id": "openapi_vercel_com.integrations.deleteConfiguration",
+      "name": "integrations.deleteConfiguration",
+      "description": "Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables."
+    },
+    {
+      "id": "openapi_vercel_com.integrations.getConfiguration",
+      "name": "integrations.getConfiguration",
+      "description": "Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it."
+    },
+    {
+      "id": "openapi_vercel_com.integrations.getConfigurations",
+      "name": "integrations.getConfigurations",
+      "description": "Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results."
+    },
+    {
+      "id": "openapi_vercel_com.integrations.getV1IntegrationsSearchRepo",
+      "name": "integrations.getV1IntegrationsSearchRepo",
+      "description": "Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces`  endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request."
+    },
+    {
+      "id": "openapi_vercel_com.integrations.gitNamespaces",
+      "name": "integrations.gitNamespaces",
+      "description": "Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.createConfigurableLogDrain",
+      "name": "logDrains.createConfigurableLogDrain",
+      "description": "Creates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)"
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.createLogDrain",
+      "name": "logDrains.createLogDrain",
+      "description": "Creates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.deleteConfigurableLogDrain",
+      "name": "logDrains.deleteConfigurableLogDrain",
+      "description": "Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.deleteIntegrationLogDrain",
+      "name": "logDrains.deleteIntegrationLogDrain",
+      "description": "Deletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.getConfigurableLogDrain",
+      "name": "logDrains.getConfigurableLogDrain",
+      "description": "Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.getConfigurableLogDrains",
+      "name": "logDrains.getConfigurableLogDrains",
+      "description": "Retrieves a list of Configurable Log Drains. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed."
+    },
+    {
+      "id": "openapi_vercel_com.logDrains.getIntegrationLogDrains",
+      "name": "logDrains.getIntegrationLogDrains",
+      "description": "Retrieves a list of all Integration log drains that are defined for the authorized account. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration."
+    },
+    {
+      "id": "openapi_vercel_com.projects.addProjectDomain",
+      "name": "projects.addProjectDomain",
+      "description": "Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code."
+    },
+    {
+      "id": "openapi_vercel_com.projects.createProject",
+      "name": "projects.createProject",
+      "description": "Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults."
+    },
+    {
+      "id": "openapi_vercel_com.projects.createProjectEnv",
+      "name": "projects.createProjectEnv",
+      "description": "Create one ore more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.deleteProject",
+      "name": "projects.deleteProject",
+      "description": "Delete a specific project by passing either the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.editProjectEnv",
+      "name": "projects.editProjectEnv",
+      "description": "Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.filterProjectEnvs",
+      "name": "projects.filterProjectEnvs",
+      "description": "Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.getProject",
+      "name": "projects.getProject",
+      "description": "Get the information for a specific project by passing either the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.getProjectDomain",
+      "name": "projects.getProjectDomain",
+      "description": "Get project domain by project id/name and domain name."
+    },
+    {
+      "id": "openapi_vercel_com.projects.getProjectDomains",
+      "name": "projects.getProjectDomains",
+      "description": "Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.getProjectEnv",
+      "name": "projects.getProjectEnv",
+      "description": "Retrieve the environment variable for a given project."
+    },
+    {
+      "id": "openapi_vercel_com.projects.getProjects",
+      "name": "projects.getProjects",
+      "description": "Allows to retrieve the list of projects of the authenticated user. The list will be paginated and the provided query parameters allow filtering the returned projects."
+    },
+    {
+      "id": "openapi_vercel_com.projects.removeProjectDomain",
+      "name": "projects.removeProjectDomain",
+      "description": "Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.removeProjectEnv",
+      "name": "projects.removeProjectEnv",
+      "description": "Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.projects.updateProject",
+      "name": "projects.updateProject",
+      "description": "Update the fields of a project using either its `name` or `id`."
+    },
+    {
+      "id": "openapi_vercel_com.projects.updateProjectDomain",
+      "name": "projects.updateProjectDomain",
+      "description": "Update a project domain's configuration, including the name, git branch and redirect of the domain."
+    },
+    {
+      "id": "openapi_vercel_com.projects.verifyProjectDomain",
+      "name": "projects.verifyProjectDomain",
+      "description": "Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge."
+    },
+    {
+      "id": "openapi_vercel_com.secrets.createSecret",
+      "name": "secrets.createSecret",
+      "description": "Allows to create a new secret."
+    },
+    {
+      "id": "openapi_vercel_com.secrets.deleteSecret",
+      "name": "secrets.deleteSecret",
+      "description": "This deletes the user's secret defined in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.secrets.getSecret",
+      "name": "secrets.getSecret",
+      "description": "Retrieves the information for a specific secret by passing either the secret id or name in the URL."
+    },
+    {
+      "id": "openapi_vercel_com.secrets.getSecrets",
+      "name": "secrets.getSecrets",
+      "description": "Retrieves the active Vercel secrets for the authenticated user. By default it returns 20 secrets. The rest can be retrieved using the pagination options. The body will contain an entry for each secret."
+    },
+    {
+      "id": "openapi_vercel_com.secrets.renameSecret",
+      "name": "secrets.renameSecret",
+      "description": "Enables to edit the name of a user's secret. The name has to be unique to that user's secrets."
+    },
+    {
+      "id": "openapi_vercel_com.teams.createTeam",
+      "name": "teams.createTeam",
+      "description": "Create a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name."
+    },
+    {
+      "id": "openapi_vercel_com.teams.deleteTeam",
+      "name": "teams.deleteTeam",
+      "description": "Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent."
+    },
+    {
+      "id": "openapi_vercel_com.teams.deleteTeamInviteCode",
+      "name": "teams.deleteTeamInviteCode",
+      "description": "Delete an active Team invite code."
+    },
+    {
+      "id": "openapi_vercel_com.teams.getTeam",
+      "name": "teams.getTeam",
+      "description": "Get information for the Team specified by the `teamId` parameter."
+    },
+    {
+      "id": "openapi_vercel_com.teams.getTeamAccessRequest",
+      "name": "teams.getTeamAccessRequest",
+      "description": "Check the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user."
+    },
+    {
+      "id": "openapi_vercel_com.teams.getTeamMembers",
+      "name": "teams.getTeamMembers",
+      "description": "Get a paginated list of team members for the provided team."
+    },
+    {
+      "id": "openapi_vercel_com.teams.getTeams",
+      "name": "teams.getTeams",
+      "description": "Get a paginated list of all the Teams the authenticated User is a member of."
+    },
+    {
+      "id": "openapi_vercel_com.teams.inviteUserToTeam",
+      "name": "teams.inviteUserToTeam",
+      "description": "Invite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user can be specified with an email or an ID. If both email and ID are provided, ID will take priority."
+    },
+    {
+      "id": "openapi_vercel_com.teams.joinTeam",
+      "name": "teams.joinTeam",
+      "description": "Join a team with a provided invite code or team ID."
+    },
+    {
+      "id": "openapi_vercel_com.teams.patchTeam",
+      "name": "teams.patchTeam",
+      "description": "Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team."
+    },
+    {
+      "id": "openapi_vercel_com.teams.removeTeamMember",
+      "name": "teams.removeTeamMember",
+      "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team."
+    },
+    {
+      "id": "openapi_vercel_com.teams.requestAccessToTeam",
+      "name": "teams.requestAccessToTeam",
+      "description": "Request access to a team as a member. An owner has to approve the request. Only 10 users can request access to a team at the same time."
+    },
+    {
+      "id": "openapi_vercel_com.teams.updateTeamMember",
+      "name": "teams.updateTeamMember",
+      "description": "Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team."
+    },
+    {
+      "id": "openapi_vercel_com.user.getAuthUser",
+      "name": "user.getAuthUser",
+      "description": "Retrieves information related to the currently authenticated User."
+    },
+    {
+      "id": "openapi_vercel_com.user.listUserEvents",
+      "name": "user.listUserEvents",
+      "description": "Retrieves a list of \"events\" generated by the User on Vercel. Events are generated when the User performs a particular action, such as logging in, creating a deployment, and joining a Team (just to name a few). When the `teamId` parameter is supplied, then the events that are returned will be in relation to the Team that was specified."
+    },
+    {
+      "id": "openapi_vercel_com.user.requestDelete",
+      "name": "user.requestDelete",
+      "description": "Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process."
+    },
+    {
+      "id": "openapi_vercel_com.webhooks.createWebhook",
+      "name": "webhooks.createWebhook",
+      "description": "Creates a webhook"
+    },
+    {
+      "id": "openapi_vercel_com.webhooks.deleteWebhook",
+      "name": "webhooks.deleteWebhook",
+      "description": "Deletes a webhook"
+    },
+    {
+      "id": "openapi_vercel_com.webhooks.getWebhook",
+      "name": "webhooks.getWebhook",
+      "description": "Get a webhook"
+    },
+    {
+      "id": "openapi_vercel_com.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Get a list of webhooks"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,1332 @@
+{
+  "fetchedAt": "2026-04-30T15:22:11.250Z",
+  "status": "ok",
+  "count": 265,
+  "tools": [
+    {
+      "id": "openapi_drchrono_com.administrative.doctorsList",
+      "name": "administrative.doctorsList",
+      "description": "Retrieve or search doctors within practice group"
+    },
+    {
+      "id": "openapi_drchrono_com.administrative.doctorsRead",
+      "name": "administrative.doctorsRead",
+      "description": "Retrieve an existing dcotor"
+    },
+    {
+      "id": "openapi_drchrono_com.administrative.userGroupsList",
+      "name": "administrative.userGroupsList",
+      "description": "Retrieve or search user groups"
+    },
+    {
+      "id": "openapi_drchrono_com.administrative.userGroupsRead",
+      "name": "administrative.userGroupsRead",
+      "description": "Retrieve an existing user group"
+    },
+    {
+      "id": "openapi_drchrono_com.administrative.usersList",
+      "name": "administrative.usersList",
+      "description": "Retrieve or search users, `/api/users/current` can be used to identify logged in user, it will redirect to `/api/users/{current_user_id}`"
+    },
+    {
+      "id": "openapi_drchrono_com.administrative.usersRead",
+      "name": "administrative.usersRead",
+      "description": "Retrieve an existing user, `/api/users/current` can be used to identify logged in user, it will redirect to `/api/users/{current_user_id}`"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.billingProfilesList",
+      "name": "billing.billingProfilesList",
+      "description": "Retrieve or search billing profiles"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.billingProfilesRead",
+      "name": "billing.billingProfilesRead",
+      "description": "Retrieve an existing billing profiles"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.commLogsCreate",
+      "name": "billing.commLogsCreate",
+      "description": "Create communication (phone call) logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.commLogsList",
+      "name": "billing.commLogsList",
+      "description": "Retrieve or search communicatioin (phone call) logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.commLogsPartialUpdate",
+      "name": "billing.commLogsPartialUpdate",
+      "description": "Update an existing communication (phone call) logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.commLogsRead",
+      "name": "billing.commLogsRead",
+      "description": "Retrieve an existing communication (phone call) logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.commLogsUpdate",
+      "name": "billing.commLogsUpdate",
+      "description": "Update an existing communication (phone call) logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.customInsurancePlanNamesList",
+      "name": "billing.customInsurancePlanNamesList",
+      "description": "Retrieve or search custom insurance plan names"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.customInsurancePlanNamesRead",
+      "name": "billing.customInsurancePlanNamesRead",
+      "description": "Retrieve an existing custom insurance plan name"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.eligibilityChecksList",
+      "name": "billing.eligibilityChecksList",
+      "description": "Retrieve or search past eligibility checks for patient"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.eligibilityChecksRead",
+      "name": "billing.eligibilityChecksRead",
+      "description": "Retrieve an existing past eligibility check"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsCreate",
+      "name": "billing.lineItemsCreate",
+      "description": "Create billing line item for appointments"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsDelete",
+      "name": "billing.lineItemsDelete",
+      "description": "DELETE /api/line_items/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsList",
+      "name": "billing.lineItemsList",
+      "description": "Retrieve or search billing line items"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsPartialUpdate",
+      "name": "billing.lineItemsPartialUpdate",
+      "description": "PATCH /api/line_items/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsRead",
+      "name": "billing.lineItemsRead",
+      "description": "Retrieve an existing billing line item"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.lineItemsUpdate",
+      "name": "billing.lineItemsUpdate",
+      "description": "PUT /api/line_items/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.patientPaymentLogList",
+      "name": "billing.patientPaymentLogList",
+      "description": "Retrieve or search patient payment logs"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.patientPaymentLogRead",
+      "name": "billing.patientPaymentLogRead",
+      "description": "Retrieve an existing patient payment log"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.patientPaymentsCreate",
+      "name": "billing.patientPaymentsCreate",
+      "description": "Create patient payment"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.patientPaymentsList",
+      "name": "billing.patientPaymentsList",
+      "description": "Retrieve or search patient payments"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.patientPaymentsRead",
+      "name": "billing.patientPaymentsRead",
+      "description": "Retrieve an existing patient payment"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.proceduresList",
+      "name": "billing.proceduresList",
+      "description": "GET /api/procedures"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.proceduresRead",
+      "name": "billing.proceduresRead",
+      "description": "GET /api/procedures/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.transactionsList",
+      "name": "billing.transactionsList",
+      "description": "Retrieve or search insurance transactions associated with billing line items"
+    },
+    {
+      "id": "openapi_drchrono_com.billing.transactionsRead",
+      "name": "billing.transactionsRead",
+      "description": "Retrieve an existing insurance transaction"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.allergiesCreate",
+      "name": "clinical.allergiesCreate",
+      "description": "Create patient allergy"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.allergiesList",
+      "name": "clinical.allergiesList",
+      "description": "Retrieve or search patient allergies"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.allergiesPartialUpdate",
+      "name": "clinical.allergiesPartialUpdate",
+      "description": "Update an existing patient allergy"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.allergiesRead",
+      "name": "clinical.allergiesRead",
+      "description": "Retrieve an existing patient allergy"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.allergiesUpdate",
+      "name": "clinical.allergiesUpdate",
+      "description": "Update an existing patient allergy"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsCreate",
+      "name": "clinical.amendmentsCreate",
+      "description": "Create patient amendments to a patient's clinical records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsDelete",
+      "name": "clinical.amendmentsDelete",
+      "description": "Delete an existing patient amendment, you can only interact with amendments created by your API application"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsList",
+      "name": "clinical.amendmentsList",
+      "description": "Retrieve or search patient amendments. You can only interact with amendments created by your API application"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsPartialUpdate",
+      "name": "clinical.amendmentsPartialUpdate",
+      "description": "Update an existing patient amendment, you can only interact with amendments created by your API application"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsRead",
+      "name": "clinical.amendmentsRead",
+      "description": "Retrieve an existing patient amendment, you can only interact with amendments created by your API application"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.amendmentsUpdate",
+      "name": "clinical.amendmentsUpdate",
+      "description": "Update an existing patient amendment, you can only interact with amendments created by your API application"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesCreate",
+      "name": "clinical.appointmentProfilesCreate",
+      "description": "Create appointment profiles for a doctor's calendar"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesDelete",
+      "name": "clinical.appointmentProfilesDelete",
+      "description": "Delete an existing appointment profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesList",
+      "name": "clinical.appointmentProfilesList",
+      "description": "Retrieve or search appointment profiles for a doctor's calendar"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesPartialUpdate",
+      "name": "clinical.appointmentProfilesPartialUpdate",
+      "description": "Update an existing appointment profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesRead",
+      "name": "clinical.appointmentProfilesRead",
+      "description": "Retrieve an existing appointment profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentProfilesUpdate",
+      "name": "clinical.appointmentProfilesUpdate",
+      "description": "Update an existing appointment profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsCreate",
+      "name": "clinical.appointmentsCreate",
+      "description": "Create a new appointment or break on doctor's calendar"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsDelete",
+      "name": "clinical.appointmentsDelete",
+      "description": "Delete an existing appointment or break"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsList",
+      "name": "clinical.appointmentsList",
+      "description": "Retrieve or search appointment or breaks.\n<b>Note:</b> Either `since`, `date` or `date_range` parameter must be specified.\n            "
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsPartialUpdate",
+      "name": "clinical.appointmentsPartialUpdate",
+      "description": "Update an existing appointment or break"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsRead",
+      "name": "clinical.appointmentsRead",
+      "description": "Retrieve an existing appointment or break"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentsUpdate",
+      "name": "clinical.appointmentsUpdate",
+      "description": "Update an existing appointment or break"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesCreate",
+      "name": "clinical.appointmentTemplatesCreate",
+      "description": "Create appointment templates for a doctor's calendar"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesDelete",
+      "name": "clinical.appointmentTemplatesDelete",
+      "description": "Delete an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesList",
+      "name": "clinical.appointmentTemplatesList",
+      "description": "Retrieve or search appointment templates for a doctor's calendar"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesPartialUpdate",
+      "name": "clinical.appointmentTemplatesPartialUpdate",
+      "description": "Update an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesRead",
+      "name": "clinical.appointmentTemplatesRead",
+      "description": "Retrieve an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.appointmentTemplatesUpdate",
+      "name": "clinical.appointmentTemplatesUpdate",
+      "description": "Update an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.carePlansList",
+      "name": "clinical.carePlansList",
+      "description": "Retrieve or search care plans"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.carePlansRead",
+      "name": "clinical.carePlansRead",
+      "description": "Retrieve an existing care plan"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.careTeamMembersList",
+      "name": "clinical.careTeamMembersList",
+      "description": "GET /api/care_team_members"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.careTeamMembersRead",
+      "name": "clinical.careTeamMembersRead",
+      "description": "GET /api/care_team_members/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.claimBillingNotesCreate",
+      "name": "clinical.claimBillingNotesCreate",
+      "description": "Create a new billing note"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.claimBillingNotesList",
+      "name": "clinical.claimBillingNotesList",
+      "description": "Retrieve or search billing notes"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.claimBillingNotesRead",
+      "name": "clinical.claimBillingNotesRead",
+      "description": "Retrieve an existing billing note"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldTypesList",
+      "name": "clinical.clinicalNoteFieldTypesList",
+      "description": "Retrieve or search clinical note field types"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldTypesRead",
+      "name": "clinical.clinicalNoteFieldTypesRead",
+      "description": "Retrieve an existing clinial note field type"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldValuesCreate",
+      "name": "clinical.clinicalNoteFieldValuesCreate",
+      "description": "Create clinical note field value"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldValuesList",
+      "name": "clinical.clinicalNoteFieldValuesList",
+      "description": "Retrieve or search clinical note field values"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldValuesPartialUpdate",
+      "name": "clinical.clinicalNoteFieldValuesPartialUpdate",
+      "description": "Update an existing clinical note field value"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldValuesRead",
+      "name": "clinical.clinicalNoteFieldValuesRead",
+      "description": "Retrieve an existing clinical note field value"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteFieldValuesUpdate",
+      "name": "clinical.clinicalNoteFieldValuesUpdate",
+      "description": "Update an existing clinical note field value"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNotesList",
+      "name": "clinical.clinicalNotesList",
+      "description": "GET /api/clinical_notes"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNotesRead",
+      "name": "clinical.clinicalNotesRead",
+      "description": "GET /api/clinical_notes/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteTemplatesList",
+      "name": "clinical.clinicalNoteTemplatesList",
+      "description": "Retrieve or search clinical note templates"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.clinicalNoteTemplatesRead",
+      "name": "clinical.clinicalNoteTemplatesRead",
+      "description": "Retrieve an existing clinical note tempalte"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsApplyToAppointment",
+      "name": "clinical.consentFormsApplyToAppointment",
+      "description": "Assign (apply) a consent form to appointment"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsCreate",
+      "name": "clinical.consentFormsCreate",
+      "description": "Create a patient consent form"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsList",
+      "name": "clinical.consentFormsList",
+      "description": "Retrieve or search patient consent forms"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsPartialUpdate",
+      "name": "clinical.consentFormsPartialUpdate",
+      "description": "Update an existing patient consent form"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsRead",
+      "name": "clinical.consentFormsRead",
+      "description": "Retrieve an existing patient consent form"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsUnapplyFromAppointment",
+      "name": "clinical.consentFormsUnapplyFromAppointment",
+      "description": "Unassign (unapply) a consent form from appointment"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.consentFormsUpdate",
+      "name": "clinical.consentFormsUpdate",
+      "description": "Update an existing patient consent form"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customAppointmentFieldsCreate",
+      "name": "clinical.customAppointmentFieldsCreate",
+      "description": "Create custom appointment fields"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customAppointmentFieldsList",
+      "name": "clinical.customAppointmentFieldsList",
+      "description": "Retrieve or search custom appointment fields"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customAppointmentFieldsPartialUpdate",
+      "name": "clinical.customAppointmentFieldsPartialUpdate",
+      "description": "Update an existing custom appointment field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customAppointmentFieldsRead",
+      "name": "clinical.customAppointmentFieldsRead",
+      "description": "Retrieve an existing custom appointment field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customAppointmentFieldsUpdate",
+      "name": "clinical.customAppointmentFieldsUpdate",
+      "description": "Update an existing custom appointment field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customDemographicsCreate",
+      "name": "clinical.customDemographicsCreate",
+      "description": "Create custom demographics fields"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customDemographicsList",
+      "name": "clinical.customDemographicsList",
+      "description": "Retrieve or search custom demographics fields"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customDemographicsPartialUpdate",
+      "name": "clinical.customDemographicsPartialUpdate",
+      "description": "Update an existing custom demographics field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customDemographicsRead",
+      "name": "clinical.customDemographicsRead",
+      "description": "Retrieve an existing custom demographics field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customDemographicsUpdate",
+      "name": "clinical.customDemographicsUpdate",
+      "description": "Update an existing custom demographics field"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customVitalsList",
+      "name": "clinical.customVitalsList",
+      "description": "Retrieve or search custom vital types"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.customVitalsRead",
+      "name": "clinical.customVitalsRead",
+      "description": "Retrieve an existing custom vital type"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsCreate",
+      "name": "clinical.documentsCreate",
+      "description": "Create documents"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsDelete",
+      "name": "clinical.documentsDelete",
+      "description": "Delete an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsList",
+      "name": "clinical.documentsList",
+      "description": "Retrieve or search documents"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsPartialUpdate",
+      "name": "clinical.documentsPartialUpdate",
+      "description": "Update an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsRead",
+      "name": "clinical.documentsRead",
+      "description": "Retrieve an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.documentsUpdate",
+      "name": "clinical.documentsUpdate",
+      "description": "Update an existing appointment template"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.eobsCreate",
+      "name": "clinical.eobsCreate",
+      "description": "Create EOB object"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.eobsList",
+      "name": "clinical.eobsList",
+      "description": "Retrieve or search EOB objects"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.eobsRead",
+      "name": "clinical.eobsRead",
+      "description": "Retrieve an existing EOB object"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.feeSchedulesList",
+      "name": "clinical.feeSchedulesList",
+      "description": "GET /api/fee_schedules"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.feeSchedulesRead",
+      "name": "clinical.feeSchedulesRead",
+      "description": "GET /api/fee_schedules/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.implantableDevicesList",
+      "name": "clinical.implantableDevicesList",
+      "description": "Retrieve or search implantable devices"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.implantableDevicesRead",
+      "name": "clinical.implantableDevicesRead",
+      "description": "Retrieve an existing implantable device"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.insurancesList",
+      "name": "clinical.insurancesList",
+      "description": "GET /api/insurances"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.insurancesRead",
+      "name": "clinical.insurancesRead",
+      "description": "GET /api/insurances/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsCreate",
+      "name": "clinical.labDocumentsCreate",
+      "description": "Create lab order documents. An example lab workflow is as following:\n\n- When you get orders, submit them via `/api/lab_orders`, such that doctors can see them in drchrono.\n\n- When results come in, submit the result document PDF via `/api/lab_documents` and submit the results data via `/api/lab_results`\n\n- Update `/api/lab_orders` status\n"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsDelete",
+      "name": "clinical.labDocumentsDelete",
+      "description": "Delete an existing lab order document"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsList",
+      "name": "clinical.labDocumentsList",
+      "description": "Retrieve or search lab order documents"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsPartialUpdate",
+      "name": "clinical.labDocumentsPartialUpdate",
+      "description": "Update an existing lab order document"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsRead",
+      "name": "clinical.labDocumentsRead",
+      "description": "Retrieve an existing lab order document"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labDocumentsUpdate",
+      "name": "clinical.labDocumentsUpdate",
+      "description": "Update an existing lab order document"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersCreate",
+      "name": "clinical.labOrdersCreate",
+      "description": "Create lab orders. An example lab workflow is as following:\n\n- When you get orders, submit them via `/api/lab_orders`, such that doctors can see them in drchrono.\n\n- When results come in, submit the result document PDF via `/api/lab_documents` and submit the results data via `/api/lab_results`\n\n- Update `/api/lab_orders` status\n"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersDelete",
+      "name": "clinical.labOrdersDelete",
+      "description": "Delete an existing lab order"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersList",
+      "name": "clinical.labOrdersList",
+      "description": "Retrieve or search lab orders"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersPartialUpdate",
+      "name": "clinical.labOrdersPartialUpdate",
+      "description": "Update an existing lab order"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersRead",
+      "name": "clinical.labOrdersRead",
+      "description": "Retrieve an existing lab order"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersSummaryList",
+      "name": "clinical.labOrdersSummaryList",
+      "description": "GET /api/lab_orders_summary"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersSummaryRead",
+      "name": "clinical.labOrdersSummaryRead",
+      "description": "GET /api/lab_orders_summary/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labOrdersUpdate",
+      "name": "clinical.labOrdersUpdate",
+      "description": "Update an existing lab order"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsCreate",
+      "name": "clinical.labResultsCreate",
+      "description": "Create lab results. An example lab workflow is as following:\n\n- When you get orders, submit them via `/api/lab_orders`, such that doctors can see them in drchrono.\n\n- When results come in, submit the result document PDF via `/api/lab_documents` and submit the results data via `/api/lab_results`\n\n- Update `/api/lab_orders` status\n"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsDelete",
+      "name": "clinical.labResultsDelete",
+      "description": "Delete an existing lab result"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsList",
+      "name": "clinical.labResultsList",
+      "description": "Retrieve or search lab results"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsPartialUpdate",
+      "name": "clinical.labResultsPartialUpdate",
+      "description": "Update an existing lab result"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsRead",
+      "name": "clinical.labResultsRead",
+      "description": "Retrieve an existing lab result"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labResultsUpdate",
+      "name": "clinical.labResultsUpdate",
+      "description": "Update an existing lab result"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsCreate",
+      "name": "clinical.labTestsCreate",
+      "description": "Create lab tests. An example lab workflow is as following:\n\n- When you get orders, submit them via `/api/lab_orders`, such that doctors can see them in drchrono.\n\n- When results come in, submit the result document PDF via `/api/lab_documents` and submit the results data via `/api/lab_results`\n\n- Update `/api/lab_orders` status\n"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsDelete",
+      "name": "clinical.labTestsDelete",
+      "description": "Delete an existing lab test"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsList",
+      "name": "clinical.labTestsList",
+      "description": "Retrieve or search lab tests"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsPartialUpdate",
+      "name": "clinical.labTestsPartialUpdate",
+      "description": "Update an existing lab test"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsRead",
+      "name": "clinical.labTestsRead",
+      "description": "Retrieve an existing lab test"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.labTestsUpdate",
+      "name": "clinical.labTestsUpdate",
+      "description": "Update an existing lab test"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsAppendToPharmacyNote",
+      "name": "clinical.medicationsAppendToPharmacyNote",
+      "description": "Append a message to the \"pharmacy_note\" section of the prescription, in a new paragraph"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsCreate",
+      "name": "clinical.medicationsCreate",
+      "description": "Create patient medications"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsList",
+      "name": "clinical.medicationsList",
+      "description": "Retrieve or search patient medications"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsPartialUpdate",
+      "name": "clinical.medicationsPartialUpdate",
+      "description": "Update an existing patient medications"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsRead",
+      "name": "clinical.medicationsRead",
+      "description": "Retrieve an existing patient medications"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.medicationsUpdate",
+      "name": "clinical.medicationsUpdate",
+      "description": "Update an existing patient medications"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientCommunicationsCreate",
+      "name": "clinical.patientCommunicationsCreate",
+      "description": "Create patient communication for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientCommunicationsList",
+      "name": "clinical.patientCommunicationsList",
+      "description": "Retrieve or search patient communications for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientCommunicationsPartialUpdate",
+      "name": "clinical.patientCommunicationsPartialUpdate",
+      "description": "Update an existing patient communication for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientCommunicationsRead",
+      "name": "clinical.patientCommunicationsRead",
+      "description": "Retrieve an existing patient communication for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientCommunicationsUpdate",
+      "name": "clinical.patientCommunicationsUpdate",
+      "description": "Update an existing patient communication for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientFlagTypesCreate",
+      "name": "clinical.patientFlagTypesCreate",
+      "description": "Create patient flag types"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientFlagTypesList",
+      "name": "clinical.patientFlagTypesList",
+      "description": "Retrieve or search patient flag types"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientFlagTypesPartialUpdate",
+      "name": "clinical.patientFlagTypesPartialUpdate",
+      "description": "Update an existing patient flag type"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientFlagTypesRead",
+      "name": "clinical.patientFlagTypesRead",
+      "description": "Retrieve an existing patient flag type"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientFlagTypesUpdate",
+      "name": "clinical.patientFlagTypesUpdate",
+      "description": "Update an existing patient flag type"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientInterventionsCreate",
+      "name": "clinical.patientInterventionsCreate",
+      "description": "Create patient intervention for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientInterventionsList",
+      "name": "clinical.patientInterventionsList",
+      "description": "Retrieve or search patient interventions for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientInterventionsPartialUpdate",
+      "name": "clinical.patientInterventionsPartialUpdate",
+      "description": "Update an existing patient intervention for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientInterventionsRead",
+      "name": "clinical.patientInterventionsRead",
+      "description": "Retrieve an existing patient intervention for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientInterventionsUpdate",
+      "name": "clinical.patientInterventionsUpdate",
+      "description": "Update an existing patient intervention for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsCreate",
+      "name": "clinical.patientLabResultsCreate",
+      "description": "POST /api/patient_lab_results"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsDelete",
+      "name": "clinical.patientLabResultsDelete",
+      "description": "DELETE /api/patient_lab_results/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsList",
+      "name": "clinical.patientLabResultsList",
+      "description": "GET /api/patient_lab_results"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsPartialUpdate",
+      "name": "clinical.patientLabResultsPartialUpdate",
+      "description": "PATCH /api/patient_lab_results/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsRead",
+      "name": "clinical.patientLabResultsRead",
+      "description": "GET /api/patient_lab_results/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientLabResultsUpdate",
+      "name": "clinical.patientLabResultsUpdate",
+      "description": "PUT /api/patient_lab_results/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientMessagesCreate",
+      "name": "clinical.patientMessagesCreate",
+      "description": "POST /api/patient_messages"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientMessagesList",
+      "name": "clinical.patientMessagesList",
+      "description": "GET /api/patient_messages"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientMessagesPartialUpdate",
+      "name": "clinical.patientMessagesPartialUpdate",
+      "description": "PATCH /api/patient_messages/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientMessagesRead",
+      "name": "clinical.patientMessagesRead",
+      "description": "GET /api/patient_messages/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientMessagesUpdate",
+      "name": "clinical.patientMessagesUpdate",
+      "description": "PUT /api/patient_messages/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientPhysicalExamsCreate",
+      "name": "clinical.patientPhysicalExamsCreate",
+      "description": "Create patient physical exam for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientPhysicalExamsList",
+      "name": "clinical.patientPhysicalExamsList",
+      "description": "Retrieve or search patient physical exams for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientPhysicalExamsPartialUpdate",
+      "name": "clinical.patientPhysicalExamsPartialUpdate",
+      "description": "Update an existing patient physical exam for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientPhysicalExamsRead",
+      "name": "clinical.patientPhysicalExamsRead",
+      "description": "Retrieve an existing patient physical exam for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientPhysicalExamsUpdate",
+      "name": "clinical.patientPhysicalExamsUpdate",
+      "description": "Update an existing patient physical exam for CQM"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientRiskAssessmentsCreate",
+      "name": "clinical.patientRiskAssessmentsCreate",
+      "description": "POST /api/patient_risk_assessments"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientRiskAssessmentsList",
+      "name": "clinical.patientRiskAssessmentsList",
+      "description": "GET /api/patient_risk_assessments"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientRiskAssessmentsPartialUpdate",
+      "name": "clinical.patientRiskAssessmentsPartialUpdate",
+      "description": "PATCH /api/patient_risk_assessments/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientRiskAssessmentsRead",
+      "name": "clinical.patientRiskAssessmentsRead",
+      "description": "GET /api/patient_risk_assessments/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientRiskAssessmentsUpdate",
+      "name": "clinical.patientRiskAssessmentsUpdate",
+      "description": "PUT /api/patient_risk_assessments/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsCcda",
+      "name": "clinical.patientsCcda",
+      "description": "Retrieve patient CCDA"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsCreate",
+      "name": "clinical.patientsCreate",
+      "description": "Create patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsDelete",
+      "name": "clinical.patientsDelete",
+      "description": "Delete an existing patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsList",
+      "name": "clinical.patientsList",
+      "description": "Retrieve or search patients"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsOnpatientAccessCreate",
+      "name": "clinical.patientsOnpatientAccessCreate",
+      "description": "Send new onpatient invite to patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsOnpatientAccessDelete",
+      "name": "clinical.patientsOnpatientAccessDelete",
+      "description": "Revoke sent onpatient invites"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsOnpatientAccessRead",
+      "name": "clinical.patientsOnpatientAccessRead",
+      "description": "Retrieve or search existing onpatient access invites"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsPartialUpdate",
+      "name": "clinical.patientsPartialUpdate",
+      "description": "Update an existing patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsQrda1",
+      "name": "clinical.patientsQrda1",
+      "description": "Retrieve patient QRDA1"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsRead",
+      "name": "clinical.patientsRead",
+      "description": "Retrieve an existing patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryCreate",
+      "name": "clinical.patientsSummaryCreate",
+      "description": "POST /api/patients_summary"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryDelete",
+      "name": "clinical.patientsSummaryDelete",
+      "description": "DELETE /api/patients_summary/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryList",
+      "name": "clinical.patientsSummaryList",
+      "description": "GET /api/patients_summary"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryPartialUpdate",
+      "name": "clinical.patientsSummaryPartialUpdate",
+      "description": "PATCH /api/patients_summary/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryRead",
+      "name": "clinical.patientsSummaryRead",
+      "description": "GET /api/patients_summary/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsSummaryUpdate",
+      "name": "clinical.patientsSummaryUpdate",
+      "description": "PUT /api/patients_summary/{id}"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientsUpdate",
+      "name": "clinical.patientsUpdate",
+      "description": "Update an existing patient"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientVaccineRecordsCreate",
+      "name": "clinical.patientVaccineRecordsCreate",
+      "description": "Create patient vaccine records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientVaccineRecordsList",
+      "name": "clinical.patientVaccineRecordsList",
+      "description": "Retrieve or search patient vaccine records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientVaccineRecordsPartialUpdate",
+      "name": "clinical.patientVaccineRecordsPartialUpdate",
+      "description": "Update an existing patient vaccine records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientVaccineRecordsRead",
+      "name": "clinical.patientVaccineRecordsRead",
+      "description": "Retrieve an existing patient vaccine records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.patientVaccineRecordsUpdate",
+      "name": "clinical.patientVaccineRecordsUpdate",
+      "description": "Update an existing patient vaccine records"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.prescriptionMessagesList",
+      "name": "clinical.prescriptionMessagesList",
+      "description": "Retrieve or search prescription messages"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.prescriptionMessagesRead",
+      "name": "clinical.prescriptionMessagesRead",
+      "description": "Retrieve an existing prescription message"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.problemsCreate",
+      "name": "clinical.problemsCreate",
+      "description": "Create patient problems"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.problemsList",
+      "name": "clinical.problemsList",
+      "description": "Retrieve or search patient problems"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.problemsPartialUpdate",
+      "name": "clinical.problemsPartialUpdate",
+      "description": "Update an existing patient problems"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.problemsRead",
+      "name": "clinical.problemsRead",
+      "description": "Retrieve an existing patient problems"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.problemsUpdate",
+      "name": "clinical.problemsUpdate",
+      "description": "Update an existing patient problems"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesCreate",
+      "name": "clinical.reminderProfilesCreate",
+      "description": "Create reminder profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesDelete",
+      "name": "clinical.reminderProfilesDelete",
+      "description": "Delete an existing reminder profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesList",
+      "name": "clinical.reminderProfilesList",
+      "description": "Retrieve or search reminder profiles"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesPartialUpdate",
+      "name": "clinical.reminderProfilesPartialUpdate",
+      "description": "Update an existing reminder profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesRead",
+      "name": "clinical.reminderProfilesRead",
+      "description": "Retrieve an existing reminder profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.reminderProfilesUpdate",
+      "name": "clinical.reminderProfilesUpdate",
+      "description": "Update an existing reminder profile"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsCreate",
+      "name": "clinical.sublabsCreate",
+      "description": "Create sub-vendors\n\n- When you get orders, submit them via `/api/lab_orders`, such that doctors can see them in drchrono.\n\n- When results come in, submit the result document PDF via `/api/lab_documents` and submit the results data via `/api/lab_results`\n\n- Update `/api/lab_orders` status\n"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsDelete",
+      "name": "clinical.sublabsDelete",
+      "description": "Delete an existing sub vendor"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsList",
+      "name": "clinical.sublabsList",
+      "description": "Retrieve or search sub vendors"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsPartialUpdate",
+      "name": "clinical.sublabsPartialUpdate",
+      "description": "Update an existing sub vendor"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsRead",
+      "name": "clinical.sublabsRead",
+      "description": "Retrieve an existing sub vendor"
+    },
+    {
+      "id": "openapi_drchrono_com.clinical.sublabsUpdate",
+      "name": "clinical.sublabsUpdate",
+      "description": "Update an existing sub vendor"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.inventoryCategoriesList",
+      "name": "practiceManagement.inventoryCategoriesList",
+      "description": "Retrieve or search inventory categories"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.inventoryCategoriesRead",
+      "name": "practiceManagement.inventoryCategoriesRead",
+      "description": "Retrieve an existing inventory category"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.inventoryVaccinesCreate",
+      "name": "practiceManagement.inventoryVaccinesCreate",
+      "description": "Create vaccine inventory"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.inventoryVaccinesList",
+      "name": "practiceManagement.inventoryVaccinesList",
+      "description": "Retrieve or search vaccine inventories"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.inventoryVaccinesRead",
+      "name": "practiceManagement.inventoryVaccinesRead",
+      "description": "Retrieve an existing vaccine inventory"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesCreate",
+      "name": "practiceManagement.messagesCreate",
+      "description": "Create messages in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesDelete",
+      "name": "practiceManagement.messagesDelete",
+      "description": "Delete an existing message in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesList",
+      "name": "practiceManagement.messagesList",
+      "description": "Retrieve or search messages in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesPartialUpdate",
+      "name": "practiceManagement.messagesPartialUpdate",
+      "description": "Update an existing message in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesRead",
+      "name": "practiceManagement.messagesRead",
+      "description": "Retrieve an existing message in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.messagesUpdate",
+      "name": "practiceManagement.messagesUpdate",
+      "description": "Update an existing message in doctor's message center"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.officesAddExamRoom",
+      "name": "practiceManagement.officesAddExamRoom",
+      "description": "Add an exam room to the office"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.officesList",
+      "name": "practiceManagement.officesList",
+      "description": "Retrieve or search offices"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.officesPartialUpdate",
+      "name": "practiceManagement.officesPartialUpdate",
+      "description": "Update an existing office"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.officesRead",
+      "name": "practiceManagement.officesRead",
+      "description": "Retrieve an existing office"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.officesUpdate",
+      "name": "practiceManagement.officesUpdate",
+      "description": "Update an existing office"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskCategoriesCreate",
+      "name": "practiceManagement.taskCategoriesCreate",
+      "description": "Create a task category"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskCategoriesList",
+      "name": "practiceManagement.taskCategoriesList",
+      "description": "Retrieve or search task categories"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskCategoriesPartialUpdate",
+      "name": "practiceManagement.taskCategoriesPartialUpdate",
+      "description": "Update an existing task category"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskCategoriesRead",
+      "name": "practiceManagement.taskCategoriesRead",
+      "description": "Retrieve an existing task category"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskCategoriesUpdate",
+      "name": "practiceManagement.taskCategoriesUpdate",
+      "description": "Update an existing task category"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskNotesCreate",
+      "name": "practiceManagement.taskNotesCreate",
+      "description": "Create a task note"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskNotesList",
+      "name": "practiceManagement.taskNotesList",
+      "description": "Retrieve or search task notes"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskNotesPartialUpdate",
+      "name": "practiceManagement.taskNotesPartialUpdate",
+      "description": "Update an existing task note"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskNotesRead",
+      "name": "practiceManagement.taskNotesRead",
+      "description": "Retrieve an existing task note"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskNotesUpdate",
+      "name": "practiceManagement.taskNotesUpdate",
+      "description": "Update an existing task note"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.tasksCreate",
+      "name": "practiceManagement.tasksCreate",
+      "description": "Create a task"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.tasksList",
+      "name": "practiceManagement.tasksList",
+      "description": "Retrieve or search tasks"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.tasksPartialUpdate",
+      "name": "practiceManagement.tasksPartialUpdate",
+      "description": "Update an existing task"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.tasksRead",
+      "name": "practiceManagement.tasksRead",
+      "description": "Retrieve an existing task"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskStatusesCreate",
+      "name": "practiceManagement.taskStatusesCreate",
+      "description": "Create a task status"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskStatusesList",
+      "name": "practiceManagement.taskStatusesList",
+      "description": "Retrieve or search task statuses"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskStatusesPartialUpdate",
+      "name": "practiceManagement.taskStatusesPartialUpdate",
+      "description": "Update an existing task status"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskStatusesRead",
+      "name": "practiceManagement.taskStatusesRead",
+      "description": "Retrieve an existing task status"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskStatusesUpdate",
+      "name": "practiceManagement.taskStatusesUpdate",
+      "description": "Update an existing task status"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.tasksUpdate",
+      "name": "practiceManagement.tasksUpdate",
+      "description": "Update an existing task"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskTemplatesCreate",
+      "name": "practiceManagement.taskTemplatesCreate",
+      "description": "Create a task template"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskTemplatesList",
+      "name": "practiceManagement.taskTemplatesList",
+      "description": "Retrieve or search task templates"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskTemplatesPartialUpdate",
+      "name": "practiceManagement.taskTemplatesPartialUpdate",
+      "description": "Update an existing task template"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskTemplatesRead",
+      "name": "practiceManagement.taskTemplatesRead",
+      "description": "Retrieve an existing task template"
+    },
+    {
+      "id": "openapi_drchrono_com.practiceManagement.taskTemplatesUpdate",
+      "name": "practiceManagement.taskTemplatesUpdate",
+      "description": "Update an existing task template"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

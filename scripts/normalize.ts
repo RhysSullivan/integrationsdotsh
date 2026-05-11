@@ -1,0 +1,496 @@
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { getDomain } from "tldts";
+import type { Integration, Feed, Kind, ExtractedTool } from "../src/lib/types.ts";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const SOURCES = join(ROOT, "sources");
+const OVERRIDES = join(ROOT, "overrides");
+const OUTPUT = join(ROOT, "output");
+
+mkdirSync(OUTPUT, { recursive: true });
+
+const slugify = (s: string) => {
+  const base = s
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  if (base) return base;
+  // Non-Latin name: hex hash so the slug is stable.
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return `x-${(h >>> 0).toString(36)}`;
+};
+
+const normName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const canonUrl = (url: string | undefined): string | undefined => {
+  if (!url) return undefined;
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, "").toLowerCase();
+    const path = u.pathname.replace(/\/+$/, "");
+    return `${host}${path}`;
+  } catch {
+    return undefined;
+  }
+};
+
+function readJson<T>(path: string): T {
+  return JSON.parse(readFileSync(path, "utf8")) as T;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MCP: claude.json + openai.json -> merged
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface ClaudeServer {
+  id: string;
+  name: string;
+  one_liner?: string;
+  description?: string;
+  icon_url?: string;
+  author?: { name?: string; url?: string };
+  tool_names?: string[];
+  categories?: string[];
+  works_with?: string[];
+  popularity_score?: number;
+  slug?: string;
+  directory_url?: string;
+  documentation?: string;
+  remote?: { url?: string; transport?: string; is_authless?: boolean };
+  type?: string;
+}
+
+interface OpenAIConnector {
+  id: string;
+  connectorType: "MCP" | "SERVICE" | "FIRST_PARTY_ECOSYSTEM";
+  name: string;
+  description?: string;
+  service?: string;
+  baseUrl?: string;
+  supportedAuth?: { type: string }[];
+  status?: string;
+  branding?: {
+    category?: string;
+    developer?: string;
+    website?: string;
+    privacy_policy?: string;
+    terms_of_service?: string;
+  };
+  developerType?: string;
+}
+
+function buildMcp(): Integration[] {
+  const claude = readJson<{ servers: ClaudeServer[] }>(join(SOURCES, "claude.json"));
+  const openai = readJson<{ connectors: OpenAIConnector[] }>(join(SOURCES, "openai.json"));
+
+  // Index by canonical URL (host+path) and by normalized name as fallback.
+  const byUrl = new Map<string, Integration>();
+  const byName = new Map<string, Integration>();
+  const all: Integration[] = [];
+
+  const insert = (rec: Integration, url: string | undefined) => {
+    all.push(rec);
+    if (url) byUrl.set(url, rec);
+    const nameKey = normName(rec.name);
+    if (!byName.has(nameKey)) byName.set(nameKey, rec);
+  };
+
+  for (const s of claude.servers) {
+    const url = canonUrl(s.remote?.url);
+    const nameKey = normName(s.name);
+    const existing = (url && byUrl.get(url)) || byName.get(nameKey);
+    if (existing && existing.feeds.includes("claude")) {
+      // Intra-feed collision (e.g. two listings of the same server). Skip the dupe;
+      // first wins. The full record is preserved in raw.claude on the original.
+      continue;
+    }
+    const slug = s.slug || slugify(s.name);
+    const rec: Integration = {
+      id: `mcp/${slug}`,
+      kind: "mcp",
+      slug,
+      name: s.name,
+      description: s.description || s.one_liner || "",
+      url: s.documentation || s.directory_url,
+      icon: s.icon_url,
+      categories: s.categories ?? [],
+      feeds: ["claude"],
+      popularity: s.popularity_score,
+      mcp: {
+        remoteUrl: s.remote?.url,
+        transport: s.remote?.transport,
+        isAuthless: s.remote?.is_authless,
+        toolNames: s.tool_names,
+        worksWith: s.works_with,
+      },
+      raw: { claude: s },
+    };
+    insert(rec, url);
+  }
+
+  for (const c of openai.connectors) {
+    if (c.connectorType !== "MCP") continue; // only MCP for now; SERVICE handled separately if we want
+    const url = canonUrl(c.baseUrl);
+    const nameKey = normName(c.name);
+    const existing = (url && byUrl.get(url)) || byName.get(nameKey);
+
+    if (existing) {
+      // Merge into existing (claude record wins for descriptive fields by default).
+      existing.feeds.push("openai");
+      existing.raw.openai = c;
+      // Fill in any missing fields from openai data.
+      if (!existing.description && c.description) existing.description = c.description;
+      if (!existing.mcp?.remoteUrl && c.baseUrl) {
+        existing.mcp = { ...(existing.mcp ?? {}), remoteUrl: c.baseUrl };
+      }
+      if (c.supportedAuth?.length) {
+        existing.mcp = {
+          ...(existing.mcp ?? {}),
+          authTypes: Array.from(
+            new Set([...(existing.mcp?.authTypes ?? []), ...c.supportedAuth.map((a) => a.type)]),
+          ),
+        };
+      }
+      continue;
+    }
+
+    const slug = slugify(c.name);
+    const rec: Integration = {
+      id: `mcp/${slug}`,
+      kind: "mcp",
+      slug,
+      name: c.name,
+      description: c.description ?? "",
+      url: c.branding?.website,
+      categories: c.branding?.category ? [c.branding.category] : [],
+      feeds: ["openai"],
+      mcp: {
+        remoteUrl: c.baseUrl,
+        authTypes: c.supportedAuth?.map((a) => a.type),
+      },
+      raw: { openai: c },
+    };
+    insert(rec, url);
+  }
+
+  return dedupeSlugs(all);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// OpenAPI: api-guru-openapi.json
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface ApiGuruSpec {
+  provider: string;
+  versionKey: string;
+  title: string;
+  description?: string;
+  updated?: string;
+  added?: string;
+  openapiVer: string;
+  origin?: string;
+  link?: string;
+  swaggerUrl?: string;
+  swaggerYamlUrl?: string;
+  categories?: string[];
+  service?: string | null;
+  providerName?: string;
+  raw?: { info?: { "x-logo"?: { url?: string } } };
+}
+
+function buildOpenapi(): Integration[] {
+  const data = readJson<{ specs: ApiGuruSpec[] }>(join(SOURCES, "api-guru-openapi.json"));
+  // One record per provider+service (collapse versions, keep newest).
+  const byKey = new Map<string, ApiGuruSpec>();
+  for (const s of data.specs) {
+    const key = s.service ? `${s.provider}:${s.service}` : s.provider;
+    const prev = byKey.get(key);
+    if (!prev || (s.updated && prev.updated && s.updated > prev.updated)) {
+      byKey.set(key, s);
+    }
+  }
+
+  const recs: Integration[] = [];
+  for (const [key, s] of byKey) {
+    const slug = slugify(key);
+    recs.push({
+      id: `openapi/${slug}`,
+      kind: "openapi",
+      slug,
+      name: s.service ? `${s.providerName ?? s.provider} – ${s.service}` : (s.title || s.provider),
+      description: s.description ?? "",
+      url: s.link,
+      icon: s.raw?.info?.["x-logo"]?.url,
+      categories: s.categories ?? [],
+      feeds: ["apis-guru"],
+      openapi: {
+        provider: s.provider,
+        service: s.service ?? undefined,
+        version: s.versionKey,
+        swaggerUrl: s.swaggerUrl,
+        swaggerYamlUrl: s.swaggerYamlUrl,
+        openapiVer: s.openapiVer,
+        updated: s.updated,
+        added: s.added,
+      },
+      raw: { "apis-guru": s },
+    });
+  }
+  return dedupeSlugs(recs);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GraphQL: graphq.json
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface GraphqlEntry {
+  title: string;
+  description?: string;
+  url: string;
+  docs?: { description?: string; url: string }[];
+  logo?: { url?: string };
+  security?: unknown[];
+  hasSecurity?: boolean;
+}
+
+function buildGraphql(): Integration[] {
+  const data = readJson<GraphqlEntry[]>(join(SOURCES, "graphq.json"));
+  const recs: Integration[] = data.map((g) => {
+    const slug = slugify(g.title);
+    return {
+      id: `graphql/${slug}`,
+      kind: "graphql" as const,
+      slug,
+      name: g.title,
+      description: g.description ?? "",
+      url: g.url,
+      icon: g.logo?.url,
+      categories: [],
+      feeds: ["graphql-apis" as Feed],
+      graphql: {
+        endpoint: g.url,
+        hasSecurity: !!g.hasSecurity,
+        docs: g.docs ?? [],
+      },
+      raw: { "graphql-apis": g },
+    };
+  });
+  return dedupeSlugs(recs);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Overrides: deep-merged onto records by id
+// ─────────────────────────────────────────────────────────────────────────────
+
+function isObject(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function deepMerge<T>(base: T, patch: Partial<T>): T {
+  if (!isObject(base) || !isObject(patch)) return (patch ?? base) as T;
+  const out: Record<string, unknown> = { ...base };
+  for (const [k, v] of Object.entries(patch)) {
+    out[k] = isObject(v) && isObject(out[k]) ? deepMerge(out[k], v as never) : v;
+  }
+  return out as T;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Favicons: output/favicons.json from validate-favicons.ts. When an icon URL
+// is known-broken we fall back to a domain-based service URL derived via
+// tldts. Untested icons are kept as-is.
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface IconStatus {
+  ok: boolean;
+  status?: number;
+  error?: string;
+}
+
+const faviconCache: Record<string, IconStatus> = (() => {
+  const p = join(OUTPUT, "favicons.json");
+  if (!existsSync(p)) return {};
+  try {
+    return JSON.parse(readFileSync(p, "utf8")) as Record<string, IconStatus>;
+  } catch {
+    return {};
+  }
+})();
+
+function fallbackDomain(item: Integration): string | undefined {
+  // For each kind, pick the URL that best identifies the vendor's domain.
+  let candidate: string | undefined;
+  if (item.kind === "openapi") {
+    // apis.guru's `provider` field is already an eTLD+1 (e.g. "1password.com").
+    candidate = item.openapi?.provider;
+    if (candidate && !/^https?:\/\//.test(candidate)) candidate = `https://${candidate}`;
+  } else if (item.kind === "mcp") {
+    candidate = item.mcp?.remoteUrl ?? item.url;
+  } else if (item.kind === "graphql") {
+    candidate = item.graphql?.endpoint ?? item.url;
+  }
+  candidate ??= item.url;
+  if (!candidate) return undefined;
+  const domain = getDomain(candidate);
+  return domain ?? undefined;
+}
+
+function applyFavicons(recs: Integration[]): Integration[] {
+  return recs.map((r) => {
+    if (r.icon) {
+      const status = faviconCache[r.icon];
+      if (!status) return r; // not yet validated; keep as-is
+      if (status.ok) return r;
+    }
+    const domain = fallbackDomain(r);
+    if (!domain) return { ...r, icon: undefined };
+    return {
+      ...r,
+      icon: `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=64`,
+    };
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tool cache: output/tools/<kind>/<slug>.json from extract-tools.ts
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface ToolsCache {
+  status: "ok" | "error" | "skipped";
+  reason?: string;
+  tools: ExtractedTool[];
+}
+
+function applyToolsCache(kind: Kind, recs: Integration[]): Integration[] {
+  const dir = join(OUTPUT, "tools", kind);
+  if (!existsSync(dir)) return recs;
+  return recs.map((r) => {
+    // Don't clobber tools an override already set explicitly.
+    if (r.tools && r.tools.length > 0) return r;
+    const p = join(dir, `${r.slug}.json`);
+    if (!existsSync(p)) return r;
+    const cache = JSON.parse(readFileSync(p, "utf8")) as ToolsCache;
+    return {
+      ...r,
+      tools: cache.tools,
+      toolsStatus: cache.status,
+      toolsReason: cache.reason,
+    };
+  });
+}
+
+function applyOverrides(kind: Kind, recs: Integration[]): Integration[] {
+  const dir = join(OVERRIDES, kind);
+  if (!existsSync(dir)) return recs;
+  const patches = new Map<string, Partial<Integration>>();
+  for (const file of readdirSync(dir)) {
+    if (!file.endsWith(".json")) continue;
+    const slug = file.replace(/\.json$/, "");
+    patches.set(slug, readJson<Partial<Integration>>(join(dir, file)));
+  }
+  // Patch matching records.
+  const updated = recs.map((r) =>
+    patches.has(r.slug) ? deepMerge(r, patches.get(r.slug)!) : r,
+  );
+  // Add new records for overrides whose slug doesn't match any existing record.
+  // The override file must supply at least name + description.
+  const existingSlugs = new Set(recs.map((r) => r.slug));
+  for (const [slug, patch] of patches) {
+    if (existingSlugs.has(slug)) continue;
+    if (!patch.name) {
+      console.warn(`overrides/${kind}/${slug}.json: skipping addition (no "name")`);
+      continue;
+    }
+    updated.push({
+      id: `${kind}/${slug}`,
+      kind,
+      slug,
+      name: patch.name,
+      description: patch.description ?? "",
+      categories: [],
+      feeds: ["override" as Feed],
+      raw: {},
+      ...patch,
+    } as Integration);
+  }
+  return updated;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Slug dedup within a kind
+// ─────────────────────────────────────────────────────────────────────────────
+
+function dedupeSlugs(recs: Integration[]): Integration[] {
+  const seen = new Map<string, number>();
+  for (const r of recs) {
+    const n = seen.get(r.slug) ?? 0;
+    if (n > 0) {
+      r.slug = `${r.slug}-${n + 1}`;
+      r.id = `${r.kind}/${r.slug}`;
+    }
+    seen.set(r.slug.replace(/-\d+$/, ""), n + 1);
+  }
+  return recs;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Index: slim record for search
+// ─────────────────────────────────────────────────────────────────────────────
+
+function buildIndex(all: Integration[]) {
+  return all.map((r) => ({
+    id: r.id,
+    kind: r.kind,
+    slug: r.slug,
+    name: r.name,
+    description: r.description.slice(0, 240),
+    url: r.url,
+    icon: r.icon,
+    categories: r.categories,
+    feeds: r.feeds,
+    popularity: r.popularity,
+  }));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Run
+// ─────────────────────────────────────────────────────────────────────────────
+
+function main() {
+  // Order: build feed records → apply overrides (may add new records) → fill
+  // tools from cache → swap broken icons for domain-based fallbacks.
+  const mcp = applyFavicons(applyToolsCache("mcp", applyOverrides("mcp", buildMcp())));
+  const openapi = applyFavicons(applyToolsCache("openapi", applyOverrides("openapi", buildOpenapi())));
+  const graphql = applyFavicons(applyToolsCache("graphql", applyOverrides("graphql", buildGraphql())));
+
+  writeFileSync(join(OUTPUT, "mcp.json"), JSON.stringify(mcp, null, 2));
+  writeFileSync(join(OUTPUT, "openapi.json"), JSON.stringify(openapi, null, 2));
+  writeFileSync(join(OUTPUT, "graphql.json"), JSON.stringify(graphql, null, 2));
+
+  const all = [...mcp, ...openapi, ...graphql];
+  writeFileSync(join(OUTPUT, "index.json"), JSON.stringify(buildIndex(all)));
+
+  const mergedMcp = mcp.filter((r) => r.feeds.length > 1).length;
+  const withTools = (rs: Integration[]) =>
+    rs.filter((r) => r.toolsStatus === "ok" && (r.tools?.length ?? 0) > 0).length;
+  console.log(
+    `mcp:     ${mcp.length.toString().padStart(5)}  (${mergedMcp} merged, ${withTools(mcp)} with tools)`,
+  );
+  console.log(`openapi: ${openapi.length.toString().padStart(5)}  (${withTools(openapi)} with tools)`);
+  console.log(`graphql: ${graphql.length.toString().padStart(5)}  (${withTools(graphql)} with tools)`);
+  console.log(`total:   ${all.length.toString().padStart(5)}`);
+
+  const validatedIcons = Object.keys(faviconCache).length;
+  if (validatedIcons === 0) {
+    console.log(`favicons: no validation cache yet — run \`bun run validate-favicons\``);
+  } else {
+    const fb = all.filter((r) => r.icon?.startsWith("https://www.google.com/s2/favicons")).length;
+    console.log(`favicons: ${validatedIcons} URLs validated, ${fb} records using domain fallback`);
+  }
+}
+
+main();

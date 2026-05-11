@@ -1,0 +1,87 @@
+{
+  "fetchedAt": "2026-04-30T15:22:49.513Z",
+  "status": "ok",
+  "count": 16,
+  "tools": [
+    {
+      "id": "openapi_linqr_app.imageManagement.imageDeleteImagesIdDelete",
+      "name": "imageManagement.imageDeleteImagesIdDelete",
+      "description": "This endpoint allows you to delete images hosted in the LinQR storage."
+    },
+    {
+      "id": "openapi_linqr_app.imageManagement.imageListAllImagesGet",
+      "name": "imageManagement.imageListAllImagesGet",
+      "description": "This endpoint allows you to list images hosted in the LinQR storage. If there are no images hosted, an empty array is returned."
+    },
+    {
+      "id": "openapi_linqr_app.imageManagement.imageListImagesIdGet",
+      "name": "imageManagement.imageListImagesIdGet",
+      "description": "This endpoint allows you to list single image hosted in the LinQR storage."
+    },
+    {
+      "id": "openapi_linqr_app.imageManagement.imageUploadImagesPost",
+      "name": "imageManagement.imageUploadImagesPost",
+      "description": "This endpoint allows you to upload images to LinQR storage. In the response, metadata of the submitted image is sent, including the identifier used by other endpoints from the `Image management` group for image identification."
+    },
+    {
+      "id": "openapi_linqr_app.multipleQrCodes.qrCodeBatchBatchQrcodePost",
+      "name": "multipleQrCodes.qrCodeBatchBatchQrcodePost",
+      "description": "This endpoint allows you to generate an archive containing multiple QR Codes with a single request. The endpoint response is the archive containing the generated image files and `items.json` file which is a record of the specifications of each of the files in the archive."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeContactPost",
+      "name": "singleQrCode.dispatcherQrcodeContactPost",
+      "description": "This endpoint allows you to create a QR Code that allows user to quickly add contact information to the phone book. The code contains an appropriately encoded electronic business card. After scanning, the device prompts to save the contact in the phone book."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeCryptoPost",
+      "name": "singleQrCode.dispatcherQrcodeCryptoPost",
+      "description": "This endpoint allows you to create a QR Code that allows user to make a quick cryptocurrency transfer. The code contains appropriately encoded data for the payment. After scanning the code, the cryptocurrency wallet application asks user to perform the transfer without rewriting all necessary data."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeEmailPost",
+      "name": "singleQrCode.dispatcherQrcodeEmailPost",
+      "description": "This endpoint allows the creation of a QR Code allowing the user to quickly send an email. The code contains an appropriately encoded message template. After scanning, the device starts the e-mail client with pre-filled specified fields."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeGeoPost",
+      "name": "singleQrCode.dispatcherQrcodeGeoPost",
+      "description": "This endpoint allows you to create a QR Code that allows to share location with the user. The code contains appropriately encoded geographic coordinates. After scanning the code, device maps application is invoked, pointing to the selected location (address)."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodePhonePost",
+      "name": "singleQrCode.dispatcherQrcodePhonePost",
+      "description": "This endpoint allows you to create a QR Code that allows user to make quick telephone call. The code contains appropriately encoded telephone number. After scanning the code, device dialer is invoked with prefilled phone number. To make a call, the user only needs to press the green phone key."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodePost",
+      "name": "singleQrCode.dispatcherQrcodePost",
+      "description": "This endpoint aggregates the functionality of all other endpoints in the group. The data type in the `data` field is recognized automatically and the data is encoded in an appropriate way."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeSmsPost",
+      "name": "singleQrCode.dispatcherQrcodeSmsPost",
+      "description": "This endpoint allows you to create a QR Code that allows user to quickly send SMS. The code contains appropriately encoded recipient number and message template. After scanning the code, device message application is invoked with prefilled phone number and text, ready to be sent. To send a SMS, the user only needs to press *Send* button."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeTextPost",
+      "name": "singleQrCode.dispatcherQrcodeTextPost",
+      "description": "This endpoint allows you to create a QR Code containing any text, in particular, an URL that may redirect the user to the website. After QR code is scanned, website will be displayed to the user."
+    },
+    {
+      "id": "openapi_linqr_app.singleQrCode.dispatcherQrcodeWifiPost",
+      "name": "singleQrCode.dispatcherQrcodeWifiPost",
+      "description": "This endpoint allows you to create a QR Code that allows user to quickly connect to a WiFi network. The code contains properly encoded network credentials. After scanning, the device can automatically connect to the network without having to enter the password manually."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

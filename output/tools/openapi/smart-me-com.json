@@ -1,0 +1,337 @@
+{
+  "fetchedAt": "2026-04-30T15:26:47.188Z",
+  "status": "ok",
+  "count": 66,
+  "tools": [
+    {
+      "id": "openapi_smart_me_com.accessToken.accessTokenPut",
+      "name": "accessToken.accessTokenPut",
+      "description": "Creates a Access Token to write on a Card (e.g. NFC)"
+    },
+    {
+      "id": "openapi_smart_me_com.account.accountLogin",
+      "name": "account.accountLogin",
+      "description": "GET /api/Account/login"
+    },
+    {
+      "id": "openapi_smart_me_com.account.postApiAccountLogin",
+      "name": "account.postApiAccountLogin",
+      "description": "POST /api/Account/login"
+    },
+    {
+      "id": "openapi_smart_me_com.actions.actionsGet",
+      "name": "actions.actionsGet",
+      "description": "Gets all available Actions of a Device"
+    },
+    {
+      "id": "openapi_smart_me_com.actions.actionsPost",
+      "name": "actions.actionsPost",
+      "description": "Set an action for the specified device."
+    },
+    {
+      "id": "openapi_smart_me_com.additionalDeviceInformation.additionalDeviceInformationGet",
+      "name": "additionalDeviceInformation.additionalDeviceInformationGet",
+      "description": "Gets the additional information (e.g. Firmware Version) about a device."
+    },
+    {
+      "id": "openapi_smart_me_com.customDevice.customDeviceGet",
+      "name": "customDevice.customDeviceGet",
+      "description": "Gets all Devices"
+    },
+    {
+      "id": "openapi_smart_me_com.customDevice.customDevicePost",
+      "name": "customDevice.customDevicePost",
+      "description": "Creates or updates a Custom Device or updates it's values.\r\n            A Custom Device can be any device that like to add some measurement values to the smart-me Cloud.\r\n            Only use a custom device for all non meters.\r\n            For a new device leave the ID empty. To create a device you have to set the DeviceEnergyType.\r\n            To update values, add the ID of the device and the values you like to set.  (See the Data Type Model for more Information)"
+    },
+    {
+      "id": "openapi_smart_me_com.customDevice.getApiCustomDeviceId",
+      "name": "customDevice.getApiCustomDeviceId",
+      "description": "Gets a Device by it's ID"
+    },
+    {
+      "id": "openapi_smart_me_com.deviceBySerial.deviceBySerialGet",
+      "name": "deviceBySerial.deviceBySerialGet",
+      "description": "Gets a Device by it's Serial Number. The Serial is the part before the \"-\"."
+    },
+    {
+      "id": "openapi_smart_me_com.devices.devicesGet",
+      "name": "devices.devicesGet",
+      "description": "Gets all Devices"
+    },
+    {
+      "id": "openapi_smart_me_com.devices.devicesPost",
+      "name": "devices.devicesPost",
+      "description": "Creates or updates a Device or updates it's values. \r\n            For a new device leave the ID empty. To create a device you have to set the DeviceEnergyType.\r\n            To update values, add the ID of the device and the values you like to set.  (See the Data Type Model for more Information)"
+    },
+    {
+      "id": "openapi_smart_me_com.devices.devicesPut",
+      "name": "devices.devicesPut",
+      "description": "Updates the On/Off Switch on a device\r\n            For new implementations please use the \"actions\" command"
+    },
+    {
+      "id": "openapi_smart_me_com.devices.getApiDevicesId",
+      "name": "devices.getApiDevicesId",
+      "description": "Gets a Device by it's ID"
+    },
+    {
+      "id": "openapi_smart_me_com.devicesByEnergy.devicesByEnergyGet",
+      "name": "devicesByEnergy.devicesByEnergyGet",
+      "description": "Gets all Devices for an Energy Type"
+    },
+    {
+      "id": "openapi_smart_me_com.devicesBySubType.devicesBySubTypeGet",
+      "name": "devicesBySubType.devicesBySubTypeGet",
+      "description": "Gets all Devices by it's Sub Type (e.g. E-Charging Station)"
+    },
+    {
+      "id": "openapi_smart_me_com.fastSendDeviceValues.fastSendDeviceValuesGet",
+      "name": "fastSendDeviceValues.fastSendDeviceValuesGet",
+      "description": "Force a device to send the data every second (if supported). This for about 30s.\r\n            Don't use this call to force a device to send the data every second for a longer time."
+    },
+    {
+      "id": "openapi_smart_me_com.folder.folderGet",
+      "name": "folder.folderGet",
+      "description": "Gets the Values for a folder or a meter"
+    },
+    {
+      "id": "openapi_smart_me_com.folderAssign.folderAssignPost",
+      "name": "folderAssign.folderAssignPost",
+      "description": "Assign a folder (source) or meter to another folder (target). Can be used to create a folder structure."
+    },
+    {
+      "id": "openapi_smart_me_com.folderMenu.folderMenuGet",
+      "name": "folderMenu.folderMenuGet",
+      "description": "Gets the folder menu items (each item might contain child items)"
+    },
+    {
+      "id": "openapi_smart_me_com.folderMenu.folderMenuPost",
+      "name": "folderMenu.folderMenuPost",
+      "description": "Creates and updates the folder menu items"
+    },
+    {
+      "id": "openapi_smart_me_com.folderSettings.folderSettingsDelete",
+      "name": "folderSettings.folderSettingsDelete",
+      "description": "Deletes a folder"
+    },
+    {
+      "id": "openapi_smart_me_com.folderSettings.folderSettingsGet",
+      "name": "folderSettings.folderSettingsGet",
+      "description": "Gets the settings of a folder or meter"
+    },
+    {
+      "id": "openapi_smart_me_com.folderSettings.folderSettingsPost",
+      "name": "folderSettings.folderSettingsPost",
+      "description": "Add or edit a folder or a meter. To add a new folder use and empty ID"
+    },
+    {
+      "id": "openapi_smart_me_com.health.healthGet",
+      "name": "health.healthGet",
+      "description": "A method returning HTTP 200 OK when queried.\r\n            It is used by Kubernetes probes to determine whether the app is healthy."
+    },
+    {
+      "id": "openapi_smart_me_com.mBus.mBusPost",
+      "name": "mBus.mBusPost",
+      "description": "M-BUS API: Adds data of a M-BUS Meter to the smart-me Cloud.\r\n            Just send us the M-BUS Telegram (RSP_UD) and we will do the Rest."
+    },
+    {
+      "id": "openapi_smart_me_com.meterFolderInformation.meterFolderInformationGet",
+      "name": "meterFolderInformation.meterFolderInformationGet",
+      "description": "Beta: Gets the General Information for a Meter or a Folder"
+    },
+    {
+      "id": "openapi_smart_me_com.meterFolderInformation.meterFolderInformationPost",
+      "name": "meterFolderInformation.meterFolderInformationPost",
+      "description": "Sets the Name of a Meter or a Folder"
+    },
+    {
+      "id": "openapi_smart_me_com.meterValues.meterValuesGet",
+      "name": "meterValues.meterValuesGet",
+      "description": "Gets the Values for a Meter at a given Date. The first Value found before the given Date is returned."
+    },
+    {
+      "id": "openapi_smart_me_com.oAuth.oAuthAuthorize",
+      "name": "oAuth.oAuthAuthorize",
+      "description": "GET /api/oauth/authorize"
+    },
+    {
+      "id": "openapi_smart_me_com.oAuth.postApiOauthAuthorize",
+      "name": "oAuth.postApiOauthAuthorize",
+      "description": "POST /api/oauth/authorize"
+    },
+    {
+      "id": "openapi_smart_me_com.pico.picoGet",
+      "name": "pico.picoGet",
+      "description": "Gets all pico charging stations for this user"
+    },
+    {
+      "id": "openapi_smart_me_com.picoCharging.picoChargingGet",
+      "name": "picoCharging.picoChargingGet",
+      "description": "Gets the active charging data of a pico station"
+    },
+    {
+      "id": "openapi_smart_me_com.picoChargingHistory.picoChargingHistoryGet",
+      "name": "picoChargingHistory.picoChargingHistoryGet",
+      "description": "Gets the last charging history for a pico station"
+    },
+    {
+      "id": "openapi_smart_me_com.picoEnableFixCableLock.picoEnableFixCableLockPost",
+      "name": "picoEnableFixCableLock.picoEnableFixCableLockPost",
+      "description": "Try to fix lock the cable of a pico. The pico must be online and a cable (without car) needs to be connected. Otherwise this will fail."
+    },
+    {
+      "id": "openapi_smart_me_com.picoLoadmanagementGroup.getApiPicoLoadmanagementgroup",
+      "name": "picoLoadmanagementGroup.getApiPicoLoadmanagementgroup",
+      "description": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns all available load management groups"
+    },
+    {
+      "id": "openapi_smart_me_com.picoLoadmanagementGroup.picoLoadmanagementGroupGet",
+      "name": "picoLoadmanagementGroup.picoLoadmanagementGroupGet",
+      "description": "GET: api/pico/loadmanagementgroup\r\n            \r\n            Returns a pico load management group by it's id"
+    },
+    {
+      "id": "openapi_smart_me_com.picoLoadmanagementSetDynamicCurrent.picoLoadmanagementSetDynamicCurrentPost",
+      "name": "picoLoadmanagementSetDynamicCurrent.picoLoadmanagementSetDynamicCurrentPost",
+      "description": "Sets the dynamic current of a load management group or a single station."
+    },
+    {
+      "id": "openapi_smart_me_com.picoSettings.picoSettingsGet",
+      "name": "picoSettings.picoSettingsGet",
+      "description": "GET: api/pico/settings\r\n            \r\n            Returns the settings of a pico charging station."
+    },
+    {
+      "id": "openapi_smart_me_com.registerForRealtimeApi.registerForRealtimeApiDelete",
+      "name": "registerForRealtimeApi.registerForRealtimeApiDelete",
+      "description": "Deletes a realtime API registration."
+    },
+    {
+      "id": "openapi_smart_me_com.registerForRealtimeApi.registerForRealtimeApiGet",
+      "name": "registerForRealtimeApi.registerForRealtimeApiGet",
+      "description": "Gets all registrations for the Realtime API."
+    },
+    {
+      "id": "openapi_smart_me_com.registerForRealtimeApi.registerForRealtimeApiPost",
+      "name": "registerForRealtimeApi.registerForRealtimeApiPost",
+      "description": "Creates a new registration for the realtime API. The Realtime API sends you the data of the registred devices as soon as we have them on the cloud. More Information about the realtime API: https://www.smart-me.com/Description/api/realtimeapi.aspx"
+    },
+    {
+      "id": "openapi_smart_me_com.smartMeDeviceConfiguration.smartMeDeviceConfigurationGet",
+      "name": "smartMeDeviceConfiguration.smartMeDeviceConfigurationGet",
+      "description": "Gets the configuration of a smart-me device."
+    },
+    {
+      "id": "openapi_smart_me_com.smartMeDeviceConfiguration.smartMeDeviceConfigurationPost",
+      "name": "smartMeDeviceConfiguration.smartMeDeviceConfigurationPost",
+      "description": "Sets the configuration of a smart-me device. The device needs to be online."
+    },
+    {
+      "id": "openapi_smart_me_com.subUser.subUserDelete",
+      "name": "subUser.subUserDelete",
+      "description": "Delete a subuser"
+    },
+    {
+      "id": "openapi_smart_me_com.subUser.subUserGet",
+      "name": "subUser.subUserGet",
+      "description": "Get a sub user. The user must be assigend to the user that makes this call."
+    },
+    {
+      "id": "openapi_smart_me_com.subUser.subUserPost",
+      "name": "subUser.subUserPost",
+      "description": "Creates or updates a subuser.\r\n            To create a new user set no ID (empty)"
+    },
+    {
+      "id": "openapi_smart_me_com.user.userDelete",
+      "name": "user.userDelete",
+      "description": "Triggers user account deletion."
+    },
+    {
+      "id": "openapi_smart_me_com.user.userGet",
+      "name": "user.userGet",
+      "description": "Gets the informations for the user."
+    },
+    {
+      "id": "openapi_smart_me_com.userToFolderAssign.userToFolderAssignDelete",
+      "name": "userToFolderAssign.userToFolderAssignDelete",
+      "description": "Deletes a user to folder assignement"
+    },
+    {
+      "id": "openapi_smart_me_com.userToFolderAssign.userToFolderAssignPost",
+      "name": "userToFolderAssign.userToFolderAssignPost",
+      "description": "Assign a user to a folder"
+    },
+    {
+      "id": "openapi_smart_me_com.values.valuesGet",
+      "name": "values.valuesGet",
+      "description": "Gets all (last) values of a device"
+    },
+    {
+      "id": "openapi_smart_me_com.valuesInPast.valuesInPastGet",
+      "name": "valuesInPast.valuesInPastGet",
+      "description": "Gets the Values for a device at a given Date. The first Value found before the given Date is returned."
+    },
+    {
+      "id": "openapi_smart_me_com.valuesInPastMultiple.valuesInPastMultipleGet",
+      "name": "valuesInPastMultiple.valuesInPastMultipleGet",
+      "description": "Gets multiple values of a device. This call needs a smart-me professional licence."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualBillingMeterActive.virtualBillingMeterActiveGet",
+      "name": "virtualBillingMeterActive.virtualBillingMeterActiveGet",
+      "description": "Beta: Gets all active virtual meters."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualBillingMeterActive.virtualBillingMeterActivePost",
+      "name": "virtualBillingMeterActive.virtualBillingMeterActivePost",
+      "description": "Beta: Virtual Meter API: Activates a Meter and add the Consumption to a Virtual Meter assosiated with the User."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualBillingMeterDeactivate.virtualBillingMeterDeactivatePost",
+      "name": "virtualBillingMeterDeactivate.virtualBillingMeterDeactivatePost",
+      "description": "Beta: Virtual Meter API: Deactivates a Virtual Meter."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualBillingMeters.virtualBillingMetersGet",
+      "name": "virtualBillingMeters.virtualBillingMetersGet",
+      "description": "Beta: Gets all Meters available to activate as a Virtual Meter."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualMeterCalculateFormula.virtualMeterCalculateFormulaGet",
+      "name": "virtualMeterCalculateFormula.virtualMeterCalculateFormulaGet",
+      "description": "Calculates a virtual meter from a formula.\r\n            \r\n            A meter is coded as ID(\"METERID\")\r\n            Ariphmetical operators:\r\n             ()  parentheses;  \r\n             +   plus (a + b); \r\n             -  minus (a - b); \r\n             *  multiplycation symbol (a * b); \r\n             /  divide symbol (a / b); \r\n            Example: (ID(\"63ac09cb-4e5f-4f3e-bd27-ad8c30bdfc0c\") + ID(\"0209555e-9dc4-4e84-a166-a864488b4b12\")) * 2"
+    },
+    {
+      "id": "openapi_smart_me_com.virtualTariff.getApiVirtualTariffId",
+      "name": "virtualTariff.getApiVirtualTariffId",
+      "description": "Gets all virtual tariffs of a folder"
+    },
+    {
+      "id": "openapi_smart_me_com.virtualTariff.virtualTariffGet",
+      "name": "virtualTariff.virtualTariffGet",
+      "description": "Gets all Virtual Tariffs of a user"
+    },
+    {
+      "id": "openapi_smart_me_com.virtualTariffConsumption.virtualTariffConsumptionGet",
+      "name": "virtualTariffConsumption.virtualTariffConsumptionGet",
+      "description": "Gets the consumption of a folder with a virtuall tariffs."
+    },
+    {
+      "id": "openapi_smart_me_com.virtualTariffsForProperty.virtualTariffsForPropertyGet",
+      "name": "virtualTariffsForProperty.virtualTariffsForPropertyGet",
+      "description": "Gets all Virtual Tariffs for a property (folder)"
+    },
+    {
+      "id": "openapi_smart_me_com.virtualTariffsStatusForProperty.virtualTariffsStatusForPropertyGet",
+      "name": "virtualTariffsStatusForProperty.virtualTariffsStatusForPropertyGet",
+      "description": "Gets the calculation status for a virtual tariff property"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

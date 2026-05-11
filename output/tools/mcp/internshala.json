@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:21:07.118Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_internshala.search_jobs",
+      "name": "search_jobs",
+      "description": "\n        Use this when the user asks for job searches, job listings, full-time employment opportunities or wants job data from Internshala. This tool performs real-time job retrieval based on filters.\n        Input Handling:\n        If user asks for \"fresher\", \"entry level\", or \"new grad\" roles, set the 'years_of_experience' to a minimum such as 0.Default 'minimum_salary_currency' to 'INR'.If the user asks for \"high paying\" jobs without a specific number, try setting a reasonable 'minimum_yearly_salary' (e.g., 300000) or ask for clarification.\n        UI Behavior:\n        Results are displayed directly in an interactive widget. Do not list, bullet point, or reprint the job titles in your text response.If 0 jobs are returned, explicitly state this and suggest removing strict filters (like high salary or specific location).\n        "
+    },
+    {
+      "id": "mcp_internshala.get_job_details",
+      "name": "get_job_details",
+      "description": "Get detailed information for a specific job by its URL. Use this when the user wants to see full details of a particular job listing."
+    },
+    {
+      "id": "mcp_internshala.search_internships",
+      "name": "search_internships",
+      "description": "\n        Use this when the user asks for internship searches, internship listings, or real-time internship information from Internshala.\n        \nInput Handling:\n        If user asks for \"paid internship\", \"or with stipend\", set 'minimum_monthly_stipend=1' (to exclude unpaid).Default 'minimum_salary_currency' to 'INR'.If the user provides no profile/category (e.g., just \"find me an internship\"), ask for their field of interest (e.g., Marketing, Coding) before calling this tool.\n        \nUI Behavior:\n        Results are displayed directly in an interactive widget. Do not list, bullet point, or reprint the job titles in your text response.If 0 internships are returned, explicitly state this and suggest removing strict filters (like stipend filter or specific location or more related profiles).\n        "
+    },
+    {
+      "id": "mcp_internshala.get_internship_details",
+      "name": "get_internship_details",
+      "description": "Get detailed information for a specific internship by its URL. Use this when the user wants to see full details of a particular internship listing."
+    }
+  ]
+}

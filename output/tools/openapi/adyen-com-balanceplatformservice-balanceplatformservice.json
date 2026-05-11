@@ -1,0 +1,172 @@
+{
+  "fetchedAt": "2026-04-30T15:44:51.804Z",
+  "status": "ok",
+  "count": 33,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.accountHolders.getAccountHoldersId",
+      "name": "accountHolders.getAccountHoldersId",
+      "description": "Returns an account holder."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.accountHolders.getAccountHoldersIdBalanceAccounts",
+      "name": "accountHolders.getAccountHoldersIdBalanceAccounts",
+      "description": "Returns a paginated list of the balance accounts associated with an account holder. To fetch multiple pages, use the query parameters. \n\nFor example, to limit the page to 5 balance accounts and skip the first 10, use `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.accountHolders.patchAccountHoldersId",
+      "name": "accountHolders.patchAccountHoldersId",
+      "description": "Updates an account holder. When updating an account holder resource, if a parameter is not provided in the request, it is left unchanged."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.accountHolders.postAccountHolders",
+      "name": "accountHolders.postAccountHolders",
+      "description": "Creates an account holder linked to a [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities).\n\n"
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.deleteBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "name": "balanceAccounts.deleteBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "description": "Deletes a sweep for a balance account."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.getBalanceAccountsBalanceAccountIdSweeps",
+      "name": "balanceAccounts.getBalanceAccountsBalanceAccountIdSweeps",
+      "description": "Returns a list of the sweeps configured for a balance account.\n\nTo fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.getBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "name": "balanceAccounts.getBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "description": "Returns a sweep."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.getBalanceAccountsId",
+      "name": "balanceAccounts.getBalanceAccountsId",
+      "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.getBalanceAccountsIdPaymentInstruments",
+      "name": "balanceAccounts.getBalanceAccountsIdPaymentInstruments",
+      "description": "Returns a paginated list of the payment instruments associated with a balance account. \n\nTo fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6`."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.patchBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "name": "balanceAccounts.patchBalanceAccountsBalanceAccountIdSweepsSweepId",
+      "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.patchBalanceAccountsId",
+      "name": "balanceAccounts.patchBalanceAccountsId",
+      "description": "Updates a balance account."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.postBalanceAccounts",
+      "name": "balanceAccounts.postBalanceAccounts",
+      "description": "Creates a balance account that holds the funds of the associated account holder."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.balanceAccounts.postBalanceAccountsBalanceAccountIdSweeps",
+      "name": "balanceAccounts.postBalanceAccountsBalanceAccountIdSweeps",
+      "description": "Creates a sweep that results in moving funds from or to a balance account.\n\nA sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.bankAccountValidation.postValidateBankAccountIdentification",
+      "name": "bankAccountValidation.postValidateBankAccountIdentification",
+      "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.grantAccounts.getGrantAccountsId",
+      "name": "grantAccounts.getGrantAccountsId",
+      "description": "Returns the details of the [grant account](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-account)."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.grantOffers.getGrantOffers",
+      "name": "grantOffers.getGrantOffers",
+      "description": "Returns a list of all [grant offers](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.grantOffers.getGrantOffersGrantOfferId",
+      "name": "grantOffers.getGrantOffersGrantOfferId",
+      "description": "Returns the details of a single grant offer."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstrumentGroups.getPaymentInstrumentGroupsId",
+      "name": "paymentInstrumentGroups.getPaymentInstrumentGroupsId",
+      "description": "Returns the details of a payment instrument group."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstrumentGroups.getPaymentInstrumentGroupsIdTransactionRules",
+      "name": "paymentInstrumentGroups.getPaymentInstrumentGroupsIdTransactionRules",
+      "description": "Returns a list of all the transaction rules associated with a payment instrument group."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstrumentGroups.postPaymentInstrumentGroups",
+      "name": "paymentInstrumentGroups.postPaymentInstrumentGroups",
+      "description": "Creates a payment instrument group to associate and group payment instrument resources together. You can apply a transaction rule to a payment instrument group."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstruments.getPaymentInstrumentsId",
+      "name": "paymentInstruments.getPaymentInstrumentsId",
+      "description": "Returns the details of a payment instrument."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstruments.getPaymentInstrumentsIdReveal",
+      "name": "paymentInstruments.getPaymentInstrumentsIdReveal",
+      "description": "Returns the primary account number (PAN) of a payment instrument.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):\n\n* Balance Platform BCL PCI role"
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstruments.getPaymentInstrumentsIdTransactionRules",
+      "name": "paymentInstruments.getPaymentInstrumentsIdTransactionRules",
+      "description": "Returns a list of transaction rules associated with a payment instrument."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstruments.patchPaymentInstrumentsId",
+      "name": "paymentInstruments.patchPaymentInstrumentsId",
+      "description": "Updates a payment instrument. Once a payment instrument is already active, you can only update its status. However, for cards created with **inactive** status, you can still update the balance account associated with the card."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.paymentInstruments.postPaymentInstruments",
+      "name": "paymentInstruments.postPaymentInstruments",
+      "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.\n\n For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.platform.getBalancePlatformsId",
+      "name": "platform.getBalancePlatformsId",
+      "description": "Returns a balance platform."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.platform.getBalancePlatformsIdAccountHolders",
+      "name": "platform.getBalancePlatformsIdAccountHolders",
+      "description": "Returns a paginated list of all the account holders that belong to the balance platform. To fetch multiple pages, use the query parameters. \n\nFor example, to limit the page to 5 account holders and to skip the first 20, use `/balancePlatforms/{id}/accountHolders?limit=5&offset=20`."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.transactionRules.deleteTransactionRulesTransactionRuleId",
+      "name": "transactionRules.deleteTransactionRulesTransactionRuleId",
+      "description": "Deletes a transaction rule."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.transactionRules.getTransactionRulesTransactionRuleId",
+      "name": "transactionRules.getTransactionRulesTransactionRuleId",
+      "description": "Returns the details of a transaction rule."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.transactionRules.patchTransactionRulesTransactionRuleId",
+      "name": "transactionRules.patchTransactionRulesTransactionRuleId",
+      "description": "Updates a transaction rule. \n\n* To update only the status of a transaction rule, send only the `status` parameter. All other parameters not provided in the request are left unchanged.\n\n* When updating any other parameter, you need to send all existing resource parameters. If you omit a parameter in the request, that parameter is removed from the resource."
+    },
+    {
+      "id": "openapi_adyen_com_balanceplatformservice_balanceplatformservice.transactionRules.postTransactionRules",
+      "name": "transactionRules.postTransactionRules",
+      "description": "Creates a [transaction rule](https://docs.adyen.com/issuing/transaction-rules). When your user makes a transaction with their Adyen-issued card, the transaction is allowed or declined based on the conditions and outcome defined in the transaction rule. You can apply the transaction rule to several cards, such as all the cards in your platform, or to a specific card. For use cases, see [examples](https://docs.adyen.com/issuing/transaction-rules/examples)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

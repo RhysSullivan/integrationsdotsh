@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:19:57.310Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_backstage.search_casting_calls",
+      "name": "search_casting_calls",
+      "description": "Search for publicly available casting calls on Backstage.\n\nIMPORTANT EXTRACTION GUIDELINES:\n- Do not make up any information - only extract what is explicitly mentioned in the query\n- If a parameter is not mentioned, leave it as null/None\n- Use natural language hints in parentheses to identify parameters (e.g., 'crew' → job_type='crew')\n- Only apply filters when user explicitly mentions them (e.g., union status, gender, ethnicity)\n\nREAD-ONLY: This tool only retrieves public casting listings. Does not submit applications or modify any data.\nNO SIDE EFFECTS: Safe to call for browsing opportunities.\nPUBLIC DATA: Returns publicly visible job postings from Backstage.com casting database.\n\nThe LLM should provide location in \"City, State\" format and latitude and longitude.\nAll codes (role_type, job_type, etc.) should be provided as single-letter/short codes, not natural language.\n\nExamples:\n    - For \"Find lead actor roles in New York\":\n        location=\"New York, NY\", latitude=40.7128, longitude=-74.0060, role_type=[\"L\"], job_type=\"tal\"\n\n    - For \"Union voiceover work in LA\":\n        location=\"Los Angeles, CA\", latitude=34.0522, longitude=-118.2437, job_type=\"vo\", union_status=\"U\"\n\n    - For \"Grip roles in London\":\n        location=\"London, UK\", latitude=51.5074, longitude=-0.1278, job_type=\"crew\", role_type=[\"P\"], query=\"Grip\"\n\n    - For \"Director of Photography jobs in NYC\":\n        location=\"New York, NY\", latitude=40.7128, longitude=-74.0060, job_type=\"crew\", role_type=[\"P\"], query=\"Director of Photography\""
+    },
+    {
+      "id": "mcp_backstage.get_casting_call_details",
+      "name": "get_casting_call_details",
+      "description": "Get detailed information about a specific casting call.\n\nREAD-ONLY: This tool only retrieves public casting call details. Does not submit applications.\nNO SIDE EFFECTS: Safe to call for viewing opportunity information.\n\nProvide the casting_call_id to retrieve full details."
+    },
+    {
+      "id": "mcp_backstage.get_similar_casting_calls",
+      "name": "get_similar_casting_calls",
+      "description": "Get casting calls similar to a specific casting call.\n\nREAD-ONLY: This tool only retrieves similar public listings. Does not modify data.\nNO SIDE EFFECTS: Safe to call for discovering related opportunities.\n\nThis is useful for finding related opportunities when a user is interested in a particular casting call."
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "fetchedAt": "2026-04-30T15:22:32.938Z",
+  "status": "ok",
+  "count": 31,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsEkmConnectionsCreate",
+      "name": "projects.cloudkmsProjectsLocationsEkmConnectionsCreate",
+      "description": "Creates a new EkmConnection in a given Project and Location."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsEkmConnectionsList",
+      "name": "projects.cloudkmsProjectsLocationsEkmConnectionsList",
+      "description": "Lists EkmConnections."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsEkmConnectionsVerifyConnectivity",
+      "name": "projects.cloudkmsProjectsLocationsEkmConnectionsVerifyConnectivity",
+      "description": "Verifies that Cloud KMS can successfully connect to the external key manager specified by an EkmConnection. If there is an error connecting to the EKM, this method returns a FAILED_PRECONDITION status containing structured information as described at https://cloud.google.com/kms/docs/reference/ekm_errors."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsGenerateRandomBytes",
+      "name": "projects.cloudkmsProjectsLocationsGenerateRandomBytes",
+      "description": "Generate random bytes using the Cloud KMS randomness source in the provided location."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCreate",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCreate",
+      "description": "Create a new KeyRing in a given Project and Location."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCreate",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCreate",
+      "description": "Create a new CryptoKey within a KeyRing. CryptoKey.purpose and CryptoKey.version_template.algorithm are required."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsAsymmetricDecrypt",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsAsymmetricDecrypt",
+      "description": "Decrypts data that was encrypted with a public key retrieved from GetPublicKey corresponding to a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_DECRYPT."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsAsymmetricSign",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsAsymmetricSign",
+      "description": "Signs data using a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_SIGN, producing a signature that can be verified with the public key retrieved from GetPublicKey."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsCreate",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsCreate",
+      "description": "Create a new CryptoKeyVersion in a CryptoKey. The server will assign the next sequential id. If unset, state will be set to ENABLED."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsDestroy",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsDestroy",
+      "description": "Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED, and destroy_time will be set to the time destroy_scheduled_duration in the future. At that time, the state will automatically change to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey",
+      "description": "Returns the public key for the given CryptoKeyVersion. The CryptoKey.purpose must be ASYMMETRIC_SIGN or ASYMMETRIC_DECRYPT."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsImport",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsImport",
+      "description": "Import wrapped key material into a CryptoKeyVersion. All requests must specify a CryptoKey. If a CryptoKeyVersion is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the CryptoKey."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList",
+      "description": "Lists CryptoKeyVersions."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsMacSign",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsMacSign",
+      "description": "Signs data using a CryptoKeyVersion with CryptoKey.purpose MAC, producing a tag that can be verified by another source with the same key."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsMacVerify",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsMacVerify",
+      "description": "Verifies MAC tag using a CryptoKeyVersion with CryptoKey.purpose MAC, and returns a response that indicates whether or not the verification was successful."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsPatch",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsPatch",
+      "description": "Update a CryptoKeyVersion's metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsRestore",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsRestore",
+      "description": "Restore a CryptoKeyVersion in the DESTROY_SCHEDULED state. Upon restoration of the CryptoKeyVersion, state will be set to DISABLED, and destroy_time will be cleared."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysDecrypt",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysDecrypt",
+      "description": "Decrypts data that was protected by Encrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysEncrypt",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysEncrypt",
+      "description": "Encrypts data, so that it can only be recovered by a call to Decrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysList",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysList",
+      "description": "Lists CryptoKeys."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion",
+      "description": "Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on a key whose purpose is not ENCRYPT_DECRYPT."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsCreate",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsCreate",
+      "description": "Create a new ImportJob within a KeyRing. ImportJob.import_method is required."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsGet",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsGet",
+      "description": "Returns metadata for a given ImportJob."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsGetIamPolicy",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsGetIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsList",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsList",
+      "description": "Lists ImportJobs."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsSetIamPolicy",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsSetIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsImportJobsTestIamPermissions",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsImportJobsTestIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsKeyRingsList",
+      "name": "projects.cloudkmsProjectsLocationsKeyRingsList",
+      "description": "Lists KeyRings."
+    },
+    {
+      "id": "openapi_googleapis_com_cloudkms_cloudkms.projects.cloudkmsProjectsLocationsList",
+      "name": "projects.cloudkmsProjectsLocationsList",
+      "description": "Lists information about the supported locations for this service."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

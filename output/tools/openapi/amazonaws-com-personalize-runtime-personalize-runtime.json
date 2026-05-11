@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:45:07.713Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_personalize_runtime_personalize_runtime.personalizeRanking.getPersonalizedRanking",
+      "name": "personalizeRanking.getPersonalizedRanking",
+      "description": "<p>Re-ranks a list of recommended items for the given user. The first item in the list is deemed the most likely item to be of interest to the user.</p> <note> <p>The solution backing the campaign must have been created using a recipe of type PERSONALIZED_RANKING.</p> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_personalize_runtime_personalize_runtime.recommendations.getRecommendations",
+      "name": "recommendations.getRecommendations",
+      "description": "<p>Returns a list of recommended items. For campaigns, the campaign's Amazon Resource Name (ARN) is required and the required user and item input depends on the recipe type used to create the solution backing the campaign as follows:</p> <ul> <li> <p>USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used</p> </li> <li> <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used</p> </li> </ul> <note> <p>Campaigns that are backed by a solution created using a recipe of type PERSONALIZED_RANKING use the API.</p> </note> <p> For recommenders, the recommender's ARN is required and the required item and user input depends on the use case (domain-based recipe) backing the recommender. For information on use case requirements see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html\">Choosing recommender use cases</a>. </p>"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

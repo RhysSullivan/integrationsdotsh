@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:21:33.400Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_abhibus.search_buses",
+      "name": "search_buses",
+      "description": "Search for available bus services between two cities on a specific date. Provide city names and the tool resolves station IDs automatically.\n\nIMPORTANT RULES:\n- If the user only mentions a destination without a source city, DO NOT call this tool — instead ask the user which city they are traveling from.\n- For follow-up requests (e.g. 'show only AC buses', 'sort by price', 'filter sleeper buses under 1000'), REUSE the same source, destination, and date from the previous search. Do NOT ask the user to confirm or re-enter these details.\n- Do NOT add any sorting unless the user explicitly asks for it.\n- When the user mentions a specific operator name (e.g. 'FreshBus', 'NueGo', 'Orange', 'IntrCity'), ALWAYS pass it in the 'operator' parameter so the widget only shows that operator's buses.\n- When the user mentions a price range, pass both minPrice and maxPrice.\n- ALWAYS pass ALL applicable filters as tool parameters — do NOT filter results in your text response only.\n\nReturns RTC government bus groups as summaries plus all private operator buses."
+    }
+  ]
+}

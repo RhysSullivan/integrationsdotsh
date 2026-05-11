@@ -1,0 +1,62 @@
+{
+  "fetchedAt": "2026-04-30T15:22:37.238Z",
+  "status": "ok",
+  "count": 11,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsBatchUpdate",
+      "name": "forms.formsBatchUpdate",
+      "description": "Change the form with a batch of updates."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsCreate",
+      "name": "forms.formsCreate",
+      "description": "Create a new form using the title given in the provided form message in the request. *Important:* Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed. To create a new form and add items, you must first call forms.create to create an empty form with a title and (optional) document title, and then call forms.update to add the items."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsGet",
+      "name": "forms.formsGet",
+      "description": "Get a form."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsResponsesGet",
+      "name": "forms.formsResponsesGet",
+      "description": "Get one response from the form."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsResponsesList",
+      "name": "forms.formsResponsesList",
+      "description": "List a form's responses."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsWatchesCreate",
+      "name": "forms.formsWatchesCreate",
+      "description": "Create a new watch. If a watch ID is provided, it must be unused. For each invoking project, the per form limit is one watch per Watch.EventType. A watch expires seven days after it is created (see Watch.expire_time)."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsWatchesDelete",
+      "name": "forms.formsWatchesDelete",
+      "description": "Delete a watch."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsWatchesList",
+      "name": "forms.formsWatchesList",
+      "description": "Return a list of the watches owned by the invoking project. The maximum number of watches is two: For each invoker, the limit is one for each event type per form."
+    },
+    {
+      "id": "openapi_googleapis_com_forms_forms.forms.formsWatchesRenew",
+      "name": "forms.formsWatchesRenew",
+      "description": "Renew an existing watch for seven days. The state of the watch after renewal is `ACTIVE`, and the `expire_time` is seven days from the renewal. Renewing a watch in an error state (e.g. `SUSPENDED`) succeeds if the error is no longer present, but fail otherwise. After a watch has expired, RenewWatch returns `NOT_FOUND`."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "fetchedAt": "2026-04-30T15:22:50.804Z",
+  "status": "ok",
+  "count": 34,
+  "tools": [
+    {
+      "id": "openapi_medium_com.article.getArticleArticleId",
+      "name": "article.getArticleArticleId",
+      "description": "Returns the article related information such as *Title, Subtitle, Tags,  Topics* (assigned by Medium), *Publication, Published date and time,  Clap Count, Voter Count, Word Count, Reading Time, Language, etc…*\n"
+    },
+    {
+      "id": "openapi_medium_com.article.getArticleArticleIdContent",
+      "name": "article.getArticleArticleIdContent",
+      "description": "Returns the content of an article/story, for the corresponding `article_id`\n"
+    },
+    {
+      "id": "openapi_medium_com.article.getArticleArticleIdFans",
+      "name": "article.getArticleArticleIdFans",
+      "description": "Returns a list of `user_ids` of the people who clapped on the article (a.k.a `voters`).\n"
+    },
+    {
+      "id": "openapi_medium_com.article.getArticleArticleIdMarkdown",
+      "name": "article.getArticleArticleIdMarkdown",
+      "description": "Returns the markdown of an article/story from Medium, for the corresponding `article_id`\n"
+    },
+    {
+      "id": "openapi_medium_com.article.getArticleArticleIdRelated",
+      "name": "article.getArticleArticleIdRelated",
+      "description": "Returns a list of `article_ids` of the related posts. (Length = 5)\n\n**Note:** If the given article is self-published, related posts will belong to the same author,  else related posts will belong to the publication in which the article is published.\n"
+    },
+    {
+      "id": "openapi_medium_com.article.getArticleArticleIdResponses",
+      "name": "article.getArticleArticleIdResponses",
+      "description": "Returns a list of responses (`response_ids`, same as `article_ids`) for a given article (`article_id`)\nNote: To see the content of the response, use the \"Get Article's Content\" endpoint\n"
+    },
+    {
+      "id": "openapi_medium_com.list.getListListId",
+      "name": "list.getListListId",
+      "description": "Returns the list-related information such as *id, name, author, description,  thumbnail image url, creation datetime, last article inserted datetime,  number of articles in the list, claps, voters, and comments/responses*.\n"
+    },
+    {
+      "id": "openapi_medium_com.list.getListListIdArticles",
+      "name": "list.getListListIdArticles",
+      "description": "Returns an array of `articles_ids` present in the given Medium List.\n"
+    },
+    {
+      "id": "openapi_medium_com.list.getListListIdResponses",
+      "name": "list.getListListIdResponses",
+      "description": "Returns an array of `response_ids` of the comments (same as `article_ids`) on the given Medium List.\n"
+    },
+    {
+      "id": "openapi_medium_com.misc.getLatestpostsTopicSlug",
+      "name": "misc.getLatestpostsTopicSlug",
+      "description": "Returns a list of latest posts (`article_ids`) for a topic/niche (as classified by the Medium platform). Example of a topic/niche can be:\n* blockchain\n* relationships\n* mental-health, etc …\n\nThese are known as `topic_slugs`. At any given moment, this endpoint will return a list of 25 articles (`article_ids`).\n"
+    },
+    {
+      "id": "openapi_medium_com.misc.getRelatedTagsTag",
+      "name": "misc.getRelatedTagsTag",
+      "description": "Returns a list of `related_tags` for the given `tag`.\n"
+    },
+    {
+      "id": "openapi_medium_com.misc.getTopfeedsTagMode",
+      "name": "misc.getTopfeedsTagMode",
+      "description": "Returns a list of `article_ids` (length: 25) for the given `tag` and `mode`.\n"
+    },
+    {
+      "id": "openapi_medium_com.misc.getTopWriterTopicSlug",
+      "name": "misc.getTopWriterTopicSlug",
+      "description": "Returns a list of top writers (`user_ids`) within a particular topic/niche (`topic_slug`). \ne.g. \n- blockchain\n- relationships\n- artificial-intelligence, etc ...\n\n**Note:** You can use optional `count` query parameter to limit the number of results.  The maximum number of top writers within a topic/niche will be 250.\n"
+    },
+    {
+      "id": "openapi_medium_com.publication.getPublicationIdForPublicationSlug",
+      "name": "publication.getPublicationIdForPublicationSlug",
+      "description": "Returns the unique `publication_id` for the given `publication_slug`.\n\n**Note:** You can find the `publication_slug` from the publication's homepage URL.\n- medium.com/**publication_slug**\n"
+    },
+    {
+      "id": "openapi_medium_com.publication.getPublicationPublicationId",
+      "name": "publication.getPublicationPublicationId",
+      "description": "Returns the publication related information such as *Publication name, Tagline, Description, Tags, Followers Count, Twitter username, Instagram username, Facebook Page name, etc …*\n\n**Note:** If you don't know the `publication_id`, you can get it from any article published by it. Use endpoint \"/article/{article_id}\" to retrieve the `publication_id`.\n"
+    },
+    {
+      "id": "openapi_medium_com.publication.getPublicationPublicationIdArticles",
+      "name": "publication.getPublicationPublicationIdArticles",
+      "description": "Returns the list of `articles_ids`, of the latest 25 articles, posted in that publication.\n"
+    },
+    {
+      "id": "openapi_medium_com.publication.getPublicationPublicationIdNewsletter",
+      "name": "publication.getPublicationPublicationIdNewsletter",
+      "description": "Returns the newsletter related information such as *id, name, description, slug, creator_id, subscribers, image_url, etc …*\n\n**Note:** If you don't know the `publication_id`, you can get it from any article published by it. Use endpoint \"/article/{article_id}\" to retrieve the `publication_id`.\n"
+    },
+    {
+      "id": "openapi_medium_com.search.getSearchArticlesQueryQuery",
+      "name": "search.getSearchArticlesQueryQuery",
+      "description": "Returns the list of `articles_ids` for the given search query results. (Max Length = 1000)\n"
+    },
+    {
+      "id": "openapi_medium_com.search.getSearchListsQueryQuery",
+      "name": "search.getSearchListsQueryQuery",
+      "description": "Returns an array of `list_ids` for the given search query results. (Max Length = 1000)\n"
+    },
+    {
+      "id": "openapi_medium_com.search.getSearchPublicationsQueryQuery",
+      "name": "search.getSearchPublicationsQueryQuery",
+      "description": "Returns the list of `publication_ids` for the given search query results. (Max Length = 1000)\n"
+    },
+    {
+      "id": "openapi_medium_com.search.getSearchTagsQueryQuery",
+      "name": "search.getSearchTagsQueryQuery",
+      "description": "Returns a list of `tags` for the given search query results. (Max Length = 1000)\n"
+    },
+    {
+      "id": "openapi_medium_com.search.getSearchUsersQueryQuery",
+      "name": "search.getSearchUsersQueryQuery",
+      "description": "Returns a list of `user_ids` for the given search query results. (Max Length = 1000)\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserIdForUsername",
+      "name": "user.getUserIdForUsername",
+      "description": "Returns the unique `user_id` for the given `username`.\n\n**Note:** You can find the `username` from the user's/author's profile page URL. \n- **username**.medium.com\n- medium.com/@**username**\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserId",
+      "name": "user.getUserUserId",
+      "description": "Returns user related information like *Full name, Bio, Followers count, Following count, Twitter username, Profile-image URL, User ID, etc...* \n\nIt takes `user_id` as the path parameter.\n\n**Note:** If you don't know the `user_id`, then you can get it from the endpoint\\\n'/user/id_for/{`username`}'.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdArticles",
+      "name": "user.getUserUserIdArticles",
+      "description": "Returns the list of articles (`article_ids`) written by the user.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdFollowers",
+      "name": "user.getUserUserIdFollowers",
+      "description": "Returns the list of `user_ids` of the user's followers.\n\n**Note:** The length of this followers' list might be different from what you get in  the \"Get User Info\" Endpoint. It's because, this list doesn't include Medium Users who  left the platform.\nIf you really need the exact followers' count, use this endpoint to get the followers'  list and take its length as the exact followers' count\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdFollowing",
+      "name": "user.getUserUserIdFollowing",
+      "description": "Returns the list of `user_ids` of the user's followings.\n\n**Note:** Currently, this list does not contain the `publication_ids` of the publications that the user is following.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdInterests",
+      "name": "user.getUserUserIdInterests",
+      "description": "Returns a list of tags that the given user follows.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdLists",
+      "name": "user.getUserUserIdLists",
+      "description": "Returns an array of `list_ids` created by the user.\n\n**Note:** You can check whether the use has created lists or not beforehand. Check the  `has_list` attribute in the \"Article Info\" endpoint.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdPublications",
+      "name": "user.getUserUserIdPublications",
+      "description": "Returns a list of `publication_ids` where the user is the editor and/or creator.\n"
+    },
+    {
+      "id": "openapi_medium_com.user.getUserUserIdTopArticles",
+      "name": "user.getUserUserIdTopArticles",
+      "description": "Returns a list of `article_ids` of the top 10 articles on the user's profile, for a given `user_id`.\n"
+    },
+    {
+      "id": "openapi_medium_com.welcome.get",
+      "name": "welcome.get",
+      "description": "**Test Endpoint**\nReturns the information about the Medium API\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

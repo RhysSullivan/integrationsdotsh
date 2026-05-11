@@ -1,0 +1,652 @@
+{
+  "fetchedAt": "2026-04-30T15:22:50.411Z",
+  "status": "ok",
+  "count": 129,
+  "tools": [
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsId",
+      "name": "accounts.getApiV1AccountsId",
+      "description": "GET /api/v1/accounts/{id}"
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdFeaturedTags",
+      "name": "accounts.getApiV1AccountsIdFeaturedTags",
+      "description": "Tags featured by this account."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdFollowers",
+      "name": "accounts.getApiV1AccountsIdFollowers",
+      "description": "Accounts which follow the given account, if network is not hidden by the account owner."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdFollowing",
+      "name": "accounts.getApiV1AccountsIdFollowing",
+      "description": "Accounts which the given account is following, if network is not hidden by the account owner."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdIdentityProofs",
+      "name": "accounts.getApiV1AccountsIdIdentityProofs",
+      "description": "Array of IdentityProof"
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdLists",
+      "name": "accounts.getApiV1AccountsIdLists",
+      "description": "User lists that you have added this account to."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsIdStatuses",
+      "name": "accounts.getApiV1AccountsIdStatuses",
+      "description": "Statuses posted to the given account."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsRelationships",
+      "name": "accounts.getApiV1AccountsRelationships",
+      "description": "Sets a private note on a user."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsSearch",
+      "name": "accounts.getApiV1AccountsSearch",
+      "description": "Search for matching accounts by username or display name."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.getApiV1AccountsVerifyCredentials",
+      "name": "accounts.getApiV1AccountsVerifyCredentials",
+      "description": "Test to make sure that the user token works."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.patchApiV1AccountsUpdateCredentials",
+      "name": "accounts.patchApiV1AccountsUpdateCredentials",
+      "description": "Update the user's display and preferences."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdBlock",
+      "name": "accounts.postApiV1AccountsIdBlock",
+      "description": "Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdFollow",
+      "name": "accounts.postApiV1AccountsIdFollow",
+      "description": "Follow the given account. Can also be used to update whether to show reblogs or enable notifications."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdMute",
+      "name": "accounts.postApiV1AccountsIdMute",
+      "description": "Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline)."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdNote",
+      "name": "accounts.postApiV1AccountsIdNote",
+      "description": "Sets a private note on a user."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdPin",
+      "name": "accounts.postApiV1AccountsIdPin",
+      "description": "Add the given account to the user's featured profiles. (Featured profiles are currently shown on the user's own public profile.)"
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdUnblock",
+      "name": "accounts.postApiV1AccountsIdUnblock",
+      "description": "Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdUnfollow",
+      "name": "accounts.postApiV1AccountsIdUnfollow",
+      "description": "Unfollow the given account."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdUnmute",
+      "name": "accounts.postApiV1AccountsIdUnmute",
+      "description": "Unmute the given account."
+    },
+    {
+      "id": "openapi_mastodon_local.accounts.postApiV1AccountsIdUnpin",
+      "name": "accounts.postApiV1AccountsIdUnpin",
+      "description": "Remove the given account from the user's featured profiles."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.getApiV1AdminAccounts",
+      "name": "admin.getApiV1AdminAccounts",
+      "description": "View accounts matching certain criteria for filtering, up to 100 at a time. Pagination may be done with the HTTP Link header in the response."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.getApiV1AdminAccountsId",
+      "name": "admin.getApiV1AdminAccountsId",
+      "description": "View admin-level information about the given account."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.getApiV1AdminReports",
+      "name": "admin.getApiV1AdminReports",
+      "description": "View all reports. Pagination may be done with HTTP Link header in the response."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.getApiV1AdminReportsId",
+      "name": "admin.getApiV1AdminReportsId",
+      "description": "View information about the report with the given ID."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdAction",
+      "name": "admin.postApiV1AdminAccountsIdAction",
+      "description": "Perform an action against an account and log this action in the moderation history."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdApprove",
+      "name": "admin.postApiV1AdminAccountsIdApprove",
+      "description": "Approve the given local account if it is currently pending approval."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdEnable",
+      "name": "admin.postApiV1AdminAccountsIdEnable",
+      "description": "Re-enable a local account whose login is currently disabled."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdReject",
+      "name": "admin.postApiV1AdminAccountsIdReject",
+      "description": "Reject the given local account if it is currently pending approval."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdUnsilence",
+      "name": "admin.postApiV1AdminAccountsIdUnsilence",
+      "description": "Unsilence a currently silenced account."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminAccountsIdUnsuspend",
+      "name": "admin.postApiV1AdminAccountsIdUnsuspend",
+      "description": "Unsuspend a currently suspended account."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminReportsIdAssignToSelf",
+      "name": "admin.postApiV1AdminReportsIdAssignToSelf",
+      "description": "Claim the handling of this report to yourself."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminReportsIdReopen",
+      "name": "admin.postApiV1AdminReportsIdReopen",
+      "description": "Mark a report as resolved with no further action taken."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminReportsIdResolve",
+      "name": "admin.postApiV1AdminReportsIdResolve",
+      "description": "Mark a report as resolved with no further action taken."
+    },
+    {
+      "id": "openapi_mastodon_local.admin.postApiV1AdminReportsIdUnassign",
+      "name": "admin.postApiV1AdminReportsIdUnassign",
+      "description": "Unassign a report so that someone else can claim it."
+    },
+    {
+      "id": "openapi_mastodon_local.announcements.deleteApiV1AnnouncementsIdReactionsName",
+      "name": "announcements.deleteApiV1AnnouncementsIdReactionsName",
+      "description": "Undo a react emoji to an announcement."
+    },
+    {
+      "id": "openapi_mastodon_local.announcements.getApiV1Announcements",
+      "name": "announcements.getApiV1Announcements",
+      "description": "See all currently active announcements set by admins."
+    },
+    {
+      "id": "openapi_mastodon_local.announcements.postApiV1AnnouncementsIdDismiss",
+      "name": "announcements.postApiV1AnnouncementsIdDismiss",
+      "description": "Allows a user to mark the announcement as read."
+    },
+    {
+      "id": "openapi_mastodon_local.announcements.putApiV1AnnouncementsIdReactionsName",
+      "name": "announcements.putApiV1AnnouncementsIdReactionsName",
+      "description": "Allows a user to mark the announcement as read."
+    },
+    {
+      "id": "openapi_mastodon_local.apps.getApiV1AppsVerifyCredentials",
+      "name": "apps.getApiV1AppsVerifyCredentials",
+      "description": "Confirm that the app's OAuth2 credentials work."
+    },
+    {
+      "id": "openapi_mastodon_local.apps.postApiV1Apps",
+      "name": "apps.postApiV1Apps",
+      "description": "Create a new application to obtain OAuth2 credentials."
+    },
+    {
+      "id": "openapi_mastodon_local.blocks.getApiV1Blocks",
+      "name": "blocks.getApiV1Blocks",
+      "description": "Get blocked users."
+    },
+    {
+      "id": "openapi_mastodon_local.bookmarks.getApiV1Bookmarks",
+      "name": "bookmarks.getApiV1Bookmarks",
+      "description": "Statuses the user has bookmarked."
+    },
+    {
+      "id": "openapi_mastodon_local.conversations.deleteApiV1ConversationsId",
+      "name": "conversations.deleteApiV1ConversationsId",
+      "description": "Remove converstation"
+    },
+    {
+      "id": "openapi_mastodon_local.conversations.getApiV1Conversations",
+      "name": "conversations.getApiV1Conversations",
+      "description": "Show conversation."
+    },
+    {
+      "id": "openapi_mastodon_local.conversations.postApiV1ConversationsIdRead",
+      "name": "conversations.postApiV1ConversationsIdRead",
+      "description": "Remove converstation"
+    },
+    {
+      "id": "openapi_mastodon_local.customEmojis.getApiV1CustomEmojis",
+      "name": "customEmojis.getApiV1CustomEmojis",
+      "description": "Returns custom emojis that are available on the server."
+    },
+    {
+      "id": "openapi_mastodon_local.directory.getApiV1Directory",
+      "name": "directory.getApiV1Directory",
+      "description": "List accounts visible in the directory."
+    },
+    {
+      "id": "openapi_mastodon_local.domainBlocks.deleteApiV1DomainBlocks",
+      "name": "domainBlocks.deleteApiV1DomainBlocks",
+      "description": "Remove a domain block, if it exists in the user's array of blocked domains."
+    },
+    {
+      "id": "openapi_mastodon_local.domainBlocks.getApiV1DomainBlocks",
+      "name": "domainBlocks.getApiV1DomainBlocks",
+      "description": "View domains the user has blocked."
+    },
+    {
+      "id": "openapi_mastodon_local.domainBlocks.postApiV1DomainBlocks",
+      "name": "domainBlocks.postApiV1DomainBlocks",
+      "description": "\"Block a domain to:\n- hide all public posts from it\n- hide all notifications from it\n- remove all followers from it\n- prevent following new users from it (but does not remove existing follows)\"\n"
+    },
+    {
+      "id": "openapi_mastodon_local.endorsements.getApiV1Endorsements",
+      "name": "endorsements.getApiV1Endorsements",
+      "description": "Accounts that the user is currently featuring on their profile."
+    },
+    {
+      "id": "openapi_mastodon_local.favourites.getApiV1Favourites",
+      "name": "favourites.getApiV1Favourites",
+      "description": "Statuses the user has favourited."
+    },
+    {
+      "id": "openapi_mastodon_local.featuredTags.deleteApiV1FeaturedTagsId",
+      "name": "featuredTags.deleteApiV1FeaturedTagsId",
+      "description": "Unfeature a tag"
+    },
+    {
+      "id": "openapi_mastodon_local.featuredTags.getApiV1FeaturedTags",
+      "name": "featuredTags.getApiV1FeaturedTags",
+      "description": "View your featured tags."
+    },
+    {
+      "id": "openapi_mastodon_local.featuredTags.getApiV1FeaturedTagsSuggestions",
+      "name": "featuredTags.getApiV1FeaturedTagsSuggestions",
+      "description": "Shows your 10 most-used tags, with usage history for the past week."
+    },
+    {
+      "id": "openapi_mastodon_local.featuredTags.postApiV1FeaturedTags",
+      "name": "featuredTags.postApiV1FeaturedTags",
+      "description": "Create a feature a tag."
+    },
+    {
+      "id": "openapi_mastodon_local.filters.deleteApiV1FiltersId",
+      "name": "filters.deleteApiV1FiltersId",
+      "description": "Delete a filter."
+    },
+    {
+      "id": "openapi_mastodon_local.filters.getApiV1Filters",
+      "name": "filters.getApiV1Filters",
+      "description": "GET /api/v1/filters"
+    },
+    {
+      "id": "openapi_mastodon_local.filters.getApiV1FiltersId",
+      "name": "filters.getApiV1FiltersId",
+      "description": "Get one filter."
+    },
+    {
+      "id": "openapi_mastodon_local.filters.postApiV1Filters",
+      "name": "filters.postApiV1Filters",
+      "description": "POST /api/v1/filters"
+    },
+    {
+      "id": "openapi_mastodon_local.filters.putApiV1FiltersId",
+      "name": "filters.putApiV1FiltersId",
+      "description": "Update a filter."
+    },
+    {
+      "id": "openapi_mastodon_local.followRequests.getApiV1FollowRequests",
+      "name": "followRequests.getApiV1FollowRequests",
+      "description": "Pending Follows"
+    },
+    {
+      "id": "openapi_mastodon_local.followRequests.postApiV1FollowRequestsIdAuthorize",
+      "name": "followRequests.postApiV1FollowRequestsIdAuthorize",
+      "description": "Accept Follow"
+    },
+    {
+      "id": "openapi_mastodon_local.followRequests.postApiV1FollowRequestsIdReject",
+      "name": "followRequests.postApiV1FollowRequestsIdReject",
+      "description": "Accept Follow"
+    },
+    {
+      "id": "openapi_mastodon_local.instance.getApiV1Instance",
+      "name": "instance.getApiV1Instance",
+      "description": "Information about the server."
+    },
+    {
+      "id": "openapi_mastodon_local.instance.getApiV1InstanceActivity",
+      "name": "instance.getApiV1InstanceActivity",
+      "description": "Instance activity over the last 3 months, binned weekly."
+    },
+    {
+      "id": "openapi_mastodon_local.instance.getApiV1InstancePeers",
+      "name": "instance.getApiV1InstancePeers",
+      "description": "Information about the server."
+    },
+    {
+      "id": "openapi_mastodon_local.lists.deleteApiV1Lists",
+      "name": "lists.deleteApiV1Lists",
+      "description": "Delete a list"
+    },
+    {
+      "id": "openapi_mastodon_local.lists.deleteApiV1ListsIdAccounts",
+      "name": "lists.deleteApiV1ListsIdAccounts",
+      "description": "Remove accounts from the given list."
+    },
+    {
+      "id": "openapi_mastodon_local.lists.getApiV1Lists",
+      "name": "lists.getApiV1Lists",
+      "description": "Fetch all lists that the user owns."
+    },
+    {
+      "id": "openapi_mastodon_local.lists.getApiV1ListsId",
+      "name": "lists.getApiV1ListsId",
+      "description": "Remove converstation"
+    },
+    {
+      "id": "openapi_mastodon_local.lists.getApiV1ListsIdAccounts",
+      "name": "lists.getApiV1ListsIdAccounts",
+      "description": "View accounts in List"
+    },
+    {
+      "id": "openapi_mastodon_local.lists.postApiV1Lists",
+      "name": "lists.postApiV1Lists",
+      "description": "Create a new list."
+    },
+    {
+      "id": "openapi_mastodon_local.lists.postApiV1ListsIdAccounts",
+      "name": "lists.postApiV1ListsIdAccounts",
+      "description": "Add accounts to the given list. Note that the user must be following these accounts."
+    },
+    {
+      "id": "openapi_mastodon_local.lists.putApiV1Lists",
+      "name": "lists.putApiV1Lists",
+      "description": "Change the title of a list, or which replies to show."
+    },
+    {
+      "id": "openapi_mastodon_local.markers.getApiV1Markers",
+      "name": "markers.getApiV1Markers",
+      "description": "Get saved timeline position"
+    },
+    {
+      "id": "openapi_mastodon_local.markers.postApiV1Markers",
+      "name": "markers.postApiV1Markers",
+      "description": "Get saved timeline position"
+    },
+    {
+      "id": "openapi_mastodon_local.media.getApiV1MediaId",
+      "name": "media.getApiV1MediaId",
+      "description": "Get an attachement."
+    },
+    {
+      "id": "openapi_mastodon_local.media.postApiV1Media",
+      "name": "media.postApiV1Media",
+      "description": "Creates an attachment to be used with a new status."
+    },
+    {
+      "id": "openapi_mastodon_local.media.postApiV1MediaId",
+      "name": "media.postApiV1MediaId",
+      "description": "Update an Attachment, before it is attached to a status and posted."
+    },
+    {
+      "id": "openapi_mastodon_local.mutes.getApiV1Mutes",
+      "name": "mutes.getApiV1Mutes",
+      "description": "Accounts the user has muted."
+    },
+    {
+      "id": "openapi_mastodon_local.notifications.getApiV1Notifications",
+      "name": "notifications.getApiV1Notifications",
+      "description": "Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and id values."
+    },
+    {
+      "id": "openapi_mastodon_local.notifications.getApiV1NotificationsId",
+      "name": "notifications.getApiV1NotificationsId",
+      "description": "View information about a notification with a given ID."
+    },
+    {
+      "id": "openapi_mastodon_local.notifications.postApiV1NotificationsClear",
+      "name": "notifications.postApiV1NotificationsClear",
+      "description": "Clear all notifications from the server."
+    },
+    {
+      "id": "openapi_mastodon_local.notifications.postApiV1NotificationsIdDismiss",
+      "name": "notifications.postApiV1NotificationsIdDismiss",
+      "description": "Clear a single notification from the server."
+    },
+    {
+      "id": "openapi_mastodon_local.oauth.getOauthAuthorize",
+      "name": "oauth.getOauthAuthorize",
+      "description": "Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired redirect_uri, or show the authorization code if urn:ietf:wg:oauth:2.0:oob was requested. The authorization code can be used while requesting a token to obtain access to user-level methods."
+    },
+    {
+      "id": "openapi_mastodon_local.oauth.postOauthRevoke",
+      "name": "oauth.postOauthRevoke",
+      "description": "Revoke an access token to make it no longer valid for use."
+    },
+    {
+      "id": "openapi_mastodon_local.oauth.postOauthToken",
+      "name": "oauth.postOauthToken",
+      "description": "Returns an access token, to be used during API calls that are not public."
+    },
+    {
+      "id": "openapi_mastodon_local.oembed.getApiOembed",
+      "name": "oembed.getApiOembed",
+      "description": "OEmbed as JSON"
+    },
+    {
+      "id": "openapi_mastodon_local.polls.getApiV1PollsId",
+      "name": "polls.getApiV1PollsId",
+      "description": "View a poll."
+    },
+    {
+      "id": "openapi_mastodon_local.polls.postApiV1PollsId",
+      "name": "polls.postApiV1PollsId",
+      "description": "Vote on a poll."
+    },
+    {
+      "id": "openapi_mastodon_local.preferences.getApiV1Preferences",
+      "name": "preferences.getApiV1Preferences",
+      "description": "Shows your 10 most-used tags, with usage history for the past week."
+    },
+    {
+      "id": "openapi_mastodon_local.proofs.getApiProofs",
+      "name": "proofs.getApiProofs",
+      "description": "View identity proof"
+    },
+    {
+      "id": "openapi_mastodon_local.push.deleteApiV1PushSubscription",
+      "name": "push.deleteApiV1PushSubscription",
+      "description": "Updates the current push subscription. Only the data part can be updated. To change fundamentals, a new subscription must be created instead."
+    },
+    {
+      "id": "openapi_mastodon_local.push.getApiV1PushSubscription",
+      "name": "push.getApiV1PushSubscription",
+      "description": "View the PushSubscription currently associated with this access token."
+    },
+    {
+      "id": "openapi_mastodon_local.push.postApiV1PushSubscription",
+      "name": "push.postApiV1PushSubscription",
+      "description": "Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted."
+    },
+    {
+      "id": "openapi_mastodon_local.push.putApiV1PushSubscription",
+      "name": "push.putApiV1PushSubscription",
+      "description": "Updates the current push subscription. Only the data part can be updated. To change fundamentals, a new subscription must be created instead."
+    },
+    {
+      "id": "openapi_mastodon_local.reports.postApiV1Reports",
+      "name": "reports.postApiV1Reports",
+      "description": "File a report."
+    },
+    {
+      "id": "openapi_mastodon_local.scheduledStatuses.deleteApiV1ScheduledStatusesId",
+      "name": "scheduledStatuses.deleteApiV1ScheduledStatusesId",
+      "description": "Cancel a scheduled status"
+    },
+    {
+      "id": "openapi_mastodon_local.scheduledStatuses.getApiV1ScheduledStatuses",
+      "name": "scheduledStatuses.getApiV1ScheduledStatuses",
+      "description": "View scheduled statuses"
+    },
+    {
+      "id": "openapi_mastodon_local.scheduledStatuses.getApiV1ScheduledStatusesId",
+      "name": "scheduledStatuses.getApiV1ScheduledStatusesId",
+      "description": "View a single scheduled status"
+    },
+    {
+      "id": "openapi_mastodon_local.scheduledStatuses.putApiV1ScheduledStatusesId",
+      "name": "scheduledStatuses.putApiV1ScheduledStatusesId",
+      "description": "View a single scheduled status"
+    },
+    {
+      "id": "openapi_mastodon_local.search.getApiV2Search",
+      "name": "search.getApiV2Search",
+      "description": "Search results"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.deleteApiV1StatusesId",
+      "name": "statuses.deleteApiV1StatusesId",
+      "description": "DELETE /api/v1/statuses/{id}"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.getApiV1StatusesId",
+      "name": "statuses.getApiV1StatusesId",
+      "description": "GET /api/v1/statuses/{id}"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.getApiV1StatusesIdContext",
+      "name": "statuses.getApiV1StatusesIdContext",
+      "description": "GET /api/v1/statuses/{id}/context"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.getApiV1StatusesIdFavouritedBy",
+      "name": "statuses.getApiV1StatusesIdFavouritedBy",
+      "description": "View who favourited a given status."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.getApiV1StatusesIdRebloggedBy",
+      "name": "statuses.getApiV1StatusesIdRebloggedBy",
+      "description": "View who boosted a given status."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1Statuses",
+      "name": "statuses.postApiV1Statuses",
+      "description": "POST /api/v1/statuses"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdBookmark",
+      "name": "statuses.postApiV1StatusesIdBookmark",
+      "description": "Privately bookmark a status."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdFavourite",
+      "name": "statuses.postApiV1StatusesIdFavourite",
+      "description": "Add a status to your favourites list."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdMute",
+      "name": "statuses.postApiV1StatusesIdMute",
+      "description": "Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdPin",
+      "name": "statuses.postApiV1StatusesIdPin",
+      "description": "Feature one of your own public statuses at the top of your profile."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdReblog",
+      "name": "statuses.postApiV1StatusesIdReblog",
+      "description": "Reshare a status."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdUnbookmark",
+      "name": "statuses.postApiV1StatusesIdUnbookmark",
+      "description": "Remove a status from your private bookmarks."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdUnfavourite",
+      "name": "statuses.postApiV1StatusesIdUnfavourite",
+      "description": "Remove a status from your favourites list."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdUnmute",
+      "name": "statuses.postApiV1StatusesIdUnmute",
+      "description": "Status's conversation unmuted, or was already unmuted"
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdUnpin",
+      "name": "statuses.postApiV1StatusesIdUnpin",
+      "description": "Unfeature a status from the top of your profile."
+    },
+    {
+      "id": "openapi_mastodon_local.statuses.postApiV1StatusesIdUnreblog",
+      "name": "statuses.postApiV1StatusesIdUnreblog",
+      "description": "Undo a reshare of a status."
+    },
+    {
+      "id": "openapi_mastodon_local.suggestions.deleteApiV1SuggestionsId",
+      "name": "suggestions.deleteApiV1SuggestionsId",
+      "description": "Delete user suggestion"
+    },
+    {
+      "id": "openapi_mastodon_local.suggestions.getApiV1Suggestions",
+      "name": "suggestions.getApiV1Suggestions",
+      "description": "Accounts the user has had past positive interactions with, but is not yet following."
+    },
+    {
+      "id": "openapi_mastodon_local.timelines.getApiV1TimelinesHome",
+      "name": "timelines.getApiV1TimelinesHome",
+      "description": "View statuses from followed users."
+    },
+    {
+      "id": "openapi_mastodon_local.timelines.getApiV1TimelinesListListId",
+      "name": "timelines.getApiV1TimelinesListListId",
+      "description": "View statuses in the given list timeline."
+    },
+    {
+      "id": "openapi_mastodon_local.timelines.getApiV1TimelinesPublic",
+      "name": "timelines.getApiV1TimelinesPublic",
+      "description": "Public timeline"
+    },
+    {
+      "id": "openapi_mastodon_local.timelines.getApiV1TimelinesTagHashtag",
+      "name": "timelines.getApiV1TimelinesTagHashtag",
+      "description": "View public statuses containing the given hashtag."
+    },
+    {
+      "id": "openapi_mastodon_local.todoSecurity.postApiV1Accounts",
+      "name": "todoSecurity.postApiV1Accounts",
+      "description": "Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox."
+    },
+    {
+      "id": "openapi_mastodon_local.trends.getApiV1Trends",
+      "name": "trends.getApiV1Trends",
+      "description": "Tags that are being used more frequently within the past week."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

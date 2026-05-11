@@ -1,0 +1,52 @@
+{
+  "fetchedAt": "2026-04-30T15:22:37.100Z",
+  "status": "ok",
+  "count": 9,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesCreate",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesCreate",
+      "description": "Requests that a new DatabaseInstance be created. The state of a successfully created DatabaseInstance is ACTIVE. Only available for projects on the Blaze plan. Projects can be upgraded using the Cloud Billing API https://cloud.google.com/billing/reference/rest/v1/projects/updateBillingInfo. Note that it might take a few minutes for billing enablement state to propagate to Firebase systems."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesDelete",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesDelete",
+      "description": "Marks a DatabaseInstance to be deleted. The DatabaseInstance will be set to the DELETED state for 20 days, and will be purged within 30 days. The default database cannot be deleted. IDs for deleted database instances may never be recovered or re-used. The Database may only be deleted if it is already in a DISABLED state."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesDisable",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesDisable",
+      "description": "Disables a DatabaseInstance. The database can be re-enabled later using ReenableDatabaseInstance. When a database is disabled, all reads and writes are denied, including view access in the Firebase console."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesGet",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesGet",
+      "description": "Gets the DatabaseInstance identified by the specified resource name."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesList",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesList",
+      "description": "Lists each DatabaseInstance associated with the specified parent project. The list items are returned in no particular order, but will be a consistent view of the database instances when additional requests are made with a `pageToken`. The resulting list contains instances in any STATE. The list results may be stale by a few seconds. Use GetDatabaseInstance for consistent reads."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesReenable",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesReenable",
+      "description": "Enables a DatabaseInstance. The database must have been disabled previously using DisableDatabaseInstance. The state of a successfully reenabled DatabaseInstance is ACTIVE."
+    },
+    {
+      "id": "openapi_googleapis_com_firebasedatabase_firebasedatabase.projects.firebasedatabaseProjectsLocationsInstancesUndelete",
+      "name": "projects.firebasedatabaseProjectsLocationsInstancesUndelete",
+      "description": "Restores a DatabaseInstance that was previously marked to be deleted. After the delete method is used, DatabaseInstances are set to the DELETED state for 20 days, and will be purged within 30 days. Databases in the DELETED state can be undeleted without losing any data. This method may only be used on a DatabaseInstance in the DELETED state. Purged DatabaseInstances may not be recovered."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

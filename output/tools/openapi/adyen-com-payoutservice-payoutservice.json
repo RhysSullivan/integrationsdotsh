@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.358Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.initialization.postStoreDetail",
+      "name": "initialization.postStoreDetail",
+      "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `/submitThirdParty` call."
+    },
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.initialization.postStoreDetailAndSubmitThirdParty",
+      "name": "initialization.postStoreDetailAndSubmitThirdParty",
+      "description": "Submits a payout and stores its details for subsequent payouts.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+    },
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.initialization.postSubmitThirdParty",
+      "name": "initialization.postSubmitThirdParty",
+      "description": "Submits a payout using the previously stored payment details. To store payment details, use the `/storeDetail` API call.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+    },
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.instantPayouts.postPayout",
+      "name": "instantPayouts.postPayout",
+      "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards."
+    },
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.reviewing.postConfirmThirdParty",
+      "name": "reviewing.postConfirmThirdParty",
+      "description": "Confirms a previously submitted payout.\n\nTo cancel a payout, use the `/declineThirdParty` endpoint."
+    },
+    {
+      "id": "openapi_adyen_com_payoutservice_payoutservice.reviewing.postDeclineThirdParty",
+      "name": "reviewing.postDeclineThirdParty",
+      "description": "Cancels a previously submitted payout.\n\nTo confirm and send a payout, use the `/confirmThirdParty` endpoint."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

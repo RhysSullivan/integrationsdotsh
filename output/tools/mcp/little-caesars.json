@@ -1,0 +1,37 @@
+{
+  "fetchedAt": "2026-04-30T15:20:11.210Z",
+  "status": "ok",
+  "count": 6,
+  "tools": [
+    {
+      "id": "mcp_little_caesars.getclosestrestaurants",
+      "name": "getClosestRestaurants",
+      "description": "Retrieves a list of Little Caesars locations near the specified area.\n                The customer should always provide a ZIP code/Postal Code or a City and State to initiate the search.\n                The results include location details such as the address, phone number, and store hours.\n                This should always be the first tool called to ensure that the correct location is selected by the customer to provide an accurate location menu.\n\n                DO NOT display or reference any internal implementation details.\n                DO NOT make up store information if none is found.\n                DO NOT proceed to get menu for a store if no stores are returned from this tool.\n                DO NOT offer to schedule a pickup for later\n                If a store is currently closed, inform the user of its opening time and let them know you can assist them once the store reopens."
+    },
+    {
+      "id": "mcp_little_caesars.getmenu",
+      "name": "getMenu",
+      "description": "Retrieves the menu items for the single restaurant that the customer has selected.\n          This should never be called prior to getClosestRestaurants and should only be envoked when the customer has provided a single locationNumber.\n          Zipcode is optional if a city and state are provided, but it should be used if available.\n          language code should be a 4 letter ISO format (ex. en-US, es-US, en-CA, fr-CA, es-MX) and\n          Only pull the location number from the stores array.\n          If there are no stores then the menu cannot be retrieved,\n          Show at most 5 to 8 top items or categories unless the user asks for the full menu.\n          If a user asks for a custom pizza or a pizza with toppings that is not on the menu, tell them they can add the pizza to their order on the website or mobile app later.\n          No need to display or reference the itemId to the customer when making order suggestions.\n          DO NOT display or reference the menuitemcode for an item.\n          DO NOT fabricate a location number.\n          DO NOT display or reference internal implementation details.\n          DO NOT ask for a name for the order.\n          DO NOT ask for pizza size, all items come in one size, sizing is not an option.\n          DO NOT fabricate menu items or details if none are found.\n          After the user says what items they want call the show cart tool with the selected items."
+    },
+    {
+      "id": "mcp_little_caesars.showcart",
+      "name": "showCart",
+      "description": "Builds the cart to display the menu items, quantity, item price, and estimated total and gives a customer a button to checkout.\n                This tool works for both Pickup and Delivery and should be called after a user says any items they want in their order to display the cart.\n                However, if the order switches from Pickup to Delivery or Delivery to Pickup, the cart will need to be rebuilt by \n                calling either Get Menu or Find Closest Delivery Restaurants (depending on the direction of the switch)\n                to ensure the correct menu items and pricing are being used for the order.\n                If the user switches from pickup to delivery, make sure to confirm their address\n                and inform them that not all items available for pickup may be available for delivery or vice versa.\n                If an item is not available for delivery, let the user know and offer assistance with modifying their order.\n                Apply the promo code as part of the checkout button if the user has asked about applying a deal.\n                Do not apply a promo code that is not avaialable from the deals tool.\n                If the user says their promo is valid tell them they can apply the code manually during checkout.\n                If the user has selected a promo, code confirm with the user before changing the code.\n                Any applied deals will not show in the estimated cart.\n                DO NOT call this tool until a user has selected a store."
+    },
+    {
+      "id": "mcp_little_caesars.findclosestdeliveryrestaurants",
+      "name": "findClosestDeliveryRestaurants",
+      "description": "Finds the closest delivery restaurants based on the user provided address and returns the menu for the given restaurant. \n      This tool should be used if the customer expresses interest in delivery. \n      If the customer has already selected a restaurant using the Get Closest Restaurants tool, this tool can be used to find out if that restaurant delivers to the customer's location. \n      DO NOT display or reference any internal implementation details.\n      If no delivery restaurants are found near the provided address, inform the user that delivery is not currently available in their area and offer assistance with placing a pickup order instead."
+    },
+    {
+      "id": "mcp_little_caesars.contactus",
+      "name": "contactUs",
+      "description": "Displays the contact us options for feedback on the customer's experience, help for issues with their order or service, and nutrition/allergens information."
+    },
+    {
+      "id": "mcp_little_caesars.getdailydeals",
+      "name": "getDailyDeals",
+      "description": "Retrieves the daily deals available at Little Caesars locations. \n            The results include deal details such as the deal name, legalize, and promo code.\n            This tool should be called only when a user asks what deals are available or when asked about saving money.\n            Suggest the best daily deal based on the current cart.\n            DO NOT offer deals that are only valid for delivery if the user has not asked for delivery.\n            DO NOT call this tool until the user has selected a store.\n            DO NOT apply a deal unless the user confirms they want to use it.\n            DO NOT modify the customers cart without asking for permission first.\n            DO NOT infer, assume, fabricate, or autofill the deals.\n            DO NOT display or reference any internal implementation details.\n            DO NOT make up deals if none are found.\n            DO NOT offer a deal if the current date is before the start date for the deal or after the end date."
+    }
+  ]
+}

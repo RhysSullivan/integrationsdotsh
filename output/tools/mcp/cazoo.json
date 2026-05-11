@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:22:00.295Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_cazoo.search_motorbike_inventory",
+      "name": "search_motorbike_inventory",
+      "description": "Search the Azure AI Search motorbike index for matching bikes. Filterable fields: vehicle/vehicleSpecification/make (e.g. 'Honda','Yamaha','Kawasaki'), vehicle/vehicleSpecification/model, vehicle/vehicleSpecification/transmissionType, vehicle/vehicleSpecification/fuelType ('Petrol','Electric'), vehicle/vehicleSpecification/colour, vehicle/vehicleSpecification/bodyStyle, vehicle/pricing/price (number), vehicle/mileage (number), vehicle/registrationDate (date). Use OData filter syntax for precise results. QUERY EXPANSION: For vague queries (e.g. 'beginner bike', 'adventure bike'), run a broad first search. If results are sparse (<3), call the tool again with common UK makes in the query: Honda, Yamaha, Kawasaki, Suzuki, BMW, KTM, Triumph, Ducati, Royal Enfield, Aprilia. Category mappings: 'beginner/learner' → 125cc models, 'adventure' → GS/Africa Twin/KTM Adventure, 'commuter' → CB500/MT-07, 'sports/superbike' → R-series/ZX/Panigale. Colour filtering: use vehicle/vehicleSpecification/colour eq 'Grey' (title-cased British English: Grey not Gray, Silver not Aluminium). Also include colour in free-text query for ranking. DEFAULT PRICE FLOOR: unless the user specifies a price, always add vehicle/pricing/price ge 1500 to exclude low-value salvage or non-runner stock. For richer search strategy, load the 'vehicle_search_guidance' prompt."
+    },
+    {
+      "id": "mcp_cazoo.search_car_and_van_inventory",
+      "name": "search_car_and_van_inventory",
+      "description": "Search the Azure AI Search cars and vans index for matching vehicles. Filterable fields: vehicle/vehicleSpecification/make (e.g. 'BMW','Ford','Audi'), vehicle/vehicleSpecification/model, vehicle/vehicleSpecification/transmissionType ('Automatic','Manual'), vehicle/vehicleSpecification/fuelType ('Petrol','Diesel','Electric','Hybrid'), vehicle/vehicleSpecification/colour, vehicle/vehicleSpecification/bodyStyle ('Hatchback','SUV','Saloon','Estate','Coupe','Convertible','People Carrier','MPV','Pick-up'), vehicle/pricing/price (number), vehicle/mileage (number), vehicle/registrationDate (date). Use OData filter syntax for precise results. QUERY EXPANSION: For vague or colour-only queries (e.g. 'red car', 'family car'), run a broad first search. If results are sparse (<3), call the tool again with common UK makes added to the query: Ford, Volkswagen, Vauxhall, BMW, Audi, Toyota, Nissan, Kia, Hyundai, Mercedes-Benz, Honda, Renault. Body style mappings: 'family car' → SUV/Estate, 'city car' → Hatchback, 'sports car' → Coupe/Convertible. Colour filtering: use vehicle/vehicleSpecification/colour eq 'Grey' (title-cased British English: Grey not Gray, Silver not Aluminium). Also include colour in free-text query for ranking. DEFAULT PRICE FLOOR: unless the user specifies a price, always add vehicle/pricing/price ge 1500 to exclude low-value salvage or non-runner stock. For richer search strategy, load the 'vehicle_search_guidance' prompt."
+    }
+  ]
+}

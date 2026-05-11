@@ -1,0 +1,117 @@
+{
+  "fetchedAt": "2026-04-30T15:22:30.808Z",
+  "status": "ok",
+  "count": 22,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsCreate",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsCreate",
+      "description": "Creates an access level. The long-running operation from this RPC has a successful status after the access level propagates to long-lasting storage. If access levels contain errors, an error response is returned for the first error encountered."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsList",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsList",
+      "description": "Lists all access levels for an access policy."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsReplaceAll",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesAccessLevelsReplaceAll",
+      "description": "Replaces all existing access levels in an access policy with the access levels provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. If the replacement contains errors, an error response is returned for the first error encountered. Upon error, the replacement is cancelled, and existing access levels are not affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing access levels contained in existing service perimeters result in an error."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesAuthorizedOrgsDescsCreate",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesAuthorizedOrgsDescsCreate",
+      "description": "Creates an authorized orgs desc. The long-running operation from this RPC has a successful status after the authorized orgs desc propagates to long-lasting storage. If a authorized orgs desc contains errors, an error response is returned for the first error encountered. The name of this `AuthorizedOrgsDesc` will be assigned during creation."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesAuthorizedOrgsDescsList",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesAuthorizedOrgsDescsList",
+      "description": "Lists all authorized orgs descs for an access policy."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesCreate",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesCreate",
+      "description": "Creates an access policy. This method fails if the organization already has an access policy. The long-running operation has a successful status after the access policy propagates to long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a BadRequest proto."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesGetIamPolicy",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesGetIamPolicy",
+      "description": "Gets the IAM policy for the specified Access Context Manager access policy."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesList",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesList",
+      "description": "Lists all access policies in an organization."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersCommit",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersCommit",
+      "description": "Commits the dry-run specification for all the service perimeters in an access policy. A commit operation on a service perimeter involves copying its `spec` field to the `status` field of the service perimeter. Only service perimeters with `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The long-running operation from this RPC has a successful status after the dry-run specifications for all the service perimeters have been committed. If a commit fails, it causes the long-running operation to return an error response and the entire commit operation is cancelled. When successful, the Operation.response field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared after a successful commit operation."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersCreate",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersCreate",
+      "description": "Creates a service perimeter. The long-running operation from this RPC has a successful status after the service perimeter propagates to long-lasting storage. If a service perimeter contains errors, an error response is returned for the first error encountered."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersList",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersList",
+      "description": "Lists all service perimeters for an access policy."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersReplaceAll",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersReplaceAll",
+      "description": "Replace all existing service perimeters in an access policy with the service perimeters provided. This is done atomically. The long-running operation from this RPC has a successful status after all replacements propagate to long-lasting storage. Replacements containing errors result in an error response for the first error encountered. Upon an error, replacement are cancelled and existing service perimeters are not affected. The Operation.response field contains ReplaceServicePerimetersResponse."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersTestIamPermissions",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesServicePerimetersTestIamPermissions",
+      "description": "Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an AccessPolicy, AccessLevel, or ServicePerimeter. This method does not support other resources."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.accessPolicies.accesscontextmanagerAccessPoliciesSetIamPolicy",
+      "name": "accessPolicies.accesscontextmanagerAccessPoliciesSetIamPolicy",
+      "description": "Sets the IAM policy for the specified Access Context Manager access policy. This method replaces the existing IAM policy on the access policy. The IAM policy controls the set of users who can perform specific operations on the Access Context Manager access policy."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.operations.accesscontextmanagerOperationsCancel",
+      "name": "operations.accesscontextmanagerOperationsCancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsCreate",
+      "name": "organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsCreate",
+      "description": "Creates a GcpUserAccessBinding. If the client specifies a name, the server ignores it. Fails if a resource already exists with the same group_key. Completion of this long-running operation does not necessarily signify that the new binding is deployed onto all affected users, which may take more time."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsDelete",
+      "name": "organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsDelete",
+      "description": "Deletes a GcpUserAccessBinding. Completion of this long-running operation does not necessarily signify that the binding deletion is deployed onto all affected users, which may take more time."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsGet",
+      "name": "organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsGet",
+      "description": "Gets the GcpUserAccessBinding with the given name."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsList",
+      "name": "organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsList",
+      "description": "Lists all GcpUserAccessBindings for a Google Cloud organization."
+    },
+    {
+      "id": "openapi_googleapis_com_accesscontextmanager_accesscontextmanager.organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsPatch",
+      "name": "organizations.accesscontextmanagerOrganizationsGcpUserAccessBindingsPatch",
+      "description": "Updates a GcpUserAccessBinding. Completion of this long-running operation does not necessarily signify that the changed binding is deployed onto all affected users, which may take more time."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

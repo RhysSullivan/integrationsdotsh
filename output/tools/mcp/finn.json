@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:19:58.524Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_finn.search_vehicles",
+      "name": "search_vehicles",
+      "description": "Search available cars on FINN with filters. Returns matching vehicles with prices, images, and links. All filter values use German names (e.g. \"Elektro\" not \"Electric\", \"Schwarz\" not \"Black\"). IMPORTANT: Always show detail_url as a clickable link for each vehicle. The vehicle_id field is an internal API identifier for get_vehicle_details — never display it to users."
+    },
+    {
+      "id": "mcp_finn.get_vehicle_details",
+      "name": "get_vehicle_details",
+      "description": "Get full specifications, equipment, all images, and pricing per term for a specific vehicle. Use a vehicle_id from search_vehicles results. IMPORTANT: Always show `detail_url` as a clickable link — it points to the FINN configurator where the user picks term and km. To produce a direct checkout link for a specific term + km combination (and optionally a one-time Fahrzeugbereitstellung), call `get_subscription_pricing` and use the `checkout_url` it returns. Never construct checkout URLs yourself. The `vehicle_id` field is an internal API identifier — never display it to users."
+    },
+    {
+      "id": "mcp_finn.get_available_filters",
+      "name": "get_available_filters",
+      "description": "Discover what's currently available in FINN's fleet. Returns all brands (with nested models), car types, fuel types, colors, subscription terms, gearshifts, and price/power/range bounds. Use this to answer questions like 'What brands does FINN offer?' or to validate filter values before searching."
+    },
+    {
+      "id": "mcp_finn.get_subscription_pricing",
+      "name": "get_subscription_pricing",
+      "description": "Calculate exact monthly subscription price for a specific vehicle, term, and mileage combination. Returns base price, km add-on, total, and a canonical checkout URL.\n\nCheckout URL structure (always use the URL returned in `checkout_url` verbatim — do NOT construct your own):\n  https://www.finn.com/de-DE/checkout/cart/{vehicleId}/{term}/{kmPackage}\n  https://www.finn.com/de-DE/checkout/cart/{vehicleId}/{term}/{kmPackage}?downPaymentAmount={amount}\n\nThe three positional path segments after `/cart` are vehicle id, term in months, and monthly km package — in that order.\n\nAbout `down_payment_amount` (Fahrzeugbereitstellung):\n- Fahrzeugbereitstellung is a one-time vehicle provisioning fee.\n- When `down_payment_amount` is provided, it is paid upfront as Einmalzahlung (one-time payment) and the URL includes `?downPaymentAmount={amount}`.\n- When omitted, the same fee is spread across the term and absorbed into the monthly price; the URL has no query string."
+    },
+    {
+      "id": "mcp_finn.get_internal_link_url",
+      "name": "get_internal_link_url",
+      "description": "Get canonical FINN URLs for a brand and its models — for building internal linking blocks on SEO pages. For each model returns three URLs that target DIFFERENT funnels: `mdp_url` (marketing/brand page), `plp_subscribe_url` (subscription product listing, /de-DE/subscribe/{brand}_{model}), and `plp_leasing_url` (leasing product listing, /de-DE/leasing/{brand}_{model}). Use `plp_leasing_url` when linking from a Leasing advisory, `plp_subscribe_url` when linking from subscription content. If `model` is omitted, returns all currently available models for the brand."
+    }
+  ]
+}

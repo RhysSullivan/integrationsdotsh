@@ -1,0 +1,947 @@
+{
+  "fetchedAt": "2026-04-30T15:22:09.893Z",
+  "status": "ok",
+  "count": 188,
+  "tools": [
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.deleteApiV1AbusesAbuseId",
+      "name": "abuses.deleteApiV1AbusesAbuseId",
+      "description": "Delete an abuse"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.deleteApiV1AbusesAbuseIdMessagesAbuseMessageId",
+      "name": "abuses.deleteApiV1AbusesAbuseIdMessagesAbuseMessageId",
+      "description": "Delete an abuse message"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.getAbuses",
+      "name": "abuses.getAbuses",
+      "description": "List abuses"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.getApiV1AbusesAbuseIdMessages",
+      "name": "abuses.getApiV1AbusesAbuseIdMessages",
+      "description": "List messages of an abuse"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.getMyAbuses",
+      "name": "abuses.getMyAbuses",
+      "description": "List my abuses"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.postApiV1Abuses",
+      "name": "abuses.postApiV1Abuses",
+      "description": "Report an abuse"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.postApiV1AbusesAbuseIdMessages",
+      "name": "abuses.postApiV1AbusesAbuseIdMessages",
+      "description": "Add message to an abuse"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.abuses.putApiV1AbusesAbuseId",
+      "name": "abuses.putApiV1AbusesAbuseId",
+      "description": "Update an abuse"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accountBlocks.deleteApiV1ServerBlocklistAccountsAccountName",
+      "name": "accountBlocks.deleteApiV1ServerBlocklistAccountsAccountName",
+      "description": "Unblock an account by its handle"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accountBlocks.getApiV1BlocklistStatus",
+      "name": "accountBlocks.getApiV1BlocklistStatus",
+      "description": "Get block status of accounts/hosts"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accountBlocks.getApiV1ServerBlocklistAccounts",
+      "name": "accountBlocks.getApiV1ServerBlocklistAccounts",
+      "description": "List account blocks"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accountBlocks.postApiV1ServerBlocklistAccounts",
+      "name": "accountBlocks.postApiV1ServerBlocklistAccounts",
+      "description": "Block an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accounts.getAccount",
+      "name": "accounts.getAccount",
+      "description": "Get an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accounts.getAccountFollowers",
+      "name": "accounts.getAccountFollowers",
+      "description": "List followers of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accounts.getAccounts",
+      "name": "accounts.getAccounts",
+      "description": "List accounts"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accounts.getAccountVideos",
+      "name": "accounts.getAccountVideos",
+      "description": "List videos of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.accounts.getApiV1AccountsNameRatings",
+      "name": "accounts.getApiV1AccountsNameRatings",
+      "description": "List ratings of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.channelsSync.addVideoChannelSync",
+      "name": "channelsSync.addVideoChannelSync",
+      "description": "Create a synchronization for a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.channelsSync.delVideoChannelSync",
+      "name": "channelsSync.delVideoChannelSync",
+      "description": "Delete a video channel synchronization"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.channelsSync.triggerVideoChannelSync",
+      "name": "channelsSync.triggerVideoChannelSync",
+      "description": "Triggers the channel synchronization job, fetching all the videos from the remote channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.config.delCustomConfig",
+      "name": "config.delCustomConfig",
+      "description": "Delete instance runtime configuration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.config.getAbout",
+      "name": "config.getAbout",
+      "description": "Get instance \"About\" information"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.config.getConfig",
+      "name": "config.getConfig",
+      "description": "Get instance public configuration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.config.getCustomConfig",
+      "name": "config.getCustomConfig",
+      "description": "Get instance runtime configuration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.config.putCustomConfig",
+      "name": "config.putCustomConfig",
+      "description": "Set instance runtime configuration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.homepage.getApiV1CustomPagesHomepageInstance",
+      "name": "homepage.getApiV1CustomPagesHomepageInstance",
+      "description": "Get instance custom homepage"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.homepage.putApiV1CustomPagesHomepageInstance",
+      "name": "homepage.putApiV1CustomPagesHomepageInstance",
+      "description": "Set instance custom homepage"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.deleteApiV1ServerFollowersNameWithHost",
+      "name": "instanceFollows.deleteApiV1ServerFollowersNameWithHost",
+      "description": "Remove or reject a follower to your server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.deleteApiV1ServerFollowingHostOrHandle",
+      "name": "instanceFollows.deleteApiV1ServerFollowingHostOrHandle",
+      "description": "Unfollow an actor (PeerTube instance, channel or account)"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.getApiV1ServerFollowers",
+      "name": "instanceFollows.getApiV1ServerFollowers",
+      "description": "List instances following the server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.getApiV1ServerFollowing",
+      "name": "instanceFollows.getApiV1ServerFollowing",
+      "description": "List instances followed by the server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.postApiV1ServerFollowersNameWithHostAccept",
+      "name": "instanceFollows.postApiV1ServerFollowersNameWithHostAccept",
+      "description": "Accept a pending follower to your server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.postApiV1ServerFollowersNameWithHostReject",
+      "name": "instanceFollows.postApiV1ServerFollowersNameWithHostReject",
+      "description": "Reject a pending follower to your server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceFollows.postApiV1ServerFollowing",
+      "name": "instanceFollows.postApiV1ServerFollowing",
+      "description": "Follow a list of actors (PeerTube instance, channel or account)"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.instanceRedundancy.putApiV1ServerRedundancyHost",
+      "name": "instanceRedundancy.putApiV1ServerRedundancyHost",
+      "description": "Update a server redundancy policy"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.job.getJobs",
+      "name": "job.getJobs",
+      "description": "List instance jobs"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.job.postApiV1JobsPause",
+      "name": "job.postApiV1JobsPause",
+      "description": "Pause job queue"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.job.postApiV1JobsResume",
+      "name": "job.postApiV1JobsResume",
+      "description": "Resume job queue"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.liveVideos.addLive",
+      "name": "liveVideos.addLive",
+      "description": "Create a live"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.liveVideos.getApiV1VideosIdLiveSession",
+      "name": "liveVideos.getApiV1VideosIdLiveSession",
+      "description": "If the video is a replay of a live, you can find the associated live session using this endpoint"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.liveVideos.getApiV1VideosLiveIdSessions",
+      "name": "liveVideos.getApiV1VideosLiveIdSessions",
+      "description": "List all sessions created in a particular live"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.liveVideos.getLiveId",
+      "name": "liveVideos.getLiveId",
+      "description": "Get information about a live"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.liveVideos.updateLiveId",
+      "name": "liveVideos.updateLiveId",
+      "description": "Update information about a live"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.logs.getInstanceAuditLogs",
+      "name": "logs.getInstanceAuditLogs",
+      "description": "Get instance audit logs"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.logs.getInstanceLogs",
+      "name": "logs.getInstanceLogs",
+      "description": "Get instance logs"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.logs.sendClientLog",
+      "name": "logs.sendClientLog",
+      "description": "Send client log"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myHistory.deleteApiV1UsersMeHistoryVideosVideoId",
+      "name": "myHistory.deleteApiV1UsersMeHistoryVideosVideoId",
+      "description": "Delete history element"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myHistory.getApiV1UsersMeHistoryVideos",
+      "name": "myHistory.getApiV1UsersMeHistoryVideos",
+      "description": "List watched videos history"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myHistory.postApiV1UsersMeHistoryVideosRemove",
+      "name": "myHistory.postApiV1UsersMeHistoryVideosRemove",
+      "description": "Clear video history"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myNotifications.getApiV1UsersMeNotifications",
+      "name": "myNotifications.getApiV1UsersMeNotifications",
+      "description": "List my notifications"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myNotifications.postApiV1UsersMeNotificationsRead",
+      "name": "myNotifications.postApiV1UsersMeNotificationsRead",
+      "description": "Mark notifications as read by their id"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myNotifications.postApiV1UsersMeNotificationsReadAll",
+      "name": "myNotifications.postApiV1UsersMeNotificationsReadAll",
+      "description": "Mark all my notification as read"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myNotifications.putApiV1UsersMeNotificationSettings",
+      "name": "myNotifications.putApiV1UsersMeNotificationSettings",
+      "description": "Update my notification settings"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.deleteApiV1UsersMeSubscriptionsSubscriptionHandle",
+      "name": "mySubscriptions.deleteApiV1UsersMeSubscriptionsSubscriptionHandle",
+      "description": "Delete subscription of my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.getApiV1UsersMeSubscriptions",
+      "name": "mySubscriptions.getApiV1UsersMeSubscriptions",
+      "description": "Get my user subscriptions"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.getApiV1UsersMeSubscriptionsExist",
+      "name": "mySubscriptions.getApiV1UsersMeSubscriptionsExist",
+      "description": "Get if subscriptions exist for my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.getApiV1UsersMeSubscriptionsSubscriptionHandle",
+      "name": "mySubscriptions.getApiV1UsersMeSubscriptionsSubscriptionHandle",
+      "description": "Get subscription of my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.getApiV1UsersMeSubscriptionsVideos",
+      "name": "mySubscriptions.getApiV1UsersMeSubscriptionsVideos",
+      "description": "List videos of subscriptions of my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.mySubscriptions.postApiV1UsersMeSubscriptions",
+      "name": "mySubscriptions.postApiV1UsersMeSubscriptions",
+      "description": "Add subscription to my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.deleteApiV1UsersMeAvatar",
+      "name": "myUser.deleteApiV1UsersMeAvatar",
+      "description": "Delete my avatar"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.getApiV1UsersMeVideoQuotaUsed",
+      "name": "myUser.getApiV1UsersMeVideoQuotaUsed",
+      "description": "Get my user used quota"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.getApiV1UsersMeVideos",
+      "name": "myUser.getApiV1UsersMeVideos",
+      "description": "Get videos of my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.getApiV1UsersMeVideosVideoIdRating",
+      "name": "myUser.getApiV1UsersMeVideosVideoIdRating",
+      "description": "Get rate of my user for a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.getUserInfo",
+      "name": "myUser.getUserInfo",
+      "description": "Get my user information"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.postApiV1UsersMeAvatarPick",
+      "name": "myUser.postApiV1UsersMeAvatarPick",
+      "description": "Update my user avatar"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.myUser.putUserInfo",
+      "name": "myUser.putUserInfo",
+      "description": "Update my user information"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.addPlugin",
+      "name": "plugins.addPlugin",
+      "description": "Install a plugin"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.getApiV1PluginsNpmNamePublicSettings",
+      "name": "plugins.getApiV1PluginsNpmNamePublicSettings",
+      "description": "Get a plugin's public settings"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.getApiV1PluginsNpmNameRegisteredSettings",
+      "name": "plugins.getApiV1PluginsNpmNameRegisteredSettings",
+      "description": "Get a plugin's registered settings"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.getAvailablePlugins",
+      "name": "plugins.getAvailablePlugins",
+      "description": "List available plugins"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.getPlugin",
+      "name": "plugins.getPlugin",
+      "description": "Get a plugin"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.getPlugins",
+      "name": "plugins.getPlugins",
+      "description": "List plugins"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.putApiV1PluginsNpmNameSettings",
+      "name": "plugins.putApiV1PluginsNpmNameSettings",
+      "description": "Set a plugin's settings"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.uninstallPlugin",
+      "name": "plugins.uninstallPlugin",
+      "description": "Uninstall a plugin"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.plugins.updatePlugin",
+      "name": "plugins.updatePlugin",
+      "description": "Update a plugin"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.acceptRegistration",
+      "name": "register.acceptRegistration",
+      "description": "Accept registration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.deleteRegistration",
+      "name": "register.deleteRegistration",
+      "description": "Delete the registration entry. It will not remove the user associated with this registration (if any)"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.listRegistrations",
+      "name": "register.listRegistrations",
+      "description": "List registrations"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.registerUser",
+      "name": "register.registerUser",
+      "description": "Signup has to be enabled and signup approval is not required"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.rejectRegistration",
+      "name": "register.rejectRegistration",
+      "description": "Reject registration"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.requestRegistration",
+      "name": "register.requestRegistration",
+      "description": "Signup has to be enabled and require approval on the instance"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.resendEmailToVerifyRegistration",
+      "name": "register.resendEmailToVerifyRegistration",
+      "description": "Resend verification link to registration email"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.register.verifyRegistrationEmail",
+      "name": "register.verifyRegistrationEmail",
+      "description": "Following a user registration request, the user will receive an email asking to click a link\ncontaining a secret.\n"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.search.searchChannels",
+      "name": "search.searchChannels",
+      "description": "Search channels"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.search.searchPlaylists",
+      "name": "search.searchPlaylists",
+      "description": "Search playlists"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.search.searchVideos",
+      "name": "search.searchVideos",
+      "description": "Search videos"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.serverBlocks.deleteApiV1ServerBlocklistServersHost",
+      "name": "serverBlocks.deleteApiV1ServerBlocklistServersHost",
+      "description": "Unblock a server by its domain"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.serverBlocks.getApiV1ServerBlocklistServers",
+      "name": "serverBlocks.getApiV1ServerBlocklistServers",
+      "description": "List server blocks"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.serverBlocks.postApiV1ServerBlocklistServers",
+      "name": "serverBlocks.postApiV1ServerBlocklistServers",
+      "description": "Block a server"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.session.getOAuthClient",
+      "name": "session.getOAuthClient",
+      "description": "You need to retrieve a client id and secret before [logging in](#operation/getOAuthToken)."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.session.getOAuthToken",
+      "name": "session.getOAuthToken",
+      "description": "With your [client id and secret](#operation/getOAuthClient), you can retrieve an access and refresh tokens."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.session.revokeOAuthToken",
+      "name": "session.revokeOAuthToken",
+      "description": "Revokes your access token and its associated refresh token, destroying your current session."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.staticVideoFiles.getStaticStreamingPlaylistsHlsFilename",
+      "name": "staticVideoFiles.getStaticStreamingPlaylistsHlsFilename",
+      "description": "Get public HLS video file"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.staticVideoFiles.getStaticStreamingPlaylistsHlsPrivateFilename",
+      "name": "staticVideoFiles.getStaticStreamingPlaylistsHlsPrivateFilename",
+      "description": "Get private HLS video file"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.staticVideoFiles.getStaticWebseedFilename",
+      "name": "staticVideoFiles.getStaticWebseedFilename",
+      "description": "Get public WebTorrent video file"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.staticVideoFiles.getStaticWebseedPrivateFilename",
+      "name": "staticVideoFiles.getStaticWebseedPrivateFilename",
+      "description": "Get private WebTorrent video file"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.stats.getInstanceStats",
+      "name": "stats.getInstanceStats",
+      "description": "Get instance public statistics. This endpoint is cached."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.stats.postApiV1MetricsPlayback",
+      "name": "stats.postApiV1MetricsPlayback",
+      "description": "These metrics are exposed by OpenTelemetry metrics exporter if enabled."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.addUser",
+      "name": "users.addUser",
+      "description": "Create a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.confirmTwoFactorRequest",
+      "name": "users.confirmTwoFactorRequest",
+      "description": "Confirm a two factor authentication request"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.delUser",
+      "name": "users.delUser",
+      "description": "Delete a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.disableTwoFactor",
+      "name": "users.disableTwoFactor",
+      "description": "Disable two factor authentication of a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.getUser",
+      "name": "users.getUser",
+      "description": "Get a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.getUsers",
+      "name": "users.getUsers",
+      "description": "List users"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.putUser",
+      "name": "users.putUser",
+      "description": "Update a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.requestTwoFactor",
+      "name": "users.requestTwoFactor",
+      "description": "Request two factor authentication for a user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.resendEmailToVerifyUser",
+      "name": "users.resendEmailToVerifyUser",
+      "description": "Resend user verification link"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.users.verifyUser",
+      "name": "users.verifyUser",
+      "description": "Following a user registration, the new user will receive an email asking to click a link\ncontaining a secret.\nThis endpoint can also be used to verify a new email set in the user account.\n"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.addView",
+      "name": "video.addView",
+      "description": "Call this endpoint regularly (every 5-10 seconds for example) to notify the server the user is watching the video. After a while, PeerTube will increase video's viewers counter. If the user is authenticated, PeerTube will also store the current player time."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.delVideo",
+      "name": "video.delVideo",
+      "description": "Delete a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getCategories",
+      "name": "video.getCategories",
+      "description": "List available video categories"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getLanguages",
+      "name": "video.getLanguages",
+      "description": "List available video languages"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getLicences",
+      "name": "video.getLicences",
+      "description": "List available video licences"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getPrivacyPolicies",
+      "name": "video.getPrivacyPolicies",
+      "description": "List available video privacy policies"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getVideo",
+      "name": "video.getVideo",
+      "description": "Get a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getVideoChannelVideos",
+      "name": "video.getVideoChannelVideos",
+      "description": "List videos of a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getVideoDesc",
+      "name": "video.getVideoDesc",
+      "description": "Get complete video description"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getVideos",
+      "name": "video.getVideos",
+      "description": "List videos"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.getVideoSource",
+      "name": "video.getVideoSource",
+      "description": "Get video source file metadata"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.putApiV1VideosIdWatching",
+      "name": "video.putApiV1VideosIdWatching",
+      "description": "This endpoint has been deprecated. Use `/videos/{id}/views` instead"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.putVideo",
+      "name": "video.putVideo",
+      "description": "Update a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.requestVideoToken",
+      "name": "video.requestVideoToken",
+      "description": "Request special tokens that expire quickly to use them in some context (like accessing private static files)"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.uploadLegacy",
+      "name": "video.uploadLegacy",
+      "description": "Uses a single request to upload a video."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.uploadResumable",
+      "name": "video.uploadResumable",
+      "description": "Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to continue, pause or resume the upload of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.uploadResumableCancel",
+      "name": "video.uploadResumableCancel",
+      "description": "Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to cancel the upload of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.video.uploadResumableInit",
+      "name": "video.uploadResumableInit",
+      "description": "Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to initialize the upload of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoBlocks.addVideoBlock",
+      "name": "videoBlocks.addVideoBlock",
+      "description": "Block a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoBlocks.delVideoBlock",
+      "name": "videoBlocks.delVideoBlock",
+      "description": "Unblock a video by its id"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoBlocks.getVideoBlocks",
+      "name": "videoBlocks.getVideoBlocks",
+      "description": "List video blocks"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoCaptions.addVideoCaption",
+      "name": "videoCaptions.addVideoCaption",
+      "description": "Add or replace a video caption"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoCaptions.delVideoCaption",
+      "name": "videoCaptions.delVideoCaption",
+      "description": "Delete a video caption"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoCaptions.getVideoCaptions",
+      "name": "videoCaptions.getVideoCaptions",
+      "description": "List captions of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.addVideoChannel",
+      "name": "videoChannels.addVideoChannel",
+      "description": "Create a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.deleteApiV1VideoChannelsChannelHandleAvatar",
+      "name": "videoChannels.deleteApiV1VideoChannelsChannelHandleAvatar",
+      "description": "Delete channel avatar"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.deleteApiV1VideoChannelsChannelHandleBanner",
+      "name": "videoChannels.deleteApiV1VideoChannelsChannelHandleBanner",
+      "description": "Delete channel banner"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.delVideoChannel",
+      "name": "videoChannels.delVideoChannel",
+      "description": "Delete a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.getApiV1AccountsNameVideoChannels",
+      "name": "videoChannels.getApiV1AccountsNameVideoChannels",
+      "description": "List video channels of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.getApiV1AccountsNameVideoChannelSyncs",
+      "name": "videoChannels.getApiV1AccountsNameVideoChannelSyncs",
+      "description": "List the synchronizations of video channels of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.getVideoChannel",
+      "name": "videoChannels.getVideoChannel",
+      "description": "Get a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.getVideoChannelFollowers",
+      "name": "videoChannels.getVideoChannelFollowers",
+      "description": "List followers of a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.getVideoChannels",
+      "name": "videoChannels.getVideoChannels",
+      "description": "List video channels"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.postApiV1VideoChannelsChannelHandleAvatarPick",
+      "name": "videoChannels.postApiV1VideoChannelsChannelHandleAvatarPick",
+      "description": "Update channel avatar"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.postApiV1VideoChannelsChannelHandleBannerPick",
+      "name": "videoChannels.postApiV1VideoChannelsChannelHandleBannerPick",
+      "description": "Update channel banner"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.postApiV1VideoChannelsChannelHandleImportVideos",
+      "name": "videoChannels.postApiV1VideoChannelsChannelHandleImportVideos",
+      "description": "Import a remote channel/playlist videos into a channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoChannels.putVideoChannel",
+      "name": "videoChannels.putVideoChannel",
+      "description": "Update a video channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoComments.deleteApiV1VideosIdCommentsCommentId",
+      "name": "videoComments.deleteApiV1VideosIdCommentsCommentId",
+      "description": "Delete a comment or a reply"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoComments.getApiV1VideosIdCommentThreads",
+      "name": "videoComments.getApiV1VideosIdCommentThreads",
+      "description": "List threads of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoComments.getApiV1VideosIdCommentThreadsThreadId",
+      "name": "videoComments.getApiV1VideosIdCommentThreadsThreadId",
+      "description": "Get a thread"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoComments.postApiV1VideosIdCommentsCommentId",
+      "name": "videoComments.postApiV1VideosIdCommentsCommentId",
+      "description": "Reply to a thread of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoComments.postApiV1VideosIdCommentThreads",
+      "name": "videoComments.postApiV1VideosIdCommentThreads",
+      "description": "Create a thread"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoFeeds.getSyndicatedComments",
+      "name": "videoFeeds.getSyndicatedComments",
+      "description": "List comments on videos"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoFeeds.getSyndicatedSubscriptionVideos",
+      "name": "videoFeeds.getSyndicatedSubscriptionVideos",
+      "description": "List videos of subscriptions tied to a token"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoFeeds.getSyndicatedVideos",
+      "name": "videoFeeds.getSyndicatedVideos",
+      "description": "List videos"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoFiles.delVideoHls",
+      "name": "videoFiles.delVideoHls",
+      "description": "Delete video HLS files"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoFiles.delVideoWebTorrent",
+      "name": "videoFiles.delVideoWebTorrent",
+      "description": "Delete video WebTorrent files"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoImports.deleteApiV1VideosImportsId",
+      "name": "videoImports.deleteApiV1VideosImportsId",
+      "description": "Delete ended video import"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoImports.importVideo",
+      "name": "videoImports.importVideo",
+      "description": "Import a torrent or magnetURI or HTTP resource (if enabled by the instance administrator)"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoImports.postApiV1VideosImportsIdCancel",
+      "name": "videoImports.postApiV1VideosImportsIdCancel",
+      "description": "Cancel a pending video import"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoMirroring.delMirroredVideo",
+      "name": "videoMirroring.delMirroredVideo",
+      "description": "Delete a mirror done on a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoMirroring.getMirroredVideos",
+      "name": "videoMirroring.getMirroredVideos",
+      "description": "List videos being mirrored"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoMirroring.putMirroredVideo",
+      "name": "videoMirroring.putMirroredVideo",
+      "description": "Mirror a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoOwnershipChange.getApiV1VideosOwnership",
+      "name": "videoOwnershipChange.getApiV1VideosOwnership",
+      "description": "List video ownership changes"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoOwnershipChange.postApiV1VideosIdGiveOwnership",
+      "name": "videoOwnershipChange.postApiV1VideosIdGiveOwnership",
+      "description": "Request ownership change"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoOwnershipChange.postApiV1VideosOwnershipIdAccept",
+      "name": "videoOwnershipChange.postApiV1VideosOwnershipIdAccept",
+      "description": "Accept ownership change request"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoOwnershipChange.postApiV1VideosOwnershipIdRefuse",
+      "name": "videoOwnershipChange.postApiV1VideosOwnershipIdRefuse",
+      "description": "Refuse ownership change request"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.addPlaylist",
+      "name": "videoPlaylists.addPlaylist",
+      "description": "If the video playlist is set as public, `videoChannelId` is mandatory."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.deleteApiV1VideoPlaylistsPlaylistId",
+      "name": "videoPlaylists.deleteApiV1VideoPlaylistsPlaylistId",
+      "description": "Delete a video playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.delVideoPlaylistVideo",
+      "name": "videoPlaylists.delVideoPlaylistVideo",
+      "description": "Delete an element from a playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getApiV1AccountsNameVideoPlaylists",
+      "name": "videoPlaylists.getApiV1AccountsNameVideoPlaylists",
+      "description": "List playlists of an account"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getApiV1UsersMeVideoPlaylistsVideosExist",
+      "name": "videoPlaylists.getApiV1UsersMeVideoPlaylistsVideosExist",
+      "description": "Check video exists in my playlists"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getApiV1VideoChannelsChannelHandleVideoPlaylists",
+      "name": "videoPlaylists.getApiV1VideoChannelsChannelHandleVideoPlaylists",
+      "description": "List playlists of a channel"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getApiV1VideoPlaylistsPlaylistId",
+      "name": "videoPlaylists.getApiV1VideoPlaylistsPlaylistId",
+      "description": "Get a video playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getPlaylistPrivacyPolicies",
+      "name": "videoPlaylists.getPlaylistPrivacyPolicies",
+      "description": "List available playlist privacy policies"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.getPlaylists",
+      "name": "videoPlaylists.getPlaylists",
+      "description": "List video playlists"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.putApiV1VideoPlaylistsPlaylistId",
+      "name": "videoPlaylists.putApiV1VideoPlaylistsPlaylistId",
+      "description": "If the video playlist is set as public, the playlist must have a assigned channel."
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.putVideoPlaylistVideo",
+      "name": "videoPlaylists.putVideoPlaylistVideo",
+      "description": "Update a playlist element"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoPlaylists.reorderVideoPlaylist",
+      "name": "videoPlaylists.reorderVideoPlaylist",
+      "description": "Reorder a playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoRates.putApiV1VideosIdRate",
+      "name": "videoRates.putApiV1VideosIdRate",
+      "description": "Like/dislike a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videos.addVideoPlaylistVideo",
+      "name": "videos.addVideoPlaylistVideo",
+      "description": "Add a video in a playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videos.getApiV1UsersMeVideosImports",
+      "name": "videos.getApiV1UsersMeVideosImports",
+      "description": "Get video imports of my user"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videos.getVideoPlaylistVideos",
+      "name": "videos.getVideoPlaylistVideos",
+      "description": "List videos of a playlist"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoStats.getApiV1VideosIdStatsOverall",
+      "name": "videoStats.getApiV1VideosIdStatsOverall",
+      "description": "Get overall stats of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoStats.getApiV1VideosIdStatsRetention",
+      "name": "videoStats.getApiV1VideosIdStatsRetention",
+      "description": "Get retention stats of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoStats.getApiV1VideosIdStatsTimeseriesMetric",
+      "name": "videoStats.getApiV1VideosIdStatsTimeseriesMetric",
+      "description": "Get timeserie stats of a video"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoTranscoding.createVideoTranscoding",
+      "name": "videoTranscoding.createVideoTranscoding",
+      "description": "Create a transcoding job"
+    },
+    {
+      "id": "openapi_cpy_re_peertube_peertube.videoTranscoding.postApiV1VideosIdStudioEdit",
+      "name": "videoTranscoding.postApiV1VideosIdStudioEdit",
+      "description": "Create a task to edit a video  (cut, add intro/outro etc)"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

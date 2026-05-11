@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:20:19.123Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "mcp_turkish_airlines.flight_status",
+      "name": "flight-status",
+      "description": "CHECK EXISTING FLIGHT STATUS: Use this tool ONLY when the user wants to check the real-time status of a specific existing flight (e.g., 'check status of TK289', 'is flight TK001 on time?', 'what's the gate for TK815?'). This tool requires a specific flight number. DO NOT use this for searching/bookable flights - use 'search_flights' instead. This tool fetches real-time flight status information including departure/arrival times, gate, terminal, and current flight status (on time, delayed, landed, etc.)."
+    },
+    {
+      "id": "mcp_turkish_airlines.flight_status_by_route",
+      "name": "flight-status-by-route",
+      "description": "CHECK FLIGHT STATUS BY ROUTE: Use this tool ONLY when the user wants to check the real-time status of flights on a specific route for a specific date (e.g., 'what flights are flying from IST to SFO today?', 'check flights from Istanbul to San Francisco tomorrow'). This tool shows the status of flights that are already scheduled/flying on that route. DO NOT use this for searching/bookable flights or finding available flights to book - use 'search_flights' instead. This tool fetches real-time flight status information for flights on a given route and date."
+    },
+    {
+      "id": "mcp_turkish_airlines.search_flights",
+      "name": "search_flights",
+      "description": "SEARCH FOR BOOKABLE FLIGHTS: Searches Turkish Airlines flights and returns available options with prices. Provide from, to, departureDate, passengers, and tripType. For round trips, also provide returnDate. For multi-city, use originDestinations array instead of from/to/departureDate. \n\nIMPORTANT — next step depends on trip type: (1) INTERNATIONAL round trip: returns outbound only — after user selects, call 'search_inbound_flights' for return flights. (2) DOMESTIC round trip: returns both outbound and inbound — do NOT call 'search_inbound_flights'. (3) One-way: returns all needed information. \nDO NOT use this for checking flight status — use flight-status tools instead."
+    },
+    {
+      "id": "mcp_turkish_airlines.search_inbound_flights",
+      "name": "search_inbound_flights",
+      "description": "SEARCH FOR RETURN FLIGHTS (international round trips only): Call after user selects an outbound from search_flights. Pass the selected outbound details (optionId, recommendationId, segments, fareFamily), the return leg in originDestinations, same passengers, and jSessionId + duTaxBean from the search_flights response. Returns inbound flight options with combined round-trip pricing."
+    },
+    {
+      "id": "mcp_turkish_airlines.get_city_guide",
+      "name": "get_city_guide",
+      "description": "Get a travel guide for a destination city, including what to see, where to go, transportation information, weather, and more. Use this when the user asks about a destination city, wants travel tips, or needs information about a place they're visiting."
+    },
+    {
+      "id": "mcp_turkish_airlines.get_airline_promotions",
+      "name": "get_airline_promotions",
+      "description": "Fetch airline promotions. Inputs: country, airports. Use this when the user asks about promotions, special offers, or discounted flights."
+    },
+    {
+      "id": "mcp_turkish_airlines.get_booking_details",
+      "name": "get_booking_details",
+      "description": "Retrieve detailed information about a flight booking using PNR or E-ticket number. Returns passenger details, flight segments, and status. Use this when the user wants to check their reservation, find their ticket number, or see flight details for a specific booking."
+    },
+    {
+      "id": "mcp_turkish_airlines.get_booking_baggage_allowance",
+      "name": "get_booking_baggage_allowance",
+      "description": "Fetch detailed booking baggage information. Tip: Call get_booking_details tool to retrieve the ticket number if not provided. Use this when the user asks about baggage allowance, baggage limits, or extra baggage for their booking."
+    }
+  ]
+}

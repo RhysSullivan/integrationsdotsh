@@ -1,0 +1,1017 @@
+{
+  "fetchedAt": "2026-04-30T15:26:48.741Z",
+  "status": "ok",
+  "count": 202,
+  "tools": [
+    {
+      "id": "openapi_squareup_com.applePay.registerDomain",
+      "name": "applePay.registerDomain",
+      "description": "Activates a domain for use with Apple Pay on the Web and Square. A validation\nis performed on this domain by Apple to ensure that it is properly set up as\nan Apple Pay enabled domain.\n\nThis endpoint provides an easy way for platform developers to bulk activate\nApple Pay on the Web with Square for merchants using their platform.\n\nTo learn more about Web Apple Pay, see\n[Add the Apple Pay on the Web Button](https://developer.squareup.com/docs/payment-form/add-digital-wallets/apple-pay)."
+    },
+    {
+      "id": "openapi_squareup_com.bankAccounts.getBankAccount",
+      "name": "bankAccounts.getBankAccount",
+      "description": "Returns details of a [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount)\nlinked to a Square account."
+    },
+    {
+      "id": "openapi_squareup_com.bankAccounts.getBankAccountByV1Id",
+      "name": "bankAccounts.getBankAccountByV1Id",
+      "description": "Returns details of a [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount) identified by V1 bank account ID."
+    },
+    {
+      "id": "openapi_squareup_com.bankAccounts.listBankAccounts",
+      "name": "bankAccounts.listBankAccounts",
+      "description": "Returns a list of [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount) objects linked to a Square account."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.cancelBooking",
+      "name": "bookings.cancelBooking",
+      "description": "Cancels an existing booking."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.createBooking",
+      "name": "bookings.createBooking",
+      "description": "Creates a booking."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.listTeamMemberBookingProfiles",
+      "name": "bookings.listTeamMemberBookingProfiles",
+      "description": "Lists booking profiles for team members."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.retrieveBooking",
+      "name": "bookings.retrieveBooking",
+      "description": "Retrieves a booking."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.retrieveBusinessBookingProfile",
+      "name": "bookings.retrieveBusinessBookingProfile",
+      "description": "Retrieves a seller's booking profile."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.retrieveTeamMemberBookingProfile",
+      "name": "bookings.retrieveTeamMemberBookingProfile",
+      "description": "Retrieves a team member's booking profile."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.searchAvailability",
+      "name": "bookings.searchAvailability",
+      "description": "Searches for availabilities for booking."
+    },
+    {
+      "id": "openapi_squareup_com.bookings.updateBooking",
+      "name": "bookings.updateBooking",
+      "description": "Updates a booking."
+    },
+    {
+      "id": "openapi_squareup_com.cards.createCard",
+      "name": "cards.createCard",
+      "description": "Adds a card on file to an existing merchant."
+    },
+    {
+      "id": "openapi_squareup_com.cards.disableCard",
+      "name": "cards.disableCard",
+      "description": "Disables the card, preventing any further updates or charges.\nDisabling an already disabled card is allowed but has no effect."
+    },
+    {
+      "id": "openapi_squareup_com.cards.listCards",
+      "name": "cards.listCards",
+      "description": "Retrieves a list of cards owned by the account making the request.\nA max of 25 cards will be returned."
+    },
+    {
+      "id": "openapi_squareup_com.cards.retrieveCard",
+      "name": "cards.retrieveCard",
+      "description": "Retrieves details for a specific Card."
+    },
+    {
+      "id": "openapi_squareup_com.cashDrawers.listCashDrawerShiftEvents",
+      "name": "cashDrawers.listCashDrawerShiftEvents",
+      "description": "Provides a paginated list of events for a single cash drawer shift."
+    },
+    {
+      "id": "openapi_squareup_com.cashDrawers.listCashDrawerShifts",
+      "name": "cashDrawers.listCashDrawerShifts",
+      "description": "Provides the details for all of the cash drawer shifts for a location\nin a date range."
+    },
+    {
+      "id": "openapi_squareup_com.cashDrawers.retrieveCashDrawerShift",
+      "name": "cashDrawers.retrieveCashDrawerShift",
+      "description": "Provides the summary details for a single cash drawer shift. See\n[ListCashDrawerShiftEvents](https://developer.squareup.com/reference/square_2021-08-18/cash-drawers-api/list-cash-drawer-shift-events) for a list of cash drawer shift events."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.batchDeleteCatalogObjects",
+      "name": "catalog.batchDeleteCatalogObjects",
+      "description": "Deletes a set of [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)s based on the\nprovided list of target IDs and returns a set of successfully deleted IDs in\nthe response. Deletion is a cascading event such that all children of the\ntargeted object are also deleted. For example, deleting a CatalogItem will\nalso delete all of its [CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation)\nchildren.\n\n`BatchDeleteCatalogObjects` succeeds even if only a portion of the targeted\nIDs can be deleted. The response will only include IDs that were\nactually deleted."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.batchRetrieveCatalogObjects",
+      "name": "catalog.batchRetrieveCatalogObjects",
+      "description": "Returns a set of objects based on the provided ID.\nEach [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) returned in the set includes all of its\nchild information including: all of its\n[CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation) objects, references to\nits [CatalogModifierList](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogModifierList) objects, and the ids of\nany [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects that apply to it."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.batchUpsertCatalogObjects",
+      "name": "catalog.batchUpsertCatalogObjects",
+      "description": "Creates or updates up to 10,000 target objects based on the provided\nlist of objects. The target objects are grouped into batches and each batch is\ninserted/updated in an all-or-nothing manner. If an object within a batch is\nmalformed in some way, or violates a database constraint, the entire batch\ncontaining that item will be disregarded. However, other batches in the same\nrequest may still succeed. Each batch may contain up to 1,000 objects, and\nbatches will be processed in order as long as the total object count for the\nrequest (items, variations, modifier lists, discounts, and taxes) is no more\nthan 10,000."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.catalogInfo",
+      "name": "catalog.catalogInfo",
+      "description": "Retrieves information about the Square Catalog API, such as batch size\nlimits that can be used by the `BatchUpsertCatalogObjects` endpoint."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.deleteCatalogObject",
+      "name": "catalog.deleteCatalogObject",
+      "description": "Deletes a single [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) based on the\nprovided ID and returns the set of successfully deleted IDs in the response.\nDeletion is a cascading event such that all children of the targeted object\nare also deleted. For example, deleting a [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\nwill also delete all of its\n[CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation) children."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.listCatalog",
+      "name": "catalog.listCatalog",
+      "description": "Returns a list of [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject)s that includes\nall objects of a set of desired types (for example, all [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\nand [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects) in the catalog. The `types` parameter\nis specified as a comma-separated list of valid [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) types:\n`ITEM`, `ITEM_VARIATION`, `MODIFIER`, `MODIFIER_LIST`, `CATEGORY`, `DISCOUNT`, `TAX`, `IMAGE`.\n\n__Important:__ ListCatalog does not return deleted catalog items. To retrieve\ndeleted catalog items, use [SearchCatalogObjects](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-objects)\nand set the `include_deleted_objects` attribute value to `true`."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.retrieveCatalogObject",
+      "name": "catalog.retrieveCatalogObject",
+      "description": "Returns a single [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) as a\n[CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) based on the provided ID. The returned\nobject includes all of the relevant [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\ninformation including: [CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation)\nchildren, references to its\n[CatalogModifierList](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogModifierList) objects, and the ids of\nany [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects that apply to it."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.searchCatalogItems",
+      "name": "catalog.searchCatalogItems",
+      "description": "Searches for catalog items or item variations by matching supported search attribute values, including\ncustom attribute values, against one or more of the specified query expressions.\n\nThis (`SearchCatalogItems`) endpoint differs from the [SearchCatalogObjects](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-objects)\nendpoint in the following aspects:\n\n- `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects.\n- `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not.\n- `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does.\n- The both endpoints use different call conventions, including the query filter formats."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.searchCatalogObjects",
+      "name": "catalog.searchCatalogObjects",
+      "description": "Searches for [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) of any type by matching supported search attribute values,\nexcluding custom attribute values on items or item variations, against one or more of the specified query expressions.\n\nThis (`SearchCatalogObjects`) endpoint differs from the [SearchCatalogItems](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-items)\nendpoint in the following aspects:\n\n- `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects.\n- `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not.\n- `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does.\n- The both endpoints have different call conventions, including the query filter formats."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.updateItemModifierLists",
+      "name": "catalog.updateItemModifierLists",
+      "description": "Updates the [CatalogModifierList](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogModifierList) objects\nthat apply to the targeted [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) without having\nto perform an upsert on the entire item."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.updateItemTaxes",
+      "name": "catalog.updateItemTaxes",
+      "description": "Updates the [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects that apply to the\ntargeted [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) without having to perform an\nupsert on the entire item."
+    },
+    {
+      "id": "openapi_squareup_com.catalog.upsertCatalogObject",
+      "name": "catalog.upsertCatalogObject",
+      "description": "Creates or updates the target [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject)."
+    },
+    {
+      "id": "openapi_squareup_com.checkout.createCheckout",
+      "name": "checkout.createCheckout",
+      "description": "Links a `checkoutId` to a `checkout_page_url` that customers are\ndirected to in order to provide their payment information using a\npayment processing workflow hosted on connect.squareup.com."
+    },
+    {
+      "id": "openapi_squareup_com.customerGroups.createCustomerGroup",
+      "name": "customerGroups.createCustomerGroup",
+      "description": "Creates a new customer group for a business.\n\nThe request must include the `name` value of the group."
+    },
+    {
+      "id": "openapi_squareup_com.customerGroups.deleteCustomerGroup",
+      "name": "customerGroups.deleteCustomerGroup",
+      "description": "Deletes a customer group as identified by the `group_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.customerGroups.listCustomerGroups",
+      "name": "customerGroups.listCustomerGroups",
+      "description": "Retrieves the list of customer groups of a business."
+    },
+    {
+      "id": "openapi_squareup_com.customerGroups.retrieveCustomerGroup",
+      "name": "customerGroups.retrieveCustomerGroup",
+      "description": "Retrieves a specific customer group as identified by the `group_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.customerGroups.updateCustomerGroup",
+      "name": "customerGroups.updateCustomerGroup",
+      "description": "Updates a customer group as identified by the `group_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.customers.addGroupToCustomer",
+      "name": "customers.addGroupToCustomer",
+      "description": "Adds a group membership to a customer.\n\nThe customer is identified by the `customer_id` value\nand the customer group is identified by the `group_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.customers.createCustomer",
+      "name": "customers.createCustomer",
+      "description": "Creates a new customer for a business.\n\nYou must provide at least one of the following values in your request to this\nendpoint:\n\n- `given_name`\n- `family_name`\n- `company_name`\n- `email_address`\n- `phone_number`"
+    },
+    {
+      "id": "openapi_squareup_com.customers.createCustomerCard",
+      "name": "customers.createCustomerCard",
+      "description": "Adds a card on file to an existing customer.\n\nAs with charges, calls to `CreateCustomerCard` are idempotent. Multiple\ncalls with the same card nonce return the same card record that was created\nwith the provided nonce during the _first_ call."
+    },
+    {
+      "id": "openapi_squareup_com.customers.deleteCustomer",
+      "name": "customers.deleteCustomer",
+      "description": "Deletes a customer profile from a business. This operation also unlinks any associated cards on file. \n\nAs a best practice, you should include the `version` field in the request to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. The value must be set to the current version of the customer profile. \n\nTo delete a customer profile that was created by merging existing profiles, you must use the ID of the newly created profile."
+    },
+    {
+      "id": "openapi_squareup_com.customers.deleteCustomerCard",
+      "name": "customers.deleteCustomerCard",
+      "description": "Removes a card on file from a customer."
+    },
+    {
+      "id": "openapi_squareup_com.customers.listCustomers",
+      "name": "customers.listCustomers",
+      "description": "Lists customer profiles associated with a Square account.\n\nUnder normal operating conditions, newly created or updated customer profiles become available\nfor the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated\nprofiles can take closer to one minute or longer, especially during network incidents and outages."
+    },
+    {
+      "id": "openapi_squareup_com.customers.removeGroupFromCustomer",
+      "name": "customers.removeGroupFromCustomer",
+      "description": "Removes a group membership from a customer.\n\nThe customer is identified by the `customer_id` value\nand the customer group is identified by the `group_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.customers.retrieveCustomer",
+      "name": "customers.retrieveCustomer",
+      "description": "Returns details for a single customer."
+    },
+    {
+      "id": "openapi_squareup_com.customers.searchCustomers",
+      "name": "customers.searchCustomers",
+      "description": "Searches the customer profiles associated with a Square account using a supported query filter.\n\nCalling `SearchCustomers` without any explicit query filter returns all\ncustomer profiles ordered alphabetically based on `given_name` and\n`family_name`.\n\nUnder normal operating conditions, newly created or updated customer profiles become available\nfor the search operation in well under 30 seconds. Occasionally, propagation of the new or updated\nprofiles can take closer to one minute or longer, especially during network incidents and outages."
+    },
+    {
+      "id": "openapi_squareup_com.customers.updateCustomer",
+      "name": "customers.updateCustomer",
+      "description": "Updates a customer profile. To change an attribute, specify the new value. To remove an attribute, specify the value as an empty string or empty object.\n\nAs a best practice, you should include the `version` field in the request to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. The value must be set to the current version of the customer profile.\n\nTo update a customer profile that was created by merging existing profiles, you must use the ID of the newly created profile.\n\nYou cannot use this endpoint to change cards on file. To make changes, use the [Cards API](https://developer.squareup.com/reference/square_2021-08-18/cards-api) or [Gift Cards API](https://developer.squareup.com/reference/square_2021-08-18/gift-cards-api)."
+    },
+    {
+      "id": "openapi_squareup_com.customerSegments.listCustomerSegments",
+      "name": "customerSegments.listCustomerSegments",
+      "description": "Retrieves the list of customer segments of a business."
+    },
+    {
+      "id": "openapi_squareup_com.customerSegments.retrieveCustomerSegment",
+      "name": "customerSegments.retrieveCustomerSegment",
+      "description": "Retrieves a specific customer segment as identified by the `segment_id` value."
+    },
+    {
+      "id": "openapi_squareup_com.devices.createDeviceCode",
+      "name": "devices.createDeviceCode",
+      "description": "Creates a DeviceCode that can be used to login to a Square Terminal device to enter the connected\nterminal mode."
+    },
+    {
+      "id": "openapi_squareup_com.devices.getDeviceCode",
+      "name": "devices.getDeviceCode",
+      "description": "Retrieves DeviceCode with the associated ID."
+    },
+    {
+      "id": "openapi_squareup_com.devices.listDeviceCodes",
+      "name": "devices.listDeviceCodes",
+      "description": "Lists all DeviceCodes associated with the merchant."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.acceptDispute",
+      "name": "disputes.acceptDispute",
+      "description": "Accepts the loss on a dispute. Square returns the disputed amount to the cardholder and\nupdates the dispute state to ACCEPTED.\n\nSquare debits the disputed amount from the seller’s Square account. If the Square account\ndoes not have sufficient funds, Square debits the associated bank account."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.createDisputeEvidenceText",
+      "name": "disputes.createDisputeEvidenceText",
+      "description": "Uploads text to use as evidence for a dispute challenge."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.deleteDisputeEvidence",
+      "name": "disputes.deleteDisputeEvidence",
+      "description": "Removes specified evidence from a dispute.\n\nSquare does not send the bank any evidence that is removed. Also, you cannot remove evidence after\nsubmitting it to the bank using [SubmitEvidence](https://developer.squareup.com/reference/square_2021-08-18/disputes-api/submit-evidence)."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.listDisputeEvidence",
+      "name": "disputes.listDisputeEvidence",
+      "description": "Returns a list of evidence associated with a dispute."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.listDisputes",
+      "name": "disputes.listDisputes",
+      "description": "Returns a list of disputes associated with a particular account."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.retrieveDispute",
+      "name": "disputes.retrieveDispute",
+      "description": "Returns details about a specific dispute."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.retrieveDisputeEvidence",
+      "name": "disputes.retrieveDisputeEvidence",
+      "description": "Returns the evidence metadata specified by the evidence ID in the request URL path\n\nYou must maintain a copy of the evidence you upload if you want to reference it later. You cannot\ndownload the evidence after you upload it."
+    },
+    {
+      "id": "openapi_squareup_com.disputes.submitEvidence",
+      "name": "disputes.submitEvidence",
+      "description": "Submits evidence to the cardholder's bank.\n\nBefore submitting evidence, Square compiles all available evidence. This includes evidence uploaded\nusing the [CreateDisputeEvidenceFile](https://developer.squareup.com/reference/square_2021-08-18/disputes-api/create-dispute-evidence-file) and\n[CreateDisputeEvidenceText](https://developer.squareup.com/reference/square_2021-08-18/disputes-api/create-dispute-evidence-text) endpoints and\nevidence automatically provided by Square, when available."
+    },
+    {
+      "id": "openapi_squareup_com.employees.getV2Employees",
+      "name": "employees.getV2Employees",
+      "description": ""
+    },
+    {
+      "id": "openapi_squareup_com.employees.getV2EmployeesId",
+      "name": "employees.getV2EmployeesId",
+      "description": ""
+    },
+    {
+      "id": "openapi_squareup_com.giftCardActivities.createGiftCardActivity",
+      "name": "giftCardActivities.createGiftCardActivity",
+      "description": "Creates a gift card activity. For more information, see \n[GiftCardActivity](https://developer.squareup.com/docs/gift-cards/using-gift-cards-api#giftcardactivity) and \n[Using activated gift cards](https://developer.squareup.com/docs/gift-cards/using-gift-cards-api#using-activated-gift-cards)."
+    },
+    {
+      "id": "openapi_squareup_com.giftCardActivities.listGiftCardActivities",
+      "name": "giftCardActivities.listGiftCardActivities",
+      "description": "Lists gift card activities. By default, you get gift card activities for all\ngift cards in the seller's account. You can optionally specify query parameters to\nfilter the list. For example, you can get a list of gift card activities for a gift card,\nfor all gift cards in a specific region, or for activities within a time window."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.createGiftCard",
+      "name": "giftCards.createGiftCard",
+      "description": "Creates a digital gift card or registers a physical (plastic) gift card. You must activate the gift card before \nit can be used for payment. For more information, see \n[Selling gift cards](https://developer.squareup.com/docs/gift-cards/using-gift-cards-api#selling-square-gift-cards)."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.linkCustomerToGiftCard",
+      "name": "giftCards.linkCustomerToGiftCard",
+      "description": "Links a customer to a gift card"
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.listGiftCards",
+      "name": "giftCards.listGiftCards",
+      "description": "Lists all gift cards. You can specify optional filters to retrieve \na subset of the gift cards."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.retrieveGiftCard",
+      "name": "giftCards.retrieveGiftCard",
+      "description": "Retrieves a gift card using its ID."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.retrieveGiftCardFromGan",
+      "name": "giftCards.retrieveGiftCardFromGan",
+      "description": "Retrieves a gift card using the gift card account number (GAN)."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.retrieveGiftCardFromNonce",
+      "name": "giftCards.retrieveGiftCardFromNonce",
+      "description": "Retrieves a gift card using a nonce (a secure token) that represents the gift card."
+    },
+    {
+      "id": "openapi_squareup_com.giftCards.unlinkCustomerFromGiftCard",
+      "name": "giftCards.unlinkCustomerFromGiftCard",
+      "description": "Unlinks a customer from a gift card"
+    },
+    {
+      "id": "openapi_squareup_com.inventory.batchChangeInventory",
+      "name": "inventory.batchChangeInventory",
+      "description": "Applies adjustments and counts to the provided item quantities.\n\nOn success: returns the current calculated counts for all objects\nreferenced in the request.\nOn failure: returns a list of related errors."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.batchRetrieveInventoryChanges",
+      "name": "inventory.batchRetrieveInventoryChanges",
+      "description": "Returns historical physical counts and adjustments based on the\nprovided filter criteria.\n\nResults are paginated and sorted in ascending order according their\n`occurred_at` timestamp (oldest first).\n\nBatchRetrieveInventoryChanges is a catch-all query endpoint for queries\nthat cannot be handled by other, simpler endpoints."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.batchRetrieveInventoryCounts",
+      "name": "inventory.batchRetrieveInventoryCounts",
+      "description": "Returns current counts for the provided\n[CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject)s at the requested\n[Location](https://developer.squareup.com/reference/square_2021-08-18/objects/Location)s.\n\nResults are paginated and sorted in descending order according to their\n`calculated_at` timestamp (newest first).\n\nWhen `updated_after` is specified, only counts that have changed since that\ntime (based on the server timestamp for the most recent change) are\nreturned. This allows clients to perform a \"sync\" operation, for example\nin response to receiving a Webhook notification."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.deprecatedBatchChangeInventory",
+      "name": "inventory.deprecatedBatchChangeInventory",
+      "description": "Deprecated version of [BatchChangeInventory](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/batch-change-inventory) after the endpoint URL \nis updated to conform to the standard convention."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.deprecatedBatchRetrieveInventoryChanges",
+      "name": "inventory.deprecatedBatchRetrieveInventoryChanges",
+      "description": "Deprecated version of [BatchRetrieveInventoryChanges](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/batch-retrieve-inventory-changes) after the endpoint URL \nis updated to conform to the standard convention."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.deprecatedBatchRetrieveInventoryCounts",
+      "name": "inventory.deprecatedBatchRetrieveInventoryCounts",
+      "description": "Deprecated version of [BatchRetrieveInventoryCounts](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/batch-retrieve-inventory-counts) after the endpoint URL \nis updated to conform to the standard convention."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.deprecatedRetrieveInventoryAdjustment",
+      "name": "inventory.deprecatedRetrieveInventoryAdjustment",
+      "description": "Deprecated version of [RetrieveInventoryAdjustment](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/retrieve-inventory-adjustment) after the endpoint URL \nis updated to conform to the standard convention."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.deprecatedRetrieveInventoryPhysicalCount",
+      "name": "inventory.deprecatedRetrieveInventoryPhysicalCount",
+      "description": "Deprecated version of [RetrieveInventoryPhysicalCount](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/retrieve-inventory-physical-count) after the endpoint URL \nis updated to conform to the standard convention."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.retrieveInventoryAdjustment",
+      "name": "inventory.retrieveInventoryAdjustment",
+      "description": "Returns the [InventoryAdjustment](https://developer.squareup.com/reference/square_2021-08-18/objects/InventoryAdjustment) object\nwith the provided `adjustment_id`."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.retrieveInventoryChanges",
+      "name": "inventory.retrieveInventoryChanges",
+      "description": "Returns a set of physical counts and inventory adjustments for the\nprovided [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) at the requested\n[Location](https://developer.squareup.com/reference/square_2021-08-18/objects/Location)s. \n\nYou can achieve the same result by calling [BatchRetrieveInventoryChanges](https://developer.squareup.com/reference/square_2021-08-18/inventory-api/batch-retrieve-inventory-changes) \nand having the `catalog_object_ids` list contain a single element of the `CatalogObject` ID.\n\nResults are paginated and sorted in descending order according to their\n`occurred_at` timestamp (newest first).\n\nThere are no limits on how far back the caller can page. This endpoint can be \nused to display recent changes for a specific item. For more\nsophisticated queries, use a batch endpoint."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.retrieveInventoryCount",
+      "name": "inventory.retrieveInventoryCount",
+      "description": "Retrieves the current calculated stock count for a given\n[CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) at a given set of\n[Location](https://developer.squareup.com/reference/square_2021-08-18/objects/Location)s. Responses are paginated and unsorted.\nFor more sophisticated queries, use a batch endpoint."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.retrieveInventoryPhysicalCount",
+      "name": "inventory.retrieveInventoryPhysicalCount",
+      "description": "Returns the [InventoryPhysicalCount](https://developer.squareup.com/reference/square_2021-08-18/objects/InventoryPhysicalCount)\nobject with the provided `physical_count_id`."
+    },
+    {
+      "id": "openapi_squareup_com.inventory.retrieveInventoryTransfer",
+      "name": "inventory.retrieveInventoryTransfer",
+      "description": "Returns the [InventoryTransfer](https://developer.squareup.com/reference/square_2021-08-18/objects/InventoryTransfer) object\nwith the provided `transfer_id`."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.cancelInvoice",
+      "name": "invoices.cancelInvoice",
+      "description": "Cancels an invoice. The seller cannot collect payments for \nthe canceled invoice.\n\nYou cannot cancel an invoice in the `DRAFT` state or in a terminal state: `PAID`, `REFUNDED`, `CANCELED`, or `FAILED`."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.createInvoice",
+      "name": "invoices.createInvoice",
+      "description": "Creates a draft [invoice](https://developer.squareup.com/reference/square_2021-08-18/objects/Invoice) \nfor an order created using the Orders API.\n\nA draft invoice remains in your account and no action is taken. \nYou must publish the invoice before Square can process it (send it to the customer's email address or charge the customer’s card on file)."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.deleteInvoice",
+      "name": "invoices.deleteInvoice",
+      "description": "Deletes the specified invoice. When an invoice is deleted, the \nassociated order status changes to CANCELED. You can only delete a draft \ninvoice (you cannot delete a published invoice, including one that is scheduled for processing)."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.getInvoice",
+      "name": "invoices.getInvoice",
+      "description": "Retrieves an invoice by invoice ID."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.listInvoices",
+      "name": "invoices.listInvoices",
+      "description": "Returns a list of invoices for a given location. The response \nis paginated. If truncated, the response includes a `cursor` that you    \nuse in a subsequent request to retrieve the next set of invoices."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.publishInvoice",
+      "name": "invoices.publishInvoice",
+      "description": "Publishes the specified draft invoice. \n\nAfter an invoice is published, Square \nfollows up based on the invoice configuration. For example, Square \nsends the invoice to the customer's email address, charges the customer's card on file, or does \nnothing. Square also makes the invoice available on a Square-hosted invoice page. \n\nThe invoice `status` also changes from `DRAFT` to a status \nbased on the invoice configuration. For example, the status changes to `UNPAID` if \nSquare emails the invoice or `PARTIALLY_PAID` if Square charge a card on file for a portion of the \ninvoice amount."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.searchInvoices",
+      "name": "invoices.searchInvoices",
+      "description": "Searches for invoices from a location specified in \nthe filter. You can optionally specify customers in the filter for whom to \nretrieve invoices. In the current implementation, you can only specify one location and \noptionally one customer.\n\nThe response is paginated. If truncated, the response includes a `cursor` \nthat you use in a subsequent request to retrieve the next set of invoices."
+    },
+    {
+      "id": "openapi_squareup_com.invoices.updateInvoice",
+      "name": "invoices.updateInvoice",
+      "description": "Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse \n`Invoice` object to add fields or change values and use the `fields_to_clear` field to specify fields to clear. \nHowever, some restrictions apply. For example, you cannot change the `order_id` or `location_id` field and you \nmust provide the complete `custom_fields` list to update a custom field. Published invoices have additional restrictions."
+    },
+    {
+      "id": "openapi_squareup_com.labor.createBreakType",
+      "name": "labor.createBreakType",
+      "description": "Creates a new `BreakType`.\n\nA `BreakType` is a template for creating `Break` objects.\nYou must provide the following values in your request to this\nendpoint:\n\n- `location_id`\n- `break_name`\n- `expected_duration`\n- `is_paid`\n\nYou can only have three `BreakType` instances per location. If you attempt to add a fourth\n`BreakType` for a location, an `INVALID_REQUEST_ERROR` \"Exceeded limit of 3 breaks per location.\"\nis returned."
+    },
+    {
+      "id": "openapi_squareup_com.labor.createShift",
+      "name": "labor.createShift",
+      "description": "Creates a new `Shift`.\n\nA `Shift` represents a complete workday for a single employee.\nYou must provide the following values in your request to this\nendpoint:\n\n- `location_id`\n- `employee_id`\n- `start_at`\n\nAn attempt to create a new `Shift` can result in a `BAD_REQUEST` error when:\n- The `status` of the new `Shift` is `OPEN` and the employee has another\nshift with an `OPEN` status.\n- The `start_at` date is in the future.\n- The `start_at` or `end_at` date overlaps another shift for the same employee.\n- The `Break` instances are set in the request and a break `start_at`\nis before the `Shift.start_at`, a break `end_at` is after\nthe `Shift.end_at`, or both."
+    },
+    {
+      "id": "openapi_squareup_com.labor.deleteBreakType",
+      "name": "labor.deleteBreakType",
+      "description": "Deletes an existing `BreakType`.\n\nA `BreakType` can be deleted even if it is referenced from a `Shift`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.deleteShift",
+      "name": "labor.deleteShift",
+      "description": "Deletes a `Shift`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.getBreakType",
+      "name": "labor.getBreakType",
+      "description": "Returns a single `BreakType` specified by `id`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.getEmployeeWage",
+      "name": "labor.getEmployeeWage",
+      "description": "Returns a single `EmployeeWage` specified by `id`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.getShift",
+      "name": "labor.getShift",
+      "description": "Returns a single `Shift` specified by `id`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.getTeamMemberWage",
+      "name": "labor.getTeamMemberWage",
+      "description": "Returns a single `TeamMemberWage` specified by `id `."
+    },
+    {
+      "id": "openapi_squareup_com.labor.listBreakTypes",
+      "name": "labor.listBreakTypes",
+      "description": "Returns a paginated list of `BreakType` instances for a business."
+    },
+    {
+      "id": "openapi_squareup_com.labor.listEmployeeWages",
+      "name": "labor.listEmployeeWages",
+      "description": "Returns a paginated list of `EmployeeWage` instances for a business."
+    },
+    {
+      "id": "openapi_squareup_com.labor.listTeamMemberWages",
+      "name": "labor.listTeamMemberWages",
+      "description": "Returns a paginated list of `TeamMemberWage` instances for a business."
+    },
+    {
+      "id": "openapi_squareup_com.labor.listWorkweekConfigs",
+      "name": "labor.listWorkweekConfigs",
+      "description": "Returns a list of `WorkweekConfig` instances for a business."
+    },
+    {
+      "id": "openapi_squareup_com.labor.searchShifts",
+      "name": "labor.searchShifts",
+      "description": "Returns a paginated list of `Shift` records for a business.\nThe list to be returned can be filtered by:\n- Location IDs.\n- Employee IDs.\n- Shift status (`OPEN` and `CLOSED`).\n- Shift start.\n- Shift end.\n- Workday details.\n\nThe list can be sorted by:\n- `start_at`.\n- `end_at`.\n- `created_at`.\n- `updated_at`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.updateBreakType",
+      "name": "labor.updateBreakType",
+      "description": "Updates an existing `BreakType`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.updateShift",
+      "name": "labor.updateShift",
+      "description": "Updates an existing `Shift`.\n\nWhen adding a `Break` to a `Shift`, any earlier `Break` instances in the `Shift` have\nthe `end_at` property set to a valid RFC-3339 datetime string.\n\nWhen closing a `Shift`, all `Break` instances in the `Shift` must be complete with `end_at`\nset on each `Break`."
+    },
+    {
+      "id": "openapi_squareup_com.labor.updateWorkweekConfig",
+      "name": "labor.updateWorkweekConfig",
+      "description": "Updates a `WorkweekConfig`."
+    },
+    {
+      "id": "openapi_squareup_com.locations.createLocation",
+      "name": "locations.createLocation",
+      "description": "Creates a location."
+    },
+    {
+      "id": "openapi_squareup_com.locations.listLocations",
+      "name": "locations.listLocations",
+      "description": "Provides information of all locations of a business.\n\nMany Square API endpoints require a `location_id` parameter.\nThe `id` field of the [`Location`](https://developer.squareup.com/reference/square_2021-08-18/objects/Location) objects returned by this\nendpoint correspond to that `location_id` parameter."
+    },
+    {
+      "id": "openapi_squareup_com.locations.retrieveLocation",
+      "name": "locations.retrieveLocation",
+      "description": "Retrieves details of a location. You can specify \"main\" \nas the location ID to retrieve details of the \nmain location."
+    },
+    {
+      "id": "openapi_squareup_com.locations.updateLocation",
+      "name": "locations.updateLocation",
+      "description": "Updates a location."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.accumulateLoyaltyPoints",
+      "name": "loyalty.accumulateLoyaltyPoints",
+      "description": "Adds points to a loyalty account.\n\n- If you are using the Orders API to manage orders, you only provide the `order_id`. \nThe endpoint reads the order to compute points to add to the buyer's account.\n- If you are not using the Orders API to manage orders, \nyou first perform a client-side computation to compute the points.  \nFor spend-based and visit-based programs, you can first call \n[CalculateLoyaltyPoints](https://developer.squareup.com/reference/square_2021-08-18/loyalty-api/calculate-loyalty-points) to compute the points  \nthat you provide to this endpoint. \n\n__Note:__ The country of the seller's Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs. \nFor more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability)."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.adjustLoyaltyPoints",
+      "name": "loyalty.adjustLoyaltyPoints",
+      "description": "Adds points to or subtracts points from a buyer's account. \n\nUse this endpoint only when you need to manually adjust points. Otherwise, in your application flow, you call \n[AccumulateLoyaltyPoints](https://developer.squareup.com/reference/square_2021-08-18/loyalty-api/accumulate-loyalty-points) \nto add points when a buyer pays for the purchase."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.calculateLoyaltyPoints",
+      "name": "loyalty.calculateLoyaltyPoints",
+      "description": "Calculates the points a purchase earns.\n\n- If you are using the Orders API to manage orders, you provide `order_id` in the request. The \nendpoint calculates the points by reading the order.\n- If you are not using the Orders API to manage orders, you provide the purchase amount in \nthe request for the endpoint to calculate the points.\n\nAn application might call this endpoint to show the points that a buyer can earn with the \nspecific purchase.\n\n__Note:__ The country of the seller's Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs. \nFor more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability)."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.createLoyaltyAccount",
+      "name": "loyalty.createLoyaltyAccount",
+      "description": "Creates a loyalty account. To create a loyalty account, you must provide the `program_id` and a `mapping` with the `phone_number` of the buyer."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.createLoyaltyReward",
+      "name": "loyalty.createLoyaltyReward",
+      "description": "Creates a loyalty reward. In the process, the endpoint does following:\n\n- Uses the `reward_tier_id` in the request to determine the number of points \nto lock for this reward. \n- If the request includes `order_id`, it adds the reward and related discount to the order. \n\nAfter a reward is created, the points are locked and \nnot available for the buyer to redeem another reward."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.deleteLoyaltyReward",
+      "name": "loyalty.deleteLoyaltyReward",
+      "description": "Deletes a loyalty reward by doing the following:\n\n- Returns the loyalty points back to the loyalty account.\n- If an order ID was specified when the reward was created \n(see [CreateLoyaltyReward](https://developer.squareup.com/reference/square_2021-08-18/loyalty-api/create-loyalty-reward)), \nit updates the order by removing the reward and related \ndiscounts.\n\nYou cannot delete a reward that has reached the terminal state (REDEEMED)."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.listLoyaltyPrograms",
+      "name": "loyalty.listLoyaltyPrograms",
+      "description": "Returns a list of loyalty programs in the seller's account.\nLoyalty programs define how buyers can earn points and redeem points for rewards. Square sellers can have only one loyalty program, which is created and managed from the Seller Dashboard. For more information, see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).\n\n\nReplaced with [RetrieveLoyaltyProgram](https://developer.squareup.com/reference/square_2021-08-18/loyalty-api/retrieve-loyalty-program) when used with the keyword `main`."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.redeemLoyaltyReward",
+      "name": "loyalty.redeemLoyaltyReward",
+      "description": "Redeems a loyalty reward.\n\nThe endpoint sets the reward to the `REDEEMED` terminal state. \n\nIf you are using your own order processing system (not using the \nOrders API), you call this endpoint after the buyer paid for the \npurchase.\n\nAfter the reward reaches the terminal state, it cannot be deleted. \nIn other words, points used for the reward cannot be returned \nto the account."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.retrieveLoyaltyAccount",
+      "name": "loyalty.retrieveLoyaltyAccount",
+      "description": "Retrieves a loyalty account."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.retrieveLoyaltyProgram",
+      "name": "loyalty.retrieveLoyaltyProgram",
+      "description": "Retrieves the loyalty program in a seller's account, specified by the program ID or the keyword `main`. \n\nLoyalty programs define how buyers can earn points and redeem points for rewards. Square sellers can have only one loyalty program, which is created and managed from the Seller Dashboard. For more information, see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview)."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.retrieveLoyaltyReward",
+      "name": "loyalty.retrieveLoyaltyReward",
+      "description": "Retrieves a loyalty reward."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.searchLoyaltyAccounts",
+      "name": "loyalty.searchLoyaltyAccounts",
+      "description": "Searches for loyalty accounts in a loyalty program.  \n\nYou can search for a loyalty account using the phone number or customer ID associated with the account. To return all loyalty accounts, specify an empty `query` object or omit it entirely.  \n\nSearch results are sorted by `created_at` in ascending order."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.searchLoyaltyEvents",
+      "name": "loyalty.searchLoyaltyEvents",
+      "description": "Searches for loyalty events.\n\nA Square loyalty program maintains a ledger of events that occur during the lifetime of a \nbuyer's loyalty account. Each change in the point balance \n(for example, points earned, points redeemed, and points expired) is \nrecorded in the ledger. Using this endpoint, you can search the ledger for events.\n\nSearch results are sorted by `created_at` in descending order."
+    },
+    {
+      "id": "openapi_squareup_com.loyalty.searchLoyaltyRewards",
+      "name": "loyalty.searchLoyaltyRewards",
+      "description": "Searches for loyalty rewards in a loyalty account. \n\nIn the current implementation, the endpoint supports search by the reward `status`.\n\nIf you know a reward ID, use the \n[RetrieveLoyaltyReward](https://developer.squareup.com/reference/square_2021-08-18/loyalty-api/retrieve-loyalty-reward) endpoint.\n\nSearch results are sorted by `updated_at` in descending order."
+    },
+    {
+      "id": "openapi_squareup_com.merchants.listMerchants",
+      "name": "merchants.listMerchants",
+      "description": "Returns `Merchant` information for a given access token.\n\nIf you don't know a `Merchant` ID, you can use this endpoint to retrieve the merchant ID for an access token.\nYou can specify your personal access token to get your own merchant information or specify an OAuth token\nto get the information for the  merchant that granted you access.\n\nIf you know the merchant ID, you can also use the [RetrieveMerchant](https://developer.squareup.com/reference/square_2021-08-18/merchants-api/retrieve-merchant)\nendpoint to get the merchant information."
+    },
+    {
+      "id": "openapi_squareup_com.merchants.retrieveMerchant",
+      "name": "merchants.retrieveMerchant",
+      "description": "Retrieve a `Merchant` object for the given `merchant_id`."
+    },
+    {
+      "id": "openapi_squareup_com.mobileAuthorization.createMobileAuthorizationCode",
+      "name": "mobileAuthorization.createMobileAuthorizationCode",
+      "description": "Generates code to authorize a mobile application to connect to a Square card reader\n\nAuthorization codes are one-time-use and expire __60 minutes__ after being issued.\n\n__Important:__ The `Authorization` header you provide to this endpoint must have the following format:\n\n```\nAuthorization: Bearer ACCESS_TOKEN\n```\n\nReplace `ACCESS_TOKEN` with a\n[valid production authorization credential](https://developer.squareup.com/docs/build-basics/access-tokens)."
+    },
+    {
+      "id": "openapi_squareup_com.oAuth.obtainToken",
+      "name": "oAuth.obtainToken",
+      "description": "Returns an OAuth access token.\n\nThe endpoint supports distinct methods of obtaining OAuth access tokens.\nApplications specify a method by adding the `grant_type` parameter\nin the request and also provide relevant information.\n\n__Note:__ Regardless of the method application specified,\nthe endpoint always returns two items; an OAuth access token and\na refresh token in the response.\n\n__OAuth tokens should only live on secure servers. Application clients\nshould never interact directly with OAuth tokens__."
+    },
+    {
+      "id": "openapi_squareup_com.oAuth.renewToken",
+      "name": "oAuth.renewToken",
+      "description": "`RenewToken` is deprecated. For information about refreshing OAuth access tokens, see\n[Migrate from Renew to Refresh OAuth Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).\n\n\nRenews an OAuth access token before it expires.\n\nOAuth access tokens besides your application's personal access token expire after __30 days__.\nYou can also renew expired tokens within __15 days__ of their expiration.\nYou cannot renew an access token that has been expired for more than 15 days.\nInstead, the associated user must re-complete the OAuth flow from the beginning.\n\n__Important:__ The `Authorization` header for this endpoint must have the\nfollowing format:\n\n```\nAuthorization: Client APPLICATION_SECRET\n```\n\nReplace `APPLICATION_SECRET` with the application secret on the Credentials\npage in the [developer dashboard](https://developer.squareup.com/apps)."
+    },
+    {
+      "id": "openapi_squareup_com.oAuth.revokeToken",
+      "name": "oAuth.revokeToken",
+      "description": "Revokes an access token generated with the OAuth flow.\n\nIf an account has more than one OAuth access token for your application, this\nendpoint revokes all of them, regardless of which token you specify. When an\nOAuth access token is revoked, all of the active subscriptions associated\nwith that OAuth token are canceled immediately.\n\n__Important:__ The `Authorization` header for this endpoint must have the\nfollowing format:\n\n```\nAuthorization: Client APPLICATION_SECRET\n```\n\nReplace `APPLICATION_SECRET` with the application secret on the OAuth\npage in the [developer dashboard](https://developer.squareup.com/apps)."
+    },
+    {
+      "id": "openapi_squareup_com.orders.batchRetrieveOrders",
+      "name": "orders.batchRetrieveOrders",
+      "description": "Retrieves a set of [orders](https://developer.squareup.com/reference/square_2021-08-18/objects/Order) by their IDs.\n\nIf a given order ID does not exist, the ID is ignored instead of generating an error."
+    },
+    {
+      "id": "openapi_squareup_com.orders.calculateOrder",
+      "name": "orders.calculateOrder",
+      "description": "Enables applications to preview order pricing without creating an order."
+    },
+    {
+      "id": "openapi_squareup_com.orders.createOrder",
+      "name": "orders.createOrder",
+      "description": "Creates a new [order](https://developer.squareup.com/reference/square_2021-08-18/objects/Order) that can include information about products for\npurchase and settings to apply to the purchase.\n\nTo pay for a created order, see \n[Pay for Orders](https://developer.squareup.com/docs/orders-api/pay-for-orders).\n\nYou can modify open orders using the [UpdateOrder](https://developer.squareup.com/reference/square_2021-08-18/orders-api/update-order) endpoint."
+    },
+    {
+      "id": "openapi_squareup_com.orders.getV2OrdersOrderId",
+      "name": "orders.getV2OrdersOrderId",
+      "description": "Retrieves an [Order](https://developer.squareup.com/reference/square_2021-08-18/objects/Order) by ID."
+    },
+    {
+      "id": "openapi_squareup_com.orders.payOrder",
+      "name": "orders.payOrder",
+      "description": "Pay for an [order](https://developer.squareup.com/reference/square_2021-08-18/objects/Order) using one or more approved [payments](https://developer.squareup.com/reference/square_2021-08-18/objects/Payment)\nor settle an order with a total of `0`.\n\nThe total of the `payment_ids` listed in the request must be equal to the order\ntotal. Orders with a total amount of `0` can be marked as paid by specifying an empty\narray of `payment_ids` in the request.\n\nTo be used with `PayOrder`, a payment must:\n\n- Reference the order by specifying the `order_id` when [creating the payment](https://developer.squareup.com/reference/square_2021-08-18/payments-api/create-payment).\nAny approved payments that reference the same `order_id` not specified in the\n`payment_ids` is canceled.\n- Be approved with [delayed capture](https://developer.squareup.com/docs/payments-api/take-payments#delayed-capture).\nUsing a delayed capture payment with `PayOrder` completes the approved payment."
+    },
+    {
+      "id": "openapi_squareup_com.orders.putV2OrdersOrderId",
+      "name": "orders.putV2OrdersOrderId",
+      "description": "Updates an open [order](https://developer.squareup.com/reference/square_2021-08-18/objects/Order) by adding, replacing, or deleting\nfields. Orders with a `COMPLETED` or `CANCELED` state cannot be updated.\n\nAn `UpdateOrder` request requires the following:\n\n- The `order_id` in the endpoint path, identifying the order to update.\n- The latest `version` of the order to update.\n- The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects)\ncontaining only the fields to update and the version to which the update is\nbeing applied.\n- If deleting fields, the [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation)\nidentifying the fields to clear.\n\nTo pay for an order, see \n[Pay for Orders](https://developer.squareup.com/docs/orders-api/pay-for-orders)."
+    },
+    {
+      "id": "openapi_squareup_com.orders.searchOrders",
+      "name": "orders.searchOrders",
+      "description": "Search all orders for one or more locations. Orders include all sales,\nreturns, and exchanges regardless of how or when they entered the Square\necosystem (such as Point of Sale, Invoices, and Connect APIs).\n\n`SearchOrders` requests need to specify which locations to search and define a\n[SearchOrdersQuery](https://developer.squareup.com/reference/square_2021-08-18/objects/SearchOrdersQuery) object that controls\nhow to sort or filter the results. Your `SearchOrdersQuery` can:\n\n  Set filter criteria.\n  Set the sort order.\n  Determine whether to return results as complete `Order` objects or as\n[OrderEntry](https://developer.squareup.com/reference/square_2021-08-18/objects/OrderEntry) objects.\n\nNote that details for orders processed with Square Point of Sale while in\noffline mode might not be transmitted to Square for up to 72 hours. Offline\norders have a `created_at` value that reflects the time the order was created,\nnot the time it was subsequently transmitted to Square."
+    },
+    {
+      "id": "openapi_squareup_com.payments.cancelPayment",
+      "name": "payments.cancelPayment",
+      "description": "Cancels (voids) a payment. You can use this endpoint to cancel a payment with \nthe APPROVED `status`."
+    },
+    {
+      "id": "openapi_squareup_com.payments.cancelPaymentByIdempotencyKey",
+      "name": "payments.cancelPaymentByIdempotencyKey",
+      "description": "Cancels (voids) a payment identified by the idempotency key that is specified in the\nrequest.\n\nUse this method when the status of a `CreatePayment` request is unknown (for example, after you send a\n`CreatePayment` request, a network error occurs and you do not get a response). In this case, you can\ndirect Square to cancel the payment using this endpoint. In the request, you provide the same\nidempotency key that you provided in your `CreatePayment` request that you want to cancel. After\ncanceling the payment, you can submit your `CreatePayment` request again.\n\nNote that if no payment with the specified idempotency key is found, no action is taken and the endpoint\nreturns successfully."
+    },
+    {
+      "id": "openapi_squareup_com.payments.completePayment",
+      "name": "payments.completePayment",
+      "description": "Completes (captures) a payment.\nBy default, payments are set to complete immediately after they are created.\n\nYou can use this endpoint to complete a payment with the APPROVED `status`."
+    },
+    {
+      "id": "openapi_squareup_com.payments.createPayment",
+      "name": "payments.createPayment",
+      "description": "Creates a payment using the provided source. You can use this endpoint \nto charge a card (credit/debit card or    \nSquare gift card) or record a payment that the seller received outside of Square \n(cash payment from a buyer or a payment that an external entity \nprocessed on behalf of the seller).\n\nThe endpoint creates a \n`Payment` object and returns it in the response."
+    },
+    {
+      "id": "openapi_squareup_com.payments.getPayment",
+      "name": "payments.getPayment",
+      "description": "Retrieves details for a specific payment."
+    },
+    {
+      "id": "openapi_squareup_com.payments.getV2Payments",
+      "name": "payments.getV2Payments",
+      "description": "Retrieves a list of payments taken by the account making the request.\n\nResults are eventually consistent, and new payments or changes to payments might take several\nseconds to appear.\n\nThe maximum results per page is 100."
+    },
+    {
+      "id": "openapi_squareup_com.payments.updatePayment",
+      "name": "payments.updatePayment",
+      "description": "Updates a payment with the APPROVED status.\nYou can update the `amount_money` and `tip_money` using this endpoint."
+    },
+    {
+      "id": "openapi_squareup_com.refunds.getPaymentRefund",
+      "name": "refunds.getPaymentRefund",
+      "description": "Retrieves a specific refund using the `refund_id`."
+    },
+    {
+      "id": "openapi_squareup_com.refunds.listPaymentRefunds",
+      "name": "refunds.listPaymentRefunds",
+      "description": "Retrieves a list of refunds for the account making the request.\n\nResults are eventually consistent, and new refunds or changes to refunds might take several\nseconds to appear.\n\nThe maximum results per page is 100."
+    },
+    {
+      "id": "openapi_squareup_com.refunds.refundPayment",
+      "name": "refunds.refundPayment",
+      "description": "Refunds a payment. You can refund the entire payment amount or a\nportion of it. You can use this endpoint to refund a card payment or record a \nrefund of a cash or external payment. For more information, see\n[Refund Payment](https://developer.squareup.com/docs/payments-api/refund-payments)."
+    },
+    {
+      "id": "openapi_squareup_com.sites.listSites",
+      "name": "sites.listSites",
+      "description": "Lists the Square Online sites that belong to a seller.\n\n\n__Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis)."
+    },
+    {
+      "id": "openapi_squareup_com.snippets.deleteSnippet",
+      "name": "snippets.deleteSnippet",
+      "description": "Removes your snippet from a Square Online site.\n\nYou can call [ListSites](https://developer.squareup.com/reference/square_2021-08-18/sites-api/list-sites) to get the IDs of the sites that belong to a seller.\n\n\n__Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis)."
+    },
+    {
+      "id": "openapi_squareup_com.snippets.retrieveSnippet",
+      "name": "snippets.retrieveSnippet",
+      "description": "Retrieves your snippet from a Square Online site. A site can contain snippets from multiple snippet applications, but you can retrieve only the snippet that was added by your application.\n\nYou can call [ListSites](https://developer.squareup.com/reference/square_2021-08-18/sites-api/list-sites) to get the IDs of the sites that belong to a seller.\n\n\n__Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis)."
+    },
+    {
+      "id": "openapi_squareup_com.snippets.upsertSnippet",
+      "name": "snippets.upsertSnippet",
+      "description": "Adds a snippet to a Square Online site or updates the existing snippet on the site. \nThe snippet code is appended to the end of the `head` element on every page of the site, except checkout pages. A snippet application can add one snippet to a given site. \n\nYou can call [ListSites](https://developer.squareup.com/reference/square_2021-08-18/sites-api/list-sites) to get the IDs of the sites that belong to a seller.\n\n\n__Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis)."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.cancelSubscription",
+      "name": "subscriptions.cancelSubscription",
+      "description": "Sets the `canceled_date` field to the end of the active billing period.\nAfter this date, the status changes from ACTIVE to CANCELED."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.createSubscription",
+      "name": "subscriptions.createSubscription",
+      "description": "Creates a subscription for a customer to a subscription plan.\n\nIf you provide a card on file in the request, Square charges the card for\nthe subscription. Otherwise, Square bills an invoice to the customer's email\naddress. The subscription starts immediately, unless the request includes\nthe optional `start_date`. Each individual subscription is associated with a particular location."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.listSubscriptionEvents",
+      "name": "subscriptions.listSubscriptionEvents",
+      "description": "Lists all events for a specific subscription.\nIn the current implementation, only `START_SUBSCRIPTION` and `STOP_SUBSCRIPTION` (when the subscription was canceled) events are returned."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.resumeSubscription",
+      "name": "subscriptions.resumeSubscription",
+      "description": "Resumes a deactivated subscription."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.retrieveSubscription",
+      "name": "subscriptions.retrieveSubscription",
+      "description": "Retrieves a subscription."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.searchSubscriptions",
+      "name": "subscriptions.searchSubscriptions",
+      "description": "Searches for subscriptions.\nResults are ordered chronologically by subscription creation date. If\nthe request specifies more than one location ID,\nthe endpoint orders the result\nby location ID, and then by creation date within each location. If no locations are given\nin the query, all locations are searched.\n\nYou can also optionally specify `customer_ids` to search by customer.\nIf left unset, all customers\nassociated with the specified locations are returned.\nIf the request specifies customer IDs, the endpoint orders results\nfirst by location, within location by customer ID, and within\ncustomer by subscription creation date.\n\nFor more information, see\n[Retrieve subscriptions](https://developer.squareup.com/docs/subscriptions-api/overview#retrieve-subscriptions)."
+    },
+    {
+      "id": "openapi_squareup_com.subscriptions.updateSubscription",
+      "name": "subscriptions.updateSubscription",
+      "description": "Updates a subscription. You can set, modify, and clear the\n`subscription` field values."
+    },
+    {
+      "id": "openapi_squareup_com.team.bulkCreateTeamMembers",
+      "name": "team.bulkCreateTeamMembers",
+      "description": "Creates multiple `TeamMember` objects. The created `TeamMember` objects are returned on successful creates.\nThis process is non-transactional and processes as much of the request as possible. If one of the creates in\nthe request cannot be successfully processed, the request is not marked as failed, but the body of the response\ncontains explicit error information for the failed create.\n\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-create-team-members)."
+    },
+    {
+      "id": "openapi_squareup_com.team.bulkUpdateTeamMembers",
+      "name": "team.bulkUpdateTeamMembers",
+      "description": "Updates multiple `TeamMember` objects. The updated `TeamMember` objects are returned on successful updates.\nThis process is non-transactional and processes as much of the request as possible. If one of the updates in\nthe request cannot be successfully processed, the request is not marked as failed, but the body of the response\ncontains explicit error information for the failed update.\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-update-team-members)."
+    },
+    {
+      "id": "openapi_squareup_com.team.createTeamMember",
+      "name": "team.createTeamMember",
+      "description": "Creates a single `TeamMember` object. The `TeamMember` object is returned on successful creates.\nYou must provide the following values in your request to this endpoint:\n- `given_name`\n- `family_name`\n\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#createteammember)."
+    },
+    {
+      "id": "openapi_squareup_com.team.retrieveTeamMember",
+      "name": "team.retrieveTeamMember",
+      "description": "Retrieves a `TeamMember` object for the given `TeamMember.id`.\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrieve-a-team-member)."
+    },
+    {
+      "id": "openapi_squareup_com.team.retrieveWageSetting",
+      "name": "team.retrieveWageSetting",
+      "description": "Retrieves a `WageSetting` object for a team member specified\nby `TeamMember.id`.\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrievewagesetting)."
+    },
+    {
+      "id": "openapi_squareup_com.team.searchTeamMembers",
+      "name": "team.searchTeamMembers",
+      "description": "Returns a paginated list of `TeamMember` objects for a business.\nThe list can be filtered by the following:\n- location IDs\n- `status`"
+    },
+    {
+      "id": "openapi_squareup_com.team.updateTeamMember",
+      "name": "team.updateTeamMember",
+      "description": "Updates a single `TeamMember` object. The `TeamMember` object is returned on successful updates.\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#update-a-team-member)."
+    },
+    {
+      "id": "openapi_squareup_com.team.updateWageSetting",
+      "name": "team.updateWageSetting",
+      "description": "Creates or updates a `WageSetting` object. The object is created if a\n`WageSetting` with the specified `team_member_id` does not exist. Otherwise,\nit fully replaces the `WageSetting` object for the team member.\nThe `WageSetting` is returned on a successful update.\nLearn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#create-or-update-a-wage-setting)."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.cancelTerminalCheckout",
+      "name": "terminal.cancelTerminalCheckout",
+      "description": "Cancels a Terminal checkout request if the status of the request permits it."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.cancelTerminalRefund",
+      "name": "terminal.cancelTerminalRefund",
+      "description": "Cancels an Interac Terminal refund request by refund request ID if the status of the request permits it."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.createTerminalCheckout",
+      "name": "terminal.createTerminalCheckout",
+      "description": "Creates a Terminal checkout request and sends it to the specified device to take a payment\nfor the requested amount."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.createTerminalRefund",
+      "name": "terminal.createTerminalRefund",
+      "description": "Creates a request to refund an Interac payment completed on a Square Terminal."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.getTerminalCheckout",
+      "name": "terminal.getTerminalCheckout",
+      "description": "Retrieves a Terminal checkout request by `checkout_id`."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.getTerminalRefund",
+      "name": "terminal.getTerminalRefund",
+      "description": "Retrieves an Interac Terminal refund object by ID."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.searchTerminalCheckouts",
+      "name": "terminal.searchTerminalCheckouts",
+      "description": "Retrieves a filtered list of Terminal checkout requests created by the account making the request."
+    },
+    {
+      "id": "openapi_squareup_com.terminal.searchTerminalRefunds",
+      "name": "terminal.searchTerminalRefunds",
+      "description": "Retrieves a filtered list of Interac Terminal refund requests created by the seller making the request."
+    },
+    {
+      "id": "openapi_squareup_com.transactions.captureTransaction",
+      "name": "transactions.captureTransaction",
+      "description": "Captures a transaction that was created with the [Charge](https://developer.squareup.com/reference/square_2021-08-18/transactions-api/charge)\nendpoint with a `delay_capture` value of `true`.\n\n\nSee [Delayed capture transactions](https://developer.squareup.com/docs/payments/transactions/overview#delayed-capture)\nfor more information."
+    },
+    {
+      "id": "openapi_squareup_com.transactions.charge",
+      "name": "transactions.charge",
+      "description": "Charges a card represented by a card nonce or a customer's card on file.\n\nYour request to this endpoint must include _either_:\n\n- A value for the `card_nonce` parameter (to charge a card payment token generated\nwith the Web Payments SDK)\n- Values for the `customer_card_id` and `customer_id` parameters (to charge\na customer's card on file)\n\nIn order for an eCommerce payment to potentially qualify for\n[Square chargeback protection](https://squareup.com/help/article/5394), you\n_must_ provide values for the following parameters in your request:\n\n- `buyer_email_address`\n- At least one of `billing_address` or `shipping_address`\n\nWhen this response is returned, the amount of Square's processing fee might not yet be\ncalculated. To obtain the processing fee, wait about ten seconds and call\n[RetrieveTransaction](https://developer.squareup.com/reference/square_2021-08-18/transactions-api/retrieve-transaction). See the `processing_fee_money`\nfield of each [Tender included](https://developer.squareup.com/reference/square_2021-08-18/objects/Tender) in the transaction."
+    },
+    {
+      "id": "openapi_squareup_com.transactions.getV2LocationsLocationIdRefunds",
+      "name": "transactions.getV2LocationsLocationIdRefunds",
+      "description": "Lists refunds for one of a business's locations.\n\nIn addition to full or partial tender refunds processed through Square APIs,\nrefunds may result from itemized returns or exchanges through Square's\nPoint of Sale applications.\n\nRefunds with a `status` of `PENDING` are not currently included in this\nendpoint's response.\n\nMax results per [page](https://developer.squareup.com/docs/working-with-apis/pagination): 50"
+    },
+    {
+      "id": "openapi_squareup_com.transactions.listTransactions",
+      "name": "transactions.listTransactions",
+      "description": "Lists transactions for a particular location.\n\nTransactions include payment information from sales and exchanges and refund\ninformation from returns and exchanges.\n\nMax results per [page](https://developer.squareup.com/docs/working-with-apis/pagination): 50"
+    },
+    {
+      "id": "openapi_squareup_com.transactions.postV2LocationsLocationIdTransactionsTransactionIdRefund",
+      "name": "transactions.postV2LocationsLocationIdTransactionsTransactionIdRefund",
+      "description": "Initiates a refund for a previously charged tender.\n\nYou must issue a refund within 120 days of the associated payment. See\n[this article](https://squareup.com/help/us/en/article/5060) for more information\non refund behavior.\n\nNOTE: Card-present transactions with Interac credit cards **cannot be\nrefunded using the Connect API**. Interac transactions must refunded\nin-person (e.g., dipping the card using POS app)."
+    },
+    {
+      "id": "openapi_squareup_com.transactions.retrieveTransaction",
+      "name": "transactions.retrieveTransaction",
+      "description": "Retrieves details for a single transaction."
+    },
+    {
+      "id": "openapi_squareup_com.transactions.voidTransaction",
+      "name": "transactions.voidTransaction",
+      "description": "Cancels a transaction that was created with the [Charge](https://developer.squareup.com/reference/square_2021-08-18/transactions-api/charge)\nendpoint with a `delay_capture` value of `true`.\n\n\nSee [Delayed capture transactions](https://developer.squareup.com/docs/payments/transactions/overview#delayed-capture)\nfor more information."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.createEmployee",
+      "name": "v1Employees.createEmployee",
+      "description": " Use the CreateEmployee endpoint to add an employee to a Square\naccount. Employees created with the Connect API have an initial status\nof `INACTIVE`. Inactive employees cannot sign in to Square Point of Sale\nuntil they are activated from the Square Dashboard. Employee status\ncannot be changed with the Connect API.\n\nEmployee entities cannot be deleted. To disable employee profiles,\nset the employee's status to <code>INACTIVE</code>"
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.createEmployeeRole",
+      "name": "v1Employees.createEmployeeRole",
+      "description": "Creates an employee role you can then assign to employees.\n\nSquare accounts can include any number of roles that can be assigned to\nemployees. These roles define the actions and permissions granted to an\nemployee with that role. For example, an employee with a \"Shift Manager\"\nrole might be able to issue refunds in Square Point of Sale, whereas an\nemployee with a \"Clerk\" role might not.\n\nRoles are assigned with the [V1UpdateEmployee](https://developer.squareup.com/reference/square_2021-08-18/v1-employees-api/update-employee-role)\nendpoint. An employee can have only one role at a time.\n\nIf an employee has no role, they have none of the permissions associated\nwith roles. All employees can accept payments with Square Point of Sale."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.listEmployeeRoles",
+      "name": "v1Employees.listEmployeeRoles",
+      "description": "Provides summary information for all of a business's employee roles."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.listEmployees",
+      "name": "v1Employees.listEmployees",
+      "description": "Provides summary information for all of a business's employees."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.retrieveEmployee",
+      "name": "v1Employees.retrieveEmployee",
+      "description": "Provides the details for a single employee."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.retrieveEmployeeRole",
+      "name": "v1Employees.retrieveEmployeeRole",
+      "description": "Provides the details for a single employee role."
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.updateEmployee",
+      "name": "v1Employees.updateEmployee",
+      "description": ""
+    },
+    {
+      "id": "openapi_squareup_com.v1Employees.updateEmployeeRole",
+      "name": "v1Employees.updateEmployeeRole",
+      "description": "Modifies the details of an employee role."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.createRefund",
+      "name": "v1Transactions.createRefund",
+      "description": "Issues a refund for a previously processed payment. You must issue\na refund within 60 days of the associated payment.\n\nYou cannot issue a partial refund for a split tender payment. You must\ninstead issue a full or partial refund for a particular tender, by\nproviding the applicable tender id to the V1CreateRefund endpoint.\nIssuing a full refund for a split tender payment refunds all tenders\nassociated with the payment.\n\nIssuing a refund for a card payment is not reversible. For development\npurposes, you can create fake cash payments in Square Point of Sale and\nrefund them."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.listOrders",
+      "name": "v1Transactions.listOrders",
+      "description": "Provides summary information for a merchant's online store orders."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.listPayments",
+      "name": "v1Transactions.listPayments",
+      "description": "Provides summary information for all payments taken for a given\nSquare account during a date range. Date ranges cannot exceed 1 year in\nlength. See Date ranges for details of inclusive and exclusive dates.\n\n*Note**: Details for payments processed with Square Point of Sale while\nin offline mode may not be transmitted to Square for up to 72 hours.\nOffline payments have a `created_at` value that reflects the time the\npayment was originally processed, not the time it was subsequently\ntransmitted to Square. Consequently, the ListPayments endpoint might\nlist an offline payment chronologically between online payments that\nwere seen in a previous request."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.listRefunds",
+      "name": "v1Transactions.listRefunds",
+      "description": "Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.listSettlements",
+      "name": "v1Transactions.listSettlements",
+      "description": "Provides summary information for all deposits and withdrawals\ninitiated by Square to a linked bank account during a date range. Date\nranges cannot exceed one year in length.\n\n*Note**: the ListSettlements endpoint does not provide entry\ninformation."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.retrieveOrder",
+      "name": "v1Transactions.retrieveOrder",
+      "description": "Provides comprehensive information for a single online store order, including the order's history."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.retrievePayment",
+      "name": "v1Transactions.retrievePayment",
+      "description": "Provides comprehensive information for a single payment."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.retrieveSettlement",
+      "name": "v1Transactions.retrieveSettlement",
+      "description": "Provides comprehensive information for a single settlement.\n\nThe returned `Settlement` objects include an `entries` field that lists\nthe transactions that contribute to the settlement total. Most\nsettlement entries correspond to a payment payout, but settlement\nentries are also generated for less common events, like refunds, manual\nadjustments, or chargeback holds.\n\nSquare initiates its regular deposits as indicated in the\n[Deposit Options with Square](https://squareup.com/help/us/en/article/3807)\nhelp article. Details for a regular deposit are usually not available\nfrom Connect API endpoints before 10 p.m. PST the same day.\n\nSquare does not know when an initiated settlement **completes**, only\nwhether it has failed. A completed settlement is typically reflected in\na bank account within 3 business days, but in exceptional cases it may\ntake longer."
+    },
+    {
+      "id": "openapi_squareup_com.v1Transactions.updateOrder",
+      "name": "v1Transactions.updateOrder",
+      "description": "Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

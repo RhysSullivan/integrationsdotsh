@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-04-30T15:22:30.713Z",
+  "status": "ok",
+  "count": 8,
+  "tools": [
+    {
+      "id": "openapi_goog_io.crawl.getOperation",
+      "name": "crawl.getOperation",
+      "description": "Perform Google Search\n\n Parameters\n----------\nquery : the string query to perform search. supports advance queries. Check out https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters guide for formating\n\nReturns\n-------\njson: a the html source of the results page"
+    },
+    {
+      "id": "openapi_goog_io.images.getOperation",
+      "name": "images.getOperation",
+      "description": "Perform Google Image Search\n\nParameters\n----------\nquery : the string query to perform search. supports advance queries.\n\nReturns\n-------\njson: a list of results with the link, description, and title for each result"
+    },
+    {
+      "id": "openapi_goog_io.news.getOperation",
+      "name": "news.getOperation",
+      "description": "Perform Google News Search\n\n Parameters\n----------\nquery : the string query to perform search for Google news. A simple query for `president` will be `q=president`. An example of multiple keyword would be `q=news+about+presdient+trump`. News can also be filtered by country and language. For `US` news and in English the query will be `q=trump&ceid=US:en` for news in Great Britian the query will be `q=trump&ceid=GB:en`\n\nReturns\n-------\njson: {\"feed\": { \"title\" : \"trump\" ...} , \"entites\": [ {\"title\" : \"Trump doubles down on divisive messaging in speech to honor Independence Day - CNN\", \"links\": []} ...]}"
+    },
+    {
+      "id": "openapi_goog_io.root.getTheStatusOfTheApiService",
+      "name": "root.getTheStatusOfTheApiService",
+      "description": "It \"status\" == true then API is up, else the API is down"
+    },
+    {
+      "id": "openapi_goog_io.search.getOperation",
+      "name": "search.getOperation",
+      "description": "Perform Google Search\n\nParameters\n----------\nquery : the string query to perform search. supports advance queries. Check out https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters guide for formating\n\nReturns\n-------\njson: a list of results with the link, description, and title for each result"
+    },
+    {
+      "id": "openapi_goog_io.serp.postOperation",
+      "name": "serp.postOperation",
+      "description": "Perform Google Search and search for website in Search Engine Results Pages (SERP)\n\nParameters\n----------\nquery : the string query to perform search. supports advance queries. Check out https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters guide for formatting, it is recommended to set the query `&num=100`\n\nReturns\n-------\njson: a list of results with the query, website, searched_results, and position. json[\"position\"] will be set to -1 if website is not found in results"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

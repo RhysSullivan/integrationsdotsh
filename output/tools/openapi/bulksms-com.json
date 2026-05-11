@@ -1,0 +1,92 @@
+{
+  "fetchedAt": "2026-04-30T15:22:06.587Z",
+  "status": "ok",
+  "count": 17,
+  "tools": [
+    {
+      "id": "openapi_bulksms_com.attachments.postRmmPreSignAttachment",
+      "name": "attachments.postRmmPreSignAttachment",
+      "description": "When composing an SMS, you can add SMS attachments by adding a URL to your text. When the recipient clicks on the URL, the attached file will be downloaded and opened on their mobile device.  \n\nThe best way to do this is to store the file on a web server you own and use that URL in the SMS text. This URL will be easily recognisable to your message recipient and ties your message back to your brand or company. \n\nIf that’s not possible, you can use BulkSMS storage to keep the files that you want to attach to your SMS. These files will be deleted after 30 days as per our fair use policy.  \n\nWe recommend you keep this file size below 20 MB, as larger files may be deleted without warning. \n\nTo use the BulkSMS storage, follow these three steps:\n\n**Step 1**: Use your BulkSMS credentials (or your API Token) to request a pre-signed URL.  This is what this `pre-sign-attachment` method is for.  It returns a PreSignInfo object that you will use in the other two steps.\n\n**Step 2**: Upload the file using a standard HTTP `PUT` request. For your `PUT` request, use the value of `putURL` from the PreSignInfo object as the request address.  You also have to add the entries from the `fields` property (of the PreSignInfo object) to the headers of your 'PUT' request. You send the file content as the body of the `PUT` request.\n\n**Step 3**: Now you can use the value of `fetchURL` from the PreSignInfo object in the body of your SMS messages and send those using the usual messaging API (described elsewhere in this document).  If you send the same file to many recipients, it is safe to use the same URL for all of them.\n\nIf you need to, take a closer look at the example program (on the right-hand side) to get a better idea of how to implement this process.\n"
+    },
+    {
+      "id": "openapi_bulksms_com.blockedNumbers.getBlockedNumbers",
+      "name": "blockedNumbers.getBlockedNumbers",
+      "description": "List blocked numbers"
+    },
+    {
+      "id": "openapi_bulksms_com.blockedNumbers.postBlockedNumbers",
+      "name": "blockedNumbers.postBlockedNumbers",
+      "description": "Blocked numbers are phone numbers to which your account is not permitted to send messages.\nThe numbers can be created via this API, by a recipient replying with a STOP message to one\nof your previous SENT messages, or by a BulkSMS administrator.\n\nSending a message to a blocked number will result in the message being assigned a status of\n`FAILED.BLOCKED`. Messages sent to blocked numbers are billed to your account.\n"
+    },
+    {
+      "id": "openapi_bulksms_com.credits.postCreditTransfer",
+      "name": "credits.postCreditTransfer",
+      "description": "Before you can use the transfer credits endpoint, the _credit-transfer facility_ must be activated for your account.  You can request activation from `support@bulksms.com`. \n\nThe recipient must be an enabled account that uses the same currency as your account.\n"
+    },
+    {
+      "id": "openapi_bulksms_com.message.getMessages",
+      "name": "message.getMessages",
+      "description": "Retrieve the messages you have sent or received.  \n\nScheduled messages are available for retrieval only after the delivery date.\n\nAll the parameters are optional.  If a value is not supplied for `filter`, the messages are not filtered.\n\nMessages can be filtered by supplying query clauses in the `filter` parameter. Each clause has the form `name=value` where `name` is the name of a filter field and `value` is a valid value for that field.  A value for a field is optional. Include a clause for a field in the filter only when there is a need to fetch messages that match some value for that field.\nFor a numeric filter field, you can also use the less than operator (`<`).\n\nIf present, the filter value must have at least one clause, but it can contain a combination of clauses. Multiple clauses are separated with the `&` symbol.  Semantically, multiple clauses form a [logical conjunction](https://en.wikipedia.org/wiki/Logical_conjunction).\n\nFor example, if you want to list all messages that were sent as part of a particular submission, your filter contains two clauses and will look something like this\n```\ntype%3DSENT&submission.id%3D1-00000000000522347562\n```\nBecause `filter` is a request parameter, it is important to note that the value for this parameter must be *URL encoded*. In particular, the `=` encodes to `%3D` and the `&` encodes to `%26`.  Note that you do not have to encode the `<` character.\n\nUsing the previous example to illustrate; after encoding and encasing it, the clauses are transformed into a request that looks like this\n```\nGET /v1/messages?filter=type%3DSENT%26submission.id%3D1-00000000000522347562\n```\nIf the field name or the field value of a clause is not valid, a [bad_request error](errors#bad-request) is returned instead of the usual result.  The `detail` field of this error provides more information about the problem.\n\nThe table below lists the fields available for filtering\n\n| Field | Type   | Values | Note and example |\n|-------|------|--------------------|------|\n| id            | Integer  | Positive integer  | Use the `id` field with `<` (or with `>`) to fetch messages that are older (or newer) than those that are already fetched. <br/>`filter=id<123456` |\n| type          | String  | SENT, RECEIVED  | SENT are Mobile Terminating (MT) SMSs; RECEIVED are Mobile Originating (MO) SMSs.<br/>`filter=type%3DSENT` |\n| submission.id | String  |  | `filter=submission.id%3D1-00000000000522347562` |\n| status.type   | String  | ACCEPTED, SENT, DELIVERED, FAILED  | See the message `status.type` field for more information. <br/>`filter=status.type%3DDELIVERED` |\n| status.id| String  |  | See the message `status.id` field for more information. `filter=status.id%3DFAILED.EXPIRED`|\n| submission.date | String | Formatted Date | A fully specified date (e.g. 2017-01-01T10:00:00+01:00).  Use this field with `<=`, `<`, `>` or `>=` to limit the values. <br/>`filter=submission.date%3E%3D2017-01-01T10%3A00%3A00%2B01%3A00` |\n| userSuppliedId  | String | | Use a string value you specified in the `userSuppliedId` property when you sent the message. Only `SENT` messages will be retrieved. <br/>`filter=userSuppliedId%3Dacc009876` |\n"
+    },
+    {
+      "id": "openapi_bulksms_com.message.getMessagesId",
+      "name": "message.getMessagesId",
+      "description": "Get a the message by `id`.\n```http\nGET /v1/messages/4023457654\n```\n"
+    },
+    {
+      "id": "openapi_bulksms_com.message.getMessagesIdRelatedReceivedMessages",
+      "name": "message.getMessagesIdRelatedReceivedMessages",
+      "description": "Get the messages related to a sent message identified by `id`.\n\nFor more information how this work, see the `relatedSentMessageId` field in the message.\n"
+    },
+    {
+      "id": "openapi_bulksms_com.message.getMessagesSend",
+      "name": "message.getMessagesSend",
+      "description": "A really simple interface for people who require a GET mechanism to submit a single message.\n\nThe URI is interpreted as UTF-8. HTTP Basic Auth is used for authentication.\n\n__Note__ BulkSMS recommends that you use the more flexible Send Messages Operation when submitting SMS messages from your application.\n\nHere is an example of a GET\n```http\nGET /v1/messages/send?to=%2b270000000&body=Hello%20World\n```\n\nYou can also use the same parameters to POST form encoded fields to `/messages`.\nHere is an example of a POST\n```http\nPOST /v1/messages\nContent-Type: application/x-www-form-urlencoded\n\nto=%2b27000000000&body=Hello+World\n```\n"
+    },
+    {
+      "id": "openapi_bulksms_com.message.postMessages",
+      "name": "message.postMessages",
+      "description": "Send messages to one or more recipients.\n\nYou can post up to `30 000` messages in a batch. \nBut note that the `deduplication-id` is set per submission, so it is recommended that you use a smaller number, like `4000` per submission in order to make resubmissions on network failures more practical.\n\n#### Repliability\n\nWhen a sent message is _repliable_,  the BulkSMS system can process an SMS response sent by your recipient.\n\nThe message sent by your customer is called a mobile originating (MO) message and would be available under `RECEIVED` messages. \nYou can obtain a list of MOs using the [retrieve messages API call](#tag/Message%2Fpaths%2F~1messages%2Fget).\nIn addition you can also get a list of the MOs that are associated with a specific sent message (see the [list related messages API call](#tag/Message%2Fpaths%2F~1messages~1%7Bid%7D~1relatedReceivedMessages%2Fget)).\n\nIf you use a specific _sender id_ in the `from` property of the send message, the message will not be repliable.\nIf you want a message to be repliable, you need to specify `REPLIABLE` in the `from.type` property.\n\nIf you do not set the `from` property, your account settings are considered to determine whether or not the message is repliable.\nIf the _default repliable_ setting on your account is _yes_ then the message will be repliable. \nIf this setting is _no_, the message will not be repliable.\n\n\n#### Body templates\n\nWhen sending a message you can use template fields to customise the message text.\n\n*Field based templates* allow you to create a message with place-holders for custom fields.  Fields are identified by a zero based index; the first field is `F0`, the second is `F1` and so on.  \n\nFor example, let's say you want to send a daily SMS message to all your clients that tell them what their current balance is.  The `body` of the message could look something like this \n\n```\nGood morning {F0######}, your balance is {F1######}\n```\n\nIn this message, the first field, `F0`, is the name  of the customer and he second field `F1` is the balance for that customer.  The `#` used to specify the maximum length  of the field.  Note that the maximum length allowed for the value includes the space taken by the braces, template name and hash symbol.  For example, the value `{F0#}` specifies a maximum length of `5`.  If the data is longer than this length, the data will be truncated when the message body is constructed.\n\nThe data fields are provided in the property named `fields` in the `to` element.  Here is a complete example of how this might look\n\n```\n{\n  \"body\": \"Good morning {F0######}, your balance is {F1######}\",\n  \"to\":  [\n      {\"address\": \"27456789\",\"fields\": [\"Harry\", \"$1345.23\"] },\n      {\"address\": \"27456785\",\"fields\": [\"Sally\", \"$2345.58\"] }\n  ]\n}\n```\n\nIf you are sending to contacts (or to groups) in your phonebook, you can use the *Phonebook based templates*.  These are similar to the templates described above, but they have specific names. The template for the contact's first name is identified by `fn` and the template for the contact's surname is identified by `sn`.  Below in an example that will work if the numbers are registered in your phonebook. \n\n```\n{\n  \"body\": \"Hi {fn######} {sn######}, have a great day!\",\n  \"to\":  [\n      {\"address\": \"27456789\" },\n      {\"address\": \"27456785\" }\n  ]\n}\n```\n"
+    },
+    {
+      "id": "openapi_bulksms_com.profile.getProfile",
+      "name": "profile.getProfile",
+      "description": "Returns information about your user profile"
+    },
+    {
+      "id": "openapi_bulksms_com.webhooks.deleteWebhooksId",
+      "name": "webhooks.deleteWebhooksId",
+      "description": "Delete a webhook"
+    },
+    {
+      "id": "openapi_bulksms_com.webhooks.getWebhooks",
+      "name": "webhooks.getWebhooks",
+      "description": "Contains a list of your webhooks"
+    },
+    {
+      "id": "openapi_bulksms_com.webhooks.getWebhooksId",
+      "name": "webhooks.getWebhooksId",
+      "description": "Read a webhook"
+    },
+    {
+      "id": "openapi_bulksms_com.webhooks.postWebhooks",
+      "name": "webhooks.postWebhooks",
+      "description": "A webhook is an URL that you can register when you want the BulkSMS system to notify you about your messages.\nYou can register multiple webhooks, and each one will be called.  (Note: you can also use our [Web App](https://www.bulksms.com/account/#!/advanced-settings/webhooks) to manage your webhooks interactively.)  \nIf you want to be notified of `SENT` messages and `RECEIVED` messages you need to create two webhooks.\n\n\n### Implementing your webhook\n\nCode samples of Webhook implementations:\n* [PHP](samples/webhook-php.html)\n\nWhen you implement your webhook, there are a few rules to be aware of:\n- Your webhook must process `POST` requests that contains an array of messages in the post body.  This input given to your webhook has the same structure as the output produced when you call [Retrieve Messages](#tag/Message%2Fpaths%2F~1messages%2Fget).\n- When you register or update your webhook, the URL will be tested by invoking it with an empty array (`[]`). \n- It is possible for your webhook to receive multiple updates for the same message and status. It happens from time to time that the mobile network duplicates status updates.\n- The order by which the webhook is invoked can be unexpected.  For example, if sender A replies before sender B, your webhook might get the reply from B first.\n- The webhook is expected to comply with good practices with regard to the status code it responds with.\n  - A status code in the `1xx` and `2xx` range is taken as an acknowledgement that the invocation was received and that the webhook host is ready to receive another.\n  - A status code in the `4xx` range is taken as a permanent problem and indicates that the webhook cannot process the message. The specific message that caused the error will be discarded, but your webhook will be invoked again when another message becomes available.\n  - Any other status code will be taken as a temporary problem; and indicates that the BulkSMS system should retry. The specific message that caused the error will not be discarded and your webhook will be invoked again with this message (see the subsequent section for more details on retry processing).\n- Your webhook has to respond within `30` seconds.  If no response is given in this time, the invocation will be retried.\n- It is good idea to add a secret to your URL in order to make it more secure. Here is an example:\n`https://www.example.com/hook.php?secret=pass763265word`\n- You can use a non-standard port if necessary, for example: `https://www.example.com:8321/hook.php?secret=pass763265word`\n- Your webhook can be called from a dynamic range of IP addresses, and you should be prepared to accept that the source IP can change in the future, without notice. This practice has become common with cloud-hosted solutions. If this is an insurmountable problem for your organisation, please contact support.\n\n### Testing and troubleshooting        \n\nUse `curl` to test your webhook.  The command below is a template that shows how the BulkSMS system invokes your code. It must return `200` for your URL before you can register it as a webhook. \n\n```\ncurl -i -X POST 'YOUR_URL_HERE' --header 'Content-Type: application/json' --header 'User-Agent: BulkSMS Invoker' --data-raw '[]'\n```\n\nWhen a `200` is returned for an empty array, modify the template to post multiple messages by adding JSON between the square brackets ('[]').\n\nAfter your webhook is successfully registered, you can send a message to `1111111` for an end-to-end test.  The delivery to this test number will fail, but your webhook will be invoked (and there are no charges).  \n\n### The retry process\n\nThe process the BulkSMS systems follow to handle retries is roughly the following:\n- The first retry is scheduled for 90 seconds into the future.\n- After the first retry, subsequent failures will have longer delays, following this sequence - 3 minutes, 6 minutes, 12 minutes thereafter the message will be retried every 15 minutes for a 2 day period.\n- When all retries fail, the message will be discarded.\n\n### Problem reports via email\n\nYour are strongly advised to provide an email address when you register your webhook.\nA notice will be sent to this email address to keep you in the loop whenever there are problems with your webhook.\nIn order to prevent your inbox from being flooded, the system sends a notice about an observed error no more than once in a 24 hour period.\n\nThe following emails can be expected\n - A __message retrying__ email is sent after an invocation has failed with a retry-able error.  This email is an early warning, allowing you to investigate your systems.\n - A __message discarded__ email is sent after failure email is send when a message is discarded as a consequence of a non-retry-able error.\n"
+    },
+    {
+      "id": "openapi_bulksms_com.webhooks.postWebhooksId",
+      "name": "webhooks.postWebhooksId",
+      "description": "Update a webhook"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

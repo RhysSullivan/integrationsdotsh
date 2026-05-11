@@ -1,0 +1,27 @@
+{
+  "fetchedAt": "2026-04-30T15:21:07.242Z",
+  "status": "ok",
+  "count": 4,
+  "tools": [
+    {
+      "id": "mcp_ovios_home.discuss_shopping_needs",
+      "name": "discuss_shopping_needs",
+      "description": "Discuss what the customer is looking for to understand their shopping needs.\n\nUse this tool for ALL shopping conversations:\n- When the user describes what they're looking for\n- For follow-up questions and back-and-forth dialogue\n- When the user gives feedback on previously shown products (e.g., \"too expensive\", \"too big\")\n- When the user asks about products, categories, or features\n\nThe shopping advisor asks thoughtful questions, searches the product catalog\n(using AI-powered search and matching), and builds an understanding of the\ncustomer's needs. IMPORTANT: When the response includes has_products: true,\nyou MUST immediately call view_product_suggestions with the same session_id\nto display them visually. The user cannot see products until\nview_product_suggestions is called — never skip this step.\n\nAlways start here. Do NOT call view_product_suggestions without discussing\nneeds first, unless the user asks for a very specific product search."
+    },
+    {
+      "id": "mcp_ovios_home.view_product_suggestions",
+      "name": "view_product_suggestions",
+      "description": "View personalized product suggestions in an interactive display. Call this\nAFTER using discuss_shopping_needs when the response includes\nhas_products: true.\n\nPass the same session_id from the conversation — this ensures the\ndisplayed products match exactly what the advisor recommended based on\nthe customer's needs.\n\nOnly use query parameter for direct product searches without prior\nconversation (e.g., user says \"show me all sofas\")."
+    },
+    {
+      "id": "mcp_ovios_home.start_new_conversation",
+      "name": "start_new_conversation",
+      "description": "Start a new shopping conversation by clearing the current session.\n\nUse this when the customer wants to start over with a completely different\nshopping need, or when switching to a new customer."
+    },
+    {
+      "id": "mcp_ovios_home.view_product_information",
+      "name": "view_product_information",
+      "description": "View detailed information about a specific product including specifications,\nreviews, and pricing. Use this when the customer wants to learn more about\na product from their suggestions.\n\nReturns full product specifications, expert reviews, ratings, and pricing\nfrom all available retailers. When a session_id is provided, also generates\npersonalized insights explaining why this product fits the customer's\nstated needs (using AI-powered analysis)."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fetchedAt": "2026-04-30T15:21:58.017Z",
+  "status": "ok",
+  "count": 1,
+  "tools": [
+    {
+      "id": "mcp_ziprecruiter.search_jobs",
+      "name": "search_jobs",
+      "description": "Do not use this tool if the search is for jobs outside of the United States or Canada. Use this tool when the user expresses intent to find, search, browse, view, or compare job opportunities, for example, full-time roles, part-time positions, remote jobs, and many more. The user can find jobs by job title, skills, keywords, location, remote options, salary range, employment type, experience level, and posting recency. \nSTRICT ARGUMENT RULE: \n- Optional filters are opt-in only. The assistant must omit every optional filter unless the user explicitly stated that criterion in the current conversation. \n- Broad job-search requests must not be narrowed by default.\n\nIMPORTANT LOCATION RULES:\n- Do NOT guess the user's country, state/province, city, or address.\n- Do NOT set country_admin_code unless it is provided by the user.\n- Do NOT set location_types unless the user explicitly specifies a REMOTE/HYBRID/PHYSICAL job.\n- If no concrete location is available for a local search, ask the user for a city, state/province or address before invoking the tool.\n- If the user asks for remote jobs only, location may be omitted unless they specify a country.\n\nTrigger examples (invoke the tool for any of these):\n- \"find me a job\", \"show me remote jobs\", \"any part-time roles?\", \"what jobs are hiring\"\n- \"software engineer jobs in Austin\", \"warehouse jobs paying $25/hr\"\n- Follow-ups like \"more like these\", \"show next page\", \"any senior ones?\" \n\nNote:\n1. Extract relevant search criteria from the user's request; omit fields the user didn't specify.\n2. Tool response includes URL links for each job. When LLM is including URLs in the text response, always format them as Markdown hyperlinks using descriptive anchor text. Never output raw URLs."
+    }
+  ]
+}

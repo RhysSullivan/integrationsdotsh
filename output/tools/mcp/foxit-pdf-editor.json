@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:21:06.932Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "mcp_foxit_pdf_editor.upload_document",
+      "name": "upload_document",
+      "description": "**INTERNAL ONLY — DO NOT CALL FROM GPT/LLM.**\nUpload a document and return the document identifier for later tool calls.\nThis tool is intended for the PDF Tools widget / backend workflow.\nIn user conversations, GPT/LLM must NOT invoke this tool directly.\n\nTo upload a document, you MUST call **show_pdf_tools** to display the upload widget.\nThe widget will handle uploading and will return a document_id (resultDocumentId) for follow-up tools.\n\nRequired dependencies:\n- file_content must be the base64-encoded file bytes\n\nOptional parameters:\n- file_name custom filename for upload\n\nReturns:\n    JSON string with:\n    - success, message\n    - resultDocumentId: required by follow-up tools that operate on the uploaded document\n\nPrivacy behavior:\n    This tool returns only the uploaded document identifier required for later document operations.\n    It does not echo file content, file name, share links, tokens, or request debug data."
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.create_share_link",
+      "name": "create_share_link",
+      "description": "Create a time-limited public download link for an existing uploaded document.\n\nRequired dependency:\n- document_id must be the uploaded document identifier returned by the PDF Tools widget\n  or another prior document-upload step. This tool cannot create a share link without it.\n\nOptional parameters:\n- expiration_minutes: 10-1440 minutes (API default: 30 minutes)\n- filename: custom filename for download\n\nReturns:\n    JSON string with:\n    - success, message\n    - shareUrl: public download URL\n    - expiresAt: link expiration timestamp, if provided by the API"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.delete_document",
+      "name": "delete_document",
+      "description": "Delete a document from Foxit.\n\nThis will permanently delete the document from the cloud storage.\nUse this to clean up temporary documents after processing.\n\nRequired dependency:\n- document_id must be the identifier of the uploaded document to delete\n\nReturns:\n    JSON string with:\n    - success, message"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_word",
+      "name": "pdf_from_word",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert a Microsoft Word document to PDF format.\n\nSupported formats: .doc, .docx, .rtf, .dot, .dotx, .docm, .dotm, .wpd\n\nFeatures:\n- Preserves text formatting and styles\n- Maintains tables and images\n- Keeps headers and footers\n- Preserves page breaks and sections\n\nMaximum file size: 100MB\n\nWorkflow:\n1. Upload Word document using upload_document tool\n2. Call this tool with the documentId\n3. Wait for conversion to complete\n4. The tool automatically creates a share link and returns it"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_excel",
+      "name": "pdf_from_excel",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert a Microsoft Excel spreadsheet to PDF format.\n\nSupported formats: .xls, .xlsx, .xlsm, .xlsb\n\nFeatures:\n- Preserves cell formatting and formulas\n- Maintains charts and graphs\n- Keeps multiple sheets (each as separate page)\n- Preserves print settings\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_ppt",
+      "name": "pdf_from_ppt",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert a Microsoft PowerPoint presentation to PDF format.\n\nSupported formats: .ppt, .pptx, .pptm, .ppsx\n\nFeatures:\n- Preserves slide layouts and formatting\n- Maintains animations (as static images)\n- Keeps notes and comments\n- One slide per PDF page\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_text",
+      "name": "pdf_from_text",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert a plain text file to PDF format.\n\nSupported formats: .txt\n\nFeatures:\n- Preserves text content\n- Uses standard font and formatting\n- Automatic page breaks\n- UTF-8 encoding support\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_image",
+      "name": "pdf_from_image",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert an image to PDF format.\n\nSupported formats: .jpg, .jpeg, .png, .gif, .bmp, .tiff\n\nFeatures:\n- Preserves image quality\n- Automatic page sizing to fit image\n- Supports multiple images (one per page)\n- Maintains aspect ratio\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_html",
+      "name": "pdf_from_html",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert an HTML file to PDF format.\n\n    When to use this vs `pdf_from_url` (LLM: choose the right tool):\n    - Use `pdf_from_html` when you already have the page content as an HTML file\n        (e.g., “Save page as…”), or when the page is private/behind login/VPN/intranet\n        and cannot be fetched directly by the Foxit service.\n    - Use `pdf_from_url` when the target page is publicly accessible and you want\n        Foxit to fetch + render it directly from the URL (no upload).\n\nFeatures:\n- Renders HTML with CSS styling\n- Supports embedded images\n- Preserves hyperlinks\n- Automatic page breaks\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_from_url",
+      "name": "pdf_from_url",
+      "description": "Convert a live web page (URL) directly to a PDF.\n\n✅ No upload needed: This tool takes a URL and asks the Foxit Cloud PDF API\nto render that page server-side.\n\nImportant limitations (LLM: read before choosing this tool):\n- The URL must be publicly reachable by the Foxit service.\n- Pages requiring login, cookies, VPN/intranet access, or complex anti-bot\n    protections may fail or render incomplete.\n- JavaScript is supported but with time/feature limits (dynamic sites may differ\n    from what you see in your browser).\n\nIf the target page is NOT publicly accessible, use one of these instead:\n- Save the page as HTML/PDF locally, upload it, then call `pdf_from_html` (HTML)\n    or just keep the uploaded PDF.\n\nFeatures:\n- Renders live web pages into PDF\n- Includes CSS styling and images\n- Preserves hyperlinks\n- Automatic page breaks\n\nWorkflow:\n1. Call this tool with `url` (and optional page size)\n2. Wait for async task completion (handled internally)\n3. Returns `resultDocumentId` plus a share link (when share creation succeeds)"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_word",
+      "name": "pdf_to_word",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nConvert PDF to Microsoft Word format.\n\nOutput format: .docx\n\nFeatures:\n- Preserves text formatting\n- Maintains tables and images\n- Keeps page layout structure\n- Editable Word document\n\nMaximum file size: 100MB\n\nWorkflow:\n1. Upload PDF using upload_document tool\n2. Call this tool with the documentId\n3. Wait for conversion to complete\n4. The tool automatically creates a share link and returns it\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_excel",
+      "name": "pdf_to_excel",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert PDF to Microsoft Excel format.\n\nOutput format: .xlsx\n\nFeatures:\n- Extracts tables and data\n- Preserves cell formatting\n- Multiple sheets for multi-page PDFs\n- Editable spreadsheet\n\nBest for: PDFs containing tabular data\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_ppt",
+      "name": "pdf_to_ppt",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert PDF to Microsoft PowerPoint format.\n\nOutput format: .pptx\n\nFeatures:\n- One slide per PDF page\n- Preserves images and graphics\n- Maintains basic layout\n- Editable presentation\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_text",
+      "name": "pdf_to_text",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert PDF to plain text format.\n\nOutput format: .txt\n\nFeatures:\n- Extracts all text content\n- Preserves text order\n- UTF-8 encoding\n- Optional page range selection\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_html",
+      "name": "pdf_to_html",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert PDF to HTML format.\n\nOutput format: .html\n\nFeatures:\n- Preserves text and formatting\n- Maintains hyperlinks\n- Includes images\n- Responsive HTML output\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_to_image",
+      "name": "pdf_to_image",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nConvert PDF pages to images.\n\nOutput formats: .jpg, .png, .tiff (returned as .zip for multiple pages)\n\nFeatures:\n- High-quality image rendering\n- Optional page range selection\n- Configurable DPI/resolution\n- Multiple format support\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_merge",
+      "name": "pdf_merge",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nMerge multiple PDF documents into a single PDF.\n\nFeatures:\n- Combines PDFs in the specified order\n- Attempts to preserve bookmarks/links where supported (results may vary)\n- Output metadata/properties may differ from inputs\n\nMaximum file size: 100MB per document\n\nPassword-protected PDFs:\n- If any PDFs are password-protected, provide passwords via the passwords parameter\n- passwords list must match the length of document_ids\n- Use None for documents without passwords\n- Example: passwords=[None, \"password123\", None] for 3 documents where only the 2nd is protected"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_split",
+      "name": "pdf_split",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nSplit a PDF document into multiple files by fixed page count.\n- The API requires pageCount (pages per output file).\n- The output is a ZIP document containing the split PDFs.\n\nExample:\n- page_count=10 splits the PDF into files of 10 pages each (last file may have fewer pages).\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_extract_pages",
+      "name": "pdf_extract_pages",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\n\nExtract selected pages into a new PDF document.\n\nFeatures:\n- Extract any pages or page ranges into a new PDF\n- Preserves page content and formatting\n\nMaximum file size: 100MB"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_extract_text",
+      "name": "pdf_extract_text",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nExtract plain text content from selected pages.\n- returns plain text and a generated .txt document.\n- pageRange controls which pages are processed (1-based) and also supports \"all\", \"even\", \"odd\"."
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_compress",
+      "name": "pdf_compress",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nCompress a PDF document to reduce file size.\n\n**Do not offer compression level options. Only one default compression level is currently supported.**\n\nFeatures:\n- Attempts to reduce file size; compression ratio and quality impact vary by document\n- Optimizes embedded resources (e.g., images) and removes redundant data where possible\n- Output fidelity and file size depend on the input document\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_flatten",
+      "name": "pdf_flatten",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nFlatten a PDF document (merge all layers and form fields).\n\nFeatures:\n- Converts form fields to static content\n- Flattens annotations and markup\n- Merges all layers\n- Prevents further editing of forms\n\nUse cases:\n- Finalize forms before archiving\n- Prevent form tampering\n- Reduce file complexity\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_linearize",
+      "name": "pdf_linearize",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nLinearize a PDF document for fast web viewing.\n\nFeatures:\n- Optimizes PDF for progressive download\n- Enables page-at-a-time display in web browsers\n- Improves user experience for large PDFs\n- No visual changes to content\n\nUse cases:\n- Web-based PDF viewing\n- Streaming large documents\n- Improving load times\n\nMaximum file size: 100MB\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_delete_pages",
+      "name": "pdf_delete_pages",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nRemove specific pages from a PDF using exact page numbers/ranges.\n\nInput uses 1-based page numbers (page 1 is the first page).\n\nExamples:\n- \"1\" (delete first page)\n- \"1,3,5\" (delete pages 1, 3, 5)\n- \"5-10\" (delete pages 5 through 10)\n- \"1,3,5-10\" (mix)\n\nBehavior:\n- Invalid tokens are ignored and reported in the message/resultData.\n- Out-of-range pages are ignored (based on PDF pageCount) and reported.\n- Deletions are executed in descending page order to avoid index shifting issues.\n\nReturns:\n    JSON string with:\n            - success, message\n            - resultDocumentId: identifier of the updated PDF, returned for\n                follow-up operations on the generated file\n            - shareUrl: public download URL for the updated PDF, when available\n            - expiresAt: link expiration timestamp, if provided by the API"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_rotate_pages",
+      "name": "pdf_rotate_pages",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\nRotate specific pages in a PDF using exact page numbers/ranges.\n\nInput uses 1-based page numbers (page 1 is the first page).\n\n    Rotation can be provided as:\n    - 0 / 90 / 180 / 270 (number)\n    - \"0\" / \"90\" / \"180\" / \"270\" (string)\n    - One of the API enum strings:\n        ROTATE_0, ROTATE_CLOCKWISE_90, ROTATE_180, ROTATE_COUNTERCLOCKWISE_90.\n\nExample operation:\n    {\n      \"type\": \"ROTATE_PAGES\",\n      \"pages\": [4, 5, 6],\n      \"rotation\": \"ROTATE_CLOCKWISE_90\"\n    }\n\nBehavior:\n- Invalid tokens are ignored and reported in the message/resultData.\n- Out-of-range pages are ignored (based on PDF pageCount) and reported.\n\nReturns:\n    JSON string with:\n            - success, message\n            - resultDocumentId: identifier of the updated PDF, returned for\n                follow-up operations on the generated file\n            - shareUrl: public download URL for the updated PDF, when available\n            - expiresAt: link expiration timestamp, if provided by the API"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_reorder_pages",
+      "name": "pdf_reorder_pages",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nMove specified pages to a target position.\n\nInput uses 1-based page numbers (page 1 is the first page)."
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.get_pdf_properties",
+      "name": "get_pdf_properties",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nExtract comprehensive properties and metadata from a PDF document.\n\nIMPORTANT: This tool returns JSON data directly, not a file documentId.\n\nInformation returned:\n- Page count and dimensions\n- PDF version and file size\n- Encryption and security status\n- Digital signatures\n- Embedded files and fonts\n- Document metadata (title, author, creation date, etc.)\n- User permissions analysis\n- Page-level information (rotation, dimensions, scan detection)\n\nConfiguration options:\n- includeExtendedInfo: Get detailed metadata (fonts, signatures, encryption details)\n- includePageInfo: Include per-page information (dimensions, rotation, scan detection)\n\nUse cases:\n- Verify PDF structure before processing\n- Check if PDF is password-protected\n- Analyze PDF compatibility\n- Extract document metadata\n- Detect scanned pages\n\nWorkflow:\n1. Upload PDF using upload_document tool\n2. Call this tool with documentId\n3. Receive JSON data with all properties\n4. No download needed - data is returned directly\n\nPassword-protected PDFs:\n- If the PDF is password-protected, provide the password via the password parameter\n- Without a valid password, the operation will fail with an authentication error"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.pdf_compare",
+      "name": "pdf_compare",
+      "description": "CRITICAL PREREQUISITE: You MUST call show_pdf_tools first to display the upload widget.\nThe document_id parameter comes from the upload response in the widget.\n\nCompare two PDF documents and generate a visual-diff PDF.\nCompares:\n- Text content differences\n- Visual layout changes\n- Added/removed content\n- Modified sections\n\nThe result is a PDF report highlighting differences with:\n- Red annotations for deletions\n- Green annotations for additions\n- Yellow highlights for modifications\n\nUse cases:\n- Document version control\n- Contract review\n- Quality assurance\n- Change tracking\n\nWorkflow:\n1. Call show_pdf_tools to display the upload widget\n2. Upload both PDFs using the widget\n3. Call this tool with both documentIds\n4. The tool automatically creates a share link and returns it\n\nRequired dependencies:\n- document_id1 and document_id2 must be valid uploaded PDF document identifiers\n- password1 and password2 are only required when the corresponding PDFs are protected\n\nReturns:\n    JSON string with:\n    - success, message\n    - shareUrl: public download URL for the generated diff PDF, when available\n    - expiresAt: link expiration timestamp, if provided by the API\n    - resultDocumentId: returned only when a share link could not be created and the\n      generated result identifier is needed for follow-up retrieval"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.show_pdf_viewer",
+      "name": "show_pdf_viewer",
+      "description": "Display the PDF viewer widget for viewing a specific PDF document by document ID.\nWhen you get a share link or have a document ID, use this tool to show the PDF viewer.\nOr user want to open a PDF document in viewer mode, call this tool with tdocument_id.\n\nOptional parameters:\n    document_id: The document ID of the PDF document to view.\nReturns:\n    JSON string with widget display status and document ID"
+    },
+    {
+      "id": "mcp_foxit_pdf_editor.show_pdf_tools",
+      "name": "show_pdf_tools",
+      "description": "This is the ENTRY POINT for all file operations. You MUST call this tool first\nbefore performing any file processing operations to allow users to upload documents.\n\nDisplay the PDF tools widget for uploading and managing PDF documents.\n\nFeatures:\n- 📤 Upload PDF documents (drag-and-drop or browse)\n- 📋 View uploaded documents list\n- 🗑️ Delete unwanted documents\n- 🔄 Real-time status updates\n\nUsage scenarios:\n- User mentions \"upload PDF\", \"process document\", \"convert file\", etc.\n- Before executing any operation that requires a document_id\n- User wants to view uploaded documents\n\nSupported file formats:\n- PDF documents\n- Microsoft Office documents (Word, Excel, PowerPoint)\n- Images (PNG, JPEG, TIFF, BMP, GIF)\n- Text files\n- HTML files\n\nMaximum file size: 100MB"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:22:45.442Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_ideal_postcodes_co_uk.addressSearch.addressAutocomplete",
+      "name": "addressSearch.addressAutocomplete",
+      "description": "The address autocomplete API returns a list of address suggestions that match the query ordered by relevance.\n\nThis API can be used to power realtime address finders, also known as address autofill or address autocomplete.\n\nConsider using our Address Autocomplete JavaScript libraries to add address lookup to a form in moments.\n\n## Implementing Address Autocomplete\n\nRapid address autocompletion using our Address Autocomplete API is a 2 step process.\n\n1. Retrieve partial address suggestions via `/autocomplete/addresses`\n2. Retrieve the entire address with the ID provided in the suggestion\n\nStep 2 will decrement your lookup balance.\n\nPlease note, this API is not intended to be a free standalone resource.\n\n## Filters\n\nYou can strictly narrow your result by adding filters to your querystring. For instance, you can restrict to postcode `SW1A 2AA` by appending `postcode=sw1a2aa`.\n\nIf a filter term is invalid, e.g. `postcode=SW1A2AAA`, then an empty result set is returned and no lookup is incurred.\n\nYou can also scope using multiple terms for the same filter with a comma separated list of terms. E.g. Restrict results to E1, E2 and E3 outward codes: `postcode_outward=e1,e2,e3`. Multiple terms are `OR`'ed, i.e. the matching result sets are combined.\n\nAll filters can accept multiple terms unless stated otherwise below.\n\nFilters can also be combined. E.g. Restrict results to small user organisations in the N postcode area: `su_organisation_indicator=Y&postcode_area=n`. Multiple filters are `AND`'ed, i.e. each additional filter narrows the result set.\n\nA maximum of **10** terms are allowed across all filters.\n\n## Biases\n\nYou can boost certain addresses results that match specific address criteria. All bias searches are prefixed with `bias_`.\n\nBiasing (unlike filtering) also allow unmatched addresses to appear with lower precedence.\n\nFor instance, can boost addresses with postcode areas `SW` and `SE` by appending `bias_postcode_area=SW,SE`.\n\nNo bias effect applies to bias terms that are invalid. e.g. `bias_postcode=SW1A2AAA`\n\nYou may scope using multiple terms for the same bias with a comma separated list of terms. E.g. Restrict results to `E1`, `E2` and `E3` outward codes: <code>bias_postcode_outward=e1,e2,e3</code>.\n\nAll biases can accept multiple terms unless stated otherwise below.\n\nA combined maximum of **5** terms are allowed across all biases.\n\n## Suggestion Format\n\nThe suggestion format is prone to change over time. Attempts to parse the suggestion may result in your integration breaking. Instead use the suggestion as-is.\n\n## Rate Limiting\n\nYou can make up to 3000 requests to the autocomplete API within a 5 minute span. The HTTP Header contains information on your current rate limit.\n\n| Header                  | Description                                                                            |\n| ----------------------- | -------------------------------------------------------------------------------------- |\n| `X-RateLimit-Limit`     | The maximum number of requests that can be made in 5 minutes                           |\n| `X-RateLimit-Remaining` | The remaining requests within the current rate limit window                            |\n| `X-RateLimit-Reset`     | The time when the rate limit window resets in Unix Time (seconds) or UTC Epoch seconds |\n\n## Pricing\n\nThis API currently does not affect your balance. However, resolving a suggestion into a full address requires a paid request.\n\nPlease note, this API is not intended as a standalone free resource. Integrations that consistently make autocomplete requests without a paid request to resolve an address may be disrupted via tightened rate limits. Continued misuse will result in account suspension.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.addressSearch.resolve",
+      "name": "addressSearch.resolve",
+      "description": "Resolves an address autocompletion by its address ID.\n\nResolved addresses (including global addresses) are returned in a UK format (up to 3 address lines) using UK nomenclature (like postcode and county).\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.addressSearch.resolveUsa",
+      "name": "addressSearch.resolveUsa",
+      "description": "Resolves an address autocompletion by its address ID.\n\nResolved addresses (including global addresses) are returned in a US format (up to 2 address lines) using US nomenclature (like zipcode, state and city).\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.configs.createConfig",
+      "name": "configs.createConfig",
+      "description": "Create a config"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.configs.deleteConfig",
+      "name": "configs.deleteConfig",
+      "description": "Permanently deletes a configuration object."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.configs.listConfigs",
+      "name": "configs.listConfigs",
+      "description": "Lists configurations associated with a key"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.configs.retrieveConfig",
+      "name": "configs.retrieveConfig",
+      "description": "Retrieve config object by name"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.configs.updateConfig",
+      "name": "configs.updateConfig",
+      "description": "Updates configuration object"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.emails.emailValidation",
+      "name": "emails.emailValidation",
+      "description": "Query for and validate email addresses.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.keys.keyAvailability",
+      "name": "keys.keyAvailability",
+      "description": "Returns public information on key. Currently only returns whether the key is currently useable via the `available` property. Use this to discover if the key is useable before making further requests.\n\nYou may pass both API Keys (beginning `ak_`) and Sub-licensed Keys (beginning `sl_`).\n## Testing\n\nTo test your implementation of our API, you may use the following test keys.\n\n- **iddqd** Availability will return as `true`\n- **idkfa** Availability will return as `false`\n\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.keys.keyDetails",
+      "name": "keys.keyDetails",
+      "description": "Returns private data on the key including remaining lookups, available datasets and usage limits.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.keys.keyLogs",
+      "name": "keys.keyLogs",
+      "description": "Reports lookup information on a key for paid lookups.\n\nThis method requires a `user_token`, which can be found on your [accounts page](https://ideal-postcodes.co.uk/account).\n\nA maximum interval of 90 days can be provided for analysis. If no start or end date is provided, the last 21 days will be used as the default interval.\n\n## Download Usage History (CSV)\n\n`GET /keys/:key/lookups`\n\nReturns a CSV download of lookups performed and associated information.\n\nNote that the Content-Type returned will be CSV (text/csv). For a non 200 response, the `Content-Type` will revert to JSON with the error code and message embedded.\n\n## Data Redaction\n\nPersonally Identifiable Data (PII) caught in this your usage log (including IP, search term and URL data) will be redacted on a weekly basis.\n\nBy default, PII will be redacted if it is older than 21 days. This timeframe can be configured from your dashboard.\n\nYou may prevent PII collection altogether by setting the interval to `0` days.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.keys.keyUsage",
+      "name": "keys.keyUsage",
+      "description": "Reports the number of lookups consumed on a key for a range of days.\n\nA maximum interval of 90 days can be provided for analysis. If no start or end date is provided, the last 21 days will be used as the default interval.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.licensees.createLicensee",
+      "name": "licensees.createLicensee",
+      "description": "Create a licensee for the specified API Key."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.licensees.deleteLicensee",
+      "name": "licensees.deleteLicensee",
+      "description": "Cancels a licensee key. This renders a licensee unusable. This action can be reversed if you get in contact with us."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.licensees.listLicensees",
+      "name": "licensees.listLicensees",
+      "description": "Returns a list of licensees for a key."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.licensees.retrieveLicensee",
+      "name": "licensees.retrieveLicensee",
+      "description": "Returns licensee information as identified by the licensee key."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.licensees.updateLicensee",
+      "name": "licensees.updateLicensee",
+      "description": "Update Licensee"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.phoneNumbers.phoneNumberValidation",
+      "name": "phoneNumbers.phoneNumberValidation",
+      "description": "Query for and validate phone numbers.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.placeSearch.findPlace",
+      "name": "placeSearch.findPlace",
+      "description": "Query for geographical places across countries. Each query will return a list of place suggestions, which consists of a place name, descriptive name and id.\n\nThis API returns geographical information such as countries, capitals, administrative areas and more. It is ideal for correctly identifying a place along with any other details like geolocation.\n\n## Implementing Place Autocomplete\n\nExtracting the full information of a place is a 2 step process:\n\n1. Retrieve place suggestions via /places\n2. Retrieve the entire place with the ID provided in the suggestion\n\n## Suggestion Format\n\nEach place suggestion contains a descriptive name which you can provide to users to uniquely idenfity a place.\n\n## Rate Limiting\n\nYou can make up to 3000 requests to the autocomplete API within a 5 minute span. The HTTP Header contains information on your current rate limit.\n\n| Header                  | Description                                                                            |\n| ----------------------- | -------------------------------------------------------------------------------------- |\n| `X-RateLimit-Limit`     | The maximum number of requests that can be made in 5 minutes                           |\n| `X-RateLimit-Remaining` | The remaining requests within the current rate limit window                            |\n| `X-RateLimit-Reset`     | The time when the rate limit window resets in Unix Time (seconds) or UTC Epoch seconds |\n\n## Pricing\n\nThis API currently does not affect your balance. However, resolving a suggestion into a full place requires a paid request.\n\nPlease note, this API is not intended as a standalone free resource. Integrations that consistently make autocomplete requests without a paid request to resolve an place may be disrupted via tightened rate limits.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.placeSearch.resolvePlace",
+      "name": "placeSearch.resolvePlace",
+      "description": "Resolves a place autocompletion by its place ID.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.uk.addressCleanse",
+      "name": "uk.addressCleanse",
+      "description": "The address cleanse API attempts to return the closest matching address for any given address inputs. We also return a number of Match Level indicators that describe the degree to which the suggested address matches the input address. The more impaired the input address, the harder it is to cleanse.\n\n## Confidence Score\n\nThe confidence score is a number ranging between 0 and 1. Where 1 implies a full match and 0 implies no major elements completely match. Each incorrect, missing or misspelled element will subtract from the overall confidence score.\n\n### Deciding on an Acceptable Confidence Score Threshold\n\nDifferent address cleanse projects can have radically different inputs. However, within each project, the inputs tend to repeat the same errors. For instance, some input datasets may be exclusively inputted manually and be prone to typos. Others may have a persistently missing datapoint such as organistation name or postcode. For this reason, it is important to understand that there is no absolute Confidence Score threshold. Instead, the acceptable confidence score must be determined on a project by project basis based on systematic errors present in the data and business goals.\n\nWhen determining an acceptable Confidence Score threshold you should load a subset of the dataset into a spreadsheet application like Excel and sort on the score. Scrolling from top-to-bottom you will be able to observe matches from best to worst. As you start to hit the lower quality searches, you will be able to roughly determine:\n- Which confidence scores indicate ambigious matches (i.e. up to building level only)\n- Which confidence scores indicate a poor or no match (i.e. the nearest matching address is too far from the input address)\n\nDepending on your business goals, you can also use the Match Levels to determine an acceptable match. For instance, do you need to match up to the throroughfare or building name only? Are accurate organisation names an important feature?\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.uk.addresses",
+      "name": "uk.addresses",
+      "description": "Extract a list of complete addresses that match the query ordered by relevance score. This query accepts an optional limit and page query (defaults to 10 and 0 respectively).\n\nIf a valid postcode is passed as the query string, the entire address list for that postcode is passed as a result. Note, in these cases, limit and page parameters are ignored.\n\nThis API is designed as a multi-purpose tool for generating address lists, cleansing and wholesale data extraction according to specific parameters.\n\nFor address autocomplete, see our address finder API - which is designed for speed and address completion.\n\n## Reverse Geocoding\n\nReturn a list of addresses around a point using the lon= and lat= querystring arguments. Addresses will be sorted in order of distance to the point. The search radius is 100m.\n\n## Filters\n\nYou can strictly narrow your result by adding filters to your query string which correspond with an address attribute.\n\nFor instance, you can restrict to postcode `SW1A 2AA` by appending `postcode=sw1a2aa`.\n\nIf a filter term is invalid, e.g. `postcode=SW1A2AAA`, then an empty result set is returned and no lookup is incurred.\n\nYou can also scope using multiple terms for the same filter with a comma separated list of terms. E.g. Restrict results to E1, E2 and E3 outward codes: `postcode_outward=e1,e2,e3`. Multiple terms are `OR`'ed, i.e. the matching result sets are combined.\n\nAll filters can accept multiple terms unless stated otherwise below.\n\nMultiple filters can also be combined. E.g. Restrict results to small user organisations in the N postcode area: `su_organisation_indicator=Y&postcode_area=n`. Multiple filters are `AND`'ed, i.e. each additional filter narrows the result set.\n\nA combined maximum of 5 terms are allowed across all filters.\n\n## Biases\n\nYou can boost certain addresses results that correspond with a certain address attribute. All bias searches are prefixed with `bias_`.\n\nBiased searches, unlike filtered searches, also allow unmatched addresses to appear . These will rank lower.\n\nFor instance, you can boost addresses with postcode areas `SW` and `SE` by appending `bias_postcode_area=SW,SE`.\n\nIf a bias term is invalid, e.g. `bias_postcode=SW1A2AAA` no bias effect is applied.\n\nYou may scope using multiple terms for the same bias with a comma separated list of terms. E.g. Restrict results to `E1`, `E2` and `E3` outward codes: `bias_postcode_outward=e1,e2,e3`.\n\nAll biases can accept multiple terms unless stated otherwise below.\n\nA combined maximum of 5 terms are allowed across all biases.\n\n## Search by Postcode and Building Name or Number\n\nSearch by postcode and building attribute with the postcode filter and query argument. E.g. For \"SW1A 2AA Prime Minister\" `/v1/addresses?postcode=sw1a2aa&q=prime minister`.\n\nThe advantage of using filters is a postcode mismatch does not result in a lookup as no results are returned.\n\n#### Search By UPRN\n\nSearch by UPRN using the `uprn` filter and excluding the query argument. E.g. `/v1/addresses?uprn=100`.\n\n## Testing\n\n- **ID1 1QD** Returns a successful query response `2000`\n- **ID1 KFA** Returns an empty query response `2000`\n- **ID1 CLIP** Returns \"no lookups remaining\" error `4020`\n- **ID1 CHOP** Returns \"daily (or individual) lookup limit breached\" error `4021`\n\nTest request undergo the usual authentication and restriction rules. This is to help surface any issues that occur during implementation and does not cost you a lookup.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.uk.postcodes",
+      "name": "uk.postcodes",
+      "description": "Returns the complete list of addresses for a postcode. Postcode searches are space and case insensitive.\n\nThe Postcode Lookup API provides a JSON interface to search UK addresses from a postcode. It can be used to power Postcode Lookup driven address searches, like [Postcode Lookup](/postcode-lookup).\n\n## Postcode Not Found\n\nLookup balance is unaffected by invalid postcodes. The API returns a `404` response with response body:\n\n```json\n{\n  \"code\": 4040,\n  \"message\": \"Postcode not found\",\n  \"suggestions\": [\"SW1A 0AA\"]\n}\n```\n\n### Suggestions\n\nIf a postcode cannot be found, the API will provide up to 5 closest matching postcodes. Common errors will be corrected first (e.g. mixing up `O` and `0` or `I` and `1`).\n\nIf the suggestion list is small (fewer than 3), there is a high probability the correct postcode is there. You may notify the user or immediately trigger new searches.\n\nThe suggestion list will be empty if the postcode has deviated too far from a valid postcode format.\n\n## Multiple Residence\n\nA small number of postcodes will return more than 100 premises. These may require pagination. Use `page` to paginate the result set.\n"
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.uk.udprn",
+      "name": "uk.udprn",
+      "description": "Returns an address as identified by its Unique Delivery Point Reference Number (UDPRN).\n\nYou may find it useful to store UDPRN information as it can be used to retrieve the most recent information for an address. It can also be used to test for a deleted address.\n\nUDPRNs are an eight digit unique numeric code (e.g. 25962203) for any premise on the Postcode Address File. It's essentially a unique identifier for every address in the UK that Royal Mail has in its database.\n\n## Testing\n\nTo test your implementation of our API we have a range of test UDPRNs that yield both successful and unsuccessful responses to your request.\n\nThey are the following:\n\n- `0` Returns a successful UDPRN lookup response\n  `2000`\n- `-1` Returns \"UDPRN not found\", error `4044`\n- `-2` Returns \"no lookups remaining\", error `4020`\n- `-3` Returns \"daily (or individual) lookup limit breached\",\n  error `4021`\n\nTest request undergo the usual authentication and restriction rules. This is to help surface any issues that occur during implementation and does not cost you a lookup."
+    },
+    {
+      "id": "openapi_ideal_postcodes_co_uk.uk.umprn",
+      "name": "uk.umprn",
+      "description": "Returns a multiple occupancy address identifited via its UMPRN (Multiple Residence Unique ID).\n\nUMPRNs are a unique numeric code for any Multiple Residence household on the optional Multiple Residence dataset.\n\n## Testing\n\nTo test your implementation of our API we have a range of test UMPRNs that yield both successful and unsuccessful responses to your request. They are the following\n\n- `0` Returns a successful UMPRN lookup response `2000`\n- `-1` Returns \"UMPRN not found\", error `4044`\n- `-2` Returns \"no lookups remaining\", error `4020`\n- `-3` Returns \"daily (or individual) lookup limit breached\", error `4021`\n\nTest request undergo the usual authentication and restriction rules. This is to help surface any issues that occur during implementation and does not cost you a lookup.\n\n### Pricing\n\nPer lookup charges apply. Empty responses are not charged.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

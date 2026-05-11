@@ -1,0 +1,177 @@
+{
+  "fetchedAt": "2026-04-30T15:22:47.344Z",
+  "status": "ok",
+  "count": 34,
+  "tools": [
+    {
+      "id": "openapi_izettle_com_products_products.categories.createCategories",
+      "name": "categories.createCategories",
+      "description": "Create a new category"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.categories.deleteCategory",
+      "name": "categories.deleteCategory",
+      "description": "Delete a category"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.categories.getProductTypes",
+      "name": "categories.getProductTypes",
+      "description": "Retrieve all categories"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.categories.renameCategory",
+      "name": "categories.renameCategory",
+      "description": "Rename a category"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.discounts.createDiscount",
+      "name": "discounts.createDiscount",
+      "description": "Creates a single discount entity. The location of the newly created discount will be available in the successful response as a HttpHeaders.LOCATION header"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.discounts.deleteDiscount",
+      "name": "discounts.deleteDiscount",
+      "description": "Delete a single discount "
+    },
+    {
+      "id": "openapi_izettle_com_products_products.discounts.getAllDiscounts",
+      "name": "discounts.getAllDiscounts",
+      "description": "Retrieve all discounts"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.discounts.getDiscount",
+      "name": "discounts.getDiscount",
+      "description": "Get the full discount with the provided UUID. The method supports conditional GET through providing a HttpHeaders.IF_NONE_MATCH header. If the conditional prerequisite is fullfilled, the full discount is returned: otherwise a 304 not modified will be returned with an empty body."
+    },
+    {
+      "id": "openapi_izettle_com_products_products.discounts.updateDiscount",
+      "name": "discounts.updateDiscount",
+      "description": "Updates a discount entity using JSON merge patch (https://tools.ietf.org/html/rfc7386). This means that only included fields will be changed: null values removes the field on the target entity, and other values updates the field. Conditional updates are supported through the HttpHeaders.IF_MATCH header. If the conditional prerequisite is fullfilled, the discount is updated: otherwise a 412 precondition failed will be returned with an empty body."
+    },
+    {
+      "id": "openapi_izettle_com_products_products.images.getAllImageUrls",
+      "name": "images.getAllImageUrls",
+      "description": "Retrieves all library items images used by the organization, sorted by updated date"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.import.getLatestImportStatus",
+      "name": "import.getLatestImportStatus",
+      "description": "Get status for latest import"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.import.getStatusByUuid",
+      "name": "import.getStatusByUuid",
+      "description": "Get status for an import"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.import.importLibraryV2",
+      "name": "import.importLibraryV2",
+      "description": "Import library items"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.library.getLibrary",
+      "name": "library.getLibrary",
+      "description": "Will return the entire library for the authenticated user. If size of the library exceeds server preferences (normally 500) or the value of the optional limit parameter, the result will be paginated. Paginated responses return a Link header, indicating the next URI to fetch. The resulting header value will look something like:\n\n<https://products.izettle.com/organizations/self/library?limit=X&offset=Y>; rel=\"next\"\n\nwhere limit is number of items in response, and offset is the current position in pagination. The rel-part in the header is the links relation to the data previously recieved. The idea is that as long as this header is present there are still items remaining to be fetched. When either the header is not present or it's value doesn't contain any \"next\" value, all items have been sent to the client.\n\nNote: The client should NOT try to extract query parameters from the URI, but rather use it as-is for the next request. Also, clients should be perpared that one Link header might contain multiple other IRIs that are not \"next\" (there will never be more than one \"next\" though). See more at:\n\n    IETF: https://tools.ietf.org/html/rfc5988\n    GitHub: https://developer.github.com/guides/traversing-with-pagination/\n\nIf eventLogUuid is provided, the response will only include events affecting the library since that event. Such responses are normally quite small and would be a preferred method for most fat clients after retrieving the initial full library.\n"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.countAllProducts",
+      "name": "products.countAllProducts",
+      "description": "Retrieve the count of existing products"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.createProduct",
+      "name": "products.createProduct",
+      "description": "Create a new product"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.deleteProduct",
+      "name": "products.deleteProduct",
+      "description": "Delete a single product"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.deleteProducts",
+      "name": "products.deleteProducts",
+      "description": "Delete a list of products"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.getAllOptions",
+      "name": "products.getAllOptions",
+      "description": "Retrieve an aggregate of active Options in the library"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.getAllProductsInPos",
+      "name": "products.getAllProductsInPos",
+      "description": "Retrieve all products visible in POS"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.getAllProductsV2",
+      "name": "products.getAllProductsV2",
+      "description": "Retrieve all products visible in POS – v2"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.getProduct",
+      "name": "products.getProduct",
+      "description": "Get the full product with the provided UUID. The method supports conditional GET through providing a HttpHeaders.IF_NONE_MATCH header. If the conditional prerequisite is fullfilled, the full product is returned, otherwise a 304 not modified will be returned with an empty body."
+    },
+    {
+      "id": "openapi_izettle_com_products_products.products.updateProduct",
+      "name": "products.updateProduct",
+      "description": "Updates a product entity using JSON merge patch (https://tools.ietf.org/html/rfc7386). This means that only included fields will be changed: null values removes the field on the target entity, and other values updates the field. Conditional updates are supported through the HttpHeaders.IF_MATCH header. If the conditional prerequisite is fullfilled, the product is updated: otherwise a 412 (precondition failed) will be returned with an empty body."
+    },
+    {
+      "id": "openapi_izettle_com_products_products.productsOnline.createProductSlug",
+      "name": "productsOnline.createProductSlug",
+      "description": "Creates a unique slug (identifier) for a product. The slug is used to create a product URL"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.createTaxRates",
+      "name": "taxes.createTaxRates",
+      "description": "Create new tax rates"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.deleteTaxRate",
+      "name": "taxes.deleteTaxRate",
+      "description": "Delete a single tax rate"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.getProductCountForAllTaxes",
+      "name": "taxes.getProductCountForAllTaxes",
+      "description": "Get all tax rates and a count of products associated with each"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.getTaxRate",
+      "name": "taxes.getTaxRate",
+      "description": "Get a single tax rate"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.getTaxRates",
+      "name": "taxes.getTaxRates",
+      "description": "Get all available tax rates"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.getTaxSettings",
+      "name": "taxes.getTaxSettings",
+      "description": "Get the organization tax settings "
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.setTaxationMode",
+      "name": "taxes.setTaxationMode",
+      "description": "Update the organization tax settings"
+    },
+    {
+      "id": "openapi_izettle_com_products_products.taxes.updateTaxRate",
+      "name": "taxes.updateTaxRate",
+      "description": "Update a single tax rate"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

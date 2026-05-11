@@ -1,0 +1,87 @@
+{
+  "fetchedAt": "2026-04-30T15:44:51.543Z",
+  "status": "ok",
+  "count": 16,
+  "tools": [
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.headKeyPk",
+      "name": "key.headKeyPk",
+      "description": "HEAD info on Authentiq ID\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyBind",
+      "name": "key.keyBind",
+      "description": "Update Authentiq ID by replacing the object.\n\nv4: `JWT(sub,email,phone)` to bind email/phone hash; \n\nv5: POST issuer-signed email & phone scopes\nand PUT to update registration `JWT(sub, pk, devtoken, ...)`\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyRegister",
+      "name": "key.keyRegister",
+      "description": "Register a new ID `JWT(sub, devtoken)`\n\nv5: `JWT(sub, pk, devtoken, ...)`\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyRetrieve",
+      "name": "key.keyRetrieve",
+      "description": "Get public details of an Authentiq ID.\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyRevoke",
+      "name": "key.keyRevoke",
+      "description": "Revoke an Identity (Key) with a revocation secret"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyRevokeNosecret",
+      "name": "key.keyRevokeNosecret",
+      "description": "Revoke an Authentiq ID using email & phone.\n\nIf called with `email` and `phone` only, a verification code \nwill be sent by email. Do a second call adding `code` to \ncomplete the revocation.\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.key.keyUpdate",
+      "name": "key.keyUpdate",
+      "description": "update properties of an Authentiq ID.\n(not operational in v4; use PUT for now)\n\nv5: POST issuer-signed email & phone scopes in\na self-signed JWT\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.login.pushLoginRequest",
+      "name": "login.pushLoginRequest",
+      "description": "push sign-in request\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signConfirm",
+      "name": "scope.signConfirm",
+      "description": "this is a scope confirmation"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signDelete",
+      "name": "scope.signDelete",
+      "description": "delete a verification job"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signRequest",
+      "name": "scope.signRequest",
+      "description": "scope verification request\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signRetrieve",
+      "name": "scope.signRetrieve",
+      "description": "get the status / current content of a verification job"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signRetrieveHead",
+      "name": "scope.signRetrieveHead",
+      "description": "HEAD to get the status of a verification job"
+    },
+    {
+      "id": "openapi_6_dot_authentiqio_appspot_com.scope.signUpdate",
+      "name": "scope.signUpdate",
+      "description": "authority updates a JWT with its signature\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

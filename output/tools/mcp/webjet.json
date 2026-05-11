@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:19.646Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_webjet.hotels_search",
+      "name": "hotels.search",
+      "description": "Use this when the user wants to find hotels at a destination. Do not use for flight searches or for fetching rooms for a specific hotel - use hotels.list_rooms for that."
+    },
+    {
+      "id": "mcp_webjet.flights_search",
+      "name": "flights.search",
+      "description": "Use this when the user wants to search for available flights between two locations. Do not use for hotel searches, car rentals, or other non-flight travel."
+    },
+    {
+      "id": "mcp_webjet.hotels_list_rooms",
+      "name": "hotels.list_rooms",
+      "description": "Use this only after hotels.search has been called and the user has selected a specific hotel from the results. Requires a hotelId from a previous hotels.search response. Do not use to search for hotels across a destination, and do not call this without a hotelId - use hotels.search first."
+    }
+  ]
+}

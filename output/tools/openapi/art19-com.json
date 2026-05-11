@@ -1,0 +1,127 @@
+{
+  "fetchedAt": "2026-04-30T15:45:20.636Z",
+  "status": "ok",
+  "count": 24,
+  "tools": [
+    {
+      "id": "openapi_art19_com.classification.getClassifications",
+      "name": "classification.getClassifications",
+      "description": "Get a list of classifications"
+    },
+    {
+      "id": "openapi_art19_com.classification.getClassificationsId",
+      "name": "classification.getClassificationsId",
+      "description": "Get a specific classification"
+    },
+    {
+      "id": "openapi_art19_com.classificationInclusion.getClassificationInclusions",
+      "name": "classificationInclusion.getClassificationInclusions",
+      "description": "Classification Inclusions connect classifications with entities like series, episodes, or campaigns, amongst others.\n\nIn order to retrieve a set of classification inclusions, at least one of the following filter parameters must\nbe provided. Failing to do so renders a `400 Bad Request` response.\n\n- `ids[]`\n- `classified_id` and `classified_type`\n- `classified_id` and `classification_type`\n- `classification_id` and `classified_type`\n"
+    },
+    {
+      "id": "openapi_art19_com.classificationInclusion.getClassificationInclusionsId",
+      "name": "classificationInclusion.getClassificationInclusionsId",
+      "description": "Get a specific classification inclusion"
+    },
+    {
+      "id": "openapi_art19_com.credit.getCredits",
+      "name": "credit.getCredits",
+      "description": "Get a list of credits"
+    },
+    {
+      "id": "openapi_art19_com.credit.getCreditsId",
+      "name": "credit.getCreditsId",
+      "description": "Get a specific credit"
+    },
+    {
+      "id": "openapi_art19_com.episode.getEpisodes",
+      "name": "episode.getEpisodes",
+      "description": "One initial filter must be provided (`ids`, `series_id`, or `season_id`), otherwise a `400 Bad Request` response\nwill be returned. Additional filters are allowed.\n\nThis API will only return episodes that your credential has permission to access, which may not be exclusive to\nyour account, depending on the filter(s) being used. Be careful to filter the results as needed.\n"
+    },
+    {
+      "id": "openapi_art19_com.episode.getEpisodesId",
+      "name": "episode.getEpisodesId",
+      "description": "Get a specific episode"
+    },
+    {
+      "id": "openapi_art19_com.episode.getEpisodesIdNextSibling",
+      "name": "episode.getEpisodesIdNextSibling",
+      "description": "Get the episode released right after the specified one"
+    },
+    {
+      "id": "openapi_art19_com.episode.getEpisodesIdPreviousSibling",
+      "name": "episode.getEpisodesIdPreviousSibling",
+      "description": "Get the episode released right before the specified one"
+    },
+    {
+      "id": "openapi_art19_com.image.getImages",
+      "name": "image.getImages",
+      "description": "An image represents a piece of artwork attached to some entity like a series, season, or episode,\nand is _owned_ by an entity called the `bucket`.\nAn image is also a container for several `MediaAssets` representing the physical files for various\nstyles used.\n\n## Media Asset Styles for Images\n\nMost media assets use square images. You may upload and use a square image, or upload an image of any\nshape and crop it to a square by specifying the cropping area. This area – identified by a coordinate\n`x, y` and a `width` & `height` – is the portion of the image used for all cover art. If an image has\ncropping defined, the cropped version of the image will be used in any `regular` or `square` style of media\nasset. If the original file is rectangular and does not have cropping, then the system will use a squared\nversion of the original file with the smaller of width or height as the square size.\n\nThe original image as uploaded into the system is always retained unmodified and available through\nthe style `original`. All media asset styles except `stripped-original` consist of the cropped image.\n\nAn image has media assets with the following styles:\n\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `stripped-original`: The original file with all metadata (EXIF, XMP, PNG metadata, etc.) removed.\n  This should be used for any application needing the original, uncropped, image.\n- `regular`: If the image has cropping defined, this is the cropped image.\n  If not, this is a square version of the original.\n- `thumb`: A square thumbnail of the image with a size of `100x100` pixels.\n- `square-400`: A square version of the image with a size of `400x400` pixels.\n- `square-640`: A square version of the image with a size of `640x640` pixels.\n- `square-888`: A square version of the image with a size of `888x888` pixels.\n- `square-3000`: A square version of the image with a size of `3000x3000` pixels.\n  This variant is only created if the cropped width & height are each at least 3000.\n- `itunes`: A square version of the image with a size of `1400x1400` pixels.\n\n### Preferred image used in feeds\n\nFor the main series image used in feeds, it is ideal to use the `square-3000` version.\nIf that is not available, the `itunes` version should be used instead.\n\n"
+    },
+    {
+      "id": "openapi_art19_com.image.getImagesId",
+      "name": "image.getImagesId",
+      "description": "An image represents a piece of artwork attached to some entity like a series, season, or episode,\nand is _owned_ by an entity called the `bucket`.\nAn image is also a container for several `MediaAssets` representing the physical files for various\nstyles used.\n\n## Media Asset Styles for Images\n\nMost media assets use square images. You may upload and use a square image, or upload an image of any\nshape and crop it to a square by specifying the cropping area. This area – identified by a coordinate\n`x, y` and a `width` & `height` – is the portion of the image used for all cover art. If an image has\ncropping defined, the cropped version of the image will be used in any `regular` or `square` style of media\nasset. If the original file is rectangular and does not have cropping, then the system will use a squared\nversion of the original file with the smaller of width or height as the square size.\n\nThe original image as uploaded into the system is always retained unmodified and available through\nthe style `original`. All media asset styles except `stripped-original` consist of the cropped image.\n\nAn image has media assets with the following styles:\n\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `stripped-original`: The original file with all metadata (EXIF, XMP, PNG metadata, etc.) removed.\n  This should be used for any application needing the original, uncropped, image.\n- `regular`: If the image has cropping defined, this is the cropped image.\n  If not, this is a square version of the original.\n- `thumb`: A square thumbnail of the image with a size of `100x100` pixels.\n- `square-400`: A square version of the image with a size of `400x400` pixels.\n- `square-640`: A square version of the image with a size of `640x640` pixels.\n- `square-888`: A square version of the image with a size of `888x888` pixels.\n- `square-3000`: A square version of the image with a size of `3000x3000` pixels.\n  This variant is only created if the cropped width & height are each at least 3000.\n- `itunes`: A square version of the image with a size of `1400x1400` pixels.\n\n### Preferred image used in feeds\n\nFor the main series image used in feeds, it is ideal to use the `square-3000` version.\nIf that is not available, the `itunes` version should be used instead.\n\n"
+    },
+    {
+      "id": "openapi_art19_com.mediaAsset.getMediaAssets",
+      "name": "mediaAsset.getMediaAssets",
+      "description": "A media asset is part of a collection of assets or files representing an image or a piece of audio content\nlike an episode or an ad. Images, for example, have differently sized versions for better rendering performance,\nand a piece of audio content usually comes in different encoding formats.\n\nThe `style` attribute of a media asset describes the role an asset plays in the context of the collection.\nThe collection is what an asset is attached to (`attachment_id|type`).\n\n## Styles for Images\n\nMost media assets use square images. You may upload and use a square image, or upload an image of any\nshape and crop it to a square by specifying the cropping area. This area – identified by a coordinate\n`x, y` and a `width` & `height` – is the portion of the image used for all cover art. If an image has\ncropping defined, the cropped version of the image will be used in any `regular` or `square` style of media\nasset. If the original file is rectangular and does not have cropping, then the system will use a squared\nversion of the original file with the smaller of width or height as the square size.\n\nThe original image as uploaded into the system is always retained unmodified and available through\nthe style `original`. All media asset styles except `stripped-original` consist of the cropped image.\n\nAn image has media assets with the following styles:\n\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `stripped-original`: The original file with all metadata (EXIF, XMP, PNG metadata, etc.) removed.\n  This should be used for any application needing the original, uncropped, image.\n- `regular`: If the image has cropping defined, this is the cropped image.\n  If not, this is a square version of the original.\n- `thumb`: A square thumbnail of the image with a size of `100x100` pixels.\n- `square-400`: A square version of the image with a size of `400x400` pixels.\n- `square-640`: A square version of the image with a size of `640x640` pixels.\n- `square-888`: A square version of the image with a size of `888x888` pixels.\n- `square-3000`: A square version of the image with a size of `3000x3000` pixels.\n  This variant is only created if the cropped width & height are each at least 3000.\n- `itunes`: A square version of the image with a size of `1400x1400` pixels.\n\n### Preferred image used in feeds\n\nFor the main series image used in feeds, it is ideal to use the `square-3000` version.\nIf that is not available, the `itunes` version should be used instead.\n\n\n## Styles for Audio\n\n- `medium`: A medium-quality version of the audio asset in various formats.\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `waveform_data`: The generated BBC Audiowaveform data in JSON or binary format.\n\n"
+    },
+    {
+      "id": "openapi_art19_com.mediaAsset.getMediaAssetsId",
+      "name": "mediaAsset.getMediaAssetsId",
+      "description": "A media asset is part of a collection of assets or files representing an image or a piece of audio content\nlike an episode or an ad. Images, for example, have differently sized versions for better rendering performance,\nand a piece of audio content usually comes in different encoding formats.\n\nThe `style` attribute of a media asset describes the role an asset plays in the context of the collection.\nThe collection is what an asset is attached to (`attachment_id|type`).\n\n## Styles for Images\n\nMost media assets use square images. You may upload and use a square image, or upload an image of any\nshape and crop it to a square by specifying the cropping area. This area – identified by a coordinate\n`x, y` and a `width` & `height` – is the portion of the image used for all cover art. If an image has\ncropping defined, the cropped version of the image will be used in any `regular` or `square` style of media\nasset. If the original file is rectangular and does not have cropping, then the system will use a squared\nversion of the original file with the smaller of width or height as the square size.\n\nThe original image as uploaded into the system is always retained unmodified and available through\nthe style `original`. All media asset styles except `stripped-original` consist of the cropped image.\n\nAn image has media assets with the following styles:\n\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `stripped-original`: The original file with all metadata (EXIF, XMP, PNG metadata, etc.) removed.\n  This should be used for any application needing the original, uncropped, image.\n- `regular`: If the image has cropping defined, this is the cropped image.\n  If not, this is a square version of the original.\n- `thumb`: A square thumbnail of the image with a size of `100x100` pixels.\n- `square-400`: A square version of the image with a size of `400x400` pixels.\n- `square-640`: A square version of the image with a size of `640x640` pixels.\n- `square-888`: A square version of the image with a size of `888x888` pixels.\n- `square-3000`: A square version of the image with a size of `3000x3000` pixels.\n  This variant is only created if the cropped width & height are each at least 3000.\n- `itunes`: A square version of the image with a size of `1400x1400` pixels.\n\n### Preferred image used in feeds\n\nFor the main series image used in feeds, it is ideal to use the `square-3000` version.\nIf that is not available, the `itunes` version should be used instead.\n\n\n## Styles for Audio\n\n- `medium`: A medium-quality version of the audio asset in various formats.\n- `original`: This is the original file provided. May not be available, depending on permissions\n  and file type.\n- `waveform_data`: The generated BBC Audiowaveform data in JSON or binary format.\n\n"
+    },
+    {
+      "id": "openapi_art19_com.network.getNetworks",
+      "name": "network.getNetworks",
+      "description": "### Deprecations\n\n- The attribute `cover_image_id` has been replaced with the relationship `cover_image`\n  and will be removed from the response in a future release.\n"
+    },
+    {
+      "id": "openapi_art19_com.network.getNetworksId",
+      "name": "network.getNetworksId",
+      "description": "### Deprecations\n\n- The attribute `cover_image_id` has been replaced with the relationship `cover_image`\n  and will be removed from the response in a future release.\n"
+    },
+    {
+      "id": "openapi_art19_com.person.getPeople",
+      "name": "person.getPeople",
+      "description": "Each series, season, and episode has a Credits section where you may add people and roles.\nThis is an internal tool to recognize contributors. It is not related to ART19 users or account permissions.\nEach Person added will have no additional access or permissions granted as a result of being included in the Credits section.\n"
+    },
+    {
+      "id": "openapi_art19_com.person.getPeopleId",
+      "name": "person.getPeopleId",
+      "description": "Each series, season, and episode has a Credits section where you may add people and roles.\nThis is an internal tool to recognize contributors. It is not related to ART19 users or account permissions.\nEach Person added will have no additional access or permissions granted as a result of being included in the Credits section.\n"
+    },
+    {
+      "id": "openapi_art19_com.season.getSeasons",
+      "name": "season.getSeasons",
+      "description": "When retrieving a list of seasons, the result is automatically filtered depending on the\nprivileges the used credential holds. If there are no specific privileges to a series or network,\nonly active seasons for active series are included.\n"
+    },
+    {
+      "id": "openapi_art19_com.season.getSeasonsId",
+      "name": "season.getSeasonsId",
+      "description": "Get a specific season"
+    },
+    {
+      "id": "openapi_art19_com.series.getSeries",
+      "name": "series.getSeries",
+      "description": "When retrieving a list of series, the result is automatically filtered depending on the\nprivileges the used credential holds. All credentials will have access to active series\nwith a public page enabled (on ART19). Utilizing a filter to limit the result to series\nassociated with your account is recommended.\n"
+    },
+    {
+      "id": "openapi_art19_com.series.getSeriesId",
+      "name": "series.getSeriesId",
+      "description": "Get a specific series"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

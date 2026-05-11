@@ -1,0 +1,612 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.315Z",
+  "status": "ok",
+  "count": 121,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountCompanyLevel.getCompanies",
+      "name": "accountCompanyLevel.getCompanies",
+      "description": "Returns the list of company accounts that your API credential has access to. The list is grouped into pages as defined by the query parameters.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Account read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountCompanyLevel.getCompaniesCompanyId",
+      "name": "accountCompanyLevel.getCompaniesCompanyId",
+      "description": "Returns the company account specified in the path. Your API credential must have access to the company account. \n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Account read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountCompanyLevel.getCompaniesCompanyIdMerchants",
+      "name": "accountCompanyLevel.getCompaniesCompanyIdMerchants",
+      "description": "Returns the list of merchant accounts under the company account specified in the path. The list only includes merchant accounts that your API credential has access to. The list is grouped into pages as defined by the query parameters. \n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Account read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountMerchantLevel.getMerchants",
+      "name": "accountMerchantLevel.getMerchants",
+      "description": "Returns the list of merchant accounts that your API credential has access to. The list is grouped into pages as defined by the query parameters. \n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Account read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountMerchantLevel.getMerchantsMerchantId",
+      "name": "accountMerchantLevel.getMerchantsMerchantId",
+      "description": "Returns the merchant account specified in the path. Your API credential must have access to the merchant account.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Account read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountMerchantLevel.postMerchants",
+      "name": "accountMerchantLevel.postMerchants",
+      "description": "Creates a merchant account for the company account specified in the request.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Accounts read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountMerchantLevel.postMerchantsMerchantIdActivate",
+      "name": "accountMerchantLevel.postMerchantsMerchantIdActivate",
+      "description": "Sends a request to activate the merchant account identified in the path.\n\nYou get the result of the activation asychronously through a [`merchant.updated`](https://docs.adyen.com/api-explorer/ManagementNotification/latest/post/merchant.updated) webhook. Once the merchant account is activated, you can start using it to accept payments and payouts.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Accounts read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.getMerchantsMerchantIdStores",
+      "name": "accountStoreLevel.getMerchantsMerchantIdStores",
+      "description": "Returns a list of stores for the merchant account identified in the path. The list is grouped into pages as defined by the query parameters.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.getMerchantsMerchantIdStoresStoreId",
+      "name": "accountStoreLevel.getMerchantsMerchantIdStoresStoreId",
+      "description": "Returns the details of the store identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.getStores",
+      "name": "accountStoreLevel.getStores",
+      "description": "Returns a list of stores. The list is grouped into pages as defined by the query parameters.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.getStoresStoreId",
+      "name": "accountStoreLevel.getStoresStoreId",
+      "description": "Returns the details of the store identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.patchMerchantsMerchantIdStoresStoreId",
+      "name": "accountStoreLevel.patchMerchantsMerchantIdStoresStoreId",
+      "description": "Updates the store identified in the path. You can only update some store parameters.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.patchStoresStoreId",
+      "name": "accountStoreLevel.patchStoresStoreId",
+      "description": "Updates the store identified in the path.\nYou can only update some store parameters.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.postMerchantsMerchantIdStores",
+      "name": "accountStoreLevel.postMerchantsMerchantIdStores",
+      "description": "Creates a store for the merchant account identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.accountStoreLevel.postStores",
+      "name": "accountStoreLevel.postStores",
+      "description": "Creates a store for the merchant account specified in the request.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Stores read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsCompanyLevel.deleteCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "name": "allowedOriginsCompanyLevel.deleteCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "name": "allowedOriginsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "description": "Returns the list of [allowed origins](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) for the API credential identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "name": "allowedOriginsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "description": "Returns the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "name": "allowedOriginsCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "description": "Adds a new [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) to the API credential's list of allowed origins.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsMerchantLevel.deleteMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "name": "allowedOriginsMerchantLevel.deleteMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "name": "allowedOriginsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "description": "Returns the list of [allowed origins](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) for the API credential identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "name": "allowedOriginsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOriginsOriginId",
+      "description": "Returns the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.allowedOriginsMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "name": "allowedOriginsMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdAllowedOrigins",
+      "description": "Adds a new [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) to the API credential's list of allowed origins.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsCompanyLevel.getCompaniesCompanyIdApiCredentials",
+      "name": "apiCredentialsCompanyLevel.getCompaniesCompanyIdApiCredentials",
+      "description": "Returns the list of [API credentials](https://docs.adyen.com/development-resources/api-credentials) for the company account. The list is grouped into pages as defined by the query parameters.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialId",
+      "name": "apiCredentialsCompanyLevel.getCompaniesCompanyIdApiCredentialsApiCredentialId",
+      "description": "Returns the [API credential](https://docs.adyen.com/development-resources/api-credentials) identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsCompanyLevel.patchCompaniesCompanyIdApiCredentialsApiCredentialId",
+      "name": "apiCredentialsCompanyLevel.patchCompaniesCompanyIdApiCredentialsApiCredentialId",
+      "description": "Changes the API credential's roles, merchant account access, or allowed origins. The request has the new values for the fields you want to change. The response contains the full updated API credential, including the new values from the request. \n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsCompanyLevel.postCompaniesCompanyIdApiCredentials",
+      "name": "apiCredentialsCompanyLevel.postCompaniesCompanyIdApiCredentials",
+      "description": "Creates an [API credential](https://docs.adyen.com/development-resources/api-credentials) for the company account identified in the path. In the request, you can specify which merchant accounts the new API credential will have access to, as well as its roles and allowed origins.\n\nThe response includes several types of authentication details:\n* [API key](https://docs.adyen.com/development-resources/api-authentication#api-key-authentication): used for API request authentication.\n* [Client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works): public key used for client-side authentication.\n* [Username and password](https://docs.adyen.com/development-resources/api-authentication#using-basic-authentication): used for basic authentication.\n\n> Make sure you store the API key securely in your system. You won't be able to retrieve it later.\n\nIf your API key is lost or compromised, you need to [generate a new API key](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/apiCredentials/{apiCredentialId}/generateApiKey).\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsMerchantLevel.getMerchantsMerchantIdApiCredentials",
+      "name": "apiCredentialsMerchantLevel.getMerchantsMerchantIdApiCredentials",
+      "description": "Returns the list of [API credentials](https://docs.adyen.com/development-resources/api-credentials) for the merchant account. The list is grouped into pages as defined by the query parameters.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialId",
+      "name": "apiCredentialsMerchantLevel.getMerchantsMerchantIdApiCredentialsApiCredentialId",
+      "description": "Returns the [API credential](https://docs.adyen.com/development-resources/api-credentials) identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsMerchantLevel.patchMerchantsMerchantIdApiCredentialsApiCredentialId",
+      "name": "apiCredentialsMerchantLevel.patchMerchantsMerchantIdApiCredentialsApiCredentialId",
+      "description": "Changes the API credential's roles, or allowed origins. The request has the new values for the fields you want to change. The response contains the full updated API credential, including the new values from the request. \n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiCredentialsMerchantLevel.postMerchantsMerchantIdApiCredentials",
+      "name": "apiCredentialsMerchantLevel.postMerchantsMerchantIdApiCredentials",
+      "description": "Creates an [API credential](https://docs.adyen.com/development-resources/api-credentials) for the company account identified in the path. In the request, you can specify the roles and allowed origins for the new API credential.\n\nThe response includes the:\n* [API key](https://docs.adyen.com/development-resources/api-authentication#api-key-authentication): used for API request authentication.\n* [Client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works): public key used for client-side authentication.\n* [Username and password](https://docs.adyen.com/development-resources/api-authentication#using-basic-authentication): used for basic authentication.\n\n> Make sure you store the API key securely in your system. You won't be able to retrieve it later.\n\nIf your API key is lost or compromised, you need to [generate a new API key](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/merchants/{merchantId}/apiCredentials/{apiCredentialId}/generateApiKey).\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiKeyCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdGenerateApiKey",
+      "name": "apiKeyCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdGenerateApiKey",
+      "description": "Returns a new API key for the API credential. You can use the new API key a few minutes after generating it. The old API key stops working 24 hours after generating a new one.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.apiKeyMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdGenerateApiKey",
+      "name": "apiKeyMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdGenerateApiKey",
+      "description": "Returns a new API key for the API credential. You can use the new API key a few minutes after generating it. The old API key stops working 24 hours after generating a new one.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.clientKeyCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdGenerateClientKey",
+      "name": "clientKeyCompanyLevel.postCompaniesCompanyIdApiCredentialsApiCredentialIdGenerateClientKey",
+      "description": "Returns a new [client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works) for the API credential identified in the path. You can use the new client key a few minutes after generating it. The old client key stops working 24 hours after generating a new one.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.clientKeyMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdGenerateClientKey",
+      "name": "clientKeyMerchantLevel.postMerchantsMerchantIdApiCredentialsApiCredentialIdGenerateClientKey",
+      "description": "Returns a new [client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works) for the API credential identified in the path. You can use the new client key a few minutes after generating it. The old client key stops working 24 hours after generating a new one.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.myApiCredential.deleteMeAllowedOriginsOriginId",
+      "name": "myApiCredential.deleteMeAllowedOriginsOriginId",
+      "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) specified in the path.\nThe API key from the request is used to identify the [API credential](https://docs.adyen.com/development-resources/api-credentials).\n\nYou can make this request with any of the Management API roles."
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.myApiCredential.getMe",
+      "name": "myApiCredential.getMe",
+      "description": "Returns your [API credential](https://docs.adyen.com/development-resources/api-credentials) details based on the API Key you used in the request.\n\nYou can make this request with any of the Management API roles."
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.myApiCredential.getMeAllowedOrigins",
+      "name": "myApiCredential.getMeAllowedOrigins",
+      "description": "Returns the list of [allowed origins](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) of your [API credential](https://docs.adyen.com/development-resources/api-credentials) based on the API key you used in the request.\n\nYou can make this request with any of the Management API roles."
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.myApiCredential.getMeAllowedOriginsOriginId",
+      "name": "myApiCredential.getMeAllowedOriginsOriginId",
+      "description": "Returns the details of the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) specified in the path.\nThe API key from the request is used to identify the [API credential](https://docs.adyen.com/development-resources/api-credentials).\n\nYou can make this request with any of the Management API roles."
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.myApiCredential.postMeAllowedOrigins",
+      "name": "myApiCredential.postMeAllowedOrigins",
+      "description": "Adds an allowed origin to the list of [allowed origins](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) of your API credential.\nThe API key from the request is used to identify the [API credential](https://docs.adyen.com/development-resources/api-credentials).\n\nYou can make this request with any of the Management API roles."
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettings",
+      "name": "paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettings",
+      "description": "Returns details for all payment methods of the merchant account identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettingsPaymentMethodId",
+      "name": "paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettingsPaymentMethodId",
+      "description": "Returns details for the merchant account and the payment method identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettingsPaymentMethodIdGetApplePayDomains",
+      "name": "paymentMethodsMerchantLevel.getMerchantsMerchantIdPaymentMethodSettingsPaymentMethodIdGetApplePayDomains",
+      "description": "Returns all Apple Pay domains that are registered with the merchant account and the payment method identified in the path. For more information, see [Apple Pay documentation](https://docs.adyen.com/payment-methods/apple-pay/enable-apple-pay#register-merchant-domain).\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.patchMerchantsMerchantIdPaymentMethodSettingsPaymentMethodId",
+      "name": "paymentMethodsMerchantLevel.patchMerchantsMerchantIdPaymentMethodSettingsPaymentMethodId",
+      "description": "Updates payment method details for the merchant account and the payment method identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.postMerchantsMerchantIdPaymentMethodSettings",
+      "name": "paymentMethodsMerchantLevel.postMerchantsMerchantIdPaymentMethodSettings",
+      "description": "Sends a request to add a new payment method to the merchant account identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.paymentMethodsMerchantLevel.postMerchantsMerchantIdPaymentMethodSettingsPaymentMethodIdAddApplePayDomains",
+      "name": "paymentMethodsMerchantLevel.postMerchantsMerchantIdPaymentMethodSettingsPaymentMethodIdAddApplePayDomains",
+      "description": "Adds the new domain to the list of Apple Pay domains that are registered with the merchant account and the payment method identified in the path. For more information, see [Apple Pay documentation](https://docs.adyen.com/payment-methods/apple-pay/enable-apple-pay#register-merchant-domain).\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payment methods read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.payoutSettingsMerchantLevel.deleteMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "name": "payoutSettingsMerchantLevel.deleteMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "description": "Deletes the payout setting identified in the path.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Payout account settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.payoutSettingsMerchantLevel.getMerchantsMerchantIdPayoutSettings",
+      "name": "payoutSettingsMerchantLevel.getMerchantsMerchantIdPayoutSettings",
+      "description": "Returns the list of payout settings for the merchant account identified in the path.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payout account settings read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.payoutSettingsMerchantLevel.getMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "name": "payoutSettingsMerchantLevel.getMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "description": "Returns the payout setting identified in the path.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Payout account settings read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.payoutSettingsMerchantLevel.patchMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "name": "payoutSettingsMerchantLevel.patchMerchantsMerchantIdPayoutSettingsPayoutSettingsId",
+      "description": "Updates the payout setting identified in the path. You can enable or disable the payout setting.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Payout account settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.payoutSettingsMerchantLevel.postMerchantsMerchantIdPayoutSettings",
+      "name": "payoutSettingsMerchantLevel.postMerchantsMerchantIdPayoutSettings",
+      "description": "Sends a request to add a payout setting for the merchant account specified in the path. A payout setting links the merchant account to the [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) that contains the details of the payout bank account. Adyen verifies the bank account before allowing and enabling the payout setting.\n\nIf you're accepting payments in multiple currencies, you may add multiple payout settings for the merchant account.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Payout account settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalActionsCompanyLevel.getCompaniesCompanyIdAndroidApps",
+      "name": "terminalActionsCompanyLevel.getCompaniesCompanyIdAndroidApps",
+      "description": "Returns a list of the Android apps that are available for the company identified in the path. \nThese apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal actions read\n* Management API—Terminal actions read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalActionsCompanyLevel.getCompaniesCompanyIdAndroidCertificates",
+      "name": "terminalActionsCompanyLevel.getCompaniesCompanyIdAndroidCertificates",
+      "description": "Returns a list of the Android certificates that are available for the company identified in the path.\nTypically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal actions read\n* Management API—Terminal actions read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalActionsCompanyLevel.getCompaniesCompanyIdTerminalActions",
+      "name": "terminalActionsCompanyLevel.getCompaniesCompanyIdTerminalActions",
+      "description": "Returns the [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api) that have been scheduled for the company identified in the path.The response doesn't include actions that are scheduled by Adyen.\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal actions read\n* Management API—Terminal actions read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalActionsCompanyLevel.getCompaniesCompanyIdTerminalActionsActionId",
+      "name": "terminalActionsCompanyLevel.getCompaniesCompanyIdTerminalActionsActionId",
+      "description": "Returns the details of the [terminal action](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api) identified in the path.\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal actions read\n* Management API—Terminal actions read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalActionsTerminalLevel.postTerminalsScheduleActions",
+      "name": "terminalActionsTerminalLevel.postTerminalsScheduleActions",
+      "description": "Schedules a [terminal action](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api) by specifying the action and the terminals that the action must be applied to. \n\nThe following restrictions apply:\n* You can schedule only one action at a time. For example, to install a new app version and remove an old app version, you have to make two API requests. \n* The maximum number of terminals in a request is **100**. For example, to apply an action to 250 terminals, you have to divide the terminals over three API requests. \n* If there is an error with one or more terminal IDs in the request, the action is scheduled for none of the terminals. You need to fix the error and try again. \n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal actions read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdBillingEntities",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdBillingEntities",
+      "description": "Returns the billing entities of the company identified in the path and all merchant accounts belonging to the company.\nA billing entity is a legal entity where we charge orders to. An order for terminal products must contain the ID of a billing entity.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdShippingLocations",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdShippingLocations",
+      "description": "Returns the shipping locations for the company identified in the path and all merchant accounts belonging to the company.\nA shipping location includes the address where orders can be delivered, and an ID which you need to specify when ordering terminal products.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalModels",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalModels",
+      "description": "Returns a list of payment terminal models that the company identified in the path has access to.\nThe response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalOrders",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalOrders",
+      "description": "Returns a lists of terminal products orders for the company identified in the path.\nTo filter the list, use one or more of the query parameters.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalOrdersOrderId",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalOrdersOrderId",
+      "description": "Returns the details of the terminal products order identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalProducts",
+      "name": "terminalOrdersCompanyLevel.getCompaniesCompanyIdTerminalProducts",
+      "description": "Returns a country-specific list of payment terminal packages and parts that the company identified in the path has access to.\n \nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.patchCompaniesCompanyIdTerminalOrdersOrderId",
+      "name": "terminalOrdersCompanyLevel.patchCompaniesCompanyIdTerminalOrdersOrderId",
+      "description": "Updates the terminal products order identified in the path.\nUpdating is only possible while the order has the status **Placed**.\n\nThe request body only needs to contain what you want to change. \nHowever, to update the products in the `items` array, you must provide the entire array. For example, if the array has three items:\n To remove one item, the array must include the remaining two items. Or to add one item, the array must include all four items.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.postCompaniesCompanyIdShippingLocations",
+      "name": "terminalOrdersCompanyLevel.postCompaniesCompanyIdShippingLocations",
+      "description": "Creates a shipping location for the company identified in the path. A shipping location defines an address where orders can be delivered.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.postCompaniesCompanyIdTerminalOrders",
+      "name": "terminalOrdersCompanyLevel.postCompaniesCompanyIdTerminalOrders",
+      "description": "Creates an order for payment terminal products for the company identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersCompanyLevel.postCompaniesCompanyIdTerminalOrdersOrderIdCancel",
+      "name": "terminalOrdersCompanyLevel.postCompaniesCompanyIdTerminalOrdersOrderIdCancel",
+      "description": "Cancels the terminal products order identified in the path.\nCancelling is only possible while the order has the status **Placed**.\nTo cancel an order, make a POST call without a request body. The response returns the full order details, but with the status changed to **Cancelled**.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdBillingEntities",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdBillingEntities",
+      "description": "Returns the billing entities of the merchant account identified in the path.\nA billing entity is a legal entity where we charge orders to. An order for terminal products must contain the ID of a billing entity.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdShippingLocations",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdShippingLocations",
+      "description": "Returns the shipping locations for the merchant account identified in the path.\nA shipping location includes the address where orders can be delivered, and an ID which you need to specify when ordering terminal products.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalModels",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalModels",
+      "description": "Returns the payment terminal models that merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalOrders",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalOrders",
+      "description": "Returns a list of terminal products orders for the merchant account identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalOrdersOrderId",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalOrdersOrderId",
+      "description": "Returns the details of the terminal products order identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalProducts",
+      "name": "terminalOrdersMerchantLevel.getMerchantsMerchantIdTerminalProducts",
+      "description": "Returns a country-specific list of payment terminal packages and parts that the merchant account identified in the path has access to.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.patchMerchantsMerchantIdTerminalOrdersOrderId",
+      "name": "terminalOrdersMerchantLevel.patchMerchantsMerchantIdTerminalOrdersOrderId",
+      "description": "Updates the terminal products order identified in the path.\nUpdating is only possible while the order has the status **Placed**.\n\nThe request body only needs to contain what you want to change. \nHowever, to update the products in the `items` array, you must provice the entire array. For example, if the array has three items:\n To remove one item, the array must include the remaining two items. Or to add one item, the array must include all four items.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.postMerchantsMerchantIdShippingLocations",
+      "name": "terminalOrdersMerchantLevel.postMerchantsMerchantIdShippingLocations",
+      "description": "Creates a shipping location for the merchant account identified in the path. A shipping location defines an address where orders can be shipped to. \n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.postMerchantsMerchantIdTerminalOrders",
+      "name": "terminalOrdersMerchantLevel.postMerchantsMerchantIdTerminalOrders",
+      "description": "Creates an order for payment terminal products for the merchant account identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalOrdersMerchantLevel.postMerchantsMerchantIdTerminalOrdersOrderIdCancel",
+      "name": "terminalOrdersMerchantLevel.postMerchantsMerchantIdTerminalOrdersOrderIdCancel",
+      "description": "Cancels the terminal products order identified in the path.\nCancelling is only possible while the order has the status **Placed**.\nTo cancel an order, make a POST call without a request body. The response returns the full order details, but with the status changed to **Cancelled**.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal ordering read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsCompanyLevel.getCompaniesCompanyIdTerminalLogos",
+      "name": "terminalSettingsCompanyLevel.getCompaniesCompanyIdTerminalLogos",
+      "description": "Returns the logo that is configured for a specific payment terminal model at the company identified in the path. \n\nThe logo is returned as a Base64-encoded string. You need to Base64-decode the string to get the actual image file. \nThis logo applies to all terminals of the specified model under the company, unless a different logo is configured at a lower level (merchant account, store, or individual terminal).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsCompanyLevel.getCompaniesCompanyIdTerminalSettings",
+      "name": "terminalSettingsCompanyLevel.getCompaniesCompanyIdTerminalSettings",
+      "description": "Returns the payment terminal settings that are configured for the company identified in the path. These settings apply to all terminals under the company, unless different values are configured at a lower level (merchant account, store, or individual terminal).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsCompanyLevel.patchCompaniesCompanyIdTerminalLogos",
+      "name": "terminalSettingsCompanyLevel.patchCompaniesCompanyIdTerminalLogos",
+      "description": "Updates the logo that is configured for a specific payment terminal model at the company identified in the path. You can update the logo for only one terminal model at a time.\nThis logo applies to all terminals of the specified model under the company, unless a different logo is configured at a lower level (merchant account, store, or individual terminal). \n* To change the logo, specify the image file as a Base64-encoded string.\n* To restore the logo inherited from the Adyen PSP level, specify an empty logo value.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsCompanyLevel.patchCompaniesCompanyIdTerminalSettings",
+      "name": "terminalSettingsCompanyLevel.patchCompaniesCompanyIdTerminalSettings",
+      "description": "Updates payment terminal settings for the company identified in the path. These settings apply to all terminals under the company, unless different values are configured at a lower level (merchant account, store, or individual terminal).\n\n* To change a parameter value, include the full object that contains the parameter, even if you don't want to change all parameters in the object.\n* To restore a parameter value inherited from the Adyen PSP level, include the full object that contains the parameter, and specify an empty value for the parameter or omit the parameter.\n* Objects that are not included in the request are not updated.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsMerchantLevel.getMerchantsMerchantIdTerminalLogos",
+      "name": "terminalSettingsMerchantLevel.getMerchantsMerchantIdTerminalLogos",
+      "description": "Returns the logo that is configured for a specific payment terminal model at the merchant account identified in the path. \nThe logo is returned as a Base64-encoded string. You need to Base64-decode the string to get the actual image file. \nThis logo applies to all terminals of the specified model under the merchant account, unless a different logo is configured at a lower level (store or individual terminal).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsMerchantLevel.getMerchantsMerchantIdTerminalSettings",
+      "name": "terminalSettingsMerchantLevel.getMerchantsMerchantIdTerminalSettings",
+      "description": "Returns the payment terminal settings that are configured for the merchant account identified in the path. These settings apply to all terminals under the merchant account unless different values are configured at a lower level (store or individual terminal).\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsMerchantLevel.patchMerchantsMerchantIdTerminalLogos",
+      "name": "terminalSettingsMerchantLevel.patchMerchantsMerchantIdTerminalLogos",
+      "description": "Updates the logo for a specific payment terminal model at the merchant account identified in the path. You can update the logo for only one terminal model at a time. \nThis logo applies to all terminals of the specified model under the merchant account, unless a different logo is configured at a lower level (store or individual terminal).\n\n* To change the logo, specify the image file as a Base64-encoded string.\n* To restore the logo inherited from the company account, specify an empty logo value.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsMerchantLevel.patchMerchantsMerchantIdTerminalSettings",
+      "name": "terminalSettingsMerchantLevel.patchMerchantsMerchantIdTerminalSettings",
+      "description": "Updates payment terminal settings for the merchant account identified in the path.\nThese settings apply to all terminals under the merchant account, unless different values are configured at a lower level (store or individual terminal).\n\n* To change a parameter value, include the full object that contains the parameter, even if you don't want to change all parameters in the object.\n* To restore a parameter value inherited from a higher level, include the full object that contains the parameter, and specify an empty value for the parameter or omit the parameter.\n* Objects that are not included in the request are not updated.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.getMerchantsMerchantIdStoresReferenceTerminalLogos",
+      "name": "terminalSettingsStoreLevel.getMerchantsMerchantIdStoresReferenceTerminalLogos",
+      "description": "Returns the logo that is configured for a specific payment terminal model at the store identified in the path. \nThe logo is returned as a Base64-encoded string. You need to Base64-decode the string to get the actual image file. \nThis logo applies to all terminals of the specified model under the store, unless a different logo is configured for an individual terminal.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.getMerchantsMerchantIdStoresReferenceTerminalSettings",
+      "name": "terminalSettingsStoreLevel.getMerchantsMerchantIdStoresReferenceTerminalSettings",
+      "description": "Returns the payment terminal settings that are configured for the store identified in the path. These settings apply to all terminals under the store unless different values are configured for an individual terminal.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.getStoresStoreIdTerminalLogos",
+      "name": "terminalSettingsStoreLevel.getStoresStoreIdTerminalLogos",
+      "description": "Returns the logo that is configured for a specific payment terminal model at the store identified in the path. \nThe logo is returned as a Base64-encoded string. You need to Base64-decode the string to get the actual image file. \nThis logo applies to all terminals of that model under the store unless a different logo is configured for an individual terminal.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.getStoresStoreIdTerminalSettings",
+      "name": "terminalSettingsStoreLevel.getStoresStoreIdTerminalSettings",
+      "description": "Returns the payment terminal settings that are configured for the store identified in the path. These settings apply to all terminals under the store unless different values are configured for an individual terminal.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.patchMerchantsMerchantIdStoresReferenceTerminalLogos",
+      "name": "terminalSettingsStoreLevel.patchMerchantsMerchantIdStoresReferenceTerminalLogos",
+      "description": "Updates the logo that is configured for a specific payment terminal model at the store identified in the path. You can update the logo for only one terminal model at a time.\nThis logo applies to all terminals of the specified model under the store, unless a different logo is configured for an individual terminal. \n\n* To change the logo, specify the image file as a Base64-encoded string.\n* To restore the logo inherited from a higher level (merchant or company account), specify an empty logo value.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.patchMerchantsMerchantIdStoresReferenceTerminalSettings",
+      "name": "terminalSettingsStoreLevel.patchMerchantsMerchantIdStoresReferenceTerminalSettings",
+      "description": "Updates payment terminal settings for the store identified in the path. These settings apply to all terminals under the store, unless different values are configured for an individual terminal.\n\n* To change a parameter value, include the full object that contains the parameter, even if you don't want to change all parameters in the object.\n* To restore a parameter value inherited from a higher level, include the full object that contains the parameter, and specify an empty value for the parameter or omit the parameter.\n* Objects that are not included in the request are not updated.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.patchStoresStoreIdTerminalLogos",
+      "name": "terminalSettingsStoreLevel.patchStoresStoreIdTerminalLogos",
+      "description": "Updates the logo that is configured for a specific payment terminal model at the store identified in the path. You can update the logo for only one terminal model at a time.\nThis logo applies to all terminals of the specified model under the store, unless a different logo is configured for an individual terminal. \n\n* To change the logo, specify the image file as a Base64-encoded string.\n* To restore the logo inherited from a higher level (merchant or company account), specify an empty logo value.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsStoreLevel.patchStoresStoreIdTerminalSettings",
+      "name": "terminalSettingsStoreLevel.patchStoresStoreIdTerminalSettings",
+      "description": "Updates payment terminal settings for the store identified in the path. These settings apply to all terminals under the store, unless different values are configured for an individual terminal.\n\n* To change a parameter value, include the full object that contains the parameter, even if you don't want to change all parameters in the object.\n* To restore a parameter value inherited from a higher level, include the full object that contains the parameter, and specify an empty value for the parameter or omit the parameter.\n* Objects that are not included in the request are not updated.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsTerminalLevel.getTerminalsTerminalIdTerminalLogos",
+      "name": "terminalSettingsTerminalLevel.getTerminalsTerminalIdTerminalLogos",
+      "description": "Returns the logo that is configured for the payment terminal identified in the path.\nThe logo is returned as a Base64-encoded string. You need to Base64-decode the string to get the actual image file.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsTerminalLevel.getTerminalsTerminalIdTerminalSettings",
+      "name": "terminalSettingsTerminalLevel.getTerminalsTerminalIdTerminalSettings",
+      "description": "Returns the settings that are configured for the payment terminal identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsTerminalLevel.patchTerminalsTerminalIdTerminalLogos",
+      "name": "terminalSettingsTerminalLevel.patchTerminalsTerminalIdTerminalLogos",
+      "description": "Updates the logo for the payment terminal identified in the path.\n\n* To change the logo, specify the image file as a Base64-encoded string.\n* To restore the logo inherited from a higher level (store, merchant account, or company account), specify an empty logo value.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalSettingsTerminalLevel.patchTerminalsTerminalIdTerminalSettings",
+      "name": "terminalSettingsTerminalLevel.patchTerminalsTerminalIdTerminalSettings",
+      "description": "Updates the settings that are configured for the payment terminal identified in the path.\n\n* To change a parameter value, include the full object that contains the parameter, even if you don't want to change all parameters in the object.\n* To restore a parameter value inherited from a higher level, include the full object that contains the parameter, and specify an empty value for the parameter or omit the parameter.\n* Objects that are not included in the request are not updated.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Terminal settings read and write\n\nFor [sensitive terminal settings](https://docs.adyen.com/point-of-sale/automating-terminal-management/configure-terminals-api#sensitive-terminal-settings), your API credential must have the following role:\n* Management API—Terminal settings Advanced read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.terminalsTerminalLevel.getTerminals",
+      "name": "terminalsTerminalLevel.getTerminals",
+      "description": "Returns the payment terminals that the API credential has access to and that match the query parameters. \nWhen using `searchQuery`, other query parameters are ignored.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API — Terminal actions read"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersCompanyLevel.getCompaniesCompanyIdUsers",
+      "name": "usersCompanyLevel.getCompaniesCompanyIdUsers",
+      "description": "Returns the list of users for the `companyId` identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersCompanyLevel.getCompaniesCompanyIdUsersUserId",
+      "name": "usersCompanyLevel.getCompaniesCompanyIdUsersUserId",
+      "description": "Returns user details for the `userId` and the `companyId` identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersCompanyLevel.patchCompaniesCompanyIdUsersUserId",
+      "name": "usersCompanyLevel.patchCompaniesCompanyIdUsersUserId",
+      "description": "Updates user details for the `userId` and the `companyId` identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersCompanyLevel.postCompaniesCompanyIdUsers",
+      "name": "usersCompanyLevel.postCompaniesCompanyIdUsers",
+      "description": "Creates the user for the `companyId` identified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersMerchantLevel.getMerchantsMerchantIdUsers",
+      "name": "usersMerchantLevel.getMerchantsMerchantIdUsers",
+      "description": "Returns a list of users associated with the `merchantId` specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersMerchantLevel.getMerchantsMerchantIdUsersUserId",
+      "name": "usersMerchantLevel.getMerchantsMerchantIdUsersUserId",
+      "description": "Returns user details for the `userId` and the `merchantId` specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersMerchantLevel.patchMerchantsMerchantIdUsersUserId",
+      "name": "usersMerchantLevel.patchMerchantsMerchantIdUsersUserId",
+      "description": "Updates user details for the `userId` and the `merchantId` specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.usersMerchantLevel.postMerchantsMerchantIdUsers",
+      "name": "usersMerchantLevel.postMerchantsMerchantIdUsers",
+      "description": "Creates a user for the `merchantId` specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Users read and write\n"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.deleteCompaniesCompanyIdWebhooksWebhookId",
+      "name": "webhooksCompanyLevel.deleteCompaniesCompanyIdWebhooksWebhookId",
+      "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.getCompaniesCompanyIdWebhooks",
+      "name": "webhooksCompanyLevel.getCompaniesCompanyIdWebhooks",
+      "description": "Lists all webhook configurations for the company account.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.getCompaniesCompanyIdWebhooksWebhookId",
+      "name": "webhooksCompanyLevel.getCompaniesCompanyIdWebhooksWebhookId",
+      "description": "Returns the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.patchCompaniesCompanyIdWebhooksWebhookId",
+      "name": "webhooksCompanyLevel.patchCompaniesCompanyIdWebhooksWebhookId",
+      "description": "Make changes to the configuration of the webhook identified in the path. The request contains the new values you want to have in the webhook configuration. The response contains the full configuration for the webhook, which includes the new values from the request.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.postCompaniesCompanyIdWebhooks",
+      "name": "webhooksCompanyLevel.postCompaniesCompanyIdWebhooks",
+      "description": "Subscribe to receive webhook notifications about events related to your company account. You can add basic authentication to make sure the data is secure.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.postCompaniesCompanyIdWebhooksWebhookIdGenerateHmac",
+      "name": "webhooksCompanyLevel.postCompaniesCompanyIdWebhooksWebhookIdGenerateHmac",
+      "description": "Returns an [HMAC key](https://en.wikipedia.org/wiki/HMAC) for the webhook identified in the path. This key allows you to check the integrity and the origin of the notifications you receive.By creating an HMAC key, you start receiving [HMAC-signed notifications](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures#enable-hmac-signatures) from Adyen. Find out more about how to [verify HMAC signatures](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures).\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksCompanyLevel.postCompaniesCompanyIdWebhooksWebhookIdTest",
+      "name": "webhooksCompanyLevel.postCompaniesCompanyIdWebhooksWebhookIdTest",
+      "description": "Sends sample notifications to test if the webhook is set up correctly.\n\nWe send sample notifications for maximum 20 of the merchant accounts that the webhook is configured for. If the webhook is configured for more than 20 merchant accounts, use the `merchantIds` array to specify a subset of the merchant accounts for which to send test notifications.\n\nWe send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.\n\nThe response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other response fields to troubleshoot unsuccessful tests.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.deleteMerchantsMerchantIdWebhooksWebhookId",
+      "name": "webhooksMerchantLevel.deleteMerchantsMerchantIdWebhooksWebhookId",
+      "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.getMerchantsMerchantIdWebhooks",
+      "name": "webhooksMerchantLevel.getMerchantsMerchantIdWebhooks",
+      "description": "Lists all webhook configurations for the merchant account.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.getMerchantsMerchantIdWebhooksWebhookId",
+      "name": "webhooksMerchantLevel.getMerchantsMerchantIdWebhooksWebhookId",
+      "description": "Returns the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.patchMerchantsMerchantIdWebhooksWebhookId",
+      "name": "webhooksMerchantLevel.patchMerchantsMerchantIdWebhooksWebhookId",
+      "description": "Make changes to the configuration of the webhook identified in the path. The request contains the new values you want to have in the webhook configuration. The response contains the full configuration for the webhook, which includes the new values from the request.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.postMerchantsMerchantIdWebhooks",
+      "name": "webhooksMerchantLevel.postMerchantsMerchantIdWebhooks",
+      "description": "Subscribe to receive webhook notifications about events related to your merchant account. You can add basic authentication to make sure the data is secure.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.postMerchantsMerchantIdWebhooksWebhookIdGenerateHmac",
+      "name": "webhooksMerchantLevel.postMerchantsMerchantIdWebhooksWebhookIdGenerateHmac",
+      "description": "Returns an [HMAC key](https://en.wikipedia.org/wiki/HMAC) for the webhook identified in the path. This key allows you to check the integrity and the origin of the notifications you receive.By creating an HMAC key, you start receiving [HMAC-signed notifications](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures#enable-hmac-signatures) from Adyen. Find out more about how to [verify HMAC signatures](https://docs.adyen.com/development-resources/webhooks/verify-hmac-signatures).\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi_adyen_com_managementservice_managementservice.webhooksMerchantLevel.postMerchantsMerchantIdWebhooksWebhookIdTest",
+      "name": "webhooksMerchantLevel.postMerchantsMerchantIdWebhooksWebhookIdTest",
+      "description": "Sends sample notifications to test if the webhook is set up correctly.\n\nWe send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.\n\nThe response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other fields to troubleshoot unsuccessful tests.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:19:59.981Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_okx.gateway_crypto_chart",
+      "name": "gateway.crypto-chart",
+      "description": "Display cryptocurrency price charts and market information. Use this tool to display cryptocurrency price charts and market information.\n\nWhen to use:\n- User asks about cryptocurrency prices, charts, or market data\n- User wants to view K-line charts for a specific coin\n- User wants to compare different cryptocurrencies\n- User asks to switch between different coins or chart intervals\n\nParameters:\n- symbol: Cryptocurrency symbol (e.g., BTC, ETH, SOL, DOGE). Defaults to BTC if not specified.\n- interval: Chart time period - '1d' for daily, '1w' for weekly, '1M' for monthly. Defaults to '1d'.\n- days: Number of historical days to load (default: 365). Maximum depends on interval.\n\nExamples:\n- \"Show me Bitcoin chart\" → Use symbol: \"BTC\"\n- \"Display Ethereum weekly chart\" → Use symbol: \"ETH\", interval: \"1w\"\n- \"Show me SOL price for the last 6 months\" → Use symbol: \"SOL\", days: 180\n- \"Switch to monthly view\" → Use interval: \"1M\"\n\nAlways provide the symbol parameter when the user mentions a specific cryptocurrency. If the user wants to change the chart period, use the interval parameter."
+    },
+    {
+      "id": "mcp_okx.gateway_token_comparison",
+      "name": "gateway.token-comparison",
+      "description": "Compare multiple cryptocurrencies side by side. Use this tool to compare prices, 24h changes, and other metrics for different tokens.\n\nWhen to use:\n- User asks to compare multiple cryptocurrencies\n- User wants to see side-by-side comparison of tokens\n- User asks about differences between tokens\n\nParameters:\n- symbols: Comma-separated list of cryptocurrency symbols to compare (e.g., BTC,ETH,SOL). Minimum 2 symbols, maximum 10.\n\nExamples:\n- \"Compare BTC and ETH\" → Use symbols: \"BTC,ETH\"\n- \"Show me BTC vs ETH vs SOL\" → Use symbols: \"BTC,ETH,SOL\"\n- \"Compare top 5 coins\" → Use symbols: \"BTC,ETH,SOL,BNB,ADA\""
+    },
+    {
+      "id": "mcp_okx.gateway_crypto_rank",
+      "name": "gateway.crypto-rank",
+      "description": "Query cryptocurrency up/down rank list. Use this tool to get top gainers or top losers in the market.\n\nWhen to use:\n- User asks about top gainers or top losers\n- User wants to see which cryptocurrencies are rising or falling the most\n- User wants to check market trends\n\nParameters:\n- num: Number of items to return (default: 10, max: 350)\n- rank: 0 for top gainers (up), 1 for top losers (down). Defaults to 0.\n\nExamples:\n- \"Show me top 10 gainers\" → Use num: \"10\", rank: 0\n- \"What are the top losers?\" → Use num: \"10\", rank: 1\n- \"Show me top 20 rising coins\" → Use num: \"20\", rank: 0"
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "fetchedAt": "2026-04-30T15:22:35.499Z",
+  "status": "ok",
+  "count": 62,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsAggregatedUsableSubnetworksList",
+      "name": "projects.containerProjectsAggregatedUsableSubnetworksList",
+      "description": "Lists subnetworks that are usable for creating clusters in a project."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersCompleteIpRotation",
+      "name": "projects.containerProjectsLocationsClustersCompleteIpRotation",
+      "description": "Completes master IP rotation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersCreate",
+      "name": "projects.containerProjectsLocationsClustersCreate",
+      "description": "Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersGetJwks",
+      "name": "projects.containerProjectsLocationsClustersGetJwks",
+      "description": "Gets the public component of the cluster signing keys in JSON Web Key format. This API is not yet intended for general use, and is not available for all clusters."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersList",
+      "name": "projects.containerProjectsLocationsClustersList",
+      "description": "Lists all clusters owned by a project in either the specified zone or all zones."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsCompleteUpgrade",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsCompleteUpgrade",
+      "description": "CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsCreate",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsCreate",
+      "description": "Creates a node pool for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsDelete",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsDelete",
+      "description": "Deletes a node pool from a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsList",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsList",
+      "description": "Lists the node pools for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsRollback",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsRollback",
+      "description": "Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last upgrade successfully completed."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsSetAutoscaling",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsSetAutoscaling",
+      "description": "Sets the autoscaling settings for the specified node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsSetManagement",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsSetManagement",
+      "description": "Sets the NodeManagement options for a node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsSetSize",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsSetSize",
+      "description": "Sets the size for a specific node pool. The new size will be used for all replicas, including future replicas created by modifying NodePool.locations."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersNodePoolsUpdate",
+      "name": "projects.containerProjectsLocationsClustersNodePoolsUpdate",
+      "description": "Updates the version and/or image type for the specified node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetAddons",
+      "name": "projects.containerProjectsLocationsClustersSetAddons",
+      "description": "Sets the addons for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetLegacyAbac",
+      "name": "projects.containerProjectsLocationsClustersSetLegacyAbac",
+      "description": "Enables or disables the ABAC authorization mechanism on a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetLocations",
+      "name": "projects.containerProjectsLocationsClustersSetLocations",
+      "description": "Sets the locations for a specific cluster. Deprecated. Use [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update) instead."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetLogging",
+      "name": "projects.containerProjectsLocationsClustersSetLogging",
+      "description": "Sets the logging service for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetMaintenancePolicy",
+      "name": "projects.containerProjectsLocationsClustersSetMaintenancePolicy",
+      "description": "Sets the maintenance policy for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetMasterAuth",
+      "name": "projects.containerProjectsLocationsClustersSetMasterAuth",
+      "description": "Sets master auth materials. Currently supports changing the admin password or a specific cluster, either via password generation or explicitly setting the password."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetMonitoring",
+      "name": "projects.containerProjectsLocationsClustersSetMonitoring",
+      "description": "Sets the monitoring service for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetNetworkPolicy",
+      "name": "projects.containerProjectsLocationsClustersSetNetworkPolicy",
+      "description": "Enables or disables Network Policy for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersSetResourceLabels",
+      "name": "projects.containerProjectsLocationsClustersSetResourceLabels",
+      "description": "Sets labels on a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersStartIpRotation",
+      "name": "projects.containerProjectsLocationsClustersStartIpRotation",
+      "description": "Starts master IP rotation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersUpdateMaster",
+      "name": "projects.containerProjectsLocationsClustersUpdateMaster",
+      "description": "Updates the master for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsClustersWellKnownGetOpenidConfiguration",
+      "name": "projects.containerProjectsLocationsClustersWellKnownGetOpenidConfiguration",
+      "description": "Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details. This API is not yet intended for general use, and is not available for all clusters."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsGetServerConfig",
+      "name": "projects.containerProjectsLocationsGetServerConfig",
+      "description": "Returns configuration info about the Google Kubernetes Engine service."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsOperationsCancel",
+      "name": "projects.containerProjectsLocationsOperationsCancel",
+      "description": "Cancels the specified operation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsOperationsGet",
+      "name": "projects.containerProjectsLocationsOperationsGet",
+      "description": "Gets the specified operation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsLocationsOperationsList",
+      "name": "projects.containerProjectsLocationsOperationsList",
+      "description": "Lists all operations in a project in a specific zone or all zones."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersAddons",
+      "name": "projects.containerProjectsZonesClustersAddons",
+      "description": "Sets the addons for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersCompleteIpRotation",
+      "name": "projects.containerProjectsZonesClustersCompleteIpRotation",
+      "description": "Completes master IP rotation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersCreate",
+      "name": "projects.containerProjectsZonesClustersCreate",
+      "description": "Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersDelete",
+      "name": "projects.containerProjectsZonesClustersDelete",
+      "description": "Deletes the cluster, including the Kubernetes endpoint and all worker nodes. Firewalls and routes that were configured during cluster creation are also deleted. Other Google Compute Engine resources that might be in use by the cluster, such as load balancer resources, are not deleted if they weren't present when the cluster was initially created."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersGet",
+      "name": "projects.containerProjectsZonesClustersGet",
+      "description": "Gets the details of a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersLegacyAbac",
+      "name": "projects.containerProjectsZonesClustersLegacyAbac",
+      "description": "Enables or disables the ABAC authorization mechanism on a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersList",
+      "name": "projects.containerProjectsZonesClustersList",
+      "description": "Lists all clusters owned by a project in either the specified zone or all zones."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersLocations",
+      "name": "projects.containerProjectsZonesClustersLocations",
+      "description": "Sets the locations for a specific cluster. Deprecated. Use [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update) instead."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersLogging",
+      "name": "projects.containerProjectsZonesClustersLogging",
+      "description": "Sets the logging service for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersMaster",
+      "name": "projects.containerProjectsZonesClustersMaster",
+      "description": "Updates the master for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersMonitoring",
+      "name": "projects.containerProjectsZonesClustersMonitoring",
+      "description": "Sets the monitoring service for a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsAutoscaling",
+      "name": "projects.containerProjectsZonesClustersNodePoolsAutoscaling",
+      "description": "Sets the autoscaling settings for the specified node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsCreate",
+      "name": "projects.containerProjectsZonesClustersNodePoolsCreate",
+      "description": "Creates a node pool for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsDelete",
+      "name": "projects.containerProjectsZonesClustersNodePoolsDelete",
+      "description": "Deletes a node pool from a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsGet",
+      "name": "projects.containerProjectsZonesClustersNodePoolsGet",
+      "description": "Retrieves the requested node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsList",
+      "name": "projects.containerProjectsZonesClustersNodePoolsList",
+      "description": "Lists the node pools for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsRollback",
+      "name": "projects.containerProjectsZonesClustersNodePoolsRollback",
+      "description": "Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last upgrade successfully completed."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsSetManagement",
+      "name": "projects.containerProjectsZonesClustersNodePoolsSetManagement",
+      "description": "Sets the NodeManagement options for a node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsSetSize",
+      "name": "projects.containerProjectsZonesClustersNodePoolsSetSize",
+      "description": "Sets the size for a specific node pool. The new size will be used for all replicas, including future replicas created by modifying NodePool.locations."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersNodePoolsUpdate",
+      "name": "projects.containerProjectsZonesClustersNodePoolsUpdate",
+      "description": "Updates the version and/or image type for the specified node pool."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersResourceLabels",
+      "name": "projects.containerProjectsZonesClustersResourceLabels",
+      "description": "Sets labels on a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersSetMaintenancePolicy",
+      "name": "projects.containerProjectsZonesClustersSetMaintenancePolicy",
+      "description": "Sets the maintenance policy for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersSetMasterAuth",
+      "name": "projects.containerProjectsZonesClustersSetMasterAuth",
+      "description": "Sets master auth materials. Currently supports changing the admin password or a specific cluster, either via password generation or explicitly setting the password."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersSetNetworkPolicy",
+      "name": "projects.containerProjectsZonesClustersSetNetworkPolicy",
+      "description": "Enables or disables Network Policy for a cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersStartIpRotation",
+      "name": "projects.containerProjectsZonesClustersStartIpRotation",
+      "description": "Starts master IP rotation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesClustersUpdate",
+      "name": "projects.containerProjectsZonesClustersUpdate",
+      "description": "Updates the settings of a specific cluster."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesGetServerconfig",
+      "name": "projects.containerProjectsZonesGetServerconfig",
+      "description": "Returns configuration info about the Google Kubernetes Engine service."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesOperationsCancel",
+      "name": "projects.containerProjectsZonesOperationsCancel",
+      "description": "Cancels the specified operation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesOperationsGet",
+      "name": "projects.containerProjectsZonesOperationsGet",
+      "description": "Gets the specified operation."
+    },
+    {
+      "id": "openapi_googleapis_com_container_container.projects.containerProjectsZonesOperationsList",
+      "name": "projects.containerProjectsZonesOperationsList",
+      "description": "Lists all operations in a project in a specific zone or all zones."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

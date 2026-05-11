@@ -1,0 +1,277 @@
+{
+  "fetchedAt": "2026-04-30T15:26:51.046Z",
+  "status": "ok",
+  "count": 54,
+  "tools": [
+    {
+      "id": "openapi_svix_com.application.createApplicationApiV1AppPost",
+      "name": "application.createApplicationApiV1AppPost",
+      "description": "Create a new application."
+    },
+    {
+      "id": "openapi_svix_com.application.deleteApplicationApiV1AppAppIdDelete",
+      "name": "application.deleteApplicationApiV1AppAppIdDelete",
+      "description": "Delete an application."
+    },
+    {
+      "id": "openapi_svix_com.application.getApplicationApiV1AppAppIdGet",
+      "name": "application.getApplicationApiV1AppAppIdGet",
+      "description": "Get an application."
+    },
+    {
+      "id": "openapi_svix_com.application.listApplicationsApiV1AppGet",
+      "name": "application.listApplicationsApiV1AppGet",
+      "description": "List of all the organization's applications."
+    },
+    {
+      "id": "openapi_svix_com.application.updateApplicationApiV1AppAppIdPut",
+      "name": "application.updateApplicationApiV1AppAppIdPut",
+      "description": "Update an application."
+    },
+    {
+      "id": "openapi_svix_com.authentication.expireAllApiV1AuthAppAppIdExpireAllPost",
+      "name": "authentication.expireAllApiV1AuthAppAppIdExpireAllPost",
+      "description": "Expire all of the tokens associated with a specific Application"
+    },
+    {
+      "id": "openapi_svix_com.authentication.getAppPortalAccessApiV1AuthAppPortalAccessAppIdPost",
+      "name": "authentication.getAppPortalAccessApiV1AuthAppPortalAccessAppIdPost",
+      "description": "Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal."
+    },
+    {
+      "id": "openapi_svix_com.authentication.getDashboardAccessApiV1AuthDashboardAccessAppIdPost",
+      "name": "authentication.getDashboardAccessApiV1AuthDashboardAccessAppIdPost",
+      "description": "DEPRECATED: Please use `app-portal-access` instead.\n\nUse this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal."
+    },
+    {
+      "id": "openapi_svix_com.authentication.logoutApiV1AuthLogoutPost",
+      "name": "authentication.logoutApiV1AuthLogoutPost",
+      "description": "Logout an app token.\n\nTrying to log out other tokens will fail."
+    },
+    {
+      "id": "openapi_svix_com.backgroundTasks.getBackgroundTaskApiV1BackgroundTaskTaskIdGet",
+      "name": "backgroundTasks.getBackgroundTaskApiV1BackgroundTaskTaskIdGet",
+      "description": "Get a background task by ID."
+    },
+    {
+      "id": "openapi_svix_com.backgroundTasks.listBackgroundTasksApiV1BackgroundTaskGet",
+      "name": "backgroundTasks.listBackgroundTasksApiV1BackgroundTaskGet",
+      "description": "List background tasks executed in the past 90 days."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.createEndpointApiV1AppAppIdEndpointPost",
+      "name": "endpoint.createEndpointApiV1AppAppIdEndpointPost",
+      "description": "Create a new endpoint for the application.\n\nWhen `secret` is `null` the secret is automatically generated (recommended)"
+    },
+    {
+      "id": "openapi_svix_com.endpoint.deleteEndpointApiV1AppAppIdEndpointEndpointIdDelete",
+      "name": "endpoint.deleteEndpointApiV1AppAppIdEndpointEndpointIdDelete",
+      "description": "Delete an endpoint."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.getEndpointApiV1AppAppIdEndpointEndpointIdGet",
+      "name": "endpoint.getEndpointApiV1AppAppIdEndpointEndpointIdGet",
+      "description": "Get an application."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.getEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersGet",
+      "name": "endpoint.getEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersGet",
+      "description": "Get the additional headers to be sent with the webhook"
+    },
+    {
+      "id": "openapi_svix_com.endpoint.getEndpointSecretApiV1AppAppIdEndpointEndpointIdSecretGet",
+      "name": "endpoint.getEndpointSecretApiV1AppAppIdEndpointEndpointIdSecretGet",
+      "description": "Get the endpoint's signing secret.\n\nThis is used to verify the authenticity of the webhook.\nFor more information please refer to [the consuming webhooks docs](https://docs.svix.com/consuming-webhooks/)."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.getEndpointStatsApiV1AppAppIdEndpointEndpointIdStatsGet",
+      "name": "endpoint.getEndpointStatsApiV1AppAppIdEndpointEndpointIdStatsGet",
+      "description": "Get basic statistics for the endpoint."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.getEndpointTransformationApiV1AppAppIdEndpointEndpointIdTransformationGet",
+      "name": "endpoint.getEndpointTransformationApiV1AppAppIdEndpointEndpointIdTransformationGet",
+      "description": "Get the transformation code associated with this endpoint"
+    },
+    {
+      "id": "openapi_svix_com.endpoint.listEndpointsApiV1AppAppIdEndpointGet",
+      "name": "endpoint.listEndpointsApiV1AppAppIdEndpointGet",
+      "description": "List the application's endpoints."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.patchEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersPatch",
+      "name": "endpoint.patchEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersPatch",
+      "description": "Partially set the additional headers to be sent with the webhook"
+    },
+    {
+      "id": "openapi_svix_com.endpoint.recoverFailedWebhooksApiV1AppAppIdEndpointEndpointIdRecoverPost",
+      "name": "endpoint.recoverFailedWebhooksApiV1AppAppIdEndpointEndpointIdRecoverPost",
+      "description": "Resend all failed messages since a given time."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.replayMissingWebhooksApiV1AppAppIdEndpointEndpointIdReplayMissingPost",
+      "name": "endpoint.replayMissingWebhooksApiV1AppAppIdEndpointEndpointIdReplayMissingPost",
+      "description": "Replays messages to the endpoint. Only messages that were created after `since` will be sent. Messages that were previously sent to the endpoint are not resent."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.rotateEndpointSecretApiV1AppAppIdEndpointEndpointIdSecretRotatePost",
+      "name": "endpoint.rotateEndpointSecretApiV1AppAppIdEndpointEndpointIdSecretRotatePost",
+      "description": "Rotates the endpoint's signing secret.  The previous secret will be valid for the next 24 hours."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.setEndpointTransformationApiV1AppAppIdEndpointEndpointIdTransformationPatch",
+      "name": "endpoint.setEndpointTransformationApiV1AppAppIdEndpointEndpointIdTransformationPatch",
+      "description": "Set or unset the transformation code associated with this endpoint"
+    },
+    {
+      "id": "openapi_svix_com.endpoint.updateEndpointApiV1AppAppIdEndpointEndpointIdPut",
+      "name": "endpoint.updateEndpointApiV1AppAppIdEndpointEndpointIdPut",
+      "description": "Update an endpoint."
+    },
+    {
+      "id": "openapi_svix_com.endpoint.updateEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersPut",
+      "name": "endpoint.updateEndpointHeadersApiV1AppAppIdEndpointEndpointIdHeadersPut",
+      "description": "Set the additional headers to be sent with the webhook"
+    },
+    {
+      "id": "openapi_svix_com.eventType.createEventTypeApiV1EventTypePost",
+      "name": "eventType.createEventTypeApiV1EventTypePost",
+      "description": "Create new or unarchive existing event type.\n\nUnarchiving an event type will allow endpoints to filter on it and messages to be sent with it.\nEndpoints filtering on the event type before archival will continue to filter on it.\nThis operation does not preserve the description and schemas."
+    },
+    {
+      "id": "openapi_svix_com.eventType.deleteEventTypeApiV1EventTypeEventTypeNameDelete",
+      "name": "eventType.deleteEventTypeApiV1EventTypeEventTypeNameDelete",
+      "description": "Archive an event type.\n\nEndpoints already configured to filter on an event type will continue to do so after archival.\nHowever, new messages can not be sent with it and endpoints can not filter on it.\nAn event type can be unarchived with the\n[create operation](#operation/create_event_type_api_v1_event_type__post).\n\nIf `expunge=true` is set then the event type is deleted instead of archived.\nThis can only be used in development environments."
+    },
+    {
+      "id": "openapi_svix_com.eventType.getEventTypeApiV1EventTypeEventTypeNameGet",
+      "name": "eventType.getEventTypeApiV1EventTypeEventTypeNameGet",
+      "description": "Get an event type."
+    },
+    {
+      "id": "openapi_svix_com.eventType.listEventTypesApiV1EventTypeGet",
+      "name": "eventType.listEventTypesApiV1EventTypeGet",
+      "description": "Return the list of event types."
+    },
+    {
+      "id": "openapi_svix_com.eventType.updateEventTypeApiV1EventTypeEventTypeNamePut",
+      "name": "eventType.updateEventTypeApiV1EventTypeEventTypeNamePut",
+      "description": "Update an event type."
+    },
+    {
+      "id": "openapi_svix_com.health.healthApiV1HealthGet",
+      "name": "health.healthApiV1HealthGet",
+      "description": "Verify the API server is up and running."
+    },
+    {
+      "id": "openapi_svix_com.integration.createIntegrationApiV1AppAppIdIntegrationPost",
+      "name": "integration.createIntegrationApiV1AppAppIdIntegrationPost",
+      "description": "Create an integration."
+    },
+    {
+      "id": "openapi_svix_com.integration.deleteIntegrationApiV1AppAppIdIntegrationIntegIdDelete",
+      "name": "integration.deleteIntegrationApiV1AppAppIdIntegrationIntegIdDelete",
+      "description": "Delete an integration and revoke it's key."
+    },
+    {
+      "id": "openapi_svix_com.integration.getIntegrationApiV1AppAppIdIntegrationIntegIdGet",
+      "name": "integration.getIntegrationApiV1AppAppIdIntegrationIntegIdGet",
+      "description": "Get an integration."
+    },
+    {
+      "id": "openapi_svix_com.integration.getIntegrationKeyApiV1AppAppIdIntegrationIntegIdKeyGet",
+      "name": "integration.getIntegrationKeyApiV1AppAppIdIntegrationIntegIdKeyGet",
+      "description": "Get an integration's key."
+    },
+    {
+      "id": "openapi_svix_com.integration.listIntegrationsApiV1AppAppIdIntegrationGet",
+      "name": "integration.listIntegrationsApiV1AppAppIdIntegrationGet",
+      "description": "List the application's integrations."
+    },
+    {
+      "id": "openapi_svix_com.integration.rotateIntegrationKeyApiV1AppAppIdIntegrationIntegIdKeyRotatePost",
+      "name": "integration.rotateIntegrationKeyApiV1AppAppIdIntegrationIntegIdKeyRotatePost",
+      "description": "Rotate the integration's key. The previous key will be immediately revoked."
+    },
+    {
+      "id": "openapi_svix_com.integration.updateIntegrationApiV1AppAppIdIntegrationIntegIdPut",
+      "name": "integration.updateIntegrationApiV1AppAppIdIntegrationIntegIdPut",
+      "description": "Update an integration."
+    },
+    {
+      "id": "openapi_svix_com.message.createMessageApiV1AppAppIdMsgPost",
+      "name": "message.createMessageApiV1AppAppIdMsgPost",
+      "description": "Creates a new message and dispatches it to all of the application's endpoints.\n\nThe `eventId` is an optional custom unique ID. It's verified to be unique only up to a day, after that no verification will be made.\nIf a message with the same `eventId` already exists for any application in your environment, a 409 conflict error will be returned.\n\nThe `eventType` indicates the type and schema of the event. All messages of a certain `eventType` are expected to have the same schema. Endpoints can choose to only listen to specific event types.\nMessages can also have `channels`, which similar to event types let endpoints filter by them. Unlike event types, messages can have multiple channels, and channels don't imply a specific message content or schema.\n\nThe `payload` property is the webhook's body (the actual webhook message). Svix supports payload sizes of up to ~350kb, though it's generally a good idea to keep webhook payloads small, probably no larger than 40kb.\n\nThe optional `application` property will be used to create an application if the application referenced in the path does not exist. If it does then this property is ignored."
+    },
+    {
+      "id": "openapi_svix_com.message.expungeMessagePayloadApiV1AppAppIdMsgMsgIdContentDelete",
+      "name": "message.expungeMessagePayloadApiV1AppAppIdMsgMsgIdContentDelete",
+      "description": "Delete the given message's payload. Useful in cases when a message was accidentally sent with sensitive content.\n\nThe message can't be replayed or resent once its payload has been deleted or expired."
+    },
+    {
+      "id": "openapi_svix_com.message.getMessageApiV1AppAppIdMsgMsgIdGet",
+      "name": "message.getMessageApiV1AppAppIdMsgMsgIdGet",
+      "description": "Get a message by its ID or eventID."
+    },
+    {
+      "id": "openapi_svix_com.message.listMessagesApiV1AppAppIdMsgGet",
+      "name": "message.listMessagesApiV1AppAppIdMsgGet",
+      "description": "List all of the application's messages.\n\nThe `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed.\nThe `after` parameter lets you filter all items created after a certain date and is ignored if an iterator is passed.\n`before` and `after` cannot be used simultaneously."
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.expungeAttemptContentApiV1AppAppIdMsgMsgIdAttemptAttemptIdContentDelete",
+      "name": "messageAttempt.expungeAttemptContentApiV1AppAppIdMsgMsgIdAttemptAttemptIdContentDelete",
+      "description": "Deletes the given attempt's response body. Useful when an endpoint accidentally returned sensitive content."
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.getAttemptApiV1AppAppIdMsgMsgIdAttemptAttemptIdGet",
+      "name": "messageAttempt.getAttemptApiV1AppAppIdMsgMsgIdAttemptAttemptIdGet",
+      "description": "`msg_id`: Use a message id or a message `eventId`"
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptedDestinationsApiV1AppAppIdMsgMsgIdEndpointGet",
+      "name": "messageAttempt.listAttemptedDestinationsApiV1AppAppIdMsgMsgIdEndpointGet",
+      "description": "`msg_id`: Use a message id or a message `eventId`"
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptedMessagesApiV1AppAppIdEndpointEndpointIdMsgGet",
+      "name": "messageAttempt.listAttemptedMessagesApiV1AppAppIdEndpointEndpointIdMsgGet",
+      "description": "List messages for a particular endpoint. Additionally includes metadata about the latest message attempt.\n\nThe `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed."
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptsApiV1AppAppIdMsgMsgIdAttemptGet",
+      "name": "messageAttempt.listAttemptsApiV1AppAppIdMsgMsgIdAttemptGet",
+      "description": "Deprecated: Please use \"List Attempts by Endpoint\" and \"List Attempts by Msg\" instead.\n\n`msg_id`: Use a message id or a message `eventId`"
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptsByEndpointApiV1AppAppIdAttemptEndpointEndpointIdGet",
+      "name": "messageAttempt.listAttemptsByEndpointApiV1AppAppIdAttemptEndpointEndpointIdGet",
+      "description": "List attempts by endpoint id"
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptsByMsgApiV1AppAppIdAttemptMsgMsgIdGet",
+      "name": "messageAttempt.listAttemptsByMsgApiV1AppAppIdAttemptMsgMsgIdGet",
+      "description": "List attempts by message id"
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.listAttemptsForEndpointApiV1AppAppIdMsgMsgIdEndpointEndpointIdAttemptGet",
+      "name": "messageAttempt.listAttemptsForEndpointApiV1AppAppIdMsgMsgIdEndpointEndpointIdAttemptGet",
+      "description": "DEPRECATED: please use list_attempts with endpoint_id as a query parameter instead.\n\nList the message attempts for a particular endpoint.\n\nReturning the endpoint.\n\nThe `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed."
+    },
+    {
+      "id": "openapi_svix_com.messageAttempt.resendWebhookApiV1AppAppIdMsgMsgIdEndpointEndpointIdResendPost",
+      "name": "messageAttempt.resendWebhookApiV1AppAppIdMsgMsgIdEndpointEndpointIdResendPost",
+      "description": "Resend a message to the specified endpoint."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

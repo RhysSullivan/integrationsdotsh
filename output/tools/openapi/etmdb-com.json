@@ -1,0 +1,152 @@
+{
+  "fetchedAt": "2026-04-30T15:22:14.144Z",
+  "status": "ok",
+  "count": 29,
+  "tools": [
+    {
+      "id": "openapi_etmdb_com.cinema.cinemaSearchRead",
+      "name": "cinema.cinemaSearchRead",
+      "description": "Return cinema search result\n\n### Response Class (Status 200)\n\n* __{id}__: Used as a key to search cinemas,\n\nFor more details on how cinemas are listed [see here][ref].\n[ref]: https://etmdb.com/en/cinema-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.cinemaDetail.cinemaDetailSearchRead",
+      "name": "cinemaDetail.cinemaDetailSearchRead",
+      "description": "Return cinema details search result\n\n### Response Class (Status 200)\n\n* __{cinema_name}__: Used as a key word to search cinemas,\n\nFor more details on how cinemas are listed [see here][ref].\n[ref]: https://etmdb.com/en/cinema-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.cinemaSchedule.cinemaScheduleSearchallRead",
+      "name": "cinemaSchedule.cinemaScheduleSearchallRead",
+      "description": "Return cinema schedule search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* movie title\n* cinema name\n* cinema hall name or\n* cinema technology\n\nFor more details about cinema schedule, check each cinema from the cinema list [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.cinemaSchedule.cinemaScheduleSearchRead",
+      "name": "cinemaSchedule.cinemaScheduleSearchRead",
+      "description": "Return cinema schedule search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movie cast\n* You can use both Amharic or English charset/font to search\n\nFor more details about cinema schedule, check each cinema from the cinema list [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.cinemaSheduleShowtime.cinemaSheduleShowtimeSearchallRead",
+      "name": "cinemaSheduleShowtime.cinemaSheduleShowtimeSearchallRead",
+      "description": "Return cinema schedule and showtime search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* movie title\n* cinema name\n* cinema hall name\n* showtime starting date\n* showtime ending date or\n* cinema technology\n\nFor more details about cinema schedule, check each cinema from the cinema list [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.cinemaSheduleShowtime.cinemaSheduleShowtimeSearchRead",
+      "name": "cinemaSheduleShowtime.cinemaSheduleShowtimeSearchRead",
+      "description": "Return cinema schedule and showtime search result\n\n### Response Class (Status 200)\n* __{movie_title}__: Used as a key word to search movie cast\n* You can use both Amharic or English charset/font to search\n\nFor more details about cinema schedule showtime, check each cinema from the cinema list [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.company.companySearchRead",
+      "name": "company.companySearchRead",
+      "description": "Return company search result\n\n### Response Class (Status 200)\n\n* __{company_name}__: Used as a key word to search companies,\n\nFor more details on how companies are listed [see here][ref].\n[ref]: https://etmdb.com/en/company-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.companyCredits.companyCreditsSearchallRead",
+      "name": "companyCredits.companyCreditsSearchallRead",
+      "description": "Return company credits search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* company name\n* movie title or\n* company credit description (such as production, cinematography, etc)\n\nFor more details on how company credits are listed [see here][ref].\n[ref]: https://etmdb.com/en/company-list/company_name"
+    },
+    {
+      "id": "openapi_etmdb_com.companyCredits.companyCreditsSearchRead",
+      "name": "companyCredits.companyCreditsSearchRead",
+      "description": "Return company credits search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search company credits for the movie\n* You can use both Amharic or English charset/font to search\n\nFor more details on how company credits are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.filmography.filmographySearchallRead",
+      "name": "filmography.filmographySearchallRead",
+      "description": "Return filmography search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* artist first name\n* artist last name\n* artist username\n* movie title or\n* filmography description (such as director, actor, producer, etc)\n\nFor more details on how filmographies are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.filmography.filmographySearchRead",
+      "name": "filmography.filmographySearchRead",
+      "description": "Return filmography search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movies\n* You can use both Amharic or English charset/font to search\n\nFor more details on how filmographies are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.filmographyType.filmographyTypeSearchRead",
+      "name": "filmographyType.filmographyTypeSearchRead",
+      "description": "Return filmography type search result\n\n### Response Class (Status 200)\n\n* __{filmography_description}__: Used as a key word to search filmography types\n\nFor more details on how filmography types are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.genre.genreSearchallRead",
+      "name": "genre.genreSearchallRead",
+      "description": "Return movie genre search result\n\n### Response Class (Status 200)\n\n* __{movie_genre_type}__: Used as a key word to search movie genres\n\nFor more details on how movies are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.genre.genreSearchRead",
+      "name": "genre.genreSearchRead",
+      "description": "Return movie genre search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movie genres\n* You can use both Amharic or English charset/font to search\n\nFor more details on how movies are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.genreType.genreTypeSearchRead",
+      "name": "genreType.genreTypeSearchRead",
+      "description": "Return genre type search result\n\n### Response Class (Status 200)\n\n* __{genre_description}__: Used as a key word to search genre types\n\nFor more details on how genre types are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.job.jobSearchallRead",
+      "name": "job.jobSearchallRead",
+      "description": "Return job details search result\n\n### Response Class (Status 200)\n\n* __{company_name}__: Used as a key word to search jobs,\n\nFor more details on how job are listed [see here][ref].\n[ref]: https://etmdb.com/en/job-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.job.jobSearchRead",
+      "name": "job.jobSearchRead",
+      "description": "Return job details search result\n\n### Response Class (Status 200)\n\n* __{job_title}__: Used as a key word to search jobs,\n\nFor more details on how job are listed [see here][ref].\n[ref]: https://etmdb.com/en/job-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.media.mediaSearchallRead",
+      "name": "media.mediaSearchallRead",
+      "description": "Return cast media search result\n\n### Response Class (Status 200)\n__{user}__ argument can be\n* artist first name\n* artist last name\n* artist username\n\nFor more details on how cast media is listed [see here][ref].\n[ref]: https://etmdb.com/en/cast-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.media.mediaSearchRead",
+      "name": "media.mediaSearchRead",
+      "description": "Return movie media search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search media for movies\n* You can use both Amharic or English charset/font to search\n\nFor more details on how media is listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.movie.movieSearchRead",
+      "name": "movie.movieSearchRead",
+      "description": "Return movie search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movies\n* You can use both Amharic or English charset/font to search\n\nFor more details on how movies are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.movieCast.movieCastSearchallRead",
+      "name": "movieCast.movieCastSearchallRead",
+      "description": "Return movie cast search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* artist first name\n* artist last name\n* artist username\n* movie title or\n* character name\n\nFor more details on how movie casts are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.movieCast.movieCastSearchRead",
+      "name": "movieCast.movieCastSearchRead",
+      "description": "Return movie cast search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movie cast\n* You can use both Amharic or English charset/font to search\n\nFor more details on how movie casts are listed [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.news.newsSearchRead",
+      "name": "news.newsSearchRead",
+      "description": "Return news or article search result\n\n### Response Class (Status 200)\n\n* __{title}__: Used as a key word to search news and articles,\n\nFor more details on how news & articles are listed [see here][ref].\n[ref]: https://etmdb.com/en/news-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.people.peopleSearchRead",
+      "name": "people.peopleSearchRead",
+      "description": "Return cast search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* artist first name\n* artist last name\n* artist username\n\nFor more details on how cast are listed [see here][ref].\n[ref]: https://etmdb.com/en/cast-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.showtime.showtimeSearchallRead",
+      "name": "showtime.showtimeSearchallRead",
+      "description": "Return showtime search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* show time or\n* day of the week [Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7]\n\nFor more details about showtime, check each cinema from the cinema list [see here][ref].\n[ref]: https://etmdb.com/en/movie-list/-updated_date"
+    },
+    {
+      "id": "openapi_etmdb_com.watchlist.watchlistSearchallRead",
+      "name": "watchlist.watchlistSearchallRead",
+      "description": "Return watchlist search result\n\n### Response Class (Status 200)\n__{param}__ argument can be\n* artist first name\n* artist last name\n* artist username\n* movie title or\n\nFor more details on how watchlist are listed [see here][ref].\n[ref]: https://etmdb.com/en/movies/watchlist/id"
+    },
+    {
+      "id": "openapi_etmdb_com.watchlist.watchlistSearchRead",
+      "name": "watchlist.watchlistSearchRead",
+      "description": "Return watchlist search result\n\n### Response Class (Status 200)\n\n* __{movie_title}__: Used as a key word to search movies on watchlist\n* You can use both Amharic or English charset/font to search\n\nFor more details on how watchlist are listed [see here][ref].\n[ref]: https://etmdb.com/en/movies/watchlist/id"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

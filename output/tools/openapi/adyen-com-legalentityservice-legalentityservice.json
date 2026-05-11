@@ -1,0 +1,142 @@
+{
+  "fetchedAt": "2026-04-30T15:44:52.067Z",
+  "status": "ok",
+  "count": 27,
+  "tools": [
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.businessLines.deleteBusinessLinesId",
+      "name": "businessLines.deleteBusinessLinesId",
+      "description": "Deletes a business line.\n\n >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.businessLines.getBusinessLinesId",
+      "name": "businessLines.getBusinessLinesId",
+      "description": "Returns the detail of a business line."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.businessLines.postBusinessLines",
+      "name": "businessLines.postBusinessLines",
+      "description": "Creates a business line. \n\nThis resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.documents.deleteDocumentsId",
+      "name": "documents.deleteDocumentsId",
+      "description": "Deletes a document."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.documents.getDocumentsId",
+      "name": "documents.getDocumentsId",
+      "description": "Returns a document."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.documents.patchDocumentsId",
+      "name": "documents.patchDocumentsId",
+      "description": "Updates a document."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.documents.postDocuments",
+      "name": "documents.postDocuments",
+      "description": "Uploads a document for verification checks.\n\n Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.\n\n You should only upload documents when Adyen requests additional information for the legal entity. "
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.hostedOnboarding.getThemes",
+      "name": "hostedOnboarding.getThemes",
+      "description": "Returns a list of hosted onboarding page themes."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.hostedOnboarding.getThemesId",
+      "name": "hostedOnboarding.getThemesId",
+      "description": "Returns the details of the theme identified in the path."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.hostedOnboarding.postLegalEntitiesIdOnboardingLinks",
+      "name": "hostedOnboarding.postLegalEntitiesIdOnboardingLinks",
+      "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.legalEntities.getLegalEntitiesId",
+      "name": "legalEntities.getLegalEntitiesId",
+      "description": "Returns a legal entity."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.legalEntities.getLegalEntitiesIdBusinessLines",
+      "name": "legalEntities.getLegalEntitiesIdBusinessLines",
+      "description": "Returns the business lines owned by a legal entity."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.legalEntities.patchLegalEntitiesId",
+      "name": "legalEntities.patchLegalEntitiesId",
+      "description": "Updates a legal entity.\n\n >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.legalEntities.postLegalEntities",
+      "name": "legalEntities.postLegalEntities",
+      "description": "Creates a legal entity. \n\nThis resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses. \n\n"
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.pciQuestionnaires.getLegalEntitiesIdPciQuestionnaires",
+      "name": "pciQuestionnaires.getLegalEntitiesIdPciQuestionnaires",
+      "description": "Get a list of signed PCI questionnaires."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.pciQuestionnaires.getLegalEntitiesIdPciQuestionnairesPciid",
+      "name": "pciQuestionnaires.getLegalEntitiesIdPciQuestionnairesPciid",
+      "description": "Returns the signed PCI questionnaire."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.pciQuestionnaires.postLegalEntitiesIdPciQuestionnairesGeneratePciTemplates",
+      "name": "pciQuestionnaires.postLegalEntitiesIdPciQuestionnairesGeneratePciTemplates",
+      "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.pciQuestionnaires.postLegalEntitiesIdPciQuestionnairesSignPciTemplates",
+      "name": "pciQuestionnaires.postLegalEntitiesIdPciQuestionnairesSignPciTemplates",
+      "description": "Signs the required PCI questionnaire."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.termsOfService.getLegalEntitiesIdTermsOfServiceAcceptanceInfos",
+      "name": "termsOfService.getLegalEntitiesIdTermsOfServiceAcceptanceInfos",
+      "description": "Returns Terms of Service information for a legal entity."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.termsOfService.patchLegalEntitiesIdTermsOfServiceTermsofservicedocumentid",
+      "name": "termsOfService.patchLegalEntitiesIdTermsOfServiceTermsofservicedocumentid",
+      "description": "Accepts Terms of Service."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.termsOfService.postLegalEntitiesIdTermsOfService",
+      "name": "termsOfService.postLegalEntitiesIdTermsOfService",
+      "description": "Returns the Terms of Service document for a legal entity."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.transferInstruments.deleteTransferInstrumentsId",
+      "name": "transferInstruments.deleteTransferInstrumentsId",
+      "description": "Deletes a transfer instrument."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.transferInstruments.getTransferInstrumentsId",
+      "name": "transferInstruments.getTransferInstrumentsId",
+      "description": "Returns the details of a transfer instrument."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.transferInstruments.patchTransferInstrumentsId",
+      "name": "transferInstruments.patchTransferInstrumentsId",
+      "description": "Updates a transfer instrument."
+    },
+    {
+      "id": "openapi_adyen_com_legalentityservice_legalentityservice.transferInstruments.postTransferInstruments",
+      "name": "transferInstruments.postTransferInstruments",
+      "description": "Creates a transfer instrument. \n\nA transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.\n\nWhen the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

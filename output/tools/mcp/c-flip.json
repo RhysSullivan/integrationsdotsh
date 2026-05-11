@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:46.646Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_c_flip.question_guide_tool",
+      "name": "question_guide_tool",
+      "description": "Use this when the user is starting for the first time, or store name is missing/ambiguous. Do not use when a valid store name is already provided."
+    },
+    {
+      "id": "mcp_c_flip.get_store_info",
+      "name": "get_store_info",
+      "description": "Fetch store information, policies, and descriptions. For parent-scope requests across all stores, pass targetMerchantId (preferred) or targetStoreName to resolve the intended merchant. Prefer targetMerchantId from search_parent_products results when the user asks about a specific merchant."
+    },
+    {
+      "id": "mcp_c_flip.search_parent_products",
+      "name": "search_parent_products",
+      "description": "Fetch and search available products across all stores. Each product includes merchantId, which should be used for follow-up tools like get_store_info(targetMerchantId). Always preserve the user sentence and split it into rawQuery, storeName, branchName, categoryOrNeed, and preference before calling this tool."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "fetchedAt": "2026-04-30T15:22:42.338Z",
+  "status": "ok",
+  "count": 7,
+  "tools": [
+    {
+      "id": "openapi_googleapis_com_testing_testing.applicationDetailService.testingApplicationDetailServiceGetApkDetails",
+      "name": "applicationDetailService.testingApplicationDetailServiceGetApkDetails",
+      "description": "Gets the details of an Android application APK."
+    },
+    {
+      "id": "openapi_googleapis_com_testing_testing.projects.testingProjectsTestMatricesCancel",
+      "name": "projects.testingProjectsTestMatricesCancel",
+      "description": "Cancels unfinished test executions in a test matrix. This call returns immediately and cancellation proceeds asynchronously. If the matrix is already final, this operation will have no effect. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist"
+    },
+    {
+      "id": "openapi_googleapis_com_testing_testing.projects.testingProjectsTestMatricesCreate",
+      "name": "projects.testingProjectsTestMatricesCreate",
+      "description": "Creates and runs a matrix of tests according to the given specifications. Unsupported environments will be returned in the state UNSUPPORTED. A test matrix is limited to use at most 2000 devices in parallel. The returned matrix will not yet contain the executions that will be created for this matrix. That happens later on and will require a call to GetTestMatrix. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed or if the matrix tries to use too many simultaneous devices."
+    },
+    {
+      "id": "openapi_googleapis_com_testing_testing.projects.testingProjectsTestMatricesGet",
+      "name": "projects.testingProjectsTestMatricesGet",
+      "description": "Checks the status of a test matrix and the executions once they are created. The test matrix will contain the list of test executions to run if and only if the resultStorage.toolResultsExecution fields have been populated. Note: Flaky test executions may still be added to the matrix at a later stage. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist"
+    },
+    {
+      "id": "openapi_googleapis_com_testing_testing.testEnvironmentCatalog.testingTestEnvironmentCatalogGet",
+      "name": "testEnvironmentCatalog.testingTestEnvironmentCatalogGet",
+      "description": "Gets the catalog of supported test environments. May return any of the following canonical error codes: - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the environment type does not exist - INTERNAL - if an internal error occurred"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

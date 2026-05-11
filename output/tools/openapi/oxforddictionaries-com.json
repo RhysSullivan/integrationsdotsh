@@ -1,0 +1,147 @@
+{
+  "fetchedAt": "2026-04-30T15:26:42.114Z",
+  "status": "ok",
+  "count": 28,
+  "tools": [
+    {
+      "id": "openapi_oxforddictionaries_com.dictionaryEntries.getEntriesSourceLangWordId",
+      "name": "dictionaryEntries.getEntriesSourceLangWordId",
+      "description": "\nUse this to retrieve definitions, [pronunciations](documentation/glossary?term=pronunciation), example sentences, [grammatical information](documentation/glossary?term=grammaticalfeatures) and [word origins](documentation/glossary?term=etymology). It only works for dictionary [headwords](documentation/glossary?term=headword), so you may need to use the [Lemmatron](documentation/glossary?term=lemma) first if your input is likely to be an [inflected](documentation/glossary?term=inflection) form (e.g., 'swimming'). This would return the linked [headword](documentation/glossary?term=headword) (e.g., 'swim') which you can then use in the Entries endpoint. Unless specified using a region filter, the default lookup will be the Oxford Dictionary of English (GB). \n  <div id=\"dictionary_entries\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.dictionaryEntries.getEntriesSourceLangWordIdFilters",
+      "name": "dictionaryEntries.getEntriesSourceLangWordIdFilters",
+      "description": "\nUse filters to limit the [entry](documentation/glossary?term=entry) information that is returned. For example, you may only require definitions and not everything else, or just [pronunciations](documentation/glossary?term=pronunciation). The full list of filters can be retrieved from the filters Utility endpoint. You can also specify values within the filter using '='. For example 'grammaticalFeatures=singular'. Filters can also be combined using a semicolon.\n\n  <div id=\"dictionary_entries_filters\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.dictionaryEntries.getEntriesSourceLangWordIdRegionsRegion",
+      "name": "dictionaryEntries.getEntriesSourceLangWordIdRegionsRegion",
+      "description": "\nUSe this filter to restrict the lookup to either our Oxford Dictionary of English (GB) or New Oxford American Dictionary (US).\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.lemmatron.getInflectionsSourceLangWordIdFilters",
+      "name": "lemmatron.getInflectionsSourceLangWordIdFilters",
+      "description": "\nUse this to check if a word exists in the dictionary, or what 'root' form it links to (e.g., swimming > swim). The response tells you the possible [lemmas](documentation/glossary?term=lemma) for a given [inflected](documentation/glossary?term=inflection) word. This can then be combined with other endpoints to retrieve more information.\n\n  <div id=\"lemmatron\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.lexiStats.getStatsFrequencyNgramsSourceLangCorpusNgramSize",
+      "name": "lexiStats.getStatsFrequencyNgramsSourceLangCorpusNgramSize",
+      "description": "This endpoint returns frequencies of ngrams of size 1-4. That is the number of times a word (ngram size = 1) or words (ngram size > 1) appear in the corpus. Ngrams are case sensitive (\"I AM\" and \"I am\" will have different frequency) and frequencies are calculated per word (true case) so \"the book\" and \"the books\" are two different ngrams. The results can be filtered based on query parameters. <br> <br> Parameters can be provided in PATH, GET or POST (form or json). The parameters in PATH are overridden by parameters in GET, POST and json (in that order). In PATH, individual options are separated by semicolon and values are separated by commas (where multiple values can be used). <br> <br> Example for bigrams (ngram of size 2):\n* PATH: /tokens=a word,another word\n* GET: /?tokens=a word&tokens=another word\n* POST (json):\n\n  ```javascript\n    {\n        \"tokens\": [\"a word\", \"another word\"]\n    }\n  ```\n\nEither \"tokens\" or \"contains\" has to be provided. <br> <br> Some queries with \"contains\" or \"sort\" can exceed the 30s timeout, in which case the API will return an error message with status code 503. You mitigate this by providing additional restrictions such as \"minFrequency\" and \"maxFrequency\". <br> <br> You can use the parameters \"offset\" and \"limit\" to paginate through large result sets. For convenience, the HTTP header \"Link\" is set on the response to provide links to \"first\", \"self\", \"next\", \"prev\" and \"last\" pages of results (depending on the context). For example, if the result set contains 50 results and the parameter \"limit\" is set to 25, the Links header will contain an URL for the first 25 results and the next 25 results. <br> <br> Some libraries such as python's `requests` can parse the header automatically and offer a convenient way of iterating through the results. For example:\n```python def get_all_results(url):\n    while url:\n        r = requests.get(url)\n        r.raise_for_status()\n        for item in r.json()['results']:\n          yield item\n        url = r.links.get('next', {}).get('url')\n```\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.lexiStats.getStatsFrequencyWordSourceLang",
+      "name": "lexiStats.getStatsFrequencyWordSourceLang",
+      "description": "This endpoint provides the frequency of a given word. When multiple database records match the query parameters, the returned frequency is the sum of the individual frequencies. For example, if the query parameters are lemma=test, the returned frequency will include the verb \"test\", the noun \"test\" and the adjective \"test\" in all forms (Test, tested, testing, etc.) <br> <br> If you are interested in the frequency of the word \"test\" but want to exclude other forms (e.g., tested) use the option trueCase=test. Normally, the word \"test\" will be spelt with a capital letter at the beginning of a sentence. The option trueCase will ignore this and it will count \"Test\" and \"test\" as the same token. If you are interested in frequencies of \"Test\" and \"test\", use the option wordform=test or wordform=Test. Note that trueCase is not just a lower case of the word as some words are genuinely spelt with a capital letter such as the word \"press\" in Oxford University Press. <br> <br> Parameters can be provided in PATH, GET or POST (form or json). The parameters in PATH are overriden by parameters in GET, POST and json (in that order). In PATH, individual options are separated by semicolon and values are separated by commas (where multiple values can be used). Examples:\n* PATH: /lemma=test;lexicalCategory=noun\n* GET: /?lemma=test&lexicalCategory=noun\n* POST (json):\n\n  ```javascript\n    {\n      \"lemma\": \"test\",\n      \"lexicalCategory\": \"noun\"\n    }\n  ```\n\n<br> One of the options wordform/trueCase/lemma/lexicalCategory has to be provided.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.lexiStats.getStatsFrequencyWordsSourceLang",
+      "name": "lexiStats.getStatsFrequencyWordsSourceLang",
+      "description": "This endpoint provides a list of frequencies for a given word or words. Unlike the /word/ endpoint, the results are split into the smallest units. <br> <br> To exclude a specific value, prepend it with the minus sign ('-'). For example, to get frequencies of the lemma 'happy' but exclude superlative forms (i.e., happiest) you could use options 'lemma=happy;grammaticalFeatures=-degreeType:superlative'. <br> <br> Parameters can be provided in PATH, GET or POST (form or json). The parameters in PATH are overridden by parameters in GET, POST and json (in that order). In PATH, individual options are separated by semicolon and values are separated by commas (where multiple values can be used). <br> <br> The parameters wordform/trueCase/lemma/lexicalCategory also exist in a plural form, taking a lists of items. Examples:\n* PATH: /wordforms=happy,happier,happiest\n* GET: /?wordforms=happy&wordforms=happier&wordforms=happiest\n* POST (json):\n```javascript\n  {\n    \"wordforms\": [\"happy\", \"happier\", \"happiest\"]\n  }\n```\nA mor complex example of retrieving frequencies of multiple lemmas:\n```\n  {\n      \"lemmas\": [\"happy\", \"content\", \"cheerful\", \"cheery\", \"merry\", \"joyful\", \"ecstatic\"],\n      \"grammaticalFeatures\": {\n          \"adjectiveFunctionType\": \"predicative\"\n      },\n      \"lexicalCategory\": \"adjective\",\n      \"sort\": [\"lemma\", \"-frequency\"]\n  }\n```\nSome queries with \"collate\" or \"sort\" can exceed the 30s timeout, in which case the API will return an error message with status code 503. You mitigate this by providing additional restrictions such as \"minFrequency\" and \"maxFrequency\". <br> <br> You can use the parameters \"offset\" and \"limit\" to paginate through large result sets. For convenience, the HTTP header \"Link\" is set on the response to provide links to \"first\", \"self\", \"next\", \"prev\" and \"last\" pages of results (depending on the context). For example, if the result set contains 50 results and the parameter \"limit\" is set to 25, the Links header will contain an URL for the first 25 results and the next 25 results. <br> <br> Some libraries such as python's `requests` can parse the header automatically and offer a convenient way of iterating through the results. For example:\n```python def get_all_results(url):\n    while url:\n        r = requests.get(url)\n        r.raise_for_status()\n        for item in r.json()['results']:\n          yield item\n        url = r.links.get('next', {}).get('url')\n```\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.search.getSearchSourceLang",
+      "name": "search.getSearchSourceLang",
+      "description": "\nUse this to retrieve possible [headword](documentation/glossary?term=headword) matches for a given string of text. The results are culculated using headword matching, fuzzy matching, and [lemmatization](documentation/glossary?term=lemma) \n\n  <div id=\"search\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.search.getSearchSourceSearchLanguageTranslationsTargetSearchLanguage",
+      "name": "search.getSearchSourceSearchLanguageTranslationsTargetSearchLanguage",
+      "description": "\nUse this to find matches in our translation dictionaries.\n\n  <div id=\"search_translation\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.thesaurus.getEntriesSourceLangWordIdAntonyms",
+      "name": "thesaurus.getEntriesSourceLangWordIdAntonyms",
+      "description": "\nRetrieve words that are opposite in meaning to the input word ([antonym](documentation/glossary?term=thesaurus)).\n\n  <div id=\"antonyms\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.thesaurus.getEntriesSourceLangWordIdSynonyms",
+      "name": "thesaurus.getEntriesSourceLangWordIdSynonyms",
+      "description": "\nUse this to retrieve words that are similar in meaning to the input word ([synonym](documentation/glossary?term=synonym)).\n\n  <div id=\"synonyms\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.thesaurus.getEntriesSourceLangWordIdSynonymsAntonyms",
+      "name": "thesaurus.getEntriesSourceLangWordIdSynonymsAntonyms",
+      "description": "\nRetrieve available [synonyms](documentation/glossary?term=thesaurus) and [antonyms](documentation/glossary?term=thesaurus) for a given word and language. \n\n  <div id=\"synonyms_and_antonyms\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.theSentenceDictionary.getEntriesSourceLanguageWordIdSentences",
+      "name": "theSentenceDictionary.getEntriesSourceLanguageWordIdSentences",
+      "description": "\nUse this to retrieve sentences extracted from  corpora which show how a word is used in the language. This is available for English and Spanish. For English, the sentences are linked to the correct [sense](documentation/glossary?term=sense) of the word in the dictionary. In Spanish, they are linked at the [headword](documentation/glossary?term=headword) level.\n  <div id=\"sentences\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.translation.getEntriesSourceTranslationLanguageWordIdTranslationsTargetTranslationLanguage",
+      "name": "translation.getEntriesSourceTranslationLanguageWordIdTranslationsTargetTranslationLanguage",
+      "description": "\nUse this to return translations for a given word. In the event that a word in the dataset does not have a direct translation, the response will be a [definition](documentation/glossary?term=entry) in the target language.\n\n  <div id=\"translation\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getDomainsSourceDomainsLanguageTargetDomainsLanguage",
+      "name": "utility.getDomainsSourceDomainsLanguageTargetDomainsLanguage",
+      "description": "Returns a list of the available [domains](documentation/glossary?term=domain) for a given bilingual language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getDomainsSourceLanguage",
+      "name": "utility.getDomainsSourceLanguage",
+      "description": "Returns a list of the available [domains](documentation/glossary?term=domain) for a given monolingual language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getFilters",
+      "name": "utility.getFilters",
+      "description": "Returns a list of all the valid filters to construct API calls.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getFiltersEndpoint",
+      "name": "utility.getFiltersEndpoint",
+      "description": "Returns a list of all the valid filters for a given endpoint to construct API calls.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getGrammaticalFeaturesSourceLanguage",
+      "name": "utility.getGrammaticalFeaturesSourceLanguage",
+      "description": "Returns a list of the available [grammatical features](documentation/glossary?term=grammaticalfeatures) for a given language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getLanguages",
+      "name": "utility.getLanguages",
+      "description": "Returns a list of monolingual and bilingual language datasets available in the API\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getLexicalcategoriesLanguage",
+      "name": "utility.getLexicalcategoriesLanguage",
+      "description": "Returns a list of available [lexical categories](documentation/glossary?term=lexicalcategory) for a given language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getRegionsSourceLanguage",
+      "name": "utility.getRegionsSourceLanguage",
+      "description": "Returns a list of the available [regions](documentation/glossary?term=regions) for a given monolingual language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getRegistersSourceLanguage",
+      "name": "utility.getRegistersSourceLanguage",
+      "description": "Returns a list of the available [registers](documentation/glossary?term=registers) for a given monolingual language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.utility.getRegistersSourceRegisterLanguageTargetRegisterLanguage",
+      "name": "utility.getRegistersSourceRegisterLanguageTargetRegisterLanguage",
+      "description": "Returns a list of the available [registers](documentation/glossary?term=registers) for a given bilingual language dataset.\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.wordlist.getWordlistSourceLangFiltersAdvanced",
+      "name": "wordlist.getWordlistSourceLangFiltersAdvanced",
+      "description": "Use this to apply more complex filters to the [list of words](documentation/glossary?term=wordlist). For example, you may only want to filter out words for which all [senses](documentation/glossary?term=sense) match the filter, or only its 'prime sense'. You can also filter by word length or match by substring (prefix). \n\n  <div id=\"wordlist_advanced\"></div>\n"
+    },
+    {
+      "id": "openapi_oxforddictionaries_com.wordlist.getWordlistSourceLangFiltersBasic",
+      "name": "wordlist.getWordlistSourceLangFiltersBasic",
+      "description": "\nUse this to retrieve a [list of words](documentation/glossary?term=wordlist) for particular [domain](documentation/glossary?term=domain), [lexical category](documentation/glossary?term=lexicalcategory), [register](documentation/glossary?term=registers) and/or [region](documentation/glossary?term=regions). View the full list of possible filters using the filters Utility endpoint.  The response only includes [headwords](documentation/glossary?term=headword), not all their possible [inflections](documentation/glossary?term=inflection). If you require a full [wordlist](documentation/glossary?term=wordlist) including [inflected forms](documentation/glossary?term=inflection), contact us and we can help.\n\n  <div id=\"wordlist\"></div>\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:19:54.401Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_granted.search_grants",
+      "name": "search_grants",
+      "description": "Search 84,000+ grant opportunities by keyword, state, source type, funder, and more. Uses semantic search (embeddings + full-text + scoring) combined with live AI-powered web discovery for comprehensive results. Returns active grants ranked by relevance with fit scores, deadlines, amounts, and application links. Use this as the starting point to find relevant grants."
+    },
+    {
+      "id": "mcp_granted.get_grant",
+      "name": "get_grant",
+      "description": "Get full details for a specific grant by its slug. Returns eligibility criteria, application link, deadline, amount, funder info, and tags. Use search_grants first to find valid slugs."
+    },
+    {
+      "id": "mcp_granted.search_funders",
+      "name": "search_funders",
+      "description": "Search 133,000+ US foundations by name, state, NTEE code, asset range, and annual income range. Returns key metrics: name, state, total assets, annual income (from IRS 990), NTEE category, and mission. Use get_funder with the returned slug for full profiles including actual giving history."
+    },
+    {
+      "id": "mcp_granted.get_funder",
+      "name": "get_funder",
+      "description": "Get a full foundation profile including mission, 5-year financials, recent grants awarded, key officers, and application info. Accepts a foundation slug (from search_funders results) or EIN (e.g. '13-1684331')."
+    },
+    {
+      "id": "mcp_granted.get_past_winners",
+      "name": "get_past_winners",
+      "description": "Competitive intelligence: see who has won a specific federal grant program. Shows top recipients grouped by organization with award counts, total funding, and year-over-year trends. Filter by CFDA number, agency, program name, or state. Supports agency abbreviations: NIH, NSF, EPA, DOE, DOD, USDA, NASA, SBA, etc."
+    }
+  ]
+}

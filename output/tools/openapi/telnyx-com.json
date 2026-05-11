@@ -1,0 +1,1822 @@
+{
+  "fetchedAt": "2026-04-30T15:26:52.190Z",
+  "status": "ok",
+  "count": 363,
+  "tools": [
+    {
+      "id": "openapi_telnyx_com.accessTokens.createTelephonyCredentialToken",
+      "name": "accessTokens.createTelephonyCredentialToken",
+      "description": "Create an Access Token (JWT) for the credential."
+    },
+    {
+      "id": "openapi_telnyx_com.addresses.createAddress",
+      "name": "addresses.createAddress",
+      "description": "Creates an address."
+    },
+    {
+      "id": "openapi_telnyx_com.addresses.deleteAddress",
+      "name": "addresses.deleteAddress",
+      "description": "Deletes an existing address."
+    },
+    {
+      "id": "openapi_telnyx_com.addresses.findAddresss",
+      "name": "addresses.findAddresss",
+      "description": "Returns a list of your addresses."
+    },
+    {
+      "id": "openapi_telnyx_com.addresses.getAddress",
+      "name": "addresses.getAddress",
+      "description": "Retrieves the details of an existing address."
+    },
+    {
+      "id": "openapi_telnyx_com.addresses.validateAddress",
+      "name": "addresses.validateAddress",
+      "description": "Validates an address for emergency services."
+    },
+    {
+      "id": "openapi_telnyx_com.authenticationProviders.createAuthenticationProvider",
+      "name": "authenticationProviders.createAuthenticationProvider",
+      "description": "Creates an authentication provider."
+    },
+    {
+      "id": "openapi_telnyx_com.authenticationProviders.deleteAuthenticationProvider",
+      "name": "authenticationProviders.deleteAuthenticationProvider",
+      "description": "Deletes an existing authentication provider."
+    },
+    {
+      "id": "openapi_telnyx_com.authenticationProviders.findAuthenticationProviders",
+      "name": "authenticationProviders.findAuthenticationProviders",
+      "description": "Returns a list of your SSO authentication providers."
+    },
+    {
+      "id": "openapi_telnyx_com.authenticationProviders.getAuthenticationProvider",
+      "name": "authenticationProviders.getAuthenticationProvider",
+      "description": "Retrieves the details of an existing authentication provider."
+    },
+    {
+      "id": "openapi_telnyx_com.authenticationProviders.updateAuthenticationProvider",
+      "name": "authenticationProviders.updateAuthenticationProvider",
+      "description": "Updates settings of an existing authentication provider."
+    },
+    {
+      "id": "openapi_telnyx_com.billing.getUserBalance",
+      "name": "billing.getUserBalance",
+      "description": "Retrieve user balance details"
+    },
+    {
+      "id": "openapi_telnyx_com.billingGroups.createBillingGroup",
+      "name": "billingGroups.createBillingGroup",
+      "description": "Create a billing group"
+    },
+    {
+      "id": "openapi_telnyx_com.billingGroups.deleteBillingGroup",
+      "name": "billingGroups.deleteBillingGroup",
+      "description": "Delete a billing group"
+    },
+    {
+      "id": "openapi_telnyx_com.billingGroups.listBillingGroups",
+      "name": "billingGroups.listBillingGroups",
+      "description": "List all billing groups"
+    },
+    {
+      "id": "openapi_telnyx_com.billingGroups.retrieveBillingGroup",
+      "name": "billingGroups.retrieveBillingGroup",
+      "description": "Retrieve a billing group"
+    },
+    {
+      "id": "openapi_telnyx_com.billingGroups.updateBillingGroup",
+      "name": "billingGroups.updateBillingGroup",
+      "description": "Update a billing group"
+    },
+    {
+      "id": "openapi_telnyx_com.bulkCredentials.bulkCredentialAction",
+      "name": "bulkCredentials.bulkCredentialAction",
+      "description": "Perform activate or deactivate action on all credentials filtered by the provided tag. Activate action will change the status to active, making it possible to connect calls with the credential. Deactivate action will change the status to inactive, making it impossible to connect calls with the credential."
+    },
+    {
+      "id": "openapi_telnyx_com.bulkCredentials.createBulkTelephonyCredential",
+      "name": "bulkCredentials.createBulkTelephonyCredential",
+      "description": "Creates several credentials in bulk."
+    },
+    {
+      "id": "openapi_telnyx_com.bulkCredentials.deleteBulkTelephonyCredential",
+      "name": "bulkCredentials.deleteBulkTelephonyCredential",
+      "description": "Delete several credentials in bulk."
+    },
+    {
+      "id": "openapi_telnyx_com.bulkCredentials.updateBulkTelephonyCredential",
+      "name": "bulkCredentials.updateBulkTelephonyCredential",
+      "description": "Update several credentials in bulk."
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callAnswer",
+      "name": "callCommands.callAnswer",
+      "description": "Answer an incoming call. You must issue this command before executing subsequent commands on an incoming call.\n\n**Expected Webhooks:**\n\n- `call.answered`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callBridge",
+      "name": "callCommands.callBridge",
+      "description": "Bridge two call control calls.\n\n**Expected Webhooks:**\n\n- `call.bridged` for Leg A\n- `call.bridged` for Leg B\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callDial",
+      "name": "callCommands.callDial",
+      "description": "Dial a number or SIP URI from a given connection. A successful response will include a `call_leg_id` which can be used to correlate the command with subsequent webhooks.\n\n**Expected Webhooks:**\n\n- `call.initiated`\n- `call.answered` or `call.hangup`\n- `call.machine.detection.ended` if `answering_machine_detection` was requested\n- `call.machine.greeting.ended` if `answering_machine_detection` was set to `detect_beep`, `greeting_end` or `detect_words`"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callEnqueue",
+      "name": "callCommands.callEnqueue",
+      "description": "Put the call in a queue."
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callForkStart",
+      "name": "callCommands.callForkStart",
+      "description": "Call forking allows you to stream the media from a call to a specific target in realtime. \nThis stream can be used to enable realtime audio analysis to support a \nvariety of use cases, including fraud detection, or the creation of AI-generated audio responses. \nRequests must specify either the `target` attribute or the `rx` and `tx` attributes.\n\n**Expected Webhooks:**\n\n- `call.fork.started`\n- `call.fork.stopped`\n\n**Simple Telnyx RTP Encapsulation Protocol (STREP)**\n\n*Note: This header/encapsulation is not used when the `rx` and `tx`\nparameters have been specified; it only applies when media is forked\nusing the `target` attribute.*\n\nIf the destination for forked media is specified using the \"target\"\nattribute, the RTP will be encapsulated in an extra Telnyx protocol,\nwhich adds a 24 byte header to the RTP payload in each packet. The STREP\nheader includes the Call Control `call_leg_id` for stream\nidentification, along with bits that represent the direction (inbound or\noutbound) of the media. This 24-byte header sits between the UDP header\nand the RTP header.\n\nThe STREP header makes it possible to fork RTP for multiple calls (or\ntwo RTP streams for the same call) to the same IP:port, where the\nstreams can be demultiplexed by your application using the information\nin the header. Of course, it's still possible to ignore this header\ncompletely, for example, if sending forked media for different calls to\ndifferent ports or IP addresses. In this case, simply strip 24 bytes\n(or use the second byte to find the header length) from the received UDP\npayload to get the RTP (RTP header and payload).\n\n```\nSTREP Specification\n\n  0                   1                   2                   3\n  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1\n +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n |1 1|Version|L|D|    HeaderLen  |  reserved (2 bytes)           |\n +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n |       reserved (4 bytes, for UDP ports or anything else)      |\n +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n |               The call_leg_id                                 |\n |                   from Call Control                           |\n |                       (128 bits / 16 bytes)                   |\n |                           (this is binary data)               |\n +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\n 11\n   Static bits 11, always set to 11 to easily distinguish forked media\n   from RTP (10) and T.38 media (usually 00) and SIP (which begins\n   with a capital letter, so begins with bits 01). This is a magic number.\n\n Version\n   Four bits to indicate the version number of the protocol, starting at 0001.\n\n L\n   One bit to represent the leg of the call (A or B).\n   0 represents the A (first) leg of the call.\n   1 represents the B (second) leg of the call.\n\n D\n   One bit to represent the direction of this RTP stream.\n   0 represents media received by Telnyx.\n   1 represents media transmitted by Telnyx.\n\n HeaderLen (1 byte)\n   The length of the header in bytes.\n   Note that this value does not include the length of the payload. The total\n   size of the RTP can be calculated by subtracting the HeaderLen from the UDP\n   length (minus 8 for the UDP header).\n   In version 1, this value will always be 24.\n\n Reserved (6 bytes)\n   Reserved for future use and to make sure that the header is a multiple of 32 bits\n\n Call Leg ID\n   A 128-bit identifier for the call leg.\n   This is the call_leg_id from Call Control.\n```\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callForkStop",
+      "name": "callCommands.callForkStop",
+      "description": "Stop forking a call.\n\n**Expected Webhooks:**\n\n- `call.fork.stopped`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callGatherStop",
+      "name": "callCommands.callGatherStop",
+      "description": "Stop current gather.\n\n**Expected Webhooks:**\n\n- `call.gather.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callGatherUsingAudio",
+      "name": "callCommands.callGatherUsingAudio",
+      "description": "Play an audio file on the call until the required DTMF signals are gathered to build interactive menus.\n\nYou can pass a list of valid digits along with an 'invalid_audio_url', which will be played back at the beginning of each prompt. Playback will be interrupted when a DTMF signal is received. The [Answer](/docs/api/v2/call-control/Call-Commands#CallControlAnswer) command must be issued before the `gather_using_audio` command.\n\n**Expected Webhooks:**\n\n- `call.playback.started`\n- `call.playback.ended`\n- `call.dtmf.received` (you may receive many of these webhooks)\n- `call.gather.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callGatherUsingSpeak",
+      "name": "callCommands.callGatherUsingSpeak",
+      "description": "Convert text to speech and play it on the call until the required DTMF signals are gathered to build interactive menus.\n\nYou can pass a list of valid digits along with an 'invalid_payload', which will be played back at the beginning of each prompt. Speech will be interrupted when a DTMF signal is received. The [Answer](/docs/api/v2/call-control/Call-Commands#CallControlAnswer) command must be issued before the `gather_using_speak` command.\n\n**Expected Webhooks:**\n\n- `call.dtmf.received` (you may receive many of these webhooks)\n- `call.gather.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callHangup",
+      "name": "callCommands.callHangup",
+      "description": "Hang up the call.\n\n**Expected Webhooks:**\n\n- `call.hangup`\n- `call.recording.saved`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callPlaybackStart",
+      "name": "callCommands.callPlaybackStart",
+      "description": "Play an audio file on the call. If multiple play audio commands are issued consecutively,\nthe audio files will be placed in a queue awaiting playback.\n\n*Notes:*\n\n- When `overlay` is enabled, `target_legs` is limited to `self`.\n- A customer cannot Play Audio with `overlay=true` unless there is a Play Audio with `overlay=false` actively playing.\n\n**Expected Webhooks:**\n\n- `call.playback.started`\n- `call.playback.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callPlaybackStop",
+      "name": "callCommands.callPlaybackStop",
+      "description": "Stop audio being played on the call.\n\n**Expected Webhooks:**\n\n- `call.playback.ended` or `call.speak.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callRecordPause",
+      "name": "callCommands.callRecordPause",
+      "description": "Pause recording the call. Recording can be resumed via Resume recording command.\n\n**Expected Webhooks:**\n\nThere are no webhooks associated with this command.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callRecordResume",
+      "name": "callCommands.callRecordResume",
+      "description": "Resume recording the call.\n\n**Expected Webhooks:**\n\nThere are no webhooks associated with this command.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callRecordStart",
+      "name": "callCommands.callRecordStart",
+      "description": "Start recording the call. Recording will stop on call hang-up, or can be initiated via the Stop Recording command.\n\n**Expected Webhooks:**\n\n- `call.recording.saved`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callRecordStop",
+      "name": "callCommands.callRecordStop",
+      "description": "Stop recording the call.\n\n**Expected Webhooks:**\n\n- `call.recording.saved`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callRefer",
+      "name": "callCommands.callRefer",
+      "description": "Initiate a SIP Refer on a Call Control call. You can initiate a SIP Refer at any point in the duration of a call.\n\n**Expected Webhooks:**\n\n- `call.refer.started`\n- `call.refer.completed`\n- `call.refer.failed`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callReject",
+      "name": "callCommands.callReject",
+      "description": "Reject an incoming call.\n\n**Expected Webhooks:**\n\n- `call.hangup`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callSendDtmf",
+      "name": "callCommands.callSendDtmf",
+      "description": "Sends DTMF tones from this leg. DTMF tones will be heard by the other end of the call.\n\n**Expected Webhooks:**\n\nThere are no webhooks associated with this command.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callSpeak",
+      "name": "callCommands.callSpeak",
+      "description": "Convert text to speech and play it back on the call. If multiple speak text commands are issued consecutively, the audio files will be placed in a queue awaiting playback.\n\n**Expected Webhooks:**\n\n- `call.speak.started`\n- `call.speak.ended`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callTranscriptionStart",
+      "name": "callCommands.callTranscriptionStart",
+      "description": "Start real-time transcription. Transcription will stop on call hang-up, or can be initiated via the Transcription stop command."
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callTranscriptionStop",
+      "name": "callCommands.callTranscriptionStop",
+      "description": "Stop real-time transcription."
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.callTransfer",
+      "name": "callCommands.callTransfer",
+      "description": "Transfer a call to a new destination. If the transfer is unsuccessful, a `call.hangup` webhook for the other call (Leg B) will be sent indicating that the transfer could not be completed. The original call will remain active and may be issued additional commands, potentially transfering the call to an alternate destination.\n\n**Expected Webhooks:**\n\n- `call.initiated`\n- `call.bridged` to Leg B\n- `call.answered` or `call.hangup`\n- `call.machine.detection.ended` if `answering_machine_detection` was requested\n- `call.machine.greeting.ended` if `answering_machine_detection` was set to `detect_beep`, `greeting_end` or `detect_words`"
+    },
+    {
+      "id": "openapi_telnyx_com.callCommands.leaveQueue",
+      "name": "callCommands.leaveQueue",
+      "description": "Removes the call from a queue."
+    },
+    {
+      "id": "openapi_telnyx_com.callControlApplications.createCallControlApplication",
+      "name": "callControlApplications.createCallControlApplication",
+      "description": "Create a call control application."
+    },
+    {
+      "id": "openapi_telnyx_com.callControlApplications.deleteCallControlApplication",
+      "name": "callControlApplications.deleteCallControlApplication",
+      "description": "Deletes a call control application."
+    },
+    {
+      "id": "openapi_telnyx_com.callControlApplications.listCallControlApplications",
+      "name": "callControlApplications.listCallControlApplications",
+      "description": "Return a list of call control applications."
+    },
+    {
+      "id": "openapi_telnyx_com.callControlApplications.retrieveCallControlApplication",
+      "name": "callControlApplications.retrieveCallControlApplication",
+      "description": "Retrieves the details of an existing call control application."
+    },
+    {
+      "id": "openapi_telnyx_com.callControlApplications.updateCallControlApplication",
+      "name": "callControlApplications.updateCallControlApplication",
+      "description": "Updates settings of an existing call control application."
+    },
+    {
+      "id": "openapi_telnyx_com.callInformation.retrieveCallStatus",
+      "name": "callInformation.retrieveCallStatus",
+      "description": "Returns the status of a call (data is available 10 minutes after call ended)."
+    },
+    {
+      "id": "openapi_telnyx_com.cdrUsageReports.getUsageReportSync",
+      "name": "cdrUsageReports.getUsageReportSync",
+      "description": "Generate and fetch voice usage report synchronously. This endpoint will both generate and fetch the voice report over a specified time period. No polling is necessary but the response may take up to a couple of minutes. "
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceDialParticipantIn",
+      "name": "conferenceCommands.conferenceDialParticipantIn",
+      "description": "Dials a phone number and, when the call is answered, automatically joins them into the specified conference.\n\n**Expected Webhooks:**\n\n- `call.hangup`\n- `call.answered`\n- `conference.participant.joined`\n- `conference.participant.left`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceHoldParticipants",
+      "name": "conferenceCommands.conferenceHoldParticipants",
+      "description": "Hold a list of participants in a conference call"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceJoin",
+      "name": "conferenceCommands.conferenceJoin",
+      "description": "Join an existing call leg to a conference. Issue the Join Conference command with the conference ID in the path and the `call_control_id` of the leg you wish to join to the conference as an attribute.\n\n**Expected Webhooks:**\n\n- `conference.participant.joined`\n- `conference.participant.left`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceLeave",
+      "name": "conferenceCommands.conferenceLeave",
+      "description": "Removes a call leg from a conference and moves it back to parked state. **Expected Webhooks:**\n\n- `conference.participant.left`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceMuteParticipants",
+      "name": "conferenceCommands.conferenceMuteParticipants",
+      "description": "Mute a list of participants in a conference call"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferencePlayAudio",
+      "name": "conferenceCommands.conferencePlayAudio",
+      "description": "Play audio to all or some participants on a conference call."
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceSpeakText",
+      "name": "conferenceCommands.conferenceSpeakText",
+      "description": "Convert text to speech and play it to all or some participants."
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceStartRecording",
+      "name": "conferenceCommands.conferenceStartRecording",
+      "description": "Start recording the conference. Recording will stop on conference end, or via the Stop Recording command.\n\n**Expected Webhooks:**\n\n- `conference.recording.saved`"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceStopAudio",
+      "name": "conferenceCommands.conferenceStopAudio",
+      "description": "Stop audio being played to all or some participants on a conference call."
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceStopRecording",
+      "name": "conferenceCommands.conferenceStopRecording",
+      "description": "Stop recording the conference.\n\n**Expected Webhooks:**\n\n- `conference.recording.saved`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceUnholdParticipants",
+      "name": "conferenceCommands.conferenceUnholdParticipants",
+      "description": "Unhold a list of participants in a conference call"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceUnmuteParticipants",
+      "name": "conferenceCommands.conferenceUnmuteParticipants",
+      "description": "Unmute a list of participants in a conference call"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.conferenceUpdate",
+      "name": "conferenceCommands.conferenceUpdate",
+      "description": "Update conference participant supervisor_role"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.createConference",
+      "name": "conferenceCommands.createConference",
+      "description": "Create a conference from an existing call leg using a `call_control_id` and a conference name. Upon creating the conference, the call will be automatically bridged to the conference. Conferences will expire after all participants have left the conference or after 4 hours regardless of the number of active participants.\n\n**Expected Webhooks:**\n\n- `conference.created`\n- `conference.participant.joined`\n- `conference.participant.left`\n- `conference.ended`\n- `conference.recording.saved`\n- `conference.floor.changed`\n"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.listConferenceParticipants",
+      "name": "conferenceCommands.listConferenceParticipants",
+      "description": "Lists conference participants"
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.listConferences",
+      "name": "conferenceCommands.listConferences",
+      "description": "Lists conferences. Conferences are created on demand, and will expire after all participants have left the conference or after 4 hours regardless of the number of active participants. Conferences are listed in descending order by `expires_at`."
+    },
+    {
+      "id": "openapi_telnyx_com.conferenceCommands.retrieveConference",
+      "name": "conferenceCommands.retrieveConference",
+      "description": "Retrieve an existing conference"
+    },
+    {
+      "id": "openapi_telnyx_com.connections.listConnections",
+      "name": "connections.listConnections",
+      "description": "Returns a list of your connections irrespective of type."
+    },
+    {
+      "id": "openapi_telnyx_com.connections.retrieveConnection",
+      "name": "connections.retrieveConnection",
+      "description": "Retrieves the high-level details of an existing connection. To retrieve specific authentication information, use the endpoint for the specific connection type."
+    },
+    {
+      "id": "openapi_telnyx_com.credentialConnections.createCredentialConnection",
+      "name": "credentialConnections.createCredentialConnection",
+      "description": "Creates a credential connection."
+    },
+    {
+      "id": "openapi_telnyx_com.credentialConnections.deleteCredentialConnection",
+      "name": "credentialConnections.deleteCredentialConnection",
+      "description": "Deletes an existing credential connection."
+    },
+    {
+      "id": "openapi_telnyx_com.credentialConnections.listCredentialConnections",
+      "name": "credentialConnections.listCredentialConnections",
+      "description": "Returns a list of your credential connections."
+    },
+    {
+      "id": "openapi_telnyx_com.credentialConnections.retrieveCredentialConnection",
+      "name": "credentialConnections.retrieveCredentialConnection",
+      "description": "Retrieves the details of an existing credential connection."
+    },
+    {
+      "id": "openapi_telnyx_com.credentialConnections.updateCredentialConnection",
+      "name": "credentialConnections.updateCredentialConnection",
+      "description": "Updates settings of an existing credential connection."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.createTelephonyCredential",
+      "name": "credentials.createTelephonyCredential",
+      "description": "Create a credential."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.deleteTelephonyCredential",
+      "name": "credentials.deleteTelephonyCredential",
+      "description": "Delete an existing credential."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.findTelephonyCredentials",
+      "name": "credentials.findTelephonyCredentials",
+      "description": "List all On-demand Credentials."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.getTelephonyCredential",
+      "name": "credentials.getTelephonyCredential",
+      "description": "Get the details of an existing On-demand Credential."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.listTags",
+      "name": "credentials.listTags",
+      "description": "Returns a list of tags used on Credentials"
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.telephonyCredentialAction",
+      "name": "credentials.telephonyCredentialAction",
+      "description": "Perform activate or deactivate action on provided Credential. Activate action will change the status to active, making it possible to connect calls with the credential. Deactivate action will change the status to inactive, making it impossible to connect calls with the credential."
+    },
+    {
+      "id": "openapi_telnyx_com.credentials.updateTelephonyCredential",
+      "name": "credentials.updateTelephonyCredential",
+      "description": "Update an existing credential."
+    },
+    {
+      "id": "openapi_telnyx_com.csvDownloads.createCsvDownload",
+      "name": "csvDownloads.createCsvDownload",
+      "description": "Create a CSV download"
+    },
+    {
+      "id": "openapi_telnyx_com.csvDownloads.listCsvDownloads",
+      "name": "csvDownloads.listCsvDownloads",
+      "description": "List CSV downloads"
+    },
+    {
+      "id": "openapi_telnyx_com.csvDownloads.retrieveCsvDownload",
+      "name": "csvDownloads.retrieveCsvDownload",
+      "description": "Retrieve a CSV download"
+    },
+    {
+      "id": "openapi_telnyx_com.debugging.listCallEvents",
+      "name": "debugging.listCallEvents",
+      "description": "Filters call events by given filter parameters. Events are ordered by `event_timestamp`. If filter for `call_leg_id` or `call_session_id` is not present, it only filters events from the last 24 hours.\n\n**Note**: Only one `filter[event_timestamp]` can be passed.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.detailRecords.detailRecordsSearch",
+      "name": "detailRecords.detailRecordsSearch",
+      "description": "Search for any detail record across the Telnyx Platform"
+    },
+    {
+      "id": "openapi_telnyx_com.documents.createDocument",
+      "name": "documents.createDocument",
+      "description": "Upload a document.<br /><br />Uploaded files must be linked to a service within 30 minutes or they will be automatically deleted."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.deleteDocument",
+      "name": "documents.deleteDocument",
+      "description": "Delete a document.<br /><br />A document can only be deleted if it's not linked to a service. If it is linked to a service, it must be unlinked prior to deleting."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.downloadDocServiceDocument",
+      "name": "documents.downloadDocServiceDocument",
+      "description": "Download a document."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.listDocumentLinks",
+      "name": "documents.listDocumentLinks",
+      "description": "List all documents links ordered by created_at descending."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.listDocuments",
+      "name": "documents.listDocuments",
+      "description": "List all documents ordered by created_at descending."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.retrieveDocument",
+      "name": "documents.retrieveDocument",
+      "description": "Retrieve a document."
+    },
+    {
+      "id": "openapi_telnyx_com.documents.updateDocument",
+      "name": "documents.updateDocument",
+      "description": "Update a document."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdnConnections.createFqdnConnection",
+      "name": "fqdnConnections.createFqdnConnection",
+      "description": "Creates a FQDN connection."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdnConnections.deleteFqdnConnection",
+      "name": "fqdnConnections.deleteFqdnConnection",
+      "description": "Deletes an FQDN connection."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdnConnections.listFqdnConnections",
+      "name": "fqdnConnections.listFqdnConnections",
+      "description": "Returns a list of your FQDN connections."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdnConnections.retrieveFqdnConnection",
+      "name": "fqdnConnections.retrieveFqdnConnection",
+      "description": "Retrieves the details of an existing FQDN connection."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdnConnections.updateFqdnConnection",
+      "name": "fqdnConnections.updateFqdnConnection",
+      "description": "Updates settings of an existing FQDN connection."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdNs.createFqdn",
+      "name": "fqdNs.createFqdn",
+      "description": "Create a new FQDN object."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdNs.deleteFqdn",
+      "name": "fqdNs.deleteFqdn",
+      "description": "Delete an FQDN."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdNs.listFqdns",
+      "name": "fqdNs.listFqdns",
+      "description": "Get all FQDNs belonging to the user that match the given filters."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdNs.retrieveFqdn",
+      "name": "fqdNs.retrieveFqdn",
+      "description": "Return the details regarding a specific FQDN."
+    },
+    {
+      "id": "openapi_telnyx_com.fqdNs.updateFqdn",
+      "name": "fqdNs.updateFqdn",
+      "description": "Update the details of a specific FQDN."
+    },
+    {
+      "id": "openapi_telnyx_com.inboundChannels.listOutboundChannels",
+      "name": "inboundChannels.listOutboundChannels",
+      "description": "Returns the inbound channels for your account. Inbound channels allows you to use Channel Billing for calls to your Telnyx phone numbers. Please check the Telnyx Support Articles section for full information and examples of how to utilize Channel Billing."
+    },
+    {
+      "id": "openapi_telnyx_com.inboundChannels.updateOutboundChannels",
+      "name": "inboundChannels.updateOutboundChannels",
+      "description": "Update the inbound channels for the account"
+    },
+    {
+      "id": "openapi_telnyx_com.inventoryLevel.createInventoryCoverageRequest",
+      "name": "inventoryLevel.createInventoryCoverageRequest",
+      "description": "Creates an inventory coverage request. If locality, npa or national_destination_code is used in groupBy, and no region or locality filters are used, the whole paginated set is returned."
+    },
+    {
+      "id": "openapi_telnyx_com.ipConnections.createIpConnection",
+      "name": "ipConnections.createIpConnection",
+      "description": "Creates an IP connection."
+    },
+    {
+      "id": "openapi_telnyx_com.ipConnections.deleteIpConnection",
+      "name": "ipConnections.deleteIpConnection",
+      "description": "Deletes an existing IP connection."
+    },
+    {
+      "id": "openapi_telnyx_com.ipConnections.listIpConnections",
+      "name": "ipConnections.listIpConnections",
+      "description": "Returns a list of your IP connections."
+    },
+    {
+      "id": "openapi_telnyx_com.ipConnections.retrieveIpConnection",
+      "name": "ipConnections.retrieveIpConnection",
+      "description": "Retrieves the details of an existing ip connection."
+    },
+    {
+      "id": "openapi_telnyx_com.ipConnections.updateIpConnection",
+      "name": "ipConnections.updateIpConnection",
+      "description": "Updates settings of an existing IP connection."
+    },
+    {
+      "id": "openapi_telnyx_com.iPs.createIp",
+      "name": "iPs.createIp",
+      "description": "Create a new IP object."
+    },
+    {
+      "id": "openapi_telnyx_com.iPs.deleteIp",
+      "name": "iPs.deleteIp",
+      "description": "Delete an IP."
+    },
+    {
+      "id": "openapi_telnyx_com.iPs.listIps",
+      "name": "iPs.listIps",
+      "description": "Get all IPs belonging to the user that match the given filters."
+    },
+    {
+      "id": "openapi_telnyx_com.iPs.retrieveIp",
+      "name": "iPs.retrieveIp",
+      "description": "Return the details regarding a specific IP."
+    },
+    {
+      "id": "openapi_telnyx_com.iPs.updateIp",
+      "name": "iPs.updateIp",
+      "description": "Update the details of a specific IP."
+    },
+    {
+      "id": "openapi_telnyx_com.managedAccounts.createManagedAccount",
+      "name": "managedAccounts.createManagedAccount",
+      "description": "Create a new managed account owned by the authenticated user. You need to be explictly approved by Telnyx in order to become a manager account."
+    },
+    {
+      "id": "openapi_telnyx_com.managedAccounts.disableManagedAccount",
+      "name": "managedAccounts.disableManagedAccount",
+      "description": "Disables a managed account, forbidding it to use Telnyx services, including sending or receiving phone calls and SMS messages. Ongoing phone calls will not be affected. The managed account and its sub-users will still be able to log in via the mission control portal."
+    },
+    {
+      "id": "openapi_telnyx_com.managedAccounts.enableManagedAccount",
+      "name": "managedAccounts.enableManagedAccount",
+      "description": "Enables a managed account and its sub-users to use Telnyx services."
+    },
+    {
+      "id": "openapi_telnyx_com.managedAccounts.listManagedAccounts",
+      "name": "managedAccounts.listManagedAccounts",
+      "description": "Lists the accounts managed by the current user. Users need to be explictly approved by Telnyx in order to become manager accounts."
+    },
+    {
+      "id": "openapi_telnyx_com.managedAccounts.retrieveManagedAccount",
+      "name": "managedAccounts.retrieveManagedAccount",
+      "description": "Retrieves the details of a single managed account."
+    },
+    {
+      "id": "openapi_telnyx_com.mdrDetailReports.deleteMdrRequest",
+      "name": "mdrDetailReports.deleteMdrRequest",
+      "description": "Delete generated messaging detail report by id"
+    },
+    {
+      "id": "openapi_telnyx_com.mdrDetailReports.getCdrRequests",
+      "name": "mdrDetailReports.getCdrRequests",
+      "description": "Fetch all previous requests for messaging detail reports. Messaging detail reports are reports for pulling all messaging records. "
+    },
+    {
+      "id": "openapi_telnyx_com.mdrDetailReports.getMdrRequest",
+      "name": "mdrDetailReports.getMdrRequest",
+      "description": "Fetch single messaging detail report by id."
+    },
+    {
+      "id": "openapi_telnyx_com.mdrDetailReports.getReportsMdrs",
+      "name": "mdrDetailReports.getReportsMdrs",
+      "description": "Fetch all Mdr records "
+    },
+    {
+      "id": "openapi_telnyx_com.mdrDetailReports.submitMdrRequest",
+      "name": "mdrDetailReports.submitMdrRequest",
+      "description": "Submit a request for new messaging detail report. Messaging detail report pulls all raw messaging data according to defined filters."
+    },
+    {
+      "id": "openapi_telnyx_com.mdrSearchBeta.getMdrMessageBody",
+      "name": "mdrSearchBeta.getMdrMessageBody",
+      "description": "Fetch Mdr message body "
+    },
+    {
+      "id": "openapi_telnyx_com.mdrSearchBeta.getPaginatedMdrs",
+      "name": "mdrSearchBeta.getPaginatedMdrs",
+      "description": "Fetch all Mdr records "
+    },
+    {
+      "id": "openapi_telnyx_com.mdrUsageReports.deleteUsageReport",
+      "name": "mdrUsageReports.deleteUsageReport",
+      "description": "Delete messaging usage report by id"
+    },
+    {
+      "id": "openapi_telnyx_com.mdrUsageReports.getUsageReport",
+      "name": "mdrUsageReports.getUsageReport",
+      "description": "Fetch a single messaging usage report by id"
+    },
+    {
+      "id": "openapi_telnyx_com.mdrUsageReports.getUsageReports",
+      "name": "mdrUsageReports.getUsageReports",
+      "description": "Fetch all messaging usage reports. Usage reports are aggregated messaging data for specified time period and breakdown"
+    },
+    {
+      "id": "openapi_telnyx_com.mdrUsageReports.getUsageReportSync1",
+      "name": "mdrUsageReports.getUsageReportSync1",
+      "description": "Generate and fetch messaging usage report synchronously. This endpoint will both generate and fetch the messaging report over a specified time period. No polling is necessary but the response may take up to a couple of minutes. "
+    },
+    {
+      "id": "openapi_telnyx_com.mdrUsageReports.submitUsageReport",
+      "name": "mdrUsageReports.submitUsageReport",
+      "description": "Submit request for new new messaging usage report. This endpoint will pull and aggregate messaging data in specified time period. "
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.createMedia",
+      "name": "mediaStorageApi.createMedia",
+      "description": "Upload media file to Telnyx so it can be used with other Telnyx services"
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.deleteMedia",
+      "name": "mediaStorageApi.deleteMedia",
+      "description": "Deletes a stored media file."
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.downloadMedia",
+      "name": "mediaStorageApi.downloadMedia",
+      "description": "Downloads a stored media file."
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.getMedia",
+      "name": "mediaStorageApi.getMedia",
+      "description": "Returns the information about a stored media file."
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.listMedia",
+      "name": "mediaStorageApi.listMedia",
+      "description": "Returns a list of stored media files."
+    },
+    {
+      "id": "openapi_telnyx_com.mediaStorageApi.updateMedia",
+      "name": "mediaStorageApi.updateMedia",
+      "description": "Updates a stored media file."
+    },
+    {
+      "id": "openapi_telnyx_com.messages.createLongCodeMessage",
+      "name": "messages.createLongCodeMessage",
+      "description": "Send a long code message"
+    },
+    {
+      "id": "openapi_telnyx_com.messages.createMessage",
+      "name": "messages.createMessage",
+      "description": "Send a message with a Phone Number, Alphanumeric Sender ID, Short Code or Number Pool.\n\nThis endpoint allows you to send a message with any messaging resource.\nCurrent messaging resources include: long-code, short-code, number-pool, and\nalphanumeric-sender-id.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.messages.createNumberPoolMessage",
+      "name": "messages.createNumberPoolMessage",
+      "description": "Send a message using number pool"
+    },
+    {
+      "id": "openapi_telnyx_com.messages.createShortCodeMessage",
+      "name": "messages.createShortCodeMessage",
+      "description": "Send a short code message"
+    },
+    {
+      "id": "openapi_telnyx_com.messages.retrieveMessage",
+      "name": "messages.retrieveMessage",
+      "description": "Note: This API endpoint can only retrieve messages that are no older than 10 days since their creation. If you require messages older than this, please generate an [MDR report.](https://developers.telnyx.com/docs/api/v1/reports/MDR-Reports)"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingHostedNumber.createMessagingHostedNumberOrder",
+      "name": "messagingHostedNumber.createMessagingHostedNumberOrder",
+      "description": "Create a messaging hosted number order"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingHostedNumber.deleteMessagingHostedNumber",
+      "name": "messagingHostedNumber.deleteMessagingHostedNumber",
+      "description": "Delete a messaging hosted number"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingHostedNumber.listMessagingHostedNumberOrder",
+      "name": "messagingHostedNumber.listMessagingHostedNumberOrder",
+      "description": "List messaging hosted number orders"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingHostedNumber.retrieveMessagingHostedNumberOrder",
+      "name": "messagingHostedNumber.retrieveMessagingHostedNumberOrder",
+      "description": "Retrieve a messaging hosted number order"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingHostedNumber.uploadFileMessagingHostedNumberOrder",
+      "name": "messagingHostedNumber.uploadFileMessagingHostedNumberOrder",
+      "description": "Upload file required for a messaging hosted number order"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.createMessagingProfile",
+      "name": "messagingProfiles.createMessagingProfile",
+      "description": "Create a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.deleteMessagingProfile",
+      "name": "messagingProfiles.deleteMessagingProfile",
+      "description": "Delete a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.listMessagingProfileMetrics",
+      "name": "messagingProfiles.listMessagingProfileMetrics",
+      "description": "List messaging profile metrics"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.listMessagingProfilePhoneNumbers",
+      "name": "messagingProfiles.listMessagingProfilePhoneNumbers",
+      "description": "List phone numbers associated with a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.listMessagingProfiles",
+      "name": "messagingProfiles.listMessagingProfiles",
+      "description": "List messaging profiles"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.listMessagingProfileShortCodes",
+      "name": "messagingProfiles.listMessagingProfileShortCodes",
+      "description": "List short codes associated with a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.retrieveMessagingProfile",
+      "name": "messagingProfiles.retrieveMessagingProfile",
+      "description": "Retrieve a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.retrieveMessagingProfileDetailedMetrics",
+      "name": "messagingProfiles.retrieveMessagingProfileDetailedMetrics",
+      "description": "Retrieve messaging profile metrics"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingProfiles.updateMessagingProfile",
+      "name": "messagingProfiles.updateMessagingProfile",
+      "description": "Update a messaging profile"
+    },
+    {
+      "id": "openapi_telnyx_com.messagingUrlDomains.listMessagingUrlDomains",
+      "name": "messagingUrlDomains.listMessagingUrlDomains",
+      "description": "List messaging URL domains"
+    },
+    {
+      "id": "openapi_telnyx_com.mobileOperatorNetworks.mobileOperatorNetworksGet",
+      "name": "mobileOperatorNetworks.mobileOperatorNetworksGet",
+      "description": "Telnyx has a set of GSM mobile operators partners that are available through our mobile network roaming. This resource is entirely managed by Telnyx and may change over time. That means that this resource won't allow any write operations for it. Still, it's available so it can be used as a support resource that can be related to other resources or become a configuration option."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.createNotificationChannels",
+      "name": "notifications.createNotificationChannels",
+      "description": "Create a notification channel."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.createNotificationProfile",
+      "name": "notifications.createNotificationProfile",
+      "description": "Create a notification profile."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.createNotificationSetting",
+      "name": "notifications.createNotificationSetting",
+      "description": "Add a notification setting."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.deleteNotificationChannel",
+      "name": "notifications.deleteNotificationChannel",
+      "description": "Delete a notification channel."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.deleteNotificationProfile",
+      "name": "notifications.deleteNotificationProfile",
+      "description": "Delete a notification profile."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.deleteNotificationSetting",
+      "name": "notifications.deleteNotificationSetting",
+      "description": "Delete a notification setting."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.findNotificationsEvents",
+      "name": "notifications.findNotificationsEvents",
+      "description": "Returns a list of your notifications events."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.findNotificationsEventsConditions",
+      "name": "notifications.findNotificationsEventsConditions",
+      "description": "Returns a list of your notifications events conditions."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.findNotificationsProfiles",
+      "name": "notifications.findNotificationsProfiles",
+      "description": "Returns a list of your notifications profiles."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.listNotificationChannels",
+      "name": "notifications.listNotificationChannels",
+      "description": "List notification channels."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.listNotificationSettings",
+      "name": "notifications.listNotificationSettings",
+      "description": "List notification settings."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.retrieveNotificationChannel",
+      "name": "notifications.retrieveNotificationChannel",
+      "description": "Retrieve a notification channel."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.retrieveNotificationProfile",
+      "name": "notifications.retrieveNotificationProfile",
+      "description": "Retrieve a notification profile."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.retrieveNotificationSetting",
+      "name": "notifications.retrieveNotificationSetting",
+      "description": "Retrieve a notification setting."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.updateNotificationChannel",
+      "name": "notifications.updateNotificationChannel",
+      "description": "Update a notification channel."
+    },
+    {
+      "id": "openapi_telnyx_com.notifications.updateNotificationProfile",
+      "name": "notifications.updateNotificationProfile",
+      "description": "Update a notification profile."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBackgroundJobs.createPhoneNumbersJobDeletePhoneNumbers",
+      "name": "numberBackgroundJobs.createPhoneNumbersJobDeletePhoneNumbers",
+      "description": "Creates a new background job to delete a batch of numbers. At most one thousand numbers can be updated per API call."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBackgroundJobs.createPhoneNumbersJobUpdateEmergencySettings",
+      "name": "numberBackgroundJobs.createPhoneNumbersJobUpdateEmergencySettings",
+      "description": "Creates a background job to update the emergency settings of a collection of phone numbers. At most one thousand numbers can be updated per API call."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBackgroundJobs.createPhoneNumbersJobUpdatePhoneNumber",
+      "name": "numberBackgroundJobs.createPhoneNumbersJobUpdatePhoneNumber",
+      "description": "Creates a new background job to update a batch of numbers. At most one thousand numbers can be updated per API call. At least one of the updateable fields must be submitted."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBackgroundJobs.listPhoneNumbersJobs",
+      "name": "numberBackgroundJobs.listPhoneNumbersJobs",
+      "description": "Lists the phone numbers jobs"
+    },
+    {
+      "id": "openapi_telnyx_com.numberBackgroundJobs.retrievePhoneNumbersJob",
+      "name": "numberBackgroundJobs.retrievePhoneNumbersJob",
+      "description": "Retrieve a phone numbers job"
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlockOrders.createNumberBlockOrder",
+      "name": "numberBlockOrders.createNumberBlockOrder",
+      "description": "Creates a phone number block order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlockOrders.listNumberBlockOrders",
+      "name": "numberBlockOrders.listNumberBlockOrders",
+      "description": "Get a paginated list of number block orders."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlockOrders.retrieveNumberBlockOrder",
+      "name": "numberBlockOrders.retrieveNumberBlockOrder",
+      "description": "Get an existing phone number block order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlocksBackgroundJobs.createPhoneNumberBlocksJobDeletePhoneNumberBlock",
+      "name": "numberBlocksBackgroundJobs.createPhoneNumberBlocksJobDeletePhoneNumberBlock",
+      "description": "Creates a new background job to delete all the phone numbers associated with the given block. We will only consider the phone number block as deleted after all phone numbers associated with it are removed, so multiple executions of this job may be necessary in case some of the phone numbers present errors during the deletion process."
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlocksBackgroundJobs.listPhoneNumberBlocksJobs",
+      "name": "numberBlocksBackgroundJobs.listPhoneNumberBlocksJobs",
+      "description": "Lists the phone number blocks jobs"
+    },
+    {
+      "id": "openapi_telnyx_com.numberBlocksBackgroundJobs.retrievePhoneNumberBlocksJob",
+      "name": "numberBlocksBackgroundJobs.retrievePhoneNumberBlocksJob",
+      "description": "Retrieves a phone number blocks job"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.deletePhoneNumber",
+      "name": "numberConfigurations.deletePhoneNumber",
+      "description": "Delete a phone number"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.enableEmergencyPhoneNumber",
+      "name": "numberConfigurations.enableEmergencyPhoneNumber",
+      "description": "Enable emergency for a phone number"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.listPhoneNumbers",
+      "name": "numberConfigurations.listPhoneNumbers",
+      "description": "List phone numbers"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.listPhoneNumbersWithMessagingSettings",
+      "name": "numberConfigurations.listPhoneNumbersWithMessagingSettings",
+      "description": "List phone numbers with messaging settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.listPhoneNumbersWithVoiceSettings",
+      "name": "numberConfigurations.listPhoneNumbersWithVoiceSettings",
+      "description": "List phone numbers with voice settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.retrievePhoneNumber",
+      "name": "numberConfigurations.retrievePhoneNumber",
+      "description": "Retrieve a phone number"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.retrievePhoneNumberWithMessagingSettings",
+      "name": "numberConfigurations.retrievePhoneNumberWithMessagingSettings",
+      "description": "Retrieve a phone number with messaging settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.retrievePhoneNumberWithVoiceSettings",
+      "name": "numberConfigurations.retrievePhoneNumberWithVoiceSettings",
+      "description": "Retrieve a phone number with voice settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.updatePhoneNumber",
+      "name": "numberConfigurations.updatePhoneNumber",
+      "description": "Update a phone number"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.updatePhoneNumberWithMessagingSettings",
+      "name": "numberConfigurations.updatePhoneNumberWithMessagingSettings",
+      "description": "Update a phone number with messaging settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberConfigurations.updatePhoneNumberWithVoiceSettings",
+      "name": "numberConfigurations.updatePhoneNumberWithVoiceSettings",
+      "description": "Update a phone number with voice settings"
+    },
+    {
+      "id": "openapi_telnyx_com.numberLookup.getOperation",
+      "name": "numberLookup.getOperation",
+      "description": "Returns information about the provided phone number."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrderDocuments.createNumberOrderDocument",
+      "name": "numberOrderDocuments.createNumberOrderDocument",
+      "description": "Upload a phone number order document."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrderDocuments.listNumberOrderDocuments",
+      "name": "numberOrderDocuments.listNumberOrderDocuments",
+      "description": "Gets a paginated list of number order documents."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrderDocuments.retrieveNumberOrderDocument",
+      "name": "numberOrderDocuments.retrieveNumberOrderDocument",
+      "description": "Gets a single number order document."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrderDocuments.updateNumberOrderDocument",
+      "name": "numberOrderDocuments.updateNumberOrderDocument",
+      "description": "Updates a number order document."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.createComment",
+      "name": "numberOrders.createComment",
+      "description": "Create a comment"
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.createNumberOrder",
+      "name": "numberOrders.createNumberOrder",
+      "description": "Creates a phone number order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.listComments",
+      "name": "numberOrders.listComments",
+      "description": "Retrieve all comments"
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.listNumberOrders",
+      "name": "numberOrders.listNumberOrders",
+      "description": "Get a paginated list of number orders."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.listSubNumberOrders",
+      "name": "numberOrders.listSubNumberOrders",
+      "description": "Get a paginated list of sub number orders."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.markCommentRead",
+      "name": "numberOrders.markCommentRead",
+      "description": "Mark a comment as read"
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.retrieveComment",
+      "name": "numberOrders.retrieveComment",
+      "description": "Retrieve a comment"
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.retrieveNumberOrder",
+      "name": "numberOrders.retrieveNumberOrder",
+      "description": "Get an existing phone number order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.retrieveNumberOrderPhoneNumber",
+      "name": "numberOrders.retrieveNumberOrderPhoneNumber",
+      "description": "Get an existing number order phone number."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.retrieveNumberOrderPhoneNumbers",
+      "name": "numberOrders.retrieveNumberOrderPhoneNumbers",
+      "description": "Get a list of phone numbers associated to orders."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.retrieveSubNumberOrder",
+      "name": "numberOrders.retrieveSubNumberOrder",
+      "description": "Get an existing sub number order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.updateNumberOrder",
+      "name": "numberOrders.updateNumberOrder",
+      "description": "Updates a phone number order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.updateNumberOrderPhoneNumber",
+      "name": "numberOrders.updateNumberOrderPhoneNumber",
+      "description": "Updates a number order phone number."
+    },
+    {
+      "id": "openapi_telnyx_com.numberOrders.updateSubNumberOrder",
+      "name": "numberOrders.updateSubNumberOrder",
+      "description": "Updates a sub number order."
+    },
+    {
+      "id": "openapi_telnyx_com.numberPortout.findPortoutComments",
+      "name": "numberPortout.findPortoutComments",
+      "description": "Returns a list of comments for a portout request."
+    },
+    {
+      "id": "openapi_telnyx_com.numberPortout.findPortoutRequest",
+      "name": "numberPortout.findPortoutRequest",
+      "description": "Returns the portout request based on the ID provided"
+    },
+    {
+      "id": "openapi_telnyx_com.numberPortout.listPortoutRequest",
+      "name": "numberPortout.listPortoutRequest",
+      "description": "Returns the portout requests according to filters"
+    },
+    {
+      "id": "openapi_telnyx_com.numberPortout.postPortRequestComment",
+      "name": "numberPortout.postPortRequestComment",
+      "description": "Creates a comment on a portout request."
+    },
+    {
+      "id": "openapi_telnyx_com.numberPortout.updatePortoutRequest",
+      "name": "numberPortout.updatePortoutRequest",
+      "description": "Authorize or reject portout request"
+    },
+    {
+      "id": "openapi_telnyx_com.numberReservations.createNumberReservation",
+      "name": "numberReservations.createNumberReservation",
+      "description": "Creates a Phone Number Reservation for multiple numbers."
+    },
+    {
+      "id": "openapi_telnyx_com.numberReservations.extendNumberReservationExpiryTime",
+      "name": "numberReservations.extendNumberReservationExpiryTime",
+      "description": "Extends reservation expiry time on all phone numbers."
+    },
+    {
+      "id": "openapi_telnyx_com.numberReservations.listNumberReservations",
+      "name": "numberReservations.listNumberReservations",
+      "description": "Gets a paginated list of phone number reservations."
+    },
+    {
+      "id": "openapi_telnyx_com.numberReservations.retrieveNumberReservation",
+      "name": "numberReservations.retrieveNumberReservation",
+      "description": "Gets a single phone number reservation."
+    },
+    {
+      "id": "openapi_telnyx_com.numberSearch.listAvailablePhoneNumberBlocks",
+      "name": "numberSearch.listAvailablePhoneNumberBlocks",
+      "description": "List available phone number blocks"
+    },
+    {
+      "id": "openapi_telnyx_com.numberSearch.listAvailablePhoneNumbers",
+      "name": "numberSearch.listAvailablePhoneNumbers",
+      "description": "List available phone numbers"
+    },
+    {
+      "id": "openapi_telnyx_com.otaUpdates.otaUpdateGet",
+      "name": "otaUpdates.otaUpdateGet",
+      "description": "This API returns the details of an Over the Air (OTA) update."
+    },
+    {
+      "id": "openapi_telnyx_com.otaUpdates.otaUpdatesList",
+      "name": "otaUpdates.otaUpdatesList",
+      "description": "List OTA updates"
+    },
+    {
+      "id": "openapi_telnyx_com.outboundVoiceProfiles.createOutboundVoiceProfile",
+      "name": "outboundVoiceProfiles.createOutboundVoiceProfile",
+      "description": "Create an outbound voice profile."
+    },
+    {
+      "id": "openapi_telnyx_com.outboundVoiceProfiles.deleteOutboundVoiceProfile",
+      "name": "outboundVoiceProfiles.deleteOutboundVoiceProfile",
+      "description": "Deletes an existing outbound voice profile."
+    },
+    {
+      "id": "openapi_telnyx_com.outboundVoiceProfiles.listOutboundVoiceProfiles",
+      "name": "outboundVoiceProfiles.listOutboundVoiceProfiles",
+      "description": "Get all outbound voice profiles belonging to the user that match the given filters."
+    },
+    {
+      "id": "openapi_telnyx_com.outboundVoiceProfiles.retrieveOutboundVoiceProfile",
+      "name": "outboundVoiceProfiles.retrieveOutboundVoiceProfile",
+      "description": "Retrieves the details of an existing outbound voice profile."
+    },
+    {
+      "id": "openapi_telnyx_com.outboundVoiceProfiles.updateOutboundVoiceProfile",
+      "name": "outboundVoiceProfiles.updateOutboundVoiceProfile",
+      "description": "Updates an existing outbound voice profile."
+    },
+    {
+      "id": "openapi_telnyx_com.phoneNumberPorting.postPortabilityCheck",
+      "name": "phoneNumberPorting.postPortabilityCheck",
+      "description": "Runs a portability check, returning the results immediately."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.activatePortingOrder",
+      "name": "portingOrder.activatePortingOrder",
+      "description": "Activate every numbers of a porting order asynchronously."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.cancelPortingOrder",
+      "name": "portingOrder.cancelPortingOrder",
+      "description": "Cancel this porting order"
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.confirmPortingOrder",
+      "name": "portingOrder.confirmPortingOrder",
+      "description": "Confirm your porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.createPortingOrder",
+      "name": "portingOrder.createPortingOrder",
+      "description": "Creates a new porting order object."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.createPortingOrderComment",
+      "name": "portingOrder.createPortingOrderComment",
+      "description": "Creates a new comment for a porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.deletePortingOrder",
+      "name": "portingOrder.deletePortingOrder",
+      "description": "Request the cancellation of a porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.getPortingOrder",
+      "name": "portingOrder.getPortingOrder",
+      "description": "Retrieves the details of an existing porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.getPortingOrderLoaTemplate",
+      "name": "portingOrder.getPortingOrderLoaTemplate",
+      "description": "Download a porting order loa template"
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.getPortingOrdersActivationJob",
+      "name": "portingOrder.getPortingOrdersActivationJob",
+      "description": "Returns a porting activation job."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.getPortingPhoneNumbers",
+      "name": "portingOrder.getPortingPhoneNumbers",
+      "description": "Returns a list of your porting phone numbers."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.listPortingOrders",
+      "name": "portingOrder.listPortingOrders",
+      "description": "Returns a list of your porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.listPortingOrdersActivationJobs",
+      "name": "portingOrder.listPortingOrdersActivationJobs",
+      "description": "Returns a list of your porting activation jobs."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.listPortingOrdersComments",
+      "name": "portingOrder.listPortingOrdersComments",
+      "description": "Returns a list of all comments of a porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.listPortingOrdersExceptionTypes",
+      "name": "portingOrder.listPortingOrdersExceptionTypes",
+      "description": "Returns a list of all possible exception types for a porting order."
+    },
+    {
+      "id": "openapi_telnyx_com.portingOrder.updatePortingOrder",
+      "name": "portingOrder.updatePortingOrder",
+      "description": "Edits the details of an existing porting order.\n\nAny or all of a porting order’s attributes may be included in the resource object included in a PATCH request.\n\nIf a request does not include all of the attributes for a resource, the system will interpret the missing attributes as if they were included with their current values. To explicitly set something to null, it must be included in the request with a null value."
+    },
+    {
+      "id": "openapi_telnyx_com.privateWirelessGateways.createPrivateWirelessGateway",
+      "name": "privateWirelessGateways.createPrivateWirelessGateway",
+      "description": "Asynchronously create a Private Wireless Gateway for SIM cards for a previously created network."
+    },
+    {
+      "id": "openapi_telnyx_com.privateWirelessGateways.deletePrivateWirelessGateway",
+      "name": "privateWirelessGateways.deletePrivateWirelessGateway",
+      "description": "Deletes the Private Wireless Gateway."
+    },
+    {
+      "id": "openapi_telnyx_com.privateWirelessGateways.getPrivateWirelessGateway",
+      "name": "privateWirelessGateways.getPrivateWirelessGateway",
+      "description": "Retrieve information about a Private Wireless Gateway."
+    },
+    {
+      "id": "openapi_telnyx_com.privateWirelessGateways.getPrivateWirelessGateways",
+      "name": "privateWirelessGateways.getPrivateWirelessGateways",
+      "description": "Get all Private Wireless Gateways belonging to the user."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxApplications.createFaxApplication",
+      "name": "programmableFaxApplications.createFaxApplication",
+      "description": "Creates a new Fax Application based on the parameters sent in the request. The application name and webhook URL are required. Once created, you can assign phone numbers to your application using the `/phone_numbers` endpoint."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxApplications.deleteFaxApplication",
+      "name": "programmableFaxApplications.deleteFaxApplication",
+      "description": "Permanently deletes a Fax Application. Deletion may be prevented if the application is in use by phone numbers."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxApplications.getFaxApplication",
+      "name": "programmableFaxApplications.getFaxApplication",
+      "description": "Return the details of an existing Fax Application inside the 'data' attribute of the response."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxApplications.listFaxApplications",
+      "name": "programmableFaxApplications.listFaxApplications",
+      "description": "This endpoint returns a list of your Fax Applications inside the 'data' attribute of the response. You can adjust which applications are listed by using filters. Fax Applications are used to configure how you send and receive faxes using the Programmable Fax API with Telnyx."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxApplications.updateFaxApplication",
+      "name": "programmableFaxApplications.updateFaxApplication",
+      "description": "Updates settings of an existing Fax Application based on the parameters of the request."
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxCommands.deleteFax",
+      "name": "programmableFaxCommands.deleteFax",
+      "description": "Delete a fax"
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxCommands.listFaxes",
+      "name": "programmableFaxCommands.listFaxes",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxCommands.refreshFax",
+      "name": "programmableFaxCommands.refreshFax",
+      "description": "Refreshes the inbound fax's media_url when it has expired"
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxCommands.sendFax",
+      "name": "programmableFaxCommands.sendFax",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.programmableFaxCommands.viewFax",
+      "name": "programmableFaxCommands.viewFax",
+      "description": "View a fax"
+    },
+    {
+      "id": "openapi_telnyx_com.queueCommands.listQueueCalls",
+      "name": "queueCommands.listQueueCalls",
+      "description": "Retrieve the list of calls in an existing queue"
+    },
+    {
+      "id": "openapi_telnyx_com.queueCommands.retrieveCallFromQueue",
+      "name": "queueCommands.retrieveCallFromQueue",
+      "description": "Retrieve an existing call from an existing queue"
+    },
+    {
+      "id": "openapi_telnyx_com.queueCommands.retrieveCallQueue",
+      "name": "queueCommands.retrieveCallQueue",
+      "description": "Retrieve an existing call queue"
+    },
+    {
+      "id": "openapi_telnyx_com.recordingsCommands.listRecordings",
+      "name": "recordingsCommands.listRecordings",
+      "description": "Lists recordings for the authenticated user"
+    },
+    {
+      "id": "openapi_telnyx_com.recordingsCommands.retrieveRecording",
+      "name": "recordingsCommands.retrieveRecording",
+      "description": "Retrieve a recording from the authenticated user's recordings"
+    },
+    {
+      "id": "openapi_telnyx_com.reporting.createWdrReport",
+      "name": "reporting.createWdrReport",
+      "description": "Asynchronously create a report containing Wireless Detail Records (WDRs) for the SIM cards that consumed wireless data in the given time period.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.reporting.deleteWdrReport",
+      "name": "reporting.deleteWdrReport",
+      "description": "Deletes one specific WDR report"
+    },
+    {
+      "id": "openapi_telnyx_com.reporting.getWdrReport",
+      "name": "reporting.getWdrReport",
+      "description": "Returns one specific WDR report"
+    },
+    {
+      "id": "openapi_telnyx_com.reporting.getWdrReports",
+      "name": "reporting.getWdrReports",
+      "description": "Returns the WDR Reports that match the given parameters."
+    },
+    {
+      "id": "openapi_telnyx_com.reports.createLedgerBillingGroupReport",
+      "name": "reports.createLedgerBillingGroupReport",
+      "description": "Create a ledger billing group report"
+    },
+    {
+      "id": "openapi_telnyx_com.reports.retrieveLedgerBillingGroupReport",
+      "name": "reports.retrieveLedgerBillingGroupReport",
+      "description": "Retrieve a ledger billing group report"
+    },
+    {
+      "id": "openapi_telnyx_com.requirements.docReqsRetrieveDocumentRequirements",
+      "name": "requirements.docReqsRetrieveDocumentRequirements",
+      "description": "Retrieve a document requirement record"
+    },
+    {
+      "id": "openapi_telnyx_com.requirements.listRequirements",
+      "name": "requirements.listRequirements",
+      "description": "List all requirements with filtering, sorting, and pagination"
+    },
+    {
+      "id": "openapi_telnyx_com.requirementTypes.docReqsListRequirementTypes",
+      "name": "requirementTypes.docReqsListRequirementTypes",
+      "description": "List all requirement types ordered by created_at descending"
+    },
+    {
+      "id": "openapi_telnyx_com.requirementTypes.docReqsRetrieveRequirementType",
+      "name": "requirementTypes.docReqsRetrieveRequirementType",
+      "description": "Retrieve a requirement type by id"
+    },
+    {
+      "id": "openapi_telnyx_com.roomParticipants.listRoomParticipants",
+      "name": "roomParticipants.listRoomParticipants",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.roomParticipants.viewRoomParticipant",
+      "name": "roomParticipants.viewRoomParticipant",
+      "description": "View a room participant."
+    },
+    {
+      "id": "openapi_telnyx_com.rooms.createRoom",
+      "name": "rooms.createRoom",
+      "description": "Synchronously create a Room."
+    },
+    {
+      "id": "openapi_telnyx_com.rooms.deleteRoom",
+      "name": "rooms.deleteRoom",
+      "description": "Synchronously delete a Room. Participants from that room will be kicked out, they won't be able to join that room anymore, and you won't be charged anymore for that room."
+    },
+    {
+      "id": "openapi_telnyx_com.rooms.listRooms",
+      "name": "rooms.listRooms",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.rooms.nestedListRoomSessions",
+      "name": "rooms.nestedListRoomSessions",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.rooms.viewRoom",
+      "name": "rooms.viewRoom",
+      "description": "View a room."
+    },
+    {
+      "id": "openapi_telnyx_com.roomsClientTokens.createRoomClientToken",
+      "name": "roomsClientTokens.createRoomClientToken",
+      "description": "Synchronously create an Client Token to join a Room. Client Token is necessary to join a Telnyx Room. Client Token will expire after `token_ttl_secs`, a Refresh Token is also provided to refresh a Client Token, the Refresh Token expires after `refresh_token_ttl_secs`."
+    },
+    {
+      "id": "openapi_telnyx_com.roomsClientTokens.refreshRoomClientToken",
+      "name": "roomsClientTokens.refreshRoomClientToken",
+      "description": "Synchronously refresh an Client Token to join a Room. Client Token is necessary to join a Telnyx Room. Client Token will expire after `token_ttl_secs`."
+    },
+    {
+      "id": "openapi_telnyx_com.roomSessions.listRoomSessions",
+      "name": "roomSessions.listRoomSessions",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.roomSessions.nestedListRoomParticipants",
+      "name": "roomSessions.nestedListRoomParticipants",
+      "description": ""
+    },
+    {
+      "id": "openapi_telnyx_com.roomSessions.viewRoomSession",
+      "name": "roomSessions.viewRoomSession",
+      "description": "View a room session."
+    },
+    {
+      "id": "openapi_telnyx_com.shortCodes.listShortCodes",
+      "name": "shortCodes.listShortCodes",
+      "description": "List short codes"
+    },
+    {
+      "id": "openapi_telnyx_com.shortCodes.retrieveShortCode",
+      "name": "shortCodes.retrieveShortCode",
+      "description": "Retrieve a short code"
+    },
+    {
+      "id": "openapi_telnyx_com.shortCodes.updateShortCode",
+      "name": "shortCodes.updateShortCode",
+      "description": "Update the settings for a specific short code. To unbind a short code from a profile, set the `messaging_profile_id` to `null` or an empty string."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroupActions.simCardGroupActionGet",
+      "name": "simCardGroupActions.simCardGroupActionGet",
+      "description": "This API allows fetching detailed information about a SIM card group action resource to make follow-ups in an existing asynchronous operation."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroupActions.simCardGroupActionsGet",
+      "name": "simCardGroupActions.simCardGroupActionsGet",
+      "description": "This API allows listing a paginated collection a SIM card group actions. It allows to explore a collection of existing asynchronous operation using specific filters."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.removeSimCardGroupPrivateWirelessGateway",
+      "name": "simCardGroups.removeSimCardGroupPrivateWirelessGateway",
+      "description": "This action will asynchronously remove an existing Private Wireless Gateway definition from a SIM card group. Completing this operation defines that all SIM cards in the SIM card group will get their traffic handled by Telnyx's default mobile network configuration."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.setSimCardGroupPrivateWirelessGateway",
+      "name": "simCardGroups.setSimCardGroupPrivateWirelessGateway",
+      "description": "This action will asynchronously assign a provisioned Private Wireless Gateway to the SIM card group. Completing this operation defines that all SIM cards in the SIM card group will get their traffic controlled by the associated Private Wireless Gateway. This operation will also imply that new SIM cards assigned to a group will inherit its network definitions. If it's moved to a different group that doesn't have a Private Wireless Gateway, it'll use Telnyx's default mobile network configuration."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.simCardGroupDelete",
+      "name": "simCardGroups.simCardGroupDelete",
+      "description": "Permanently deletes a SIM card group"
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.simCardGroupsGet",
+      "name": "simCardGroups.simCardGroupsGet",
+      "description": "Returns the details regarding a specific SIM card group"
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.simCardGroupsGetAll",
+      "name": "simCardGroups.simCardGroupsGetAll",
+      "description": "Get all SIM card groups belonging to the user that match the given filters."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.simCardGroupsPost",
+      "name": "simCardGroups.simCardGroupsPost",
+      "description": "Creates a new SIM card group object"
+    },
+    {
+      "id": "openapi_telnyx_com.simCardGroups.simCardGroupUpdate",
+      "name": "simCardGroups.simCardGroupUpdate",
+      "description": "Updates a SIM card group"
+    },
+    {
+      "id": "openapi_telnyx_com.simCardOrders.simCardOrderGet",
+      "name": "simCardOrders.simCardOrderGet",
+      "description": "Get a single SIM card order by its ID."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardOrders.simCardOrdersGet",
+      "name": "simCardOrders.simCardOrdersGet",
+      "description": "Get all SIM card orders according to filters."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardOrders.simCardOrdersPost",
+      "name": "simCardOrders.simCardOrdersPost",
+      "description": "Creates a new order for SIM cards."
+    },
+    {
+      "id": "openapi_telnyx_com.simCardOrders.simCardOrdersPreview",
+      "name": "simCardOrders.simCardOrdersPreview",
+      "description": "Preview SIM card order purchases."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.bulkSimCardNetworkPreferences",
+      "name": "simCards.bulkSimCardNetworkPreferences",
+      "description": "This API allows dispatching the same operation described for the PUT sim_cards/:sim_card_id/network_preferences API for multiple SIM cards at once.<br/><br/>\nAlthough, a SIM card network preference may fail individually under any validation triggered as a consequence of its state. For example, a SIM can't have an in-progress OTA update for applying a Network Preference, so they'll fail when requested in this API. In that scenario, the specific error will be present in the response along with the successful definitions in the \"errors\" response node.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.postValidateRegistrationCodes",
+      "name": "simCards.postValidateRegistrationCodes",
+      "description": "It validates whether SIM card registration codes are valid or not."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardDelete",
+      "name": "simCards.simCardDelete",
+      "description": "The SIM card will be decommissioned, removed from your account and you will stop being charged.<br />The SIM card won't be able to connect to the network after the deletion is completed, thus making it impossible to consume data.<br/>\nTransitioning to the disabled state may take a period of time.</br>\nUntil the transition is completed, the SIM card status will be disabling <code>disabling</code>.<br />In order to re-enable the SIM card, you will need to re-register it."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardDisable",
+      "name": "simCards.simCardDisable",
+      "description": "The SIM card won't be able to connect to the network after the disabling is completed, thus making it impossible to consume data.<br/>\nTransitioning to the disabled state may take a period of time.</br>\nUntil the transition is completed, the SIM card status will be <code>disabling</code>.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardEnable",
+      "name": "simCards.simCardEnable",
+      "description": "The SIM card will be able to connect to the network once the enabling is complete, thus making it possible to consume data.<br/>\nTo enable a SIM card, it must be associated with SIM card group.<br/>\nTransitioning to the enabled state may take a period of time. Until the transition is completed, the SIM card status will be <code>enabling</code>.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardGet",
+      "name": "simCards.simCardGet",
+      "description": "Returns the details regarding a specific SIM card."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardNetworkPreferencesDelete",
+      "name": "simCards.simCardNetworkPreferencesDelete",
+      "description": "This API asynchronously removes the custom-defined network preferences settings. After this operation is done the Telnyx default settings, the same applied for an unaltered SIM card, will be in place.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardNetworkPreferencesGet",
+      "name": "simCards.simCardNetworkPreferencesGet",
+      "description": "It returns the network preferences currently applied in the SIM card.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardNetworkPreferencesPut",
+      "name": "simCards.simCardNetworkPreferencesPut",
+      "description": "This API allows setting or updating a SIM card network preference. <br/><br/>\nEvery SIM card has default network preferences defined on Telnyx. These preferences will determine how a SIMCard will connect to the network by considering a list of preferable operators.<br/><br/>\nThere can be multiple scenarios where an operator can be preferred over another, for example, when a specific mobile operator can provide better network latency or better pricing.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardPublicIpDelete",
+      "name": "simCards.simCardPublicIpDelete",
+      "description": "This API asynchronously removes an existing public IP from a SIM card.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardPublicIpGet",
+      "name": "simCards.simCardPublicIpGet",
+      "description": "It returns the public IP requested for a SIM card.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardPublicIpPost",
+      "name": "simCards.simCardPublicIpPost",
+      "description": "This API will asynchronously map a random public IP to a SIM card, making it reachable on the public internet. <br/><br/>\n The request will return the resource as \"provisioning\" right away, and it'll eventually get \"provisioned\", meaning it completed the setup. <br/><br/>\n Setting up a public IP will generate charges, and we won't be able to provide the IP if the account doesn't have a balance. In that case, this operation will succeed, but its status will change to failed eventually, and the resource will be updated with the associated status. The IP resource will need to be deleted and re-created with our DELETE and POST APIs in this scenario."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardRegister",
+      "name": "simCards.simCardRegister",
+      "description": "Register the SIM cards associated with the provided registration codes to the current user's account.<br/><br/>\nIf <code>sim_card_group_id</code> is provided, the SIM cards will be associated with that group. Otherwise, the default group for the current user will be used.<br/><br/>\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardSetStandby",
+      "name": "simCards.simCardSetStandby",
+      "description": "The SIM card will be able to connect to the network once the process to set it to standby has been completed, thus making it possible to consume data.<br/>\nTo set a SIM card to standby, it must be associated with SIM card group.<br/>\nTransitioning to the standby state may take a period of time. Until the transition is completed, the SIM card status will be <code>setting_standby</code>.\n"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardsGet",
+      "name": "simCards.simCardsGet",
+      "description": "Get all SIM cards belonging to the user that match the given filters."
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.simCardUpdate",
+      "name": "simCards.simCardUpdate",
+      "description": "Updates a SIM card's group and tags"
+    },
+    {
+      "id": "openapi_telnyx_com.simCards.wirelessConnectivityLogsGet",
+      "name": "simCards.wirelessConnectivityLogsGet",
+      "description": "This API allows listing a paginated collection of Wireless Connectivity Logs associated with a SIM Card, for troubleshooting purposes."
+    },
+    {
+      "id": "openapi_telnyx_com.teXmlApplications.createTexmlApplication",
+      "name": "teXmlApplications.createTexmlApplication",
+      "description": "Creates a TeXML Application."
+    },
+    {
+      "id": "openapi_telnyx_com.teXmlApplications.deleteTexmlApplication",
+      "name": "teXmlApplications.deleteTexmlApplication",
+      "description": "Deletes a TeXML Application."
+    },
+    {
+      "id": "openapi_telnyx_com.teXmlApplications.findTexmlApplications",
+      "name": "teXmlApplications.findTexmlApplications",
+      "description": "Returns a list of your TeXML Applications."
+    },
+    {
+      "id": "openapi_telnyx_com.teXmlApplications.getTexmlApplication",
+      "name": "teXmlApplications.getTexmlApplication",
+      "description": "Retrieves the details of an existing TeXML Application."
+    },
+    {
+      "id": "openapi_telnyx_com.teXmlApplications.updateTexmlApplication",
+      "name": "teXmlApplications.updateTexmlApplication",
+      "description": "Updates settings of an existing TeXML Application."
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerificationCall",
+      "name": "verify.createVerificationCall",
+      "description": "Trigger a Call verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerificationFlashcall",
+      "name": "verify.createVerificationFlashcall",
+      "description": "Trigger a Flash call verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerificationPsD2",
+      "name": "verify.createVerificationPsD2",
+      "description": "Trigger a PSD2 verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerificationSms",
+      "name": "verify.createVerificationSms",
+      "description": "Trigger a SMS verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerificationWhatsapp",
+      "name": "verify.createVerificationWhatsapp",
+      "description": "Trigger a Whatsapp verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.createVerifyProfile",
+      "name": "verify.createVerifyProfile",
+      "description": "Creates a new Verify profile to associate verifications with."
+    },
+    {
+      "id": "openapi_telnyx_com.verify.deleteVerifyProfile",
+      "name": "verify.deleteVerifyProfile",
+      "description": "Delete a Verify profile"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.listVerifications",
+      "name": "verify.listVerifications",
+      "description": "List verifications by phone number"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.listVerifyProfiles",
+      "name": "verify.listVerifyProfiles",
+      "description": "Gets a paginated list of Verify profiles."
+    },
+    {
+      "id": "openapi_telnyx_com.verify.retrieveVerification",
+      "name": "verify.retrieveVerification",
+      "description": "Retrieve a verification"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.retrieveVerifyProfile",
+      "name": "verify.retrieveVerifyProfile",
+      "description": "Gets a single Verify profile."
+    },
+    {
+      "id": "openapi_telnyx_com.verify.updateVerifyProfile",
+      "name": "verify.updateVerifyProfile",
+      "description": "Update a Verify profile"
+    },
+    {
+      "id": "openapi_telnyx_com.verify.verifyVerificationCode",
+      "name": "verify.verifyVerificationCode",
+      "description": "Submit a verification code"
+    },
+    {
+      "id": "openapi_telnyx_com.wdrDetailReports.getPaginatedWdrs",
+      "name": "wdrDetailReports.getPaginatedWdrs",
+      "description": "Fetch all Wdr records "
+    },
+    {
+      "id": "openapi_telnyx_com.webhooks.getWebhookDeliveries",
+      "name": "webhooks.getWebhookDeliveries",
+      "description": "Lists webhook_deliveries for the authenticated user"
+    },
+    {
+      "id": "openapi_telnyx_com.webhooks.getWebhookDelivery",
+      "name": "webhooks.getWebhookDelivery",
+      "description": "Provides webhook_delivery debug data, such as timestamps, delivery status and attempts."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppContacts.checkContact",
+      "name": "whatsAppContacts.checkContact",
+      "description": "Verify that a phone number belongs to a valid WhatsApp account. You must ensure that the status is valid before you can message a user, and you'll get their WhatsApp ID to use for messaging."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppDetailReports.deleteRequest",
+      "name": "whatsAppDetailReports.deleteRequest",
+      "description": "Delete generated WhatsApp detail report by id"
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppDetailReports.getRequest",
+      "name": "whatsAppDetailReports.getRequest",
+      "description": "Fetch single whatsapp detail report by id."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppDetailReports.getRequests",
+      "name": "whatsAppDetailReports.getRequests",
+      "description": "Fetch all previous requests for WhatsApp detail reports. WhatsApp detail reports are reports for pulling all WhatsApp records. "
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppDetailReports.submitRequest",
+      "name": "whatsAppDetailReports.submitRequest",
+      "description": "Submit a request for new WhatsApp detail report. WhatsApp detail report pulls all raw WhatsApp data according to defined filters."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppMedia.deleteWhatsappMediaWhatsappUserIdMediaId",
+      "name": "whatsAppMedia.deleteWhatsappMediaWhatsappUserIdMediaId",
+      "description": "Delete uploaded media."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppMedia.getWhatsappMediaWhatsappUserIdMediaId",
+      "name": "whatsAppMedia.getWhatsappMediaWhatsappUserIdMediaId",
+      "description": "Retrieve uploaded media. Media is typically available for 30 days after uploading."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppMedia.uploadMedia",
+      "name": "whatsAppMedia.uploadMedia",
+      "description": "Upload media. Accepted media types include image/jpeg, image/png, video/mp4, video/3gpp, audio/aac, audio/ogg."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppMessages.markMessageAsRead",
+      "name": "whatsAppMessages.markMessageAsRead",
+      "description": "Mark a message as read."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppMessages.sendMessage",
+      "name": "whatsAppMessages.sendMessage",
+      "description": "Send text messages, media/documents, and message templates to your customers."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppUsageAggregations.getUsageAggregationsSync",
+      "name": "whatsAppUsageAggregations.getUsageAggregationsSync",
+      "description": "Generate and fetch WhatsApp usage aggregations synchronously. This endpoint will both generate and fetch the WhatsApp aggregations over a specified time period. "
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppUsers.getUser",
+      "name": "whatsAppUsers.getUser",
+      "description": "Retrieve WhatsApp user information."
+    },
+    {
+      "id": "openapi_telnyx_com.whatsAppUsers.updateWhatsAppWebhook",
+      "name": "whatsAppUsers.updateWhatsAppWebhook",
+      "description": "Update webhook URL used for a given WhatsApp user."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

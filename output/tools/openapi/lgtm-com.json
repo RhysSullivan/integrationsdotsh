@@ -1,0 +1,162 @@
+{
+  "fetchedAt": "2026-04-30T15:22:49.494Z",
+  "status": "ok",
+  "count": 31,
+  "tools": [
+    {
+      "id": "openapi_lgtm_com.analyses.getAlerts",
+      "name": "analyses.getAlerts",
+      "description": "Download all the alerts found by an analysis.\nUse the `Accept:` request header to specify the output media type as either CSV or [SARIF](https://lgtm.com/help/lgtm/sarif-results-file): \n\n- `application/sarif+json`: Alerts in SARIF format. If no version is specified the latest supported SARIF version is used.\n- `application/json`: Alerts in SARIF format (*deprecated*). \n  If no version is specified, [SARIF 2.0.0](http://docs.oasis-open.org/sarif/sarif/v2.0/sarif-v2.0.html) \n  is used for backwards compatibility.\n\n- `text/csv`: Alerts in CSV format. The `text/csv` media type has two optional parameters:\n   - `charset`: determines the character encoding of the text, by default UTF-8.\n   - `header`: determines whether a header row with column names is `present` or `absent`.\n      The default value for this parameter is `present`.\n      For example, an Accept header with value `text/csv; header=absent` \n      would result in CSV output without a header row.\n    \n\n\n\nTo find the analysis identifier for a commit, use the `/analyses/{project-id}/commits/{commit-id}`  endpoint. For more information, see [Get analysis summary for a specific commit](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAnalysisForCommit). \n"
+    },
+    {
+      "id": "openapi_lgtm_com.analyses.getAnalysis",
+      "name": "analyses.getAnalysis",
+      "description": "Get a summary of the analysis results for a specific analysis identifier.\n\nTo find the analysis identifier for a commit, use the `/analyses/{project-id}/commits/{commit-id}` endpoint. For more information, see [Get analysis summary for a specific commit](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAnalysisForCommit).\n\nThis endpoint reports the commit analyzed and a summary of the results for each language. Alternatively, you can use this identifier to download full details  of all the alerts found by the analysis. For more information, see [Get detailed alert information](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAlerts).\n"
+    },
+    {
+      "id": "openapi_lgtm_com.analyses.getAnalysisForCommit",
+      "name": "analyses.getAnalysisForCommit",
+      "description": "Get a summary of the analysis results for a specific commit, or the latest commit, to a project. (For projects configured for sparse or upload analysis, only `latest` is supported.) \n\nThis endpoint reports a summary of results for each language, and also the analysis identifier. You can use the analysis identifier to download full details of all the alerts  found by the analysis. For more information, see [Get detailed alert information](https://lgtm.com/help/lgtm/api/api-v1#opIdgetAlerts).\n"
+    },
+    {
+      "id": "openapi_lgtm_com.analyses.requestAnalysis",
+      "name": "analyses.requestAnalysis",
+      "description": "Trigger the analysis of a specific commit to a project. If a previous attempt to analyze that commit failed, this triggers a fresh analysis.  This is supported for all LGTM projects, regardless of repository type or host. The commit must be available in the main repository, but can be on a branch that isn't tracked by LGTM. For both LGTM.com and LGTM Enterprise, you must include an access token with the `analyses:write` scope.\n\nWhen you request the analysis of a commit, the API returns:\n- `operation-id`: used to track the status of the task using the `/operations` endpoint. For more information, see [Get operation status](https://lgtm.com/help/lgtm/api/api-v1#opIdgetOperation).\n- `status`: initially pending.\n- `task-result`: containing information about the progress and results of the analysis.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.apiRoot.getSpec",
+      "name": "apiRoot.getSpec",
+      "description": "Get the specification of this API in [OpenAPI](https://github.com/OAI/OpenAPI-Specification) format. This endpoint does not require an access token. This makes it easier for you to use the specification with third-party tools."
+    },
+    {
+      "id": "openapi_lgtm_com.apiRoot.getVersion",
+      "name": "apiRoot.getVersion",
+      "description": "Get the version information of this API."
+    },
+    {
+      "id": "openapi_lgtm_com.codeReviews.getCodeReview",
+      "name": "codeReviews.getCodeReview",
+      "description": "Get the results of a code review using the review identifier for the task.\n\nWhen you request a code review, the response includes a task result URL of the form: `/codereviews/{review-id}`.\n\nThis endpoint reports the results of a complete code review, or the status of a review  that's still in progress.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.codeReviews.requestReview",
+      "name": "codeReviews.requestReview",
+      "description": "Trigger the code review of a patch. This is available for projects with Git repositories.\n\nYour request must include:\n\n  * Identifier for the base commit\n  * Patch generated using `git diff --binary` (see [git diff](https://git-scm.com/docs/git-diff))\n  * Header `Content-Type: application/octet-stream`\n  * For both LGTM.com and LGTM Enterprise, an access token with the `codereviews:write` scope\n\nNote that if you make a request using Curl, you'll also need to add `--data-binary` to the request to ensure that the patch you supply in the body is sent with newlines unchanged.\nYou can track the progress of the review using the task result URL returned on creation of the task, or by calling the `/operations` endpoint with the operations identifier returned by the request. For more information, see [Get operation status](https://lgtm.com/help/lgtm/api/api-v1#opIdgetOperation). Alternatively, if you supply a callback URL you'll get a post-back automatically on completion of the review.\n\nWhen the review is complete, you can access the results using the task result URL.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.issues.getIssue",
+      "name": "issues.getIssue",
+      "description": "Fetch the alert information for an issue in [SARIF](https://lgtm.com/help/lgtm/sarif-results-file) format.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.operations.getOperation",
+      "name": "operations.getOperation",
+      "description": "Track progress of a long-running operation using the operations identifier returned when you  created the operation. For example, by triggering the analysis of a commit, or the code review of a patch. For both LGTM.com and LGTM Enterprise, you must include an access token with the `operations:read` scope.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.addProject",
+      "name": "projects.addProject",
+      "description": "LGTM administrators can add a new project to LGTM by providing a repository URL. By default, LGTM tries to build and analyze the project in the same way as for projects added through the user interface. If at least one language is successfully analyzed, and the repository doesn't already exist on LGTM, a new project is created. If the project already exists but your API call triggers a successful analysis  of additional languages, LGTM adds those languages to the project.\n\nYou can configure how LGTM processes the project using query parameters to:\n  * Specify the languages to analyze.\n  * Create a new project in [sparse mode](https://help.semmle.com/lgtm-enterprise/user/help/analysis-faqs.html#what-is-sparse-analysis).\n  * Create a new project in [upload mode](https://help.semmle.com/lgtm-enterprise/user/help/analysis-faqs.html#what-is-upload-analysis) to analyze externally-generated databases. Each database represents a snapshot of the codebase. \n  Use this option when you want to upload databases that were generated by the CodeQL CLI (or the QL command-line tools).\n  The version of the command line used to generate the database\n  must be the same version as LGTM Enterprise. \n\nWith any of these options, you can also include an `lgtm.yml` in the body of the request to [customize extraction](https://lgtm.com/help/lgtm/customizing-code-extraction).\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.deleteProject",
+      "name": "projects.deleteProject",
+      "description": "Delete a project with a particular numeric project identifier.\nIn addition to access to the project, administrative access to LGTM or the LGTM Enterprise instance is required to delete projects.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.getProject",
+      "name": "projects.getProject",
+      "description": "Get the latest summary for a specific project using the numeric project identifier.\n\nTo find the LGTM identifier for a project, list all projects using the `/projects`  endpoint and look up the project by name. Alternatively, use the `/projects/{provider}/{org}/{name}` endpoint. If you have administration access, the project identifier is also displayed in  the administration page for the project.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.getProjectByUrlIdentifier",
+      "name": "projects.getProjectByUrlIdentifier",
+      "description": "Get the latest summary for a specific project using the project's URL identifier `{provider}/{org}/{name}`.\n\nTo find the URL identifier for a project, view the project overview page in LGTM. The URL identifier follows after `/projects`. For example, for a project with the URL `https://lgtm.example.com/projects/g/apache/commons-io` the URL identifier is `g/apache/commons-io`. In the example, `g` represents the `provider` (repository host), `apache` is the `organization` and `commons-io` is the `name` of the repository.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.getProjectConfig",
+      "name": "projects.getProjectConfig",
+      "description": "Get the latest configuration for a specific project using the numeric project identifier."
+    },
+    {
+      "id": "openapi_lgtm_com.projects.getProjects",
+      "name": "projects.getProjects",
+      "description": "List all the projects the current user has authorization to view. \n\nA maximum of 100 projects are returned in each response. When further results are available, the response includes the URL you need to request the next page of results.\n\nUse the optional parameter, `limit`, to change the number of results reported in each response (range of 1&mdash;100). If you supply an invalid value for this  parameter, the default value of 100 is used.\n\nWhen more than one page of results is available, each response includes a `nextPageUrl` response parameter. You can use this URL to request the next page of results. The `nextPageUrl` includes an automatically generated `start` parameter, which specifies the projects to return in the next page of results.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.projects.setProjectConfig",
+      "name": "projects.setProjectConfig",
+      "description": "Set the administrator configuration for a specific project using the numeric project identifier."
+    },
+    {
+      "id": "openapi_lgtm_com.queryJobs.createQueryJob",
+      "name": "queryJobs.createQueryJob",
+      "description": "Submit a query to run on one or more projects on LGTM. The query is included in the body of the request.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.queryJobs.getQueryJob",
+      "name": "queryJobs.getQueryJob",
+      "description": "Get the status of a query job using the query job identifier for the task.\n\nWhen you create a query job, the response includes a task result URL of the form: `/queryjobs/{queryjob-id}`.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.queryJobs.getQueryJobResultsForProject",
+      "name": "queryJobs.getQueryJobResultsForProject",
+      "description": "Fetch the results for a specific project. The endpoint succeeds only if the query was successful,  and returns a `404` error otherwise.  By default, the endpoint provides only results that are within the source tree. To obtain all results, specify the `nofilter` parameter.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.queryJobs.getQueryJobResultsOverview",
+      "name": "queryJobs.getQueryJobResultsOverview",
+      "description": "This endpoint provides a summary of the results generated by completed query runs for each  project specified in the the POST /queryjobs endpoint.  For completed query jobs, the summary includes:\n\n  * The number of results for successful query runs.\n  * Error information for failed query runs.\n\nNo information is included in the response for any project for which the query  run is still in progress.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.snapshots.abortUpload",
+      "name": "snapshots.abortUpload",
+      "description": "Aborts the specified upload session and deletes any uploaded parts. After the session is aborted it cannot be restarted.\nIf any part uploads are in progress when the session is aborted, their data may not be deleted. To ensure that uploaded parts are deleted correctly, you should only abort an upload session after all part uploads have completed.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.snapshots.completeUpload",
+      "name": "snapshots.completeUpload",
+      "description": "Completes the database upload by closing the upload session, upgrading the database if appropriate, and scheduling analysis of that snapshot of the codebase.\n\nYou can view the analysis progress and access the results using the `task-result-url`.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.snapshots.getSnapshot",
+      "name": "snapshots.getSnapshot",
+      "description": "Download a CodeQL database from LGTM, representing a snapshot of the codebase, to run queries in your IDE.\n\nThis endpoint works for projects that have been successfully analyzed for the language specified in the request.  A successful request redirects you to a URL for downloading a database that represents the code snapshot, as specified in the `Location:` header in the response. Therefore, your HTTP client should be configured to follow redirects. For example, if you are using `curl`, you can add the`-L` flag to the command.\n\nThe database is downloaded as a zip file that can be imported into an IDE equipped with a  CodeQL extension. The extension must be up to date to analyze databases downloaded from LGTM. For more information on running queries locally in your IDE, see [Runnning queries in your IDE](https://lgtm.com/help/lgtm/running-queries-ide). \n"
+    },
+    {
+      "id": "openapi_lgtm_com.snapshots.initSnapshotUpload",
+      "name": "snapshots.initSnapshotUpload",
+      "description": "Start a session to upload an externally-built database (which represents a snapshot of a codebase) to a project on LGTM. \n\nThis endpoint works for projects that are already on LGTM, and the selected language of  the database must already be configured. The project must be configured with 'upload' analysis mode. You can upload a \"bundled\" CodeQL database or a database exported by  the QL command-line tools (`odasa`).\n\nIf your database was generated using a version of the  command line that is older than LGTM,  LGTM will try to upgrade and analyze it when the upload is complete. You can include cached predicates in the upload, but they are ignored as the cache is  repopulated after the database has been upgraded and analyzed. However, if you want to include results with your database, make sure the database is  compatible before you start the upload session.  Incompatible databases with results won't be upgraded and therefore cannot be uploaded.  For further information on externally-built databases,  see [Preparing snapshots to upload to LGTM using the QL command-line tools](https://help.semmle.com/wiki/display/SD/Preparing+snapshots+to+upload+to+LGTM).\n\n    \nWhen the upload session has been successfully started, upload the database to the  upload URL returned in the response. The database can be uploaded to the upload URL in parts using  the [`PUT /snapshots/uploads/{session-id}`](https://lgtm.com/help/lgtm/api/api-v1#opIduploadPart) endpoint. After uploading all the parts you must call  the [`POST /snapshots/uploads/{session-id}`](https://lgtm.com/help/lgtm/api/api-v1#opIdcompleteUpload) endpoint to complete the upload session.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.snapshots.uploadPart",
+      "name": "snapshots.uploadPart",
+      "description": "Upload a database representing a snapshot of a codebase.  The database is sent in one or more parts. Each part is sent in the request body. \nUse the [`POST /snapshots/{project-id}/{language}`](https://lgtm.com/help/lgtm/api/api-v1#opIdinitSnapshotUpload) endpoint  to start an upload session before uploading a database part. Database parts must have been generated and prepared for upload using the CodeQL CLI or the QL command-line tools. For further information on exporting externally-built databases,  see [Preparing snapshots to upload to LGTM](https://help.semmle.com/wiki/display/SD/Preparing+snapshots+to+upload+to+LGTM).\n\nSplit large databases into multiple parts. Upload the parts by making a separate request for each part.  Don't upload the next part until you've successfully uploaded the previous part.\n\nIf the upload fails you should retry it with the same data.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.system.getHealth",
+      "name": "system.getHealth",
+      "description": "Return an indication of whether the application is working as expected (up) or needs  attention (down). \n\\> The `description` and `details` fields are reported only if the request includes an access token for a user account that has administration rights for this LGTM server.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.system.getMetric",
+      "name": "system.getMetric",
+      "description": "LGTM administrators can download usage data using this endpoint. The response includes up to 1000 values for the specified metric and reports the date-time that each value was calculated. There is normally one value per day.\n"
+    },
+    {
+      "id": "openapi_lgtm_com.system.getMetrics",
+      "name": "system.getMetrics",
+      "description": "LGTM administrators can use this endpoint to list the usage metrics that are available to download.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

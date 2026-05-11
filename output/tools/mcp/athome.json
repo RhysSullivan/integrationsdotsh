@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:19.304Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_athome.property_carousel",
+      "name": "property-carousel",
+      "description": "Primary tool for search real estate properties for sale or rent in Luxembourg and the Greater Region on athome.lu using natural language criteria.\nMANDATORY CALL ORDER WHEN A LOCATION IS MENTIONED:\n- If the user gives a location in natural language, first call `fetch-locations` to resolve hkeys\n- Then call `property-carousel` immediately with the resolved hkey(s) and extracted filters\n- Never stop after `fetch-locations` when the user asks to find/buy/rent/search properties, because that tool does not return listings\n- If no hkeys match, still call `property-carousel` with other extracted filters\nDo this automatically; the user does not need to request a carousel or mention tool names\n- After rendering results, present the carousel first, then briefly summarize the applied filters\nUse this when the user wants to see property listings such as:\n- Apartments, houses or commercial properties matching criteria\n- Price, size, location hkey(come from tool 'fetch-locations') or room-based searches\nKey expected inputs:\n- Mandatory: Location (Luxembourg or nearby border areas in France, Germany, or Belgium)\n- Mandatory: Property type\n- Mandatory: Transaction type (rent or buy)\n- Optional: Price range\n- Optional: Number of rooms/bedrooms\n- Optional: Surface area\n- Optional: Other user-specified filters\nOutput intent: Returns a carousel with up to 20 properties matching user criteria with details like first photo, property type, price, location, surface area, number of bedrooms.\nWhat it does not do:\n- No affordability recommendations or financial advice (for this the user should use our dedicated mortgage brokering service: https://www.athome.lu/finance/pret-immobilier)\n- No suggestions on which property to choose"
+    },
+    {
+      "id": "mcp_athome.fetch_locations",
+      "name": "fetch-locations",
+      "description": "Preparatory tool only. This tool does not return property listings.When the user wants to find, show, rent, buy, or search properties and mentions a natural-language location:1. Call this tool to resolve locations into hkeys.2. Immediately call `property-carousel` using the returned hkeys.3. Do not answer the user after this tool alone."
+    }
+  ]
+}

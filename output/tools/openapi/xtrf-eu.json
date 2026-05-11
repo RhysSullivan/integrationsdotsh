@@ -1,0 +1,1437 @@
+{
+  "fetchedAt": "2026-04-30T15:26:58.262Z",
+  "status": "ok",
+  "count": 286,
+  "tools": [
+    {
+      "id": "openapi_xtrf_eu.browser.browseCsv",
+      "name": "browser.browseCsv",
+      "description": "Searches for data (ie. customer, task, etc) and returns it in a CSV form."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.browseJson",
+      "name": "browser.browseJson",
+      "description": "Searches for data (ie. customer, task, etc) and returns it in a tabular form."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.create",
+      "name": "browser.create",
+      "description": "Creates view for given class."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.delete",
+      "name": "browser.delete",
+      "description": "Removes a view. No content is returned upon success (204)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.deleteColumn",
+      "name": "browser.deleteColumn",
+      "description": "Deletes a single column from view."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.get",
+      "name": "browser.get",
+      "description": "Returns all view's information (ie. name, columns, filters, etc)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getColumns",
+      "name": "browser.getColumns",
+      "description": "Returns columns defined in view."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getColumnSettings",
+      "name": "browser.getColumnSettings",
+      "description": "Returns column's specific settings. For example when column describes money amount we can decide whether it should display currency or not."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getCurrentViewDetails",
+      "name": "browser.getCurrentViewDetails",
+      "description": "Returns current view's detailed information, suitable for browser."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getFilter",
+      "name": "browser.getFilter",
+      "description": "Returns view's filter."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getLocalSettings",
+      "name": "browser.getLocalSettings",
+      "description": "Returns view's local settings (for current user)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getOrder",
+      "name": "browser.getOrder",
+      "description": "Returns view's order settings."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getPermissions",
+      "name": "browser.getPermissions",
+      "description": "Returns view's permissions."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getSettings",
+      "name": "browser.getSettings",
+      "description": "Returns view's settings (ie. name)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getViewDetails",
+      "name": "browser.getViewDetails",
+      "description": "Returns view's detailed information, suitable for browser."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.getViewsBrief",
+      "name": "browser.getViewsBrief",
+      "description": "Returns views' brief."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.selectViewAndGetItsDetails",
+      "name": "browser.selectViewAndGetItsDetails",
+      "description": "Selects given view as current and returns its detailed information, suitable for browser."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.update",
+      "name": "browser.update",
+      "description": "Updates all view's information (ie. name, columns, filters, etc)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateColumns",
+      "name": "browser.updateColumns",
+      "description": "Updates columns in view."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateColumnSettings",
+      "name": "browser.updateColumnSettings",
+      "description": "Updates column's specific settings. For example when column describes money amount we can decide whether it should display currency or not."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateFilter",
+      "name": "browser.updateFilter",
+      "description": "Updates view's filter."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateFilterProperty",
+      "name": "browser.updateFilterProperty",
+      "description": "Updates view's filter property."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateLocalSettings",
+      "name": "browser.updateLocalSettings",
+      "description": "Updates view's local settings (for current user)."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateOrder",
+      "name": "browser.updateOrder",
+      "description": "Updates view's order settings."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updatePermissions",
+      "name": "browser.updatePermissions",
+      "description": "Updates view's permissions."
+    },
+    {
+      "id": "openapi_xtrf_eu.browser.updateSettings",
+      "name": "browser.updateSettings",
+      "description": "Updates view's settings."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.create1",
+      "name": "clientInvoices.create1",
+      "description": "Creates a new invoice from tasks. Tasks are grouped by client and currency, therefore multiple invoices can be created.If any of the tasks cannot be invoiced (ie. it is already invoiced, not invoiceable, not associated with a project) then an error is reported."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.createPayment",
+      "name": "clientInvoices.createPayment",
+      "description": "Adds a new payment to the client invoice. The invoice payment status (Not Paid, Partially Paid, Fully Paid) is automatically recalculated."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.delete1",
+      "name": "clientInvoices.delete1",
+      "description": "Removes a client invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.delete2",
+      "name": "clientInvoices.delete2",
+      "description": "Removes a customer payment."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.downloadDocuments",
+      "name": "clientInvoices.downloadDocuments",
+      "description": "Generates client invoices' documents."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.duplicate",
+      "name": "clientInvoices.duplicate",
+      "description": "Duplicate client invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.duplicateAsProForma",
+      "name": "clientInvoices.duplicateAsProForma",
+      "description": "Duplicate client invoice as pro forma."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getAll",
+      "name": "clientInvoices.getAll",
+      "description": "Lists all client invoices in all statuses (including not ready and drafts) that have been updated since a specific date."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getAllIds",
+      "name": "clientInvoices.getAllIds",
+      "description": "Returns client invoices' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getById",
+      "name": "clientInvoices.getById",
+      "description": "Returns client invoice details."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getDates",
+      "name": "clientInvoices.getDates",
+      "description": "Returns dates of a given client invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getDocument",
+      "name": "clientInvoices.getDocument",
+      "description": "Generates client invoice document (PDF)."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getPayments",
+      "name": "clientInvoices.getPayments",
+      "description": "Returns all payments for the client invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.getPaymentTerms",
+      "name": "clientInvoices.getPaymentTerms",
+      "description": "Returns payment terms of a given client invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.sendReminder",
+      "name": "clientInvoices.sendReminder",
+      "description": "Sends reminder."
+    },
+    {
+      "id": "openapi_xtrf_eu.clientInvoices.sendReminders",
+      "name": "clientInvoices.sendReminders",
+      "description": "Sends reminders. Returns number of sent e-mails."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.create2",
+      "name": "clients.create2",
+      "description": "Creates a new person. Required fields are presented in the example. Other fields (from PUT) may also be specified here."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.create3",
+      "name": "clients.create3",
+      "description": "Creates a new client. All available fields are presented in PUT request.<p>\n  Required fields:\n  <ul>\n    <li>name</li>\n    <li>fullName</li>\n    <li>contact -> emails -> primary</li>\n  </ul>\n</p>\n"
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.delete3",
+      "name": "clients.delete3",
+      "description": "Removes a person."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.delete4",
+      "name": "clients.delete4",
+      "description": "Removes a customer price list."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.delete5",
+      "name": "clients.delete5",
+      "description": "Removes a client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.generateSingleUseSignInToken",
+      "name": "clients.generateSingleUseSignInToken",
+      "description": "Generates a single use sign-in token for the customer person found for given login or e-mail. Returns 'url' and 'token' which allows to sign-in to customer portal as this person. Token is valid for two minutes and can be used only once. To sign-in to customer portal you should post 'token' provided as the 'accessToken' form param to the 'url' using POST method.Detailed description is available in the Customer API <a href=\"/api-doc/customer-api/authentication\">authentication</a>."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getAddress",
+      "name": "clients.getAddress",
+      "description": "Returns address of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getAllIds1",
+      "name": "clients.getAllIds1",
+      "description": "Returns persons' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getAllIds2",
+      "name": "clients.getAllIds2",
+      "description": "Returns clients' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getAllNamesWithIds",
+      "name": "clients.getAllNamesWithIds",
+      "description": "Returns list of simple clients representations"
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getById1",
+      "name": "clients.getById1",
+      "description": "Returns person details."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getById2",
+      "name": "clients.getById2",
+      "description": "Returns client details."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getCategories",
+      "name": "clients.getCategories",
+      "description": "Returns categories of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getContact",
+      "name": "clients.getContact",
+      "description": "Returns contact of a given person."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getContact1",
+      "name": "clients.getContact1",
+      "description": "Returns contact of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getCorrespondenceAddress",
+      "name": "clients.getCorrespondenceAddress",
+      "description": "Returns correspondence address of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getCustomField",
+      "name": "clients.getCustomField",
+      "description": "Returns custom field of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getCustomFields",
+      "name": "clients.getCustomFields",
+      "description": "Returns custom fields of a given person."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getCustomFields1",
+      "name": "clients.getCustomFields1",
+      "description": "Returns custom fields of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.getIndustries",
+      "name": "clients.getIndustries",
+      "description": "Returns industries of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.update1",
+      "name": "clients.update1",
+      "description": "Only specified fields will be changed. One may not specify embeddable fields here - use separate API calls for updating them."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.update2",
+      "name": "clients.update2",
+      "description": "Only specified fields will be changed (id is required). One may not specify embeddable fields here - use separate API calls for updating them."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateAddress",
+      "name": "clients.updateAddress",
+      "description": "Updates address of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateCategories",
+      "name": "clients.updateCategories",
+      "description": "Updates categories of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateContact",
+      "name": "clients.updateContact",
+      "description": "Updates contact of a given person. Sets that this person uses specific address and contact (not the one from customer)."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateContact1",
+      "name": "clients.updateContact1",
+      "description": "Updates contact of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateCorrespondenceAddress",
+      "name": "clients.updateCorrespondenceAddress",
+      "description": "Updates correspondence address of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateCustomField",
+      "name": "clients.updateCustomField",
+      "description": "Updates given custom field of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateCustomFields",
+      "name": "clients.updateCustomFields",
+      "description": "Updates custom fields of a given person."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateCustomFields1",
+      "name": "clients.updateCustomFields1",
+      "description": "Updates custom fields of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.clients.updateIndustries",
+      "name": "clients.updateIndustries",
+      "description": "Updates industries of a given client."
+    },
+    {
+      "id": "openapi_xtrf_eu.currencyExchangeRates.createExchangeRate",
+      "name": "currencyExchangeRates.createExchangeRate",
+      "description": "Adding currency exchange rates via API"
+    },
+    {
+      "id": "openapi_xtrf_eu.currencyExchangeRates.getByIsoCode",
+      "name": "currencyExchangeRates.getByIsoCode",
+      "description": "Returns currency exchange rates."
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getActive",
+      "name": "dictionaries.getActive",
+      "description": "Returns active dictionary entities for all types."
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getActiveByType",
+      "name": "dictionaries.getActiveByType",
+      "description": "Returns active values from a given dictionary."
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getAll1",
+      "name": "dictionaries.getAll1",
+      "description": "<div>\n  <p>\n    XTRF holds many user-defined dictionaries (ie. countries).\n    Each dictionary contains a set of values (ie. Poland or Germany).\n    A default value may be defined for a dictionary.\n  </p>\n  <p>\n    Dictionary values are identified using internal identifier which is constant and unique among other values from the same dictionary.\n    Please note that name used in dictionary values is presented in the locale of the current identity.\n    The same dictionary value can have different names, ie. \"Poland\" for one user, \"Polska\" for another one.\n  </p>\n  <p>\n    Possible dictionary types with short explanation:\n    <ul>\n      <li>calculationUnit - predefined values of how to calculate the volume of work into the price</li>\n      <li>category - labels to organize data on the platform</li>\n      <li>country - list of countries used on the platform</li>\n      <li>currency - currencies used in financial operations in the system</li>\n      <li>industry - industry sectors which clients specialize in</li>\n      <li>jobType - services offered by a company used in customized workflows</li>\n      <li>language - list of languages and its values used on the platform</li>\n      <li>leadSource - lead/recruitment places where new clients and vendors may be found</li>\n      <li>personDepartment - departments in which contact person may be assigned to</li>\n      <li>personPosition - positions in which user may be associated with</li>\n      <li>province - states and provinces used in various documents on the platform</li>\n      <li>specialization - list of specific qualifications required to perform a specific job in the task, for ex. medical, military</li>\n    </ul>\n  </p>\n</div>"
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getAll3",
+      "name": "dictionaries.getAll3",
+      "description": "Returns workflows list. Both active and not active ones."
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getAllActive",
+      "name": "dictionaries.getAllActive",
+      "description": "Returns active workflows list"
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getAllByType",
+      "name": "dictionaries.getAllByType",
+      "description": "Returns all values (both active and not active) from a given dictionary."
+    },
+    {
+      "id": "openapi_xtrf_eu.dictionaries.getByTypeAndId",
+      "name": "dictionaries.getByTypeAndId",
+      "description": "Returns specific value from a given dictionary."
+    },
+    {
+      "id": "openapi_xtrf_eu.files.uploadFile",
+      "name": "files.uploadFile",
+      "description": "When a file is required by an operation (ie. task creation) it must be uploaded previously to the API.\nUploading a file will result in a file token, which can be used to reference this file in other API calls.\n Each file must be uploaded separately.\n Keep in mind that file token has limited validity (ie. 10 minutes).\n Therefore files must be uploaded just before issuing API call which reference them.\n"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.assignFileToJobOutput",
+      "name": "jobsClassic.assignFileToJobOutput",
+      "description": "POST /jobs/{jobId}/files/output"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.assignVendor",
+      "name": "jobsClassic.assignVendor",
+      "description": "Assigns vendor to a job in a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.changeStatus",
+      "name": "jobsClassic.changeStatus",
+      "description": "Changes job status if possible (400 Bad Request is returned otherwise). The status has to be specified using one of the following keys:<ul><li>OPEN – available when the job has one of the following statuses: ACCEPTED, CANCELED</li><li>ACCEPTED – available when the job has one of the following statuses: OPEN (Vendor and dates have to be set before calling the operation), STARTED</li><li>STARTED – available when the job has one of the following statuses: ACCEPTED, READY</li><li>READY – available when the job has one of the following statuses: STARTED</li><li>CANCELLED – available when the job has one of the following statuses: OPEN, ACCEPTED, STARTED, OFFERS_SENT</li><li>OFFERS_SENT – not available as a target status for this operation</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.getJobDetails",
+      "name": "jobsClassic.getJobDetails",
+      "description": "Returns job details by jobId."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.getJobFiles",
+      "name": "jobsClassic.getJobFiles",
+      "description": "Returns list of input and output files of a job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.getJobFiles1",
+      "name": "jobsClassic.getJobFiles1",
+      "description": "Returns file metadata."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.updateDates",
+      "name": "jobsClassic.updateDates",
+      "description": "Updates dates of a given job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsClassic.updateInstructions",
+      "name": "jobsClassic.updateInstructions",
+      "description": "Updates instructions for a job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.addExternalFileLink",
+      "name": "jobsSmartV2.addExternalFileLink",
+      "description": "POST /v2/jobs/{jobId}/files/addExternalLink"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.addFileLinks",
+      "name": "jobsSmartV2.addFileLinks",
+      "description": "Adds file link to the project as a link delivered in the job. The following properties can be specified for each file link:<ul><li>url (required, 400 Bad Request is returned otherwise)</li><li>category (required, 400 Bad Request is returned otherwise)</li><li>languageIds – when the file category depends on a list of languages</li><li>languageCombinationIds – when the file category depends on a list of language combinations</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.addFiles",
+      "name": "jobsSmartV2.addFiles",
+      "description": "Adds files to the project as delivered in the job. The files have to be uploaded beforehand (see \"POST /jobs/{jobId}/files/upload\" operation). The following properties can be specified for each file:<ul><li>category (required, 400 Bad Request is returned otherwise)</li><li>languageIds – when the file category depends on a list of languages</li><li>languageCombinationIds – when the file category depends on a list of language combinations</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.assignVendor1",
+      "name": "jobsSmartV2.assignVendor1",
+      "description": "Assigns vendor to a job in a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.changeDates",
+      "name": "jobsSmartV2.changeDates",
+      "description": "Updates dates of a given job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.changeStatus1",
+      "name": "jobsSmartV2.changeStatus1",
+      "description": "Changes job status if possible (400 Bad Request is returned otherwise). The status has to be specified using one of the following keys:<ul><li>OPEN – available when the job has one of the following statuses: ACCEPTED, CANCELED</li><li>ACCEPTED – available when the job has one of the following statuses: OPEN (Vendor and dates have to be set before calling the operation), STARTED</li><li>STARTED – available when the job has one of the following statuses: ACCEPTED, READY</li><li>READY – available when the job has one of the following statuses: STARTED</li><li>CANCELLED – available when the job has one of the following statuses: OPEN, ACCEPTED, STARTED, OFFERS_SENT</li><li>OFFERS_SENT – not available as a target status for this operation</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.getByExternalId",
+      "name": "jobsSmartV2.getByExternalId",
+      "description": "GET /v2/jobs/for-external-id"
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.getDeliveredFiles",
+      "name": "jobsSmartV2.getDeliveredFiles",
+      "description": "Returns list of files delivered in the job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.getFileById1",
+      "name": "jobsSmartV2.getFileById1",
+      "description": "Returns details for a job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.getSharedReferenceFiles",
+      "name": "jobsSmartV2.getSharedReferenceFiles",
+      "description": "Returns list of files shared with the job as Reference Files."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.getSharedWorkFiles",
+      "name": "jobsSmartV2.getSharedWorkFiles",
+      "description": "Returns list of files shared with the job as Work Files."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.shareAsReferenceFiles",
+      "name": "jobsSmartV2.shareAsReferenceFiles",
+      "description": "Shares selected files as Reference Files with a job in a project. The files and the job have to be part of the same project. The operation is finished successfully even if some of the selected files were already shared with the job. If a file was shared with the job as Work File, it will now be shared as Reference File (and not as Work File)."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.shareAsWorkFiles",
+      "name": "jobsSmartV2.shareAsWorkFiles",
+      "description": "Shares selected files as Work Files with a job in a project. The files and the job have to be part of the same project. The operation is finished successfully even if some of the selected files were already shared with the job. If a file was shared with the job as Reference File, it will now be shared as Work File (and not as Reference File)."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.stopSharing",
+      "name": "jobsSmartV2.stopSharing",
+      "description": "Stops sharing selected files with a job in a project. The files and the job have to be part of the same project. The operation is finished successfully even if some of the selected files were not shared with the job."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.updateInstructions4",
+      "name": "jobsSmartV2.updateInstructions4",
+      "description": "Updates instructions for a job. See also \"PUT /projects/{projectId}/vendorInstructions\" and \"PUT /quotes/{quoteId}/vendorInstructions\" for updating instructions for all jobs in a project or quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.jobsSmartV2.uploadFile1",
+      "name": "jobsSmartV2.uploadFile1",
+      "description": "Uploads file to the project as a file delivered in the job. Only one file can be uploaded at once. When the upload is finished the file has to be added by specifying its category and languages (see \"PUT /jobs/{jobId}/files/add\" operation)."
+    },
+    {
+      "id": "openapi_xtrf_eu.license.getLicense",
+      "name": "license.getLicense",
+      "description": "Returns license content."
+    },
+    {
+      "id": "openapi_xtrf_eu.license.refresh",
+      "name": "license.refresh",
+      "description": "Refreshes license content. This method returns OK immediately and license is refreshed asynchronously. It takes a while (usually a few seconds) for the license to be actually refreshed."
+    },
+    {
+      "id": "openapi_xtrf_eu.macros.run",
+      "name": "macros.run",
+      "description": "Runs a specified macro on a specified list of items (\"list\" variable in the macro code). The list of items can be empty if the macro doesn't use it. Additional custom parameters can be provided to the macro when necessary (\"params\" variable in the macro code).\n\n <BR>Note: Macros that support parameters can be also run from GUI (Views in Home Portal),so they should also handle the empty parameters map (e.g. by defining default values when parameters are not provided)."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.create5",
+      "name": "projectsClassic.create5",
+      "description": "Creates a new Classic Project. If the specified service ID refers to Smart Project, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.createLanguageCombination",
+      "name": "projectsClassic.createLanguageCombination",
+      "description": "Creates a new language combination for a given project without creating a task."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.createPayable",
+      "name": "projectsClassic.createPayable",
+      "description": "Adds a payable to a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.createReceivable",
+      "name": "projectsClassic.createReceivable",
+      "description": "Adds a receivable to a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.createTask",
+      "name": "projectsClassic.createTask",
+      "description": "Creates a new task for a given project.<p>\n  Required fields:\n  <ul>\n    <li>languageCombination</li>\n    <li>specializationId</li>\n    <li>workflowId</li>\n  </ul>\n</p>\n"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.delete12",
+      "name": "projectsClassic.delete12",
+      "description": "Removes a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.deletePayable",
+      "name": "projectsClassic.deletePayable",
+      "description": "Deletes a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.deleteReceivable",
+      "name": "projectsClassic.deleteReceivable",
+      "description": "Deletes a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getAllIds6",
+      "name": "projectsClassic.getAllIds6",
+      "description": "Returns projects' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getById7",
+      "name": "projectsClassic.getById7",
+      "description": "Returns project details. If the specified project ID refers to Smart Project, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getContacts",
+      "name": "projectsClassic.getContacts",
+      "description": "Returns contacts of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getCustomFields5",
+      "name": "projectsClassic.getCustomFields5",
+      "description": "Returns custom fields of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getDates1",
+      "name": "projectsClassic.getDates1",
+      "description": "Returns dates of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getFileById",
+      "name": "projectsClassic.getFileById",
+      "description": "Downloads a file."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getFinance",
+      "name": "projectsClassic.getFinance",
+      "description": "Returns finance of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.getInstructions",
+      "name": "projectsClassic.getInstructions",
+      "description": "Returns instructions of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updateContacts",
+      "name": "projectsClassic.updateContacts",
+      "description": "Updates contacts of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updateCustomFields3",
+      "name": "projectsClassic.updateCustomFields3",
+      "description": "Updates custom fields of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updateDates1",
+      "name": "projectsClassic.updateDates1",
+      "description": "Updates dates of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updateInstructions1",
+      "name": "projectsClassic.updateInstructions1",
+      "description": "Updates instructions of a given project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updatePayable",
+      "name": "projectsClassic.updatePayable",
+      "description": "Updates a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsClassic.updateReceivable",
+      "name": "projectsClassic.updateReceivable",
+      "description": "Updates a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.addExternalFileLinks",
+      "name": "projectsSmartV2.addExternalFileLinks",
+      "description": "POST /v2/projects/{projectId}/files/addExternalLink"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.addFileLinks1",
+      "name": "projectsSmartV2.addFileLinks1",
+      "description": "Adds file links to the project as added by PM. The following properties can be specified for each file link:<ul><li>url (required, 400 Bad Request is returned otherwise)</li><li>category (required, 400 Bad Request is returned otherwise)</li><li>languageIds – when the file category depends on a list of languages</li><li>languageCombinationIds – when the file category depends on a list of language combinations</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.addFiles1",
+      "name": "projectsSmartV2.addFiles1",
+      "description": "Adds files to the project as added by PM. The files have to be uploaded beforehand (see \"POST /v2/projects/{projectId}/files/upload\" operation). The following properties can be specified for each file:<ul><li>category (required, 400 Bad Request is returned otherwise)</li><li>languageIds – when the file category depends on a list of languages</li><li>languageCombinationIds – when the file category depends on a list of language combinations</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.addJobToProcess",
+      "name": "projectsSmartV2.addJobToProcess",
+      "description": "Returns process id."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.archive",
+      "name": "projectsSmartV2.archive",
+      "description": "Prepares a ZIP archive that contains the specified files."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.changeStatus2",
+      "name": "projectsSmartV2.changeStatus2",
+      "description": "Changes project status if possible (400 Bad Request is returned otherwise). The status has to be specified using one of the following keys: <ul><li>CANCELLED – available when the job has one of the following statuses: OPEN, STARTED</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.create6",
+      "name": "projectsSmartV2.create6",
+      "description": "Creates a new Smart Project. If the specified service ID refers to Classic Project, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.createPayable2",
+      "name": "projectsSmartV2.createPayable2",
+      "description": "Adds a payable to a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.createReceivable2",
+      "name": "projectsSmartV2.createReceivable2",
+      "description": "Adds a receivable to a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.deletePayable2",
+      "name": "projectsSmartV2.deletePayable2",
+      "description": "Deletes a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.deleteReceivable2",
+      "name": "projectsSmartV2.deleteReceivable2",
+      "description": "Deletes a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getByExternalId1",
+      "name": "projectsSmartV2.getByExternalId1",
+      "description": "Returns project details."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getById9",
+      "name": "projectsSmartV2.getById9",
+      "description": "Returns project details. If the specified project ID refers to Classic Project, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getCatToolProjectInfo",
+      "name": "projectsSmartV2.getCatToolProjectInfo",
+      "description": "Returns if cat tool project is created or queued."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getContacts2",
+      "name": "projectsSmartV2.getContacts2",
+      "description": "Returns Client Contacts information for a project"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getCustomFields8",
+      "name": "projectsSmartV2.getCustomFields8",
+      "description": "Returns a list of custom field keys and values for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getDeliverableFiles",
+      "name": "projectsSmartV2.getDeliverableFiles",
+      "description": "Returns list of files in a project, that are ready to be delivered to client. A file is considered deliverable to client when all of the following criteria are met:<ul><li>the file was added to a job in the last step in the process</li><li>the file is marked as verified (if it was added in a verification step and the file is verifiable, according to its category)</li><li>the job is finished (has Ready status)</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getFileById2",
+      "name": "projectsSmartV2.getFileById2",
+      "description": "Returns details of a file."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getFileContentById",
+      "name": "projectsSmartV2.getFileContentById",
+      "description": "Downloads a file content."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getFiles",
+      "name": "projectsSmartV2.getFiles",
+      "description": "Returns list of files in a project. Only files added to the project (i.e. files that have assigned category and languages) are listed."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getFinance2",
+      "name": "projectsSmartV2.getFinance2",
+      "description": "Returns finance information for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getJobs",
+      "name": "projectsSmartV2.getJobs",
+      "description": "Returns list of jobs in a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.getProcessId",
+      "name": "projectsSmartV2.getProcessId",
+      "description": "Returns process id."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateClientDeadline",
+      "name": "projectsSmartV2.updateClientDeadline",
+      "description": "Updates Client Deadline for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateClientNotes",
+      "name": "projectsSmartV2.updateClientNotes",
+      "description": "Updates Client Notes for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateClientReferenceNumber",
+      "name": "projectsSmartV2.updateClientReferenceNumber",
+      "description": "Updates Client Reference Number for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateContacts2",
+      "name": "projectsSmartV2.updateContacts2",
+      "description": "Updates Client Contacts for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateCustomField2",
+      "name": "projectsSmartV2.updateCustomField2",
+      "description": "Updates a custom field with a specified key in a project"
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateInternalNotes",
+      "name": "projectsSmartV2.updateInternalNotes",
+      "description": "Updates Internal Notes for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateOrderedOn",
+      "name": "projectsSmartV2.updateOrderedOn",
+      "description": "Updates Order Date for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updatePayable2",
+      "name": "projectsSmartV2.updatePayable2",
+      "description": "Updates a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateReceivable2",
+      "name": "projectsSmartV2.updateReceivable2",
+      "description": "Updates a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateSourceLanguage",
+      "name": "projectsSmartV2.updateSourceLanguage",
+      "description": "Updates source language for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateSpecialization",
+      "name": "projectsSmartV2.updateSpecialization",
+      "description": "Updates specialization for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateTargetLanguages",
+      "name": "projectsSmartV2.updateTargetLanguages",
+      "description": "Updates target languages for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateVendorInstructions",
+      "name": "projectsSmartV2.updateVendorInstructions",
+      "description": "Updates instructions for all vendors performing the jobs in a project. See also \"PUT /jobs/{jobId}/instructions\" for updating instructions for a specific job in a project or quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.updateVolume",
+      "name": "projectsSmartV2.updateVolume",
+      "description": "Updates volume for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.projectsSmartV2.uploadFile2",
+      "name": "projectsSmartV2.uploadFile2",
+      "description": "Uploads file to the project as a file uploaded by PM. Only one file can be uploaded at once. When the upload is finished the file has to be added by specifying its category and languages (see \"PUT /v2/projects/{projectId}/files/add\" operation"
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.createLanguageCombination1",
+      "name": "quotesClassic.createLanguageCombination1",
+      "description": "Creates a new language combination for a given quote without creating a task."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.createPayable1",
+      "name": "quotesClassic.createPayable1",
+      "description": "Adds a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.createReceivable1",
+      "name": "quotesClassic.createReceivable1",
+      "description": "Adds a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.createTask1",
+      "name": "quotesClassic.createTask1",
+      "description": "Creates a new task for a given quote. Required fields are presented in the example."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.delete13",
+      "name": "quotesClassic.delete13",
+      "description": "Removes a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.deletePayable1",
+      "name": "quotesClassic.deletePayable1",
+      "description": "Deletes a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.deleteReceivable1",
+      "name": "quotesClassic.deleteReceivable1",
+      "description": "Deletes a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getAllIds7",
+      "name": "quotesClassic.getAllIds7",
+      "description": "Returns quotes' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getById8",
+      "name": "quotesClassic.getById8",
+      "description": "Returns quote details. If the specified quote ID refers to Smart Quote, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getCustomFields6",
+      "name": "quotesClassic.getCustomFields6",
+      "description": "Returns custom fields of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getDates2",
+      "name": "quotesClassic.getDates2",
+      "description": "Returns dates of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getFinance1",
+      "name": "quotesClassic.getFinance1",
+      "description": "Returns finance of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.getInstructions1",
+      "name": "quotesClassic.getInstructions1",
+      "description": "Returns instructions of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.send1",
+      "name": "quotesClassic.send1",
+      "description": "Sends a quote for customer confirmation. Quote status is changed to SENT and a document is sent to the customer."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.start",
+      "name": "quotesClassic.start",
+      "description": "Starts a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.updateCustomFields4",
+      "name": "quotesClassic.updateCustomFields4",
+      "description": "Updates custom fields of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.updateInstructions2",
+      "name": "quotesClassic.updateInstructions2",
+      "description": "Updates instructions of a given quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.updatePayable1",
+      "name": "quotesClassic.updatePayable1",
+      "description": "Updates a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesClassic.updateReceivable1",
+      "name": "quotesClassic.updateReceivable1",
+      "description": "Updates a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.addFiles2",
+      "name": "quotesSmartV2.addFiles2",
+      "description": "Adds files to the quote as added by PM. The files have to be uploaded beforehand (see \"POST v2/quotes/{quoteId}/files/upload\" operation). The following properties can be specified for each file:<ul><li>category (required, 400 Bad Request is returned otherwise)</li><li>languageIds – when the file category depends on a list of languages</li><li>languageCombinationIds – when the file category depends on a list of language combinations</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.archive1",
+      "name": "quotesSmartV2.archive1",
+      "description": "Prepares a ZIP archive that contains the specified files."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.changeStatus3",
+      "name": "quotesSmartV2.changeStatus3",
+      "description": "Changes quote status if possible (400 Bad Request is returned otherwise). The status has to be specified using one of the following keys: <ul><li>PENDING – available when the job has one of the following statuses: REQUESTED, REJECTED</li><li>SENT – available when the job has one of the following statuses: PENDING</li><li>APPROVED – available when the job has one of the following statuses: REQUESTED, PENDING, SENT, APPROVED_BY_CLIENT</li><li>REJECTED – available when the job has one of the following statuses: REQUESTED, PENDING, SENT</li></ul>"
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.create7",
+      "name": "quotesSmartV2.create7",
+      "description": "Creates a new Smart Quote. If the specified service ID refers to Classic Quote, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.createPayable3",
+      "name": "quotesSmartV2.createPayable3",
+      "description": "Adds a payable to a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.createReceivable3",
+      "name": "quotesSmartV2.createReceivable3",
+      "description": "Adds a receivable to a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.deletePayable3",
+      "name": "quotesSmartV2.deletePayable3",
+      "description": "Deletes a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.deleteReceivable3",
+      "name": "quotesSmartV2.deleteReceivable3",
+      "description": "Deletes a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getById10",
+      "name": "quotesSmartV2.getById10",
+      "description": "Returns quote details. If the specified quote ID refers to Classic Quote, 400 Bad Request is returned instead."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getContacts3",
+      "name": "quotesSmartV2.getContacts3",
+      "description": "Returns Client Contacts information for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getCustomFields9",
+      "name": "quotesSmartV2.getCustomFields9",
+      "description": "Returns a list of custom field keys and values for a project."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getFileById3",
+      "name": "quotesSmartV2.getFileById3",
+      "description": "Returns details of a file."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getFileContentById1",
+      "name": "quotesSmartV2.getFileContentById1",
+      "description": "Downloads a file content."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getFiles1",
+      "name": "quotesSmartV2.getFiles1",
+      "description": "Returns list of files in a quote. Only files added to the quote (i.e. files that have assigned category and languages) are listed."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getFinance3",
+      "name": "quotesSmartV2.getFinance3",
+      "description": "Returns finance information for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.getJobs1",
+      "name": "quotesSmartV2.getJobs1",
+      "description": "Returns list of jobs in a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateBusinessDays",
+      "name": "quotesSmartV2.updateBusinessDays",
+      "description": "Updates Business Days for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateClientNotes1",
+      "name": "quotesSmartV2.updateClientNotes1",
+      "description": "Updates Client Notes for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateClientReferenceNumber1",
+      "name": "quotesSmartV2.updateClientReferenceNumber1",
+      "description": "Updates Client Reference Number for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateContacts3",
+      "name": "quotesSmartV2.updateContacts3",
+      "description": "Updates Client Contacts for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateCustomField3",
+      "name": "quotesSmartV2.updateCustomField3",
+      "description": "Updates a custom field with a specified key in a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateExpectedDeliveryDate",
+      "name": "quotesSmartV2.updateExpectedDeliveryDate",
+      "description": "Updates Expected Delivery Date for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateInternalNotes1",
+      "name": "quotesSmartV2.updateInternalNotes1",
+      "description": "Updates Internal Notes for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updatePayable3",
+      "name": "quotesSmartV2.updatePayable3",
+      "description": "Updates a payable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateQuoteExpiry",
+      "name": "quotesSmartV2.updateQuoteExpiry",
+      "description": "Updates Quote Expiry Date for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateReceivable3",
+      "name": "quotesSmartV2.updateReceivable3",
+      "description": "Updates a receivable."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateSourceLanguage1",
+      "name": "quotesSmartV2.updateSourceLanguage1",
+      "description": "Updates source language for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateSpecialization1",
+      "name": "quotesSmartV2.updateSpecialization1",
+      "description": "Updates specialization for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateTargetLanguages1",
+      "name": "quotesSmartV2.updateTargetLanguages1",
+      "description": "Updates target languages for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateVendorInstructions1",
+      "name": "quotesSmartV2.updateVendorInstructions1",
+      "description": "Updates instructions for all vendors performing the jobs in a quote. See also \"PUT /jobs/{jobId}/instructions\" for updating instructions for a specific job in a project or quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.updateVolume1",
+      "name": "quotesSmartV2.updateVolume1",
+      "description": "Updates volume for a quote."
+    },
+    {
+      "id": "openapi_xtrf_eu.quotesSmartV2.uploadFile3",
+      "name": "quotesSmartV2.uploadFile3",
+      "description": "Uploads file to the quote as a file uploaded by PM. Only one file can be uploaded at once. When the upload is finished the file has to be added by specifying its category and languages (see \"PUT /v2/quotes/{quoteId}/files/add\" operation)."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.delete11",
+      "name": "reports.delete11",
+      "description": "Removes a report."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.duplicate1",
+      "name": "reports.duplicate1",
+      "description": "Duplicates a report."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.exportToXml",
+      "name": "reports.exportToXml",
+      "description": "Exports reports definition to XML."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.generateCsv",
+      "name": "reports.generateCsv",
+      "description": "Generates CSV content for a report."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.generatePrinterFriendly",
+      "name": "reports.generatePrinterFriendly",
+      "description": "Generates printer friendly content for a report."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.importFromXml",
+      "name": "reports.importFromXml",
+      "description": "Imports a report definition from an XML using a file token. To obtain the token, you first need to upload a temporary XML file, as specified in the Files section. Note that the name of the imported report must be unique."
+    },
+    {
+      "id": "openapi_xtrf_eu.reports.setPreferred",
+      "name": "reports.setPreferred",
+      "description": "Marks report as preferred or not."
+    },
+    {
+      "id": "openapi_xtrf_eu.subscription.areHooksSupported",
+      "name": "subscription.areHooksSupported",
+      "description": "This method can be used to determine if hooks are supported."
+    },
+    {
+      "id": "openapi_xtrf_eu.subscription.getAll4",
+      "name": "subscription.getAll4",
+      "description": "Returns all subscriptions. Subscriptions are automatically removed if they do not work (ie. if 404 status is returned). To improve notification reliability one can use this method to check if subscription is still active and re-subscribe if necessary."
+    },
+    {
+      "id": "openapi_xtrf_eu.subscription.subscribe",
+      "name": "subscription.subscribe",
+      "description": "Subscribe to event. Returns subscription Id."
+    },
+    {
+      "id": "openapi_xtrf_eu.subscription.unsubscribe",
+      "name": "subscription.unsubscribe",
+      "description": "Unsubscribe from job status changed event"
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.addFile",
+      "name": "tasksClassic.addFile",
+      "description": "Adds files to a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.delete14",
+      "name": "tasksClassic.delete14",
+      "description": "Removes a task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getContacts1",
+      "name": "tasksClassic.getContacts1",
+      "description": "Returns contacts of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getCustomFields7",
+      "name": "tasksClassic.getCustomFields7",
+      "description": "Returns custom fields of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getDates3",
+      "name": "tasksClassic.getDates3",
+      "description": "Returns dates of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getInstructions2",
+      "name": "tasksClassic.getInstructions2",
+      "description": "Returns instructions of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getProgress",
+      "name": "tasksClassic.getProgress",
+      "description": "Returns progress of a given task. Progress contains information about task's status (ie. opened or ready) and current phase (ie. translation). Workflow phase is defined as the first one which contains not ready jobs (ie. opened or started). When no such job exists then workflow phase is not included."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.getTaskFiles",
+      "name": "tasksClassic.getTaskFiles",
+      "description": "Returns several lists of files for a given task: input files divided by type, output files, bundles, files per job, preview files."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.start1",
+      "name": "tasksClassic.start1",
+      "description": "Starts a task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateClientTaskPoNumber",
+      "name": "tasksClassic.updateClientTaskPoNumber",
+      "description": "Updates Client Task PO Number of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateContacts1",
+      "name": "tasksClassic.updateContacts1",
+      "description": "Updates contacts of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateCustomFields5",
+      "name": "tasksClassic.updateCustomFields5",
+      "description": "Updates custom fields of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateDates2",
+      "name": "tasksClassic.updateDates2",
+      "description": "Updates dates of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateInstructions3",
+      "name": "tasksClassic.updateInstructions3",
+      "description": "Updates instructions of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.tasksClassic.updateName",
+      "name": "tasksClassic.updateName",
+      "description": "Updates name of a given task."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.changePassword",
+      "name": "users.changePassword",
+      "description": "Sets user's password to a new value."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getAllNamesWithIds1",
+      "name": "users.getAllNamesWithIds1",
+      "description": "Returns list of simple users representations"
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getById6",
+      "name": "users.getById6",
+      "description": "Returns user details."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getCustomField1",
+      "name": "users.getCustomField1",
+      "description": "Returns custom field of a given user."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getCustomFields4",
+      "name": "users.getCustomFields4",
+      "description": "Returns custom fields of a given user."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getMe",
+      "name": "users.getMe",
+      "description": "Returns currently signed in user details."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.getTimeZone",
+      "name": "users.getTimeZone",
+      "description": "Returns time zone preferred by user currently signed in."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.update3",
+      "name": "users.update3",
+      "description": "Updates an existing user."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.updateCustomField1",
+      "name": "users.updateCustomField1",
+      "description": "Updates given custom field of a given user."
+    },
+    {
+      "id": "openapi_xtrf_eu.users.updateCustomFields2",
+      "name": "users.updateCustomFields2",
+      "description": "Updates custom fields of a given user."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.create4",
+      "name": "vendorInvoices.create4",
+      "description": "Creates a new invoice from jobs. Jobs are grouped by provider and currency, therefore multiple invoices can be created.If any of the jobs cannot be invoiced (ie. it is already invoiced) then an error is reported."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.createPayment1",
+      "name": "vendorInvoices.createPayment1",
+      "description": "Creates a new payment on the vendor account and assigns the payment to the invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.delete6",
+      "name": "vendorInvoices.delete6",
+      "description": "Removes a provider invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.delete7",
+      "name": "vendorInvoices.delete7",
+      "description": "Removes a provider payment."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.getAll2",
+      "name": "vendorInvoices.getAll2",
+      "description": "Lists all vendor invoices in all statuses (including not ready and drafts) that have been updated since a specific date."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.getAllIds3",
+      "name": "vendorInvoices.getAllIds3",
+      "description": "Returns vendor invoices' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.getById3",
+      "name": "vendorInvoices.getById3",
+      "description": "Returns provider invoice details."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.getDocument1",
+      "name": "vendorInvoices.getDocument1",
+      "description": "Generates provider invoice document (PDF)."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.getPayments1",
+      "name": "vendorInvoices.getPayments1",
+      "description": "Returns all payments for the vendor invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.send",
+      "name": "vendorInvoices.send",
+      "description": "Sends a provider invoice."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendorInvoices.setStatus",
+      "name": "vendorInvoices.setStatus",
+      "description": "Changes invoice status to given status."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.delete10",
+      "name": "vendors.delete10",
+      "description": "Removes a provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.delete8",
+      "name": "vendors.delete8",
+      "description": "Removes a person."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.delete9",
+      "name": "vendors.delete9",
+      "description": "Removes a provider price list."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getAddress1",
+      "name": "vendors.getAddress1",
+      "description": "Returns address of a given provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getAllIds4",
+      "name": "vendors.getAllIds4",
+      "description": "Returns persons' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getAllIds5",
+      "name": "vendors.getAllIds5",
+      "description": "Returns providers' internal identifiers."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getById4",
+      "name": "vendors.getById4",
+      "description": "Returns person details."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getById5",
+      "name": "vendors.getById5",
+      "description": "Returns provider details."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getCompetencies",
+      "name": "vendors.getCompetencies",
+      "description": "Returns competencies of a given provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getContact2",
+      "name": "vendors.getContact2",
+      "description": "Returns contact of a given person."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getContact3",
+      "name": "vendors.getContact3",
+      "description": "Returns contact of a given provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getCorrespondenceAddress1",
+      "name": "vendors.getCorrespondenceAddress1",
+      "description": "Returns correspondence address of a given provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getCustomFields2",
+      "name": "vendors.getCustomFields2",
+      "description": "Returns custom fields of a given person."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.getCustomFields3",
+      "name": "vendors.getCustomFields3",
+      "description": "Returns custom fields of a given provider."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.sendInvitations",
+      "name": "vendors.sendInvitations",
+      "description": "Sends invitation to Vendor Portal."
+    },
+    {
+      "id": "openapi_xtrf_eu.vendors.sendInvitations1",
+      "name": "vendors.sendInvitations1",
+      "description": "Sends invitations to Vendor Portal."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

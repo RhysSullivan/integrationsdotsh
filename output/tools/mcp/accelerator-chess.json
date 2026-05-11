@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:06.165Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_accelerator_chess.start_chess",
+      "name": "start-chess",
+      "description": "Use to start a playable chess game in a conversation widget.\nThis tool is for standard legal chess positions only.\n\nCall it when the user asks to begin a new game, load a specific FEN position into the widget,\nor open a playable board for the first chess tool call in the conversation.\n\nThe tool accepts:\n- an optional canonical FEN string. If this is not specified, a fresh board is used\n- an optional user color. Defaults to 'w'\n- an optional assistant move as `modelMove`\n\nIf the starting position is a fresh board, `modelMove` is required if and only if the user is Black.\nThat means:\n- when the user is White, you are Black, so do not provide `modelMove`\n- when the user is Black, you are White, so provide your legal opening move as `modelMove`\n\nIf the starting position is not a fresh board, `modelMove` should be supplied if and only if it is your.\nWhen supplied, that move is validated and applied before the updated board is returned.\n\nUse this tool to keep the conversation synchronized with the real board state rather than describing hypothetical moves in plain text.\n\nAfter the user makes a move inside the widget, the widget will persist the updated position and send a follow-up asking you to move.\nRespond to that follow-up with `continue-chess`, not this tool.\n\nDo not call this tool for:\n- puzzles\n- commentary-only analysis\n- non-standard chess variants\n\nDo not invent board states, castling rights, or illegal moves.\nLet the tool validate the position and move sequence."
+    },
+    {
+      "id": "mcp_accelerator_chess.continue_chess",
+      "name": "continue-chess",
+      "description": "Use to continue an ongoing playable chess game in conversation widgets.\nThis tool is for standard legal chess positions only.\n\nCall it when the widget or the user provides the current board state and asks you to make your legal reply move.\nThis is the follow-up move tool for an already-started game.\n\nThe tool requires:\n- the current canonical `fen`\n- the existing `userColor`\n- your legal `modelMove` for that position\n\nThe move is validated and applied to the supplied position before the updated board is returned.\nUse this tool after the user has already moved in the widget, or when the user explicitly gives you the current ongoing position and asks for your next move.\n\nDo not use this tool to open a fresh game with no move yet, or to load an initial board position without applying your move.\nFor those cases, use `start-chess`.\n\nDo not call this tool for:\n- puzzles\n- commentary-only analysis\n- non-standard chess variants\n\nDo not invent board states, castling rights, or illegal moves.\nLet the tool validate the position and move sequence."
+    }
+  ]
+}

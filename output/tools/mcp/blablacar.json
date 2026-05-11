@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:44.014Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_blablacar.search_trips",
+      "name": "search-trips",
+      "description": "Search for available carpool, bus, or train trips"
+    },
+    {
+      "id": "mcp_blablacar.trip_details",
+      "name": "trip-details",
+      "description": "Use this to provide details about a specific trip. The trip IDs (id, source, partner_id) can be obtained from the search-trips tool output (structuredContent.tripIds).\n\n        IMPORTANT:\n\n        - If ride details have already been returned in previous messages (in structuredContent.rideDetails),\n\n          DO NOT call this tool again to answer follow-up questions.\n\n        - Instead, use the previously returned rideDetails to answer more precise questions.\n\n        - Only call this tool again if the user explicitly asks to search for different rides\n          or change the search parameters."
+    }
+  ]
+}

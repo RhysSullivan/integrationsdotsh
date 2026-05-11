@@ -1,0 +1,132 @@
+{
+  "fetchedAt": "2026-04-30T15:26:52.445Z",
+  "status": "ok",
+  "count": 25,
+  "tools": [
+    {
+      "id": "openapi_truesight_local.actions.collectNow",
+      "name": "actions.collectNow",
+      "description": "You need to provide the <b>Device ID</b> and <b>Monitor Class</b> parameters to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> of a device."
+    },
+    {
+      "id": "openapi_truesight_local.actions.rediscover",
+      "name": "actions.rediscover",
+      "description": "You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device."
+    },
+    {
+      "id": "openapi_truesight_local.actions.reinitialize",
+      "name": "actions.reinitialize",
+      "description": "Launches a 'Reinitialize KM' command for the following parameters:<br>- resetDiscoveryAndPollingIntervals<br>- resetAlertAfterNTimes<br>- resetAlertActions<br>- resetOtherA<br>- resetSettings<br>- resetDebugMode<br>- resetRemovedPausedObjectList<br>- resetReportSettings<br>- resetJavaSettings<br>- resetThresholds<br><br>You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device."
+    },
+    {
+      "id": "openapi_truesight_local.actions.remove",
+      "name": "actions.remove",
+      "description": "You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:\"path\":\"/MS_HW_MAIN/10025150\" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the Monitor SID)."
+    },
+    {
+      "id": "openapi_truesight_local.actions.reset",
+      "name": "actions.reset",
+      "description": "Sets the Error Count parameter to 0.<br><br>You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:\"path\":\"/MS_HW_MAIN/10025150\" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the monitorSid)."
+    },
+    {
+      "id": "openapi_truesight_local.applications.getApplications",
+      "name": "applications.getApplications",
+      "description": "Lists all the available ApplicationSummary instances."
+    },
+    {
+      "id": "openapi_truesight_local.applications.getOneApplication",
+      "name": "applications.getOneApplication",
+      "description": "You need to provide an <b>Application ID</b>:<br>- use the <b>hardware/applications</b> service to retrieve all available application IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getAgentDevices",
+      "name": "devices.getAgentDevices",
+      "description": "You need to provide the <b>Device ID</b> of a device to retrieve any other devices monitored by the same Agent:<br>-use the <b>hardware/devices</b> service to get all available device IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDevice",
+      "name": "devices.getDevice",
+      "description": "You need to provide a <b>Device ID</b>:<br>-use the <b>hardware/devices</b> service to get all available device IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDeviceAgent",
+      "name": "devices.getDeviceAgent",
+      "description": "You need to provide a <b>Device ID</b> to retrieve detailed information about the Agent that Monitors the device:<br>-use the <b>hardware/devices</b> service to get all available device IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDeviceEnergyUsage",
+      "name": "devices.getDeviceEnergyUsage",
+      "description": "You need to provide the device ID:<br>- use the <b>hardware/devices</b> service to get all available device IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDeviceMonitors",
+      "name": "devices.getDeviceMonitors",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDeviceParameterHistory",
+      "name": "devices.getDeviceParameterHistory",
+      "description": "You need to provide the <b>Device ID</b>, <b>Parameter Name</b>, <b>Monitor Type</b> and <b>Monitor SID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs<br>- use the <b>/hardware/device-monitors/{deviceId}</b> to get the parameter name, the Monitor type and the Monitor SID.<br><br>Finally, define the period for which you wish to retrieve data history."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDevices",
+      "name": "devices.getDevices",
+      "description": "Lists the available DeviceSummary instances.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>"
+    },
+    {
+      "id": "openapi_truesight_local.devices.getDevicesSummary",
+      "name": "devices.getDevicesSummary",
+      "description": "Lists the GlobalSummary instance for all the monitored devices."
+    },
+    {
+      "id": "openapi_truesight_local.devices.getHeatingMarginCoverage",
+      "name": "devices.getHeatingMarginCoverage",
+      "description": "If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>"
+    },
+    {
+      "id": "openapi_truesight_local.devices.searchDevices",
+      "name": "devices.searchDevices",
+      "description": "Gets the DeviceSummary instances whose name, model, manufacturer or serial number match the specified criteria.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>"
+    },
+    {
+      "id": "openapi_truesight_local.groups.getGroups",
+      "name": "groups.getGroups",
+      "description": "Lists the available GroupSummary instances."
+    },
+    {
+      "id": "openapi_truesight_local.groups.getOneGroup",
+      "name": "groups.getOneGroup",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/groups</b> service to get all available group ID."
+    },
+    {
+      "id": "openapi_truesight_local.groups.updateEnergyCost",
+      "name": "groups.updateEnergyCost",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/groups</b> service to get all available group ID.<br><br>If the ID is <em>\"global\"</em>, then the group being updated is the GlobalSummary."
+    },
+    {
+      "id": "openapi_truesight_local.historicalData.getHistory",
+      "name": "historicalData.getHistory",
+      "description": "Gets the historical data for a specific group, application or service, for a given period.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>"
+    },
+    {
+      "id": "openapi_truesight_local.services.getOneService",
+      "name": "services.getOneService",
+      "description": "You need to provide a <b>Service ID</b> ID :<br>- use the <b>hardware/services</b> service to get all available service IDs."
+    },
+    {
+      "id": "openapi_truesight_local.services.getServices",
+      "name": "services.getServices",
+      "description": "Lists the available ServiceSummary instances."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

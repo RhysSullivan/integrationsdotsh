@@ -1,0 +1,332 @@
+{
+  "fetchedAt": "2026-04-30T15:45:09.753Z",
+  "status": "ok",
+  "count": 65,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverAssociateFirewallRuleGroup.associateFirewallRuleGroup",
+      "name": "xAmzTargetRoute53ResolverAssociateFirewallRuleGroup.associateFirewallRuleGroup",
+      "description": "Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverAssociateResolverEndpointIpAddress.associateResolverEndpointIpAddress",
+      "name": "xAmzTargetRoute53ResolverAssociateResolverEndpointIpAddress.associateResolverEndpointIpAddress",
+      "description": "<p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address, submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.</p> <p>To remove an IP address from an endpoint, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html\">DisassociateResolverEndpointIpAddress</a>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverAssociateResolverQueryLogConfig.associateResolverQueryLogConfig",
+      "name": "xAmzTargetRoute53ResolverAssociateResolverQueryLogConfig.associateResolverQueryLogConfig",
+      "description": "<p>Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code> request for each VPC.</p> <note> <p>The VPCs that you associate with a query logging configuration must be in the same Region as the configuration.</p> </note> <p>To remove a VPC from a query logging configuration, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html\">DisassociateResolverQueryLogConfig</a>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverAssociateResolverRule.associateResolverRule",
+      "name": "xAmzTargetRoute53ResolverAssociateResolverRule.associateResolverRule",
+      "description": "Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html\">CreateResolverRule</a>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateFirewallDomainList.createFirewallDomainList",
+      "name": "xAmzTargetRoute53ResolverCreateFirewallDomainList.createFirewallDomainList",
+      "description": "Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateFirewallRule.createFirewallRule",
+      "name": "xAmzTargetRoute53ResolverCreateFirewallRule.createFirewallRule",
+      "description": "Creates a single DNS Firewall rule in the specified rule group, using the specified domain list."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateFirewallRuleGroup.createFirewallRuleGroup",
+      "name": "xAmzTargetRoute53ResolverCreateFirewallRuleGroup.createFirewallRuleGroup",
+      "description": "Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group by calling <a>CreateFirewallRule</a>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateResolverEndpoint.createResolverEndpoint",
+      "name": "xAmzTargetRoute53ResolverCreateResolverEndpoint.createResolverEndpoint",
+      "description": "<p>Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:</p> <ul> <li> <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p> </li> <li> <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateResolverQueryLogConfig.createResolverQueryLogConfig",
+      "name": "xAmzTargetRoute53ResolverCreateResolverQueryLogConfig.createResolverQueryLogConfig",
+      "description": "<p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.</p> <p>To specify which VPCs you want to log queries for, you use <code>AssociateResolverQueryLogConfig</code>. For more information, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html\">AssociateResolverQueryLogConfig</a>. </p> <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all VPCs that are associated with the configuration.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverCreateResolverRule.createResolverRule",
+      "name": "xAmzTargetRoute53ResolverCreateResolverRule.createResolverRule",
+      "description": "For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteFirewallDomainList.deleteFirewallDomainList",
+      "name": "xAmzTargetRoute53ResolverDeleteFirewallDomainList.deleteFirewallDomainList",
+      "description": "Deletes the specified domain list. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteFirewallRule.deleteFirewallRule",
+      "name": "xAmzTargetRoute53ResolverDeleteFirewallRule.deleteFirewallRule",
+      "description": "Deletes the specified firewall rule."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteFirewallRuleGroup.deleteFirewallRuleGroup",
+      "name": "xAmzTargetRoute53ResolverDeleteFirewallRuleGroup.deleteFirewallRuleGroup",
+      "description": "Deletes the specified firewall rule group. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteResolverEndpoint.deleteResolverEndpoint",
+      "name": "xAmzTargetRoute53ResolverDeleteResolverEndpoint.deleteResolverEndpoint",
+      "description": "<p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound Resolver endpoint:</p> <ul> <li> <p> <b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service for the specified VPC.</p> </li> <li> <p> <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteResolverQueryLogConfig.deleteResolverQueryLogConfig",
+      "name": "xAmzTargetRoute53ResolverDeleteResolverQueryLogConfig.deleteResolverQueryLogConfig",
+      "description": "<p>Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and the other accounts have associated VPCs with the shared configuration.</p> <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. See <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html\">DisassociateResolverQueryLogConfig</a>.</p> <p>If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must stop sharing the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs that they associated with the configuration, but that's not necessary. If you stop sharing the configuration, those VPCs are automatically disassociated from the configuration.</p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDeleteResolverRule.deleteResolverRule",
+      "name": "xAmzTargetRoute53ResolverDeleteResolverRule.deleteResolverRule",
+      "description": "Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you associated the Resolver rule with. For more information, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html\">DisassociateResolverRule</a>."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDisassociateFirewallRuleGroup.disassociateFirewallRuleGroup",
+      "name": "xAmzTargetRoute53ResolverDisassociateFirewallRuleGroup.disassociateFirewallRuleGroup",
+      "description": "Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDisassociateResolverEndpointIpAddress.disassociateResolverEndpointIpAddress",
+      "name": "xAmzTargetRoute53ResolverDisassociateResolverEndpointIpAddress.disassociateResolverEndpointIpAddress",
+      "description": "<p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address, submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.</p> <p>To add an IP address to an endpoint, see <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html\">AssociateResolverEndpointIpAddress</a>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDisassociateResolverQueryLogConfig.disassociateResolverQueryLogConfig",
+      "name": "xAmzTargetRoute53ResolverDisassociateResolverQueryLogConfig.disassociateResolverQueryLogConfig",
+      "description": "<p>Disassociates a VPC from a query logging configuration.</p> <note> <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be disassociated from the configuration in the following ways:</p> <ul> <li> <p>The accounts that you shared the configuration with can disassociate VPCs from the configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p> </li> </ul> </note>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverDisassociateResolverRule.disassociateResolverRule",
+      "name": "xAmzTargetRoute53ResolverDisassociateResolverRule.disassociateResolverRule",
+      "description": "<p>Removes the association between a specified Resolver rule and a specified VPC.</p> <important> <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule. </p> </important>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetFirewallConfig.getFirewallConfig",
+      "name": "xAmzTargetRoute53ResolverGetFirewallConfig.getFirewallConfig",
+      "description": "Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetFirewallDomainList.getFirewallDomainList",
+      "name": "xAmzTargetRoute53ResolverGetFirewallDomainList.getFirewallDomainList",
+      "description": "Retrieves the specified firewall domain list."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetFirewallRuleGroup.getFirewallRuleGroup",
+      "name": "xAmzTargetRoute53ResolverGetFirewallRuleGroup.getFirewallRuleGroup",
+      "description": "Retrieves the specified firewall rule group. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetFirewallRuleGroupAssociation.getFirewallRuleGroupAssociation",
+      "name": "xAmzTargetRoute53ResolverGetFirewallRuleGroupAssociation.getFirewallRuleGroupAssociation",
+      "description": "Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can have more than one firewall rule group association, and a rule group can be associated with more than one VPC."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetFirewallRuleGroupPolicy.getFirewallRuleGroupPolicy",
+      "name": "xAmzTargetRoute53ResolverGetFirewallRuleGroupPolicy.getFirewallRuleGroupPolicy",
+      "description": "Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverConfig.getResolverConfig",
+      "name": "xAmzTargetRoute53ResolverGetResolverConfig.getResolverConfig",
+      "description": "Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverDnssecConfig.getResolverDnssecConfig",
+      "name": "xAmzTargetRoute53ResolverGetResolverDnssecConfig.getResolverDnssecConfig",
+      "description": "Gets DNSSEC validation information for a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverEndpoint.getResolverEndpoint",
+      "name": "xAmzTargetRoute53ResolverGetResolverEndpoint.getResolverEndpoint",
+      "description": "Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver endpoint, and the current status of the endpoint."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverQueryLogConfig.getResolverQueryLogConfig",
+      "name": "xAmzTargetRoute53ResolverGetResolverQueryLogConfig.getResolverQueryLogConfig",
+      "description": "Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverQueryLogConfigAssociation.getResolverQueryLogConfigAssociation",
+      "name": "xAmzTargetRoute53ResolverGetResolverQueryLogConfigAssociation.getResolverQueryLogConfigAssociation",
+      "description": "Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverQueryLogConfigPolicy.getResolverQueryLogConfigPolicy",
+      "name": "xAmzTargetRoute53ResolverGetResolverQueryLogConfigPolicy.getResolverQueryLogConfigPolicy",
+      "description": "Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverRule.getResolverRule",
+      "name": "xAmzTargetRoute53ResolverGetResolverRule.getResolverRule",
+      "description": "Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverRuleAssociation.getResolverRuleAssociation",
+      "name": "xAmzTargetRoute53ResolverGetResolverRuleAssociation.getResolverRuleAssociation",
+      "description": "Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using <a href=\"https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html\">AssociateResolverRule</a>. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverGetResolverRulePolicy.getResolverRulePolicy",
+      "name": "xAmzTargetRoute53ResolverGetResolverRulePolicy.getResolverRulePolicy",
+      "description": "Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverImportFirewallDomains.importFirewallDomains",
+      "name": "xAmzTargetRoute53ResolverImportFirewallDomains.importFirewallDomains",
+      "description": "<p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group. </p> <p>Each domain specification in your domain list must satisfy the following requirements: </p> <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> <li> <p>It must be from 1-255 characters in length. </p> </li> </ul>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallConfigs.listFirewallConfigs",
+      "name": "xAmzTargetRoute53ResolverListFirewallConfigs.listFirewallConfigs",
+      "description": "<p>Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage firewall behavior for your VPCs. </p> <p>A single call might return only a partial list of the configurations. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallDomainLists.listFirewallDomainLists",
+      "name": "xAmzTargetRoute53ResolverListFirewallDomainLists.listFirewallDomainLists",
+      "description": "<p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <a>ListFirewallDomains</a>. </p> <p>A single call to this list operation might return only a partial list of the domain lists. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallDomains.listFirewallDomains",
+      "name": "xAmzTargetRoute53ResolverListFirewallDomains.listFirewallDomains",
+      "description": "<p>Retrieves the domains that you have defined for the specified firewall domain list. </p> <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallRuleGroupAssociations.listFirewallRuleGroupAssociations",
+      "name": "xAmzTargetRoute53ResolverListFirewallRuleGroupAssociations.listFirewallRuleGroupAssociations",
+      "description": "<p>Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group. </p> <p>A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallRuleGroups.listFirewallRuleGroups",
+      "name": "xAmzTargetRoute53ResolverListFirewallRuleGroups.listFirewallRuleGroups",
+      "description": "<p>Retrieves the minimal high-level information for the rule groups that you have defined. </p> <p>A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListFirewallRules.listFirewallRules",
+      "name": "xAmzTargetRoute53ResolverListFirewallRules.listFirewallRules",
+      "description": "<p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC. </p> <p>A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>. </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverConfigs.listResolverConfigs",
+      "name": "xAmzTargetRoute53ResolverListResolverConfigs.listResolverConfigs",
+      "description": "Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverDnssecConfigs.listResolverDnssecConfigs",
+      "name": "xAmzTargetRoute53ResolverListResolverDnssecConfigs.listResolverDnssecConfigs",
+      "description": "Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverEndpointIpAddresses.listResolverEndpointIpAddresses",
+      "name": "xAmzTargetRoute53ResolverListResolverEndpointIpAddresses.listResolverEndpointIpAddresses",
+      "description": "Gets the IP addresses for a specified Resolver endpoint."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverEndpoints.listResolverEndpoints",
+      "name": "xAmzTargetRoute53ResolverListResolverEndpoints.listResolverEndpoints",
+      "description": "Lists all the Resolver endpoints that were created using the current Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverQueryLogConfigAssociations.listResolverQueryLogConfigAssociations",
+      "name": "xAmzTargetRoute53ResolverListResolverQueryLogConfigAssociations.listResolverQueryLogConfigAssociations",
+      "description": "Lists information about associations between Amazon VPCs and query logging configurations."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverQueryLogConfigs.listResolverQueryLogConfigs",
+      "name": "xAmzTargetRoute53ResolverListResolverQueryLogConfigs.listResolverQueryLogConfigs",
+      "description": "Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs that you want to log queries for."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverRuleAssociations.listResolverRuleAssociations",
+      "name": "xAmzTargetRoute53ResolverListResolverRuleAssociations.listResolverRuleAssociations",
+      "description": "Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListResolverRules.listResolverRules",
+      "name": "xAmzTargetRoute53ResolverListResolverRules.listResolverRules",
+      "description": "Lists the Resolver rules that were created using the current Amazon Web Services account."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverListTagsForResource.listTagsForResource",
+      "name": "xAmzTargetRoute53ResolverListTagsForResource.listTagsForResource",
+      "description": "Lists the tags that you associated with the specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverPutFirewallRuleGroupPolicy.putFirewallRuleGroupPolicy",
+      "name": "xAmzTargetRoute53ResolverPutFirewallRuleGroupPolicy.putFirewallRuleGroupPolicy",
+      "description": "Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverPutResolverQueryLogConfigPolicy.putResolverQueryLogConfigPolicy",
+      "name": "xAmzTargetRoute53ResolverPutResolverQueryLogConfigPolicy.putResolverQueryLogConfigPolicy",
+      "description": "Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverPutResolverRulePolicy.putResolverRulePolicy",
+      "name": "xAmzTargetRoute53ResolverPutResolverRulePolicy.putResolverRulePolicy",
+      "description": "Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverTagResource.tagResource",
+      "name": "xAmzTargetRoute53ResolverTagResource.tagResource",
+      "description": "Adds one or more tags to a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUntagResource.untagResource",
+      "name": "xAmzTargetRoute53ResolverUntagResource.untagResource",
+      "description": "Removes one or more tags from a specified resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateFirewallConfig.updateFirewallConfig",
+      "name": "xAmzTargetRoute53ResolverUpdateFirewallConfig.updateFirewallConfig",
+      "description": "Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateFirewallDomains.updateFirewallDomains",
+      "name": "xAmzTargetRoute53ResolverUpdateFirewallDomains.updateFirewallDomains",
+      "description": "Updates the firewall domain list from an array of domain specifications. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateFirewallRule.updateFirewallRule",
+      "name": "xAmzTargetRoute53ResolverUpdateFirewallRule.updateFirewallRule",
+      "description": "Updates the specified firewall rule. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateFirewallRuleGroupAssociation.updateFirewallRuleGroupAssociation",
+      "name": "xAmzTargetRoute53ResolverUpdateFirewallRuleGroupAssociation.updateFirewallRuleGroupAssociation",
+      "description": "Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the VPC. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateResolverConfig.updateResolverConfig",
+      "name": "xAmzTargetRoute53ResolverUpdateResolverConfig.updateResolverConfig",
+      "description": "Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateResolverDnssecConfig.updateResolverDnssecConfig",
+      "name": "xAmzTargetRoute53ResolverUpdateResolverDnssecConfig.updateResolverDnssecConfig",
+      "description": "Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created."
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateResolverEndpoint.updateResolverEndpoint",
+      "name": "xAmzTargetRoute53ResolverUpdateResolverEndpoint.updateResolverEndpoint",
+      "description": "Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type. "
+    },
+    {
+      "id": "openapi_amazonaws_com_route53resolver_route53resolver.xAmzTargetRoute53ResolverUpdateResolverRule.updateResolverRule",
+      "name": "xAmzTargetRoute53ResolverUpdateResolverRule.updateResolverRule",
+      "description": "Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional. If you don't specify a parameter, it retains its current value."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

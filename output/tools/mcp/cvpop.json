@@ -1,0 +1,32 @@
+{
+  "fetchedAt": "2026-04-30T15:19:55.333Z",
+  "status": "ok",
+  "count": 5,
+  "tools": [
+    {
+      "id": "mcp_cvpop.getcvimportcode",
+      "name": "getCvImportCode",
+      "description": "Returns the import code for an existing CV. The import code can be used in the CVpop app (iOS, Android, macOS, Web) to import and edit the CV."
+    },
+    {
+      "id": "mcp_cvpop.editcvcolor",
+      "name": "editCvColor",
+      "description": "Updates the theme color of an existing CV. Requires a CV to have been created first with createCv."
+    },
+    {
+      "id": "mcp_cvpop.editcvmodel",
+      "name": "editCvModel",
+      "description": "\n    Updates the layout template of an existing CV. Randomly selects a design from the chosen category: classic (traditional), creative (modern), simple (minimalist), dynamic (contemporary). \n    Requires a CV to have been created first with createCv.\n  "
+    },
+    {
+      "id": "mcp_cvpop.editcvfont",
+      "name": "editCvFont",
+      "description": "Updates the base font of an existing CV. Requires a CV to have been created first with createCv."
+    },
+    {
+      "id": "mcp_cvpop.createcv",
+      "name": "createCv",
+      "description": "\n    Generates a professional CV (curriculum vitae) based on the user's name, job title, and preferred language.\n    Returns the generated CV and an import code. The import code can be shared with the user to import the CV into the CVpop app (available on iOS, Android, macOS, and Web).\n    Available follow-up actions: change color (editCvColor), change layout (editCvModel), change font (editCvFont), retrieve import code again (getCvImportCode).\n    Content editing (work experience, education, skills, etc.) requires importing the CV into the CVpop app using the import code.\n  "
+    }
+  ]
+}

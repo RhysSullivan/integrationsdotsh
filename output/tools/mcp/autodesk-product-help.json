@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:17:43.449Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_autodesk_product_help.get_available_products",
+      "name": "get_available_products",
+      "description": "Returns the canonical Autodesk product catalog (closed set).\nEach item has: product_name, product_code, and release_codes.\nUse this to discover or validate product values for other product-scoped tools. Not required if valid product context is already available.\nTerminology: release_codes = the code only (e.g. 2025), not the human-readable release name (release_name, e.g. 'AutoCAD 2025')."
+    },
+    {
+      "id": "mcp_autodesk_product_help.search_help_content",
+      "name": "search_help_content",
+      "description": "Search Autodesk Help/Support documentation and return the most relevant documents for a user question.\n\nUse when:\n  - The user asks how to do something in an Autodesk product.\n  - The user reports an error (include the exact error text/code in the query).\n  - The user needs official troubleshooting steps or reference documentation.\n\nCall shape (recommended):\n  - Always pass: `query`, `locale`.\n  - If your agent has a default product context, pass it directly via `product_code` (preferred) or `product_name`.\n  - Pass `release_code` only when you can validate it for that product.\n\nBehavior:\n  1) Locale:\n     - Read `locale` from your current context. Do not guess locale.\n     - Pass that locale as the `locale` parameter.\n\n  2) Product and release filters (best-effort):\n     - If your agent already has a default `product_code` or `product_name`, pass it directly.\n     - Only call `get_available_products` to validate/normalize when:\n         a) product is missing/unknown in context, OR\n         b) the user explicitly specifies a product that may differ from your default, OR\n         c) you have a `release_code` that may not be valid for the product, OR\n         d) the product/release value appears malformed or not an allowed enum/value.\n     - If you cannot confidently map to an exact allowed value from `get_available_products`, omit that field rather than guessing.\n     - If both `product_name` and `product_code` are present, they must refer to the same product; `product_code` takes precedence.\n\n  3) Query construction:\n     - Make the query keyword-rich: include product + feature/task nouns.\n     - Include exact error text/codes when relevant.\n     - Use the user's wording where possible.\n     - Do not include secrets, credentials, or personal data.\n\nReturns:\n  - Up to `max_results` documents sorted by relevance. Each item includes title, url, locale, body, media_type, source (and may include internal IDs for debugging/deduplication)."
+    }
+  ]
+}

@@ -1,0 +1,832 @@
+{
+  "fetchedAt": "2026-04-30T15:26:45.715Z",
+  "status": "ok",
+  "count": 165,
+  "tools": [
+    {
+      "id": "openapi_reverb_com.articles.getArticles",
+      "name": "articles.getArticles",
+      "description": "GET /articles"
+    },
+    {
+      "id": "openapi_reverb_com.articles.getArticlesCategories",
+      "name": "articles.getArticlesCategories",
+      "description": "List of all article categories"
+    },
+    {
+      "id": "openapi_reverb_com.categories.getCategories",
+      "name": "categories.getCategories",
+      "description": "List of supported product categories"
+    },
+    {
+      "id": "openapi_reverb_com.categories.getCategoriesFlat",
+      "name": "categories.getCategoriesFlat",
+      "description": "GET /categories/flat"
+    },
+    {
+      "id": "openapi_reverb_com.categories.getCategoriesProductTypeCategory",
+      "name": "categories.getCategoriesProductTypeCategory",
+      "description": "Get subcategory details"
+    },
+    {
+      "id": "openapi_reverb_com.categories.getCategoriesTaxonomy",
+      "name": "categories.getCategoriesTaxonomy",
+      "description": "Full taxonomy tree of categories including middle categories"
+    },
+    {
+      "id": "openapi_reverb_com.categories.getCategoriesUuid",
+      "name": "categories.getCategoriesUuid",
+      "description": "Get category details"
+    },
+    {
+      "id": "openapi_reverb_com.comparisonShoppingPages.getComparisonShoppingPages",
+      "name": "comparisonShoppingPages.getComparisonShoppingPages",
+      "description": "Returns a set of comparison shopping pages based on the current params"
+    },
+    {
+      "id": "openapi_reverb_com.comparisonShoppingPages.getComparisonShoppingPagesFind",
+      "name": "comparisonShoppingPages.getComparisonShoppingPagesFind",
+      "description": "Show comparison shopping page"
+    },
+    {
+      "id": "openapi_reverb_com.comparisonShoppingPages.getComparisonShoppingPagesId",
+      "name": "comparisonShoppingPages.getComparisonShoppingPagesId",
+      "description": "GET /comparison_shopping_pages/{id}"
+    },
+    {
+      "id": "openapi_reverb_com.comparisonShoppingPages.getComparisonShoppingPagesIdListings",
+      "name": "comparisonShoppingPages.getComparisonShoppingPagesIdListings",
+      "description": "Return new or used listings for a comparison shopping page"
+    },
+    {
+      "id": "openapi_reverb_com.comparisonShoppingPages.getComparisonShoppingPagesIdReviews",
+      "name": "comparisonShoppingPages.getComparisonShoppingPagesIdReviews",
+      "description": "View reviews of a comparison shopping page"
+    },
+    {
+      "id": "openapi_reverb_com.conversations.postConversationsConversationIdOffer",
+      "name": "conversations.postConversationsConversationIdOffer",
+      "description": "Make an offer to the other participant in the conversation"
+    },
+    {
+      "id": "openapi_reverb_com.conversations.postConversationsIdOffer",
+      "name": "conversations.postConversationsIdOffer",
+      "description": "Make an offer to the other participant in the conversation"
+    },
+    {
+      "id": "openapi_reverb_com.countries.getCountries",
+      "name": "countries.getCountries",
+      "description": "Retrieve a list of country codes with corresponding subregions"
+    },
+    {
+      "id": "openapi_reverb_com.csps.getCsps",
+      "name": "csps.getCsps",
+      "description": "Returns a set of comparison shopping pages based on the current params"
+    },
+    {
+      "id": "openapi_reverb_com.csps.getCspsCategories",
+      "name": "csps.getCspsCategories",
+      "description": "GET /csps/categories"
+    },
+    {
+      "id": "openapi_reverb_com.csps.getCspsFind",
+      "name": "csps.getCspsFind",
+      "description": "Show comparison shopping page"
+    },
+    {
+      "id": "openapi_reverb_com.csps.getCspsId",
+      "name": "csps.getCspsId",
+      "description": "GET /csps/{id}"
+    },
+    {
+      "id": "openapi_reverb_com.curatedSets.getCuratedSetsSlug",
+      "name": "curatedSets.getCuratedSetsSlug",
+      "description": "GET /curated_sets/{slug}"
+    },
+    {
+      "id": "openapi_reverb_com.currencies.getCurrenciesDisplay",
+      "name": "currencies.getCurrenciesDisplay",
+      "description": "List of supported display currencies for browsing listings"
+    },
+    {
+      "id": "openapi_reverb_com.currencies.getCurrenciesListing",
+      "name": "currencies.getCurrenciesListing",
+      "description": "List of supported listing currencies for shops"
+    },
+    {
+      "id": "openapi_reverb_com.feedback.getFeedbackFeedbackId",
+      "name": "feedback.getFeedbackFeedbackId",
+      "description": "Feedback details"
+    },
+    {
+      "id": "openapi_reverb_com.handpicked.getHandpickedSlug",
+      "name": "handpicked.getHandpickedSlug",
+      "description": "Get results from a handpicked collection"
+    },
+    {
+      "id": "openapi_reverb_com.listingConditions.getListingConditions",
+      "name": "listingConditions.getListingConditions",
+      "description": "List of supported product conditions"
+    },
+    {
+      "id": "openapi_reverb_com.listings.deleteListingsListingIdImagesImageId",
+      "name": "listings.deleteListingsListingIdImagesImageId",
+      "description": "Delete an image from a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.deleteListingsSlug",
+      "name": "listings.deleteListingsSlug",
+      "description": "Delete a draft listing. Cannot be used on non-drafts."
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListings",
+      "name": "listings.getListings",
+      "description": "Default search of listings includes only used & handmade. Add a filter to view all listings or use the /listings/all endpoint."
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsAll",
+      "name": "listings.getListingsAll",
+      "description": "All listings including used, handmade, and brand new"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsFacetsSellerLocation",
+      "name": "listings.getListingsFacetsSellerLocation",
+      "description": "Individual facets"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsIdNegotiation",
+      "name": "listings.getListingsIdNegotiation",
+      "description": "Returns the latest negotiation for the requesting user given a listing id"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsListingIdBump",
+      "name": "listings.getListingsListingIdBump",
+      "description": "View available bump tiers and stats for a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsListingIdImages",
+      "name": "listings.getListingsListingIdImages",
+      "description": "View the images associated with a particular listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsListingIdSales",
+      "name": "listings.getListingsListingIdSales",
+      "description": "See all sales that include a listing."
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsSlug",
+      "name": "listings.getListingsSlug",
+      "description": "Listing details"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsSlugEdit",
+      "name": "listings.getListingsSlugEdit",
+      "description": "Edit listing."
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsSlugReviews",
+      "name": "listings.getListingsSlugReviews",
+      "description": "View reviews of a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.getListingsSlugSimilarListings",
+      "name": "listings.getListingsSlugSimilarListings",
+      "description": "Listing details"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListings",
+      "name": "listings.postListings",
+      "description": "Create a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListingsIdOffer",
+      "name": "listings.postListingsIdOffer",
+      "description": "Make an offer to the seller of a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListingsListingIdBumpBudgetType",
+      "name": "listings.postListingsListingIdBumpBudgetType",
+      "description": "Bump a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListingsListingIdConversations",
+      "name": "listings.postListingsListingIdConversations",
+      "description": "Start a conversation with a seller"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListingsSlugFlag",
+      "name": "listings.postListingsSlugFlag",
+      "description": "Flag a listing for inappropriate content or fraud"
+    },
+    {
+      "id": "openapi_reverb_com.listings.postListingsSlugReviews",
+      "name": "listings.postListingsSlugReviews",
+      "description": "Create a review for a listing"
+    },
+    {
+      "id": "openapi_reverb_com.listings.putListingsSlug",
+      "name": "listings.putListingsSlug",
+      "description": "Update a listing"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyAddressesAddressId",
+      "name": "my.deleteMyAddressesAddressId",
+      "description": "Delete an existing address in your address book"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyCuratedSetProductProductId",
+      "name": "my.deleteMyCuratedSetProductProductId",
+      "description": "DELETE /my/curated_set/product/{product_id}"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsBrandsSlug",
+      "name": "my.deleteMyFollowsBrandsSlug",
+      "description": "Unfollow a brand"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsCategoriesCategorySubcategory",
+      "name": "my.deleteMyFollowsCategoriesCategorySubcategory",
+      "description": "Unfollow a subcategory"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsCategoriesIdentifier",
+      "name": "my.deleteMyFollowsCategoriesIdentifier",
+      "description": "Unfollow a category"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsCollectionsSlug",
+      "name": "my.deleteMyFollowsCollectionsSlug",
+      "description": "Unfollow a collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsFollowId",
+      "name": "my.deleteMyFollowsFollowId",
+      "description": "Delete a follow"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsFollowIdAlert",
+      "name": "my.deleteMyFollowsFollowIdAlert",
+      "description": "DELETE /my/follows/{follow_id}/alert"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsHandpickedSlug",
+      "name": "my.deleteMyFollowsHandpickedSlug",
+      "description": "Unfollow a handpicked collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyFollowsShopsSlug",
+      "name": "my.deleteMyFollowsShopsSlug",
+      "description": "Unfollow a shop"
+    },
+    {
+      "id": "openapi_reverb_com.my.deleteMyWishlistId",
+      "name": "my.deleteMyWishlistId",
+      "description": "Remove a listing from your wishlist"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyAccount",
+      "name": "my.getMyAccount",
+      "description": "Get account details"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyAddresses",
+      "name": "my.getMyAddresses",
+      "description": "See all addresses in your address book"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyConversations",
+      "name": "my.getMyConversations",
+      "description": "Get a list of your conversations"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyConversationsId",
+      "name": "my.getMyConversationsId",
+      "description": "Display conversation details with messages in natural time order (oldest to newest)"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyCounts",
+      "name": "my.getMyCounts",
+      "description": "Get your actionable status counts"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFeed",
+      "name": "my.getMyFeed",
+      "description": "Get listings from your feed"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFeedbackReceived",
+      "name": "my.getMyFeedbackReceived",
+      "description": "List of received feedback"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFeedbackSent",
+      "name": "my.getMyFeedbackSent",
+      "description": "List of sent feedback"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFeedCustomize",
+      "name": "my.getMyFeedCustomize",
+      "description": "get your feed customization options"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFeedGrid",
+      "name": "my.getMyFeedGrid",
+      "description": "get your feed"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollows",
+      "name": "my.getMyFollows",
+      "description": "See what the user is following"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsArticles",
+      "name": "my.getMyFollowsArticles",
+      "description": "Returns a user's ArticleCategoryFollows"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsBrandsSlug",
+      "name": "my.getMyFollowsBrandsSlug",
+      "description": "Follow status for a brand"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsCategoriesCategorySubcategory",
+      "name": "my.getMyFollowsCategoriesCategorySubcategory",
+      "description": "Follow status for a subcategory"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsCategoriesIdentifier",
+      "name": "my.getMyFollowsCategoriesIdentifier",
+      "description": "Follow status for a category"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsCollectionsSlug",
+      "name": "my.getMyFollowsCollectionsSlug",
+      "description": "Follow status for a collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsHandpickedSlug",
+      "name": "my.getMyFollowsHandpickedSlug",
+      "description": "Follow status for a handpicked collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsSearch",
+      "name": "my.getMyFollowsSearch",
+      "description": "Follow status for a search"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyFollowsShopsSlug",
+      "name": "my.getMyFollowsShopsSlug",
+      "description": "Follow status for a shop"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyListings",
+      "name": "my.getMyListings",
+      "description": "Retrieve a list of live listings for the seller. To search all listings specify state=all"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyListingsDrafts",
+      "name": "my.getMyListingsDrafts",
+      "description": "Retrieve a list your draft listings"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyListingsNegotiations",
+      "name": "my.getMyListingsNegotiations",
+      "description": "Get a list of active negotiations as a seller"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyLists",
+      "name": "my.getMyLists",
+      "description": "Get a list of your lists (wishlist, watch list, etc)"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyNegotiationsBuying",
+      "name": "my.getMyNegotiationsBuying",
+      "description": "Get a list of active negotiations as a buyer"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyNegotiationsId",
+      "name": "my.getMyNegotiationsId",
+      "description": "Get offer details"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersAwaitingFeedback",
+      "name": "my.getMyOrdersAwaitingFeedback",
+      "description": "List of orders that need feedback"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersBuyingAll",
+      "name": "my.getMyOrdersBuyingAll",
+      "description": "Returns all orders, newest first."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersBuyingByUuidUuid",
+      "name": "my.getMyOrdersBuyingByUuidUuid",
+      "description": "GET /my/orders/buying/by_uuid/{uuid}"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersBuyingId",
+      "name": "my.getMyOrdersBuyingId",
+      "description": "Returns order details for a buyer"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersBuyingUnpaid",
+      "name": "my.getMyOrdersBuyingUnpaid",
+      "description": "Returns unpaid orders, newest first."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingAll",
+      "name": "my.getMyOrdersSellingAll",
+      "description": "Get all seller orders, newest first."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingAwaitingShipment",
+      "name": "my.getMyOrdersSellingAwaitingShipment",
+      "description": "Get unpaid seller orders, newest first."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingBuyerHistoryBuyerId",
+      "name": "my.getMyOrdersSellingBuyerHistoryBuyerId",
+      "description": "See previous orders from buyer"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingByUuidUuid",
+      "name": "my.getMyOrdersSellingByUuidUuid",
+      "description": "GET /my/orders/selling/by_uuid/{uuid}"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingId",
+      "name": "my.getMyOrdersSellingId",
+      "description": "Returns order details for a seller"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyOrdersSellingUnpaid",
+      "name": "my.getMyOrdersSellingUnpaid",
+      "description": "Get unpaid seller orders, newest first."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyPaymentsSelling",
+      "name": "my.getMyPaymentsSelling",
+      "description": "Get payments"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyPaymentsSellingId",
+      "name": "my.getMyPaymentsSellingId",
+      "description": "Get payment"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyPayouts",
+      "name": "my.getMyPayouts",
+      "description": "Get a list of payouts"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyPayoutsIdLineItems",
+      "name": "my.getMyPayoutsIdLineItems",
+      "description": "Read the line items of a payout"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyRefundRequestsSelling",
+      "name": "my.getMyRefundRequestsSelling",
+      "description": "Get a list of refund requests as a seller"
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyViewedListings",
+      "name": "my.getMyViewedListings",
+      "description": "Get a list of your recently viewed listings."
+    },
+    {
+      "id": "openapi_reverb_com.my.getMyWishlist",
+      "name": "my.getMyWishlist",
+      "description": "Get a list of wishlisted items"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyAddresses",
+      "name": "my.postMyAddresses",
+      "description": "Create a new address in your address book"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyConversations",
+      "name": "my.postMyConversations",
+      "description": "Start a conversation"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyConversationsConversationIdMessages",
+      "name": "my.postMyConversationsConversationIdMessages",
+      "description": "Send a message"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyCuratedSetProductProductId",
+      "name": "my.postMyCuratedSetProductProductId",
+      "description": "POST /my/curated_set/product/{product_id}"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsArticles",
+      "name": "my.postMyFollowsArticles",
+      "description": "Set a user's ArticleCategoryFollows"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsBrandsSlug",
+      "name": "my.postMyFollowsBrandsSlug",
+      "description": "Follow a brand"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsCategoriesCategorySubcategory",
+      "name": "my.postMyFollowsCategoriesCategorySubcategory",
+      "description": "Follow a subcategory"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsCategoriesIdentifier",
+      "name": "my.postMyFollowsCategoriesIdentifier",
+      "description": "Follow a category"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsCategoriesUuid",
+      "name": "my.postMyFollowsCategoriesUuid",
+      "description": "Follow a category"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsCollectionsSlug",
+      "name": "my.postMyFollowsCollectionsSlug",
+      "description": "Follow a collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsFollowIdAlert",
+      "name": "my.postMyFollowsFollowIdAlert",
+      "description": "POST /my/follows/{follow_id}/alert"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsHandpickedSlug",
+      "name": "my.postMyFollowsHandpickedSlug",
+      "description": "Follow a handpicked collection"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsSearch",
+      "name": "my.postMyFollowsSearch",
+      "description": "Follow a search"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyFollowsShopsSlug",
+      "name": "my.postMyFollowsShopsSlug",
+      "description": "Follow a shop"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyNegotiationsIdAccept",
+      "name": "my.postMyNegotiationsIdAccept",
+      "description": "Accept an offer"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyNegotiationsIdCounter",
+      "name": "my.postMyNegotiationsIdCounter",
+      "description": "Counter an offer"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyNegotiationsIdDecline",
+      "name": "my.postMyNegotiationsIdDecline",
+      "description": "Decline an offer"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyOrdersBuyingIdMarkReceived",
+      "name": "my.postMyOrdersBuyingIdMarkReceived",
+      "description": "Marks an order as received by the buyer"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyOrdersSellingIdMarkPickedUp",
+      "name": "my.postMyOrdersSellingIdMarkPickedUp",
+      "description": "Marks an order as picked up"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyOrdersSellingIdShip",
+      "name": "my.postMyOrdersSellingIdShip",
+      "description": "Marks an order as shipped"
+    },
+    {
+      "id": "openapi_reverb_com.my.postMyOrdersSellingOrderIdRefundRequests",
+      "name": "my.postMyOrdersSellingOrderIdRefundRequests",
+      "description": "Initiate a refund for a sold order"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyAccount",
+      "name": "my.putMyAccount",
+      "description": "Update account details"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyAddressesAddressId",
+      "name": "my.putMyAddressesAddressId",
+      "description": "Update an existing address in your address book"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyConversationsId",
+      "name": "my.putMyConversationsId",
+      "description": "Mark a conversation read/unread"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyListingsSlugStateEnd",
+      "name": "my.putMyListingsSlugStateEnd",
+      "description": "End a listing"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyRefundRequestsSellingId",
+      "name": "my.putMyRefundRequestsSellingId",
+      "description": "Update a refund request for a sold order"
+    },
+    {
+      "id": "openapi_reverb_com.my.putMyWishlistId",
+      "name": "my.putMyWishlistId",
+      "description": "Add a listing to your wishlist"
+    },
+    {
+      "id": "openapi_reverb_com.orders.getOrdersOrderIdFeedbackBuyer",
+      "name": "orders.getOrdersOrderIdFeedbackBuyer",
+      "description": "Feedback details for an order's buyer"
+    },
+    {
+      "id": "openapi_reverb_com.orders.getOrdersOrderIdFeedbackSeller",
+      "name": "orders.getOrdersOrderIdFeedbackSeller",
+      "description": "Feedback details for an order's seller"
+    },
+    {
+      "id": "openapi_reverb_com.orders.postOrdersOrderIdFeedbackBuyer",
+      "name": "orders.postOrdersOrderIdFeedbackBuyer",
+      "description": "Add feedback about an order's buyer"
+    },
+    {
+      "id": "openapi_reverb_com.orders.postOrdersOrderIdFeedbackSeller",
+      "name": "orders.postOrdersOrderIdFeedbackSeller",
+      "description": "Add feedback about an order's seller"
+    },
+    {
+      "id": "openapi_reverb_com.paymentMethods.getPaymentMethods",
+      "name": "paymentMethods.getPaymentMethods",
+      "description": "Get list of payment methods"
+    },
+    {
+      "id": "openapi_reverb_com.priceguide.getPriceguideIdTransactionsSummary",
+      "name": "priceguide.getPriceguideIdTransactionsSummary",
+      "description": "Get a summary of transactions for a given price guide"
+    },
+    {
+      "id": "openapi_reverb_com.products.getProductsReviewsId",
+      "name": "products.getProductsReviewsId",
+      "description": "View a review"
+    },
+    {
+      "id": "openapi_reverb_com.products.getProductsSlugReviews",
+      "name": "products.getProductsSlugReviews",
+      "description": "View reviews of a comparison shopping page"
+    },
+    {
+      "id": "openapi_reverb_com.products.postProductsSlugReviews",
+      "name": "products.postProductsSlugReviews",
+      "description": "Create a review for a product"
+    },
+    {
+      "id": "openapi_reverb_com.products.putProductsReviewsId",
+      "name": "products.putProductsReviewsId",
+      "description": "Update a review"
+    },
+    {
+      "id": "openapi_reverb_com.sales.deleteSalesSaleIdListings",
+      "name": "sales.deleteSalesSaleIdListings",
+      "description": "Remove a listing from a sale"
+    },
+    {
+      "id": "openapi_reverb_com.sales.getSalesReverb",
+      "name": "sales.getSalesReverb",
+      "description": "View upcoming and live Reverb official sales."
+    },
+    {
+      "id": "openapi_reverb_com.sales.getSalesSeller",
+      "name": "sales.getSalesSeller",
+      "description": "View your created sales."
+    },
+    {
+      "id": "openapi_reverb_com.sales.getSalesSlug",
+      "name": "sales.getSalesSlug",
+      "description": "GET /sales/{slug}"
+    },
+    {
+      "id": "openapi_reverb_com.sales.postSalesSaleIdListings",
+      "name": "sales.postSalesSaleIdListings",
+      "description": "Add listings to a sale"
+    },
+    {
+      "id": "openapi_reverb_com.shipping.getShippingProviders",
+      "name": "shipping.getShippingProviders",
+      "description": "List of supported shipping providers"
+    },
+    {
+      "id": "openapi_reverb_com.shipping.getShippingRegions",
+      "name": "shipping.getShippingRegions",
+      "description": "GET /shipping/regions"
+    },
+    {
+      "id": "openapi_reverb_com.shop.deleteShopVacation",
+      "name": "shop.deleteShopVacation",
+      "description": "Disable vacation mode. All listings will be re-enabled."
+    },
+    {
+      "id": "openapi_reverb_com.shop.getShop",
+      "name": "shop.getShop",
+      "description": "Get your own shop details"
+    },
+    {
+      "id": "openapi_reverb_com.shop.getShopListingConditions",
+      "name": "shop.getShopListingConditions",
+      "description": "List of supported product conditions"
+    },
+    {
+      "id": "openapi_reverb_com.shop.getShopPaymentMethods",
+      "name": "shop.getShopPaymentMethods",
+      "description": "Get accepted payment methods"
+    },
+    {
+      "id": "openapi_reverb_com.shop.getShopVacation",
+      "name": "shop.getShopVacation",
+      "description": "Returns shop vacation status"
+    },
+    {
+      "id": "openapi_reverb_com.shop.postShopVacation",
+      "name": "shop.postShopVacation",
+      "description": "Enable vacation mode. All listings will be unavailable until vacation mode is turned off."
+    },
+    {
+      "id": "openapi_reverb_com.shop.putShop",
+      "name": "shop.putShop",
+      "description": "Update your shop profile"
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsIdStorefronts",
+      "name": "shops.getShopsIdStorefronts",
+      "description": "Get storefront details on a shop."
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsShopIdShippingProfiles",
+      "name": "shops.getShopsShopIdShippingProfiles",
+      "description": "List of shipping profiles for your shop"
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsSlug",
+      "name": "shops.getShopsSlug",
+      "description": "Get details on a shop."
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsSlugFeedback",
+      "name": "shops.getShopsSlugFeedback",
+      "description": "Get seller's feedback"
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsSlugFeedbackBuyer",
+      "name": "shops.getShopsSlugFeedbackBuyer",
+      "description": "Get seller's feedback as a buyer"
+    },
+    {
+      "id": "openapi_reverb_com.shops.getShopsSlugFeedbackSeller",
+      "name": "shops.getShopsSlugFeedbackSeller",
+      "description": "Get seller's feedback as a seller"
+    },
+    {
+      "id": "openapi_reverb_com.wants.deleteWantsId",
+      "name": "wants.deleteWantsId",
+      "description": "Unmark an item wanted."
+    },
+    {
+      "id": "openapi_reverb_com.wants.getWants",
+      "name": "wants.getWants",
+      "description": "A list of wanted items by the user"
+    },
+    {
+      "id": "openapi_reverb_com.wants.putWantsId",
+      "name": "wants.putWantsId",
+      "description": "Mark an item wanted. Returns 200 on success or 422 on failure."
+    },
+    {
+      "id": "openapi_reverb_com.webhooks.deleteWebhooksRegistrationsId",
+      "name": "webhooks.deleteWebhooksRegistrationsId",
+      "description": "Remove a webhook"
+    },
+    {
+      "id": "openapi_reverb_com.webhooks.getWebhooksRegistrations",
+      "name": "webhooks.getWebhooksRegistrations",
+      "description": "Get webhook registrations"
+    },
+    {
+      "id": "openapi_reverb_com.webhooks.getWebhooksRegistrationsId",
+      "name": "webhooks.getWebhooksRegistrationsId",
+      "description": "Get details of a webhook registration"
+    },
+    {
+      "id": "openapi_reverb_com.webhooks.postWebhooksRegistrations",
+      "name": "webhooks.postWebhooksRegistrations",
+      "description": "Register a webhook"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

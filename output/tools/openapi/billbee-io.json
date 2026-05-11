@@ -1,0 +1,397 @@
+{
+  "fetchedAt": "2026-04-30T15:22:05.854Z",
+  "status": "ok",
+  "count": 78,
+  "tools": [
+    {
+      "id": "openapi_billbee_io.cloudStorage.cloudStorageApiGetList",
+      "name": "cloudStorage.cloudStorageApiGetList",
+      "description": "Gets a list of all connected cloud storage devices"
+    },
+    {
+      "id": "openapi_billbee_io.customerAddresses.customerAddressesCreate",
+      "name": "customerAddresses.customerAddressesCreate",
+      "description": "Creates a new customer address"
+    },
+    {
+      "id": "openapi_billbee_io.customerAddresses.customerAddressesGetAll",
+      "name": "customerAddresses.customerAddressesGetAll",
+      "description": "Get a list of all customer addresses"
+    },
+    {
+      "id": "openapi_billbee_io.customerAddresses.customerAddressesGetOne",
+      "name": "customerAddresses.customerAddressesGetOne",
+      "description": "Queries a single customer address by id"
+    },
+    {
+      "id": "openapi_billbee_io.customerAddresses.customerAddressesUpdate",
+      "name": "customerAddresses.customerAddressesUpdate",
+      "description": "Updates a customer address by id"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerAddCustomerAddress",
+      "name": "customers.customerAddCustomerAddress",
+      "description": "Id and  CustomerId will be ignored in model. If Id is set, the addition will be stopped."
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerCreate",
+      "name": "customers.customerCreate",
+      "description": "Creates a new customer"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerGetAll",
+      "name": "customers.customerGetAll",
+      "description": "Get a list of all customers"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerGetCustomerAddress",
+      "name": "customers.customerGetCustomerAddress",
+      "description": "Queries a single address from a customer"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerGetCustomerAddresses",
+      "name": "customers.customerGetCustomerAddresses",
+      "description": "Queries a list of addresses from a customer"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerGetCustomerOrders",
+      "name": "customers.customerGetCustomerOrders",
+      "description": "Queries a list of orders from a customer"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerGetOne",
+      "name": "customers.customerGetOne",
+      "description": "Queries a single customer by id"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerPatchAddress",
+      "name": "customers.customerPatchAddress",
+      "description": "Id and CustomerId cannot be changed"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerUpdate",
+      "name": "customers.customerUpdate",
+      "description": "Updates a customer by id"
+    },
+    {
+      "id": "openapi_billbee_io.customers.customerUpdateAddress",
+      "name": "customers.customerUpdateAddress",
+      "description": "Id and CustomerId cannot be changed. Fields you do not send will become empty."
+    },
+    {
+      "id": "openapi_billbee_io.enumApi.enumApiGetOrderStates",
+      "name": "enumApi.enumApiGetOrderStates",
+      "description": "Returns a list with all defined orderstates"
+    },
+    {
+      "id": "openapi_billbee_io.enumApi.enumApiGetPaymentTypes",
+      "name": "enumApi.enumApiGetPaymentTypes",
+      "description": "Returns a list with all defined paymenttypes"
+    },
+    {
+      "id": "openapi_billbee_io.enumApi.enumApiGetShipmentTypes",
+      "name": "enumApi.enumApiGetShipmentTypes",
+      "description": "Returns a list with all defined shipmenttypes"
+    },
+    {
+      "id": "openapi_billbee_io.enumApi.enumApiGetShippingCarriers",
+      "name": "enumApi.enumApiGetShippingCarriers",
+      "description": "Returns a list with all defined shippingcarriers"
+    },
+    {
+      "id": "openapi_billbee_io.events.eventApiGetList",
+      "name": "events.eventApiGetList",
+      "description": "Get a list of all events optionally filtered by date. This request is extra throttled to 2 calls per page per hour."
+    },
+    {
+      "id": "openapi_billbee_io.orders.layoutApiGetList",
+      "name": "orders.layoutApiGetList",
+      "description": "GET /api/v1/layouts"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiAddShipment",
+      "name": "orders.orderApiAddShipment",
+      "description": "Add a shipment to a given order"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiCreateDeliveryNote",
+      "name": "orders.orderApiCreateDeliveryNote",
+      "description": "Create an delivery note for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes."
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiCreateInvoice",
+      "name": "orders.orderApiCreateInvoice",
+      "description": "Create an invoice for an existing order. This request is extra throttled by order and api key to a maximum of 1 per 5 minutes."
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiFind",
+      "name": "orders.orderApiFind",
+      "description": "Find a single order by its external id (order number)"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiGet",
+      "name": "orders.orderApiGet",
+      "description": "Get a single order by its internal billbee id. This request is throttled to 6 calls per order in one minute"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiGetByExtRef",
+      "name": "orders.orderApiGetByExtRef",
+      "description": "Get a single order by its external order number"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiGetInvoiceList",
+      "name": "orders.orderApiGetInvoiceList",
+      "description": "Get a list of all invoices optionally filtered by date. This request ist throttled to 1 per 1 minute for same page and minInvoiceDate"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiGetList",
+      "name": "orders.orderApiGetList",
+      "description": "Get a list of all orders optionally filtered by date"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiGetPatchableFields",
+      "name": "orders.orderApiGetPatchableFields",
+      "description": "Returns a list of fields which can be updated with the orders/{id} patch call"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiParsePlaceholders",
+      "name": "orders.orderApiParsePlaceholders",
+      "description": "Parses a text and replaces all placeholders"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiPatchOrder",
+      "name": "orders.orderApiPatchOrder",
+      "description": "Updates one or more fields of an order"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiPostNewOrder",
+      "name": "orders.orderApiPostNewOrder",
+      "description": "To create an order POST an JSON object to the orders endpoint with the shown properties.\r\nNot all properties are required."
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiSendMessage",
+      "name": "orders.orderApiSendMessage",
+      "description": "Sends a message to the buyer"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiTagsCreate",
+      "name": "orders.orderApiTagsCreate",
+      "description": "When a tag is already attached, it is ignored. Tags are not case sensitive. All given tags are added to the existing tags."
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiTagsUpdate",
+      "name": "orders.orderApiTagsUpdate",
+      "description": "All existing tags will be replaced by the given list of new tags. To just add tags, use POST method."
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiTriggerEvent",
+      "name": "orders.orderApiTriggerEvent",
+      "description": "Triggers a rule event"
+    },
+    {
+      "id": "openapi_billbee_io.orders.orderApiUpdateState",
+      "name": "orders.orderApiUpdateState",
+      "description": "### REMARKS ###\r\nUse this call to change the state of an order to i.e. paid or sent.\r\n\r\nThe state is transfered to the external shop/marketplace if configured.\r\nThis is the list of known states:\r\n- 1: ordered\r\n- 2: confirmed\r\n- 3: paid\r\n- 4: shipped\r\n- 5: reclamation\r\n- 6: deleted\r\n- 7: closed\r\n- 8: canceled\r\n- 9: archived\r\n- 10: not used\r\n- 11: demand note 1\r\n- 12: demand note 2\r\n- 13: packed\r\n- 14: offered\r\n- 15: payment reminder\r\n- 16: fulfilling"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleCreateArticle",
+      "name": "products.articleCreateArticle",
+      "description": "Creates a new product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleDeleteArticle",
+      "name": "products.articleDeleteArticle",
+      "description": "Deletes a product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleDeleteImage",
+      "name": "products.articleDeleteImage",
+      "description": "Deletes a single image by id"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleDeleteImageFromProduct",
+      "name": "products.articleDeleteImageFromProduct",
+      "description": "Deletes a single image from a product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleDeleteImages",
+      "name": "products.articleDeleteImages",
+      "description": "Delete multiple images by id"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetArticle",
+      "name": "products.articleGetArticle",
+      "description": "Queries a single article by id or by sku"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetCategory",
+      "name": "products.articleGetCategory",
+      "description": "GEts a list of all defined categories"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetCustomField",
+      "name": "products.articleGetCustomField",
+      "description": "Queries a single custom field"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetCustomFields",
+      "name": "products.articleGetCustomFields",
+      "description": "Queries a list of all custom fields"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetImage",
+      "name": "products.articleGetImage",
+      "description": "Returns a single image by id"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetImageFromProduct",
+      "name": "products.articleGetImageFromProduct",
+      "description": "Returns a single image by id"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetImages",
+      "name": "products.articleGetImages",
+      "description": "Returns a list of all images of the product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetList",
+      "name": "products.articleGetList",
+      "description": "Get a list of all products"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetPatchableFields",
+      "name": "products.articleGetPatchableFields",
+      "description": "Returns a list of fields which can be updated with the patch call"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetReservedAmount",
+      "name": "products.articleGetReservedAmount",
+      "description": "Queries the reserved amount for a single article by id or by sku"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleGetStocks",
+      "name": "products.articleGetStocks",
+      "description": "Query all defined stock locations"
+    },
+    {
+      "id": "openapi_billbee_io.products.articlePatchArticle",
+      "name": "products.articlePatchArticle",
+      "description": "Updates one or more fields of a product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articlePutImage",
+      "name": "products.articlePutImage",
+      "description": "Add or update an existing image of a product"
+    },
+    {
+      "id": "openapi_billbee_io.products.articlePutImages",
+      "name": "products.articlePutImages",
+      "description": "Add multiple images to a product or replace the product images by the given images"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleUpdateStock",
+      "name": "products.articleUpdateStock",
+      "description": "The article is specified by sku. You have to send the absolute value for the current stock"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleUpdateStockCode",
+      "name": "products.articleUpdateStockCode",
+      "description": "Update the stock code of an article"
+    },
+    {
+      "id": "openapi_billbee_io.products.articleUpdateStockMultiple",
+      "name": "products.articleUpdateStockMultiple",
+      "description": "Update the stock qty for multiple articles at once"
+    },
+    {
+      "id": "openapi_billbee_io.products.searchSearch",
+      "name": "products.searchSearch",
+      "description": "Search for products, customers and orders.\r\nType can be \"order\", \"product\" and / or \"customer\"\r\nTerm can contains lucene query syntax"
+    },
+    {
+      "id": "openapi_billbee_io.provisioning.automaticProvisioningCreateAccount",
+      "name": "provisioning.automaticProvisioningCreateAccount",
+      "description": "Creates a new Billbee user account with the data passed"
+    },
+    {
+      "id": "openapi_billbee_io.provisioning.automaticProvisioningTermsInfo",
+      "name": "provisioning.automaticProvisioningTermsInfo",
+      "description": "Returns infos about Billbee terms and conditions"
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentGetList",
+      "name": "shipments.shipmentGetList",
+      "description": "Get a list of all shipments optionally filtered by date. All parameters are optional."
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentGetPing",
+      "name": "shipments.shipmentGetPing",
+      "description": "GET /api/v1/shipment/ping"
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentGetShippingCarrier",
+      "name": "shipments.shipmentGetShippingCarrier",
+      "description": "Queries the currently available shipping carriers."
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentGetShippingproviders",
+      "name": "shipments.shipmentGetShippingproviders",
+      "description": "Query all defined shipping providers"
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentPostShipment",
+      "name": "shipments.shipmentPostShipment",
+      "description": "Creates a new shipment with the selected Shippingprovider"
+    },
+    {
+      "id": "openapi_billbee_io.shipments.shipmentShipWithLabel",
+      "name": "shipments.shipmentShipWithLabel",
+      "description": "Creates a shipment for an order in billbee"
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementDelete",
+      "name": "webhooks.webHookManagementDelete",
+      "description": "Deletes an existing WebHook registration."
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementDeleteAll",
+      "name": "webhooks.webHookManagementDeleteAll",
+      "description": "Deletes all existing WebHook registrations."
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementGet",
+      "name": "webhooks.webHookManagementGet",
+      "description": "Gets all registered WebHooks for a given user."
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementGetFilters",
+      "name": "webhooks.webHookManagementGetFilters",
+      "description": "Returns a list of all known filters you can use to register webhooks"
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementLookup",
+      "name": "webhooks.webHookManagementLookup",
+      "description": "Looks up a registered WebHook with the given {id} for a given user."
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementPost",
+      "name": "webhooks.webHookManagementPost",
+      "description": "Registers a new WebHook for a given user."
+    },
+    {
+      "id": "openapi_billbee_io.webhooks.webHookManagementPut",
+      "name": "webhooks.webHookManagementPut",
+      "description": "Updates an existing WebHook registration."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

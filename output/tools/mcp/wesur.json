@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:19:58.423Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_wesur.lookup_vehicle",
+      "name": "lookup_vehicle",
+      "description": "Recherche les informations d'un véhicule (marque, modèle, version, motorisation, puissance fiscale, date de mise en circulation, code SRA) à partir de sa plaque d'immatriculation française. C'est la première étape du parcours de comparaison d'assurance auto : les données véhicule retournées sont requises en entrée de compare_insurance. L'utilisateur doit confirmer que le véhicule trouvé est correct avant de poursuivre."
+    },
+    {
+      "id": "mcp_wesur.compare_insurance",
+      "name": "compare_insurance",
+      "description": "Compare les offres d'assurance automobile de plusieurs assureurs français pour un véhicule et un profil conducteur donnés.\n\nPrérequis : appeler d'abord lookup_vehicle et obtenir la confirmation de l'utilisateur sur le véhicule.\n\nIMPORTANT : Le paramètre \"vehicle\" doit être l'objet complet retourné dans le structuredContent de lookup_vehicle (incluant sraCode, group, horsePowerClass, etc.). Ne pas reconstruire cet objet manuellement.\n\nAvant d'appeler ce tool, collecter auprès de l'utilisateur tous les paramètres du profil conducteur (âge, durée d'assurance, durée de permis de conduire, sinistres, infractions) en suivant strictement la logique suivante :\n- D'abord demander à l'utilisateur son âge, sa durée d'assurance et sa durée de permis de conduire.\n- Ensuite demander s'il a eu des sinistres sur son assurance auto au cours des 3 dernières années et si oui combien il en a eu.\n  - S'il en a eu : pour CHAQUE sinistre, demander :\n    - l'année du sinistre,\n    - le type de sinistre parmi : Vol, Vandalisme, Incendie, Bris de glace, Evénement climatique, Accident matériel,\n    - la responsabilité parmi : Responsable, Co-responsable, Non-responsable.\n- Ensuite demander s'il a eu des infractions graves liées au permis ou à l'assurance au cours des 3 dernières années et si oui combien il en a eu.\n  - S'il en a eu : pour CHAQUE infraction, demander :\n    - l'année de l'infraction,\n    - le type d'infraction parmi : Drogue ou alcool, suspension de permis, annulation de permis, refus d'obtempérer, défaut d'assurance.\n\nNe demander AUCUNE autre information que celles listées ci-dessus.\nInterdictions explicites : ne pas demander date de naissance, bonus/malus, adresse, code postal, ville, email, téléphone, nom, prénom, usage du véhicule.\nSi l'utilisateur fournit volontairement ces informations, les ignorer et continuer uniquement avec le schéma attendu."
+    }
+  ]
+}

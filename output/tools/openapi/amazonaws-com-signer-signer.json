@@ -1,0 +1,102 @@
+{
+  "fetchedAt": "2026-04-30T15:45:11.527Z",
+  "status": "ok",
+  "count": 19,
+  "tools": [
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingJobs.describeSigningJob",
+      "name": "signingJobs.describeSigningJob",
+      "description": "Returns information about a specific code signing job. You specify the job by using the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation. "
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingJobs.listSigningJobs",
+      "name": "signingJobs.listSigningJobs",
+      "description": "Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned. "
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingJobs.revokeSignature",
+      "name": "signingJobs.revokeSignature",
+      "description": "Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingJobs.startSigningJob",
+      "name": "signingJobs.startSigningJob",
+      "description": "<p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements: </p> <ul> <li> <p> You must create an Amazon S3 source bucket. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html\">Create a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li> <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.</p> </li> <li> <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p> </li> <li> <p>You must also specify a request token that identifies your request to code signing.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions after you call <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use this action, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/\">http://docs.aws.amazon.com/acm/latest/userguide/</a> </p>"
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingPlatforms.getSigningPlatform",
+      "name": "signingPlatforms.getSigningPlatform",
+      "description": "Returns information on a specific signing platform."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingPlatforms.listSigningPlatforms",
+      "name": "signingPlatforms.listSigningPlatforms",
+      "description": "Lists all signing platforms available in code signing that match the request parameters. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.addProfilePermission",
+      "name": "signingProfiles.addProfilePermission",
+      "description": "Adds cross-account permissions to a signing profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.cancelSigningProfile",
+      "name": "signingProfiles.cancelSigningProfile",
+      "description": "Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.getSigningProfile",
+      "name": "signingProfiles.getSigningProfile",
+      "description": "Returns information on a specific signing profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.listProfilePermissions",
+      "name": "signingProfiles.listProfilePermissions",
+      "description": "Lists the cross-account permissions associated with a signing profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.listSigningProfiles",
+      "name": "signingProfiles.listSigningProfiles",
+      "description": "Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.putSigningProfile",
+      "name": "signingProfiles.putSigningProfile",
+      "description": "Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. For more information, see <a href=\"http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html\">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a> "
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.removeProfilePermission",
+      "name": "signingProfiles.removeProfilePermission",
+      "description": "Removes cross-account permissions from a signing profile."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.signingProfiles.revokeSigningProfile",
+      "name": "signingProfiles.revokeSigningProfile",
+      "description": "Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.tags.listTagsForResource",
+      "name": "tags.listTagsForResource",
+      "description": "Returns a list of the tags associated with a signing profile resource."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.tags.tagResource",
+      "name": "tags.tagResource",
+      "description": "Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a key and an optional value. To specify the signing profile, use its Amazon Resource Name (ARN). To specify the tag, use a key-value pair."
+    },
+    {
+      "id": "openapi_amazonaws_com_signer_signer.tags.untagResource",
+      "name": "tags.untagResource",
+      "description": "Removes one or more tags from a signing profile. To remove the tags, specify a list of tag keys."
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "fetchedAt": "2026-04-30T15:22:52.458Z",
+  "status": "ok",
+  "count": 170,
+  "tools": [
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationBySubjectAndAssocType",
+      "name": "association.getAssociationBySubjectAndAssocType",
+      "description": "Returns list of matching associations of a given type"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationBySubjectAndObjectCategorySearch",
+      "name": "association.getAssociationBySubjectAndObjectCategorySearch",
+      "description": "Returns list of matching associations between a given subject and object category"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationBySubjectCategorySearch",
+      "name": "association.getAssociationBySubjectCategorySearch",
+      "description": "Returns list of matching associations for a given subject category"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationObject",
+      "name": "association.getAssociationObject",
+      "description": "An association connects, at a minimum, two things, designated subject and object,\nvia some relationship. Associations also include evidence, provenance etc."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationsBetween",
+      "name": "association.getAssociationsBetween",
+      "description": "Given two entities (e.g. a particular gene and a particular disease), if these two entities\nare connected (directly or indirectly), then return the association objects describing\nthe connection."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationsFrom",
+      "name": "association.getAssociationsFrom",
+      "description": "Returns list of matching associations starting from a given subject (source)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.association.getAssociationsTo",
+      "name": "association.getAssociationsTo",
+      "description": "Returns list of matching associations pointing to a given object (target)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getAnatomyGeneAssociations",
+      "name": "bioentity.getAnatomyGeneAssociations",
+      "description": "Returns genes associated with a given anatomy"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getAnatomyGeneByTaxonAssociations",
+      "name": "bioentity.getAnatomyGeneByTaxonAssociations",
+      "description": "For example, + NCBITaxon:10090 (mouse)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getCaseDiseaseAssociations",
+      "name": "bioentity.getCaseDiseaseAssociations",
+      "description": "Returns diseases associated with a case"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getCaseGenotypeAssociations",
+      "name": "bioentity.getCaseGenotypeAssociations",
+      "description": "Returns genotypes associated with a case"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getCaseModelAssociations",
+      "name": "bioentity.getCaseModelAssociations",
+      "description": "Returns models associated with a case"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getCasePhenotypeAssociations",
+      "name": "bioentity.getCasePhenotypeAssociations",
+      "description": "Returns phenotypes associated with a case"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getCaseVariantAssociations",
+      "name": "bioentity.getCaseVariantAssociations",
+      "description": "Returns variants associated with a case"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseCaseAssociations",
+      "name": "bioentity.getDiseaseCaseAssociations",
+      "description": "Returns cases associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseGeneAssociations",
+      "name": "bioentity.getDiseaseGeneAssociations",
+      "description": "Returns genes associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseGenotypeAssociations",
+      "name": "bioentity.getDiseaseGenotypeAssociations",
+      "description": "Returns genotypes associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseModelAssociations",
+      "name": "bioentity.getDiseaseModelAssociations",
+      "description": "In the association object returned, the subject will be the disease, and the object will be the model.\nThe model may be a gene or genetic element.\n\nIf the query disease is a general class, the association subject may be to a specific disease.\n\nIn some cases the association will be *direct*, for example if a paper asserts a genotype is a model of a disease.\n\nIn other cases, the association will be *indirect*, for\nexample, chaining over orthology. In these cases the chain\nwill be reflected in the *evidence graph*\n\n* TODO: provide hook into owlsim for dynamic computation of models by similarity"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseModelTaxonAssociations",
+      "name": "bioentity.getDiseaseModelTaxonAssociations",
+      "description": "See /disease/<id>/models route for full details"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseasePathwayAssociations",
+      "name": "bioentity.getDiseasePathwayAssociations",
+      "description": "Returns pathways associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseasePhenotypeAssociations",
+      "name": "bioentity.getDiseasePhenotypeAssociations",
+      "description": "Returns phenotypes associated with disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseasePublicationAssociations",
+      "name": "bioentity.getDiseasePublicationAssociations",
+      "description": "Returns publications associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseSubstanceAssociations",
+      "name": "bioentity.getDiseaseSubstanceAssociations",
+      "description": "e.g. drugs or small molecules used to treat"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getDiseaseVariantAssociations",
+      "name": "bioentity.getDiseaseVariantAssociations",
+      "description": "Returns variants associated with a disease"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getFunctionAssociations",
+      "name": "bioentity.getFunctionAssociations",
+      "description": "Returns annotations associated to a function term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getFunctionGeneAssociations",
+      "name": "bioentity.getFunctionGeneAssociations",
+      "description": "Returns genes associated to a GO term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getFunctionPublicationAssociations",
+      "name": "bioentity.getFunctionPublicationAssociations",
+      "description": "Returns publications associated to a GO term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getFunctionTaxonAssociations",
+      "name": "bioentity.getFunctionTaxonAssociations",
+      "description": "Returns taxons associated to a GO term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneAnatomyAssociations",
+      "name": "bioentity.getGeneAnatomyAssociations",
+      "description": "Returns anatomical entities associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneCaseAssociations",
+      "name": "bioentity.getGeneCaseAssociations",
+      "description": "Returns cases associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneDiseaseAssociations",
+      "name": "bioentity.getGeneDiseaseAssociations",
+      "description": "Returns diseases associated with gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneExpressionAssociations",
+      "name": "bioentity.getGeneExpressionAssociations",
+      "description": "Returns expression events for a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneFunctionAssociations",
+      "name": "bioentity.getGeneFunctionAssociations",
+      "description": "IMPLEMENTATION DETAILS\n----------------------\n\nNote: currently this is implemented as a query to the GO/AmiGO solr instance.\nThis directly supports IDs such as:\n\n - ZFIN e.g. ZFIN:ZDB-GENE-050417-357\n\nNote that the AmiGO GOlr natively stores MGI annotations to MGI:MGI:nn. However,\nthe standard for biolink is MGI:nnnn, so you should use this (will be transparently\nmapped to legacy ID)\n\nAdditionally, for some species such as Human, GO has the annotation attached to the UniProt ID.\nAgain, this should be transparently handled; e.g. you can use NCBIGene:6469, and this will be\nmapped behind the scenes for querying."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneGenotypeAssociations",
+      "name": "bioentity.getGeneGenotypeAssociations",
+      "description": "Returns genotypes associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneHomologAssociations",
+      "name": "bioentity.getGeneHomologAssociations",
+      "description": "Returns homologs for a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneInteractions",
+      "name": "bioentity.getGeneInteractions",
+      "description": "Returns interactions for a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneModelAssociations",
+      "name": "bioentity.getGeneModelAssociations",
+      "description": "Returns models associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneOrthologDiseaseAssociations",
+      "name": "bioentity.getGeneOrthologDiseaseAssociations",
+      "description": "Return diseases associated with orthologs of a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneOrthologPhenotypeAssociations",
+      "name": "bioentity.getGeneOrthologPhenotypeAssociations",
+      "description": "Return phenotypes associated with orthologs for a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenePathwayAssociations",
+      "name": "bioentity.getGenePathwayAssociations",
+      "description": "Returns pathways associated with gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenePhenotypeAssociations",
+      "name": "bioentity.getGenePhenotypeAssociations",
+      "description": "Returns phenotypes associated with gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenePublicationAssociations",
+      "name": "bioentity.getGenePublicationAssociations",
+      "description": "Returns publications associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenericAssociations",
+      "name": "bioentity.getGenericAssociations",
+      "description": "Returns associations for an entity regardless of the type"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenericObject",
+      "name": "bioentity.getGenericObject",
+      "description": "Returns basic info on object of any type"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenericObjectByType",
+      "name": "bioentity.getGenericObjectByType",
+      "description": "Return basic info on an object for a given type"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGeneVariantAssociations",
+      "name": "bioentity.getGeneVariantAssociations",
+      "description": "Returns variants associated with a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeCaseAssociations",
+      "name": "bioentity.getGenotypeCaseAssociations",
+      "description": "Returns cases associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeDiseaseAssociations",
+      "name": "bioentity.getGenotypeDiseaseAssociations",
+      "description": "Returns diseases associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeGeneAssociations",
+      "name": "bioentity.getGenotypeGeneAssociations",
+      "description": "Returns genes associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeGenotypeAssociations",
+      "name": "bioentity.getGenotypeGenotypeAssociations",
+      "description": "Genotypes may be related to one another according to the GENO model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeModelAssociations",
+      "name": "bioentity.getGenotypeModelAssociations",
+      "description": "Returns models associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypePhenotypeAssociations",
+      "name": "bioentity.getGenotypePhenotypeAssociations",
+      "description": "Returns phenotypes associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypePublicationAssociations",
+      "name": "bioentity.getGenotypePublicationAssociations",
+      "description": "Returns publications associated with a genotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGenotypeVariantAssociations",
+      "name": "bioentity.getGenotypeVariantAssociations",
+      "description": "Returns genotypes-variant associations"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getGotermGeneAssociations",
+      "name": "bioentity.getGotermGeneAssociations",
+      "description": "Returns associations to GO terms for a gene"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelCaseAssociations",
+      "name": "bioentity.getModelCaseAssociations",
+      "description": "Returns cases associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelDiseaseAssociations",
+      "name": "bioentity.getModelDiseaseAssociations",
+      "description": "Returns diseases associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelGeneAssociations",
+      "name": "bioentity.getModelGeneAssociations",
+      "description": "Returns genes associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelGenotypeAssociations",
+      "name": "bioentity.getModelGenotypeAssociations",
+      "description": "Returns genotypes associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelPhenotypeAssociations",
+      "name": "bioentity.getModelPhenotypeAssociations",
+      "description": "Returns phenotypes associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelPublicationAssociations",
+      "name": "bioentity.getModelPublicationAssociations",
+      "description": "Returns publications associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getModelVariantAssociations",
+      "name": "bioentity.getModelVariantAssociations",
+      "description": "Returns variants associated with a model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPathwayDiseaseAssociations",
+      "name": "bioentity.getPathwayDiseaseAssociations",
+      "description": "Returns diseases associated with a pathway"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPathwayGeneAssociations",
+      "name": "bioentity.getPathwayGeneAssociations",
+      "description": "Returns genes associated with a pathway"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPathwayPhenotypeAssociations",
+      "name": "bioentity.getPathwayPhenotypeAssociations",
+      "description": "Returns phenotypes associated with a pathway"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeAnatomyAssociations",
+      "name": "bioentity.getPhenotypeAnatomyAssociations",
+      "description": "Example IDs:\n\n * MP:0008521 abnormal Bowman membrane"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeCaseAssociations",
+      "name": "bioentity.getPhenotypeCaseAssociations",
+      "description": "Returns cases associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeDiseaseAssociations",
+      "name": "bioentity.getPhenotypeDiseaseAssociations",
+      "description": "Returns diseases associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeGeneAssociations",
+      "name": "bioentity.getPhenotypeGeneAssociations",
+      "description": "Returns genes associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeGeneByTaxonAssociations",
+      "name": "bioentity.getPhenotypeGeneByTaxonAssociations",
+      "description": "For example, MP:0001569 + NCBITaxon:10090 (mouse)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeGenotypeAssociations",
+      "name": "bioentity.getPhenotypeGenotypeAssociations",
+      "description": "Returns genotypes associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypePathwayAssociations",
+      "name": "bioentity.getPhenotypePathwayAssociations",
+      "description": "Returns pathways associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypePublicationAssociations",
+      "name": "bioentity.getPhenotypePublicationAssociations",
+      "description": "Returns publications associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPhenotypeVariantAssociations",
+      "name": "bioentity.getPhenotypeVariantAssociations",
+      "description": "Returns variants associated with a phenotype"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationDiseaseAssociations",
+      "name": "bioentity.getPublicationDiseaseAssociations",
+      "description": "Returns diseases associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationGeneAssociations",
+      "name": "bioentity.getPublicationGeneAssociations",
+      "description": "Returns genes associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationGenotypeAssociations",
+      "name": "bioentity.getPublicationGenotypeAssociations",
+      "description": "Returns genotypes associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationModelAssociations",
+      "name": "bioentity.getPublicationModelAssociations",
+      "description": "Returns models associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationPhenotypeAssociations",
+      "name": "bioentity.getPublicationPhenotypeAssociations",
+      "description": "Returns phenotypes associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getPublicationVariantAssociations",
+      "name": "bioentity.getPublicationVariantAssociations",
+      "description": "Returns variants associated with a publication"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getSubstanceParticipantInAssociations",
+      "name": "bioentity.getSubstanceParticipantInAssociations",
+      "description": "Examples relationships:\n\n * substance is a metabolite of a process\n * substance is synthesized by a process\n * substance is modified by an activity\n * substance elicits a response program/pathway\n * substance is transported by activity or pathway\n\nFor example, CHEBI:40036 (amitrole)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getSubstanceRoleAssociations",
+      "name": "bioentity.getSubstanceRoleAssociations",
+      "description": "Roles may be human-oriented (e.g. pesticide) or molecular (e.g. enzyme inhibitor)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getSubstanceTreatsAssociations",
+      "name": "bioentity.getSubstanceTreatsAssociations",
+      "description": "e.g. drugs or small molecules used to treat"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantCaseAssociations",
+      "name": "bioentity.getVariantCaseAssociations",
+      "description": "Returns cases associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantDiseaseAssociations",
+      "name": "bioentity.getVariantDiseaseAssociations",
+      "description": "Returns diseases associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantGeneAssociations",
+      "name": "bioentity.getVariantGeneAssociations",
+      "description": "Returns genes associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantGenotypeAssociations",
+      "name": "bioentity.getVariantGenotypeAssociations",
+      "description": "Returns genotypes associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantModelAssociations",
+      "name": "bioentity.getVariantModelAssociations",
+      "description": "Returns models associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantPhenotypeAssociations",
+      "name": "bioentity.getVariantPhenotypeAssociations",
+      "description": "Returns phenotypes associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentity.getVariantPublicationAssociations",
+      "name": "bioentity.getVariantPublicationAssociations",
+      "description": "Returns publications associated with a variant"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentityset.getEntitySetAssociations",
+      "name": "bioentityset.getEntitySetAssociations",
+      "description": "Returns compact associations for a given input set"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentityset.getEntitySetGraphResource",
+      "name": "bioentityset.getEntitySetGraphResource",
+      "description": "TODO Graph object spanning all entities"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentityset.getEntitySetSummary",
+      "name": "bioentityset.getEntitySetSummary",
+      "description": "Summary statistics for objects associated"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentityset.getOverRepresentation",
+      "name": "bioentityset.getOverRepresentation",
+      "description": "Summary statistics for objects associated"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentitysetHomologs.getEntitySetHomologs",
+      "name": "bioentitysetHomologs.getEntitySetHomologs",
+      "description": "Returns homology associations for a given input set of genes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentitysetSlimmer.getEntitySetAnatomySlimmer",
+      "name": "bioentitysetSlimmer.getEntitySetAnatomySlimmer",
+      "description": "For a given gene(s), summarize its annotations over a defined set of slim"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentitysetSlimmer.getEntitySetFunctionSlimmer",
+      "name": "bioentitysetSlimmer.getEntitySetFunctionSlimmer",
+      "description": "For a given gene(s), summarize its annotations over a defined set of slim"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.bioentitysetSlimmer.getEntitySetPhenotypeSlimmer",
+      "name": "bioentitysetSlimmer.getEntitySetPhenotypeSlimmer",
+      "description": "For a given gene(s), summarize its annotations over a defined set of slim"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getActivityCollection",
+      "name": "cam.getActivityCollection",
+      "description": "Returns list of models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getInstanceObject",
+      "name": "cam.getInstanceObject",
+      "description": "Returns list of matches"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelCollection",
+      "name": "cam.getModelCollection",
+      "description": "Returns list of ALL models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelContributors",
+      "name": "cam.getModelContributors",
+      "description": "Returns list of all contributors across all models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelInstances",
+      "name": "cam.getModelInstances",
+      "description": "Returns list of all instances"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelObject",
+      "name": "cam.getModelObject",
+      "description": "Returns a complete model"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelProperties",
+      "name": "cam.getModelProperties",
+      "description": "Returns list of all properties used across all models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelPropertyValues",
+      "name": "cam.getModelPropertyValues",
+      "description": "Returns list property-values for all models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getModelQuery",
+      "name": "cam.getModelQuery",
+      "description": "Returns list of models matching query"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.cam.getPhysicalInteraction",
+      "name": "cam.getPhysicalInteraction",
+      "description": "Returns list of models"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.evidenceGraph.getEvidenceGraphObject",
+      "name": "evidenceGraph.getEvidenceGraphObject",
+      "description": "Note that every association is assumed to have a unique ID"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.evidenceGraph.getEvidenceGraphTable",
+      "name": "evidenceGraph.getEvidenceGraphTable",
+      "description": "Note that every association is assumed to have a unique ID"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.genomeFeatures.getFeaturesWithinResource",
+      "name": "genomeFeatures.getFeaturesWithinResource",
+      "description": "Returns list of matches"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.graph.getEdgeResource",
+      "name": "graph.getEdgeResource",
+      "description": "Returns edges emanating from a given node"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.graph.getNodeResource",
+      "name": "graph.getNodeResource",
+      "description": "A node is an abstract representation of some kind of entity. The entity may be a physical thing such as a patient,\na molecular entity such as a gene or protein, or a conceptual entity such as a class from an ontology."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.identifierMapper.getIdentifierMapper",
+      "name": "identifierMapper.getIdentifierMapper",
+      "description": "TODO maps a list of identifiers from a source to a target"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.identifierPrefixes.getPrefixCollection",
+      "name": "identifierPrefixes.getPrefixCollection",
+      "description": "Returns list of prefixes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.identifierPrefixes.getPrefixContract",
+      "name": "identifierPrefixes.getPrefixContract",
+      "description": "Returns contracted URI"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.identifierPrefixes.getPrefixExpand",
+      "name": "identifierPrefixes.getPrefixExpand",
+      "description": "Returns expanded URI"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.individual.getIndividual",
+      "name": "individual.getIndividual",
+      "description": "Returns list of matches"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.individual.getPedigree",
+      "name": "individual.getPedigree",
+      "description": "Returns list of matches"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mart.getMartCaseAssociationsResource",
+      "name": "mart.getMartCaseAssociationsResource",
+      "description": "NOTE: this route has a limiter on it, you may be restricted in the number of downloads per hour. Use carefully."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mart.getMartDiseaseAssociationsResource",
+      "name": "mart.getMartDiseaseAssociationsResource",
+      "description": "NOTE: this route has a limiter on it, you may be restricted in the number of downloads per hour. Use carefully."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mart.getMartGeneAssociationsResource",
+      "name": "mart.getMartGeneAssociationsResource",
+      "description": "NOTE: this route has a limiter on it, you may be restricted in the number of downloads per hour. Use carefully."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mart.getMartOrthologAssociationsResource",
+      "name": "mart.getMartOrthologAssociationsResource",
+      "description": "Bulk download of orthologs"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mart.getMartParalogAssociationsResource",
+      "name": "mart.getMartParalogAssociationsResource",
+      "description": "Bulk download of paralogs"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.metadata.getMetadataForDatasets",
+      "name": "metadata.getMetadataForDatasets",
+      "description": "Get metadata for all datasets from SciGraph"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mme.postDiseaseMme",
+      "name": "mme.postDiseaseMme",
+      "description": "Match a patient to diseases based on their phenotypes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mme.postFlyMme",
+      "name": "mme.postFlyMme",
+      "description": "Match a patient to fruit fly genes based on similar phenotypes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mme.postMouseMme",
+      "name": "mme.postMouseMme",
+      "description": "Match a patient to mouse genes based on similar phenotypes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mme.postNematodeMme",
+      "name": "mme.postNematodeMme",
+      "description": "Match a patient to nematode genes based on similar phenotypes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.mme.postZebrafishMme",
+      "name": "mme.postZebrafishMme",
+      "description": "Match a patient to zebrafish genes based on similar phenotypes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.nlpAnnotate.getAnnotate",
+      "name": "nlpAnnotate.getAnnotate",
+      "description": "Annotate a given text using SciGraph annotator"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.nlpAnnotate.getAnnotateEntities",
+      "name": "nlpAnnotate.getAnnotateEntities",
+      "description": "Annotate a given content using SciGraph annotator and get all entities from content"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.nlpAnnotate.postAnnotate",
+      "name": "nlpAnnotate.postAnnotate",
+      "description": "Annotate a given text using SciGraph annotator"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.nlpAnnotate.postAnnotateEntities",
+      "name": "nlpAnnotate.postAnnotateEntities",
+      "description": "Annotate a given content using SciGraph annotator and get all entities from content"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontol.getExtractOntologySubgraphResource",
+      "name": "ontol.getExtractOntologySubgraphResource",
+      "description": "Extract a subgraph from an ontology"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontol.getInformationContentResource",
+      "name": "ontol.getInformationContentResource",
+      "description": "```\nIC = -log2( freq(t) / popSize )\n```\n\nHere the frequency and population is calculated for a particular dataset:\ne.g. all human disease-phenotype associations"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontol.postExtractOntologySubgraphResource",
+      "name": "ontol.postExtractOntologySubgraphResource",
+      "description": "Extract a subgraph from an ontology"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontolIdentifier.getOntolIdentifierResource",
+      "name": "ontolIdentifier.getOntolIdentifierResource",
+      "description": "Fetches a map from CURIEs/IDs to labels"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontolIdentifier.postOntolIdentifierResource",
+      "name": "ontolIdentifier.postOntolIdentifierResource",
+      "description": "Takes 'label' list argument either as a querystring argument or as a key\nin the POST body when content-type is application/json."
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontolLabeler.getOntolLabelerResource",
+      "name": "ontolLabeler.getOntolLabelerResource",
+      "description": "Fetches a map from CURIEs/IDs to labels"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologySubset",
+      "name": "ontology.getOntologySubset",
+      "description": "Returns meta data of an ontology subset (slim)"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologyTerm",
+      "name": "ontology.getOntologyTerm",
+      "description": "Returns meta data of an ontology term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologyTermGraph",
+      "name": "ontology.getOntologyTermGraph",
+      "description": "Returns graph of an ontology term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologyTermsSharedAncestor",
+      "name": "ontology.getOntologyTermsSharedAncestor",
+      "description": "Returns the ancestor ontology terms shared by two ontology terms"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologyTermSubgraph",
+      "name": "ontology.getOntologyTermSubgraph",
+      "description": "Extract a subgraph from an ontology term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.ontology.getOntologyTermSubsets",
+      "name": "ontology.getOntologyTermSubsets",
+      "description": "Returns subsets (slims) associated to an ontology term"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.owlOntology.getDlQuery",
+      "name": "owlOntology.getDlQuery",
+      "description": "Placeholder - use OWLery for now"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.owlOntology.getSparqlQuery",
+      "name": "owlOntology.getSparqlQuery",
+      "description": "Placeholder - use direct SPARQL endpoint for now"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.pairSim.getPairSimJaccardResource",
+      "name": "pairSim.getPairSimJaccardResource",
+      "description": "Get pairwise similarity"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.relationUsage.getRelationUsageBetweenResource",
+      "name": "relationUsage.getRelationUsageBetweenResource",
+      "description": "All relations used plus count of associations"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.relationUsage.getRelationUsagePivotLabelResource",
+      "name": "relationUsage.getRelationUsagePivotLabelResource",
+      "description": "Relation usage count for all subj x obj category combinations, showing label"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.relationUsage.getRelationUsagePivotResource",
+      "name": "relationUsage.getRelationUsagePivotResource",
+      "description": "Relation usage count for all subj x obj category combinations"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.relationUsage.getRelationUsageResource",
+      "name": "relationUsage.getRelationUsageResource",
+      "description": "All relations used plus count of associations"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.search.getAutocomplete",
+      "name": "search.getAutocomplete",
+      "description": "Returns list of matching concepts or entities using lexical search"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.search.getSearchEntities",
+      "name": "search.getSearchEntities",
+      "description": "Returns list of matching concepts or entities using lexical search"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.search.getSearchHpoEntities",
+      "name": "search.getSearchHpoEntities",
+      "description": "Returns list of matching concepts or entities using lexical search"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.sim.getAnnotationScore",
+      "name": "sim.getAnnotationScore",
+      "description": "Get annotation score"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.sim.getSimCompare",
+      "name": "sim.getSimCompare",
+      "description": "Compare a reference profile vs one profiles"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.sim.getSimSearch",
+      "name": "sim.getSimSearch",
+      "description": "Search for phenotypically similar diseases or model genes"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.sim.postAnnotationScore",
+      "name": "sim.postAnnotationScore",
+      "description": "Get annotation score"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.sim.postSimCompare",
+      "name": "sim.postSimCompare",
+      "description": "Compare a reference profile vs one or more profiles"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.deleteVariantSetItem",
+      "name": "variationSet.deleteVariantSetItem",
+      "description": "Deletes variant set"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.getVariantAnalyze",
+      "name": "variationSet.getVariantAnalyze",
+      "description": "Returns list of matches"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.getVariantSetItem",
+      "name": "variationSet.getVariantSetItem",
+      "description": "Returns a variant set"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.getVariantSetsArchiveCollection",
+      "name": "variationSet.getVariantSetsArchiveCollection",
+      "description": "Returns list of variant sets from a specified time period"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.getVariantSetsCollection",
+      "name": "variationSet.getVariantSetsCollection",
+      "description": "Returns list of variant sets"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.postVariantSetsCollection",
+      "name": "variationSet.postVariantSetsCollection",
+      "description": "Creates a new variant set"
+    },
+    {
+      "id": "openapi_monarchinitiative_org.variationSet.putVariantSetItem",
+      "name": "variationSet.putVariantSetItem",
+      "description": "Updates a variant set"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

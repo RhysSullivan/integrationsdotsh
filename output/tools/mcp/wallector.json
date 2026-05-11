@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:21:43.066Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_wallector.get_capabilities",
+      "name": "get_capabilities",
+      "description": "Return supported tools, listing fields, filters, grouping, and known API gaps for this MCP server. Use ONLY if the user explicitly asks about capabilities, schema, limits, or supported fields."
+    },
+    {
+      "id": "mcp_wallector.detail_listings",
+      "name": "detail_listings",
+      "description": "Return detailed information for a single artwork by exact SKU. This tool is a constrained works search (intent=\"works\", limit=1, offset=0) with a required SKU filter; it never groups results and always renders the detail widget."
+    },
+    {
+      "id": "mcp_wallector.search_listings_v2",
+      "name": "search_listings_v2",
+      "description": "Search listings with intent (groups|works), pagination, and sorting. Use intent=groups with group_by on canonical groupable fields that are available for this source: work_group, artist_name, category, typology, technique, topics, subjects, style_tags, movement_period, seller.seller_name. Use intent=works for SKU-level works. Filters: sku, work_group, title, artist_name, category, typology, seller_name, topics, subjects, style_tags, movement_period, period, materials, technique, q. Range filters: min_price|max_price, min_height|max_height, min_width|max_width, min_depth|max_depth, min_quantity|max_quantity. Image/semantic inputs for works: image (file param object with download_url,file_id), image_url, image_base64, q with search_mode=semantic|hybrid. Semantic modes are supported via search_mode=lexical|hybrid|semantic. For natural-language requests (example: \"mostrami quadri con cavalli\"), prefer q with search_mode=hybrid and combine with canonical filters when present (example typology/category). Use lexical when the request is exact (SKU, strict keyword match), semantic when lexical misses concept matches, and hybrid as default when available. Pagination is explicit: use group_limit/group_offset for groups and limit/offset for works. IMPORTANT: for \"works by artist\" requests, make one works call directly (artist_name) and do not preflight with groups."
+    }
+  ]
+}

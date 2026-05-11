@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:21:15.554Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_tonita.tonita_search",
+      "name": "tonita-search",
+      "description": "Search Tonita to find products that\nmatch the user's intent.\n\nThe `query` parameter is the main search query used for ranking\nresults. The `additional_queries` parameter can include variations\nof the query to improve retrieval coverage.\n\nNOTE: The search engine does NOT have much \"world knowledge\". That\nmeans queries should not contain any pop-culture references, trendy\nterms, or other cultural references.\n\nNOTE: Queries must NOT contain any references to other listings. For\nexample, if the user has expressed they want items similar to\npreviously-shown listings X, Y and Z, do not include \"similar to X, Y\nand Z\" in the queries. Instead, first gather the product details of X,\nY and Z, and then use those details to construct the queries.\n\nNOTE: This function is meant to search for one specific type of item.\nFor example, do not use a single `search` call to search for shirts\nand pants and shoes. Instead, make three separate calls to this\nfunction.\n\nNOTE: It is OK if not every detail is provided. For example, if the\nuser does not have a brand/domain preference, set the corresponding\nparameter to null.\n"
+    },
+    {
+      "id": "mcp_tonita.tonita_get_listing_details",
+      "name": "tonita-get-listing-details",
+      "description": "Get the details for one or\nmore listings.\n\nGiven a list of listing IDs, this tool returns the full details for\neach listing, including title, description, price, brand, images, and\nother metadata.\n\nUse this tool when you need to retrieve detailed information about\nspecific products that have already been shown to the user, for example:\n- When the user asks for more information about specific products\n- When you need to understand the details of products before searching\n  for similar items\n- When the user wants to compare specific products\n"
+    }
+  ]
+}

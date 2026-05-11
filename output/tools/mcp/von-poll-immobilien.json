@@ -1,0 +1,22 @@
+{
+  "fetchedAt": "2026-04-30T15:20:29.115Z",
+  "status": "ok",
+  "count": 3,
+  "tools": [
+    {
+      "id": "mcp_von_poll_immobilien.search_real_estate",
+      "name": "search_real_estate",
+      "description": "Use this when the user asks about real estate, properties, apartments, houses, land, or commercial real estate in Germany. Searches VON POLL IMMOBILIEN's exclusive premium listings with precise filtering by price, rooms, area, location, and property type. Do not use for property valuations or market reports.\n\nCity names must be in German (e.g. \"München\" not \"Munich\"). Only include filters the user explicitly mentions. For multi-city comparisons, pass all cities in the city parameter. Omitting offer_type returns both rent and purchase. Omitting property_type returns houses and flats."
+    },
+    {
+      "id": "mcp_von_poll_immobilien.get_real_estate_highlights",
+      "name": "get_real_estate_highlights",
+      "description": "Use this when the user wants a detailed AI-generated summary of a specific property. Called by the interactive map widget when a user clicks a property marker. Returns key selling points and highlights. Do not use for searching properties — use search_real_estate instead."
+    },
+    {
+      "id": "mcp_von_poll_immobilien.get_real_estate_details",
+      "name": "get_real_estate_details",
+      "description": "Use this when the user asks detailed questions about a specific property they already found — e.g. \"What are the features of this property?\", \"Tell me about 00123\", \"Does this house have a garden?\", \"Compare these two properties in detail\". Returns comprehensive data including description, features, location, amenities, and equipment beyond basic search results.\n\nDo not use for browsing or finding properties — use search_real_estate instead. Do not use when the user clicks a map marker — the widget uses get_real_estate_highlights internally."
+    }
+  ]
+}

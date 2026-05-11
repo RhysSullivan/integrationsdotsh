@@ -1,0 +1,17 @@
+{
+  "fetchedAt": "2026-04-30T15:20:35.527Z",
+  "status": "ok",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mcp_komoot.find_routes_by_location",
+      "name": "find_routes_by_location",
+      "description": "Find hiking, running, cycling, or other outdoor routes near a named location within an optional specified radius (meters).\n\nDo NOT use this tool when the user:\n* Asks for point-to-point route planning (e.g., 'plan a route from A to B', 'create a route from Munich to Garmisch').\n* Asks for directions or navigation between two specific locations.\nInstead, explain that komoot discovers existing community-verified routes near a location, and suggest rephrasing as a discovery search (e.g., 'show me hikes near [location]').\n\nUse this tool when the user:\n* Requests routes near a specific point of interest, landmark, or named place.\n* Requests routes near their current location ('near me').\n* Wants to find routes accessible from a specific starting place type (train station, bus stop, car park).\n\nUsers can specify filters for: sport type (hike, jogging, touringbicycle, racebike, mtb, mtb_easy), difficulty (easy, moderate, difficult), duration (seconds), length (meters), elevation gain (meters), surface preference (paved/unpaved), route type (loop, out-and-back), starting place category, and route attributes (waterfalls, lakes, summits, forests, coastline, cafes, restaurants, mountain huts, etc.).\n\nNumeric filter values for radius, length, and elevation MUST be specified in meters; duration in seconds.\n\nReturns a carousel or map widget of routes. The widget displays distance in miles and elevation in feet."
+    },
+    {
+      "id": "mcp_komoot.find_highlights_by_location",
+      "name": "find_highlights_by_location",
+      "description": "Find outdoor highlights and points of interest near a named location within an optional specified radius (meters).\n\nDo NOT use this tool when the user:\n* Asks for point-to-point route planning (e.g., 'plan a route from A to B').\n* Asks for directions or navigation between two specific locations.\nInstead, explain that komoot discovers existing points of interest and routes near a location, and suggest rephrasing as a discovery search.\n\nUse this tool when the user:\n* Requests highlights, viewpoints, or points of interest near a specific place or landmark.\n* Requests highlights near their current location ('near me').\n* Wants to discover natural features (summits, waterfalls, lakes, trails) or amenities (cafes, restaurants, huts) in an area.\n\nUsers can specify filters for: sport type (hike, jogging, touringbicycle, racebike, mtb, mtb_easy) and categories (viewpoint, trail, summit, waterfall, lake, river, beach, forest, cave, gorge, canyon, mountain_pass, volcano, castle, historical_site, cafe, pub, restaurant, hut, and more).\n\nRadius filter MUST be specified in meters.\n\nReturns an interactive map widget showing highlights with markers."
+    }
+  ]
+}

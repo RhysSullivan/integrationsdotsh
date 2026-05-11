@@ -1,0 +1,157 @@
+{
+  "fetchedAt": "2026-04-30T15:26:55.877Z",
+  "status": "ok",
+  "count": 30,
+  "tools": [
+    {
+      "id": "openapi_viator_com.bookingServices.bookingAvailability",
+      "name": "bookingServices.bookingAvailability",
+      "description": "Get the tour-grade with the lowest price that is available for a product on each day of the specified month\n\nThis service:\n- returns \n- useful when displaying a calendar of available tours\n- For more information, see: [Availability services](#section/Key-concepts/Availability-services)\n- **Notes:** \n  - [/booking/availability/dates](#operation/bookingAvailabilityDates) provides all availability in one call and is more suitable for calendars, etc.\n\n  - Availability data is limited to a period of **12 months** into the future from the present time on the production server and **6 months** on the sandbox server. \n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingAvailabilityDates",
+      "name": "bookingServices.bookingAvailabilityDates",
+      "description": "Get dates on which a product is available\n\nThis service:\n- retrieves all available dates for a product, excluding days it does not operate and blocked-out dates\n- returns a multi-dimensional array of year-month -&gt; days that have any availabile tour grade or traveler mix\n- useful to present the user with a list of dates for selection on which *this* product is available for booking\n- **Notes**: \n\n  - The user's desired traveler mix may not be eligible for booking; these details can be displayed when you retrieve its list of tour grades\n  - Availability data is limited to a period of **12 months** into the future from the present time on the production server and **6 months** on the sandbox server. \n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingAvailabilityTourgrades",
+      "name": "bookingServices.bookingAvailabilityTourgrades",
+      "description": "Get the tour grades of a product that are currently available\n\nThis service reports:\n- all tour grades for the specified product, on the specified day, that are available for the specified age bands\n- the pricing breakdown and the total depending on the travel date and traveler mix\n\n**Note**: Availability data is limited to a period of **12 months** into the future from the present time on the production server and **6 months** on the sandbox server. \n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingAvailabilityTourgradesPricingmatrix",
+      "name": "bookingServices.bookingAvailabilityTourgradesPricingmatrix",
+      "description": "Get a pricing matrix that includes availability and tour-grades for a product\n\nGiven a month, this service returns days with available tour grades only (i.e., days which have at least one tourgrade available), and the pricing matrix for that tour grade for that day.\n\n- **Note**: Availability data is limited to a period of **12 months** into the future from the present time on the production server and **6 months** on the sandbox server. \n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingBook",
+      "name": "bookingServices.bookingBook",
+      "description": "Make a booking\n\nFor more information, see: \n\n  - [Cancellation policy](#section/Key-concepts/Cancellation-policy)\n  - [Booking concepts](#section/Key-concepts/Booking-concepts)\n  - [Booking process flow](#section/Common-workflows-and-data-validation/Booking-process-flow)\n  - [Making a booking](#section/Common-workflows-and-data-validation/Making-a-booking)\n  - [Supplier communications](#section/Key-concepts/Supplier-communications)\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingCalculateprice",
+      "name": "bookingServices.bookingCalculateprice",
+      "description": "Confirm the price of a tour / activity prior to booking\n\nFor more information, see: [Calculating prices](#section/Common-workflows-and-data-validation/Calculating-prices)  \n\n- **Note**: Availability and pricing data is limited to a period of **six months** into the future from the present time\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingHotels",
+      "name": "bookingServices.bookingHotels",
+      "description": "Get hotel pick-ups\nLists the hotel pickups available for either a product or a destination\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingMybookings",
+      "name": "bookingServices.bookingMybookings",
+      "description": "Get a user's bookings with travel dates in the future. \n\nThis service can also be used to check the status of a booking. \n\n**Provide either:** \n- A `voucherKey`, **or...** \n- An email address (`email`) and a booking reference (`itineraryOrItemId`) ([Booking Reference](#section/Key-concepts/Booking-references))\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingPastbooking",
+      "name": "bookingServices.bookingPastbooking",
+      "description": "Get the details of a single specific past booking based on the `voucherKey` or `itemId` and email address sent in the request.\n\n**Note**: this service will only return past bookings that were made with the same API key that was used to make the booking\n\n**Sample query parameters**:\n- email=apitest@viator.com&amp;itemId=580669678\n\n**or**\n- voucherKey=1005851866:4af44c13ecf3f1a7d3f9ef2fc00c2257e08fa42ae20f877f3039ff9b52aba24e:580669678\n\n**email**\n- The email address passed must match the email address associated with the booking\n\n**Departure details**\n\n- Departure details such as the `departurePoint`, `departurePointAddress` and `departurePointDirections` is included in the response. \n- These fields may contain HTML escape characters such as &amp;amp; and special characters that are escaped by a backslash. Ensure that these fields are parsed after receiving the response as it will cause your JSON to be invalid.\n\nFor more information, see: [Reviewing bookings](#section/Common-workflows-and-data-validation/Reviewing-bookings)\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingPricingmatrix",
+      "name": "bookingServices.bookingPricingmatrix",
+      "description": "Get the pricing matrix for tour-grades, product age bands and pax mixes\n\nFor more information, see: [Get the tour-grade pricing matrix](#section/Common-workflows-and-data-validation/Get-the-tour-grade-pricing-matrix)\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingStatus",
+      "name": "bookingServices.bookingStatus",
+      "description": "Get the booking status for multiple items based on different criteria\n\nThis service: \n- is ideally be used in software for bulk updates of pending bookings\n- returns a maximum of 1000 bookings (narrow your search if you expect a greater number of results)\n- will return &lt;u&gt;both&lt;/u&gt; live &lt;u&gt;and&lt;/u&gt; test bookings\n- rate limited to &lt;u&gt;one request every 30 minutes&lt;/u&gt;\n- For more information, see: [Get the bookiing status for multiple items](#section/Common-workflows-and-data-validation/Get-the-booking-status-for-multiple-items)\n\n**Exceeding the rate limit**\n- You will receive the following error message if you exceed the rate limit allowed for this service. Set `test` to `true` to bypass this limit:\n```javascript\n{\n    \"data\": null\n    \"vmid\": 221002\n    \"errorMessage\": [\"Access allowed every 30 minutes\"]\n    \"errorType\": \"EXCEPTION\"\n    \"dateStamp\": \"2013-03-26T10:28:51+0000\"\n    \"errorReference\": 55315512721712161381352771\n    \"errorMessageText\": [\"Access allowed every 30 minutes\"]\n    \"success\": false\n    \"totalCount\": 1\n    \"errorName\": \"PollingDeniedException\"  \n}\n```\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingStatusItems",
+      "name": "bookingServices.bookingStatusItems",
+      "description": "Get brief booking statuses\n\nThis service is similar to [/booking/status](#operation/bookingStatus) in that it:\n- retrieves the booking status for multiple items based on different criteria\n- has the same request parameters as [/booking/status](#operation/bookingStatus)\n\nHowever, it differs in that it returns a multi-item array of booking items with less detail than what would be received from [/booking/status](#operation/bookingStatus).\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.bookingVoucher",
+      "name": "bookingServices.bookingVoucher",
+      "description": "Get voucher details\n- Use this service to retrieve the voucher details of a booked item.\n- The data returned is HTML-formatted and can be wrapped in a header and/or footer.\n\n**Sample query parameters**\n- leadLastName=Simpson test&amp;itemId=580669678\n\n**or** \n- voucherKey=1005851866:4af44c13ecf3f1a7d3f9ef2fc00c2257e08fa42ae20f877f3039ff9b52aba24e:580669678&amp;fullHTML=true&amp;mobileVoucher=true\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.cancelBooking",
+      "name": "bookingServices.cancelBooking",
+      "description": "Submits a cancellation request for the specified booking\n\nFor information on how to use this service, see: [Cancellation API workflow](#section/Common-workflows-and-data-validation/Cancellation-API-workflow)\n\n**Note**: \n\n  * This service &lt;u&gt;requires&lt;/u&gt; [exp-api-key](#section/Authentication/exp-api-key) to be included as a header parameter. Please speak to your account manager if you have not yet been issued an exp-api-key.\n  * The base URL for the server for this endpoint is different from the older endpoints described in this document. Use `https://api.sandbox.viator.com/partner/bookings/{booking-reference}/cancel`\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.cancelBookingQuote",
+      "name": "bookingServices.cancelBookingQuote",
+      "description": "Retrieves a quote for the cancellation of a booking\n\nFor information on how to use this service, see: [Cancellation API workflow](#section/Common-workflows-and-data-validation/Cancellation-API-workflow)\n\n**Note**: \n\n  * This service &lt;u&gt;requires&lt;/u&gt; [exp-api-key](#section/Authentication/exp-api-key) to be included as a header parameter. Please speak to your account manager if you have not yet been issued an exp-api-key.\n  * The base URL for the server for this endpoint is different from the older endpoints described in this document. Use `https://api.sandbox.viator.com/partner/bookings/{booking-reference}/cancel-quote`\n"
+    },
+    {
+      "id": "openapi_viator_com.bookingServices.cancellationReasons",
+      "name": "bookingServices.cancellationReasons",
+      "description": "Retrieves a dictionary of unique identification codes (`cancellationReasonCode`) and their associated natural-language descriptions (`cancellationReasonText`).\n\nFor information on how to use this service, see: [Cancellation API workflow](#section/Common-workflows-and-data-validation/Cancellation-API-workflow)\n\n**Note**: \n\n  * This service &lt;u&gt;requires&lt;/u&gt; [exp-api-key](#section/Authentication/exp-api-key) to be included as a header parameter. Please speak to your account manager if you have not yet been issued an exp-api-key.\n  * The base URL for the server for this endpoint is different from the older endpoints described in this document. Use `https://api.sandbox.viator.com/partner/cancel-reasons`\n"
+    },
+    {
+      "id": "openapi_viator_com.deprecatedServices.merchantCancellation",
+      "name": "deprecatedServices.merchantCancellation",
+      "description": "Cancel a booking\n**Note**: This service has been replaced by the [cancellationReasons](#operation/cancellationReasons), [bookingQuote](#operation/bookingQuote) and [cancelBooking](#operation/cancelBooking) endpoints\n"
+    },
+    {
+      "id": "openapi_viator_com.generalServices.healthCheck",
+      "name": "generalServices.healthCheck",
+      "description": "Health check\nUse this service to determine whether the Viator API is presently online and that your API key is valid. You should receive a response identical to the example shown. If you have not yet received an API key, please request one from your business development partner. If you have not yet signed up as a Viator merchant partner and would like to, please visit our [distribution partner website](https://www.viator.com/distribution-partners?mcid=58463#api-solutions).\"\n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.availableProducts",
+      "name": "productServices.availableProducts",
+      "description": "Find products that are available\n\n This endpoint returns available products filtered by product code, date range or number of adult travelers\n\n\n - **Note**: Availability data is limited to a period of **12 months** into the future from the present time on the production server and **6 months** on the sandbox server. \n \n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.product",
+      "name": "productServices.product",
+      "description": "Get product information\nThis service provides all product details required for a product display page, as well as information required for price checks and booking, such as: \n- age bands\n- tour grades\n- language options \n- booking questions\n- hotel pickup flags\n\n**currencyCode (in query):** \n- use this parameter to specify the currency in which product pricing should be displayed\n- the default currency is the currency of your account; or, if you have multi-currency enabled, US dollars\n- \"multi-currency\" allows pricing and booking in various currencies - please speak to the business development team if you'd like this enabled\n- **Note**: you will be billed in the currency in which the booking was made\n\n**Product photos**\n\n&lt;mark&gt;**&lt;u&gt;Update 13 Feb 2020&lt;/u&gt;**: All supplier-provided photos for the selected product are now available in the `productPhotos` array in this endpoint's response. Previously, only two supplier-provided photos were available – one in the `productPhotos` array and one in `thumbnailHiResURL`. &lt;/mark&gt;\n\n**Videos**\n\n- Videos are no longer provided via this API\n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.productPhotos",
+      "name": "productServices.productPhotos",
+      "description": "Get photos of a product submitted by users"
+    },
+    {
+      "id": "openapi_viator_com.productServices.productReviews",
+      "name": "productServices.productReviews",
+      "description": "Get user-submitted reviews of a product\n\n**Note**: \n- The number of reviews that you can obtain via this service will depend on whether your account is limited in terms of the number of reviews you are entitled to receive. \n- The number of reviews available through this service is given in the `reviewCount` element in the response from [/product](#operation/product)\n- Please speak to your account manager if you wish to receive more reviews. If your account is not limited, you will be able to receive all available reviews for this product.\n- Only reviews in the language specified in the Accept-Language request header will be returned\n\n**Example:** \"Get the first three reviews for product `5010SYDNEY` sorted by rating in ascending order\":\n\n```javascript\nhttps://viatorapi.sandbox.viator.com/service/product/reviews?sortOrder=REVIEW_RATING_A&amp;topX=1-3&amp;code=5010SYDNEY&amp;showUnavailable=false\n```\n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.searchFreetext",
+      "name": "productServices.searchFreetext",
+      "description": "Free text search\n- This service provides a **free text search across all products and destinations**\n- The `text` parameter is required\n- **Note:** results include a type indicator (`type`) that you can use to display each result appropriately based on its content\n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.searchProducts",
+      "name": "productServices.searchProducts",
+      "description": "Search for products\nThis service is used to search for products based on various criteria; such as:\n* the destination (locale) in which it operates\n* its association with a tourist attraction\n* its category and/or subcategory\n* the time period during which it operates\nThe fields you include in the request body for this service determine the kind of search that will be performed.\n\n**&lt;u&gt;Note&lt;/u&gt;**: \n\n* You can search **EITHER** by destination (`destId`) **OR** by attraction-link (`seoId`), but not both.\n* The destination identifier (`destId`) can be retrieved from the [/taxonomy/destinations](#operation/taxonomyDestinations) service.\n* The category (`catId`) and subcategory (`subCatId`) identifiers can be retrieved from the [/taxonomy/categories](#operation/taxonomyCategories) service.\n* The attraction identifier (`seoId`) can be retrieved from the [/taxonomy/attractions](#operation/taxonomyAttractions) service.\n\n**&lt;u&gt;Examples&lt;/u&gt;**:\n\n**Search by destination**:\n\n* E.g., \"Top ten highest-rated yoga classes operating in Las Vegas:\n```javascript\n{\n    \"destId\": 684,\n    \"subCatId\": 26052,\n    \"sortOrder\": \"REVIEW_AVG_RATING_D\",\n    \"topX\": \"1-3\"\n}\n```\n\n**Search by attraction-link**:\n\n* E.g., \"Products related to Everglades National Park operating 21-26 May 2019 in order of descending price\":\n```javascript\n{\n    \"seoId\": 1115,\n    \"sortOrder\": \"PRICE_FROM_D\",\n    \"topX\": \"1-3\"\n}\n```\n\n**&lt;u&gt;'Freesale-only' merchants&lt;/u&gt;**:\n- Merchants with a \"freesale only\" key *must* pass `startDate` and `endDate` to this service to retrieve a list of all available 'freesale' products (and 'freesale/on-request' products that are currently 'freesale') in the destination. \n- E.g., the following request body will result in 'freesale/on-request' products within their on-request period not appearing in the results from this service. \n```javascript\n{\n    \"destId\": 684,\n    \"startDate\": \"2020-02-21\",\n    \"endDate\": \"2020-03-21\",\n    \"sortOrder\": \"PRICE_FROM_D\",\n    \"topX\": \"1-3\"\n}\n```\n\n- If `startDate` and `endDate` are omitted, 'freesale/on-request' products that are presently within their on-request period may appear to be available to customers, but won't be available at the time of booking.\n"
+    },
+    {
+      "id": "openapi_viator_com.productServices.searchProductsCodes",
+      "name": "productServices.searchProductsCodes",
+      "description": "Search by product code\n- This service returns an array of products given an array of product identifiers that is useful for wishlist / shopping cart / user account display \n- **Note**: requesting an inactive or non-existent product code will return `0`, `null` and blank values (as per the 'invalid_product' example).\n"
+    },
+    {
+      "id": "openapi_viator_com.taxonomyServices.taxonomyAttractions",
+      "name": "taxonomyServices.taxonomyAttractions",
+      "description": "Get attractions\n- Retrieves a list of attractions (things like the Eiffel Tower or Empire State Building) and their associated unique numeric identifiers\n- The attraction's identifier (`seoId`) can be used as a means of searching for available products; for example, in the [/search/products](#operation/searchProducts) service.\n"
+    },
+    {
+      "id": "openapi_viator_com.taxonomyServices.taxonomyCategories",
+      "name": "taxonomyServices.taxonomyCategories",
+      "description": "Get all product categories\n- Retrieves a list of product categories for a destination that can be used as a means of filtering when searching for products using the [/search/products](/#operation/searchProducts) service\n- This service can be used to get a list of all categories and subcategories for a destination by including its `destId`, or you can omit the `destId` to get a list of all categories and subcategories\n- **Note:** If no `destId` is passed, `productCount` and `thumbnailURL` will be `null` as they are destination-specific fields\n"
+    },
+    {
+      "id": "openapi_viator_com.taxonomyServices.taxonomyDestinations",
+      "name": "taxonomyServices.taxonomyDestinations",
+      "description": "Get details of all destinations supported by this API\n- Retrieves all the country taxonomy/city nodes as a flat list\n- Returns a complete list of Viator destinations, including destination names and parent identifiers\n- Used to provide navigation through drill down lists or combo boxes\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}

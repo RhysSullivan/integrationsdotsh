@@ -1,0 +1,422 @@
+{
+  "fetchedAt": "2026-04-30T15:22:14.926Z",
+  "status": "ok",
+  "count": 83,
+  "tools": [
+    {
+      "id": "openapi_flat_io.account.getAuthenticatedUser",
+      "name": "account.getAuthenticatedUser",
+      "description": "Get details about the current authenticated User.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.activateClass",
+      "name": "class.activateClass",
+      "description": "Mark the class as `active`. This is mainly used for classes synchronized from Clever that are initially with an `inactive` state and hidden in the UI.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.addClassUser",
+      "name": "class.addClassUser",
+      "description": "This method can be used by a teacher of the class to enroll another Flat user into the class.\n\nOnly users that are part of your Organization can be enrolled in a class of this same Organization.\n\nWhen enrolling a user in the class, Flat will automatically add this user to the corresponding Class group, based on this role in the Organization.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.archiveAssignment",
+      "name": "class.archiveAssignment",
+      "description": "Archive the assignment\n"
+    },
+    {
+      "id": "openapi_flat_io.class.archiveClass",
+      "name": "class.archiveClass",
+      "description": "Mark the class as `archived`. When this course is synchronized with another app, like Google Classroom, this state will be automatically be updated.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.copyAssignment",
+      "name": "class.copyAssignment",
+      "description": "Copy an assignment to a specified class.\n\nIf the original assignment has a due date in the past, this new assingment will be created without a due date.\n\nIf the new class is synchronized with an external app (e.g. Google Classroom), the copied assignment will also be posted on the external app.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.createAssignment",
+      "name": "class.createAssignment",
+      "description": "Use this method as a teacher to create and post a new assignment to a class.\n\nIf the class is synchronized with Google Classroom, the assignment will be automatically posted to your Classroom course.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.createClass",
+      "name": "class.createClass",
+      "description": "Classrooms on Flat allow you to create activities with assignments and post content to a specific group.\n\nWhen creating a class, Flat automatically creates two groups: one for the teachers of the course, one for the students. The creator of this class is automatically added to the teachers group.\n\nIf the classsroom is synchronized with another application like Google Classroom, some of the meta information will automatically be updated.\n\nYou can add users to this class using `PUT /classes/{class}/users/{user}`, they will automatically added to the group based on their role on Flat. Users can also enroll themselves to this class using `POST /classes/enroll/{enrollmentCode}` and the `enrollmentCode` returned in the `ClassDetails` response.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.createSubmission",
+      "name": "class.createSubmission",
+      "description": "Use this method as a student to create, update and submit a submission related to an assignment.\nStudents can only set `attachments` and `submit`.\nTeachers can use `PUT /classes/{class}/assignments/{assignment}/submissions/{submission}` to update a submission by id.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.deleteClassUser",
+      "name": "class.deleteClassUser",
+      "description": "This method can be used by a teacher to remove a user from the class, or by a student to leave the classroom.\n\nWarning: Removing a user from the class will remove the associated resources, including the submissions and feedback related to these submissions.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.deleteSubmission",
+      "name": "class.deleteSubmission",
+      "description": "Use this method as a teacher to delete a submission and allow student to start over the assignment\n"
+    },
+    {
+      "id": "openapi_flat_io.class.deleteSubmissionComment",
+      "name": "class.deleteSubmissionComment",
+      "description": "Delete a feedback comment to a submission"
+    },
+    {
+      "id": "openapi_flat_io.class.editSubmission",
+      "name": "class.editSubmission",
+      "description": "Use this method as a teacher to update the different submission and give feedback.\nTeachers can only set `return`, `draftGrade` and `grade`\n"
+    },
+    {
+      "id": "openapi_flat_io.class.enrollClass",
+      "name": "class.enrollClass",
+      "description": "Use this method to join a class using an enrollment code given one of the teacher of this class. This code is also available in the `ClassDetails` returned to the teachers when creating the class or listing / fetching a specific class.\n\nFlat will automatically add the user to the corresponding class group based on this role in the organization.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.exportSubmissionsReviewsAsCsv",
+      "name": "class.exportSubmissionsReviewsAsCsv",
+      "description": "Export list of submissions grades to a CSV file"
+    },
+    {
+      "id": "openapi_flat_io.class.exportSubmissionsReviewsAsExcel",
+      "name": "class.exportSubmissionsReviewsAsExcel",
+      "description": "Export list of submissions grades to an Excel file"
+    },
+    {
+      "id": "openapi_flat_io.class.getClass",
+      "name": "class.getClass",
+      "description": "Get the details of a single class"
+    },
+    {
+      "id": "openapi_flat_io.class.getSubmission",
+      "name": "class.getSubmission",
+      "description": "Get a student submission"
+    },
+    {
+      "id": "openapi_flat_io.class.getSubmissionComments",
+      "name": "class.getSubmissionComments",
+      "description": "List the feedback comments of a submission"
+    },
+    {
+      "id": "openapi_flat_io.class.getSubmissionHistory",
+      "name": "class.getSubmissionHistory",
+      "description": "For teachers only. Returns a detailed history of the submission. This currently includes state and grade histories.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.getSubmissions",
+      "name": "class.getSubmissions",
+      "description": "List the students' submissions"
+    },
+    {
+      "id": "openapi_flat_io.class.listAssignments",
+      "name": "class.listAssignments",
+      "description": "Assignments listing"
+    },
+    {
+      "id": "openapi_flat_io.class.listClasses",
+      "name": "class.listClasses",
+      "description": "List the classes available for the current user"
+    },
+    {
+      "id": "openapi_flat_io.class.listClassStudentSubmissions",
+      "name": "class.listClassStudentSubmissions",
+      "description": "Use this method as a teacher to list all the assignment submissions sent by a student of the class\n"
+    },
+    {
+      "id": "openapi_flat_io.class.postSubmissionComment",
+      "name": "class.postSubmissionComment",
+      "description": "Add a feedback comment to a submission"
+    },
+    {
+      "id": "openapi_flat_io.class.unarchiveAssignment",
+      "name": "class.unarchiveAssignment",
+      "description": "Mark the assignment as `active`.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.unarchiveClass",
+      "name": "class.unarchiveClass",
+      "description": "Mark the class as `active`. When this course is synchronized with another app, like Google Classroom, this state will be automatically be updated.\n"
+    },
+    {
+      "id": "openapi_flat_io.class.updateClass",
+      "name": "class.updateClass",
+      "description": "Update the meta information of the class\n"
+    },
+    {
+      "id": "openapi_flat_io.class.updateSubmissionComment",
+      "name": "class.updateSubmissionComment",
+      "description": "Update a feedback comment to a submission"
+    },
+    {
+      "id": "openapi_flat_io.collection.addScoreToCollection",
+      "name": "collection.addScoreToCollection",
+      "description": "This operation will add a score to a collection. The default behavior will make the score available across multiple collections.\nYou must have the capability `canAddScores` on the provided `collection` to perform the action.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.createCollection",
+      "name": "collection.createCollection",
+      "description": "This method will create a new collection and add it to your `root` collection.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.deleteCollection",
+      "name": "collection.deleteCollection",
+      "description": "This method will schedule the deletion of the collection. Until deleted, the collection will be available in the `trash`.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.deleteScoreFromCollection",
+      "name": "collection.deleteScoreFromCollection",
+      "description": "This method will delete a score from the collection. Unlike [`DELETE /scores/{score}`](#operation/deleteScore), this score will not remove the score from your account, but only from the collection.\nThis can be used to *move* a score from one collection to another, or simply remove a score from one collection when this one is contained in multiple collections.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.editCollection",
+      "name": "collection.editCollection",
+      "description": "Update a collection's metadata"
+    },
+    {
+      "id": "openapi_flat_io.collection.getCollection",
+      "name": "collection.getCollection",
+      "description": "Get collection details"
+    },
+    {
+      "id": "openapi_flat_io.collection.listCollections",
+      "name": "collection.listCollections",
+      "description": "Use this method to list the user's collections contained in `parent` (by default in the `root` collection).\nIf no sort option is provided, the collections are sorted by `creationDate` `desc`.\n\nNote that this method will not include the `parent` collection in the listing.\nFor example, if you need the details of the `root` collection, you can use `GET /v2/collections/root`.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.listCollectionScores",
+      "name": "collection.listCollectionScores",
+      "description": "Use this method to list the scores contained in a collection.\nIf no sort option is provided, the scores are sorted by `modificationDate` `desc`.\n"
+    },
+    {
+      "id": "openapi_flat_io.collection.untrashCollection",
+      "name": "collection.untrashCollection",
+      "description": "This method will restore the collection by removing it from the `trash` and add it back to the `root` collection.\n"
+    },
+    {
+      "id": "openapi_flat_io.group.getGroupDetails",
+      "name": "group.getGroupDetails",
+      "description": "Get group information"
+    },
+    {
+      "id": "openapi_flat_io.group.getGroupScores",
+      "name": "group.getGroupScores",
+      "description": "Get the list of scores shared with a group.\n"
+    },
+    {
+      "id": "openapi_flat_io.group.listGroupUsers",
+      "name": "group.listGroupUsers",
+      "description": "List group's users"
+    },
+    {
+      "id": "openapi_flat_io.organization.countOrgaUsers",
+      "name": "organization.countOrgaUsers",
+      "description": "Count the organization users using the provided filters"
+    },
+    {
+      "id": "openapi_flat_io.organization.createLtiCredentials",
+      "name": "organization.createLtiCredentials",
+      "description": "Flat for Education is a Certified LTI Provider. You can use these API methods to automate the creation of LTI credentials. You can read more about our LTI implementation, supported components and LTI Endpoints in our [Developer Documentation](https://flat.io/developers/docs/lti/).\n"
+    },
+    {
+      "id": "openapi_flat_io.organization.createOrganizationInvitation",
+      "name": "organization.createOrganizationInvitation",
+      "description": "This method creates and sends invitation for teachers and admins.\n\nInvitations can only be used by new Flat users or users who are not part of the organization yet.\n\nIf the email of the user is already associated to a user of your organization, the API will simply update the role of the existing user and won't send an invitation. In this case, the property `usedBy` will be directly filled with the uniquer identifier of the corresponding user.\n"
+    },
+    {
+      "id": "openapi_flat_io.organization.createOrganizationUser",
+      "name": "organization.createOrganizationUser",
+      "description": "Create a new user account"
+    },
+    {
+      "id": "openapi_flat_io.organization.listLtiCredentials",
+      "name": "organization.listLtiCredentials",
+      "description": "List LTI 1.x credentials"
+    },
+    {
+      "id": "openapi_flat_io.organization.listOrganizationInvitations",
+      "name": "organization.listOrganizationInvitations",
+      "description": "List the organization invitations"
+    },
+    {
+      "id": "openapi_flat_io.organization.listOrganizationUsers",
+      "name": "organization.listOrganizationUsers",
+      "description": "List the organization users"
+    },
+    {
+      "id": "openapi_flat_io.organization.removeOrganizationInvitation",
+      "name": "organization.removeOrganizationInvitation",
+      "description": "Remove an organization invitation"
+    },
+    {
+      "id": "openapi_flat_io.organization.removeOrganizationUser",
+      "name": "organization.removeOrganizationUser",
+      "description": "This operation removes an account from Flat and its data, including:\n* The music scores created by this user (documents, history, comments, collaboration information)\n* Education related data (assignments and classroom information)\n"
+    },
+    {
+      "id": "openapi_flat_io.organization.revokeLtiCredentials",
+      "name": "organization.revokeLtiCredentials",
+      "description": "Revoke LTI 1.x credentials"
+    },
+    {
+      "id": "openapi_flat_io.organization.updateOrganizationUser",
+      "name": "organization.updateOrganizationUser",
+      "description": "Update account information"
+    },
+    {
+      "id": "openapi_flat_io.score.addScoreCollaborator",
+      "name": "score.addScoreCollaborator",
+      "description": "Share a score with a single user or a group. This API call allows to add, invite and update the collaborators of a resource.\n- To add an existing Flat user to the resource, specify its unique identifier in the `user` property.\n- To invite an external user to the resource, specify its email in the `userEmail` property.\n- To add a Flat group to the resource, specify its unique identifier in the `group` property.\n- To update an existing collaborator, process the same request with different rights.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.addScoreTrack",
+      "name": "score.addScoreTrack",
+      "description": "Use this method to add new track to the score. This track can then be played on flat.io or in an embedded score.\nThis API method support medias hosted on SoundCloud, YouTube and Vimeo.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.createScore",
+      "name": "score.createScore",
+      "description": "Use this API method to **create a new music score in the current User account**. You will need a MusicXML 3 (`vnd.recordare.musicxml` or `vnd.recordare.musicxml+xml`), a MIDI (`audio/midi`), Guitar Pro (GP3, GP4, GP5, GPX, GP), PowerTab, TuxGuitar, or MuseScore file to create the new Flat document.\n\nThis API call will automatically create the first revision of the document, the score can be modified by the using our web application or by uploading a new revision of this file (`POST /v2/scores/{score}/revisions/{revision}`).\n\nThe currently authenticated user will be granted owner of the file and will be able to add other collaborators (users and groups).\n\nIf no `collection` is specified, the API will create the score in the most appropriate collection. This can be the `root` collection or a different collection based on the user's settings or API authentication method.\nIf a `collection` is specified and this one has more public privacy settings than the score (e.g. `public` vs `private` for the score), the privacy settings of the created score will be adjusted to the collection ones.\nYou can check the adjusted privacy settings in the returned score `privacy`, and optionally adjust these settings if needed using `PUT /scores/{score}`.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.createScoreRevision",
+      "name": "score.createScoreRevision",
+      "description": "Update a score by uploading a new revision for this one.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.deleteScore",
+      "name": "score.deleteScore",
+      "description": "This method can be used by the owner/admin (`aclAdmin` rights) of a score as well as regular collaborators.\n\nWhen called by an owner/admin, it will schedule the deletion of the score, its revisions, and complete history.\nThe score won't be accessible anymore after calling this method and the user's quota will directly be updated.\n\nWhen called by a regular collaborator (`aclRead` / `aclWrite`), the score will be unshared (i.e. removed from the account & own collections).\n"
+    },
+    {
+      "id": "openapi_flat_io.score.deleteScoreComment",
+      "name": "score.deleteScoreComment",
+      "description": "Delete a comment"
+    },
+    {
+      "id": "openapi_flat_io.score.deleteScoreTrack",
+      "name": "score.deleteScoreTrack",
+      "description": "Remove an audio or video track linked to the score"
+    },
+    {
+      "id": "openapi_flat_io.score.editScore",
+      "name": "score.editScore",
+      "description": "This API method allows you to change the metadata of a score document (e.g. its `title` or `privacy`), all the properties are optional.\n\nTo edit the file itself, create a new revision using the appropriate method (`POST /v2/scores/{score}/revisions/{revision}`).\n\nWhen editing the `title`, `subtitle`, `composer`, `lyricist`, `arranger` or `licenseText`, the metadatas will be instantly be updated, and a real-time action will be pushed to update the document lazily.\nThis pending document modification will be automatically be saved as a new version by either a connected client or our internal versioning service.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.forkScore",
+      "name": "score.forkScore",
+      "description": "This API call will make a copy of the last revision of the specified score and create a new score. The copy of the score will have a privacy set to `private`.\n\nWhen using a [Flat for Education](https://flat.io/edu) account, the inline and contextualized comments will be accessible in the child document.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScore",
+      "name": "score.getScore",
+      "description": "Get the details of a score identified by the `score` parameter in the URL.\nThe currently authenticated user must have at least a read access to the document to use this API call.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreCollaborator",
+      "name": "score.getScoreCollaborator",
+      "description": "Get the information about a collaborator (User or Group).\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreCollaborators",
+      "name": "score.getScoreCollaborators",
+      "description": "This API call will list the different collaborators of a score and their rights on the document. The returned list will at least contain the owner of the document.\n\nCollaborators can be a single user (the object `user` will be populated) or a group (the object `group` will be populated).\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreComments",
+      "name": "score.getScoreComments",
+      "description": "This method lists the different comments added on a music score (documents and inline) sorted by their post dates."
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreRevision",
+      "name": "score.getScoreRevision",
+      "description": "When creating a score or saving a new version of a score, a revision is created in our storage. This method allows you to get a specific\nrevision metadata.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreRevisionData",
+      "name": "score.getScoreRevisionData",
+      "description": "Retrieve the file corresponding to a score revision (the following formats are available): Flat JSON/Adagio JSON `json`, MusicXML\n`mxl`/`xml`, MP3 `mp3`, WAV `wav`, MIDI `midi`, a tumbnail of the first page `thumbnail.png` or auto sync points `synchronizationPoints`.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreRevisions",
+      "name": "score.getScoreRevisions",
+      "description": "When creating a score or saving a new version of a score, a revision is created in our storage. This method allows you to list all of them, sorted by last modification.\n\nDepending the plan of the account, this list can be trunked to the few last revisions.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreSubmissions",
+      "name": "score.getScoreSubmissions",
+      "description": "This API call will list the different assignments submissions where the score is attached. This method can be used by anyone that are part of the organization and have at least read access to the document.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.getScoreTrack",
+      "name": "score.getScoreTrack",
+      "description": "Retrieve the details of an audio or video track linked to a score"
+    },
+    {
+      "id": "openapi_flat_io.score.listScoreTracks",
+      "name": "score.listScoreTracks",
+      "description": "List the audio or video tracks linked to a score"
+    },
+    {
+      "id": "openapi_flat_io.score.markScoreCommentResolved",
+      "name": "score.markScoreCommentResolved",
+      "description": "Mark the comment as resolved"
+    },
+    {
+      "id": "openapi_flat_io.score.markScoreCommentUnresolved",
+      "name": "score.markScoreCommentUnresolved",
+      "description": "Mark the comment as unresolved"
+    },
+    {
+      "id": "openapi_flat_io.score.postScoreComment",
+      "name": "score.postScoreComment",
+      "description": "Post a document or a contextualized comment on a document.\n\nPlease note that this method includes an anti-spam system for public scores. We don't guarantee that your comments will be accepted and displayed to end-user. Comments are be blocked by returning a `403` HTTP error and hidden from other users when the `spam` property is `true`.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.removeScoreCollaborator",
+      "name": "score.removeScoreCollaborator",
+      "description": "Remove the specified collaborator from the score\n"
+    },
+    {
+      "id": "openapi_flat_io.score.untrashScore",
+      "name": "score.untrashScore",
+      "description": "This method will remove the score from the `trash` collection and from the deletion queue, and add it back to the original collections.\n"
+    },
+    {
+      "id": "openapi_flat_io.score.updateScoreComment",
+      "name": "score.updateScoreComment",
+      "description": "Update an existing comment"
+    },
+    {
+      "id": "openapi_flat_io.score.updateScoreTrack",
+      "name": "score.updateScoreTrack",
+      "description": "Update an audio or video track linked to a score"
+    },
+    {
+      "id": "openapi_flat_io.user.gerUserLikes",
+      "name": "user.gerUserLikes",
+      "description": "List liked scores"
+    },
+    {
+      "id": "openapi_flat_io.user.getUser",
+      "name": "user.getUser",
+      "description": "Get a public profile of a Flat User.\n"
+    },
+    {
+      "id": "openapi_flat_io.user.getUserScores",
+      "name": "user.getUserScores",
+      "description": "Get the list of public scores owned by a User.\n\n**DEPRECATED**: Please note that the current behavior will be deprecrated on **2019-01-01**.\nThis method will no longer list private and shared scores, but only public scores of a Flat account.\nIf you want to access to private scores, please use the [Collections API](#tag/Collection) instead.\n"
+    },
+    {
+      "id": "openapi.previewSpec",
+      "name": "openapi.previewSpec",
+      "description": "Preview an OpenAPI document before adding it as a source"
+    },
+    {
+      "id": "openapi.addSource",
+      "name": "openapi.addSource",
+      "description": "Add an OpenAPI source and register its operations as tools"
+    }
+  ]
+}
