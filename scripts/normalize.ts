@@ -8,8 +8,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCES = join(ROOT, "sources");
 const OVERRIDES = join(ROOT, "overrides");
 const OUTPUT = join(ROOT, "output");
+const PUBLIC = join(ROOT, "public");
 
 mkdirSync(OUTPUT, { recursive: true });
+mkdirSync(PUBLIC, { recursive: true });
 
 const slugify = (s: string) => {
   const base = s
@@ -472,7 +474,9 @@ function main() {
   writeFileSync(join(OUTPUT, "graphql.json"), JSON.stringify(graphql, null, 2));
 
   const all = [...mcp, ...openapi, ...graphql];
-  writeFileSync(join(OUTPUT, "index.json"), JSON.stringify(buildIndex(all)));
+  const index = JSON.stringify(buildIndex(all));
+  writeFileSync(join(OUTPUT, "index.json"), index);
+  writeFileSync(join(PUBLIC, "api.json"), index);
 
   const mergedMcp = mcp.filter((r) => r.feeds.length > 1).length;
   const withTools = (rs: Integration[]) =>
